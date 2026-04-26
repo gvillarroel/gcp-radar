@@ -397,13 +397,30 @@ Validated documentation that is accepted as correct should then be promoted into
 
 Build a hierarchical card or map for each product.
 
-Each card should eventually support:
+Current canonical Step 08 inputs:
 
-- parent-child structure
+- `data/step-06/current/products/<product-slug>/extended-features.json`
+- `data/step-07/current/products/<product-slug>/gate.json`
+
+Current canonical Step 08 output layout:
+
+- `data/step-08/current/index.json`
+- `data/step-08/current/index.md`
+- `data/step-08/current/products/<product-slug>/card.json`
+- `data/step-08/current/products/<product-slug>/card.md`
+
+Each product card currently contains:
+
+- product identity
 - feature inventory
-- source-backed attributes
-- IAM and security summaries
-- traceability to evidence
+- source-backed feature definitions
+- lifecycle dates and lifecycle summary
+- evidence URLs
+- Step 07 quality status
+- IAM/security/audit/network/compliance signal summaries derived from feature text
+- traceability to Step 06 and Step 07 inputs
+
+IAM role/permission mappings remain a later enhancement once Step 05 is mapped to products and features.
 
 Expected storage location:
 
