@@ -66,3 +66,16 @@ Current default behavior:
 - Step 04 registers each `site` source with `--compact`
 - Step 04 skips `know export` for compact site sources
 - the retained corpus is only `site/` plus key metadata, without `raw/` or `library/`
+
+## Corpus coverage dashboard
+
+Summarize captured corpus health without network access:
+
+```bash
+node scripts/step-04/build-corpus-coverage-dashboard.mjs
+```
+
+The command writes `data/step-04/current/coverage-dashboard.json` and
+`data/step-04/current/coverage-dashboard.md`, including source counts, captured
+page counts, failed-source counts, anti-bot detections, and low-coverage flags.
+Use `GCP_RADAR_STEP04_MIN_HEALTHY_PAGES` to tune the warning threshold.
