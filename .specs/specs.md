@@ -445,6 +445,18 @@ Generate final reports under `radar/` using the validated content stored in `art
 
 `radar/` is the canonical home for final report outputs.
 
+Current canonical Step 10 output layout:
+
+- `radar/<product-slug>/card.md`
+- `radar/<product-slug>/features-1.md`
+
+Each Step 10 product report should contain:
+
+- a concise product summary in `card.md`
+- source-backed report scope and primary sources
+- a first curated feature inventory in `features-1.md`
+- one IAM role mapping per listed feature, with explicit notes when the mapping is a conservative inference from service-level documentation
+
 ### Step 11: Knowledge Capture
 
 Persist reusable research findings in `knowledge/`.

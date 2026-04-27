@@ -21,7 +21,7 @@ Resource Manager is the Google Cloud control-plane layer for organizations, fold
 
 ## IAM model
 
-Unlike some other products in this repository, Resource Manager documentation names several feature-level IAM roles directly. The first feature page therefore stays close to explicit Google guidance instead of relying mostly on service-level inference.
+Unlike some other products in this repository, Resource Manager documentation names several feature-level IAM roles directly. The first feature page in [features-1.md](features-1.md) therefore stays close to explicit Google guidance instead of relying mostly on service-level inference.
 
 Core roles repeatedly referenced by the official docs:
 

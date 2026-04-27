@@ -22,7 +22,7 @@ Batch is a fully managed Google Cloud service for scheduling, queueing, and exec
 
 ## IAM model
 
-Batch documentation exposes product IAM at the service level, not per feature. The feature-to-role mapping in [`features-1.md`](/C:/Users/villa/.codex/worktrees/1df2/gcp-radar/radar/batch/features-1.md) therefore uses the narrowest role set that is directly supported by official Batch setup guidance and the official Batch IAM role catalog.
+Batch documentation exposes product IAM at the service level, not per feature. The feature-to-role mapping in [features-1.md](features-1.md) therefore uses the narrowest role set that is directly supported by official Batch setup guidance and the official Batch IAM role catalog.
 
 Core roles repeatedly referenced by the official docs:
 
