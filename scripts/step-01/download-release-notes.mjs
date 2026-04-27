@@ -6,9 +6,40 @@ import path from "node:path";
 $.quote = quote;
 
 const [bucket = process.env.GCP_RADAR_BUCKET, projectArg] = process.argv.slice(3);
-if (!bucket) throw new Error("Usage: zx scripts/step-01/download-release-notes.mjs <gcs-bucket> [gcp-project]");
 
-const project = projectArg || (await $`gcloud config get-value project`).stdout.trim();
+function commandExists(command) {
+  const result = spawnSync(
+    process.platform === "win32" ? (process.env.ComSpec || "cmd.exe") : "sh",
+    process.platform === "win32" ? ["/d", "/s", "/c", `where ${command}`] : ["-lc", `command -v ${command}`],
+    { stdio: "ignore" },
+  );
+  return result.status === 0;
+}
+
+function validateLocalContract() {
+  const missing = [];
+  if (!bucket) missing.push("GCP_RADAR_BUCKET or <gcs-bucket> argument");
+  if (!projectArg && !process.env.GOOGLE_CLOUD_PROJECT && !commandExists(process.platform === "win32" ? "gcloud.cmd" : "gcloud")) {
+    missing.push("GOOGLE_CLOUD_PROJECT or [gcp-project] argument or an authenticated gcloud default project");
+  }
+  for (const command of ["bq", "gcloud", "python"]) {
+    const candidate = process.platform === "win32" && command !== "python" ? `${command}.cmd` : command;
+    if (!commandExists(candidate)) missing.push(`${command} CLI on PATH`);
+  }
+  if (missing.length > 0) {
+    throw new Error([
+      "Step 01 environment contract is incomplete.",
+      ...missing.map((item) => `- Missing: ${item}`),
+      "See scripts/step-01/ENVIRONMENT.md and .env.example.",
+      "Usage: zx scripts/step-01/download-release-notes.mjs <gcs-bucket> [gcp-project]",
+    ].join("\n"));
+  }
+}
+
+validateLocalContract();
+
+const project = projectArg || process.env.GOOGLE_CLOUD_PROJECT || (await $`gcloud config get-value project`).stdout.trim();
+if (!project) throw new Error("Step 01 requires GOOGLE_CLOUD_PROJECT, [gcp-project], or a configured gcloud default project.");
 const runId = new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
 
 const baseDir = path.resolve("data/step-01/raw/google_cloud_release_notes");
