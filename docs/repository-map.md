@@ -117,3 +117,9 @@ results that measure whether repository-specific workflows are improving.
 - If you are checking evidence or state, start in `data/`.
 - If you are changing project rules, start in `.specs/`.
 - If you are explaining the project to a human reader, start in `docs/`.
+
+## Scratch Artifacts
+
+Ad hoc debugging files belong under ignored `tmp/` only. Do not commit root-level
+`tmp_*.txt`, `tmp_*.json`, `temp_extract.py`, `out.json`, or `result.json`
+artifacts; promote useful examples into documented fixtures before versioning.
