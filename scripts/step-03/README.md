@@ -43,3 +43,16 @@ Optional controls:
 - set `GCP_RADAR_STEP03_MAX_CANDIDATES_FOR_API` to limit how many URLs per product are scored by the API rubric
 - set `GCP_RADAR_STEP03_SEARCH_CONCURRENCY` to tune concurrent `bx` calls
 - set `GCP_RADAR_STEP03_PI_MODEL` to override the API scoring model
+
+## Coverage feedback from Step 06
+
+Generate a Step 3 feedback artifact from Step 6 coverage outcomes and Step 4
+corpus health:
+
+```bash
+node scripts/step-03/build-coverage-feedback.mjs
+```
+
+The command writes `data/step-03/current/coverage-feedback.json` and `.md` with
+uncovered feature counts, missing feature terms, Step 4 corpus status, and
+recommended actions such as adding feature-term seeds or increasing crawl budget.
