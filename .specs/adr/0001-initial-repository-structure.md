@@ -27,7 +27,7 @@ Adopt the following repository structure as the initial standard:
 
 - `AGENTS.md` as the repository-wide operating guide
 - `.specs/specs.md` as the workflow and project specification
-- `.specs/ADRs/` for architecture decision records
+- `.specs/adr/` for architecture decision records
 - `artifacts/` for validated source-of-truth documentation
 - `docs/` for canonical user-facing documentation
 - `radar/` for final report outputs
