@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.083Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/certificatemanager.serviceAgent --format=json"
+  },
+  "name": "roles/certificatemanager.serviceAgent",
+  "role_slug": "certificatemanager-serviceagent",
+  "title": "Certificate Manager Service Agent",
+  "description": "Grants Certificate Manager access to services and APIs in the user project.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "certificatemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "certificatemanager",
+      "permissions": [
+        "certificatemanager.locations.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "certificatemanager.locations.get"
+  ]
+}

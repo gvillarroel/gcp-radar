@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.696Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/endpointsportal.serviceAgent --format=json"
+  },
+  "name": "roles/endpointsportal.serviceAgent",
+  "role_slug": "endpointsportal-serviceagent",
+  "title": "Endpoints Portal Service Agent",
+  "description": "Can access information about Endpoints services for consumer portal management, and can read Source Repositories for consumer portal custom content.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "servicemanagement",
+    "source"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "servicemanagement",
+      "permissions": [
+        "servicemanagement.services.get",
+        "servicemanagement.services.list"
+      ]
+    },
+    {
+      "group": "source",
+      "permissions": [
+        "source.repos.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "servicemanagement.services.get",
+    "servicemanagement.services.list",
+    "source.repos.get"
+  ]
+}

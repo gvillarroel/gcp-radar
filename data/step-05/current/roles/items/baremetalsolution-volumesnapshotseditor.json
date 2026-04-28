@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.000Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/baremetalsolution.volumesnapshotseditor --format=json"
+  },
+  "name": "roles/baremetalsolution.volumesnapshotseditor",
+  "role_slug": "baremetalsolution-volumesnapshotseditor",
+  "title": "Snapshots Editor",
+  "description": "Editor of Bare Metal Solution snapshots resources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "baremetalsolution"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "baremetalsolution",
+      "permissions": [
+        "baremetalsolution.operations.get",
+        "baremetalsolution.volumesnapshots.create",
+        "baremetalsolution.volumesnapshots.delete",
+        "baremetalsolution.volumesnapshots.get",
+        "baremetalsolution.volumesnapshots.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "baremetalsolution.operations.get",
+    "baremetalsolution.volumesnapshots.create",
+    "baremetalsolution.volumesnapshots.delete",
+    "baremetalsolution.volumesnapshots.get",
+    "baremetalsolution.volumesnapshots.list"
+  ]
+}

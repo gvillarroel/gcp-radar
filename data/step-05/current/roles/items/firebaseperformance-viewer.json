@@ -1,0 +1,52 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.792Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebaseperformance.viewer --format=json"
+  },
+  "name": "roles/firebaseperformance.viewer",
+  "role_slug": "firebaseperformance-viewer",
+  "title": "Firebase Performance Reporting Viewer",
+  "description": "Read-only access to firebaseperformance resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "firebase",
+    "firebaseperformance",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "firebase",
+      "permissions": [
+        "firebase.clients.get",
+        "firebase.clients.list",
+        "firebase.projects.get"
+      ]
+    },
+    {
+      "group": "firebaseperformance",
+      "permissions": [
+        "firebaseperformance.data.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "firebase.clients.get",
+    "firebase.clients.list",
+    "firebase.projects.get",
+    "firebaseperformance.data.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.328Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/recommender.bigqueryMaterializedViewAdmin --format=json"
+  },
+  "name": "roles/recommender.bigqueryMaterializedViewAdmin",
+  "role_slug": "recommender-bigquerymaterializedviewadmin",
+  "title": "BigQuery Materialized View Recommender Admin",
+  "description": "Admin of BigQuery Materialized View Insights and Recommendations.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "recommender",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.bigqueryMaterializedViewInsights.get",
+        "recommender.bigqueryMaterializedViewInsights.list",
+        "recommender.bigqueryMaterializedViewInsights.update",
+        "recommender.bigqueryMaterializedViewRecommendations.get",
+        "recommender.bigqueryMaterializedViewRecommendations.list",
+        "recommender.bigqueryMaterializedViewRecommendations.update",
+        "recommender.locations.get",
+        "recommender.locations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "recommender.bigqueryMaterializedViewInsights.get",
+    "recommender.bigqueryMaterializedViewInsights.list",
+    "recommender.bigqueryMaterializedViewInsights.update",
+    "recommender.bigqueryMaterializedViewRecommendations.get",
+    "recommender.bigqueryMaterializedViewRecommendations.list",
+    "recommender.bigqueryMaterializedViewRecommendations.update",
+    "recommender.locations.get",
+    "recommender.locations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

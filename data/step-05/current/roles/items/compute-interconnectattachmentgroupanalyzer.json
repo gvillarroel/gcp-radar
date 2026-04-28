@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.319Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/compute.interconnectAttachmentGroupAnalyzer --format=json"
+  },
+  "name": "roles/compute.interconnectAttachmentGroupAnalyzer",
+  "role_slug": "compute-interconnectattachmentgroupanalyzer",
+  "title": "Interconnect Attachment Group Analyzer",
+  "description": "Analyze Interconnect Attachment Groups via their GetOperationalStatus method.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "cloudasset",
+    "compute"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudasset",
+      "permissions": [
+        "cloudasset.assets.listComputeInterconnect",
+        "cloudasset.assets.listComputeInterconnectAttachment",
+        "cloudasset.assets.listComputeNetworks",
+        "cloudasset.assets.listComputeRouters",
+        "cloudasset.assets.listComputeVpnGateways"
+      ]
+    },
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.interconnectAttachmentGroups.get",
+        "compute.interconnectAttachmentGroups.list",
+        "compute.interconnectAttachments.get",
+        "compute.interconnectAttachments.list",
+        "compute.routers.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudasset.assets.listComputeInterconnect",
+    "cloudasset.assets.listComputeInterconnectAttachment",
+    "cloudasset.assets.listComputeNetworks",
+    "cloudasset.assets.listComputeRouters",
+    "cloudasset.assets.listComputeVpnGateways",
+    "compute.interconnectAttachmentGroups.get",
+    "compute.interconnectAttachmentGroups.list",
+    "compute.interconnectAttachments.get",
+    "compute.interconnectAttachments.list",
+    "compute.routers.get"
+  ]
+}

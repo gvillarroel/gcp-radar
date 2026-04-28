@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.197Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudkms.cryptoKeyEncrypterDecrypterViaDelegation --format=json"
+  },
+  "name": "roles/cloudkms.cryptoKeyEncrypterDecrypterViaDelegation",
+  "role_slug": "cloudkms-cryptokeyencrypterdecrypterviadelegation",
+  "title": "Cloud KMS CryptoKey Encrypter/Decrypter Via Delegation",
+  "description": "Enables Encrypt and Decrypt operations via other GCP services",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "cloudkms",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudkms",
+      "permissions": [
+        "cloudkms.cryptoKeyVersions.useToDecryptViaDelegation",
+        "cloudkms.cryptoKeyVersions.useToEncryptViaDelegation",
+        "cloudkms.locations.get",
+        "cloudkms.locations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudkms.cryptoKeyVersions.useToDecryptViaDelegation",
+    "cloudkms.cryptoKeyVersions.useToEncryptViaDelegation",
+    "cloudkms.locations.get",
+    "cloudkms.locations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

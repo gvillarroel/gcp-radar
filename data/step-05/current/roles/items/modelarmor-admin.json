@@ -1,0 +1,60 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.105Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/modelarmor.admin --format=json"
+  },
+  "name": "roles/modelarmor.admin",
+  "role_slug": "modelarmor-admin",
+  "title": "Model Armor Admin",
+  "description": "Grants full access to all modelarmor resources. Intended for administrators & owners.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "modelarmor",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "modelarmor",
+      "permissions": [
+        "modelarmor.locations.get",
+        "modelarmor.locations.list",
+        "modelarmor.templates.create",
+        "modelarmor.templates.delete",
+        "modelarmor.templates.get",
+        "modelarmor.templates.list",
+        "modelarmor.templates.update",
+        "modelarmor.templates.useToSanitizeInput",
+        "modelarmor.templates.useToSanitizeModelResponse",
+        "modelarmor.templates.useToSanitizeOutput",
+        "modelarmor.templates.useToSanitizeUserPrompt"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "modelarmor.locations.get",
+    "modelarmor.locations.list",
+    "modelarmor.templates.create",
+    "modelarmor.templates.delete",
+    "modelarmor.templates.get",
+    "modelarmor.templates.list",
+    "modelarmor.templates.update",
+    "modelarmor.templates.useToSanitizeInput",
+    "modelarmor.templates.useToSanitizeModelResponse",
+    "modelarmor.templates.useToSanitizeOutput",
+    "modelarmor.templates.useToSanitizeUserPrompt",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

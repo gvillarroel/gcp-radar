@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.556Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dellemccloudonefs.viewer --format=json"
+  },
+  "name": "roles/dellemccloudonefs.viewer",
+  "role_slug": "dellemccloudonefs-viewer",
+  "title": "Dell EMC Cloud OneFS Viewer",
+  "description": "This role is managed by Dell EMC, not Google.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "cloudonefs",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudonefs",
+      "permissions": [
+        "cloudonefs.isiloncloud.com/clusters.get",
+        "cloudonefs.isiloncloud.com/clusters.list",
+        "cloudonefs.isiloncloud.com/fileshares.get",
+        "cloudonefs.isiloncloud.com/fileshares.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudonefs.isiloncloud.com/clusters.get",
+    "cloudonefs.isiloncloud.com/clusters.list",
+    "cloudonefs.isiloncloud.com/fileshares.get",
+    "cloudonefs.isiloncloud.com/fileshares.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

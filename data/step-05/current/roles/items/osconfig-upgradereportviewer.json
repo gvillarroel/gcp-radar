@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.247Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/osconfig.upgradeReportViewer --format=json"
+  },
+  "name": "roles/osconfig.upgradeReportViewer",
+  "role_slug": "osconfig-upgradereportviewer",
+  "title": "Upgrade Report Viewer",
+  "description": "Provides read-only access to VM Manager Upgrade Reports",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "osconfig",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "osconfig",
+      "permissions": [
+        "osconfig.upgradeReports.get",
+        "osconfig.upgradeReports.getSummary",
+        "osconfig.upgradeReports.list",
+        "osconfig.upgradeReports.searchSummaries"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "osconfig.upgradeReports.get",
+    "osconfig.upgradeReports.getSummary",
+    "osconfig.upgradeReports.list",
+    "osconfig.upgradeReports.searchSummaries",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

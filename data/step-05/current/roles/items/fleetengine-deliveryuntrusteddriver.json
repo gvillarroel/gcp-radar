@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.806Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/fleetengine.deliveryUntrustedDriver --format=json"
+  },
+  "name": "roles/fleetengine.deliveryUntrustedDriver",
+  "role_slug": "fleetengine-deliveryuntrusteddriver",
+  "title": "Fleet Engine Delivery Untrusted Driver User",
+  "description": "Limited write access to Fleet Engine Delivery Vehicle resources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "fleetengine"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "fleetengine",
+      "permissions": [
+        "fleetengine.deliveryvehicles.get",
+        "fleetengine.deliveryvehicles.updateLocation"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "fleetengine.deliveryvehicles.get",
+    "fleetengine.deliveryvehicles.updateLocation"
+  ]
+}

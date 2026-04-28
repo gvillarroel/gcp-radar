@@ -1,0 +1,80 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.582Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/spanner.databaseUser --format=json"
+  },
+  "name": "roles/spanner.databaseUser",
+  "role_slug": "spanner-databaseuser",
+  "title": "Cloud Spanner Database User",
+  "description": "Access to read, query, write and view and change the schema of Cloud Spanner databases",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 23,
+  "permission_groups": [
+    "monitoring",
+    "spanner"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.timeSeries.create"
+      ]
+    },
+    {
+      "group": "spanner",
+      "permissions": [
+        "spanner.databaseOperations.cancel",
+        "spanner.databaseOperations.get",
+        "spanner.databaseOperations.list",
+        "spanner.databases.adapt",
+        "spanner.databases.beginOrRollbackReadWriteTransaction",
+        "spanner.databases.beginPartitionedDmlTransaction",
+        "spanner.databases.beginReadOnlyTransaction",
+        "spanner.databases.changequorum",
+        "spanner.databases.get",
+        "spanner.databases.getDdl",
+        "spanner.databases.partitionQuery",
+        "spanner.databases.partitionRead",
+        "spanner.databases.read",
+        "spanner.databases.select",
+        "spanner.databases.updateDdl",
+        "spanner.databases.write",
+        "spanner.instancePartitions.get",
+        "spanner.instances.get",
+        "spanner.sessions.create",
+        "spanner.sessions.delete",
+        "spanner.sessions.get",
+        "spanner.sessions.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "monitoring.timeSeries.create",
+    "spanner.databaseOperations.cancel",
+    "spanner.databaseOperations.get",
+    "spanner.databaseOperations.list",
+    "spanner.databases.adapt",
+    "spanner.databases.beginOrRollbackReadWriteTransaction",
+    "spanner.databases.beginPartitionedDmlTransaction",
+    "spanner.databases.beginReadOnlyTransaction",
+    "spanner.databases.changequorum",
+    "spanner.databases.get",
+    "spanner.databases.getDdl",
+    "spanner.databases.partitionQuery",
+    "spanner.databases.partitionRead",
+    "spanner.databases.read",
+    "spanner.databases.select",
+    "spanner.databases.updateDdl",
+    "spanner.databases.write",
+    "spanner.instancePartitions.get",
+    "spanner.instances.get",
+    "spanner.sessions.create",
+    "spanner.sessions.delete",
+    "spanner.sessions.get",
+    "spanner.sessions.list"
+  ]
+}

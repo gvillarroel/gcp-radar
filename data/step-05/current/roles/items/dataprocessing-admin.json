@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.527Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataprocessing.admin --format=json"
+  },
+  "name": "roles/dataprocessing.admin",
+  "role_slug": "dataprocessing-admin",
+  "title": "Data Processing Controls Resource Admin",
+  "description": "Data processing controls admin who can fully manage data processing controls settings and view all datasource data.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "billing",
+    "dataprocessing"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "billing",
+      "permissions": [
+        "billing.accounts.get",
+        "billing.accounts.list"
+      ]
+    },
+    {
+      "group": "dataprocessing",
+      "permissions": [
+        "dataprocessing.datasources.get",
+        "dataprocessing.datasources.list",
+        "dataprocessing.datasources.update",
+        "dataprocessing.featurecontrols.list",
+        "dataprocessing.featurecontrols.update",
+        "dataprocessing.groupcontrols.get",
+        "dataprocessing.groupcontrols.list",
+        "dataprocessing.groupcontrols.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "billing.accounts.get",
+    "billing.accounts.list",
+    "dataprocessing.datasources.get",
+    "dataprocessing.datasources.list",
+    "dataprocessing.datasources.update",
+    "dataprocessing.featurecontrols.list",
+    "dataprocessing.featurecontrols.update",
+    "dataprocessing.groupcontrols.get",
+    "dataprocessing.groupcontrols.list",
+    "dataprocessing.groupcontrols.update"
+  ]
+}

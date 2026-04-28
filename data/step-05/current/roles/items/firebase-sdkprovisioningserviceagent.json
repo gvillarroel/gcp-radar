@@ -1,0 +1,88 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.739Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebase.sdkProvisioningServiceAgent --format=json"
+  },
+  "name": "roles/firebase.sdkProvisioningServiceAgent",
+  "role_slug": "firebase-sdkprovisioningserviceagent",
+  "title": "Firebase SDK Provisioning Service Agent",
+  "description": "Access to provision apps with the Admin SDK.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 15,
+  "permission_groups": [
+    "apikeys",
+    "clientauthconfig",
+    "cloudmessaging",
+    "firebase",
+    "servicemanagement",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "apikeys",
+      "permissions": [
+        "apikeys.keys.list"
+      ]
+    },
+    {
+      "group": "clientauthconfig",
+      "permissions": [
+        "clientauthconfig.clients.list"
+      ]
+    },
+    {
+      "group": "cloudmessaging",
+      "permissions": [
+        "cloudmessaging.messages.create"
+      ]
+    },
+    {
+      "group": "firebase",
+      "permissions": [
+        "firebase.clients.create"
+      ]
+    },
+    {
+      "group": "servicemanagement",
+      "permissions": [
+        "servicemanagement.services.bind"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.consumerpolicy.analyze",
+        "serviceusage.consumerpolicy.get",
+        "serviceusage.consumerpolicy.update",
+        "serviceusage.effectivepolicy.get",
+        "serviceusage.groups.list",
+        "serviceusage.groups.listExpandedMembers",
+        "serviceusage.groups.listMembers",
+        "serviceusage.services.enable",
+        "serviceusage.services.get",
+        "serviceusage.values.test"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "apikeys.keys.list",
+    "clientauthconfig.clients.list",
+    "cloudmessaging.messages.create",
+    "firebase.clients.create",
+    "servicemanagement.services.bind",
+    "serviceusage.consumerpolicy.analyze",
+    "serviceusage.consumerpolicy.get",
+    "serviceusage.consumerpolicy.update",
+    "serviceusage.effectivepolicy.get",
+    "serviceusage.groups.list",
+    "serviceusage.groups.listExpandedMembers",
+    "serviceusage.groups.listMembers",
+    "serviceusage.services.enable",
+    "serviceusage.services.get",
+    "serviceusage.values.test"
+  ]
+}

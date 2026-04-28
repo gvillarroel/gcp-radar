@@ -1,0 +1,60 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.612Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/storage.objectCreator --format=json"
+  },
+  "name": "roles/storage.objectCreator",
+  "role_slug": "storage-objectcreator",
+  "title": "Storage Object Creator",
+  "description": "Allows users to create objects. Does not give permission to view, delete, or replace objects.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "orgpolicy",
+    "resourcemanager",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "orgpolicy",
+      "permissions": [
+        "orgpolicy.policy.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.folders.create",
+        "storage.managedFolders.create",
+        "storage.multipartUploads.abort",
+        "storage.multipartUploads.create",
+        "storage.multipartUploads.listParts",
+        "storage.objects.create",
+        "storage.objects.createContext"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "orgpolicy.policy.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "storage.folders.create",
+    "storage.managedFolders.create",
+    "storage.multipartUploads.abort",
+    "storage.multipartUploads.create",
+    "storage.multipartUploads.listParts",
+    "storage.objects.create",
+    "storage.objects.createContext"
+  ]
+}

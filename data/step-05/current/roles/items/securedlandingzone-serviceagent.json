@@ -1,0 +1,102 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.475Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securedlandingzone.serviceAgent --format=json"
+  },
+  "name": "roles/securedlandingzone.serviceAgent",
+  "role_slug": "securedlandingzone-serviceagent",
+  "title": "Secured Landing Zone Service Agent",
+  "description": "Grants Secured Landing Zone service account permissions to manage resources in the customer project",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 22,
+  "permission_groups": [
+    "cloudasset",
+    "logging",
+    "pubsub",
+    "resourcemanager",
+    "securitycenter",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudasset",
+      "permissions": [
+        "cloudasset.assets.exportOrgPolicy",
+        "cloudasset.assets.exportResource",
+        "cloudasset.feeds.create",
+        "cloudasset.feeds.delete",
+        "cloudasset.feeds.update"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.list"
+      ]
+    },
+    {
+      "group": "pubsub",
+      "permissions": [
+        "pubsub.subscriptions.consume",
+        "pubsub.subscriptions.create",
+        "pubsub.subscriptions.delete",
+        "pubsub.topics.attachSubscription",
+        "pubsub.topics.create",
+        "pubsub.topics.delete",
+        "pubsub.topics.detachSubscription",
+        "pubsub.topics.getIamPolicy",
+        "pubsub.topics.setIamPolicy"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get"
+      ]
+    },
+    {
+      "group": "securitycenter",
+      "permissions": [
+        "securitycenter.assetsecuritymarks.update",
+        "securitycenter.findings.list",
+        "securitycenter.findings.update",
+        "securitycenter.sources.list",
+        "securitycenter.sources.update"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudasset.assets.exportOrgPolicy",
+    "cloudasset.assets.exportResource",
+    "cloudasset.feeds.create",
+    "cloudasset.feeds.delete",
+    "cloudasset.feeds.update",
+    "logging.logEntries.list",
+    "pubsub.subscriptions.consume",
+    "pubsub.subscriptions.create",
+    "pubsub.subscriptions.delete",
+    "pubsub.topics.attachSubscription",
+    "pubsub.topics.create",
+    "pubsub.topics.delete",
+    "pubsub.topics.detachSubscription",
+    "pubsub.topics.getIamPolicy",
+    "pubsub.topics.setIamPolicy",
+    "resourcemanager.projects.get",
+    "securitycenter.assetsecuritymarks.update",
+    "securitycenter.findings.list",
+    "securitycenter.findings.update",
+    "securitycenter.sources.list",
+    "securitycenter.sources.update",
+    "serviceusage.services.use"
+  ]
+}

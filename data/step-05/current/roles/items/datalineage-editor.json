@@ -1,0 +1,70 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.466Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datalineage.editor --format=json"
+  },
+  "name": "roles/datalineage.editor",
+  "role_slug": "datalineage-editor",
+  "title": "Data Lineage Editor",
+  "description": "Grants edit access to all resources in Data Lineage API",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 18,
+  "permission_groups": [
+    "datalineage",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datalineage",
+      "permissions": [
+        "datalineage.events.create",
+        "datalineage.events.delete",
+        "datalineage.events.get",
+        "datalineage.events.getFields",
+        "datalineage.events.list",
+        "datalineage.locations.processOpenLineageMessage",
+        "datalineage.locations.searchLinks",
+        "datalineage.operations.get",
+        "datalineage.processes.create",
+        "datalineage.processes.get",
+        "datalineage.processes.list",
+        "datalineage.processes.update",
+        "datalineage.runs.create",
+        "datalineage.runs.get",
+        "datalineage.runs.list",
+        "datalineage.runs.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datalineage.events.create",
+    "datalineage.events.delete",
+    "datalineage.events.get",
+    "datalineage.events.getFields",
+    "datalineage.events.list",
+    "datalineage.locations.processOpenLineageMessage",
+    "datalineage.locations.searchLinks",
+    "datalineage.operations.get",
+    "datalineage.processes.create",
+    "datalineage.processes.get",
+    "datalineage.processes.list",
+    "datalineage.processes.update",
+    "datalineage.runs.create",
+    "datalineage.runs.get",
+    "datalineage.runs.list",
+    "datalineage.runs.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

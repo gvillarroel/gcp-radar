@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.527Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securitycenter.sourcesAdmin --format=json"
+  },
+  "name": "roles/securitycenter.sourcesAdmin",
+  "role_slug": "securitycenter-sourcesadmin",
+  "title": "Security Center Sources Admin",
+  "description": "Admin access to sources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "resourcemanager",
+    "securitycenter"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get"
+      ]
+    },
+    {
+      "group": "securitycenter",
+      "permissions": [
+        "securitycenter.sources.get",
+        "securitycenter.sources.getIamPolicy",
+        "securitycenter.sources.list",
+        "securitycenter.sources.setIamPolicy",
+        "securitycenter.sources.update",
+        "securitycenter.userinterfacemetadata.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.organizations.get",
+    "securitycenter.sources.get",
+    "securitycenter.sources.getIamPolicy",
+    "securitycenter.sources.list",
+    "securitycenter.sources.setIamPolicy",
+    "securitycenter.sources.update",
+    "securitycenter.userinterfacemetadata.get"
+  ]
+}

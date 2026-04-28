@@ -1,0 +1,66 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.583Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/spanner.graphIntelligenceUser --format=json"
+  },
+  "name": "roles/spanner.graphIntelligenceUser",
+  "role_slug": "spanner-graphintelligenceuser",
+  "title": "Cloud Spanner Database Graph Intelligence features user",
+  "description": "Access to Graph Intelligence features.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 16,
+  "permission_groups": [
+    "monitoring",
+    "spanner"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.timeSeries.create"
+      ]
+    },
+    {
+      "group": "spanner",
+      "permissions": [
+        "spanner.databases.beginReadOnlyTransaction",
+        "spanner.databases.get",
+        "spanner.databases.getDdl",
+        "spanner.databases.partitionQuery",
+        "spanner.databases.partitionRead",
+        "spanner.databases.read",
+        "spanner.databases.runGraphAlgorithms",
+        "spanner.databases.select",
+        "spanner.databases.useDataBoost",
+        "spanner.instancePartitions.get",
+        "spanner.instances.get",
+        "spanner.sessions.create",
+        "spanner.sessions.delete",
+        "spanner.sessions.get",
+        "spanner.sessions.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "monitoring.timeSeries.create",
+    "spanner.databases.beginReadOnlyTransaction",
+    "spanner.databases.get",
+    "spanner.databases.getDdl",
+    "spanner.databases.partitionQuery",
+    "spanner.databases.partitionRead",
+    "spanner.databases.read",
+    "spanner.databases.runGraphAlgorithms",
+    "spanner.databases.select",
+    "spanner.databases.useDataBoost",
+    "spanner.instancePartitions.get",
+    "spanner.instances.get",
+    "spanner.sessions.create",
+    "spanner.sessions.delete",
+    "spanner.sessions.get",
+    "spanner.sessions.list"
+  ]
+}

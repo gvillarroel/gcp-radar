@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.546Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securityposture.viewer --format=json"
+  },
+  "name": "roles/securityposture.viewer",
+  "role_slug": "securityposture-viewer",
+  "title": "Security Posture Viewer",
+  "description": "Read only access to all the SecurityPosture Service resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "resourcemanager",
+    "securityposture"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get"
+      ]
+    },
+    {
+      "group": "securityposture",
+      "permissions": [
+        "securityposture.operations.get",
+        "securityposture.postureDeployments.get",
+        "securityposture.postureDeployments.list",
+        "securityposture.postures.get",
+        "securityposture.postures.list",
+        "securityposture.postureTemplates.get",
+        "securityposture.postureTemplates.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.organizations.get",
+    "securityposture.operations.get",
+    "securityposture.postureDeployments.get",
+    "securityposture.postureDeployments.list",
+    "securityposture.postures.get",
+    "securityposture.postures.list",
+    "securityposture.postureTemplates.get",
+    "securityposture.postureTemplates.list"
+  ]
+}

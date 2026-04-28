@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.925Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/iam.principalAccessBoundaryAdmin --format=json"
+  },
+  "name": "roles/iam.principalAccessBoundaryAdmin",
+  "role_slug": "iam-principalaccessboundaryadmin",
+  "title": "Principal Access Boundary Policy Admin",
+  "description": "Principal Access Boundary admin role, with permissions to read and modify principal access boundary policies, and to bind and unbind principal access boundary policies to targets. Also includes permissions to read principal authorization activities analysis and permissions to list assets from Cloud Asset Inventory",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "cloudasset",
+    "iam"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudasset",
+      "permissions": [
+        "cloudasset.assets.listResource",
+        "cloudasset.assets.searchAllResources"
+      ]
+    },
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.principalaccessboundarypolicies.bind",
+        "iam.principalaccessboundarypolicies.create",
+        "iam.principalaccessboundarypolicies.delete",
+        "iam.principalaccessboundarypolicies.get",
+        "iam.principalaccessboundarypolicies.list",
+        "iam.principalaccessboundarypolicies.searchPolicyBindings",
+        "iam.principalaccessboundarypolicies.unbind",
+        "iam.principalaccessboundarypolicies.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudasset.assets.listResource",
+    "cloudasset.assets.searchAllResources",
+    "iam.principalaccessboundarypolicies.bind",
+    "iam.principalaccessboundarypolicies.create",
+    "iam.principalaccessboundarypolicies.delete",
+    "iam.principalaccessboundarypolicies.get",
+    "iam.principalaccessboundarypolicies.list",
+    "iam.principalaccessboundarypolicies.searchPolicyBindings",
+    "iam.principalaccessboundarypolicies.unbind",
+    "iam.principalaccessboundarypolicies.update"
+  ]
+}

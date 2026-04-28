@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.789Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/advisorynotifications.admin --format=json"
+  },
+  "name": "roles/advisorynotifications.admin",
+  "role_slug": "advisorynotifications-admin",
+  "title": "Advisory Notifications Admin",
+  "description": "Grants write access to settings in Advisory Notifications",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "advisorynotifications",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "advisorynotifications",
+      "permissions": [
+        "advisorynotifications.notifications.get",
+        "advisorynotifications.notifications.list",
+        "advisorynotifications.settings.get",
+        "advisorynotifications.settings.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get",
+        "resourcemanager.projects.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "advisorynotifications.notifications.get",
+    "advisorynotifications.notifications.list",
+    "advisorynotifications.settings.get",
+    "advisorynotifications.settings.update",
+    "resourcemanager.organizations.get",
+    "resourcemanager.projects.get"
+  ]
+}

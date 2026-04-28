@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.106Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/modelarmor.calloutUser --format=json"
+  },
+  "name": "roles/modelarmor.calloutUser",
+  "role_slug": "modelarmor-calloutuser",
+  "title": "Model Armor Callout User",
+  "description": "Grants access to use Model Armor Callout service. Intended for users & applications which plan to use Model Armor Callout service.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "modelarmor",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "modelarmor",
+      "permissions": [
+        "modelarmor.callouts.invoke",
+        "modelarmor.locations.get",
+        "modelarmor.locations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "modelarmor.callouts.invoke",
+    "modelarmor.locations.get",
+    "modelarmor.locations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

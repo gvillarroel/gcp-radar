@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.649Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dns.peer --format=json"
+  },
+  "name": "roles/dns.peer",
+  "role_slug": "dns-peer",
+  "title": "DNS Peer",
+  "description": "Access to target networks with DNS peering zones",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "dns"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dns",
+      "permissions": [
+        "dns.networks.targetWithPeeringZone"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dns.networks.targetWithPeeringZone"
+  ]
+}

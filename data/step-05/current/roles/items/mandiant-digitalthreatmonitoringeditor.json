@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.062Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/mandiant.digitalThreatMonitoringEditor --format=json"
+  },
+  "name": "roles/mandiant.digitalThreatMonitoringEditor",
+  "role_slug": "mandiant-digitalthreatmonitoringeditor",
+  "title": "Mandiant Digital Threat Monitoring Editor",
+  "description": "Access to write Digital Threat Monitoring",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "mandiant",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "mandiant",
+      "permissions": [
+        "mandiant.genericDigitalThreatMonitorings.create",
+        "mandiant.genericDigitalThreatMonitorings.update",
+        "mandiant.genericPlatforms.create",
+        "mandiant.genericPlatforms.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "mandiant.genericDigitalThreatMonitorings.create",
+    "mandiant.genericDigitalThreatMonitorings.update",
+    "mandiant.genericPlatforms.create",
+    "mandiant.genericPlatforms.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

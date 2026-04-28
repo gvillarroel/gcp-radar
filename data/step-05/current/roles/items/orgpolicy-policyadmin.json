@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.232Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/orgpolicy.policyAdmin --format=json"
+  },
+  "name": "roles/orgpolicy.policyAdmin",
+  "role_slug": "orgpolicy-policyadmin",
+  "title": "Organization Policy Administrator",
+  "description": "The permission to set Organization Policies on resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 26,
+  "permission_groups": [
+    "cloudasset",
+    "orgpolicy",
+    "policysimulator",
+    "recommender"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudasset",
+      "permissions": [
+        "cloudasset.assets.analyzeOrgPolicy",
+        "cloudasset.assets.exportResource",
+        "cloudasset.assets.listResource",
+        "cloudasset.assets.searchAllResources"
+      ]
+    },
+    {
+      "group": "orgpolicy",
+      "permissions": [
+        "orgpolicy.constraints.list",
+        "orgpolicy.customConstraints.create",
+        "orgpolicy.customConstraints.delete",
+        "orgpolicy.customConstraints.get",
+        "orgpolicy.customConstraints.list",
+        "orgpolicy.customConstraints.update",
+        "orgpolicy.policies.create",
+        "orgpolicy.policies.delete",
+        "orgpolicy.policies.list",
+        "orgpolicy.policies.update",
+        "orgpolicy.policy.get",
+        "orgpolicy.policy.set"
+      ]
+    },
+    {
+      "group": "policysimulator",
+      "permissions": [
+        "policysimulator.orgPolicyViolations.list",
+        "policysimulator.orgPolicyViolationsPreviews.create",
+        "policysimulator.orgPolicyViolationsPreviews.get",
+        "policysimulator.orgPolicyViolationsPreviews.list"
+      ]
+    },
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.orgPolicyInsights.get",
+        "recommender.orgPolicyInsights.list",
+        "recommender.orgPolicyInsights.update",
+        "recommender.orgPolicyRecommendations.get",
+        "recommender.orgPolicyRecommendations.list",
+        "recommender.orgPolicyRecommendations.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudasset.assets.analyzeOrgPolicy",
+    "cloudasset.assets.exportResource",
+    "cloudasset.assets.listResource",
+    "cloudasset.assets.searchAllResources",
+    "orgpolicy.constraints.list",
+    "orgpolicy.customConstraints.create",
+    "orgpolicy.customConstraints.delete",
+    "orgpolicy.customConstraints.get",
+    "orgpolicy.customConstraints.list",
+    "orgpolicy.customConstraints.update",
+    "orgpolicy.policies.create",
+    "orgpolicy.policies.delete",
+    "orgpolicy.policies.list",
+    "orgpolicy.policies.update",
+    "orgpolicy.policy.get",
+    "orgpolicy.policy.set",
+    "policysimulator.orgPolicyViolations.list",
+    "policysimulator.orgPolicyViolationsPreviews.create",
+    "policysimulator.orgPolicyViolationsPreviews.get",
+    "policysimulator.orgPolicyViolationsPreviews.list",
+    "recommender.orgPolicyInsights.get",
+    "recommender.orgPolicyInsights.list",
+    "recommender.orgPolicyInsights.update",
+    "recommender.orgPolicyRecommendations.get",
+    "recommender.orgPolicyRecommendations.list",
+    "recommender.orgPolicyRecommendations.update"
+  ]
+}

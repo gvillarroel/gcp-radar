@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.368Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/recommender.memorystoreperformanceViewer --format=json"
+  },
+  "name": "roles/recommender.memorystoreperformanceViewer",
+  "role_slug": "recommender-memorystoreperformanceviewer",
+  "title": "Memorystore Performance Recommender Viewer",
+  "description": "Viewer of Memorystore Performance Insights and Recommendations.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "recommender",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.locations.get",
+        "recommender.locations.list",
+        "recommender.memorystorePerformanceInsights.get",
+        "recommender.memorystorePerformanceInsights.list",
+        "recommender.memorystorePerformanceRecommendations.get",
+        "recommender.memorystorePerformanceRecommendations.list",
+        "recommender.memorystoreUtilizationInsights.get",
+        "recommender.memorystoreUtilizationInsights.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "recommender.locations.get",
+    "recommender.locations.list",
+    "recommender.memorystorePerformanceInsights.get",
+    "recommender.memorystorePerformanceInsights.list",
+    "recommender.memorystorePerformanceRecommendations.get",
+    "recommender.memorystorePerformanceRecommendations.list",
+    "recommender.memorystoreUtilizationInsights.get",
+    "recommender.memorystoreUtilizationInsights.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

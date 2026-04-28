@@ -1,0 +1,66 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.042Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/managedidentities.backupAdmin --format=json"
+  },
+  "name": "roles/managedidentities.backupAdmin",
+  "role_slug": "managedidentities-backupadmin",
+  "title": "Google Cloud Managed Identities Backup Admin",
+  "description": "Full access to Google Cloud Managed Identities Backup and related resources. Intended to be granted on a project-level",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 16,
+  "permission_groups": [
+    "managedidentities",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "managedidentities",
+      "permissions": [
+        "managedidentities.backups.create",
+        "managedidentities.backups.delete",
+        "managedidentities.backups.get",
+        "managedidentities.backups.getIamPolicy",
+        "managedidentities.backups.list",
+        "managedidentities.backups.setIamPolicy",
+        "managedidentities.backups.update",
+        "managedidentities.domains.get",
+        "managedidentities.locations.get",
+        "managedidentities.locations.list",
+        "managedidentities.operations.cancel",
+        "managedidentities.operations.delete",
+        "managedidentities.operations.get",
+        "managedidentities.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "managedidentities.backups.create",
+    "managedidentities.backups.delete",
+    "managedidentities.backups.get",
+    "managedidentities.backups.getIamPolicy",
+    "managedidentities.backups.list",
+    "managedidentities.backups.setIamPolicy",
+    "managedidentities.backups.update",
+    "managedidentities.domains.get",
+    "managedidentities.locations.get",
+    "managedidentities.locations.list",
+    "managedidentities.operations.cancel",
+    "managedidentities.operations.delete",
+    "managedidentities.operations.get",
+    "managedidentities.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

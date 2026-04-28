@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.823Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/aiplatform.modelMonitoringServiceAgent --format=json"
+  },
+  "name": "roles/aiplatform.modelMonitoringServiceAgent",
+  "role_slug": "aiplatform-modelmonitoringserviceagent",
+  "title": "Vertex AI Model Monitoring Service Agent",
+  "description": "Gives Vertex AI Model Monitoring the permissions it needs to function.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 26,
+  "permission_groups": [
+    "aiplatform",
+    "bigquery",
+    "monitoring",
+    "serviceusage",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "aiplatform",
+      "permissions": [
+        "aiplatform.batchPredictionJobs.create",
+        "aiplatform.batchPredictionJobs.get",
+        "aiplatform.batchPredictionJobs.list",
+        "aiplatform.locations.evaluateInstances"
+      ]
+    },
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.datasets.create",
+        "bigquery.datasets.get",
+        "bigquery.jobs.create",
+        "bigquery.jobs.get",
+        "bigquery.tables.create",
+        "bigquery.tables.export",
+        "bigquery.tables.get",
+        "bigquery.tables.getData",
+        "bigquery.tables.update",
+        "bigquery.tables.updateData"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.notificationChannels.get"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.create",
+        "storage.buckets.delete",
+        "storage.buckets.get",
+        "storage.buckets.list",
+        "storage.buckets.update",
+        "storage.objects.create",
+        "storage.objects.delete",
+        "storage.objects.get",
+        "storage.objects.list",
+        "storage.objects.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "aiplatform.batchPredictionJobs.create",
+    "aiplatform.batchPredictionJobs.get",
+    "aiplatform.batchPredictionJobs.list",
+    "aiplatform.locations.evaluateInstances",
+    "bigquery.datasets.create",
+    "bigquery.datasets.get",
+    "bigquery.jobs.create",
+    "bigquery.jobs.get",
+    "bigquery.tables.create",
+    "bigquery.tables.export",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.update",
+    "bigquery.tables.updateData",
+    "monitoring.notificationChannels.get",
+    "serviceusage.services.use",
+    "storage.buckets.create",
+    "storage.buckets.delete",
+    "storage.buckets.get",
+    "storage.buckets.list",
+    "storage.buckets.update",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.get",
+    "storage.objects.list",
+    "storage.objects.update"
+  ]
+}

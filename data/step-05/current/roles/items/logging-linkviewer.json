@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.024Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/logging.linkViewer --format=json"
+  },
+  "name": "roles/logging.linkViewer",
+  "role_slug": "logging-linkviewer",
+  "title": "Log Link Accessor",
+  "description": "Ability to see links for a bucket.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "logging"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.links.get",
+        "logging.links.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "logging.links.get",
+    "logging.links.list"
+  ]
+}

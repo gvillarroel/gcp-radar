@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.009Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/kubernetesmetadata.admin --format=json"
+  },
+  "name": "roles/kubernetesmetadata.admin",
+  "role_slug": "kubernetesmetadata-admin",
+  "title": "Kubernetesmetadata Admin",
+  "description": "Admin role for kubernetesmetadata",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "kubernetesmetadata",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "kubernetesmetadata",
+      "permissions": [
+        "kubernetesmetadata.metadata.config",
+        "kubernetesmetadata.metadata.publish",
+        "kubernetesmetadata.metadata.snapshot"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "kubernetesmetadata.metadata.config",
+    "kubernetesmetadata.metadata.publish",
+    "kubernetesmetadata.metadata.snapshot",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

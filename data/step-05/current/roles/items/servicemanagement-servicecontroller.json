@@ -1,0 +1,36 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.563Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/servicemanagement.serviceController --format=json"
+  },
+  "name": "roles/servicemanagement.serviceController",
+  "role_slug": "servicemanagement-servicecontroller",
+  "title": "Service Controller",
+  "description": "Can check preconditions and report usage of a service during runtime.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "servicemanagement"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "servicemanagement",
+      "permissions": [
+        "servicemanagement.services.check",
+        "servicemanagement.services.get",
+        "servicemanagement.services.quota",
+        "servicemanagement.services.report"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "servicemanagement.services.check",
+    "servicemanagement.services.get",
+    "servicemanagement.services.quota",
+    "servicemanagement.services.report"
+  ]
+}

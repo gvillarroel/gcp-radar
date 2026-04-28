@@ -1,0 +1,64 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.605Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/storage.hmacKeyAdmin --format=json"
+  },
+  "name": "roles/storage.hmacKeyAdmin",
+  "role_slug": "storage-hmackeyadmin",
+  "title": "Storage HMAC Key Admin",
+  "description": "Grants full control over HMAC keys in a project.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "firebase",
+    "orgpolicy",
+    "resourcemanager",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "firebase",
+      "permissions": [
+        "firebase.projects.get"
+      ]
+    },
+    {
+      "group": "orgpolicy",
+      "permissions": [
+        "orgpolicy.policy.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.hmacKeys.create",
+        "storage.hmacKeys.delete",
+        "storage.hmacKeys.get",
+        "storage.hmacKeys.list",
+        "storage.hmacKeys.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "firebase.projects.get",
+    "orgpolicy.policy.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "storage.hmacKeys.create",
+    "storage.hmacKeys.delete",
+    "storage.hmacKeys.get",
+    "storage.hmacKeys.list",
+    "storage.hmacKeys.update"
+  ]
+}

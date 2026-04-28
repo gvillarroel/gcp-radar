@@ -1,0 +1,36 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.161Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/clouddebugger.agent --format=json"
+  },
+  "name": "roles/clouddebugger.agent",
+  "role_slug": "clouddebugger-agent",
+  "title": "Cloud Debugger Agent",
+  "description": "Cloud Debugger agents are allowed to register and provide debug snapshot data.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "clouddebugger"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "clouddebugger",
+      "permissions": [
+        "clouddebugger.breakpoints.list",
+        "clouddebugger.breakpoints.listActive",
+        "clouddebugger.breakpoints.update",
+        "clouddebugger.debuggees.create"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "clouddebugger.breakpoints.list",
+    "clouddebugger.breakpoints.listActive",
+    "clouddebugger.breakpoints.update",
+    "clouddebugger.debuggees.create"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.650Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/timeseriesinsights.admin --format=json"
+  },
+  "name": "roles/timeseriesinsights.admin",
+  "role_slug": "timeseriesinsights-admin",
+  "title": "Timeseriesinsights Admin",
+  "description": "Admin role for timeseriesinsights",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "resourcemanager",
+    "timeseriesinsights"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "timeseriesinsights",
+      "permissions": [
+        "timeseriesinsights.datasets.create",
+        "timeseriesinsights.datasets.delete",
+        "timeseriesinsights.datasets.evaluate",
+        "timeseriesinsights.datasets.list",
+        "timeseriesinsights.datasets.query",
+        "timeseriesinsights.datasets.update",
+        "timeseriesinsights.locations.get",
+        "timeseriesinsights.locations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "timeseriesinsights.datasets.create",
+    "timeseriesinsights.datasets.delete",
+    "timeseriesinsights.datasets.evaluate",
+    "timeseriesinsights.datasets.list",
+    "timeseriesinsights.datasets.query",
+    "timeseriesinsights.datasets.update",
+    "timeseriesinsights.locations.get",
+    "timeseriesinsights.locations.list"
+  ]
+}

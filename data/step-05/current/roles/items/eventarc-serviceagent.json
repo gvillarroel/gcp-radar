@@ -1,0 +1,194 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.716Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/eventarc.serviceAgent --format=json"
+  },
+  "name": "roles/eventarc.serviceAgent",
+  "role_slug": "eventarc-serviceagent",
+  "title": "Eventarc Service Agent",
+  "description": "Gives Eventarc service account access to managed resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 50,
+  "permission_groups": [
+    "cloudfunctions",
+    "compute",
+    "container",
+    "dns",
+    "eventarc",
+    "iam",
+    "monitoring",
+    "pubsub",
+    "run",
+    "serviceusage",
+    "storage",
+    "workflows"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudfunctions",
+      "permissions": [
+        "cloudfunctions.functions.get"
+      ]
+    },
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.instanceGroupManagers.get",
+        "compute.networkAttachments.get",
+        "compute.networkAttachments.update",
+        "compute.networkAttachments.use",
+        "compute.regionOperations.get"
+      ]
+    },
+    {
+      "group": "container",
+      "permissions": [
+        "container.clusters.connect",
+        "container.clusters.get",
+        "container.deployments.create",
+        "container.deployments.delete",
+        "container.deployments.get",
+        "container.deployments.list",
+        "container.deployments.update",
+        "container.namespaces.create",
+        "container.namespaces.delete",
+        "container.namespaces.get",
+        "container.namespaces.list",
+        "container.serviceAccounts.create",
+        "container.serviceAccounts.delete",
+        "container.serviceAccounts.get",
+        "container.serviceAccounts.list",
+        "container.services.get",
+        "container.services.list"
+      ]
+    },
+    {
+      "group": "dns",
+      "permissions": [
+        "dns.networks.targetWithPeeringZone"
+      ]
+    },
+    {
+      "group": "eventarc",
+      "permissions": [
+        "eventarc.channels.publish",
+        "eventarc.messageBuses.publish",
+        "eventarc.operations.get"
+      ]
+    },
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.serviceAccounts.actAs",
+        "iam.serviceAccounts.getAccessToken",
+        "iam.serviceAccounts.getOpenIdToken"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.timeSeries.create"
+      ]
+    },
+    {
+      "group": "pubsub",
+      "permissions": [
+        "pubsub.subscriptions.consume",
+        "pubsub.subscriptions.create",
+        "pubsub.subscriptions.delete",
+        "pubsub.subscriptions.get",
+        "pubsub.subscriptions.list",
+        "pubsub.subscriptions.update",
+        "pubsub.topics.attachSubscription",
+        "pubsub.topics.create",
+        "pubsub.topics.delete",
+        "pubsub.topics.get",
+        "pubsub.topics.list",
+        "pubsub.topics.publish",
+        "pubsub.topics.update"
+      ]
+    },
+    {
+      "group": "run",
+      "permissions": [
+        "run.jobs.get",
+        "run.services.get"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.get",
+        "storage.buckets.update"
+      ]
+    },
+    {
+      "group": "workflows",
+      "permissions": [
+        "workflows.workflows.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudfunctions.functions.get",
+    "compute.instanceGroupManagers.get",
+    "compute.networkAttachments.get",
+    "compute.networkAttachments.update",
+    "compute.networkAttachments.use",
+    "compute.regionOperations.get",
+    "container.clusters.connect",
+    "container.clusters.get",
+    "container.deployments.create",
+    "container.deployments.delete",
+    "container.deployments.get",
+    "container.deployments.list",
+    "container.deployments.update",
+    "container.namespaces.create",
+    "container.namespaces.delete",
+    "container.namespaces.get",
+    "container.namespaces.list",
+    "container.serviceAccounts.create",
+    "container.serviceAccounts.delete",
+    "container.serviceAccounts.get",
+    "container.serviceAccounts.list",
+    "container.services.get",
+    "container.services.list",
+    "dns.networks.targetWithPeeringZone",
+    "eventarc.channels.publish",
+    "eventarc.messageBuses.publish",
+    "eventarc.operations.get",
+    "iam.serviceAccounts.actAs",
+    "iam.serviceAccounts.getAccessToken",
+    "iam.serviceAccounts.getOpenIdToken",
+    "monitoring.timeSeries.create",
+    "pubsub.subscriptions.consume",
+    "pubsub.subscriptions.create",
+    "pubsub.subscriptions.delete",
+    "pubsub.subscriptions.get",
+    "pubsub.subscriptions.list",
+    "pubsub.subscriptions.update",
+    "pubsub.topics.attachSubscription",
+    "pubsub.topics.create",
+    "pubsub.topics.delete",
+    "pubsub.topics.get",
+    "pubsub.topics.list",
+    "pubsub.topics.publish",
+    "pubsub.topics.update",
+    "run.jobs.get",
+    "run.services.get",
+    "serviceusage.services.use",
+    "storage.buckets.get",
+    "storage.buckets.update",
+    "workflows.workflows.get"
+  ]
+}

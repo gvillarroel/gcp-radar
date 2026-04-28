@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.313Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/pubsublite.subscriber --format=json"
+  },
+  "name": "roles/pubsublite.subscriber",
+  "role_slug": "pubsublite-subscriber",
+  "title": "Pub/Sub Lite Subscriber",
+  "description": "Subscribe to and read messages from a topic.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "pubsublite"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "pubsublite",
+      "permissions": [
+        "pubsublite.locations.openKafkaStream",
+        "pubsublite.operations.get",
+        "pubsublite.subscriptions.getCursor",
+        "pubsublite.subscriptions.seek",
+        "pubsublite.subscriptions.setCursor",
+        "pubsublite.subscriptions.subscribe",
+        "pubsublite.topics.computeHeadCursor",
+        "pubsublite.topics.computeMessageStats",
+        "pubsublite.topics.computeTimeCursor",
+        "pubsublite.topics.getPartitions",
+        "pubsublite.topics.subscribe"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "pubsublite.locations.openKafkaStream",
+    "pubsublite.operations.get",
+    "pubsublite.subscriptions.getCursor",
+    "pubsublite.subscriptions.seek",
+    "pubsublite.subscriptions.setCursor",
+    "pubsublite.subscriptions.subscribe",
+    "pubsublite.topics.computeHeadCursor",
+    "pubsublite.topics.computeMessageStats",
+    "pubsublite.topics.computeTimeCursor",
+    "pubsublite.topics.getPartitions",
+    "pubsublite.topics.subscribe"
+  ]
+}

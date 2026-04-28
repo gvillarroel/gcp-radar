@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.768Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebasedatabase.serviceAgent --format=json"
+  },
+  "name": "roles/firebasedatabase.serviceAgent",
+  "role_slug": "firebasedatabase-serviceagent",
+  "title": "Firebase Realtime Database Service Agent",
+  "description": "Access to publish triggers",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "pubsub",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "pubsub",
+      "permissions": [
+        "pubsub.topics.publish"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "pubsub.topics.publish",
+    "serviceusage.services.use"
+  ]
+}

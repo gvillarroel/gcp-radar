@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.811Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/fpnv.admin --format=json"
+  },
+  "name": "roles/fpnv.admin",
+  "role_slug": "fpnv-admin",
+  "title": "Firebase Phone Number Verification Admin",
+  "description": "Full access to FPNV resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "fpnv"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "fpnv",
+      "permissions": [
+        "fpnv.phoneNumberTokens.fetchDigitalCredentialPayload",
+        "fpnv.phoneNumberTokens.generateTestNumberToken",
+        "fpnv.phoneNumberTokens.mintPhoneNumberToken"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "fpnv.phoneNumberTokens.fetchDigitalCredentialPayload",
+    "fpnv.phoneNumberTokens.generateTestNumberToken",
+    "fpnv.phoneNumberTokens.mintPhoneNumberToken"
+  ]
+}

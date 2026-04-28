@@ -1,0 +1,72 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.384Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/container.hostServiceAgentUser --format=json"
+  },
+  "name": "roles/container.hostServiceAgentUser",
+  "role_slug": "container-hostserviceagentuser",
+  "title": "Kubernetes Engine Host Service Agent User",
+  "description": "Allows the Kubernetes Engine service account in the host project to configure shared network resources for cluster management. Also gives access to inspect the firewall rules in the host project, and configure Cloud DNS resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 16,
+  "permission_groups": [
+    "compute",
+    "container",
+    "dns"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.firewalls.get",
+        "compute.networks.get"
+      ]
+    },
+    {
+      "group": "container",
+      "permissions": [
+        "container.hostServiceAgent.use"
+      ]
+    },
+    {
+      "group": "dns",
+      "permissions": [
+        "dns.networks.bindDNSResponsePolicy",
+        "dns.networks.bindPrivateDNSPolicy",
+        "dns.networks.bindPrivateDNSZone",
+        "dns.responsePolicies.create",
+        "dns.responsePolicies.delete",
+        "dns.responsePolicies.get",
+        "dns.responsePolicies.list",
+        "dns.responsePolicies.update",
+        "dns.responsePolicyRules.create",
+        "dns.responsePolicyRules.delete",
+        "dns.responsePolicyRules.get",
+        "dns.responsePolicyRules.list",
+        "dns.responsePolicyRules.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "compute.firewalls.get",
+    "compute.networks.get",
+    "container.hostServiceAgent.use",
+    "dns.networks.bindDNSResponsePolicy",
+    "dns.networks.bindPrivateDNSPolicy",
+    "dns.networks.bindPrivateDNSZone",
+    "dns.responsePolicies.create",
+    "dns.responsePolicies.delete",
+    "dns.responsePolicies.get",
+    "dns.responsePolicies.list",
+    "dns.responsePolicies.update",
+    "dns.responsePolicyRules.create",
+    "dns.responsePolicyRules.delete",
+    "dns.responsePolicyRules.get",
+    "dns.responsePolicyRules.list",
+    "dns.responsePolicyRules.update"
+  ]
+}

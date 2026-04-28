@@ -1,0 +1,78 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.723Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/file.serviceAgent --format=json"
+  },
+  "name": "roles/file.serviceAgent",
+  "role_slug": "file-serviceagent",
+  "title": "Cloud Filestore Service Agent",
+  "description": "Gives Cloud Filestore service account access to managed resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 16,
+  "permission_groups": [
+    "compute",
+    "monitoring",
+    "resourcemanager",
+    "telemetry"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.globalOperations.get",
+        "compute.networks.addPeering",
+        "compute.networks.get",
+        "compute.networks.removePeering",
+        "compute.networks.update",
+        "compute.networks.updatePeering",
+        "compute.routes.list"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.metricDescriptors.create",
+        "monitoring.metricDescriptors.get",
+        "monitoring.metricDescriptors.list",
+        "monitoring.monitoredResourceDescriptors.get",
+        "monitoring.monitoredResourceDescriptors.list",
+        "monitoring.timeSeries.create"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "telemetry",
+      "permissions": [
+        "telemetry.metrics.write"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "compute.globalOperations.get",
+    "compute.networks.addPeering",
+    "compute.networks.get",
+    "compute.networks.removePeering",
+    "compute.networks.update",
+    "compute.networks.updatePeering",
+    "compute.routes.list",
+    "monitoring.metricDescriptors.create",
+    "monitoring.metricDescriptors.get",
+    "monitoring.metricDescriptors.list",
+    "monitoring.monitoredResourceDescriptors.get",
+    "monitoring.monitoredResourceDescriptors.list",
+    "monitoring.timeSeries.create",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "telemetry.metrics.write"
+  ]
+}

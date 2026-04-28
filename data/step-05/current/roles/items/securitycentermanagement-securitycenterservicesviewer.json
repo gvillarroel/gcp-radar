@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.535Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securitycentermanagement.securityCenterServicesViewer --format=json"
+  },
+  "name": "roles/securitycentermanagement.securityCenterServicesViewer",
+  "role_slug": "securitycentermanagement-securitycenterservicesviewer",
+  "title": "Security Center Management Services Viewer",
+  "description": "Readonly access to Cloud Security Command Center services configuration.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "securitycentermanagement"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "securitycentermanagement",
+      "permissions": [
+        "securitycentermanagement.securityCenterServices.get",
+        "securitycentermanagement.securityCenterServices.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "securitycentermanagement.securityCenterServices.get",
+    "securitycentermanagement.securityCenterServices.list"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.163Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/networksecurity.authzServiceAgent --format=json"
+  },
+  "name": "roles/networksecurity.authzServiceAgent",
+  "role_slug": "networksecurity-authzserviceagent",
+  "title": "Network Security Authz Service Agent",
+  "description": "Allows the Network Security service to access dependent resources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "compute",
+    "networkservices"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.forwardingRules.list",
+        "compute.forwardingRules.update",
+        "compute.globalForwardingRules.list",
+        "compute.globalForwardingRules.update"
+      ]
+    },
+    {
+      "group": "networkservices",
+      "permissions": [
+        "networkservices.authzExtensions.list",
+        "networkservices.authzExtensions.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "compute.forwardingRules.list",
+    "compute.forwardingRules.update",
+    "compute.globalForwardingRules.list",
+    "compute.globalForwardingRules.update",
+    "networkservices.authzExtensions.list",
+    "networkservices.authzExtensions.use"
+  ]
+}

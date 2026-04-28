@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.920Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/applianceactivation.client --format=json"
+  },
+  "name": "roles/applianceactivation.client",
+  "role_slug": "applianceactivation-client",
+  "title": "On-appliance troubleshooting client",
+  "description": "Grants access to read commands for an appliance and send its result.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "applianceactivation"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "applianceactivation",
+      "permissions": [
+        "applianceactivation.rttCommands.get",
+        "applianceactivation.rttCommands.sendResult"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "applianceactivation.rttCommands.get",
+    "applianceactivation.rttCommands.sendResult"
+  ]
+}

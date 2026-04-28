@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.795Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebaserules.viewer --format=json"
+  },
+  "name": "roles/firebaserules.viewer",
+  "role_slug": "firebaserules-viewer",
+  "title": "Firebase Rules Viewer",
+  "description": "Read-only access on all resources with the ability to test Rulesets.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "firebaserules",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "firebaserules",
+      "permissions": [
+        "firebaserules.releases.get",
+        "firebaserules.releases.list",
+        "firebaserules.rulesets.get",
+        "firebaserules.rulesets.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "firebaserules.releases.get",
+    "firebaserules.releases.list",
+    "firebaserules.rulesets.get",
+    "firebaserules.rulesets.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

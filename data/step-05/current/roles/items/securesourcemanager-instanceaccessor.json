@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.479Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securesourcemanager.instanceAccessor --format=json"
+  },
+  "name": "roles/securesourcemanager.instanceAccessor",
+  "role_slug": "securesourcemanager-instanceaccessor",
+  "title": "Secure Source Manager Instance Accessor",
+  "description": "An instance accessor can access an instance, but not necessarily create resources in the instance.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "resourcemanager",
+    "securesourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "securesourcemanager",
+      "permissions": [
+        "securesourcemanager.instances.access",
+        "securesourcemanager.sshkeys.create",
+        "securesourcemanager.sshkeys.delete",
+        "securesourcemanager.sshkeys.get",
+        "securesourcemanager.sshkeys.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "securesourcemanager.instances.access",
+    "securesourcemanager.sshkeys.create",
+    "securesourcemanager.sshkeys.delete",
+    "securesourcemanager.sshkeys.get",
+    "securesourcemanager.sshkeys.list"
+  ]
+}

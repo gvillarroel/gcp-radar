@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.628Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/subscribewithgoogledeveloper.admin --format=json"
+  },
+  "name": "roles/subscribewithgoogledeveloper.admin",
+  "role_slug": "subscribewithgoogledeveloper-admin",
+  "title": "Subscribewithgoogledeveloper Admin",
+  "description": "Admin role for subscribewithgoogledeveloper",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "resourcemanager",
+    "subscribewithgoogledeveloper"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "subscribewithgoogledeveloper",
+      "permissions": [
+        "subscribewithgoogledeveloper.tools.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "subscribewithgoogledeveloper.tools.get"
+  ]
+}

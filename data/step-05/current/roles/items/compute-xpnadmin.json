@@ -1,0 +1,60 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.341Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/compute.xpnAdmin --format=json"
+  },
+  "name": "roles/compute.xpnAdmin",
+  "role_slug": "compute-xpnadmin",
+  "title": "Compute Shared VPC Admin",
+  "description": "Can administer shared VPC network (XPN).",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "compute",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.globalOperations.get",
+        "compute.globalOperations.list",
+        "compute.organizations.disableXpnHost",
+        "compute.organizations.disableXpnResource",
+        "compute.organizations.enableXpnHost",
+        "compute.organizations.enableXpnResource",
+        "compute.projects.get",
+        "compute.subnetworks.getIamPolicy",
+        "compute.subnetworks.setIamPolicy"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get",
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.getIamPolicy",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "compute.globalOperations.get",
+    "compute.globalOperations.list",
+    "compute.organizations.disableXpnHost",
+    "compute.organizations.disableXpnResource",
+    "compute.organizations.enableXpnHost",
+    "compute.organizations.enableXpnResource",
+    "compute.projects.get",
+    "compute.subnetworks.getIamPolicy",
+    "compute.subnetworks.setIamPolicy",
+    "resourcemanager.organizations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.getIamPolicy",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.249Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudsupport.admin --format=json"
+  },
+  "name": "roles/cloudsupport.admin",
+  "role_slug": "cloudsupport-admin",
+  "title": "Support Account Administrator",
+  "description": "Allows management of a support account without giving access to support cases.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "cloudsupport",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudsupport",
+      "permissions": [
+        "cloudsupport.accounts.create",
+        "cloudsupport.accounts.delete",
+        "cloudsupport.accounts.get",
+        "cloudsupport.accounts.getIamPolicy",
+        "cloudsupport.accounts.getUserRoles",
+        "cloudsupport.accounts.list",
+        "cloudsupport.accounts.purchase",
+        "cloudsupport.accounts.setIamPolicy",
+        "cloudsupport.accounts.update",
+        "cloudsupport.accounts.updateUserRoles",
+        "cloudsupport.operations.get",
+        "cloudsupport.properties.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudsupport.accounts.create",
+    "cloudsupport.accounts.delete",
+    "cloudsupport.accounts.get",
+    "cloudsupport.accounts.getIamPolicy",
+    "cloudsupport.accounts.getUserRoles",
+    "cloudsupport.accounts.list",
+    "cloudsupport.accounts.purchase",
+    "cloudsupport.accounts.setIamPolicy",
+    "cloudsupport.accounts.update",
+    "cloudsupport.accounts.updateUserRoles",
+    "cloudsupport.operations.get",
+    "cloudsupport.properties.get",
+    "resourcemanager.organizations.get"
+  ]
+}

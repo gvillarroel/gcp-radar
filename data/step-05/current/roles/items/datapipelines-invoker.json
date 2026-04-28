@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.474Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datapipelines.invoker --format=json"
+  },
+  "name": "roles/datapipelines.invoker",
+  "role_slug": "datapipelines-invoker",
+  "title": "Data pipelines Invoker",
+  "description": "Invoker of Data pipelines jobs",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "datapipelines",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datapipelines",
+      "permissions": [
+        "datapipelines.pipelines.run"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datapipelines.pipelines.run",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

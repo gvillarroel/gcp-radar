@@ -1,0 +1,136 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.351Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/configdelivery.serviceAgent --format=json"
+  },
+  "name": "roles/configdelivery.serviceAgent",
+  "role_slug": "configdelivery-serviceagent",
+  "title": "Config Delivery Service Agent",
+  "description": "Gives the Config Delivery service account permission to manage resources ",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 42,
+  "permission_groups": [
+    "artifactregistry",
+    "cloudbuild",
+    "container",
+    "gkehub",
+    "iam"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "artifactregistry",
+      "permissions": [
+        "artifactregistry.dockerimages.get",
+        "artifactregistry.dockerimages.list",
+        "artifactregistry.projectsettings.get",
+        "artifactregistry.repositories.create",
+        "artifactregistry.repositories.downloadArtifacts",
+        "artifactregistry.repositories.get",
+        "artifactregistry.repositories.getIamPolicy",
+        "artifactregistry.repositories.list",
+        "artifactregistry.repositories.listEffectiveTags",
+        "artifactregistry.repositories.listTagBindings",
+        "artifactregistry.repositories.setIamPolicy",
+        "artifactregistry.repositories.uploadArtifacts",
+        "artifactregistry.tags.create",
+        "artifactregistry.tags.delete",
+        "artifactregistry.tags.get",
+        "artifactregistry.tags.list",
+        "artifactregistry.tags.update",
+        "artifactregistry.versions.delete",
+        "artifactregistry.versions.get",
+        "artifactregistry.versions.list"
+      ]
+    },
+    {
+      "group": "cloudbuild",
+      "permissions": [
+        "cloudbuild.builds.create",
+        "cloudbuild.builds.get",
+        "cloudbuild.builds.list",
+        "cloudbuild.builds.update",
+        "cloudbuild.repositories.get"
+      ]
+    },
+    {
+      "group": "container",
+      "permissions": [
+        "container.customResourceDefinitions.get",
+        "container.customResourceDefinitions.list",
+        "container.serviceAccounts.get",
+        "container.serviceAccounts.list",
+        "container.thirdPartyObjects.create",
+        "container.thirdPartyObjects.delete",
+        "container.thirdPartyObjects.get",
+        "container.thirdPartyObjects.list",
+        "container.thirdPartyObjects.update"
+      ]
+    },
+    {
+      "group": "gkehub",
+      "permissions": [
+        "gkehub.gateway.delete",
+        "gkehub.gateway.generateCredentials",
+        "gkehub.gateway.get",
+        "gkehub.gateway.patch",
+        "gkehub.gateway.post",
+        "gkehub.gateway.put",
+        "gkehub.memberships.get"
+      ]
+    },
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.serviceAccounts.actAs"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "artifactregistry.dockerimages.get",
+    "artifactregistry.dockerimages.list",
+    "artifactregistry.projectsettings.get",
+    "artifactregistry.repositories.create",
+    "artifactregistry.repositories.downloadArtifacts",
+    "artifactregistry.repositories.get",
+    "artifactregistry.repositories.getIamPolicy",
+    "artifactregistry.repositories.list",
+    "artifactregistry.repositories.listEffectiveTags",
+    "artifactregistry.repositories.listTagBindings",
+    "artifactregistry.repositories.setIamPolicy",
+    "artifactregistry.repositories.uploadArtifacts",
+    "artifactregistry.tags.create",
+    "artifactregistry.tags.delete",
+    "artifactregistry.tags.get",
+    "artifactregistry.tags.list",
+    "artifactregistry.tags.update",
+    "artifactregistry.versions.delete",
+    "artifactregistry.versions.get",
+    "artifactregistry.versions.list",
+    "cloudbuild.builds.create",
+    "cloudbuild.builds.get",
+    "cloudbuild.builds.list",
+    "cloudbuild.builds.update",
+    "cloudbuild.repositories.get",
+    "container.customResourceDefinitions.get",
+    "container.customResourceDefinitions.list",
+    "container.serviceAccounts.get",
+    "container.serviceAccounts.list",
+    "container.thirdPartyObjects.create",
+    "container.thirdPartyObjects.delete",
+    "container.thirdPartyObjects.get",
+    "container.thirdPartyObjects.list",
+    "container.thirdPartyObjects.update",
+    "gkehub.gateway.delete",
+    "gkehub.gateway.generateCredentials",
+    "gkehub.gateway.get",
+    "gkehub.gateway.patch",
+    "gkehub.gateway.post",
+    "gkehub.gateway.put",
+    "gkehub.memberships.get",
+    "iam.serviceAccounts.actAs"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.941Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/assuredworkloads.reader --format=json"
+  },
+  "name": "roles/assuredworkloads.reader",
+  "role_slug": "assuredworkloads-reader",
+  "title": "Assured Workloads Reader",
+  "description": "Grants read access to all Assured Workloads resources and CRM resources - project/folder",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 14,
+  "permission_groups": [
+    "assuredworkloads",
+    "orgpolicy",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "assuredworkloads",
+      "permissions": [
+        "assuredworkloads.operations.get",
+        "assuredworkloads.operations.list",
+        "assuredworkloads.updates.list",
+        "assuredworkloads.violations.get",
+        "assuredworkloads.violations.list",
+        "assuredworkloads.workload.get",
+        "assuredworkloads.workload.list"
+      ]
+    },
+    {
+      "group": "orgpolicy",
+      "permissions": [
+        "orgpolicy.policies.list",
+        "orgpolicy.policy.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.folders.get",
+        "resourcemanager.folders.list",
+        "resourcemanager.organizations.get",
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "assuredworkloads.operations.get",
+    "assuredworkloads.operations.list",
+    "assuredworkloads.updates.list",
+    "assuredworkloads.violations.get",
+    "assuredworkloads.violations.list",
+    "assuredworkloads.workload.get",
+    "assuredworkloads.workload.list",
+    "orgpolicy.policies.list",
+    "orgpolicy.policy.get",
+    "resourcemanager.folders.get",
+    "resourcemanager.folders.list",
+    "resourcemanager.organizations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

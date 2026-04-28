@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.129Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/monitoring.uptimeCheckConfigViewer --format=json"
+  },
+  "name": "roles/monitoring.uptimeCheckConfigViewer",
+  "role_slug": "monitoring-uptimecheckconfigviewer",
+  "title": "Monitoring Uptime Check Configuration Viewer",
+  "description": "Read-only access to uptime check configurations.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "monitoring"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.uptimeCheckConfigs.get",
+        "monitoring.uptimeCheckConfigs.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "monitoring.uptimeCheckConfigs.get",
+    "monitoring.uptimeCheckConfigs.list"
+  ]
+}

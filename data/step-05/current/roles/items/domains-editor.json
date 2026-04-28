@@ -1,0 +1,70 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.655Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/domains.editor --format=json"
+  },
+  "name": "roles/domains.editor",
+  "role_slug": "domains-editor",
+  "title": "Cloud Domains Editor",
+  "description": "Editor role for Cloud Domains",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 18,
+  "permission_groups": [
+    "domains",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "domains",
+      "permissions": [
+        "domains.locations.get",
+        "domains.locations.list",
+        "domains.operations.cancel",
+        "domains.operations.get",
+        "domains.operations.list",
+        "domains.registrations.configureContact",
+        "domains.registrations.configureDns",
+        "domains.registrations.configureManagement",
+        "domains.registrations.create",
+        "domains.registrations.delete",
+        "domains.registrations.get",
+        "domains.registrations.getIamPolicy",
+        "domains.registrations.list",
+        "domains.registrations.listEffectiveTags",
+        "domains.registrations.listTagBindings",
+        "domains.registrations.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "domains.locations.get",
+    "domains.locations.list",
+    "domains.operations.cancel",
+    "domains.operations.get",
+    "domains.operations.list",
+    "domains.registrations.configureContact",
+    "domains.registrations.configureDns",
+    "domains.registrations.configureManagement",
+    "domains.registrations.create",
+    "domains.registrations.delete",
+    "domains.registrations.get",
+    "domains.registrations.getIamPolicy",
+    "domains.registrations.list",
+    "domains.registrations.listEffectiveTags",
+    "domains.registrations.listTagBindings",
+    "domains.registrations.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

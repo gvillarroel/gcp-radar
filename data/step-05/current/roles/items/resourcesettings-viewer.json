@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.432Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/resourcesettings.viewer --format=json"
+  },
+  "name": "roles/resourcesettings.viewer",
+  "role_slug": "resourcesettings-viewer",
+  "title": "Resource Settings Viewer",
+  "description": "Provides capabilities to view Resource Settings and Resource Setting Values on resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "resourcesettings"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcesettings",
+      "permissions": [
+        "resourcesettings.settings.get",
+        "resourcesettings.settings.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcesettings.settings.get",
+    "resourcesettings.settings.list"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.715Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/eventarc.publisher --format=json"
+  },
+  "name": "roles/eventarc.publisher",
+  "role_slug": "eventarc-publisher",
+  "title": "Eventarc Publisher",
+  "description": "Can publish events to Eventarc channels.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "eventarc",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "eventarc",
+      "permissions": [
+        "eventarc.channels.get",
+        "eventarc.channels.list",
+        "eventarc.channels.publish"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "eventarc.channels.get",
+    "eventarc.channels.list",
+    "eventarc.channels.publish",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

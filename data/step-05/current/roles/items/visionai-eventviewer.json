@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.691Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/visionai.eventViewer --format=json"
+  },
+  "name": "roles/visionai.eventViewer",
+  "role_slug": "visionai-eventviewer",
+  "title": "Vision AI Event Viewer",
+  "description": "Access to read Vision AI Events.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "visionai"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "visionai",
+      "permissions": [
+        "visionai.events.get",
+        "visionai.events.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "visionai.events.get",
+    "visionai.events.list"
+  ]
+}

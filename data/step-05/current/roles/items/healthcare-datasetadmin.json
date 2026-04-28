@@ -1,0 +1,64 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.888Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/healthcare.datasetAdmin --format=json"
+  },
+  "name": "roles/healthcare.datasetAdmin",
+  "role_slug": "healthcare-datasetadmin",
+  "title": "Healthcare Dataset Administrator",
+  "description": "Administer Healthcare Datasets.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 15,
+  "permission_groups": [
+    "healthcare",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "healthcare",
+      "permissions": [
+        "healthcare.datasets.create",
+        "healthcare.datasets.deidentify",
+        "healthcare.datasets.delete",
+        "healthcare.datasets.get",
+        "healthcare.datasets.getIamPolicy",
+        "healthcare.datasets.list",
+        "healthcare.datasets.setIamPolicy",
+        "healthcare.datasets.update",
+        "healthcare.locations.get",
+        "healthcare.locations.list",
+        "healthcare.operations.cancel",
+        "healthcare.operations.get",
+        "healthcare.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "healthcare.datasets.create",
+    "healthcare.datasets.deidentify",
+    "healthcare.datasets.delete",
+    "healthcare.datasets.get",
+    "healthcare.datasets.getIamPolicy",
+    "healthcare.datasets.list",
+    "healthcare.datasets.setIamPolicy",
+    "healthcare.datasets.update",
+    "healthcare.locations.get",
+    "healthcare.locations.list",
+    "healthcare.operations.cancel",
+    "healthcare.operations.get",
+    "healthcare.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

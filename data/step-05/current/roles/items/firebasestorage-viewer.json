@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.797Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebasestorage.viewer --format=json"
+  },
+  "name": "roles/firebasestorage.viewer",
+  "role_slug": "firebasestorage-viewer",
+  "title": "Cloud Storage for Firebase Viewer",
+  "description": "Read-only access for Cloud Storage for Firebase.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "firebasestorage",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "firebasestorage",
+      "permissions": [
+        "firebasestorage.buckets.get",
+        "firebasestorage.buckets.list",
+        "firebasestorage.defaultBucket.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "firebasestorage.buckets.get",
+    "firebasestorage.buckets.list",
+    "firebasestorage.defaultBucket.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

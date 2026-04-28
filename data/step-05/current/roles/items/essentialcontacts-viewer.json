@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.705Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/essentialcontacts.viewer --format=json"
+  },
+  "name": "roles/essentialcontacts.viewer",
+  "role_slug": "essentialcontacts-viewer",
+  "title": "Essential Contacts Viewer",
+  "description": "Viewer for all essential contacts",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "essentialcontacts"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "essentialcontacts",
+      "permissions": [
+        "essentialcontacts.contacts.get",
+        "essentialcontacts.contacts.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "essentialcontacts.contacts.get",
+    "essentialcontacts.contacts.list"
+  ]
+}

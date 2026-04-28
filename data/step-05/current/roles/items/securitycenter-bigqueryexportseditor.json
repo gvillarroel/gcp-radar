@@ -1,0 +1,56 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.499Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securitycenter.bigQueryExportsEditor --format=json"
+  },
+  "name": "roles/securitycenter.bigQueryExportsEditor",
+  "role_slug": "securitycenter-bigqueryexportseditor",
+  "title": "Security Center BigQuery Exports Editor",
+  "description": "Read-Write access to security center BigQuery Exports",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "resourcemanager",
+    "securitycenter"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.folders.get",
+        "resourcemanager.folders.list",
+        "resourcemanager.organizations.get",
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "securitycenter",
+      "permissions": [
+        "securitycenter.bigQueryExports.create",
+        "securitycenter.bigQueryExports.delete",
+        "securitycenter.bigQueryExports.get",
+        "securitycenter.bigQueryExports.list",
+        "securitycenter.bigQueryExports.update",
+        "securitycenter.findings.export"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.folders.get",
+    "resourcemanager.folders.list",
+    "resourcemanager.organizations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "securitycenter.bigQueryExports.create",
+    "securitycenter.bigQueryExports.delete",
+    "securitycenter.bigQueryExports.get",
+    "securitycenter.bigQueryExports.list",
+    "securitycenter.bigQueryExports.update",
+    "securitycenter.findings.export"
+  ]
+}

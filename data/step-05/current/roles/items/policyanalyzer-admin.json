@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.273Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/policyanalyzer.admin --format=json"
+  },
+  "name": "roles/policyanalyzer.admin",
+  "role_slug": "policyanalyzer-admin",
+  "title": "Policyanalyzer Admin",
+  "description": "Admin role for policyanalyzer",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "policyanalyzer",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "policyanalyzer",
+      "permissions": [
+        "policyanalyzer.resourceAuthorizationActivities.query",
+        "policyanalyzer.serviceAccountKeyLastAuthenticationActivities.query",
+        "policyanalyzer.serviceAccountLastAuthenticationActivities.query"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "policyanalyzer.resourceAuthorizationActivities.query",
+    "policyanalyzer.serviceAccountKeyLastAuthenticationActivities.query",
+    "policyanalyzer.serviceAccountLastAuthenticationActivities.query",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

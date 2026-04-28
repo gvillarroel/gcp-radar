@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.172Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/networksecurity.interceptEndpointViewer --format=json"
+  },
+  "name": "roles/networksecurity.interceptEndpointViewer",
+  "role_slug": "networksecurity-interceptendpointviewer",
+  "title": "Intercept Endpoint Viewer",
+  "description": "Enables read-only access to intercept resources on the Consumer's side.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "networksecurity",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "networksecurity",
+      "permissions": [
+        "networksecurity.interceptEndpointGroupAssociations.get",
+        "networksecurity.interceptEndpointGroupAssociations.list",
+        "networksecurity.interceptEndpointGroups.get",
+        "networksecurity.interceptEndpointGroups.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "networksecurity.interceptEndpointGroupAssociations.get",
+    "networksecurity.interceptEndpointGroupAssociations.list",
+    "networksecurity.interceptEndpointGroups.get",
+    "networksecurity.interceptEndpointGroups.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

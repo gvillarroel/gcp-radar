@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.079Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/memcache.viewer --format=json"
+  },
+  "name": "roles/memcache.viewer",
+  "role_slug": "memcache-viewer",
+  "title": "Cloud Memorystore Memcached Viewer",
+  "description": "Read-only access to Memcached instances and related resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "memcache",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "memcache",
+      "permissions": [
+        "memcache.instances.get",
+        "memcache.instances.list",
+        "memcache.locations.get",
+        "memcache.locations.list",
+        "memcache.operations.get",
+        "memcache.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "memcache.instances.get",
+    "memcache.instances.list",
+    "memcache.locations.get",
+    "memcache.locations.list",
+    "memcache.operations.get",
+    "memcache.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

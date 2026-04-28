@@ -1,0 +1,66 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.169Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/clouddeploy.policyAdmin --format=json"
+  },
+  "name": "roles/clouddeploy.policyAdmin",
+  "role_slug": "clouddeploy-policyadmin",
+  "title": "Cloud Deploy Policy Admin",
+  "description": "Permission to manage Deploy Policies.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 16,
+  "permission_groups": [
+    "clouddeploy",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "clouddeploy",
+      "permissions": [
+        "clouddeploy.deployPolicies.create",
+        "clouddeploy.deployPolicies.delete",
+        "clouddeploy.deployPolicies.get",
+        "clouddeploy.deployPolicies.getIamPolicy",
+        "clouddeploy.deployPolicies.list",
+        "clouddeploy.deployPolicies.override",
+        "clouddeploy.deployPolicies.setIamPolicy",
+        "clouddeploy.deployPolicies.update",
+        "clouddeploy.locations.get",
+        "clouddeploy.locations.list",
+        "clouddeploy.operations.cancel",
+        "clouddeploy.operations.delete",
+        "clouddeploy.operations.get",
+        "clouddeploy.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "clouddeploy.deployPolicies.create",
+    "clouddeploy.deployPolicies.delete",
+    "clouddeploy.deployPolicies.get",
+    "clouddeploy.deployPolicies.getIamPolicy",
+    "clouddeploy.deployPolicies.list",
+    "clouddeploy.deployPolicies.override",
+    "clouddeploy.deployPolicies.setIamPolicy",
+    "clouddeploy.deployPolicies.update",
+    "clouddeploy.locations.get",
+    "clouddeploy.locations.list",
+    "clouddeploy.operations.cancel",
+    "clouddeploy.operations.delete",
+    "clouddeploy.operations.get",
+    "clouddeploy.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

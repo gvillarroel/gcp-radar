@@ -1,0 +1,94 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.926Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/artifactregistry.containerRegistryMigrationAdmin --format=json"
+  },
+  "name": "roles/artifactregistry.containerRegistryMigrationAdmin",
+  "role_slug": "artifactregistry-containerregistrymigrationadmin",
+  "title": "Container Registry -> Artifact Registry Migration Admin",
+  "description": "Access to run migration tooling to migrate from Container Registry to Artifact Registry",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 18,
+  "permission_groups": [
+    "artifactregistry",
+    "cloudasset",
+    "iam",
+    "resourcemanager",
+    "serviceusage",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "artifactregistry",
+      "permissions": [
+        "artifactregistry.projectsettings.get",
+        "artifactregistry.projectsettings.update",
+        "artifactregistry.repositories.create",
+        "artifactregistry.repositories.downloadArtifacts",
+        "artifactregistry.repositories.get",
+        "artifactregistry.repositories.getIamPolicy",
+        "artifactregistry.repositories.list",
+        "artifactregistry.repositories.setIamPolicy",
+        "artifactregistry.repositories.uploadArtifacts"
+      ]
+    },
+    {
+      "group": "cloudasset",
+      "permissions": [
+        "cloudasset.assets.analyzeIamPolicy",
+        "cloudasset.assets.searchAllIamPolicies",
+        "cloudasset.assets.searchAllResources"
+      ]
+    },
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.roles.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.getIamPolicy"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.objects.get",
+        "storage.objects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "artifactregistry.projectsettings.get",
+    "artifactregistry.projectsettings.update",
+    "artifactregistry.repositories.create",
+    "artifactregistry.repositories.downloadArtifacts",
+    "artifactregistry.repositories.get",
+    "artifactregistry.repositories.getIamPolicy",
+    "artifactregistry.repositories.list",
+    "artifactregistry.repositories.setIamPolicy",
+    "artifactregistry.repositories.uploadArtifacts",
+    "cloudasset.assets.analyzeIamPolicy",
+    "cloudasset.assets.searchAllIamPolicies",
+    "cloudasset.assets.searchAllResources",
+    "iam.roles.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.getIamPolicy",
+    "serviceusage.services.use",
+    "storage.objects.get",
+    "storage.objects.list"
+  ]
+}

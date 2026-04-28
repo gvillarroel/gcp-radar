@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.579Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/developerconnect.viewer --format=json"
+  },
+  "name": "roles/developerconnect.viewer",
+  "role_slug": "developerconnect-viewer",
+  "title": "Developer Connect Viewer",
+  "description": "Readonly access to Developer Connect resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "developerconnect",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "developerconnect",
+      "permissions": [
+        "developerconnect.connections.get",
+        "developerconnect.connections.list",
+        "developerconnect.gitRepositoryLinks.get",
+        "developerconnect.gitRepositoryLinks.list",
+        "developerconnect.locations.get",
+        "developerconnect.locations.list",
+        "developerconnect.operations.get",
+        "developerconnect.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "developerconnect.connections.get",
+    "developerconnect.connections.list",
+    "developerconnect.gitRepositoryLinks.get",
+    "developerconnect.gitRepositoryLinks.list",
+    "developerconnect.locations.get",
+    "developerconnect.locations.list",
+    "developerconnect.operations.get",
+    "developerconnect.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

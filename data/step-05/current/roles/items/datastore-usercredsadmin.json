@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.543Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datastore.userCredsAdmin --format=json"
+  },
+  "name": "roles/datastore.userCredsAdmin",
+  "role_slug": "datastore-usercredsadmin",
+  "title": "Cloud Datastore User Creds Admin",
+  "description": "Manage user creds in Cloud Datastore.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "datastore"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datastore",
+      "permissions": [
+        "datastore.databases.getMetadata",
+        "datastore.databases.list",
+        "datastore.userCreds.create",
+        "datastore.userCreds.delete",
+        "datastore.userCreds.get",
+        "datastore.userCreds.list",
+        "datastore.userCreds.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datastore.databases.getMetadata",
+    "datastore.databases.list",
+    "datastore.userCreds.create",
+    "datastore.userCreds.delete",
+    "datastore.userCreds.get",
+    "datastore.userCreds.list",
+    "datastore.userCreds.update"
+  ]
+}

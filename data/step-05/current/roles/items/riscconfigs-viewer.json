@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.438Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/riscconfigs.viewer --format=json"
+  },
+  "name": "roles/riscconfigs.viewer",
+  "role_slug": "riscconfigs-viewer",
+  "title": "RISC Configuration Viewer",
+  "description": "Read-only access to RISC config resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "clientauthconfig",
+    "riscconfigurationservice"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "clientauthconfig",
+      "permissions": [
+        "clientauthconfig.clients.list"
+      ]
+    },
+    {
+      "group": "riscconfigurationservice",
+      "permissions": [
+        "riscconfigurationservice.riscconfigs.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "clientauthconfig.clients.list",
+    "riscconfigurationservice.riscconfigs.get"
+  ]
+}

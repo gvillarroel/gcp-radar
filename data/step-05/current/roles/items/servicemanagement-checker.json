@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.557Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/servicemanagement.checker --format=json"
+  },
+  "name": "roles/servicemanagement.checker",
+  "role_slug": "servicemanagement-checker",
+  "title": "Service Checker",
+  "description": "Can check admission of a service during runtime.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "servicemanagement"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "servicemanagement",
+      "permissions": [
+        "servicemanagement.services.check"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "servicemanagement.services.check"
+  ]
+}

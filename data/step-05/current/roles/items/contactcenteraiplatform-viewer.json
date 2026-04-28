@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.370Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/contactcenteraiplatform.viewer --format=json"
+  },
+  "name": "roles/contactcenteraiplatform.viewer",
+  "role_slug": "contactcenteraiplatform-viewer",
+  "title": "Contact Center AI Platform Viewer",
+  "description": "Readonly access to Contact Center AI Platform resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "contactcenteraiplatform",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "contactcenteraiplatform",
+      "permissions": [
+        "contactcenteraiplatform.contactCenters.get",
+        "contactcenteraiplatform.contactCenters.list",
+        "contactcenteraiplatform.locations.get",
+        "contactcenteraiplatform.locations.list",
+        "contactcenteraiplatform.operations.get",
+        "contactcenteraiplatform.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "contactcenteraiplatform.contactCenters.get",
+    "contactcenteraiplatform.contactCenters.list",
+    "contactcenteraiplatform.locations.get",
+    "contactcenteraiplatform.locations.list",
+    "contactcenteraiplatform.operations.get",
+    "contactcenteraiplatform.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

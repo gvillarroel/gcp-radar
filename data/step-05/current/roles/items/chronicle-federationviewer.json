@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.102Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/chronicle.federationViewer --format=json"
+  },
+  "name": "roles/chronicle.federationViewer",
+  "role_slug": "chronicle-federationviewer",
+  "title": "Chronicle API Federation Viewer",
+  "description": "Readonly access to Chronicle Federation Features.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "chronicle",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "chronicle",
+      "permissions": [
+        "chronicle.federationGroups.get",
+        "chronicle.federationGroups.list",
+        "chronicle.instances.permitFederationAccess"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "chronicle.federationGroups.get",
+    "chronicle.federationGroups.list",
+    "chronicle.instances.permitFederationAccess",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

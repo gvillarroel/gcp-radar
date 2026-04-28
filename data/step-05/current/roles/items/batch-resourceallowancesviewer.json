@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.009Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/batch.resourceAllowancesViewer --format=json"
+  },
+  "name": "roles/batch.resourceAllowancesViewer",
+  "role_slug": "batch-resourceallowancesviewer",
+  "title": "Batch ResourceAllowance Viewer",
+  "description": "Viewer of Batch ResourceAllowances",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "batch",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "batch",
+      "permissions": [
+        "batch.locations.get",
+        "batch.locations.list",
+        "batch.operations.get",
+        "batch.operations.list",
+        "batch.resourceAllowances.get",
+        "batch.resourceAllowances.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "batch.locations.get",
+    "batch.locations.list",
+    "batch.operations.get",
+    "batch.operations.list",
+    "batch.resourceAllowances.get",
+    "batch.resourceAllowances.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

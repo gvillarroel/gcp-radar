@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.393Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/containeranalysis.notes.viewer --format=json"
+  },
+  "name": "roles/containeranalysis.notes.viewer",
+  "role_slug": "containeranalysis-notes-viewer",
+  "title": "Container Analysis Notes Viewer",
+  "description": "Can view Container Analysis Notes.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "containeranalysis",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "containeranalysis",
+      "permissions": [
+        "containeranalysis.notes.get",
+        "containeranalysis.notes.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "containeranalysis.notes.get",
+    "containeranalysis.notes.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

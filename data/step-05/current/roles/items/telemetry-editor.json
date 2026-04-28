@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.637Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/telemetry.editor --format=json"
+  },
+  "name": "roles/telemetry.editor",
+  "role_slug": "telemetry-editor",
+  "title": "Telemetry Editor",
+  "description": "Editor role for telemetry",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "resourcemanager",
+    "telemetry"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "telemetry",
+      "permissions": [
+        "telemetry.logs.write",
+        "telemetry.metrics.write",
+        "telemetry.traces.write"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "telemetry.logs.write",
+    "telemetry.metrics.write",
+    "telemetry.traces.write"
+  ]
+}

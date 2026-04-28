@@ -1,0 +1,62 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.135Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudbuild.builds.editor --format=json"
+  },
+  "name": "roles/cloudbuild.builds.editor",
+  "role_slug": "cloudbuild-builds-editor",
+  "title": "Cloud Build Editor",
+  "description": "Can create and cancel builds",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "cloudbuild",
+    "remotebuildexecution",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudbuild",
+      "permissions": [
+        "cloudbuild.builds.create",
+        "cloudbuild.builds.get",
+        "cloudbuild.builds.list",
+        "cloudbuild.builds.update",
+        "cloudbuild.locations.get",
+        "cloudbuild.locations.list",
+        "cloudbuild.operations.get",
+        "cloudbuild.operations.list"
+      ]
+    },
+    {
+      "group": "remotebuildexecution",
+      "permissions": [
+        "remotebuildexecution.blobs.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudbuild.builds.create",
+    "cloudbuild.builds.get",
+    "cloudbuild.builds.list",
+    "cloudbuild.builds.update",
+    "cloudbuild.locations.get",
+    "cloudbuild.locations.list",
+    "cloudbuild.operations.get",
+    "cloudbuild.operations.list",
+    "remotebuildexecution.blobs.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

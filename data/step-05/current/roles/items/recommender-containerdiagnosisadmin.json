@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.350Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/recommender.containerDiagnosisAdmin --format=json"
+  },
+  "name": "roles/recommender.containerDiagnosisAdmin",
+  "role_slug": "recommender-containerdiagnosisadmin",
+  "title": "GKE Diagnosis Recommender Admin",
+  "description": "Admin of GKE Diagnosis Insights and Recommendations.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "recommender",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.containerDiagnosisInsights.get",
+        "recommender.containerDiagnosisInsights.list",
+        "recommender.containerDiagnosisInsights.update",
+        "recommender.containerDiagnosisRecommendations.get",
+        "recommender.containerDiagnosisRecommendations.list",
+        "recommender.containerDiagnosisRecommendations.update",
+        "recommender.locations.get",
+        "recommender.locations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "recommender.containerDiagnosisInsights.get",
+    "recommender.containerDiagnosisInsights.list",
+    "recommender.containerDiagnosisInsights.update",
+    "recommender.containerDiagnosisRecommendations.get",
+    "recommender.containerDiagnosisRecommendations.list",
+    "recommender.containerDiagnosisRecommendations.update",
+    "recommender.locations.get",
+    "recommender.locations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

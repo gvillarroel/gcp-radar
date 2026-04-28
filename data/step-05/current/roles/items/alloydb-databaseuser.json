@@ -1,0 +1,58 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.842Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/alloydb.databaseUser --format=json"
+  },
+  "name": "roles/alloydb.databaseUser",
+  "role_slug": "alloydb-databaseuser",
+  "title": "AlloyDB Database User",
+  "description": "Role allowing access to login as a database user.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "alloydb",
+    "databasesconsole",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "alloydb",
+      "permissions": [
+        "alloydb.clusters.get",
+        "alloydb.instances.executeSql",
+        "alloydb.instances.get",
+        "alloydb.users.login"
+      ]
+    },
+    {
+      "group": "databasesconsole",
+      "permissions": [
+        "databasesconsole.locations.get",
+        "databasesconsole.locations.list",
+        "databasesconsole.studioQueries.search"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "alloydb.clusters.get",
+    "alloydb.instances.executeSql",
+    "alloydb.instances.get",
+    "alloydb.users.login",
+    "databasesconsole.locations.get",
+    "databasesconsole.locations.list",
+    "databasesconsole.studioQueries.search",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.061Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/billing.projectManager --format=json"
+  },
+  "name": "roles/billing.projectManager",
+  "role_slug": "billing-projectmanager",
+  "title": "Project Billing Manager",
+  "description": "Can assign a project's billing account or disable its billing.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.createBillingAssignment",
+        "resourcemanager.projects.deleteBillingAssignment"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.createBillingAssignment",
+    "resourcemanager.projects.deleteBillingAssignment"
+  ]
+}

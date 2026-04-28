@@ -1,0 +1,58 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.871Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/gsuiteaddons.developer --format=json"
+  },
+  "name": "roles/gsuiteaddons.developer",
+  "role_slug": "gsuiteaddons-developer",
+  "title": "Google Workspace Add-ons Developer",
+  "description": "Full access to Google Workspace Add-ons resources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 12,
+  "permission_groups": [
+    "gsuiteaddons",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "gsuiteaddons",
+      "permissions": [
+        "gsuiteaddons.authorizations.get",
+        "gsuiteaddons.deployments.create",
+        "gsuiteaddons.deployments.delete",
+        "gsuiteaddons.deployments.execute",
+        "gsuiteaddons.deployments.get",
+        "gsuiteaddons.deployments.install",
+        "gsuiteaddons.deployments.installStatus",
+        "gsuiteaddons.deployments.list",
+        "gsuiteaddons.deployments.uninstall",
+        "gsuiteaddons.deployments.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "gsuiteaddons.authorizations.get",
+    "gsuiteaddons.deployments.create",
+    "gsuiteaddons.deployments.delete",
+    "gsuiteaddons.deployments.execute",
+    "gsuiteaddons.deployments.get",
+    "gsuiteaddons.deployments.install",
+    "gsuiteaddons.deployments.installStatus",
+    "gsuiteaddons.deployments.list",
+    "gsuiteaddons.deployments.uninstall",
+    "gsuiteaddons.deployments.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

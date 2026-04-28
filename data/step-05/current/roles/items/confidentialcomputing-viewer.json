@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.344Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/confidentialcomputing.viewer --format=json"
+  },
+  "name": "roles/confidentialcomputing.viewer",
+  "role_slug": "confidentialcomputing-viewer",
+  "title": "Confidentialcomputing Viewer",
+  "description": "Viewer role for confidentialcomputing",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "confidentialcomputing",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "confidentialcomputing",
+      "permissions": [
+        "confidentialcomputing.locations.get",
+        "confidentialcomputing.locations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "confidentialcomputing.locations.get",
+    "confidentialcomputing.locations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

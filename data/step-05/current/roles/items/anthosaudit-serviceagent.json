@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.853Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/anthosaudit.serviceAgent --format=json"
+  },
+  "name": "roles/anthosaudit.serviceAgent",
+  "role_slug": "anthosaudit-serviceagent",
+  "title": "Anthos Audit Service Agent",
+  "description": "Gives the Anthos Audit service agent access toCloud Platform resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "gkehub"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "gkehub",
+      "permissions": [
+        "gkehub.features.get",
+        "gkehub.locations.get",
+        "gkehub.locations.list",
+        "gkehub.memberships.get",
+        "gkehub.memberships.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "gkehub.features.get",
+    "gkehub.locations.get",
+    "gkehub.locations.list",
+    "gkehub.memberships.get",
+    "gkehub.memberships.list"
+  ]
+}

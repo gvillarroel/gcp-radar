@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.189Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudkms.autokeyAdmin --format=json"
+  },
+  "name": "roles/cloudkms.autokeyAdmin",
+  "role_slug": "cloudkms-autokeyadmin",
+  "title": "Cloud KMS Autokey Admin",
+  "description": "Enables management of AutokeyConfig.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "cloudkms"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudkms",
+      "permissions": [
+        "cloudkms.autokeyConfigs.get",
+        "cloudkms.autokeyConfigs.update",
+        "cloudkms.projects.showEffectiveAutokeyConfig"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudkms.autokeyConfigs.get",
+    "cloudkms.autokeyConfigs.update",
+    "cloudkms.projects.showEffectiveAutokeyConfig"
+  ]
+}

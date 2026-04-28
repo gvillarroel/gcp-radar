@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.118Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/monitoring.dashboardEditor --format=json"
+  },
+  "name": "roles/monitoring.dashboardEditor",
+  "role_slug": "monitoring-dashboardeditor",
+  "title": "Monitoring Dashboard Configuration Editor",
+  "description": "Read/write access to dashboard configurations.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "monitoring"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.dashboards.create",
+        "monitoring.dashboards.createTagBinding",
+        "monitoring.dashboards.delete",
+        "monitoring.dashboards.deleteTagBinding",
+        "monitoring.dashboards.get",
+        "monitoring.dashboards.list",
+        "monitoring.dashboards.listEffectiveTags",
+        "monitoring.dashboards.listTagBindings",
+        "monitoring.dashboards.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "monitoring.dashboards.create",
+    "monitoring.dashboards.createTagBinding",
+    "monitoring.dashboards.delete",
+    "monitoring.dashboards.deleteTagBinding",
+    "monitoring.dashboards.get",
+    "monitoring.dashboards.list",
+    "monitoring.dashboards.listEffectiveTags",
+    "monitoring.dashboards.listTagBindings",
+    "monitoring.dashboards.update"
+  ]
+}

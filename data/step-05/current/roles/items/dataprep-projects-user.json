@@ -1,0 +1,64 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.517Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataprep.projects.user --format=json"
+  },
+  "name": "roles/dataprep.projects.user",
+  "role_slug": "dataprep-projects-user",
+  "title": "Dataprep User",
+  "description": "Use of Dataprep.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 12,
+  "permission_groups": [
+    "dataprep",
+    "resourcemanager",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dataprep",
+      "permissions": [
+        "dataprep.projects.use"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.consumerpolicy.analyze",
+        "serviceusage.consumerpolicy.get",
+        "serviceusage.effectivepolicy.get",
+        "serviceusage.groups.list",
+        "serviceusage.groups.listExpandedMembers",
+        "serviceusage.groups.listMembers",
+        "serviceusage.quotas.get",
+        "serviceusage.services.get",
+        "serviceusage.services.list",
+        "serviceusage.values.test"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dataprep.projects.use",
+    "resourcemanager.projects.get",
+    "serviceusage.consumerpolicy.analyze",
+    "serviceusage.consumerpolicy.get",
+    "serviceusage.effectivepolicy.get",
+    "serviceusage.groups.list",
+    "serviceusage.groups.listExpandedMembers",
+    "serviceusage.groups.listMembers",
+    "serviceusage.quotas.get",
+    "serviceusage.services.get",
+    "serviceusage.services.list",
+    "serviceusage.values.test"
+  ]
+}

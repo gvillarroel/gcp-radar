@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.777Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/accessapproval.invalidator --format=json"
+  },
+  "name": "roles/accessapproval.invalidator",
+  "role_slug": "accessapproval-invalidator",
+  "title": "Access Approval Invalidator",
+  "description": "Ability to invalidate existing approved approval requests",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "accessapproval",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "accessapproval",
+      "permissions": [
+        "accessapproval.requests.invalidate",
+        "accessapproval.serviceAccounts.get",
+        "accessapproval.settings.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "accessapproval.requests.invalidate",
+    "accessapproval.serviceAccounts.get",
+    "accessapproval.settings.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

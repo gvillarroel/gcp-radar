@@ -1,0 +1,78 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.088Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/metastore.metadataOperator --format=json"
+  },
+  "name": "roles/metastore.metadataOperator",
+  "role_slug": "metastore-metadataoperator",
+  "title": "Dataproc Metastore Metadata Operator",
+  "description": "Read-only access to Dataproc Metastore resources with additional metadata operations permission.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 22,
+  "permission_groups": [
+    "metastore",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "metastore",
+      "permissions": [
+        "metastore.backups.create",
+        "metastore.backups.delete",
+        "metastore.backups.get",
+        "metastore.backups.list",
+        "metastore.backups.use",
+        "metastore.imports.create",
+        "metastore.imports.get",
+        "metastore.imports.list",
+        "metastore.imports.update",
+        "metastore.locations.get",
+        "metastore.locations.list",
+        "metastore.operations.get",
+        "metastore.operations.list",
+        "metastore.services.export",
+        "metastore.services.get",
+        "metastore.services.getIamPolicy",
+        "metastore.services.list",
+        "metastore.services.listEffectiveTags",
+        "metastore.services.listTagBindings",
+        "metastore.services.restore"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "metastore.backups.create",
+    "metastore.backups.delete",
+    "metastore.backups.get",
+    "metastore.backups.list",
+    "metastore.backups.use",
+    "metastore.imports.create",
+    "metastore.imports.get",
+    "metastore.imports.list",
+    "metastore.imports.update",
+    "metastore.locations.get",
+    "metastore.locations.list",
+    "metastore.operations.get",
+    "metastore.operations.list",
+    "metastore.services.export",
+    "metastore.services.get",
+    "metastore.services.getIamPolicy",
+    "metastore.services.list",
+    "metastore.services.listEffectiveTags",
+    "metastore.services.listTagBindings",
+    "metastore.services.restore",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

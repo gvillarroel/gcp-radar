@@ -1,0 +1,36 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.909Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/iam.accessPolicyUser --format=json"
+  },
+  "name": "roles/iam.accessPolicyUser",
+  "role_slug": "iam-accesspolicyuser",
+  "title": "Access Policy User",
+  "description": "Access Policies user role, with permissions to view access policies, and to bind and unbind access policies to targets",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "iam"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.accesspolicies.bind",
+        "iam.accesspolicies.get",
+        "iam.accesspolicies.list",
+        "iam.accesspolicies.unbind"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "iam.accesspolicies.bind",
+    "iam.accesspolicies.get",
+    "iam.accesspolicies.list",
+    "iam.accesspolicies.unbind"
+  ]
+}

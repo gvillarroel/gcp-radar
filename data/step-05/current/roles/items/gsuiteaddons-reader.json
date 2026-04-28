@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.872Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/gsuiteaddons.reader --format=json"
+  },
+  "name": "roles/gsuiteaddons.reader",
+  "role_slug": "gsuiteaddons-reader",
+  "title": "Google Workspace Add-ons Reader",
+  "description": "Read-only access to Google Workspace Add-ons resources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "gsuiteaddons",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "gsuiteaddons",
+      "permissions": [
+        "gsuiteaddons.authorizations.get",
+        "gsuiteaddons.deployments.get",
+        "gsuiteaddons.deployments.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "gsuiteaddons.authorizations.get",
+    "gsuiteaddons.deployments.get",
+    "gsuiteaddons.deployments.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

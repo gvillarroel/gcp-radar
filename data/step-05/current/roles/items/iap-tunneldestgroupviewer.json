@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.968Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/iap.tunnelDestGroupViewer --format=json"
+  },
+  "name": "roles/iap.tunnelDestGroupViewer",
+  "role_slug": "iap-tunneldestgroupviewer",
+  "title": "IAP-secured Tunnel Destination Group Viewer",
+  "description": "View Tunnel Destination Group resources which use Identity-Aware Proxy",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "iap"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "iap",
+      "permissions": [
+        "iap.tunnelDestGroups.get",
+        "iap.tunnelDestGroups.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "iap.tunnelDestGroups.get",
+    "iap.tunnelDestGroups.list"
+  ]
+}

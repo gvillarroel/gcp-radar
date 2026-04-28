@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.961Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/autoscaling.viewer --format=json"
+  },
+  "name": "roles/autoscaling.viewer",
+  "role_slug": "autoscaling-viewer",
+  "title": "Autoscaling Viewer",
+  "description": "Viewer role for autoscaling",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "autoscaling",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "autoscaling",
+      "permissions": [
+        "autoscaling.sites.getIamPolicy",
+        "autoscaling.sites.readRecommendations"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "autoscaling.sites.getIamPolicy",
+    "autoscaling.sites.readRecommendations",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

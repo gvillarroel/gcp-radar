@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.684Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/visionai.assetViewer --format=json"
+  },
+  "name": "roles/visionai.assetViewer",
+  "role_slug": "visionai-assetviewer",
+  "title": "VisionAI Warehouse Asset Viewer",
+  "description": "Grants access to view media assets into the Warehouse.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "visionai"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "visionai",
+      "permissions": [
+        "visionai.assets.get",
+        "visionai.assets.list",
+        "visionai.assets.search"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "visionai.assets.get",
+    "visionai.assets.list",
+    "visionai.assets.search"
+  ]
+}

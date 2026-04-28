@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.548Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/serviceconsumermanagement.admin --format=json"
+  },
+  "name": "roles/serviceconsumermanagement.admin",
+  "role_slug": "serviceconsumermanagement-admin",
+  "title": "Serviceconsumermanagement Admin",
+  "description": "Admin role for serviceconsumermanagement",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "resourcemanager",
+    "serviceconsumermanagement"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "serviceconsumermanagement",
+      "permissions": [
+        "serviceconsumermanagement.consumers.get",
+        "serviceconsumermanagement.quota.get",
+        "serviceconsumermanagement.quota.update",
+        "serviceconsumermanagement.tenancyu.addResource",
+        "serviceconsumermanagement.tenancyu.create",
+        "serviceconsumermanagement.tenancyu.delete",
+        "serviceconsumermanagement.tenancyu.list",
+        "serviceconsumermanagement.tenancyu.removeResource"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "serviceconsumermanagement.consumers.get",
+    "serviceconsumermanagement.quota.get",
+    "serviceconsumermanagement.quota.update",
+    "serviceconsumermanagement.tenancyu.addResource",
+    "serviceconsumermanagement.tenancyu.create",
+    "serviceconsumermanagement.tenancyu.delete",
+    "serviceconsumermanagement.tenancyu.list",
+    "serviceconsumermanagement.tenancyu.removeResource"
+  ]
+}

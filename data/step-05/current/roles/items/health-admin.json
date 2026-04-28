@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.875Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/health.admin --format=json"
+  },
+  "name": "roles/health.admin",
+  "role_slug": "health-admin",
+  "title": "Health Admin",
+  "description": "Admin access to Health resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "health"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "health",
+      "permissions": [
+        "health.subscribers.create",
+        "health.subscribers.delete",
+        "health.subscribers.list",
+        "health.subscribers.update",
+        "health.subscriptions.create",
+        "health.subscriptions.delete",
+        "health.subscriptions.get",
+        "health.subscriptions.list",
+        "health.subscriptions.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "health.subscribers.create",
+    "health.subscribers.delete",
+    "health.subscribers.list",
+    "health.subscribers.update",
+    "health.subscriptions.create",
+    "health.subscriptions.delete",
+    "health.subscriptions.get",
+    "health.subscriptions.list",
+    "health.subscriptions.update"
+  ]
+}

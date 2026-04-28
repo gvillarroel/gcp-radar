@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.290Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/commerceproducer.admin --format=json"
+  },
+  "name": "roles/commerceproducer.admin",
+  "role_slug": "commerceproducer-admin",
+  "title": "Commerce Producer Admin",
+  "description": "Grants full access to all resources in Cloud Commerce Producer API.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "commercebusinessenablement",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "commercebusinessenablement",
+      "permissions": [
+        "commercebusinessenablement.partnerInfo.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "commercebusinessenablement.partnerInfo.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

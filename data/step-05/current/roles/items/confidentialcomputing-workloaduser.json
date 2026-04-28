@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.345Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/confidentialcomputing.workloadUser --format=json"
+  },
+  "name": "roles/confidentialcomputing.workloadUser",
+  "role_slug": "confidentialcomputing-workloaduser",
+  "title": "Confidential Space Workload User",
+  "description": "Grants the ability to generate an attestation token and run a workload in a VM. Intended for service accounts that run on Confidential Space VMs.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "confidentialcomputing",
+    "logging"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "confidentialcomputing",
+      "permissions": [
+        "confidentialcomputing.challenges.create",
+        "confidentialcomputing.challenges.verify",
+        "confidentialcomputing.locations.get",
+        "confidentialcomputing.locations.list"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "confidentialcomputing.challenges.create",
+    "confidentialcomputing.challenges.verify",
+    "confidentialcomputing.locations.get",
+    "confidentialcomputing.locations.list",
+    "logging.logEntries.create"
+  ]
+}

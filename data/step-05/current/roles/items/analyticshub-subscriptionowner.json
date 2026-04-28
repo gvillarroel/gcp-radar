@@ -1,0 +1,60 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.850Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/analyticshub.subscriptionOwner --format=json"
+  },
+  "name": "roles/analyticshub.subscriptionOwner",
+  "role_slug": "analyticshub-subscriptionowner",
+  "title": "Analytics Hub Subscription Owner",
+  "description": "Grants full control over the Subscription, including updating and deleting",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "analyticshub",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "analyticshub",
+      "permissions": [
+        "analyticshub.dataExchanges.get",
+        "analyticshub.dataExchanges.getIamPolicy",
+        "analyticshub.dataExchanges.list",
+        "analyticshub.listings.get",
+        "analyticshub.listings.getIamPolicy",
+        "analyticshub.listings.list",
+        "analyticshub.subscriptions.create",
+        "analyticshub.subscriptions.delete",
+        "analyticshub.subscriptions.get",
+        "analyticshub.subscriptions.list",
+        "analyticshub.subscriptions.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "analyticshub.dataExchanges.get",
+    "analyticshub.dataExchanges.getIamPolicy",
+    "analyticshub.dataExchanges.list",
+    "analyticshub.listings.get",
+    "analyticshub.listings.getIamPolicy",
+    "analyticshub.listings.list",
+    "analyticshub.subscriptions.create",
+    "analyticshub.subscriptions.delete",
+    "analyticshub.subscriptions.get",
+    "analyticshub.subscriptions.list",
+    "analyticshub.subscriptions.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

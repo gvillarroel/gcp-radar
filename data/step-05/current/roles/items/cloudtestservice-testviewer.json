@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.265Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudtestservice.testViewer --format=json"
+  },
+  "name": "roles/cloudtestservice.testViewer",
+  "role_slug": "cloudtestservice-testviewer",
+  "title": "Firebase Test Lab Viewer",
+  "description": "Read access to Test Lab features",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 16,
+  "permission_groups": [
+    "cloudtestservice",
+    "cloudtoolresults",
+    "firebase",
+    "resourcemanager",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudtestservice",
+      "permissions": [
+        "cloudtestservice.environmentcatalog.get",
+        "cloudtestservice.matrices.get"
+      ]
+    },
+    {
+      "group": "cloudtoolresults",
+      "permissions": [
+        "cloudtoolresults.executions.get",
+        "cloudtoolresults.executions.list",
+        "cloudtoolresults.histories.get",
+        "cloudtoolresults.histories.list",
+        "cloudtoolresults.settings.get",
+        "cloudtoolresults.steps.get",
+        "cloudtoolresults.steps.list"
+      ]
+    },
+    {
+      "group": "firebase",
+      "permissions": [
+        "firebase.clients.get",
+        "firebase.clients.list",
+        "firebase.projects.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.objects.get",
+        "storage.objects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudtestservice.environmentcatalog.get",
+    "cloudtestservice.matrices.get",
+    "cloudtoolresults.executions.get",
+    "cloudtoolresults.executions.list",
+    "cloudtoolresults.histories.get",
+    "cloudtoolresults.histories.list",
+    "cloudtoolresults.settings.get",
+    "cloudtoolresults.steps.get",
+    "cloudtoolresults.steps.list",
+    "firebase.clients.get",
+    "firebase.clients.list",
+    "firebase.projects.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "storage.objects.get",
+    "storage.objects.list"
+  ]
+}

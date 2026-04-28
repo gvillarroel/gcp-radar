@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.698Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/enterpriseknowledgegraph.viewer --format=json"
+  },
+  "name": "roles/enterpriseknowledgegraph.viewer",
+  "role_slug": "enterpriseknowledgegraph-viewer",
+  "title": "Enterprise Knowledge Graph Viewer",
+  "description": "Viewer of Enterprise Knowledge Graph resources",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "enterpriseknowledgegraph",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "enterpriseknowledgegraph",
+      "permissions": [
+        "enterpriseknowledgegraph.cloudKnowledgeGraphEntities.lookup",
+        "enterpriseknowledgegraph.cloudKnowledgeGraphEntities.search",
+        "enterpriseknowledgegraph.entityReconciliationJobs.get",
+        "enterpriseknowledgegraph.entityReconciliationJobs.list",
+        "enterpriseknowledgegraph.publicKnowledgeGraphEntities.lookup",
+        "enterpriseknowledgegraph.publicKnowledgeGraphEntities.search"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "enterpriseknowledgegraph.cloudKnowledgeGraphEntities.lookup",
+    "enterpriseknowledgegraph.cloudKnowledgeGraphEntities.search",
+    "enterpriseknowledgegraph.entityReconciliationJobs.get",
+    "enterpriseknowledgegraph.entityReconciliationJobs.list",
+    "enterpriseknowledgegraph.publicKnowledgeGraphEntities.lookup",
+    "enterpriseknowledgegraph.publicKnowledgeGraphEntities.search",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

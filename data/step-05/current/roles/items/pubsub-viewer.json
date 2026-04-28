@@ -1,0 +1,96 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.307Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/pubsub.viewer --format=json"
+  },
+  "name": "roles/pubsub.viewer",
+  "role_slug": "pubsub-viewer",
+  "title": "Pub/Sub Viewer",
+  "description": "View topics, subscriptions, and snapshots.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 28,
+  "permission_groups": [
+    "pubsub",
+    "resourcemanager",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "pubsub",
+      "permissions": [
+        "pubsub.messageTransforms.validate",
+        "pubsub.schemas.get",
+        "pubsub.schemas.list",
+        "pubsub.schemas.listRevisions",
+        "pubsub.schemas.validate",
+        "pubsub.snapshots.get",
+        "pubsub.snapshots.list",
+        "pubsub.snapshots.listEffectiveTags",
+        "pubsub.snapshots.listTagBindings",
+        "pubsub.subscriptions.get",
+        "pubsub.subscriptions.list",
+        "pubsub.subscriptions.listEffectiveTags",
+        "pubsub.subscriptions.listTagBindings",
+        "pubsub.topics.get",
+        "pubsub.topics.list",
+        "pubsub.topics.listEffectiveTags",
+        "pubsub.topics.listTagBindings"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.consumerpolicy.analyze",
+        "serviceusage.consumerpolicy.get",
+        "serviceusage.effectivepolicy.get",
+        "serviceusage.groups.list",
+        "serviceusage.groups.listExpandedMembers",
+        "serviceusage.groups.listMembers",
+        "serviceusage.quotas.get",
+        "serviceusage.services.get",
+        "serviceusage.services.list",
+        "serviceusage.values.test"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "pubsub.messageTransforms.validate",
+    "pubsub.schemas.get",
+    "pubsub.schemas.list",
+    "pubsub.schemas.listRevisions",
+    "pubsub.schemas.validate",
+    "pubsub.snapshots.get",
+    "pubsub.snapshots.list",
+    "pubsub.snapshots.listEffectiveTags",
+    "pubsub.snapshots.listTagBindings",
+    "pubsub.subscriptions.get",
+    "pubsub.subscriptions.list",
+    "pubsub.subscriptions.listEffectiveTags",
+    "pubsub.subscriptions.listTagBindings",
+    "pubsub.topics.get",
+    "pubsub.topics.list",
+    "pubsub.topics.listEffectiveTags",
+    "pubsub.topics.listTagBindings",
+    "resourcemanager.projects.get",
+    "serviceusage.consumerpolicy.analyze",
+    "serviceusage.consumerpolicy.get",
+    "serviceusage.effectivepolicy.get",
+    "serviceusage.groups.list",
+    "serviceusage.groups.listExpandedMembers",
+    "serviceusage.groups.listMembers",
+    "serviceusage.quotas.get",
+    "serviceusage.services.get",
+    "serviceusage.services.list",
+    "serviceusage.values.test"
+  ]
+}

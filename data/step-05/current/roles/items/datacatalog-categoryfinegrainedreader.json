@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.419Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datacatalog.categoryFineGrainedReader --format=json"
+  },
+  "name": "roles/datacatalog.categoryFineGrainedReader",
+  "role_slug": "datacatalog-categoryfinegrainedreader",
+  "title": "Fine-Grained Reader",
+  "description": "Read access to sub-resources tagged by a policy tag, for example, BigQuery columns",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "datacatalog"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datacatalog",
+      "permissions": [
+        "datacatalog.categories.fineGrainedGet"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datacatalog.categories.fineGrainedGet"
+  ]
+}

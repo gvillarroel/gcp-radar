@@ -1,0 +1,86 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.483Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataplex.catalogViewer --format=json"
+  },
+  "name": "roles/dataplex.catalogViewer",
+  "role_slug": "dataplex-catalogviewer",
+  "title": "Dataplex Catalog Viewer",
+  "description": "Read access to catalog resources, including entries, entry groups, and glossaries. Can view IAM policies on catalog resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 23,
+  "permission_groups": [
+    "datacatalog",
+    "dataplex",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datacatalog",
+      "permissions": [
+        "datacatalog.migrationConfig.get"
+      ]
+    },
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.aspectTypes.get",
+        "dataplex.aspectTypes.getIamPolicy",
+        "dataplex.aspectTypes.list",
+        "dataplex.entries.get",
+        "dataplex.entries.list",
+        "dataplex.entryGroups.get",
+        "dataplex.entryGroups.getIamPolicy",
+        "dataplex.entryGroups.list",
+        "dataplex.entryLinks.get",
+        "dataplex.entryTypes.get",
+        "dataplex.entryTypes.getIamPolicy",
+        "dataplex.entryTypes.list",
+        "dataplex.glossaries.get",
+        "dataplex.glossaries.getIamPolicy",
+        "dataplex.glossaries.list",
+        "dataplex.glossaryCategories.get",
+        "dataplex.glossaryCategories.list",
+        "dataplex.glossaryTerms.get",
+        "dataplex.glossaryTerms.list",
+        "dataplex.projects.search"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datacatalog.migrationConfig.get",
+    "dataplex.aspectTypes.get",
+    "dataplex.aspectTypes.getIamPolicy",
+    "dataplex.aspectTypes.list",
+    "dataplex.entries.get",
+    "dataplex.entries.list",
+    "dataplex.entryGroups.get",
+    "dataplex.entryGroups.getIamPolicy",
+    "dataplex.entryGroups.list",
+    "dataplex.entryLinks.get",
+    "dataplex.entryTypes.get",
+    "dataplex.entryTypes.getIamPolicy",
+    "dataplex.entryTypes.list",
+    "dataplex.glossaries.get",
+    "dataplex.glossaries.getIamPolicy",
+    "dataplex.glossaries.list",
+    "dataplex.glossaryCategories.get",
+    "dataplex.glossaryCategories.list",
+    "dataplex.glossaryTerms.get",
+    "dataplex.glossaryTerms.list",
+    "dataplex.projects.search",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

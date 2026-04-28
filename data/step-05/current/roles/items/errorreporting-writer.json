@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.703Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/errorreporting.writer --format=json"
+  },
+  "name": "roles/errorreporting.writer",
+  "role_slug": "errorreporting-writer",
+  "title": "Error Reporting Writer",
+  "description": "Can send error events to Error Reporting. Intended for service accounts.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "errorreporting"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "errorreporting",
+      "permissions": [
+        "errorreporting.errorEvents.create"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "errorreporting.errorEvents.create"
+  ]
+}

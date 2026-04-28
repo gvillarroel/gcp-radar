@@ -1,0 +1,62 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.419Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/resourcemanager.folderCreator --format=json"
+  },
+  "name": "roles/resourcemanager.folderCreator",
+  "role_slug": "resourcemanager-foldercreator",
+  "title": "Folder Creator",
+  "description": "Create folder and view all of its sub-resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "essentialcontacts",
+    "orgpolicy",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "essentialcontacts",
+      "permissions": [
+        "essentialcontacts.contacts.get",
+        "essentialcontacts.contacts.list"
+      ]
+    },
+    {
+      "group": "orgpolicy",
+      "permissions": [
+        "orgpolicy.constraints.list",
+        "orgpolicy.policies.list",
+        "orgpolicy.policy.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.capabilities.get",
+        "resourcemanager.folders.create",
+        "resourcemanager.folders.get",
+        "resourcemanager.folders.list",
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "essentialcontacts.contacts.get",
+    "essentialcontacts.contacts.list",
+    "orgpolicy.constraints.list",
+    "orgpolicy.policies.list",
+    "orgpolicy.policy.get",
+    "resourcemanager.capabilities.get",
+    "resourcemanager.folders.create",
+    "resourcemanager.folders.get",
+    "resourcemanager.folders.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

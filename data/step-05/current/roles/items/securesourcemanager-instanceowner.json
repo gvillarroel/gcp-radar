@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.480Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securesourcemanager.instanceOwner --format=json"
+  },
+  "name": "roles/securesourcemanager.instanceOwner",
+  "role_slug": "securesourcemanager-instanceowner",
+  "title": "Secure Source Manager Instance Owner",
+  "description": "Full control over Secure Source Manager instances, including listing, creating, and deleting them. Also enables instance user management.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 29,
+  "permission_groups": [
+    "cloudkms",
+    "resourcemanager",
+    "securesourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudkms",
+      "permissions": [
+        "cloudkms.keyHandles.create",
+        "cloudkms.keyHandles.get",
+        "cloudkms.keyHandles.list",
+        "cloudkms.operations.get",
+        "cloudkms.projects.showEffectiveAutokeyConfig"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "securesourcemanager",
+      "permissions": [
+        "securesourcemanager.instances.access",
+        "securesourcemanager.instances.create",
+        "securesourcemanager.instances.createRepository",
+        "securesourcemanager.instances.delete",
+        "securesourcemanager.instances.get",
+        "securesourcemanager.instances.getIamPolicy",
+        "securesourcemanager.instances.linkDeveloperConnect",
+        "securesourcemanager.instances.list",
+        "securesourcemanager.instances.setIamPolicy",
+        "securesourcemanager.locations.get",
+        "securesourcemanager.locations.list",
+        "securesourcemanager.operations.cancel",
+        "securesourcemanager.operations.delete",
+        "securesourcemanager.operations.get",
+        "securesourcemanager.operations.list",
+        "securesourcemanager.sshkeys.create",
+        "securesourcemanager.sshkeys.createAny",
+        "securesourcemanager.sshkeys.delete",
+        "securesourcemanager.sshkeys.deleteAny",
+        "securesourcemanager.sshkeys.get",
+        "securesourcemanager.sshkeys.list",
+        "securesourcemanager.sshkeys.listAny"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudkms.keyHandles.create",
+    "cloudkms.keyHandles.get",
+    "cloudkms.keyHandles.list",
+    "cloudkms.operations.get",
+    "cloudkms.projects.showEffectiveAutokeyConfig",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "securesourcemanager.instances.access",
+    "securesourcemanager.instances.create",
+    "securesourcemanager.instances.createRepository",
+    "securesourcemanager.instances.delete",
+    "securesourcemanager.instances.get",
+    "securesourcemanager.instances.getIamPolicy",
+    "securesourcemanager.instances.linkDeveloperConnect",
+    "securesourcemanager.instances.list",
+    "securesourcemanager.instances.setIamPolicy",
+    "securesourcemanager.locations.get",
+    "securesourcemanager.locations.list",
+    "securesourcemanager.operations.cancel",
+    "securesourcemanager.operations.delete",
+    "securesourcemanager.operations.get",
+    "securesourcemanager.operations.list",
+    "securesourcemanager.sshkeys.create",
+    "securesourcemanager.sshkeys.createAny",
+    "securesourcemanager.sshkeys.delete",
+    "securesourcemanager.sshkeys.deleteAny",
+    "securesourcemanager.sshkeys.get",
+    "securesourcemanager.sshkeys.list",
+    "securesourcemanager.sshkeys.listAny"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.080Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/carestudio.admin --format=json"
+  },
+  "name": "roles/carestudio.admin",
+  "role_slug": "carestudio-admin",
+  "title": "Carestudio Admin",
+  "description": "Admin role for carestudio",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "carestudio",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "carestudio",
+      "permissions": [
+        "carestudio.patients.get",
+        "carestudio.patients.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "carestudio.patients.get",
+    "carestudio.patients.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

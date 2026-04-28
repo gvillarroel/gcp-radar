@@ -1,0 +1,66 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.501Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataplex.entryTypeOwner --format=json"
+  },
+  "name": "roles/dataplex.entryTypeOwner",
+  "role_slug": "dataplex-entrytypeowner",
+  "title": "Dataplex Entry Type Owner",
+  "description": "Grants access to creating and managing Entry Types. Does not give the right to create/modify Entries.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "datacatalog",
+    "dataplex",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datacatalog",
+      "permissions": [
+        "datacatalog.migrationConfig.get"
+      ]
+    },
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.entryTypes.create",
+        "dataplex.entryTypes.delete",
+        "dataplex.entryTypes.get",
+        "dataplex.entryTypes.getIamPolicy",
+        "dataplex.entryTypes.list",
+        "dataplex.entryTypes.setIamPolicy",
+        "dataplex.entryTypes.update",
+        "dataplex.entryTypes.use",
+        "dataplex.operations.get",
+        "dataplex.projects.search"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datacatalog.migrationConfig.get",
+    "dataplex.entryTypes.create",
+    "dataplex.entryTypes.delete",
+    "dataplex.entryTypes.get",
+    "dataplex.entryTypes.getIamPolicy",
+    "dataplex.entryTypes.list",
+    "dataplex.entryTypes.setIamPolicy",
+    "dataplex.entryTypes.update",
+    "dataplex.entryTypes.use",
+    "dataplex.operations.get",
+    "dataplex.projects.search",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

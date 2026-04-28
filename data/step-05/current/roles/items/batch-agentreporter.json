@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.003Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/batch.agentReporter --format=json"
+  },
+  "name": "roles/batch.agentReporter",
+  "role_slug": "batch-agentreporter",
+  "title": "Batch Agent Reporter",
+  "description": "Reporter of Batch agent states.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "batch"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "batch",
+      "permissions": [
+        "batch.states.report"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "batch.states.report"
+  ]
+}

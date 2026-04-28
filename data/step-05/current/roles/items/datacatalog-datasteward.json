@@ -1,0 +1,70 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.420Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datacatalog.dataSteward --format=json"
+  },
+  "name": "roles/datacatalog.dataSteward",
+  "role_slug": "datacatalog-datasteward",
+  "title": "DataCatalog Data Steward",
+  "description": "Can update overview and data steward fields",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 15,
+  "permission_groups": [
+    "datacatalog",
+    "dataplex",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datacatalog",
+      "permissions": [
+        "datacatalog.entries.get",
+        "datacatalog.entries.list",
+        "datacatalog.entries.updateContacts",
+        "datacatalog.entries.updateOverview",
+        "datacatalog.entryGroups.get",
+        "datacatalog.migrationConfig.get",
+        "datacatalog.relationships.list"
+      ]
+    },
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.entries.get",
+        "dataplex.entries.list",
+        "dataplex.entryGroups.get",
+        "dataplex.entryGroups.useContactsAspect",
+        "dataplex.entryGroups.useOverviewAspect",
+        "dataplex.projects.search"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datacatalog.entries.get",
+    "datacatalog.entries.list",
+    "datacatalog.entries.updateContacts",
+    "datacatalog.entries.updateOverview",
+    "datacatalog.entryGroups.get",
+    "datacatalog.migrationConfig.get",
+    "datacatalog.relationships.list",
+    "dataplex.entries.get",
+    "dataplex.entries.list",
+    "dataplex.entryGroups.get",
+    "dataplex.entryGroups.useContactsAspect",
+    "dataplex.entryGroups.useOverviewAspect",
+    "dataplex.projects.search",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

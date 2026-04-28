@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.969Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/backupdr.cloudSqlOperator --format=json"
+  },
+  "name": "roles/backupdr.cloudSqlOperator",
+  "role_slug": "backupdr-cloudsqloperator",
+  "title": "Backup and DR Cloud SQL Operator",
+  "description": "Allows a Backup and DR service account to discover and backup Cloud SQL instances.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "cloudsql"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudsql",
+      "permissions": [
+        "cloudsql.instances.createBackupDrBackup",
+        "cloudsql.instances.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudsql.instances.createBackupDrBackup",
+    "cloudsql.instances.get"
+  ]
+}

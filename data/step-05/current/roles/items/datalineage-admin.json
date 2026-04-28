@@ -1,0 +1,78 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.465Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datalineage.admin --format=json"
+  },
+  "name": "roles/datalineage.admin",
+  "role_slug": "datalineage-admin",
+  "title": "Data Lineage Administrator",
+  "description": "Grants full access to all resources in Data Lineage API",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 22,
+  "permission_groups": [
+    "datalineage",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datalineage",
+      "permissions": [
+        "datalineage.configs.get",
+        "datalineage.configs.update",
+        "datalineage.events.create",
+        "datalineage.events.delete",
+        "datalineage.events.get",
+        "datalineage.events.getFields",
+        "datalineage.events.list",
+        "datalineage.locations.processOpenLineageMessage",
+        "datalineage.locations.searchLinks",
+        "datalineage.operations.get",
+        "datalineage.processes.create",
+        "datalineage.processes.delete",
+        "datalineage.processes.get",
+        "datalineage.processes.list",
+        "datalineage.processes.update",
+        "datalineage.runs.create",
+        "datalineage.runs.delete",
+        "datalineage.runs.get",
+        "datalineage.runs.list",
+        "datalineage.runs.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datalineage.configs.get",
+    "datalineage.configs.update",
+    "datalineage.events.create",
+    "datalineage.events.delete",
+    "datalineage.events.get",
+    "datalineage.events.getFields",
+    "datalineage.events.list",
+    "datalineage.locations.processOpenLineageMessage",
+    "datalineage.locations.searchLinks",
+    "datalineage.operations.get",
+    "datalineage.processes.create",
+    "datalineage.processes.delete",
+    "datalineage.processes.get",
+    "datalineage.processes.list",
+    "datalineage.processes.update",
+    "datalineage.runs.create",
+    "datalineage.runs.delete",
+    "datalineage.runs.get",
+    "datalineage.runs.list",
+    "datalineage.runs.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.781Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/accesscontextmanager.gcpAccessReader --format=json"
+  },
+  "name": "roles/accesscontextmanager.gcpAccessReader",
+  "role_slug": "accesscontextmanager-gcpaccessreader",
+  "title": "Cloud Access Binding Reader",
+  "description": "Read access to Cloud access bindings.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "accesscontextmanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "accesscontextmanager",
+      "permissions": [
+        "accesscontextmanager.gcpUserAccessBindings.get",
+        "accesscontextmanager.gcpUserAccessBindings.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "accesscontextmanager.gcpUserAccessBindings.get",
+    "accesscontextmanager.gcpUserAccessBindings.list"
+  ]
+}

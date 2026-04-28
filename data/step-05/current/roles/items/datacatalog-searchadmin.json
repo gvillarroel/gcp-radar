@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.429Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datacatalog.searchAdmin --format=json"
+  },
+  "name": "roles/datacatalog.searchAdmin",
+  "role_slug": "datacatalog-searchadmin",
+  "title": "DataCatalog Search Admin",
+  "description": "Can search all metadata for a project/org in DataCatalog",
+  "stage": "DEPRECATED",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "datacatalog",
+    "dataplex",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datacatalog",
+      "permissions": [
+        "datacatalog.catalogs.searchAll"
+      ]
+    },
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.projects.search"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get",
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datacatalog.catalogs.searchAll",
+    "dataplex.projects.search",
+    "resourcemanager.organizations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

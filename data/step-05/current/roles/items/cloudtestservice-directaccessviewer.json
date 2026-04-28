@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.263Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudtestservice.directAccessViewer --format=json"
+  },
+  "name": "roles/cloudtestservice.directAccessViewer",
+  "role_slug": "cloudtestservice-directaccessviewer",
+  "title": "Firebase Test Lab Direct Access Viewer",
+  "description": "Viewer, able to see what direct access sessions exist",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "cloudtestservice",
+    "devicestreaming",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudtestservice",
+      "permissions": [
+        "cloudtestservice.devicesession.get",
+        "cloudtestservice.devicesession.list",
+        "cloudtestservice.environmentcatalog.get"
+      ]
+    },
+    {
+      "group": "devicestreaming",
+      "permissions": [
+        "devicestreaming.deviceSessions.get",
+        "devicestreaming.deviceSessions.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudtestservice.devicesession.get",
+    "cloudtestservice.devicesession.list",
+    "cloudtestservice.environmentcatalog.get",
+    "devicestreaming.deviceSessions.get",
+    "devicestreaming.deviceSessions.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

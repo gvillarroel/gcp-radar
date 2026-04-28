@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.608Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/discoveryengine.notebookLmUser --format=json"
+  },
+  "name": "roles/discoveryengine.notebookLmUser",
+  "role_slug": "discoveryengine-notebooklmuser",
+  "title": "Cloud NotebookLM User",
+  "description": "Grants user-level access to Cloud NotebookLM resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "discoveryengine",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "discoveryengine",
+      "permissions": [
+        "discoveryengine.accounts.create",
+        "discoveryengine.locations.completeExternalIdentities",
+        "discoveryengine.notebooks.create",
+        "discoveryengine.notebooks.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "discoveryengine.accounts.create",
+    "discoveryengine.locations.completeExternalIdentities",
+    "discoveryengine.notebooks.create",
+    "discoveryengine.notebooks.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

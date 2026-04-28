@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.455Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/run.servicesInvoker --format=json"
+  },
+  "name": "roles/run.servicesInvoker",
+  "role_slug": "run-servicesinvoker",
+  "title": "Cloud Run Service Invoker",
+  "description": "Can invoke Cloud Run services.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "run"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "run",
+      "permissions": [
+        "run.routes.invoke"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "run.routes.invoke"
+  ]
+}

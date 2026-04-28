@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.793Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebaserules.firestoreServiceAgent --format=json"
+  },
+  "name": "roles/firebaserules.firestoreServiceAgent",
+  "role_slug": "firebaserules-firestoreserviceagent",
+  "title": "Firebase Rules Firestore Service Agent",
+  "description": "Grants Firebase Security Rules access to Firestore for providing cross-service Rules.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "datastore"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datastore",
+      "permissions": [
+        "datastore.entities.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datastore.entities.get"
+  ]
+}

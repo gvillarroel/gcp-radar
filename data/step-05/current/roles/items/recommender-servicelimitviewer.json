@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.396Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/recommender.serviceLimitViewer --format=json"
+  },
+  "name": "roles/recommender.serviceLimitViewer",
+  "role_slug": "recommender-servicelimitviewer",
+  "title": "Service Limit Recommender Viewer",
+  "description": "Viewer of Service Limit insights and recommendations.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "recommender",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.resourcemanagerServiceLimitInsights.get",
+        "recommender.resourcemanagerServiceLimitInsights.list",
+        "recommender.resourcemanagerServiceLimitRecommendations.get",
+        "recommender.resourcemanagerServiceLimitRecommendations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "recommender.resourcemanagerServiceLimitInsights.get",
+    "recommender.resourcemanagerServiceLimitInsights.list",
+    "recommender.resourcemanagerServiceLimitRecommendations.get",
+    "recommender.resourcemanagerServiceLimitRecommendations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

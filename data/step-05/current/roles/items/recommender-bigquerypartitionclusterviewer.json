@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.331Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/recommender.bigqueryPartitionClusterViewer --format=json"
+  },
+  "name": "roles/recommender.bigqueryPartitionClusterViewer",
+  "role_slug": "recommender-bigquerypartitionclusterviewer",
+  "title": "BigQuery Partitioning Clustering Recommender Viewer",
+  "description": "Viewer of BigQuery Partitioning Clustering recommendations.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "recommender",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.bigqueryPartitionClusterRecommendations.get",
+        "recommender.bigqueryPartitionClusterRecommendations.list",
+        "recommender.bigqueryTableStatsInsights.get",
+        "recommender.bigqueryTableStatsInsights.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "recommender.bigqueryPartitionClusterRecommendations.get",
+    "recommender.bigqueryPartitionClusterRecommendations.list",
+    "recommender.bigqueryTableStatsInsights.get",
+    "recommender.bigqueryTableStatsInsights.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

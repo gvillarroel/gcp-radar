@@ -1,0 +1,64 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.430Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datacatalog.tagEditor --format=json"
+  },
+  "name": "roles/datacatalog.tagEditor",
+  "role_slug": "datacatalog-tageditor",
+  "title": "Data Catalog Tag Editor",
+  "description": "Gives permission to modify tags on a GCP assets (BigQuery, Pub/Sub etc).",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "bigquery",
+    "datacatalog",
+    "dataplex",
+    "pubsub"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.connections.updateTag",
+        "bigquery.datasets.updateTag",
+        "bigquery.models.updateTag",
+        "bigquery.routines.updateTag",
+        "bigquery.tables.updateTag"
+      ]
+    },
+    {
+      "group": "datacatalog",
+      "permissions": [
+        "datacatalog.entries.updateTag",
+        "datacatalog.entryGroups.updateTag"
+      ]
+    },
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.entries.update"
+      ]
+    },
+    {
+      "group": "pubsub",
+      "permissions": [
+        "pubsub.topics.updateTag"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.connections.updateTag",
+    "bigquery.datasets.updateTag",
+    "bigquery.models.updateTag",
+    "bigquery.routines.updateTag",
+    "bigquery.tables.updateTag",
+    "datacatalog.entries.updateTag",
+    "datacatalog.entryGroups.updateTag",
+    "dataplex.entries.update",
+    "pubsub.topics.updateTag"
+  ]
+}

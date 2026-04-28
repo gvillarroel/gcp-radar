@@ -1,0 +1,68 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.263Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudtestservice.directAccessAdmin --format=json"
+  },
+  "name": "roles/cloudtestservice.directAccessAdmin",
+  "role_slug": "cloudtestservice-directaccessadmin",
+  "title": "Firebase Test Lab Direct Access Admin",
+  "description": "Administrator owning access to Direct Access",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 14,
+  "permission_groups": [
+    "cloudtestservice",
+    "devicestreaming",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudtestservice",
+      "permissions": [
+        "cloudtestservice.devicesession.cancel",
+        "cloudtestservice.devicesession.create",
+        "cloudtestservice.devicesession.get",
+        "cloudtestservice.devicesession.list",
+        "cloudtestservice.devicesession.update",
+        "cloudtestservice.devicesession.use",
+        "cloudtestservice.environmentcatalog.get"
+      ]
+    },
+    {
+      "group": "devicestreaming",
+      "permissions": [
+        "devicestreaming.deviceSessions.cancel",
+        "devicestreaming.deviceSessions.create",
+        "devicestreaming.deviceSessions.get",
+        "devicestreaming.deviceSessions.list",
+        "devicestreaming.deviceSessions.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudtestservice.devicesession.cancel",
+    "cloudtestservice.devicesession.create",
+    "cloudtestservice.devicesession.get",
+    "cloudtestservice.devicesession.list",
+    "cloudtestservice.devicesession.update",
+    "cloudtestservice.devicesession.use",
+    "cloudtestservice.environmentcatalog.get",
+    "devicestreaming.deviceSessions.cancel",
+    "devicestreaming.deviceSessions.create",
+    "devicestreaming.deviceSessions.get",
+    "devicestreaming.deviceSessions.list",
+    "devicestreaming.deviceSessions.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

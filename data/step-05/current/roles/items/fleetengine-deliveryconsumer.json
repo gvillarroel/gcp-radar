@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.802Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/fleetengine.deliveryConsumer --format=json"
+  },
+  "name": "roles/fleetengine.deliveryConsumer",
+  "role_slug": "fleetengine-deliveryconsumer",
+  "title": "Fleet Engine Delivery Consumer User",
+  "description": "Limited read access to Fleet Engine Delivery resources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "fleetengine"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "fleetengine",
+      "permissions": [
+        "fleetengine.tasks.searchWithTrackingId",
+        "fleetengine.tasktrackinginfo.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "fleetengine.tasks.searchWithTrackingId",
+    "fleetengine.tasktrackinginfo.get"
+  ]
+}

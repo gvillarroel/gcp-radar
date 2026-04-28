@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.080Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/memorystore.dbConnectionUser --format=json"
+  },
+  "name": "roles/memorystore.dbConnectionUser",
+  "role_slug": "memorystore-dbconnectionuser",
+  "title": "Memorystore DB Connector User",
+  "description": "Access to connecting to Memorystore Server db.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "memorystore"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "memorystore",
+      "permissions": [
+        "memorystore.instances.connect"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "memorystore.instances.connect"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.421Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/resourcemanager.folderMover --format=json"
+  },
+  "name": "roles/resourcemanager.folderMover",
+  "role_slug": "resourcemanager-foldermover",
+  "title": "Folder Mover",
+  "description": "Move a folder and all of its child resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.folders.move",
+        "resourcemanager.projects.move"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.folders.move",
+    "resourcemanager.projects.move"
+  ]
+}

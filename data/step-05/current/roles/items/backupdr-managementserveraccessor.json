@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.976Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/backupdr.managementServerAccessor --format=json"
+  },
+  "name": "roles/backupdr.managementServerAccessor",
+  "role_slug": "backupdr-managementserveraccessor",
+  "title": "Backup and DR Management Server Accessor",
+  "description": "Grants the Backup and DR management server access role to Backup Appliances.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "backupdr"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "backupdr",
+      "permissions": [
+        "backupdr.managementServers.createConnection"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "backupdr.managementServers.createConnection"
+  ]
+}

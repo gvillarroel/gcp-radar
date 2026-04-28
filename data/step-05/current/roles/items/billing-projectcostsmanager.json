@@ -1,0 +1,36 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.060Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/billing.projectCostsManager --format=json"
+  },
+  "name": "roles/billing.projectCostsManager",
+  "role_slug": "billing-projectcostsmanager",
+  "title": "Project Billing Costs Manager",
+  "description": "Can interact with billing information scoped to the projects to which the user has cost access.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "billing"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "billing",
+      "permissions": [
+        "billing.accounts.get",
+        "billing.accounts.getIamPolicy",
+        "billing.accounts.getSpendingInformationScoped",
+        "billing.costRecommendations.listScoped"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "billing.accounts.get",
+    "billing.accounts.getIamPolicy",
+    "billing.accounts.getSpendingInformationScoped",
+    "billing.costRecommendations.listScoped"
+  ]
+}

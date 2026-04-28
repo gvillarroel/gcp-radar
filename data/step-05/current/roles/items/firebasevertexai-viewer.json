@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.798Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebasevertexai.viewer --format=json"
+  },
+  "name": "roles/firebasevertexai.viewer",
+  "role_slug": "firebasevertexai-viewer",
+  "title": "Firebase AI Logic Viewer",
+  "description": "Read access to Firebase AI Logic resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "firebasevertexai",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "firebasevertexai",
+      "permissions": [
+        "firebasevertexai.configs.get",
+        "firebasevertexai.promptTemplates.get",
+        "firebasevertexai.promptTemplates.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "firebasevertexai.configs.get",
+    "firebasevertexai.promptTemplates.get",
+    "firebasevertexai.promptTemplates.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

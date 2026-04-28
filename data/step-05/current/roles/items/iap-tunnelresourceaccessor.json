@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.969Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/iap.tunnelResourceAccessor --format=json"
+  },
+  "name": "roles/iap.tunnelResourceAccessor",
+  "role_slug": "iap-tunnelresourceaccessor",
+  "title": "IAP-secured Tunnel User",
+  "description": "Access Tunnel resources which use Identity-Aware Proxy",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "iap"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "iap",
+      "permissions": [
+        "iap.tunnelDestGroups.accessViaIAP",
+        "iap.tunnelInstances.accessViaIAP"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "iap.tunnelDestGroups.accessViaIAP",
+    "iap.tunnelInstances.accessViaIAP"
+  ]
+}

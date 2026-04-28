@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.534Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securitycentermanagement.etdCustomModulesViewer --format=json"
+  },
+  "name": "roles/securitycentermanagement.etdCustomModulesViewer",
+  "role_slug": "securitycentermanagement-etdcustommodulesviewer",
+  "title": "Security Center Management ETD Custom Modules Viewer",
+  "description": "Readonly access to Cloud Security Command Center ETD custom modules.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "resourcemanager",
+    "securitycentermanagement"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get",
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "securitycentermanagement",
+      "permissions": [
+        "securitycentermanagement.effectiveEventThreatDetectionCustomModules.get",
+        "securitycentermanagement.effectiveEventThreatDetectionCustomModules.list",
+        "securitycentermanagement.eventThreatDetectionCustomModules.get",
+        "securitycentermanagement.eventThreatDetectionCustomModules.list",
+        "securitycentermanagement.eventThreatDetectionCustomModules.validate",
+        "securitycentermanagement.locations.get",
+        "securitycentermanagement.locations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.organizations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "securitycentermanagement.effectiveEventThreatDetectionCustomModules.get",
+    "securitycentermanagement.effectiveEventThreatDetectionCustomModules.list",
+    "securitycentermanagement.eventThreatDetectionCustomModules.get",
+    "securitycentermanagement.eventThreatDetectionCustomModules.list",
+    "securitycentermanagement.eventThreatDetectionCustomModules.validate",
+    "securitycentermanagement.locations.get",
+    "securitycentermanagement.locations.list"
+  ]
+}

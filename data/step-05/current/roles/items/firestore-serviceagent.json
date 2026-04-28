@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.799Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firestore.serviceAgent --format=json"
+  },
+  "name": "roles/firestore.serviceAgent",
+  "role_slug": "firestore-serviceagent",
+  "title": "Firestore Service Agent",
+  "description": "Gives Firestore service account access to managed resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.get",
+        "storage.objects.create",
+        "storage.objects.delete",
+        "storage.objects.get",
+        "storage.objects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "storage.buckets.get",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.get",
+    "storage.objects.list"
+  ]
+}

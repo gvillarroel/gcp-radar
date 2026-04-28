@@ -1,0 +1,110 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.125Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/monitoring.notificationServiceAgent --format=json"
+  },
+  "name": "roles/monitoring.notificationServiceAgent",
+  "role_slug": "monitoring-notificationserviceagent",
+  "title": "Monitoring Service Agent",
+  "description": "Grants Cloud Monitoring and Cloud Alerting permission to access consumer resources and track usage.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 17,
+  "permission_groups": [
+    "bigquery",
+    "cloudfunctions",
+    "cloudtrace",
+    "logging",
+    "monitoring",
+    "observability",
+    "run",
+    "servicedirectory",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.jobs.create"
+      ]
+    },
+    {
+      "group": "cloudfunctions",
+      "permissions": [
+        "cloudfunctions.functions.get"
+      ]
+    },
+    {
+      "group": "cloudtrace",
+      "permissions": [
+        "cloudtrace.traces.patch"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.links.list"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.metricDescriptors.get",
+        "monitoring.metricDescriptors.list",
+        "monitoring.monitoredResourceDescriptors.get",
+        "monitoring.monitoredResourceDescriptors.list",
+        "monitoring.notificationChannels.get",
+        "monitoring.notificationChannels.list",
+        "monitoring.notificationChannels.update",
+        "monitoring.timeSeries.list"
+      ]
+    },
+    {
+      "group": "observability",
+      "permissions": [
+        "observability.links.list"
+      ]
+    },
+    {
+      "group": "run",
+      "permissions": [
+        "run.routes.invoke"
+      ]
+    },
+    {
+      "group": "servicedirectory",
+      "permissions": [
+        "servicedirectory.networks.access",
+        "servicedirectory.services.resolve"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.jobs.create",
+    "cloudfunctions.functions.get",
+    "cloudtrace.traces.patch",
+    "logging.links.list",
+    "monitoring.metricDescriptors.get",
+    "monitoring.metricDescriptors.list",
+    "monitoring.monitoredResourceDescriptors.get",
+    "monitoring.monitoredResourceDescriptors.list",
+    "monitoring.notificationChannels.get",
+    "monitoring.notificationChannels.list",
+    "monitoring.notificationChannels.update",
+    "monitoring.timeSeries.list",
+    "observability.links.list",
+    "run.routes.invoke",
+    "servicedirectory.networks.access",
+    "servicedirectory.services.resolve",
+    "serviceusage.services.use"
+  ]
+}

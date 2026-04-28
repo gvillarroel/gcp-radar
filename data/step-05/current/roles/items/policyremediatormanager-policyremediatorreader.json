@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.278Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/policyremediatormanager.policyRemediatorReader --format=json"
+  },
+  "name": "roles/policyremediatormanager.policyRemediatorReader",
+  "role_slug": "policyremediatormanager-policyremediatorreader",
+  "title": "Policy Remediator Reader",
+  "description": "Grants the ability to read/view the state of the policy remediator for the organization",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "policyremediatormanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "policyremediatormanager",
+      "permissions": [
+        "policyremediatormanager.locations.get",
+        "policyremediatormanager.locations.list",
+        "policyremediatormanager.operations.get",
+        "policyremediatormanager.operations.list",
+        "policyremediatormanager.remediatorServices.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "policyremediatormanager.locations.get",
+    "policyremediatormanager.locations.list",
+    "policyremediatormanager.operations.get",
+    "policyremediatormanager.operations.list",
+    "policyremediatormanager.remediatorServices.get"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.165Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/clouddeploy.customTargetTypeAdmin --format=json"
+  },
+  "name": "roles/clouddeploy.customTargetTypeAdmin",
+  "role_slug": "clouddeploy-customtargettypeadmin",
+  "title": "Cloud Deploy Custom Target Type Admin",
+  "description": "Permission to manage CustomTargetType resources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "clouddeploy",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "clouddeploy",
+      "permissions": [
+        "clouddeploy.config.get",
+        "clouddeploy.customTargetTypes.create",
+        "clouddeploy.customTargetTypes.delete",
+        "clouddeploy.customTargetTypes.get",
+        "clouddeploy.customTargetTypes.getIamPolicy",
+        "clouddeploy.customTargetTypes.list",
+        "clouddeploy.customTargetTypes.setIamPolicy",
+        "clouddeploy.customTargetTypes.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "clouddeploy.config.get",
+    "clouddeploy.customTargetTypes.create",
+    "clouddeploy.customTargetTypes.delete",
+    "clouddeploy.customTargetTypes.get",
+    "clouddeploy.customTargetTypes.getIamPolicy",
+    "clouddeploy.customTargetTypes.list",
+    "clouddeploy.customTargetTypes.setIamPolicy",
+    "clouddeploy.customTargetTypes.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

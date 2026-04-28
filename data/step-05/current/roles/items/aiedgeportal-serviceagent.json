@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.794Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/aiedgeportal.serviceAgent --format=json"
+  },
+  "name": "roles/aiedgeportal.serviceAgent",
+  "role_slug": "aiedgeportal-serviceagent",
+  "title": "AI Edge Portal Service Agent",
+  "description": "Grants AI Edge Portal Service Agent permissions required to read/write data to GCS buckets",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.create",
+        "storage.buckets.get",
+        "storage.buckets.list",
+        "storage.objects.create",
+        "storage.objects.delete",
+        "storage.objects.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "storage.buckets.create",
+    "storage.buckets.get",
+    "storage.buckets.list",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.get"
+  ]
+}

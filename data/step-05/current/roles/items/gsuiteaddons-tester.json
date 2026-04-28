@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.873Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/gsuiteaddons.tester --format=json"
+  },
+  "name": "roles/gsuiteaddons.tester",
+  "role_slug": "gsuiteaddons-tester",
+  "title": "Google Workspace Add-ons Tester",
+  "description": "Testing execution access to Google Workspace Add-ons resources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "gsuiteaddons",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "gsuiteaddons",
+      "permissions": [
+        "gsuiteaddons.deployments.execute",
+        "gsuiteaddons.deployments.install",
+        "gsuiteaddons.deployments.installStatus",
+        "gsuiteaddons.deployments.uninstall"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "gsuiteaddons.deployments.execute",
+    "gsuiteaddons.deployments.install",
+    "gsuiteaddons.deployments.installStatus",
+    "gsuiteaddons.deployments.uninstall",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

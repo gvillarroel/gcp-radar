@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.122Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudaicompanion.serviceAgent --format=json"
+  },
+  "name": "roles/cloudaicompanion.serviceAgent",
+  "role_slug": "cloudaicompanion-serviceagent",
+  "title": "Gemini for Google Cloud Service Agent",
+  "description": "Gives Gemini for Google Cloud components the proper permissions to function.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 29,
+  "permission_groups": [
+    "cloudaicompanion",
+    "cloudbuild",
+    "developerconnect",
+    "logging",
+    "monitoring",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudaicompanion",
+      "permissions": [
+        "cloudaicompanion.codeRepositoryIndexes.get",
+        "cloudaicompanion.codeRepositoryIndexes.list",
+        "cloudaicompanion.instances.exportMetrics",
+        "cloudaicompanion.instances.queryEffectiveSetting",
+        "cloudaicompanion.instances.queryEffectiveSettingBindings",
+        "cloudaicompanion.licenses.selfAssign",
+        "cloudaicompanion.repositoryGroups.get",
+        "cloudaicompanion.repositoryGroups.getIamPolicy",
+        "cloudaicompanion.repositoryGroups.list"
+      ]
+    },
+    {
+      "group": "cloudbuild",
+      "permissions": [
+        "cloudbuild.connections.get",
+        "cloudbuild.repositories.accessReadToken",
+        "cloudbuild.repositories.fetchGitRefs",
+        "cloudbuild.repositories.get",
+        "cloudbuild.repositories.list"
+      ]
+    },
+    {
+      "group": "developerconnect",
+      "permissions": [
+        "developerconnect.connections.get",
+        "developerconnect.gitRepositoryLinks.fetchGitRefs",
+        "developerconnect.gitRepositoryLinks.fetchReadToken",
+        "developerconnect.gitRepositoryLinks.get",
+        "developerconnect.gitRepositoryLinks.gitProxyRead",
+        "developerconnect.gitRepositoryLinks.list"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create",
+        "logging.logEntries.route"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.metricDescriptors.create",
+        "monitoring.metricDescriptors.get",
+        "monitoring.metricDescriptors.list",
+        "monitoring.monitoredResourceDescriptors.get",
+        "monitoring.monitoredResourceDescriptors.list",
+        "monitoring.timeSeries.create"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudaicompanion.codeRepositoryIndexes.get",
+    "cloudaicompanion.codeRepositoryIndexes.list",
+    "cloudaicompanion.instances.exportMetrics",
+    "cloudaicompanion.instances.queryEffectiveSetting",
+    "cloudaicompanion.instances.queryEffectiveSettingBindings",
+    "cloudaicompanion.licenses.selfAssign",
+    "cloudaicompanion.repositoryGroups.get",
+    "cloudaicompanion.repositoryGroups.getIamPolicy",
+    "cloudaicompanion.repositoryGroups.list",
+    "cloudbuild.connections.get",
+    "cloudbuild.repositories.accessReadToken",
+    "cloudbuild.repositories.fetchGitRefs",
+    "cloudbuild.repositories.get",
+    "cloudbuild.repositories.list",
+    "developerconnect.connections.get",
+    "developerconnect.gitRepositoryLinks.fetchGitRefs",
+    "developerconnect.gitRepositoryLinks.fetchReadToken",
+    "developerconnect.gitRepositoryLinks.get",
+    "developerconnect.gitRepositoryLinks.gitProxyRead",
+    "developerconnect.gitRepositoryLinks.list",
+    "logging.logEntries.create",
+    "logging.logEntries.route",
+    "monitoring.metricDescriptors.create",
+    "monitoring.metricDescriptors.get",
+    "monitoring.metricDescriptors.list",
+    "monitoring.monitoredResourceDescriptors.get",
+    "monitoring.monitoredResourceDescriptors.list",
+    "monitoring.timeSeries.create",
+    "serviceusage.services.use"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.461Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datafusion.runner --format=json"
+  },
+  "name": "roles/datafusion.runner",
+  "role_slug": "datafusion-runner",
+  "title": "Cloud Data Fusion Runner",
+  "description": "Access to Cloud Data Fusion runtime resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "datafusion"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datafusion",
+      "permissions": [
+        "datafusion.instances.runtime"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datafusion.instances.runtime"
+  ]
+}

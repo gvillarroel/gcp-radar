@@ -1,0 +1,62 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.225Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/oracledatabase.odbSubnetAdmin --format=json"
+  },
+  "name": "roles/oracledatabase.odbSubnetAdmin",
+  "role_slug": "oracledatabase-odbsubnetadmin",
+  "title": "Oracle Database@Google ODB Subnet Admin",
+  "description": "Grants full access to manage all ODB Subnet resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 14,
+  "permission_groups": [
+    "oracledatabase",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "oracledatabase",
+      "permissions": [
+        "oracledatabase.entitlements.list",
+        "oracledatabase.locations.get",
+        "oracledatabase.locations.list",
+        "oracledatabase.odbSubnets.create",
+        "oracledatabase.odbSubnets.delete",
+        "oracledatabase.odbSubnets.get",
+        "oracledatabase.odbSubnets.list",
+        "oracledatabase.odbSubnets.use",
+        "oracledatabase.operations.cancel",
+        "oracledatabase.operations.delete",
+        "oracledatabase.operations.get",
+        "oracledatabase.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "oracledatabase.entitlements.list",
+    "oracledatabase.locations.get",
+    "oracledatabase.locations.list",
+    "oracledatabase.odbSubnets.create",
+    "oracledatabase.odbSubnets.delete",
+    "oracledatabase.odbSubnets.get",
+    "oracledatabase.odbSubnets.list",
+    "oracledatabase.odbSubnets.use",
+    "oracledatabase.operations.cancel",
+    "oracledatabase.operations.delete",
+    "oracledatabase.operations.get",
+    "oracledatabase.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

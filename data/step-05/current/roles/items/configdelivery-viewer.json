@@ -1,0 +1,66 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.353Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/configdelivery.viewer --format=json"
+  },
+  "name": "roles/configdelivery.viewer",
+  "role_slug": "configdelivery-viewer",
+  "title": "Configdelivery Viewer",
+  "description": "Viewer role for configdelivery",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 16,
+  "permission_groups": [
+    "configdelivery",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "configdelivery",
+      "permissions": [
+        "configdelivery.fleetPackages.get",
+        "configdelivery.fleetPackages.list",
+        "configdelivery.locations.get",
+        "configdelivery.locations.list",
+        "configdelivery.operations.get",
+        "configdelivery.operations.list",
+        "configdelivery.releases.get",
+        "configdelivery.releases.list",
+        "configdelivery.resourceBundles.get",
+        "configdelivery.resourceBundles.list",
+        "configdelivery.rollouts.get",
+        "configdelivery.rollouts.list",
+        "configdelivery.variants.get",
+        "configdelivery.variants.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "configdelivery.fleetPackages.get",
+    "configdelivery.fleetPackages.list",
+    "configdelivery.locations.get",
+    "configdelivery.locations.list",
+    "configdelivery.operations.get",
+    "configdelivery.operations.list",
+    "configdelivery.releases.get",
+    "configdelivery.releases.list",
+    "configdelivery.resourceBundles.get",
+    "configdelivery.resourceBundles.list",
+    "configdelivery.rollouts.get",
+    "configdelivery.rollouts.list",
+    "configdelivery.variants.get",
+    "configdelivery.variants.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

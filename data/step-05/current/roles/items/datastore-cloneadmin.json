@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.536Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datastore.cloneAdmin --format=json"
+  },
+  "name": "roles/datastore.cloneAdmin",
+  "role_slug": "datastore-cloneadmin",
+  "title": "Cloud Datastore Clone Admin",
+  "description": "Clone Cloud Datastore Databases.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "datastore"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datastore",
+      "permissions": [
+        "datastore.databases.clone",
+        "datastore.databases.create",
+        "datastore.databases.getMetadata",
+        "datastore.databases.list",
+        "datastore.operations.get",
+        "datastore.operations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datastore.databases.clone",
+    "datastore.databases.create",
+    "datastore.databases.getMetadata",
+    "datastore.databases.list",
+    "datastore.operations.get",
+    "datastore.operations.list"
+  ]
+}

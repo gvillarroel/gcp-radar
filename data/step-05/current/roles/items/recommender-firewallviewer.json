@@ -1,0 +1,56 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.361Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/recommender.firewallViewer --format=json"
+  },
+  "name": "roles/recommender.firewallViewer",
+  "role_slug": "recommender-firewallviewer",
+  "title": "Firewall Recommender Viewer",
+  "description": "Viewer of Firewall insights and recommendations.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "monitoring",
+    "recommender",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.timeSeries.list"
+      ]
+    },
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.computeFirewallInsights.get",
+        "recommender.computeFirewallInsights.list",
+        "recommender.computeFirewallInsightTypeConfigs.get",
+        "recommender.locations.get",
+        "recommender.locations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "monitoring.timeSeries.list",
+    "recommender.computeFirewallInsights.get",
+    "recommender.computeFirewallInsights.list",
+    "recommender.computeFirewallInsightTypeConfigs.get",
+    "recommender.locations.get",
+    "recommender.locations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

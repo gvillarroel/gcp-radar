@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.240Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/osconfig.patchDeploymentAdmin --format=json"
+  },
+  "name": "roles/osconfig.patchDeploymentAdmin",
+  "role_slug": "osconfig-patchdeploymentadmin",
+  "title": "PatchDeployment Admin",
+  "description": "Full admin access to PatchDeployments",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "osconfig",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "osconfig",
+      "permissions": [
+        "osconfig.patchDeployments.create",
+        "osconfig.patchDeployments.delete",
+        "osconfig.patchDeployments.execute",
+        "osconfig.patchDeployments.get",
+        "osconfig.patchDeployments.list",
+        "osconfig.patchDeployments.pause",
+        "osconfig.patchDeployments.resume",
+        "osconfig.patchDeployments.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "osconfig.patchDeployments.create",
+    "osconfig.patchDeployments.delete",
+    "osconfig.patchDeployments.execute",
+    "osconfig.patchDeployments.get",
+    "osconfig.patchDeployments.list",
+    "osconfig.patchDeployments.pause",
+    "osconfig.patchDeployments.resume",
+    "osconfig.patchDeployments.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.662Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/earthengine.appsPublisher --format=json"
+  },
+  "name": "roles/earthengine.appsPublisher",
+  "role_slug": "earthengine-appspublisher",
+  "title": "Earth Engine Apps Publisher",
+  "description": "Publisher of Earth Engine Apps",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 15,
+  "permission_groups": [
+    "iam",
+    "resourcemanager",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.serviceAccounts.create",
+        "iam.serviceAccounts.disable",
+        "iam.serviceAccounts.enable",
+        "iam.serviceAccounts.get",
+        "iam.serviceAccounts.getIamPolicy",
+        "iam.serviceAccounts.setIamPolicy"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.consumerpolicy.analyze",
+        "serviceusage.consumerpolicy.get",
+        "serviceusage.effectivepolicy.get",
+        "serviceusage.groups.list",
+        "serviceusage.groups.listExpandedMembers",
+        "serviceusage.groups.listMembers",
+        "serviceusage.services.get",
+        "serviceusage.values.test"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "iam.serviceAccounts.create",
+    "iam.serviceAccounts.disable",
+    "iam.serviceAccounts.enable",
+    "iam.serviceAccounts.get",
+    "iam.serviceAccounts.getIamPolicy",
+    "iam.serviceAccounts.setIamPolicy",
+    "resourcemanager.projects.get",
+    "serviceusage.consumerpolicy.analyze",
+    "serviceusage.consumerpolicy.get",
+    "serviceusage.effectivepolicy.get",
+    "serviceusage.groups.list",
+    "serviceusage.groups.listExpandedMembers",
+    "serviceusage.groups.listMembers",
+    "serviceusage.services.get",
+    "serviceusage.values.test"
+  ]
+}

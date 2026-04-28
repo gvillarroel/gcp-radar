@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.698Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/visionai.processorViewer --format=json"
+  },
+  "name": "roles/visionai.processorViewer",
+  "role_slug": "visionai-processorviewer",
+  "title": "Vision AI Processor Viewer",
+  "description": "Access to read Vision AI Processors.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "visionai"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "visionai",
+      "permissions": [
+        "visionai.processors.get",
+        "visionai.processors.list",
+        "visionai.processors.listPrebuilt"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "visionai.processors.get",
+    "visionai.processors.list",
+    "visionai.processors.listPrebuilt"
+  ]
+}

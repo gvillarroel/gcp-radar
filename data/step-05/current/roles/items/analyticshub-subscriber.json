@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.849Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/analyticshub.subscriber --format=json"
+  },
+  "name": "roles/analyticshub.subscriber",
+  "role_slug": "analyticshub-subscriber",
+  "title": "Analytics Hub Subscriber",
+  "description": "Can browse Data Exchanges and subscribe to Listings",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "analyticshub",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "analyticshub",
+      "permissions": [
+        "analyticshub.dataExchanges.get",
+        "analyticshub.dataExchanges.getIamPolicy",
+        "analyticshub.dataExchanges.list",
+        "analyticshub.dataExchanges.subscribe",
+        "analyticshub.listings.get",
+        "analyticshub.listings.getIamPolicy",
+        "analyticshub.listings.list",
+        "analyticshub.listings.subscribe"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "analyticshub.dataExchanges.get",
+    "analyticshub.dataExchanges.getIamPolicy",
+    "analyticshub.dataExchanges.list",
+    "analyticshub.dataExchanges.subscribe",
+    "analyticshub.listings.get",
+    "analyticshub.listings.getIamPolicy",
+    "analyticshub.listings.list",
+    "analyticshub.listings.subscribe",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

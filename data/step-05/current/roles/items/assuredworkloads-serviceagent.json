@@ -1,0 +1,70 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.942Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/assuredworkloads.serviceAgent --format=json"
+  },
+  "name": "roles/assuredworkloads.serviceAgent",
+  "role_slug": "assuredworkloads-serviceagent",
+  "title": "Assured Workloads Service Agent",
+  "description": "Gives the Assured Workloads service account access to create KMS keyrings and keys, monitor Assured Workloads and read Organization Policies.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 15,
+  "permission_groups": [
+    "cloudkms",
+    "orgpolicy",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudkms",
+      "permissions": [
+        "cloudkms.cryptoKeys.create",
+        "cloudkms.keyRings.create"
+      ]
+    },
+    {
+      "group": "orgpolicy",
+      "permissions": [
+        "orgpolicy.policies.list",
+        "orgpolicy.policy.get"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.consumerpolicy.analyze",
+        "serviceusage.consumerpolicy.get",
+        "serviceusage.consumerpolicy.update",
+        "serviceusage.effectivepolicy.get",
+        "serviceusage.groups.list",
+        "serviceusage.groups.listExpandedMembers",
+        "serviceusage.groups.listMembers",
+        "serviceusage.services.enable",
+        "serviceusage.services.get",
+        "serviceusage.services.use",
+        "serviceusage.values.test"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudkms.cryptoKeys.create",
+    "cloudkms.keyRings.create",
+    "orgpolicy.policies.list",
+    "orgpolicy.policy.get",
+    "serviceusage.consumerpolicy.analyze",
+    "serviceusage.consumerpolicy.get",
+    "serviceusage.consumerpolicy.update",
+    "serviceusage.effectivepolicy.get",
+    "serviceusage.groups.list",
+    "serviceusage.groups.listExpandedMembers",
+    "serviceusage.groups.listMembers",
+    "serviceusage.services.enable",
+    "serviceusage.services.get",
+    "serviceusage.services.use",
+    "serviceusage.values.test"
+  ]
+}

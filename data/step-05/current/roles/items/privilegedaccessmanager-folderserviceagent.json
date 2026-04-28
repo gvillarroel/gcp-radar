@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.291Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/privilegedaccessmanager.folderServiceAgent --format=json"
+  },
+  "name": "roles/privilegedaccessmanager.folderServiceAgent",
+  "role_slug": "privilegedaccessmanager-folderserviceagent",
+  "title": "Privileged Access Manager Folder Service Agent",
+  "description": "Gives privileged access manager service account access to modify IAM policies on GCP folders",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.folders.get",
+        "resourcemanager.folders.getIamPolicy",
+        "resourcemanager.folders.setIamPolicy"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.folders.get",
+    "resourcemanager.folders.getIamPolicy",
+    "resourcemanager.folders.setIamPolicy"
+  ]
+}

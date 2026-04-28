@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.836Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/geminidataanalytics.dataAgentStatelessUser --format=json"
+  },
+  "name": "roles/geminidataanalytics.dataAgentStatelessUser",
+  "role_slug": "geminidataanalytics-dataagentstatelessuser",
+  "title": "Gemini Data Analytics Stateless Chat User",
+  "description": "Stateless access to Gemini Data Analytics chat.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "geminidataanalytics"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "geminidataanalytics",
+      "permissions": [
+        "geminidataanalytics.locations.suggestContext",
+        "geminidataanalytics.locations.useDataEngineeringAgent"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "geminidataanalytics.locations.suggestContext",
+    "geminidataanalytics.locations.useDataEngineeringAgent"
+  ]
+}

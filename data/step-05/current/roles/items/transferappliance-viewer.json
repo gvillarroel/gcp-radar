@@ -1,0 +1,58 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.665Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/transferappliance.viewer --format=json"
+  },
+  "name": "roles/transferappliance.viewer",
+  "role_slug": "transferappliance-viewer",
+  "title": "Transfer Appliance Viewer",
+  "description": "Read-only access to Transfer Appliance all resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 12,
+  "permission_groups": [
+    "resourcemanager",
+    "transferappliance"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "transferappliance",
+      "permissions": [
+        "transferappliance.appliances.get",
+        "transferappliance.appliances.list",
+        "transferappliance.locations.get",
+        "transferappliance.locations.list",
+        "transferappliance.operations.get",
+        "transferappliance.operations.list",
+        "transferappliance.orders.get",
+        "transferappliance.orders.list",
+        "transferappliance.savedAddresses.get",
+        "transferappliance.savedAddresses.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "transferappliance.appliances.get",
+    "transferappliance.appliances.list",
+    "transferappliance.locations.get",
+    "transferappliance.locations.list",
+    "transferappliance.operations.get",
+    "transferappliance.operations.list",
+    "transferappliance.orders.get",
+    "transferappliance.orders.list",
+    "transferappliance.savedAddresses.get",
+    "transferappliance.savedAddresses.list"
+  ]
+}

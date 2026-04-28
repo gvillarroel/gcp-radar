@@ -1,0 +1,64 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.571Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/serviceusage.serviceUsageViewer --format=json"
+  },
+  "name": "roles/serviceusage.serviceUsageViewer",
+  "role_slug": "serviceusage-serviceusageviewer",
+  "title": "Service Usage Viewer",
+  "description": "Ability to inspect service states and operations for a consumer project.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 15,
+  "permission_groups": [
+    "monitoring",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.timeSeries.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.consumerpolicy.analyze",
+        "serviceusage.consumerpolicy.get",
+        "serviceusage.contentsecuritypolicy.get",
+        "serviceusage.effectivemcppolicy.get",
+        "serviceusage.effectivepolicy.get",
+        "serviceusage.groups.list",
+        "serviceusage.groups.listExpandedMembers",
+        "serviceusage.groups.listMembers",
+        "serviceusage.mcppolicy.get",
+        "serviceusage.operations.get",
+        "serviceusage.quotas.get",
+        "serviceusage.services.get",
+        "serviceusage.services.list",
+        "serviceusage.values.test"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "monitoring.timeSeries.list",
+    "serviceusage.consumerpolicy.analyze",
+    "serviceusage.consumerpolicy.get",
+    "serviceusage.contentsecuritypolicy.get",
+    "serviceusage.effectivemcppolicy.get",
+    "serviceusage.effectivepolicy.get",
+    "serviceusage.groups.list",
+    "serviceusage.groups.listExpandedMembers",
+    "serviceusage.groups.listMembers",
+    "serviceusage.mcppolicy.get",
+    "serviceusage.operations.get",
+    "serviceusage.quotas.get",
+    "serviceusage.services.get",
+    "serviceusage.services.list",
+    "serviceusage.values.test"
+  ]
+}

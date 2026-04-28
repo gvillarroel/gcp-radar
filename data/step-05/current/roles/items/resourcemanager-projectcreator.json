@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.425Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/resourcemanager.projectCreator --format=json"
+  },
+  "name": "roles/resourcemanager.projectCreator",
+  "role_slug": "resourcemanager-projectcreator",
+  "title": "Project Creator",
+  "description": "Access to create new GCP projects.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get",
+        "resourcemanager.projects.create"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.organizations.get",
+    "resourcemanager.projects.create"
+  ]
+}

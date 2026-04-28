@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.071Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/binaryauthorization.serviceAgent --format=json"
+  },
+  "name": "roles/binaryauthorization.serviceAgent",
+  "role_slug": "binaryauthorization-serviceagent",
+  "title": "Binary Authorization Service Agent",
+  "description": "Can read Notes and Occurrences from the Container Analysis Service to find and verify signatures.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 20,
+  "permission_groups": [
+    "artifactregistry",
+    "binaryauthorization",
+    "cloudasset",
+    "containeranalysis",
+    "resourcemanager",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "artifactregistry",
+      "permissions": [
+        "artifactregistry.dockerimages.get",
+        "artifactregistry.repositories.downloadArtifacts"
+      ]
+    },
+    {
+      "group": "binaryauthorization",
+      "permissions": [
+        "binaryauthorization.attestors.get",
+        "binaryauthorization.attestors.list",
+        "binaryauthorization.attestors.verifyImageAttested",
+        "binaryauthorization.platformPolicies.evaluatePolicy",
+        "binaryauthorization.policy.evaluatePolicy"
+      ]
+    },
+    {
+      "group": "cloudasset",
+      "permissions": [
+        "cloudasset.assets.exportResource",
+        "cloudasset.feeds.create",
+        "cloudasset.feeds.delete",
+        "cloudasset.feeds.get",
+        "cloudasset.feeds.update"
+      ]
+    },
+    {
+      "group": "containeranalysis",
+      "permissions": [
+        "containeranalysis.notes.get",
+        "containeranalysis.notes.list",
+        "containeranalysis.notes.listOccurrences",
+        "containeranalysis.occurrences.get",
+        "containeranalysis.occurrences.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.objects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "artifactregistry.dockerimages.get",
+    "artifactregistry.repositories.downloadArtifacts",
+    "binaryauthorization.attestors.get",
+    "binaryauthorization.attestors.list",
+    "binaryauthorization.attestors.verifyImageAttested",
+    "binaryauthorization.platformPolicies.evaluatePolicy",
+    "binaryauthorization.policy.evaluatePolicy",
+    "cloudasset.assets.exportResource",
+    "cloudasset.feeds.create",
+    "cloudasset.feeds.delete",
+    "cloudasset.feeds.get",
+    "cloudasset.feeds.update",
+    "containeranalysis.notes.get",
+    "containeranalysis.notes.list",
+    "containeranalysis.notes.listOccurrences",
+    "containeranalysis.occurrences.get",
+    "containeranalysis.occurrences.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "storage.objects.list"
+  ]
+}

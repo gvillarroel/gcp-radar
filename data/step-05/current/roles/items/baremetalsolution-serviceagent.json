@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.995Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/baremetalsolution.serviceAgent --format=json"
+  },
+  "name": "roles/baremetalsolution.serviceAgent",
+  "role_slug": "baremetalsolution-serviceagent",
+  "title": "Bare Metal Solution Service Agent",
+  "description": "Gives permission to manage network resources such as interconnect pairing keys, required for Bare Metal Solution.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "compute",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.interconnectAttachments.get",
+        "compute.interconnectAttachments.list",
+        "compute.interconnects.get",
+        "compute.interconnects.list",
+        "compute.networks.get",
+        "compute.networks.list",
+        "compute.projects.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "compute.interconnectAttachments.get",
+    "compute.interconnectAttachments.list",
+    "compute.interconnects.get",
+    "compute.interconnects.list",
+    "compute.networks.get",
+    "compute.networks.list",
+    "compute.projects.get",
+    "resourcemanager.projects.get"
+  ]
+}

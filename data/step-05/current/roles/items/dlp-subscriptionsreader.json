@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.644Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dlp.subscriptionsReader --format=json"
+  },
+  "name": "roles/dlp.subscriptionsReader",
+  "role_slug": "dlp-subscriptionsreader",
+  "title": "DLP Subscription Viewer",
+  "description": "View DLP subscriptions.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "dlp"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dlp",
+      "permissions": [
+        "dlp.subscriptions.get",
+        "dlp.subscriptions.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dlp.subscriptions.get",
+    "dlp.subscriptions.list"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.109Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/chronicle.soarRemoteAgent --format=json"
+  },
+  "name": "roles/chronicle.soarRemoteAgent",
+  "role_slug": "chronicle-soarremoteagent",
+  "title": "Chronicle SOAR Remote Agent",
+  "description": "Grants Remote Agent access to Chronicle SOAR.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "chronicle",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "chronicle",
+      "permissions": [
+        "chronicle.legacyPublisher.get",
+        "chronicle.legacyPublisher.update",
+        "chronicle.legacySdk.get",
+        "chronicle.legacySdk.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "chronicle.legacyPublisher.get",
+    "chronicle.legacyPublisher.update",
+    "chronicle.legacySdk.get",
+    "chronicle.legacySdk.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.458Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datafusion.accessor --format=json"
+  },
+  "name": "roles/datafusion.accessor",
+  "role_slug": "datafusion-accessor",
+  "title": "Cloud Data Fusion Accessor",
+  "description": "Read-only access to Cloud Data Fusion Instances. Use it on instance level along with the namespace grants to provide access to the specific namespace.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "datafusion",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datafusion",
+      "permissions": [
+        "datafusion.instances.get",
+        "datafusion.instances.getIamPolicy",
+        "datafusion.instances.list",
+        "datafusion.instances.listEffectiveTags",
+        "datafusion.instances.listTagBindings"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datafusion.instances.get",
+    "datafusion.instances.getIamPolicy",
+    "datafusion.instances.list",
+    "datafusion.instances.listEffectiveTags",
+    "datafusion.instances.listTagBindings",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

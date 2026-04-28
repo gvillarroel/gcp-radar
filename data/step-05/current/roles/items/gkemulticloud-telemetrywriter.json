@@ -1,0 +1,78 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.867Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/gkemulticloud.telemetryWriter --format=json"
+  },
+  "name": "roles/gkemulticloud.telemetryWriter",
+  "role_slug": "gkemulticloud-telemetrywriter",
+  "title": "Anthos Multi-cloud Telemetry Writer",
+  "description": "Grant access to write cluster telemetry data such as logs, metrics, and resource metadata.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "kubernetesmetadata",
+    "logging",
+    "monitoring",
+    "opsconfigmonitoring",
+    "telemetry"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "kubernetesmetadata",
+      "permissions": [
+        "kubernetesmetadata.metadata.config",
+        "kubernetesmetadata.metadata.publish",
+        "kubernetesmetadata.metadata.snapshot"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create",
+        "logging.logEntries.route"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.metricDescriptors.create",
+        "monitoring.metricDescriptors.get",
+        "monitoring.metricDescriptors.list",
+        "monitoring.monitoredResourceDescriptors.get",
+        "monitoring.monitoredResourceDescriptors.list",
+        "monitoring.timeSeries.create"
+      ]
+    },
+    {
+      "group": "opsconfigmonitoring",
+      "permissions": [
+        "opsconfigmonitoring.resourceMetadata.write"
+      ]
+    },
+    {
+      "group": "telemetry",
+      "permissions": [
+        "telemetry.metrics.write"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "kubernetesmetadata.metadata.config",
+    "kubernetesmetadata.metadata.publish",
+    "kubernetesmetadata.metadata.snapshot",
+    "logging.logEntries.create",
+    "logging.logEntries.route",
+    "monitoring.metricDescriptors.create",
+    "monitoring.metricDescriptors.get",
+    "monitoring.metricDescriptors.list",
+    "monitoring.monitoredResourceDescriptors.get",
+    "monitoring.monitoredResourceDescriptors.list",
+    "monitoring.timeSeries.create",
+    "opsconfigmonitoring.resourceMetadata.write",
+    "telemetry.metrics.write"
+  ]
+}

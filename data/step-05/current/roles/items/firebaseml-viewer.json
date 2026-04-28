@@ -1,0 +1,58 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.789Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebaseml.viewer --format=json"
+  },
+  "name": "roles/firebaseml.viewer",
+  "role_slug": "firebaseml-viewer",
+  "title": "Firebase ML Kit Viewer",
+  "description": "Read-only access to Firebase ML Kit resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "firebase",
+    "firebaseml",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "firebase",
+      "permissions": [
+        "firebase.clients.get",
+        "firebase.clients.list",
+        "firebase.projects.get"
+      ]
+    },
+    {
+      "group": "firebaseml",
+      "permissions": [
+        "firebaseml.models.get",
+        "firebaseml.models.list",
+        "firebaseml.modelversions.get",
+        "firebaseml.modelversions.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "firebase.clients.get",
+    "firebase.clients.list",
+    "firebase.projects.get",
+    "firebaseml.models.get",
+    "firebaseml.models.list",
+    "firebaseml.modelversions.get",
+    "firebaseml.modelversions.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

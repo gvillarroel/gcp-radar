@@ -1,0 +1,36 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.016Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/lifesciences.editor --format=json"
+  },
+  "name": "roles/lifesciences.editor",
+  "role_slug": "lifesciences-editor",
+  "title": "Cloud Life Sciences Editor",
+  "description": "Access to read and edit Cloud Life Sciences resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "lifesciences"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "lifesciences",
+      "permissions": [
+        "lifesciences.operations.cancel",
+        "lifesciences.operations.get",
+        "lifesciences.operations.list",
+        "lifesciences.workflows.run"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "lifesciences.operations.cancel",
+    "lifesciences.operations.get",
+    "lifesciences.operations.list",
+    "lifesciences.workflows.run"
+  ]
+}

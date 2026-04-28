@@ -1,0 +1,64 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.882Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/healthcare.consentArtifactEditor --format=json"
+  },
+  "name": "roles/healthcare.consentArtifactEditor",
+  "role_slug": "healthcare-consentartifacteditor",
+  "title": "Healthcare Consent Artifact Editor",
+  "description": "Edit ConsentArtifact objects.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 15,
+  "permission_groups": [
+    "healthcare",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "healthcare",
+      "permissions": [
+        "healthcare.consentArtifacts.create",
+        "healthcare.consentArtifacts.get",
+        "healthcare.consentArtifacts.list",
+        "healthcare.consentStores.checkDataAccess",
+        "healthcare.consentStores.evaluateUserConsents",
+        "healthcare.consentStores.get",
+        "healthcare.consentStores.list",
+        "healthcare.consentStores.queryAccessibleData",
+        "healthcare.datasets.get",
+        "healthcare.datasets.list",
+        "healthcare.locations.get",
+        "healthcare.locations.list",
+        "healthcare.operations.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "healthcare.consentArtifacts.create",
+    "healthcare.consentArtifacts.get",
+    "healthcare.consentArtifacts.list",
+    "healthcare.consentStores.checkDataAccess",
+    "healthcare.consentStores.evaluateUserConsents",
+    "healthcare.consentStores.get",
+    "healthcare.consentStores.list",
+    "healthcare.consentStores.queryAccessibleData",
+    "healthcare.datasets.get",
+    "healthcare.datasets.list",
+    "healthcare.locations.get",
+    "healthcare.locations.list",
+    "healthcare.operations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.402Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/redis.dbConnectionUser --format=json"
+  },
+  "name": "roles/redis.dbConnectionUser",
+  "role_slug": "redis-dbconnectionuser",
+  "title": "Cloud Memorystore Redis Db Connection User",
+  "description": "Access to connecting to Redis Server db.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "redis"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "redis",
+      "permissions": [
+        "redis.clusters.connect"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "redis.clusters.connect"
+  ]
+}

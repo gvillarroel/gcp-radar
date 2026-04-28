@@ -1,0 +1,52 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.137Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudbuild.connectionViewer --format=json"
+  },
+  "name": "roles/cloudbuild.connectionViewer",
+  "role_slug": "cloudbuild-connectionviewer",
+  "title": "Cloud Build Connection Viewer",
+  "description": "Can view and list connections and repositories.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "cloudbuild",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudbuild",
+      "permissions": [
+        "cloudbuild.connections.fetchLinkableRepositories",
+        "cloudbuild.connections.get",
+        "cloudbuild.connections.getIamPolicy",
+        "cloudbuild.connections.list",
+        "cloudbuild.repositories.fetchGitRefs",
+        "cloudbuild.repositories.get",
+        "cloudbuild.repositories.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudbuild.connections.fetchLinkableRepositories",
+    "cloudbuild.connections.get",
+    "cloudbuild.connections.getIamPolicy",
+    "cloudbuild.connections.list",
+    "cloudbuild.repositories.fetchGitRefs",
+    "cloudbuild.repositories.get",
+    "cloudbuild.repositories.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

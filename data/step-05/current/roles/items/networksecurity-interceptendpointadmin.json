@@ -1,0 +1,60 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.170Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/networksecurity.interceptEndpointAdmin --format=json"
+  },
+  "name": "roles/networksecurity.interceptEndpointAdmin",
+  "role_slug": "networksecurity-interceptendpointadmin",
+  "title": "Intercept Endpoint Admin",
+  "description": "Enables full access to intercept resources on the consumer's side.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "networksecurity",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "networksecurity",
+      "permissions": [
+        "networksecurity.interceptEndpointGroupAssociations.create",
+        "networksecurity.interceptEndpointGroupAssociations.delete",
+        "networksecurity.interceptEndpointGroupAssociations.get",
+        "networksecurity.interceptEndpointGroupAssociations.list",
+        "networksecurity.interceptEndpointGroupAssociations.update",
+        "networksecurity.interceptEndpointGroups.create",
+        "networksecurity.interceptEndpointGroups.delete",
+        "networksecurity.interceptEndpointGroups.get",
+        "networksecurity.interceptEndpointGroups.list",
+        "networksecurity.interceptEndpointGroups.update",
+        "networksecurity.interceptEndpointGroups.use"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "networksecurity.interceptEndpointGroupAssociations.create",
+    "networksecurity.interceptEndpointGroupAssociations.delete",
+    "networksecurity.interceptEndpointGroupAssociations.get",
+    "networksecurity.interceptEndpointGroupAssociations.list",
+    "networksecurity.interceptEndpointGroupAssociations.update",
+    "networksecurity.interceptEndpointGroups.create",
+    "networksecurity.interceptEndpointGroups.delete",
+    "networksecurity.interceptEndpointGroups.get",
+    "networksecurity.interceptEndpointGroups.list",
+    "networksecurity.interceptEndpointGroups.update",
+    "networksecurity.interceptEndpointGroups.use",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

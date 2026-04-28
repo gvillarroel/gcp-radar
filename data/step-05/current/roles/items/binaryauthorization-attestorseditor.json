@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.064Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/binaryauthorization.attestorsEditor --format=json"
+  },
+  "name": "roles/binaryauthorization.attestorsEditor",
+  "role_slug": "binaryauthorization-attestorseditor",
+  "title": "Binary Authorization Attestor Editor",
+  "description": "Editor of Binary Authorization Attestors",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "binaryauthorization",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "binaryauthorization",
+      "permissions": [
+        "binaryauthorization.attestors.create",
+        "binaryauthorization.attestors.delete",
+        "binaryauthorization.attestors.get",
+        "binaryauthorization.attestors.list",
+        "binaryauthorization.attestors.update",
+        "binaryauthorization.attestors.verifyImageAttested"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "binaryauthorization.attestors.create",
+    "binaryauthorization.attestors.delete",
+    "binaryauthorization.attestors.get",
+    "binaryauthorization.attestors.list",
+    "binaryauthorization.attestors.update",
+    "binaryauthorization.attestors.verifyImageAttested",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

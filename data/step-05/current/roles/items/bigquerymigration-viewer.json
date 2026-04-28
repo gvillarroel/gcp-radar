@@ -1,0 +1,36 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.046Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/bigquerymigration.viewer --format=json"
+  },
+  "name": "roles/bigquerymigration.viewer",
+  "role_slug": "bigquerymigration-viewer",
+  "title": "MigrationWorkflow Viewer",
+  "description": "Viewer of EDW migration MigrationWorkflow.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "bigquerymigration"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquerymigration",
+      "permissions": [
+        "bigquerymigration.subtasks.get",
+        "bigquerymigration.subtasks.list",
+        "bigquerymigration.workflows.get",
+        "bigquerymigration.workflows.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquerymigration.subtasks.get",
+    "bigquerymigration.subtasks.list",
+    "bigquerymigration.workflows.get",
+    "bigquerymigration.workflows.list"
+  ]
+}

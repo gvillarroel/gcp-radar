@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.251Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudsupport.advisorySupportViewer --format=json"
+  },
+  "name": "roles/cloudsupport.advisorySupportViewer",
+  "role_slug": "cloudsupport-advisorysupportviewer",
+  "title": "Advisory Support Viewer",
+  "description": "Read-only access to advisory support cases applicable for GCP Customer Care.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "cloudsupport",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudsupport",
+      "permissions": [
+        "cloudsupport.properties.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudsupport.properties.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

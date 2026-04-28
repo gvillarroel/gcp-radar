@@ -1,0 +1,72 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.891Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/apigeeregistry.worker --format=json"
+  },
+  "name": "roles/apigeeregistry.worker",
+  "role_slug": "apigeeregistry-worker",
+  "title": "Cloud Apigee Registry Worker",
+  "description": "The role used by Apigee Registry application workers to read and update Apigee Registry Artifacts.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 19,
+  "permission_groups": [
+    "apigeeregistry",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "apigeeregistry",
+      "permissions": [
+        "apigeeregistry.apis.get",
+        "apigeeregistry.apis.list",
+        "apigeeregistry.apis.update",
+        "apigeeregistry.artifacts.create",
+        "apigeeregistry.artifacts.delete",
+        "apigeeregistry.artifacts.get",
+        "apigeeregistry.artifacts.list",
+        "apigeeregistry.artifacts.update",
+        "apigeeregistry.deployments.get",
+        "apigeeregistry.deployments.list",
+        "apigeeregistry.deployments.update",
+        "apigeeregistry.specs.get",
+        "apigeeregistry.specs.list",
+        "apigeeregistry.specs.update",
+        "apigeeregistry.versions.get",
+        "apigeeregistry.versions.list",
+        "apigeeregistry.versions.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "apigeeregistry.apis.get",
+    "apigeeregistry.apis.list",
+    "apigeeregistry.apis.update",
+    "apigeeregistry.artifacts.create",
+    "apigeeregistry.artifacts.delete",
+    "apigeeregistry.artifacts.get",
+    "apigeeregistry.artifacts.list",
+    "apigeeregistry.artifacts.update",
+    "apigeeregistry.deployments.get",
+    "apigeeregistry.deployments.list",
+    "apigeeregistry.deployments.update",
+    "apigeeregistry.specs.get",
+    "apigeeregistry.specs.list",
+    "apigeeregistry.specs.update",
+    "apigeeregistry.versions.get",
+    "apigeeregistry.versions.list",
+    "apigeeregistry.versions.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

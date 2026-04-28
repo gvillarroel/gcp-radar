@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.193Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudkms.cryptoKeyEncrypter --format=json"
+  },
+  "name": "roles/cloudkms.cryptoKeyEncrypter",
+  "role_slug": "cloudkms-cryptokeyencrypter",
+  "title": "Cloud KMS CryptoKey Encrypter",
+  "description": "Enables Encrypt operations",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "cloudkms",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudkms",
+      "permissions": [
+        "cloudkms.cryptoKeyVersions.useToEncrypt",
+        "cloudkms.locations.get",
+        "cloudkms.locations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudkms.cryptoKeyVersions.useToEncrypt",
+    "cloudkms.locations.get",
+    "cloudkms.locations.list",
+    "resourcemanager.projects.get"
+  ]
+}

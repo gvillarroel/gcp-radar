@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.102Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/ml.modelUser --format=json"
+  },
+  "name": "roles/ml.modelUser",
+  "role_slug": "ml-modeluser",
+  "title": "AI Platform Model User",
+  "description": "Permissions to read the model and its versions, and use them for prediction.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "ml"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "ml",
+      "permissions": [
+        "ml.models.get",
+        "ml.models.predict",
+        "ml.versions.get",
+        "ml.versions.list",
+        "ml.versions.predict"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "ml.models.get",
+    "ml.models.predict",
+    "ml.versions.get",
+    "ml.versions.list",
+    "ml.versions.predict"
+  ]
+}

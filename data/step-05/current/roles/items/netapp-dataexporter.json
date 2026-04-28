@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.140Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/netapp.dataExporter --format=json"
+  },
+  "name": "roles/netapp.dataExporter",
+  "role_slug": "netapp-dataexporter",
+  "title": "Google Cloud NetApp Volumes Data Exporter",
+  "description": "Access to export data from Google Cloud NetApp Volumes.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "netapp"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "netapp",
+      "permissions": [
+        "netapp.operations.get",
+        "netapp.volumes.export"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "netapp.operations.get",
+    "netapp.volumes.export"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.122Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/monitoring.metricWriter --format=json"
+  },
+  "name": "roles/monitoring.metricWriter",
+  "role_slug": "monitoring-metricwriter",
+  "title": "Monitoring Metric Writer",
+  "description": "Write-only access to metrics.  This provides exactly the permissions needed by the Stackdriver agent and other systems that send metrics.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "monitoring",
+    "telemetry"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.metricDescriptors.create",
+        "monitoring.metricDescriptors.get",
+        "monitoring.metricDescriptors.list",
+        "monitoring.monitoredResourceDescriptors.get",
+        "monitoring.monitoredResourceDescriptors.list",
+        "monitoring.timeSeries.create"
+      ]
+    },
+    {
+      "group": "telemetry",
+      "permissions": [
+        "telemetry.metrics.write"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "monitoring.metricDescriptors.create",
+    "monitoring.metricDescriptors.get",
+    "monitoring.metricDescriptors.list",
+    "monitoring.monitoredResourceDescriptors.get",
+    "monitoring.monitoredResourceDescriptors.list",
+    "monitoring.timeSeries.create",
+    "telemetry.metrics.write"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.262Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudtestservice.admin --format=json"
+  },
+  "name": "roles/cloudtestservice.admin",
+  "role_slug": "cloudtestservice-admin",
+  "title": "Cloud Test Service Admin",
+  "description": "Admin role for cloudtestservice",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 12,
+  "permission_groups": [
+    "cloudtestservice",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudtestservice",
+      "permissions": [
+        "cloudtestservice.devicesession.cancel",
+        "cloudtestservice.devicesession.create",
+        "cloudtestservice.devicesession.get",
+        "cloudtestservice.devicesession.list",
+        "cloudtestservice.devicesession.update",
+        "cloudtestservice.devicesession.use",
+        "cloudtestservice.environmentcatalog.get",
+        "cloudtestservice.matrices.create",
+        "cloudtestservice.matrices.get",
+        "cloudtestservice.matrices.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudtestservice.devicesession.cancel",
+    "cloudtestservice.devicesession.create",
+    "cloudtestservice.devicesession.get",
+    "cloudtestservice.devicesession.list",
+    "cloudtestservice.devicesession.update",
+    "cloudtestservice.devicesession.use",
+    "cloudtestservice.environmentcatalog.get",
+    "cloudtestservice.matrices.create",
+    "cloudtestservice.matrices.get",
+    "cloudtestservice.matrices.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

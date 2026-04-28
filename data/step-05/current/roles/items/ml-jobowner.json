@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.100Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/ml.jobOwner --format=json"
+  },
+  "name": "roles/ml.jobOwner",
+  "role_slug": "ml-jobowner",
+  "title": "AI Platform Job Owner",
+  "description": "Full access to the job.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "ml"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "ml",
+      "permissions": [
+        "ml.jobs.cancel",
+        "ml.jobs.create",
+        "ml.jobs.get",
+        "ml.jobs.getIamPolicy",
+        "ml.jobs.list",
+        "ml.jobs.setIamPolicy",
+        "ml.jobs.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "ml.jobs.cancel",
+    "ml.jobs.create",
+    "ml.jobs.get",
+    "ml.jobs.getIamPolicy",
+    "ml.jobs.list",
+    "ml.jobs.setIamPolicy",
+    "ml.jobs.update"
+  ]
+}

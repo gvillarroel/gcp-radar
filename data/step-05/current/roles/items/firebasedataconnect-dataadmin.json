@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.772Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebasedataconnect.dataAdmin --format=json"
+  },
+  "name": "roles/firebasedataconnect.dataAdmin",
+  "role_slug": "firebasedataconnect-dataadmin",
+  "title": "Firebase Data Connect API Data Admin",
+  "description": "Full access to data sources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "firebasedataconnect"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "firebasedataconnect",
+      "permissions": [
+        "firebasedataconnect.connectors.impersonateMutation",
+        "firebasedataconnect.connectors.impersonateQuery",
+        "firebasedataconnect.services.executeGraphql",
+        "firebasedataconnect.services.executeGraphqlRead",
+        "firebasedataconnect.services.introspectGraphql"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "firebasedataconnect.connectors.impersonateMutation",
+    "firebasedataconnect.connectors.impersonateQuery",
+    "firebasedataconnect.services.executeGraphql",
+    "firebasedataconnect.services.executeGraphqlRead",
+    "firebasedataconnect.services.introspectGraphql"
+  ]
+}

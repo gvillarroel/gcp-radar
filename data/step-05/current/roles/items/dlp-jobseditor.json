@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.631Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dlp.jobsEditor --format=json"
+  },
+  "name": "roles/dlp.jobsEditor",
+  "role_slug": "dlp-jobseditor",
+  "title": "DLP Jobs Editor",
+  "description": "Edit and create jobs",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "dlp"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dlp",
+      "permissions": [
+        "dlp.jobs.cancel",
+        "dlp.jobs.create",
+        "dlp.jobs.delete",
+        "dlp.jobs.get",
+        "dlp.jobs.hybridInspect",
+        "dlp.jobs.list",
+        "dlp.kms.encrypt"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dlp.jobs.cancel",
+    "dlp.jobs.create",
+    "dlp.jobs.delete",
+    "dlp.jobs.get",
+    "dlp.jobs.hybridInspect",
+    "dlp.jobs.list",
+    "dlp.kms.encrypt"
+  ]
+}

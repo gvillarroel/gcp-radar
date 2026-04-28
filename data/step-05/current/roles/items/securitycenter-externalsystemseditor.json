@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.503Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securitycenter.externalSystemsEditor --format=json"
+  },
+  "name": "roles/securitycenter.externalSystemsEditor",
+  "role_slug": "securitycenter-externalsystemseditor",
+  "title": "Security Center External Systems Editor",
+  "description": "Write access to security center external systems",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "securitycenter"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "securitycenter",
+      "permissions": [
+        "securitycenter.findingexternalsystems.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "securitycenter.findingexternalsystems.update"
+  ]
+}

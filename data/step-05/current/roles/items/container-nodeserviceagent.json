@@ -1,0 +1,80 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.385Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/container.nodeServiceAgent --format=json"
+  },
+  "name": "roles/container.nodeServiceAgent",
+  "role_slug": "container-nodeserviceagent",
+  "title": "[Deprecated] Kubernetes Engine Node Service Agent",
+  "description": "Minimal set of permission required by a GKE node to support standard capabilities such as logging and monitoring export, and image pulls.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "autoscaling",
+    "logging",
+    "monitoring",
+    "resourcemanager",
+    "serviceusage",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "autoscaling",
+      "permissions": [
+        "autoscaling.sites.writeMetrics"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.metricDescriptors.create",
+        "monitoring.metricDescriptors.list",
+        "monitoring.timeSeries.create",
+        "monitoring.timeSeries.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.objects.get",
+        "storage.objects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "autoscaling.sites.writeMetrics",
+    "logging.logEntries.create",
+    "monitoring.metricDescriptors.create",
+    "monitoring.metricDescriptors.list",
+    "monitoring.timeSeries.create",
+    "monitoring.timeSeries.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "serviceusage.services.use",
+    "storage.objects.get",
+    "storage.objects.list"
+  ]
+}

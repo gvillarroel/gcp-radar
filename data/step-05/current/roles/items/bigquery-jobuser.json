@@ -1,0 +1,58 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.025Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/bigquery.jobUser --format=json"
+  },
+  "name": "roles/bigquery.jobUser",
+  "role_slug": "bigquery-jobuser",
+  "title": "BigQuery Job User",
+  "description": "Access to run jobs",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "bigquery",
+    "dataform",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.config.get",
+        "bigquery.jobs.create"
+      ]
+    },
+    {
+      "group": "dataform",
+      "permissions": [
+        "dataform.folders.create",
+        "dataform.locations.get",
+        "dataform.locations.list",
+        "dataform.repositories.create",
+        "dataform.repositories.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.config.get",
+    "bigquery.jobs.create",
+    "dataform.folders.create",
+    "dataform.locations.get",
+    "dataform.locations.list",
+    "dataform.repositories.create",
+    "dataform.repositories.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

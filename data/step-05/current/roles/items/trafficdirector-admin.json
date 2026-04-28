@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.659Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/trafficdirector.admin --format=json"
+  },
+  "name": "roles/trafficdirector.admin",
+  "role_slug": "trafficdirector-admin",
+  "title": "Trafficdirector Admin",
+  "description": "Admin role for trafficdirector",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "resourcemanager",
+    "trafficdirector"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "trafficdirector",
+      "permissions": [
+        "trafficdirector.networks.getConfigs",
+        "trafficdirector.networks.reportMetrics"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "trafficdirector.networks.getConfigs",
+    "trafficdirector.networks.reportMetrics"
+  ]
+}

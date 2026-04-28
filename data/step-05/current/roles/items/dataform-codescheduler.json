@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.450Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataform.codeScheduler --format=json"
+  },
+  "name": "roles/dataform.codeScheduler",
+  "role_slug": "dataform-codescheduler",
+  "title": "Code Scheduler",
+  "description": "Access for scheduling workflows and releases.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "dataform"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dataform",
+      "permissions": [
+        "dataform.releaseConfigs.create",
+        "dataform.workflowConfigs.create"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dataform.releaseConfigs.create",
+    "dataform.workflowConfigs.create"
+  ]
+}

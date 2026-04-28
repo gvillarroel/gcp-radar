@@ -1,0 +1,82 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.279Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/commercebusinessenablement.admin --format=json"
+  },
+  "name": "roles/commercebusinessenablement.admin",
+  "role_slug": "commercebusinessenablement-admin",
+  "title": "Commerce Business Enablement Configuration Admin",
+  "description": "Admin of Various Provider Configuration resources",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 18,
+  "permission_groups": [
+    "bigquery",
+    "commercebusinessenablement",
+    "resourcemanager",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.datasets.create",
+        "bigquery.datasets.get",
+        "bigquery.datasets.update"
+      ]
+    },
+    {
+      "group": "commercebusinessenablement",
+      "permissions": [
+        "commercebusinessenablement.leadgenConfig.get",
+        "commercebusinessenablement.leadgenConfig.update",
+        "commercebusinessenablement.partnerAccounts.get",
+        "commercebusinessenablement.partnerAccounts.list",
+        "commercebusinessenablement.partnerInfo.get",
+        "commercebusinessenablement.resellerConfig.get",
+        "commercebusinessenablement.resellerConfig.update",
+        "commercebusinessenablement.resellerRestrictions.list",
+        "commercebusinessenablement.resellerRestrictions.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get",
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.operations.get",
+        "serviceusage.services.enable",
+        "serviceusage.services.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.datasets.create",
+    "bigquery.datasets.get",
+    "bigquery.datasets.update",
+    "commercebusinessenablement.leadgenConfig.get",
+    "commercebusinessenablement.leadgenConfig.update",
+    "commercebusinessenablement.partnerAccounts.get",
+    "commercebusinessenablement.partnerAccounts.list",
+    "commercebusinessenablement.partnerInfo.get",
+    "commercebusinessenablement.resellerConfig.get",
+    "commercebusinessenablement.resellerConfig.update",
+    "commercebusinessenablement.resellerRestrictions.list",
+    "commercebusinessenablement.resellerRestrictions.update",
+    "resourcemanager.organizations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "serviceusage.operations.get",
+    "serviceusage.services.enable",
+    "serviceusage.services.get"
+  ]
+}

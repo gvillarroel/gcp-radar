@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.275Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudtranslate.serviceAgent --format=json"
+  },
+  "name": "roles/cloudtranslate.serviceAgent",
+  "role_slug": "cloudtranslate-serviceagent",
+  "title": "Cloud Translation API Service Agent",
+  "description": "Gives Cloud Translation Service Account access to consumer resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "automl",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "automl",
+      "permissions": [
+        "automl.datasets.export",
+        "automl.datasets.get",
+        "automl.datasets.list",
+        "automl.models.get",
+        "automl.models.list",
+        "automl.operations.get"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.get",
+        "storage.objects.create",
+        "storage.objects.get",
+        "storage.objects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "automl.datasets.export",
+    "automl.datasets.get",
+    "automl.datasets.list",
+    "automl.models.get",
+    "automl.models.list",
+    "automl.operations.get",
+    "storage.buckets.get",
+    "storage.objects.create",
+    "storage.objects.get",
+    "storage.objects.list"
+  ]
+}

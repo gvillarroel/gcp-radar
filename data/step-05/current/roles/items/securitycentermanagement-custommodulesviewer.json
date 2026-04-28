@@ -1,0 +1,66 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.532Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securitycentermanagement.customModulesViewer --format=json"
+  },
+  "name": "roles/securitycentermanagement.customModulesViewer",
+  "role_slug": "securitycentermanagement-custommodulesviewer",
+  "title": "Security Center Management Custom Modules Viewer",
+  "description": "Readonly access to Cloud Security Command Center custom modules.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 16,
+  "permission_groups": [
+    "resourcemanager",
+    "securitycentermanagement"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get",
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "securitycentermanagement",
+      "permissions": [
+        "securitycentermanagement.effectiveEventThreatDetectionCustomModules.get",
+        "securitycentermanagement.effectiveEventThreatDetectionCustomModules.list",
+        "securitycentermanagement.effectiveSecurityHealthAnalyticsCustomModules.get",
+        "securitycentermanagement.effectiveSecurityHealthAnalyticsCustomModules.list",
+        "securitycentermanagement.eventThreatDetectionCustomModules.get",
+        "securitycentermanagement.eventThreatDetectionCustomModules.list",
+        "securitycentermanagement.eventThreatDetectionCustomModules.validate",
+        "securitycentermanagement.locations.get",
+        "securitycentermanagement.locations.list",
+        "securitycentermanagement.securityHealthAnalyticsCustomModules.get",
+        "securitycentermanagement.securityHealthAnalyticsCustomModules.list",
+        "securitycentermanagement.securityHealthAnalyticsCustomModules.simulate",
+        "securitycentermanagement.securityHealthAnalyticsCustomModules.test"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.organizations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "securitycentermanagement.effectiveEventThreatDetectionCustomModules.get",
+    "securitycentermanagement.effectiveEventThreatDetectionCustomModules.list",
+    "securitycentermanagement.effectiveSecurityHealthAnalyticsCustomModules.get",
+    "securitycentermanagement.effectiveSecurityHealthAnalyticsCustomModules.list",
+    "securitycentermanagement.eventThreatDetectionCustomModules.get",
+    "securitycentermanagement.eventThreatDetectionCustomModules.list",
+    "securitycentermanagement.eventThreatDetectionCustomModules.validate",
+    "securitycentermanagement.locations.get",
+    "securitycentermanagement.locations.list",
+    "securitycentermanagement.securityHealthAnalyticsCustomModules.get",
+    "securitycentermanagement.securityHealthAnalyticsCustomModules.list",
+    "securitycentermanagement.securityHealthAnalyticsCustomModules.simulate",
+    "securitycentermanagement.securityHealthAnalyticsCustomModules.test"
+  ]
+}

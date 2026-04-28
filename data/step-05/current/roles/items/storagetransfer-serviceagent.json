@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.621Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/storagetransfer.serviceAgent --format=json"
+  },
+  "name": "roles/storagetransfer.serviceAgent",
+  "role_slug": "storagetransfer-serviceagent",
+  "title": "Storage Transfer Service Agent",
+  "description": "Grants Storage Transfer Service Agent permissions required to run transfers",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "pubsub"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "pubsub",
+      "permissions": [
+        "pubsub.subscriptions.consume",
+        "pubsub.subscriptions.create",
+        "pubsub.subscriptions.delete",
+        "pubsub.subscriptions.get",
+        "pubsub.subscriptions.update",
+        "pubsub.topics.attachSubscription",
+        "pubsub.topics.create",
+        "pubsub.topics.delete",
+        "pubsub.topics.get",
+        "pubsub.topics.publish",
+        "pubsub.topics.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "pubsub.subscriptions.consume",
+    "pubsub.subscriptions.create",
+    "pubsub.subscriptions.delete",
+    "pubsub.subscriptions.get",
+    "pubsub.subscriptions.update",
+    "pubsub.topics.attachSubscription",
+    "pubsub.topics.create",
+    "pubsub.topics.delete",
+    "pubsub.topics.get",
+    "pubsub.topics.publish",
+    "pubsub.topics.update"
+  ]
+}

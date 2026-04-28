@@ -1,0 +1,62 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.796Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/aiplatform.agentSandboxServiceAgent --format=json"
+  },
+  "name": "roles/aiplatform.agentSandboxServiceAgent",
+  "role_slug": "aiplatform-agentsandboxserviceagent",
+  "title": "Vertex AI Agent Sandbox Service Agent",
+  "description": "Vertex AI Service Agent used to access Agent Sandbox managed resources in consumer project with restricted permissions.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "artifactregistry",
+    "logging",
+    "serviceusage",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "artifactregistry",
+      "permissions": [
+        "artifactregistry.repositories.downloadArtifacts"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create",
+        "logging.logEntries.route"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.objects.create",
+        "storage.objects.delete",
+        "storage.objects.get",
+        "storage.objects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "artifactregistry.repositories.downloadArtifacts",
+    "logging.logEntries.create",
+    "logging.logEntries.route",
+    "serviceusage.services.use",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.get",
+    "storage.objects.list"
+  ]
+}

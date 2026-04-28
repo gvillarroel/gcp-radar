@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.406Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/contentwarehouse.documentViewer --format=json"
+  },
+  "name": "roles/contentwarehouse.documentViewer",
+  "role_slug": "contentwarehouse-documentviewer",
+  "title": "Content Warehouse Viewer",
+  "description": "Grants access to view all the resources in Content Warehouse",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "contentwarehouse",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "contentwarehouse",
+      "permissions": [
+        "contentwarehouse.documents.get",
+        "contentwarehouse.documents.getIamPolicy",
+        "contentwarehouse.documentSchemas.get",
+        "contentwarehouse.links.get",
+        "contentwarehouse.locations.getStatus",
+        "contentwarehouse.rawDocuments.download"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "contentwarehouse.documents.get",
+    "contentwarehouse.documents.getIamPolicy",
+    "contentwarehouse.documentSchemas.get",
+    "contentwarehouse.links.get",
+    "contentwarehouse.locations.getStatus",
+    "contentwarehouse.rawDocuments.download",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

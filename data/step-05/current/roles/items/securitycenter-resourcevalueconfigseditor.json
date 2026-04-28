@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.517Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securitycenter.resourceValueConfigsEditor --format=json"
+  },
+  "name": "roles/securitycenter.resourceValueConfigsEditor",
+  "role_slug": "securitycenter-resourcevalueconfigseditor",
+  "title": "Security Center Resource Value Configurations Editor",
+  "description": "Read-Write access to security center resource value configurations",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "resourcemanager",
+    "securitycenter"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.tagValues.get"
+      ]
+    },
+    {
+      "group": "securitycenter",
+      "permissions": [
+        "securitycenter.resourcevalueconfigs.create",
+        "securitycenter.resourcevalueconfigs.delete",
+        "securitycenter.resourcevalueconfigs.get",
+        "securitycenter.resourcevalueconfigs.list",
+        "securitycenter.resourcevalueconfigs.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.tagValues.get",
+    "securitycenter.resourcevalueconfigs.create",
+    "securitycenter.resourcevalueconfigs.delete",
+    "securitycenter.resourcevalueconfigs.get",
+    "securitycenter.resourcevalueconfigs.list",
+    "securitycenter.resourcevalueconfigs.update"
+  ]
+}

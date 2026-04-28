@@ -1,0 +1,80 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.302Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/composer.user --format=json"
+  },
+  "name": "roles/composer.user",
+  "role_slug": "composer-user",
+  "title": "Composer User",
+  "description": "Read and use access to Composer resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 23,
+  "permission_groups": [
+    "composer",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "composer",
+      "permissions": [
+        "composer.dags.execute",
+        "composer.dags.get",
+        "composer.dags.getSourceCode",
+        "composer.dags.list",
+        "composer.environments.get",
+        "composer.environments.list",
+        "composer.imageversions.list",
+        "composer.operations.get",
+        "composer.operations.list",
+        "composer.userworkloadsconfigmaps.get",
+        "composer.userworkloadsconfigmaps.list",
+        "composer.userworkloadssecrets.get",
+        "composer.userworkloadssecrets.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.consumerpolicy.analyze",
+        "serviceusage.consumerpolicy.get",
+        "serviceusage.effectivepolicy.get",
+        "serviceusage.groups.list",
+        "serviceusage.groups.listExpandedMembers",
+        "serviceusage.groups.listMembers",
+        "serviceusage.quotas.get",
+        "serviceusage.services.get",
+        "serviceusage.services.list",
+        "serviceusage.values.test"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "composer.dags.execute",
+    "composer.dags.get",
+    "composer.dags.getSourceCode",
+    "composer.dags.list",
+    "composer.environments.get",
+    "composer.environments.list",
+    "composer.imageversions.list",
+    "composer.operations.get",
+    "composer.operations.list",
+    "composer.userworkloadsconfigmaps.get",
+    "composer.userworkloadsconfigmaps.list",
+    "composer.userworkloadssecrets.get",
+    "composer.userworkloadssecrets.list",
+    "serviceusage.consumerpolicy.analyze",
+    "serviceusage.consumerpolicy.get",
+    "serviceusage.effectivepolicy.get",
+    "serviceusage.groups.list",
+    "serviceusage.groups.listExpandedMembers",
+    "serviceusage.groups.listMembers",
+    "serviceusage.quotas.get",
+    "serviceusage.services.get",
+    "serviceusage.services.list",
+    "serviceusage.values.test"
+  ]
+}

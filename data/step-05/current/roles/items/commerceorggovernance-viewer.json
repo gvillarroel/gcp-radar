@@ -1,0 +1,62 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.287Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/commerceorggovernance.viewer --format=json"
+  },
+  "name": "roles/commerceorggovernance.viewer",
+  "role_slug": "commerceorggovernance-viewer",
+  "title": "Commerce Organization Governance Viewer",
+  "description": "Full access to Organization Governance read-only APIs.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "commerceorggovernance",
+    "consumerprocurement",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "commerceorggovernance",
+      "permissions": [
+        "commerceorggovernance.collections.get",
+        "commerceorggovernance.collections.list",
+        "commerceorggovernance.consumerSharingPolicies.get",
+        "commerceorggovernance.organizationSettings.get",
+        "commerceorggovernance.populateCollectionJobs.list",
+        "commerceorggovernance.services.get",
+        "commerceorggovernance.services.list"
+      ]
+    },
+    {
+      "group": "consumerprocurement",
+      "permissions": [
+        "consumerprocurement.entitlements.get",
+        "consumerprocurement.entitlements.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "commerceorggovernance.collections.get",
+    "commerceorggovernance.collections.list",
+    "commerceorggovernance.consumerSharingPolicies.get",
+    "commerceorggovernance.organizationSettings.get",
+    "commerceorggovernance.populateCollectionJobs.list",
+    "commerceorggovernance.services.get",
+    "commerceorggovernance.services.list",
+    "consumerprocurement.entitlements.get",
+    "consumerprocurement.entitlements.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

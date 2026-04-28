@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.233Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/orgpolicy.policyViewer --format=json"
+  },
+  "name": "roles/orgpolicy.policyViewer",
+  "role_slug": "orgpolicy-policyviewer",
+  "title": "Organization Policy Viewer",
+  "description": "Access to view Organization Policies on resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "orgpolicy"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "orgpolicy",
+      "permissions": [
+        "orgpolicy.constraints.list",
+        "orgpolicy.customConstraints.get",
+        "orgpolicy.customConstraints.list",
+        "orgpolicy.policies.list",
+        "orgpolicy.policy.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "orgpolicy.constraints.list",
+    "orgpolicy.customConstraints.get",
+    "orgpolicy.customConstraints.list",
+    "orgpolicy.policies.list",
+    "orgpolicy.policy.get"
+  ]
+}

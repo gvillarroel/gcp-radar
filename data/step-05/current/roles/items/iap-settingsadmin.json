@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.967Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/iap.settingsAdmin --format=json"
+  },
+  "name": "roles/iap.settingsAdmin",
+  "role_slug": "iap-settingsadmin",
+  "title": "IAP Settings Admin",
+  "description": "Administrator of IAP Settings.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "iap"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "iap",
+      "permissions": [
+        "iap.projects.getSettings",
+        "iap.projects.updateSettings",
+        "iap.web.getSettings",
+        "iap.web.updateSettings",
+        "iap.webServices.getSettings",
+        "iap.webServices.updateSettings",
+        "iap.webServiceVersions.getSettings",
+        "iap.webServiceVersions.updateSettings",
+        "iap.webTypes.getSettings",
+        "iap.webTypes.updateSettings"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "iap.projects.getSettings",
+    "iap.projects.updateSettings",
+    "iap.web.getSettings",
+    "iap.web.updateSettings",
+    "iap.webServices.getSettings",
+    "iap.webServices.updateSettings",
+    "iap.webServiceVersions.getSettings",
+    "iap.webServiceVersions.updateSettings",
+    "iap.webTypes.getSettings",
+    "iap.webTypes.updateSettings"
+  ]
+}

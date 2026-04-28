@@ -1,0 +1,64 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.755Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebaseapphosting.viewer --format=json"
+  },
+  "name": "roles/firebaseapphosting.viewer",
+  "role_slug": "firebaseapphosting-viewer",
+  "title": "Firebase App Hosting Viewer",
+  "description": "Grants readonly access to Firebase App Hosting resources, but not permission to invoke the backend.  Intended for auditors, PMs, ect.  Includes minimal viewer permissions for Firebase Console.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 15,
+  "permission_groups": [
+    "firebaseapphosting",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "firebaseapphosting",
+      "permissions": [
+        "firebaseapphosting.backends.get",
+        "firebaseapphosting.backends.list",
+        "firebaseapphosting.builds.get",
+        "firebaseapphosting.builds.list",
+        "firebaseapphosting.domains.get",
+        "firebaseapphosting.domains.list",
+        "firebaseapphosting.locations.get",
+        "firebaseapphosting.locations.list",
+        "firebaseapphosting.operations.get",
+        "firebaseapphosting.operations.list",
+        "firebaseapphosting.rollouts.get",
+        "firebaseapphosting.rollouts.list",
+        "firebaseapphosting.traffic.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "firebaseapphosting.backends.get",
+    "firebaseapphosting.backends.list",
+    "firebaseapphosting.builds.get",
+    "firebaseapphosting.builds.list",
+    "firebaseapphosting.domains.get",
+    "firebaseapphosting.domains.list",
+    "firebaseapphosting.locations.get",
+    "firebaseapphosting.locations.list",
+    "firebaseapphosting.operations.get",
+    "firebaseapphosting.operations.list",
+    "firebaseapphosting.rollouts.get",
+    "firebaseapphosting.rollouts.list",
+    "firebaseapphosting.traffic.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

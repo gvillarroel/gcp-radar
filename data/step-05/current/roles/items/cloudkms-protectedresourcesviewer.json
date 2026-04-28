@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.209Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudkms.protectedResourcesViewer --format=json"
+  },
+  "name": "roles/cloudkms.protectedResourcesViewer",
+  "role_slug": "cloudkms-protectedresourcesviewer",
+  "title": "Cloud KMS Protected Resources Viewer",
+  "description": "Enables viewing protected resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "cloudkms"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudkms",
+      "permissions": [
+        "cloudkms.protectedResources.search"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudkms.protectedResources.search"
+  ]
+}

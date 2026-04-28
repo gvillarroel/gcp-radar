@@ -1,0 +1,82 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.023Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/bigquery.dataViewer --format=json"
+  },
+  "name": "roles/bigquery.dataViewer",
+  "role_slug": "bigquery-dataviewer",
+  "title": "BigQuery Data Viewer",
+  "description": "Access to view datasets and all of their contents",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 21,
+  "permission_groups": [
+    "bigquery",
+    "dataplex",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.datasets.get",
+        "bigquery.datasets.getIamPolicy",
+        "bigquery.models.export",
+        "bigquery.models.getData",
+        "bigquery.models.getMetadata",
+        "bigquery.models.list",
+        "bigquery.routines.get",
+        "bigquery.routines.list",
+        "bigquery.tables.createSnapshot",
+        "bigquery.tables.export",
+        "bigquery.tables.get",
+        "bigquery.tables.getData",
+        "bigquery.tables.getIamPolicy",
+        "bigquery.tables.list",
+        "bigquery.tables.replicateData"
+      ]
+    },
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.datascans.get",
+        "dataplex.datascans.getData",
+        "dataplex.datascans.getIamPolicy",
+        "dataplex.datascans.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.datasets.get",
+    "bigquery.datasets.getIamPolicy",
+    "bigquery.models.export",
+    "bigquery.models.getData",
+    "bigquery.models.getMetadata",
+    "bigquery.models.list",
+    "bigquery.routines.get",
+    "bigquery.routines.list",
+    "bigquery.tables.createSnapshot",
+    "bigquery.tables.export",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.getIamPolicy",
+    "bigquery.tables.list",
+    "bigquery.tables.replicateData",
+    "dataplex.datascans.get",
+    "dataplex.datascans.getData",
+    "dataplex.datascans.getIamPolicy",
+    "dataplex.datascans.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

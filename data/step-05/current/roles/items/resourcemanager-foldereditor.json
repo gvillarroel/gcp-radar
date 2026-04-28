@@ -1,0 +1,72 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.420Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/resourcemanager.folderEditor --format=json"
+  },
+  "name": "roles/resourcemanager.folderEditor",
+  "role_slug": "resourcemanager-foldereditor",
+  "title": "Folder Editor",
+  "description": "Edit, delete, and undelete a folder and all of its child resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 16,
+  "permission_groups": [
+    "essentialcontacts",
+    "orgpolicy",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "essentialcontacts",
+      "permissions": [
+        "essentialcontacts.contacts.get",
+        "essentialcontacts.contacts.list"
+      ]
+    },
+    {
+      "group": "orgpolicy",
+      "permissions": [
+        "orgpolicy.constraints.list",
+        "orgpolicy.policies.list",
+        "orgpolicy.policy.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.capabilities.get",
+        "resourcemanager.capabilities.update",
+        "resourcemanager.folders.delete",
+        "resourcemanager.folders.get",
+        "resourcemanager.folders.getIamPolicy",
+        "resourcemanager.folders.list",
+        "resourcemanager.folders.searchPolicyBindings",
+        "resourcemanager.folders.undelete",
+        "resourcemanager.folders.update",
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "essentialcontacts.contacts.get",
+    "essentialcontacts.contacts.list",
+    "orgpolicy.constraints.list",
+    "orgpolicy.policies.list",
+    "orgpolicy.policy.get",
+    "resourcemanager.capabilities.get",
+    "resourcemanager.capabilities.update",
+    "resourcemanager.folders.delete",
+    "resourcemanager.folders.get",
+    "resourcemanager.folders.getIamPolicy",
+    "resourcemanager.folders.list",
+    "resourcemanager.folders.searchPolicyBindings",
+    "resourcemanager.folders.undelete",
+    "resourcemanager.folders.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

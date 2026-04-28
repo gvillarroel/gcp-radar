@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.336Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/recommender.cloudCostRecommendationAdmin --format=json"
+  },
+  "name": "roles/recommender.cloudCostRecommendationAdmin",
+  "role_slug": "recommender-cloudcostrecommendationadmin",
+  "title": "Cloud Cost General Recommendations Recommender Admin",
+  "description": "Admin of Cloud Cost General Recommendations Insights and Recommendations.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "recommender",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.cloudCostGeneralInsights.get",
+        "recommender.cloudCostGeneralInsights.list",
+        "recommender.cloudCostGeneralInsights.update",
+        "recommender.cloudCostGeneralRecommendations.get",
+        "recommender.cloudCostGeneralRecommendations.list",
+        "recommender.cloudCostGeneralRecommendations.update",
+        "recommender.locations.get",
+        "recommender.locations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "recommender.cloudCostGeneralInsights.get",
+    "recommender.cloudCostGeneralInsights.list",
+    "recommender.cloudCostGeneralInsights.update",
+    "recommender.cloudCostGeneralRecommendations.get",
+    "recommender.cloudCostGeneralRecommendations.list",
+    "recommender.cloudCostGeneralRecommendations.update",
+    "recommender.locations.get",
+    "recommender.locations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

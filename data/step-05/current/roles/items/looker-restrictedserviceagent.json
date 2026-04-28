@@ -1,0 +1,56 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.031Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/looker.restrictedServiceAgent --format=json"
+  },
+  "name": "roles/looker.restrictedServiceAgent",
+  "role_slug": "looker-restrictedserviceagent",
+  "title": "Looker Service Agent",
+  "description": "Gives the Looker service account permission to manage customer resources. Does not include permissions to access BigQuery",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "compute",
+    "looker",
+    "resourcemanager",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.globalAddresses.get"
+      ]
+    },
+    {
+      "group": "looker",
+      "permissions": [
+        "looker.backups.create",
+        "looker.instances.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "compute.globalAddresses.get",
+    "looker.backups.create",
+    "looker.instances.get",
+    "resourcemanager.projects.get",
+    "serviceusage.services.use"
+  ]
+}

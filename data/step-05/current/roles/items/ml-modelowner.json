@@ -1,0 +1,56 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.101Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/ml.modelOwner --format=json"
+  },
+  "name": "roles/ml.modelOwner",
+  "role_slug": "ml-modelowner",
+  "title": "AI Platform Model Owner",
+  "description": "Full access to the model and its versions.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 14,
+  "permission_groups": [
+    "ml"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "ml",
+      "permissions": [
+        "ml.models.create",
+        "ml.models.delete",
+        "ml.models.get",
+        "ml.models.getIamPolicy",
+        "ml.models.list",
+        "ml.models.predict",
+        "ml.models.setIamPolicy",
+        "ml.models.update",
+        "ml.versions.create",
+        "ml.versions.delete",
+        "ml.versions.get",
+        "ml.versions.list",
+        "ml.versions.predict",
+        "ml.versions.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "ml.models.create",
+    "ml.models.delete",
+    "ml.models.get",
+    "ml.models.getIamPolicy",
+    "ml.models.list",
+    "ml.models.predict",
+    "ml.models.setIamPolicy",
+    "ml.models.update",
+    "ml.versions.create",
+    "ml.versions.delete",
+    "ml.versions.get",
+    "ml.versions.list",
+    "ml.versions.predict",
+    "ml.versions.update"
+  ]
+}

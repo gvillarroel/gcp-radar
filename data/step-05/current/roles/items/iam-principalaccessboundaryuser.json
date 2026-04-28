@@ -1,0 +1,36 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.926Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/iam.principalAccessBoundaryUser --format=json"
+  },
+  "name": "roles/iam.principalAccessBoundaryUser",
+  "role_slug": "iam-principalaccessboundaryuser",
+  "title": "Principal Access Boundary Policy User",
+  "description": "Principal Access Boundary Policies user role, with permissions to view principal access boundary policies, and to bind and unbind principal access boundary policies to targets",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "iam"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.principalaccessboundarypolicies.bind",
+        "iam.principalaccessboundarypolicies.get",
+        "iam.principalaccessboundarypolicies.list",
+        "iam.principalaccessboundarypolicies.unbind"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "iam.principalaccessboundarypolicies.bind",
+    "iam.principalaccessboundarypolicies.get",
+    "iam.principalaccessboundarypolicies.list",
+    "iam.principalaccessboundarypolicies.unbind"
+  ]
+}

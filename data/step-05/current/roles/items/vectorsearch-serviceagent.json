@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.670Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/vectorsearch.serviceAgent --format=json"
+  },
+  "name": "roles/vectorsearch.serviceAgent",
+  "role_slug": "vectorsearch-serviceagent",
+  "title": "Vector Search Service Agent",
+  "description": "Gives Vector Search access to read Cloud Storage buckets and read/create objects.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "aiplatform",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "aiplatform",
+      "permissions": [
+        "aiplatform.endpoints.predict"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.get",
+        "storage.objects.create",
+        "storage.objects.get",
+        "storage.objects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "aiplatform.endpoints.predict",
+    "storage.buckets.get",
+    "storage.objects.create",
+    "storage.objects.get",
+    "storage.objects.list"
+  ]
+}

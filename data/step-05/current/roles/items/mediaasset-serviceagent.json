@@ -1,0 +1,56 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.076Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/mediaasset.serviceAgent --format=json"
+  },
+  "name": "roles/mediaasset.serviceAgent",
+  "role_slug": "mediaasset-serviceagent",
+  "title": "Media Asset Service Agent",
+  "description": "Downloads and uploads media files from and to customer GCS buckets.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "pubsub",
+    "storage",
+    "transcoder"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "pubsub",
+      "permissions": [
+        "pubsub.topics.get",
+        "pubsub.topics.publish"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.objects.create",
+        "storage.objects.delete",
+        "storage.objects.get"
+      ]
+    },
+    {
+      "group": "transcoder",
+      "permissions": [
+        "transcoder.jobs.create",
+        "transcoder.jobs.delete",
+        "transcoder.jobs.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "pubsub.topics.get",
+    "pubsub.topics.publish",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.get",
+    "transcoder.jobs.create",
+    "transcoder.jobs.delete",
+    "transcoder.jobs.get"
+  ]
+}

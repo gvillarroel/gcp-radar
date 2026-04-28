@@ -1,0 +1,60 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.213Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/oracledatabase.dbSystemViewer --format=json"
+  },
+  "name": "roles/oracledatabase.dbSystemViewer",
+  "role_slug": "oracledatabase-dbsystemviewer",
+  "title": "Oracle Database@Google Cloud DB System Viewer",
+  "description": "Grants read access to see all DB System resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "oracledatabase",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "oracledatabase",
+      "permissions": [
+        "oracledatabase.databaseCharacterSets.list",
+        "oracledatabase.databases.get",
+        "oracledatabase.databases.list",
+        "oracledatabase.dbSystems.get",
+        "oracledatabase.dbSystems.list",
+        "oracledatabase.dbSystemShapes.list",
+        "oracledatabase.entitlements.list",
+        "oracledatabase.locations.get",
+        "oracledatabase.locations.list",
+        "oracledatabase.operations.get",
+        "oracledatabase.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "oracledatabase.databaseCharacterSets.list",
+    "oracledatabase.databases.get",
+    "oracledatabase.databases.list",
+    "oracledatabase.dbSystems.get",
+    "oracledatabase.dbSystems.list",
+    "oracledatabase.dbSystemShapes.list",
+    "oracledatabase.entitlements.list",
+    "oracledatabase.locations.get",
+    "oracledatabase.locations.list",
+    "oracledatabase.operations.get",
+    "oracledatabase.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

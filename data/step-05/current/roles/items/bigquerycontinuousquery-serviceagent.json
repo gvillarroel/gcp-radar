@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.037Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/bigquerycontinuousquery.serviceAgent --format=json"
+  },
+  "name": "roles/bigquerycontinuousquery.serviceAgent",
+  "role_slug": "bigquerycontinuousquery-serviceagent",
+  "title": "BigQuery Continuous Query Service Agent",
+  "description": "Gives BigQuery Continuous Query access to the service accounts in the user project.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "iam"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.serviceAccounts.getAccessToken"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "iam.serviceAccounts.getAccessToken"
+  ]
+}

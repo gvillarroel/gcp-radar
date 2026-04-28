@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.613Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/storage.objectUser --format=json"
+  },
+  "name": "roles/storage.objectUser",
+  "role_slug": "storage-objectuser",
+  "title": "Storage Object User",
+  "description": "Access to create, read, update and delete objects and multipart uploads in GCS.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 27,
+  "permission_groups": [
+    "monitoring",
+    "orgpolicy",
+    "resourcemanager",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.timeSeries.create"
+      ]
+    },
+    {
+      "group": "orgpolicy",
+      "permissions": [
+        "orgpolicy.policy.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.folders.create",
+        "storage.folders.delete",
+        "storage.folders.get",
+        "storage.folders.list",
+        "storage.folders.rename",
+        "storage.managedFolders.create",
+        "storage.managedFolders.delete",
+        "storage.managedFolders.get",
+        "storage.managedFolders.list",
+        "storage.multipartUploads.abort",
+        "storage.multipartUploads.create",
+        "storage.multipartUploads.list",
+        "storage.multipartUploads.listParts",
+        "storage.objects.create",
+        "storage.objects.createContext",
+        "storage.objects.delete",
+        "storage.objects.deleteContext",
+        "storage.objects.get",
+        "storage.objects.list",
+        "storage.objects.move",
+        "storage.objects.restore",
+        "storage.objects.update",
+        "storage.objects.updateContext"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "monitoring.timeSeries.create",
+    "orgpolicy.policy.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "storage.folders.create",
+    "storage.folders.delete",
+    "storage.folders.get",
+    "storage.folders.list",
+    "storage.folders.rename",
+    "storage.managedFolders.create",
+    "storage.managedFolders.delete",
+    "storage.managedFolders.get",
+    "storage.managedFolders.list",
+    "storage.multipartUploads.abort",
+    "storage.multipartUploads.create",
+    "storage.multipartUploads.list",
+    "storage.multipartUploads.listParts",
+    "storage.objects.create",
+    "storage.objects.createContext",
+    "storage.objects.delete",
+    "storage.objects.deleteContext",
+    "storage.objects.get",
+    "storage.objects.list",
+    "storage.objects.move",
+    "storage.objects.restore",
+    "storage.objects.update",
+    "storage.objects.updateContext"
+  ]
+}

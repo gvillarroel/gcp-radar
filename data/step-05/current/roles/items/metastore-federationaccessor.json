@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.087Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/metastore.federationAccessor --format=json"
+  },
+  "name": "roles/metastore.federationAccessor",
+  "role_slug": "metastore-federationaccessor",
+  "title": "Metastore Federation Accessor",
+  "description": "Access to the Metastore Federation resource.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "metastore"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "metastore",
+      "permissions": [
+        "metastore.federations.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "metastore.federations.use"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.910Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/appengine.codeViewer --format=json"
+  },
+  "name": "roles/appengine.codeViewer",
+  "role_slug": "appengine-codeviewer",
+  "title": "App Engine Code Viewer",
+  "description": "Ability to view App Engine app status and deployed source code.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 14,
+  "permission_groups": [
+    "appengine",
+    "artifactregistry",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "appengine",
+      "permissions": [
+        "appengine.applications.get",
+        "appengine.applications.listRuntimes",
+        "appengine.instances.get",
+        "appengine.instances.list",
+        "appengine.operations.get",
+        "appengine.operations.list",
+        "appengine.services.get",
+        "appengine.services.list",
+        "appengine.versions.get",
+        "appengine.versions.getFileContents",
+        "appengine.versions.list"
+      ]
+    },
+    {
+      "group": "artifactregistry",
+      "permissions": [
+        "artifactregistry.projectsettings.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "appengine.applications.get",
+    "appengine.applications.listRuntimes",
+    "appengine.instances.get",
+    "appengine.instances.list",
+    "appengine.operations.get",
+    "appengine.operations.list",
+    "appengine.services.get",
+    "appengine.services.list",
+    "appengine.versions.get",
+    "appengine.versions.getFileContents",
+    "appengine.versions.list",
+    "artifactregistry.projectsettings.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

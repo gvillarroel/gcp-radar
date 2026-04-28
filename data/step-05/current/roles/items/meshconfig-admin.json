@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.082Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/meshconfig.admin --format=json"
+  },
+  "name": "roles/meshconfig.admin",
+  "role_slug": "meshconfig-admin",
+  "title": "Mesh Config Admin",
+  "description": "Full access to all mesh configuration resources",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "meshconfig"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "meshconfig",
+      "permissions": [
+        "meshconfig.projects.init"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "meshconfig.projects.init"
+  ]
+}

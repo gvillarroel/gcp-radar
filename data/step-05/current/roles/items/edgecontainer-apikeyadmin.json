@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.665Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/edgecontainer.apiKeyAdmin --format=json"
+  },
+  "name": "roles/edgecontainer.apiKeyAdmin",
+  "role_slug": "edgecontainer-apikeyadmin",
+  "title": "Edge Container API Key Admin",
+  "description": "Access to manage API Keys.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "edgecontainer"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "edgecontainer",
+      "permissions": [
+        "edgecontainer.apikeys.create",
+        "edgecontainer.apikeys.delete",
+        "edgecontainer.apikeys.get",
+        "edgecontainer.apikeys.list",
+        "edgecontainer.locations.get",
+        "edgecontainer.locations.list",
+        "edgecontainer.operations.cancel",
+        "edgecontainer.operations.delete",
+        "edgecontainer.operations.get",
+        "edgecontainer.operations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "edgecontainer.apikeys.create",
+    "edgecontainer.apikeys.delete",
+    "edgecontainer.apikeys.get",
+    "edgecontainer.apikeys.list",
+    "edgecontainer.locations.get",
+    "edgecontainer.locations.list",
+    "edgecontainer.operations.cancel",
+    "edgecontainer.operations.delete",
+    "edgecontainer.operations.get",
+    "edgecontainer.operations.list"
+  ]
+}

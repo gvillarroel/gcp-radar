@@ -1,0 +1,52 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.477Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securesourcemanager.developerConnectLinker --format=json"
+  },
+  "name": "roles/securesourcemanager.developerConnectLinker",
+  "role_slug": "securesourcemanager-developerconnectlinker",
+  "title": "Secure Source Manager Developer Connect Linker",
+  "description": "A Developer Connect Linker can link a Secure Source Manager instance to Developer Connect.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "resourcemanager",
+    "securesourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "securesourcemanager",
+      "permissions": [
+        "securesourcemanager.instances.access",
+        "securesourcemanager.instances.linkDeveloperConnect",
+        "securesourcemanager.operations.get",
+        "securesourcemanager.repositories.fetch",
+        "securesourcemanager.repositories.get",
+        "securesourcemanager.repositories.list",
+        "securesourcemanager.repositories.push"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "securesourcemanager.instances.access",
+    "securesourcemanager.instances.linkDeveloperConnect",
+    "securesourcemanager.operations.get",
+    "securesourcemanager.repositories.fetch",
+    "securesourcemanager.repositories.get",
+    "securesourcemanager.repositories.list",
+    "securesourcemanager.repositories.push"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.272Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudtrace.user --format=json"
+  },
+  "name": "roles/cloudtrace.user",
+  "role_slug": "cloudtrace-user",
+  "title": "Cloud Trace User",
+  "description": "User access to Cloud Trace. Can view traces, insights and stats. Can create, list, view, and delete tasks.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 22,
+  "permission_groups": [
+    "cloudtrace",
+    "observability",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudtrace",
+      "permissions": [
+        "cloudtrace.insights.get",
+        "cloudtrace.insights.list",
+        "cloudtrace.stats.get",
+        "cloudtrace.tasks.create",
+        "cloudtrace.tasks.delete",
+        "cloudtrace.tasks.get",
+        "cloudtrace.tasks.list",
+        "cloudtrace.traces.get",
+        "cloudtrace.traces.list",
+        "cloudtrace.traceScopes.create",
+        "cloudtrace.traceScopes.delete",
+        "cloudtrace.traceScopes.get",
+        "cloudtrace.traceScopes.list",
+        "cloudtrace.traceScopes.update"
+      ]
+    },
+    {
+      "group": "observability",
+      "permissions": [
+        "observability.scopes.get",
+        "observability.traceScopes.create",
+        "observability.traceScopes.delete",
+        "observability.traceScopes.get",
+        "observability.traceScopes.list",
+        "observability.traceScopes.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudtrace.insights.get",
+    "cloudtrace.insights.list",
+    "cloudtrace.stats.get",
+    "cloudtrace.tasks.create",
+    "cloudtrace.tasks.delete",
+    "cloudtrace.tasks.get",
+    "cloudtrace.tasks.list",
+    "cloudtrace.traces.get",
+    "cloudtrace.traces.list",
+    "cloudtrace.traceScopes.create",
+    "cloudtrace.traceScopes.delete",
+    "cloudtrace.traceScopes.get",
+    "cloudtrace.traceScopes.list",
+    "cloudtrace.traceScopes.update",
+    "observability.scopes.get",
+    "observability.traceScopes.create",
+    "observability.traceScopes.delete",
+    "observability.traceScopes.get",
+    "observability.traceScopes.list",
+    "observability.traceScopes.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

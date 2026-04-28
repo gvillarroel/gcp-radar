@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.626Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/stream.contentBuilder --format=json"
+  },
+  "name": "roles/stream.contentBuilder",
+  "role_slug": "stream-contentbuilder",
+  "title": "Stream Content Builder",
+  "description": "Read and build access to StreamContent resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "resourcemanager",
+    "stream"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "stream",
+      "permissions": [
+        "stream.streamContents.build",
+        "stream.streamContents.get",
+        "stream.streamContents.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "stream.streamContents.build",
+    "stream.streamContents.get",
+    "stream.streamContents.list"
+  ]
+}

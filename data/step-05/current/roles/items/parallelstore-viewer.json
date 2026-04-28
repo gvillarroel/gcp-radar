@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.260Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/parallelstore.viewer --format=json"
+  },
+  "name": "roles/parallelstore.viewer",
+  "role_slug": "parallelstore-viewer",
+  "title": "Parallelstore Viewer",
+  "description": "Readonly access to Parallelstore resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "parallelstore",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "parallelstore",
+      "permissions": [
+        "parallelstore.instances.get",
+        "parallelstore.instances.list",
+        "parallelstore.locations.get",
+        "parallelstore.locations.list",
+        "parallelstore.operations.get",
+        "parallelstore.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "parallelstore.instances.get",
+    "parallelstore.instances.list",
+    "parallelstore.locations.get",
+    "parallelstore.locations.list",
+    "parallelstore.operations.get",
+    "parallelstore.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

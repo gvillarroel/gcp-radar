@@ -1,0 +1,78 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.730Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebase.analyticsViewer --format=json"
+  },
+  "name": "roles/firebase.analyticsViewer",
+  "role_slug": "firebase-analyticsviewer",
+  "title": "Firebase Analytics Viewer",
+  "description": "Read access to Google Analytics for Firebase.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "cloudnotifications",
+    "firebase",
+    "firebaseanalytics",
+    "firebaseextensions",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudnotifications",
+      "permissions": [
+        "cloudnotifications.activities.list"
+      ]
+    },
+    {
+      "group": "firebase",
+      "permissions": [
+        "firebase.billingPlans.get",
+        "firebase.clients.get",
+        "firebase.clients.list",
+        "firebase.links.list",
+        "firebase.playLinks.get",
+        "firebase.playLinks.list",
+        "firebase.projects.get"
+      ]
+    },
+    {
+      "group": "firebaseanalytics",
+      "permissions": [
+        "firebaseanalytics.resources.googleAnalyticsReadAndAnalyze"
+      ]
+    },
+    {
+      "group": "firebaseextensions",
+      "permissions": [
+        "firebaseextensions.configs.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.getIamPolicy",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudnotifications.activities.list",
+    "firebase.billingPlans.get",
+    "firebase.clients.get",
+    "firebase.clients.list",
+    "firebase.links.list",
+    "firebase.playLinks.get",
+    "firebase.playLinks.list",
+    "firebase.projects.get",
+    "firebaseanalytics.resources.googleAnalyticsReadAndAnalyze",
+    "firebaseextensions.configs.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.getIamPolicy",
+    "resourcemanager.projects.list"
+  ]
+}

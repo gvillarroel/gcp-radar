@@ -1,0 +1,60 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.765Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebasecrashlytics.viewer --format=json"
+  },
+  "name": "roles/firebasecrashlytics.viewer",
+  "role_slug": "firebasecrashlytics-viewer",
+  "title": "Firebase Crashlytics Viewer",
+  "description": "Read-only access to Firebase Crashlytics resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "firebase",
+    "firebasecrashlytics",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "firebase",
+      "permissions": [
+        "firebase.clients.get",
+        "firebase.clients.list",
+        "firebase.projects.get"
+      ]
+    },
+    {
+      "group": "firebasecrashlytics",
+      "permissions": [
+        "firebasecrashlytics.config.get",
+        "firebasecrashlytics.data.get",
+        "firebasecrashlytics.issues.get",
+        "firebasecrashlytics.issues.list",
+        "firebasecrashlytics.sessions.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "firebase.clients.get",
+    "firebase.clients.list",
+    "firebase.projects.get",
+    "firebasecrashlytics.config.get",
+    "firebasecrashlytics.data.get",
+    "firebasecrashlytics.issues.get",
+    "firebasecrashlytics.issues.list",
+    "firebasecrashlytics.sessions.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

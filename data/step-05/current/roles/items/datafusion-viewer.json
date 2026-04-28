@@ -1,0 +1,80 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.462Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datafusion.viewer --format=json"
+  },
+  "name": "roles/datafusion.viewer",
+  "role_slug": "datafusion-viewer",
+  "title": "Cloud Data Fusion Viewer",
+  "description": "Read-only access to Cloud Data Fusion Instances, Namespaces and related resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 23,
+  "permission_groups": [
+    "datafusion",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datafusion",
+      "permissions": [
+        "datafusion.artifacts.get",
+        "datafusion.artifacts.list",
+        "datafusion.instances.get",
+        "datafusion.instances.getIamPolicy",
+        "datafusion.instances.list",
+        "datafusion.instances.listEffectiveTags",
+        "datafusion.instances.listTagBindings",
+        "datafusion.locations.get",
+        "datafusion.locations.list",
+        "datafusion.namespaces.get",
+        "datafusion.namespaces.getIamPolicy",
+        "datafusion.namespaces.list",
+        "datafusion.operations.get",
+        "datafusion.operations.list",
+        "datafusion.pipelineConnections.get",
+        "datafusion.pipelineConnections.list",
+        "datafusion.pipelines.get",
+        "datafusion.pipelines.list",
+        "datafusion.profiles.get",
+        "datafusion.profiles.list",
+        "datafusion.secureKeys.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datafusion.artifacts.get",
+    "datafusion.artifacts.list",
+    "datafusion.instances.get",
+    "datafusion.instances.getIamPolicy",
+    "datafusion.instances.list",
+    "datafusion.instances.listEffectiveTags",
+    "datafusion.instances.listTagBindings",
+    "datafusion.locations.get",
+    "datafusion.locations.list",
+    "datafusion.namespaces.get",
+    "datafusion.namespaces.getIamPolicy",
+    "datafusion.namespaces.list",
+    "datafusion.operations.get",
+    "datafusion.operations.list",
+    "datafusion.pipelineConnections.get",
+    "datafusion.pipelineConnections.list",
+    "datafusion.pipelines.get",
+    "datafusion.pipelines.list",
+    "datafusion.profiles.get",
+    "datafusion.profiles.list",
+    "datafusion.secureKeys.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

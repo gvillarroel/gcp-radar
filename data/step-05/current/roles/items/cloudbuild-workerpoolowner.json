@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.147Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudbuild.workerPoolOwner --format=json"
+  },
+  "name": "roles/cloudbuild.workerPoolOwner",
+  "role_slug": "cloudbuild-workerpoolowner",
+  "title": "Cloud Build WorkerPool Owner",
+  "description": "Can create, delete, update, and view WorkerPools",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "cloudbuild",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudbuild",
+      "permissions": [
+        "cloudbuild.workerpools.create",
+        "cloudbuild.workerpools.delete",
+        "cloudbuild.workerpools.get",
+        "cloudbuild.workerpools.list",
+        "cloudbuild.workerpools.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudbuild.workerpools.create",
+    "cloudbuild.workerpools.delete",
+    "cloudbuild.workerpools.get",
+    "cloudbuild.workerpools.list",
+    "cloudbuild.workerpools.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

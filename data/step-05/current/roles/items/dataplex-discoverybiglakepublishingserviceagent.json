@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.495Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataplex.discoveryBigLakePublishingServiceAgent --format=json"
+  },
+  "name": "roles/dataplex.discoveryBigLakePublishingServiceAgent",
+  "role_slug": "dataplex-discoverybiglakepublishingserviceagent",
+  "title": "Dataplex Discovery BigLake Publishing Service Agent",
+  "description": "Gives the Dataplex Discovery Service Agent permissions to use bigquery connection.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "bigquery"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.connections.delegate",
+        "bigquery.connections.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.connections.delegate",
+    "bigquery.connections.use"
+  ]
+}

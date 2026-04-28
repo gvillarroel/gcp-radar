@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.708Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/visionai.streamViewer --format=json"
+  },
+  "name": "roles/visionai.streamViewer",
+  "role_slug": "visionai-streamviewer",
+  "title": "Vision AI Stream Viewer",
+  "description": "Access to read Vision AI Streams.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "visionai"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "visionai",
+      "permissions": [
+        "visionai.streams.get",
+        "visionai.streams.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "visionai.streams.get",
+    "visionai.streams.list"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.407Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/contentwarehouse.serviceAgent --format=json"
+  },
+  "name": "roles/contentwarehouse.serviceAgent",
+  "role_slug": "contentwarehouse-serviceagent",
+  "title": "Content Warehouse Service Agent",
+  "description": "Gives the Content Warehouse service account to manage customer resources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "cloudfunctions",
+    "documentai",
+    "pubsub",
+    "pubsublite",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudfunctions",
+      "permissions": [
+        "cloudfunctions.functions.invoke"
+      ]
+    },
+    {
+      "group": "documentai",
+      "permissions": [
+        "documentai.datasets.createDocuments",
+        "documentai.processors.get",
+        "documentai.processors.processBatch"
+      ]
+    },
+    {
+      "group": "pubsub",
+      "permissions": [
+        "pubsub.topics.publish"
+      ]
+    },
+    {
+      "group": "pubsublite",
+      "permissions": [
+        "pubsublite.topics.publish"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.get",
+        "storage.buckets.list",
+        "storage.objects.create",
+        "storage.objects.delete",
+        "storage.objects.get",
+        "storage.objects.list",
+        "storage.objects.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudfunctions.functions.invoke",
+    "documentai.datasets.createDocuments",
+    "documentai.processors.get",
+    "documentai.processors.processBatch",
+    "pubsub.topics.publish",
+    "pubsublite.topics.publish",
+    "storage.buckets.get",
+    "storage.buckets.list",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.get",
+    "storage.objects.list",
+    "storage.objects.update"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.890Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/healthcare.dicomEditor --format=json"
+  },
+  "name": "roles/healthcare.dicomEditor",
+  "role_slug": "healthcare-dicomeditor",
+  "title": "Healthcare DICOM Editor",
+  "description": "Edit DICOM images individually and in bulk.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 16,
+  "permission_groups": [
+    "healthcare",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "healthcare",
+      "permissions": [
+        "healthcare.datasets.get",
+        "healthcare.datasets.list",
+        "healthcare.dicomStores.dicomWebDelete",
+        "healthcare.dicomStores.dicomWebRead",
+        "healthcare.dicomStores.dicomWebUpdate",
+        "healthcare.dicomStores.dicomWebWrite",
+        "healthcare.dicomStores.export",
+        "healthcare.dicomStores.get",
+        "healthcare.dicomStores.import",
+        "healthcare.dicomStores.list",
+        "healthcare.locations.get",
+        "healthcare.locations.list",
+        "healthcare.operations.cancel",
+        "healthcare.operations.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "healthcare.datasets.get",
+    "healthcare.datasets.list",
+    "healthcare.dicomStores.dicomWebDelete",
+    "healthcare.dicomStores.dicomWebRead",
+    "healthcare.dicomStores.dicomWebUpdate",
+    "healthcare.dicomStores.dicomWebWrite",
+    "healthcare.dicomStores.export",
+    "healthcare.dicomStores.get",
+    "healthcare.dicomStores.import",
+    "healthcare.dicomStores.list",
+    "healthcare.locations.get",
+    "healthcare.locations.list",
+    "healthcare.operations.cancel",
+    "healthcare.operations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

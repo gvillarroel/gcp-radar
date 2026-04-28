@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.234Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/osconfig.guestPolicyAdmin --format=json"
+  },
+  "name": "roles/osconfig.guestPolicyAdmin",
+  "role_slug": "osconfig-guestpolicyadmin",
+  "title": "GuestPolicy Admin",
+  "description": "Full admin access to GuestPolicies",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "osconfig",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "osconfig",
+      "permissions": [
+        "osconfig.guestPolicies.create",
+        "osconfig.guestPolicies.delete",
+        "osconfig.guestPolicies.get",
+        "osconfig.guestPolicies.list",
+        "osconfig.guestPolicies.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "osconfig.guestPolicies.create",
+    "osconfig.guestPolicies.delete",
+    "osconfig.guestPolicies.get",
+    "osconfig.guestPolicies.list",
+    "osconfig.guestPolicies.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

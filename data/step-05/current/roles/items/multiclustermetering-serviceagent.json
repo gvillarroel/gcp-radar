@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.132Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/multiclustermetering.serviceAgent --format=json"
+  },
+  "name": "roles/multiclustermetering.serviceAgent",
+  "role_slug": "multiclustermetering-serviceagent",
+  "title": "Multi-cluster metering Service Agent",
+  "description": "Gives the Multi-cluster metering service agent access to CloudPlatform resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "gkehub"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "gkehub",
+      "permissions": [
+        "gkehub.features.get",
+        "gkehub.gateway.delete",
+        "gkehub.gateway.generateCredentials",
+        "gkehub.gateway.get",
+        "gkehub.gateway.patch",
+        "gkehub.gateway.post",
+        "gkehub.gateway.put",
+        "gkehub.locations.get",
+        "gkehub.locations.list",
+        "gkehub.memberships.get",
+        "gkehub.memberships.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "gkehub.features.get",
+    "gkehub.gateway.delete",
+    "gkehub.gateway.generateCredentials",
+    "gkehub.gateway.get",
+    "gkehub.gateway.patch",
+    "gkehub.gateway.post",
+    "gkehub.gateway.put",
+    "gkehub.locations.get",
+    "gkehub.locations.list",
+    "gkehub.memberships.get",
+    "gkehub.memberships.list"
+  ]
+}

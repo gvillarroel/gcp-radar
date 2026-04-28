@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.416Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/remotebuildexecution.worker --format=json"
+  },
+  "name": "roles/remotebuildexecution.worker",
+  "role_slug": "remotebuildexecution-worker",
+  "title": "Remote Build Execution Worker",
+  "description": "Remote Build Execution Worker",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "remotebuildexecution"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "remotebuildexecution",
+      "permissions": [
+        "remotebuildexecution.actions.update",
+        "remotebuildexecution.blobs.create",
+        "remotebuildexecution.blobs.get",
+        "remotebuildexecution.botsessions.create",
+        "remotebuildexecution.botsessions.update",
+        "remotebuildexecution.logstreams.create",
+        "remotebuildexecution.logstreams.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "remotebuildexecution.actions.update",
+    "remotebuildexecution.blobs.create",
+    "remotebuildexecution.blobs.get",
+    "remotebuildexecution.botsessions.create",
+    "remotebuildexecution.botsessions.update",
+    "remotebuildexecution.logstreams.create",
+    "remotebuildexecution.logstreams.update"
+  ]
+}

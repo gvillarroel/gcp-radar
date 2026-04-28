@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.641Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/telemetry.serviceTracesWriter --format=json"
+  },
+  "name": "roles/telemetry.serviceTracesWriter",
+  "role_slug": "telemetry-servicetraceswriter",
+  "title": "Integrated Service Telemetry Traces Writer",
+  "description": "Allows an onboarded service to write trace data to a destination.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "telemetry"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "telemetry",
+      "permissions": [
+        "telemetry.consumers.writeTraces"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "telemetry.consumers.writeTraces"
+  ]
+}

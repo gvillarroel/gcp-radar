@@ -1,0 +1,52 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.221Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/oracledatabase.goldenGateDeploymentsUser --format=json"
+  },
+  "name": "roles/oracledatabase.goldenGateDeploymentsUser",
+  "role_slug": "oracledatabase-goldengatedeploymentsuser",
+  "title": "Oracle Database@Google GoldenGate Deployments User",
+  "description": "Grants use access to GoldenGate Deployments resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "oracledatabase",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "oracledatabase",
+      "permissions": [
+        "oracledatabase.goldenGateDeployments.get",
+        "oracledatabase.goldenGateDeployments.list",
+        "oracledatabase.goldenGateDeployments.use",
+        "oracledatabase.locations.get",
+        "oracledatabase.locations.list",
+        "oracledatabase.operations.get",
+        "oracledatabase.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "oracledatabase.goldenGateDeployments.get",
+    "oracledatabase.goldenGateDeployments.list",
+    "oracledatabase.goldenGateDeployments.use",
+    "oracledatabase.locations.get",
+    "oracledatabase.locations.list",
+    "oracledatabase.operations.get",
+    "oracledatabase.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

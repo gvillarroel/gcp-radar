@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.735Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/workloadmanager.deploymentViewer --format=json"
+  },
+  "name": "roles/workloadmanager.deploymentViewer",
+  "role_slug": "workloadmanager-deploymentviewer",
+  "title": "Workload Manager Deployment Viewer",
+  "description": "Read-only access to Workload Manager deployment resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "resourcemanager",
+    "workloadmanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "workloadmanager",
+      "permissions": [
+        "workloadmanager.actuations.get",
+        "workloadmanager.actuations.list",
+        "workloadmanager.deployments.get",
+        "workloadmanager.deployments.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "workloadmanager.actuations.get",
+    "workloadmanager.actuations.list",
+    "workloadmanager.deployments.get",
+    "workloadmanager.deployments.list"
+  ]
+}

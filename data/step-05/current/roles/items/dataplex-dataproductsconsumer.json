@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.486Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataplex.dataProductsConsumer --format=json"
+  },
+  "name": "roles/dataplex.dataProductsConsumer",
+  "role_slug": "dataplex-dataproductsconsumer",
+  "title": "Dataplex Data Products Consumer",
+  "description": "Restricted read access, intended for consumers of Data Products.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "dataplex",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.dataAssets.get",
+        "dataplex.dataAssets.list",
+        "dataplex.dataProducts.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dataplex.dataAssets.get",
+    "dataplex.dataAssets.list",
+    "dataplex.dataProducts.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

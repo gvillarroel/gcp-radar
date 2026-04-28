@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.167Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/clouddeploy.jobRunner --format=json"
+  },
+  "name": "roles/clouddeploy.jobRunner",
+  "role_slug": "clouddeploy-jobrunner",
+  "title": "Cloud Deploy Runner",
+  "description": "Permission to execute Cloud Deploy work without permission to deliver to a target.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "clouddeploy",
+    "logging",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "clouddeploy",
+      "permissions": [
+        "clouddeploy.config.get"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.objects.create",
+        "storage.objects.get",
+        "storage.objects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "clouddeploy.config.get",
+    "logging.logEntries.create",
+    "storage.objects.create",
+    "storage.objects.get",
+    "storage.objects.list"
+  ]
+}

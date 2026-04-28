@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.207Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudkms.keyAccessJustificationsPolicyConfigAdmin --format=json"
+  },
+  "name": "roles/cloudkms.keyAccessJustificationsPolicyConfigAdmin",
+  "role_slug": "cloudkms-keyaccessjustificationspolicyconfigadmin",
+  "title": "Key Access Justifications Policy Config Admin",
+  "description": "Grant ability to manage Key Access Justifications Policy at parent resource level.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "cloudkms"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudkms",
+      "permissions": [
+        "cloudkms.kajPolicyConfigs.get",
+        "cloudkms.kajPolicyConfigs.update",
+        "cloudkms.projects.showEffectiveKajPolicyConfig"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudkms.kajPolicyConfigs.get",
+    "cloudkms.kajPolicyConfigs.update",
+    "cloudkms.projects.showEffectiveKajPolicyConfig"
+  ]
+}

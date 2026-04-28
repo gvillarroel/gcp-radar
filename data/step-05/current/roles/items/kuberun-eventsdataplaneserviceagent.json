@@ -1,0 +1,60 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.013Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/kuberun.eventsDataPlaneServiceAgent --format=json"
+  },
+  "name": "roles/kuberun.eventsDataPlaneServiceAgent",
+  "role_slug": "kuberun-eventsdataplaneserviceagent",
+  "title": "KubeRun Events Data Plane Service Agent",
+  "description": "Service account role used to setup authentication for the data plane used by KubeRun Events.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "cloudtrace",
+    "monitoring",
+    "pubsub",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudtrace",
+      "permissions": [
+        "cloudtrace.traces.patch"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.timeSeries.create"
+      ]
+    },
+    {
+      "group": "pubsub",
+      "permissions": [
+        "pubsub.subscriptions.consume",
+        "pubsub.subscriptions.get",
+        "pubsub.topics.get",
+        "pubsub.topics.publish"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudtrace.traces.patch",
+    "monitoring.timeSeries.create",
+    "pubsub.subscriptions.consume",
+    "pubsub.subscriptions.get",
+    "pubsub.topics.get",
+    "pubsub.topics.publish",
+    "resourcemanager.projects.get"
+  ]
+}

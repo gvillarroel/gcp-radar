@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.981Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/integrations.apigeeIntegrationInvokerRole --format=json"
+  },
+  "name": "roles/integrations.apigeeIntegrationInvokerRole",
+  "role_slug": "integrations-apigeeintegrationinvokerrole",
+  "title": "Apigee Integration Invoker",
+  "description": "A role that can invoke Apigee integrations.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 26,
+  "permission_groups": [
+    "connectors",
+    "integrations",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "connectors",
+      "permissions": [
+        "connectors.actions.execute",
+        "connectors.actions.list",
+        "connectors.connections.executeSqlQuery",
+        "connectors.entities.create",
+        "connectors.entities.delete",
+        "connectors.entities.deleteEntitiesWithConditions",
+        "connectors.entities.get",
+        "connectors.entities.list",
+        "connectors.entities.update",
+        "connectors.entities.updateEntitiesWithConditions",
+        "connectors.entityTypes.list"
+      ]
+    },
+    {
+      "group": "integrations",
+      "permissions": [
+        "integrations.apigeeExecutions.list",
+        "integrations.apigeeIntegrations.invoke",
+        "integrations.apigeeIntegrations.list",
+        "integrations.apigeeIntegrationVers.get",
+        "integrations.apigeeIntegrationVers.list",
+        "integrations.executions.get",
+        "integrations.executions.list",
+        "integrations.integrations.get",
+        "integrations.integrations.invoke",
+        "integrations.integrations.list",
+        "integrations.integrationVersions.get",
+        "integrations.integrationVersions.invoke",
+        "integrations.integrationVersions.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "connectors.actions.execute",
+    "connectors.actions.list",
+    "connectors.connections.executeSqlQuery",
+    "connectors.entities.create",
+    "connectors.entities.delete",
+    "connectors.entities.deleteEntitiesWithConditions",
+    "connectors.entities.get",
+    "connectors.entities.list",
+    "connectors.entities.update",
+    "connectors.entities.updateEntitiesWithConditions",
+    "connectors.entityTypes.list",
+    "integrations.apigeeExecutions.list",
+    "integrations.apigeeIntegrations.invoke",
+    "integrations.apigeeIntegrations.list",
+    "integrations.apigeeIntegrationVers.get",
+    "integrations.apigeeIntegrationVers.list",
+    "integrations.executions.get",
+    "integrations.executions.list",
+    "integrations.integrations.get",
+    "integrations.integrations.invoke",
+    "integrations.integrations.list",
+    "integrations.integrationVersions.get",
+    "integrations.integrationVersions.invoke",
+    "integrations.integrationVersions.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.729Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/workflows.serviceAgent --format=json"
+  },
+  "name": "roles/workflows.serviceAgent",
+  "role_slug": "workflows-serviceagent",
+  "title": "Cloud Workflows Service Agent",
+  "description": "Gives Cloud Workflows service account access to managed resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "container",
+    "iam",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "container",
+      "permissions": [
+        "container.clusters.connect"
+      ]
+    },
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.serviceAccounts.get",
+        "iam.serviceAccounts.getAccessToken",
+        "iam.serviceAccounts.getOpenIdToken"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "container.clusters.connect",
+    "iam.serviceAccounts.get",
+    "iam.serviceAccounts.getAccessToken",
+    "iam.serviceAccounts.getOpenIdToken",
+    "serviceusage.services.use"
+  ]
+}

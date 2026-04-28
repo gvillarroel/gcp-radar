@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.845Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/alloydb.serviceAgent --format=json"
+  },
+  "name": "roles/alloydb.serviceAgent",
+  "role_slug": "alloydb-serviceagent",
+  "title": "AlloyDB Service Agent",
+  "description": "Gives the AlloyDB service account permission to manage customer resources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "alloydb"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "alloydb",
+      "permissions": [
+        "alloydb.clusters.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "alloydb.clusters.list"
+  ]
+}

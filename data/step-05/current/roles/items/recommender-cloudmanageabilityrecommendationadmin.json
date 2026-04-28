@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.340Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/recommender.cloudManageabilityRecommendationAdmin --format=json"
+  },
+  "name": "roles/recommender.cloudManageabilityRecommendationAdmin",
+  "role_slug": "recommender-cloudmanageabilityrecommendationadmin",
+  "title": "Cloud Manageability General Recommendations Recommender Admin",
+  "description": "Admin of Cloud Manageability General Recommendations Insights and Recommendations.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "recommender",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.cloudManageabilityGeneralInsights.get",
+        "recommender.cloudManageabilityGeneralInsights.list",
+        "recommender.cloudManageabilityGeneralInsights.update",
+        "recommender.cloudManageabilityGeneralRecommendations.get",
+        "recommender.cloudManageabilityGeneralRecommendations.list",
+        "recommender.cloudManageabilityGeneralRecommendations.update",
+        "recommender.locations.get",
+        "recommender.locations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "recommender.cloudManageabilityGeneralInsights.get",
+    "recommender.cloudManageabilityGeneralInsights.list",
+    "recommender.cloudManageabilityGeneralInsights.update",
+    "recommender.cloudManageabilityGeneralRecommendations.get",
+    "recommender.cloudManageabilityGeneralRecommendations.list",
+    "recommender.cloudManageabilityGeneralRecommendations.update",
+    "recommender.locations.get",
+    "recommender.locations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

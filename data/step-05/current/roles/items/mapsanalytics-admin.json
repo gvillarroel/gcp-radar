@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.068Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/mapsanalytics.admin --format=json"
+  },
+  "name": "roles/mapsanalytics.admin",
+  "role_slug": "mapsanalytics-admin",
+  "title": "Mapsanalytics Admin",
+  "description": "Admin role for mapsanalytics",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "mapsanalytics",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "mapsanalytics",
+      "permissions": [
+        "mapsanalytics.metricData.query",
+        "mapsanalytics.metricData.queryMobilitySolutionsOverageData",
+        "mapsanalytics.metricMetadata.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "mapsanalytics.metricData.query",
+    "mapsanalytics.metricData.queryMobilitySolutionsOverageData",
+    "mapsanalytics.metricMetadata.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

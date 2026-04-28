@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.791Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/agentgateway.serviceAgent --format=json"
+  },
+  "name": "roles/agentgateway.serviceAgent",
+  "role_slug": "agentgateway-serviceagent",
+  "title": "Agent Gateway Service Agent",
+  "description": "Grants Agent Gateway Service Agent permissions required to do DNS peering.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "dns"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dns",
+      "permissions": [
+        "dns.networks.targetWithPeeringZone"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dns.networks.targetWithPeeringZone"
+  ]
+}

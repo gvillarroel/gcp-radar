@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.910Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/iam.accessPolicyViewer --format=json"
+  },
+  "name": "roles/iam.accessPolicyViewer",
+  "role_slug": "iam-accesspolicyviewer",
+  "title": "Access Policy Viewer",
+  "description": "Access Policy Viewer role, with permissions to read  access policies and view associated policy bindings",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "iam"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.accesspolicies.get",
+        "iam.accesspolicies.list",
+        "iam.accesspolicies.searchPolicyBindings"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "iam.accesspolicies.get",
+    "iam.accesspolicies.list",
+    "iam.accesspolicies.searchPolicyBindings"
+  ]
+}

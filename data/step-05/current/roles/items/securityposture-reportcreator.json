@@ -1,0 +1,36 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.545Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securityposture.reportCreator --format=json"
+  },
+  "name": "roles/securityposture.reportCreator",
+  "role_slug": "securityposture-reportcreator",
+  "title": "Security Posture Shift-Left Validator",
+  "description": "Create access for Reports, e.g. IaC Validation Report.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "securityposture"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "securityposture",
+      "permissions": [
+        "securityposture.operations.get",
+        "securityposture.reports.create",
+        "securityposture.reports.get",
+        "securityposture.reports.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "securityposture.operations.get",
+    "securityposture.reports.create",
+    "securityposture.reports.get",
+    "securityposture.reports.list"
+  ]
+}

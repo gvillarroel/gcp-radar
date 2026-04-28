@@ -1,0 +1,72 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.666Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/translationhub.portalUser --format=json"
+  },
+  "name": "roles/translationhub.portalUser",
+  "role_slug": "translationhub-portaluser",
+  "title": "Translation Hub Portal User",
+  "description": "Portal user of Translation Hub",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "automl",
+    "cloudtranslate",
+    "resourcemanager",
+    "translationhub"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "automl",
+      "permissions": [
+        "automl.models.get",
+        "automl.models.list",
+        "automl.models.predict"
+      ]
+    },
+    {
+      "group": "cloudtranslate",
+      "permissions": [
+        "cloudtranslate.customModels.get",
+        "cloudtranslate.customModels.list",
+        "cloudtranslate.customModels.predict",
+        "cloudtranslate.glossaries.get",
+        "cloudtranslate.glossaries.list",
+        "cloudtranslate.glossaries.predict"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "translationhub",
+      "permissions": [
+        "translationhub.portals.get",
+        "translationhub.portals.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "automl.models.get",
+    "automl.models.list",
+    "automl.models.predict",
+    "cloudtranslate.customModels.get",
+    "cloudtranslate.customModels.list",
+    "cloudtranslate.customModels.predict",
+    "cloudtranslate.glossaries.get",
+    "cloudtranslate.glossaries.list",
+    "cloudtranslate.glossaries.predict",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "translationhub.portals.get",
+    "translationhub.portals.list"
+  ]
+}

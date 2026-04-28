@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.841Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/alloydb.client --format=json"
+  },
+  "name": "roles/alloydb.client",
+  "role_slug": "alloydb-client",
+  "title": "AlloyDB Client",
+  "description": "Connectivity access to AlloyDB instances.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "alloydb",
+    "monitoring",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "alloydb",
+      "permissions": [
+        "alloydb.clusters.generateClientCertificate",
+        "alloydb.clusters.get",
+        "alloydb.instances.connect",
+        "alloydb.instances.get"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.timeSeries.create"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "alloydb.clusters.generateClientCertificate",
+    "alloydb.clusters.get",
+    "alloydb.instances.connect",
+    "alloydb.instances.get",
+    "monitoring.timeSeries.create",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

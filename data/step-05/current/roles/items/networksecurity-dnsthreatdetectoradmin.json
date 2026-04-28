@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.164Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/networksecurity.dnsThreatDetectorAdmin --format=json"
+  },
+  "name": "roles/networksecurity.dnsThreatDetectorAdmin",
+  "role_slug": "networksecurity-dnsthreatdetectoradmin",
+  "title": "DNS Threat Detector Admin",
+  "description": "Enables full access to DNS Threat Detector resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "networksecurity",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "networksecurity",
+      "permissions": [
+        "networksecurity.dnsThreatDetectors.create",
+        "networksecurity.dnsThreatDetectors.delete",
+        "networksecurity.dnsThreatDetectors.get",
+        "networksecurity.dnsThreatDetectors.list",
+        "networksecurity.dnsThreatDetectors.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "networksecurity.dnsThreatDetectors.create",
+    "networksecurity.dnsThreatDetectors.delete",
+    "networksecurity.dnsThreatDetectors.get",
+    "networksecurity.dnsThreatDetectors.list",
+    "networksecurity.dnsThreatDetectors.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

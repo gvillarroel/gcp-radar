@@ -1,0 +1,190 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.526Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataproc.worker --format=json"
+  },
+  "name": "roles/dataproc.worker",
+  "role_slug": "dataproc-worker",
+  "title": "Dataproc Worker",
+  "description": "Worker access to Dataproc. Intended for service accounts.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 60,
+  "permission_groups": [
+    "cloudprofiler",
+    "datalineage",
+    "dataproc",
+    "dataprocrm",
+    "logging",
+    "monitoring",
+    "storage",
+    "telemetry"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudprofiler",
+      "permissions": [
+        "cloudprofiler.profiles.create",
+        "cloudprofiler.profiles.update"
+      ]
+    },
+    {
+      "group": "datalineage",
+      "permissions": [
+        "datalineage.locations.processOpenLineageMessage"
+      ]
+    },
+    {
+      "group": "dataproc",
+      "permissions": [
+        "dataproc.agents.create",
+        "dataproc.agents.delete",
+        "dataproc.agents.get",
+        "dataproc.agents.list",
+        "dataproc.agents.update",
+        "dataproc.batches.sparkApplicationWrite",
+        "dataproc.sessions.sparkApplicationWrite",
+        "dataproc.tasks.lease",
+        "dataproc.tasks.listInvalidatedLeases",
+        "dataproc.tasks.reportStatus"
+      ]
+    },
+    {
+      "group": "dataprocrm",
+      "permissions": [
+        "dataprocrm.nodePools.create",
+        "dataprocrm.nodePools.delete",
+        "dataprocrm.nodePools.deleteNodes",
+        "dataprocrm.nodePools.get",
+        "dataprocrm.nodePools.list",
+        "dataprocrm.nodePools.resize",
+        "dataprocrm.nodes.get",
+        "dataprocrm.nodes.heartbeat",
+        "dataprocrm.nodes.list",
+        "dataprocrm.nodes.mintOAuthToken",
+        "dataprocrm.operations.get"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create",
+        "logging.logEntries.route"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.metricDescriptors.create",
+        "monitoring.metricDescriptors.get",
+        "monitoring.metricDescriptors.list",
+        "monitoring.monitoredResourceDescriptors.get",
+        "monitoring.monitoredResourceDescriptors.list",
+        "monitoring.timeSeries.create"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.get",
+        "storage.folders.create",
+        "storage.folders.delete",
+        "storage.folders.get",
+        "storage.folders.list",
+        "storage.folders.rename",
+        "storage.managedFolders.create",
+        "storage.managedFolders.delete",
+        "storage.managedFolders.get",
+        "storage.managedFolders.list",
+        "storage.multipartUploads.abort",
+        "storage.multipartUploads.create",
+        "storage.multipartUploads.list",
+        "storage.multipartUploads.listParts",
+        "storage.objects.create",
+        "storage.objects.createContext",
+        "storage.objects.delete",
+        "storage.objects.deleteContext",
+        "storage.objects.get",
+        "storage.objects.getIamPolicy",
+        "storage.objects.list",
+        "storage.objects.overrideUnlockedRetention",
+        "storage.objects.restore",
+        "storage.objects.setIamPolicy",
+        "storage.objects.setRetention",
+        "storage.objects.update",
+        "storage.objects.updateContext"
+      ]
+    },
+    {
+      "group": "telemetry",
+      "permissions": [
+        "telemetry.metrics.write"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudprofiler.profiles.create",
+    "cloudprofiler.profiles.update",
+    "datalineage.locations.processOpenLineageMessage",
+    "dataproc.agents.create",
+    "dataproc.agents.delete",
+    "dataproc.agents.get",
+    "dataproc.agents.list",
+    "dataproc.agents.update",
+    "dataproc.batches.sparkApplicationWrite",
+    "dataproc.sessions.sparkApplicationWrite",
+    "dataproc.tasks.lease",
+    "dataproc.tasks.listInvalidatedLeases",
+    "dataproc.tasks.reportStatus",
+    "dataprocrm.nodePools.create",
+    "dataprocrm.nodePools.delete",
+    "dataprocrm.nodePools.deleteNodes",
+    "dataprocrm.nodePools.get",
+    "dataprocrm.nodePools.list",
+    "dataprocrm.nodePools.resize",
+    "dataprocrm.nodes.get",
+    "dataprocrm.nodes.heartbeat",
+    "dataprocrm.nodes.list",
+    "dataprocrm.nodes.mintOAuthToken",
+    "dataprocrm.operations.get",
+    "logging.logEntries.create",
+    "logging.logEntries.route",
+    "monitoring.metricDescriptors.create",
+    "monitoring.metricDescriptors.get",
+    "monitoring.metricDescriptors.list",
+    "monitoring.monitoredResourceDescriptors.get",
+    "monitoring.monitoredResourceDescriptors.list",
+    "monitoring.timeSeries.create",
+    "storage.buckets.get",
+    "storage.folders.create",
+    "storage.folders.delete",
+    "storage.folders.get",
+    "storage.folders.list",
+    "storage.folders.rename",
+    "storage.managedFolders.create",
+    "storage.managedFolders.delete",
+    "storage.managedFolders.get",
+    "storage.managedFolders.list",
+    "storage.multipartUploads.abort",
+    "storage.multipartUploads.create",
+    "storage.multipartUploads.list",
+    "storage.multipartUploads.listParts",
+    "storage.objects.create",
+    "storage.objects.createContext",
+    "storage.objects.delete",
+    "storage.objects.deleteContext",
+    "storage.objects.get",
+    "storage.objects.getIamPolicy",
+    "storage.objects.list",
+    "storage.objects.overrideUnlockedRetention",
+    "storage.objects.restore",
+    "storage.objects.setIamPolicy",
+    "storage.objects.setRetention",
+    "storage.objects.update",
+    "storage.objects.updateContext",
+    "telemetry.metrics.write"
+  ]
+}

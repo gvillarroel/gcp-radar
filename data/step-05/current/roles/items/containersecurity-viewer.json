@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.400Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/containersecurity.viewer --format=json"
+  },
+  "name": "roles/containersecurity.viewer",
+  "role_slug": "containersecurity-viewer",
+  "title": "GKE Security Posture Viewer",
+  "description": "Readonly access to GKE Security Posture resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "container",
+    "containersecurity",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "container",
+      "permissions": [
+        "container.clusters.list"
+      ]
+    },
+    {
+      "group": "containersecurity",
+      "permissions": [
+        "containersecurity.clusterSummaries.list",
+        "containersecurity.findings.list",
+        "containersecurity.locations.get",
+        "containersecurity.locations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "container.clusters.list",
+    "containersecurity.clusterSummaries.list",
+    "containersecurity.findings.list",
+    "containersecurity.locations.get",
+    "containersecurity.locations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

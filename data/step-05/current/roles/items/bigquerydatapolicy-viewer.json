@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.041Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/bigquerydatapolicy.viewer --format=json"
+  },
+  "name": "roles/bigquerydatapolicy.viewer",
+  "role_slug": "bigquerydatapolicy-viewer",
+  "title": "BigQuery Data Policy Viewer",
+  "description": "Role for viewing Data Policies in BigQuery",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "bigquery"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.dataPolicies.get",
+        "bigquery.dataPolicies.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.dataPolicies.get",
+    "bigquery.dataPolicies.list"
+  ]
+}

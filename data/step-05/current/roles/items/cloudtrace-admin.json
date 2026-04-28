@@ -1,0 +1,94 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.269Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudtrace.admin --format=json"
+  },
+  "name": "roles/cloudtrace.admin",
+  "role_slug": "cloudtrace-admin",
+  "title": "Cloud Trace Admin",
+  "description": "Admin access to Cloud Trace.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 24,
+  "permission_groups": [
+    "cloudtrace",
+    "observability",
+    "resourcemanager",
+    "telemetry"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudtrace",
+      "permissions": [
+        "cloudtrace.insights.get",
+        "cloudtrace.insights.list",
+        "cloudtrace.stats.get",
+        "cloudtrace.tasks.create",
+        "cloudtrace.tasks.delete",
+        "cloudtrace.tasks.get",
+        "cloudtrace.tasks.list",
+        "cloudtrace.traces.get",
+        "cloudtrace.traces.list",
+        "cloudtrace.traces.patch",
+        "cloudtrace.traceScopes.create",
+        "cloudtrace.traceScopes.delete",
+        "cloudtrace.traceScopes.get",
+        "cloudtrace.traceScopes.list",
+        "cloudtrace.traceScopes.update"
+      ]
+    },
+    {
+      "group": "observability",
+      "permissions": [
+        "observability.scopes.get",
+        "observability.traceScopes.create",
+        "observability.traceScopes.delete",
+        "observability.traceScopes.get",
+        "observability.traceScopes.list",
+        "observability.traceScopes.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "telemetry",
+      "permissions": [
+        "telemetry.traces.write"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudtrace.insights.get",
+    "cloudtrace.insights.list",
+    "cloudtrace.stats.get",
+    "cloudtrace.tasks.create",
+    "cloudtrace.tasks.delete",
+    "cloudtrace.tasks.get",
+    "cloudtrace.tasks.list",
+    "cloudtrace.traces.get",
+    "cloudtrace.traces.list",
+    "cloudtrace.traces.patch",
+    "cloudtrace.traceScopes.create",
+    "cloudtrace.traceScopes.delete",
+    "cloudtrace.traceScopes.get",
+    "cloudtrace.traceScopes.list",
+    "cloudtrace.traceScopes.update",
+    "observability.scopes.get",
+    "observability.traceScopes.create",
+    "observability.traceScopes.delete",
+    "observability.traceScopes.get",
+    "observability.traceScopes.list",
+    "observability.traceScopes.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "telemetry.traces.write"
+  ]
+}

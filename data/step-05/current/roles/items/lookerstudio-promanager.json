@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.033Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/lookerstudio.proManager --format=json"
+  },
+  "name": "roles/lookerstudio.proManager",
+  "role_slug": "lookerstudio-promanager",
+  "title": "Looker Studio Pro Manager",
+  "description": "Looker Studio Pro Manager",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "lookerstudio",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "lookerstudio",
+      "permissions": [
+        "lookerstudio.pro.manage"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list",
+        "resourcemanager.projects.updateLiens"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "lookerstudio.pro.manage",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "resourcemanager.projects.updateLiens"
+  ]
+}

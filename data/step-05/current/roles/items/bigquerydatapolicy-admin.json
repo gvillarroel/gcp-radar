@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.038Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/bigquerydatapolicy.admin --format=json"
+  },
+  "name": "roles/bigquerydatapolicy.admin",
+  "role_slug": "bigquerydatapolicy-admin",
+  "title": "BigQuery Data Policy Admin",
+  "description": "Role for managing Data Policies in BigQuery",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "bigquery"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.dataPolicies.attach",
+        "bigquery.dataPolicies.create",
+        "bigquery.dataPolicies.delete",
+        "bigquery.dataPolicies.get",
+        "bigquery.dataPolicies.getIamPolicy",
+        "bigquery.dataPolicies.list",
+        "bigquery.dataPolicies.setIamPolicy",
+        "bigquery.dataPolicies.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.dataPolicies.attach",
+    "bigquery.dataPolicies.create",
+    "bigquery.dataPolicies.delete",
+    "bigquery.dataPolicies.get",
+    "bigquery.dataPolicies.getIamPolicy",
+    "bigquery.dataPolicies.list",
+    "bigquery.dataPolicies.setIamPolicy",
+    "bigquery.dataPolicies.update"
+  ]
+}

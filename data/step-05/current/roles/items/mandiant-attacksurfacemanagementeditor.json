@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.060Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/mandiant.attackSurfaceManagementEditor --format=json"
+  },
+  "name": "roles/mandiant.attackSurfaceManagementEditor",
+  "role_slug": "mandiant-attacksurfacemanagementeditor",
+  "title": "Mandiant Attack Surface Management Editor",
+  "description": "Access to write Attack Surface Management",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "mandiant",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "mandiant",
+      "permissions": [
+        "mandiant.genericAttackSurfaceManagements.create",
+        "mandiant.genericAttackSurfaceManagements.delete",
+        "mandiant.genericAttackSurfaceManagements.update",
+        "mandiant.genericPlatforms.create",
+        "mandiant.genericPlatforms.delete",
+        "mandiant.genericPlatforms.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "mandiant.genericAttackSurfaceManagements.create",
+    "mandiant.genericAttackSurfaceManagements.delete",
+    "mandiant.genericAttackSurfaceManagements.update",
+    "mandiant.genericPlatforms.create",
+    "mandiant.genericPlatforms.delete",
+    "mandiant.genericPlatforms.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

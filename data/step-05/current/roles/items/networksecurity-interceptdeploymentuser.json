@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.169Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/networksecurity.interceptDeploymentUser --format=json"
+  },
+  "name": "roles/networksecurity.interceptDeploymentUser",
+  "role_slug": "networksecurity-interceptdeploymentuser",
+  "title": "Intercept Deployment User",
+  "description": "Allows a consumer to view and connect to a producer's interceptDeploymentGroup.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "networksecurity"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "networksecurity",
+      "permissions": [
+        "networksecurity.interceptDeploymentGroups.get",
+        "networksecurity.interceptDeploymentGroups.list",
+        "networksecurity.interceptDeploymentGroups.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "networksecurity.interceptDeploymentGroups.get",
+    "networksecurity.interceptDeploymentGroups.list",
+    "networksecurity.interceptDeploymentGroups.use"
+  ]
+}

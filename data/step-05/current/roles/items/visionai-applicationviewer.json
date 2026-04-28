@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.681Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/visionai.applicationViewer --format=json"
+  },
+  "name": "roles/visionai.applicationViewer",
+  "role_slug": "visionai-applicationviewer",
+  "title": "Vision AI Application Viewer",
+  "description": "Access to read Vision AI Applications.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "visionai"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "visionai",
+      "permissions": [
+        "visionai.applications.get",
+        "visionai.applications.list",
+        "visionai.drafts.get",
+        "visionai.drafts.list",
+        "visionai.instances.get",
+        "visionai.instances.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "visionai.applications.get",
+    "visionai.applications.list",
+    "visionai.drafts.get",
+    "visionai.drafts.list",
+    "visionai.instances.get",
+    "visionai.instances.list"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.504Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataplex.metadataJobOwner --format=json"
+  },
+  "name": "roles/dataplex.metadataJobOwner",
+  "role_slug": "dataplex-metadatajobowner",
+  "title": "Dataplex Metadata Job Owner",
+  "description": "Grants access to creating and managing Metadata Jobs. Does not give the right to create/modify Entry Groups.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "dataplex",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.metadataJobs.cancel",
+        "dataplex.metadataJobs.create",
+        "dataplex.metadataJobs.get",
+        "dataplex.metadataJobs.list",
+        "dataplex.operations.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dataplex.metadataJobs.cancel",
+    "dataplex.metadataJobs.create",
+    "dataplex.metadataJobs.get",
+    "dataplex.metadataJobs.list",
+    "dataplex.operations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

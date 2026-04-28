@@ -1,0 +1,68 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.604Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/discoveryengine.agentspaceRestrictedUser --format=json"
+  },
+  "name": "roles/discoveryengine.agentspaceRestrictedUser",
+  "role_slug": "discoveryengine-agentspacerestricteduser",
+  "title": "Gemini Enterprise Restricted User",
+  "description": "Grants restricted user-level access to Gemini Enterprise resources, for fine-grained control over multiple Gemini Enterprise instances in the same project. Principals with this role will need to be granted an unrestricted user-level role (e.g. /agentspaceUser) on an Engine policy in order to use Gemini Enterprise.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 17,
+  "permission_groups": [
+    "discoveryengine",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "discoveryengine",
+      "permissions": [
+        "discoveryengine.accounts.create",
+        "discoveryengine.authorizations.storeUserAuthorization",
+        "discoveryengine.dataConnectors.acquireAccessToken",
+        "discoveryengine.dataConnectors.acquireAndStoreRefreshToken",
+        "discoveryengine.dataConnectors.buildActionInvocation",
+        "discoveryengine.dataConnectors.checkRefreshToken",
+        "discoveryengine.dataConnectors.executeAction",
+        "discoveryengine.dataConnectors.queryAvailableActions",
+        "discoveryengine.locations.completeExternalIdentities",
+        "discoveryengine.locations.fetchAgentCards",
+        "discoveryengine.notebooks.create",
+        "discoveryengine.notebooks.list",
+        "discoveryengine.userEvents.create",
+        "discoveryengine.users.get",
+        "discoveryengine.users.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "discoveryengine.accounts.create",
+    "discoveryengine.authorizations.storeUserAuthorization",
+    "discoveryengine.dataConnectors.acquireAccessToken",
+    "discoveryengine.dataConnectors.acquireAndStoreRefreshToken",
+    "discoveryengine.dataConnectors.buildActionInvocation",
+    "discoveryengine.dataConnectors.checkRefreshToken",
+    "discoveryengine.dataConnectors.executeAction",
+    "discoveryengine.dataConnectors.queryAvailableActions",
+    "discoveryengine.locations.completeExternalIdentities",
+    "discoveryengine.locations.fetchAgentCards",
+    "discoveryengine.notebooks.create",
+    "discoveryengine.notebooks.list",
+    "discoveryengine.userEvents.create",
+    "discoveryengine.users.get",
+    "discoveryengine.users.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.073Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/blockchainnodeengine.serviceAgent --format=json"
+  },
+  "name": "roles/blockchainnodeengine.serviceAgent",
+  "role_slug": "blockchainnodeengine-serviceagent",
+  "title": "Blockchain Node Engine Service Agent",
+  "description": "Grants Blockchain Node Engine access to metrics in user project",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "monitoring"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.timeSeries.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "monitoring.timeSeries.list"
+  ]
+}

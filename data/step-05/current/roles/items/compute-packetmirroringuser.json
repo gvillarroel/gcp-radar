@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.333Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/compute.packetMirroringUser --format=json"
+  },
+  "name": "roles/compute.packetMirroringUser",
+  "role_slug": "compute-packetmirroringuser",
+  "title": "Compute packet mirroring user",
+  "description": "Use Compute Engine packet mirrorings.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 22,
+  "permission_groups": [
+    "compute",
+    "resourcemanager",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.packetMirrorings.create",
+        "compute.packetMirrorings.createTagBinding",
+        "compute.packetMirrorings.delete",
+        "compute.packetMirrorings.deleteTagBinding",
+        "compute.packetMirrorings.get",
+        "compute.packetMirrorings.list",
+        "compute.packetMirrorings.listEffectiveTags",
+        "compute.packetMirrorings.listTagBindings",
+        "compute.packetMirrorings.update",
+        "compute.projects.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.consumerpolicy.analyze",
+        "serviceusage.consumerpolicy.get",
+        "serviceusage.effectivepolicy.get",
+        "serviceusage.groups.list",
+        "serviceusage.groups.listExpandedMembers",
+        "serviceusage.groups.listMembers",
+        "serviceusage.quotas.get",
+        "serviceusage.services.get",
+        "serviceusage.services.list",
+        "serviceusage.values.test"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "compute.packetMirrorings.create",
+    "compute.packetMirrorings.createTagBinding",
+    "compute.packetMirrorings.delete",
+    "compute.packetMirrorings.deleteTagBinding",
+    "compute.packetMirrorings.get",
+    "compute.packetMirrorings.list",
+    "compute.packetMirrorings.listEffectiveTags",
+    "compute.packetMirrorings.listTagBindings",
+    "compute.packetMirrorings.update",
+    "compute.projects.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "serviceusage.consumerpolicy.analyze",
+    "serviceusage.consumerpolicy.get",
+    "serviceusage.effectivepolicy.get",
+    "serviceusage.groups.list",
+    "serviceusage.groups.listExpandedMembers",
+    "serviceusage.groups.listMembers",
+    "serviceusage.quotas.get",
+    "serviceusage.services.get",
+    "serviceusage.services.list",
+    "serviceusage.values.test"
+  ]
+}

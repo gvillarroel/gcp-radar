@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.364Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/recommender.iampolicychangeriskViewer --format=json"
+  },
+  "name": "roles/recommender.iampolicychangeriskViewer",
+  "role_slug": "recommender-iampolicychangeriskviewer",
+  "title": "IAM Policy Change Risk Recommender Viewer",
+  "description": "Viewer of IAM Policy Change Risk Insights and Recommendations.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "recommender",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.iamPolicyChangeRiskInsights.get",
+        "recommender.iamPolicyChangeRiskInsights.list",
+        "recommender.iamPolicyChangeRiskRecommendations.get",
+        "recommender.iamPolicyChangeRiskRecommendations.list",
+        "recommender.locations.get",
+        "recommender.locations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "recommender.iamPolicyChangeRiskInsights.get",
+    "recommender.iamPolicyChangeRiskInsights.list",
+    "recommender.iamPolicyChangeRiskRecommendations.get",
+    "recommender.iamPolicyChangeRiskRecommendations.list",
+    "recommender.locations.get",
+    "recommender.locations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

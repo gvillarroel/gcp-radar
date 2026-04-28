@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.649Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/threatintelligence.ctemViewer --format=json"
+  },
+  "name": "roles/threatintelligence.ctemViewer",
+  "role_slug": "threatintelligence-ctemviewer",
+  "title": "CTEM Viewer",
+  "description": "This role can view all resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "resourcemanager",
+    "threatintelligence"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "threatintelligence",
+      "permissions": [
+        "threatintelligence.configurations.get",
+        "threatintelligence.configurations.list",
+        "threatintelligence.configurations.listRevisions",
+        "threatintelligence.findings.get",
+        "threatintelligence.findings.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "threatintelligence.configurations.get",
+    "threatintelligence.configurations.list",
+    "threatintelligence.configurations.listRevisions",
+    "threatintelligence.findings.get",
+    "threatintelligence.findings.list"
+  ]
+}

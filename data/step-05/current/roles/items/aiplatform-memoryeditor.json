@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.820Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/aiplatform.memoryEditor --format=json"
+  },
+  "name": "roles/aiplatform.memoryEditor",
+  "role_slug": "aiplatform-memoryeditor",
+  "title": "Vertex AI Agent Engine Memory Editor Role",
+  "description": "Grants edit access to Memory for Agent Engine.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "aiplatform"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "aiplatform",
+      "permissions": [
+        "aiplatform.memories.create",
+        "aiplatform.memories.delete",
+        "aiplatform.memories.generate",
+        "aiplatform.memories.update",
+        "aiplatform.memoryRevisions.rollback"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "aiplatform.memories.create",
+    "aiplatform.memories.delete",
+    "aiplatform.memories.generate",
+    "aiplatform.memories.update",
+    "aiplatform.memoryRevisions.rollback"
+  ]
+}

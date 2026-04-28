@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.204Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudkms.hsmSingleTenantKeyCreator --format=json"
+  },
+  "name": "roles/cloudkms.hsmSingleTenantKeyCreator",
+  "role_slug": "cloudkms-hsmsingletenantkeycreator",
+  "title": "Cloud KMS single-tenant HSM Key Creator",
+  "description": "Grants ability to use single-tenant HSM instances to create keys. This role must be combined with another role that grants the ability to create cryptoKeys.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "cloudkms"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudkms",
+      "permissions": [
+        "cloudkms.singleTenantHsmInstances.get",
+        "cloudkms.singleTenantHsmInstances.list",
+        "cloudkms.singleTenantHsmInstances.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudkms.singleTenantHsmInstances.get",
+    "cloudkms.singleTenantHsmInstances.list",
+    "cloudkms.singleTenantHsmInstances.use"
+  ]
+}

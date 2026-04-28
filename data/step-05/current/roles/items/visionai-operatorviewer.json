@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.694Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/visionai.operatorViewer --format=json"
+  },
+  "name": "roles/visionai.operatorViewer",
+  "role_slug": "visionai-operatorviewer",
+  "title": "Vision AI Operator Viewer",
+  "description": "Access to read Vision AI Operators.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "visionai"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "visionai",
+      "permissions": [
+        "visionai.operators.get",
+        "visionai.operators.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "visionai.operators.get",
+    "visionai.operators.list"
+  ]
+}

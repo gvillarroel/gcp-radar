@@ -1,0 +1,58 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.781Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebaseextensionspublisher.extensionsAdmin --format=json"
+  },
+  "name": "roles/firebaseextensionspublisher.extensionsAdmin",
+  "role_slug": "firebaseextensionspublisher-extensionsadmin",
+  "title": "Firebase Extensions Publisher - Extensions Admin",
+  "description": "Fully manage Firebase Extensions",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "firebase",
+    "firebaseextensionspublisher",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "firebase",
+      "permissions": [
+        "firebase.clients.get",
+        "firebase.clients.list",
+        "firebase.projects.get"
+      ]
+    },
+    {
+      "group": "firebaseextensionspublisher",
+      "permissions": [
+        "firebaseextensionspublisher.extensions.create",
+        "firebaseextensionspublisher.extensions.delete",
+        "firebaseextensionspublisher.extensions.get",
+        "firebaseextensionspublisher.extensions.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "firebase.clients.get",
+    "firebase.clients.list",
+    "firebase.projects.get",
+    "firebaseextensionspublisher.extensions.create",
+    "firebaseextensionspublisher.extensions.delete",
+    "firebaseextensionspublisher.extensions.get",
+    "firebaseextensionspublisher.extensions.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

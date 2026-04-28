@@ -1,0 +1,58 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.017Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/biglake.metadataViewer --format=json"
+  },
+  "name": "roles/biglake.metadataViewer",
+  "role_slug": "biglake-metadataviewer",
+  "title": "BigLake Metadata Viewer",
+  "description": "Provides read-only metadata access to all BigLake resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 12,
+  "permission_groups": [
+    "biglake",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "biglake",
+      "permissions": [
+        "biglake.catalogs.get",
+        "biglake.catalogs.getIamPolicy",
+        "biglake.catalogs.list",
+        "biglake.namespaces.get",
+        "biglake.namespaces.getIamPolicy",
+        "biglake.namespaces.list",
+        "biglake.tables.get",
+        "biglake.tables.getIamPolicy",
+        "biglake.tables.list",
+        "biglake.tables.listPartitions"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "biglake.catalogs.get",
+    "biglake.catalogs.getIamPolicy",
+    "biglake.catalogs.list",
+    "biglake.namespaces.get",
+    "biglake.namespaces.getIamPolicy",
+    "biglake.namespaces.list",
+    "biglake.tables.get",
+    "biglake.tables.getIamPolicy",
+    "biglake.tables.list",
+    "biglake.tables.listPartitions",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

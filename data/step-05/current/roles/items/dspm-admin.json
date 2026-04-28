@@ -1,0 +1,58 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.657Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dspm.admin --format=json"
+  },
+  "name": "roles/dspm.admin",
+  "role_slug": "dspm-admin",
+  "title": "Data Security Posture Management Admin",
+  "description": "Full access to Data Security Posture Management resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 12,
+  "permission_groups": [
+    "dspm",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dspm",
+      "permissions": [
+        "dspm.locations.computeAggregation",
+        "dspm.locations.fetchDataGovernanceAnalytics",
+        "dspm.locations.fetchDspmGovernedProjects",
+        "dspm.locations.fetchGovernedResourceMetrics",
+        "dspm.locations.fetchLineageConnections",
+        "dspm.locations.get",
+        "dspm.locations.list",
+        "dspm.operations.cancel",
+        "dspm.operations.delete",
+        "dspm.operations.get",
+        "dspm.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dspm.locations.computeAggregation",
+    "dspm.locations.fetchDataGovernanceAnalytics",
+    "dspm.locations.fetchDspmGovernedProjects",
+    "dspm.locations.fetchGovernedResourceMetrics",
+    "dspm.locations.fetchLineageConnections",
+    "dspm.locations.get",
+    "dspm.locations.list",
+    "dspm.operations.cancel",
+    "dspm.operations.delete",
+    "dspm.operations.get",
+    "dspm.operations.list",
+    "resourcemanager.organizations.get"
+  ]
+}

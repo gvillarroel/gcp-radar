@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.859Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/gkehub.scopeViewer --format=json"
+  },
+  "name": "roles/gkehub.scopeViewer",
+  "role_slug": "gkehub-scopeviewer",
+  "title": "Fleet Scope Viewer",
+  "description": "Viewer of Fleet Scopes and associated resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "gkehub"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "gkehub",
+      "permissions": [
+        "gkehub.namespaces.get",
+        "gkehub.namespaces.list",
+        "gkehub.rbacrolebindings.get",
+        "gkehub.rbacrolebindings.list",
+        "gkehub.scopes.get",
+        "gkehub.scopes.getIamPolicy",
+        "gkehub.scopes.listBoundMemberships"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "gkehub.namespaces.get",
+    "gkehub.namespaces.list",
+    "gkehub.rbacrolebindings.get",
+    "gkehub.rbacrolebindings.list",
+    "gkehub.scopes.get",
+    "gkehub.scopes.getIamPolicy",
+    "gkehub.scopes.listBoundMemberships"
+  ]
+}

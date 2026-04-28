@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.259Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudtasks.serviceAgent --format=json"
+  },
+  "name": "roles/cloudtasks.serviceAgent",
+  "role_slug": "cloudtasks-serviceagent",
+  "title": "Cloud Tasks Service Agent",
+  "description": "Grants Cloud Tasks Service Account access to manage resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "iam",
+    "logging"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.serviceAccounts.getAccessToken",
+        "iam.serviceAccounts.getOpenIdToken"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "iam.serviceAccounts.getAccessToken",
+    "iam.serviceAccounts.getOpenIdToken",
+    "logging.logEntries.create"
+  ]
+}

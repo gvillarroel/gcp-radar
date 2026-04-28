@@ -1,0 +1,70 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.140Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudbuild.integrationsOwner --format=json"
+  },
+  "name": "roles/cloudbuild.integrationsOwner",
+  "role_slug": "cloudbuild-integrationsowner",
+  "title": "Cloud Build Integrations Owner",
+  "description": "Can create/delete Integrations",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 15,
+  "permission_groups": [
+    "cloudbuild",
+    "compute",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudbuild",
+      "permissions": [
+        "cloudbuild.integrations.create",
+        "cloudbuild.integrations.delete",
+        "cloudbuild.integrations.get",
+        "cloudbuild.integrations.list",
+        "cloudbuild.integrations.update"
+      ]
+    },
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.firewalls.create",
+        "compute.firewalls.get",
+        "compute.firewalls.list",
+        "compute.networks.get",
+        "compute.networks.updatePolicy",
+        "compute.regions.get",
+        "compute.subnetworks.get",
+        "compute.subnetworks.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudbuild.integrations.create",
+    "cloudbuild.integrations.delete",
+    "cloudbuild.integrations.get",
+    "cloudbuild.integrations.list",
+    "cloudbuild.integrations.update",
+    "compute.firewalls.create",
+    "compute.firewalls.get",
+    "compute.firewalls.list",
+    "compute.networks.get",
+    "compute.networks.updatePolicy",
+    "compute.regions.get",
+    "compute.subnetworks.get",
+    "compute.subnetworks.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

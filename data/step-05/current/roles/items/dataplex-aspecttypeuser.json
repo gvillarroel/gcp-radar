@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.480Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataplex.aspectTypeUser --format=json"
+  },
+  "name": "roles/dataplex.aspectTypeUser",
+  "role_slug": "dataplex-aspecttypeuser",
+  "title": "Dataplex Aspect Type User",
+  "description": "Grants access to use Aspect Types to create/modify Entries with the corresponding aspects.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "datacatalog",
+    "dataplex",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datacatalog",
+      "permissions": [
+        "datacatalog.migrationConfig.get"
+      ]
+    },
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.aspectTypes.get",
+        "dataplex.aspectTypes.list",
+        "dataplex.aspectTypes.use",
+        "dataplex.projects.search"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datacatalog.migrationConfig.get",
+    "dataplex.aspectTypes.get",
+    "dataplex.aspectTypes.list",
+    "dataplex.aspectTypes.use",
+    "dataplex.projects.search",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

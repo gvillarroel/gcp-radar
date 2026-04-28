@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.473Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securedlandingzone.overwatchActivator --format=json"
+  },
+  "name": "roles/securedlandingzone.overwatchActivator",
+  "role_slug": "securedlandingzone-overwatchactivator",
+  "title": "Overwatch Activator",
+  "description": "This role can activate or suspend Overwatches",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "resourcemanager",
+    "securedlandingzone"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "securedlandingzone",
+      "permissions": [
+        "securedlandingzone.overwatches.activate",
+        "securedlandingzone.overwatches.suspend"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "securedlandingzone.overwatches.activate",
+    "securedlandingzone.overwatches.suspend"
+  ]
+}

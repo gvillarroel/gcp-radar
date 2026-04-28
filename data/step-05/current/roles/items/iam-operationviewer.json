@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.923Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/iam.operationViewer --format=json"
+  },
+  "name": "roles/iam.operationViewer",
+  "role_slug": "iam-operationviewer",
+  "title": "IAM Operation Viewer",
+  "description": "Operation user role, with permissions to view and list operations in IAM v3",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "iam"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.operations.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "iam.operations.get"
+  ]
+}

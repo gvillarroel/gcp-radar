@@ -1,0 +1,60 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.782Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebasehosting.admin --format=json"
+  },
+  "name": "roles/firebasehosting.admin",
+  "role_slug": "firebasehosting-admin",
+  "title": "Firebase Hosting Admin",
+  "description": "Full read/write access to Firebase Hosting resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "firebase",
+    "firebasehosting",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "firebase",
+      "permissions": [
+        "firebase.clients.get",
+        "firebase.clients.list",
+        "firebase.projects.get"
+      ]
+    },
+    {
+      "group": "firebasehosting",
+      "permissions": [
+        "firebasehosting.sites.create",
+        "firebasehosting.sites.delete",
+        "firebasehosting.sites.get",
+        "firebasehosting.sites.list",
+        "firebasehosting.sites.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "firebase.clients.get",
+    "firebase.clients.list",
+    "firebase.projects.get",
+    "firebasehosting.sites.create",
+    "firebasehosting.sites.delete",
+    "firebasehosting.sites.get",
+    "firebasehosting.sites.list",
+    "firebasehosting.sites.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

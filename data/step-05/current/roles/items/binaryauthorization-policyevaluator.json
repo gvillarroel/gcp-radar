@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.070Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/binaryauthorization.policyEvaluator --format=json"
+  },
+  "name": "roles/binaryauthorization.policyEvaluator",
+  "role_slug": "binaryauthorization-policyevaluator",
+  "title": "Binary Authorization Policy Evaluator",
+  "description": "Evaluator of Binary Authorization Policy",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "binaryauthorization",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "binaryauthorization",
+      "permissions": [
+        "binaryauthorization.platformPolicies.evaluatePolicy",
+        "binaryauthorization.platformPolicies.get",
+        "binaryauthorization.platformPolicies.list",
+        "binaryauthorization.policy.evaluatePolicy",
+        "binaryauthorization.policy.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "binaryauthorization.platformPolicies.evaluatePolicy",
+    "binaryauthorization.platformPolicies.get",
+    "binaryauthorization.platformPolicies.list",
+    "binaryauthorization.policy.evaluatePolicy",
+    "binaryauthorization.policy.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

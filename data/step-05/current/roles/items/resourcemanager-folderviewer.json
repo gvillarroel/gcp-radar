@@ -1,0 +1,60 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.422Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/resourcemanager.folderViewer --format=json"
+  },
+  "name": "roles/resourcemanager.folderViewer",
+  "role_slug": "resourcemanager-folderviewer",
+  "title": "Folder Viewer",
+  "description": "Access to view a folder and all of its child resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "essentialcontacts",
+    "orgpolicy",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "essentialcontacts",
+      "permissions": [
+        "essentialcontacts.contacts.get",
+        "essentialcontacts.contacts.list"
+      ]
+    },
+    {
+      "group": "orgpolicy",
+      "permissions": [
+        "orgpolicy.constraints.list",
+        "orgpolicy.policies.list",
+        "orgpolicy.policy.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.capabilities.get",
+        "resourcemanager.folders.get",
+        "resourcemanager.folders.list",
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "essentialcontacts.contacts.get",
+    "essentialcontacts.contacts.list",
+    "orgpolicy.constraints.list",
+    "orgpolicy.policies.list",
+    "orgpolicy.policy.get",
+    "resourcemanager.capabilities.get",
+    "resourcemanager.folders.get",
+    "resourcemanager.folders.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

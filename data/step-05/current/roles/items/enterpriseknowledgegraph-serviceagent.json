@@ -1,0 +1,88 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.698Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/enterpriseknowledgegraph.serviceAgent --format=json"
+  },
+  "name": "roles/enterpriseknowledgegraph.serviceAgent",
+  "role_slug": "enterpriseknowledgegraph-serviceagent",
+  "title": "Enterprise Knowledge Graph Service Agent",
+  "description": "Gives Enterprise Knowledge Graph Service Account access to consumer resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 21,
+  "permission_groups": [
+    "bigquery",
+    "dataform",
+    "resourcemanager",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.config.get",
+        "bigquery.datasets.create",
+        "bigquery.datasets.get",
+        "bigquery.jobs.create",
+        "bigquery.readsessions.create",
+        "bigquery.readsessions.getData",
+        "bigquery.tables.create",
+        "bigquery.tables.get",
+        "bigquery.tables.getData",
+        "bigquery.tables.list",
+        "bigquery.tables.update",
+        "bigquery.tables.updateData"
+      ]
+    },
+    {
+      "group": "dataform",
+      "permissions": [
+        "dataform.folders.create",
+        "dataform.locations.get",
+        "dataform.locations.list",
+        "dataform.repositories.create",
+        "dataform.repositories.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.objects.get",
+        "storage.objects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.config.get",
+    "bigquery.datasets.create",
+    "bigquery.datasets.get",
+    "bigquery.jobs.create",
+    "bigquery.readsessions.create",
+    "bigquery.readsessions.getData",
+    "bigquery.tables.create",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list",
+    "bigquery.tables.update",
+    "bigquery.tables.updateData",
+    "dataform.folders.create",
+    "dataform.locations.get",
+    "dataform.locations.list",
+    "dataform.repositories.create",
+    "dataform.repositories.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "storage.objects.get",
+    "storage.objects.list"
+  ]
+}

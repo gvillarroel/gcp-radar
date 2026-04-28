@@ -1,0 +1,60 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.896Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/healthcare.hl7V2Consumer --format=json"
+  },
+  "name": "roles/healthcare.hl7V2Consumer",
+  "role_slug": "healthcare-hl7v2consumer",
+  "title": "Healthcare HL7v2 Message Consumer",
+  "description": "List and read HL7v2 messages, update message labels, and publish new messages.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "healthcare",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "healthcare",
+      "permissions": [
+        "healthcare.datasets.get",
+        "healthcare.datasets.list",
+        "healthcare.hl7V2Messages.create",
+        "healthcare.hl7V2Messages.get",
+        "healthcare.hl7V2Messages.list",
+        "healthcare.hl7V2Messages.update",
+        "healthcare.hl7V2Stores.get",
+        "healthcare.hl7V2Stores.list",
+        "healthcare.locations.get",
+        "healthcare.locations.list",
+        "healthcare.operations.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "healthcare.datasets.get",
+    "healthcare.datasets.list",
+    "healthcare.hl7V2Messages.create",
+    "healthcare.hl7V2Messages.get",
+    "healthcare.hl7V2Messages.list",
+    "healthcare.hl7V2Messages.update",
+    "healthcare.hl7V2Stores.get",
+    "healthcare.hl7V2Stores.list",
+    "healthcare.locations.get",
+    "healthcare.locations.list",
+    "healthcare.operations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

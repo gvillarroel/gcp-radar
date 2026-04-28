@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.027Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/logging.serviceAgent --format=json"
+  },
+  "name": "roles/logging.serviceAgent",
+  "role_slug": "logging-serviceagent",
+  "title": "Cloud Logging Service Agent",
+  "description": "Grants a Cloud Logging Service Account the ability to create and link datasets.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "bigquery"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.datasets.create",
+        "bigquery.datasets.get",
+        "bigquery.datasets.link"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.datasets.create",
+    "bigquery.datasets.get",
+    "bigquery.datasets.link"
+  ]
+}

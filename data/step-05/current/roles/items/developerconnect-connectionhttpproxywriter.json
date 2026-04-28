@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.569Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/developerconnect.connectionHttpProxyWriter --format=json"
+  },
+  "name": "roles/developerconnect.connectionHttpProxyWriter",
+  "role_slug": "developerconnect-connectionhttpproxywriter",
+  "title": "Developer Connect HTTP Proxy Writer",
+  "description": "Grants read and write access to connections through the HTTP Proxy.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "developerconnect"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "developerconnect",
+      "permissions": [
+        "developerconnect.connections.httpProxyRead",
+        "developerconnect.connections.httpProxyWrite"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "developerconnect.connections.httpProxyRead",
+    "developerconnect.connections.httpProxyWrite"
+  ]
+}

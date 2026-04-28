@@ -1,0 +1,56 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.653Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/documentaicore.serviceAgent --format=json"
+  },
+  "name": "roles/documentaicore.serviceAgent",
+  "role_slug": "documentaicore-serviceagent",
+  "title": "DocumentAI Core Service Agent",
+  "description": "Gives DocumentAI Core Service Account access to consumer resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "automl",
+    "documentai",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "automl",
+      "permissions": [
+        "automl.models.predict"
+      ]
+    },
+    {
+      "group": "documentai",
+      "permissions": [
+        "documentai.humanReviewConfigs.review"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.get",
+        "storage.objects.create",
+        "storage.objects.delete",
+        "storage.objects.get",
+        "storage.objects.list",
+        "storage.objects.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "automl.models.predict",
+    "documentai.humanReviewConfigs.review",
+    "storage.buckets.get",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.get",
+    "storage.objects.list",
+    "storage.objects.update"
+  ]
+}

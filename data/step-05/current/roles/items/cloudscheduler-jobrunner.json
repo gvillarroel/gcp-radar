@@ -1,0 +1,74 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.234Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudscheduler.jobRunner --format=json"
+  },
+  "name": "roles/cloudscheduler.jobRunner",
+  "role_slug": "cloudscheduler-jobrunner",
+  "title": "Cloud Scheduler Job Runner",
+  "description": "Access to run jobs.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 14,
+  "permission_groups": [
+    "appengine",
+    "cloudscheduler",
+    "resourcemanager",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "appengine",
+      "permissions": [
+        "appengine.applications.get"
+      ]
+    },
+    {
+      "group": "cloudscheduler",
+      "permissions": [
+        "cloudscheduler.jobs.fullView",
+        "cloudscheduler.jobs.run"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.consumerpolicy.analyze",
+        "serviceusage.consumerpolicy.get",
+        "serviceusage.effectivepolicy.get",
+        "serviceusage.groups.list",
+        "serviceusage.groups.listExpandedMembers",
+        "serviceusage.groups.listMembers",
+        "serviceusage.services.get",
+        "serviceusage.services.list",
+        "serviceusage.values.test"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "appengine.applications.get",
+    "cloudscheduler.jobs.fullView",
+    "cloudscheduler.jobs.run",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "serviceusage.consumerpolicy.analyze",
+    "serviceusage.consumerpolicy.get",
+    "serviceusage.effectivepolicy.get",
+    "serviceusage.groups.list",
+    "serviceusage.groups.listExpandedMembers",
+    "serviceusage.groups.listMembers",
+    "serviceusage.services.get",
+    "serviceusage.services.list",
+    "serviceusage.values.test"
+  ]
+}

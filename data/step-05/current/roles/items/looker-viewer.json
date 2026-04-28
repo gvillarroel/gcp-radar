@@ -1,0 +1,56 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.032Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/looker.viewer --format=json"
+  },
+  "name": "roles/looker.viewer",
+  "role_slug": "looker-viewer",
+  "title": "Looker Viewer",
+  "description": "Read-only access to all Looker resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "looker",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "looker",
+      "permissions": [
+        "looker.backups.get",
+        "looker.backups.list",
+        "looker.instances.get",
+        "looker.instances.list",
+        "looker.instances.login",
+        "looker.locations.get",
+        "looker.locations.list",
+        "looker.operations.get",
+        "looker.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "looker.backups.get",
+    "looker.backups.list",
+    "looker.instances.get",
+    "looker.instances.list",
+    "looker.instances.login",
+    "looker.locations.get",
+    "looker.locations.list",
+    "looker.operations.get",
+    "looker.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

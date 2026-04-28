@@ -1,0 +1,102 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.541Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securityposture.postureDeployer --format=json"
+  },
+  "name": "roles/securityposture.postureDeployer",
+  "role_slug": "securityposture-posturedeployer",
+  "title": "Security Posture Deployer",
+  "description": "Mutate and read permissions to the Posture Deployment resource.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 25,
+  "permission_groups": [
+    "orgpolicy",
+    "resourcemanager",
+    "securitycenter",
+    "securitycentermanagement",
+    "securityposture"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "orgpolicy",
+      "permissions": [
+        "orgpolicy.constraints.list",
+        "orgpolicy.customConstraints.create",
+        "orgpolicy.customConstraints.delete",
+        "orgpolicy.customConstraints.get",
+        "orgpolicy.customConstraints.list",
+        "orgpolicy.customConstraints.update",
+        "orgpolicy.policies.create",
+        "orgpolicy.policies.delete",
+        "orgpolicy.policies.list",
+        "orgpolicy.policies.update",
+        "orgpolicy.policy.get",
+        "orgpolicy.policy.set"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get"
+      ]
+    },
+    {
+      "group": "securitycenter",
+      "permissions": [
+        "securitycenter.securityhealthanalyticssettings.calculate",
+        "securitycenter.securityhealthanalyticssettings.get",
+        "securitycenter.securityhealthanalyticssettings.update"
+      ]
+    },
+    {
+      "group": "securitycentermanagement",
+      "permissions": [
+        "securitycentermanagement.securityHealthAnalyticsCustomModules.create",
+        "securitycentermanagement.securityHealthAnalyticsCustomModules.delete",
+        "securitycentermanagement.securityHealthAnalyticsCustomModules.update"
+      ]
+    },
+    {
+      "group": "securityposture",
+      "permissions": [
+        "securityposture.operations.get",
+        "securityposture.postureDeployments.create",
+        "securityposture.postureDeployments.delete",
+        "securityposture.postureDeployments.get",
+        "securityposture.postureDeployments.list",
+        "securityposture.postureDeployments.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "orgpolicy.constraints.list",
+    "orgpolicy.customConstraints.create",
+    "orgpolicy.customConstraints.delete",
+    "orgpolicy.customConstraints.get",
+    "orgpolicy.customConstraints.list",
+    "orgpolicy.customConstraints.update",
+    "orgpolicy.policies.create",
+    "orgpolicy.policies.delete",
+    "orgpolicy.policies.list",
+    "orgpolicy.policies.update",
+    "orgpolicy.policy.get",
+    "orgpolicy.policy.set",
+    "resourcemanager.organizations.get",
+    "securitycenter.securityhealthanalyticssettings.calculate",
+    "securitycenter.securityhealthanalyticssettings.get",
+    "securitycenter.securityhealthanalyticssettings.update",
+    "securitycentermanagement.securityHealthAnalyticsCustomModules.create",
+    "securitycentermanagement.securityHealthAnalyticsCustomModules.delete",
+    "securitycentermanagement.securityHealthAnalyticsCustomModules.update",
+    "securityposture.operations.get",
+    "securityposture.postureDeployments.create",
+    "securityposture.postureDeployments.delete",
+    "securityposture.postureDeployments.get",
+    "securityposture.postureDeployments.list",
+    "securityposture.postureDeployments.update"
+  ]
+}

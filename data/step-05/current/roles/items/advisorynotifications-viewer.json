@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.790Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/advisorynotifications.viewer --format=json"
+  },
+  "name": "roles/advisorynotifications.viewer",
+  "role_slug": "advisorynotifications-viewer",
+  "title": "Advisory Notifications Viewer",
+  "description": "Grants view access in Advisory Notifications",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "advisorynotifications",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "advisorynotifications",
+      "permissions": [
+        "advisorynotifications.notifications.get",
+        "advisorynotifications.notifications.list",
+        "advisorynotifications.settings.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get",
+        "resourcemanager.projects.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "advisorynotifications.notifications.get",
+    "advisorynotifications.notifications.list",
+    "advisorynotifications.settings.get",
+    "resourcemanager.organizations.get",
+    "resourcemanager.projects.get"
+  ]
+}

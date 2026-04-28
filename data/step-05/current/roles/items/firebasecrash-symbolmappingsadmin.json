@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.762Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebasecrash.symbolMappingsAdmin --format=json"
+  },
+  "name": "roles/firebasecrash.symbolMappingsAdmin",
+  "role_slug": "firebasecrash-symbolmappingsadmin",
+  "title": "Firebase Crash Symbol Uploader",
+  "description": "Full read/write access to symbol mapping file resources for Firebase Crash Reporting.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "firebase",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "firebase",
+      "permissions": [
+        "firebase.clients.get",
+        "firebase.clients.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "firebase.clients.get",
+    "firebase.clients.list",
+    "resourcemanager.projects.get"
+  ]
+}

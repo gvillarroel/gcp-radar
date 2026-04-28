@@ -1,0 +1,52 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.211Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudkms.serviceAgent --format=json"
+  },
+  "name": "roles/cloudkms.serviceAgent",
+  "role_slug": "cloudkms-serviceagent",
+  "title": "Cloud KMS Service Agent",
+  "description": "Gives Cloud KMS service account access to managed resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "cloudasset",
+    "cloudkms"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudasset",
+      "permissions": [
+        "cloudasset.assets.listCloudkmsCryptoKeys",
+        "cloudasset.assets.listResource",
+        "cloudasset.assets.searchAllIamPolicies",
+        "cloudasset.assets.searchAllResources"
+      ]
+    },
+    {
+      "group": "cloudkms",
+      "permissions": [
+        "cloudkms.cryptoKeys.create",
+        "cloudkms.cryptoKeys.getIamPolicy",
+        "cloudkms.cryptoKeys.setIamPolicy",
+        "cloudkms.keyRings.create",
+        "cloudkms.keyRings.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudasset.assets.listCloudkmsCryptoKeys",
+    "cloudasset.assets.listResource",
+    "cloudasset.assets.searchAllIamPolicies",
+    "cloudasset.assets.searchAllResources",
+    "cloudkms.cryptoKeys.create",
+    "cloudkms.cryptoKeys.getIamPolicy",
+    "cloudkms.cryptoKeys.setIamPolicy",
+    "cloudkms.keyRings.create",
+    "cloudkms.keyRings.get"
+  ]
+}

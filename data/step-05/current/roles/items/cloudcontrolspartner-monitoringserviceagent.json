@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.158Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudcontrolspartner.monitoringServiceAgent --format=json"
+  },
+  "name": "roles/cloudcontrolspartner.monitoringServiceAgent",
+  "role_slug": "cloudcontrolspartner-monitoringserviceagent",
+  "title": "Cloud Controls Partner Monitoring Service Agent",
+  "description": "Gives Cloud Controls Partner monitoring service agent permission to view and list Assured Workload violations. The role is assigned to enable partner monitoring capability.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "assuredworkloads"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "assuredworkloads",
+      "permissions": [
+        "assuredworkloads.violations.get",
+        "assuredworkloads.violations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "assuredworkloads.violations.get",
+    "assuredworkloads.violations.list"
+  ]
+}

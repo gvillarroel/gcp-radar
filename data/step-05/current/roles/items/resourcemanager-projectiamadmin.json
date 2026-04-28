@@ -1,0 +1,52 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.426Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/resourcemanager.projectIamAdmin --format=json"
+  },
+  "name": "roles/resourcemanager.projectIamAdmin",
+  "role_slug": "resourcemanager-projectiamadmin",
+  "title": "Project IAM Admin",
+  "description": "Access and administer a project IAM policies.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "iam",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.policybindings.get",
+        "iam.policybindings.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.createPolicyBinding",
+        "resourcemanager.projects.deletePolicyBinding",
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.getIamPolicy",
+        "resourcemanager.projects.searchPolicyBindings",
+        "resourcemanager.projects.setIamPolicy",
+        "resourcemanager.projects.updatePolicyBinding"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "iam.policybindings.get",
+    "iam.policybindings.list",
+    "resourcemanager.projects.createPolicyBinding",
+    "resourcemanager.projects.deletePolicyBinding",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.getIamPolicy",
+    "resourcemanager.projects.searchPolicyBindings",
+    "resourcemanager.projects.setIamPolicy",
+    "resourcemanager.projects.updatePolicyBinding"
+  ]
+}

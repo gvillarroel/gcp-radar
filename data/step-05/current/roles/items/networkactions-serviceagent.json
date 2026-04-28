@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.144Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/networkactions.serviceAgent --format=json"
+  },
+  "name": "roles/networkactions.serviceAgent",
+  "role_slug": "networkactions-serviceagent",
+  "title": "Network Actions Service Agent",
+  "description": "Gives Network Actions service account access to read required resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "artifactregistry"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "artifactregistry",
+      "permissions": [
+        "artifactregistry.files.download",
+        "artifactregistry.repositories.downloadArtifacts"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "artifactregistry.files.download",
+    "artifactregistry.repositories.downloadArtifacts"
+  ]
+}

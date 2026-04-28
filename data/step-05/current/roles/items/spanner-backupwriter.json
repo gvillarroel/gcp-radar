@@ -1,0 +1,56 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.578Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/spanner.backupWriter --format=json"
+  },
+  "name": "roles/spanner.backupWriter",
+  "role_slug": "spanner-backupwriter",
+  "title": "Cloud Spanner Backup Writer",
+  "description": "Role with limited permissions to create and manage Cloud Spanner backups. Does not have permission to modify backups.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 14,
+  "permission_groups": [
+    "spanner"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "spanner",
+      "permissions": [
+        "spanner.backupOperations.get",
+        "spanner.backupOperations.list",
+        "spanner.backups.copy",
+        "spanner.backups.create",
+        "spanner.backups.get",
+        "spanner.backups.list",
+        "spanner.backupSchedules.create",
+        "spanner.backupSchedules.get",
+        "spanner.backupSchedules.list",
+        "spanner.databases.createBackup",
+        "spanner.databases.get",
+        "spanner.databases.list",
+        "spanner.instancePartitions.get",
+        "spanner.instances.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "spanner.backupOperations.get",
+    "spanner.backupOperations.list",
+    "spanner.backups.copy",
+    "spanner.backups.create",
+    "spanner.backups.get",
+    "spanner.backups.list",
+    "spanner.backupSchedules.create",
+    "spanner.backupSchedules.get",
+    "spanner.backupSchedules.list",
+    "spanner.databases.createBackup",
+    "spanner.databases.get",
+    "spanner.databases.list",
+    "spanner.instancePartitions.get",
+    "spanner.instances.get"
+  ]
+}

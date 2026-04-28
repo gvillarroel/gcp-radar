@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.539Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datastore.keyVisualizerViewer --format=json"
+  },
+  "name": "roles/datastore.keyVisualizerViewer",
+  "role_slug": "datastore-keyvisualizerviewer",
+  "title": "Cloud Datastore Key Visualizer Viewer",
+  "description": "Full access to Key Visualizer scans.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "datastore",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datastore",
+      "permissions": [
+        "datastore.databases.getMetadata",
+        "datastore.keyVisualizerScans.get",
+        "datastore.keyVisualizerScans.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datastore.databases.getMetadata",
+    "datastore.keyVisualizerScans.get",
+    "datastore.keyVisualizerScans.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

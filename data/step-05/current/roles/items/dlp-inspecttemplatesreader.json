@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.630Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dlp.inspectTemplatesReader --format=json"
+  },
+  "name": "roles/dlp.inspectTemplatesReader",
+  "role_slug": "dlp-inspecttemplatesreader",
+  "title": "DLP Inspect Templates Reader",
+  "description": "Read DLP inspect templates.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "dlp"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dlp",
+      "permissions": [
+        "dlp.inspectTemplates.get",
+        "dlp.inspectTemplates.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dlp.inspectTemplates.get",
+    "dlp.inspectTemplates.list"
+  ]
+}

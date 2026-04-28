@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.241Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudsecurityscanner.runner --format=json"
+  },
+  "name": "roles/cloudsecurityscanner.runner",
+  "role_slug": "cloudsecurityscanner-runner",
+  "title": "Web Security Scanner Runner",
+  "description": "Read access to Scan and ScanRun, plus the ability to start scans",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "cloudsecurityscanner"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudsecurityscanner",
+      "permissions": [
+        "cloudsecurityscanner.crawledurls.list",
+        "cloudsecurityscanner.scanruns.get",
+        "cloudsecurityscanner.scanruns.list",
+        "cloudsecurityscanner.scanruns.stop",
+        "cloudsecurityscanner.scans.get",
+        "cloudsecurityscanner.scans.list",
+        "cloudsecurityscanner.scans.run"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudsecurityscanner.crawledurls.list",
+    "cloudsecurityscanner.scanruns.get",
+    "cloudsecurityscanner.scanruns.list",
+    "cloudsecurityscanner.scanruns.stop",
+    "cloudsecurityscanner.scans.get",
+    "cloudsecurityscanner.scans.list",
+    "cloudsecurityscanner.scans.run"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.151Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/networkconnectivity.multicloudDataTransferDestinationAdmin --format=json"
+  },
+  "name": "roles/networkconnectivity.multicloudDataTransferDestinationAdmin",
+  "role_slug": "networkconnectivity-multiclouddatatransferdestinationadmin",
+  "title": "Destination Admin",
+  "description": "Access to all Destination resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "networkconnectivity",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "networkconnectivity",
+      "permissions": [
+        "networkconnectivity.multicloudDataTransferDestinations.create",
+        "networkconnectivity.multicloudDataTransferDestinations.delete",
+        "networkconnectivity.multicloudDataTransferDestinations.get",
+        "networkconnectivity.multicloudDataTransferDestinations.list",
+        "networkconnectivity.multicloudDataTransferDestinations.update",
+        "networkconnectivity.multicloudDataTransferSupportedServices.get",
+        "networkconnectivity.multicloudDataTransferSupportedServices.list",
+        "networkconnectivity.operations.get",
+        "networkconnectivity.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "networkconnectivity.multicloudDataTransferDestinations.create",
+    "networkconnectivity.multicloudDataTransferDestinations.delete",
+    "networkconnectivity.multicloudDataTransferDestinations.get",
+    "networkconnectivity.multicloudDataTransferDestinations.list",
+    "networkconnectivity.multicloudDataTransferDestinations.update",
+    "networkconnectivity.multicloudDataTransferSupportedServices.get",
+    "networkconnectivity.multicloudDataTransferSupportedServices.list",
+    "networkconnectivity.operations.get",
+    "networkconnectivity.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

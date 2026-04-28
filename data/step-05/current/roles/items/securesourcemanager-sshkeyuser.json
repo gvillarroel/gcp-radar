@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.487Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securesourcemanager.sshKeyUser --format=json"
+  },
+  "name": "roles/securesourcemanager.sshKeyUser",
+  "role_slug": "securesourcemanager-sshkeyuser",
+  "title": "Secure Source Manager SSH Key User",
+  "description": "An sshKeyUser can create SSH keys for themselves and list/delete SSH keys they own.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "resourcemanager",
+    "securesourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "securesourcemanager",
+      "permissions": [
+        "securesourcemanager.sshkeys.create",
+        "securesourcemanager.sshkeys.delete",
+        "securesourcemanager.sshkeys.get",
+        "securesourcemanager.sshkeys.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "securesourcemanager.sshkeys.create",
+    "securesourcemanager.sshkeys.delete",
+    "securesourcemanager.sshkeys.get",
+    "securesourcemanager.sshkeys.list"
+  ]
+}

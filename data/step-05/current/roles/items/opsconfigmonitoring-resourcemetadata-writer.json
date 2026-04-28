@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.203Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/opsconfigmonitoring.resourceMetadata.writer --format=json"
+  },
+  "name": "roles/opsconfigmonitoring.resourceMetadata.writer",
+  "role_slug": "opsconfigmonitoring-resourcemetadata-writer",
+  "title": "Ops Config Monitoring Resource Metadata Writer",
+  "description": "Write-only access to resource metadata. This provides exactly the permissions needed by the Ops Config Monitoring metadata agent and other systems that send metadata.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "opsconfigmonitoring"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "opsconfigmonitoring",
+      "permissions": [
+        "opsconfigmonitoring.resourceMetadata.write"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "opsconfigmonitoring.resourceMetadata.write"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.968Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/backupdr.backupvaultViewer --format=json"
+  },
+  "name": "roles/backupdr.backupvaultViewer",
+  "role_slug": "backupdr-backupvaultviewer",
+  "title": "Backup and DR Backup Vault Viewer",
+  "description": "Allows read-only permissions to access backup vault resources and backups.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "backupdr"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "backupdr",
+      "permissions": [
+        "backupdr.backupVaults.get",
+        "backupdr.backupVaults.list",
+        "backupdr.bvbackups.get",
+        "backupdr.bvbackups.list",
+        "backupdr.bvdataSources.get",
+        "backupdr.bvdataSources.list",
+        "backupdr.operations.get",
+        "backupdr.operations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "backupdr.backupVaults.get",
+    "backupdr.backupVaults.list",
+    "backupdr.bvbackups.get",
+    "backupdr.bvbackups.list",
+    "backupdr.bvdataSources.get",
+    "backupdr.bvdataSources.list",
+    "backupdr.operations.get",
+    "backupdr.operations.list"
+  ]
+}

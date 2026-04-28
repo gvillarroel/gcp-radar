@@ -1,0 +1,66 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.034Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/lustre.admin --format=json"
+  },
+  "name": "roles/lustre.admin",
+  "role_slug": "lustre-admin",
+  "title": "Google Cloud Managed Lustre Admin",
+  "description": "Full access to Google Cloud Managed Lustre resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 16,
+  "permission_groups": [
+    "lustre",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "lustre",
+      "permissions": [
+        "lustre.instances.create",
+        "lustre.instances.delete",
+        "lustre.instances.exportData",
+        "lustre.instances.get",
+        "lustre.instances.importData",
+        "lustre.instances.list",
+        "lustre.instances.rescheduleMaintenance",
+        "lustre.instances.update",
+        "lustre.locations.get",
+        "lustre.locations.list",
+        "lustre.operations.cancel",
+        "lustre.operations.delete",
+        "lustre.operations.get",
+        "lustre.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "lustre.instances.create",
+    "lustre.instances.delete",
+    "lustre.instances.exportData",
+    "lustre.instances.get",
+    "lustre.instances.importData",
+    "lustre.instances.list",
+    "lustre.instances.rescheduleMaintenance",
+    "lustre.instances.update",
+    "lustre.locations.get",
+    "lustre.locations.list",
+    "lustre.operations.cancel",
+    "lustre.operations.delete",
+    "lustre.operations.get",
+    "lustre.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

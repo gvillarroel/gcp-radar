@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.454Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/run.jobsExecutorWithOverrides --format=json"
+  },
+  "name": "roles/run.jobsExecutorWithOverrides",
+  "role_slug": "run-jobsexecutorwithoverrides",
+  "title": "Cloud Run Jobs Executor With Overrides",
+  "description": "Can execute and cancel Cloud Run jobs with overrides.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "run"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "run",
+      "permissions": [
+        "run.executions.cancel",
+        "run.jobs.run",
+        "run.jobs.runWithOverrides"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "run.executions.cancel",
+    "run.jobs.run",
+    "run.jobs.runWithOverrides"
+  ]
+}

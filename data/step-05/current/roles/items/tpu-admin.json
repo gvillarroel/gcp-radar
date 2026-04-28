@@ -1,0 +1,80 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.654Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/tpu.admin --format=json"
+  },
+  "name": "roles/tpu.admin",
+  "role_slug": "tpu-admin",
+  "title": "TPU Admin",
+  "description": "Full access to TPU nodes and related resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 23,
+  "permission_groups": [
+    "resourcemanager",
+    "tpu"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "tpu",
+      "permissions": [
+        "tpu.acceleratortypes.get",
+        "tpu.acceleratortypes.list",
+        "tpu.locations.get",
+        "tpu.locations.list",
+        "tpu.nodes.create",
+        "tpu.nodes.delete",
+        "tpu.nodes.get",
+        "tpu.nodes.list",
+        "tpu.nodes.performMaintenance",
+        "tpu.nodes.reimage",
+        "tpu.nodes.reset",
+        "tpu.nodes.simulateMaintenanceEvent",
+        "tpu.nodes.start",
+        "tpu.nodes.stop",
+        "tpu.nodes.update",
+        "tpu.operations.get",
+        "tpu.operations.list",
+        "tpu.runtimeversions.get",
+        "tpu.runtimeversions.list",
+        "tpu.tensorflowversions.get",
+        "tpu.tensorflowversions.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "tpu.acceleratortypes.get",
+    "tpu.acceleratortypes.list",
+    "tpu.locations.get",
+    "tpu.locations.list",
+    "tpu.nodes.create",
+    "tpu.nodes.delete",
+    "tpu.nodes.get",
+    "tpu.nodes.list",
+    "tpu.nodes.performMaintenance",
+    "tpu.nodes.reimage",
+    "tpu.nodes.reset",
+    "tpu.nodes.simulateMaintenanceEvent",
+    "tpu.nodes.start",
+    "tpu.nodes.stop",
+    "tpu.nodes.update",
+    "tpu.operations.get",
+    "tpu.operations.list",
+    "tpu.runtimeversions.get",
+    "tpu.runtimeversions.list",
+    "tpu.tensorflowversions.get",
+    "tpu.tensorflowversions.list"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.379Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/container.cloudKmsKeyUser --format=json"
+  },
+  "name": "roles/container.cloudKmsKeyUser",
+  "role_slug": "container-cloudkmskeyuser",
+  "title": "Kubernetes Engine KMS Crypto Key User",
+  "description": "Allow the Kubernetes Engine service agent in the cluster project to call KMS with user provided crypto keys to sign payloads.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "cloudkms",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudkms",
+      "permissions": [
+        "cloudkms.cryptoKeys.get",
+        "cloudkms.cryptoKeyVersions.get",
+        "cloudkms.cryptoKeyVersions.useToSign",
+        "cloudkms.cryptoKeyVersions.useToVerify",
+        "cloudkms.cryptoKeyVersions.viewPublicKey",
+        "cloudkms.locations.get",
+        "cloudkms.locations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudkms.cryptoKeys.get",
+    "cloudkms.cryptoKeyVersions.get",
+    "cloudkms.cryptoKeyVersions.useToSign",
+    "cloudkms.cryptoKeyVersions.useToVerify",
+    "cloudkms.cryptoKeyVersions.viewPublicKey",
+    "cloudkms.locations.get",
+    "cloudkms.locations.list",
+    "resourcemanager.projects.get"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.358Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/connectors.invoker --format=json"
+  },
+  "name": "roles/connectors.invoker",
+  "role_slug": "connectors-invoker",
+  "title": "Connector Invoker",
+  "description": "Full Access to invoke all operations on Connections.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "connectors"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "connectors",
+      "permissions": [
+        "connectors.actions.execute",
+        "connectors.actions.list",
+        "connectors.connections.executeSqlQuery",
+        "connectors.entities.create",
+        "connectors.entities.delete",
+        "connectors.entities.deleteEntitiesWithConditions",
+        "connectors.entities.get",
+        "connectors.entities.list",
+        "connectors.entities.update",
+        "connectors.entities.updateEntitiesWithConditions",
+        "connectors.entityTypes.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "connectors.actions.execute",
+    "connectors.actions.list",
+    "connectors.connections.executeSqlQuery",
+    "connectors.entities.create",
+    "connectors.entities.delete",
+    "connectors.entities.deleteEntitiesWithConditions",
+    "connectors.entities.get",
+    "connectors.entities.list",
+    "connectors.entities.update",
+    "connectors.entities.updateEntitiesWithConditions",
+    "connectors.entityTypes.list"
+  ]
+}

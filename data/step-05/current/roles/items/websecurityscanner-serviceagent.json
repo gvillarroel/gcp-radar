@@ -1,0 +1,60 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.725Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/websecurityscanner.serviceAgent --format=json"
+  },
+  "name": "roles/websecurityscanner.serviceAgent",
+  "role_slug": "websecurityscanner-serviceagent",
+  "title": "Cloud Web Security Scanner Service Agent",
+  "description": "Gives the Cloud Web Security Scanner service account access to compute engine details and app engine details.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "appengine",
+    "cloudasset",
+    "compute"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "appengine",
+      "permissions": [
+        "appengine.applications.get"
+      ]
+    },
+    {
+      "group": "cloudasset",
+      "permissions": [
+        "cloudasset.assets.listResource"
+      ]
+    },
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.addresses.list",
+        "compute.backendServices.get",
+        "compute.forwardingRules.get",
+        "compute.globalForwardingRules.get",
+        "compute.sslCertificates.list",
+        "compute.targetHttpProxies.get",
+        "compute.targetHttpsProxies.get",
+        "compute.urlMaps.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "appengine.applications.get",
+    "cloudasset.assets.listResource",
+    "compute.addresses.list",
+    "compute.backendServices.get",
+    "compute.forwardingRules.get",
+    "compute.globalForwardingRules.get",
+    "compute.sslCertificates.list",
+    "compute.targetHttpProxies.get",
+    "compute.targetHttpsProxies.get",
+    "compute.urlMaps.get"
+  ]
+}

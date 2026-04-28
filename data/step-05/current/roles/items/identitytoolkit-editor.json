@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.972Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/identitytoolkit.editor --format=json"
+  },
+  "name": "roles/identitytoolkit.editor",
+  "role_slug": "identitytoolkit-editor",
+  "title": "Identity Toolkit editor",
+  "description": "Write access to Identity Toolkit resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 22,
+  "permission_groups": [
+    "firebase",
+    "firebaseauth",
+    "identitytoolkit",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "firebase",
+      "permissions": [
+        "firebase.clients.get",
+        "firebase.clients.list",
+        "firebase.projects.get"
+      ]
+    },
+    {
+      "group": "firebaseauth",
+      "permissions": [
+        "firebaseauth.configs.create",
+        "firebaseauth.configs.get",
+        "firebaseauth.configs.getHashConfig",
+        "firebaseauth.configs.getSecret",
+        "firebaseauth.configs.update",
+        "firebaseauth.users.create",
+        "firebaseauth.users.createSession",
+        "firebaseauth.users.delete",
+        "firebaseauth.users.get",
+        "firebaseauth.users.sendEmail",
+        "firebaseauth.users.update"
+      ]
+    },
+    {
+      "group": "identitytoolkit",
+      "permissions": [
+        "identitytoolkit.tenants.create",
+        "identitytoolkit.tenants.delete",
+        "identitytoolkit.tenants.get",
+        "identitytoolkit.tenants.getIamPolicy",
+        "identitytoolkit.tenants.list",
+        "identitytoolkit.tenants.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "firebase.clients.get",
+    "firebase.clients.list",
+    "firebase.projects.get",
+    "firebaseauth.configs.create",
+    "firebaseauth.configs.get",
+    "firebaseauth.configs.getHashConfig",
+    "firebaseauth.configs.getSecret",
+    "firebaseauth.configs.update",
+    "firebaseauth.users.create",
+    "firebaseauth.users.createSession",
+    "firebaseauth.users.delete",
+    "firebaseauth.users.get",
+    "firebaseauth.users.sendEmail",
+    "firebaseauth.users.update",
+    "identitytoolkit.tenants.create",
+    "identitytoolkit.tenants.delete",
+    "identitytoolkit.tenants.get",
+    "identitytoolkit.tenants.getIamPolicy",
+    "identitytoolkit.tenants.list",
+    "identitytoolkit.tenants.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

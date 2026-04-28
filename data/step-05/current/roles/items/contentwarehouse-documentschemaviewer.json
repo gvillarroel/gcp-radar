@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.404Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/contentwarehouse.documentSchemaViewer --format=json"
+  },
+  "name": "roles/contentwarehouse.documentSchemaViewer",
+  "role_slug": "contentwarehouse-documentschemaviewer",
+  "title": "Content Warehouse document schema viewer",
+  "description": "Grants access to view the document schemas in Content Warehouse",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "contentwarehouse",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "contentwarehouse",
+      "permissions": [
+        "contentwarehouse.documentSchemas.get",
+        "contentwarehouse.documentSchemas.list",
+        "contentwarehouse.locations.getStatus"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "contentwarehouse.documentSchemas.get",
+    "contentwarehouse.documentSchemas.list",
+    "contentwarehouse.locations.getStatus",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

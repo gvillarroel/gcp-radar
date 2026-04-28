@@ -1,0 +1,340 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.736Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebase.managementServiceAgent --format=json"
+  },
+  "name": "roles/firebase.managementServiceAgent",
+  "role_slug": "firebase-managementserviceagent",
+  "title": "Firebase Service Management Service Agent",
+  "description": "Access to create new service agents for Firebase projects; assign roles to service agents; provision GCP resources as required by Firebase services.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 102,
+  "permission_groups": [
+    "apikeys",
+    "appengine",
+    "bigquery",
+    "clientauthconfig",
+    "datastore",
+    "firebase",
+    "firebaseabt",
+    "firebaseapphosting",
+    "firebaseauth",
+    "firebasedataconnect",
+    "firebasehosting",
+    "firebaserules",
+    "firebasestorage",
+    "firebasevertexai",
+    "iam",
+    "resourcemanager",
+    "servicemanagement",
+    "serviceusage",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "apikeys",
+      "permissions": [
+        "apikeys.keys.create",
+        "apikeys.keys.get",
+        "apikeys.keys.getKeyString",
+        "apikeys.keys.list",
+        "apikeys.keys.update"
+      ]
+    },
+    {
+      "group": "appengine",
+      "permissions": [
+        "appengine.applications.create",
+        "appengine.applications.get",
+        "appengine.applications.update",
+        "appengine.operations.get",
+        "appengine.services.list"
+      ]
+    },
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.datasets.create",
+        "bigquery.datasets.get",
+        "bigquery.datasets.getIamPolicy",
+        "bigquery.datasets.setIamPolicy",
+        "bigquery.datasets.update",
+        "bigquery.transfers.get",
+        "bigquery.transfers.update"
+      ]
+    },
+    {
+      "group": "clientauthconfig",
+      "permissions": [
+        "clientauthconfig.brands.create",
+        "clientauthconfig.brands.get",
+        "clientauthconfig.brands.list",
+        "clientauthconfig.brands.update",
+        "clientauthconfig.clients.create",
+        "clientauthconfig.clients.delete",
+        "clientauthconfig.clients.get",
+        "clientauthconfig.clients.getWithSecret",
+        "clientauthconfig.clients.list",
+        "clientauthconfig.clients.update"
+      ]
+    },
+    {
+      "group": "datastore",
+      "permissions": [
+        "datastore.databases.create",
+        "datastore.databases.get",
+        "datastore.databases.getMetadata",
+        "datastore.databases.list",
+        "datastore.databases.update",
+        "datastore.locations.get",
+        "datastore.locations.list",
+        "datastore.operations.get",
+        "datastore.operations.list"
+      ]
+    },
+    {
+      "group": "firebase",
+      "permissions": [
+        "firebase.clients.create",
+        "firebase.clients.delete",
+        "firebase.clients.get",
+        "firebase.clients.undelete",
+        "firebase.clients.update",
+        "firebase.projects.delete",
+        "firebase.projects.get",
+        "firebase.projects.update"
+      ]
+    },
+    {
+      "group": "firebaseabt",
+      "permissions": [
+        "firebaseabt.experiments.delete"
+      ]
+    },
+    {
+      "group": "firebaseapphosting",
+      "permissions": [
+        "firebaseapphosting.domains.create",
+        "firebaseapphosting.domains.get",
+        "firebaseapphosting.domains.list",
+        "firebaseapphosting.domains.update"
+      ]
+    },
+    {
+      "group": "firebaseauth",
+      "permissions": [
+        "firebaseauth.configs.create",
+        "firebaseauth.configs.get",
+        "firebaseauth.configs.update"
+      ]
+    },
+    {
+      "group": "firebasedataconnect",
+      "permissions": [
+        "firebasedataconnect.locations.get",
+        "firebasedataconnect.locations.list",
+        "firebasedataconnect.operations.get",
+        "firebasedataconnect.operations.list",
+        "firebasedataconnect.services.create"
+      ]
+    },
+    {
+      "group": "firebasehosting",
+      "permissions": [
+        "firebasehosting.sites.create",
+        "firebasehosting.sites.get",
+        "firebasehosting.sites.list",
+        "firebasehosting.sites.update"
+      ]
+    },
+    {
+      "group": "firebaserules",
+      "permissions": [
+        "firebaserules.releases.create",
+        "firebaserules.releases.delete",
+        "firebaserules.releases.get",
+        "firebaserules.releases.list",
+        "firebaserules.releases.update",
+        "firebaserules.rulesets.create",
+        "firebaserules.rulesets.get",
+        "firebaserules.rulesets.list"
+      ]
+    },
+    {
+      "group": "firebasestorage",
+      "permissions": [
+        "firebasestorage.defaultBucket.get"
+      ]
+    },
+    {
+      "group": "firebasevertexai",
+      "permissions": [
+        "firebasevertexai.configs.get",
+        "firebasevertexai.configs.update"
+      ]
+    },
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.roles.get",
+        "iam.serviceAccounts.create",
+        "iam.serviceAccounts.get",
+        "iam.serviceAccounts.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get",
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.getIamPolicy",
+        "resourcemanager.projects.setIamPolicy",
+        "resourcemanager.projects.update"
+      ]
+    },
+    {
+      "group": "servicemanagement",
+      "permissions": [
+        "servicemanagement.services.bind"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.consumerpolicy.analyze",
+        "serviceusage.consumerpolicy.get",
+        "serviceusage.consumerpolicy.update",
+        "serviceusage.effectivepolicy.get",
+        "serviceusage.groups.list",
+        "serviceusage.groups.listExpandedMembers",
+        "serviceusage.groups.listMembers",
+        "serviceusage.services.enable",
+        "serviceusage.services.get",
+        "serviceusage.services.list",
+        "serviceusage.services.use",
+        "serviceusage.values.test"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.bucketOperations.get",
+        "storage.bucketOperations.list",
+        "storage.buckets.create",
+        "storage.buckets.get",
+        "storage.buckets.getIamPolicy",
+        "storage.buckets.list",
+        "storage.buckets.setIamPolicy",
+        "storage.buckets.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "apikeys.keys.create",
+    "apikeys.keys.get",
+    "apikeys.keys.getKeyString",
+    "apikeys.keys.list",
+    "apikeys.keys.update",
+    "appengine.applications.create",
+    "appengine.applications.get",
+    "appengine.applications.update",
+    "appengine.operations.get",
+    "appengine.services.list",
+    "bigquery.datasets.create",
+    "bigquery.datasets.get",
+    "bigquery.datasets.getIamPolicy",
+    "bigquery.datasets.setIamPolicy",
+    "bigquery.datasets.update",
+    "bigquery.transfers.get",
+    "bigquery.transfers.update",
+    "clientauthconfig.brands.create",
+    "clientauthconfig.brands.get",
+    "clientauthconfig.brands.list",
+    "clientauthconfig.brands.update",
+    "clientauthconfig.clients.create",
+    "clientauthconfig.clients.delete",
+    "clientauthconfig.clients.get",
+    "clientauthconfig.clients.getWithSecret",
+    "clientauthconfig.clients.list",
+    "clientauthconfig.clients.update",
+    "datastore.databases.create",
+    "datastore.databases.get",
+    "datastore.databases.getMetadata",
+    "datastore.databases.list",
+    "datastore.databases.update",
+    "datastore.locations.get",
+    "datastore.locations.list",
+    "datastore.operations.get",
+    "datastore.operations.list",
+    "firebase.clients.create",
+    "firebase.clients.delete",
+    "firebase.clients.get",
+    "firebase.clients.undelete",
+    "firebase.clients.update",
+    "firebase.projects.delete",
+    "firebase.projects.get",
+    "firebase.projects.update",
+    "firebaseabt.experiments.delete",
+    "firebaseapphosting.domains.create",
+    "firebaseapphosting.domains.get",
+    "firebaseapphosting.domains.list",
+    "firebaseapphosting.domains.update",
+    "firebaseauth.configs.create",
+    "firebaseauth.configs.get",
+    "firebaseauth.configs.update",
+    "firebasedataconnect.locations.get",
+    "firebasedataconnect.locations.list",
+    "firebasedataconnect.operations.get",
+    "firebasedataconnect.operations.list",
+    "firebasedataconnect.services.create",
+    "firebasehosting.sites.create",
+    "firebasehosting.sites.get",
+    "firebasehosting.sites.list",
+    "firebasehosting.sites.update",
+    "firebaserules.releases.create",
+    "firebaserules.releases.delete",
+    "firebaserules.releases.get",
+    "firebaserules.releases.list",
+    "firebaserules.releases.update",
+    "firebaserules.rulesets.create",
+    "firebaserules.rulesets.get",
+    "firebaserules.rulesets.list",
+    "firebasestorage.defaultBucket.get",
+    "firebasevertexai.configs.get",
+    "firebasevertexai.configs.update",
+    "iam.roles.get",
+    "iam.serviceAccounts.create",
+    "iam.serviceAccounts.get",
+    "iam.serviceAccounts.list",
+    "resourcemanager.organizations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.getIamPolicy",
+    "resourcemanager.projects.setIamPolicy",
+    "resourcemanager.projects.update",
+    "servicemanagement.services.bind",
+    "serviceusage.consumerpolicy.analyze",
+    "serviceusage.consumerpolicy.get",
+    "serviceusage.consumerpolicy.update",
+    "serviceusage.effectivepolicy.get",
+    "serviceusage.groups.list",
+    "serviceusage.groups.listExpandedMembers",
+    "serviceusage.groups.listMembers",
+    "serviceusage.services.enable",
+    "serviceusage.services.get",
+    "serviceusage.services.list",
+    "serviceusage.services.use",
+    "serviceusage.values.test",
+    "storage.bucketOperations.get",
+    "storage.bucketOperations.list",
+    "storage.buckets.create",
+    "storage.buckets.get",
+    "storage.buckets.getIamPolicy",
+    "storage.buckets.list",
+    "storage.buckets.setIamPolicy",
+    "storage.buckets.update"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.538Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datastore.importExportAdmin --format=json"
+  },
+  "name": "roles/datastore.importExportAdmin",
+  "role_slug": "datastore-importexportadmin",
+  "title": "Cloud Datastore Import Export Admin",
+  "description": "Full access to manage imports and exports.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "appengine",
+    "datastore",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "appengine",
+      "permissions": [
+        "appengine.applications.get"
+      ]
+    },
+    {
+      "group": "datastore",
+      "permissions": [
+        "datastore.databases.export",
+        "datastore.databases.getMetadata",
+        "datastore.databases.import",
+        "datastore.operations.cancel",
+        "datastore.operations.get",
+        "datastore.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "appengine.applications.get",
+    "datastore.databases.export",
+    "datastore.databases.getMetadata",
+    "datastore.databases.import",
+    "datastore.operations.cancel",
+    "datastore.operations.get",
+    "datastore.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

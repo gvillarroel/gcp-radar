@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.704Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/visionai.seriesViewer --format=json"
+  },
+  "name": "roles/visionai.seriesViewer",
+  "role_slug": "visionai-seriesviewer",
+  "title": "Vision AI Series Viewer",
+  "description": "Access to read Vision AI Series.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "visionai"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "visionai",
+      "permissions": [
+        "visionai.series.get",
+        "visionai.series.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "visionai.series.get",
+    "visionai.series.list"
+  ]
+}

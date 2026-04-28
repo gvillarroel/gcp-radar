@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.181Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudjobdiscovery.admin --format=json"
+  },
+  "name": "roles/cloudjobdiscovery.admin",
+  "role_slug": "cloudjobdiscovery-admin",
+  "title": "Cloud Talent Solution Admin",
+  "description": "Access to Cloud Talent Solution Self-Service Tools.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "cloudjobdiscovery",
+    "iam",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudjobdiscovery",
+      "permissions": [
+        "cloudjobdiscovery.tools.access"
+      ]
+    },
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.serviceAccounts.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudjobdiscovery.tools.access",
+    "iam.serviceAccounts.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

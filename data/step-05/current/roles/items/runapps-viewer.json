@@ -1,0 +1,56 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.462Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/runapps.viewer --format=json"
+  },
+  "name": "roles/runapps.viewer",
+  "role_slug": "runapps-viewer",
+  "title": "Serverless Integrations Viewer",
+  "description": "Readonly access to Serverless Integrations resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "resourcemanager",
+    "runapps"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "runapps",
+      "permissions": [
+        "runapps.applications.get",
+        "runapps.applications.getStatus",
+        "runapps.applications.list",
+        "runapps.deployments.get",
+        "runapps.deployments.list",
+        "runapps.locations.get",
+        "runapps.locations.list",
+        "runapps.operations.get",
+        "runapps.operations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "runapps.applications.get",
+    "runapps.applications.getStatus",
+    "runapps.applications.list",
+    "runapps.deployments.get",
+    "runapps.deployments.list",
+    "runapps.locations.get",
+    "runapps.locations.list",
+    "runapps.operations.get",
+    "runapps.operations.list"
+  ]
+}

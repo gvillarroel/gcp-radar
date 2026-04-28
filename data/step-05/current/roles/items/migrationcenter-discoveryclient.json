@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.097Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/migrationcenter.discoveryClient --format=json"
+  },
+  "name": "roles/migrationcenter.discoveryClient",
+  "role_slug": "migrationcenter-discoveryclient",
+  "title": "Migration Center Discovery Client",
+  "description": "Migration Center Discover Client role",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "migrationcenter"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "migrationcenter",
+      "permissions": [
+        "migrationcenter.assets.reportFrames",
+        "migrationcenter.discoveryClients.get",
+        "migrationcenter.discoveryClients.sendHeartbeat"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "migrationcenter.assets.reportFrames",
+    "migrationcenter.discoveryClients.get",
+    "migrationcenter.discoveryClients.sendHeartbeat"
+  ]
+}

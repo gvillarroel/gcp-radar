@@ -1,0 +1,36 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.411Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/remotebuildexecution.configurationViewer --format=json"
+  },
+  "name": "roles/remotebuildexecution.configurationViewer",
+  "role_slug": "remotebuildexecution-configurationviewer",
+  "title": "Remote Build Execution Configuration Viewer",
+  "description": "Remote Build Execution Configuration Viewer",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "remotebuildexecution"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "remotebuildexecution",
+      "permissions": [
+        "remotebuildexecution.instances.get",
+        "remotebuildexecution.instances.list",
+        "remotebuildexecution.workerpools.get",
+        "remotebuildexecution.workerpools.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "remotebuildexecution.instances.get",
+    "remotebuildexecution.instances.list",
+    "remotebuildexecution.workerpools.get",
+    "remotebuildexecution.workerpools.list"
+  ]
+}

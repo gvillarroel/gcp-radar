@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.061Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/mandiant.attackSurfaceManagementViewer --format=json"
+  },
+  "name": "roles/mandiant.attackSurfaceManagementViewer",
+  "role_slug": "mandiant-attacksurfacemanagementviewer",
+  "title": "Mandiant Attack Surface Management Viewer",
+  "description": "Access to read Attack Surface Management",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "mandiant",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "mandiant",
+      "permissions": [
+        "mandiant.genericAttackSurfaceManagements.get",
+        "mandiant.genericPlatforms.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "mandiant.genericAttackSurfaceManagements.get",
+    "mandiant.genericPlatforms.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

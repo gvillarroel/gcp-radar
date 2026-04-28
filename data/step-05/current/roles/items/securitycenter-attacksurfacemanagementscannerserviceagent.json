@@ -1,0 +1,56 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.498Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securitycenter.attackSurfaceManagementScannerServiceAgent --format=json"
+  },
+  "name": "roles/securitycenter.attackSurfaceManagementScannerServiceAgent",
+  "role_slug": "securitycenter-attacksurfacemanagementscannerserviceagent",
+  "title": "Attack Surface Management Scanner Service Agent",
+  "description": "Gives Mandiant Attack Surface Management the ability to scan Cloud Platform resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "apigateway",
+    "cloudasset",
+    "dns",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "apigateway",
+      "permissions": [
+        "apigateway.apiconfigs.get"
+      ]
+    },
+    {
+      "group": "cloudasset",
+      "permissions": [
+        "cloudasset.assets.listResource"
+      ]
+    },
+    {
+      "group": "dns",
+      "permissions": [
+        "dns.managedZones.list",
+        "dns.resourceRecordSets.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "apigateway.apiconfigs.get",
+    "cloudasset.assets.listResource",
+    "dns.managedZones.list",
+    "dns.resourceRecordSets.list",
+    "resourcemanager.projects.get"
+  ]
+}

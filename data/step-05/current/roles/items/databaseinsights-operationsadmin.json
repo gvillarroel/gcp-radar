@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.412Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/databaseinsights.operationsAdmin --format=json"
+  },
+  "name": "roles/databaseinsights.operationsAdmin",
+  "role_slug": "databaseinsights-operationsadmin",
+  "title": "Database Insights performing operations",
+  "description": "Admin role for performing Database Insights operations",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "databaseinsights"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "databaseinsights",
+      "permissions": [
+        "databaseinsights.activeQuery.terminate"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "databaseinsights.activeQuery.terminate"
+  ]
+}

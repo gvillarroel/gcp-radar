@@ -1,0 +1,72 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.738Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/workloadmanager.viewer --format=json"
+  },
+  "name": "roles/workloadmanager.viewer",
+  "role_slug": "workloadmanager-viewer",
+  "title": "Workload Manager Viewer",
+  "description": "Read-only access to Workload Manager all resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 16,
+  "permission_groups": [
+    "orgpolicy",
+    "resourcemanager",
+    "workloadmanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "orgpolicy",
+      "permissions": [
+        "orgpolicy.policy.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "workloadmanager",
+      "permissions": [
+        "workloadmanager.actuations.get",
+        "workloadmanager.actuations.list",
+        "workloadmanager.deployments.get",
+        "workloadmanager.deployments.list",
+        "workloadmanager.discoveredprofiles.get",
+        "workloadmanager.discoveredprofiles.getHealth",
+        "workloadmanager.discoveredprofiles.list",
+        "workloadmanager.evaluations.get",
+        "workloadmanager.evaluations.list",
+        "workloadmanager.executions.get",
+        "workloadmanager.executions.list",
+        "workloadmanager.results.list",
+        "workloadmanager.rules.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "orgpolicy.policy.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "workloadmanager.actuations.get",
+    "workloadmanager.actuations.list",
+    "workloadmanager.deployments.get",
+    "workloadmanager.deployments.list",
+    "workloadmanager.discoveredprofiles.get",
+    "workloadmanager.discoveredprofiles.getHealth",
+    "workloadmanager.discoveredprofiles.list",
+    "workloadmanager.evaluations.get",
+    "workloadmanager.evaluations.list",
+    "workloadmanager.executions.get",
+    "workloadmanager.executions.list",
+    "workloadmanager.results.list",
+    "workloadmanager.rules.list"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.294Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/privilegedaccessmanager.settingsAdmin --format=json"
+  },
+  "name": "roles/privilegedaccessmanager.settingsAdmin",
+  "role_slug": "privilegedaccessmanager-settingsadmin",
+  "title": "Privileged Access Manager Settings Admin",
+  "description": "Administrator of Privileged Access Manager Settings.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "privilegedaccessmanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "privilegedaccessmanager",
+      "permissions": [
+        "privilegedaccessmanager.operations.get",
+        "privilegedaccessmanager.settings.fetchEffective",
+        "privilegedaccessmanager.settings.get",
+        "privilegedaccessmanager.settings.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "privilegedaccessmanager.operations.get",
+    "privilegedaccessmanager.settings.fetchEffective",
+    "privilegedaccessmanager.settings.get",
+    "privilegedaccessmanager.settings.update"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.743Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/workstations.operationViewer --format=json"
+  },
+  "name": "roles/workstations.operationViewer",
+  "role_slug": "workstations-operationviewer",
+  "title": "Cloud Workstations Operation Viewer",
+  "description": "Grants ability to view Cloud Workstations API operations.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "workstations"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "workstations",
+      "permissions": [
+        "workstations.operations.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "workstations.operations.get"
+  ]
+}

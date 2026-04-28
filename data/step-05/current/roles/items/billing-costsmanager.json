@@ -1,0 +1,72 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.058Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/billing.costsManager --format=json"
+  },
+  "name": "roles/billing.costsManager",
+  "role_slug": "billing-costsmanager",
+  "title": "Billing Account Costs Manager",
+  "description": "Can view and export cost information of billing accounts.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 19,
+  "permission_groups": [
+    "billing",
+    "recommender"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "billing",
+      "permissions": [
+        "billing.accounts.get",
+        "billing.accounts.getIamPolicy",
+        "billing.accounts.getSpendingInformation",
+        "billing.accounts.getUsageExportSpec",
+        "billing.accounts.list",
+        "billing.accounts.updateUsageExportSpec",
+        "billing.anomalies.get",
+        "billing.anomalies.list",
+        "billing.anomaliesConfigs.get",
+        "billing.anomaliesConfigs.update",
+        "billing.budgets.create",
+        "billing.budgets.delete",
+        "billing.budgets.get",
+        "billing.budgets.list",
+        "billing.budgets.update",
+        "billing.resourceAssociations.list"
+      ]
+    },
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.costInsights.get",
+        "recommender.costInsights.list",
+        "recommender.costInsights.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "billing.accounts.get",
+    "billing.accounts.getIamPolicy",
+    "billing.accounts.getSpendingInformation",
+    "billing.accounts.getUsageExportSpec",
+    "billing.accounts.list",
+    "billing.accounts.updateUsageExportSpec",
+    "billing.anomalies.get",
+    "billing.anomalies.list",
+    "billing.anomaliesConfigs.get",
+    "billing.anomaliesConfigs.update",
+    "billing.budgets.create",
+    "billing.budgets.delete",
+    "billing.budgets.get",
+    "billing.budgets.list",
+    "billing.budgets.update",
+    "billing.resourceAssociations.list",
+    "recommender.costInsights.get",
+    "recommender.costInsights.list",
+    "recommender.costInsights.update"
+  ]
+}

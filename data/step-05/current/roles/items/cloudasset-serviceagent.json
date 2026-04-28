@@ -1,0 +1,70 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.130Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudasset.serviceAgent --format=json"
+  },
+  "name": "roles/cloudasset.serviceAgent",
+  "role_slug": "cloudasset-serviceagent",
+  "title": "Cloud Asset Service Agent",
+  "description": "Gives Cloud Asset service agent permissions to Cloud Storage and BigQuery for exporting Assets, and permission to publish to Cloud Pub/Sub topics for Asset Real Time Feed.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 15,
+  "permission_groups": [
+    "bigquery",
+    "pubsub",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.datasets.get",
+        "bigquery.jobs.create",
+        "bigquery.jobs.get",
+        "bigquery.tables.create",
+        "bigquery.tables.delete",
+        "bigquery.tables.get",
+        "bigquery.tables.update",
+        "bigquery.tables.updateData"
+      ]
+    },
+    {
+      "group": "pubsub",
+      "permissions": [
+        "pubsub.topics.publish"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.create",
+        "storage.buckets.get",
+        "storage.buckets.getIamPolicy",
+        "storage.objects.create",
+        "storage.objects.delete",
+        "storage.objects.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.datasets.get",
+    "bigquery.jobs.create",
+    "bigquery.jobs.get",
+    "bigquery.tables.create",
+    "bigquery.tables.delete",
+    "bigquery.tables.get",
+    "bigquery.tables.update",
+    "bigquery.tables.updateData",
+    "pubsub.topics.publish",
+    "storage.buckets.create",
+    "storage.buckets.get",
+    "storage.buckets.getIamPolicy",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.get"
+  ]
+}

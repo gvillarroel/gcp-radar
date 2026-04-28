@@ -1,0 +1,60 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.787Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/actions.Viewer --format=json"
+  },
+  "name": "roles/actions.Viewer",
+  "role_slug": "actions-viewer",
+  "title": "Actions Viewer",
+  "description": "Access to view an action",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "actions",
+    "firebase",
+    "resourcemanager",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "actions",
+      "permissions": [
+        "actions.agent.get",
+        "actions.agentVersions.get",
+        "actions.agentVersions.list"
+      ]
+    },
+    {
+      "group": "firebase",
+      "permissions": [
+        "firebase.projects.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "actions.agent.get",
+    "actions.agentVersions.get",
+    "actions.agentVersions.list",
+    "firebase.projects.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "serviceusage.services.use"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.516Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securitycenter.notificationConfigViewer --format=json"
+  },
+  "name": "roles/securitycenter.notificationConfigViewer",
+  "role_slug": "securitycenter-notificationconfigviewer",
+  "title": "Security Center Notification Configurations Viewer",
+  "description": "Read access to notification configurations",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "securitycenter"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "securitycenter",
+      "permissions": [
+        "securitycenter.notificationconfig.get",
+        "securitycenter.notificationconfig.list",
+        "securitycenter.userinterfacemetadata.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "securitycenter.notificationconfig.get",
+    "securitycenter.notificationconfig.list",
+    "securitycenter.userinterfacemetadata.get"
+  ]
+}

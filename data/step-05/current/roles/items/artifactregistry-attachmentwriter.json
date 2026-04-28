@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.925Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/artifactregistry.attachmentWriter --format=json"
+  },
+  "name": "roles/artifactregistry.attachmentWriter",
+  "role_slug": "artifactregistry-attachmentwriter",
+  "title": "Artifact Registry Attachment Writer",
+  "description": "Access to write attachments to a repository",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "artifactregistry"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "artifactregistry",
+      "permissions": [
+        "artifactregistry.attachments.create",
+        "artifactregistry.attachments.delete",
+        "artifactregistry.attachments.get",
+        "artifactregistry.attachments.list",
+        "artifactregistry.files.download",
+        "artifactregistry.files.upload"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "artifactregistry.attachments.create",
+    "artifactregistry.attachments.delete",
+    "artifactregistry.attachments.get",
+    "artifactregistry.attachments.list",
+    "artifactregistry.files.download",
+    "artifactregistry.files.upload"
+  ]
+}

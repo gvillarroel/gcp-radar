@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.280Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/policysimulator.admin --format=json"
+  },
+  "name": "roles/policysimulator.admin",
+  "role_slug": "policysimulator-admin",
+  "title": "Simulator Admin",
+  "description": "Admin user that can run and access replays.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "policysimulator"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "policysimulator",
+      "permissions": [
+        "policysimulator.accessPolicySimulationResults.list",
+        "policysimulator.accessPolicySimulations.create",
+        "policysimulator.accessPolicySimulations.get",
+        "policysimulator.accessPolicySimulations.list",
+        "policysimulator.replayResults.list",
+        "policysimulator.replays.create",
+        "policysimulator.replays.get",
+        "policysimulator.replays.list",
+        "policysimulator.replays.run"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "policysimulator.accessPolicySimulationResults.list",
+    "policysimulator.accessPolicySimulations.create",
+    "policysimulator.accessPolicySimulations.get",
+    "policysimulator.accessPolicySimulations.list",
+    "policysimulator.replayResults.list",
+    "policysimulator.replays.create",
+    "policysimulator.replays.get",
+    "policysimulator.replays.list",
+    "policysimulator.replays.run"
+  ]
+}

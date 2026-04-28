@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.390Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/recommender.projectUtilViewer --format=json"
+  },
+  "name": "roles/recommender.projectUtilViewer",
+  "role_slug": "recommender-projectutilviewer",
+  "title": "Project Utilization Recommender Viewer",
+  "description": "Viewer of Project Utilization insights and recommendations.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "recommender",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.resourcemanagerProjectUtilizationInsights.get",
+        "recommender.resourcemanagerProjectUtilizationInsights.list",
+        "recommender.resourcemanagerProjectUtilizationInsightTypeConfigs.get",
+        "recommender.resourcemanagerProjectUtilizationRecommendations.get",
+        "recommender.resourcemanagerProjectUtilizationRecommendations.list",
+        "recommender.resourcemanagerProjectUtilizationRecommenderConfigs.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "recommender.resourcemanagerProjectUtilizationInsights.get",
+    "recommender.resourcemanagerProjectUtilizationInsights.list",
+    "recommender.resourcemanagerProjectUtilizationInsightTypeConfigs.get",
+    "recommender.resourcemanagerProjectUtilizationRecommendations.get",
+    "recommender.resourcemanagerProjectUtilizationRecommendations.list",
+    "recommender.resourcemanagerProjectUtilizationRecommenderConfigs.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.503Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataplex.metadataFeedOwner --format=json"
+  },
+  "name": "roles/dataplex.metadataFeedOwner",
+  "role_slug": "dataplex-metadatafeedowner",
+  "title": "Dataplex Metadata Feed Owner",
+  "description": "Grants access to creating and managing Metadata Feeds. Does not give the right to create/modify Entry Groups.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "dataplex",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.metadataFeeds.create",
+        "dataplex.metadataFeeds.delete",
+        "dataplex.metadataFeeds.get",
+        "dataplex.metadataFeeds.list",
+        "dataplex.metadataFeeds.update",
+        "dataplex.operations.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dataplex.metadataFeeds.create",
+    "dataplex.metadataFeeds.delete",
+    "dataplex.metadataFeeds.get",
+    "dataplex.metadataFeeds.list",
+    "dataplex.metadataFeeds.update",
+    "dataplex.operations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

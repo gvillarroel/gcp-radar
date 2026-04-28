@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.505Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataplex.metadataReader --format=json"
+  },
+  "name": "roles/dataplex.metadataReader",
+  "role_slug": "dataplex-metadatareader",
+  "title": "Dataplex Metadata Reader",
+  "description": "Read only access to metadata within table and fileset entities and partitions.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "dataplex",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.assets.get",
+        "dataplex.assets.list",
+        "dataplex.entities.get",
+        "dataplex.entities.list",
+        "dataplex.partitions.get",
+        "dataplex.partitions.list",
+        "dataplex.zones.get",
+        "dataplex.zones.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dataplex.assets.get",
+    "dataplex.assets.list",
+    "dataplex.entities.get",
+    "dataplex.entities.list",
+    "dataplex.partitions.get",
+    "dataplex.partitions.list",
+    "dataplex.zones.get",
+    "dataplex.zones.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.444Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataflow.worker --format=json"
+  },
+  "name": "roles/dataflow.worker",
+  "role_slug": "dataflow-worker",
+  "title": "Dataflow Worker",
+  "description": "Worker access to Dataflow.  Intended for service accounts.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 23,
+  "permission_groups": [
+    "autoscaling",
+    "compute",
+    "dataflow",
+    "logging",
+    "monitoring",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "autoscaling",
+      "permissions": [
+        "autoscaling.sites.readRecommendations",
+        "autoscaling.sites.writeMetrics",
+        "autoscaling.sites.writeState"
+      ]
+    },
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.instanceGroupManagers.update",
+        "compute.instances.delete",
+        "compute.instances.setDiskAutoDelete"
+      ]
+    },
+    {
+      "group": "dataflow",
+      "permissions": [
+        "dataflow.jobs.get",
+        "dataflow.shuffle.read",
+        "dataflow.shuffle.write",
+        "dataflow.streamingWorkItems.commitWork",
+        "dataflow.streamingWorkItems.getData",
+        "dataflow.streamingWorkItems.getWork",
+        "dataflow.streamingWorkItems.getWorkerMetadata",
+        "dataflow.streamingWorkItems.ImportState",
+        "dataflow.workItems.lease",
+        "dataflow.workItems.sendMessage",
+        "dataflow.workItems.update"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create",
+        "logging.logEntries.route"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.timeSeries.create"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.get",
+        "storage.objects.create",
+        "storage.objects.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "autoscaling.sites.readRecommendations",
+    "autoscaling.sites.writeMetrics",
+    "autoscaling.sites.writeState",
+    "compute.instanceGroupManagers.update",
+    "compute.instances.delete",
+    "compute.instances.setDiskAutoDelete",
+    "dataflow.jobs.get",
+    "dataflow.shuffle.read",
+    "dataflow.shuffle.write",
+    "dataflow.streamingWorkItems.commitWork",
+    "dataflow.streamingWorkItems.getData",
+    "dataflow.streamingWorkItems.getWork",
+    "dataflow.streamingWorkItems.getWorkerMetadata",
+    "dataflow.streamingWorkItems.ImportState",
+    "dataflow.workItems.lease",
+    "dataflow.workItems.sendMessage",
+    "dataflow.workItems.update",
+    "logging.logEntries.create",
+    "logging.logEntries.route",
+    "monitoring.timeSeries.create",
+    "storage.buckets.get",
+    "storage.objects.create",
+    "storage.objects.get"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.233Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudquotas.viewer --format=json"
+  },
+  "name": "roles/cloudquotas.viewer",
+  "role_slug": "cloudquotas-viewer",
+  "title": "Cloud Quotas Viewer",
+  "description": "Readonly access to Cloud Quotas resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "cloudquotas",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudquotas",
+      "permissions": [
+        "cloudquotas.quotas.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudquotas.quotas.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

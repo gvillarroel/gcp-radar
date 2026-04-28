@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.078Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/businessaicode.user --format=json"
+  },
+  "name": "roles/businessaicode.user",
+  "role_slug": "businessaicode-user",
+  "title": "User role for Business AI Code API",
+  "description": "A user who can use Business AI Code API",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "businessaicode",
+    "cloudaicompanion"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "businessaicode",
+      "permissions": [
+        "businessaicode.locations.generateContent",
+        "businessaicode.locations.queryConfiguration",
+        "businessaicode.locations.sendTelemetry"
+      ]
+    },
+    {
+      "group": "cloudaicompanion",
+      "permissions": [
+        "cloudaicompanion.instances.exportMetrics",
+        "cloudaicompanion.instances.queryEffectiveSetting",
+        "cloudaicompanion.instances.queryEffectiveSettingBindings",
+        "cloudaicompanion.licenses.selfAssign"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "businessaicode.locations.generateContent",
+    "businessaicode.locations.queryConfiguration",
+    "businessaicode.locations.sendTelemetry",
+    "cloudaicompanion.instances.exportMetrics",
+    "cloudaicompanion.instances.queryEffectiveSetting",
+    "cloudaicompanion.instances.queryEffectiveSettingBindings",
+    "cloudaicompanion.licenses.selfAssign"
+  ]
+}

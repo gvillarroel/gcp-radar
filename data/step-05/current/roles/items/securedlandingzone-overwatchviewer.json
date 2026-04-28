@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.474Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securedlandingzone.overwatchViewer --format=json"
+  },
+  "name": "roles/securedlandingzone.overwatchViewer",
+  "role_slug": "securedlandingzone-overwatchviewer",
+  "title": "Overwatch Viewer",
+  "description": "This role can view all properties of Overwatches",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "resourcemanager",
+    "securedlandingzone"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "securedlandingzone",
+      "permissions": [
+        "securedlandingzone.operations.get",
+        "securedlandingzone.overwatches.get",
+        "securedlandingzone.overwatches.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "securedlandingzone.operations.get",
+    "securedlandingzone.overwatches.get",
+    "securedlandingzone.overwatches.list"
+  ]
+}

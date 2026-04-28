@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.589Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/speakerid.verifier --format=json"
+  },
+  "name": "roles/speakerid.verifier",
+  "role_slug": "speakerid-verifier",
+  "title": "Speaker ID Verifier",
+  "description": "Grants read access to all Speaker ID resources, and allows verification.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "speakerid"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "speakerid",
+      "permissions": [
+        "speakerid.phrases.get",
+        "speakerid.phrases.list",
+        "speakerid.speakers.get",
+        "speakerid.speakers.list",
+        "speakerid.speakers.verify"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "speakerid.phrases.get",
+    "speakerid.phrases.list",
+    "speakerid.speakers.get",
+    "speakerid.speakers.list",
+    "speakerid.speakers.verify"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.385Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/recommender.orgPolicyAdmin --format=json"
+  },
+  "name": "roles/recommender.orgPolicyAdmin",
+  "role_slug": "recommender-orgpolicyadmin",
+  "title": "Org Policy Recommender Admin",
+  "description": "Admin of Org Policy Insights and Recommendations.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "recommender",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.locations.get",
+        "recommender.locations.list",
+        "recommender.orgPolicyInsights.get",
+        "recommender.orgPolicyInsights.list",
+        "recommender.orgPolicyInsights.update",
+        "recommender.orgPolicyRecommendations.get",
+        "recommender.orgPolicyRecommendations.list",
+        "recommender.orgPolicyRecommendations.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "recommender.locations.get",
+    "recommender.locations.list",
+    "recommender.orgPolicyInsights.get",
+    "recommender.orgPolicyInsights.list",
+    "recommender.orgPolicyInsights.update",
+    "recommender.orgPolicyRecommendations.get",
+    "recommender.orgPolicyRecommendations.list",
+    "recommender.orgPolicyRecommendations.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

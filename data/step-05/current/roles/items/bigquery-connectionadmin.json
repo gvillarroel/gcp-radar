@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.019Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/bigquery.connectionAdmin --format=json"
+  },
+  "name": "roles/bigquery.connectionAdmin",
+  "role_slug": "bigquery-connectionadmin",
+  "title": "BigQuery Connection Admin",
+  "description": "Grants full control over BigQuery connections.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "bigquery"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.connections.create",
+        "bigquery.connections.delegate",
+        "bigquery.connections.delete",
+        "bigquery.connections.get",
+        "bigquery.connections.getIamPolicy",
+        "bigquery.connections.list",
+        "bigquery.connections.setIamPolicy",
+        "bigquery.connections.update",
+        "bigquery.connections.updateTag",
+        "bigquery.connections.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.connections.create",
+    "bigquery.connections.delegate",
+    "bigquery.connections.delete",
+    "bigquery.connections.get",
+    "bigquery.connections.getIamPolicy",
+    "bigquery.connections.list",
+    "bigquery.connections.setIamPolicy",
+    "bigquery.connections.update",
+    "bigquery.connections.updateTag",
+    "bigquery.connections.use"
+  ]
+}

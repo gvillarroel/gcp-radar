@@ -1,0 +1,72 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.787Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/actions.Admin --format=json"
+  },
+  "name": "roles/actions.Admin",
+  "role_slug": "actions-admin",
+  "title": "Actions Admin",
+  "description": "Access to edit and deploy an action",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "actions",
+    "firebase",
+    "resourcemanager",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "actions",
+      "permissions": [
+        "actions.agent.claimContentProvider",
+        "actions.agent.get",
+        "actions.agent.update",
+        "actions.agentVersions.create",
+        "actions.agentVersions.delete",
+        "actions.agentVersions.deploy",
+        "actions.agentVersions.get",
+        "actions.agentVersions.list"
+      ]
+    },
+    {
+      "group": "firebase",
+      "permissions": [
+        "firebase.projects.get",
+        "firebase.projects.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "actions.agent.claimContentProvider",
+    "actions.agent.get",
+    "actions.agent.update",
+    "actions.agentVersions.create",
+    "actions.agentVersions.delete",
+    "actions.agentVersions.deploy",
+    "actions.agentVersions.get",
+    "actions.agentVersions.list",
+    "firebase.projects.get",
+    "firebase.projects.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "serviceusage.services.use"
+  ]
+}

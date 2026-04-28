@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.732Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/workloadcertificate.serviceAgent --format=json"
+  },
+  "name": "roles/workloadcertificate.serviceAgent",
+  "role_slug": "workloadcertificate-serviceagent",
+  "title": "Workload Certificate Service Agent",
+  "description": "Gives the Workload Certificate service agent access to Cloud Platform resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 24,
+  "permission_groups": [
+    "container",
+    "gkehub",
+    "serviceconsumermanagement",
+    "serviceusage",
+    "workloadcertificate"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "container",
+      "permissions": [
+        "container.clusterRoleBindings.get",
+        "container.clusterRoleBindings.list",
+        "container.clusters.get",
+        "container.clusters.update",
+        "container.customResourceDefinitions.create",
+        "container.customResourceDefinitions.get",
+        "container.customResourceDefinitions.list",
+        "container.operations.get",
+        "container.thirdPartyObjects.update"
+      ]
+    },
+    {
+      "group": "gkehub",
+      "permissions": [
+        "gkehub.features.get",
+        "gkehub.fleet.create",
+        "gkehub.fleet.get",
+        "gkehub.locations.get",
+        "gkehub.locations.list",
+        "gkehub.memberships.get",
+        "gkehub.memberships.list",
+        "gkehub.operations.get"
+      ]
+    },
+    {
+      "group": "serviceconsumermanagement",
+      "permissions": [
+        "serviceconsumermanagement.tenancyu.addResource",
+        "serviceconsumermanagement.tenancyu.create",
+        "serviceconsumermanagement.tenancyu.delete",
+        "serviceconsumermanagement.tenancyu.removeResource"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    },
+    {
+      "group": "workloadcertificate",
+      "permissions": [
+        "workloadcertificate.workloadCertificateFeature.get",
+        "workloadcertificate.workloadRegistrations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "container.clusterRoleBindings.get",
+    "container.clusterRoleBindings.list",
+    "container.clusters.get",
+    "container.clusters.update",
+    "container.customResourceDefinitions.create",
+    "container.customResourceDefinitions.get",
+    "container.customResourceDefinitions.list",
+    "container.operations.get",
+    "container.thirdPartyObjects.update",
+    "gkehub.features.get",
+    "gkehub.fleet.create",
+    "gkehub.fleet.get",
+    "gkehub.locations.get",
+    "gkehub.locations.list",
+    "gkehub.memberships.get",
+    "gkehub.memberships.list",
+    "gkehub.operations.get",
+    "serviceconsumermanagement.tenancyu.addResource",
+    "serviceconsumermanagement.tenancyu.create",
+    "serviceconsumermanagement.tenancyu.delete",
+    "serviceconsumermanagement.tenancyu.removeResource",
+    "serviceusage.services.use",
+    "workloadcertificate.workloadCertificateFeature.get",
+    "workloadcertificate.workloadRegistrations.list"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.962Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/axt.admin --format=json"
+  },
+  "name": "roles/axt.admin",
+  "role_slug": "axt-admin",
+  "title": "Access Transparency Admin",
+  "description": "Enable Access Transparency for Organization",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "axt",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "axt",
+      "permissions": [
+        "axt.labels.get",
+        "axt.labels.set"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get",
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "axt.labels.get",
+    "axt.labels.set",
+    "resourcemanager.organizations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

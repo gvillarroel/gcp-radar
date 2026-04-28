@@ -1,0 +1,76 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.193Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/oauthconfig.viewer --format=json"
+  },
+  "name": "roles/oauthconfig.viewer",
+  "role_slug": "oauthconfig-viewer",
+  "title": "OAuth Config Viewer",
+  "description": "Read-only access to OAuth config resources",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 12,
+  "permission_groups": [
+    "clientauthconfig",
+    "firebase",
+    "firebaseappcheck",
+    "oauthconfig",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "clientauthconfig",
+      "permissions": [
+        "clientauthconfig.brands.get",
+        "clientauthconfig.brands.list",
+        "clientauthconfig.clients.get",
+        "clientauthconfig.clients.list"
+      ]
+    },
+    {
+      "group": "firebase",
+      "permissions": [
+        "firebase.clients.get",
+        "firebase.clients.list"
+      ]
+    },
+    {
+      "group": "firebaseappcheck",
+      "permissions": [
+        "firebaseappcheck.resourcePolicies.get"
+      ]
+    },
+    {
+      "group": "oauthconfig",
+      "permissions": [
+        "oauthconfig.clientpolicy.get",
+        "oauthconfig.testusers.get",
+        "oauthconfig.verification.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "clientauthconfig.brands.get",
+    "clientauthconfig.brands.list",
+    "clientauthconfig.clients.get",
+    "clientauthconfig.clients.list",
+    "firebase.clients.get",
+    "firebase.clients.list",
+    "firebaseappcheck.resourcePolicies.get",
+    "oauthconfig.clientpolicy.get",
+    "oauthconfig.testusers.get",
+    "oauthconfig.verification.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

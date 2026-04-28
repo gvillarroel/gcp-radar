@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.125Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudaicompanion.topicReader --format=json"
+  },
+  "name": "roles/cloudaicompanion.topicReader",
+  "role_slug": "cloudaicompanion-topicreader",
+  "title": "Topic Reader",
+  "description": "Grants read-only access to topic resource.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "cloudaicompanion"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudaicompanion",
+      "permissions": [
+        "cloudaicompanion.topics.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudaicompanion.topics.get"
+  ]
+}

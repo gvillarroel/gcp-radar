@@ -1,0 +1,36 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.712Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/eventarc.messageBusUser --format=json"
+  },
+  "name": "roles/eventarc.messageBusUser",
+  "role_slug": "eventarc-messagebususer",
+  "title": "Eventarc Message Bus User",
+  "description": "Access to publish to or bind to a Message Bus.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "eventarc"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "eventarc",
+      "permissions": [
+        "eventarc.messageBuses.get",
+        "eventarc.messageBuses.list",
+        "eventarc.messageBuses.publish",
+        "eventarc.messageBuses.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "eventarc.messageBuses.get",
+    "eventarc.messageBuses.list",
+    "eventarc.messageBuses.publish",
+    "eventarc.messageBuses.use"
+  ]
+}

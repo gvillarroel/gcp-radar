@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.869Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/gkeonprem.serviceAgent --format=json"
+  },
+  "name": "roles/gkeonprem.serviceAgent",
+  "role_slug": "gkeonprem-serviceagent",
+  "title": "GKE On-Prem Service Agent",
+  "description": "Gives the GKE On-Prem service agent access to Cloud Platform resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 25,
+  "permission_groups": [
+    "gkehub",
+    "gkeonprem"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "gkehub",
+      "permissions": [
+        "gkehub.memberships.delete",
+        "gkehub.memberships.get",
+        "gkehub.memberships.update"
+      ]
+    },
+    {
+      "group": "gkeonprem",
+      "permissions": [
+        "gkeonprem.bareMetalAdminClusters.connect",
+        "gkeonprem.bareMetalAdminClusters.enroll",
+        "gkeonprem.bareMetalAdminClusters.get",
+        "gkeonprem.bareMetalAdminClusters.unenroll",
+        "gkeonprem.bareMetalClusters.enroll",
+        "gkeonprem.bareMetalClusters.get",
+        "gkeonprem.bareMetalClusters.unenroll",
+        "gkeonprem.bareMetalNodePools.enroll",
+        "gkeonprem.bareMetalNodePools.get",
+        "gkeonprem.bareMetalNodePools.unenroll",
+        "gkeonprem.operations.get",
+        "gkeonprem.operations.list",
+        "gkeonprem.vmwareAdminClusters.connect",
+        "gkeonprem.vmwareAdminClusters.enroll",
+        "gkeonprem.vmwareAdminClusters.get",
+        "gkeonprem.vmwareAdminClusters.unenroll",
+        "gkeonprem.vmwareClusters.enroll",
+        "gkeonprem.vmwareClusters.get",
+        "gkeonprem.vmwareClusters.unenroll",
+        "gkeonprem.vmwareNodePools.enroll",
+        "gkeonprem.vmwareNodePools.get",
+        "gkeonprem.vmwareNodePools.unenroll"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "gkehub.memberships.delete",
+    "gkehub.memberships.get",
+    "gkehub.memberships.update",
+    "gkeonprem.bareMetalAdminClusters.connect",
+    "gkeonprem.bareMetalAdminClusters.enroll",
+    "gkeonprem.bareMetalAdminClusters.get",
+    "gkeonprem.bareMetalAdminClusters.unenroll",
+    "gkeonprem.bareMetalClusters.enroll",
+    "gkeonprem.bareMetalClusters.get",
+    "gkeonprem.bareMetalClusters.unenroll",
+    "gkeonprem.bareMetalNodePools.enroll",
+    "gkeonprem.bareMetalNodePools.get",
+    "gkeonprem.bareMetalNodePools.unenroll",
+    "gkeonprem.operations.get",
+    "gkeonprem.operations.list",
+    "gkeonprem.vmwareAdminClusters.connect",
+    "gkeonprem.vmwareAdminClusters.enroll",
+    "gkeonprem.vmwareAdminClusters.get",
+    "gkeonprem.vmwareAdminClusters.unenroll",
+    "gkeonprem.vmwareClusters.enroll",
+    "gkeonprem.vmwareClusters.get",
+    "gkeonprem.vmwareClusters.unenroll",
+    "gkeonprem.vmwareNodePools.enroll",
+    "gkeonprem.vmwareNodePools.get",
+    "gkeonprem.vmwareNodePools.unenroll"
+  ]
+}

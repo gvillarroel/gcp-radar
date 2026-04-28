@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.006Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/batch.jobsViewer --format=json"
+  },
+  "name": "roles/batch.jobsViewer",
+  "role_slug": "batch-jobsviewer",
+  "title": "Batch Job Viewer",
+  "description": "Viewer of Batch Jobs, Task Groups and Tasks",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "batch",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "batch",
+      "permissions": [
+        "batch.jobs.get",
+        "batch.jobs.list",
+        "batch.locations.get",
+        "batch.locations.list",
+        "batch.operations.get",
+        "batch.operations.list",
+        "batch.tasks.get",
+        "batch.tasks.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "batch.jobs.get",
+    "batch.jobs.list",
+    "batch.locations.get",
+    "batch.locations.list",
+    "batch.operations.get",
+    "batch.operations.list",
+    "batch.tasks.get",
+    "batch.tasks.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

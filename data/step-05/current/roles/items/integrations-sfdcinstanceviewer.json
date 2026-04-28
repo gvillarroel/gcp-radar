@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.990Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/integrations.sfdcInstanceViewer --format=json"
+  },
+  "name": "roles/integrations.sfdcInstanceViewer",
+  "role_slug": "integrations-sfdcinstanceviewer",
+  "title": "Application Integration SFDC Instance Viewer",
+  "description": "A developer that can list and view SFDC instances.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "integrations",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "integrations",
+      "permissions": [
+        "integrations.sfdcChannels.get",
+        "integrations.sfdcChannels.list",
+        "integrations.sfdcInstances.get",
+        "integrations.sfdcInstances.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "integrations.sfdcChannels.get",
+    "integrations.sfdcChannels.list",
+    "integrations.sfdcInstances.get",
+    "integrations.sfdcInstances.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

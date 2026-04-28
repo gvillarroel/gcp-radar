@@ -1,0 +1,80 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.227Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudprivatecatalogproducer.manager --format=json"
+  },
+  "name": "roles/cloudprivatecatalogproducer.manager",
+  "role_slug": "cloudprivatecatalogproducer-manager",
+  "title": "Catalog Manager",
+  "description": "Can manage associations between a catalog and a target resource.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 20,
+  "permission_groups": [
+    "cloudprivatecatalog",
+    "cloudprivatecatalogproducer",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudprivatecatalog",
+      "permissions": [
+        "cloudprivatecatalog.targets.get"
+      ]
+    },
+    {
+      "group": "cloudprivatecatalogproducer",
+      "permissions": [
+        "cloudprivatecatalogproducer.associations.create",
+        "cloudprivatecatalogproducer.associations.delete",
+        "cloudprivatecatalogproducer.associations.get",
+        "cloudprivatecatalogproducer.associations.list",
+        "cloudprivatecatalogproducer.catalogAssociations.create",
+        "cloudprivatecatalogproducer.catalogAssociations.delete",
+        "cloudprivatecatalogproducer.catalogAssociations.get",
+        "cloudprivatecatalogproducer.catalogAssociations.list",
+        "cloudprivatecatalogproducer.catalogs.get",
+        "cloudprivatecatalogproducer.catalogs.list",
+        "cloudprivatecatalogproducer.producerCatalogs.get",
+        "cloudprivatecatalogproducer.producerCatalogs.list",
+        "cloudprivatecatalogproducer.targets.associate",
+        "cloudprivatecatalogproducer.targets.unassociate"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.folders.get",
+        "resourcemanager.folders.list",
+        "resourcemanager.organizations.get",
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudprivatecatalog.targets.get",
+    "cloudprivatecatalogproducer.associations.create",
+    "cloudprivatecatalogproducer.associations.delete",
+    "cloudprivatecatalogproducer.associations.get",
+    "cloudprivatecatalogproducer.associations.list",
+    "cloudprivatecatalogproducer.catalogAssociations.create",
+    "cloudprivatecatalogproducer.catalogAssociations.delete",
+    "cloudprivatecatalogproducer.catalogAssociations.get",
+    "cloudprivatecatalogproducer.catalogAssociations.list",
+    "cloudprivatecatalogproducer.catalogs.get",
+    "cloudprivatecatalogproducer.catalogs.list",
+    "cloudprivatecatalogproducer.producerCatalogs.get",
+    "cloudprivatecatalogproducer.producerCatalogs.list",
+    "cloudprivatecatalogproducer.targets.associate",
+    "cloudprivatecatalogproducer.targets.unassociate",
+    "resourcemanager.folders.get",
+    "resourcemanager.folders.list",
+    "resourcemanager.organizations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

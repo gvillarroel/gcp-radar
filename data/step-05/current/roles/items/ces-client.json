@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.088Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/ces.client --format=json"
+  },
+  "name": "roles/ces.client",
+  "role_slug": "ces-client",
+  "title": "Gemini Enterprise for Customer Experience Client",
+  "description": "Query access to Gemini Enterprise for Customer Experience agents.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "ces"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "ces",
+      "permissions": [
+        "ces.sessions.bidiRunSession",
+        "ces.sessions.runSession",
+        "ces.tools.execute"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "ces.sessions.bidiRunSession",
+    "ces.sessions.runSession",
+    "ces.tools.execute"
+  ]
+}

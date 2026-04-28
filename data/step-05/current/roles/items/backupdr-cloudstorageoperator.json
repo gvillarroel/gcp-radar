@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.971Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/backupdr.cloudStorageOperator --format=json"
+  },
+  "name": "roles/backupdr.cloudStorageOperator",
+  "role_slug": "backupdr-cloudstorageoperator",
+  "title": "Backup and DR Cloud Storage Operator",
+  "description": "Allows a Backup and DR service account to store and manage data (backups or metadata) in Cloud Storage.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.create",
+        "storage.buckets.get",
+        "storage.objects.create",
+        "storage.objects.delete",
+        "storage.objects.get",
+        "storage.objects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "storage.buckets.create",
+    "storage.buckets.get",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.get",
+    "storage.objects.list"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.229Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudprofiler.admin --format=json"
+  },
+  "name": "roles/cloudprofiler.admin",
+  "role_slug": "cloudprofiler-admin",
+  "title": "Cloud Profiler Admin",
+  "description": "Admin role for Cloud Profiler",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "cloudprofiler",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudprofiler",
+      "permissions": [
+        "cloudprofiler.profiles.create",
+        "cloudprofiler.profiles.list",
+        "cloudprofiler.profiles.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudprofiler.profiles.create",
+    "cloudprofiler.profiles.list",
+    "cloudprofiler.profiles.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

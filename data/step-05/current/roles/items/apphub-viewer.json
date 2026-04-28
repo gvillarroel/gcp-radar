@@ -1,0 +1,74 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.918Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/apphub.viewer --format=json"
+  },
+  "name": "roles/apphub.viewer",
+  "role_slug": "apphub-viewer",
+  "title": "App Hub Viewer",
+  "description": "View access to App Hub resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 20,
+  "permission_groups": [
+    "apphub",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "apphub",
+      "permissions": [
+        "apphub.applications.get",
+        "apphub.applications.list",
+        "apphub.boundaries.get",
+        "apphub.discoveredServices.get",
+        "apphub.discoveredServices.list",
+        "apphub.discoveredWorkloads.get",
+        "apphub.discoveredWorkloads.list",
+        "apphub.extendedMetadataSchemas.get",
+        "apphub.extendedMetadataSchemas.list",
+        "apphub.locations.get",
+        "apphub.locations.list",
+        "apphub.operations.get",
+        "apphub.operations.list",
+        "apphub.serviceProjectAttachments.lookup",
+        "apphub.services.get",
+        "apphub.services.list",
+        "apphub.workloads.get",
+        "apphub.workloads.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "apphub.applications.get",
+    "apphub.applications.list",
+    "apphub.boundaries.get",
+    "apphub.discoveredServices.get",
+    "apphub.discoveredServices.list",
+    "apphub.discoveredWorkloads.get",
+    "apphub.discoveredWorkloads.list",
+    "apphub.extendedMetadataSchemas.get",
+    "apphub.extendedMetadataSchemas.list",
+    "apphub.locations.get",
+    "apphub.locations.list",
+    "apphub.operations.get",
+    "apphub.operations.list",
+    "apphub.serviceProjectAttachments.lookup",
+    "apphub.services.get",
+    "apphub.services.list",
+    "apphub.workloads.get",
+    "apphub.workloads.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

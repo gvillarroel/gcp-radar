@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.365Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/consumerprocurement.licensePoolViewer --format=json"
+  },
+  "name": "roles/consumerprocurement.licensePoolViewer",
+  "role_slug": "consumerprocurement-licensepoolviewer",
+  "title": "Consumer Procurement License Pool Viewer",
+  "description": "Allows viewing license pools and license assignments.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "consumerprocurement"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "consumerprocurement",
+      "permissions": [
+        "consumerprocurement.licensePools.enumerateLicensedUsers",
+        "consumerprocurement.licensePools.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "consumerprocurement.licensePools.enumerateLicensedUsers",
+    "consumerprocurement.licensePools.get"
+  ]
+}

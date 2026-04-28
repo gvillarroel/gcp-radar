@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.049Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/bigqueryomni.serviceAgent --format=json"
+  },
+  "name": "roles/bigqueryomni.serviceAgent",
+  "role_slug": "bigqueryomni-serviceagent",
+  "title": "BigQuery Omni Service Agent",
+  "description": "Gives BigQuery Omni access to tables in user projects.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "bigquery"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.jobs.create",
+        "bigquery.tables.updateData"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.jobs.create",
+    "bigquery.tables.updateData"
+  ]
+}

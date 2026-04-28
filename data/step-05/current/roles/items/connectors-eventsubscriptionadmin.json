@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.356Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/connectors.eventSubscriptionAdmin --format=json"
+  },
+  "name": "roles/connectors.eventSubscriptionAdmin",
+  "role_slug": "connectors-eventsubscriptionadmin",
+  "title": "Connectors Event Subscriptions Admin",
+  "description": "Event Subscription is a regional resource which creates subscriptions on events for a given connection within the given target project. This role grants Admin access to Connectors Subscription resources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "connectors"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "connectors",
+      "permissions": [
+        "connectors.eventSubscriptions.create",
+        "connectors.eventSubscriptions.delete",
+        "connectors.eventSubscriptions.get",
+        "connectors.eventSubscriptions.list",
+        "connectors.eventSubscriptions.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "connectors.eventSubscriptions.create",
+    "connectors.eventSubscriptions.delete",
+    "connectors.eventSubscriptions.get",
+    "connectors.eventSubscriptions.list",
+    "connectors.eventSubscriptions.update"
+  ]
+}

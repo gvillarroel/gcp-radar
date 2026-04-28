@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.444Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/rma.runner --format=json"
+  },
+  "name": "roles/rma.runner",
+  "role_slug": "rma-runner",
+  "title": "Rapid Migration Assessment Runner",
+  "description": "Update and Read access to Rapid Migration Assessment all resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "resourcemanager",
+    "rma"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "rma",
+      "permissions": [
+        "rma.annotations.get",
+        "rma.collectors.get",
+        "rma.collectors.list",
+        "rma.collectors.update",
+        "rma.locations.get",
+        "rma.locations.list",
+        "rma.operations.get",
+        "rma.operations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "rma.annotations.get",
+    "rma.collectors.get",
+    "rma.collectors.list",
+    "rma.collectors.update",
+    "rma.locations.get",
+    "rma.locations.list",
+    "rma.operations.get",
+    "rma.operations.list"
+  ]
+}

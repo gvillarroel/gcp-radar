@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.854Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/gkehub.crossProjectServiceAgent --format=json"
+  },
+  "name": "roles/gkehub.crossProjectServiceAgent",
+  "role_slug": "gkehub-crossprojectserviceagent",
+  "title": "GKE Hub Cross Project Service Agent",
+  "description": "Gives the GKE Hub service agent permission to manage the project for cross-project fleet registration.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.getIamPolicy",
+        "resourcemanager.projects.setIamPolicy"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.getIamPolicy",
+    "resourcemanager.projects.setIamPolicy"
+  ]
+}

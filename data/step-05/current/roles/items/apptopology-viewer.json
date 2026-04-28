@@ -1,0 +1,60 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.923Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/apptopology.viewer --format=json"
+  },
+  "name": "roles/apptopology.viewer",
+  "role_slug": "apptopology-viewer",
+  "title": "App Topology Viewer",
+  "description": "Readonly access to App Topology resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "apptopology",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "apptopology",
+      "permissions": [
+        "apptopology.applicationTopologies.generate",
+        "apptopology.discoveredResourcesTopologies.generate",
+        "apptopology.domains.get",
+        "apptopology.domains.list",
+        "apptopology.locations.get",
+        "apptopology.locations.list",
+        "apptopology.operations.get",
+        "apptopology.operations.list",
+        "apptopology.schemas.get",
+        "apptopology.topologyViews.get",
+        "apptopology.topologyViews.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "apptopology.applicationTopologies.generate",
+    "apptopology.discoveredResourcesTopologies.generate",
+    "apptopology.domains.get",
+    "apptopology.domains.list",
+    "apptopology.locations.get",
+    "apptopology.locations.list",
+    "apptopology.operations.get",
+    "apptopology.operations.list",
+    "apptopology.schemas.get",
+    "apptopology.topologyViews.get",
+    "apptopology.topologyViews.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.955Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/automlrecommendations.viewer --format=json"
+  },
+  "name": "roles/automlrecommendations.viewer",
+  "role_slug": "automlrecommendations-viewer",
+  "title": "Recommendations AI Viewer",
+  "description": "Viewer of all Recommendations AI resources except automlrecommendations.apiKeys. To have all read access use Recommendations AI Admin Viewer role instead.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 31,
+  "permission_groups": [
+    "automlrecommendations",
+    "resourcemanager",
+    "retail",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "automlrecommendations",
+      "permissions": [
+        "automlrecommendations.catalogItems.get",
+        "automlrecommendations.catalogItems.list",
+        "automlrecommendations.catalogs.getStats",
+        "automlrecommendations.catalogs.list",
+        "automlrecommendations.events.get",
+        "automlrecommendations.events.list",
+        "automlrecommendations.eventStores.getStats",
+        "automlrecommendations.eventStores.list",
+        "automlrecommendations.placements.getStats",
+        "automlrecommendations.placements.list",
+        "automlrecommendations.recommendations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "retail",
+      "permissions": [
+        "retail.catalogs.list",
+        "retail.operations.get",
+        "retail.operations.list",
+        "retail.placements.predict",
+        "retail.placements.search",
+        "retail.products.export",
+        "retail.products.get",
+        "retail.products.list",
+        "retail.retailProjects.get"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.consumerpolicy.analyze",
+        "serviceusage.consumerpolicy.get",
+        "serviceusage.effectivepolicy.get",
+        "serviceusage.groups.list",
+        "serviceusage.groups.listExpandedMembers",
+        "serviceusage.groups.listMembers",
+        "serviceusage.services.get",
+        "serviceusage.services.list",
+        "serviceusage.values.test"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "automlrecommendations.catalogItems.get",
+    "automlrecommendations.catalogItems.list",
+    "automlrecommendations.catalogs.getStats",
+    "automlrecommendations.catalogs.list",
+    "automlrecommendations.events.get",
+    "automlrecommendations.events.list",
+    "automlrecommendations.eventStores.getStats",
+    "automlrecommendations.eventStores.list",
+    "automlrecommendations.placements.getStats",
+    "automlrecommendations.placements.list",
+    "automlrecommendations.recommendations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "retail.catalogs.list",
+    "retail.operations.get",
+    "retail.operations.list",
+    "retail.placements.predict",
+    "retail.placements.search",
+    "retail.products.export",
+    "retail.products.get",
+    "retail.products.list",
+    "retail.retailProjects.get",
+    "serviceusage.consumerpolicy.analyze",
+    "serviceusage.consumerpolicy.get",
+    "serviceusage.effectivepolicy.get",
+    "serviceusage.groups.list",
+    "serviceusage.groups.listExpandedMembers",
+    "serviceusage.groups.listMembers",
+    "serviceusage.services.get",
+    "serviceusage.services.list",
+    "serviceusage.values.test"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.365Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/consumerprocurement.licensePoolEditor --format=json"
+  },
+  "name": "roles/consumerprocurement.licensePoolEditor",
+  "role_slug": "consumerprocurement-licensepooleditor",
+  "title": "Consumer Procurement License Pool Editor",
+  "description": "Allows managing license pools and license assignments.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "consumerprocurement"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "consumerprocurement",
+      "permissions": [
+        "consumerprocurement.licensePools.assign",
+        "consumerprocurement.licensePools.enumerateLicensedUsers",
+        "consumerprocurement.licensePools.get",
+        "consumerprocurement.licensePools.unassign",
+        "consumerprocurement.licensePools.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "consumerprocurement.licensePools.assign",
+    "consumerprocurement.licensePools.enumerateLicensedUsers",
+    "consumerprocurement.licensePools.get",
+    "consumerprocurement.licensePools.unassign",
+    "consumerprocurement.licensePools.update"
+  ]
+}

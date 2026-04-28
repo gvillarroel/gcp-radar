@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.073Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/mcp.admin --format=json"
+  },
+  "name": "roles/mcp.admin",
+  "role_slug": "mcp-admin",
+  "title": "MCP Admin",
+  "description": "Full access for interacting with Google-managed MCP servers.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "mcp",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "mcp",
+      "permissions": [
+        "mcp.tools.call"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "mcp.tools.call",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

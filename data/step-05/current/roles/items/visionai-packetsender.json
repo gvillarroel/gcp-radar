@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.696Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/visionai.packetSender --format=json"
+  },
+  "name": "roles/visionai.packetSender",
+  "role_slug": "visionai-packetsender",
+  "title": "Vision AI Packet Sender",
+  "description": "Packet sender to the series.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "visionai"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "visionai",
+      "permissions": [
+        "visionai.series.acquireLease",
+        "visionai.series.releaseLease",
+        "visionai.series.renewLease",
+        "visionai.series.send",
+        "visionai.streams.send"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "visionai.series.acquireLease",
+    "visionai.series.releaseLease",
+    "visionai.series.renewLease",
+    "visionai.series.send",
+    "visionai.streams.send"
+  ]
+}

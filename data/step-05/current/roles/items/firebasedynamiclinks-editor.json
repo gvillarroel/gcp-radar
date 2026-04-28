@@ -1,0 +1,70 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.777Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebasedynamiclinks.editor --format=json"
+  },
+  "name": "roles/firebasedynamiclinks.editor",
+  "role_slug": "firebasedynamiclinks-editor",
+  "title": "Firebasedynamiclinks Editor",
+  "description": "Editor role for firebasedynamiclinks",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 15,
+  "permission_groups": [
+    "firebase",
+    "firebasedynamiclinks",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "firebase",
+      "permissions": [
+        "firebase.clients.get",
+        "firebase.clients.list",
+        "firebase.projects.get"
+      ]
+    },
+    {
+      "group": "firebasedynamiclinks",
+      "permissions": [
+        "firebasedynamiclinks.destinations.list",
+        "firebasedynamiclinks.domains.create",
+        "firebasedynamiclinks.domains.get",
+        "firebasedynamiclinks.domains.list",
+        "firebasedynamiclinks.domains.update",
+        "firebasedynamiclinks.links.create",
+        "firebasedynamiclinks.links.get",
+        "firebasedynamiclinks.links.list",
+        "firebasedynamiclinks.links.update",
+        "firebasedynamiclinks.stats.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "firebase.clients.get",
+    "firebase.clients.list",
+    "firebase.projects.get",
+    "firebasedynamiclinks.destinations.list",
+    "firebasedynamiclinks.domains.create",
+    "firebasedynamiclinks.domains.get",
+    "firebasedynamiclinks.domains.list",
+    "firebasedynamiclinks.domains.update",
+    "firebasedynamiclinks.links.create",
+    "firebasedynamiclinks.links.get",
+    "firebasedynamiclinks.links.list",
+    "firebasedynamiclinks.links.update",
+    "firebasedynamiclinks.stats.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

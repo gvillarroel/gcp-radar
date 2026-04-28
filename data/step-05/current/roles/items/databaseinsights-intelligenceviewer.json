@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.411Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/databaseinsights.intelligenceViewer --format=json"
+  },
+  "name": "roles/databaseinsights.intelligenceViewer",
+  "role_slug": "databaseinsights-intelligenceviewer",
+  "title": "Database Insights intelligence viewer",
+  "description": "Viewer role for Database Insights intelligence data",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "databaseinsights"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "databaseinsights",
+      "permissions": [
+        "databaseinsights.databaseIssues.troubleshoot",
+        "databaseinsights.dbCenter.query",
+        "databaseinsights.dbPerformance.query",
+        "databaseinsights.queryMetrics.fetch",
+        "databaseinsights.systemMetrics.fetch"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "databaseinsights.databaseIssues.troubleshoot",
+    "databaseinsights.dbCenter.query",
+    "databaseinsights.dbPerformance.query",
+    "databaseinsights.queryMetrics.fetch",
+    "databaseinsights.systemMetrics.fetch"
+  ]
+}

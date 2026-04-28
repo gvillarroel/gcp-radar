@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.946Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/auditmanager.ccfViewer --format=json"
+  },
+  "name": "roles/auditmanager.ccfViewer",
+  "role_slug": "auditmanager-ccfviewer",
+  "title": "Custom Compliance Framework Viewer",
+  "description": "Allows viewing Custom Compliance Framework resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "auditmanager",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "auditmanager",
+      "permissions": [
+        "auditmanager.billingSettings.get",
+        "auditmanager.customComplianceFrameworks.get",
+        "auditmanager.customComplianceFrameworks.list",
+        "auditmanager.locations.get",
+        "auditmanager.locations.list",
+        "auditmanager.operations.get",
+        "auditmanager.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "auditmanager.billingSettings.get",
+    "auditmanager.customComplianceFrameworks.get",
+    "auditmanager.customComplianceFrameworks.list",
+    "auditmanager.locations.get",
+    "auditmanager.locations.list",
+    "auditmanager.operations.get",
+    "auditmanager.operations.list",
+    "resourcemanager.organizations.get"
+  ]
+}

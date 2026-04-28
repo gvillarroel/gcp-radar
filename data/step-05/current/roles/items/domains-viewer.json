@@ -1,0 +1,56 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.656Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/domains.viewer --format=json"
+  },
+  "name": "roles/domains.viewer",
+  "role_slug": "domains-viewer",
+  "title": "Cloud Domains Viewer",
+  "description": "Read-only access to Cloud Domains Registrations and related resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "domains",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "domains",
+      "permissions": [
+        "domains.locations.get",
+        "domains.locations.list",
+        "domains.operations.get",
+        "domains.operations.list",
+        "domains.registrations.get",
+        "domains.registrations.getIamPolicy",
+        "domains.registrations.list",
+        "domains.registrations.listEffectiveTags",
+        "domains.registrations.listTagBindings"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "domains.locations.get",
+    "domains.locations.list",
+    "domains.operations.get",
+    "domains.operations.list",
+    "domains.registrations.get",
+    "domains.registrations.getIamPolicy",
+    "domains.registrations.list",
+    "domains.registrations.listEffectiveTags",
+    "domains.registrations.listTagBindings",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

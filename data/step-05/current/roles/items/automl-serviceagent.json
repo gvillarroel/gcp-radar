@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.950Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/automl.serviceAgent --format=json"
+  },
+  "name": "roles/automl.serviceAgent",
+  "role_slug": "automl-serviceagent",
+  "title": "AutoML Service Agent",
+  "description": "AutoML service agent can act as Cloud Storage admin and export BigQuery tables, which can be backed by Cloud Storage and Cloud Bigtable.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 19,
+  "permission_groups": [
+    "bigquery",
+    "bigtable",
+    "serviceusage",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.datasets.create",
+        "bigquery.datasets.get",
+        "bigquery.jobs.create",
+        "bigquery.tables.create",
+        "bigquery.tables.export",
+        "bigquery.tables.get",
+        "bigquery.tables.getData",
+        "bigquery.tables.update",
+        "bigquery.tables.updateData"
+      ]
+    },
+    {
+      "group": "bigtable",
+      "permissions": [
+        "bigtable.tables.get",
+        "bigtable.tables.list",
+        "bigtable.tables.readRows"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.get",
+        "storage.objects.create",
+        "storage.objects.delete",
+        "storage.objects.get",
+        "storage.objects.list",
+        "storage.objects.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.datasets.create",
+    "bigquery.datasets.get",
+    "bigquery.jobs.create",
+    "bigquery.tables.create",
+    "bigquery.tables.export",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.update",
+    "bigquery.tables.updateData",
+    "bigtable.tables.get",
+    "bigtable.tables.list",
+    "bigtable.tables.readRows",
+    "serviceusage.services.use",
+    "storage.buckets.get",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.get",
+    "storage.objects.list",
+    "storage.objects.update"
+  ]
+}

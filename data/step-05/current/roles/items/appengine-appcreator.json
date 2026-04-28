@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.907Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/appengine.appCreator --format=json"
+  },
+  "name": "roles/appengine.appCreator",
+  "role_slug": "appengine-appcreator",
+  "title": "App Engine Creator",
+  "description": "Ability to create the App Engine resource for the project.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "appengine",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "appengine",
+      "permissions": [
+        "appengine.applications.create"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "appengine.applications.create",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

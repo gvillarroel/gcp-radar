@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.268Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/paymentsresellersubscription.productViewer --format=json"
+  },
+  "name": "roles/paymentsresellersubscription.productViewer",
+  "role_slug": "paymentsresellersubscription-productviewer",
+  "title": "Payments Reseller Products Viewer",
+  "description": "Read access to Payments Reseller Product resource",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "paymentsresellersubscription",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "paymentsresellersubscription",
+      "permissions": [
+        "paymentsresellersubscription.products.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "paymentsresellersubscription.products.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

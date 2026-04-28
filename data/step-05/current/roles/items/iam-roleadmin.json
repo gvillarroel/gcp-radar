@@ -1,0 +1,58 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.928Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/iam.roleAdmin --format=json"
+  },
+  "name": "roles/iam.roleAdmin",
+  "role_slug": "iam-roleadmin",
+  "title": "Role Administrator",
+  "description": "Access to administer all custom roles in the project.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 12,
+  "permission_groups": [
+    "iam",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.roles.create",
+        "iam.roles.createTagBinding",
+        "iam.roles.delete",
+        "iam.roles.deleteTagBinding",
+        "iam.roles.get",
+        "iam.roles.list",
+        "iam.roles.listEffectiveTags",
+        "iam.roles.listTagBindings",
+        "iam.roles.undelete",
+        "iam.roles.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.getIamPolicy"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "iam.roles.create",
+    "iam.roles.createTagBinding",
+    "iam.roles.delete",
+    "iam.roles.deleteTagBinding",
+    "iam.roles.get",
+    "iam.roles.list",
+    "iam.roles.listEffectiveTags",
+    "iam.roles.listTagBindings",
+    "iam.roles.undelete",
+    "iam.roles.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.getIamPolicy"
+  ]
+}

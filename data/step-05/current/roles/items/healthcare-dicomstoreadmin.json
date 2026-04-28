@@ -1,0 +1,68 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.891Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/healthcare.dicomStoreAdmin --format=json"
+  },
+  "name": "roles/healthcare.dicomStoreAdmin",
+  "role_slug": "healthcare-dicomstoreadmin",
+  "title": "Healthcare DICOM Store Administrator",
+  "description": "Administer DICOM stores.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 17,
+  "permission_groups": [
+    "healthcare",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "healthcare",
+      "permissions": [
+        "healthcare.datasets.get",
+        "healthcare.datasets.list",
+        "healthcare.dicomStores.create",
+        "healthcare.dicomStores.deidentify",
+        "healthcare.dicomStores.delete",
+        "healthcare.dicomStores.dicomWebDelete",
+        "healthcare.dicomStores.get",
+        "healthcare.dicomStores.getIamPolicy",
+        "healthcare.dicomStores.list",
+        "healthcare.dicomStores.setIamPolicy",
+        "healthcare.dicomStores.update",
+        "healthcare.locations.get",
+        "healthcare.locations.list",
+        "healthcare.operations.cancel",
+        "healthcare.operations.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "healthcare.datasets.get",
+    "healthcare.datasets.list",
+    "healthcare.dicomStores.create",
+    "healthcare.dicomStores.deidentify",
+    "healthcare.dicomStores.delete",
+    "healthcare.dicomStores.dicomWebDelete",
+    "healthcare.dicomStores.get",
+    "healthcare.dicomStores.getIamPolicy",
+    "healthcare.dicomStores.list",
+    "healthcare.dicomStores.setIamPolicy",
+    "healthcare.dicomStores.update",
+    "healthcare.locations.get",
+    "healthcare.locations.list",
+    "healthcare.operations.cancel",
+    "healthcare.operations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

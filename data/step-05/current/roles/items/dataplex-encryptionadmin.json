@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.498Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataplex.encryptionAdmin --format=json"
+  },
+  "name": "roles/dataplex.encryptionAdmin",
+  "role_slug": "dataplex-encryptionadmin",
+  "title": "Dataplex Encryption Admin",
+  "description": "Gives user permissions to manage encryption configurations.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "dataplex"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.encryptionConfig.create",
+        "dataplex.encryptionConfig.delete",
+        "dataplex.encryptionConfig.get",
+        "dataplex.encryptionConfig.list",
+        "dataplex.encryptionConfig.update",
+        "dataplex.operations.get",
+        "dataplex.operations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dataplex.encryptionConfig.create",
+    "dataplex.encryptionConfig.delete",
+    "dataplex.encryptionConfig.get",
+    "dataplex.encryptionConfig.list",
+    "dataplex.encryptionConfig.update",
+    "dataplex.operations.get",
+    "dataplex.operations.list"
+  ]
+}

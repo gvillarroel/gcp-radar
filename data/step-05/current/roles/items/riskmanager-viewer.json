@@ -1,0 +1,56 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.442Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/riskmanager.viewer --format=json"
+  },
+  "name": "roles/riskmanager.viewer",
+  "role_slug": "riskmanager-viewer",
+  "title": "Risk Manager Viewer",
+  "description": "Access to view Risk Manager resources",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "resourcemanager",
+    "riskmanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "riskmanager",
+      "permissions": [
+        "riskmanager.controlScoreBreakdowns.get",
+        "riskmanager.controlScoreBreakdowns.list",
+        "riskmanager.operations.get",
+        "riskmanager.operations.list",
+        "riskmanager.policies.get",
+        "riskmanager.policies.list",
+        "riskmanager.reports.get",
+        "riskmanager.reports.list",
+        "riskmanager.settings.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "riskmanager.controlScoreBreakdowns.get",
+    "riskmanager.controlScoreBreakdowns.list",
+    "riskmanager.operations.get",
+    "riskmanager.operations.list",
+    "riskmanager.policies.get",
+    "riskmanager.policies.list",
+    "riskmanager.reports.get",
+    "riskmanager.reports.list",
+    "riskmanager.settings.get"
+  ]
+}

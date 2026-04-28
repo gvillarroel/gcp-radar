@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.746Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/workstations.user --format=json"
+  },
+  "name": "roles/workstations.user",
+  "role_slug": "workstations-user",
+  "title": "Cloud Workstations User",
+  "description": "Grants runtime access to Workstation resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "workstations"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "workstations",
+      "permissions": [
+        "workstations.operations.get",
+        "workstations.operations.list",
+        "workstations.workstations.delete",
+        "workstations.workstations.get",
+        "workstations.workstations.start",
+        "workstations.workstations.stop",
+        "workstations.workstations.update",
+        "workstations.workstations.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "workstations.operations.get",
+    "workstations.operations.list",
+    "workstations.workstations.delete",
+    "workstations.workstations.get",
+    "workstations.workstations.start",
+    "workstations.workstations.stop",
+    "workstations.workstations.update",
+    "workstations.workstations.use"
+  ]
+}

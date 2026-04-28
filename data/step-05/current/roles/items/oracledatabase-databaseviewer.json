@@ -1,0 +1,56 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.212Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/oracledatabase.databaseViewer --format=json"
+  },
+  "name": "roles/oracledatabase.databaseViewer",
+  "role_slug": "oracledatabase-databaseviewer",
+  "title": "Oracle Database@Google Cloud Container Database Viewer",
+  "description": "Grants read access to see all Container Database resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "oracledatabase",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "oracledatabase",
+      "permissions": [
+        "oracledatabase.databases.get",
+        "oracledatabase.databases.list",
+        "oracledatabase.entitlements.list",
+        "oracledatabase.locations.get",
+        "oracledatabase.locations.list",
+        "oracledatabase.operations.get",
+        "oracledatabase.operations.list",
+        "oracledatabase.pluggableDatabases.get",
+        "oracledatabase.pluggableDatabases.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "oracledatabase.databases.get",
+    "oracledatabase.databases.list",
+    "oracledatabase.entitlements.list",
+    "oracledatabase.locations.get",
+    "oracledatabase.locations.list",
+    "oracledatabase.operations.get",
+    "oracledatabase.operations.list",
+    "oracledatabase.pluggableDatabases.get",
+    "oracledatabase.pluggableDatabases.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

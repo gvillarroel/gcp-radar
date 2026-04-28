@@ -1,0 +1,36 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.843Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/genomics.pipelinesRunner --format=json"
+  },
+  "name": "roles/genomics.pipelinesRunner",
+  "role_slug": "genomics-pipelinesrunner",
+  "title": "Genomics Pipelines Runner",
+  "description": "Full access to operate on genomics pipelines.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "genomics"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "genomics",
+      "permissions": [
+        "genomics.operations.cancel",
+        "genomics.operations.create",
+        "genomics.operations.get",
+        "genomics.operations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "genomics.operations.cancel",
+    "genomics.operations.create",
+    "genomics.operations.get",
+    "genomics.operations.list"
+  ]
+}

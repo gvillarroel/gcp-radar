@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.219Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudmigration.velostrataconnect --format=json"
+  },
+  "name": "roles/cloudmigration.velostrataconnect",
+  "role_slug": "cloudmigration-velostrataconnect",
+  "title": "Velostrata Manager Connection Agent",
+  "description": "Ability to set up connection between Velostrata Manager and Google",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "cloudmigration",
+    "gkehub"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudmigration",
+      "permissions": [
+        "cloudmigration.velostrataendpoints.connect"
+      ]
+    },
+    {
+      "group": "gkehub",
+      "permissions": [
+        "gkehub.endpoints.connect"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudmigration.velostrataendpoints.connect",
+    "gkehub.endpoints.connect"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.542Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datastore.user --format=json"
+  },
+  "name": "roles/datastore.user",
+  "role_slug": "datastore-user",
+  "title": "Cloud Datastore User",
+  "description": "Provides read/write access to data in a Cloud Datastore database. Intended for application developers and service accounts.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 23,
+  "permission_groups": [
+    "appengine",
+    "databasesconsole",
+    "datastore",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "appengine",
+      "permissions": [
+        "appengine.applications.get"
+      ]
+    },
+    {
+      "group": "databasesconsole",
+      "permissions": [
+        "databasesconsole.locations.get",
+        "databasesconsole.locations.list",
+        "databasesconsole.studioQueries.create",
+        "databasesconsole.studioQueries.delete",
+        "databasesconsole.studioQueries.search",
+        "databasesconsole.studioQueries.update"
+      ]
+    },
+    {
+      "group": "datastore",
+      "permissions": [
+        "datastore.databases.get",
+        "datastore.databases.getMetadata",
+        "datastore.databases.list",
+        "datastore.entities.allocateIds",
+        "datastore.entities.create",
+        "datastore.entities.delete",
+        "datastore.entities.get",
+        "datastore.entities.list",
+        "datastore.entities.update",
+        "datastore.namespaces.get",
+        "datastore.namespaces.list",
+        "datastore.schemas.list",
+        "datastore.statistics.get",
+        "datastore.statistics.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "appengine.applications.get",
+    "databasesconsole.locations.get",
+    "databasesconsole.locations.list",
+    "databasesconsole.studioQueries.create",
+    "databasesconsole.studioQueries.delete",
+    "databasesconsole.studioQueries.search",
+    "databasesconsole.studioQueries.update",
+    "datastore.databases.get",
+    "datastore.databases.getMetadata",
+    "datastore.databases.list",
+    "datastore.entities.allocateIds",
+    "datastore.entities.create",
+    "datastore.entities.delete",
+    "datastore.entities.get",
+    "datastore.entities.list",
+    "datastore.entities.update",
+    "datastore.namespaces.get",
+    "datastore.namespaces.list",
+    "datastore.schemas.list",
+    "datastore.statistics.get",
+    "datastore.statistics.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

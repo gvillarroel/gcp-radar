@@ -1,0 +1,72 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.702Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/errorreporting.viewer --format=json"
+  },
+  "name": "roles/errorreporting.viewer",
+  "role_slug": "errorreporting-viewer",
+  "title": "Error Reporting Viewer",
+  "description": "Read-only access to all Error Reporting data.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "cloudnotifications",
+    "errorreporting",
+    "logging",
+    "resourcemanager",
+    "stackdriver"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudnotifications",
+      "permissions": [
+        "cloudnotifications.activities.list"
+      ]
+    },
+    {
+      "group": "errorreporting",
+      "permissions": [
+        "errorreporting.applications.list",
+        "errorreporting.errorEvents.list",
+        "errorreporting.groupMetadata.get",
+        "errorreporting.groups.list"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.notificationRules.get",
+        "logging.notificationRules.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "stackdriver",
+      "permissions": [
+        "stackdriver.projects.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudnotifications.activities.list",
+    "errorreporting.applications.list",
+    "errorreporting.errorEvents.list",
+    "errorreporting.groupMetadata.get",
+    "errorreporting.groups.list",
+    "logging.notificationRules.get",
+    "logging.notificationRules.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "stackdriver.projects.get"
+  ]
+}

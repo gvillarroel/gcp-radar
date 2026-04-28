@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.472Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securedlandingzone.bqdwProjectRemediator --format=json"
+  },
+  "name": "roles/securedlandingzone.bqdwProjectRemediator",
+  "role_slug": "securedlandingzone-bqdwprojectremediator",
+  "title": "SLZ BQDW Blueprint Project Level Remediator",
+  "description": "Access to modify (remediate) resources in SLZ BQDW Blueprint at Project.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 23,
+  "permission_groups": [
+    "bigquery",
+    "cloudkms",
+    "pubsub",
+    "resourcemanager",
+    "serviceusage",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.datasets.get",
+        "bigquery.datasets.getIamPolicy",
+        "bigquery.datasets.setIamPolicy",
+        "bigquery.datasets.update"
+      ]
+    },
+    {
+      "group": "cloudkms",
+      "permissions": [
+        "cloudkms.cryptoKeys.get",
+        "cloudkms.cryptoKeys.getIamPolicy",
+        "cloudkms.cryptoKeys.list",
+        "cloudkms.cryptoKeys.setIamPolicy",
+        "cloudkms.cryptoKeys.update",
+        "cloudkms.keyRings.getIamPolicy",
+        "cloudkms.keyRings.setIamPolicy"
+      ]
+    },
+    {
+      "group": "pubsub",
+      "permissions": [
+        "pubsub.topics.get",
+        "pubsub.topics.getIamPolicy",
+        "pubsub.topics.list",
+        "pubsub.topics.setIamPolicy",
+        "pubsub.topics.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.update"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.get",
+        "storage.buckets.getIamPolicy",
+        "storage.buckets.list",
+        "storage.buckets.setIamPolicy",
+        "storage.buckets.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.datasets.get",
+    "bigquery.datasets.getIamPolicy",
+    "bigquery.datasets.setIamPolicy",
+    "bigquery.datasets.update",
+    "cloudkms.cryptoKeys.get",
+    "cloudkms.cryptoKeys.getIamPolicy",
+    "cloudkms.cryptoKeys.list",
+    "cloudkms.cryptoKeys.setIamPolicy",
+    "cloudkms.cryptoKeys.update",
+    "cloudkms.keyRings.getIamPolicy",
+    "cloudkms.keyRings.setIamPolicy",
+    "pubsub.topics.get",
+    "pubsub.topics.getIamPolicy",
+    "pubsub.topics.list",
+    "pubsub.topics.setIamPolicy",
+    "pubsub.topics.update",
+    "resourcemanager.projects.update",
+    "serviceusage.services.use",
+    "storage.buckets.get",
+    "storage.buckets.getIamPolicy",
+    "storage.buckets.list",
+    "storage.buckets.setIamPolicy",
+    "storage.buckets.update"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.380Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/container.clusterAdmin --format=json"
+  },
+  "name": "roles/container.clusterAdmin",
+  "role_slug": "container-clusteradmin",
+  "title": "Kubernetes Engine Cluster Admin",
+  "description": "Management of Kubernetes Clusters.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "container",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "container",
+      "permissions": [
+        "container.clusters.connect",
+        "container.clusters.create",
+        "container.clusters.delete",
+        "container.clusters.get",
+        "container.clusters.list",
+        "container.clusters.update",
+        "container.operations.get",
+        "container.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "container.clusters.connect",
+    "container.clusters.create",
+    "container.clusters.delete",
+    "container.clusters.get",
+    "container.clusters.list",
+    "container.clusters.update",
+    "container.operations.get",
+    "container.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

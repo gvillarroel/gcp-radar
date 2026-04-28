@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.413Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/databaseinsights.recommendationViewer --format=json"
+  },
+  "name": "roles/databaseinsights.recommendationViewer",
+  "role_slug": "databaseinsights-recommendationviewer",
+  "title": "Database Insights recommendation viewer",
+  "description": "Viewer role for Database Insights recommendation data",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "databaseinsights",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "databaseinsights",
+      "permissions": [
+        "databaseinsights.locations.get",
+        "databaseinsights.locations.list",
+        "databaseinsights.recommendations.query",
+        "databaseinsights.resourceRecommendations.query",
+        "databaseinsights.workloadRecommendations.fetch"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "databaseinsights.locations.get",
+    "databaseinsights.locations.list",
+    "databaseinsights.recommendations.query",
+    "databaseinsights.resourceRecommendations.query",
+    "databaseinsights.workloadRecommendations.fetch",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

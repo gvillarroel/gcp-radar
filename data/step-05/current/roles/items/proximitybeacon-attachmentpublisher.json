@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.298Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/proximitybeacon.attachmentPublisher --format=json"
+  },
+  "name": "roles/proximitybeacon.attachmentPublisher",
+  "role_slug": "proximitybeacon-attachmentpublisher",
+  "title": "Beacon Attachment Publisher",
+  "description": "Grants necessary permissions to use beacons to create attachments in namespaces not owned by this project.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "proximitybeacon",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "proximitybeacon",
+      "permissions": [
+        "proximitybeacon.beacons.attach",
+        "proximitybeacon.beacons.get",
+        "proximitybeacon.beacons.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "proximitybeacon.beacons.attach",
+    "proximitybeacon.beacons.get",
+    "proximitybeacon.beacons.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.040Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/managedflink.serviceAgent --format=json"
+  },
+  "name": "roles/managedflink.serviceAgent",
+  "role_slug": "managedflink-serviceagent",
+  "title": "Managed Flink Service Agent",
+  "description": "Gives Managed Flink Service Agent access to Cloud Platform resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 23,
+  "permission_groups": [
+    "compute",
+    "dns",
+    "managedkafka",
+    "monitoring",
+    "serviceusage",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.networkAttachments.create",
+        "compute.networkAttachments.delete",
+        "compute.networkAttachments.get",
+        "compute.networkAttachments.list",
+        "compute.networkAttachments.update",
+        "compute.networks.get",
+        "compute.networks.list",
+        "compute.regionOperations.get",
+        "compute.subnetworks.get",
+        "compute.subnetworks.list",
+        "compute.subnetworks.use"
+      ]
+    },
+    {
+      "group": "dns",
+      "permissions": [
+        "dns.networks.targetWithPeeringZone"
+      ]
+    },
+    {
+      "group": "managedkafka",
+      "permissions": [
+        "managedkafka.clusters.get",
+        "managedkafka.clusters.list",
+        "managedkafka.clusters.update"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.metricDescriptors.create",
+        "monitoring.metricDescriptors.get",
+        "monitoring.metricDescriptors.list",
+        "monitoring.monitoredResourceDescriptors.get",
+        "monitoring.monitoredResourceDescriptors.list",
+        "monitoring.timeSeries.create"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.objects.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "compute.networkAttachments.create",
+    "compute.networkAttachments.delete",
+    "compute.networkAttachments.get",
+    "compute.networkAttachments.list",
+    "compute.networkAttachments.update",
+    "compute.networks.get",
+    "compute.networks.list",
+    "compute.regionOperations.get",
+    "compute.subnetworks.get",
+    "compute.subnetworks.list",
+    "compute.subnetworks.use",
+    "dns.networks.targetWithPeeringZone",
+    "managedkafka.clusters.get",
+    "managedkafka.clusters.list",
+    "managedkafka.clusters.update",
+    "monitoring.metricDescriptors.create",
+    "monitoring.metricDescriptors.get",
+    "monitoring.metricDescriptors.list",
+    "monitoring.monitoredResourceDescriptors.get",
+    "monitoring.monitoredResourceDescriptors.list",
+    "monitoring.timeSeries.create",
+    "serviceusage.services.use",
+    "storage.objects.get"
+  ]
+}

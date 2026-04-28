@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.123Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/monitoring.notificationChannelEditor --format=json"
+  },
+  "name": "roles/monitoring.notificationChannelEditor",
+  "role_slug": "monitoring-notificationchanneleditor",
+  "title": "Monitoring NotificationChannel Editor",
+  "description": "Read/write access to notification channels.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "monitoring"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.notificationChannelDescriptors.get",
+        "monitoring.notificationChannelDescriptors.list",
+        "monitoring.notificationChannels.create",
+        "monitoring.notificationChannels.delete",
+        "monitoring.notificationChannels.get",
+        "monitoring.notificationChannels.list",
+        "monitoring.notificationChannels.sendVerificationCode",
+        "monitoring.notificationChannels.update",
+        "monitoring.notificationChannels.verify"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "monitoring.notificationChannelDescriptors.get",
+    "monitoring.notificationChannelDescriptors.list",
+    "monitoring.notificationChannels.create",
+    "monitoring.notificationChannels.delete",
+    "monitoring.notificationChannels.get",
+    "monitoring.notificationChannels.list",
+    "monitoring.notificationChannels.sendVerificationCode",
+    "monitoring.notificationChannels.update",
+    "monitoring.notificationChannels.verify"
+  ]
+}

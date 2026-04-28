@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.360Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/connectors.managedZoneAdmin --format=json"
+  },
+  "name": "roles/connectors.managedZoneAdmin",
+  "role_slug": "connectors-managedzoneadmin",
+  "title": "Connectors Managed Zone Admin",
+  "description": "Managed Zone is a global resource which creates Cloud DNS Peering Zone with the given target project. This role grants Admin access to Connectors Managed Zone resources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "connectors"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "connectors",
+      "permissions": [
+        "connectors.locations.get",
+        "connectors.locations.list",
+        "connectors.managedZones.create",
+        "connectors.managedZones.delete",
+        "connectors.managedZones.get",
+        "connectors.managedZones.getIamPolicy",
+        "connectors.managedZones.list",
+        "connectors.managedZones.setIamPolicy",
+        "connectors.managedZones.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "connectors.locations.get",
+    "connectors.locations.list",
+    "connectors.managedZones.create",
+    "connectors.managedZones.delete",
+    "connectors.managedZones.get",
+    "connectors.managedZones.getIamPolicy",
+    "connectors.managedZones.list",
+    "connectors.managedZones.setIamPolicy",
+    "connectors.managedZones.update"
+  ]
+}

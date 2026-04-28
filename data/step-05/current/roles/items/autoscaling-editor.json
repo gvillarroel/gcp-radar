@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.957Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/autoscaling.editor --format=json"
+  },
+  "name": "roles/autoscaling.editor",
+  "role_slug": "autoscaling-editor",
+  "title": "Autoscaling Editor",
+  "description": "Editor role for autoscaling",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "autoscaling",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "autoscaling",
+      "permissions": [
+        "autoscaling.sites.getIamPolicy",
+        "autoscaling.sites.readRecommendations",
+        "autoscaling.sites.writeMetrics",
+        "autoscaling.sites.writeState"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "autoscaling.sites.getIamPolicy",
+    "autoscaling.sites.readRecommendations",
+    "autoscaling.sites.writeMetrics",
+    "autoscaling.sites.writeState",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

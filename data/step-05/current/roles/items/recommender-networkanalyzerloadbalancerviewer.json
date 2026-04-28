@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.380Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/recommender.networkAnalyzerLoadBalancerViewer --format=json"
+  },
+  "name": "roles/recommender.networkAnalyzerLoadBalancerViewer",
+  "role_slug": "recommender-networkanalyzerloadbalancerviewer",
+  "title": "Network Analyzer Load Balancer Recommender Viewer",
+  "description": "Viewer of Network Analyzer Load Balancer Insights and Recommendations.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "recommender",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.locations.get",
+        "recommender.locations.list",
+        "recommender.networkAnalyzerLoadBalancerInsights.get",
+        "recommender.networkAnalyzerLoadBalancerInsights.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "recommender.locations.get",
+    "recommender.locations.list",
+    "recommender.networkAnalyzerLoadBalancerInsights.get",
+    "recommender.networkAnalyzerLoadBalancerInsights.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

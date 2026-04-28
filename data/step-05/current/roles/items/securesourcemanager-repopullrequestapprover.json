@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.483Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securesourcemanager.repoPullRequestApprover --format=json"
+  },
+  "name": "roles/securesourcemanager.repoPullRequestApprover",
+  "role_slug": "securesourcemanager-repopullrequestapprover",
+  "title": "Secure Source Manager Repository Pull Request Approver",
+  "description": "A pull request approver can approve pull requests in a repository.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "resourcemanager",
+    "securesourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "securesourcemanager",
+      "permissions": [
+        "securesourcemanager.repositories.approvePullRequests"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "securesourcemanager.repositories.approvePullRequests"
+  ]
+}

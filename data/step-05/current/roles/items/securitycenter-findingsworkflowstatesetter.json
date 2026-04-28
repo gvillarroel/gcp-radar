@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.509Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securitycenter.findingsWorkflowStateSetter --format=json"
+  },
+  "name": "roles/securitycenter.findingsWorkflowStateSetter",
+  "role_slug": "securitycenter-findingsworkflowstatesetter",
+  "title": "Security Center Findings Workflow State Setter",
+  "description": "Set workflow state access to findings",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "securitycenter"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "securitycenter",
+      "permissions": [
+        "securitycenter.findings.setWorkflowState",
+        "securitycenter.userinterfacemetadata.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "securitycenter.findings.setWorkflowState",
+    "securitycenter.userinterfacemetadata.get"
+  ]
+}

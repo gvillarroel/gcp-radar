@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.473Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securedlandingzone.overwatchAdmin --format=json"
+  },
+  "name": "roles/securedlandingzone.overwatchAdmin",
+  "role_slug": "securedlandingzone-overwatchadmin",
+  "title": "Overwatch Admin",
+  "description": "Full access to Overwatches",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "resourcemanager",
+    "securedlandingzone"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "securedlandingzone",
+      "permissions": [
+        "securedlandingzone.operations.get",
+        "securedlandingzone.overwatches.activate",
+        "securedlandingzone.overwatches.create",
+        "securedlandingzone.overwatches.delete",
+        "securedlandingzone.overwatches.get",
+        "securedlandingzone.overwatches.list",
+        "securedlandingzone.overwatches.suspend",
+        "securedlandingzone.overwatches.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "securedlandingzone.operations.get",
+    "securedlandingzone.overwatches.activate",
+    "securedlandingzone.overwatches.create",
+    "securedlandingzone.overwatches.delete",
+    "securedlandingzone.overwatches.get",
+    "securedlandingzone.overwatches.list",
+    "securedlandingzone.overwatches.suspend",
+    "securedlandingzone.overwatches.update"
+  ]
+}

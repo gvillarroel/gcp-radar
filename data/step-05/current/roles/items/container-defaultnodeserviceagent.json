@@ -1,0 +1,80 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.382Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/container.defaultNodeServiceAgent --format=json"
+  },
+  "name": "roles/container.defaultNodeServiceAgent",
+  "role_slug": "container-defaultnodeserviceagent",
+  "title": "Kubernetes Engine Default Node Service Agent",
+  "description": "Minimal set of permissions required by a GKE node to support standard capabilities such as logging and monitoring. Replaces the container.nodeServiceAgent role with a reduced permission set.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "autoscaling",
+    "logging",
+    "monitoring",
+    "serviceusage",
+    "telemetry",
+    "trafficdirector"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "autoscaling",
+      "permissions": [
+        "autoscaling.sites.writeMetrics"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.metricDescriptors.create",
+        "monitoring.metricDescriptors.list",
+        "monitoring.timeSeries.create",
+        "monitoring.timeSeries.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    },
+    {
+      "group": "telemetry",
+      "permissions": [
+        "telemetry.metrics.write",
+        "telemetry.traces.write"
+      ]
+    },
+    {
+      "group": "trafficdirector",
+      "permissions": [
+        "trafficdirector.networks.getConfigs",
+        "trafficdirector.networks.reportMetrics"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "autoscaling.sites.writeMetrics",
+    "logging.logEntries.create",
+    "monitoring.metricDescriptors.create",
+    "monitoring.metricDescriptors.list",
+    "monitoring.timeSeries.create",
+    "monitoring.timeSeries.list",
+    "serviceusage.services.use",
+    "telemetry.metrics.write",
+    "telemetry.traces.write",
+    "trafficdirector.networks.getConfigs",
+    "trafficdirector.networks.reportMetrics"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.610Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/storage.legacyObjectOwner --format=json"
+  },
+  "name": "roles/storage.legacyObjectOwner",
+  "role_slug": "storage-legacyobjectowner",
+  "title": "Storage Legacy Object Owner",
+  "description": "Grants permission to view and edit objects and their metadata, including ACLs.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.objects.createContext",
+        "storage.objects.deleteContext",
+        "storage.objects.get",
+        "storage.objects.getIamPolicy",
+        "storage.objects.overrideUnlockedRetention",
+        "storage.objects.setIamPolicy",
+        "storage.objects.setRetention",
+        "storage.objects.update",
+        "storage.objects.updateContext"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "storage.objects.createContext",
+    "storage.objects.deleteContext",
+    "storage.objects.get",
+    "storage.objects.getIamPolicy",
+    "storage.objects.overrideUnlockedRetention",
+    "storage.objects.setIamPolicy",
+    "storage.objects.setRetention",
+    "storage.objects.update",
+    "storage.objects.updateContext"
+  ]
+}

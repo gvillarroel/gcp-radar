@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.295Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/privilegedaccessmanager.settingsViewer --format=json"
+  },
+  "name": "roles/privilegedaccessmanager.settingsViewer",
+  "role_slug": "privilegedaccessmanager-settingsviewer",
+  "title": "Privileged Access Manager Settings Viewer",
+  "description": "Readonly access to Privileged Access Manager Settings & Effective Settings.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "privilegedaccessmanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "privilegedaccessmanager",
+      "permissions": [
+        "privilegedaccessmanager.settings.fetchEffective",
+        "privilegedaccessmanager.settings.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "privilegedaccessmanager.settings.fetchEffective",
+    "privilegedaccessmanager.settings.get"
+  ]
+}

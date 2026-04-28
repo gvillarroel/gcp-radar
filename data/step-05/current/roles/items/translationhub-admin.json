@@ -1,0 +1,82 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.665Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/translationhub.admin --format=json"
+  },
+  "name": "roles/translationhub.admin",
+  "role_slug": "translationhub-admin",
+  "title": "Translation Hub Admin",
+  "description": "Admin of Translation Hub",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 18,
+  "permission_groups": [
+    "automl",
+    "cloudtranslate",
+    "resourcemanager",
+    "translationhub"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "automl",
+      "permissions": [
+        "automl.models.get",
+        "automl.models.list",
+        "automl.models.predict"
+      ]
+    },
+    {
+      "group": "cloudtranslate",
+      "permissions": [
+        "cloudtranslate.customModels.get",
+        "cloudtranslate.customModels.list",
+        "cloudtranslate.customModels.predict",
+        "cloudtranslate.glossaries.create",
+        "cloudtranslate.glossaries.delete",
+        "cloudtranslate.glossaries.get",
+        "cloudtranslate.glossaries.list",
+        "cloudtranslate.glossaries.predict"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "translationhub",
+      "permissions": [
+        "translationhub.portals.create",
+        "translationhub.portals.delete",
+        "translationhub.portals.get",
+        "translationhub.portals.list",
+        "translationhub.portals.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "automl.models.get",
+    "automl.models.list",
+    "automl.models.predict",
+    "cloudtranslate.customModels.get",
+    "cloudtranslate.customModels.list",
+    "cloudtranslate.customModels.predict",
+    "cloudtranslate.glossaries.create",
+    "cloudtranslate.glossaries.delete",
+    "cloudtranslate.glossaries.get",
+    "cloudtranslate.glossaries.list",
+    "cloudtranslate.glossaries.predict",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "translationhub.portals.create",
+    "translationhub.portals.delete",
+    "translationhub.portals.get",
+    "translationhub.portals.list",
+    "translationhub.portals.update"
+  ]
+}

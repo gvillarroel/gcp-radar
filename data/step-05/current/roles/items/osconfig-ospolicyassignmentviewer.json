@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.239Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/osconfig.osPolicyAssignmentViewer --format=json"
+  },
+  "name": "roles/osconfig.osPolicyAssignmentViewer",
+  "role_slug": "osconfig-ospolicyassignmentviewer",
+  "title": "OSPolicyAssignment Viewer",
+  "description": "Viewer of OS Policy Assignments",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "osconfig",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "osconfig",
+      "permissions": [
+        "osconfig.osPolicyAssignments.get",
+        "osconfig.osPolicyAssignments.list",
+        "osconfig.osPolicyAssignments.searchPolicies"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "osconfig.osPolicyAssignments.get",
+    "osconfig.osPolicyAssignments.list",
+    "osconfig.osPolicyAssignments.searchPolicies",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

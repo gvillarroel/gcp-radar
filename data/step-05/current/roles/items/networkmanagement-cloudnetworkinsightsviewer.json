@@ -1,0 +1,58 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.160Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/networkmanagement.CloudNetworkInsightsViewer --format=json"
+  },
+  "name": "roles/networkmanagement.CloudNetworkInsightsViewer",
+  "role_slug": "networkmanagement-cloudnetworkinsightsviewer",
+  "title": "Cloud Network Insights Viewer",
+  "description": "Read-only access to Cloud Network Insights resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 12,
+  "permission_groups": [
+    "networkmanagement",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "networkmanagement",
+      "permissions": [
+        "networkmanagement.monitoringpoints.get",
+        "networkmanagement.monitoringpoints.list",
+        "networkmanagement.networkpaths.get",
+        "networkmanagement.networkpaths.list",
+        "networkmanagement.providers.generateProviderAccessToken",
+        "networkmanagement.providers.get",
+        "networkmanagement.providers.list",
+        "networkmanagement.webpaths.get",
+        "networkmanagement.webpaths.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get",
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "networkmanagement.monitoringpoints.get",
+    "networkmanagement.monitoringpoints.list",
+    "networkmanagement.networkpaths.get",
+    "networkmanagement.networkpaths.list",
+    "networkmanagement.providers.generateProviderAccessToken",
+    "networkmanagement.providers.get",
+    "networkmanagement.providers.list",
+    "networkmanagement.webpaths.get",
+    "networkmanagement.webpaths.list",
+    "resourcemanager.organizations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

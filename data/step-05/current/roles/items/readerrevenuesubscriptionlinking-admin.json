@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.315Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/readerrevenuesubscriptionlinking.admin --format=json"
+  },
+  "name": "roles/readerrevenuesubscriptionlinking.admin",
+  "role_slug": "readerrevenuesubscriptionlinking-admin",
+  "title": "Subscription Linking Admin",
+  "description": "Full access to publication reader resources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "readerrevenuesubscriptionlinking",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "readerrevenuesubscriptionlinking",
+      "permissions": [
+        "readerrevenuesubscriptionlinking.readerEntitlements.get",
+        "readerrevenuesubscriptionlinking.readerEntitlements.update",
+        "readerrevenuesubscriptionlinking.readers.delete",
+        "readerrevenuesubscriptionlinking.readers.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "readerrevenuesubscriptionlinking.readerEntitlements.get",
+    "readerrevenuesubscriptionlinking.readerEntitlements.update",
+    "readerrevenuesubscriptionlinking.readers.delete",
+    "readerrevenuesubscriptionlinking.readers.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.496Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securitycenter.assetsViewer --format=json"
+  },
+  "name": "roles/securitycenter.assetsViewer",
+  "role_slug": "securitycenter-assetsviewer",
+  "title": "Security Center Assets Viewer",
+  "description": "Read access to assets",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 20,
+  "permission_groups": [
+    "cloudasset",
+    "resourcemanager",
+    "securitycenter"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudasset",
+      "permissions": [
+        "cloudasset.assets.exportIamPolicy",
+        "cloudasset.assets.exportOSInventories",
+        "cloudasset.assets.exportResource",
+        "cloudasset.assets.queryAccessPolicy",
+        "cloudasset.assets.queryIamPolicy",
+        "cloudasset.assets.queryOSInventories",
+        "cloudasset.assets.queryResource",
+        "cloudasset.assets.searchAllIamPolicies",
+        "cloudasset.assets.searchAllResources",
+        "cloudasset.assets.searchEnrichmentResourceOwners",
+        "cloudasset.othercloudconnections.get",
+        "cloudasset.othercloudconnections.list",
+        "cloudasset.othercloudconnections.verify"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.folders.get",
+        "resourcemanager.organizations.get",
+        "resourcemanager.projects.get"
+      ]
+    },
+    {
+      "group": "securitycenter",
+      "permissions": [
+        "securitycenter.assets.group",
+        "securitycenter.assets.list",
+        "securitycenter.assets.listAssetPropertyNames",
+        "securitycenter.userinterfacemetadata.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudasset.assets.exportIamPolicy",
+    "cloudasset.assets.exportOSInventories",
+    "cloudasset.assets.exportResource",
+    "cloudasset.assets.queryAccessPolicy",
+    "cloudasset.assets.queryIamPolicy",
+    "cloudasset.assets.queryOSInventories",
+    "cloudasset.assets.queryResource",
+    "cloudasset.assets.searchAllIamPolicies",
+    "cloudasset.assets.searchAllResources",
+    "cloudasset.assets.searchEnrichmentResourceOwners",
+    "cloudasset.othercloudconnections.get",
+    "cloudasset.othercloudconnections.list",
+    "cloudasset.othercloudconnections.verify",
+    "resourcemanager.folders.get",
+    "resourcemanager.organizations.get",
+    "resourcemanager.projects.get",
+    "securitycenter.assets.group",
+    "securitycenter.assets.list",
+    "securitycenter.assets.listAssetPropertyNames",
+    "securitycenter.userinterfacemetadata.get"
+  ]
+}

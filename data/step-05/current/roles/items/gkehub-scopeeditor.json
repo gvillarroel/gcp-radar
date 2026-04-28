@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.858Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/gkehub.scopeEditor --format=json"
+  },
+  "name": "roles/gkehub.scopeEditor",
+  "role_slug": "gkehub-scopeeditor",
+  "title": "Fleet Scope Editor",
+  "description": "Edit access to Namespaces under Fleet Scopes.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "gkehub"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "gkehub",
+      "permissions": [
+        "gkehub.namespaces.create",
+        "gkehub.namespaces.delete",
+        "gkehub.namespaces.get",
+        "gkehub.namespaces.list",
+        "gkehub.rbacrolebindings.get",
+        "gkehub.rbacrolebindings.list",
+        "gkehub.scopes.get",
+        "gkehub.scopes.getIamPolicy",
+        "gkehub.scopes.listBoundMemberships"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "gkehub.namespaces.create",
+    "gkehub.namespaces.delete",
+    "gkehub.namespaces.get",
+    "gkehub.namespaces.list",
+    "gkehub.rbacrolebindings.get",
+    "gkehub.rbacrolebindings.list",
+    "gkehub.scopes.get",
+    "gkehub.scopes.getIamPolicy",
+    "gkehub.scopes.listBoundMemberships"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.618Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/storageinsights.serviceAgent --format=json"
+  },
+  "name": "roles/storageinsights.serviceAgent",
+  "role_slug": "storageinsights-serviceagent",
+  "title": "StorageInsights Service Agent",
+  "description": "Permissions for Insights to write reports into customer project",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "bigquery",
+    "serviceusage",
+    "storageinsights"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.datasets.create"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    },
+    {
+      "group": "storageinsights",
+      "permissions": [
+        "storageinsights.reportDetails.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.datasets.create",
+    "serviceusage.services.use",
+    "storageinsights.reportDetails.list"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.835Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/aiplatform.sessionUser --format=json"
+  },
+  "name": "roles/aiplatform.sessionUser",
+  "role_slug": "aiplatform-sessionuser",
+  "title": "Vertex AI Agent Engine Session User Role",
+  "description": "Grants full user access to Session for Agent Engine.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "aiplatform"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "aiplatform",
+      "permissions": [
+        "aiplatform.sessionEvents.append",
+        "aiplatform.sessionEvents.list",
+        "aiplatform.sessions.create",
+        "aiplatform.sessions.delete",
+        "aiplatform.sessions.get",
+        "aiplatform.sessions.list",
+        "aiplatform.sessions.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "aiplatform.sessionEvents.append",
+    "aiplatform.sessionEvents.list",
+    "aiplatform.sessions.create",
+    "aiplatform.sessions.delete",
+    "aiplatform.sessions.get",
+    "aiplatform.sessions.list",
+    "aiplatform.sessions.update"
+  ]
+}

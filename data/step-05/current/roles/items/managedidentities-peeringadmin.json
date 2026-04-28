@@ -1,0 +1,64 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.046Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/managedidentities.peeringAdmin --format=json"
+  },
+  "name": "roles/managedidentities.peeringAdmin",
+  "role_slug": "managedidentities-peeringadmin",
+  "title": "Google Cloud Managed Identities Peering Admin",
+  "description": "Full access to Google Cloud Managed Identities Domains and related resources. Intended to be granted on a project-level",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 15,
+  "permission_groups": [
+    "managedidentities",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "managedidentities",
+      "permissions": [
+        "managedidentities.locations.get",
+        "managedidentities.locations.list",
+        "managedidentities.operations.cancel",
+        "managedidentities.operations.delete",
+        "managedidentities.operations.get",
+        "managedidentities.operations.list",
+        "managedidentities.peerings.create",
+        "managedidentities.peerings.delete",
+        "managedidentities.peerings.get",
+        "managedidentities.peerings.getIamPolicy",
+        "managedidentities.peerings.list",
+        "managedidentities.peerings.setIamPolicy",
+        "managedidentities.peerings.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "managedidentities.locations.get",
+    "managedidentities.locations.list",
+    "managedidentities.operations.cancel",
+    "managedidentities.operations.delete",
+    "managedidentities.operations.get",
+    "managedidentities.operations.list",
+    "managedidentities.peerings.create",
+    "managedidentities.peerings.delete",
+    "managedidentities.peerings.get",
+    "managedidentities.peerings.getIamPolicy",
+    "managedidentities.peerings.list",
+    "managedidentities.peerings.setIamPolicy",
+    "managedidentities.peerings.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

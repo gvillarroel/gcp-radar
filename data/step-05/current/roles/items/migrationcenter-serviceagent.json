@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.098Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/migrationcenter.serviceAgent --format=json"
+  },
+  "name": "roles/migrationcenter.serviceAgent",
+  "role_slug": "migrationcenter-serviceagent",
+  "title": "Migration Center Service Agent",
+  "description": "Gives Migration Center Service Account access to objects storedin object store and Cloud Migration products.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "storage",
+    "vmmigration"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.objects.get"
+      ]
+    },
+    {
+      "group": "vmmigration",
+      "permissions": [
+        "vmmigration.migratingVms.create"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "storage.objects.get",
+    "vmmigration.migratingVms.create"
+  ]
+}

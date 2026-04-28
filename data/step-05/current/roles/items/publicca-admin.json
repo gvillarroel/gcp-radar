@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.303Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/publicca.admin --format=json"
+  },
+  "name": "roles/publicca.admin",
+  "role_slug": "publicca-admin",
+  "title": "Publicca Admin",
+  "description": "Admin role for publicca",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "publicca",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "publicca",
+      "permissions": [
+        "publicca.externalAccountKeys.create"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "publicca.externalAccountKeys.create",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

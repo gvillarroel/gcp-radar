@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.014Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/beyondcorp.subscriptionViewer --format=json"
+  },
+  "name": "roles/beyondcorp.subscriptionViewer",
+  "role_slug": "beyondcorp-subscriptionviewer",
+  "title": "Cloud BeyondCorp Subscription Viewer",
+  "description": "Read-only access to all BeyondCorp Subscription resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "beyondcorp",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "beyondcorp",
+      "permissions": [
+        "beyondcorp.subscriptions.get",
+        "beyondcorp.subscriptions.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "beyondcorp.subscriptions.get",
+    "beyondcorp.subscriptions.list",
+    "resourcemanager.organizations.get"
+  ]
+}

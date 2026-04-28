@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.864Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/gkemulticloud.controlPlaneMachineServiceAgent --format=json"
+  },
+  "name": "roles/gkemulticloud.controlPlaneMachineServiceAgent",
+  "role_slug": "gkemulticloud-controlplanemachineserviceagent",
+  "title": "Anthos Multi-Cloud Control Plane Machine Service Agent",
+  "description": "Grants the Anthos Multi-Cloud Control Plane Machine Service Account access to manage resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "artifactregistry",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "artifactregistry",
+      "permissions": [
+        "artifactregistry.dockerimages.get",
+        "artifactregistry.repositories.downloadArtifacts",
+        "artifactregistry.repositories.get"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "artifactregistry.dockerimages.get",
+    "artifactregistry.repositories.downloadArtifacts",
+    "artifactregistry.repositories.get",
+    "serviceusage.services.use"
+  ]
+}

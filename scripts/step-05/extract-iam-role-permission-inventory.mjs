@@ -1,5 +1,6 @@
 #!/usr/bin/env zx
 import { execFile } from "node:child_process";
+import os from "node:os";
 import { access, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { promisify } from "node:util";
@@ -147,22 +148,30 @@ async function hasPyArrow() {
 }
 
 async function exportParquet(targetPath, rows) {
-  const payload = JSON.stringify(rows);
+  const tempDir = path.join(os.tmpdir(), "gcp-radar-step05");
+  const tempPayloadFile = path.join(tempDir, `${path.basename(targetPath)}.json`);
   const script = [
     "import json",
     "import sys",
     "import pyarrow as pa",
     "import pyarrow.parquet as pq",
-    "rows = json.loads(sys.argv[1])",
+    "with open(sys.argv[1], 'r', encoding='utf-8') as handle:",
+    "    rows = json.load(handle)",
     "table = pa.Table.from_pylist(rows)",
     "pq.write_table(table, sys.argv[2])",
-  ].join("; ");
+  ].join("\n");
 
   await mkdir(path.dirname(targetPath), { recursive: true });
-  await execFileAsync(pythonBin, ["-c", script, payload, targetPath], {
-    windowsHide: true,
-    maxBuffer: 1024 * 1024 * 64,
-  });
+  await mkdir(tempDir, { recursive: true });
+  await writeFile(tempPayloadFile, JSON.stringify(rows), "utf8");
+  try {
+    await execFileAsync(pythonBin, ["-c", script, tempPayloadFile, targetPath], {
+      windowsHide: true,
+      maxBuffer: 1024 * 1024 * 64,
+    });
+  } finally {
+    await rm(tempPayloadFile, { force: true });
+  }
 }
 
 async function listPredefinedRoles() {

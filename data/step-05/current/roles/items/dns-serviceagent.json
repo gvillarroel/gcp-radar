@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.650Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dns.serviceAgent --format=json"
+  },
+  "name": "roles/dns.serviceAgent",
+  "role_slug": "dns-serviceagent",
+  "title": "Cloud DNS Service Agent",
+  "description": "Gives Cloud DNS Service Agent access to Cloud Platform resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "compute"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.globalNetworkEndpointGroups.attachNetworkEndpoints",
+        "compute.globalNetworkEndpointGroups.create",
+        "compute.globalNetworkEndpointGroups.delete",
+        "compute.globalNetworkEndpointGroups.detachNetworkEndpoints",
+        "compute.globalNetworkEndpointGroups.get",
+        "compute.globalOperations.get",
+        "compute.healthChecks.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "compute.globalNetworkEndpointGroups.attachNetworkEndpoints",
+    "compute.globalNetworkEndpointGroups.create",
+    "compute.globalNetworkEndpointGroups.delete",
+    "compute.globalNetworkEndpointGroups.detachNetworkEndpoints",
+    "compute.globalNetworkEndpointGroups.get",
+    "compute.globalOperations.get",
+    "compute.healthChecks.get"
+  ]
+}

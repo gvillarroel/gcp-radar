@@ -1,0 +1,36 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.119Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/monitoring.dashboardViewer --format=json"
+  },
+  "name": "roles/monitoring.dashboardViewer",
+  "role_slug": "monitoring-dashboardviewer",
+  "title": "Monitoring Dashboard Configuration Viewer",
+  "description": "Read-only access to dashboard configurations.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "monitoring"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.dashboards.get",
+        "monitoring.dashboards.list",
+        "monitoring.dashboards.listEffectiveTags",
+        "monitoring.dashboards.listTagBindings"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "monitoring.dashboards.get",
+    "monitoring.dashboards.list",
+    "monitoring.dashboards.listEffectiveTags",
+    "monitoring.dashboards.listTagBindings"
+  ]
+}

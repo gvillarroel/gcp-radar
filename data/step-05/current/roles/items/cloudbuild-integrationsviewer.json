@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.141Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudbuild.integrationsViewer --format=json"
+  },
+  "name": "roles/cloudbuild.integrationsViewer",
+  "role_slug": "cloudbuild-integrationsviewer",
+  "title": "Cloud Build Integrations Viewer",
+  "description": "Can view Integrations",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "cloudbuild",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudbuild",
+      "permissions": [
+        "cloudbuild.integrations.get",
+        "cloudbuild.integrations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudbuild.integrations.get",
+    "cloudbuild.integrations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

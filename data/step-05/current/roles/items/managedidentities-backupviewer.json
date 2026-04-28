@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.043Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/managedidentities.backupViewer --format=json"
+  },
+  "name": "roles/managedidentities.backupViewer",
+  "role_slug": "managedidentities-backupviewer",
+  "title": "Google Cloud Managed Identities Backup Viewer",
+  "description": "Read-only access to Google Cloud Managed Identities Backup and related resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "managedidentities",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "managedidentities",
+      "permissions": [
+        "managedidentities.backups.get",
+        "managedidentities.backups.getIamPolicy",
+        "managedidentities.backups.list",
+        "managedidentities.domains.get",
+        "managedidentities.locations.get",
+        "managedidentities.locations.list",
+        "managedidentities.operations.get",
+        "managedidentities.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "managedidentities.backups.get",
+    "managedidentities.backups.getIamPolicy",
+    "managedidentities.backups.list",
+    "managedidentities.domains.get",
+    "managedidentities.locations.get",
+    "managedidentities.locations.list",
+    "managedidentities.operations.get",
+    "managedidentities.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

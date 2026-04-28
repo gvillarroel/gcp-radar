@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.153Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/networkconnectivity.regionalEndpointViewer --format=json"
+  },
+  "name": "roles/networkconnectivity.regionalEndpointViewer",
+  "role_slug": "networkconnectivity-regionalendpointviewer",
+  "title": "Regional Endpoint Viewer",
+  "description": "Read-only access to all Regional Endpoint resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "networkconnectivity",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "networkconnectivity",
+      "permissions": [
+        "networkconnectivity.regionalEndpoints.get",
+        "networkconnectivity.regionalEndpoints.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "networkconnectivity.regionalEndpoints.get",
+    "networkconnectivity.regionalEndpoints.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

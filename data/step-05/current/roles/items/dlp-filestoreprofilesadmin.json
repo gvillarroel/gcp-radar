@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.628Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dlp.fileStoreProfilesAdmin --format=json"
+  },
+  "name": "roles/dlp.fileStoreProfilesAdmin",
+  "role_slug": "dlp-filestoreprofilesadmin",
+  "title": "DLP File Store Data Profiles Admin",
+  "description": "Manage DLP file store profiles.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "dlp"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dlp",
+      "permissions": [
+        "dlp.fileStoreProfiles.delete",
+        "dlp.fileStoreProfiles.get",
+        "dlp.fileStoreProfiles.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dlp.fileStoreProfiles.delete",
+    "dlp.fileStoreProfiles.get",
+    "dlp.fileStoreProfiles.list"
+  ]
+}

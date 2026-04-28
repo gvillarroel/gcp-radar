@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.045Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/managedidentities.domainJoin --format=json"
+  },
+  "name": "roles/managedidentities.domainJoin",
+  "role_slug": "managedidentities-domainjoin",
+  "title": "Google Cloud Managed Identities Domain Join",
+  "description": "Access to domain join VMs with Cloud AD",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "managedidentities"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "managedidentities",
+      "permissions": [
+        "managedidentities.domains.domainJoinMachine",
+        "managedidentities.domains.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "managedidentities.domains.domainJoinMachine",
+    "managedidentities.domains.get"
+  ]
+}

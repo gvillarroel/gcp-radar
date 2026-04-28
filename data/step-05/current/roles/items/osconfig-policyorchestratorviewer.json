@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.244Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/osconfig.policyOrchestratorViewer --format=json"
+  },
+  "name": "roles/osconfig.policyOrchestratorViewer",
+  "role_slug": "osconfig-policyorchestratorviewer",
+  "title": "PolicyOrchestrator Viewer",
+  "description": "Viewer of PolicyOrchestrator resources",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "osconfig"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "osconfig",
+      "permissions": [
+        "osconfig.locations.get",
+        "osconfig.locations.list",
+        "osconfig.operations.get",
+        "osconfig.policyOrchestrators.get",
+        "osconfig.policyOrchestrators.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "osconfig.locations.get",
+    "osconfig.locations.list",
+    "osconfig.operations.get",
+    "osconfig.policyOrchestrators.get",
+    "osconfig.policyOrchestrators.list"
+  ]
+}

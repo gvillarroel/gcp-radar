@@ -1,0 +1,96 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.509Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataplex.storageDataOwner --format=json"
+  },
+  "name": "roles/dataplex.storageDataOwner",
+  "role_slug": "dataplex-storagedataowner",
+  "title": "Dataplex Storage Data Owner",
+  "description": "Owner access to data.  Should not be used directly. This role is granted by Dataplex Universal Catalog to managed resources like Cloud Storage buckets, BigQuery datasets etc.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 31,
+  "permission_groups": [
+    "bigquery",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.datasets.get",
+        "bigquery.models.create",
+        "bigquery.models.delete",
+        "bigquery.models.export",
+        "bigquery.models.getData",
+        "bigquery.models.getMetadata",
+        "bigquery.models.list",
+        "bigquery.models.updateData",
+        "bigquery.models.updateMetadata",
+        "bigquery.routines.create",
+        "bigquery.routines.delete",
+        "bigquery.routines.get",
+        "bigquery.routines.list",
+        "bigquery.routines.update",
+        "bigquery.tables.create",
+        "bigquery.tables.createSnapshot",
+        "bigquery.tables.delete",
+        "bigquery.tables.deleteSnapshot",
+        "bigquery.tables.export",
+        "bigquery.tables.get",
+        "bigquery.tables.getData",
+        "bigquery.tables.list",
+        "bigquery.tables.restoreSnapshot",
+        "bigquery.tables.update",
+        "bigquery.tables.updateData"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.get",
+        "storage.objects.create",
+        "storage.objects.delete",
+        "storage.objects.get",
+        "storage.objects.list",
+        "storage.objects.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.datasets.get",
+    "bigquery.models.create",
+    "bigquery.models.delete",
+    "bigquery.models.export",
+    "bigquery.models.getData",
+    "bigquery.models.getMetadata",
+    "bigquery.models.list",
+    "bigquery.models.updateData",
+    "bigquery.models.updateMetadata",
+    "bigquery.routines.create",
+    "bigquery.routines.delete",
+    "bigquery.routines.get",
+    "bigquery.routines.list",
+    "bigquery.routines.update",
+    "bigquery.tables.create",
+    "bigquery.tables.createSnapshot",
+    "bigquery.tables.delete",
+    "bigquery.tables.deleteSnapshot",
+    "bigquery.tables.export",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list",
+    "bigquery.tables.restoreSnapshot",
+    "bigquery.tables.update",
+    "bigquery.tables.updateData",
+    "storage.buckets.get",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.get",
+    "storage.objects.list",
+    "storage.objects.update"
+  ]
+}

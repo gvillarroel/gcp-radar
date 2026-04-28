@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.150Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudconfig.serviceAgent --format=json"
+  },
+  "name": "roles/cloudconfig.serviceAgent",
+  "role_slug": "cloudconfig-serviceagent",
+  "title": "Infrastructure Manager Service Agent",
+  "description": "Gives Infrastructure Manager service agent access to managed resources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 20,
+  "permission_groups": [
+    "cloudbuild",
+    "iam",
+    "logging",
+    "serviceusage",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudbuild",
+      "permissions": [
+        "cloudbuild.builds.create",
+        "cloudbuild.builds.get",
+        "cloudbuild.builds.list",
+        "cloudbuild.builds.update",
+        "cloudbuild.workerpools.use"
+      ]
+    },
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.serviceAccounts.actAs",
+        "iam.serviceAccounts.getAccessToken"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create",
+        "logging.logEntries.route"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.create",
+        "storage.buckets.delete",
+        "storage.buckets.get",
+        "storage.buckets.list",
+        "storage.buckets.update",
+        "storage.objects.create",
+        "storage.objects.delete",
+        "storage.objects.get",
+        "storage.objects.list",
+        "storage.objects.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudbuild.builds.create",
+    "cloudbuild.builds.get",
+    "cloudbuild.builds.list",
+    "cloudbuild.builds.update",
+    "cloudbuild.workerpools.use",
+    "iam.serviceAccounts.actAs",
+    "iam.serviceAccounts.getAccessToken",
+    "logging.logEntries.create",
+    "logging.logEntries.route",
+    "serviceusage.services.use",
+    "storage.buckets.create",
+    "storage.buckets.delete",
+    "storage.buckets.get",
+    "storage.buckets.list",
+    "storage.buckets.update",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.get",
+    "storage.objects.list",
+    "storage.objects.update"
+  ]
+}

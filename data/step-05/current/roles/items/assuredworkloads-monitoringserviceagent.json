@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.940Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/assuredworkloads.monitoringServiceAgent --format=json"
+  },
+  "name": "roles/assuredworkloads.monitoringServiceAgent",
+  "role_slug": "assuredworkloads-monitoringserviceagent",
+  "title": "Assured Workloads Monitoring Service Agent",
+  "description": "Gives the Assured Workloads service account access to create CAIS feed and monitor Assured Workloads.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "cloudasset"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudasset",
+      "permissions": [
+        "cloudasset.assets.exportResource",
+        "cloudasset.assets.listResource",
+        "cloudasset.feeds.create",
+        "cloudasset.feeds.delete",
+        "cloudasset.feeds.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudasset.assets.exportResource",
+    "cloudasset.assets.listResource",
+    "cloudasset.feeds.create",
+    "cloudasset.feeds.delete",
+    "cloudasset.feeds.get"
+  ]
+}

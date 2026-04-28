@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.358Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/recommender.firestoredatabasefirebaserulesAdmin --format=json"
+  },
+  "name": "roles/recommender.firestoredatabasefirebaserulesAdmin",
+  "role_slug": "recommender-firestoredatabasefirebaserulesadmin",
+  "title": "Firestore Database Firebase rules Recommender Admin",
+  "description": "Admin of Firestore Database Firebase rules Insights and Recommendations.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "recommender",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.firestoreDatabaseFirebaseRulesInsights.get",
+        "recommender.firestoreDatabaseFirebaseRulesInsights.list",
+        "recommender.firestoreDatabaseFirebaseRulesInsights.update",
+        "recommender.firestoreDatabaseFirebaseRulesRecommendations.get",
+        "recommender.firestoreDatabaseFirebaseRulesRecommendations.list",
+        "recommender.firestoreDatabaseFirebaseRulesRecommendations.update",
+        "recommender.locations.get",
+        "recommender.locations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "recommender.firestoreDatabaseFirebaseRulesInsights.get",
+    "recommender.firestoreDatabaseFirebaseRulesInsights.list",
+    "recommender.firestoreDatabaseFirebaseRulesInsights.update",
+    "recommender.firestoreDatabaseFirebaseRulesRecommendations.get",
+    "recommender.firestoreDatabaseFirebaseRulesRecommendations.list",
+    "recommender.firestoreDatabaseFirebaseRulesRecommendations.update",
+    "recommender.locations.get",
+    "recommender.locations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

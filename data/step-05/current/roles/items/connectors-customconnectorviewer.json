@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.355Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/connectors.customConnectorViewer --format=json"
+  },
+  "name": "roles/connectors.customConnectorViewer",
+  "role_slug": "connectors-customconnectorviewer",
+  "title": "Custom Connector Viewer",
+  "description": "Custom Connector  is a global resource which creates custom connector within the given target project. This role grants Read-only access to Custom Connector & Custom Connector Version resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "connectors"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "connectors",
+      "permissions": [
+        "connectors.customConnectors.get",
+        "connectors.customConnectors.getIamPolicy",
+        "connectors.customConnectors.list",
+        "connectors.customConnectorVersions.get",
+        "connectors.customConnectorVersions.getIamPolicy",
+        "connectors.customConnectorVersions.list",
+        "connectors.locations.get",
+        "connectors.locations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "connectors.customConnectors.get",
+    "connectors.customConnectors.getIamPolicy",
+    "connectors.customConnectors.list",
+    "connectors.customConnectorVersions.get",
+    "connectors.customConnectorVersions.getIamPolicy",
+    "connectors.customConnectorVersions.list",
+    "connectors.locations.get",
+    "connectors.locations.list"
+  ]
+}

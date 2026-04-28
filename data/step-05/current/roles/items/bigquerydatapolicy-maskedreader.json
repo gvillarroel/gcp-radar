@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.039Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/bigquerydatapolicy.maskedReader --format=json"
+  },
+  "name": "roles/bigquerydatapolicy.maskedReader",
+  "role_slug": "bigquerydatapolicy-maskedreader",
+  "title": "Masked Reader",
+  "description": "Masked read access to sub-resources tagged by the policy tag associated with a data policy, for example, BigQuery columns",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "bigquery"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.dataPolicies.maskedGet"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.dataPolicies.maskedGet"
+  ]
+}

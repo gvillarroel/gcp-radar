@@ -1,0 +1,68 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.914Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/iam.denyAdmin --format=json"
+  },
+  "name": "roles/iam.denyAdmin",
+  "role_slug": "iam-denyadmin",
+  "title": "Deny Admin",
+  "description": "Deny admin role, with permissions to read and modify deny policies",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "cloudasset",
+    "iam",
+    "policyanalyzer",
+    "policysimulator"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudasset",
+      "permissions": [
+        "cloudasset.assets.listResource"
+      ]
+    },
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.denypolicies.create",
+        "iam.denypolicies.delete",
+        "iam.denypolicies.get",
+        "iam.denypolicies.list",
+        "iam.denypolicies.update"
+      ]
+    },
+    {
+      "group": "policyanalyzer",
+      "permissions": [
+        "policyanalyzer.resourceAuthorizationActivities.query"
+      ]
+    },
+    {
+      "group": "policysimulator",
+      "permissions": [
+        "policysimulator.accessPolicySimulationResults.list",
+        "policysimulator.accessPolicySimulations.create",
+        "policysimulator.accessPolicySimulations.get",
+        "policysimulator.accessPolicySimulations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudasset.assets.listResource",
+    "iam.denypolicies.create",
+    "iam.denypolicies.delete",
+    "iam.denypolicies.get",
+    "iam.denypolicies.list",
+    "iam.denypolicies.update",
+    "policyanalyzer.resourceAuthorizationActivities.query",
+    "policysimulator.accessPolicySimulationResults.list",
+    "policysimulator.accessPolicySimulations.create",
+    "policysimulator.accessPolicySimulations.get",
+    "policysimulator.accessPolicySimulations.list"
+  ]
+}

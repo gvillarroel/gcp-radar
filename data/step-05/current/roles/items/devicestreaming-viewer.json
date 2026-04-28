@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.580Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/devicestreaming.viewer --format=json"
+  },
+  "name": "roles/devicestreaming.viewer",
+  "role_slug": "devicestreaming-viewer",
+  "title": "Device Streaming Viewer",
+  "description": "Viewer, able to see what device streaming sessions exist",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "cloudtestservice",
+    "devicestreaming",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudtestservice",
+      "permissions": [
+        "cloudtestservice.environmentcatalog.get"
+      ]
+    },
+    {
+      "group": "devicestreaming",
+      "permissions": [
+        "devicestreaming.deviceSessions.get",
+        "devicestreaming.deviceSessions.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudtestservice.environmentcatalog.get",
+    "devicestreaming.deviceSessions.get",
+    "devicestreaming.deviceSessions.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

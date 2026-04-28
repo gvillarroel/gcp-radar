@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.822Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/aiplatform.migrator --format=json"
+  },
+  "name": "roles/aiplatform.migrator",
+  "role_slug": "aiplatform-migrator",
+  "title": "Vertex AI Migration Service User",
+  "description": "Grants access to use migration service in Vertex AI",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "aiplatform"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "aiplatform",
+      "permissions": [
+        "aiplatform.migratableResources.migrate",
+        "aiplatform.migratableResources.search"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "aiplatform.migratableResources.migrate",
+    "aiplatform.migratableResources.search"
+  ]
+}

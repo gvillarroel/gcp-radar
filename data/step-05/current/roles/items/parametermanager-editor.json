@@ -1,0 +1,62 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.261Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/parametermanager.editor --format=json"
+  },
+  "name": "roles/parametermanager.editor",
+  "role_slug": "parametermanager-editor",
+  "title": "Parametermanager Editor",
+  "description": "Editor role for parametermanager",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 14,
+  "permission_groups": [
+    "parametermanager",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "parametermanager",
+      "permissions": [
+        "parametermanager.locations.get",
+        "parametermanager.locations.list",
+        "parametermanager.parameters.create",
+        "parametermanager.parameters.delete",
+        "parametermanager.parameters.get",
+        "parametermanager.parameters.list",
+        "parametermanager.parameters.update",
+        "parametermanager.parameterVersions.create",
+        "parametermanager.parameterVersions.delete",
+        "parametermanager.parameterVersions.get",
+        "parametermanager.parameterVersions.list",
+        "parametermanager.parameterVersions.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "parametermanager.locations.get",
+    "parametermanager.locations.list",
+    "parametermanager.parameters.create",
+    "parametermanager.parameters.delete",
+    "parametermanager.parameters.get",
+    "parametermanager.parameters.list",
+    "parametermanager.parameters.update",
+    "parametermanager.parameterVersions.create",
+    "parametermanager.parameterVersions.delete",
+    "parametermanager.parameterVersions.get",
+    "parametermanager.parameterVersions.list",
+    "parametermanager.parameterVersions.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

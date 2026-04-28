@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.877Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/health.viewer --format=json"
+  },
+  "name": "roles/health.viewer",
+  "role_slug": "health-viewer",
+  "title": "Health Viewer",
+  "description": "Read-only access to Health resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "health"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "health",
+      "permissions": [
+        "health.subscribers.list",
+        "health.subscriptions.get",
+        "health.subscriptions.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "health.subscribers.list",
+    "health.subscriptions.get",
+    "health.subscriptions.list"
+  ]
+}

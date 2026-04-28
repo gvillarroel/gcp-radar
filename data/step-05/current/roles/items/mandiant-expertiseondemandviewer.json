@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.064Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/mandiant.expertiseOnDemandViewer --format=json"
+  },
+  "name": "roles/mandiant.expertiseOnDemandViewer",
+  "role_slug": "mandiant-expertiseondemandviewer",
+  "title": "Mandiant Expertise On Demand Viewer",
+  "description": "Access to read Expertise On Demand",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "mandiant",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "mandiant",
+      "permissions": [
+        "mandiant.genericExpertiseOnDemands.get",
+        "mandiant.genericPlatforms.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "mandiant.genericExpertiseOnDemands.get",
+    "mandiant.genericPlatforms.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

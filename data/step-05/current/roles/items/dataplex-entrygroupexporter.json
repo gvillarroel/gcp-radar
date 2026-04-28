@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.498Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataplex.entryGroupExporter --format=json"
+  },
+  "name": "roles/dataplex.entryGroupExporter",
+  "role_slug": "dataplex-entrygroupexporter",
+  "title": "Dataplex Entry Group Exporter",
+  "description": "Grants access to export this entry group for Metadata Job processing.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "dataplex",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.entryGroups.export",
+        "dataplex.entryGroups.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dataplex.entryGroups.export",
+    "dataplex.entryGroups.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

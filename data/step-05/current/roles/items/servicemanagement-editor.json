@@ -1,0 +1,56 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.558Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/servicemanagement.editor --format=json"
+  },
+  "name": "roles/servicemanagement.editor",
+  "role_slug": "servicemanagement-editor",
+  "title": "Service Management Editor",
+  "description": "Editor role for Service Management.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "resourcemanager",
+    "servicemanagement"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "servicemanagement",
+      "permissions": [
+        "servicemanagement.services.bind",
+        "servicemanagement.services.check",
+        "servicemanagement.services.create",
+        "servicemanagement.services.delete",
+        "servicemanagement.services.get",
+        "servicemanagement.services.list",
+        "servicemanagement.services.quota",
+        "servicemanagement.services.report",
+        "servicemanagement.services.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "servicemanagement.services.bind",
+    "servicemanagement.services.check",
+    "servicemanagement.services.create",
+    "servicemanagement.services.delete",
+    "servicemanagement.services.get",
+    "servicemanagement.services.list",
+    "servicemanagement.services.quota",
+    "servicemanagement.services.report",
+    "servicemanagement.services.update"
+  ]
+}

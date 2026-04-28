@@ -1,0 +1,58 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.209Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/oracledatabase.cloudExadataInfrastructureViewer --format=json"
+  },
+  "name": "roles/oracledatabase.cloudExadataInfrastructureViewer",
+  "role_slug": "oracledatabase-cloudexadatainfrastructureviewer",
+  "title": "Oracle Database@Google Cloud Exadata Infrastructure Viewer",
+  "description": "Grants read access to see all Exadata Infrastructure resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 12,
+  "permission_groups": [
+    "oracledatabase",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "oracledatabase",
+      "permissions": [
+        "oracledatabase.cloudExadataInfrastructures.get",
+        "oracledatabase.cloudExadataInfrastructures.list",
+        "oracledatabase.dbServers.list",
+        "oracledatabase.dbSystemShapes.list",
+        "oracledatabase.entitlements.list",
+        "oracledatabase.giVersions.list",
+        "oracledatabase.locations.get",
+        "oracledatabase.locations.list",
+        "oracledatabase.operations.get",
+        "oracledatabase.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "oracledatabase.cloudExadataInfrastructures.get",
+    "oracledatabase.cloudExadataInfrastructures.list",
+    "oracledatabase.dbServers.list",
+    "oracledatabase.dbSystemShapes.list",
+    "oracledatabase.entitlements.list",
+    "oracledatabase.giVersions.list",
+    "oracledatabase.locations.get",
+    "oracledatabase.locations.list",
+    "oracledatabase.operations.get",
+    "oracledatabase.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

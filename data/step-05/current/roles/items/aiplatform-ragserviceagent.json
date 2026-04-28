@@ -1,0 +1,182 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.829Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/aiplatform.ragServiceAgent --format=json"
+  },
+  "name": "roles/aiplatform.ragServiceAgent",
+  "role_slug": "aiplatform-ragserviceagent",
+  "title": "Vertex AI RAG Data Service Agent",
+  "description": "Vertex AI Service Agent used by Vertex RAG to access user imported data, Vertex AI, Document AI processors, and Vector Search in the project",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 62,
+  "permission_groups": [
+    "aiplatform",
+    "bigquery",
+    "documentai",
+    "logging",
+    "storage",
+    "vectorsearch"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "aiplatform",
+      "permissions": [
+        "aiplatform.endpoints.get",
+        "aiplatform.endpoints.predict",
+        "aiplatform.featureViews.get",
+        "aiplatform.featureViews.list",
+        "aiplatform.featureViews.sync",
+        "aiplatform.featureViews.update",
+        "aiplatform.indexEndpoints.create",
+        "aiplatform.indexEndpoints.delete",
+        "aiplatform.indexEndpoints.deploy",
+        "aiplatform.indexEndpoints.get",
+        "aiplatform.indexEndpoints.list",
+        "aiplatform.indexEndpoints.queryVectors",
+        "aiplatform.indexEndpoints.undeploy",
+        "aiplatform.indexEndpoints.update",
+        "aiplatform.indexes.create",
+        "aiplatform.indexes.delete",
+        "aiplatform.indexes.get",
+        "aiplatform.indexes.list",
+        "aiplatform.indexes.update",
+        "aiplatform.models.get"
+      ]
+    },
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.datasets.create",
+        "bigquery.datasets.get",
+        "bigquery.jobs.create",
+        "bigquery.jobs.get",
+        "bigquery.readsessions.create",
+        "bigquery.readsessions.getData",
+        "bigquery.tables.create",
+        "bigquery.tables.createSnapshot",
+        "bigquery.tables.deleteSnapshot",
+        "bigquery.tables.export",
+        "bigquery.tables.get",
+        "bigquery.tables.getData",
+        "bigquery.tables.restoreSnapshot",
+        "bigquery.tables.update",
+        "bigquery.tables.updateData"
+      ]
+    },
+    {
+      "group": "documentai",
+      "permissions": [
+        "documentai.processors.get",
+        "documentai.processors.processOnline",
+        "documentai.processorVersions.processOnline"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create",
+        "logging.logEntries.route"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.get",
+        "storage.buckets.list",
+        "storage.objects.get",
+        "storage.objects.list"
+      ]
+    },
+    {
+      "group": "vectorsearch",
+      "permissions": [
+        "vectorsearch.collections.create",
+        "vectorsearch.collections.delete",
+        "vectorsearch.collections.get",
+        "vectorsearch.collections.list",
+        "vectorsearch.collections.update",
+        "vectorsearch.dataObjects.create",
+        "vectorsearch.dataObjects.delete",
+        "vectorsearch.dataObjects.get",
+        "vectorsearch.dataObjects.import",
+        "vectorsearch.dataObjects.query",
+        "vectorsearch.dataObjects.search",
+        "vectorsearch.dataObjects.update",
+        "vectorsearch.indexes.create",
+        "vectorsearch.indexes.delete",
+        "vectorsearch.indexes.get",
+        "vectorsearch.indexes.list",
+        "vectorsearch.operations.get",
+        "vectorsearch.operations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "aiplatform.endpoints.get",
+    "aiplatform.endpoints.predict",
+    "aiplatform.featureViews.get",
+    "aiplatform.featureViews.list",
+    "aiplatform.featureViews.sync",
+    "aiplatform.featureViews.update",
+    "aiplatform.indexEndpoints.create",
+    "aiplatform.indexEndpoints.delete",
+    "aiplatform.indexEndpoints.deploy",
+    "aiplatform.indexEndpoints.get",
+    "aiplatform.indexEndpoints.list",
+    "aiplatform.indexEndpoints.queryVectors",
+    "aiplatform.indexEndpoints.undeploy",
+    "aiplatform.indexEndpoints.update",
+    "aiplatform.indexes.create",
+    "aiplatform.indexes.delete",
+    "aiplatform.indexes.get",
+    "aiplatform.indexes.list",
+    "aiplatform.indexes.update",
+    "aiplatform.models.get",
+    "bigquery.datasets.create",
+    "bigquery.datasets.get",
+    "bigquery.jobs.create",
+    "bigquery.jobs.get",
+    "bigquery.readsessions.create",
+    "bigquery.readsessions.getData",
+    "bigquery.tables.create",
+    "bigquery.tables.createSnapshot",
+    "bigquery.tables.deleteSnapshot",
+    "bigquery.tables.export",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.restoreSnapshot",
+    "bigquery.tables.update",
+    "bigquery.tables.updateData",
+    "documentai.processors.get",
+    "documentai.processors.processOnline",
+    "documentai.processorVersions.processOnline",
+    "logging.logEntries.create",
+    "logging.logEntries.route",
+    "storage.buckets.get",
+    "storage.buckets.list",
+    "storage.objects.get",
+    "storage.objects.list",
+    "vectorsearch.collections.create",
+    "vectorsearch.collections.delete",
+    "vectorsearch.collections.get",
+    "vectorsearch.collections.list",
+    "vectorsearch.collections.update",
+    "vectorsearch.dataObjects.create",
+    "vectorsearch.dataObjects.delete",
+    "vectorsearch.dataObjects.get",
+    "vectorsearch.dataObjects.import",
+    "vectorsearch.dataObjects.query",
+    "vectorsearch.dataObjects.search",
+    "vectorsearch.dataObjects.update",
+    "vectorsearch.indexes.create",
+    "vectorsearch.indexes.delete",
+    "vectorsearch.indexes.get",
+    "vectorsearch.indexes.list",
+    "vectorsearch.operations.get",
+    "vectorsearch.operations.list"
+  ]
+}

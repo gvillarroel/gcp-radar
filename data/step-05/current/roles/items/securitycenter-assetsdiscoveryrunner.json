@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.495Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securitycenter.assetsDiscoveryRunner --format=json"
+  },
+  "name": "roles/securitycenter.assetsDiscoveryRunner",
+  "role_slug": "securitycenter-assetsdiscoveryrunner",
+  "title": "Security Center Assets Discovery Runner",
+  "description": "Run asset discovery access to assets",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "securitycenter"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "securitycenter",
+      "permissions": [
+        "securitycenter.assets.runDiscovery",
+        "securitycenter.userinterfacemetadata.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "securitycenter.assets.runDiscovery",
+    "securitycenter.userinterfacemetadata.get"
+  ]
+}

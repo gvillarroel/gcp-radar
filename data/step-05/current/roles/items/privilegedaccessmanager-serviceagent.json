@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.293Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/privilegedaccessmanager.serviceAgent --format=json"
+  },
+  "name": "roles/privilegedaccessmanager.serviceAgent",
+  "role_slug": "privilegedaccessmanager-serviceagent",
+  "title": "Privileged Access Manager Service Agent",
+  "description": "Gives privileged access manager service account access to modify IAM policies on GCP resources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "iam",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.roles.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.folders.get",
+        "resourcemanager.folders.getIamPolicy",
+        "resourcemanager.folders.setIamPolicy",
+        "resourcemanager.organizations.get",
+        "resourcemanager.organizations.getIamPolicy",
+        "resourcemanager.organizations.setIamPolicy",
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.getIamPolicy",
+        "resourcemanager.projects.setIamPolicy"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "iam.roles.get",
+    "resourcemanager.folders.get",
+    "resourcemanager.folders.getIamPolicy",
+    "resourcemanager.folders.setIamPolicy",
+    "resourcemanager.organizations.get",
+    "resourcemanager.organizations.getIamPolicy",
+    "resourcemanager.organizations.setIamPolicy",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.getIamPolicy",
+    "resourcemanager.projects.setIamPolicy"
+  ]
+}

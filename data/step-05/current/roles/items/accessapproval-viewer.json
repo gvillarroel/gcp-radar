@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.778Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/accessapproval.viewer --format=json"
+  },
+  "name": "roles/accessapproval.viewer",
+  "role_slug": "accessapproval-viewer",
+  "title": "Access Approval Viewer",
+  "description": "Ability to view access approval requests and configuration",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "accessapproval",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "accessapproval",
+      "permissions": [
+        "accessapproval.requests.get",
+        "accessapproval.requests.list",
+        "accessapproval.serviceAccounts.get",
+        "accessapproval.settings.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "accessapproval.requests.get",
+    "accessapproval.requests.list",
+    "accessapproval.serviceAccounts.get",
+    "accessapproval.settings.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

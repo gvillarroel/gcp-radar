@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.279Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/commercebusinessenablement.paymentConfigAdmin --format=json"
+  },
+  "name": "roles/commercebusinessenablement.paymentConfigAdmin",
+  "role_slug": "commercebusinessenablement-paymentconfigadmin",
+  "title": "Commerce Business Enablement PaymentConfig Admin",
+  "description": "Administration of Payment Configuration resource",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "commercebusinessenablement",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "commercebusinessenablement",
+      "permissions": [
+        "commercebusinessenablement.partnerInfo.get",
+        "commercebusinessenablement.paymentConfig.get",
+        "commercebusinessenablement.paymentConfig.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "commercebusinessenablement.partnerInfo.get",
+    "commercebusinessenablement.paymentConfig.get",
+    "commercebusinessenablement.paymentConfig.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

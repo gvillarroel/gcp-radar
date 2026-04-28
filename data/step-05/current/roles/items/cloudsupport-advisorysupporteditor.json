@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.250Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudsupport.advisorySupportEditor --format=json"
+  },
+  "name": "roles/cloudsupport.advisorySupportEditor",
+  "role_slug": "cloudsupport-advisorysupporteditor",
+  "title": "Advisory Support Editor",
+  "description": "Full read-write access to advisory support cases applicable for GCP Customer Care.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "cloudasset",
+    "cloudsupport",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudasset",
+      "permissions": [
+        "cloudasset.assets.searchAllResources"
+      ]
+    },
+    {
+      "group": "cloudsupport",
+      "permissions": [
+        "cloudsupport.properties.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudasset.assets.searchAllResources",
+    "cloudsupport.properties.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

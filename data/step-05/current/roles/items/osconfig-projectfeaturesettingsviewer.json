@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.246Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/osconfig.projectFeatureSettingsViewer --format=json"
+  },
+  "name": "roles/osconfig.projectFeatureSettingsViewer",
+  "role_slug": "osconfig-projectfeaturesettingsviewer",
+  "title": "Project Feature Settings Viewer",
+  "description": "Read access to project feature settings",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "osconfig",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "osconfig",
+      "permissions": [
+        "osconfig.projectFeatureSettings.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "osconfig.projectFeatureSettings.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

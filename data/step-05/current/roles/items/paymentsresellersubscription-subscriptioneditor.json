@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.269Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/paymentsresellersubscription.subscriptionEditor --format=json"
+  },
+  "name": "roles/paymentsresellersubscription.subscriptionEditor",
+  "role_slug": "paymentsresellersubscription-subscriptioneditor",
+  "title": "Payments Reseller Subscriptions Editor",
+  "description": "Write access to Payments Reseller Subscription resource",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "paymentsresellersubscription",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "paymentsresellersubscription",
+      "permissions": [
+        "paymentsresellersubscription.subscriptionLineItems.update",
+        "paymentsresellersubscription.subscriptions.cancel",
+        "paymentsresellersubscription.subscriptions.extend",
+        "paymentsresellersubscription.subscriptions.get",
+        "paymentsresellersubscription.subscriptions.provision",
+        "paymentsresellersubscription.subscriptions.resume",
+        "paymentsresellersubscription.subscriptions.suspend",
+        "paymentsresellersubscription.subscriptions.undoCancel"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "paymentsresellersubscription.subscriptionLineItems.update",
+    "paymentsresellersubscription.subscriptions.cancel",
+    "paymentsresellersubscription.subscriptions.extend",
+    "paymentsresellersubscription.subscriptions.get",
+    "paymentsresellersubscription.subscriptions.provision",
+    "paymentsresellersubscription.subscriptions.resume",
+    "paymentsresellersubscription.subscriptions.suspend",
+    "paymentsresellersubscription.subscriptions.undoCancel",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

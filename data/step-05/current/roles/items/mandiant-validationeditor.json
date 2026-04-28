@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.066Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/mandiant.validationEditor --format=json"
+  },
+  "name": "roles/mandiant.validationEditor",
+  "role_slug": "mandiant-validationeditor",
+  "title": "Mandiant Validation Editor",
+  "description": "Access to write Validation",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "mandiant",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "mandiant",
+      "permissions": [
+        "mandiant.genericPlatforms.create",
+        "mandiant.genericPlatforms.delete",
+        "mandiant.genericPlatforms.update",
+        "mandiant.genericValidations.create",
+        "mandiant.genericValidations.delete",
+        "mandiant.genericValidations.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "mandiant.genericPlatforms.create",
+    "mandiant.genericPlatforms.delete",
+    "mandiant.genericPlatforms.update",
+    "mandiant.genericValidations.create",
+    "mandiant.genericValidations.delete",
+    "mandiant.genericValidations.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

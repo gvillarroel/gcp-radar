@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.499Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataplex.entryGroupImporter --format=json"
+  },
+  "name": "roles/dataplex.entryGroupImporter",
+  "role_slug": "dataplex-entrygroupimporter",
+  "title": "Dataplex Entry Group Importer",
+  "description": "Grants access to import this entry group for Metadata Job processing.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "dataplex",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.entryGroups.get",
+        "dataplex.entryGroups.import"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dataplex.entryGroups.get",
+    "dataplex.entryGroups.import",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

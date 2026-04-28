@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.662Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/transcoder.serviceAgent --format=json"
+  },
+  "name": "roles/transcoder.serviceAgent",
+  "role_slug": "transcoder-serviceagent",
+  "title": "Transcoder Service Agent",
+  "description": "Downloads and uploads media files from and to customer GCS buckets. Publishes status updates to customer Pub/Sub.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "pubsub",
+    "storage",
+    "transcoder"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "pubsub",
+      "permissions": [
+        "pubsub.topics.publish"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.objects.create",
+        "storage.objects.delete",
+        "storage.objects.get"
+      ]
+    },
+    {
+      "group": "transcoder",
+      "permissions": [
+        "transcoder.jobs.delete"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "pubsub.topics.publish",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.get",
+    "transcoder.jobs.delete"
+  ]
+}

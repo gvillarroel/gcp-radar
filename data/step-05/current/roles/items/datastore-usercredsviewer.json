@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.544Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datastore.userCredsViewer --format=json"
+  },
+  "name": "roles/datastore.userCredsViewer",
+  "role_slug": "datastore-usercredsviewer",
+  "title": "Cloud Datastore User Creds Viewer",
+  "description": "Read access to user creds in Cloud Datastore.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "datastore"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datastore",
+      "permissions": [
+        "datastore.userCreds.get",
+        "datastore.userCreds.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datastore.userCreds.get",
+    "datastore.userCreds.list"
+  ]
+}

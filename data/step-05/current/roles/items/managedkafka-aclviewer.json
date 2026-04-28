@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.050Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/managedkafka.aclViewer --format=json"
+  },
+  "name": "roles/managedkafka.aclViewer",
+  "role_slug": "managedkafka-aclviewer",
+  "title": "Managed Kafka ACL Viewer",
+  "description": "Readonly access to Managed Kafka ACL resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "managedkafka"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "managedkafka",
+      "permissions": [
+        "managedkafka.acls.get",
+        "managedkafka.acls.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "managedkafka.acls.get",
+    "managedkafka.acls.list"
+  ]
+}

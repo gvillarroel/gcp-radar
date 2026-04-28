@@ -1,0 +1,36 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.668Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/edgecontainer.identityProviderViewer --format=json"
+  },
+  "name": "roles/edgecontainer.identityProviderViewer",
+  "role_slug": "edgecontainer-identityproviderviewer",
+  "title": "Edge Container Identity Provider Viewer",
+  "description": "Read-only access to Identity Providers.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "edgecontainer"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "edgecontainer",
+      "permissions": [
+        "edgecontainer.identityproviders.get",
+        "edgecontainer.identityproviders.list",
+        "edgecontainer.locations.get",
+        "edgecontainer.locations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "edgecontainer.identityproviders.get",
+    "edgecontainer.identityproviders.list",
+    "edgecontainer.locations.get",
+    "edgecontainer.locations.list"
+  ]
+}

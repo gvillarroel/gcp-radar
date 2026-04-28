@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.177Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/networksecurity.mirroringEndpointUser --format=json"
+  },
+  "name": "roles/networksecurity.mirroringEndpointUser",
+  "role_slug": "networksecurity-mirroringendpointuser",
+  "title": "Mirroring Endpoint User",
+  "description": "Allows a consumer to connect their networks to a mirroringEndpointGroup.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "networksecurity"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "networksecurity",
+      "permissions": [
+        "networksecurity.mirroringEndpointGroups.get",
+        "networksecurity.mirroringEndpointGroups.list",
+        "networksecurity.mirroringEndpointGroups.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "networksecurity.mirroringEndpointGroups.get",
+    "networksecurity.mirroringEndpointGroups.list",
+    "networksecurity.mirroringEndpointGroups.use"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.660Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/trafficdirector.client --format=json"
+  },
+  "name": "roles/trafficdirector.client",
+  "role_slug": "trafficdirector-client",
+  "title": "Traffic Director Client",
+  "description": "Traffic Director Client to fetch service configurations and report metrics",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "trafficdirector"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "trafficdirector",
+      "permissions": [
+        "trafficdirector.networks.getConfigs",
+        "trafficdirector.networks.reportMetrics"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "trafficdirector.networks.getConfigs",
+    "trafficdirector.networks.reportMetrics"
+  ]
+}

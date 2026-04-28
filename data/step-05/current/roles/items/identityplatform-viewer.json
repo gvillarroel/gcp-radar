@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.971Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/identityplatform.viewer --format=json"
+  },
+  "name": "roles/identityplatform.viewer",
+  "role_slug": "identityplatform-viewer",
+  "title": "Identity Platform Viewer",
+  "description": "Read access to Identity Platform resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "firebaseauth",
+    "identitytoolkit"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "firebaseauth",
+      "permissions": [
+        "firebaseauth.configs.get",
+        "firebaseauth.users.get"
+      ]
+    },
+    {
+      "group": "identitytoolkit",
+      "permissions": [
+        "identitytoolkit.tenants.get",
+        "identitytoolkit.tenants.getIamPolicy",
+        "identitytoolkit.tenants.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "firebaseauth.configs.get",
+    "firebaseauth.users.get",
+    "identitytoolkit.tenants.get",
+    "identitytoolkit.tenants.getIamPolicy",
+    "identitytoolkit.tenants.list"
+  ]
+}

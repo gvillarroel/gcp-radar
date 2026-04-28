@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.527Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataprocessing.dataSourceManager --format=json"
+  },
+  "name": "roles/dataprocessing.dataSourceManager",
+  "role_slug": "dataprocessing-datasourcemanager",
+  "title": "Data Processing Controls Data Source Manager",
+  "description": "Data processing controls data source manager who can get, list, and update the underlying data.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "dataprocessing"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dataprocessing",
+      "permissions": [
+        "dataprocessing.datasources.list",
+        "dataprocessing.datasources.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dataprocessing.datasources.list",
+    "dataprocessing.datasources.update"
+  ]
+}

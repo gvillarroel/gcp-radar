@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.559Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/servicemanagement.quotaAdmin --format=json"
+  },
+  "name": "roles/servicemanagement.quotaAdmin",
+  "role_slug": "servicemanagement-quotaadmin",
+  "title": "Quota Administrator",
+  "description": "Access to administer service quotas.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 29,
+  "permission_groups": [
+    "cloudquotas",
+    "monitoring",
+    "resourcemanager",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudquotas",
+      "permissions": [
+        "cloudquotas.quotas.get",
+        "cloudquotas.quotas.update"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.alertPolicies.create",
+        "monitoring.alertPolicies.createTagBinding",
+        "monitoring.alertPolicies.delete",
+        "monitoring.alertPolicies.deleteTagBinding",
+        "monitoring.alertPolicies.get",
+        "monitoring.alertPolicies.list",
+        "monitoring.alertPolicies.listEffectiveTags",
+        "monitoring.alertPolicies.listTagBindings",
+        "monitoring.alertPolicies.update",
+        "monitoring.timeSeries.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get",
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.consumerpolicy.analyze",
+        "serviceusage.consumerpolicy.get",
+        "serviceusage.consumerpolicy.update",
+        "serviceusage.effectivepolicy.get",
+        "serviceusage.groups.list",
+        "serviceusage.groups.listExpandedMembers",
+        "serviceusage.groups.listMembers",
+        "serviceusage.quotas.get",
+        "serviceusage.quotas.update",
+        "serviceusage.services.disable",
+        "serviceusage.services.enable",
+        "serviceusage.services.get",
+        "serviceusage.services.list",
+        "serviceusage.values.test"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudquotas.quotas.get",
+    "cloudquotas.quotas.update",
+    "monitoring.alertPolicies.create",
+    "monitoring.alertPolicies.createTagBinding",
+    "monitoring.alertPolicies.delete",
+    "monitoring.alertPolicies.deleteTagBinding",
+    "monitoring.alertPolicies.get",
+    "monitoring.alertPolicies.list",
+    "monitoring.alertPolicies.listEffectiveTags",
+    "monitoring.alertPolicies.listTagBindings",
+    "monitoring.alertPolicies.update",
+    "monitoring.timeSeries.list",
+    "resourcemanager.organizations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "serviceusage.consumerpolicy.analyze",
+    "serviceusage.consumerpolicy.get",
+    "serviceusage.consumerpolicy.update",
+    "serviceusage.effectivepolicy.get",
+    "serviceusage.groups.list",
+    "serviceusage.groups.listExpandedMembers",
+    "serviceusage.groups.listMembers",
+    "serviceusage.quotas.get",
+    "serviceusage.quotas.update",
+    "serviceusage.services.disable",
+    "serviceusage.services.enable",
+    "serviceusage.services.get",
+    "serviceusage.services.list",
+    "serviceusage.values.test"
+  ]
+}

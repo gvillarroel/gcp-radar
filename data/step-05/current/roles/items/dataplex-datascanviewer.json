@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.492Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataplex.dataScanViewer --format=json"
+  },
+  "name": "roles/dataplex.dataScanViewer",
+  "role_slug": "dataplex-datascanviewer",
+  "title": "Dataplex DataScan Viewer",
+  "description": "Read access to DataScan resources, excluding the results.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "dataplex"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.datascans.get",
+        "dataplex.datascans.getIamPolicy",
+        "dataplex.datascans.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dataplex.datascans.get",
+    "dataplex.datascans.getIamPolicy",
+    "dataplex.datascans.list"
+  ]
+}

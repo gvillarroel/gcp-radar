@@ -1,0 +1,52 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.849Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/analyticshub.publisher --format=json"
+  },
+  "name": "roles/analyticshub.publisher",
+  "role_slug": "analyticshub-publisher",
+  "title": "Analytics Hub Publisher",
+  "description": "Can publish to Data Exchanges thus creating Listings",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "analyticshub",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "analyticshub",
+      "permissions": [
+        "analyticshub.dataExchanges.get",
+        "analyticshub.dataExchanges.getIamPolicy",
+        "analyticshub.dataExchanges.list",
+        "analyticshub.listings.create",
+        "analyticshub.listings.get",
+        "analyticshub.listings.getIamPolicy",
+        "analyticshub.listings.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "analyticshub.dataExchanges.get",
+    "analyticshub.dataExchanges.getIamPolicy",
+    "analyticshub.dataExchanges.list",
+    "analyticshub.listings.create",
+    "analyticshub.listings.get",
+    "analyticshub.listings.getIamPolicy",
+    "analyticshub.listings.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

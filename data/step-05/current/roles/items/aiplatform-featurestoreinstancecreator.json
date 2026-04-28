@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.818Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/aiplatform.featurestoreInstanceCreator --format=json"
+  },
+  "name": "roles/aiplatform.featurestoreInstanceCreator",
+  "role_slug": "aiplatform-featurestoreinstancecreator",
+  "title": "Vertex AI Feature Store Instance Creator",
+  "description": "Administrator of Featurestore resources, but not the child resources under Featurestores.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "aiplatform"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "aiplatform",
+      "permissions": [
+        "aiplatform.featurestores.create",
+        "aiplatform.featurestores.delete",
+        "aiplatform.featurestores.get",
+        "aiplatform.featurestores.list",
+        "aiplatform.featurestores.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "aiplatform.featurestores.create",
+    "aiplatform.featurestores.delete",
+    "aiplatform.featurestores.get",
+    "aiplatform.featurestores.list",
+    "aiplatform.featurestores.update"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.116Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloud.admin --format=json"
+  },
+  "name": "roles/cloud.admin",
+  "role_slug": "cloud-admin",
+  "title": "Cloud Admin",
+  "description": "Admin role for cloud",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "cloud",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloud",
+      "permissions": [
+        "cloud.locations.get",
+        "cloud.locations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloud.locations.get",
+    "cloud.locations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

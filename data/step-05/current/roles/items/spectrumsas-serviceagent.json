@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.590Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/spectrumsas.serviceAgent --format=json"
+  },
+  "name": "roles/spectrumsas.serviceAgent",
+  "role_slug": "spectrumsas-serviceagent",
+  "title": "Spectrum SAS Service Agent",
+  "description": "Gives Spectrum SAS Service Account access to enable analytics on behalf of users.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 39,
+  "permission_groups": [
+    "bigquery",
+    "pubsub",
+    "resourcemanager",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.datasets.create",
+        "bigquery.jobs.create",
+        "bigquery.tables.create",
+        "bigquery.tables.updateData"
+      ]
+    },
+    {
+      "group": "pubsub",
+      "permissions": [
+        "pubsub.messageTransforms.validate",
+        "pubsub.schemas.attach",
+        "pubsub.schemas.commit",
+        "pubsub.schemas.create",
+        "pubsub.schemas.delete",
+        "pubsub.schemas.get",
+        "pubsub.schemas.list",
+        "pubsub.schemas.listRevisions",
+        "pubsub.schemas.rollback",
+        "pubsub.schemas.validate",
+        "pubsub.snapshots.create",
+        "pubsub.snapshots.delete",
+        "pubsub.snapshots.get",
+        "pubsub.snapshots.list",
+        "pubsub.snapshots.seek",
+        "pubsub.snapshots.update",
+        "pubsub.subscriptions.consume",
+        "pubsub.subscriptions.create",
+        "pubsub.subscriptions.delete",
+        "pubsub.subscriptions.get",
+        "pubsub.subscriptions.list",
+        "pubsub.subscriptions.update",
+        "pubsub.topics.attachSubscription",
+        "pubsub.topics.create",
+        "pubsub.topics.delete",
+        "pubsub.topics.detachSubscription",
+        "pubsub.topics.get",
+        "pubsub.topics.list",
+        "pubsub.topics.publish",
+        "pubsub.topics.update",
+        "pubsub.topics.updateTag"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.quotas.get",
+        "serviceusage.services.get",
+        "serviceusage.services.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.datasets.create",
+    "bigquery.jobs.create",
+    "bigquery.tables.create",
+    "bigquery.tables.updateData",
+    "pubsub.messageTransforms.validate",
+    "pubsub.schemas.attach",
+    "pubsub.schemas.commit",
+    "pubsub.schemas.create",
+    "pubsub.schemas.delete",
+    "pubsub.schemas.get",
+    "pubsub.schemas.list",
+    "pubsub.schemas.listRevisions",
+    "pubsub.schemas.rollback",
+    "pubsub.schemas.validate",
+    "pubsub.snapshots.create",
+    "pubsub.snapshots.delete",
+    "pubsub.snapshots.get",
+    "pubsub.snapshots.list",
+    "pubsub.snapshots.seek",
+    "pubsub.snapshots.update",
+    "pubsub.subscriptions.consume",
+    "pubsub.subscriptions.create",
+    "pubsub.subscriptions.delete",
+    "pubsub.subscriptions.get",
+    "pubsub.subscriptions.list",
+    "pubsub.subscriptions.update",
+    "pubsub.topics.attachSubscription",
+    "pubsub.topics.create",
+    "pubsub.topics.delete",
+    "pubsub.topics.detachSubscription",
+    "pubsub.topics.get",
+    "pubsub.topics.list",
+    "pubsub.topics.publish",
+    "pubsub.topics.update",
+    "pubsub.topics.updateTag",
+    "resourcemanager.projects.get",
+    "serviceusage.quotas.get",
+    "serviceusage.services.get",
+    "serviceusage.services.list"
+  ]
+}

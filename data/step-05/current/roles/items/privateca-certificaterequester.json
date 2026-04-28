@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.284Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/privateca.certificateRequester --format=json"
+  },
+  "name": "roles/privateca.certificateRequester",
+  "role_slug": "privateca-certificaterequester",
+  "title": "CA Service Certificate Requester",
+  "description": "Request certificates from CA Service.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "privateca"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "privateca",
+      "permissions": [
+        "privateca.certificates.create"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "privateca.certificates.create"
+  ]
+}

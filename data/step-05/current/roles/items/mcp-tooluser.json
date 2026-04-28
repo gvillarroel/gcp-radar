@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.074Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/mcp.toolUser --format=json"
+  },
+  "name": "roles/mcp.toolUser",
+  "role_slug": "mcp-tooluser",
+  "title": "MCP Tool User",
+  "description": "Gives permission to call tools on any MCP server enabled by the parent project.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "mcp",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "mcp",
+      "permissions": [
+        "mcp.tools.call"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "mcp.tools.call",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

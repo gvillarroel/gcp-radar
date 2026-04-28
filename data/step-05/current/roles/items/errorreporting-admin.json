@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.701Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/errorreporting.admin --format=json"
+  },
+  "name": "roles/errorreporting.admin",
+  "role_slug": "errorreporting-admin",
+  "title": "Error Reporting Admin",
+  "description": "Administrative access to Error Reporting.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 16,
+  "permission_groups": [
+    "cloudnotifications",
+    "errorreporting",
+    "logging",
+    "resourcemanager",
+    "stackdriver"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudnotifications",
+      "permissions": [
+        "cloudnotifications.activities.list"
+      ]
+    },
+    {
+      "group": "errorreporting",
+      "permissions": [
+        "errorreporting.applications.list",
+        "errorreporting.errorEvents.create",
+        "errorreporting.errorEvents.delete",
+        "errorreporting.errorEvents.list",
+        "errorreporting.groupMetadata.get",
+        "errorreporting.groupMetadata.update",
+        "errorreporting.groups.list"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.notificationRules.create",
+        "logging.notificationRules.delete",
+        "logging.notificationRules.get",
+        "logging.notificationRules.list",
+        "logging.notificationRules.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "stackdriver",
+      "permissions": [
+        "stackdriver.projects.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudnotifications.activities.list",
+    "errorreporting.applications.list",
+    "errorreporting.errorEvents.create",
+    "errorreporting.errorEvents.delete",
+    "errorreporting.errorEvents.list",
+    "errorreporting.groupMetadata.get",
+    "errorreporting.groupMetadata.update",
+    "errorreporting.groups.list",
+    "logging.notificationRules.create",
+    "logging.notificationRules.delete",
+    "logging.notificationRules.get",
+    "logging.notificationRules.list",
+    "logging.notificationRules.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "stackdriver.projects.get"
+  ]
+}

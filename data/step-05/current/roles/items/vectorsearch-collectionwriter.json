@@ -1,0 +1,60 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.667Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/vectorsearch.collectionWriter --format=json"
+  },
+  "name": "roles/vectorsearch.collectionWriter",
+  "role_slug": "vectorsearch-collectionwriter",
+  "title": "Vector Search Collection Writer",
+  "description": "Grants read-write access to Collections.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "resourcemanager",
+    "vectorsearch"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "vectorsearch",
+      "permissions": [
+        "vectorsearch.collections.create",
+        "vectorsearch.collections.delete",
+        "vectorsearch.collections.get",
+        "vectorsearch.collections.list",
+        "vectorsearch.collections.update",
+        "vectorsearch.locations.get",
+        "vectorsearch.locations.list",
+        "vectorsearch.operations.cancel",
+        "vectorsearch.operations.delete",
+        "vectorsearch.operations.get",
+        "vectorsearch.operations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "vectorsearch.collections.create",
+    "vectorsearch.collections.delete",
+    "vectorsearch.collections.get",
+    "vectorsearch.collections.list",
+    "vectorsearch.collections.update",
+    "vectorsearch.locations.get",
+    "vectorsearch.locations.list",
+    "vectorsearch.operations.cancel",
+    "vectorsearch.operations.delete",
+    "vectorsearch.operations.get",
+    "vectorsearch.operations.list"
+  ]
+}

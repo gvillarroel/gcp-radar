@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.097Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/migrationcenter.discoveryClientRegistrator --format=json"
+  },
+  "name": "roles/migrationcenter.discoveryClientRegistrator",
+  "role_slug": "migrationcenter-discoveryclientregistrator",
+  "title": "Migration Center Discovery Client Registrator",
+  "description": "Registrator of Migration Center Discover Clients",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "migrationcenter",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "migrationcenter",
+      "permissions": [
+        "migrationcenter.discoveryClients.create",
+        "migrationcenter.discoveryClients.delete",
+        "migrationcenter.discoveryClients.update",
+        "migrationcenter.operations.get",
+        "migrationcenter.sources.create",
+        "migrationcenter.sources.delete"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "migrationcenter.discoveryClients.create",
+    "migrationcenter.discoveryClients.delete",
+    "migrationcenter.discoveryClients.update",
+    "migrationcenter.operations.get",
+    "migrationcenter.sources.create",
+    "migrationcenter.sources.delete",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

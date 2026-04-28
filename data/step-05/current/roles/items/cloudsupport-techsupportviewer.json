@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.253Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudsupport.techSupportViewer --format=json"
+  },
+  "name": "roles/cloudsupport.techSupportViewer",
+  "role_slug": "cloudsupport-techsupportviewer",
+  "title": "Tech Support Viewer",
+  "description": "Read-only access to technical support cases (applicable for GCP Customer Care and Maps support).",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "cloudsupport",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudsupport",
+      "permissions": [
+        "cloudsupport.properties.get",
+        "cloudsupport.techCases.get",
+        "cloudsupport.techCases.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudsupport.properties.get",
+    "cloudsupport.techCases.get",
+    "cloudsupport.techCases.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

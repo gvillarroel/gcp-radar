@@ -1,0 +1,58 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.774Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebasedataconnect.serviceAgent --format=json"
+  },
+  "name": "roles/firebasedataconnect.serviceAgent",
+  "role_slug": "firebasedataconnect-serviceagent",
+  "title": "Firebase Data Connect Service Agent",
+  "description": "Gives Firebase Data Connect access to administer Cloud SQL instances.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "cloudsql",
+    "run",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudsql",
+      "permissions": [
+        "cloudsql.databases.create",
+        "cloudsql.databases.get",
+        "cloudsql.instances.connect",
+        "cloudsql.instances.get",
+        "cloudsql.instances.login",
+        "cloudsql.users.create",
+        "cloudsql.users.get"
+      ]
+    },
+    {
+      "group": "run",
+      "permissions": [
+        "run.routes.invoke"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudsql.databases.create",
+    "cloudsql.databases.get",
+    "cloudsql.instances.connect",
+    "cloudsql.instances.get",
+    "cloudsql.instances.login",
+    "cloudsql.users.create",
+    "cloudsql.users.get",
+    "run.routes.invoke",
+    "serviceusage.services.use"
+  ]
+}

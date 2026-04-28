@@ -1,0 +1,66 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.523Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataproc.serverlessViewer --format=json"
+  },
+  "name": "roles/dataproc.serverlessViewer",
+  "role_slug": "dataproc-serverlessviewer",
+  "title": "Dataproc Serverless Viewer",
+  "description": "Permissions needed to view serverless sessions and batches",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "compute",
+    "dataproc",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.projects.get",
+        "compute.regions.get",
+        "compute.regions.list",
+        "compute.zones.get",
+        "compute.zones.list"
+      ]
+    },
+    {
+      "group": "dataproc",
+      "permissions": [
+        "dataproc.batches.get",
+        "dataproc.batches.list",
+        "dataproc.sessions.get",
+        "dataproc.sessions.list",
+        "dataproc.sessionTemplates.get",
+        "dataproc.sessionTemplates.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "compute.projects.get",
+    "compute.regions.get",
+    "compute.regions.list",
+    "compute.zones.get",
+    "compute.zones.list",
+    "dataproc.batches.get",
+    "dataproc.batches.list",
+    "dataproc.sessions.get",
+    "dataproc.sessions.list",
+    "dataproc.sessionTemplates.get",
+    "dataproc.sessionTemplates.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

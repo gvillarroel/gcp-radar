@@ -1,0 +1,68 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.446Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataform.codeCommenter --format=json"
+  },
+  "name": "roles/dataform.codeCommenter",
+  "role_slug": "dataform-codecommenter",
+  "title": "Code Commenter",
+  "description": "Permissions to comment, at the repository level. Grants CRUD access over commentThread and comment resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 17,
+  "permission_groups": [
+    "dataform",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dataform",
+      "permissions": [
+        "dataform.comments.create",
+        "dataform.comments.delete",
+        "dataform.comments.get",
+        "dataform.comments.list",
+        "dataform.comments.update",
+        "dataform.commentThreads.create",
+        "dataform.commentThreads.delete",
+        "dataform.commentThreads.get",
+        "dataform.commentThreads.list",
+        "dataform.commentThreads.update",
+        "dataform.folders.get",
+        "dataform.folders.queryContents",
+        "dataform.locations.get",
+        "dataform.repositories.get",
+        "dataform.repositories.readFile"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dataform.comments.create",
+    "dataform.comments.delete",
+    "dataform.comments.get",
+    "dataform.comments.list",
+    "dataform.comments.update",
+    "dataform.commentThreads.create",
+    "dataform.commentThreads.delete",
+    "dataform.commentThreads.get",
+    "dataform.commentThreads.list",
+    "dataform.commentThreads.update",
+    "dataform.folders.get",
+    "dataform.folders.queryContents",
+    "dataform.locations.get",
+    "dataform.repositories.get",
+    "dataform.repositories.readFile",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

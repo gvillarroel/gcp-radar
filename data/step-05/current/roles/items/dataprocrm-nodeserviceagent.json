@@ -1,0 +1,70 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.530Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataprocrm.nodeServiceAgent --format=json"
+  },
+  "name": "roles/dataprocrm.nodeServiceAgent",
+  "role_slug": "dataprocrm-nodeserviceagent",
+  "title": "Dataproc Resource Manager Node Service Agent",
+  "description": "Dataproc Resource Manager Node Service Agent used to run managed resources in user project with restricted permissions.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 12,
+  "permission_groups": [
+    "dataprocrm",
+    "logging",
+    "monitoring",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dataprocrm",
+      "permissions": [
+        "dataprocrm.nodes.get",
+        "dataprocrm.nodes.heartbeat",
+        "dataprocrm.nodes.mintOAuthToken"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create",
+        "logging.logEntries.route"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.metricDescriptors.create",
+        "monitoring.metricDescriptors.get",
+        "monitoring.metricDescriptors.list",
+        "monitoring.monitoredResourceDescriptors.get",
+        "monitoring.monitoredResourceDescriptors.list",
+        "monitoring.timeSeries.create"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dataprocrm.nodes.get",
+    "dataprocrm.nodes.heartbeat",
+    "dataprocrm.nodes.mintOAuthToken",
+    "logging.logEntries.create",
+    "logging.logEntries.route",
+    "monitoring.metricDescriptors.create",
+    "monitoring.metricDescriptors.get",
+    "monitoring.metricDescriptors.list",
+    "monitoring.monitoredResourceDescriptors.get",
+    "monitoring.monitoredResourceDescriptors.list",
+    "monitoring.timeSeries.create",
+    "serviceusage.services.use"
+  ]
+}

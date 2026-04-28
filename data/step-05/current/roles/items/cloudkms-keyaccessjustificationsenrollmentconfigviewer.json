@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.207Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudkms.keyAccessJustificationsEnrollmentConfigViewer --format=json"
+  },
+  "name": "roles/cloudkms.keyAccessJustificationsEnrollmentConfigViewer",
+  "role_slug": "cloudkms-keyaccessjustificationsenrollmentconfigviewer",
+  "title": "Key Access Justifications Enrollment Viewer",
+  "description": "Grant ability to view Key Access Justification enrollment configs of a project.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "cloudkms"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudkms",
+      "permissions": [
+        "cloudkms.projects.showEffectiveKajEnrollmentConfig"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudkms.projects.showEffectiveKajEnrollmentConfig"
+  ]
+}

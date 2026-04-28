@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.028Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/logging.viewAccessor --format=json"
+  },
+  "name": "roles/logging.viewAccessor",
+  "role_slug": "logging-viewaccessor",
+  "title": "Logs View Accessor",
+  "description": "Ability to read logs in a view.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "logging"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.download",
+        "logging.views.access",
+        "logging.views.listLogs",
+        "logging.views.listResourceKeys",
+        "logging.views.listResourceValues"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "logging.logEntries.download",
+    "logging.views.access",
+    "logging.views.listLogs",
+    "logging.views.listResourceKeys",
+    "logging.views.listResourceValues"
+  ]
+}

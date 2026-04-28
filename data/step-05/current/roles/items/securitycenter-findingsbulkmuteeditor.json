@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.504Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securitycenter.findingsBulkMuteEditor --format=json"
+  },
+  "name": "roles/securitycenter.findingsBulkMuteEditor",
+  "role_slug": "securitycenter-findingsbulkmuteeditor",
+  "title": "Security Center Findings Bulk Mute Editor",
+  "description": "Ability to mute findings in bulk",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "securitycenter"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "securitycenter",
+      "permissions": [
+        "securitycenter.findings.bulkMuteUpdate"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "securitycenter.findings.bulkMuteUpdate"
+  ]
+}

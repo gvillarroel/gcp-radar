@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.262Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/parametermanager.parameterVersionAdder --format=json"
+  },
+  "name": "roles/parametermanager.parameterVersionAdder",
+  "role_slug": "parametermanager-parameterversionadder",
+  "title": "Parameter Manager Parameter Version Adder",
+  "description": "Grants create access to Parameter Manager ParameterVersion resources. Intended for users & applications that need to perform create operations on ParameterVersions only.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "parametermanager",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "parametermanager",
+      "permissions": [
+        "parametermanager.locations.get",
+        "parametermanager.locations.list",
+        "parametermanager.parameters.get",
+        "parametermanager.parameters.list",
+        "parametermanager.parameterVersions.create"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "parametermanager.locations.get",
+    "parametermanager.locations.list",
+    "parametermanager.parameters.get",
+    "parametermanager.parameters.list",
+    "parametermanager.parameterVersions.create",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

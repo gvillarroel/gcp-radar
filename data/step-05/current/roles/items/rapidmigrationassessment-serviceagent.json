@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.314Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/rapidmigrationassessment.serviceAgent --format=json"
+  },
+  "name": "roles/rapidmigrationassessment.serviceAgent",
+  "role_slug": "rapidmigrationassessment-serviceagent",
+  "title": "RMA Service Agent",
+  "description": "Gives RMA service account access to MC resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 17,
+  "permission_groups": [
+    "autoscaling",
+    "cloudasset",
+    "logging",
+    "migrationcenter",
+    "monitoring",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "autoscaling",
+      "permissions": [
+        "autoscaling.sites.writeMetrics"
+      ]
+    },
+    {
+      "group": "cloudasset",
+      "permissions": [
+        "cloudasset.assets.exportResource",
+        "cloudasset.feeds.create"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create"
+      ]
+    },
+    {
+      "group": "migrationcenter",
+      "permissions": [
+        "migrationcenter.assets.list",
+        "migrationcenter.assets.reportFrames",
+        "migrationcenter.importJobs.get",
+        "migrationcenter.importJobs.list",
+        "migrationcenter.sources.create",
+        "migrationcenter.sources.delete",
+        "migrationcenter.sources.get",
+        "migrationcenter.sources.list",
+        "migrationcenter.sources.update"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.metricDescriptors.create",
+        "monitoring.metricDescriptors.list",
+        "monitoring.timeSeries.create"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "autoscaling.sites.writeMetrics",
+    "cloudasset.assets.exportResource",
+    "cloudasset.feeds.create",
+    "logging.logEntries.create",
+    "migrationcenter.assets.list",
+    "migrationcenter.assets.reportFrames",
+    "migrationcenter.importJobs.get",
+    "migrationcenter.importJobs.list",
+    "migrationcenter.sources.create",
+    "migrationcenter.sources.delete",
+    "migrationcenter.sources.get",
+    "migrationcenter.sources.list",
+    "migrationcenter.sources.update",
+    "monitoring.metricDescriptors.create",
+    "monitoring.metricDescriptors.list",
+    "monitoring.timeSeries.create",
+    "resourcemanager.projects.get"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.793Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebaserules.admin --format=json"
+  },
+  "name": "roles/firebaserules.admin",
+  "role_slug": "firebaserules-admin",
+  "title": "Firebase Rules Admin",
+  "description": "Full management of Firebase Rules.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "firebaserules",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "firebaserules",
+      "permissions": [
+        "firebaserules.releases.create",
+        "firebaserules.releases.delete",
+        "firebaserules.releases.get",
+        "firebaserules.releases.getExecutable",
+        "firebaserules.releases.list",
+        "firebaserules.releases.update",
+        "firebaserules.rulesets.create",
+        "firebaserules.rulesets.delete",
+        "firebaserules.rulesets.get",
+        "firebaserules.rulesets.list",
+        "firebaserules.rulesets.test"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "firebaserules.releases.create",
+    "firebaserules.releases.delete",
+    "firebaserules.releases.get",
+    "firebaserules.releases.getExecutable",
+    "firebaserules.releases.list",
+    "firebaserules.releases.update",
+    "firebaserules.rulesets.create",
+    "firebaserules.rulesets.delete",
+    "firebaserules.rulesets.get",
+    "firebaserules.rulesets.list",
+    "firebaserules.rulesets.test",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.710Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/eventarc.eventReceiver --format=json"
+  },
+  "name": "roles/eventarc.eventReceiver",
+  "role_slug": "eventarc-eventreceiver",
+  "title": "Eventarc Event Receiver",
+  "description": "Can receive events from all event providers.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "eventarc"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "eventarc",
+      "permissions": [
+        "eventarc.events.receiveAuditLogWritten",
+        "eventarc.events.receiveEvent"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "eventarc.events.receiveAuditLogWritten",
+    "eventarc.events.receiveEvent"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.965Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/iap.egressor --format=json"
+  },
+  "name": "roles/iap.egressor",
+  "role_slug": "iap-egressor",
+  "title": "IAP-secured Egressor",
+  "description": "Egress to resources via Identity-Aware Proxy",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "iap"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "iap",
+      "permissions": [
+        "iap.webServiceVersions.egressViaIAP"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "iap.webServiceVersions.egressViaIAP"
+  ]
+}

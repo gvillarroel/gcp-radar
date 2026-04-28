@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.965Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/backupdr.backupConfigViewer --format=json"
+  },
+  "name": "roles/backupdr.backupConfigViewer",
+  "role_slug": "backupdr-backupconfigviewer",
+  "title": "Backup and DR Backup Config Viewer",
+  "description": "Provides read access to resource backup config. Resource backup config has the metadata of a Google Cloud resource that can be backed up, along with its backup configurations.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "backupdr"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "backupdr",
+      "permissions": [
+        "backupdr.locations.list",
+        "backupdr.resourceBackupConfigs.get",
+        "backupdr.resourceBackupConfigs.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "backupdr.locations.list",
+    "backupdr.resourceBackupConfigs.get",
+    "backupdr.resourceBackupConfigs.list"
+  ]
+}

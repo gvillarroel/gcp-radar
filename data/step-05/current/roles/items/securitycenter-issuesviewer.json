@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.512Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securitycenter.issuesViewer --format=json"
+  },
+  "name": "roles/securitycenter.issuesViewer",
+  "role_slug": "securitycenter-issuesviewer",
+  "title": "Security Center Issues Viewer",
+  "description": "Read access to security center issues",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "securitycenter"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "securitycenter",
+      "permissions": [
+        "securitycenter.graphs.get",
+        "securitycenter.graphs.query",
+        "securitycenter.issues.get",
+        "securitycenter.issues.group",
+        "securitycenter.issues.list",
+        "securitycenter.issues.listFilterValues"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "securitycenter.graphs.get",
+    "securitycenter.graphs.query",
+    "securitycenter.issues.get",
+    "securitycenter.issues.group",
+    "securitycenter.issues.list",
+    "securitycenter.issues.listFilterValues"
+  ]
+}

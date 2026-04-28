@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.831Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/geminicodeassistmanagement.serviceAgent --format=json"
+  },
+  "name": "roles/geminicodeassistmanagement.serviceAgent",
+  "role_slug": "geminicodeassistmanagement-serviceagent",
+  "title": "Gemini Code Assist Management Service Agent",
+  "description": "Gives Gemini Code Assist Management Service Agent access to Cloud Platform resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "developerconnect"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "developerconnect",
+      "permissions": [
+        "developerconnect.connections.get",
+        "developerconnect.connections.httpProxyRead",
+        "developerconnect.connections.httpProxyWrite",
+        "developerconnect.gitRepositoryLinks.get",
+        "developerconnect.operations.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "developerconnect.connections.get",
+    "developerconnect.connections.httpProxyRead",
+    "developerconnect.connections.httpProxyWrite",
+    "developerconnect.gitRepositoryLinks.get",
+    "developerconnect.operations.get"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.181Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudiot.serviceAgent --format=json"
+  },
+  "name": "roles/cloudiot.serviceAgent",
+  "role_slug": "cloudiot-serviceagent",
+  "title": "Cloud IoT Core Service Agent",
+  "description": "Grants the ability to manage Cloud IoT Core resources, including publishing data to Cloud Pub/Sub and writing device activity logs to Stackdriver. Warning: If this role is removed from the Cloud IoT service account, Cloud IoT Core will be unable to publish data or write device activity logs.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "logging",
+    "pubsub"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create",
+        "logging.logEntries.route"
+      ]
+    },
+    {
+      "group": "pubsub",
+      "permissions": [
+        "pubsub.topics.publish"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "logging.logEntries.create",
+    "logging.logEntries.route",
+    "pubsub.topics.publish"
+  ]
+}

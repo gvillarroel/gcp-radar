@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.918Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/applianceactivation.approver --format=json"
+  },
+  "name": "roles/applianceactivation.approver",
+  "role_slug": "applianceactivation-approver",
+  "title": "Appliance troubleshooting commands approver",
+  "description": "Grants access to approve commands to run on appliances",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "applianceactivation",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "applianceactivation",
+      "permissions": [
+        "applianceactivation.rttCommands.approve",
+        "applianceactivation.rttCommands.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "applianceactivation.rttCommands.approve",
+    "applianceactivation.rttCommands.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

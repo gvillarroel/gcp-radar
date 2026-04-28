@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.731Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebase.appDistributionSdkServiceAgent --format=json"
+  },
+  "name": "roles/firebase.appDistributionSdkServiceAgent",
+  "role_slug": "firebase-appdistributionsdkserviceagent",
+  "title": "Firebase App Distribution Admin SDK Service Agent",
+  "description": "Read and write access to Firebase App Distribution with the Admin SDK",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "firebaseappdistro"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "firebaseappdistro",
+      "permissions": [
+        "firebaseappdistro.groups.list",
+        "firebaseappdistro.groups.update",
+        "firebaseappdistro.releases.list",
+        "firebaseappdistro.releases.update",
+        "firebaseappdistro.testers.list",
+        "firebaseappdistro.testers.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "firebaseappdistro.groups.list",
+    "firebaseappdistro.groups.update",
+    "firebaseappdistro.releases.list",
+    "firebaseappdistro.releases.update",
+    "firebaseappdistro.testers.list",
+    "firebaseappdistro.testers.update"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.272Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/policyanalyzer.activityAnalysisViewer --format=json"
+  },
+  "name": "roles/policyanalyzer.activityAnalysisViewer",
+  "role_slug": "policyanalyzer-activityanalysisviewer",
+  "title": "Activity Analysis Viewer",
+  "description": "Viewer user that can read all activity analysis.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "policyanalyzer"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "policyanalyzer",
+      "permissions": [
+        "policyanalyzer.resourceAuthorizationActivities.query",
+        "policyanalyzer.serviceAccountKeyLastAuthenticationActivities.query",
+        "policyanalyzer.serviceAccountLastAuthenticationActivities.query"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "policyanalyzer.resourceAuthorizationActivities.query",
+    "policyanalyzer.serviceAccountKeyLastAuthenticationActivities.query",
+    "policyanalyzer.serviceAccountLastAuthenticationActivities.query"
+  ]
+}

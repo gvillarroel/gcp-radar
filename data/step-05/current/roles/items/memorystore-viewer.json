@@ -1,0 +1,58 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.081Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/memorystore.viewer --format=json"
+  },
+  "name": "roles/memorystore.viewer",
+  "role_slug": "memorystore-viewer",
+  "title": "Memorystore Viewer",
+  "description": "Readonly access to Memorystore resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 12,
+  "permission_groups": [
+    "memorystore",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "memorystore",
+      "permissions": [
+        "memorystore.backupCollections.get",
+        "memorystore.backupCollections.list",
+        "memorystore.backups.get",
+        "memorystore.backups.list",
+        "memorystore.instances.get",
+        "memorystore.instances.list",
+        "memorystore.locations.get",
+        "memorystore.locations.list",
+        "memorystore.operations.get",
+        "memorystore.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "memorystore.backupCollections.get",
+    "memorystore.backupCollections.list",
+    "memorystore.backups.get",
+    "memorystore.backups.list",
+    "memorystore.instances.get",
+    "memorystore.instances.list",
+    "memorystore.locations.get",
+    "memorystore.locations.list",
+    "memorystore.operations.get",
+    "memorystore.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

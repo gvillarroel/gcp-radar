@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.788Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebaseml.serviceAgent --format=json"
+  },
+  "name": "roles/firebaseml.serviceAgent",
+  "role_slug": "firebaseml-serviceagent",
+  "title": "Firebase Machine Learning Service Agent",
+  "description": "Access to Cloud ML and AI resources used by Firebase ML",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "aiplatform",
+    "logging",
+    "telemetry"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "aiplatform",
+      "permissions": [
+        "aiplatform.endpoints.predict"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create",
+        "logging.logEntries.route"
+      ]
+    },
+    {
+      "group": "telemetry",
+      "permissions": [
+        "telemetry.metrics.write",
+        "telemetry.traces.write"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "aiplatform.endpoints.predict",
+    "logging.logEntries.create",
+    "logging.logEntries.route",
+    "telemetry.metrics.write",
+    "telemetry.traces.write"
+  ]
+}

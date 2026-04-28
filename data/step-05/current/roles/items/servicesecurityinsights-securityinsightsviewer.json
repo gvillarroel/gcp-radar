@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.568Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/servicesecurityinsights.securityInsightsViewer --format=json"
+  },
+  "name": "roles/servicesecurityinsights.securityInsightsViewer",
+  "role_slug": "servicesecurityinsights-securityinsightsviewer",
+  "title": "Security Insights Viewer",
+  "description": "Read-only access to Security Insights resources",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "servicesecurityinsights"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "servicesecurityinsights",
+      "permissions": [
+        "servicesecurityinsights.clusterSecurityInfo.get",
+        "servicesecurityinsights.clusterSecurityInfo.list",
+        "servicesecurityinsights.policies.get",
+        "servicesecurityinsights.projectStates.get",
+        "servicesecurityinsights.securityInfo.list",
+        "servicesecurityinsights.securityViews.get",
+        "servicesecurityinsights.workloadPolicies.list",
+        "servicesecurityinsights.workloadSecurityInfo.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "servicesecurityinsights.clusterSecurityInfo.get",
+    "servicesecurityinsights.clusterSecurityInfo.list",
+    "servicesecurityinsights.policies.get",
+    "servicesecurityinsights.projectStates.get",
+    "servicesecurityinsights.securityInfo.list",
+    "servicesecurityinsights.securityViews.get",
+    "servicesecurityinsights.workloadPolicies.list",
+    "servicesecurityinsights.workloadSecurityInfo.get"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.528Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataprocessing.editor --format=json"
+  },
+  "name": "roles/dataprocessing.editor",
+  "role_slug": "dataprocessing-editor",
+  "title": "Dataprocessing Editor",
+  "description": "Editor role for dataprocessing",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "dataprocessing",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dataprocessing",
+      "permissions": [
+        "dataprocessing.datasources.get",
+        "dataprocessing.datasources.list",
+        "dataprocessing.datasources.update",
+        "dataprocessing.featurecontrols.list",
+        "dataprocessing.groupcontrols.get",
+        "dataprocessing.groupcontrols.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dataprocessing.datasources.get",
+    "dataprocessing.datasources.list",
+    "dataprocessing.datasources.update",
+    "dataprocessing.featurecontrols.list",
+    "dataprocessing.groupcontrols.get",
+    "dataprocessing.groupcontrols.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

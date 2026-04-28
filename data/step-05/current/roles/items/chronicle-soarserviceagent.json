@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.110Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/chronicle.soarServiceAgent --format=json"
+  },
+  "name": "roles/chronicle.soarServiceAgent",
+  "role_slug": "chronicle-soarserviceagent",
+  "title": "Chronicle SOAR Service Agent",
+  "description": "Gives Chronicle SOAR the ability to perform remediation on Cloud Platform resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 37,
+  "permission_groups": [
+    "cloudasset",
+    "compute",
+    "iam",
+    "recommender",
+    "resourcemanager",
+    "securitycenter",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudasset",
+      "permissions": [
+        "cloudasset.assets.analyzeIamPolicy",
+        "cloudasset.assets.exportIamPolicy",
+        "cloudasset.assets.exportResource",
+        "cloudasset.assets.searchAllIamPolicies",
+        "cloudasset.assets.searchAllResources"
+      ]
+    },
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.firewalls.get",
+        "compute.firewalls.update",
+        "compute.globalOperations.get",
+        "compute.instances.deleteAccessConfig",
+        "compute.instances.get",
+        "compute.instances.list",
+        "compute.instances.stop",
+        "compute.instances.updateNetworkInterface",
+        "compute.networks.updatePolicy",
+        "compute.regionOperations.get",
+        "compute.zoneOperations.get",
+        "compute.zones.list"
+      ]
+    },
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.serviceAccounts.disable",
+        "iam.serviceAccounts.list"
+      ]
+    },
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.iamPolicyRecommendations.get",
+        "recommender.iamPolicyRecommendations.list",
+        "recommender.iamPolicyRecommendations.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.getIamPolicy"
+      ]
+    },
+    {
+      "group": "securitycenter",
+      "permissions": [
+        "securitycenter.findingexternalsystems.update",
+        "securitycenter.findings.list",
+        "securitycenter.findings.setMute",
+        "securitycenter.findings.setState",
+        "securitycenter.findings.update",
+        "securitycenter.notificationconfig.create",
+        "securitycenter.notificationconfig.delete",
+        "securitycenter.notificationconfig.get",
+        "securitycenter.notificationconfig.update",
+        "securitycenter.sources.list"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.get",
+        "storage.buckets.getIamPolicy",
+        "storage.buckets.list",
+        "storage.buckets.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudasset.assets.analyzeIamPolicy",
+    "cloudasset.assets.exportIamPolicy",
+    "cloudasset.assets.exportResource",
+    "cloudasset.assets.searchAllIamPolicies",
+    "cloudasset.assets.searchAllResources",
+    "compute.firewalls.get",
+    "compute.firewalls.update",
+    "compute.globalOperations.get",
+    "compute.instances.deleteAccessConfig",
+    "compute.instances.get",
+    "compute.instances.list",
+    "compute.instances.stop",
+    "compute.instances.updateNetworkInterface",
+    "compute.networks.updatePolicy",
+    "compute.regionOperations.get",
+    "compute.zoneOperations.get",
+    "compute.zones.list",
+    "iam.serviceAccounts.disable",
+    "iam.serviceAccounts.list",
+    "recommender.iamPolicyRecommendations.get",
+    "recommender.iamPolicyRecommendations.list",
+    "recommender.iamPolicyRecommendations.update",
+    "resourcemanager.organizations.getIamPolicy",
+    "securitycenter.findingexternalsystems.update",
+    "securitycenter.findings.list",
+    "securitycenter.findings.setMute",
+    "securitycenter.findings.setState",
+    "securitycenter.findings.update",
+    "securitycenter.notificationconfig.create",
+    "securitycenter.notificationconfig.delete",
+    "securitycenter.notificationconfig.get",
+    "securitycenter.notificationconfig.update",
+    "securitycenter.sources.list",
+    "storage.buckets.get",
+    "storage.buckets.getIamPolicy",
+    "storage.buckets.list",
+    "storage.buckets.update"
+  ]
+}

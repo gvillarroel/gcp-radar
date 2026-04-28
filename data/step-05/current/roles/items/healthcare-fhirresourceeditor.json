@@ -1,0 +1,70 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.893Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/healthcare.fhirResourceEditor --format=json"
+  },
+  "name": "roles/healthcare.fhirResourceEditor",
+  "role_slug": "healthcare-fhirresourceeditor",
+  "title": "Healthcare FHIR Resource Editor",
+  "description": "Create, delete, update, read and search FHIR resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 18,
+  "permission_groups": [
+    "healthcare",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "healthcare",
+      "permissions": [
+        "healthcare.datasets.get",
+        "healthcare.datasets.list",
+        "healthcare.fhirResources.create",
+        "healthcare.fhirResources.delete",
+        "healthcare.fhirResources.get",
+        "healthcare.fhirResources.patch",
+        "healthcare.fhirResources.translateConceptMap",
+        "healthcare.fhirResources.update",
+        "healthcare.fhirStores.executeBundle",
+        "healthcare.fhirStores.get",
+        "healthcare.fhirStores.list",
+        "healthcare.fhirStores.searchResources",
+        "healthcare.locations.get",
+        "healthcare.locations.list",
+        "healthcare.operations.cancel",
+        "healthcare.operations.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "healthcare.datasets.get",
+    "healthcare.datasets.list",
+    "healthcare.fhirResources.create",
+    "healthcare.fhirResources.delete",
+    "healthcare.fhirResources.get",
+    "healthcare.fhirResources.patch",
+    "healthcare.fhirResources.translateConceptMap",
+    "healthcare.fhirResources.update",
+    "healthcare.fhirStores.executeBundle",
+    "healthcare.fhirStores.get",
+    "healthcare.fhirStores.list",
+    "healthcare.fhirStores.searchResources",
+    "healthcare.locations.get",
+    "healthcare.locations.list",
+    "healthcare.operations.cancel",
+    "healthcare.operations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

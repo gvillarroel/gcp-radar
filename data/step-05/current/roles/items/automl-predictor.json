@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.949Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/automl.predictor --format=json"
+  },
+  "name": "roles/automl.predictor",
+  "role_slug": "automl-predictor",
+  "title": "AutoML Predictor",
+  "description": "Predict using models",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "automl",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "automl",
+      "permissions": [
+        "automl.models.predict"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "automl.models.predict",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

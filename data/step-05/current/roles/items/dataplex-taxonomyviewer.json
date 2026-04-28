@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.514Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataplex.taxonomyViewer --format=json"
+  },
+  "name": "roles/dataplex.taxonomyViewer",
+  "role_slug": "dataplex-taxonomyviewer",
+  "title": "Dataplex Taxonomy Viewer",
+  "description": "Read access on DataTaxonomy, DataAttribute resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "dataplex"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.dataAttributes.get",
+        "dataplex.dataAttributes.getIamPolicy",
+        "dataplex.dataAttributes.list",
+        "dataplex.dataTaxonomies.get",
+        "dataplex.dataTaxonomies.getIamPolicy",
+        "dataplex.dataTaxonomies.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dataplex.dataAttributes.get",
+    "dataplex.dataAttributes.getIamPolicy",
+    "dataplex.dataAttributes.list",
+    "dataplex.dataTaxonomies.get",
+    "dataplex.dataTaxonomies.getIamPolicy",
+    "dataplex.dataTaxonomies.list"
+  ]
+}

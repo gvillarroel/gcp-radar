@@ -1,0 +1,74 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.672Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/videostitcher.viewer --format=json"
+  },
+  "name": "roles/videostitcher.viewer",
+  "role_slug": "videostitcher-viewer",
+  "title": "Video Stitcher Viewer",
+  "description": "Read-only access to video stitcher resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 20,
+  "permission_groups": [
+    "resourcemanager",
+    "videostitcher"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "videostitcher",
+      "permissions": [
+        "videostitcher.cdnKeys.get",
+        "videostitcher.cdnKeys.list",
+        "videostitcher.liveAdTagDetails.get",
+        "videostitcher.liveAdTagDetails.list",
+        "videostitcher.liveConfigs.get",
+        "videostitcher.liveConfigs.list",
+        "videostitcher.liveSessions.get",
+        "videostitcher.operations.get",
+        "videostitcher.operations.list",
+        "videostitcher.slates.get",
+        "videostitcher.slates.list",
+        "videostitcher.vodAdTagDetails.get",
+        "videostitcher.vodAdTagDetails.list",
+        "videostitcher.vodConfigs.get",
+        "videostitcher.vodConfigs.list",
+        "videostitcher.vodSessions.get",
+        "videostitcher.vodStitchDetails.get",
+        "videostitcher.vodStitchDetails.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "videostitcher.cdnKeys.get",
+    "videostitcher.cdnKeys.list",
+    "videostitcher.liveAdTagDetails.get",
+    "videostitcher.liveAdTagDetails.list",
+    "videostitcher.liveConfigs.get",
+    "videostitcher.liveConfigs.list",
+    "videostitcher.liveSessions.get",
+    "videostitcher.operations.get",
+    "videostitcher.operations.list",
+    "videostitcher.slates.get",
+    "videostitcher.slates.list",
+    "videostitcher.vodAdTagDetails.get",
+    "videostitcher.vodAdTagDetails.list",
+    "videostitcher.vodConfigs.get",
+    "videostitcher.vodConfigs.list",
+    "videostitcher.vodSessions.get",
+    "videostitcher.vodStitchDetails.get",
+    "videostitcher.vodStitchDetails.list"
+  ]
+}

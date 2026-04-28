@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.761Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebasecloudmessaging.admin --format=json"
+  },
+  "name": "roles/firebasecloudmessaging.admin",
+  "role_slug": "firebasecloudmessaging-admin",
+  "title": "Firebase Cloud Messaging API Admin",
+  "description": "Full read/write access to Firebase Cloud Messaging API resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "cloudmessaging",
+    "fcmdata",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudmessaging",
+      "permissions": [
+        "cloudmessaging.messages.create"
+      ]
+    },
+    {
+      "group": "fcmdata",
+      "permissions": [
+        "fcmdata.deliverydata.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudmessaging.messages.create",
+    "fcmdata.deliverydata.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.528Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securitycenter.sourcesViewer --format=json"
+  },
+  "name": "roles/securitycenter.sourcesViewer",
+  "role_slug": "securitycenter-sourcesviewer",
+  "title": "Security Center Sources Viewer",
+  "description": "Read access to sources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "resourcemanager",
+    "securitycenter"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get"
+      ]
+    },
+    {
+      "group": "securitycenter",
+      "permissions": [
+        "securitycenter.sources.get",
+        "securitycenter.sources.list",
+        "securitycenter.userinterfacemetadata.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.organizations.get",
+    "securitycenter.sources.get",
+    "securitycenter.sources.list",
+    "securitycenter.userinterfacemetadata.get"
+  ]
+}

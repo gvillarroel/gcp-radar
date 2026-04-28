@@ -1,0 +1,52 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.225Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/oracledatabase.odbNetworkViewer --format=json"
+  },
+  "name": "roles/oracledatabase.odbNetworkViewer",
+  "role_slug": "oracledatabase-odbnetworkviewer",
+  "title": "Oracle Database@Google ODB Network Viewer",
+  "description": "Grants read access to see all ODB Network resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "oracledatabase",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "oracledatabase",
+      "permissions": [
+        "oracledatabase.entitlements.list",
+        "oracledatabase.locations.get",
+        "oracledatabase.locations.list",
+        "oracledatabase.odbNetworks.get",
+        "oracledatabase.odbNetworks.list",
+        "oracledatabase.operations.get",
+        "oracledatabase.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "oracledatabase.entitlements.list",
+    "oracledatabase.locations.get",
+    "oracledatabase.locations.list",
+    "oracledatabase.odbNetworks.get",
+    "oracledatabase.odbNetworks.list",
+    "oracledatabase.operations.get",
+    "oracledatabase.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

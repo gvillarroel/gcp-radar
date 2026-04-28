@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.915Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/iam.denyReviewer --format=json"
+  },
+  "name": "roles/iam.denyReviewer",
+  "role_slug": "iam-denyreviewer",
+  "title": "Deny Reviewer",
+  "description": "Deny Reviewer role, with permissions to read deny policies",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "iam"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.denypolicies.get",
+        "iam.denypolicies.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "iam.denypolicies.get",
+    "iam.denypolicies.list"
+  ]
+}

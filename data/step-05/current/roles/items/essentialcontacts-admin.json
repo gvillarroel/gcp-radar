@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.704Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/essentialcontacts.admin --format=json"
+  },
+  "name": "roles/essentialcontacts.admin",
+  "role_slug": "essentialcontacts-admin",
+  "title": "Essential Contacts Admin",
+  "description": "Full access to all essential contacts",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "essentialcontacts"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "essentialcontacts",
+      "permissions": [
+        "essentialcontacts.contacts.create",
+        "essentialcontacts.contacts.delete",
+        "essentialcontacts.contacts.get",
+        "essentialcontacts.contacts.list",
+        "essentialcontacts.contacts.send",
+        "essentialcontacts.contacts.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "essentialcontacts.contacts.create",
+    "essentialcontacts.contacts.delete",
+    "essentialcontacts.contacts.get",
+    "essentialcontacts.contacts.list",
+    "essentialcontacts.contacts.send",
+    "essentialcontacts.contacts.update"
+  ]
+}

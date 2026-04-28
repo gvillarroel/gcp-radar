@@ -1,0 +1,52 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.151Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudconfig.viewer --format=json"
+  },
+  "name": "roles/cloudconfig.viewer",
+  "role_slug": "cloudconfig-viewer",
+  "title": "Firebase Remote Config Viewer",
+  "description": "Read access to Firebase Remote Config resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "cloudconfig",
+    "firebase",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudconfig",
+      "permissions": [
+        "cloudconfig.configs.get"
+      ]
+    },
+    {
+      "group": "firebase",
+      "permissions": [
+        "firebase.clients.get",
+        "firebase.clients.list",
+        "firebase.projects.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudconfig.configs.get",
+    "firebase.clients.get",
+    "firebase.clients.list",
+    "firebase.projects.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

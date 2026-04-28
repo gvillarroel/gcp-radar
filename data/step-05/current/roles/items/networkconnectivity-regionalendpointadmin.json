@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.152Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/networkconnectivity.regionalEndpointAdmin --format=json"
+  },
+  "name": "roles/networkconnectivity.regionalEndpointAdmin",
+  "role_slug": "networkconnectivity-regionalendpointadmin",
+  "title": "Regional Endpoint Admin",
+  "description": "Full access to all Regional Endpoint resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "networkconnectivity",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "networkconnectivity",
+      "permissions": [
+        "networkconnectivity.regionalEndpoints.create",
+        "networkconnectivity.regionalEndpoints.delete",
+        "networkconnectivity.regionalEndpoints.get",
+        "networkconnectivity.regionalEndpoints.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "networkconnectivity.regionalEndpoints.create",
+    "networkconnectivity.regionalEndpoints.delete",
+    "networkconnectivity.regionalEndpoints.get",
+    "networkconnectivity.regionalEndpoints.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

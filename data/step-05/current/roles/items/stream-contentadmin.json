@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.625Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/stream.contentAdmin --format=json"
+  },
+  "name": "roles/stream.contentAdmin",
+  "role_slug": "stream-contentadmin",
+  "title": "Stream Content Admin",
+  "description": "Full access to all StreamContent resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "resourcemanager",
+    "stream"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "stream",
+      "permissions": [
+        "stream.streamContents.build",
+        "stream.streamContents.create",
+        "stream.streamContents.delete",
+        "stream.streamContents.get",
+        "stream.streamContents.list",
+        "stream.streamContents.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "stream.streamContents.build",
+    "stream.streamContents.create",
+    "stream.streamContents.delete",
+    "stream.streamContents.get",
+    "stream.streamContents.list",
+    "stream.streamContents.update"
+  ]
+}

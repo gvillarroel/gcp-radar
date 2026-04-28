@@ -1,0 +1,64 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.924Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/iam.organizationRoleAdmin --format=json"
+  },
+  "name": "roles/iam.organizationRoleAdmin",
+  "role_slug": "iam-organizationroleadmin",
+  "title": "Organization Role Administrator",
+  "description": "Access to administer all custom roles in the organization and the projects below it.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 15,
+  "permission_groups": [
+    "iam",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.roles.create",
+        "iam.roles.createTagBinding",
+        "iam.roles.delete",
+        "iam.roles.deleteTagBinding",
+        "iam.roles.get",
+        "iam.roles.list",
+        "iam.roles.listEffectiveTags",
+        "iam.roles.listTagBindings",
+        "iam.roles.undelete",
+        "iam.roles.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get",
+        "resourcemanager.organizations.getIamPolicy",
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.getIamPolicy",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "iam.roles.create",
+    "iam.roles.createTagBinding",
+    "iam.roles.delete",
+    "iam.roles.deleteTagBinding",
+    "iam.roles.get",
+    "iam.roles.list",
+    "iam.roles.listEffectiveTags",
+    "iam.roles.listTagBindings",
+    "iam.roles.undelete",
+    "iam.roles.update",
+    "resourcemanager.organizations.get",
+    "resourcemanager.organizations.getIamPolicy",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.getIamPolicy",
+    "resourcemanager.projects.list"
+  ]
+}

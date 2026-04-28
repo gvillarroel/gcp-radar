@@ -1,0 +1,70 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.365Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/recommender.iamViewer --format=json"
+  },
+  "name": "roles/recommender.iamViewer",
+  "role_slug": "recommender-iamviewer",
+  "title": "IAM Recommender Viewer",
+  "description": "Viewer of IAM recommendations.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 15,
+  "permission_groups": [
+    "recommender",
+    "resourcemanager",
+    "securitycenter"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.iamPolicyInsights.get",
+        "recommender.iamPolicyInsights.list",
+        "recommender.iamPolicyLateralMovementInsights.get",
+        "recommender.iamPolicyLateralMovementInsights.list",
+        "recommender.iamPolicyRecommendations.get",
+        "recommender.iamPolicyRecommendations.list",
+        "recommender.iamPolicyRecommenderConfig.get",
+        "recommender.iamServiceAccountInsights.get",
+        "recommender.iamServiceAccountInsights.list",
+        "recommender.locations.get",
+        "recommender.locations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "securitycenter",
+      "permissions": [
+        "securitycenter.findings.group",
+        "securitycenter.userinterfacemetadata.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "recommender.iamPolicyInsights.get",
+    "recommender.iamPolicyInsights.list",
+    "recommender.iamPolicyLateralMovementInsights.get",
+    "recommender.iamPolicyLateralMovementInsights.list",
+    "recommender.iamPolicyRecommendations.get",
+    "recommender.iamPolicyRecommendations.list",
+    "recommender.iamPolicyRecommenderConfig.get",
+    "recommender.iamServiceAccountInsights.get",
+    "recommender.iamServiceAccountInsights.list",
+    "recommender.locations.get",
+    "recommender.locations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "securitycenter.findings.group",
+    "securitycenter.userinterfacemetadata.get"
+  ]
+}

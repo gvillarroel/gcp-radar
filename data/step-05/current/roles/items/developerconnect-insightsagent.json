@@ -1,0 +1,58 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.572Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/developerconnect.insightsAgent --format=json"
+  },
+  "name": "roles/developerconnect.insightsAgent",
+  "role_slug": "developerconnect-insightsagent",
+  "title": "Developer Connect Insights Config Agent",
+  "description": "Allow Developer Connect to access SDLC information.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "cloudasset",
+    "containeranalysis",
+    "logging"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudasset",
+      "permissions": [
+        "cloudasset.assets.exportResource",
+        "cloudasset.assets.listResource",
+        "cloudasset.assets.searchAllResources",
+        "cloudasset.feeds.create",
+        "cloudasset.feeds.get",
+        "cloudasset.feeds.update"
+      ]
+    },
+    {
+      "group": "containeranalysis",
+      "permissions": [
+        "containeranalysis.occurrences.get",
+        "containeranalysis.occurrences.list"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudasset.assets.exportResource",
+    "cloudasset.assets.listResource",
+    "cloudasset.assets.searchAllResources",
+    "cloudasset.feeds.create",
+    "cloudasset.feeds.get",
+    "cloudasset.feeds.update",
+    "containeranalysis.occurrences.get",
+    "containeranalysis.occurrences.list",
+    "logging.logEntries.create"
+  ]
+}

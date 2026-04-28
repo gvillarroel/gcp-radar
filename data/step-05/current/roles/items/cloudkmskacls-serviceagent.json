@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.215Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudkmskacls.serviceAgent --format=json"
+  },
+  "name": "roles/cloudkmskacls.serviceAgent",
+  "role_slug": "cloudkmskacls-serviceagent",
+  "title": "Cloud KMS KACLS Service Agent",
+  "description": "Grants Cloud KMS KACLS Service Agent access to KMS resource permissions to perform DEK encryption/decryption.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "cloudkms"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudkms",
+      "permissions": [
+        "cloudkms.cryptoKeys.get",
+        "cloudkms.cryptoKeyVersions.useToDecrypt",
+        "cloudkms.cryptoKeyVersions.useToEncrypt"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudkms.cryptoKeys.get",
+    "cloudkms.cryptoKeyVersions.useToDecrypt",
+    "cloudkms.cryptoKeyVersions.useToEncrypt"
+  ]
+}

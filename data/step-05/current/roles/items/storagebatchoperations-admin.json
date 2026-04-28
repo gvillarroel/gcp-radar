@@ -1,0 +1,64 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.615Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/storagebatchoperations.admin --format=json"
+  },
+  "name": "roles/storagebatchoperations.admin",
+  "role_slug": "storagebatchoperations-admin",
+  "title": "Storage Batch Operations Admin",
+  "description": "Full access to Storage Batch Operations resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 15,
+  "permission_groups": [
+    "resourcemanager",
+    "storagebatchoperations"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "storagebatchoperations",
+      "permissions": [
+        "storagebatchoperations.bucketOperations.get",
+        "storagebatchoperations.bucketOperations.list",
+        "storagebatchoperations.jobs.cancel",
+        "storagebatchoperations.jobs.create",
+        "storagebatchoperations.jobs.delete",
+        "storagebatchoperations.jobs.get",
+        "storagebatchoperations.jobs.list",
+        "storagebatchoperations.locations.get",
+        "storagebatchoperations.locations.list",
+        "storagebatchoperations.operations.cancel",
+        "storagebatchoperations.operations.delete",
+        "storagebatchoperations.operations.get",
+        "storagebatchoperations.operations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "storagebatchoperations.bucketOperations.get",
+    "storagebatchoperations.bucketOperations.list",
+    "storagebatchoperations.jobs.cancel",
+    "storagebatchoperations.jobs.create",
+    "storagebatchoperations.jobs.delete",
+    "storagebatchoperations.jobs.get",
+    "storagebatchoperations.jobs.list",
+    "storagebatchoperations.locations.get",
+    "storagebatchoperations.locations.list",
+    "storagebatchoperations.operations.cancel",
+    "storagebatchoperations.operations.delete",
+    "storagebatchoperations.operations.get",
+    "storagebatchoperations.operations.list"
+  ]
+}

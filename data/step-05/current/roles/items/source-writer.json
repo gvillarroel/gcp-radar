@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.575Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/source.writer --format=json"
+  },
+  "name": "roles/source.writer",
+  "role_slug": "source-writer",
+  "title": "Source Repository Writer",
+  "description": "Read / Write access to repositories",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "source"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "source",
+      "permissions": [
+        "source.repos.get",
+        "source.repos.list",
+        "source.repos.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "source.repos.get",
+    "source.repos.list",
+    "source.repos.update"
+  ]
+}

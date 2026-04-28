@@ -1,0 +1,36 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.156Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudcontrolspartner.ekmServiceAgent --format=json"
+  },
+  "name": "roles/cloudcontrolspartner.ekmServiceAgent",
+  "role_slug": "cloudcontrolspartner-ekmserviceagent",
+  "title": "Cloud Controls Partner EKM Service Agent",
+  "description": "Gives Cloud Controls Partner service agent permission to list EKM connections, get EKM connection status, and provide EKM diagnostic information.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "cloudkms"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudkms",
+      "permissions": [
+        "cloudkms.ekmConnections.get",
+        "cloudkms.ekmConnections.getIamPolicy",
+        "cloudkms.ekmConnections.list",
+        "cloudkms.ekmConnections.verifyConnectivity"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudkms.ekmConnections.get",
+    "cloudkms.ekmConnections.getIamPolicy",
+    "cloudkms.ekmConnections.list",
+    "cloudkms.ekmConnections.verifyConnectivity"
+  ]
+}

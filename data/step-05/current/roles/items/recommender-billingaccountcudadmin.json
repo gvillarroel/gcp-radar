@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.333Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/recommender.billingAccountCudAdmin --format=json"
+  },
+  "name": "roles/recommender.billingAccountCudAdmin",
+  "role_slug": "recommender-billingaccountcudadmin",
+  "title": "Billing Account Usage Commitment Recommender Admin",
+  "description": "Admin of Billing Account Usage Commitment Recommender.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "billing",
+    "recommender"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "billing",
+      "permissions": [
+        "billing.accounts.get",
+        "billing.accounts.list"
+      ]
+    },
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.commitmentUtilizationInsights.get",
+        "recommender.commitmentUtilizationInsights.list",
+        "recommender.commitmentUtilizationInsights.update",
+        "recommender.usageCommitmentRecommendations.get",
+        "recommender.usageCommitmentRecommendations.list",
+        "recommender.usageCommitmentRecommendations.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "billing.accounts.get",
+    "billing.accounts.list",
+    "recommender.commitmentUtilizationInsights.get",
+    "recommender.commitmentUtilizationInsights.list",
+    "recommender.commitmentUtilizationInsights.update",
+    "recommender.usageCommitmentRecommendations.get",
+    "recommender.usageCommitmentRecommendations.list",
+    "recommender.usageCommitmentRecommendations.update"
+  ]
+}

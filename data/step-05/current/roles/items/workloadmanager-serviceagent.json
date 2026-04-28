@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.738Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/workloadmanager.serviceAgent --format=json"
+  },
+  "name": "roles/workloadmanager.serviceAgent",
+  "role_slug": "workloadmanager-serviceagent",
+  "title": "Workload Manager Service Agent",
+  "description": "Gives Workload Manager Service Agent access to CAI export functions and Cloud Monitoring.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 33,
+  "permission_groups": [
+    "cloudasset",
+    "config",
+    "monitoring",
+    "serviceusage",
+    "workloadmanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudasset",
+      "permissions": [
+        "cloudasset.assets.exportAccessPolicy",
+        "cloudasset.assets.exportIamPolicy",
+        "cloudasset.assets.exportOrgPolicy",
+        "cloudasset.assets.exportOSInventories",
+        "cloudasset.assets.exportResource",
+        "cloudasset.assets.listAccessPolicy",
+        "cloudasset.assets.listIamPolicy",
+        "cloudasset.assets.listOrgPolicy",
+        "cloudasset.assets.listOSInventories",
+        "cloudasset.assets.listResource",
+        "cloudasset.assets.searchAllResources"
+      ]
+    },
+    {
+      "group": "config",
+      "permissions": [
+        "config.deployments.create",
+        "config.deployments.delete",
+        "config.deployments.get",
+        "config.deployments.list",
+        "config.deployments.update",
+        "config.locations.get",
+        "config.locations.list",
+        "config.operations.cancel",
+        "config.operations.delete",
+        "config.operations.get",
+        "config.operations.list",
+        "config.resources.list",
+        "config.revisions.get",
+        "config.revisions.list"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.metricDescriptors.get",
+        "monitoring.metricDescriptors.list",
+        "monitoring.monitoredResourceDescriptors.get",
+        "monitoring.monitoredResourceDescriptors.list",
+        "monitoring.timeSeries.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    },
+    {
+      "group": "workloadmanager",
+      "permissions": [
+        "workloadmanager.insights.export",
+        "workloadmanager.insights.listSapSystems"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudasset.assets.exportAccessPolicy",
+    "cloudasset.assets.exportIamPolicy",
+    "cloudasset.assets.exportOrgPolicy",
+    "cloudasset.assets.exportOSInventories",
+    "cloudasset.assets.exportResource",
+    "cloudasset.assets.listAccessPolicy",
+    "cloudasset.assets.listIamPolicy",
+    "cloudasset.assets.listOrgPolicy",
+    "cloudasset.assets.listOSInventories",
+    "cloudasset.assets.listResource",
+    "cloudasset.assets.searchAllResources",
+    "config.deployments.create",
+    "config.deployments.delete",
+    "config.deployments.get",
+    "config.deployments.list",
+    "config.deployments.update",
+    "config.locations.get",
+    "config.locations.list",
+    "config.operations.cancel",
+    "config.operations.delete",
+    "config.operations.get",
+    "config.operations.list",
+    "config.resources.list",
+    "config.revisions.get",
+    "config.revisions.list",
+    "monitoring.metricDescriptors.get",
+    "monitoring.metricDescriptors.list",
+    "monitoring.monitoredResourceDescriptors.get",
+    "monitoring.monitoredResourceDescriptors.list",
+    "monitoring.timeSeries.list",
+    "serviceusage.services.use",
+    "workloadmanager.insights.export",
+    "workloadmanager.insights.listSapSystems"
+  ]
+}

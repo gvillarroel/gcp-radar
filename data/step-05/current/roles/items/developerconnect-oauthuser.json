@@ -1,0 +1,60 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.575Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/developerconnect.oauthUser --format=json"
+  },
+  "name": "roles/developerconnect.oauthUser",
+  "role_slug": "developerconnect-oauthuser",
+  "title": "Developer Connect OAuth User",
+  "description": "Grants read and write access to User resources, and read access to AccountConnectors.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "developerconnect",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "developerconnect",
+      "permissions": [
+        "developerconnect.accountConnectors.get",
+        "developerconnect.accountConnectors.list",
+        "developerconnect.locations.get",
+        "developerconnect.locations.list",
+        "developerconnect.operations.get",
+        "developerconnect.operations.list",
+        "developerconnect.users.deleteSelf",
+        "developerconnect.users.fetchAccessToken",
+        "developerconnect.users.finishOAuth",
+        "developerconnect.users.getSelf",
+        "developerconnect.users.startOAuth"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "developerconnect.accountConnectors.get",
+    "developerconnect.accountConnectors.list",
+    "developerconnect.locations.get",
+    "developerconnect.locations.list",
+    "developerconnect.operations.get",
+    "developerconnect.operations.list",
+    "developerconnect.users.deleteSelf",
+    "developerconnect.users.fetchAccessToken",
+    "developerconnect.users.finishOAuth",
+    "developerconnect.users.getSelf",
+    "developerconnect.users.startOAuth",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

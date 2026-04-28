@@ -1,0 +1,56 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.067Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/mapsadmin.viewer --format=json"
+  },
+  "name": "roles/mapsadmin.viewer",
+  "role_slug": "mapsadmin-viewer",
+  "title": "Maps API Viewer",
+  "description": "Grants permission to read everything",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "mapsadmin",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "mapsadmin",
+      "permissions": [
+        "mapsadmin.clientMaps.get",
+        "mapsadmin.clientMaps.list",
+        "mapsadmin.clientStyles.get",
+        "mapsadmin.clientStyles.list",
+        "mapsadmin.clientStyleSheetSnapshots.list",
+        "mapsadmin.mapViews.get",
+        "mapsadmin.mapViews.list",
+        "mapsadmin.styleEditorConfigs.get",
+        "mapsadmin.styleSnapshots.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "mapsadmin.clientMaps.get",
+    "mapsadmin.clientMaps.list",
+    "mapsadmin.clientStyles.get",
+    "mapsadmin.clientStyles.list",
+    "mapsadmin.clientStyleSheetSnapshots.list",
+    "mapsadmin.mapViews.get",
+    "mapsadmin.mapViews.list",
+    "mapsadmin.styleEditorConfigs.get",
+    "mapsadmin.styleSnapshots.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

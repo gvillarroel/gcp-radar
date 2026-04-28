@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.379Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/recommender.networkAnalyzerIpAddressViewer --format=json"
+  },
+  "name": "roles/recommender.networkAnalyzerIpAddressViewer",
+  "role_slug": "recommender-networkanalyzeripaddressviewer",
+  "title": "Network Analyzer IP Address Recommender Viewer",
+  "description": "Viewer of Network Analyzer IP Address Insights and Recommendations.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "recommender",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.locations.get",
+        "recommender.locations.list",
+        "recommender.networkAnalyzerIpAddressInsights.get",
+        "recommender.networkAnalyzerIpAddressInsights.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "recommender.locations.get",
+    "recommender.locations.list",
+    "recommender.networkAnalyzerIpAddressInsights.get",
+    "recommender.networkAnalyzerIpAddressInsights.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

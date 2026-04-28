@@ -1,0 +1,56 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.646Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/threatintelligence.alertUser --format=json"
+  },
+  "name": "roles/threatintelligence.alertUser",
+  "role_slug": "threatintelligence-alertuser",
+  "title": "GTI Alert User",
+  "description": "This role can view and edit properties of resources, except for editing configurations and exporting alerts.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "resourcemanager",
+    "threatintelligence"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "threatintelligence",
+      "permissions": [
+        "threatintelligence.alertdocuments.get",
+        "threatintelligence.alerts.get",
+        "threatintelligence.alerts.list",
+        "threatintelligence.alerts.update",
+        "threatintelligence.configurations.get",
+        "threatintelligence.configurations.list",
+        "threatintelligence.configurations.listRevisions",
+        "threatintelligence.findings.get",
+        "threatintelligence.findings.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "threatintelligence.alertdocuments.get",
+    "threatintelligence.alerts.get",
+    "threatintelligence.alerts.list",
+    "threatintelligence.alerts.update",
+    "threatintelligence.configurations.get",
+    "threatintelligence.configurations.list",
+    "threatintelligence.configurations.listRevisions",
+    "threatintelligence.findings.get",
+    "threatintelligence.findings.list"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.037Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/maintenance.viewer --format=json"
+  },
+  "name": "roles/maintenance.viewer",
+  "role_slug": "maintenance-viewer",
+  "title": "Maintenance API Viewer",
+  "description": "Readonly access to Maintenance API resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "maintenance",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "maintenance",
+      "permissions": [
+        "maintenance.locations.get",
+        "maintenance.locations.list",
+        "maintenance.resourceMaintenances.get",
+        "maintenance.resourceMaintenances.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "maintenance.locations.get",
+    "maintenance.locations.list",
+    "maintenance.resourceMaintenances.get",
+    "maintenance.resourceMaintenances.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

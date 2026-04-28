@@ -1,0 +1,52 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.200Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudkms.ekmConnectionsAdmin --format=json"
+  },
+  "name": "roles/cloudkms.ekmConnectionsAdmin",
+  "role_slug": "cloudkms-ekmconnectionsadmin",
+  "title": "Cloud KMS EkmConnections Admin",
+  "description": "Enables management of EkmConnections.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "cloudkms",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudkms",
+      "permissions": [
+        "cloudkms.ekmConfigs.get",
+        "cloudkms.ekmConfigs.update",
+        "cloudkms.ekmConnections.create",
+        "cloudkms.ekmConnections.get",
+        "cloudkms.ekmConnections.list",
+        "cloudkms.ekmConnections.update",
+        "cloudkms.ekmConnections.verifyConnectivity"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudkms.ekmConfigs.get",
+    "cloudkms.ekmConfigs.update",
+    "cloudkms.ekmConnections.create",
+    "cloudkms.ekmConnections.get",
+    "cloudkms.ekmConnections.list",
+    "cloudkms.ekmConnections.update",
+    "cloudkms.ekmConnections.verifyConnectivity",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

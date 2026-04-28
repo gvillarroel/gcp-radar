@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.384Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/recommender.networkAnalyzerVpcConnectivityViewer --format=json"
+  },
+  "name": "roles/recommender.networkAnalyzerVpcConnectivityViewer",
+  "role_slug": "recommender-networkanalyzervpcconnectivityviewer",
+  "title": "Network Analyzer VPC Connectivity Recommender Viewer",
+  "description": "Viewer of Network Analyzer VPC Connectivity Insights and Recommendations.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "recommender",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.locations.get",
+        "recommender.locations.list",
+        "recommender.networkAnalyzerVpcConnectivityInsights.get",
+        "recommender.networkAnalyzerVpcConnectivityInsights.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "recommender.locations.get",
+    "recommender.locations.list",
+    "recommender.networkAnalyzerVpcConnectivityInsights.get",
+    "recommender.networkAnalyzerVpcConnectivityInsights.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

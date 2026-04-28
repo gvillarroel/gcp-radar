@@ -1,0 +1,78 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.620Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/storagetransfer.admin --format=json"
+  },
+  "name": "roles/storagetransfer.admin",
+  "role_slug": "storagetransfer-admin",
+  "title": "Storage Transfer Admin",
+  "description": "Create, update and manage transfer jobs and operations.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 22,
+  "permission_groups": [
+    "resourcemanager",
+    "storagetransfer"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "storagetransfer",
+      "permissions": [
+        "storagetransfer.agentpools.create",
+        "storagetransfer.agentpools.delete",
+        "storagetransfer.agentpools.get",
+        "storagetransfer.agentpools.list",
+        "storagetransfer.agentpools.report",
+        "storagetransfer.agentpools.update",
+        "storagetransfer.jobs.create",
+        "storagetransfer.jobs.delete",
+        "storagetransfer.jobs.get",
+        "storagetransfer.jobs.list",
+        "storagetransfer.jobs.run",
+        "storagetransfer.jobs.update",
+        "storagetransfer.operations.assign",
+        "storagetransfer.operations.cancel",
+        "storagetransfer.operations.get",
+        "storagetransfer.operations.list",
+        "storagetransfer.operations.pause",
+        "storagetransfer.operations.report",
+        "storagetransfer.operations.resume",
+        "storagetransfer.projects.getServiceAccount"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "storagetransfer.agentpools.create",
+    "storagetransfer.agentpools.delete",
+    "storagetransfer.agentpools.get",
+    "storagetransfer.agentpools.list",
+    "storagetransfer.agentpools.report",
+    "storagetransfer.agentpools.update",
+    "storagetransfer.jobs.create",
+    "storagetransfer.jobs.delete",
+    "storagetransfer.jobs.get",
+    "storagetransfer.jobs.list",
+    "storagetransfer.jobs.run",
+    "storagetransfer.jobs.update",
+    "storagetransfer.operations.assign",
+    "storagetransfer.operations.cancel",
+    "storagetransfer.operations.get",
+    "storagetransfer.operations.list",
+    "storagetransfer.operations.pause",
+    "storagetransfer.operations.report",
+    "storagetransfer.operations.resume",
+    "storagetransfer.projects.getServiceAccount"
+  ]
+}

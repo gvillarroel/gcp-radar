@@ -1,0 +1,80 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.794Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebaserules.system --format=json"
+  },
+  "name": "roles/firebaserules.system",
+  "role_slug": "firebaserules-system",
+  "title": "Firebase Rules System",
+  "description": "Read/write/list access for Datastore entities and Cloud Storage objects, as well as get/list/publish access for PubSub topics.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 17,
+  "permission_groups": [
+    "datastore",
+    "pubsub",
+    "resourcemanager",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datastore",
+      "permissions": [
+        "datastore.databases.get",
+        "datastore.entities.allocateIds",
+        "datastore.entities.create",
+        "datastore.entities.delete",
+        "datastore.entities.get",
+        "datastore.entities.list",
+        "datastore.entities.update"
+      ]
+    },
+    {
+      "group": "pubsub",
+      "permissions": [
+        "pubsub.topics.get",
+        "pubsub.topics.list",
+        "pubsub.topics.publish"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.objects.create",
+        "storage.objects.delete",
+        "storage.objects.get",
+        "storage.objects.list",
+        "storage.objects.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datastore.databases.get",
+    "datastore.entities.allocateIds",
+    "datastore.entities.create",
+    "datastore.entities.delete",
+    "datastore.entities.get",
+    "datastore.entities.list",
+    "datastore.entities.update",
+    "pubsub.topics.get",
+    "pubsub.topics.list",
+    "pubsub.topics.publish",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.get",
+    "storage.objects.list",
+    "storage.objects.update"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.975Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/backupdr.filestoreOperator --format=json"
+  },
+  "name": "roles/backupdr.filestoreOperator",
+  "role_slug": "backupdr-filestoreoperator",
+  "title": "Backup and DR Filestore Operator",
+  "description": "Allows a Backup and DR service account to discover and backup Filestore instances.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "file"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "file",
+      "permissions": [
+        "file.backups.create",
+        "file.instances.createCrossProjectBackup",
+        "file.instances.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "file.backups.create",
+    "file.instances.createCrossProjectBackup",
+    "file.instances.get"
+  ]
+}

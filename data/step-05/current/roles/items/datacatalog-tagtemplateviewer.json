@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.433Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datacatalog.tagTemplateViewer --format=json"
+  },
+  "name": "roles/datacatalog.tagTemplateViewer",
+  "role_slug": "datacatalog-tagtemplateviewer",
+  "title": "Data Catalog TagTemplate Viewer",
+  "description": "Read access to templates and tags created using the templates",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "datacatalog",
+    "dataplex",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datacatalog",
+      "permissions": [
+        "datacatalog.tagTemplates.get",
+        "datacatalog.tagTemplates.getTag"
+      ]
+    },
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.aspectTypes.get",
+        "dataplex.aspectTypes.list",
+        "dataplex.projects.search"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datacatalog.tagTemplates.get",
+    "datacatalog.tagTemplates.getTag",
+    "dataplex.aspectTypes.get",
+    "dataplex.aspectTypes.list",
+    "dataplex.projects.search",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

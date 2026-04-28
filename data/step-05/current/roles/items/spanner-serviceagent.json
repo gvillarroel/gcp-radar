@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.585Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/spanner.serviceAgent --format=json"
+  },
+  "name": "roles/spanner.serviceAgent",
+  "role_slug": "spanner-serviceagent",
+  "title": "Cloud Spanner API Service Agent",
+  "description": "Cloud Spanner API Service Agent",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 38,
+  "permission_groups": [
+    "aiplatform",
+    "compute",
+    "logging",
+    "run",
+    "spanner",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "aiplatform",
+      "permissions": [
+        "aiplatform.endpoints.get",
+        "aiplatform.endpoints.list",
+        "aiplatform.endpoints.predict",
+        "aiplatform.models.get",
+        "aiplatform.models.list"
+      ]
+    },
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.disks.create",
+        "compute.disks.createTagBinding",
+        "compute.disks.use",
+        "compute.instances.create",
+        "compute.instances.createTagBinding",
+        "compute.instances.delete",
+        "compute.instances.get",
+        "compute.instances.setLabels",
+        "compute.instances.setMetadata",
+        "compute.instances.setServiceAccount",
+        "compute.networks.create",
+        "compute.networks.use",
+        "compute.networks.useExternalIp",
+        "compute.subnetworks.create",
+        "compute.subnetworks.use",
+        "compute.subnetworks.useExternalIp"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create"
+      ]
+    },
+    {
+      "group": "run",
+      "permissions": [
+        "run.jobs.run",
+        "run.routes.invoke"
+      ]
+    },
+    {
+      "group": "spanner",
+      "permissions": [
+        "spanner.databases.beginOrRollbackReadWriteTransaction",
+        "spanner.databases.beginReadOnlyTransaction",
+        "spanner.databases.partitionQuery",
+        "spanner.databases.select",
+        "spanner.databases.useDataBoost",
+        "spanner.databases.write",
+        "spanner.sessions.create"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.create",
+        "storage.buckets.get",
+        "storage.buckets.list",
+        "storage.objects.create",
+        "storage.objects.delete",
+        "storage.objects.get",
+        "storage.objects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "aiplatform.endpoints.get",
+    "aiplatform.endpoints.list",
+    "aiplatform.endpoints.predict",
+    "aiplatform.models.get",
+    "aiplatform.models.list",
+    "compute.disks.create",
+    "compute.disks.createTagBinding",
+    "compute.disks.use",
+    "compute.instances.create",
+    "compute.instances.createTagBinding",
+    "compute.instances.delete",
+    "compute.instances.get",
+    "compute.instances.setLabels",
+    "compute.instances.setMetadata",
+    "compute.instances.setServiceAccount",
+    "compute.networks.create",
+    "compute.networks.use",
+    "compute.networks.useExternalIp",
+    "compute.subnetworks.create",
+    "compute.subnetworks.use",
+    "compute.subnetworks.useExternalIp",
+    "logging.logEntries.create",
+    "run.jobs.run",
+    "run.routes.invoke",
+    "spanner.databases.beginOrRollbackReadWriteTransaction",
+    "spanner.databases.beginReadOnlyTransaction",
+    "spanner.databases.partitionQuery",
+    "spanner.databases.select",
+    "spanner.databases.useDataBoost",
+    "spanner.databases.write",
+    "spanner.sessions.create",
+    "storage.buckets.create",
+    "storage.buckets.get",
+    "storage.buckets.list",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.get",
+    "storage.objects.list"
+  ]
+}

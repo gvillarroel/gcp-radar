@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.627Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/stream.instanceAdmin --format=json"
+  },
+  "name": "roles/stream.instanceAdmin",
+  "role_slug": "stream-instanceadmin",
+  "title": "Stream Instance Admin",
+  "description": "Full access to all StreamInstance resources and Read access to all StreamContent resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "resourcemanager",
+    "stream"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "stream",
+      "permissions": [
+        "stream.streamContents.get",
+        "stream.streamContents.list",
+        "stream.streamInstances.create",
+        "stream.streamInstances.delete",
+        "stream.streamInstances.get",
+        "stream.streamInstances.list",
+        "stream.streamInstances.rollout",
+        "stream.streamInstances.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "stream.streamContents.get",
+    "stream.streamContents.list",
+    "stream.streamInstances.create",
+    "stream.streamInstances.delete",
+    "stream.streamInstances.get",
+    "stream.streamInstances.list",
+    "stream.streamInstances.rollout",
+    "stream.streamInstances.update"
+  ]
+}

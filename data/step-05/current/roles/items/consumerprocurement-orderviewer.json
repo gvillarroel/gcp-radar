@@ -1,0 +1,88 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.367Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/consumerprocurement.orderViewer --format=json"
+  },
+  "name": "roles/consumerprocurement.orderViewer",
+  "role_slug": "consumerprocurement-orderviewer",
+  "title": "Consumer Procurement Order Viewer",
+  "description": "Allows inspecting purchases",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 21,
+  "permission_groups": [
+    "billing",
+    "commerceoffercatalog",
+    "consumerprocurement",
+    "discoveryengine"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "billing",
+      "permissions": [
+        "billing.accounts.get",
+        "billing.accounts.getIamPolicy",
+        "billing.accounts.list",
+        "billing.credits.list"
+      ]
+    },
+    {
+      "group": "commerceoffercatalog",
+      "permissions": [
+        "commerceoffercatalog.agreements.get",
+        "commerceoffercatalog.agreements.list",
+        "commerceoffercatalog.documents.get",
+        "commerceoffercatalog.documents.list",
+        "commerceoffercatalog.offers.get"
+      ]
+    },
+    {
+      "group": "consumerprocurement",
+      "permissions": [
+        "consumerprocurement.accounts.get",
+        "consumerprocurement.accounts.list",
+        "consumerprocurement.consents.check",
+        "consumerprocurement.consents.list",
+        "consumerprocurement.licensePools.enumerateLicensedUsers",
+        "consumerprocurement.licensePools.get",
+        "consumerprocurement.orderAttributions.get",
+        "consumerprocurement.orderAttributions.list",
+        "consumerprocurement.orders.get",
+        "consumerprocurement.orders.list"
+      ]
+    },
+    {
+      "group": "discoveryengine",
+      "permissions": [
+        "discoveryengine.billingAccountLicenseConfigs.get",
+        "discoveryengine.billingAccountLicenseConfigs.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "billing.accounts.get",
+    "billing.accounts.getIamPolicy",
+    "billing.accounts.list",
+    "billing.credits.list",
+    "commerceoffercatalog.agreements.get",
+    "commerceoffercatalog.agreements.list",
+    "commerceoffercatalog.documents.get",
+    "commerceoffercatalog.documents.list",
+    "commerceoffercatalog.offers.get",
+    "consumerprocurement.accounts.get",
+    "consumerprocurement.accounts.list",
+    "consumerprocurement.consents.check",
+    "consumerprocurement.consents.list",
+    "consumerprocurement.licensePools.enumerateLicensedUsers",
+    "consumerprocurement.licensePools.get",
+    "consumerprocurement.orderAttributions.get",
+    "consumerprocurement.orderAttributions.list",
+    "consumerprocurement.orders.get",
+    "consumerprocurement.orders.list",
+    "discoveryengine.billingAccountLicenseConfigs.get",
+    "discoveryengine.billingAccountLicenseConfigs.list"
+  ]
+}

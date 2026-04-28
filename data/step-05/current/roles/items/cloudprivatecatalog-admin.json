@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.223Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudprivatecatalog.admin --format=json"
+  },
+  "name": "roles/cloudprivatecatalog.admin",
+  "role_slug": "cloudprivatecatalog-admin",
+  "title": "Cloudprivatecatalog Admin",
+  "description": "Admin role for cloudprivatecatalog",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "cloudprivatecatalog",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudprivatecatalog",
+      "permissions": [
+        "cloudprivatecatalog.targets.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudprivatecatalog.targets.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.145Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/networkconnectivity.consumerNetworkAdmin --format=json"
+  },
+  "name": "roles/networkconnectivity.consumerNetworkAdmin",
+  "role_slug": "networkconnectivity-consumernetworkadmin",
+  "title": "Service Automation Consumer Network Admin",
+  "description": "Service Automation Consumer Network Admin is responsible for setting up ServiceConnectionPolicies.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "networkconnectivity",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "networkconnectivity",
+      "permissions": [
+        "networkconnectivity.serviceConnectionPolicies.create",
+        "networkconnectivity.serviceConnectionPolicies.delete",
+        "networkconnectivity.serviceConnectionPolicies.get",
+        "networkconnectivity.serviceConnectionPolicies.list",
+        "networkconnectivity.serviceConnectionPolicies.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "networkconnectivity.serviceConnectionPolicies.create",
+    "networkconnectivity.serviceConnectionPolicies.delete",
+    "networkconnectivity.serviceConnectionPolicies.get",
+    "networkconnectivity.serviceConnectionPolicies.list",
+    "networkconnectivity.serviceConnectionPolicies.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

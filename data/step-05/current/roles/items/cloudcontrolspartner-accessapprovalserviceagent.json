@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.152Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudcontrolspartner.accessApprovalServiceAgent --format=json"
+  },
+  "name": "roles/cloudcontrolspartner.accessApprovalServiceAgent",
+  "role_slug": "cloudcontrolspartner-accessapprovalserviceagent",
+  "title": "Cloud Controls Partner Access Approval Service Agent",
+  "description": "Gives the Partner Console service account access to read Access Approval Requests for workloads associated with a partner.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "accessapproval"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "accessapproval",
+      "permissions": [
+        "accessapproval.requests.get",
+        "accessapproval.requests.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "accessapproval.requests.get",
+    "accessapproval.requests.list"
+  ]
+}

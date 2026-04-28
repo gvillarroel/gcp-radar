@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.847Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/gkebackup.delegatedBackupAdmin --format=json"
+  },
+  "name": "roles/gkebackup.delegatedBackupAdmin",
+  "role_slug": "gkebackup-delegatedbackupadmin",
+  "title": "Backup for GKE Delegated Backup Admin",
+  "description": "Allows administrators to manage Backup resources for specific BackupPlans",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "gkebackup"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "gkebackup",
+      "permissions": [
+        "gkebackup.backupChannels.get",
+        "gkebackup.backupChannels.list",
+        "gkebackup.backupPlanBindings.get",
+        "gkebackup.backupPlanBindings.list",
+        "gkebackup.backupPlans.get",
+        "gkebackup.backups.create",
+        "gkebackup.backups.delete",
+        "gkebackup.backups.get",
+        "gkebackup.backups.getBackupIndex",
+        "gkebackup.backups.list",
+        "gkebackup.backups.update",
+        "gkebackup.volumeBackups.get",
+        "gkebackup.volumeBackups.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "gkebackup.backupChannels.get",
+    "gkebackup.backupChannels.list",
+    "gkebackup.backupPlanBindings.get",
+    "gkebackup.backupPlanBindings.list",
+    "gkebackup.backupPlans.get",
+    "gkebackup.backups.create",
+    "gkebackup.backups.delete",
+    "gkebackup.backups.get",
+    "gkebackup.backups.getBackupIndex",
+    "gkebackup.backups.list",
+    "gkebackup.backups.update",
+    "gkebackup.volumeBackups.get",
+    "gkebackup.volumeBackups.list"
+  ]
+}

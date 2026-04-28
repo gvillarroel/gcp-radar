@@ -1,0 +1,62 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.425Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datacatalog.entryViewer --format=json"
+  },
+  "name": "roles/datacatalog.entryViewer",
+  "role_slug": "datacatalog-entryviewer",
+  "title": "DataCatalog Entry Viewer",
+  "description": "Read access to entries",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "datacatalog",
+    "dataplex",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datacatalog",
+      "permissions": [
+        "datacatalog.entries.get",
+        "datacatalog.entries.list",
+        "datacatalog.entryGroups.get",
+        "datacatalog.migrationConfig.get",
+        "datacatalog.relationships.list"
+      ]
+    },
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.entries.get",
+        "dataplex.entries.list",
+        "dataplex.entryGroups.get",
+        "dataplex.projects.search"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datacatalog.entries.get",
+    "datacatalog.entries.list",
+    "datacatalog.entryGroups.get",
+    "datacatalog.migrationConfig.get",
+    "datacatalog.relationships.list",
+    "dataplex.entries.get",
+    "dataplex.entries.list",
+    "dataplex.entryGroups.get",
+    "dataplex.projects.search",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

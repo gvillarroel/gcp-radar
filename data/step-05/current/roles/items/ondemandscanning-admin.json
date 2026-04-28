@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.200Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/ondemandscanning.admin --format=json"
+  },
+  "name": "roles/ondemandscanning.admin",
+  "role_slug": "ondemandscanning-admin",
+  "title": "On-Demand Scanning Admin",
+  "description": "All permissions for On-Demand Scanning",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "ondemandscanning"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "ondemandscanning",
+      "permissions": [
+        "ondemandscanning.operations.cancel",
+        "ondemandscanning.operations.delete",
+        "ondemandscanning.operations.get",
+        "ondemandscanning.operations.list",
+        "ondemandscanning.operations.wait",
+        "ondemandscanning.scans.analyzePackages",
+        "ondemandscanning.scans.listVulnerabilities",
+        "ondemandscanning.scans.scan"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "ondemandscanning.operations.cancel",
+    "ondemandscanning.operations.delete",
+    "ondemandscanning.operations.get",
+    "ondemandscanning.operations.list",
+    "ondemandscanning.operations.wait",
+    "ondemandscanning.scans.analyzePackages",
+    "ondemandscanning.scans.listVulnerabilities",
+    "ondemandscanning.scans.scan"
+  ]
+}

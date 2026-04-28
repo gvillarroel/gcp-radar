@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.973Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/backupdr.diskOperator --format=json"
+  },
+  "name": "roles/backupdr.diskOperator",
+  "role_slug": "backupdr-diskoperator",
+  "title": "Backup and DR Disk Operator",
+  "description": "Allows a Backup and DR service account to store and manage data (backups or metadata) in Disk.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "compute"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.disks.create",
+        "compute.disks.createSnapshot",
+        "compute.disks.createTagBinding",
+        "compute.disks.get",
+        "compute.disks.list",
+        "compute.disks.setLabels",
+        "compute.disks.useReadOnly",
+        "compute.regionOperations.get",
+        "compute.resourcePolicies.use",
+        "compute.snapshots.setLabels",
+        "compute.snapshots.useReadOnly",
+        "compute.storagePools.use",
+        "compute.zoneOperations.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "compute.disks.create",
+    "compute.disks.createSnapshot",
+    "compute.disks.createTagBinding",
+    "compute.disks.get",
+    "compute.disks.list",
+    "compute.disks.setLabels",
+    "compute.disks.useReadOnly",
+    "compute.regionOperations.get",
+    "compute.resourcePolicies.use",
+    "compute.snapshots.setLabels",
+    "compute.snapshots.useReadOnly",
+    "compute.storagePools.use",
+    "compute.zoneOperations.get"
+  ]
+}

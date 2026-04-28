@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.091Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/metastore.metadataViewer --format=json"
+  },
+  "name": "roles/metastore.metadataViewer",
+  "role_slug": "metastore-metadataviewer",
+  "title": "Dataproc Metastore Metadata Viewer",
+  "description": "Access to read the metadata of databases and tables under those databases",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "metastore"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "metastore",
+      "permissions": [
+        "metastore.databases.get",
+        "metastore.databases.getIamPolicy",
+        "metastore.databases.list",
+        "metastore.services.get",
+        "metastore.services.use",
+        "metastore.tables.get",
+        "metastore.tables.getIamPolicy",
+        "metastore.tables.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "metastore.databases.get",
+    "metastore.databases.getIamPolicy",
+    "metastore.databases.list",
+    "metastore.services.get",
+    "metastore.services.use",
+    "metastore.tables.get",
+    "metastore.tables.getIamPolicy",
+    "metastore.tables.list"
+  ]
+}

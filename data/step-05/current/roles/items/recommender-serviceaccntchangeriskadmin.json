@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.394Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/recommender.serviceaccntchangeriskAdmin --format=json"
+  },
+  "name": "roles/recommender.serviceaccntchangeriskAdmin",
+  "role_slug": "recommender-serviceaccntchangeriskadmin",
+  "title": "Service Account Change Risk Recommender Admin",
+  "description": "Admin of Service Account Change Risk Insights and Recommendations.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "recommender",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.iamServiceAccountChangeRiskInsights.get",
+        "recommender.iamServiceAccountChangeRiskInsights.list",
+        "recommender.iamServiceAccountChangeRiskInsights.update",
+        "recommender.iamServiceAccountChangeRiskRecommendations.get",
+        "recommender.iamServiceAccountChangeRiskRecommendations.list",
+        "recommender.iamServiceAccountChangeRiskRecommendations.update",
+        "recommender.locations.get",
+        "recommender.locations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "recommender.iamServiceAccountChangeRiskInsights.get",
+    "recommender.iamServiceAccountChangeRiskInsights.list",
+    "recommender.iamServiceAccountChangeRiskInsights.update",
+    "recommender.iamServiceAccountChangeRiskRecommendations.get",
+    "recommender.iamServiceAccountChangeRiskRecommendations.list",
+    "recommender.iamServiceAccountChangeRiskRecommendations.update",
+    "recommender.locations.get",
+    "recommender.locations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

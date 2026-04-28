@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.391Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/recommender.recentChangeConfigAdmin --format=json"
+  },
+  "name": "roles/recommender.recentChangeConfigAdmin",
+  "role_slug": "recommender-recentchangeconfigadmin",
+  "title": "RecentChange RecommenderConfig Admin",
+  "description": "Admin of RecentChange RecommenderConfigs.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "recommender",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.cloudRecentChangeRecommenderConfig.get",
+        "recommender.cloudRecentChangeRecommenderConfig.update",
+        "recommender.locations.get",
+        "recommender.locations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "recommender.cloudRecentChangeRecommenderConfig.get",
+    "recommender.cloudRecentChangeRecommenderConfig.update",
+    "recommender.locations.get",
+    "recommender.locations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

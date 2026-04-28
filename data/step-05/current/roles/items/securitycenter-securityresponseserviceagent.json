@@ -1,0 +1,74 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.522Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securitycenter.securityResponseServiceAgent --format=json"
+  },
+  "name": "roles/securitycenter.securityResponseServiceAgent",
+  "role_slug": "securitycenter-securityresponseserviceagent",
+  "title": "Google Cloud Security Response Service Agent",
+  "description": "Gives Playbook Runner permissions to execute all Google authored Playbooks. This role will keep evolving as we add more playbooks",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "compute",
+    "iam",
+    "pubsub",
+    "securitycenter",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.globalOperations.get",
+        "compute.instances.deleteAccessConfig",
+        "compute.instances.get",
+        "compute.instances.setMetadata",
+        "compute.regionOperations.get",
+        "compute.zoneOperations.get"
+      ]
+    },
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.serviceAccounts.actAs"
+      ]
+    },
+    {
+      "group": "pubsub",
+      "permissions": [
+        "pubsub.topics.publish"
+      ]
+    },
+    {
+      "group": "securitycenter",
+      "permissions": [
+        "securitycenter.findings.list"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.get",
+        "storage.buckets.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "compute.globalOperations.get",
+    "compute.instances.deleteAccessConfig",
+    "compute.instances.get",
+    "compute.instances.setMetadata",
+    "compute.regionOperations.get",
+    "compute.zoneOperations.get",
+    "iam.serviceAccounts.actAs",
+    "pubsub.topics.publish",
+    "securitycenter.findings.list",
+    "storage.buckets.get",
+    "storage.buckets.update"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.326Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/recommender.bigQueryCapacityCommitmentsProjectAdmin --format=json"
+  },
+  "name": "roles/recommender.bigQueryCapacityCommitmentsProjectAdmin",
+  "role_slug": "recommender-bigquerycapacitycommitmentsprojectadmin",
+  "title": "BigQuery Recommender Project Admin",
+  "description": "Project Admin of BigQuery Capacity Commitments insights and recommendations.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "recommender",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.bigqueryCapacityCommitmentsInsights.get",
+        "recommender.bigqueryCapacityCommitmentsInsights.list",
+        "recommender.bigqueryCapacityCommitmentsInsights.update",
+        "recommender.bigqueryCapacityCommitmentsRecommendations.get",
+        "recommender.bigqueryCapacityCommitmentsRecommendations.list",
+        "recommender.bigqueryCapacityCommitmentsRecommendations.update",
+        "recommender.locations.get",
+        "recommender.locations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "recommender.bigqueryCapacityCommitmentsInsights.get",
+    "recommender.bigqueryCapacityCommitmentsInsights.list",
+    "recommender.bigqueryCapacityCommitmentsInsights.update",
+    "recommender.bigqueryCapacityCommitmentsRecommendations.get",
+    "recommender.bigqueryCapacityCommitmentsRecommendations.list",
+    "recommender.bigqueryCapacityCommitmentsRecommendations.update",
+    "recommender.locations.get",
+    "recommender.locations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

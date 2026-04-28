@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.135Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/nestconsole.homeDeveloperAdmin --format=json"
+  },
+  "name": "roles/nestconsole.homeDeveloperAdmin",
+  "role_slug": "nestconsole-homedeveloperadmin",
+  "title": "Google Home Developer Console Admin",
+  "description": "Admin access to Google Home Developer Console resources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "nestconsole",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "nestconsole",
+      "permissions": [
+        "nestconsole.smarthomePreviews.update",
+        "nestconsole.smarthomeProjects.create",
+        "nestconsole.smarthomeProjects.delete",
+        "nestconsole.smarthomeProjects.get",
+        "nestconsole.smarthomeProjects.update",
+        "nestconsole.smarthomeVersions.create",
+        "nestconsole.smarthomeVersions.get",
+        "nestconsole.smarthomeVersions.submit"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "nestconsole.smarthomePreviews.update",
+    "nestconsole.smarthomeProjects.create",
+    "nestconsole.smarthomeProjects.delete",
+    "nestconsole.smarthomeProjects.get",
+    "nestconsole.smarthomeProjects.update",
+    "nestconsole.smarthomeVersions.create",
+    "nestconsole.smarthomeVersions.get",
+    "nestconsole.smarthomeVersions.submit",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

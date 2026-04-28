@@ -1,0 +1,74 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.885Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/healthcare.consentEditor --format=json"
+  },
+  "name": "roles/healthcare.consentEditor",
+  "role_slug": "healthcare-consenteditor",
+  "title": "Healthcare Consent Editor",
+  "description": "Edit Consent objects.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 20,
+  "permission_groups": [
+    "healthcare",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "healthcare",
+      "permissions": [
+        "healthcare.consents.activate",
+        "healthcare.consents.create",
+        "healthcare.consents.delete",
+        "healthcare.consents.get",
+        "healthcare.consents.list",
+        "healthcare.consents.reject",
+        "healthcare.consents.revoke",
+        "healthcare.consents.update",
+        "healthcare.consentStores.checkDataAccess",
+        "healthcare.consentStores.evaluateUserConsents",
+        "healthcare.consentStores.get",
+        "healthcare.consentStores.list",
+        "healthcare.consentStores.queryAccessibleData",
+        "healthcare.datasets.get",
+        "healthcare.datasets.list",
+        "healthcare.locations.get",
+        "healthcare.locations.list",
+        "healthcare.operations.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "healthcare.consents.activate",
+    "healthcare.consents.create",
+    "healthcare.consents.delete",
+    "healthcare.consents.get",
+    "healthcare.consents.list",
+    "healthcare.consents.reject",
+    "healthcare.consents.revoke",
+    "healthcare.consents.update",
+    "healthcare.consentStores.checkDataAccess",
+    "healthcare.consentStores.evaluateUserConsents",
+    "healthcare.consentStores.get",
+    "healthcare.consentStores.list",
+    "healthcare.consentStores.queryAccessibleData",
+    "healthcare.datasets.get",
+    "healthcare.datasets.list",
+    "healthcare.locations.get",
+    "healthcare.locations.list",
+    "healthcare.operations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.595Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/stackdriver.resourceMetadata.writer --format=json"
+  },
+  "name": "roles/stackdriver.resourceMetadata.writer",
+  "role_slug": "stackdriver-resourcemetadata-writer",
+  "title": "Stackdriver Resource Metadata Writer",
+  "description": "Write-only access to resource metadata.  This provides exactly the permissions needed by the Stackdriver metadata agent and other systems that send metadata.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "stackdriver"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "stackdriver",
+      "permissions": [
+        "stackdriver.resourceMetadata.write"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "stackdriver.resourceMetadata.write"
+  ]
+}

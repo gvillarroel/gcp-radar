@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.356Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/recommender.errorReportingViewer --format=json"
+  },
+  "name": "roles/recommender.errorReportingViewer",
+  "role_slug": "recommender-errorreportingviewer",
+  "title": "Error Reporting Recommender Viewer",
+  "description": "Viewer of Error Reporting Insights and Recommendations.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "recommender",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.errorReportingInsights.get",
+        "recommender.errorReportingInsights.list",
+        "recommender.errorReportingRecommendations.get",
+        "recommender.errorReportingRecommendations.list",
+        "recommender.locations.get",
+        "recommender.locations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "recommender.errorReportingInsights.get",
+    "recommender.errorReportingInsights.list",
+    "recommender.errorReportingRecommendations.get",
+    "recommender.errorReportingRecommendations.list",
+    "recommender.locations.get",
+    "recommender.locations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.148Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudbuild.workerPoolUser --format=json"
+  },
+  "name": "roles/cloudbuild.workerPoolUser",
+  "role_slug": "cloudbuild-workerpooluser",
+  "title": "Cloud Build WorkerPool User",
+  "description": "Can run builds in the WorkerPool",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "cloudbuild"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudbuild",
+      "permissions": [
+        "cloudbuild.workerpools.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudbuild.workerpools.use"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.510Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securitycenter.integrationExecutorServiceAgent --format=json"
+  },
+  "name": "roles/securitycenter.integrationExecutorServiceAgent",
+  "role_slug": "securitycenter-integrationexecutorserviceagent",
+  "title": "Security Center Integration Executor Service Agent",
+  "description": "Gives Security Center access to execute Integrations.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "integrations"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "integrations",
+      "permissions": [
+        "integrations.securityExecutions.cancel",
+        "integrations.securityExecutions.list",
+        "integrations.securityIntegrations.invoke"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "integrations.securityExecutions.cancel",
+    "integrations.securityExecutions.list",
+    "integrations.securityIntegrations.invoke"
+  ]
+}

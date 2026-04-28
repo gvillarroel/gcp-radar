@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.301Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/composer.sharedVpcAgent --format=json"
+  },
+  "name": "roles/composer.sharedVpcAgent",
+  "role_slug": "composer-sharedvpcagent",
+  "title": "Composer Shared VPC Agent",
+  "description": "Role that should be assigned to Composer Agent service account in Shared VPC host project",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 25,
+  "permission_groups": [
+    "compute",
+    "dns"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.networkAttachments.create",
+        "compute.networkAttachments.delete",
+        "compute.networkAttachments.get",
+        "compute.networkAttachments.update",
+        "compute.networks.access",
+        "compute.networks.addPeering",
+        "compute.networks.get",
+        "compute.networks.list",
+        "compute.networks.listPeeringRoutes",
+        "compute.networks.removePeering",
+        "compute.networks.updatePeering",
+        "compute.networks.use",
+        "compute.networks.useExternalIp",
+        "compute.projects.get",
+        "compute.regions.get",
+        "compute.regions.list",
+        "compute.subnetworks.get",
+        "compute.subnetworks.list",
+        "compute.subnetworks.use",
+        "compute.subnetworks.useExternalIp",
+        "compute.zones.get",
+        "compute.zones.list"
+      ]
+    },
+    {
+      "group": "dns",
+      "permissions": [
+        "dns.managedZones.get",
+        "dns.managedZones.list",
+        "dns.networks.targetWithPeeringZone"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "compute.networkAttachments.create",
+    "compute.networkAttachments.delete",
+    "compute.networkAttachments.get",
+    "compute.networkAttachments.update",
+    "compute.networks.access",
+    "compute.networks.addPeering",
+    "compute.networks.get",
+    "compute.networks.list",
+    "compute.networks.listPeeringRoutes",
+    "compute.networks.removePeering",
+    "compute.networks.updatePeering",
+    "compute.networks.use",
+    "compute.networks.useExternalIp",
+    "compute.projects.get",
+    "compute.regions.get",
+    "compute.regions.list",
+    "compute.subnetworks.get",
+    "compute.subnetworks.list",
+    "compute.subnetworks.use",
+    "compute.subnetworks.useExternalIp",
+    "compute.zones.get",
+    "compute.zones.list",
+    "dns.managedZones.get",
+    "dns.managedZones.list",
+    "dns.networks.targetWithPeeringZone"
+  ]
+}

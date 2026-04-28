@@ -1,0 +1,146 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.439Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataflow.admin --format=json"
+  },
+  "name": "roles/dataflow.admin",
+  "role_slug": "dataflow-admin",
+  "title": "Dataflow Admin",
+  "description": "Minimal role for creating and managing dataflow jobs.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 38,
+  "permission_groups": [
+    "cloudbuild",
+    "cloudkms",
+    "compute",
+    "dataflow",
+    "recommender",
+    "remotebuildexecution",
+    "resourcemanager",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudbuild",
+      "permissions": [
+        "cloudbuild.builds.create",
+        "cloudbuild.builds.get",
+        "cloudbuild.builds.list",
+        "cloudbuild.builds.update",
+        "cloudbuild.locations.get",
+        "cloudbuild.locations.list",
+        "cloudbuild.operations.get",
+        "cloudbuild.operations.list"
+      ]
+    },
+    {
+      "group": "cloudkms",
+      "permissions": [
+        "cloudkms.keyHandles.create",
+        "cloudkms.keyHandles.get",
+        "cloudkms.keyHandles.list",
+        "cloudkms.operations.get",
+        "cloudkms.projects.showEffectiveAutokeyConfig"
+      ]
+    },
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.machineTypes.get",
+        "compute.projects.get",
+        "compute.regions.list",
+        "compute.zones.list"
+      ]
+    },
+    {
+      "group": "dataflow",
+      "permissions": [
+        "dataflow.jobs.cancel",
+        "dataflow.jobs.create",
+        "dataflow.jobs.get",
+        "dataflow.jobs.list",
+        "dataflow.jobs.snapshot",
+        "dataflow.jobs.updateContents",
+        "dataflow.messages.list",
+        "dataflow.metrics.get",
+        "dataflow.snapshots.delete",
+        "dataflow.snapshots.get",
+        "dataflow.snapshots.list"
+      ]
+    },
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.dataflowDiagnosticsInsights.get",
+        "recommender.dataflowDiagnosticsInsights.list",
+        "recommender.dataflowDiagnosticsInsights.update"
+      ]
+    },
+    {
+      "group": "remotebuildexecution",
+      "permissions": [
+        "remotebuildexecution.blobs.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.get",
+        "storage.objects.create",
+        "storage.objects.get",
+        "storage.objects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudbuild.builds.create",
+    "cloudbuild.builds.get",
+    "cloudbuild.builds.list",
+    "cloudbuild.builds.update",
+    "cloudbuild.locations.get",
+    "cloudbuild.locations.list",
+    "cloudbuild.operations.get",
+    "cloudbuild.operations.list",
+    "cloudkms.keyHandles.create",
+    "cloudkms.keyHandles.get",
+    "cloudkms.keyHandles.list",
+    "cloudkms.operations.get",
+    "cloudkms.projects.showEffectiveAutokeyConfig",
+    "compute.machineTypes.get",
+    "compute.projects.get",
+    "compute.regions.list",
+    "compute.zones.list",
+    "dataflow.jobs.cancel",
+    "dataflow.jobs.create",
+    "dataflow.jobs.get",
+    "dataflow.jobs.list",
+    "dataflow.jobs.snapshot",
+    "dataflow.jobs.updateContents",
+    "dataflow.messages.list",
+    "dataflow.metrics.get",
+    "dataflow.snapshots.delete",
+    "dataflow.snapshots.get",
+    "dataflow.snapshots.list",
+    "recommender.dataflowDiagnosticsInsights.get",
+    "recommender.dataflowDiagnosticsInsights.list",
+    "recommender.dataflowDiagnosticsInsights.update",
+    "remotebuildexecution.blobs.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "storage.buckets.get",
+    "storage.objects.create",
+    "storage.objects.get",
+    "storage.objects.list"
+  ]
+}

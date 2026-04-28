@@ -1,0 +1,270 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.035Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/bigquery.studioUser --format=json"
+  },
+  "name": "roles/bigquery.studioUser",
+  "role_slug": "bigquery-studiouser",
+  "title": "BigQuery Studio User",
+  "description": "Combination role of BigQuery Job User, BigQuery Read Session User, Dataform Code Creator, Notebook Runtime User and Dataproc Serverless Editor.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 91,
+  "permission_groups": [
+    "aiplatform",
+    "bigquery",
+    "cloudaicompanion",
+    "cloudkms",
+    "compute",
+    "dataform",
+    "dataplex",
+    "dataproc",
+    "dataprocrm",
+    "geminidataanalytics",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "aiplatform",
+      "permissions": [
+        "aiplatform.locations.get",
+        "aiplatform.notebookRuntimes.assign",
+        "aiplatform.notebookRuntimes.get",
+        "aiplatform.notebookRuntimes.list",
+        "aiplatform.notebookRuntimeTemplates.apply",
+        "aiplatform.notebookRuntimeTemplates.get",
+        "aiplatform.notebookRuntimeTemplates.getIamPolicy",
+        "aiplatform.notebookRuntimeTemplates.list",
+        "aiplatform.operations.list"
+      ]
+    },
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.config.get",
+        "bigquery.jobs.create",
+        "bigquery.readsessions.create",
+        "bigquery.readsessions.getData",
+        "bigquery.readsessions.update"
+      ]
+    },
+    {
+      "group": "cloudaicompanion",
+      "permissions": [
+        "cloudaicompanion.companions.generateChat",
+        "cloudaicompanion.companions.generateCode",
+        "cloudaicompanion.entitlements.get",
+        "cloudaicompanion.instances.completeCode",
+        "cloudaicompanion.instances.completeTask",
+        "cloudaicompanion.instances.exportMetrics",
+        "cloudaicompanion.instances.generateCode",
+        "cloudaicompanion.instances.generateText",
+        "cloudaicompanion.instances.queryEffectiveSetting",
+        "cloudaicompanion.instances.queryEffectiveSettingBindings",
+        "cloudaicompanion.licenses.selfAssign",
+        "cloudaicompanion.operations.get",
+        "cloudaicompanion.topics.create"
+      ]
+    },
+    {
+      "group": "cloudkms",
+      "permissions": [
+        "cloudkms.keyHandles.create",
+        "cloudkms.keyHandles.get",
+        "cloudkms.keyHandles.list",
+        "cloudkms.operations.get",
+        "cloudkms.projects.showEffectiveAutokeyConfig"
+      ]
+    },
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.projects.get",
+        "compute.regions.get",
+        "compute.regions.list",
+        "compute.zones.get",
+        "compute.zones.list"
+      ]
+    },
+    {
+      "group": "dataform",
+      "permissions": [
+        "dataform.comments.get",
+        "dataform.comments.list",
+        "dataform.commentThreads.get",
+        "dataform.commentThreads.list",
+        "dataform.folders.create",
+        "dataform.locations.get",
+        "dataform.locations.list",
+        "dataform.repositories.create",
+        "dataform.repositories.list"
+      ]
+    },
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.projects.search"
+      ]
+    },
+    {
+      "group": "dataproc",
+      "permissions": [
+        "dataproc.batches.analyze",
+        "dataproc.batches.cancel",
+        "dataproc.batches.create",
+        "dataproc.batches.delete",
+        "dataproc.batches.get",
+        "dataproc.batches.list",
+        "dataproc.batches.sparkApplicationRead",
+        "dataproc.batches.sparkApplicationWrite",
+        "dataproc.operations.cancel",
+        "dataproc.operations.delete",
+        "dataproc.operations.get",
+        "dataproc.operations.list",
+        "dataproc.sessions.create",
+        "dataproc.sessions.delete",
+        "dataproc.sessions.get",
+        "dataproc.sessions.list",
+        "dataproc.sessions.sparkApplicationRead",
+        "dataproc.sessions.sparkApplicationWrite",
+        "dataproc.sessions.terminate",
+        "dataproc.sessionTemplates.create",
+        "dataproc.sessionTemplates.delete",
+        "dataproc.sessionTemplates.get",
+        "dataproc.sessionTemplates.list",
+        "dataproc.sessionTemplates.update"
+      ]
+    },
+    {
+      "group": "dataprocrm",
+      "permissions": [
+        "dataprocrm.nodePools.create",
+        "dataprocrm.nodePools.delete",
+        "dataprocrm.nodePools.deleteNodes",
+        "dataprocrm.nodePools.get",
+        "dataprocrm.nodePools.list",
+        "dataprocrm.nodePools.resize",
+        "dataprocrm.nodes.get",
+        "dataprocrm.nodes.heartbeat",
+        "dataprocrm.nodes.list",
+        "dataprocrm.nodes.update",
+        "dataprocrm.operations.get",
+        "dataprocrm.operations.list",
+        "dataprocrm.workloads.cancel",
+        "dataprocrm.workloads.create",
+        "dataprocrm.workloads.delete",
+        "dataprocrm.workloads.get",
+        "dataprocrm.workloads.list"
+      ]
+    },
+    {
+      "group": "geminidataanalytics",
+      "permissions": [
+        "geminidataanalytics.locations.useDataEngineeringAgent"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "aiplatform.locations.get",
+    "aiplatform.notebookRuntimes.assign",
+    "aiplatform.notebookRuntimes.get",
+    "aiplatform.notebookRuntimes.list",
+    "aiplatform.notebookRuntimeTemplates.apply",
+    "aiplatform.notebookRuntimeTemplates.get",
+    "aiplatform.notebookRuntimeTemplates.getIamPolicy",
+    "aiplatform.notebookRuntimeTemplates.list",
+    "aiplatform.operations.list",
+    "bigquery.config.get",
+    "bigquery.jobs.create",
+    "bigquery.readsessions.create",
+    "bigquery.readsessions.getData",
+    "bigquery.readsessions.update",
+    "cloudaicompanion.companions.generateChat",
+    "cloudaicompanion.companions.generateCode",
+    "cloudaicompanion.entitlements.get",
+    "cloudaicompanion.instances.completeCode",
+    "cloudaicompanion.instances.completeTask",
+    "cloudaicompanion.instances.exportMetrics",
+    "cloudaicompanion.instances.generateCode",
+    "cloudaicompanion.instances.generateText",
+    "cloudaicompanion.instances.queryEffectiveSetting",
+    "cloudaicompanion.instances.queryEffectiveSettingBindings",
+    "cloudaicompanion.licenses.selfAssign",
+    "cloudaicompanion.operations.get",
+    "cloudaicompanion.topics.create",
+    "cloudkms.keyHandles.create",
+    "cloudkms.keyHandles.get",
+    "cloudkms.keyHandles.list",
+    "cloudkms.operations.get",
+    "cloudkms.projects.showEffectiveAutokeyConfig",
+    "compute.projects.get",
+    "compute.regions.get",
+    "compute.regions.list",
+    "compute.zones.get",
+    "compute.zones.list",
+    "dataform.comments.get",
+    "dataform.comments.list",
+    "dataform.commentThreads.get",
+    "dataform.commentThreads.list",
+    "dataform.folders.create",
+    "dataform.locations.get",
+    "dataform.locations.list",
+    "dataform.repositories.create",
+    "dataform.repositories.list",
+    "dataplex.projects.search",
+    "dataproc.batches.analyze",
+    "dataproc.batches.cancel",
+    "dataproc.batches.create",
+    "dataproc.batches.delete",
+    "dataproc.batches.get",
+    "dataproc.batches.list",
+    "dataproc.batches.sparkApplicationRead",
+    "dataproc.batches.sparkApplicationWrite",
+    "dataproc.operations.cancel",
+    "dataproc.operations.delete",
+    "dataproc.operations.get",
+    "dataproc.operations.list",
+    "dataproc.sessions.create",
+    "dataproc.sessions.delete",
+    "dataproc.sessions.get",
+    "dataproc.sessions.list",
+    "dataproc.sessions.sparkApplicationRead",
+    "dataproc.sessions.sparkApplicationWrite",
+    "dataproc.sessions.terminate",
+    "dataproc.sessionTemplates.create",
+    "dataproc.sessionTemplates.delete",
+    "dataproc.sessionTemplates.get",
+    "dataproc.sessionTemplates.list",
+    "dataproc.sessionTemplates.update",
+    "dataprocrm.nodePools.create",
+    "dataprocrm.nodePools.delete",
+    "dataprocrm.nodePools.deleteNodes",
+    "dataprocrm.nodePools.get",
+    "dataprocrm.nodePools.list",
+    "dataprocrm.nodePools.resize",
+    "dataprocrm.nodes.get",
+    "dataprocrm.nodes.heartbeat",
+    "dataprocrm.nodes.list",
+    "dataprocrm.nodes.update",
+    "dataprocrm.operations.get",
+    "dataprocrm.operations.list",
+    "dataprocrm.workloads.cancel",
+    "dataprocrm.workloads.create",
+    "dataprocrm.workloads.delete",
+    "dataprocrm.workloads.get",
+    "dataprocrm.workloads.list",
+    "geminidataanalytics.locations.useDataEngineeringAgent",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

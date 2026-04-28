@@ -1,0 +1,52 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.312Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/pubsublite.serviceAgent --format=json"
+  },
+  "name": "roles/pubsublite.serviceAgent",
+  "role_slug": "pubsublite-serviceagent",
+  "title": "Pub/Sub Lite Service Agent",
+  "description": "Grants Pub/Sub Lite Service Agent access to project resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "pubsub",
+    "pubsublite"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "pubsub",
+      "permissions": [
+        "pubsub.topics.publish"
+      ]
+    },
+    {
+      "group": "pubsublite",
+      "permissions": [
+        "pubsublite.subscriptions.get",
+        "pubsublite.subscriptions.getCursor",
+        "pubsublite.subscriptions.setCursor",
+        "pubsublite.subscriptions.subscribe",
+        "pubsublite.topics.computeHeadCursor",
+        "pubsublite.topics.getPartitions",
+        "pubsublite.topics.publish",
+        "pubsublite.topics.subscribe"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "pubsub.topics.publish",
+    "pubsublite.subscriptions.get",
+    "pubsublite.subscriptions.getCursor",
+    "pubsublite.subscriptions.setCursor",
+    "pubsublite.subscriptions.subscribe",
+    "pubsublite.topics.computeHeadCursor",
+    "pubsublite.topics.getPartitions",
+    "pubsublite.topics.publish",
+    "pubsublite.topics.subscribe"
+  ]
+}

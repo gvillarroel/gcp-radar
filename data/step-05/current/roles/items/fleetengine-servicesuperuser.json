@@ -1,0 +1,66 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.810Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/fleetengine.serviceSuperUser --format=json"
+  },
+  "name": "roles/fleetengine.serviceSuperUser",
+  "role_slug": "fleetengine-servicesuperuser",
+  "title": "Fleet Engine Service Super User",
+  "description": "Full access to all Fleet Engine resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 16,
+  "permission_groups": [
+    "fleetengine",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "fleetengine",
+      "permissions": [
+        "fleetengine.trips.create",
+        "fleetengine.trips.delete",
+        "fleetengine.trips.get",
+        "fleetengine.trips.search",
+        "fleetengine.trips.update",
+        "fleetengine.trips.updateState",
+        "fleetengine.vehicles.create",
+        "fleetengine.vehicles.delete",
+        "fleetengine.vehicles.get",
+        "fleetengine.vehicles.list",
+        "fleetengine.vehicles.search",
+        "fleetengine.vehicles.searchFuzzed",
+        "fleetengine.vehicles.update",
+        "fleetengine.vehicles.updateLocation"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "fleetengine.trips.create",
+    "fleetengine.trips.delete",
+    "fleetengine.trips.get",
+    "fleetengine.trips.search",
+    "fleetengine.trips.update",
+    "fleetengine.trips.updateState",
+    "fleetengine.vehicles.create",
+    "fleetengine.vehicles.delete",
+    "fleetengine.vehicles.get",
+    "fleetengine.vehicles.list",
+    "fleetengine.vehicles.search",
+    "fleetengine.vehicles.searchFuzzed",
+    "fleetengine.vehicles.update",
+    "fleetengine.vehicles.updateLocation",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

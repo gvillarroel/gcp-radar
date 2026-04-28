@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.204Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudkms.hsmSingleTenantExecutor --format=json"
+  },
+  "name": "roles/cloudkms.hsmSingleTenantExecutor",
+  "role_slug": "cloudkms-hsmsingletenantexecutor",
+  "title": "Cloud KMS single-tenant HSM Executor",
+  "description": "Grants ability to execute SingleTenantHsmInstanceProposal resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "cloudkms"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudkms",
+      "permissions": [
+        "cloudkms.operations.get",
+        "cloudkms.singleTenantHsmInstanceProposals.execute",
+        "cloudkms.singleTenantHsmInstanceProposals.get",
+        "cloudkms.singleTenantHsmInstanceProposals.list",
+        "cloudkms.singleTenantHsmInstances.get",
+        "cloudkms.singleTenantHsmInstances.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudkms.operations.get",
+    "cloudkms.singleTenantHsmInstanceProposals.execute",
+    "cloudkms.singleTenantHsmInstanceProposals.get",
+    "cloudkms.singleTenantHsmInstanceProposals.list",
+    "cloudkms.singleTenantHsmInstances.get",
+    "cloudkms.singleTenantHsmInstances.list"
+  ]
+}

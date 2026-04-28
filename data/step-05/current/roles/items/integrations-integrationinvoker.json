@@ -1,0 +1,74 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.986Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/integrations.integrationInvoker --format=json"
+  },
+  "name": "roles/integrations.integrationInvoker",
+  "role_slug": "integrations-integrationinvoker",
+  "title": "Application Integration Invoker",
+  "description": "A role that can invoke integrations.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 20,
+  "permission_groups": [
+    "integrations",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "integrations",
+      "permissions": [
+        "integrations.apigeeExecutions.list",
+        "integrations.apigeeIntegrations.invoke",
+        "integrations.apigeeIntegrations.list",
+        "integrations.apigeeIntegrationVers.get",
+        "integrations.apigeeIntegrationVers.list",
+        "integrations.executions.cancel",
+        "integrations.executions.get",
+        "integrations.executions.list",
+        "integrations.executions.replay",
+        "integrations.integrations.get",
+        "integrations.integrations.invoke",
+        "integrations.integrations.list",
+        "integrations.integrationVersions.get",
+        "integrations.integrationVersions.invoke",
+        "integrations.integrationVersions.list",
+        "integrations.testCases.get",
+        "integrations.testCases.invoke",
+        "integrations.testCases.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "integrations.apigeeExecutions.list",
+    "integrations.apigeeIntegrations.invoke",
+    "integrations.apigeeIntegrations.list",
+    "integrations.apigeeIntegrationVers.get",
+    "integrations.apigeeIntegrationVers.list",
+    "integrations.executions.cancel",
+    "integrations.executions.get",
+    "integrations.executions.list",
+    "integrations.executions.replay",
+    "integrations.integrations.get",
+    "integrations.integrations.invoke",
+    "integrations.integrations.list",
+    "integrations.integrationVersions.get",
+    "integrations.integrationVersions.invoke",
+    "integrations.integrationVersions.list",
+    "integrations.testCases.get",
+    "integrations.testCases.invoke",
+    "integrations.testCases.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

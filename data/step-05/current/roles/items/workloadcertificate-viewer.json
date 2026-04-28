@@ -1,0 +1,52 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.733Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/workloadcertificate.viewer --format=json"
+  },
+  "name": "roles/workloadcertificate.viewer",
+  "role_slug": "workloadcertificate-viewer",
+  "title": "Workload Certificate Viewer",
+  "description": "Read-only access to Workload Certificate all resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "resourcemanager",
+    "workloadcertificate"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "workloadcertificate",
+      "permissions": [
+        "workloadcertificate.locations.get",
+        "workloadcertificate.locations.list",
+        "workloadcertificate.operations.get",
+        "workloadcertificate.operations.list",
+        "workloadcertificate.workloadCertificateFeature.get",
+        "workloadcertificate.workloadRegistrations.get",
+        "workloadcertificate.workloadRegistrations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "workloadcertificate.locations.get",
+    "workloadcertificate.locations.list",
+    "workloadcertificate.operations.get",
+    "workloadcertificate.operations.list",
+    "workloadcertificate.workloadCertificateFeature.get",
+    "workloadcertificate.workloadRegistrations.get",
+    "workloadcertificate.workloadRegistrations.list"
+  ]
+}

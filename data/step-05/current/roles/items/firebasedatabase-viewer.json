@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.769Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebasedatabase.viewer --format=json"
+  },
+  "name": "roles/firebasedatabase.viewer",
+  "role_slug": "firebasedatabase-viewer",
+  "title": "Firebase Realtime Database Viewer",
+  "description": "Read-only access to Firebase Realtime Database resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "firebase",
+    "firebasedatabase",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "firebase",
+      "permissions": [
+        "firebase.clients.get",
+        "firebase.clients.list",
+        "firebase.projects.get"
+      ]
+    },
+    {
+      "group": "firebasedatabase",
+      "permissions": [
+        "firebasedatabase.instances.get",
+        "firebasedatabase.instances.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "firebase.clients.get",
+    "firebase.clients.list",
+    "firebase.projects.get",
+    "firebasedatabase.instances.get",
+    "firebasedatabase.instances.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

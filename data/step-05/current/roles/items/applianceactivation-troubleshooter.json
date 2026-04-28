@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.921Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/applianceactivation.troubleshooter --format=json"
+  },
+  "name": "roles/applianceactivation.troubleshooter",
+  "role_slug": "applianceactivation-troubleshooter",
+  "title": "Appliance troubleshooter",
+  "description": "Grants access to send new commands to run on appliances and view the outputs",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "applianceactivation",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "applianceactivation",
+      "permissions": [
+        "applianceactivation.rttCommands.create",
+        "applianceactivation.rttCommands.get",
+        "applianceactivation.rttCommands.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "applianceactivation.rttCommands.create",
+    "applianceactivation.rttCommands.get",
+    "applianceactivation.rttCommands.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

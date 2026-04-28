@@ -1,0 +1,36 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.693Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/visionai.indexEndpointWriter --format=json"
+  },
+  "name": "roles/visionai.indexEndpointWriter",
+  "role_slug": "visionai-indexendpointwriter",
+  "title": "VisionAI Warehouse IndexEndpoint Writer",
+  "description": "Grants access to perform update, delete, deploy and undeploy operations on the index endpoint.\n",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "visionai"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "visionai",
+      "permissions": [
+        "visionai.indexEndpoints.delete",
+        "visionai.indexEndpoints.deploy",
+        "visionai.indexEndpoints.undeploy",
+        "visionai.indexEndpoints.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "visionai.indexEndpoints.delete",
+    "visionai.indexEndpoints.deploy",
+    "visionai.indexEndpoints.undeploy",
+    "visionai.indexEndpoints.update"
+  ]
+}

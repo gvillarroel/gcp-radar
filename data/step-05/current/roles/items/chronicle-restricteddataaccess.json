@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.105Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/chronicle.restrictedDataAccess --format=json"
+  },
+  "name": "roles/chronicle.restrictedDataAccess",
+  "role_slug": "chronicle-restricteddataaccess",
+  "title": "Chronicle API Restricted Data Access",
+  "description": "Grants access to data controlled by Data Access Scopes. Intended to be refined by IAM Conditions.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "chronicle"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "chronicle",
+      "permissions": [
+        "chronicle.dataAccessScopes.permit"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "chronicle.dataAccessScopes.permit"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.278Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/commerceagreementpublishing.viewer --format=json"
+  },
+  "name": "roles/commerceagreementpublishing.viewer",
+  "role_slug": "commerceagreementpublishing-viewer",
+  "title": "Commerce Agreement Publishing Viewer",
+  "description": "Viewer of Commerce Agreement Publishing service",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "commerceagreementpublishing",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "commerceagreementpublishing",
+      "permissions": [
+        "commerceagreementpublishing.agreements.get",
+        "commerceagreementpublishing.agreements.list",
+        "commerceagreementpublishing.documents.get",
+        "commerceagreementpublishing.documents.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "commerceagreementpublishing.agreements.get",
+    "commerceagreementpublishing.agreements.list",
+    "commerceagreementpublishing.documents.get",
+    "commerceagreementpublishing.documents.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

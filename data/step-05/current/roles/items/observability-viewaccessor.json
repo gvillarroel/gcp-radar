@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.198Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/observability.viewAccessor --format=json"
+  },
+  "name": "roles/observability.viewAccessor",
+  "role_slug": "observability-viewaccessor",
+  "title": "Observability View Accessor",
+  "description": "Read only access to data defined by an Observability View.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "observability"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "observability",
+      "permissions": [
+        "observability.views.access"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "observability.views.access"
+  ]
+}

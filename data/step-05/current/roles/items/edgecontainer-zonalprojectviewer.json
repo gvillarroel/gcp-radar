@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.681Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/edgecontainer.zonalProjectViewer --format=json"
+  },
+  "name": "roles/edgecontainer.zonalProjectViewer",
+  "role_slug": "edgecontainer-zonalprojectviewer",
+  "title": "Edge Container Zonal Project Viewer",
+  "description": "Read-only access to zonal projects.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "edgecontainer"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "edgecontainer",
+      "permissions": [
+        "edgecontainer.locations.get",
+        "edgecontainer.locations.list",
+        "edgecontainer.operations.get",
+        "edgecontainer.operations.list",
+        "edgecontainer.zonalProjects.get",
+        "edgecontainer.zonalProjects.list",
+        "edgecontainer.zones.get",
+        "edgecontainer.zones.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "edgecontainer.locations.get",
+    "edgecontainer.locations.list",
+    "edgecontainer.operations.get",
+    "edgecontainer.operations.list",
+    "edgecontainer.zonalProjects.get",
+    "edgecontainer.zonalProjects.list",
+    "edgecontainer.zones.get",
+    "edgecontainer.zones.list"
+  ]
+}

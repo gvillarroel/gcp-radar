@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.246Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudsql.instanceUser --format=json"
+  },
+  "name": "roles/cloudsql.instanceUser",
+  "role_slug": "cloudsql-instanceuser",
+  "title": "Cloud SQL Instance User",
+  "description": "Role allowing access to a Cloud SQL instance",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "cloudsql"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudsql",
+      "permissions": [
+        "cloudsql.instances.executeSql",
+        "cloudsql.instances.get",
+        "cloudsql.instances.login"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudsql.instances.executeSql",
+    "cloudsql.instances.get",
+    "cloudsql.instances.login"
+  ]
+}

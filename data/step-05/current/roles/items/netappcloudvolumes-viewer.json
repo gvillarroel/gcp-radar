@@ -1,0 +1,60 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.143Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/netappcloudvolumes.viewer --format=json"
+  },
+  "name": "roles/netappcloudvolumes.viewer",
+  "role_slug": "netappcloudvolumes-viewer",
+  "title": "NetApp Cloud Volumes Viewer",
+  "description": "This role is managed by NetApp, not Google.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "cloudvolumesgcp-api",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudvolumesgcp-api",
+      "permissions": [
+        "cloudvolumesgcp-api.netapp.com/activeDirectories.get",
+        "cloudvolumesgcp-api.netapp.com/activeDirectories.list",
+        "cloudvolumesgcp-api.netapp.com/ipRanges.list",
+        "cloudvolumesgcp-api.netapp.com/jobs.get",
+        "cloudvolumesgcp-api.netapp.com/jobs.list",
+        "cloudvolumesgcp-api.netapp.com/regions.list",
+        "cloudvolumesgcp-api.netapp.com/serviceLevels.list",
+        "cloudvolumesgcp-api.netapp.com/snapshots.get",
+        "cloudvolumesgcp-api.netapp.com/snapshots.list",
+        "cloudvolumesgcp-api.netapp.com/volumes.get",
+        "cloudvolumesgcp-api.netapp.com/volumes.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudvolumesgcp-api.netapp.com/activeDirectories.get",
+    "cloudvolumesgcp-api.netapp.com/activeDirectories.list",
+    "cloudvolumesgcp-api.netapp.com/ipRanges.list",
+    "cloudvolumesgcp-api.netapp.com/jobs.get",
+    "cloudvolumesgcp-api.netapp.com/jobs.list",
+    "cloudvolumesgcp-api.netapp.com/regions.list",
+    "cloudvolumesgcp-api.netapp.com/serviceLevels.list",
+    "cloudvolumesgcp-api.netapp.com/snapshots.get",
+    "cloudvolumesgcp-api.netapp.com/snapshots.list",
+    "cloudvolumesgcp-api.netapp.com/volumes.get",
+    "cloudvolumesgcp-api.netapp.com/volumes.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

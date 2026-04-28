@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.747Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/workstations.workstationLimitExemptedCreator --format=json"
+  },
+  "name": "roles/workstations.workstationLimitExemptedCreator",
+  "role_slug": "workstations-workstationlimitexemptedcreator",
+  "title": "Cloud Workstations Limit Exempted Creator",
+  "description": "Grants ability to create workstations with exemption from max_usable_workstations Limit.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "resourcemanager",
+    "workstations"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "workstations",
+      "permissions": [
+        "workstations.operations.get",
+        "workstations.operations.list",
+        "workstations.workstationConfigs.get",
+        "workstations.workstations.create"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "workstations.operations.get",
+    "workstations.operations.list",
+    "workstations.workstationConfigs.get",
+    "workstations.workstations.create"
+  ]
+}

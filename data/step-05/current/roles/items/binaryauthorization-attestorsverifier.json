@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.065Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/binaryauthorization.attestorsVerifier --format=json"
+  },
+  "name": "roles/binaryauthorization.attestorsVerifier",
+  "role_slug": "binaryauthorization-attestorsverifier",
+  "title": "Binary Authorization Attestor Image Verifier",
+  "description": "Caller of Binary Authorization Attestors VerifyImageAttested",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "binaryauthorization",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "binaryauthorization",
+      "permissions": [
+        "binaryauthorization.attestors.get",
+        "binaryauthorization.attestors.list",
+        "binaryauthorization.attestors.verifyImageAttested"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "binaryauthorization.attestors.get",
+    "binaryauthorization.attestors.list",
+    "binaryauthorization.attestors.verifyImageAttested",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

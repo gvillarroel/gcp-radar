@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.693Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/visionai.operatorEditor --format=json"
+  },
+  "name": "roles/visionai.operatorEditor",
+  "role_slug": "visionai-operatoreditor",
+  "title": "Vision AI Operator Editor",
+  "description": "Access to read and write Vision AI Operators.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "visionai"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "visionai",
+      "permissions": [
+        "visionai.operators.create",
+        "visionai.operators.delete",
+        "visionai.operators.get",
+        "visionai.operators.list",
+        "visionai.operators.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "visionai.operators.create",
+    "visionai.operators.delete",
+    "visionai.operators.get",
+    "visionai.operators.list",
+    "visionai.operators.update"
+  ]
+}

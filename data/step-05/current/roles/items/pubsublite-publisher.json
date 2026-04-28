@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.311Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/pubsublite.publisher --format=json"
+  },
+  "name": "roles/pubsublite.publisher",
+  "role_slug": "pubsublite-publisher",
+  "title": "Pub/Sub Lite Publisher",
+  "description": "Publish messages to a topic.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "pubsublite"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "pubsublite",
+      "permissions": [
+        "pubsublite.locations.openKafkaStream",
+        "pubsublite.topics.getPartitions",
+        "pubsublite.topics.publish"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "pubsublite.locations.openKafkaStream",
+    "pubsublite.topics.getPartitions",
+    "pubsublite.topics.publish"
+  ]
+}

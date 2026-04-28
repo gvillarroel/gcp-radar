@@ -1,0 +1,60 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.432Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datacatalog.tagTemplateUser --format=json"
+  },
+  "name": "roles/datacatalog.tagTemplateUser",
+  "role_slug": "datacatalog-tagtemplateuser",
+  "title": "Data Catalog TagTemplate User",
+  "description": "Access to use templates to tag resources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "datacatalog",
+    "dataplex",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datacatalog",
+      "permissions": [
+        "datacatalog.migrationConfig.get",
+        "datacatalog.tagTemplates.get",
+        "datacatalog.tagTemplates.getTag",
+        "datacatalog.tagTemplates.use"
+      ]
+    },
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.aspectTypes.get",
+        "dataplex.aspectTypes.list",
+        "dataplex.aspectTypes.use",
+        "dataplex.projects.search"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datacatalog.migrationConfig.get",
+    "datacatalog.tagTemplates.get",
+    "datacatalog.tagTemplates.getTag",
+    "datacatalog.tagTemplates.use",
+    "dataplex.aspectTypes.get",
+    "dataplex.aspectTypes.list",
+    "dataplex.aspectTypes.use",
+    "dataplex.projects.search",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

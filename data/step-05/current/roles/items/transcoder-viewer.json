@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.663Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/transcoder.viewer --format=json"
+  },
+  "name": "roles/transcoder.viewer",
+  "role_slug": "transcoder-viewer",
+  "title": "Transcoder Viewer",
+  "description": "Viewer of all transcoder resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "resourcemanager",
+    "transcoder"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "transcoder",
+      "permissions": [
+        "transcoder.jobs.get",
+        "transcoder.jobs.list",
+        "transcoder.jobs.listEffectiveTags",
+        "transcoder.jobs.listTagBindings",
+        "transcoder.jobTemplates.get",
+        "transcoder.jobTemplates.list",
+        "transcoder.jobTemplates.listEffectiveTags",
+        "transcoder.jobTemplates.listTagBindings"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "transcoder.jobs.get",
+    "transcoder.jobs.list",
+    "transcoder.jobs.listEffectiveTags",
+    "transcoder.jobs.listTagBindings",
+    "transcoder.jobTemplates.get",
+    "transcoder.jobTemplates.list",
+    "transcoder.jobTemplates.listEffectiveTags",
+    "transcoder.jobTemplates.listTagBindings"
+  ]
+}

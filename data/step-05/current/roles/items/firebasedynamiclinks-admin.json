@@ -1,0 +1,74 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.776Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebasedynamiclinks.admin --format=json"
+  },
+  "name": "roles/firebasedynamiclinks.admin",
+  "role_slug": "firebasedynamiclinks-admin",
+  "title": "Firebase Dynamic Links Admin",
+  "description": "Full read/write access to Firebase Dynamic Links resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 17,
+  "permission_groups": [
+    "firebase",
+    "firebasedynamiclinks",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "firebase",
+      "permissions": [
+        "firebase.clients.get",
+        "firebase.clients.list",
+        "firebase.projects.get"
+      ]
+    },
+    {
+      "group": "firebasedynamiclinks",
+      "permissions": [
+        "firebasedynamiclinks.destinations.list",
+        "firebasedynamiclinks.destinations.update",
+        "firebasedynamiclinks.domains.create",
+        "firebasedynamiclinks.domains.delete",
+        "firebasedynamiclinks.domains.get",
+        "firebasedynamiclinks.domains.list",
+        "firebasedynamiclinks.domains.update",
+        "firebasedynamiclinks.links.create",
+        "firebasedynamiclinks.links.get",
+        "firebasedynamiclinks.links.list",
+        "firebasedynamiclinks.links.update",
+        "firebasedynamiclinks.stats.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "firebase.clients.get",
+    "firebase.clients.list",
+    "firebase.projects.get",
+    "firebasedynamiclinks.destinations.list",
+    "firebasedynamiclinks.destinations.update",
+    "firebasedynamiclinks.domains.create",
+    "firebasedynamiclinks.domains.delete",
+    "firebasedynamiclinks.domains.get",
+    "firebasedynamiclinks.domains.list",
+    "firebasedynamiclinks.domains.update",
+    "firebasedynamiclinks.links.create",
+    "firebasedynamiclinks.links.get",
+    "firebasedynamiclinks.links.list",
+    "firebasedynamiclinks.links.update",
+    "firebasedynamiclinks.stats.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

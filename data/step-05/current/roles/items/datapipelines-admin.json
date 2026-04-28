@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.473Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datapipelines.admin --format=json"
+  },
+  "name": "roles/datapipelines.admin",
+  "role_slug": "datapipelines-admin",
+  "title": "Data pipelines Admin",
+  "description": "Administrator of Data pipelines resources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "datapipelines",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datapipelines",
+      "permissions": [
+        "datapipelines.jobs.list",
+        "datapipelines.pipelines.create",
+        "datapipelines.pipelines.delete",
+        "datapipelines.pipelines.get",
+        "datapipelines.pipelines.list",
+        "datapipelines.pipelines.run",
+        "datapipelines.pipelines.stop",
+        "datapipelines.pipelines.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datapipelines.jobs.list",
+    "datapipelines.pipelines.create",
+    "datapipelines.pipelines.delete",
+    "datapipelines.pipelines.get",
+    "datapipelines.pipelines.list",
+    "datapipelines.pipelines.run",
+    "datapipelines.pipelines.stop",
+    "datapipelines.pipelines.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

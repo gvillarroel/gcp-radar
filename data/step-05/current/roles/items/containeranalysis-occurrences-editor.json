@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.394Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/containeranalysis.occurrences.editor --format=json"
+  },
+  "name": "roles/containeranalysis.occurrences.editor",
+  "role_slug": "containeranalysis-occurrences-editor",
+  "title": "Container Analysis Occurrences Editor",
+  "description": "Can edit Container Analysis Occurrences.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "containeranalysis",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "containeranalysis",
+      "permissions": [
+        "containeranalysis.occurrences.create",
+        "containeranalysis.occurrences.delete",
+        "containeranalysis.occurrences.get",
+        "containeranalysis.occurrences.list",
+        "containeranalysis.occurrences.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "containeranalysis.occurrences.create",
+    "containeranalysis.occurrences.delete",
+    "containeranalysis.occurrences.get",
+    "containeranalysis.occurrences.list",
+    "containeranalysis.occurrences.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

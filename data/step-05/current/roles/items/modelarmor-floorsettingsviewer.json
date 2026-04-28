@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.107Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/modelarmor.floorSettingsViewer --format=json"
+  },
+  "name": "roles/modelarmor.floorSettingsViewer",
+  "role_slug": "modelarmor-floorsettingsviewer",
+  "title": "Model Armor Floor Setting Viewer",
+  "description": "Grants read access to all Model Armor Floor Setting resources. Intended for viewers.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "modelarmor",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "modelarmor",
+      "permissions": [
+        "modelarmor.floorSettings.get",
+        "modelarmor.locations.get",
+        "modelarmor.locations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.folders.get",
+        "resourcemanager.folders.list",
+        "resourcemanager.organizations.get",
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "modelarmor.floorSettings.get",
+    "modelarmor.locations.get",
+    "modelarmor.locations.list",
+    "resourcemanager.folders.get",
+    "resourcemanager.folders.list",
+    "resourcemanager.organizations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.477Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datapipelines.viewer --format=json"
+  },
+  "name": "roles/datapipelines.viewer",
+  "role_slug": "datapipelines-viewer",
+  "title": "Data pipelines Viewer",
+  "description": "Viewer of Data pipelines resources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "datapipelines",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datapipelines",
+      "permissions": [
+        "datapipelines.jobs.list",
+        "datapipelines.pipelines.get",
+        "datapipelines.pipelines.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datapipelines.jobs.list",
+    "datapipelines.pipelines.get",
+    "datapipelines.pipelines.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

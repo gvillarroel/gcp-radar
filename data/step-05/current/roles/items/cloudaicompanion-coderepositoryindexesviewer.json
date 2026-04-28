@@ -1,0 +1,52 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.119Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudaicompanion.codeRepositoryIndexesViewer --format=json"
+  },
+  "name": "roles/cloudaicompanion.codeRepositoryIndexesViewer",
+  "role_slug": "cloudaicompanion-coderepositoryindexesviewer",
+  "title": "Code Repository Indexes Viewer",
+  "description": "Grants readonly access to Code Repository Indexes resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "cloudaicompanion",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudaicompanion",
+      "permissions": [
+        "cloudaicompanion.codeRepositoryIndexes.get",
+        "cloudaicompanion.codeRepositoryIndexes.list",
+        "cloudaicompanion.operations.get",
+        "cloudaicompanion.operations.list",
+        "cloudaicompanion.repositoryGroups.get",
+        "cloudaicompanion.repositoryGroups.getIamPolicy",
+        "cloudaicompanion.repositoryGroups.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudaicompanion.codeRepositoryIndexes.get",
+    "cloudaicompanion.codeRepositoryIndexes.list",
+    "cloudaicompanion.operations.get",
+    "cloudaicompanion.operations.list",
+    "cloudaicompanion.repositoryGroups.get",
+    "cloudaicompanion.repositoryGroups.getIamPolicy",
+    "cloudaicompanion.repositoryGroups.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

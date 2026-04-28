@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.807Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/fleetengine.driverSdkUser --format=json"
+  },
+  "name": "roles/fleetengine.driverSdkUser",
+  "role_slug": "fleetengine-driversdkuser",
+  "title": "Fleet Engine Driver SDK User",
+  "description": "Read and limited update access to Fleet Engine resources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "fleetengine"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "fleetengine",
+      "permissions": [
+        "fleetengine.trips.get",
+        "fleetengine.trips.search",
+        "fleetengine.trips.update",
+        "fleetengine.vehicles.get",
+        "fleetengine.vehicles.updateLocation"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "fleetengine.trips.get",
+    "fleetengine.trips.search",
+    "fleetengine.trips.update",
+    "fleetengine.vehicles.get",
+    "fleetengine.vehicles.updateLocation"
+  ]
+}

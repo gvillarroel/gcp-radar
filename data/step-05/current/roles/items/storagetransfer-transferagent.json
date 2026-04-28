@@ -1,0 +1,76 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.622Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/storagetransfer.transferAgent --format=json"
+  },
+  "name": "roles/storagetransfer.transferAgent",
+  "role_slug": "storagetransfer-transferagent",
+  "title": "Storage Transfer Agent",
+  "description": "Perform transfers from an agent.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 15,
+  "permission_groups": [
+    "logging",
+    "monitoring",
+    "pubsub",
+    "storagetransfer"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.timeSeries.create"
+      ]
+    },
+    {
+      "group": "pubsub",
+      "permissions": [
+        "pubsub.subscriptions.consume",
+        "pubsub.subscriptions.create",
+        "pubsub.subscriptions.delete",
+        "pubsub.subscriptions.get",
+        "pubsub.topics.attachSubscription",
+        "pubsub.topics.create",
+        "pubsub.topics.get",
+        "pubsub.topics.list",
+        "pubsub.topics.publish"
+      ]
+    },
+    {
+      "group": "storagetransfer",
+      "permissions": [
+        "storagetransfer.agentpools.report",
+        "storagetransfer.operations.assign",
+        "storagetransfer.operations.get",
+        "storagetransfer.operations.report"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "logging.logEntries.create",
+    "monitoring.timeSeries.create",
+    "pubsub.subscriptions.consume",
+    "pubsub.subscriptions.create",
+    "pubsub.subscriptions.delete",
+    "pubsub.subscriptions.get",
+    "pubsub.topics.attachSubscription",
+    "pubsub.topics.create",
+    "pubsub.topics.get",
+    "pubsub.topics.list",
+    "pubsub.topics.publish",
+    "storagetransfer.agentpools.report",
+    "storagetransfer.operations.assign",
+    "storagetransfer.operations.get",
+    "storagetransfer.operations.report"
+  ]
+}

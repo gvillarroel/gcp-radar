@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.036Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/maintenance.admin --format=json"
+  },
+  "name": "roles/maintenance.admin",
+  "role_slug": "maintenance-admin",
+  "title": "Maintenance Admin",
+  "description": "Admin role for maintenance",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "maintenance",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "maintenance",
+      "permissions": [
+        "maintenance.locations.get",
+        "maintenance.locations.list",
+        "maintenance.resourceMaintenances.get",
+        "maintenance.resourceMaintenances.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "maintenance.locations.get",
+    "maintenance.locations.list",
+    "maintenance.resourceMaintenances.get",
+    "maintenance.resourceMaintenances.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.160Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudcontrolspartner.supportCaseServiceAgent --format=json"
+  },
+  "name": "roles/cloudcontrolspartner.supportCaseServiceAgent",
+  "role_slug": "cloudcontrolspartner-supportcaseserviceagent",
+  "title": "Cloud Controls Partner Support Case Service Agent",
+  "description": "Gives the Partner Console service account access to support cases for workloads associated with a partner.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "cloudsupport"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudsupport",
+      "permissions": [
+        "cloudsupport.techCases.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudsupport.techCases.get"
+  ]
+}

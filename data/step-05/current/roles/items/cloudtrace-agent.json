@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.271Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudtrace.agent --format=json"
+  },
+  "name": "roles/cloudtrace.agent",
+  "role_slug": "cloudtrace-agent",
+  "title": "Cloud Trace Agent",
+  "description": "Agent access to Cloud Trace. Can write trace data.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "cloudtrace",
+    "telemetry"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudtrace",
+      "permissions": [
+        "cloudtrace.traces.patch"
+      ]
+    },
+    {
+      "group": "telemetry",
+      "permissions": [
+        "telemetry.traces.write"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudtrace.traces.patch",
+    "telemetry.traces.write"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.032Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/bigquery.routineMetadataViewer --format=json"
+  },
+  "name": "roles/bigquery.routineMetadataViewer",
+  "role_slug": "bigquery-routinemetadataviewer",
+  "title": "BigQuery Authorized Routine Metadata Viewer",
+  "description": " Role for Authorized Routine to view metadata of supported resources",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "bigquery"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.datasets.get",
+        "bigquery.models.getMetadata",
+        "bigquery.routines.get",
+        "bigquery.routines.list",
+        "bigquery.tables.get",
+        "bigquery.tables.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.datasets.get",
+    "bigquery.models.getMetadata",
+    "bigquery.routines.get",
+    "bigquery.routines.list",
+    "bigquery.tables.get",
+    "bigquery.tables.list"
+  ]
+}

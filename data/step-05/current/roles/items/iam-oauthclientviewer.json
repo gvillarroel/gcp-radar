@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.923Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/iam.oauthClientViewer --format=json"
+  },
+  "name": "roles/iam.oauthClientViewer",
+  "role_slug": "iam-oauthclientviewer",
+  "title": "IAM OAuth Client Viewer",
+  "description": "Read access to a particular instance of an OAuth client.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "iam",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.googleapis.com/oauthClientCredentials.get",
+        "iam.googleapis.com/oauthClientCredentials.list",
+        "iam.googleapis.com/oauthClients.get",
+        "iam.googleapis.com/oauthClients.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "iam.googleapis.com/oauthClientCredentials.get",
+    "iam.googleapis.com/oauthClientCredentials.list",
+    "iam.googleapis.com/oauthClients.get",
+    "iam.googleapis.com/oauthClients.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

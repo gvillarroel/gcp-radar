@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.959Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/iam.workloadIdentityPoolViewer --format=json"
+  },
+  "name": "roles/iam.workloadIdentityPoolViewer",
+  "role_slug": "iam-workloadidentitypoolviewer",
+  "title": "IAM Workload Identity Pool Viewer",
+  "description": "Read access to workload identity pools.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "iam",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.googleapis.com/workloadIdentityPoolProviderKeys.get",
+        "iam.googleapis.com/workloadIdentityPoolProviderKeys.list",
+        "iam.googleapis.com/workloadIdentityPoolProviders.get",
+        "iam.googleapis.com/workloadIdentityPoolProviders.list",
+        "iam.googleapis.com/workloadIdentityPools.get",
+        "iam.googleapis.com/workloadIdentityPools.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "iam.googleapis.com/workloadIdentityPoolProviderKeys.get",
+    "iam.googleapis.com/workloadIdentityPoolProviderKeys.list",
+    "iam.googleapis.com/workloadIdentityPoolProviders.get",
+    "iam.googleapis.com/workloadIdentityPoolProviders.list",
+    "iam.googleapis.com/workloadIdentityPools.get",
+    "iam.googleapis.com/workloadIdentityPools.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

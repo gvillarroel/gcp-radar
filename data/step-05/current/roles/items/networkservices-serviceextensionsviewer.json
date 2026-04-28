@@ -1,0 +1,80 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.182Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/networkservices.serviceExtensionsViewer --format=json"
+  },
+  "name": "roles/networkservices.serviceExtensionsViewer",
+  "role_slug": "networkservices-serviceextensionsviewer",
+  "title": "Service Extensions Viewer",
+  "description": "Provides read-only access to Service Extensions resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 17,
+  "permission_groups": [
+    "monitoring",
+    "networkservices",
+    "resourcemanager",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.timeSeries.list"
+      ]
+    },
+    {
+      "group": "networkservices",
+      "permissions": [
+        "networkservices.authzExtensions.get",
+        "networkservices.authzExtensions.list",
+        "networkservices.lbEdgeExtensions.get",
+        "networkservices.lbEdgeExtensions.list",
+        "networkservices.lbRouteExtensions.get",
+        "networkservices.lbRouteExtensions.list",
+        "networkservices.lbTrafficExtensions.get",
+        "networkservices.lbTrafficExtensions.list",
+        "networkservices.swpSecurityExtensions.get",
+        "networkservices.swpSecurityExtensions.list",
+        "networkservices.wasmPlugins.get",
+        "networkservices.wasmPlugins.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.quotas.get",
+        "serviceusage.services.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "monitoring.timeSeries.list",
+    "networkservices.authzExtensions.get",
+    "networkservices.authzExtensions.list",
+    "networkservices.lbEdgeExtensions.get",
+    "networkservices.lbEdgeExtensions.list",
+    "networkservices.lbRouteExtensions.get",
+    "networkservices.lbRouteExtensions.list",
+    "networkservices.lbTrafficExtensions.get",
+    "networkservices.lbTrafficExtensions.list",
+    "networkservices.swpSecurityExtensions.get",
+    "networkservices.swpSecurityExtensions.list",
+    "networkservices.wasmPlugins.get",
+    "networkservices.wasmPlugins.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "serviceusage.quotas.get",
+    "serviceusage.services.get"
+  ]
+}

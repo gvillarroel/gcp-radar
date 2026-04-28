@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.682Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/edgecontainer.zoneIamAdmin --format=json"
+  },
+  "name": "roles/edgecontainer.zoneIamAdmin",
+  "role_slug": "edgecontainer-zoneiamadmin",
+  "title": "Edge Container Zone Iam Policy Admin",
+  "description": "Access to manage Iam Policy in the zone.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "edgecontainer"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "edgecontainer",
+      "permissions": [
+        "edgecontainer.locations.get",
+        "edgecontainer.locations.list",
+        "edgecontainer.zones.getZoneIamPolicy",
+        "edgecontainer.zones.listRoles",
+        "edgecontainer.zones.setZoneIamPolicy"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "edgecontainer.locations.get",
+    "edgecontainer.locations.list",
+    "edgecontainer.zones.getZoneIamPolicy",
+    "edgecontainer.zones.listRoles",
+    "edgecontainer.zones.setZoneIamPolicy"
+  ]
+}

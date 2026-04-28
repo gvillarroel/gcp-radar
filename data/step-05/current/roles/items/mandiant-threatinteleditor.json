@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.064Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/mandiant.threatIntelEditor --format=json"
+  },
+  "name": "roles/mandiant.threatIntelEditor",
+  "role_slug": "mandiant-threatinteleditor",
+  "title": "Mandiant Threat Intel Editor",
+  "description": "Access to write Threat Intel",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "mandiant",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "mandiant",
+      "permissions": [
+        "mandiant.genericPlatforms.create",
+        "mandiant.genericPlatforms.delete",
+        "mandiant.genericPlatforms.update",
+        "mandiant.genericThreatIntels.create",
+        "mandiant.genericThreatIntels.delete",
+        "mandiant.genericThreatIntels.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "mandiant.genericPlatforms.create",
+    "mandiant.genericPlatforms.delete",
+    "mandiant.genericPlatforms.update",
+    "mandiant.genericThreatIntels.create",
+    "mandiant.genericThreatIntels.delete",
+    "mandiant.genericThreatIntels.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

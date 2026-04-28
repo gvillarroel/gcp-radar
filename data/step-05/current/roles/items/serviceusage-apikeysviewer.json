@@ -1,0 +1,36 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.569Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/serviceusage.apiKeysViewer --format=json"
+  },
+  "name": "roles/serviceusage.apiKeysViewer",
+  "role_slug": "serviceusage-apikeysviewer",
+  "title": "API Keys Viewer",
+  "description": "Ability to get and list API keys for a project.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "apikeys"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "apikeys",
+      "permissions": [
+        "apikeys.keys.get",
+        "apikeys.keys.getKeyString",
+        "apikeys.keys.list",
+        "apikeys.keys.lookup"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "apikeys.keys.get",
+    "apikeys.keys.getKeyString",
+    "apikeys.keys.list",
+    "apikeys.keys.lookup"
+  ]
+}

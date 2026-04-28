@@ -1,0 +1,78 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.807Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/fleetengine.ondemandAdmin --format=json"
+  },
+  "name": "roles/fleetengine.ondemandAdmin",
+  "role_slug": "fleetengine-ondemandadmin",
+  "title": "Fleet Engine On-Demand Admin",
+  "description": "Full access to Vehicle and Trip resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 19,
+  "permission_groups": [
+    "fleetengine",
+    "resourcemanager",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "fleetengine",
+      "permissions": [
+        "fleetengine.trips.allowAllActions",
+        "fleetengine.trips.create",
+        "fleetengine.trips.delete",
+        "fleetengine.trips.get",
+        "fleetengine.trips.search",
+        "fleetengine.trips.update",
+        "fleetengine.trips.updateState",
+        "fleetengine.vehicles.allowAllActions",
+        "fleetengine.vehicles.create",
+        "fleetengine.vehicles.delete",
+        "fleetengine.vehicles.get",
+        "fleetengine.vehicles.list",
+        "fleetengine.vehicles.search",
+        "fleetengine.vehicles.searchFuzzed",
+        "fleetengine.vehicles.update",
+        "fleetengine.vehicles.updateLocation"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "fleetengine.trips.allowAllActions",
+    "fleetengine.trips.create",
+    "fleetengine.trips.delete",
+    "fleetengine.trips.get",
+    "fleetengine.trips.search",
+    "fleetengine.trips.update",
+    "fleetengine.trips.updateState",
+    "fleetengine.vehicles.allowAllActions",
+    "fleetengine.vehicles.create",
+    "fleetengine.vehicles.delete",
+    "fleetengine.vehicles.get",
+    "fleetengine.vehicles.list",
+    "fleetengine.vehicles.search",
+    "fleetengine.vehicles.searchFuzzed",
+    "fleetengine.vehicles.update",
+    "fleetengine.vehicles.updateLocation",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "serviceusage.services.use"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.479Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securesourcemanager.instanceManager --format=json"
+  },
+  "name": "roles/securesourcemanager.instanceManager",
+  "role_slug": "securesourcemanager-instancemanager",
+  "title": "Secure Source Manager Instance Manager",
+  "description": "Read-write access to all Secure Source Manager resources (full control except for the ability to modify permissions).",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 20,
+  "permission_groups": [
+    "resourcemanager",
+    "securesourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "securesourcemanager",
+      "permissions": [
+        "securesourcemanager.instances.access",
+        "securesourcemanager.instances.createRepository",
+        "securesourcemanager.instances.delete",
+        "securesourcemanager.instances.get",
+        "securesourcemanager.instances.list",
+        "securesourcemanager.locations.get",
+        "securesourcemanager.locations.list",
+        "securesourcemanager.operations.cancel",
+        "securesourcemanager.operations.delete",
+        "securesourcemanager.operations.get",
+        "securesourcemanager.operations.list",
+        "securesourcemanager.sshkeys.create",
+        "securesourcemanager.sshkeys.createAny",
+        "securesourcemanager.sshkeys.delete",
+        "securesourcemanager.sshkeys.deleteAny",
+        "securesourcemanager.sshkeys.get",
+        "securesourcemanager.sshkeys.list",
+        "securesourcemanager.sshkeys.listAny"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "securesourcemanager.instances.access",
+    "securesourcemanager.instances.createRepository",
+    "securesourcemanager.instances.delete",
+    "securesourcemanager.instances.get",
+    "securesourcemanager.instances.list",
+    "securesourcemanager.locations.get",
+    "securesourcemanager.locations.list",
+    "securesourcemanager.operations.cancel",
+    "securesourcemanager.operations.delete",
+    "securesourcemanager.operations.get",
+    "securesourcemanager.operations.list",
+    "securesourcemanager.sshkeys.create",
+    "securesourcemanager.sshkeys.createAny",
+    "securesourcemanager.sshkeys.delete",
+    "securesourcemanager.sshkeys.deleteAny",
+    "securesourcemanager.sshkeys.get",
+    "securesourcemanager.sshkeys.list",
+    "securesourcemanager.sshkeys.listAny"
+  ]
+}

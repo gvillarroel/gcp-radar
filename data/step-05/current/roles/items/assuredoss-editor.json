@@ -1,0 +1,52 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.933Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/assuredoss.editor --format=json"
+  },
+  "name": "roles/assuredoss.editor",
+  "role_slug": "assuredoss-editor",
+  "title": "Assured OSS Editor",
+  "description": "Editor role for Assured OSS",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "assuredoss",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "assuredoss",
+      "permissions": [
+        "assuredoss.config.get",
+        "assuredoss.locations.get",
+        "assuredoss.locations.list",
+        "assuredoss.metadata.get",
+        "assuredoss.metadata.list",
+        "assuredoss.operations.get",
+        "assuredoss.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "assuredoss.config.get",
+    "assuredoss.locations.get",
+    "assuredoss.locations.list",
+    "assuredoss.metadata.get",
+    "assuredoss.metadata.list",
+    "assuredoss.operations.get",
+    "assuredoss.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

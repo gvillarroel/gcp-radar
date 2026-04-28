@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.117Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloud.locationReader --format=json"
+  },
+  "name": "roles/cloud.locationReader",
+  "role_slug": "cloud-locationreader",
+  "title": "Location reader",
+  "description": "Read and enumerate locations available for resource creation.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "cloud"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloud",
+      "permissions": [
+        "cloud.locations.get",
+        "cloud.locations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloud.locations.get",
+    "cloud.locations.list"
+  ]
+}

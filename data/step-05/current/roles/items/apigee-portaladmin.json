@@ -1,0 +1,56 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.875Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/apigee.portalAdmin --format=json"
+  },
+  "name": "roles/apigee.portalAdmin",
+  "role_slug": "apigee-portaladmin",
+  "title": "Apigee Portal Admin",
+  "description": "Portal admin for an Apigee Organization",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "apigee",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "apigee",
+      "permissions": [
+        "apigee.entitlements.get",
+        "apigee.organizations.get",
+        "apigee.organizations.list",
+        "apigee.portals.create",
+        "apigee.portals.delete",
+        "apigee.portals.get",
+        "apigee.portals.list",
+        "apigee.portals.update",
+        "apigee.projectorganizations.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "apigee.entitlements.get",
+    "apigee.organizations.get",
+    "apigee.organizations.list",
+    "apigee.portals.create",
+    "apigee.portals.delete",
+    "apigee.portals.get",
+    "apigee.portals.list",
+    "apigee.portals.update",
+    "apigee.projectorganizations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

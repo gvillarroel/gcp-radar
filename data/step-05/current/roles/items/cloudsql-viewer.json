@@ -1,0 +1,182 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.248Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudsql.viewer --format=json"
+  },
+  "name": "roles/cloudsql.viewer",
+  "role_slug": "cloudsql-viewer",
+  "title": "Cloud SQL Viewer",
+  "description": "Read-only access to Cloud SQL resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 62,
+  "permission_groups": [
+    "cloudaicompanion",
+    "cloudsql",
+    "monitoring",
+    "recommender",
+    "resourcemanager",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudaicompanion",
+      "permissions": [
+        "cloudaicompanion.entitlements.get"
+      ]
+    },
+    {
+      "group": "cloudsql",
+      "permissions": [
+        "cloudsql.backupRuns.export",
+        "cloudsql.backupRuns.get",
+        "cloudsql.backupRuns.list",
+        "cloudsql.databases.get",
+        "cloudsql.databases.list",
+        "cloudsql.instances.export",
+        "cloudsql.instances.get",
+        "cloudsql.instances.getDiskShrinkConfig",
+        "cloudsql.instances.list",
+        "cloudsql.instances.listEffectiveTags",
+        "cloudsql.instances.listServerCas",
+        "cloudsql.instances.listServerCertificates",
+        "cloudsql.instances.listTagBindings",
+        "cloudsql.instances.preCheckMajorVersionUpgrade",
+        "cloudsql.sslCerts.get",
+        "cloudsql.sslCerts.list",
+        "cloudsql.users.get",
+        "cloudsql.users.list"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.timeSeries.list"
+      ]
+    },
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.cloudsqlIdleInstanceRecommendations.get",
+        "recommender.cloudsqlIdleInstanceRecommendations.list",
+        "recommender.cloudsqlInstanceActivityInsights.get",
+        "recommender.cloudsqlInstanceActivityInsights.list",
+        "recommender.cloudsqlInstanceCpuUsageInsights.get",
+        "recommender.cloudsqlInstanceCpuUsageInsights.list",
+        "recommender.cloudsqlInstanceDiskUsageTrendInsights.get",
+        "recommender.cloudsqlInstanceDiskUsageTrendInsights.list",
+        "recommender.cloudsqlInstanceMemoryUsageInsights.get",
+        "recommender.cloudsqlInstanceMemoryUsageInsights.list",
+        "recommender.cloudsqlInstanceOomProbabilityInsights.get",
+        "recommender.cloudsqlInstanceOomProbabilityInsights.list",
+        "recommender.cloudsqlInstanceOutOfDiskRecommendations.get",
+        "recommender.cloudsqlInstanceOutOfDiskRecommendations.list",
+        "recommender.cloudsqlInstancePerformanceInsights.get",
+        "recommender.cloudsqlInstancePerformanceInsights.list",
+        "recommender.cloudsqlInstancePerformanceRecommendations.get",
+        "recommender.cloudsqlInstancePerformanceRecommendations.list",
+        "recommender.cloudsqlInstanceReliabilityInsights.get",
+        "recommender.cloudsqlInstanceReliabilityInsights.list",
+        "recommender.cloudsqlInstanceReliabilityRecommendations.get",
+        "recommender.cloudsqlInstanceReliabilityRecommendations.list",
+        "recommender.cloudsqlInstanceUnderprovisionedCpuUsageInsights.get",
+        "recommender.cloudsqlInstanceUnderprovisionedCpuUsageInsights.list",
+        "recommender.cloudsqlInstanceUnderprovisionedMemoryUsageInsights.get",
+        "recommender.cloudsqlInstanceUnderprovisionedMemoryUsageInsights.list",
+        "recommender.cloudsqlOverprovisionedInstanceRecommendations.get",
+        "recommender.cloudsqlOverprovisionedInstanceRecommendations.list",
+        "recommender.cloudsqlUnderProvisionedInstanceRecommendations.get",
+        "recommender.cloudsqlUnderProvisionedInstanceRecommendations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.consumerpolicy.analyze",
+        "serviceusage.consumerpolicy.get",
+        "serviceusage.effectivepolicy.get",
+        "serviceusage.groups.list",
+        "serviceusage.groups.listExpandedMembers",
+        "serviceusage.groups.listMembers",
+        "serviceusage.quotas.get",
+        "serviceusage.services.get",
+        "serviceusage.services.list",
+        "serviceusage.values.test"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudaicompanion.entitlements.get",
+    "cloudsql.backupRuns.export",
+    "cloudsql.backupRuns.get",
+    "cloudsql.backupRuns.list",
+    "cloudsql.databases.get",
+    "cloudsql.databases.list",
+    "cloudsql.instances.export",
+    "cloudsql.instances.get",
+    "cloudsql.instances.getDiskShrinkConfig",
+    "cloudsql.instances.list",
+    "cloudsql.instances.listEffectiveTags",
+    "cloudsql.instances.listServerCas",
+    "cloudsql.instances.listServerCertificates",
+    "cloudsql.instances.listTagBindings",
+    "cloudsql.instances.preCheckMajorVersionUpgrade",
+    "cloudsql.sslCerts.get",
+    "cloudsql.sslCerts.list",
+    "cloudsql.users.get",
+    "cloudsql.users.list",
+    "monitoring.timeSeries.list",
+    "recommender.cloudsqlIdleInstanceRecommendations.get",
+    "recommender.cloudsqlIdleInstanceRecommendations.list",
+    "recommender.cloudsqlInstanceActivityInsights.get",
+    "recommender.cloudsqlInstanceActivityInsights.list",
+    "recommender.cloudsqlInstanceCpuUsageInsights.get",
+    "recommender.cloudsqlInstanceCpuUsageInsights.list",
+    "recommender.cloudsqlInstanceDiskUsageTrendInsights.get",
+    "recommender.cloudsqlInstanceDiskUsageTrendInsights.list",
+    "recommender.cloudsqlInstanceMemoryUsageInsights.get",
+    "recommender.cloudsqlInstanceMemoryUsageInsights.list",
+    "recommender.cloudsqlInstanceOomProbabilityInsights.get",
+    "recommender.cloudsqlInstanceOomProbabilityInsights.list",
+    "recommender.cloudsqlInstanceOutOfDiskRecommendations.get",
+    "recommender.cloudsqlInstanceOutOfDiskRecommendations.list",
+    "recommender.cloudsqlInstancePerformanceInsights.get",
+    "recommender.cloudsqlInstancePerformanceInsights.list",
+    "recommender.cloudsqlInstancePerformanceRecommendations.get",
+    "recommender.cloudsqlInstancePerformanceRecommendations.list",
+    "recommender.cloudsqlInstanceReliabilityInsights.get",
+    "recommender.cloudsqlInstanceReliabilityInsights.list",
+    "recommender.cloudsqlInstanceReliabilityRecommendations.get",
+    "recommender.cloudsqlInstanceReliabilityRecommendations.list",
+    "recommender.cloudsqlInstanceUnderprovisionedCpuUsageInsights.get",
+    "recommender.cloudsqlInstanceUnderprovisionedCpuUsageInsights.list",
+    "recommender.cloudsqlInstanceUnderprovisionedMemoryUsageInsights.get",
+    "recommender.cloudsqlInstanceUnderprovisionedMemoryUsageInsights.list",
+    "recommender.cloudsqlOverprovisionedInstanceRecommendations.get",
+    "recommender.cloudsqlOverprovisionedInstanceRecommendations.list",
+    "recommender.cloudsqlUnderProvisionedInstanceRecommendations.get",
+    "recommender.cloudsqlUnderProvisionedInstanceRecommendations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "serviceusage.consumerpolicy.analyze",
+    "serviceusage.consumerpolicy.get",
+    "serviceusage.effectivepolicy.get",
+    "serviceusage.groups.list",
+    "serviceusage.groups.listExpandedMembers",
+    "serviceusage.groups.listMembers",
+    "serviceusage.quotas.get",
+    "serviceusage.services.get",
+    "serviceusage.services.list",
+    "serviceusage.values.test"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.993Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/issuerswitch.accountManagerTransactionsAdmin --format=json"
+  },
+  "name": "roles/issuerswitch.accountManagerTransactionsAdmin",
+  "role_slug": "issuerswitch-accountmanagertransactionsadmin",
+  "title": "Issuerswitch Account Manager Transactions Admin",
+  "description": "This role can perform all account manager transactions related operations",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "issuerswitch",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "issuerswitch",
+      "permissions": [
+        "issuerswitch.accountManagerTransactions.list",
+        "issuerswitch.accountManagerTransactions.update",
+        "issuerswitch.operations.get",
+        "issuerswitch.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "issuerswitch.accountManagerTransactions.list",
+    "issuerswitch.accountManagerTransactions.update",
+    "issuerswitch.operations.get",
+    "issuerswitch.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

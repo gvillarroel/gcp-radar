@@ -1,0 +1,112 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.247Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/osconfig.serviceAgent --format=json"
+  },
+  "name": "roles/osconfig.serviceAgent",
+  "role_slug": "osconfig-serviceagent",
+  "title": "Cloud OS Config Service Agent",
+  "description": "Grants OS Config Service Account access to Google Compute Engine instances.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 27,
+  "permission_groups": [
+    "cloudasset",
+    "compute",
+    "containeranalysis",
+    "iam",
+    "osconfig",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudasset",
+      "permissions": [
+        "cloudasset.assets.listOSConfigOSPolicyAssignments",
+        "cloudasset.assets.listPatchDeployments"
+      ]
+    },
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.globalOperations.get",
+        "compute.instances.get",
+        "compute.instances.getGuestAttributes",
+        "compute.instances.list",
+        "compute.instances.setMetadata",
+        "compute.projects.get",
+        "compute.projects.setCommonInstanceMetadata",
+        "compute.zones.get",
+        "compute.zones.list"
+      ]
+    },
+    {
+      "group": "containeranalysis",
+      "permissions": [
+        "containeranalysis.notes.attachOccurrence",
+        "containeranalysis.notes.create",
+        "containeranalysis.notes.delete",
+        "containeranalysis.notes.get",
+        "containeranalysis.notes.list",
+        "containeranalysis.notes.update",
+        "containeranalysis.occurrences.create",
+        "containeranalysis.occurrences.delete",
+        "containeranalysis.occurrences.get",
+        "containeranalysis.occurrences.list",
+        "containeranalysis.occurrences.update"
+      ]
+    },
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.serviceAccounts.actAs"
+      ]
+    },
+    {
+      "group": "osconfig",
+      "permissions": [
+        "osconfig.projectFeatureSettings.get",
+        "osconfig.projectFeatureSettings.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudasset.assets.listOSConfigOSPolicyAssignments",
+    "cloudasset.assets.listPatchDeployments",
+    "compute.globalOperations.get",
+    "compute.instances.get",
+    "compute.instances.getGuestAttributes",
+    "compute.instances.list",
+    "compute.instances.setMetadata",
+    "compute.projects.get",
+    "compute.projects.setCommonInstanceMetadata",
+    "compute.zones.get",
+    "compute.zones.list",
+    "containeranalysis.notes.attachOccurrence",
+    "containeranalysis.notes.create",
+    "containeranalysis.notes.delete",
+    "containeranalysis.notes.get",
+    "containeranalysis.notes.list",
+    "containeranalysis.notes.update",
+    "containeranalysis.occurrences.create",
+    "containeranalysis.occurrences.delete",
+    "containeranalysis.occurrences.get",
+    "containeranalysis.occurrences.list",
+    "containeranalysis.occurrences.update",
+    "iam.serviceAccounts.actAs",
+    "osconfig.projectFeatureSettings.get",
+    "osconfig.projectFeatureSettings.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

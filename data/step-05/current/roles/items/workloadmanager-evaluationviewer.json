@@ -1,0 +1,58 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.737Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/workloadmanager.evaluationViewer --format=json"
+  },
+  "name": "roles/workloadmanager.evaluationViewer",
+  "role_slug": "workloadmanager-evaluationviewer",
+  "title": "Workload Manager Evaluation Viewer",
+  "description": "Read-only access to Workload Manager evaluation resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "orgpolicy",
+    "resourcemanager",
+    "workloadmanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "orgpolicy",
+      "permissions": [
+        "orgpolicy.policy.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "workloadmanager",
+      "permissions": [
+        "workloadmanager.evaluations.get",
+        "workloadmanager.evaluations.list",
+        "workloadmanager.executions.get",
+        "workloadmanager.executions.list",
+        "workloadmanager.results.list",
+        "workloadmanager.rules.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "orgpolicy.policy.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "workloadmanager.evaluations.get",
+    "workloadmanager.evaluations.list",
+    "workloadmanager.executions.get",
+    "workloadmanager.executions.list",
+    "workloadmanager.results.list",
+    "workloadmanager.rules.list"
+  ]
+}

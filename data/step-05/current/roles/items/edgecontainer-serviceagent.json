@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.676Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/edgecontainer.serviceAgent --format=json"
+  },
+  "name": "roles/edgecontainer.serviceAgent",
+  "role_slug": "edgecontainer-serviceagent",
+  "title": "Edge Container Service Agent",
+  "description": "Grants the Edge Container Service Account access to manage resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 34,
+  "permission_groups": [
+    "compute",
+    "gkehub",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.externalVpnGateways.create",
+        "compute.externalVpnGateways.delete",
+        "compute.externalVpnGateways.get",
+        "compute.externalVpnGateways.use",
+        "compute.globalOperations.get",
+        "compute.networks.get",
+        "compute.networks.updatePolicy",
+        "compute.regionOperations.get",
+        "compute.routers.create",
+        "compute.routers.delete",
+        "compute.routers.get",
+        "compute.routers.list",
+        "compute.routers.update",
+        "compute.routers.use",
+        "compute.vpnGateways.create",
+        "compute.vpnGateways.delete",
+        "compute.vpnGateways.get",
+        "compute.vpnGateways.use",
+        "compute.vpnTunnels.create",
+        "compute.vpnTunnels.delete",
+        "compute.vpnTunnels.get"
+      ]
+    },
+    {
+      "group": "gkehub",
+      "permissions": [
+        "gkehub.features.create",
+        "gkehub.features.get",
+        "gkehub.features.update",
+        "gkehub.memberships.create",
+        "gkehub.memberships.delete",
+        "gkehub.memberships.generateConnectManifest",
+        "gkehub.memberships.get",
+        "gkehub.memberships.list",
+        "gkehub.memberships.update",
+        "gkehub.operations.cancel",
+        "gkehub.operations.get"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.get",
+        "serviceusage.services.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "compute.externalVpnGateways.create",
+    "compute.externalVpnGateways.delete",
+    "compute.externalVpnGateways.get",
+    "compute.externalVpnGateways.use",
+    "compute.globalOperations.get",
+    "compute.networks.get",
+    "compute.networks.updatePolicy",
+    "compute.regionOperations.get",
+    "compute.routers.create",
+    "compute.routers.delete",
+    "compute.routers.get",
+    "compute.routers.list",
+    "compute.routers.update",
+    "compute.routers.use",
+    "compute.vpnGateways.create",
+    "compute.vpnGateways.delete",
+    "compute.vpnGateways.get",
+    "compute.vpnGateways.use",
+    "compute.vpnTunnels.create",
+    "compute.vpnTunnels.delete",
+    "compute.vpnTunnels.get",
+    "gkehub.features.create",
+    "gkehub.features.get",
+    "gkehub.features.update",
+    "gkehub.memberships.create",
+    "gkehub.memberships.delete",
+    "gkehub.memberships.generateConnectManifest",
+    "gkehub.memberships.get",
+    "gkehub.memberships.list",
+    "gkehub.memberships.update",
+    "gkehub.operations.cancel",
+    "gkehub.operations.get",
+    "serviceusage.services.get",
+    "serviceusage.services.list"
+  ]
+}

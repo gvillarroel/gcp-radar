@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.246Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudsql.schemaViewer --format=json"
+  },
+  "name": "roles/cloudsql.schemaViewer",
+  "role_slug": "cloudsql-schemaviewer",
+  "title": "Cloud SQL Schema Viewer",
+  "description": "Role allowing access to the Cloud SQL instance schema on Dataplex",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "cloudsql"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudsql",
+      "permissions": [
+        "cloudsql.schemas.view"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudsql.schemas.view"
+  ]
+}

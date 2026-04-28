@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.667Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/edgecontainer.identityProviderAdmin --format=json"
+  },
+  "name": "roles/edgecontainer.identityProviderAdmin",
+  "role_slug": "edgecontainer-identityprovideradmin",
+  "title": "Edge Container Identity Provider Admin",
+  "description": "Access to manage Identity Providers.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "edgecontainer"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "edgecontainer",
+      "permissions": [
+        "edgecontainer.identityproviders.create",
+        "edgecontainer.identityproviders.delete",
+        "edgecontainer.identityproviders.get",
+        "edgecontainer.identityproviders.list",
+        "edgecontainer.locations.get",
+        "edgecontainer.locations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "edgecontainer.identityproviders.create",
+    "edgecontainer.identityproviders.delete",
+    "edgecontainer.identityproviders.get",
+    "edgecontainer.identityproviders.list",
+    "edgecontainer.locations.get",
+    "edgecontainer.locations.list"
+  ]
+}

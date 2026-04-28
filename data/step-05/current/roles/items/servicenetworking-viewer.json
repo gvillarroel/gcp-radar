@@ -1,0 +1,52 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.567Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/servicenetworking.viewer --format=json"
+  },
+  "name": "roles/servicenetworking.viewer",
+  "role_slug": "servicenetworking-viewer",
+  "title": "Servicenetworking Viewer",
+  "description": "Viewer role for servicenetworking",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "resourcemanager",
+    "servicenetworking"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "servicenetworking",
+      "permissions": [
+        "servicenetworking.operations.get",
+        "servicenetworking.operations.list",
+        "servicenetworking.services.get",
+        "servicenetworking.services.getConsumerConfig",
+        "servicenetworking.services.getVpcServiceControls",
+        "servicenetworking.services.listPeeredDnsDomains",
+        "servicenetworking.services.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "servicenetworking.operations.get",
+    "servicenetworking.operations.list",
+    "servicenetworking.services.get",
+    "servicenetworking.services.getConsumerConfig",
+    "servicenetworking.services.getVpcServiceControls",
+    "servicenetworking.services.listPeeredDnsDomains",
+    "servicenetworking.services.use"
+  ]
+}

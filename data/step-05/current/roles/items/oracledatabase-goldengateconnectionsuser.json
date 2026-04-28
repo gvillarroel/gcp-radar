@@ -1,0 +1,52 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.219Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/oracledatabase.goldenGateConnectionsUser --format=json"
+  },
+  "name": "roles/oracledatabase.goldenGateConnectionsUser",
+  "role_slug": "oracledatabase-goldengateconnectionsuser",
+  "title": "Oracle Database@Google GoldenGate Connections User",
+  "description": "Grants use access to GoldenGate Connections resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "oracledatabase",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "oracledatabase",
+      "permissions": [
+        "oracledatabase.goldenGateConnections.get",
+        "oracledatabase.goldenGateConnections.list",
+        "oracledatabase.goldenGateConnections.use",
+        "oracledatabase.locations.get",
+        "oracledatabase.locations.list",
+        "oracledatabase.operations.get",
+        "oracledatabase.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "oracledatabase.goldenGateConnections.get",
+    "oracledatabase.goldenGateConnections.list",
+    "oracledatabase.goldenGateConnections.use",
+    "oracledatabase.locations.get",
+    "oracledatabase.locations.list",
+    "oracledatabase.operations.get",
+    "oracledatabase.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

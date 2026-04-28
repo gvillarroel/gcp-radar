@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.183Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudjobdiscovery.jobsViewer --format=json"
+  },
+  "name": "roles/cloudjobdiscovery.jobsViewer",
+  "role_slug": "cloudjobdiscovery-jobsviewer",
+  "title": "Cloud Talent Solution Job Viewer",
+  "description": "Read access to all job data in Cloud Talent Solution.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "cloudjobdiscovery",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudjobdiscovery",
+      "permissions": [
+        "cloudjobdiscovery.companies.get",
+        "cloudjobdiscovery.companies.list",
+        "cloudjobdiscovery.jobs.get",
+        "cloudjobdiscovery.jobs.search",
+        "cloudjobdiscovery.tenants.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudjobdiscovery.companies.get",
+    "cloudjobdiscovery.companies.list",
+    "cloudjobdiscovery.jobs.get",
+    "cloudjobdiscovery.jobs.search",
+    "cloudjobdiscovery.tenants.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

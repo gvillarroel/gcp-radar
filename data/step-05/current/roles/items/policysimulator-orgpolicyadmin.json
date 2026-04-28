@@ -1,0 +1,72 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.281Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/policysimulator.orgPolicyAdmin --format=json"
+  },
+  "name": "roles/policysimulator.orgPolicyAdmin",
+  "role_slug": "policysimulator-orgpolicyadmin",
+  "title": "OrgPolicy Simulator Admin",
+  "description": "OrgPolicy Admin that can run and access simulations.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "cloudasset",
+    "orgpolicy",
+    "policysimulator",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudasset",
+      "permissions": [
+        "cloudasset.assets.analyzeOrgPolicy",
+        "cloudasset.assets.exportResource",
+        "cloudasset.assets.listResource",
+        "cloudasset.assets.searchAllResources"
+      ]
+    },
+    {
+      "group": "orgpolicy",
+      "permissions": [
+        "orgpolicy.customConstraints.get",
+        "orgpolicy.customConstraints.list",
+        "orgpolicy.policies.list",
+        "orgpolicy.policy.get"
+      ]
+    },
+    {
+      "group": "policysimulator",
+      "permissions": [
+        "policysimulator.orgPolicyViolations.list",
+        "policysimulator.orgPolicyViolationsPreviews.create",
+        "policysimulator.orgPolicyViolationsPreviews.get",
+        "policysimulator.orgPolicyViolationsPreviews.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudasset.assets.analyzeOrgPolicy",
+    "cloudasset.assets.exportResource",
+    "cloudasset.assets.listResource",
+    "cloudasset.assets.searchAllResources",
+    "orgpolicy.customConstraints.get",
+    "orgpolicy.customConstraints.list",
+    "orgpolicy.policies.list",
+    "orgpolicy.policy.get",
+    "policysimulator.orgPolicyViolations.list",
+    "policysimulator.orgPolicyViolationsPreviews.create",
+    "policysimulator.orgPolicyViolationsPreviews.get",
+    "policysimulator.orgPolicyViolationsPreviews.list",
+    "resourcemanager.organizations.get"
+  ]
+}

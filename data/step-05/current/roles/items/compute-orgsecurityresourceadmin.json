@@ -1,0 +1,80 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.328Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/compute.orgSecurityResourceAdmin --format=json"
+  },
+  "name": "roles/compute.orgSecurityResourceAdmin",
+  "role_slug": "compute-orgsecurityresourceadmin",
+  "title": "Compute Organization Resource Admin",
+  "description": "Full control of Compute Engine Firewall Policy associations to the organization or folders.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 20,
+  "permission_groups": [
+    "compute",
+    "resourcemanager",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.globalOperations.get",
+        "compute.globalOperations.getIamPolicy",
+        "compute.globalOperations.list",
+        "compute.globalOperations.setIamPolicy",
+        "compute.organizations.listAssociations",
+        "compute.organizations.setFirewallPolicy",
+        "compute.organizations.setSecurityPolicy",
+        "compute.projects.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.consumerpolicy.analyze",
+        "serviceusage.consumerpolicy.get",
+        "serviceusage.effectivepolicy.get",
+        "serviceusage.groups.list",
+        "serviceusage.groups.listExpandedMembers",
+        "serviceusage.groups.listMembers",
+        "serviceusage.quotas.get",
+        "serviceusage.services.get",
+        "serviceusage.services.list",
+        "serviceusage.values.test"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "compute.globalOperations.get",
+    "compute.globalOperations.getIamPolicy",
+    "compute.globalOperations.list",
+    "compute.globalOperations.setIamPolicy",
+    "compute.organizations.listAssociations",
+    "compute.organizations.setFirewallPolicy",
+    "compute.organizations.setSecurityPolicy",
+    "compute.projects.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "serviceusage.consumerpolicy.analyze",
+    "serviceusage.consumerpolicy.get",
+    "serviceusage.effectivepolicy.get",
+    "serviceusage.groups.list",
+    "serviceusage.groups.listExpandedMembers",
+    "serviceusage.groups.listMembers",
+    "serviceusage.quotas.get",
+    "serviceusage.services.get",
+    "serviceusage.services.list",
+    "serviceusage.values.test"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.027Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/bigquery.readSessionUser --format=json"
+  },
+  "name": "roles/bigquery.readSessionUser",
+  "role_slug": "bigquery-readsessionuser",
+  "title": "BigQuery Read Session User",
+  "description": "Access to create and use read sessions",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "bigquery",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.readsessions.create",
+        "bigquery.readsessions.getData",
+        "bigquery.readsessions.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.readsessions.create",
+    "bigquery.readsessions.getData",
+    "bigquery.readsessions.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

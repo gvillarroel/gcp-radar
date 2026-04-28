@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.511Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataplex.storageDataWriter --format=json"
+  },
+  "name": "roles/dataplex.storageDataWriter",
+  "role_slug": "dataplex-storagedatawriter",
+  "title": "Dataplex Storage Data Writer",
+  "description": "Write access to data. Should not be used directly. This role is granted by Dataplex Universal Catalog to managed resources like Cloud Storage buckets, BigQuery datasets etc.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "bigquery",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.tables.updateData"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.objects.create",
+        "storage.objects.delete",
+        "storage.objects.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.tables.updateData",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.update"
+  ]
+}

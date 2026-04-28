@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.563Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/servicemanagement.serviceConsumer --format=json"
+  },
+  "name": "roles/servicemanagement.serviceConsumer",
+  "role_slug": "servicemanagement-serviceconsumer",
+  "title": "Service Consumer",
+  "description": "Can enable the service.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "servicemanagement"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "servicemanagement",
+      "permissions": [
+        "servicemanagement.services.bind"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "servicemanagement.services.bind"
+  ]
+}

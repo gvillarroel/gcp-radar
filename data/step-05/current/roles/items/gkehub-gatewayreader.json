@@ -1,0 +1,56 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.856Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/gkehub.gatewayReader --format=json"
+  },
+  "name": "roles/gkehub.gatewayReader",
+  "role_slug": "gkehub-gatewayreader",
+  "title": "Connect Gateway Reader",
+  "description": "Read-only access to Connect Gateway.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "gkehub",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "gkehub",
+      "permissions": [
+        "gkehub.gateway.generateCredentials",
+        "gkehub.gateway.get",
+        "gkehub.memberships.get"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.consumerpolicy.analyze",
+        "serviceusage.consumerpolicy.get",
+        "serviceusage.effectivepolicy.get",
+        "serviceusage.groups.list",
+        "serviceusage.groups.listExpandedMembers",
+        "serviceusage.groups.listMembers",
+        "serviceusage.services.get",
+        "serviceusage.values.test"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "gkehub.gateway.generateCredentials",
+    "gkehub.gateway.get",
+    "gkehub.memberships.get",
+    "serviceusage.consumerpolicy.analyze",
+    "serviceusage.consumerpolicy.get",
+    "serviceusage.effectivepolicy.get",
+    "serviceusage.groups.list",
+    "serviceusage.groups.listExpandedMembers",
+    "serviceusage.groups.listMembers",
+    "serviceusage.services.get",
+    "serviceusage.values.test"
+  ]
+}

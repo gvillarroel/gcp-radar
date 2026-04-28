@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.594Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/stackdriver.admin --format=json"
+  },
+  "name": "roles/stackdriver.admin",
+  "role_slug": "stackdriver-admin",
+  "title": "Stackdriver Admin",
+  "description": "Admin role for stackdriver",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "resourcemanager",
+    "stackdriver"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "stackdriver",
+      "permissions": [
+        "stackdriver.projects.edit",
+        "stackdriver.projects.get",
+        "stackdriver.resourceMetadata.list",
+        "stackdriver.resourceMetadata.write"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "stackdriver.projects.edit",
+    "stackdriver.projects.get",
+    "stackdriver.resourceMetadata.list",
+    "stackdriver.resourceMetadata.write"
+  ]
+}

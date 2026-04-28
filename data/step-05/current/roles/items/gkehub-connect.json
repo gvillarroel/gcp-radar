@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.853Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/gkehub.connect --format=json"
+  },
+  "name": "roles/gkehub.connect",
+  "role_slug": "gkehub-connect",
+  "title": "GKE Connect Agent",
+  "description": "Ability to set up GKE Connect between external clusters and Google.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "gkehub"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "gkehub",
+      "permissions": [
+        "gkehub.endpoints.connect"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "gkehub.endpoints.connect"
+  ]
+}

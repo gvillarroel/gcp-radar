@@ -1,0 +1,66 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.586Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/spanner.viewer --format=json"
+  },
+  "name": "roles/spanner.viewer",
+  "role_slug": "spanner-viewer",
+  "title": "Cloud Spanner Viewer",
+  "description": "Viewer access to Cloud Spanner resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "monitoring",
+    "resourcemanager",
+    "spanner"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.timeSeries.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "spanner",
+      "permissions": [
+        "spanner.databases.get",
+        "spanner.databases.list",
+        "spanner.instanceConfigs.get",
+        "spanner.instanceConfigs.list",
+        "spanner.instancePartitions.get",
+        "spanner.instancePartitions.list",
+        "spanner.instances.get",
+        "spanner.instances.list",
+        "spanner.instances.listEffectiveTags",
+        "spanner.instances.listTagBindings"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "monitoring.timeSeries.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "spanner.databases.get",
+    "spanner.databases.list",
+    "spanner.instanceConfigs.get",
+    "spanner.instanceConfigs.list",
+    "spanner.instancePartitions.get",
+    "spanner.instancePartitions.list",
+    "spanner.instances.get",
+    "spanner.instances.list",
+    "spanner.instances.listEffectiveTags",
+    "spanner.instances.listTagBindings"
+  ]
+}

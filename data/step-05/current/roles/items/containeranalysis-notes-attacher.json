@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.391Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/containeranalysis.notes.attacher --format=json"
+  },
+  "name": "roles/containeranalysis.notes.attacher",
+  "role_slug": "containeranalysis-notes-attacher",
+  "title": "Container Analysis Notes Attacher",
+  "description": "Can attach Container Analysis Occurrences to Notes.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "containeranalysis"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "containeranalysis",
+      "permissions": [
+        "containeranalysis.notes.attachOccurrence",
+        "containeranalysis.notes.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "containeranalysis.notes.attachOccurrence",
+    "containeranalysis.notes.get"
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.539Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securitycentermanagement.viewer --format=json"
+  },
+  "name": "roles/securitycentermanagement.viewer",
+  "role_slug": "securitycentermanagement-viewer",
+  "title": "Security Center Management Viewer",
+  "description": "Readonly access to Cloud Security Command Center services and custom modules configuration.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 27,
+  "permission_groups": [
+    "resourcemanager",
+    "securitycenter",
+    "securitycentermanagement"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.organizations.get",
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "securitycenter",
+      "permissions": [
+        "securitycenter.organizationsettings.get",
+        "securitycenter.securitycentersettings.get"
+      ]
+    },
+    {
+      "group": "securitycentermanagement",
+      "permissions": [
+        "securitycentermanagement.billingMetadata.get",
+        "securitycentermanagement.effectiveEventThreatDetectionCustomModules.get",
+        "securitycentermanagement.effectiveEventThreatDetectionCustomModules.list",
+        "securitycentermanagement.effectiveSecurityHealthAnalyticsCustomModules.get",
+        "securitycentermanagement.effectiveSecurityHealthAnalyticsCustomModules.list",
+        "securitycentermanagement.eventThreatDetectionCustomModules.get",
+        "securitycentermanagement.eventThreatDetectionCustomModules.list",
+        "securitycentermanagement.eventThreatDetectionCustomModules.validate",
+        "securitycentermanagement.locations.get",
+        "securitycentermanagement.locations.list",
+        "securitycentermanagement.operations.get",
+        "securitycentermanagement.operations.list",
+        "securitycentermanagement.securityCenter.get",
+        "securitycentermanagement.securityCenterServices.get",
+        "securitycentermanagement.securityCenterServices.list",
+        "securitycentermanagement.securityCommandCenter.checkActivationOperation",
+        "securitycentermanagement.securityCommandCenter.checkOnboardingStatus",
+        "securitycentermanagement.securityCommandCenter.get",
+        "securitycentermanagement.securityHealthAnalyticsCustomModules.get",
+        "securitycentermanagement.securityHealthAnalyticsCustomModules.list",
+        "securitycentermanagement.securityHealthAnalyticsCustomModules.simulate",
+        "securitycentermanagement.securityHealthAnalyticsCustomModules.test"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.organizations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "securitycenter.organizationsettings.get",
+    "securitycenter.securitycentersettings.get",
+    "securitycentermanagement.billingMetadata.get",
+    "securitycentermanagement.effectiveEventThreatDetectionCustomModules.get",
+    "securitycentermanagement.effectiveEventThreatDetectionCustomModules.list",
+    "securitycentermanagement.effectiveSecurityHealthAnalyticsCustomModules.get",
+    "securitycentermanagement.effectiveSecurityHealthAnalyticsCustomModules.list",
+    "securitycentermanagement.eventThreatDetectionCustomModules.get",
+    "securitycentermanagement.eventThreatDetectionCustomModules.list",
+    "securitycentermanagement.eventThreatDetectionCustomModules.validate",
+    "securitycentermanagement.locations.get",
+    "securitycentermanagement.locations.list",
+    "securitycentermanagement.operations.get",
+    "securitycentermanagement.operations.list",
+    "securitycentermanagement.securityCenter.get",
+    "securitycentermanagement.securityCenterServices.get",
+    "securitycentermanagement.securityCenterServices.list",
+    "securitycentermanagement.securityCommandCenter.checkActivationOperation",
+    "securitycentermanagement.securityCommandCenter.checkOnboardingStatus",
+    "securitycentermanagement.securityCommandCenter.get",
+    "securitycentermanagement.securityHealthAnalyticsCustomModules.get",
+    "securitycentermanagement.securityHealthAnalyticsCustomModules.list",
+    "securitycentermanagement.securityHealthAnalyticsCustomModules.simulate",
+    "securitycentermanagement.securityHealthAnalyticsCustomModules.test"
+  ]
+}

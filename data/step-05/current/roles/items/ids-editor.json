@@ -1,0 +1,62 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.977Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/ids.editor --format=json"
+  },
+  "name": "roles/ids.editor",
+  "role_slug": "ids-editor",
+  "title": "Cloud IDS Editor",
+  "description": "Editor role for Cloud IDS",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 14,
+  "permission_groups": [
+    "ids",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "ids",
+      "permissions": [
+        "ids.endpoints.create",
+        "ids.endpoints.delete",
+        "ids.endpoints.get",
+        "ids.endpoints.getIamPolicy",
+        "ids.endpoints.list",
+        "ids.endpoints.update",
+        "ids.locations.get",
+        "ids.locations.list",
+        "ids.operations.cancel",
+        "ids.operations.delete",
+        "ids.operations.get",
+        "ids.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "ids.endpoints.create",
+    "ids.endpoints.delete",
+    "ids.endpoints.get",
+    "ids.endpoints.getIamPolicy",
+    "ids.endpoints.list",
+    "ids.endpoints.update",
+    "ids.locations.get",
+    "ids.locations.list",
+    "ids.operations.cancel",
+    "ids.operations.delete",
+    "ids.operations.get",
+    "ids.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

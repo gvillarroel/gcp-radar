@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.406Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/redisenterprisecloud.viewer --format=json"
+  },
+  "name": "roles/redisenterprisecloud.viewer",
+  "role_slug": "redisenterprisecloud-viewer",
+  "title": "Redis Enterprise Cloud Viewer",
+  "description": "This role is managed by Redis Labs, not Google.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "gcp",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "gcp",
+      "permissions": [
+        "gcp.redisenterprise.com/databases.get",
+        "gcp.redisenterprise.com/databases.list",
+        "gcp.redisenterprise.com/subscriptions.get",
+        "gcp.redisenterprise.com/subscriptions.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "gcp.redisenterprise.com/databases.get",
+    "gcp.redisenterprise.com/databases.list",
+    "gcp.redisenterprise.com/subscriptions.get",
+    "gcp.redisenterprise.com/subscriptions.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

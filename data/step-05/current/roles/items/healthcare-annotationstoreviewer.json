@@ -1,0 +1,52 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.880Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/healthcare.annotationStoreViewer --format=json"
+  },
+  "name": "roles/healthcare.annotationStoreViewer",
+  "role_slug": "healthcare-annotationstoreviewer",
+  "title": "Healthcare Annotation Store Viewer",
+  "description": "List Annotation Stores in a dataset.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "healthcare",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "healthcare",
+      "permissions": [
+        "healthcare.annotationStores.get",
+        "healthcare.annotationStores.list",
+        "healthcare.datasets.get",
+        "healthcare.datasets.list",
+        "healthcare.locations.get",
+        "healthcare.locations.list",
+        "healthcare.operations.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "healthcare.annotationStores.get",
+    "healthcare.annotationStores.list",
+    "healthcare.datasets.get",
+    "healthcare.datasets.list",
+    "healthcare.locations.get",
+    "healthcare.locations.list",
+    "healthcare.operations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

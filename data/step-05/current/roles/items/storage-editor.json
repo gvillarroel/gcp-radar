@@ -1,0 +1,72 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.602Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/storage.editor --format=json"
+  },
+  "name": "roles/storage.editor",
+  "role_slug": "storage-editor",
+  "title": "Storage Editor",
+  "description": "Editor role for storage",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 19,
+  "permission_groups": [
+    "resourcemanager",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.create",
+        "storage.buckets.delete",
+        "storage.buckets.list",
+        "storage.buckets.listEffectiveTags",
+        "storage.buckets.listTagBindings",
+        "storage.buckets.viewIntelligenceDetails",
+        "storage.folders.create",
+        "storage.folders.delete",
+        "storage.folders.get",
+        "storage.folders.list",
+        "storage.folders.rename",
+        "storage.hmacKeys.create",
+        "storage.hmacKeys.delete",
+        "storage.hmacKeys.get",
+        "storage.hmacKeys.list",
+        "storage.hmacKeys.update",
+        "storage.intelligenceConfigs.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "storage.buckets.create",
+    "storage.buckets.delete",
+    "storage.buckets.list",
+    "storage.buckets.listEffectiveTags",
+    "storage.buckets.listTagBindings",
+    "storage.buckets.viewIntelligenceDetails",
+    "storage.folders.create",
+    "storage.folders.delete",
+    "storage.folders.get",
+    "storage.folders.list",
+    "storage.folders.rename",
+    "storage.hmacKeys.create",
+    "storage.hmacKeys.delete",
+    "storage.hmacKeys.get",
+    "storage.hmacKeys.list",
+    "storage.hmacKeys.update",
+    "storage.intelligenceConfigs.get"
+  ]
+}

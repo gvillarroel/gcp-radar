@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.587Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/speakerid.admin --format=json"
+  },
+  "name": "roles/speakerid.admin",
+  "role_slug": "speakerid-admin",
+  "title": "Speaker ID Admin",
+  "description": "Grants full access to all Speaker ID resources, including project settings.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "speakerid"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "speakerid",
+      "permissions": [
+        "speakerid.phrases.create",
+        "speakerid.phrases.delete",
+        "speakerid.phrases.get",
+        "speakerid.phrases.list",
+        "speakerid.settings.get",
+        "speakerid.settings.update",
+        "speakerid.speakers.create",
+        "speakerid.speakers.delete",
+        "speakerid.speakers.get",
+        "speakerid.speakers.list",
+        "speakerid.speakers.verify"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "speakerid.phrases.create",
+    "speakerid.phrases.delete",
+    "speakerid.phrases.get",
+    "speakerid.phrases.list",
+    "speakerid.settings.get",
+    "speakerid.settings.update",
+    "speakerid.speakers.create",
+    "speakerid.speakers.delete",
+    "speakerid.speakers.get",
+    "speakerid.speakers.list",
+    "speakerid.speakers.verify"
+  ]
+}

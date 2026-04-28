@@ -1,0 +1,80 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.289Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/commercepricemanagement.viewer --format=json"
+  },
+  "name": "roles/commercepricemanagement.viewer",
+  "role_slug": "commercepricemanagement-viewer",
+  "title": "Commerce Price Management Viewer",
+  "description": "Allows viewing offers, free trials, skus",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 17,
+  "permission_groups": [
+    "commerceagreementpublishing",
+    "commerceprice",
+    "resourcemanager",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "commerceagreementpublishing",
+      "permissions": [
+        "commerceagreementpublishing.agreements.get",
+        "commerceagreementpublishing.agreements.list",
+        "commerceagreementpublishing.documents.get",
+        "commerceagreementpublishing.documents.list"
+      ]
+    },
+    {
+      "group": "commerceprice",
+      "permissions": [
+        "commerceprice.privateoffers.get",
+        "commerceprice.privateoffers.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.consumerpolicy.analyze",
+        "serviceusage.consumerpolicy.get",
+        "serviceusage.effectivepolicy.get",
+        "serviceusage.groups.list",
+        "serviceusage.groups.listExpandedMembers",
+        "serviceusage.groups.listMembers",
+        "serviceusage.services.get",
+        "serviceusage.services.list",
+        "serviceusage.values.test"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "commerceagreementpublishing.agreements.get",
+    "commerceagreementpublishing.agreements.list",
+    "commerceagreementpublishing.documents.get",
+    "commerceagreementpublishing.documents.list",
+    "commerceprice.privateoffers.get",
+    "commerceprice.privateoffers.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "serviceusage.consumerpolicy.analyze",
+    "serviceusage.consumerpolicy.get",
+    "serviceusage.effectivepolicy.get",
+    "serviceusage.groups.list",
+    "serviceusage.groups.listExpandedMembers",
+    "serviceusage.groups.listMembers",
+    "serviceusage.services.get",
+    "serviceusage.services.list",
+    "serviceusage.values.test"
+  ]
+}

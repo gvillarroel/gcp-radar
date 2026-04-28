@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.236Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/osconfig.instanceOSPoliciesComplianceViewer --format=json"
+  },
+  "name": "roles/osconfig.instanceOSPoliciesComplianceViewer",
+  "role_slug": "osconfig-instanceospoliciescomplianceviewer",
+  "title": "InstanceOSPoliciesCompliance Viewer",
+  "description": "Viewer of OS Policies Compliance of VM instances",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "osconfig",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "osconfig",
+      "permissions": [
+        "osconfig.instanceOSPoliciesCompliances.get",
+        "osconfig.instanceOSPoliciesCompliances.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "osconfig.instanceOSPoliciesCompliances.get",
+    "osconfig.instanceOSPoliciesCompliances.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

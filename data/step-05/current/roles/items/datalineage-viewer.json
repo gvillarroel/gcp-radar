@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.468Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datalineage.viewer --format=json"
+  },
+  "name": "roles/datalineage.viewer",
+  "role_slug": "datalineage-viewer",
+  "title": "Data Lineage Viewer",
+  "description": "Grants read access to all resources in Data Lineage API",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "datalineage",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datalineage",
+      "permissions": [
+        "datalineage.events.get",
+        "datalineage.events.getFields",
+        "datalineage.events.list",
+        "datalineage.locations.searchLinks",
+        "datalineage.processes.get",
+        "datalineage.processes.list",
+        "datalineage.runs.get",
+        "datalineage.runs.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datalineage.events.get",
+    "datalineage.events.getFields",
+    "datalineage.events.list",
+    "datalineage.locations.searchLinks",
+    "datalineage.processes.get",
+    "datalineage.processes.list",
+    "datalineage.runs.get",
+    "datalineage.runs.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

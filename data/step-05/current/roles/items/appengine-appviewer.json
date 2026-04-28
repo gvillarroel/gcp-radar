@@ -1,0 +1,76 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.908Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/appengine.appViewer --format=json"
+  },
+  "name": "roles/appengine.appViewer",
+  "role_slug": "appengine-appviewer",
+  "title": "App Engine Viewer",
+  "description": "Ability to view App Engine app status.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 15,
+  "permission_groups": [
+    "appengine",
+    "artifactregistry",
+    "recommender",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "appengine",
+      "permissions": [
+        "appengine.applications.get",
+        "appengine.applications.listRuntimes",
+        "appengine.instances.get",
+        "appengine.instances.list",
+        "appengine.operations.get",
+        "appengine.operations.list",
+        "appengine.services.get",
+        "appengine.services.list",
+        "appengine.versions.get",
+        "appengine.versions.list"
+      ]
+    },
+    {
+      "group": "artifactregistry",
+      "permissions": [
+        "artifactregistry.projectsettings.get"
+      ]
+    },
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.locations.get",
+        "recommender.locations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "appengine.applications.get",
+    "appengine.applications.listRuntimes",
+    "appengine.instances.get",
+    "appengine.instances.list",
+    "appengine.operations.get",
+    "appengine.operations.list",
+    "appengine.services.get",
+    "appengine.services.list",
+    "appengine.versions.get",
+    "appengine.versions.list",
+    "artifactregistry.projectsettings.get",
+    "recommender.locations.get",
+    "recommender.locations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

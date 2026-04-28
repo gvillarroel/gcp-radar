@@ -1,0 +1,70 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.970Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/identityplatform.admin --format=json"
+  },
+  "name": "roles/identityplatform.admin",
+  "role_slug": "identityplatform-admin",
+  "title": "Identity Platform Admin",
+  "description": "Full access to Identity Platform resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 18,
+  "permission_groups": [
+    "firebaseauth",
+    "identitytoolkit"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "firebaseauth",
+      "permissions": [
+        "firebaseauth.configs.create",
+        "firebaseauth.configs.get",
+        "firebaseauth.configs.getHashConfig",
+        "firebaseauth.configs.getSecret",
+        "firebaseauth.configs.update",
+        "firebaseauth.users.create",
+        "firebaseauth.users.createSession",
+        "firebaseauth.users.delete",
+        "firebaseauth.users.get",
+        "firebaseauth.users.sendEmail",
+        "firebaseauth.users.update"
+      ]
+    },
+    {
+      "group": "identitytoolkit",
+      "permissions": [
+        "identitytoolkit.tenants.create",
+        "identitytoolkit.tenants.delete",
+        "identitytoolkit.tenants.get",
+        "identitytoolkit.tenants.getIamPolicy",
+        "identitytoolkit.tenants.list",
+        "identitytoolkit.tenants.setIamPolicy",
+        "identitytoolkit.tenants.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "firebaseauth.configs.create",
+    "firebaseauth.configs.get",
+    "firebaseauth.configs.getHashConfig",
+    "firebaseauth.configs.getSecret",
+    "firebaseauth.configs.update",
+    "firebaseauth.users.create",
+    "firebaseauth.users.createSession",
+    "firebaseauth.users.delete",
+    "firebaseauth.users.get",
+    "firebaseauth.users.sendEmail",
+    "firebaseauth.users.update",
+    "identitytoolkit.tenants.create",
+    "identitytoolkit.tenants.delete",
+    "identitytoolkit.tenants.get",
+    "identitytoolkit.tenants.getIamPolicy",
+    "identitytoolkit.tenants.list",
+    "identitytoolkit.tenants.setIamPolicy",
+    "identitytoolkit.tenants.update"
+  ]
+}

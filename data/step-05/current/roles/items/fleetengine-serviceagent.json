@@ -1,0 +1,72 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.808Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/fleetengine.serviceAgent --format=json"
+  },
+  "name": "roles/fleetengine.serviceAgent",
+  "role_slug": "fleetengine-serviceagent",
+  "title": "FleetEngine Service Agent",
+  "description": "Grants the FleetEngine Service Account access to manage resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "bigquery",
+    "dataform",
+    "resourcemanager",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.config.get",
+        "bigquery.datasets.create",
+        "bigquery.datasets.get",
+        "bigquery.jobs.create",
+        "bigquery.tables.getData"
+      ]
+    },
+    {
+      "group": "dataform",
+      "permissions": [
+        "dataform.folders.create",
+        "dataform.locations.get",
+        "dataform.locations.list",
+        "dataform.repositories.create",
+        "dataform.repositories.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.enable"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.config.get",
+    "bigquery.datasets.create",
+    "bigquery.datasets.get",
+    "bigquery.jobs.create",
+    "bigquery.tables.getData",
+    "dataform.folders.create",
+    "dataform.locations.get",
+    "dataform.locations.list",
+    "dataform.repositories.create",
+    "dataform.repositories.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "serviceusage.services.enable"
+  ]
+}

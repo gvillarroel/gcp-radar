@@ -1,0 +1,66 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.479Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataplex.aspectTypeOwner --format=json"
+  },
+  "name": "roles/dataplex.aspectTypeOwner",
+  "role_slug": "dataplex-aspecttypeowner",
+  "title": "Dataplex Aspect Type Owner",
+  "description": "Grants access to creating and managing Aspect Types. Does not give the right to create/modify Entries.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "datacatalog",
+    "dataplex",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datacatalog",
+      "permissions": [
+        "datacatalog.migrationConfig.get"
+      ]
+    },
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.aspectTypes.create",
+        "dataplex.aspectTypes.delete",
+        "dataplex.aspectTypes.get",
+        "dataplex.aspectTypes.getIamPolicy",
+        "dataplex.aspectTypes.list",
+        "dataplex.aspectTypes.setIamPolicy",
+        "dataplex.aspectTypes.update",
+        "dataplex.aspectTypes.use",
+        "dataplex.operations.get",
+        "dataplex.projects.search"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datacatalog.migrationConfig.get",
+    "dataplex.aspectTypes.create",
+    "dataplex.aspectTypes.delete",
+    "dataplex.aspectTypes.get",
+    "dataplex.aspectTypes.getIamPolicy",
+    "dataplex.aspectTypes.list",
+    "dataplex.aspectTypes.setIamPolicy",
+    "dataplex.aspectTypes.update",
+    "dataplex.aspectTypes.use",
+    "dataplex.operations.get",
+    "dataplex.projects.search",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

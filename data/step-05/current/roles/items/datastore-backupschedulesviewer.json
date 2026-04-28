@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.534Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datastore.backupSchedulesViewer --format=json"
+  },
+  "name": "roles/datastore.backupSchedulesViewer",
+  "role_slug": "datastore-backupschedulesviewer",
+  "title": "Cloud Datastore Backup Schedules Viewer",
+  "description": "Read access to backup schedules in Cloud Datastore.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "datastore"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datastore",
+      "permissions": [
+        "datastore.backupSchedules.get",
+        "datastore.backupSchedules.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datastore.backupSchedules.get",
+    "datastore.backupSchedules.list"
+  ]
+}

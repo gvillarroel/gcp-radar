@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.995Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/issuerswitch.issuerParticipantsAdmin --format=json"
+  },
+  "name": "roles/issuerswitch.issuerParticipantsAdmin",
+  "role_slug": "issuerswitch-issuerparticipantsadmin",
+  "title": "Issuerswitch Participants Admin",
+  "description": "Full access to issuer switch participants",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "issuerswitch",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "issuerswitch",
+      "permissions": [
+        "issuerswitch.issuerParticipants.get",
+        "issuerswitch.issuerParticipants.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "issuerswitch.issuerParticipants.get",
+    "issuerswitch.issuerParticipants.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

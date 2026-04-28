@@ -1,0 +1,82 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.545Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datastore.viewer --format=json"
+  },
+  "name": "roles/datastore.viewer",
+  "role_slug": "datastore-viewer",
+  "title": "Cloud Datastore Viewer",
+  "description": "Read access to all Cloud Datastore resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 18,
+  "permission_groups": [
+    "appengine",
+    "databasesconsole",
+    "datastore",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "appengine",
+      "permissions": [
+        "appengine.applications.get"
+      ]
+    },
+    {
+      "group": "databasesconsole",
+      "permissions": [
+        "databasesconsole.locations.get",
+        "databasesconsole.locations.list",
+        "databasesconsole.studioQueries.search"
+      ]
+    },
+    {
+      "group": "datastore",
+      "permissions": [
+        "datastore.databases.get",
+        "datastore.databases.getMetadata",
+        "datastore.databases.list",
+        "datastore.entities.get",
+        "datastore.entities.list",
+        "datastore.insights.get",
+        "datastore.namespaces.get",
+        "datastore.namespaces.list",
+        "datastore.schemas.get",
+        "datastore.schemas.list",
+        "datastore.statistics.get",
+        "datastore.statistics.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "appengine.applications.get",
+    "databasesconsole.locations.get",
+    "databasesconsole.locations.list",
+    "databasesconsole.studioQueries.search",
+    "datastore.databases.get",
+    "datastore.databases.getMetadata",
+    "datastore.databases.list",
+    "datastore.entities.get",
+    "datastore.entities.list",
+    "datastore.insights.get",
+    "datastore.namespaces.get",
+    "datastore.namespaces.list",
+    "datastore.schemas.get",
+    "datastore.schemas.list",
+    "datastore.statistics.get",
+    "datastore.statistics.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

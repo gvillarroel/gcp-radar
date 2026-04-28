@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.103Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/ml.operationOwner --format=json"
+  },
+  "name": "roles/ml.operationOwner",
+  "role_slug": "ml-operationowner",
+  "title": "AI Platform Operation Owner",
+  "description": "Full access to the operation.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "ml"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "ml",
+      "permissions": [
+        "ml.operations.cancel",
+        "ml.operations.get",
+        "ml.operations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "ml.operations.cancel",
+    "ml.operations.get",
+    "ml.operations.list"
+  ]
+}

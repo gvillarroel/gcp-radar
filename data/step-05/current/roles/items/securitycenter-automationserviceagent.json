@@ -1,0 +1,82 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.498Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securitycenter.automationServiceAgent --format=json"
+  },
+  "name": "roles/securitycenter.automationServiceAgent",
+  "role_slug": "securitycenter-automationserviceagent",
+  "title": "Security Center Automation Service Agent",
+  "description": "Security Center automation service agent can configure GCP resources to enable security scanning.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 21,
+  "permission_groups": [
+    "cloudasset",
+    "resourcemanager",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudasset",
+      "permissions": [
+        "cloudasset.feeds.create",
+        "cloudasset.feeds.delete",
+        "cloudasset.feeds.get",
+        "cloudasset.feeds.list",
+        "cloudasset.feeds.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.folders.get",
+        "resourcemanager.folders.list",
+        "resourcemanager.organizations.get",
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.getIamPolicy",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.consumerpolicy.analyze",
+        "serviceusage.consumerpolicy.get",
+        "serviceusage.consumerpolicy.update",
+        "serviceusage.effectivepolicy.get",
+        "serviceusage.groups.list",
+        "serviceusage.groups.listExpandedMembers",
+        "serviceusage.groups.listMembers",
+        "serviceusage.services.enable",
+        "serviceusage.services.get",
+        "serviceusage.values.test"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudasset.feeds.create",
+    "cloudasset.feeds.delete",
+    "cloudasset.feeds.get",
+    "cloudasset.feeds.list",
+    "cloudasset.feeds.update",
+    "resourcemanager.folders.get",
+    "resourcemanager.folders.list",
+    "resourcemanager.organizations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.getIamPolicy",
+    "resourcemanager.projects.list",
+    "serviceusage.consumerpolicy.analyze",
+    "serviceusage.consumerpolicy.get",
+    "serviceusage.consumerpolicy.update",
+    "serviceusage.effectivepolicy.get",
+    "serviceusage.groups.list",
+    "serviceusage.groups.listExpandedMembers",
+    "serviceusage.groups.listMembers",
+    "serviceusage.services.enable",
+    "serviceusage.services.get",
+    "serviceusage.values.test"
+  ]
+}

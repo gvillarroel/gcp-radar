@@ -1,0 +1,82 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.282Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/privateca.auditor --format=json"
+  },
+  "name": "roles/privateca.auditor",
+  "role_slug": "privateca-auditor",
+  "title": "CA Service Auditor",
+  "description": "Read-only access to all CA Service resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 24,
+  "permission_groups": [
+    "privateca",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "privateca",
+      "permissions": [
+        "privateca.caPools.get",
+        "privateca.caPools.getIamPolicy",
+        "privateca.caPools.list",
+        "privateca.certificateAuthorities.get",
+        "privateca.certificateAuthorities.getIamPolicy",
+        "privateca.certificateAuthorities.list",
+        "privateca.certificateRevocationLists.get",
+        "privateca.certificateRevocationLists.getIamPolicy",
+        "privateca.certificateRevocationLists.list",
+        "privateca.certificates.get",
+        "privateca.certificates.getIamPolicy",
+        "privateca.certificates.list",
+        "privateca.certificateTemplates.get",
+        "privateca.certificateTemplates.getIamPolicy",
+        "privateca.certificateTemplates.list",
+        "privateca.locations.get",
+        "privateca.locations.list",
+        "privateca.operations.get",
+        "privateca.operations.list",
+        "privateca.reusableConfigs.get",
+        "privateca.reusableConfigs.getIamPolicy",
+        "privateca.reusableConfigs.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "privateca.caPools.get",
+    "privateca.caPools.getIamPolicy",
+    "privateca.caPools.list",
+    "privateca.certificateAuthorities.get",
+    "privateca.certificateAuthorities.getIamPolicy",
+    "privateca.certificateAuthorities.list",
+    "privateca.certificateRevocationLists.get",
+    "privateca.certificateRevocationLists.getIamPolicy",
+    "privateca.certificateRevocationLists.list",
+    "privateca.certificates.get",
+    "privateca.certificates.getIamPolicy",
+    "privateca.certificates.list",
+    "privateca.certificateTemplates.get",
+    "privateca.certificateTemplates.getIamPolicy",
+    "privateca.certificateTemplates.list",
+    "privateca.locations.get",
+    "privateca.locations.list",
+    "privateca.operations.get",
+    "privateca.operations.list",
+    "privateca.reusableConfigs.get",
+    "privateca.reusableConfigs.getIamPolicy",
+    "privateca.reusableConfigs.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

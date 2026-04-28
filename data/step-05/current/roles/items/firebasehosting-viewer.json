@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.783Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebasehosting.viewer --format=json"
+  },
+  "name": "roles/firebasehosting.viewer",
+  "role_slug": "firebasehosting-viewer",
+  "title": "Firebase Hosting Viewer",
+  "description": "Read-only access to Firebase Hosting resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "firebase",
+    "firebasehosting",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "firebase",
+      "permissions": [
+        "firebase.clients.get",
+        "firebase.clients.list",
+        "firebase.projects.get"
+      ]
+    },
+    {
+      "group": "firebasehosting",
+      "permissions": [
+        "firebasehosting.sites.get",
+        "firebasehosting.sites.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "firebase.clients.get",
+    "firebase.clients.list",
+    "firebase.projects.get",
+    "firebasehosting.sites.get",
+    "firebasehosting.sites.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

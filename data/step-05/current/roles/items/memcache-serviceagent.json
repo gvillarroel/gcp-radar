@@ -1,0 +1,82 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.078Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/memcache.serviceAgent --format=json"
+  },
+  "name": "roles/memcache.serviceAgent",
+  "role_slug": "memcache-serviceagent",
+  "title": "Cloud Memorystore Memcached Service Agent",
+  "description": "Gives Cloud Memorystore Memcached service account access to managed resource",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 18,
+  "permission_groups": [
+    "compute",
+    "monitoring",
+    "resourcemanager",
+    "telemetry"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.globalOperations.get",
+        "compute.networks.addPeering",
+        "compute.networks.get",
+        "compute.networks.removePeering",
+        "compute.networks.update",
+        "compute.routes.get",
+        "compute.routes.list",
+        "compute.subnetworks.get",
+        "compute.subnetworks.list"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.metricDescriptors.create",
+        "monitoring.metricDescriptors.get",
+        "monitoring.metricDescriptors.list",
+        "monitoring.monitoredResourceDescriptors.get",
+        "monitoring.monitoredResourceDescriptors.list",
+        "monitoring.timeSeries.create"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "telemetry",
+      "permissions": [
+        "telemetry.metrics.write"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "compute.globalOperations.get",
+    "compute.networks.addPeering",
+    "compute.networks.get",
+    "compute.networks.removePeering",
+    "compute.networks.update",
+    "compute.routes.get",
+    "compute.routes.list",
+    "compute.subnetworks.get",
+    "compute.subnetworks.list",
+    "monitoring.metricDescriptors.create",
+    "monitoring.metricDescriptors.get",
+    "monitoring.metricDescriptors.list",
+    "monitoring.monitoredResourceDescriptors.get",
+    "monitoring.monitoredResourceDescriptors.list",
+    "monitoring.timeSeries.create",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "telemetry.metrics.write"
+  ]
+}

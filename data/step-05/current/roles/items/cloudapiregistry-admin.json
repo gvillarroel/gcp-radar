@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.127Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudapiregistry.admin --format=json"
+  },
+  "name": "roles/cloudapiregistry.admin",
+  "role_slug": "cloudapiregistry-admin",
+  "title": "Cloud API Registry Admin",
+  "description": "Read/write access to Cloud API Registry resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "cloudapiregistry",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudapiregistry",
+      "permissions": [
+        "cloudapiregistry.locations.get",
+        "cloudapiregistry.locations.list",
+        "cloudapiregistry.mcpServers.get",
+        "cloudapiregistry.mcpServers.list",
+        "cloudapiregistry.mcpTools.get",
+        "cloudapiregistry.mcpTools.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.effectivemcppolicy.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudapiregistry.locations.get",
+    "cloudapiregistry.locations.list",
+    "cloudapiregistry.mcpServers.get",
+    "cloudapiregistry.mcpServers.list",
+    "cloudapiregistry.mcpTools.get",
+    "cloudapiregistry.mcpTools.list",
+    "serviceusage.effectivemcppolicy.get"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.044Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/bigquerymigration.admin --format=json"
+  },
+  "name": "roles/bigquerymigration.admin",
+  "role_slug": "bigquerymigration-admin",
+  "title": "Bigquerymigration Admin",
+  "description": "Admin role for bigquerymigration",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 14,
+  "permission_groups": [
+    "bigquerymigration",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquerymigration",
+      "permissions": [
+        "bigquerymigration.subtasks.get",
+        "bigquerymigration.subtasks.list",
+        "bigquerymigration.translation.translate",
+        "bigquerymigration.workflows.create",
+        "bigquerymigration.workflows.delete",
+        "bigquerymigration.workflows.enableAiOutputTypes",
+        "bigquerymigration.workflows.enableLineageOutputTypes",
+        "bigquerymigration.workflows.enableOutputTypePermissions",
+        "bigquerymigration.workflows.get",
+        "bigquerymigration.workflows.list",
+        "bigquerymigration.workflows.orchestrateTask",
+        "bigquerymigration.workflows.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquerymigration.subtasks.get",
+    "bigquerymigration.subtasks.list",
+    "bigquerymigration.translation.translate",
+    "bigquerymigration.workflows.create",
+    "bigquerymigration.workflows.delete",
+    "bigquerymigration.workflows.enableAiOutputTypes",
+    "bigquerymigration.workflows.enableLineageOutputTypes",
+    "bigquerymigration.workflows.enableOutputTypePermissions",
+    "bigquerymigration.workflows.get",
+    "bigquerymigration.workflows.list",
+    "bigquerymigration.workflows.orchestrateTask",
+    "bigquerymigration.workflows.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

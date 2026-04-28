@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.598Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dialogflow.webhookAdmin --format=json"
+  },
+  "name": "roles/dialogflow.webhookAdmin",
+  "role_slug": "dialogflow-webhookadmin",
+  "title": "Dialogflow Webhook Admin",
+  "description": "Can read & write webhooks.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "dialogflow"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dialogflow",
+      "permissions": [
+        "dialogflow.webhooks.create",
+        "dialogflow.webhooks.delete",
+        "dialogflow.webhooks.get",
+        "dialogflow.webhooks.list",
+        "dialogflow.webhooks.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dialogflow.webhooks.create",
+    "dialogflow.webhooks.delete",
+    "dialogflow.webhooks.get",
+    "dialogflow.webhooks.list",
+    "dialogflow.webhooks.update"
+  ]
+}

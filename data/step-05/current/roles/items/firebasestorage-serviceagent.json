@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.796Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebasestorage.serviceAgent --format=json"
+  },
+  "name": "roles/firebasestorage.serviceAgent",
+  "role_slug": "firebasestorage-serviceagent",
+  "title": "Cloud Storage for Firebase Service Agent",
+  "description": "Access to Cloud Storage for Firebase through API and SDK.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.get",
+        "storage.buckets.getIamPolicy",
+        "storage.objects.create",
+        "storage.objects.delete",
+        "storage.objects.get",
+        "storage.objects.getIamPolicy",
+        "storage.objects.list",
+        "storage.objects.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "storage.buckets.get",
+    "storage.buckets.getIamPolicy",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.get",
+    "storage.objects.getIamPolicy",
+    "storage.objects.list",
+    "storage.objects.update"
+  ]
+}

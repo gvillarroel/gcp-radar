@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.618Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dlp.connectionsAdmin --format=json"
+  },
+  "name": "roles/dlp.connectionsAdmin",
+  "role_slug": "dlp-connectionsadmin",
+  "title": "DLP Connections Admin",
+  "description": "Manage DLP Connections.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "dlp",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dlp",
+      "permissions": [
+        "dlp.connections.create",
+        "dlp.connections.delete",
+        "dlp.connections.get",
+        "dlp.connections.list",
+        "dlp.connections.search",
+        "dlp.connections.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dlp.connections.create",
+    "dlp.connections.delete",
+    "dlp.connections.get",
+    "dlp.connections.list",
+    "dlp.connections.search",
+    "dlp.connections.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

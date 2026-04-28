@@ -1,0 +1,60 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.442Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataflow.viewer --format=json"
+  },
+  "name": "roles/dataflow.viewer",
+  "role_slug": "dataflow-viewer",
+  "title": "Dataflow Viewer",
+  "description": "Read only access to Dataflow jobs.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "dataflow",
+    "recommender",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dataflow",
+      "permissions": [
+        "dataflow.jobs.get",
+        "dataflow.jobs.list",
+        "dataflow.messages.list",
+        "dataflow.metrics.get",
+        "dataflow.snapshots.get",
+        "dataflow.snapshots.list"
+      ]
+    },
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.dataflowDiagnosticsInsights.get",
+        "recommender.dataflowDiagnosticsInsights.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dataflow.jobs.get",
+    "dataflow.jobs.list",
+    "dataflow.messages.list",
+    "dataflow.metrics.get",
+    "dataflow.snapshots.get",
+    "dataflow.snapshots.list",
+    "recommender.dataflowDiagnosticsInsights.get",
+    "recommender.dataflowDiagnosticsInsights.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

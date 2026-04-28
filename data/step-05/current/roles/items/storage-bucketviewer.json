@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.600Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/storage.bucketViewer --format=json"
+  },
+  "name": "roles/storage.bucketViewer",
+  "role_slug": "storage-bucketviewer",
+  "title": "Storage Bucket Viewer",
+  "description": "Grants permission to view buckets and their metadata, excluding IAM policies.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.get",
+        "storage.buckets.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "storage.buckets.get",
+    "storage.buckets.list"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.646Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dlp.user --format=json"
+  },
+  "name": "roles/dlp.user",
+  "role_slug": "dlp-user",
+  "title": "DLP User",
+  "description": "Inspect, Redact, and De-identify Content",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "dlp",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dlp",
+      "permissions": [
+        "dlp.kms.encrypt",
+        "dlp.locations.get",
+        "dlp.locations.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dlp.kms.encrypt",
+    "dlp.locations.get",
+    "dlp.locations.list",
+    "serviceusage.services.use"
+  ]
+}

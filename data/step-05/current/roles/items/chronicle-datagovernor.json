@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.100Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/chronicle.dataGovernor --format=json"
+  },
+  "name": "roles/chronicle.dataGovernor",
+  "role_slug": "chronicle-datagovernor",
+  "title": "Chronicle API Data Governor",
+  "description": "Grants elevated access to control the lifecycle of the Chronicle instance and its data.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "chronicle",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "chronicle",
+      "permissions": [
+        "chronicle.instances.delete",
+        "chronicle.instances.undelete"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "chronicle.instances.delete",
+    "chronicle.instances.undelete",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

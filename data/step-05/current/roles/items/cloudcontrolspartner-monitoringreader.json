@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.157Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudcontrolspartner.monitoringReader --format=json"
+  },
+  "name": "roles/cloudcontrolspartner.monitoringReader",
+  "role_slug": "cloudcontrolspartner-monitoringreader",
+  "title": "Cloud Controls Partner Monitoring Reader",
+  "description": "Readonly access to Cloud Controls Partner monitoring resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "cloudcontrolspartner"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudcontrolspartner",
+      "permissions": [
+        "cloudcontrolspartner.customers.get",
+        "cloudcontrolspartner.customers.list",
+        "cloudcontrolspartner.violations.get",
+        "cloudcontrolspartner.violations.list",
+        "cloudcontrolspartner.workloads.get",
+        "cloudcontrolspartner.workloads.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudcontrolspartner.customers.get",
+    "cloudcontrolspartner.customers.list",
+    "cloudcontrolspartner.violations.get",
+    "cloudcontrolspartner.violations.list",
+    "cloudcontrolspartner.workloads.get",
+    "cloudcontrolspartner.workloads.list"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.985Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/baremetalsolution.instancesviewer --format=json"
+  },
+  "name": "roles/baremetalsolution.instancesviewer",
+  "role_slug": "baremetalsolution-instancesviewer",
+  "title": "Bare Metal Solution Instances Viewer",
+  "description": "Viewer of Bare Metal Solution Instance resources",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "baremetalsolution",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "baremetalsolution",
+      "permissions": [
+        "baremetalsolution.instancequotas.list",
+        "baremetalsolution.instances.get",
+        "baremetalsolution.instances.list",
+        "baremetalsolution.operations.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "baremetalsolution.instancequotas.list",
+    "baremetalsolution.instances.get",
+    "baremetalsolution.instances.list",
+    "baremetalsolution.operations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

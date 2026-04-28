@@ -1,0 +1,40 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.120Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/monitoring.metricsScopesAdmin --format=json"
+  },
+  "name": "roles/monitoring.metricsScopesAdmin",
+  "role_slug": "monitoring-metricsscopesadmin",
+  "title": "Monitoring Metrics Scopes Admin",
+  "description": "Access to add and remove monitored projects from metrics scopes.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "monitoring",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.metricsScopes.link"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "monitoring.metricsScopes.link",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

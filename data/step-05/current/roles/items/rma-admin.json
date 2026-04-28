@@ -1,0 +1,64 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.444Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/rma.admin --format=json"
+  },
+  "name": "roles/rma.admin",
+  "role_slug": "rma-admin",
+  "title": "Rapid Migration Assessment Admin",
+  "description": "Full access to Rapid Migration Assessment all resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 15,
+  "permission_groups": [
+    "resourcemanager",
+    "rma"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "rma",
+      "permissions": [
+        "rma.annotations.create",
+        "rma.annotations.get",
+        "rma.collectors.create",
+        "rma.collectors.delete",
+        "rma.collectors.get",
+        "rma.collectors.list",
+        "rma.collectors.update",
+        "rma.locations.get",
+        "rma.locations.list",
+        "rma.operations.cancel",
+        "rma.operations.delete",
+        "rma.operations.get",
+        "rma.operations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "rma.annotations.create",
+    "rma.annotations.get",
+    "rma.collectors.create",
+    "rma.collectors.delete",
+    "rma.collectors.get",
+    "rma.collectors.list",
+    "rma.collectors.update",
+    "rma.locations.get",
+    "rma.locations.list",
+    "rma.operations.cancel",
+    "rma.operations.delete",
+    "rma.operations.get",
+    "rma.operations.list"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.737Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/workloadmanager.insightWriter --format=json"
+  },
+  "name": "roles/workloadmanager.insightWriter",
+  "role_slug": "workloadmanager-insightwriter",
+  "title": "Workload Manager Insights Writer",
+  "description": "The role used to write data to WLM data warehouse.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "workloadmanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "workloadmanager",
+      "permissions": [
+        "workloadmanager.insights.delete",
+        "workloadmanager.insights.write"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "workloadmanager.insights.delete",
+    "workloadmanager.insights.write"
+  ]
+}

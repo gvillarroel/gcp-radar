@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.124Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudaicompanion.topicAdmin --format=json"
+  },
+  "name": "roles/cloudaicompanion.topicAdmin",
+  "role_slug": "cloudaicompanion-topicadmin",
+  "title": "Topic Admin",
+  "description": "Grants read, write and permission management access to the Topic resource.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "cloudaicompanion"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudaicompanion",
+      "permissions": [
+        "cloudaicompanion.topics.delete",
+        "cloudaicompanion.topics.get",
+        "cloudaicompanion.topics.getIamPolicy",
+        "cloudaicompanion.topics.setIamPolicy",
+        "cloudaicompanion.topics.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudaicompanion.topics.delete",
+    "cloudaicompanion.topics.get",
+    "cloudaicompanion.topics.getIamPolicy",
+    "cloudaicompanion.topics.setIamPolicy",
+    "cloudaicompanion.topics.update"
+  ]
+}

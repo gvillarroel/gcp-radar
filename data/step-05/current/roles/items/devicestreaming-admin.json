@@ -1,0 +1,56 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.579Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/devicestreaming.admin --format=json"
+  },
+  "name": "roles/devicestreaming.admin",
+  "role_slug": "devicestreaming-admin",
+  "title": "Device Streaming Admin",
+  "description": "Administrator owning access to Direct Access",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "cloudtestservice",
+    "devicestreaming",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudtestservice",
+      "permissions": [
+        "cloudtestservice.environmentcatalog.get"
+      ]
+    },
+    {
+      "group": "devicestreaming",
+      "permissions": [
+        "devicestreaming.deviceSessions.cancel",
+        "devicestreaming.deviceSessions.create",
+        "devicestreaming.deviceSessions.get",
+        "devicestreaming.deviceSessions.list",
+        "devicestreaming.deviceSessions.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudtestservice.environmentcatalog.get",
+    "devicestreaming.deviceSessions.cancel",
+    "devicestreaming.deviceSessions.create",
+    "devicestreaming.deviceSessions.get",
+    "devicestreaming.deviceSessions.list",
+    "devicestreaming.deviceSessions.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

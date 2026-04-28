@@ -1,0 +1,66 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.570Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/serviceusage.serviceUsageConsumer --format=json"
+  },
+  "name": "roles/serviceusage.serviceUsageConsumer",
+  "role_slug": "serviceusage-serviceusageconsumer",
+  "title": "Service Usage Consumer",
+  "description": "Ability to inspect service states and operations, and consume quota and billing for a consumer project.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 16,
+  "permission_groups": [
+    "monitoring",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.timeSeries.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.consumerpolicy.analyze",
+        "serviceusage.consumerpolicy.get",
+        "serviceusage.contentsecuritypolicy.get",
+        "serviceusage.effectivemcppolicy.get",
+        "serviceusage.effectivepolicy.get",
+        "serviceusage.groups.list",
+        "serviceusage.groups.listExpandedMembers",
+        "serviceusage.groups.listMembers",
+        "serviceusage.mcppolicy.get",
+        "serviceusage.operations.get",
+        "serviceusage.quotas.get",
+        "serviceusage.services.get",
+        "serviceusage.services.list",
+        "serviceusage.services.use",
+        "serviceusage.values.test"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "monitoring.timeSeries.list",
+    "serviceusage.consumerpolicy.analyze",
+    "serviceusage.consumerpolicy.get",
+    "serviceusage.contentsecuritypolicy.get",
+    "serviceusage.effectivemcppolicy.get",
+    "serviceusage.effectivepolicy.get",
+    "serviceusage.groups.list",
+    "serviceusage.groups.listExpandedMembers",
+    "serviceusage.groups.listMembers",
+    "serviceusage.mcppolicy.get",
+    "serviceusage.operations.get",
+    "serviceusage.quotas.get",
+    "serviceusage.services.get",
+    "serviceusage.services.list",
+    "serviceusage.services.use",
+    "serviceusage.values.test"
+  ]
+}

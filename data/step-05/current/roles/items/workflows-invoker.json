@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.728Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/workflows.invoker --format=json"
+  },
+  "name": "roles/workflows.invoker",
+  "role_slug": "workflows-invoker",
+  "title": "Workflows Invoker",
+  "description": "Access to execute workflows and manage the executions using the API. Does not provide access to develop and debug workflows.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "resourcemanager",
+    "workflows"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "workflows",
+      "permissions": [
+        "workflows.callbacks.list",
+        "workflows.callbacks.send",
+        "workflows.executions.cancel",
+        "workflows.executions.create",
+        "workflows.executions.get",
+        "workflows.executions.list",
+        "workflows.stepEntries.get",
+        "workflows.stepEntries.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "workflows.callbacks.list",
+    "workflows.callbacks.send",
+    "workflows.executions.cancel",
+    "workflows.executions.create",
+    "workflows.executions.get",
+    "workflows.executions.list",
+    "workflows.stepEntries.get",
+    "workflows.stepEntries.list"
+  ]
+}

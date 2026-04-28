@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.173Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/networksecurity.mirroringDeploymentExternalUser --format=json"
+  },
+  "name": "roles/networksecurity.mirroringDeploymentExternalUser",
+  "role_slug": "networksecurity-mirroringdeploymentexternaluser",
+  "title": "Mirroring Deployment External User",
+  "description": "Allows an external consumer to a producer's mirroringDeploymentGroup.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "networksecurity"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "networksecurity",
+      "permissions": [
+        "networksecurity.mirroringDeploymentGroups.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "networksecurity.mirroringDeploymentGroups.use"
+  ]
+}

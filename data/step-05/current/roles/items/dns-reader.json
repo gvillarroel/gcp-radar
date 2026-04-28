@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.650Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dns.reader --format=json"
+  },
+  "name": "roles/dns.reader",
+  "role_slug": "dns-reader",
+  "title": "DNS Reader",
+  "description": "Read-only access to DNS resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 22,
+  "permission_groups": [
+    "compute",
+    "dns",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.networks.get"
+      ]
+    },
+    {
+      "group": "dns",
+      "permissions": [
+        "dns.changes.get",
+        "dns.changes.list",
+        "dns.dnsKeys.get",
+        "dns.dnsKeys.list",
+        "dns.managedZoneOperations.get",
+        "dns.managedZoneOperations.list",
+        "dns.managedZones.get",
+        "dns.managedZones.list",
+        "dns.policies.get",
+        "dns.policies.list",
+        "dns.policies.listEffectiveTags",
+        "dns.policies.listTagBindings",
+        "dns.projects.get",
+        "dns.resourceRecordSets.get",
+        "dns.resourceRecordSets.list",
+        "dns.responsePolicies.get",
+        "dns.responsePolicies.list",
+        "dns.responsePolicyRules.get",
+        "dns.responsePolicyRules.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "compute.networks.get",
+    "dns.changes.get",
+    "dns.changes.list",
+    "dns.dnsKeys.get",
+    "dns.dnsKeys.list",
+    "dns.managedZoneOperations.get",
+    "dns.managedZoneOperations.list",
+    "dns.managedZones.get",
+    "dns.managedZones.list",
+    "dns.policies.get",
+    "dns.policies.list",
+    "dns.policies.listEffectiveTags",
+    "dns.policies.listTagBindings",
+    "dns.projects.get",
+    "dns.resourceRecordSets.get",
+    "dns.resourceRecordSets.list",
+    "dns.responsePolicies.get",
+    "dns.responsePolicies.list",
+    "dns.responsePolicyRules.get",
+    "dns.responsePolicyRules.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

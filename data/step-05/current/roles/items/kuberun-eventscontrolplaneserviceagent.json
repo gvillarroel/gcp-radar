@@ -1,0 +1,88 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.012Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/kuberun.eventsControlPlaneServiceAgent --format=json"
+  },
+  "name": "roles/kuberun.eventsControlPlaneServiceAgent",
+  "role_slug": "kuberun-eventscontrolplaneserviceagent",
+  "title": "KubeRun Events Control Plane Service Agent",
+  "description": "Service account role used to setup authentication for the control plane used by KubeRun Events.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 18,
+  "permission_groups": [
+    "cloudscheduler",
+    "logging",
+    "pubsub",
+    "resourcemanager",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudscheduler",
+      "permissions": [
+        "cloudscheduler.jobs.create",
+        "cloudscheduler.jobs.delete",
+        "cloudscheduler.jobs.get"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.sinks.create",
+        "logging.sinks.delete",
+        "logging.sinks.get"
+      ]
+    },
+    {
+      "group": "pubsub",
+      "permissions": [
+        "pubsub.subscriptions.create",
+        "pubsub.subscriptions.delete",
+        "pubsub.subscriptions.get",
+        "pubsub.topics.attachSubscription",
+        "pubsub.topics.create",
+        "pubsub.topics.delete",
+        "pubsub.topics.get",
+        "pubsub.topics.getIamPolicy",
+        "pubsub.topics.setIamPolicy"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.get",
+        "storage.buckets.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudscheduler.jobs.create",
+    "cloudscheduler.jobs.delete",
+    "cloudscheduler.jobs.get",
+    "logging.sinks.create",
+    "logging.sinks.delete",
+    "logging.sinks.get",
+    "pubsub.subscriptions.create",
+    "pubsub.subscriptions.delete",
+    "pubsub.subscriptions.get",
+    "pubsub.topics.attachSubscription",
+    "pubsub.topics.create",
+    "pubsub.topics.delete",
+    "pubsub.topics.get",
+    "pubsub.topics.getIamPolicy",
+    "pubsub.topics.setIamPolicy",
+    "resourcemanager.projects.get",
+    "storage.buckets.get",
+    "storage.buckets.update"
+  ]
+}

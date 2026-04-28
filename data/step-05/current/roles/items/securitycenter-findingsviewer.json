@@ -1,0 +1,72 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.508Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securitycenter.findingsViewer --format=json"
+  },
+  "name": "roles/securitycenter.findingsViewer",
+  "role_slug": "securitycenter-findingsviewer",
+  "title": "Security Center Findings Viewer",
+  "description": "Read access to findings",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 19,
+  "permission_groups": [
+    "resourcemanager",
+    "securitycenter"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.folders.get",
+        "resourcemanager.organizations.get",
+        "resourcemanager.projects.get"
+      ]
+    },
+    {
+      "group": "securitycenter",
+      "permissions": [
+        "securitycenter.complianceReports.aggregate",
+        "securitycenter.compliancesnapshots.list",
+        "securitycenter.findingexplanations.get",
+        "securitycenter.findings.group",
+        "securitycenter.findings.list",
+        "securitycenter.findings.listFindingPropertyNames",
+        "securitycenter.graphs.get",
+        "securitycenter.graphs.query",
+        "securitycenter.issues.get",
+        "securitycenter.issues.group",
+        "securitycenter.issues.list",
+        "securitycenter.issues.listFilterValues",
+        "securitycenter.sources.get",
+        "securitycenter.sources.list",
+        "securitycenter.userinterfacemetadata.get",
+        "securitycenter.vulnerabilitysnapshots.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.folders.get",
+    "resourcemanager.organizations.get",
+    "resourcemanager.projects.get",
+    "securitycenter.complianceReports.aggregate",
+    "securitycenter.compliancesnapshots.list",
+    "securitycenter.findingexplanations.get",
+    "securitycenter.findings.group",
+    "securitycenter.findings.list",
+    "securitycenter.findings.listFindingPropertyNames",
+    "securitycenter.graphs.get",
+    "securitycenter.graphs.query",
+    "securitycenter.issues.get",
+    "securitycenter.issues.group",
+    "securitycenter.issues.list",
+    "securitycenter.issues.listFilterValues",
+    "securitycenter.sources.get",
+    "securitycenter.sources.list",
+    "securitycenter.userinterfacemetadata.get",
+    "securitycenter.vulnerabilitysnapshots.list"
+  ]
+}

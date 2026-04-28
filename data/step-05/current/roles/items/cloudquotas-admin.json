@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.232Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudquotas.admin --format=json"
+  },
+  "name": "roles/cloudquotas.admin",
+  "role_slug": "cloudquotas-admin",
+  "title": "Cloud Quotas Admin",
+  "description": "Full access to Cloud Quotas resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "cloudquotas",
+    "monitoring",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudquotas",
+      "permissions": [
+        "cloudquotas.quotas.get",
+        "cloudquotas.quotas.update"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.timeSeries.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudquotas.quotas.get",
+    "cloudquotas.quotas.update",
+    "monitoring.timeSeries.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.446Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/roads.roadsSelectionAdmin --format=json"
+  },
+  "name": "roles/roads.roadsSelectionAdmin",
+  "role_slug": "roads-roadsselectionadmin",
+  "title": "Roads Selection Admin",
+  "description": "Full access to SelectedRoutes",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "resourcemanager",
+    "roads"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "roads",
+      "permissions": [
+        "roads.selectedRoutes.batchCreate",
+        "roads.selectedRoutes.create",
+        "roads.selectedRoutes.delete",
+        "roads.selectedRoutes.get",
+        "roads.selectedRoutes.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "roads.selectedRoutes.batchCreate",
+    "roads.selectedRoutes.create",
+    "roads.selectedRoutes.delete",
+    "roads.selectedRoutes.get",
+    "roads.selectedRoutes.list"
+  ]
+}

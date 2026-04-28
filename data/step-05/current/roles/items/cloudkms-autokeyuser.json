@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.190Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudkms.autokeyUser --format=json"
+  },
+  "name": "roles/cloudkms.autokeyUser",
+  "role_slug": "cloudkms-autokeyuser",
+  "title": "Cloud KMS Autokey User",
+  "description": "Grants ability to use KeyHandle resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "cloudkms"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudkms",
+      "permissions": [
+        "cloudkms.keyHandles.create",
+        "cloudkms.keyHandles.get",
+        "cloudkms.keyHandles.list",
+        "cloudkms.operations.get",
+        "cloudkms.projects.showEffectiveAutokeyConfig"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudkms.keyHandles.create",
+    "cloudkms.keyHandles.get",
+    "cloudkms.keyHandles.list",
+    "cloudkms.operations.get",
+    "cloudkms.projects.showEffectiveAutokeyConfig"
+  ]
+}

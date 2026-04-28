@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.097Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/chat.owner --format=json"
+  },
+  "name": "roles/chat.owner",
+  "role_slug": "chat-owner",
+  "title": "Chat Apps Owner",
+  "description": "Can view and modify app configurations",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "chat"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "chat",
+      "permissions": [
+        "chat.bots.get",
+        "chat.bots.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "chat.bots.get",
+    "chat.bots.update"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.085Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/meshdataplane.serviceAgent --format=json"
+  },
+  "name": "roles/meshdataplane.serviceAgent",
+  "role_slug": "meshdataplane-serviceagent",
+  "title": "Mesh Data Plane Service Agent",
+  "description": "Run user-space Istio components",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 14,
+  "permission_groups": [
+    "cloudtrace",
+    "compute",
+    "logging",
+    "monitoring",
+    "serviceusage",
+    "telemetry"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudtrace",
+      "permissions": [
+        "cloudtrace.traces.patch"
+      ]
+    },
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.forwardingRules.get",
+        "compute.globalForwardingRules.get"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create",
+        "logging.logEntries.route"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.metricDescriptors.create",
+        "monitoring.metricDescriptors.get",
+        "monitoring.metricDescriptors.list",
+        "monitoring.monitoredResourceDescriptors.get",
+        "monitoring.monitoredResourceDescriptors.list",
+        "monitoring.timeSeries.create"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    },
+    {
+      "group": "telemetry",
+      "permissions": [
+        "telemetry.metrics.write",
+        "telemetry.traces.write"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudtrace.traces.patch",
+    "compute.forwardingRules.get",
+    "compute.globalForwardingRules.get",
+    "logging.logEntries.create",
+    "logging.logEntries.route",
+    "monitoring.metricDescriptors.create",
+    "monitoring.metricDescriptors.get",
+    "monitoring.metricDescriptors.list",
+    "monitoring.monitoredResourceDescriptors.get",
+    "monitoring.monitoredResourceDescriptors.list",
+    "monitoring.timeSeries.create",
+    "serviceusage.services.use",
+    "telemetry.metrics.write",
+    "telemetry.traces.write"
+  ]
+}

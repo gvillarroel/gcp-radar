@@ -1,0 +1,68 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.593Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/stackdriver.accounts.editor --format=json"
+  },
+  "name": "roles/stackdriver.accounts.editor",
+  "role_slug": "stackdriver-accounts-editor",
+  "title": "Stackdriver Accounts Editor",
+  "description": "Read/write access to manage Stackdriver account structure.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 14,
+  "permission_groups": [
+    "resourcemanager",
+    "serviceusage",
+    "stackdriver"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.consumerpolicy.analyze",
+        "serviceusage.consumerpolicy.get",
+        "serviceusage.consumerpolicy.update",
+        "serviceusage.effectivepolicy.get",
+        "serviceusage.groups.list",
+        "serviceusage.groups.listExpandedMembers",
+        "serviceusage.groups.listMembers",
+        "serviceusage.services.enable",
+        "serviceusage.services.get",
+        "serviceusage.values.test"
+      ]
+    },
+    {
+      "group": "stackdriver",
+      "permissions": [
+        "stackdriver.projects.edit",
+        "stackdriver.projects.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "serviceusage.consumerpolicy.analyze",
+    "serviceusage.consumerpolicy.get",
+    "serviceusage.consumerpolicy.update",
+    "serviceusage.effectivepolicy.get",
+    "serviceusage.groups.list",
+    "serviceusage.groups.listExpandedMembers",
+    "serviceusage.groups.listMembers",
+    "serviceusage.services.enable",
+    "serviceusage.services.get",
+    "serviceusage.values.test",
+    "stackdriver.projects.edit",
+    "stackdriver.projects.get"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.036Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/bigqueryconnection.serviceAgent --format=json"
+  },
+  "name": "roles/bigqueryconnection.serviceAgent",
+  "role_slug": "bigqueryconnection-serviceagent",
+  "title": "BigQuery Connection Service Agent",
+  "description": "Gives BigQuery Connection Service access to Cloud SQL instances in user projects.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "cloudsql",
+    "logging",
+    "monitoring",
+    "telemetry"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudsql",
+      "permissions": [
+        "cloudsql.instances.connect",
+        "cloudsql.instances.get"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create",
+        "logging.logEntries.route"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.metricDescriptors.create",
+        "monitoring.metricDescriptors.get",
+        "monitoring.metricDescriptors.list",
+        "monitoring.monitoredResourceDescriptors.get",
+        "monitoring.monitoredResourceDescriptors.list",
+        "monitoring.timeSeries.create"
+      ]
+    },
+    {
+      "group": "telemetry",
+      "permissions": [
+        "telemetry.metrics.write"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudsql.instances.connect",
+    "cloudsql.instances.get",
+    "logging.logEntries.create",
+    "logging.logEntries.route",
+    "monitoring.metricDescriptors.create",
+    "monitoring.metricDescriptors.get",
+    "monitoring.metricDescriptors.list",
+    "monitoring.monitoredResourceDescriptors.get",
+    "monitoring.monitoredResourceDescriptors.list",
+    "monitoring.timeSeries.create",
+    "telemetry.metrics.write"
+  ]
+}

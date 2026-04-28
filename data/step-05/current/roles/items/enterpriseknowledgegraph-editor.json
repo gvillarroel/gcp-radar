@@ -1,0 +1,56 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.697Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/enterpriseknowledgegraph.editor --format=json"
+  },
+  "name": "roles/enterpriseknowledgegraph.editor",
+  "role_slug": "enterpriseknowledgegraph-editor",
+  "title": "Enterprise Knowledge Graph Editor",
+  "description": "Editor of Enterprise Knowledge Graph resources",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "enterpriseknowledgegraph",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "enterpriseknowledgegraph",
+      "permissions": [
+        "enterpriseknowledgegraph.cloudKnowledgeGraphEntities.lookup",
+        "enterpriseknowledgegraph.cloudKnowledgeGraphEntities.search",
+        "enterpriseknowledgegraph.entityReconciliationJobs.cancel",
+        "enterpriseknowledgegraph.entityReconciliationJobs.create",
+        "enterpriseknowledgegraph.entityReconciliationJobs.delete",
+        "enterpriseknowledgegraph.entityReconciliationJobs.get",
+        "enterpriseknowledgegraph.entityReconciliationJobs.list",
+        "enterpriseknowledgegraph.publicKnowledgeGraphEntities.lookup",
+        "enterpriseknowledgegraph.publicKnowledgeGraphEntities.search"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "enterpriseknowledgegraph.cloudKnowledgeGraphEntities.lookup",
+    "enterpriseknowledgegraph.cloudKnowledgeGraphEntities.search",
+    "enterpriseknowledgegraph.entityReconciliationJobs.cancel",
+    "enterpriseknowledgegraph.entityReconciliationJobs.create",
+    "enterpriseknowledgegraph.entityReconciliationJobs.delete",
+    "enterpriseknowledgegraph.entityReconciliationJobs.get",
+    "enterpriseknowledgegraph.entityReconciliationJobs.list",
+    "enterpriseknowledgegraph.publicKnowledgeGraphEntities.lookup",
+    "enterpriseknowledgegraph.publicKnowledgeGraphEntities.search",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

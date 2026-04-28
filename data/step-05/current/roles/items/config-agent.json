@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.346Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/config.agent --format=json"
+  },
+  "name": "roles/config.agent",
+  "role_slug": "config-agent",
+  "title": "Cloud Infrastructure Manager Agent",
+  "description": "Required permissions to make Cloud Infrastructure Manager work with the user-specified service account",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 23,
+  "permission_groups": [
+    "cloudbuild",
+    "cloudquotas",
+    "config",
+    "logging",
+    "monitoring",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudbuild",
+      "permissions": [
+        "cloudbuild.connections.list",
+        "cloudbuild.repositories.accessReadToken",
+        "cloudbuild.repositories.list"
+      ]
+    },
+    {
+      "group": "cloudquotas",
+      "permissions": [
+        "cloudquotas.quotas.get"
+      ]
+    },
+    {
+      "group": "config",
+      "permissions": [
+        "config.artifacts.import",
+        "config.deployments.deleteState",
+        "config.deployments.getLock",
+        "config.deployments.getState",
+        "config.deployments.updateState",
+        "config.previews.upload",
+        "config.revisions.getState"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.timeSeries.list"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.buckets.create",
+        "storage.buckets.delete",
+        "storage.buckets.get",
+        "storage.buckets.list",
+        "storage.buckets.update",
+        "storage.objects.create",
+        "storage.objects.delete",
+        "storage.objects.get",
+        "storage.objects.list",
+        "storage.objects.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudbuild.connections.list",
+    "cloudbuild.repositories.accessReadToken",
+    "cloudbuild.repositories.list",
+    "cloudquotas.quotas.get",
+    "config.artifacts.import",
+    "config.deployments.deleteState",
+    "config.deployments.getLock",
+    "config.deployments.getState",
+    "config.deployments.updateState",
+    "config.previews.upload",
+    "config.revisions.getState",
+    "logging.logEntries.create",
+    "monitoring.timeSeries.list",
+    "storage.buckets.create",
+    "storage.buckets.delete",
+    "storage.buckets.get",
+    "storage.buckets.list",
+    "storage.buckets.update",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.get",
+    "storage.objects.list",
+    "storage.objects.update"
+  ]
+}

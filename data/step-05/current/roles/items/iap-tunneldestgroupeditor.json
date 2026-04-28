@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.968Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/iap.tunnelDestGroupEditor --format=json"
+  },
+  "name": "roles/iap.tunnelDestGroupEditor",
+  "role_slug": "iap-tunneldestgroupeditor",
+  "title": "IAP-secured Tunnel Destination Group Editor",
+  "description": "Edit Tunnel Destination Group resources which use Identity-Aware Proxy",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "iap"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "iap",
+      "permissions": [
+        "iap.tunnelDestGroups.create",
+        "iap.tunnelDestGroups.delete",
+        "iap.tunnelDestGroups.get",
+        "iap.tunnelDestGroups.list",
+        "iap.tunnelDestGroups.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "iap.tunnelDestGroups.create",
+    "iap.tunnelDestGroups.delete",
+    "iap.tunnelDestGroups.get",
+    "iap.tunnelDestGroups.list",
+    "iap.tunnelDestGroups.update"
+  ]
+}

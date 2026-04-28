@@ -1,0 +1,78 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.404Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/redis.viewer --format=json"
+  },
+  "name": "roles/redis.viewer",
+  "role_slug": "redis-viewer",
+  "title": "Cloud Memorystore Redis Viewer",
+  "description": "Read-only access to Redis instances and related resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 19,
+  "permission_groups": [
+    "redis",
+    "resourcemanager",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "redis",
+      "permissions": [
+        "redis.aclPolicies.get",
+        "redis.aclPolicies.list",
+        "redis.backupCollections.get",
+        "redis.backupCollections.list",
+        "redis.backups.get",
+        "redis.backups.list",
+        "redis.clusters.get",
+        "redis.clusters.list",
+        "redis.instances.get",
+        "redis.instances.list",
+        "redis.instances.listEffectiveTags",
+        "redis.instances.listTagBindings",
+        "redis.locations.get",
+        "redis.locations.list",
+        "redis.operations.get",
+        "redis.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "redis.aclPolicies.get",
+    "redis.aclPolicies.list",
+    "redis.backupCollections.get",
+    "redis.backupCollections.list",
+    "redis.backups.get",
+    "redis.backups.list",
+    "redis.clusters.get",
+    "redis.clusters.list",
+    "redis.instances.get",
+    "redis.instances.list",
+    "redis.instances.listEffectiveTags",
+    "redis.instances.listTagBindings",
+    "redis.locations.get",
+    "redis.locations.list",
+    "redis.operations.get",
+    "redis.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "serviceusage.services.use"
+  ]
+}

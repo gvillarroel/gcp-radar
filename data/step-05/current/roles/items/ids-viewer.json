@@ -1,0 +1,52 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.978Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/ids.viewer --format=json"
+  },
+  "name": "roles/ids.viewer",
+  "role_slug": "ids-viewer",
+  "title": "Cloud IDS Viewer",
+  "description": "Read-only access to Cloud IDS all resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 9,
+  "permission_groups": [
+    "ids",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "ids",
+      "permissions": [
+        "ids.endpoints.get",
+        "ids.endpoints.getIamPolicy",
+        "ids.endpoints.list",
+        "ids.locations.get",
+        "ids.locations.list",
+        "ids.operations.get",
+        "ids.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "ids.endpoints.get",
+    "ids.endpoints.getIamPolicy",
+    "ids.endpoints.list",
+    "ids.locations.get",
+    "ids.locations.list",
+    "ids.operations.get",
+    "ids.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

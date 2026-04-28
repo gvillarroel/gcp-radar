@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.892Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/apihub.addonsAdmin --format=json"
+  },
+  "name": "roles/apihub.addonsAdmin",
+  "role_slug": "apihub-addonsadmin",
+  "title": "Cloud API hub Addons Admin",
+  "description": "Full access to all Cloud API hub addon's resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "apihub",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "apihub",
+      "permissions": [
+        "apihub.addons.get",
+        "apihub.addons.list",
+        "apihub.addons.manage"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "apihub.addons.get",
+    "apihub.addons.list",
+    "apihub.addons.manage",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.991Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/integrations.suspensionResolver --format=json"
+  },
+  "name": "roles/integrations.suspensionResolver",
+  "role_slug": "integrations-suspensionresolver",
+  "title": "Application Integration Approver",
+  "description": "A role that can resolve suspended integrations.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "integrations",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "integrations",
+      "permissions": [
+        "integrations.apigeeSuspensions.lift",
+        "integrations.apigeeSuspensions.list",
+        "integrations.apigeeSuspensions.resolve",
+        "integrations.suspensions.lift",
+        "integrations.suspensions.list",
+        "integrations.suspensions.resolve"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "integrations.apigeeSuspensions.lift",
+    "integrations.apigeeSuspensions.list",
+    "integrations.apigeeSuspensions.resolve",
+    "integrations.suspensions.lift",
+    "integrations.suspensions.list",
+    "integrations.suspensions.resolve",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

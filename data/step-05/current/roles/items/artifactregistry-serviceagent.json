@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.930Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/artifactregistry.serviceAgent --format=json"
+  },
+  "name": "roles/artifactregistry.serviceAgent",
+  "role_slug": "artifactregistry-serviceagent",
+  "title": "Artifact Registry Service Agent",
+  "description": "Gives the Artifact Registry service account access to managed resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "artifactregistry",
+    "pubsub"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "artifactregistry",
+      "permissions": [
+        "artifactregistry.repositories.downloadArtifacts",
+        "artifactregistry.repositories.get",
+        "artifactregistry.repositories.readViaVirtualRepository",
+        "artifactregistry.versions.delete"
+      ]
+    },
+    {
+      "group": "pubsub",
+      "permissions": [
+        "pubsub.topics.publish"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "artifactregistry.repositories.downloadArtifacts",
+    "artifactregistry.repositories.get",
+    "artifactregistry.repositories.readViaVirtualRepository",
+    "artifactregistry.versions.delete",
+    "pubsub.topics.publish"
+  ]
+}

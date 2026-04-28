@@ -1,0 +1,78 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.812Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/aiplatform.extensionServiceAgent --format=json"
+  },
+  "name": "roles/aiplatform.extensionServiceAgent",
+  "role_slug": "aiplatform-extensionserviceagent",
+  "title": "Vertex AI Extension Service Agent",
+  "description": "Gives Vertex AI Extension the permissions it needs to function.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "aiplatform",
+    "discoveryengine",
+    "iam",
+    "logging",
+    "serviceusage",
+    "storage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "aiplatform",
+      "permissions": [
+        "aiplatform.endpoints.predict",
+        "aiplatform.locations.get",
+        "aiplatform.ragCorpora.query"
+      ]
+    },
+    {
+      "group": "discoveryengine",
+      "permissions": [
+        "discoveryengine.servingConfigs.search"
+      ]
+    },
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.serviceAccounts.getAccessToken",
+        "iam.serviceAccounts.getOpenIdToken"
+      ]
+    },
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.logEntries.create",
+        "logging.logEntries.route"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.use"
+      ]
+    },
+    {
+      "group": "storage",
+      "permissions": [
+        "storage.objects.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "aiplatform.endpoints.predict",
+    "aiplatform.locations.get",
+    "aiplatform.ragCorpora.query",
+    "discoveryengine.servingConfigs.search",
+    "iam.serviceAccounts.getAccessToken",
+    "iam.serviceAccounts.getOpenIdToken",
+    "logging.logEntries.create",
+    "logging.logEntries.route",
+    "serviceusage.services.use",
+    "storage.objects.get"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.023Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/logging.fieldAccessor --format=json"
+  },
+  "name": "roles/logging.fieldAccessor",
+  "role_slug": "logging-fieldaccessor",
+  "title": "Log Field Accessor",
+  "description": "Ability to read restricted fields in a log bucket.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "logging"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "logging",
+      "permissions": [
+        "logging.fields.access"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "logging.fields.access"
+  ]
+}

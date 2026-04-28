@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.583Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/spanner.fineGrainedAccessUser --format=json"
+  },
+  "name": "roles/spanner.fineGrainedAccessUser",
+  "role_slug": "spanner-finegrainedaccessuser",
+  "title": "Cloud Spanner Fine-grained Access User",
+  "description": "Grants permissions to use Spanner's fine-grained access control framework. To grant access to specific database roles, also add the Cloud Spanner Database Role User IAM role and its necessary conditions.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "spanner"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "spanner",
+      "permissions": [
+        "spanner.databaseRoles.list",
+        "spanner.databases.useRoleBasedAccess"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "spanner.databaseRoles.list",
+    "spanner.databases.useRoleBasedAccess"
+  ]
+}

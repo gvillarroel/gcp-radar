@@ -1,0 +1,60 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.894Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/healthcare.fhirResourceReader --format=json"
+  },
+  "name": "roles/healthcare.fhirResourceReader",
+  "role_slug": "healthcare-fhirresourcereader",
+  "title": "Healthcare FHIR Resource Reader",
+  "description": "Read and search FHIR resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 13,
+  "permission_groups": [
+    "healthcare",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "healthcare",
+      "permissions": [
+        "healthcare.datasets.get",
+        "healthcare.datasets.list",
+        "healthcare.fhirResources.get",
+        "healthcare.fhirResources.translateConceptMap",
+        "healthcare.fhirStores.executeBundle",
+        "healthcare.fhirStores.get",
+        "healthcare.fhirStores.list",
+        "healthcare.fhirStores.searchResources",
+        "healthcare.locations.get",
+        "healthcare.locations.list",
+        "healthcare.operations.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "healthcare.datasets.get",
+    "healthcare.datasets.list",
+    "healthcare.fhirResources.get",
+    "healthcare.fhirResources.translateConceptMap",
+    "healthcare.fhirStores.executeBundle",
+    "healthcare.fhirStores.get",
+    "healthcare.fhirStores.list",
+    "healthcare.fhirStores.searchResources",
+    "healthcare.locations.get",
+    "healthcare.locations.list",
+    "healthcare.operations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

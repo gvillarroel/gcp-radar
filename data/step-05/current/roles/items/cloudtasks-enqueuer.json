@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.257Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudtasks.enqueuer --format=json"
+  },
+  "name": "roles/cloudtasks.enqueuer",
+  "role_slug": "cloudtasks-enqueuer",
+  "title": "Cloud Tasks Enqueuer",
+  "description": "Access to create tasks.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "cloudtasks",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudtasks",
+      "permissions": [
+        "cloudtasks.tasks.create",
+        "cloudtasks.tasks.fullView"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudtasks.tasks.create",
+    "cloudtasks.tasks.fullView",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

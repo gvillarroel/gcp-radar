@@ -1,0 +1,30 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.562Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/servicemanagement.reporter --format=json"
+  },
+  "name": "roles/servicemanagement.reporter",
+  "role_slug": "servicemanagement-reporter",
+  "title": "Service Reporter",
+  "description": "Can report usage of a service during runtime.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 1,
+  "permission_groups": [
+    "servicemanagement"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "servicemanagement",
+      "permissions": [
+        "servicemanagement.services.report"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "servicemanagement.services.report"
+  ]
+}

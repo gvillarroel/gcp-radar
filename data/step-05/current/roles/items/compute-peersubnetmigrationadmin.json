@@ -1,0 +1,74 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.334Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/compute.peerSubnetMigrationAdmin --format=json"
+  },
+  "name": "roles/compute.peerSubnetMigrationAdmin",
+  "role_slug": "compute-peersubnetmigrationadmin",
+  "title": "Compute Peer Subnet Migration Admin",
+  "description": "Use subnetwork whose PURPOSE is \"PEER_MIGRATION\"",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 20,
+  "permission_groups": [
+    "compute",
+    "servicedirectory"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.addresses.createInternal",
+        "compute.addresses.deleteInternal",
+        "compute.addresses.get",
+        "compute.addresses.use",
+        "compute.forwardingRules.create",
+        "compute.forwardingRules.delete",
+        "compute.forwardingRules.get",
+        "compute.forwardingRules.list",
+        "compute.forwardingRules.pscCreate",
+        "compute.forwardingRules.pscDelete",
+        "compute.forwardingRules.pscUpdate",
+        "compute.forwardingRules.update",
+        "compute.networks.use",
+        "compute.regionOperations.get",
+        "compute.regions.list",
+        "compute.subnetworks.use",
+        "compute.subnetworks.usePeerMigration"
+      ]
+    },
+    {
+      "group": "servicedirectory",
+      "permissions": [
+        "servicedirectory.namespaces.create",
+        "servicedirectory.services.create",
+        "servicedirectory.services.delete"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "compute.addresses.createInternal",
+    "compute.addresses.deleteInternal",
+    "compute.addresses.get",
+    "compute.addresses.use",
+    "compute.forwardingRules.create",
+    "compute.forwardingRules.delete",
+    "compute.forwardingRules.get",
+    "compute.forwardingRules.list",
+    "compute.forwardingRules.pscCreate",
+    "compute.forwardingRules.pscDelete",
+    "compute.forwardingRules.pscUpdate",
+    "compute.forwardingRules.update",
+    "compute.networks.use",
+    "compute.regionOperations.get",
+    "compute.regions.list",
+    "compute.subnetworks.use",
+    "compute.subnetworks.usePeerMigration",
+    "servicedirectory.namespaces.create",
+    "servicedirectory.services.create",
+    "servicedirectory.services.delete"
+  ]
+}

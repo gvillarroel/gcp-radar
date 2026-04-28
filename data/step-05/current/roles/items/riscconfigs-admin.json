@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.437Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/riscconfigs.admin --format=json"
+  },
+  "name": "roles/riscconfigs.admin",
+  "role_slug": "riscconfigs-admin",
+  "title": "RISC Configuration Admin",
+  "description": "Read/write access to RISC config resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "clientauthconfig",
+    "riscconfigurationservice"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "clientauthconfig",
+      "permissions": [
+        "clientauthconfig.clients.list"
+      ]
+    },
+    {
+      "group": "riscconfigurationservice",
+      "permissions": [
+        "riscconfigurationservice.riscconfigs.createOrUpdate",
+        "riscconfigurationservice.riscconfigs.delete",
+        "riscconfigurationservice.riscconfigs.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "clientauthconfig.clients.list",
+    "riscconfigurationservice.riscconfigs.createOrUpdate",
+    "riscconfigurationservice.riscconfigs.delete",
+    "riscconfigurationservice.riscconfigs.get"
+  ]
+}

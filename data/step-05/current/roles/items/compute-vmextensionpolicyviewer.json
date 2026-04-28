@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.340Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/compute.vmExtensionPolicyViewer --format=json"
+  },
+  "name": "roles/compute.vmExtensionPolicyViewer",
+  "role_slug": "compute-vmextensionpolicyviewer",
+  "title": "Compute VM extension policy viewer",
+  "description": "View zone/global VM extension policies.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "compute",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "compute",
+      "permissions": [
+        "compute.instances.get",
+        "compute.instances.list",
+        "compute.rolloutPlans.get",
+        "compute.rolloutPlans.list",
+        "compute.rollouts.get",
+        "compute.rollouts.list",
+        "compute.vmExtensionPolicies.get",
+        "compute.vmExtensionPolicies.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "compute.instances.get",
+    "compute.instances.list",
+    "compute.rolloutPlans.get",
+    "compute.rolloutPlans.list",
+    "compute.rollouts.get",
+    "compute.rollouts.list",
+    "compute.vmExtensionPolicies.get",
+    "compute.vmExtensionPolicies.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

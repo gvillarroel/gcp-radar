@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.679Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/visionai.annotationEditor --format=json"
+  },
+  "name": "roles/visionai.annotationEditor",
+  "role_slug": "visionai-annotationeditor",
+  "title": "VisionAI Warehouse Annotation Editor",
+  "description": "Grants access to edit media asset annotations into the Warehouse.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "visionai"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "visionai",
+      "permissions": [
+        "visionai.annotations.create",
+        "visionai.annotations.delete",
+        "visionai.annotations.get",
+        "visionai.annotations.list",
+        "visionai.annotations.update"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "visionai.annotations.create",
+    "visionai.annotations.delete",
+    "visionai.annotations.get",
+    "visionai.annotations.list",
+    "visionai.annotations.update"
+  ]
+}

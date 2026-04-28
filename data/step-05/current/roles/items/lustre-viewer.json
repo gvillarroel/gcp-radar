@@ -1,0 +1,50 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.035Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/lustre.viewer --format=json"
+  },
+  "name": "roles/lustre.viewer",
+  "role_slug": "lustre-viewer",
+  "title": "Google Cloud Managed Lustre Viewer",
+  "description": "Readonly access to Google Cloud Managed Lustre resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "lustre",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "lustre",
+      "permissions": [
+        "lustre.instances.get",
+        "lustre.instances.list",
+        "lustre.locations.get",
+        "lustre.locations.list",
+        "lustre.operations.get",
+        "lustre.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "lustre.instances.get",
+    "lustre.instances.list",
+    "lustre.locations.get",
+    "lustre.locations.list",
+    "lustre.operations.get",
+    "lustre.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

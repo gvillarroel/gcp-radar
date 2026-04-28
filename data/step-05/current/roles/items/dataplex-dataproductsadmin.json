@@ -1,0 +1,64 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.485Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/dataplex.dataProductsAdmin --format=json"
+  },
+  "name": "roles/dataplex.dataProductsAdmin",
+  "role_slug": "dataplex-dataproductsadmin",
+  "title": "Dataplex Data Products Admin",
+  "description": "Full access to Data Products.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 15,
+  "permission_groups": [
+    "dataplex",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.dataAssets.create",
+        "dataplex.dataAssets.delete",
+        "dataplex.dataAssets.get",
+        "dataplex.dataAssets.list",
+        "dataplex.dataAssets.update",
+        "dataplex.dataProducts.create",
+        "dataplex.dataProducts.delete",
+        "dataplex.dataProducts.get",
+        "dataplex.dataProducts.getIamPolicy",
+        "dataplex.dataProducts.list",
+        "dataplex.dataProducts.setIamPolicy",
+        "dataplex.dataProducts.update",
+        "dataplex.operations.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "dataplex.dataAssets.create",
+    "dataplex.dataAssets.delete",
+    "dataplex.dataAssets.get",
+    "dataplex.dataAssets.list",
+    "dataplex.dataAssets.update",
+    "dataplex.dataProducts.create",
+    "dataplex.dataProducts.delete",
+    "dataplex.dataProducts.get",
+    "dataplex.dataProducts.getIamPolicy",
+    "dataplex.dataProducts.list",
+    "dataplex.dataProducts.setIamPolicy",
+    "dataplex.dataProducts.update",
+    "dataplex.operations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

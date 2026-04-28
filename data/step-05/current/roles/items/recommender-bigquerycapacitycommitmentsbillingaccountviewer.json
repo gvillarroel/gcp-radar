@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.325Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/recommender.bigQueryCapacityCommitmentsBillingAccountViewer --format=json"
+  },
+  "name": "roles/recommender.bigQueryCapacityCommitmentsBillingAccountViewer",
+  "role_slug": "recommender-bigquerycapacitycommitmentsbillingaccountviewer",
+  "title": "BigQuery Recommender Billing Account Viewer",
+  "description": "Billing Account Viewer of BigQuery Capacity Commitments insights and recommendations.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "billing",
+    "recommender"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "billing",
+      "permissions": [
+        "billing.accounts.get",
+        "billing.accounts.list"
+      ]
+    },
+    {
+      "group": "recommender",
+      "permissions": [
+        "recommender.bigqueryCapacityCommitmentsInsights.get",
+        "recommender.bigqueryCapacityCommitmentsInsights.list",
+        "recommender.bigqueryCapacityCommitmentsRecommendations.get",
+        "recommender.bigqueryCapacityCommitmentsRecommendations.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "billing.accounts.get",
+    "billing.accounts.list",
+    "recommender.bigqueryCapacityCommitmentsInsights.get",
+    "recommender.bigqueryCapacityCommitmentsInsights.list",
+    "recommender.bigqueryCapacityCommitmentsRecommendations.get",
+    "recommender.bigqueryCapacityCommitmentsRecommendations.list"
+  ]
+}

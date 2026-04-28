@@ -1,0 +1,44 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.848Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/gkebackup.delegatedRestoreAdmin --format=json"
+  },
+  "name": "roles/gkebackup.delegatedRestoreAdmin",
+  "role_slug": "gkebackup-delegatedrestoreadmin",
+  "title": "Backup for GKE Delegated Restore Admin",
+  "description": "Allows administrators to manage Restore resources for specific RestorePlans",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 8,
+  "permission_groups": [
+    "gkebackup"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "gkebackup",
+      "permissions": [
+        "gkebackup.restorePlans.get",
+        "gkebackup.restores.create",
+        "gkebackup.restores.delete",
+        "gkebackup.restores.get",
+        "gkebackup.restores.list",
+        "gkebackup.restores.update",
+        "gkebackup.volumeRestores.get",
+        "gkebackup.volumeRestores.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "gkebackup.restorePlans.get",
+    "gkebackup.restores.create",
+    "gkebackup.restores.delete",
+    "gkebackup.restores.get",
+    "gkebackup.restores.list",
+    "gkebackup.restores.update",
+    "gkebackup.volumeRestores.get",
+    "gkebackup.volumeRestores.list"
+  ]
+}

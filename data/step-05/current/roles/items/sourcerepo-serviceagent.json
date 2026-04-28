@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.576Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/sourcerepo.serviceAgent --format=json"
+  },
+  "name": "roles/sourcerepo.serviceAgent",
+  "role_slug": "sourcerepo-serviceagent",
+  "title": "Cloud Source Repositories Service Agent",
+  "description": "Allow Cloud Source Repositories to integrate with other Cloud services.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "iam",
+    "pubsub"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "iam",
+      "permissions": [
+        "iam.serviceAccounts.getAccessToken"
+      ]
+    },
+    {
+      "group": "pubsub",
+      "permissions": [
+        "pubsub.topics.publish"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "iam.serviceAccounts.getAccessToken",
+    "pubsub.topics.publish"
+  ]
+}

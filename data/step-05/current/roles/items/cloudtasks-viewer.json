@@ -1,0 +1,62 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.261Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudtasks.viewer --format=json"
+  },
+  "name": "roles/cloudtasks.viewer",
+  "role_slug": "cloudtasks-viewer",
+  "title": "Cloud Tasks Viewer",
+  "description": "Get and list access to tasks, queues, and locations.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "cloudtasks",
+    "monitoring",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudtasks",
+      "permissions": [
+        "cloudtasks.cmekConfig.get",
+        "cloudtasks.locations.get",
+        "cloudtasks.locations.list",
+        "cloudtasks.queues.get",
+        "cloudtasks.queues.list",
+        "cloudtasks.tasks.fullView",
+        "cloudtasks.tasks.get",
+        "cloudtasks.tasks.list"
+      ]
+    },
+    {
+      "group": "monitoring",
+      "permissions": [
+        "monitoring.timeSeries.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudtasks.cmekConfig.get",
+    "cloudtasks.locations.get",
+    "cloudtasks.locations.list",
+    "cloudtasks.queues.get",
+    "cloudtasks.queues.list",
+    "cloudtasks.tasks.fullView",
+    "cloudtasks.tasks.get",
+    "cloudtasks.tasks.list",
+    "monitoring.timeSeries.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

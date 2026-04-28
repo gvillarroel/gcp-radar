@@ -1,0 +1,54 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.215Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudlocationfinder.admin --format=json"
+  },
+  "name": "roles/cloudlocationfinder.admin",
+  "role_slug": "cloudlocationfinder-admin",
+  "title": "Cloud Location Finder Admin",
+  "description": "Full access to Cloud Location Finder resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 10,
+  "permission_groups": [
+    "cloudlocationfinder",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudlocationfinder",
+      "permissions": [
+        "cloudlocationfinder.cloudLocations.create",
+        "cloudlocationfinder.cloudLocations.delete",
+        "cloudlocationfinder.cloudLocations.get",
+        "cloudlocationfinder.cloudLocations.list",
+        "cloudlocationfinder.cloudLocations.search",
+        "cloudlocationfinder.cloudLocations.update",
+        "cloudlocationfinder.locations.get",
+        "cloudlocationfinder.locations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudlocationfinder.cloudLocations.create",
+    "cloudlocationfinder.cloudLocations.delete",
+    "cloudlocationfinder.cloudLocations.get",
+    "cloudlocationfinder.cloudLocations.list",
+    "cloudlocationfinder.cloudLocations.search",
+    "cloudlocationfinder.cloudLocations.update",
+    "cloudlocationfinder.locations.get",
+    "cloudlocationfinder.locations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

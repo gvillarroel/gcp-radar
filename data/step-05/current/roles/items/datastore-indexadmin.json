@@ -1,0 +1,62 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.539Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datastore.indexAdmin --format=json"
+  },
+  "name": "roles/datastore.indexAdmin",
+  "role_slug": "datastore-indexadmin",
+  "title": "Cloud Datastore Index Admin",
+  "description": "Full access to manage index definitions.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "appengine",
+    "datastore",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "appengine",
+      "permissions": [
+        "appengine.applications.get"
+      ]
+    },
+    {
+      "group": "datastore",
+      "permissions": [
+        "datastore.databases.getMetadata",
+        "datastore.operations.get",
+        "datastore.operations.list",
+        "datastore.schemas.create",
+        "datastore.schemas.delete",
+        "datastore.schemas.get",
+        "datastore.schemas.list",
+        "datastore.schemas.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "appengine.applications.get",
+    "datastore.databases.getMetadata",
+    "datastore.operations.get",
+    "datastore.operations.list",
+    "datastore.schemas.create",
+    "datastore.schemas.delete",
+    "datastore.schemas.get",
+    "datastore.schemas.list",
+    "datastore.schemas.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

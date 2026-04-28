@@ -1,0 +1,38 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.018Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/bigquery.connectedSheetsServiceAgent --format=json"
+  },
+  "name": "roles/bigquery.connectedSheetsServiceAgent",
+  "role_slug": "bigquery-connectedsheetsserviceagent",
+  "title": "Connected Sheets Service Agent",
+  "description": "Grants Connected Sheets Service Account access to create and manage BigQuery jobs on the customers resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 5,
+  "permission_groups": [
+    "bigquery"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.datasets.get",
+        "bigquery.jobs.create",
+        "bigquery.tables.create",
+        "bigquery.tables.update",
+        "bigquery.tables.updateData"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.datasets.get",
+    "bigquery.jobs.create",
+    "bigquery.tables.create",
+    "bigquery.tables.update",
+    "bigquery.tables.updateData"
+  ]
+}

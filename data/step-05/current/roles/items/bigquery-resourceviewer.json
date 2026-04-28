@@ -1,0 +1,66 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.030Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/bigquery.resourceViewer --format=json"
+  },
+  "name": "roles/bigquery.resourceViewer",
+  "role_slug": "bigquery-resourceviewer",
+  "title": "BigQuery Resource Viewer",
+  "description": "Can view BigQuery workloads, but cannot create or modify slot reservations or commitments.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 16,
+  "permission_groups": [
+    "bigquery",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.bireservations.get",
+        "bigquery.capacityCommitments.get",
+        "bigquery.capacityCommitments.list",
+        "bigquery.jobs.get",
+        "bigquery.jobs.list",
+        "bigquery.jobs.listAll",
+        "bigquery.jobs.listExecutionMetadata",
+        "bigquery.reservationAssignments.list",
+        "bigquery.reservationAssignments.search",
+        "bigquery.reservationGroups.get",
+        "bigquery.reservationGroups.list",
+        "bigquery.reservations.get",
+        "bigquery.reservations.list",
+        "bigquery.reservations.listFailoverDatasets"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.bireservations.get",
+    "bigquery.capacityCommitments.get",
+    "bigquery.capacityCommitments.list",
+    "bigquery.jobs.get",
+    "bigquery.jobs.list",
+    "bigquery.jobs.listAll",
+    "bigquery.jobs.listExecutionMetadata",
+    "bigquery.reservationAssignments.list",
+    "bigquery.reservationAssignments.search",
+    "bigquery.reservationGroups.get",
+    "bigquery.reservationGroups.list",
+    "bigquery.reservations.get",
+    "bigquery.reservations.list",
+    "bigquery.reservations.listFailoverDatasets",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

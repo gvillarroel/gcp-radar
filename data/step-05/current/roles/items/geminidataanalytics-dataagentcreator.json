@@ -1,0 +1,34 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.832Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/geminidataanalytics.dataAgentCreator --format=json"
+  },
+  "name": "roles/geminidataanalytics.dataAgentCreator",
+  "role_slug": "geminidataanalytics-dataagentcreator",
+  "title": "Gemini Data Analytics Data Agent Creator",
+  "description": "Create access to Gemini Data Analytics resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 3,
+  "permission_groups": [
+    "geminidataanalytics"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "geminidataanalytics",
+      "permissions": [
+        "geminidataanalytics.dataAgents.create",
+        "geminidataanalytics.locations.suggestContext",
+        "geminidataanalytics.operations.get"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "geminidataanalytics.dataAgents.create",
+    "geminidataanalytics.locations.suggestContext",
+    "geminidataanalytics.operations.get"
+  ]
+}

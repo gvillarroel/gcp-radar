@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.433Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datacatalog.viewer --format=json"
+  },
+  "name": "roles/datacatalog.viewer",
+  "role_slug": "datacatalog-viewer",
+  "title": "Data Catalog Viewer",
+  "description": "Grants metadata read permissions to cataloged GCP assets (BigQuery, Pub/Sub etc)",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 39,
+  "permission_groups": [
+    "bigquery",
+    "datacatalog",
+    "dataplex",
+    "pubsub",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.connections.get",
+        "bigquery.datasets.get",
+        "bigquery.models.getMetadata",
+        "bigquery.routines.get",
+        "bigquery.tables.get"
+      ]
+    },
+    {
+      "group": "datacatalog",
+      "permissions": [
+        "datacatalog.entries.get",
+        "datacatalog.entries.list",
+        "datacatalog.entryGroups.get",
+        "datacatalog.entryGroups.list",
+        "datacatalog.migrationConfig.get",
+        "datacatalog.operations.list",
+        "datacatalog.relationships.list",
+        "datacatalog.tagTemplates.get",
+        "datacatalog.tagTemplates.getTag",
+        "datacatalog.taxonomies.get",
+        "datacatalog.taxonomies.list"
+      ]
+    },
+    {
+      "group": "dataplex",
+      "permissions": [
+        "dataplex.aspectTypes.get",
+        "dataplex.aspectTypes.getIamPolicy",
+        "dataplex.aspectTypes.list",
+        "dataplex.entries.get",
+        "dataplex.entries.list",
+        "dataplex.entryGroups.get",
+        "dataplex.entryGroups.getIamPolicy",
+        "dataplex.entryGroups.list",
+        "dataplex.entryLinks.get",
+        "dataplex.entryTypes.get",
+        "dataplex.entryTypes.getIamPolicy",
+        "dataplex.entryTypes.list",
+        "dataplex.glossaries.get",
+        "dataplex.glossaries.getIamPolicy",
+        "dataplex.glossaries.list",
+        "dataplex.glossaryCategories.get",
+        "dataplex.glossaryCategories.list",
+        "dataplex.glossaryTerms.get",
+        "dataplex.glossaryTerms.list",
+        "dataplex.projects.search"
+      ]
+    },
+    {
+      "group": "pubsub",
+      "permissions": [
+        "pubsub.topics.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.connections.get",
+    "bigquery.datasets.get",
+    "bigquery.models.getMetadata",
+    "bigquery.routines.get",
+    "bigquery.tables.get",
+    "datacatalog.entries.get",
+    "datacatalog.entries.list",
+    "datacatalog.entryGroups.get",
+    "datacatalog.entryGroups.list",
+    "datacatalog.migrationConfig.get",
+    "datacatalog.operations.list",
+    "datacatalog.relationships.list",
+    "datacatalog.tagTemplates.get",
+    "datacatalog.tagTemplates.getTag",
+    "datacatalog.taxonomies.get",
+    "datacatalog.taxonomies.list",
+    "dataplex.aspectTypes.get",
+    "dataplex.aspectTypes.getIamPolicy",
+    "dataplex.aspectTypes.list",
+    "dataplex.entries.get",
+    "dataplex.entries.list",
+    "dataplex.entryGroups.get",
+    "dataplex.entryGroups.getIamPolicy",
+    "dataplex.entryGroups.list",
+    "dataplex.entryLinks.get",
+    "dataplex.entryTypes.get",
+    "dataplex.entryTypes.getIamPolicy",
+    "dataplex.entryTypes.list",
+    "dataplex.glossaries.get",
+    "dataplex.glossaries.getIamPolicy",
+    "dataplex.glossaries.list",
+    "dataplex.glossaryCategories.get",
+    "dataplex.glossaryCategories.list",
+    "dataplex.glossaryTerms.get",
+    "dataplex.glossaryTerms.list",
+    "dataplex.projects.search",
+    "pubsub.topics.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

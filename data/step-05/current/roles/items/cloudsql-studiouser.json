@@ -1,0 +1,74 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.248Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudsql.studioUser --format=json"
+  },
+  "name": "roles/cloudsql.studioUser",
+  "role_slug": "cloudsql-studiouser",
+  "title": "Cloud SQL Studio User",
+  "description": "Role allowing access to Cloud SQL Studio",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 14,
+  "permission_groups": [
+    "cloudaicompanion",
+    "cloudsql",
+    "databasesconsole",
+    "serviceusage"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudaicompanion",
+      "permissions": [
+        "cloudaicompanion.companions.generateChat",
+        "cloudaicompanion.companions.generateCode",
+        "cloudaicompanion.instances.completeCode",
+        "cloudaicompanion.instances.generateCode"
+      ]
+    },
+    {
+      "group": "cloudsql",
+      "permissions": [
+        "cloudsql.databases.list",
+        "cloudsql.instances.executeSql",
+        "cloudsql.instances.get",
+        "cloudsql.instances.login",
+        "cloudsql.users.list"
+      ]
+    },
+    {
+      "group": "databasesconsole",
+      "permissions": [
+        "databasesconsole.locations.get",
+        "databasesconsole.locations.list",
+        "databasesconsole.studioQueries.search"
+      ]
+    },
+    {
+      "group": "serviceusage",
+      "permissions": [
+        "serviceusage.services.get",
+        "serviceusage.services.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudaicompanion.companions.generateChat",
+    "cloudaicompanion.companions.generateCode",
+    "cloudaicompanion.instances.completeCode",
+    "cloudaicompanion.instances.generateCode",
+    "cloudsql.databases.list",
+    "cloudsql.instances.executeSql",
+    "cloudsql.instances.get",
+    "cloudsql.instances.login",
+    "cloudsql.users.list",
+    "databasesconsole.locations.get",
+    "databasesconsole.locations.list",
+    "databasesconsole.studioQueries.search",
+    "serviceusage.services.get",
+    "serviceusage.services.list"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.534Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/datastore.backupSchedulesAdmin --format=json"
+  },
+  "name": "roles/datastore.backupSchedulesAdmin",
+  "role_slug": "datastore-backupschedulesadmin",
+  "title": "Cloud Datastore Backup Schedules Admin",
+  "description": "Manage backup schedules in Cloud Datastore.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "datastore"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "datastore",
+      "permissions": [
+        "datastore.backupSchedules.create",
+        "datastore.backupSchedules.delete",
+        "datastore.backupSchedules.get",
+        "datastore.backupSchedules.list",
+        "datastore.backupSchedules.update",
+        "datastore.databases.getMetadata",
+        "datastore.databases.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "datastore.backupSchedules.create",
+    "datastore.backupSchedules.delete",
+    "datastore.backupSchedules.get",
+    "datastore.backupSchedules.list",
+    "datastore.backupSchedules.update",
+    "datastore.databases.getMetadata",
+    "datastore.databases.list"
+  ]
+}

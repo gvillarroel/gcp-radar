@@ -1,0 +1,66 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.730Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/workflows.viewer --format=json"
+  },
+  "name": "roles/workflows.viewer",
+  "role_slug": "workflows-viewer",
+  "title": "Workflows Viewer",
+  "description": "Read-only access to workflows and related resources.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 16,
+  "permission_groups": [
+    "resourcemanager",
+    "workflows"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "workflows",
+      "permissions": [
+        "workflows.callbacks.list",
+        "workflows.executions.get",
+        "workflows.executions.list",
+        "workflows.locations.get",
+        "workflows.locations.list",
+        "workflows.operations.get",
+        "workflows.operations.list",
+        "workflows.stepEntries.get",
+        "workflows.stepEntries.list",
+        "workflows.workflows.get",
+        "workflows.workflows.list",
+        "workflows.workflows.listEffectiveTags",
+        "workflows.workflows.listRevision",
+        "workflows.workflows.listTagBindings"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "workflows.callbacks.list",
+    "workflows.executions.get",
+    "workflows.executions.list",
+    "workflows.locations.get",
+    "workflows.locations.list",
+    "workflows.operations.get",
+    "workflows.operations.list",
+    "workflows.stepEntries.get",
+    "workflows.stepEntries.list",
+    "workflows.workflows.get",
+    "workflows.workflows.list",
+    "workflows.workflows.listEffectiveTags",
+    "workflows.workflows.listRevision",
+    "workflows.workflows.listTagBindings"
+  ]
+}

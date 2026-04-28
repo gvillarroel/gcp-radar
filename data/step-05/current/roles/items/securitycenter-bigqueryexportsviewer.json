@@ -1,0 +1,48 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.499Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/securitycenter.bigQueryExportsViewer --format=json"
+  },
+  "name": "roles/securitycenter.bigQueryExportsViewer",
+  "role_slug": "securitycenter-bigqueryexportsviewer",
+  "title": "Security Center BigQuery Exports Viewer",
+  "description": "Read access to security center BigQuery Exports",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 7,
+  "permission_groups": [
+    "resourcemanager",
+    "securitycenter"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.folders.get",
+        "resourcemanager.folders.list",
+        "resourcemanager.organizations.get",
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    },
+    {
+      "group": "securitycenter",
+      "permissions": [
+        "securitycenter.bigQueryExports.get",
+        "securitycenter.bigQueryExports.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "resourcemanager.folders.get",
+    "resourcemanager.folders.list",
+    "resourcemanager.organizations.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list",
+    "securitycenter.bigQueryExports.get",
+    "securitycenter.bigQueryExports.list"
+  ]
+}

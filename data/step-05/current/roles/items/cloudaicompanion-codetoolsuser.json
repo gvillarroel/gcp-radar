@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.120Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudaicompanion.codeToolsUser --format=json"
+  },
+  "name": "roles/cloudaicompanion.codeToolsUser",
+  "role_slug": "cloudaicompanion-codetoolsuser",
+  "title": "Gemini Code Assist Tools User",
+  "description": "Grants read access to Gemini Code Assist Tools resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 30,
+  "permission_groups": [
+    "cloudaicompanion",
+    "developerconnect",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudaicompanion",
+      "permissions": [
+        "cloudaicompanion.codeToolsSettings.get",
+        "cloudaicompanion.codeToolsSettings.list",
+        "cloudaicompanion.companions.generateChat",
+        "cloudaicompanion.companions.generateCode",
+        "cloudaicompanion.entitlements.get",
+        "cloudaicompanion.instances.completeCode",
+        "cloudaicompanion.instances.completeTask",
+        "cloudaicompanion.instances.exportMetrics",
+        "cloudaicompanion.instances.generateCode",
+        "cloudaicompanion.instances.generateText",
+        "cloudaicompanion.instances.queryEffectiveSetting",
+        "cloudaicompanion.instances.queryEffectiveSettingBindings",
+        "cloudaicompanion.licenses.selfAssign",
+        "cloudaicompanion.operations.get",
+        "cloudaicompanion.settingBindings.codeToolsSettingsGet",
+        "cloudaicompanion.settingBindings.codeToolsSettingsList",
+        "cloudaicompanion.topics.create"
+      ]
+    },
+    {
+      "group": "developerconnect",
+      "permissions": [
+        "developerconnect.accountConnectors.get",
+        "developerconnect.accountConnectors.list",
+        "developerconnect.locations.get",
+        "developerconnect.locations.list",
+        "developerconnect.operations.get",
+        "developerconnect.operations.list",
+        "developerconnect.users.deleteSelf",
+        "developerconnect.users.fetchAccessToken",
+        "developerconnect.users.finishOAuth",
+        "developerconnect.users.getSelf",
+        "developerconnect.users.startOAuth"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudaicompanion.codeToolsSettings.get",
+    "cloudaicompanion.codeToolsSettings.list",
+    "cloudaicompanion.companions.generateChat",
+    "cloudaicompanion.companions.generateCode",
+    "cloudaicompanion.entitlements.get",
+    "cloudaicompanion.instances.completeCode",
+    "cloudaicompanion.instances.completeTask",
+    "cloudaicompanion.instances.exportMetrics",
+    "cloudaicompanion.instances.generateCode",
+    "cloudaicompanion.instances.generateText",
+    "cloudaicompanion.instances.queryEffectiveSetting",
+    "cloudaicompanion.instances.queryEffectiveSettingBindings",
+    "cloudaicompanion.licenses.selfAssign",
+    "cloudaicompanion.operations.get",
+    "cloudaicompanion.settingBindings.codeToolsSettingsGet",
+    "cloudaicompanion.settingBindings.codeToolsSettingsList",
+    "cloudaicompanion.topics.create",
+    "developerconnect.accountConnectors.get",
+    "developerconnect.accountConnectors.list",
+    "developerconnect.locations.get",
+    "developerconnect.locations.list",
+    "developerconnect.operations.get",
+    "developerconnect.operations.list",
+    "developerconnect.users.deleteSelf",
+    "developerconnect.users.fetchAccessToken",
+    "developerconnect.users.finishOAuth",
+    "developerconnect.users.getSelf",
+    "developerconnect.users.startOAuth",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

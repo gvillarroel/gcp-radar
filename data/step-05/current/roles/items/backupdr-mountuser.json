@@ -1,0 +1,88 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:50:59.977Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/backupdr.mountUser --format=json"
+  },
+  "name": "roles/backupdr.mountUser",
+  "role_slug": "backupdr-mountuser",
+  "title": "Backup and DR Mount User",
+  "description": "Allows the user to mount from a backup. This role cannot create a backup plan or restore from a backup.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 27,
+  "permission_groups": [
+    "backupdr",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "backupdr",
+      "permissions": [
+        "backupdr.locations.get",
+        "backupdr.locations.list",
+        "backupdr.managementServers.access",
+        "backupdr.managementServers.get",
+        "backupdr.managementServers.getDynamicProtection",
+        "backupdr.managementServers.list",
+        "backupdr.managementServers.listDynamicProtection",
+        "backupdr.managementServers.listEffectiveTags",
+        "backupdr.managementServers.listTagBindings",
+        "backupdr.managementServers.manageApplications",
+        "backupdr.managementServers.manageClones",
+        "backupdr.managementServers.manageHosts",
+        "backupdr.managementServers.manageLiveClones",
+        "backupdr.managementServers.manageMirroring",
+        "backupdr.managementServers.manageMounts",
+        "backupdr.managementServers.manageWorkflows",
+        "backupdr.managementServers.refreshWorkflows",
+        "backupdr.managementServers.runWorkflows",
+        "backupdr.managementServers.viewBackupPlans",
+        "backupdr.managementServers.viewReports",
+        "backupdr.managementServers.viewStorage",
+        "backupdr.managementServers.viewSystem",
+        "backupdr.managementServers.viewWorkflows",
+        "backupdr.operations.get",
+        "backupdr.operations.list"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "backupdr.locations.get",
+    "backupdr.locations.list",
+    "backupdr.managementServers.access",
+    "backupdr.managementServers.get",
+    "backupdr.managementServers.getDynamicProtection",
+    "backupdr.managementServers.list",
+    "backupdr.managementServers.listDynamicProtection",
+    "backupdr.managementServers.listEffectiveTags",
+    "backupdr.managementServers.listTagBindings",
+    "backupdr.managementServers.manageApplications",
+    "backupdr.managementServers.manageClones",
+    "backupdr.managementServers.manageHosts",
+    "backupdr.managementServers.manageLiveClones",
+    "backupdr.managementServers.manageMirroring",
+    "backupdr.managementServers.manageMounts",
+    "backupdr.managementServers.manageWorkflows",
+    "backupdr.managementServers.refreshWorkflows",
+    "backupdr.managementServers.runWorkflows",
+    "backupdr.managementServers.viewBackupPlans",
+    "backupdr.managementServers.viewReports",
+    "backupdr.managementServers.viewStorage",
+    "backupdr.managementServers.viewSystem",
+    "backupdr.managementServers.viewWorkflows",
+    "backupdr.operations.get",
+    "backupdr.operations.list",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

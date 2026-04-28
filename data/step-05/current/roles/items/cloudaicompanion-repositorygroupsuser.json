@@ -1,0 +1,36 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.121Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/cloudaicompanion.repositoryGroupsUser --format=json"
+  },
+  "name": "roles/cloudaicompanion.repositoryGroupsUser",
+  "role_slug": "cloudaicompanion-repositorygroupsuser",
+  "title": "Repository Groups User",
+  "description": "Grants Read/Use access to the Code Repository Indexes Repository Group.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 4,
+  "permission_groups": [
+    "cloudaicompanion"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "cloudaicompanion",
+      "permissions": [
+        "cloudaicompanion.codeRepositoryIndexes.get",
+        "cloudaicompanion.repositoryGroups.get",
+        "cloudaicompanion.repositoryGroups.getIamPolicy",
+        "cloudaicompanion.repositoryGroups.use"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "cloudaicompanion.codeRepositoryIndexes.get",
+    "cloudaicompanion.repositoryGroups.get",
+    "cloudaicompanion.repositoryGroups.getIamPolicy",
+    "cloudaicompanion.repositoryGroups.use"
+  ]
+}

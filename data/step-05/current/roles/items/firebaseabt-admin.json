@@ -1,0 +1,64 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.741Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/firebaseabt.admin --format=json"
+  },
+  "name": "roles/firebaseabt.admin",
+  "role_slug": "firebaseabt-admin",
+  "title": "Firebase A/B Testing Admin",
+  "description": "Full read/write access to Firebase A/B Testing resources.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 12,
+  "permission_groups": [
+    "firebase",
+    "firebaseabt",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "firebase",
+      "permissions": [
+        "firebase.clients.get",
+        "firebase.clients.list",
+        "firebase.projects.get"
+      ]
+    },
+    {
+      "group": "firebaseabt",
+      "permissions": [
+        "firebaseabt.experimentresults.get",
+        "firebaseabt.experiments.create",
+        "firebaseabt.experiments.delete",
+        "firebaseabt.experiments.get",
+        "firebaseabt.experiments.list",
+        "firebaseabt.experiments.update",
+        "firebaseabt.projectmetadata.get"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "firebase.clients.get",
+    "firebase.clients.list",
+    "firebase.projects.get",
+    "firebaseabt.experimentresults.get",
+    "firebaseabt.experiments.create",
+    "firebaseabt.experiments.delete",
+    "firebaseabt.experiments.get",
+    "firebaseabt.experiments.list",
+    "firebaseabt.experiments.update",
+    "firebaseabt.projectmetadata.get",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

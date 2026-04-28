@@ -1,0 +1,32 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.571Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/developerconnect.gitProxyUser --format=json"
+  },
+  "name": "roles/developerconnect.gitProxyUser",
+  "role_slug": "developerconnect-gitproxyuser",
+  "title": "Developer Connect Git Proxy User",
+  "description": "Grants read and write access to repositories through the Git Proxy.",
+  "stage": "BETA",
+  "etag": "AA==",
+  "permission_count": 2,
+  "permission_groups": [
+    "developerconnect"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "developerconnect",
+      "permissions": [
+        "developerconnect.gitRepositoryLinks.gitProxyRead",
+        "developerconnect.gitRepositoryLinks.gitProxyWrite"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "developerconnect.gitRepositoryLinks.gitProxyRead",
+    "developerconnect.gitRepositoryLinks.gitProxyWrite"
+  ]
+}

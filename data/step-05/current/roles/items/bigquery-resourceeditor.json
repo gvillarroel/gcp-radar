@@ -1,0 +1,82 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:00.029Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/bigquery.resourceEditor --format=json"
+  },
+  "name": "roles/bigquery.resourceEditor",
+  "role_slug": "bigquery-resourceeditor",
+  "title": "BigQuery Resource Editor",
+  "description": "Manages BigQuery workloads, but is unable to create or modify slot commitments.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 24,
+  "permission_groups": [
+    "bigquery",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "bigquery",
+      "permissions": [
+        "bigquery.bireservations.get",
+        "bigquery.capacityCommitments.get",
+        "bigquery.capacityCommitments.list",
+        "bigquery.jobs.get",
+        "bigquery.jobs.list",
+        "bigquery.jobs.listAll",
+        "bigquery.jobs.listExecutionMetadata",
+        "bigquery.reservationAssignments.create",
+        "bigquery.reservationAssignments.delete",
+        "bigquery.reservationAssignments.list",
+        "bigquery.reservationAssignments.search",
+        "bigquery.reservationGroups.create",
+        "bigquery.reservationGroups.delete",
+        "bigquery.reservationGroups.get",
+        "bigquery.reservationGroups.list",
+        "bigquery.reservations.create",
+        "bigquery.reservations.delete",
+        "bigquery.reservations.get",
+        "bigquery.reservations.list",
+        "bigquery.reservations.listFailoverDatasets",
+        "bigquery.reservations.update",
+        "bigquery.reservations.use"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "bigquery.bireservations.get",
+    "bigquery.capacityCommitments.get",
+    "bigquery.capacityCommitments.list",
+    "bigquery.jobs.get",
+    "bigquery.jobs.list",
+    "bigquery.jobs.listAll",
+    "bigquery.jobs.listExecutionMetadata",
+    "bigquery.reservationAssignments.create",
+    "bigquery.reservationAssignments.delete",
+    "bigquery.reservationAssignments.list",
+    "bigquery.reservationAssignments.search",
+    "bigquery.reservationGroups.create",
+    "bigquery.reservationGroups.delete",
+    "bigquery.reservationGroups.get",
+    "bigquery.reservationGroups.list",
+    "bigquery.reservations.create",
+    "bigquery.reservations.delete",
+    "bigquery.reservations.get",
+    "bigquery.reservations.list",
+    "bigquery.reservations.listFailoverDatasets",
+    "bigquery.reservations.update",
+    "bigquery.reservations.use",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

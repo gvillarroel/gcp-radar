@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-26T20:51:01.300Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/proximitybeacon.beaconEditor --format=json"
+  },
+  "name": "roles/proximitybeacon.beaconEditor",
+  "role_slug": "proximitybeacon-beaconeditor",
+  "title": "Beacon Editor",
+  "description": "Necessary access to register, modify, and view beacons; no attachment or namespace permissions.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "proximitybeacon",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "proximitybeacon",
+      "permissions": [
+        "proximitybeacon.beacons.create",
+        "proximitybeacon.beacons.get",
+        "proximitybeacon.beacons.list",
+        "proximitybeacon.beacons.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "proximitybeacon.beacons.create",
+    "proximitybeacon.beacons.get",
+    "proximitybeacon.beacons.list",
+    "proximitybeacon.beacons.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}
