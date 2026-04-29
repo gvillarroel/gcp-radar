@@ -526,6 +526,11 @@ The IAM report must aggregate the same promoted feature-level role and
 permission details across products. Product reports must not reduce IAM to only
 a product-level count or a mapping-status label.
 
+Final-output validation must confirm that the promoted artifact inventory,
+`data/step-10/current/index.json`, and `radar/products/*.md` agree exactly.
+Stale product reports, missing product reports, mismatched Step 10 counts, and
+radar references to intermediate `data/step-*` paths are validation failures.
+
 ### Step 11: Knowledge Capture
 
 Persist reusable research findings in `knowledge/`.

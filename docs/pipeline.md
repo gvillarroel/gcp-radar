@@ -368,6 +368,11 @@ counts. Each feature row should show the mapping status, roles, permissions,
 coverage, and official evidence links. `radar/iam/index.md` must aggregate the
 same promoted feature-level role and permission details across products.
 
+Final validation checks the report boundary after Step 10. The promoted product
+directories under `artifacts/`, the product reports under `radar/products/`,
+and `data/step-10/current/index.json` must describe the same product inventory
+and feature counts. Stale or missing product reports fail validation.
+
 ## Practical Lessons
 
 - Step 03 quality dominates Step 04 usefulness.
