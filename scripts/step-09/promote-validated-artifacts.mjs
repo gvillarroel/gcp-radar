@@ -61,6 +61,11 @@ function relativeToCwd(target) {
   return path.relative(process.cwd(), target).replace(/\\/g, "/");
 }
 
+function markdownLink(label, target) {
+  const escapedLabel = String(label || "").replace(/([\\[\]])/g, "\\$1");
+  return `[${escapedLabel}](${target})`;
+}
+
 function isOfficialGoogleUrl(url) {
   try {
     const host = new URL(url).hostname.toLowerCase();
@@ -147,7 +152,7 @@ function renderFeatureReadme(product, feature) {
 
   lines.push("## Official Evidence", "");
   for (const url of feature.evidence.source_links) {
-    lines.push(`- [${url}](${url})`);
+    lines.push(`- ${markdownLink(url, url)}`);
   }
 
   if (feature.validation.findings.length > 0) {
@@ -160,13 +165,13 @@ function renderFeatureReadme(product, feature) {
   return `${lines.join("\n")}\n`;
 }
 
-function renderProductIndex(card, promotedFeatures) {
+function renderProductIndex(card, promotedFeatures, sourceStep08Card) {
   const lines = [
     `# ${card.product_name}`,
     "",
     `Service card: [card.json](./card.json)`,
     "",
-    `Generated from Step 08 card: \`${card.inputs.step06_extended_features}\``,
+    `Generated from Step 08 card: \`${sourceStep08Card}\``,
     "",
     "## Summary",
     "",
@@ -181,7 +186,7 @@ function renderProductIndex(card, promotedFeatures) {
   ];
 
   for (const feature of promotedFeatures) {
-    lines.push(`- [${feature.feature_name}](./${feature.feature_slug}/README.md)`);
+    lines.push(`- ${markdownLink(feature.feature_name, `./${feature.feature_slug}/README.md`)}`);
   }
 
   return `${lines.join("\n")}\n`;
@@ -261,7 +266,7 @@ async function promoteProduct(productSlug) {
     });
   }
 
-  await writeFile(path.join(productArtifactDir, "index.md"), renderProductIndex(card, promotedFeatures));
+  await writeFile(path.join(productArtifactDir, "index.md"), renderProductIndex(card, promotedFeatures, relativeToCwd(cardPath)));
   await writeJson(path.join(productArtifactDir, "promotion.json"), {
     schema_version: schemaVersion,
     generated_at: generatedAt,

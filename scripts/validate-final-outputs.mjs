@@ -166,6 +166,65 @@ async function validateArtifacts() {
   return { featureCount, findings };
 }
 
+async function validateArtifactProductIndexes() {
+  const findings = [];
+
+  for (const productSlug of await listDirs(artifactsRoot)) {
+    const productDir = path.join(artifactsRoot, productSlug);
+    const promotionPath = path.join(productDir, "promotion.json");
+    const productIndexPath = path.join(productDir, "index.md");
+    const promotion = await readJson(promotionPath, null);
+    if (!promotion || !(await exists(productIndexPath))) {
+      continue;
+    }
+
+    const indexMarkdown = await readFile(productIndexPath, "utf8");
+    const expectedFeatureLinks = new Set((promotion.promoted_features || [])
+      .map((feature) => feature?.feature_slug)
+      .filter(Boolean)
+      .sort((left, right) => left.localeCompare(right))
+      .map((featureSlug) => `./${featureSlug}/README.md`));
+    const actualFeatureLinks = new Set();
+    const staleFeatureLinks = new Set();
+    const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
+
+    for (const match of indexMarkdown.matchAll(linkPattern)) {
+      const link = String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0];
+      if (!link.startsWith("./") || !link.endsWith("/README.md")) {
+        continue;
+      }
+      if (expectedFeatureLinks.has(link)) {
+        actualFeatureLinks.add(link);
+      } else {
+        staleFeatureLinks.add(link);
+      }
+    }
+
+    for (const link of expectedFeatureLinks) {
+      if (!actualFeatureLinks.has(link)) {
+        findings.push({
+          severity: "error",
+          rule: "missing_artifact_index_feature_link",
+          path: productIndexPath,
+          product_slug: productSlug,
+          link,
+        });
+      }
+    }
+    for (const link of staleFeatureLinks) {
+      findings.push({
+        severity: "error",
+        rule: "stale_artifact_index_feature_link",
+        path: productIndexPath,
+        product_slug: productSlug,
+        link,
+      });
+    }
+  }
+
+  return findings;
+}
+
 async function validateRadarDoesNotReferenceDataSteps() {
   const findings = [];
   for (const file of await listFilesRecursive(radarRoot)) {
@@ -351,10 +410,11 @@ async function validateRadarMatchesArtifacts() {
 
 async function main() {
   const artifactValidation = await validateArtifacts();
+  const artifactIndexFindings = await validateArtifactProductIndexes();
   const radarFindings = await validateRadarDoesNotReferenceDataSteps();
   const radarArtifactLinkFindings = await validateRadarArtifactLinks();
   const radarArtifactFindings = await validateRadarMatchesArtifacts();
-  const findings = [...artifactValidation.findings, ...radarFindings, ...radarArtifactLinkFindings, ...radarArtifactFindings];
+  const findings = [...artifactValidation.findings, ...artifactIndexFindings, ...radarFindings, ...radarArtifactLinkFindings, ...radarArtifactFindings];
   const payload = {
     schema_version: "final-output-validation-v1",
     generated_at: new Date().toISOString(),

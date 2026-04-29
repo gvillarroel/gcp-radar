@@ -537,6 +537,9 @@ Stale product reports, missing product reports, mismatched Step 10 counts, and
 radar references to intermediate `data/step-*` paths are validation failures.
 Every feature listed in a promotion manifest must have both a promoted
 `card.json` and `README.md` artifact.
+Each product artifact index must link every promoted feature README for that
+product and must not link feature README files outside the product's promotion
+manifest.
 Radar Markdown links that target promoted `artifacts/` content must resolve to
 existing files or directories. Each product report must also link every
 promoted feature README for that product and must not link feature README files

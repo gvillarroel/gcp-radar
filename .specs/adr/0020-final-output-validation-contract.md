@@ -39,6 +39,10 @@ The validator must check:
 - Step 10 product report paths exactly match the promoted product inventory
 - every promoted feature listed in a promotion manifest has both its artifact
   `card.json` and `README.md`
+- each product artifact index links every promoted feature README for that
+  product
+- product artifact indexes do not retain feature README links outside the
+  product's promotion manifest
 - each Step 10 product report links every promoted feature README for that
   product
 - Step 10 product reports do not retain feature README links outside the
