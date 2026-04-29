@@ -111,8 +111,17 @@ async function validateArtifacts() {
       }
     }
     for (const featureSlug of promotedFeatureSlugs) {
+      const featureDir = path.join(productDir, featureSlug);
+      const featureCardPath = path.join(featureDir, "card.json");
+      const featureReadmePath = path.join(featureDir, "README.md");
       if (!artifactFeatureSlugs.includes(featureSlug)) {
-        findings.push({ severity: "error", rule: "promoted_feature_artifact_missing", path: path.join(productDir, featureSlug, "card.json"), product_slug: productSlug, feature_slug: featureSlug });
+        findings.push({ severity: "error", rule: "promoted_feature_artifact_missing", path: featureDir, product_slug: productSlug, feature_slug: featureSlug });
+      }
+      if (!(await exists(featureCardPath))) {
+        findings.push({ severity: "error", rule: "promoted_feature_card_missing", path: featureCardPath, product_slug: productSlug, feature_slug: featureSlug });
+      }
+      if (!(await exists(featureReadmePath))) {
+        findings.push({ severity: "error", rule: "promoted_feature_readme_missing", path: featureReadmePath, product_slug: productSlug, feature_slug: featureSlug });
       }
     }
     if (!serviceCard) {
