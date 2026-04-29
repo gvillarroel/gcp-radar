@@ -301,10 +301,7 @@ function buildExplicitIamMapping(feature, rolesIndex, permissionsByName) {
 
   return {
     explicitPermissions,
-    explicitRoles: uniqueSorted([
-      ...explicitRoles,
-      ...explicitPermissions.flatMap((permission) => permission.roles || []),
-    ]),
+    explicitRoles: uniqueSorted(explicitRoles),
     missingPermissions,
     missingRoles,
   };

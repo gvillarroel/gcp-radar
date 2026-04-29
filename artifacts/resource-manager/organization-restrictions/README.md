@@ -1,0 +1,41 @@
+# Organization restrictions
+
+Product: Resource Manager
+Feature slug: `organization-restrictions`
+Coverage: `MEDIUM`
+IAM mapping: `explicit`
+
+## Technical Summary
+
+Organization restrictions limit access to resources in authorized Google Cloud organizations; Organization restrictions limit access to resources in authorized Google Cloud organizations.
+
+## Lifecycle
+
+- Latest feature date: 2023-02-16
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+Explicit IAM evidence was found in the supporting documentation.
+
+Permissions:
+
+- `resourcemanager.projects.get`
+- `resourcemanager.projects.list`
+
+## Security Capabilities
+
+- access
+- allow
+- auth
+- constraint
+- iam
+- policy
+- role
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/resource-manager/docs/access-control-org](https://docs.cloud.google.com/resource-manager/docs/access-control-org)
+- [https://docs.cloud.google.com/resource-manager/docs/access-control-proj](https://docs.cloud.google.com/resource-manager/docs/access-control-proj)
+- [https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview](https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview)
