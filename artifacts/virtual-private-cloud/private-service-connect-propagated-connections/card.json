@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:33.557Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Private Service Connect propagated connections",
+  "feature_slug": "private-service-connect-propagated-connections",
+  "summary": "Private Service Connect propagated connections became generally available, enabling services in one consumer VPC spoke to be privately accessed from other spokes connected to the same Network Connectivity Center hub; Private Service Connect propagated connections allow services exposed through one consumer VPC spoke via Private Service Connect to be privately reached by other consumer VPC spokes connected to the same Network Connectivity Center hub.",
+  "extended_definition": "Private Service Connect propagated connections became generally available, enabling services in one consumer VPC spoke to be privately accessed from other spokes connected to the same Network Connectivity Center hub; Private Service Connect propagated connections allow services exposed through one consumer VPC spoke via Private Service Connect to be privately reached by other consumer VPC spokes connected to the same Network Connectivity Center hub.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/about-peering-connections",
+      "https://docs.cloud.google.com/vpc/docs/about-propagated-connections",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+      "https://docs.cloud.google.com/vpc/docs/quota"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About propagated connections \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-propagated-connections",
+        "source_id": "site-docs-root-2",
+        "final_score": 285,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Quotas and limits The following quotas and limits apply to Private Service Connect connection propagation: Consumer quota : the PSC propagated connections per VPC network quota limits the number of propagated connections that can be made available in a consumer VPC network.",
+          "With propagated connections, services that are accessible in one consumer VPC spoke through Private Service Connect endpoints can be privately accessed by other consumer VPC spokes that are connected to the same Network Connectivity Center hub.",
+          "You can configure global access on an endpoint to make propagated connections for that endpoint available to workloads in any region of the propagated connection's VPC spoke."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/quota",
+        "source_id": "site-docs-root",
+        "final_score": 207,
+        "relevance": "",
+        "evidence_snippets": [
+          "Quota name: PSC PROPAGATED CONNECTIONS PER VPC NETWORK Available metrics: compute.googleapis.com/quota/psc propagated connections per vpc network/limit compute.googleapis.com/quota/psc propagated connections per vpc network/usage compute.googleapis.com/quota/psc propagated connections per vpc network/exceeded PSC ILB consumer forwarding rules per producer VPC network The maximum number of Private Service Connect endpoints and propagated connections that can access a service producer VPC network.",
+          "Quota name: PSC GOOGLE APIS FORWARDING RULES PER NETWORK Available metrics: compute.googleapis.com/quota/psc google apis forwarding rules per vpc network/limit compute.googleapis.com/quota/psc google apis forwarding rules per vpc network/usage compute.googleapis.com/quota/psc google apis forwarding rules per vpc network/exceeded PSC propagated connections per VPC network The maximum number of Private Service Connect propagated connections that can exist in a consumer's VPC network .",
+          "Propagated connections contribute to this quota until the associated endpoint is deleted, even if connection propagation is disabled on the hub or the propagated connection's spoke is deleted."
+        ]
+      },
+      {
+        "title": "\"Publish services by using Private Service Connect \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "source_id": "site-docs-root-2",
+        "final_score": 201,
+        "relevance": "",
+        "evidence_snippets": [
+          "Propagated connection errors For information about troubleshooting propagated connections, see Troubleshoot Private Service Connect connection propagation errors .",
+          "Click Add service . gcloud Use the gcloud compute service-attachments create command . gcloud compute service-attachments create ATTACHMENT NAME \\ --region= ATTACHMENT REGION \\ --target-service= TARGET SERVICE \\ --connection-preference=ACCEPT MANUAL \\ --consumer-accept-list= ACCEPTED PROJECT OR NETWORK 1 = LIMIT 1 , ACCEPTED PROJECT OR NETWORK 2 = LIMIT 2 \\ --consumer-reject-list= REJECTED PROJECT OR NETWORK 1 , REJECTED PROJECT OR NETWORK 2 \\ --nat-subnets= PSC SUBNET LIST \\ [ --propagated-connection-limit= PROPAGATED CONNECTION LIMIT ] \\ [ --enable-proxy-protocol ] \\ [ --domain-names= DOMAIN NAME ] \\ [ --reconcile-connections ] Replace the following: ATTACHMENT NAME : the name to assign to the service attachment.",
+          "For each endpoint in the list of connected endpoints, the endpointWithId field contains the endpoint's ID-based URI that you can use to accept or reject connections from individual Private Service Connect endpoints. gcloud compute service-attachments describe \\ ATTACHMENT NAME --region= REGION Replace the following: ATTACHMENT NAME : the name of the service attachment."
+        ]
+      },
+      {
+        "title": "\"About peering connections \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-peering-connections",
+        "source_id": "site-docs-root-2",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "VPC Network Peering supports two connection modes: Independent mode (default) Consensus mode For standard deployments, independent mode is generally preferred.",
+          "After the peering connection is established, the two VPC networks always exchange IPv4 subnet routes that use private IPv4 address ranges.",
+          "What's next To create and manage VPC Network Peering connections, see Set up and manage VPC Network Peering ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-propagated-connections",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/about-peering-connections"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-propagated-connections",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/about-peering-connections"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-propagated-connections",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/about-peering-connections"
+      ]
+    }
+  ]
+}

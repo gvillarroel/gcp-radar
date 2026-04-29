@@ -1,0 +1,136 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:07.711Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai",
+  "feature_name": "Custom Document Extractor dataset export with metadata preservation",
+  "feature_slug": "custom-document-extractor-dataset-export-with-metadata-preservation",
+  "summary": "Custom Document Extractor can export datasets while preserving metadata.",
+  "extended_definition": "Custom Document Extractor can export datasets while preserving metadata.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+      "https://docs.cloud.google.com/document-ai/docs/create-dataset",
+      "https://docs.cloud.google.com/document-ai/docs/handle-response",
+      "https://docs.cloud.google.com/document-ai/docs/label-documents"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Handle processing response \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "source_id": "site-docs-root-2",
+        "final_score": 231,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . from typing import Optional , Sequence from google.api core.client options import ClientOptions from google.cloud import documentai TODO(developer): Uncomment these variables before running the sample. project id = \"YOUR PROJECT ID\" location = \"YOUR PROCESSOR LOCATION\" # Format is \"us\" or \"eu\" processor id = \"YOUR PROCESSOR ID\" # Create processor before running sample processor version = \"rc\" # Refer to https://cloud.google.com/document-ai/docs/manage-processor-versions for more information file path = \"/path/to/local/pdf\" mime type = \"application/pdf\" # Refer to https://cloud.google.com/document-ai/docs/file-types for supported file types def process document custom extractor sample ( project id : str , location : str , processor id : str , processor version : str , file path : str , mime type : str , ) - > None : Entities to extract from Foundation Model CDE properties = [ documentai .",
+          "RawDocument ( content = image content , mime type = mime type ), Only supported for Document OCR processor process options = process options , ) result = client . process document ( request = request ) For a full list of Document object attributes, reference this page: https://cloud.google.com/document-ai/docs/reference/rest/v1/Document return result . document Custom Document Extractor The Custom Document Extractor processor can extract custom entities from documents which don't have a pretrained processor available.",
+          "The following parsers do follow it: Extract (Custom Extractor) Legacy Bank statement parser Expense parser Invoice Parser PaySlip parser W2 Parser Code samples The following code samples demonstrate how to send a processing request and then read and print the fields from a specialized processor to the terminal: Java For more information, see the Document AI Java API reference documentation ."
+        ]
+      },
+      {
+        "title": "\"Custom extractor with generative AI \\_|\\_ Document AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "source_id": "site-docs-root",
+        "final_score": 225,
+        "relevance": "",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json ` -Uri \"https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ PROCESSOR VERSION :process\" Select-Object -Expand Content Custom extractor with signature detection Preview This product is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "Home Documentation AI and ML Document AI Guides Send feedback Custom extractor with generative AI Stay organized with collections Save and categorize content based on your preferences.",
+          "Custom extractor with derived fields Preview This product is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms ."
+        ]
+      },
+      {
+        "title": "Create dataset \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/create-dataset",
+        "source_id": "site-docs-root",
+        "final_score": 224,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before using any of the request data, make the following replacements: LOCATION : Your processor location PROJECT ID : Your Google Cloud project ID PROCESSOR ID : The ID of your custom processor Get data schema HTTP method GET https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /dataset/datasetSchema CURL curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /dataset/datasetSchema\" You should receive a JSON response similar to the following: { \"name\" : \"projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /dataset/datasetSchema\" , \"documentSchema\" : { \"entityTypes\" : [ { \"name\" : $SCHEMA NAME , \"baseTypes\" : [ \"document\" ] , \"properties\" : [ { \"name\" : $LABEL NAME , \"valueType\" : $VALUE TYPE , \"occurrenceType\" : $OCCURRENCE TYPE , \"propertyMetadata\" : {} } , ] , \"entityTypeMetadata\" : {} } ] } } Update document schema This sample shows you how to use the dataset.updateDatasetSchema to update the current schema.",
+          "Before using any of the request data, make the following replacements: LOCATION : Your processor location PROJECT ID : Your Google Cloud project ID PROCESSOR ID The ID of your custom processor GCS URI : Your Cloud Storage URI where dataset documents are stored Provided bucket Follow next steps to create a dataset request with a Cloud Storage bucket you provide.",
+          "Train or test dataset If you want to add documents to either training or test dataset: HTTP method POST https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /dataset/importDocuments Request JSON: { \"batch documents import configs\" : { \"dataset split\" : DATASET TYPE \"batch input config\" : { \"gcs prefix\" : { \"gcs uri prefix\" : GCS URI } } } } Train & test dataset If you want to autosplit the documents between the training and test dataset: HTTP method POST https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /dataset/importDocuments Request JSON: { \"batch documents import configs\" : { \"auto split config\" : { \"training split ratio\" : TRAINING SPLIT RATIO } , \"batch input config\" : { \"gcs prefix\" : { \"gcs uri prefix\" : \"gs://test sbindal/pdfs-1-page/\" } } } } Save the request body in a file named request.json , and execute the following command: CURL curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /dataset/importDocuments\" You should receive a JSON response similar to the following: { \"name\" : \"projects/ PROJECT ID /locations/ LOCATION /operations/ OPERATION ID \" } Tip: You can use ImportDocumentsMetadata to get the status of each document import."
+        ]
+      },
+      {
+        "title": "Label documents \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/label-documents",
+        "source_id": "site-docs-root-2",
+        "final_score": 215,
+        "relevance": "",
+        "evidence_snippets": [
+          "Dataset metadata, such as processor schema, document assignments (training/test/unassigned), and document labeling status (labeled, unlabeled, auto-labeled) are not exported.",
+          "Resync dataset Resync keeps your dataset's Cloud Storage folder consistent with Document AI's internal index of metadata.",
+          "Export dataset To export all documents as JSON Document files to a Cloud Storage folder, select Export Dataset ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "core.client",
+      "dataset.updateDatasetSchema",
+      "documentai.googleapis.com",
+      "request.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/create-dataset",
+        "https://docs.cloud.google.com/document-ai/docs/label-documents"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/create-dataset",
+        "https://docs.cloud.google.com/document-ai/docs/label-documents"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/create-dataset",
+        "https://docs.cloud.google.com/document-ai/docs/label-documents"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/create-dataset",
+        "https://docs.cloud.google.com/document-ai/docs/label-documents"
+      ]
+    }
+  ]
+}

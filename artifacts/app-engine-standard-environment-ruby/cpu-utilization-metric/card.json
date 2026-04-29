@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.362Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-ruby/card.json",
+  "product_name": "App Engine standard environment Ruby",
+  "product_slug": "app-engine-standard-environment-ruby",
+  "feature_name": "CPU Utilization metric",
+  "feature_slug": "cpu-utilization-metric",
+  "summary": "The CPU Utilization metric reports average CPU usage across all active App Engine standard environment instances.",
+  "extended_definition": "The CPU Utilization metric reports average CPU usage across all active App Engine standard environment instances.",
+  "lifecycle": {
+    "latest_feature_date": "2021-03-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+      "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+      "https://docs.cloud.google.com/appengine/docs/standard/ruby/connecting-vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connecting to a VPC network \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "source_id": "site-docs-reference",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "To display charts for the connector's throughput, number of instances, and CPU utilization metrics over time by using the Google Cloud console: Go to the Serverless VPC Access overview page.",
+          "In the CPU Utilization chart, hold the pointer over the chart to view the connector's recent CPU usage.",
+          "The chart displays the CPU usage distributed across instances for the 50th, 95th, and 99th percentiles."
+        ]
+      },
+      {
+        "title": "\"Connecting to a VPC network \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/ruby/connecting-vpc",
+        "source_id": "site-docs-reference-4",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "To display charts for the connector's throughput, number of instances, and CPU utilization metrics over time by using the Google Cloud console: Go to the Serverless VPC Access overview page.",
+          "In the CPU Utilization chart, hold the pointer over the chart to view the connector's recent CPU usage.",
+          "The chart displays the CPU usage distributed across instances for the 50th, 95th, and 99th percentiles."
+        ]
+      },
+      {
+        "title": "\"How instances are managed \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+        "source_id": "site-docs-reference",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "Automatic scaling settings Description Target CPU utilization Sets the CPU utilization ratio threshold to specify the CPU usage threshold at which more instances will be started to handle traffic.",
+          "You can specify thresholds for each of these metrics, as well as a minimum number instances to keep running at all times by configuring the automatic scaling element.",
+          "Target throughput utilization Sets the throughput threshold for the number of concurrent requests after which more instances will be started to handle traffic."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed"
+      ]
+    }
+  ]
+}

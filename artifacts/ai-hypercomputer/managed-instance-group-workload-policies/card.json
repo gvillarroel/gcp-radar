@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:40.944Z",
+  "source_step08_card": "data/step-08/current/products/ai-hypercomputer/card.json",
+  "product_name": "AI Hypercomputer",
+  "product_slug": "ai-hypercomputer",
+  "feature_name": "Managed instance group workload policies",
+  "feature_slug": "managed-instance-group-workload-policies",
+  "summary": "AI Hypercomputer now supports workload policies on managed instance groups, including a high-throughput workload type optimized for high networking performance.",
+  "extended_definition": "AI Hypercomputer now supports workload policies on managed instance groups, including a high-throughput workload type optimized for high networking performance.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a3-high-mega",
+      "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a4-or-a3ultra",
+      "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a4x"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create an AI-optimized MIG with A3 High or A3 Mega machine type \\_|\\_ AI\\",
+        "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a3-high-mega",
+        "source_id": "site-docs-root-required-2",
+        "final_score": 141,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Flex-start Create a zonal or regional MIG and a resize request as follows: To create a zonal MIG and a resize request in it, do the following: Create a zonal MIG using the instance-groups managed create command as follows. gcloud compute instance-groups managed create MIG NAME \\ --template= INSTANCE TEMPLATE URL \\ --size=0 \\ --default-action-on-vm-failure=do-nothing \\ --zone= ZONE Create a resize request in the zonal MIG using the instance-groups managed resize-requests create command as follows: gcloud compute instance-groups managed resize-requests create MIG NAME \\ --resize-request= RESIZE REQUEST NAME \\ --resize-by= COUNT \\ --zone= ZONE To create a regional MIG and a resize request in it, do the following: Create a regional MIG using the instance-groups managed create command as follows. gcloud compute instance-groups managed create MIG NAME \\ --template= INSTANCE TEMPLATE URL \\ --size=0 \\ --default-action-on-vm-failure=do-nothing \\ --zones= ZONE \\ --target-distribution-shape=any-single-zone \\ --instance-redistribution-type=none Create a resize request in the regional MIG using the beta instance-groups managed resize-requests create command as follows: gcloud beta compute instance-groups managed resize-requests create MIG NAME \\ --resize-request= RESIZE REQUEST NAME \\ --resize-by= COUNT \\ --region= REGION Reservation-bound The commands that you use to create a MIG use a workload policy to specify instance placement.",
+          "Create a zonal or regional MIG and a resize request as follows: To create a zonal MIG and a resize request in it, do the following: Create a zonal MIG using the instance-groups managed create command as follows. gcloud compute instance-groups managed create MIG NAME \\ --template= INSTANCE TEMPLATE URL \\ --size=0 \\ --workload-policy= WORKLOAD POLICY URL \\ --zone= ZONE Create a resize request in the zonal MIG using the instance-groups managed resize-requests create command as follows: gcloud compute instance-groups managed resize-requests create MIG NAME \\ --resize-request= RESIZE REQUEST NAME \\ --resize-by= COUNT \\ --zone= ZONE To create a regional MIG and a resize request in it, do the following: Create a regional MIG using the instance-groups managed create command as follows. gcloud compute instance-groups managed create MIG NAME \\ --template= INSTANCE TEMPLATE URL \\ --size=0 \\ --workload-policy= WORKLOAD POLICY URL \\ --zones= ZONE \\ --target-distribution-shape=any-single-zone \\ --instance-redistribution-type=none Create a resize request in the regional MIG using the beta instance-groups managed resize-requests create command as follows: gcloud beta compute instance-groups managed resize-requests create MIG NAME \\ --resize-request= RESIZE REQUEST NAME \\ --resize-by= COUNT \\ --region= REGION Spot The commands that you use to create a MIG use a workload policy to specify instance placement.",
+          "Create a zonal or regional MIG and a resize request as follows: To create a zonal MIG and a resize request in it, do the following: Create a zonal MIG using the instance-groups managed create command as follows. gcloud compute instance-groups managed create MIG NAME \\ --template= INSTANCE TEMPLATE URL \\ --size=0 \\ --workload-policy= WORKLOAD POLICY URL \\ --zone= ZONE Create a resize request in the zonal MIG using the instance-groups managed resize-requests create command as follows: gcloud compute instance-groups managed resize-requests create MIG NAME \\ --resize-request= RESIZE REQUEST NAME \\ --resize-by= COUNT \\ --zone= ZONE To create a regional MIG and a resize request in it, do the following: Create a regional MIG using the instance-groups managed create command as follows. gcloud compute instance-groups managed create MIG NAME \\ --template= INSTANCE TEMPLATE URL \\ --size=0 \\ --workload-policy= WORKLOAD POLICY URL \\ --zones= ZONE \\ --target-distribution-shape=any-single-zone \\ --instance-redistribution-type=none Create a resize request in the regional MIG using the beta instance-groups managed resize-requests create command as follows: gcloud beta compute instance-groups managed resize-requests create MIG NAME \\ --resize-request= RESIZE REQUEST NAME \\ --resize-by= COUNT \\ --region= REGION Replace the following: MIG NAME : the name of the MIG."
+        ]
+      },
+      {
+        "title": "\"Create an AI-optimized MIG with A4 or A3 Ultra machine type \\_|\\_ AI Hypercomputer\\",
+        "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a4-or-a3ultra",
+        "source_id": "site-docs-root-required-2",
+        "final_score": 141,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Flex-start Create a zonal or regional MIG and a resize request as follows: To create a zonal MIG and a resize request in it, do the following: Create a zonal MIG using the instance-groups managed create command as follows. gcloud compute instance-groups managed create MIG NAME \\ --template= INSTANCE TEMPLATE URL \\ --size=0 \\ --default-action-on-vm-failure=do-nothing \\ --zone= ZONE Create a resize request in the zonal MIG using the instance-groups managed resize-requests create command as follows: gcloud compute instance-groups managed resize-requests create MIG NAME \\ --resize-request= RESIZE REQUEST NAME \\ --resize-by= COUNT \\ --zone= ZONE To create a regional MIG and a resize request in it, do the following: Create a regional MIG using the instance-groups managed create command as follows. gcloud compute instance-groups managed create MIG NAME \\ --template= INSTANCE TEMPLATE URL \\ --size=0 \\ --default-action-on-vm-failure=do-nothing \\ --zones= ZONE \\ --target-distribution-shape=any-single-zone \\ --instance-redistribution-type=none Create a resize request in the regional MIG using the beta instance-groups managed resize-requests create command as follows: gcloud beta compute instance-groups managed resize-requests create MIG NAME \\ --resize-request= RESIZE REQUEST NAME \\ --resize-by= COUNT \\ --region= REGION Reservation-bound The commands that you use to create a MIG use a workload policy to specify instance placement.",
+          "Create a zonal or regional MIG and a resize request as follows: To create a zonal MIG and a resize request in it, do the following: Create a zonal MIG using the instance-groups managed create command as follows. gcloud compute instance-groups managed create MIG NAME \\ --template= INSTANCE TEMPLATE URL \\ --size=0 \\ --workload-policy= WORKLOAD POLICY URL \\ --zone= ZONE Create a resize request in the zonal MIG using the instance-groups managed resize-requests create command as follows: gcloud compute instance-groups managed resize-requests create MIG NAME \\ --resize-request= RESIZE REQUEST NAME \\ --resize-by= COUNT \\ --zone= ZONE To create a regional MIG and a resize request in it, do the following: Create a regional MIG using the instance-groups managed create command as follows. gcloud compute instance-groups managed create MIG NAME \\ --template= INSTANCE TEMPLATE URL \\ --size=0 \\ --workload-policy= WORKLOAD POLICY URL \\ --zones= ZONE \\ --target-distribution-shape=any-single-zone \\ --instance-redistribution-type=none Create a resize request in the regional MIG using the beta instance-groups managed resize-requests create command as follows: gcloud beta compute instance-groups managed resize-requests create MIG NAME \\ --resize-request= RESIZE REQUEST NAME \\ --resize-by= COUNT \\ --region= REGION Spot The commands that you use to create a MIG use a workload policy to specify instance placement.",
+          "Create a zonal or regional MIG and a resize request as follows: To create a zonal MIG and a resize request in it, do the following: Create a zonal MIG using the instance-groups managed create command as follows. gcloud compute instance-groups managed create MIG NAME \\ --template= INSTANCE TEMPLATE URL \\ --size=0 \\ --workload-policy= WORKLOAD POLICY URL \\ --zone= ZONE Create a resize request in the zonal MIG using the instance-groups managed resize-requests create command as follows: gcloud compute instance-groups managed resize-requests create MIG NAME \\ --resize-request= RESIZE REQUEST NAME \\ --resize-by= COUNT \\ --zone= ZONE To create a regional MIG and a resize request in it, do the following: Create a regional MIG using the instance-groups managed create command as follows. gcloud compute instance-groups managed create MIG NAME \\ --template= INSTANCE TEMPLATE URL \\ --size=0 \\ --workload-policy= WORKLOAD POLICY URL \\ --zones= ZONE \\ --target-distribution-shape=any-single-zone \\ --instance-redistribution-type=none Create a resize request in the regional MIG using the beta instance-groups managed resize-requests create command as follows: gcloud beta compute instance-groups managed resize-requests create MIG NAME \\ --resize-request= RESIZE REQUEST NAME \\ --resize-by= COUNT \\ --region= REGION Replace the following: MIG NAME : the name of the MIG."
+        ]
+      },
+      {
+        "title": "\"Create an AI-optimized MIG with A4X \\_|\\_ AI Hypercomputer \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a4x",
+        "source_id": "site-docs-root-required-2",
+        "final_score": 141,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create a zonal or regional MIG as follows: To create a zonal MIG, use the following command: gcloud compute instance-groups managed create MIG NAME \\ --template= INSTANCE TEMPLATE URL \\ --size= TARGET SIZE \\ --workload-policy= WORKLOAD POLICY URL \\ --zone= ZONE To create a regional MIG, use the following command: gcloud compute instance-groups managed create MIG NAME \\ --template= INSTANCE TEMPLATE URL \\ --size= TARGET SIZE \\ --workload-policy= WORKLOAD POLICY URL \\ --region= REGION Replace the following: MIG NAME : the name of the MIG.",
+          "POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /zones/ ZONE /instanceGroupManagers { \"versions\": [ { \"instanceTemplate\": \" INSTANCE TEMPLATE URL \" } ], \"name\": \" MIG NAME \", \"instanceTemplate\": \" INSTANCE TEMPLATE URL \", \"targetSize\": \" TARGET SIZE \", \"resourcePolicies\": { \"workloadPolicy\": WORKLOAD POLICY URL } } To create a regional MIG, make a POST request to the regionInstanceGroupManagers.insert method .",
+          "POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /instanceGroupManagers { \"versions\": [ { \"instanceTemplate\": \" INSTANCE TEMPLATE URL \" } ], \"name\": \" MIG NAME \", \"instanceTemplate\": \" INSTANCE TEMPLATE URL \", \"targetSize\": \" TARGET SIZE \", \"resourcePolicies\": { \"workloadPolicy\": WORKLOAD POLICY URL } } Replace the following: PROJECT ID : the project ID."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "beta.regionInstanceGroupManagerResizeRequests.insert",
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a3-high-mega",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a4-or-a3ultra",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a4x"
+      ]
+    }
+  ]
+}

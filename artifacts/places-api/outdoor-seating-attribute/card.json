@@ -1,0 +1,127 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:25.238Z",
+  "source_step08_card": "data/step-08/current/products/places-api/card.json",
+  "product_name": "Places API",
+  "product_slug": "places-api",
+  "feature_name": "Outdoor seating attribute",
+  "feature_slug": "outdoor-seating-attribute",
+  "summary": "This attribute indicates whether a place has outdoor seating.",
+  "extended_definition": "This attribute indicates whether a place has outdoor seating.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/places/web-service/legacy/details",
+      "https://developers.google.com/maps/documentation/places/web-service/legacy/search-find-place",
+      "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+      "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "REST Resource: places \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "source_id": "site-api-reference",
+        "final_score": 215,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "X hours and 15 minutes. userRatingCount integer The total number of reviews (with or without text) for this place. takeout boolean Specifies if the business supports takeout. delivery boolean Specifies if the business supports delivery. dineIn boolean Specifies if the business supports indoor or outdoor seating options. curbsidePickup boolean Specifies if the business supports curbside pickup. reservable boolean Specifies if the place supports reservations. servesBreakfast boolean Specifies if the place serves breakfast. servesLunch boolean Specifies if the place serves lunch. servesDinner boolean Specifies if the place serves dinner. servesBeer boolean Specifies if the place serves beer. servesWine boolean Specifies if the place serves wine. servesBrunch boolean Specifies if the place serves brunch. servesVegetarianFood boolean Specifies if the place serves vegetarian food. outdoorSeating boolean Place provides outdoor seating. liveMusic boolean Place provides live music. menuForChildren boolean Place has a children's menu. servesCocktails boolean Place serves cocktails. servesDessert boolean Place serves dessert. servesCoffee boolean Place serves coffee. goodForChildren boolean Place is good for children. allowsDogs boolean Place allows dogs. restroom boolean Place has restroom. goodForGroups boolean Place accommodates groups. goodForWatchingSports boolean Place is suitable for watching sports. accessibilityOptions object ( AccessibilityOptions ) Information about the accessibility options a place offers. pureServiceAreaBusiness boolean Indicates whether the place is a pure service area business.",
+          "JSON representation { \"name\" : string , \"id\" : string , \"displayName\" : { object ( LocalizedText ) } , \"types\" : [ string ] , \"primaryType\" : string , \"primaryTypeDisplayName\" : { object ( LocalizedText ) } , \"googleMapsTypeLabel\" : { object ( LocalizedText ) } , \"nationalPhoneNumber\" : string , \"internationalPhoneNumber\" : string , \"formattedAddress\" : string , \"shortFormattedAddress\" : string , \"postalAddress\" : { object ( PostalAddress ) } , \"addressComponents\" : [ { object ( AddressComponent ) } ] , \"plusCode\" : { object ( PlusCode ) } , \"location\" : { object ( LatLng ) } , \"viewport\" : { object ( Viewport ) } , \"rating\" : number , \"googleMapsUri\" : string , \"websiteUri\" : string , \"reviews\" : [ { object ( Review ) } ] , \"regularOpeningHours\" : { object ( OpeningHours ) } , \"timeZone\" : { object ( TimeZone ) } , \"photos\" : [ { object ( Photo ) } ] , \"adrFormatAddress\" : string , \"businessStatus\" : enum ( BusinessStatus ) , \"openingDate\" : { object ( Date ) } , \"priceLevel\" : enum ( PriceLevel ) , \"attributions\" : [ { object ( Attribution ) } ] , \"iconMaskBaseUri\" : string , \"iconBackgroundColor\" : string , \"currentOpeningHours\" : { object ( OpeningHours ) } , \"currentSecondaryOpeningHours\" : [ { object ( OpeningHours ) } ] , \"regularSecondaryOpeningHours\" : [ { object ( OpeningHours ) } ] , \"editorialSummary\" : { object ( LocalizedText ) } , \"paymentOptions\" : { object ( PaymentOptions ) } , \"parkingOptions\" : { object ( ParkingOptions ) } , \"subDestinations\" : [ { object ( SubDestination ) } ] , \"fuelOptions\" : { object ( FuelOptions ) } , \"evChargeOptions\" : { object ( EVChargeOptions ) } , \"generativeSummary\" : { object ( GenerativeSummary ) } , \"containingPlaces\" : [ { object ( ContainingPlace ) } ] , \"addressDescriptor\" : { object ( AddressDescriptor ) } , \"googleMapsLinks\" : { object ( GoogleMapsLinks ) } , \"priceRange\" : { object ( PriceRange ) } , \"reviewSummary\" : { object ( ReviewSummary ) } , \"evChargeAmenitySummary\" : { object ( EvChargeAmenitySummary ) } , \"neighborhoodSummary\" : { object ( NeighborhoodSummary ) } , \"consumerAlert\" : { object ( ConsumerAlert ) } , \"movedPlace\" : string , \"movedPlaceId\" : string , \"utcOffsetMinutes\" : integer , \"userRatingCount\" : integer , \"takeout\" : boolean , \"delivery\" : boolean , \"dineIn\" : boolean , \"curbsidePickup\" : boolean , \"reservable\" : boolean , \"servesBreakfast\" : boolean , \"servesLunch\" : boolean , \"servesDinner\" : boolean , \"servesBeer\" : boolean , \"servesWine\" : boolean , \"servesBrunch\" : boolean , \"servesVegetarianFood\" : boolean , \"outdoorSeating\" : boolean , \"liveMusic\" : boolean , \"menuForChildren\" : boolean , \"servesCocktails\" : boolean , \"servesDessert\" : boolean , \"servesCoffee\" : boolean , \"goodForChildren\" : boolean , \"allowsDogs\" : boolean , \"restroom\" : boolean , \"goodForGroups\" : boolean , \"goodForWatchingSports\" : boolean , \"accessibilityOptions\" : { object ( AccessibilityOptions ) } , \"pureServiceAreaBusiness\" : boolean } Fields name string This Place's resource name, in places/{placeId} format.",
+          "See address descriptor regional coverage in https://developers.google.com/maps/documentation/geocoding/address-descriptors/coverage . googleMapsLinks object ( GoogleMapsLinks ) Links to trigger different Google Maps actions. priceRange object ( PriceRange ) The price range associated with a Place. reviewSummary object ( ReviewSummary ) AI-generated summary of the place using user reviews. evChargeAmenitySummary object ( EvChargeAmenitySummary ) The summary of amenities near the EV charging station. neighborhoodSummary object ( NeighborhoodSummary ) A summary of points of interest near the place. consumerAlert object ( ConsumerAlert ) The consumer alert message for the place when we detect suspicious review activity on a business or a business violates our policies. movedPlace string If this Place is permanently closed and has moved to a new Place, this field contains the new Place's resource name, in places/{placeId} format."
+        ]
+      },
+      {
+        "title": "Package google.maps.places.v1 \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "source_id": "site-api-reference",
+        "final_score": 211,
+        "relevance": "",
+        "evidence_snippets": [
+          "X hours and 15 minutes. user rating count int32 The total number of reviews (with or without text) for this place. takeout bool Specifies if the business supports takeout. delivery bool Specifies if the business supports delivery. dine in bool Specifies if the business supports indoor or outdoor seating options. curbside pickup bool Specifies if the business supports curbside pickup. reservable bool Specifies if the place supports reservations. serves breakfast bool Specifies if the place serves breakfast. serves lunch bool Specifies if the place serves lunch. serves dinner bool Specifies if the place serves dinner. serves beer bool Specifies if the place serves beer. serves wine bool Specifies if the place serves wine. serves brunch bool Specifies if the place serves brunch. serves vegetarian food bool Specifies if the place serves vegetarian food. outdoor seating bool Place provides outdoor seating. live music bool Place provides live music. menu for children bool Place has a children's menu. serves cocktails bool Place serves cocktails. serves dessert bool Place serves dessert. serves coffee bool Place serves coffee. good for children bool Place is good for children. allows dogs bool Place allows dogs. restroom bool Place has restroom. good for groups bool Place accommodates groups. good for watching sports bool Place is suitable for watching sports. accessibility options AccessibilityOptions Information about the accessibility options a place offers. pure service area business bool Indicates whether the place is a pure service area business.",
+          "See address descriptor regional coverage in https://developers.google.com/maps/documentation/geocoding/address-descriptors/coverage . google maps links GoogleMapsLinks Links to trigger different Google Maps actions. price range PriceRange The price range associated with a Place. review summary ReviewSummary AI-generated summary of the place using user reviews. ev charge amenity summary EvChargeAmenitySummary The summary of amenities near the EV charging station. neighborhood summary NeighborhoodSummary A summary of points of interest near the place. consumer alert ConsumerAlert The consumer alert message for the place when we detect suspicious review activity on a business or a business violates our policies. moved place string If this Place is permanently closed and has moved to a new Place, this field contains the new Place's resource name, in places/{place id} format.",
+          "Fields wheelchair accessible parking bool Place offers wheelchair accessible parking. wheelchair accessible entrance bool Places has wheelchair accessible entrance. wheelchair accessible restroom bool Place has wheelchair accessible restroom. wheelchair accessible seating bool Place has wheelchair accessible seating."
+        ]
+      },
+      {
+        "title": "Find Place (Legacy) \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/legacy/search-find-place",
+        "source_id": "site-docs-root-2",
+        "final_score": 171,
+        "relevance": "",
+        "evidence_snippets": [
+          "See PlaceOpeningHours for more information. delivery optional boolean Specifies if the business supports delivery. dine in optional boolean Specifies if the business supports indoor or outdoor seating options. editorial summary optional PlaceEditorialSummary Contains a summary of the place.",
+          "Don't programmatically parse the formatted address. website optional string The authoritative website for this place, such as a business' homepage. wheelchair accessible entrance optional boolean Specifies if the place has an entrance that is wheelchair-accessible.",
+          "Anonymous reviews are attributed to \"A Google user\". rating required number The user's overall rating for this place."
+        ]
+      },
+      {
+        "title": "Place Details (Legacy) \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/legacy/details",
+        "source_id": "site-docs-root-2",
+        "final_score": 161,
+        "relevance": "",
+        "evidence_snippets": [
+          "See PlaceOpeningHours for more information. delivery optional boolean Specifies if the business supports delivery. dine in optional boolean Specifies if the business supports indoor or outdoor seating options. editorial summary optional PlaceEditorialSummary Contains a summary of the place.",
+          "Don't programmatically parse the formatted address. website optional string The authoritative website for this place, such as a business' homepage. wheelchair accessible entrance optional boolean Specifies if the place has an entrance that is wheelchair-accessible.",
+          "Anonymous reviews are attributed to \"A Google user\". rating required number The user's overall rating for this place."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "lh3.googleusercontent.com",
+      "maps.google.com",
+      "maps.gstatic.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "https://developers.google.com/maps/documentation/places/web-service/legacy/search-find-place",
+        "https://developers.google.com/maps/documentation/places/web-service/legacy/details"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "https://developers.google.com/maps/documentation/places/web-service/legacy/search-find-place",
+        "https://developers.google.com/maps/documentation/places/web-service/legacy/details"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "https://developers.google.com/maps/documentation/places/web-service/legacy/search-find-place",
+        "https://developers.google.com/maps/documentation/places/web-service/legacy/details"
+      ]
+    }
+  ]
+}

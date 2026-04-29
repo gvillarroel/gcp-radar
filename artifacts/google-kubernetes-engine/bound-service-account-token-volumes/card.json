@@ -1,0 +1,201 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Bound service account token volumes",
+  "feature_slug": "bound-service-account-token-volumes",
+  "summary": "Injected service account token volumes are time-limited, auto-refreshed, and invalidated when the pod is deleted; Service account token volumes are time-limited, auto-refreshed, and invalidated when the pod is deleted.",
+  "extended_definition": "Injected service account token volumes are time-limited, auto-refreshed, and invalidated when the pod is deleted; Service account token volumes are time-limited, auto-refreshed, and invalidated when the pod is deleted.",
+  "lifecycle": {
+    "latest_feature_date": "2021-10-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/service-accounts",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 187,
+        "relevance": "",
+        "evidence_snippets": [
+          "Medium GKE on AWS Description Severity Note: This section applies to both the current and previous generation of GKE on AWS A vulnerability in the Google Secret Manager Provider for Secret Store CSI Driver allows an attacker with Pod and Secret creation permissions in a namespace to exfiltrate the CSI driver's Kubernetes service account token by mounting a malicious volume on a Pod.",
+          "The researcher used Cloud Service Mesh's privileged Kubernetes service account token to escalate their initial compromised privileges by creating a new pod with cluster-admin privileges We have removed Fluent Bit's access to the service account tokens and have redesigned the functionality of Cloud Service Mesh to remove excess privileges.",
+          "Medium GDC (bare metal) Description Severity A vulnerability in the Google Secret Manager Provider for Secret Store CSI Driver allows an attacker with Pod and Secret creation permissions in a namespace to exfiltrate the CSI driver's Kubernetes service account token by mounting a malicious volume on a Pod."
+        ]
+      },
+      {
+        "title": "GKE Autopilot security measures \\_|\\_ GKE security \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "source_id": "site-iam-reference",
+        "final_score": 163,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Autopilot also rejects ValidatingAdmissionPolicy objects that specify one or more of the following resources, and any sub-resources of those resources. - group: \"\" resource: nodes - group: \"\" resource: persistentVolumes - group: certificates.k8s.io resource: certificatesigningrequests - group: authentication.k8s.io resource: tokenreviews You can't use the wildcard for resources or groups to bypass this restriction.",
+          "Autopilot also rejects webhooks that specify one or more of the following resources, and any sub-resources of those resources. - group: \"\" resource: nodes - group: \"\" resource: persistentVolumes - group: certificates.k8s.io resource: certificatesigningrequests - group: authentication.k8s.io resource: tokenreviews You can't use the wildcard for resources or groups to bypass this restriction.",
+          "Volume types Autopilot allows only the volume types in the Restricted policy with the following additions: HostPath volumes with read-only access to /var/log for debugging, gcePersistentDisk for Compute Engine persistent disks, and nfs for network file system volumes."
+        ]
+      },
+      {
+        "title": "About service accounts in GKE \\_|\\_ GKE security \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/service-accounts",
+        "source_id": "site-docs-reference-2",
+        "final_score": 145,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Compromised Kubernetes ServiceAccount credentials If a Kubernetes service account credential is compromised, use one of the following options to revoke the credentials: Recreate your Pods : The bearer token is bound to each unique Pod UID, so recreating the Pods invalidates the previous credentials.",
+          "Recreate the Kubernetes service account : The bearer token is bound to the UID of the ServiceAccount object in the Kubernetes API.",
+          "You must grant the service agents in your cluster project the following roles on the service account: Service Account Token Creator ( roles/iam.serviceAccountTokenCreator ) on the service account to the Compute Engine service agent in your cluster project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "authentication.k8s.io",
+      "certificates.k8s.io",
+      "iam.automaticIamGrantsForDefaultServiceAccounts",
+      "iam.serviceAccountTokenCreator"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.serviceAccountTokenCreator"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/service-accounts"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/service-accounts"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/service-accounts"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/service-accounts"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/service-accounts"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/service-accounts"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/service-accounts"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/service-accounts"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/service-accounts"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/service-accounts"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/service-accounts"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/service-accounts"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/service-accounts"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/service-accounts"
+      ]
+    }
+  ]
+}

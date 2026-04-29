@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner SPANNER_SYS query statistics column AVG_REMOTE_SERVER_CALLS",
+  "feature_slug": "spanner-spanner-sys-query-statistics-column-avg-remote-server-calls",
+  "summary": "Spanner added support for the AVG_REMOTE_SERVER_CALLS column in the SPANNER_SYS query statistics table.",
+  "extended_definition": "Spanner added support for the AVG_REMOTE_SERVER_CALLS column in the SPANNER_SYS query statistics table.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/query-operators-binary",
+      "https://docs.cloud.google.com/spanner/docs/query-operators-distributed",
+      "https://docs.cloud.google.com/spanner/docs/query-operators-unary"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Unary operators \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/query-operators-unary",
+        "source_id": "site-docs-reference",
+        "final_score": 146,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following query demonstrates this operator: SELECT s . songgenre FROM songs AS s ORDER BY songgenre LIMIT 3 ; / --------------------------+ SongGenre +--------------------------+ BLUES BLUES BLUES +-------------------------- / The execution plan appears as follows: The execution plan shows the local limit for the remote servers and the global limit for the root server.",
+          "The following query demonstrates this operator: SELECT s . songname FROM songs AS s LIMIT 3 ; / ----------------------+ SongName +----------------------+ Not About The Guitar The Second Time Starting Again +---------------------- / The execution plan appears as follows: The local limit is the limit for each remote server.",
+          "The following query demonstrates this operator: SELECT genre , songname FROM ml . predict ( model genreclassifier , TABLE songs ) / -----------------------+--------------------------+ Genre SongName +-----------------------+--------------------------+ Country Not About The Guitar Rock The Second Time Pop Starting Again Pop Nothing Is The Same Country Let's Get Back Together Pop I Knew You Were Magic Electronic Blue Rock 42 Rock Fight Story +-----------------------+-------------------------- / Properties and execution statistics A property of an operator describes a trait that is used when the operator is executed."
+        ]
+      },
+      {
+        "title": "Binary operators \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/query-operators-binary",
+        "source_id": "site-docs-reference",
+        "final_score": 123,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The cross apply operator output is the FirstName value from the input row, and the SongName value from the map row. (The SongName value is NULL if there is no map row that matches on SingerId .) The distributed union operator at the top of the execution plan then combines all of the output rows from the remote servers and returns them as the query results.",
+          "The following query uses a semi join to find which singers do have an Album: SELECT FirstName , LastName FROM Singers WHERE SingerId IN ( SELECT SingerId FROM Albums ); / -----------+----------+ FirstName LastName +-----------+----------+ Marc Richards Catalina Smith Alice Trentor Lea Martin +-----------+---------- / The plan segment appears as follows: Anti-semi apply An Anti-semi apply operator is similar to a semi apply operator, except that it returns the input table columns only when a match doesn't occur on the map side.",
+          "SELECT si . firstname , ( SELECT so . songname FROM songs AS so WHERE so . singerid = si . singerid LIMIT 1 ) FROM singers AS si ; / -----------+--------------------------+ FirstName Unspecified +-----------+--------------------------+ Alice Not About The Guitar Catalina Let's Get Back Together David NULL Lea NULL Marc NULL +-----------+-------------------------- / The query populates the first column from the Singers table, and the second column from the Songs table."
+        ]
+      },
+      {
+        "title": "Distributed operators \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/query-operators-distributed",
+        "source_id": "site-docs-reference",
+        "final_score": 121,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following query demonstrates this operator: SELECT s . songname , s . songgenre FROM songs AS s WHERE s . singerid = 2 AND s . songgenre = 'ROCK' ; / -----------------+-----------+ SongName SongGenre +-----------------+-----------+ Starting Again ROCK The Second Time ROCK Fight Story ROCK +-----------------+----------- / The execution plan appears as follows: The distributed union operator sends subplans to remote servers, which perform a table scan across splits that satisfy the query's predicate WHERE s.SingerId = 2 AND s.SongGenre = 'ROCK' .",
+          "A distributed merge union executes the following steps: The root server sends a subquery to each remote server that hosts a split of the queried data.",
+          "Split pruning means the remote servers execute subplans only on splits that satisfy the predicate, improving latency and query performance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "s.SingerId",
+      "s.SongGenre"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

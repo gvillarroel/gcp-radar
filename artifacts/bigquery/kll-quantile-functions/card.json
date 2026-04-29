@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "KLL quantile functions",
+  "feature_slug": "kll-quantile-functions",
+  "summary": "KLL quantile functions let you efficiently compute approximate quantiles in BigQuery.",
+  "extended_definition": "KLL quantile functions let you efficiently compute approximate quantiles in BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/approximate_aggregate_functions",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Approximate aggregate functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/approximate_aggregate_functions",
+        "source_id": "site-docs-reference",
+        "final_score": 151,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Examples SELECT APPROX QUANTILES ( x , 2 ) AS approx quantiles FROM UNNEST ( [ 1 , 1 , 1 , 4 , 5 , 6 , 7 , 8 , 9 , 10 ] ) AS x ; / ------------------+ approx quantiles +------------------+ [1, 5, 10] +------------------ / SELECT APPROX QUANTILES ( x , 100 ) [ OFFSET ( 90 ) ] AS percentile 90 FROM UNNEST ( [ 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 ] ) AS x ; / ---------------+ percentile 90 +---------------+ 9 +--------------- / SELECT APPROX QUANTILES ( DISTINCT x , 2 ) AS approx quantiles FROM UNNEST ( [ 1 , 1 , 1 , 4 , 5 , 6 , 7 , 8 , 9 , 10 ] ) AS x ; / ------------------+ approx quantiles +------------------+ [1, 6, 10] +------------------ / SELECT FORMAT ( \"%T\" , APPROX QUANTILES ( x , 2 RESPECT NULLS )) AS approx quantiles FROM UNNEST ( [ NULL , NULL , 1 , 1 , 1 , 4 , 5 , 6 , 7 , 8 , 9 , 10 ] ) AS x ; / ------------------+ approx quantiles +------------------+ [NULL, 4, 10] +------------------ / SELECT FORMAT ( \"%T\" , APPROX QUANTILES ( DISTINCT x , 2 RESPECT NULLS )) AS approx quantiles FROM UNNEST ( [ NULL , NULL , 1 , 1 , 1 , 4 , 5 , 6 , 7 , 8 , 9 , 10 ] ) AS x ; / ------------------+ approx quantiles +------------------+ [NULL, 6, 10] +------------------ / APPROX TOP COUNT APPROX TOP COUNT ( expression , number ) Description Returns the approximate top elements of expression as an array of STRUCT s.",
+          "Supported Argument Types Any data type except : ARRAY STRUCT INTERVAL Returned Data Types INT64 Examples SELECT APPROX COUNT DISTINCT ( x ) as approx distinct FROM UNNEST ( [ 0 , 1 , 1 , 2 , 3 , 5 ] ) as x ; / -----------------+ approx distinct +-----------------+ 5 +----------------- / APPROX QUANTILES APPROX QUANTILES ( [ DISTINCT ] expression , number [ { IGNORE RESPECT } NULLS ] ) Description Returns the approximate boundaries for a group of expression values, where number represents the number of quantiles to create.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback Approximate aggregate functions Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Functions (alphabetical) \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all",
+        "source_id": "site-docs-reference",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "APPROX QUANTILES Gets the approximate quantile boundaries.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback Functions (alphabetical) Stay organized with collections Save and categorize content based on your preferences.",
+          "KLL QUANTILES.MERGE POINT FLOAT64 Merges FLOAT64 -initialized KLL sketches into a new sketch, and then gets a specific quantile from the new sketch."
+        ]
+      },
+      {
+        "title": "\"Legacy SQL Syntax, Functions and Operators \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "source_id": "site-docs-reference",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "QUANTILES( expr [, buckets ]) Computes approximate minimum, maximum, and quantiles for the input expression.",
+          "QUANTILES() Computes approximate minimum, maximum, and quantiles ...",
+          "QUANTILES() Computes approximate minimum, maximum, and quantiles ..."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

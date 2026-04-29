@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:06.489Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Dialogflow CX retail generative prebuilt agent",
+  "feature_slug": "dialogflow-cx-retail-generative-prebuilt-agent",
+  "summary": "Dialogflow CX provides a generative prebuilt agent for retail use cases.",
+  "extended_definition": "Dialogflow CX provides a generative prebuilt agent for retail use cases.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agents-prebuilt",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/tutorials/deploy/prebuilt",
+      "https://docs.cloud.google.com/dialogflow/es/docs/agents-prebuilt"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Prebuilt agents \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agents-prebuilt",
+        "source_id": "site-docs-root",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Webhook The Cloud Functions webhook performs the following actions: Validates an end-user's identity Provides sample balances, loan status, and credit card feature information Mocks sample payments, including validating payment amounts and dates Controls opening hours package.json { \"name\": \"sample-http\", \"version\": \"0.0.1\" } index.js / Responds to any HTTP request. @param {!express:Request} req HTTP request context. @param {!express:Response} res HTTP response context. / exports . cxPrebuiltAgentsFinServ = ( req , res ) => { console . log ( 'Cloud Function:' , 'Invoked cloud function from Dialogflow CX' ); let tag = req . body . fulfillmentInfo . tag ; if ( !! tag ) { switch ( tag ) { // BEGIN validateAccount case 'validateAccount' : console . log ( tag + ' was triggered.' ); let card last four = req . body . sessionInfo . parameters . card last four ; let card verified ; // card validation only fails if card number is 0000 if ( card last four == '0000' ) { card verified = 'false' ; } else { card verified = 'true' ; } res . status ( 200 ). send ( { sessionInfo : { parameters : { card verified : card verified }}} ); console . log ( ' verified: ' + card verified ); break ; // BEGIN getAccountInfo case 'getAccountInfo' : console . log ( tag + ' was triggered.' ); let current balance ; let last statement balance ; let minimum due ; // Random current balance between 1 and 1000 current balance = Math . floor ( Math . random () 1000 ); // Last statement balance is 70 % of current balance last statement balance = Math . floor ( current balance 0.7 ); // Minimum due is 25 % of last statement balance minimum due = Math . floor ( last statement balance 0.25 ); res . status ( 200 ). send ( { sessionInfo : { parameters : { current balance : current balance , last statement balance : last statement balance , minimum due : minimum due } } } ); console . log ( 'current balance: ' + current balance + ' last statement balance: ' + last statement balance ); break ; // BEGIN getPaymentSource case 'getPaymentSource' : console . log ( tag + ' was triggered.' ); // static array of account names let account names = [ 'National Checking Account', 'My Checking', 'Personal Checking' ] ; // random array value for account names let account index = Math . floor ( Math . random () account names . length ); let selected account = account names [ account index ] ; res . status ( 200 ). send ( { sessionInfo : { parameters : { selected account : selected account }}} ); console . log ( ' selected account: ' + selected account ); break ; // BEGIN submitPayment case 'submitPayment' : console . log ( tag + ' was triggered.' ); let card digits = String ( req . body . sessionInfo . parameters . card last four ); let payment status ; // When first digit of card digits is 9 the transaction fails if ( card digits [ 0 ] == '9' ) { payment status = 'fail' ; } else { payment status = 'success' ; } res . status ( 200 ). send ( { sessionInfo : { parameters : { payment status : payment status }}} ); console . log ( ' verified: ' + card verified ); break ; // BEGIN validatePaymentAmount case 'validatePaymentAmount' : console . log ( tag + ' was triggered.' ); // get payment amount let payment amount = Number ( req . body . sessionInfo . parameters . other amount ); let current balance temp = req . body . sessionInfo . parameters . current balance ; let amount valid ; payment amount = Number ( payment amount ); console . log ( payment amount : + payment amount + current balance : + current balance temp ); // confirm payment amount is a positive value less than or equal to the // current balance if ( payment amount > 0 ) { if ( payment amount current balance temp ) { amount valid = true ; } else { amount valid = false ; } } else { amount valid = false ; } res . status ( 200 ). send ( { sessionInfo : { parameters : { amount valid : amount valid }}} ); console . log ( 'payment status: ' + payment status ); break ; // BEGIN validatePaymentDate case 'validatePaymentDate' : console . log ( tag + ' was triggered.' ); // get payment date let payment date raw = req . body . sessionInfo . parameters . payment date ; // set payment date in date object format . subtract one from month // because month is indexed to 0. let payment year = payment date raw . year ; let payment month = payment date raw . month - 1 ; let payment day = payment date raw . day ; console . log ( 'Payment - Year: ' + payment year + ' Month ' + payment month + ' Day: ' + payment day ); // set today 's date let today = new Date(); let this year = today.getFullYear(); let this month = today.getMonth(); let this day = today.getDate(); console.log( ' Today - Year : ' + this year + ' Month ' + this month + ' Day : ' + this day); let payment date valid; // check if the payment date is after today if (payment year > this year) { payment date valid = true; console.log(' Future year '); } else if (payment year == this year && payment month > this month) { payment date valid = true; console.log(' Future month '); } else if ( payment year == this year && payment month == this month && payment day >= this day) { payment date valid = true; console.log(' Today or later this month '); } else { payment date valid = false; } res.status(200).send({ sessionInfo: {parameters: {payment date valid: payment date valid}} }); console.log(' payment date valid : ' + payment date valid); break; // BEGIN checkInHours case ' checkInHours ': console.log(tag + ' was triggered . '); // check if we are currently in hours let currentDate = new Date(); console.log(' current time is ' + currentDate); let currentHour = currentDate.getHours(); console.log(' current hour is ' + currentHour); if (currentHour >= 8 && currentHour in hours = ' true '; console.log(' currently in hours '); } else { in hours = ' false '; console.log(' currently out of hours '); } res.status(200).send({sessionInfo: {parameters: {in hours: in hours}}}); break; // BEGIN getRetryCount case ' getRetryCount ': console.log(tag + ' was triggered . '); // increment the current retry counter let retry count = req.body.sessionInfo.parameters.retry count; retry count = retry count + 1; res.status(200).send( {sessionInfo: {parameters: {retry count: retry count}}}); break; // BEGIN getLoanStatus case ' getLoanStatus ': console.log(tag + ' was triggered . '); let loan reference = String(req.body.sessionInfo.parameters.loan reference); let loan type = loan reference[0]; let loan status = loan reference[1]; let loan found = ' true '; console.log(' loan ref is ' + loan reference); console.log(' type is ' + loan type); console.log(' status is ' + loan status); // mock loan not found if (loan reference[0] == ' 0 ') { loan found = ' false '; } // mock loan found if ((loan type != ' auto ') && (loan type != ' home ')) { if (loan reference[0] > ' 5 ') { loan type = ' home '; } else { loan type = ' auto '; } } res.status(200).send({ sessionInfo: { parameters: { loan type: loan type, loan status: loan status, loan found: loan found } } }); break; // BEGIN validateTransactionDate case ' validateTransactionDate ': console.log(tag + ' was triggered . '); // get date queried let date queried raw = req.body.sessionInfo.parameters.date queried; // set date queried in date object format. subtract one from month // because month is indexed to 0. date queried = new Date( date queried raw.year, date queried raw.month - 1, date queried raw.day); console.log(date queried + ' is the date im looking for . '); let date valid; let date now = new Date(); // check if the payment date is after today if (date queried > date now) { date valid = ' false '; } else { date valid = ' true '; } res.status(200).send( {sessionInfo: {parameters: {date valid: date valid}}}); break; // BEGIN lookupTransactions case ' lookupTransactions ': console.log(tag + ' was triggered . '); // select a random retailer from the retailers array let retailers = [ ' Dior ', ' Walmart ', ' Target ', ' Costco ', ' Macy \\ 's' , 'Bed Bath & Beyond' , 'Amazon' , 'Walgreens' , 'Home Depot' , 'Best Buy' , 'Kohl\\' s ' ]; let randomRetail = Math.floor(Math.random() retailers.length); console.log(' random retail value ' + randomRetail); let retailer queried = retailers[randomRetail]; // Alter the transaction amount let amount queried = Number(req.body.sessionInfo.parameters.amount queried.amount); let transaction value = Number(amount queried); let randomAdjust = Math.floor(Math.random() 5); randomAdjust = Number(randomAdjust / 100); let adjustment = Number(amount queried randomAdjust); let randomMath = Math.floor(Math.random() 1); if (randomMath transaction value = Number(transaction value - adjustment).toFixed(2); } else if (randomMath = 1) { transaction value = Number(transaction value + adjustment).toFixed(2); } if (amount queried transaction found = ' true '; } else { transaction found = ' false '; } res.status(200).send({ sessionInfo: { parameters: { retailer queried: retailer queried, transaction value: transaction value, transaction found: transaction found } } }); break; // BEGIN lookupCardFeatures case ' lookupCardFeatures ': console.log(tag + ' was triggered . '); // setup arrays for card features let interestRate = [ ' 14.5 % APR ', ' 0 % APR in year 1 and then increases to 25 % APR in year 2 ', ' 10 % APR in year 1 and then increases to 20 % APR in year 2 ', ' 18 % APR ' ]; let annualFee = [ ' $ 0 annual fee for year 1 and then increases to $ 90 in year 2 ', ' $ 70 annual fee starting in year 1 ', ' $ 15 annual fee for year 1 and then increases to $ 80 in year 2 ', ' $ 50 annual fee starting in year 1 ' ]; let cashBackRate = [' 1 % ', ' 3 % ', ' 6 % ', ' 2 % ', ' 5 % ', ' 4 % ']; let pointsBonus = [' 50 , 000 ', ' 25 , 000 ', ' 10 , 000 ', ' 100 , 000 ', ' 75 , 000 ']; // setup card one features let cardOneRandomInterest = Math.floor(Math.random() interestRate.length); let card one interest = interestRate[cardOneRandomInterest]; let cardOneRandomFee = Math.floor(Math.random() annualFee.length); let card one fee = annualFee[cardOneRandomFee]; let cardOneRandomCashback = Math.floor(Math.random() cashBackRate.length); let card one cashback = cashBackRate[cardOneRandomCashback]; let cardOneRandomPoints = Math.floor(Math.random() pointsBonus.length); let card one points = pointsBonus[cardOneRandomPoints]; // setup card two features let cardTwoRandomInterest = Math.floor(Math.random() interestRate.length); let card two interest = interestRate[cardTwoRandomInterest]; let cardTwoRandomFee = Math.floor(Math.random() annualFee.length); let card two fee = annualFee[cardTwoRandomFee]; let cardTwoRandomCashback = Math.floor(Math.random() cashBackRate.length); let card two cashback = cashBackRate[cardTwoRandomCashback]; let cardTwoRandomPoints = Math.floor(Math.random() pointsBonus.length); let card two points = pointsBonus[cardTwoRandomPoints]; res.status(200).send({ sessionInfo: { parameters: { card one interest: card one interest, card one fee: card one fee, card one cashback: card one cashback, card one points: card one points, card two interest: card two interest, card two fee: card two fee, card two cashback: card two cashback, card two points: card two points } } }); break; default: console.log(' default case called ' ); res . status ( 200 ). end (); break ; } } } ; Healthcare agent This template helps end-users check their claims, benefits, and find a doctor.",
+          "Webhook The Cloud Functions webhook performs the following actions: Compares plan costs based on a trip location and duration Identifies billing anomalies based on an end-user's phone number package.json { \"name\": \"sample-http\", \"version\": \"0.0.1\", \"dependencies\": { \"moment\": \"2.24.0\" } } helpers.js // Get the current month , first day of current month and last month values // based on today 's date module . exports = { get date details : function ( bill state ) { const monthNames = [ \"January\" , \"February\" , \"March\" , \"April\" , \"May\" , \"June\" , \"July\" , \"August\" , \"September\" , \"October\" , \"November\" , \"December\" ]; let today = new Date () let first month name = monthNames [ today . getMonth ()] let firstDay = new Date ( today . getFullYear (), today . getMonth (), 1 ); let first day str = first month name + ' 0' + firstDay . getDate () + ', ' + firstDay . getFullYear () let last month name = monthNames [ today . getMonth () - 1 ] let last month first day str = last month name + ' 0' + firstDay . getDate () + ', ' + firstDay . getFullYear () let second last month name = monthNames [ today . getMonth () - 2 ] if ( bill state . toString () == 'current' ) { return [ first month name , first day str , last month name ] } else { return [ last month name , last month first day str , second last month name ] } } } index.js / Responds to any HTTP request . @ param { ! express : Request } req HTTP request context . @ param { ! express : Response } res HTTP response context . / const helpers = require ( './helpers.js' ) exports . cxPrebuiltAgentsTelecom = ( req , res ) => { console . log ( 'Cloud Function:' , 'Invoked cloud function from Dialogflow CX' ); let tag = req . body . fulfillmentInfo . tag ; if ( !! tag ) { switch ( tag ) { // BEGIN detectCustomerAnomaly case 'detectCustomerAnomaly' : console . log ( tag + ' was triggered.' ); let phone number = req . body . sessionInfo . parameters . phone number ; let bill month = req . body . sessionInfo . parameters . bill state ; let parameters = req . body . sessionInfo . parameters ; let bill amount ; let product line ; let anomaly detect = \"false\" let purchase = \"The Godfather\" let purchase amount = 9.99 let total bill amount = 64.33 let bill without purchase = 54.34 let updated parameters = {} let [ month name , first of month , last month name ] = helpers . get date details ( bill month ) console . log ( month name , first of month , last month name ) // Getting the month name based on the bill state - current or previous // For example , if the current month is December , we get the values as // December , December 1 st , November // Only 999999 will have anomaly detection if ( phone number . toString () == '999999' ) { anomaly detect = \"true\" product line = \"phone\" purchase = \"device protection\" updated parameters [ \"product line\" ] = product line updated parameters [ \"bill month\" ] = month name updated parameters [ \"last month\" ] = last month name } // If bill hike amount is given - we just add it to the total bill if ( 'bill amount' in parameters ) { bill amount = parameters [ 'bill amount' ] purchase amount = bill amount [ 'amount' ] total bill amount = 54.34 + purchase amount } // Adding the updated session parameters to the new parameters json updated parameters [ \"anomaly detect\" ] = anomaly detect updated parameters [ \"purchase\" ] = purchase updated parameters [ \"purchase amount\" ] = purchase amount updated parameters [ \"bill without purchase\" ] = bill without purchase updated parameters [ \"total bill\" ] = total bill amount updated parameters [ \"first month\" ] = first of month res . status ( 200 ) . send ({ sessionInfo : { parameters : updated parameters } }); break ; // BEGIN validatePhoneLine case 'validatePhoneLine' : console . log ( tag + ' was triggered.' ); let phone = req . body . sessionInfo . parameters . phone number ; let phone line verified ; let line index ; let domestic coverage ; let covered lines = [ '5555555555' , '5105105100' , '1231231234' , '9999999999' ]; // Loop over the covered lines array covered lines . forEach (( line , index ) => { // For each phone line in the array , check if the last 4 digits are // included in the string . when true , update the line index variable if ( line . includes ( phone )) { line index = index ; console . log ( 'This is the index ' + line index ); } }); // Only 9999 will fail ; if ( line index === 3 ) { phone line verified = 'false' ; } else { phone line verified = 'true' ; } // Only 1234 will have domestic coverage . if ( line index === 2 ) { domestic coverage = 'true' ; } else { domestic coverage = 'false' ; } res . status ( 200 ) . send ({ sessionInfo : { parameters : { phone line verified : phone line verified , domestic coverage : domestic coverage } } }); break ; // BEGIN cruisePlanCoverage case 'cruisePlanCoverage' : console . log ( tag + ' was triggered.' ); let port = req . body . sessionInfo . parameters . destination ; let port is covered ; // Sample list of covered cruise ports . let covered ports = [ 'mexico' , 'canada' , 'anguilla' , ]; if ( covered ports . includes ( port . toLowerCase ())) { port is covered = 'true' ; } else { port is covered = 'false' ; } res . status ( 200 ) . send ( { sessionInfo : { parameters : { port is covered : port is covered } } }); break ; // BEGIN internationalCoverage case 'internationalCoverage' : console . log ( tag + ' was triggered.' ); let destination = req . body . sessionInfo . parameters . destination ; let coverage ; // Sample list of covered international monthly destinations . let covered by monthly = [ 'anguilla' , 'australia' , 'brazil' , 'canada' , 'chile' , 'england' , 'france' , 'india' , 'japan' , 'mexico' , 'russia' , 'singapore' , ]; // Sample list of covered international daily destinations . let covered by daily = [ 'anguilla' , 'australia' , 'brazil' , 'canada' , 'chile' , 'england' , 'france' , 'india' , 'japan' , 'mexico' , 'singapore' ]; if ( covered by monthly . includes ( destination . toLowerCase ()) && covered by daily . includes ( destination . toLowerCase ())) { coverage = 'both' ; } else if ( covered by monthly . includes ( destination . toLowerCase ()) && ! covered by daily . includes ( destination . toLowerCase ())) { coverage = 'monthly only' ; } else if ( ! covered by monthly . includes ( destination . toLowerCase ()) && ! covered by daily . includes ( destination . toLowerCase ())) { coverage = 'neither' ; } else { // This should never happen , because covered by daily is a subset of // covered by monthly coverage = 'daily only' ; } res . status ( 200 ) . send ({ sessionInfo : { parameters : { coverage : coverage } } }); break ; // BEGIN cheapestPlan case 'cheapestPlan' : console . log ( tag + ' was triggered.' ); let trip duration = req . body . sessionInfo . parameters . trip duration ; let monthly cost ; let daily cost ; let suggested plan ; // Can only suggest cheapest if both are valid for location . // When trip is longer than 30 days , calculate per - month cost ( example $ // amounts ) .",
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Send feedback Prebuilt agents Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Create a prebuilt agent \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/tutorials/deploy/prebuilt",
+        "source_id": "site-docs-root",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Send feedback Create a prebuilt agent Stay organized with collections Save and categorize content based on your preferences.",
+          "To import a prebuilt agent to your project: Go to the Dialogflow CX console .",
+          "Select the project where you would like to import the prebuilt agent or click Create Project to create a new project."
+        ]
+      },
+      {
+        "title": "Prebuilt agents \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-prebuilt",
+        "source_id": "site-iam-reference",
+        "final_score": 120,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Dialogflow Dialogflow ES Send feedback Prebuilt agents Stay organized with collections Save and categorize content based on your preferences.",
+          "Import a prebuilt agent To import a prebuilt agent to your project: Go to the Dialogflow ES console .",
+          "Prebuilt agents are a collection of agents provided by Dialogflow for common use cases."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "console.log",
+      "helpers.js",
+      "index.js",
+      "package.json",
+      "queried.amount",
+      "raw.day",
+      "raw.month",
+      "raw.year",
+      "req.body.sessionInfo.parameters.amount",
+      "req.body.sessionInfo.parameters.date",
+      "req.body.sessionInfo.parameters.loan",
+      "req.body.sessionInfo.parameters.retry",
+      "res.status",
+      "retailers.length",
+      "today.getDate",
+      "today.getFullYear",
+      "today.getMonth"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agents-prebuilt",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-prebuilt",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/tutorials/deploy/prebuilt"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agents-prebuilt",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-prebuilt",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/tutorials/deploy/prebuilt"
+      ]
+    }
+  ]
+}

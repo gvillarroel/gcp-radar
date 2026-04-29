@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:45.759Z",
+  "source_step08_card": "data/step-08/current/products/buildpacks/card.json",
+  "product_name": "Buildpacks",
+  "product_slug": "buildpacks",
+  "feature_name": "pyproject.toml dependency management support",
+  "feature_slug": "pyproject-toml-dependency-management-support",
+  "summary": "Cloud Run and Cloud Run functions source deployments support pyproject.toml for managing Python dependencies; Cloud Run and Cloud Run functions source deployments support pyproject.toml for managing Python dependencies.",
+  "extended_definition": "Cloud Run and Cloud Run functions source deployments support pyproject.toml for managing Python dependencies; Cloud Run and Cloud Run functions source deployments support pyproject.toml for managing Python dependencies.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/docs/buildpacks/python"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Build a Python application \\_|\\_ Buildpacks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/buildpacks/python",
+        "source_id": "site-docs-reference",
+        "final_score": 285,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following is an example pyproject.toml file: [project] name = \"demo-app\" version = \"0.1.0\" description = \"\" requires-python = \">=3.10\" dependencies = [ \"flask>=3.1.1\" , \"gunicorn>=23.0.0\" , ] [build-system] requires = [ \"setuptools>=61.0\" ] build-backend = \"setuptools.build meta\" Package manager If you manage your dependencies using a requirements.txt file , the default package manager varies based on the Python version you configure.",
+          "Supported buildpacks configurations Python buildpacks supports the following configurations: pip buildpack : Installs dependencies directly from pyproject.toml if it detects all the following conditions: A pyproject.toml file is present in the root directory and you don't configure high-precedence tools such as a poetry.lock file, a [tool.poetry] section, or a uv.lock file.",
+          "The buildpack searches for an entrypoint in the following order of precedence: If a Procfile exists in your root directory, or you configure the GOOGLE ENTRYPOINT environment variable, these configurations always override any entrypoint determined by pyproject.toml scripts."
+        ]
+      },
+      {
+        "title": "\"Configure Cloud Run and Cloud Run functions services \\_|\\_ Buildpacks \\_\\",
+        "url": "https://docs.cloud.google.com/docs/buildpacks/service-specific-configs",
+        "source_id": "site-docs-reference",
+        "final_score": 78,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported values: true , True , or 1 Additional Cloud Run functions environment variables The following configurations are only available for source code built as functions that use Functions Framework and Cloud Run functions.",
+          "Supported values: true , True , 1 GOOGLE CLEAR SOURCE For functions and Go or Java applications: Clears source after the application is built.",
+          "The Python buildpack sets the default entrypoint for Cloud Run source deployments ."
+        ]
+      },
+      {
+        "title": "AI and ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/ai-ml",
+        "source_id": "site-docs-root",
+        "final_score": 78,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Data and features description Vertex AI datasets Use a managed dataset to provide the source data used to train AutoML and custom models on Vertex AI. description Vertex AI Feature Store Streamline your ML feature management and online serving processes by managing your feature data in a BigQuery table or view and serving features online directly from the BigQuery data source.",
+          "Explore AI and ML in Google Cloud Read documentation and Cloud Architecture Center articles about AI and ML products, capabilities, and procedures. description Introduction to machine learning on Vertex AI Support data engineering, data science, and ML engineering workflows on a unified platform, enabling you to train ML models and deploy AI solutions. account tree AI and ML architecture resources Plan your approach with architecture center resources across a wide variety of AI & ML subjects. (Goes to Architecture Center.) account tree Best practices for implementing ML Plan for implementing ML, with a focus on custom-trained models based on your data and code. (Goes to Architecture Center.) Training, blog articles, and more Go to training courses, blog articles, and other related resources. school Applied AI summit learning path Study Vertex AI and Gemini in Google Cloud. (Goes to Google Cloud Skills Boost.) school Machine learning engineer learning path Study designing, building, productionalizing, optimizing, operating, and maintaining ML systems. (Goes to Google Cloud Skills Boost.) AI and ML products by use case Expand sections or use the filter to find products and guides for typical use cases.",
+          "Vertex AI Model Monitoring Provide model monitoring of feature skew and drift in the model's prediction input data for tabular AutoML and tabular custom-trained models. description Vertex AI model evaluation Determine the performance of your models with model evaluation metrics, such as precision and recall."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "index.php",
+      "myjar.jar",
+      "poetry.lock",
+      "pyproject.toml",
+      "requirements.txt",
+      "setuptools.build",
+      "tool.poetry",
+      "uv.lock"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/buildpacks/python"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/buildpacks/python"
+      ]
+    }
+  ]
+}

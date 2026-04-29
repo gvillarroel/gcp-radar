@@ -1,0 +1,205 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.653Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-marketplace/card.json",
+  "product_name": "Google SecOps Marketplace",
+  "product_slug": "google-secops-marketplace",
+  "feature_name": "Cisco Umbrella List Top Domains action",
+  "feature_slug": "cisco-umbrella-list-top-domains-action",
+  "summary": "Adds an action that lists top domains in Cisco Umbrella.",
+  "extended_definition": "Adds an action that lists top domains in Cisco Umbrella.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Integrate Anomali ThreatStream with Google SecOps \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "source_id": "site-docs-root",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "Run on This action runs on the following entities: Hash IP Address URL Email Action results Script result Script result name Value options Example is success True or False is success:False Entity enrichment Enrichment field name Logic - When to apply id When available in JSON status When available in JSON itype When available in JSON expiration time When available in JSON ip When available in JSON feed id When available in JSON confidence When available in JSON uuid When available in JSON retina confidence When available in JSON trusted circle ids When available in JSON source When available in JSON latitude When available in JSON type When available in JSON description When available in JSON tags When available in JSON threat score When available in JSON source confidence When available in JSON modification time When available in JSON org name When available in JSON asn When available in JSON creation time When available in JSON tlp When available in JSON country When available in JSON longitude When available in JSON severity When available in JSON subtype When available in JSON report When available in JSON Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one of the provided entities is enriched (is success=true): \"Successfully enriched the following entities using Anomali ThreatStream: \\n {0}\".format(entity.identifier list) If failed to enrich specific entities (is success=true): \"Action was not able to enrich the following entities using Anomali ThreatStream\\n: {0}\".format([entity.identifier]) If failed to enrich all entities (is success=false): \"No entities were enriched.\" The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: \"Error executing action \"Enrich Entities\".",
+          "Run on This action runs on the following entities: Hash IP Address URL Email Action results Script result Script result name Value options Example is success True or False is success:False JSON result approved jobs = [ { \"id\" :, \"entity\" : { e nt i t y.ide nt i f ier } } ] jobs wi t h excluded e nt i t ies = [ { \"id\" :, \"entity\" : { e nt i t y.ide nt i f ier } } ] Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one hash across entities is found(is success=true): \"Successfully submitted and approved the following entities in Anomali ThreatStream:\\n{0}\".format(entity.identifier list) If fails to enrich some entities (rejected entities) (is success=true): \"Action was not able to successfully submit and approve the following entities in Anomali ThreatStream\\n: {0}\".format([entity.identifier]) If fails to enrich for all entities (is success=false): \"No entities were successfully submitted to Anomali ThreatStream.\" The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: \"Error executing action \"Submit Observables\".",
+          "Run on This action runs on the following entities: Hash IP Address URL Email Address (user entity that matches email regex) Action results Script result Script result name Value options Example is success True or False is success:False Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one hash across entities is found (is success=true): \"Successfully reported the following entities as false positive in Anomali ThreatStream:\\n{0}\".format(entity.identifier list) If fail to mark specific entities (is success=true): \"Action was not able to report the following entities as false positive in Anomali ThreatStream\\n: {0}\".format([entity.identifier]) If fail to enrich all entities (is success=false): \"No entities were reported as false positive.\" The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: \"Error executing action \"Report As False Positive\"."
+        ]
+      },
+      {
+        "title": "\"AWS Identity and Access Management (IAM) \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "source_id": "site-docs-root",
+        "final_score": 145,
+        "relevance": "",
+        "evidence_snippets": [
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result [{ \"Arn\" : \"arn:aws:iam::582302349248:group/ZivGroup\" , \"CreateDate\" : \"2020-12-05 16:18:36+00:00\" , \"Path\" : \"/\" , \"GroupId\" : \"AGPAYPE7MW7AMKCWMJPMX\" , \"GroupName\" : \"ZivGroup\" }] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print \"Successfully listed available groups in AWS IAM\" If no data available: Print \"No Groups found in AWS IAM\" The action should fail and stop a playbook execution: if not successful (wrong credentials, no connection to server, other server error, If 'Max Groups'> 1000): print \"Error executing action 'List Groups'.",
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result [{ \"Arn\" : \"arn:aws:iam::582302349248:user/ziv\" , \"CreateDate\" : \"2020-12-03T12:12:20\" , \"Path\" : \"/\" , \"UserId\" : \"AIDAYPE7MW7AFMHK4WCHS\" , \"UserName\" : \"ziv\" }] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print \"Successfully listed available users in AWS IAM\" If no data available: Print \"No users found in AWS IAM\" The action should fail and stop a playbook execution: if not successful (wrong credentials, no connection to server, other server error, if max>10000): print \"Error executing action 'List Users'.",
+          "Please note, there are additional policies that match the provided filter.\" If no data: Print \"No Policies were found in AWS IAM\" The action should fail and stop a playbook execution: if not successful (wrong credentials, no connection to server, other server error, max>1000): print \"Error executing action 'List Policies."
+        ]
+      },
+      {
+        "title": "\"AWS IAM Access Analyzer \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer",
+        "source_id": "site-docs-root",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result { \"ResponseMetadata\" : { \"HTTPHeaders\" : { \"connection\" : \"keep-alive\" , \"content-length\" : \"178\" , \"content-type\" : \"application/json\" , \"date\" : \"Sun, 22 Nov 2020 09:22:03 GMT\" , \"x-amz-apigw-id\" : \"WZwVQFICIAMFjnQ=\" , \"x-amzn-requestid\" : \"c15d8ab2-afc7-4cb0-bea2-a47ebc649cb8\" , \"x-amzn-trace-id\" : \"Root=1-5fba2dbb-042d89bb2964e4f635bd7843\" }, \"HTTPStatusCode\" : 200 , \"RequestId\" : \"c15d8ab2-afc7-4cb0-bea2-a47ebc649cb8\" , \"RetryAttempts\" : 0 }, \"resource\" : { \"analyzedAt\" : da tet ime.da tet ime( 2020 , 11 , 22 , 9 , 21 , 50 , 919000 , t zi nf o= t zu t c()) , \"isPublic\" : False , \"resourceArn\" : \"arn:aws:s3:::asddsa\" , \"resourceOwnerAccount\" : \"582302349248\" , \"resourceType\" : \"AWS::S3::Bucket\" }} Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If successfully returned scans for at least one (is success = true) : print\"Successfully scanned the following resources using AWS IAM Access Analyzer: \\n\".format(Resource IDs) If fail for at least one (is success = true): print\"Action wasn't able to scan the following resources using AWS IAM Access Analyzer: \\n\".format(Resource IDs) If fail for all (is success = false): print\"No resources were scanned.\" Async Message: \"Waiting for the following resources to be scanned using AWS IAM Access Analyzer: {0}\".format(unprocessed resources) The action should fail and stop a playbook execution: if fatal error, SDK error, like wrong credentials, no connection to server, other: print \"Error executing action \"Scan Resources\".",
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If no raised errors from SDK (is success = true) : print\"Successfully archived finding with ID '{0}' in AWS IAM Access Analyzer\".format(Finding ID) The action should fail and stop a playbook execution: if fatal error, SDK error, like wrong credentials, no connection to server, other: print \"Error executing action \"Archive Finding\".",
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print \"Successfully connected to the AWS IAM Access Analyzer server with the provided connection parameters!\" The action should fail and stop a playbook execution: if not successful: print \"Failed to connect to the AWS IAM Access Analyzer server!"
+        ]
+      },
+      {
+        "title": "\"Forwarder Management \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "source_id": "site-docs-root",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, you can install a forwarder with two syslog collectors listening for PAN FIREWALL and CISCO ASA FIREWALL data on separate ports, respectively.",
+          "SERVICE ACCOUNT FILE is the full path to the apikeys-demo.json file ToDo: Replace this with the full path to your OAuth2 credentials SERVICE ACCOUNT FILE = '/customer-keys/apikeys-demo.json' Create a credential using the Google Developer Service Account Credential and Backstory API Scope. credentials = service account.Credentials.from service account file(SERVICE ACCOUNT FILE, scopes=SCOPES) Build a requests Session Object to make authorized OAuth requests. http session = requests.AuthorizedSession(credentials) Your endpoint GET POST PATCH etc. code will vary below Reference List example (for US region) url = 'https://backstory.googleapis.com/v2/lists/COLDRIVER SHA256' You might need another regional endpoint for your API call; see https://cloud.google.com/chronicle/docs/reference/ingestion-api#regional endpoints requests GET example response = http session.request(\"GET\", url) POST example uses json body = { \"foo\": \"bar\" } response = http session.request(\"POST\", url, json=body) PATCH example uses params and json params = { \"foo\": \"bar\" } response = http session.request(\"PATCH\", url, params=params, json=body) For more complete examples, see: https://github.com/chronicle/api-samples-python/ Backstory API query limits The Backstory API enforces limits on the volume of requests that can be made by any one customer against the Google SecOps platform.",
+          "PATCH https://backstory.googleapis.com/v2/forwarders/12ab3cd4-56ef-7abc-d89e-1f23a4bcde56/collectors/98ab7cd6-54ef-3abc-d21e-1f23a4bcde56?updateMask=displayName,config.logType,config.metadata.assetNamespace,config.syslogSettings.protocol { \"display name\": \"UpdatedCollector\" \"config\": { \"metadata\": { \"asset namespace\": \"COLLECTOR\", }, \"log type\": \"CISCO ASA FIREWALL\", \"syslog settings\": { \"protocol\": \"TCP\", } } } Response example This is an example of the response returned for the request example above. { \"name\": \"forwarders/12ab3cd4-56ef-7abc-d89e-1f23a4bcde56/collectors/98ab7cd6-54ef-3abc-d21e-1f23a4bcde56\", \"displayName\": \"UpdatedCollector\", \"config\": { \"logType\": \"CISCO ASA FIREWALL\", \"metadata\": { \"assetNamespace\": \"COLLECTOR\" }, \"maxSecondsPerBatch\": 10, \"maxBytesPerBatch\": \"1048576\", \"syslogSettings\": { \"protocol\": \"TCP\", \"address\": \"0.0.0.0\", \"port\": 10514, } }, \"state\": \"ACTIVE\" } Delete Collector Deletes a collector."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.Credentials.from",
+      "backstory.googleapis.com",
+      "config.logType",
+      "config.metadata.assetNamespace",
+      "config.syslogSettings.protocol",
+      "demo.json",
+      "entity.identifier",
+      "github.com",
+      "ime.da",
+      "requests.AuthorizedSession",
+      "session.request",
+      "settings.authentication.password",
+      "settings.authentication.username",
+      "settings.bpf",
+      "settings.host",
+      "settings.minimum",
+      "settings.network",
+      "settings.port",
+      "y.ide"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api"
+      ]
+    }
+  ]
+}

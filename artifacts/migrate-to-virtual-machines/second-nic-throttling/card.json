@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:23.096Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-virtual-machines/card.json",
+  "product_name": "Migrate to Virtual Machines",
+  "product_slug": "migrate-to-virtual-machines",
+  "feature_name": "Second NIC throttling",
+  "feature_slug": "second-nic-throttling",
+  "summary": "Starting with Migrate Connector 2.7, throttling is supported for a second network interface.",
+  "extended_definition": "Starting with Migrate Connector 2.7, throttling is supported for a second network interface.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate individual VMs \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "source_id": "site-docs-root",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: When migrating VM instances with 16 or more disks to regions that don't support N2 machines, we recommend that you migrate fewer than 200 VMs concurrently to avoid any issues.",
+          "Note: When migrating VM instances with 16 or more disks to regions that don't support N2 machines, we recommend that you migrate fewer than 200 VMs concurrently to avoid any issues.",
+          "Add Network Interface Migrate to Virtual Machines lets you optionally create a Compute Engine instance with multiple network interfaces (NICs)."
+        ]
+      },
+      {
+        "title": "\"Migrate individual VMs \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "source_id": "site-docs-root-2",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: When migrating VM instances with 16 or more disks to regions that don't support N2 machines, we recommend that you migrate fewer than 200 VMs concurrently to avoid any issues.",
+          "Note: When migrating VM instances with 16 or more disks to regions that don't support N2 machines, we recommend that you migrate fewer than 200 VMs concurrently to avoid any issues.",
+          "Add Network Interface Migrate to Virtual Machines lets you optionally create a Compute Engine instance with multiple network interfaces (NICs)."
+        ]
+      },
+      {
+        "title": "\"Migrate VM disks and attach them to a new VM \\_|\\_ Migrate to Virtual Machines\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+        "source_id": "site-docs-root",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "Step 3: Configure the target for a migrated VM disk Migrate to Virtual Machines lets you migrate the disks of a source VM to Persistent Disk volumes on Google Cloud with the following options: Migrate the disks to Persistent Disk volumes Migrate the disks to Persistent Disk volumes and attach them to a new VM instance You must configure the target details such as project, zone, disk type, and more based on the option you choose.",
+          "Step 5: Create a cut-over In the cut-over phase, you transfer control to your migrated disk, or the new VM you created with the migrated Persistent Disk volumes attached to it, in your target environment on Google Cloud.",
+          "Home Documentation Migration Migrate to Virtual Machines Guides Send feedback Migrate VM disks and attach them to a new VM Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Migrate VM disks and attach them to a new VM \\_|\\_ Migrate to Virtual Machines\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+        "source_id": "site-docs-root-2",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "Step 3: Configure the target for a migrated VM disk Migrate to Virtual Machines lets you migrate the disks of a source VM to Persistent Disk volumes on Google Cloud with the following options: Migrate the disks to Persistent Disk volumes Migrate the disks to Persistent Disk volumes and attach them to a new VM instance You must configure the target details such as project, zone, disk type, and more based on the option you choose.",
+          "Step 5: Create a cut-over In the cut-over phase, you transfer control to your migrated disk, or the new VM you created with the migrated Persistent Disk volumes attached to it, in your target environment on Google Cloud.",
+          "Home Documentation Migration Migrate to Virtual Machines Guides Send feedback Migrate VM disks and attach them to a new VM Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks"
+      ]
+    }
+  ]
+}

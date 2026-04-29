@@ -1,0 +1,96 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.828Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry",
+  "feature_name": "On-Demand Scanning for Java packages",
+  "feature_slug": "on-demand-scanning-for-java-packages",
+  "summary": "Artifact Registry enables generally available On-Demand Scanning for Java packages to identify vulnerabilities in container images.",
+  "extended_definition": "Artifact Registry enables generally available On-Demand Scanning for Java packages to identify vulnerabilities in container images.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/java",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListNpmPackagesPage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class ArtifactRegistryClient.ListNpmPackagesPage (1.87.0) \\_|\\_ Java client\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListNpmPackagesPage",
+        "source_id": "site-java-reference",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "ListNpmPackagesPage > Inheritance java.lang.Object > AbstractPage > ArtifactRegistryClient.ListNpmPackagesPage Inherited Members AbstractPage.createPage(PageContext<RequestT,ResponseT,ResourceT>,ResponseT) AbstractPage.createPageAsync(PageContext<RequestT,ResponseT,ResourceT>,ApiFuture<ResponseT>) AbstractPage.getNextPage() AbstractPage.getNextPage(int) AbstractPage.getNextPageAsync() AbstractPage.getNextPageToken() AbstractPage.getPageElementCount() AbstractPage.getRequest() AbstractPage.getResponse() AbstractPage.getValues() AbstractPage.hasNextPage() AbstractPage.iterateAll() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createPage(PageContext<ListNpmPackagesRequest,ListNpmPackagesResponse,NpmPackage> context, ListNpmPackagesResponse response) protected ArtifactRegistryClient .",
+          "Home Documentation Developer tools Java Client libraries Send feedback Class ArtifactRegistryClient.ListNpmPackagesPage (1.87.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "ListNpmPackagesPage > createPageAsync ( PageContext<ListNpmPackagesRequest , ListNpmPackagesResponse , NpmPackage > context , ApiFuture<ListNpmPackagesResponse> futureResponse ) Parameters Name Description context PageContext < ListNpmPackagesRequest , ListNpmPackagesResponse , NpmPackage > futureResponse ApiFuture < ListNpmPackagesResponse > Returns Type Description ApiFuture < ListNpmPackagesPage > Overrides AbstractPage<RequestT,ResponseT,ResourceT,PageT>.createPageAsync(PageContext<RequestT,ResponseT,ResourceT> context, ApiFuture<ResponseT> futureResponse) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Package com.google.devtools.artifactregistry.v1 (1.87.0) \\_|\\_ Java client\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1",
+        "source_id": "site-java-reference",
+        "final_score": 110,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Java Client libraries Send feedback Package com.google.devtools.artifactregistry.v1 (1.87.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "Vulnerability Scanning Config Config on whether to perform vulnerability scanning for resources in this repository, as well as output fields describing current state. com. google. devtools. artifactregistry. v1.",
+          "Builder Config on whether to perform vulnerability scanning for resources in this repository, as well as output fields describing current state. com. google. devtools. artifactregistry. v1."
+        ]
+      },
+      {
+        "title": "Manage Java packages \\_|\\_ Artifact Registry \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/java",
+        "source_id": "site-docs-root",
+        "final_score": 105,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application development Artifact Registry Guides Send feedback Manage Java packages Stay organized with collections Save and categorize content based on your preferences.",
+          "When you are ready to learn more, read the following information: Create a Java package repository for your packages.",
+          "Overview To get familiar with Java packages in Artifact Registry, you can try the quickstart ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.devtools.artifactregistry.v1",
+      "com.google.devtools.artifactregistry.v1.ArtifactRegistryClient",
+      "com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListNpmPackagesFixedSizeCollection",
+      "com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListNpmPackagesPage",
+      "java.lang.Object"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListNpmPackagesPage",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1",
+        "https://docs.cloud.google.com/artifact-registry/docs/java"
+      ]
+    }
+  ]
+}

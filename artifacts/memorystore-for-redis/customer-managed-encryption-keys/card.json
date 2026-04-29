@@ -1,0 +1,169 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:22.371Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis/card.json",
+  "product_name": "Memorystore for Redis",
+  "product_slug": "memorystore-for-redis",
+  "feature_name": "Customer-managed encryption keys",
+  "feature_slug": "customer-managed-encryption-keys",
+  "summary": "Memorystore for Redis supports customer-managed encryption keys; Memorystore for Redis adds support for customer-managed encryption keys.",
+  "extended_definition": "Memorystore for Redis supports customer-managed encryption keys; Memorystore for Redis adds support for customer-managed encryption keys.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/redis/about-cmek",
+      "https://docs.cloud.google.com/memorystore/docs/redis/cmek",
+      "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+      "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/create_instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About customer-managed encryption keys (CMEK) \\_|\\_ Memorystore for Redis\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/about-cmek",
+        "source_id": "site-docs-root-2",
+        "final_score": 388,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback About customer-managed encryption keys (CMEK) Stay organized with collections Save and categorize content based on your preferences.",
+          "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Memorystore for Redis.",
+          "Google-managed encryption versus customer-managed encryption The CMEK feature lets you use your own cryptographic keys for data at rest in Memorystore for Redis."
+        ]
+      },
+      {
+        "title": "\"About customer-managed encryption keys (CMEK) \\_|\\_ Memorystore for Redis\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 388,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback About customer-managed encryption keys (CMEK) Stay organized with collections Save and categorize content based on your preferences.",
+          "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Memorystore for Redis.",
+          "Google-managed encryption versus customer-managed encryption The CMEK feature lets you use your own cryptographic keys for data at rest in Memorystore for Redis."
+        ]
+      },
+      {
+        "title": "\"Connect to a Redis instance \\_|\\_ Memorystore for Redis \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "source_id": "site-docs-root",
+        "final_score": 270,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: If your instance uses customer-managed encryption keys (CMEK) and the Cloud Key Management Service API is unavailable because of an outage, then when you reconnect to your instance, you might need to use a different IP address.",
+          "For a list of Google Cloud environments that Memorystore for Redis supports, see Supported environments .",
+          "Connect to a Redis instance from a Compute Engine VM using telnet You can connect to the Memorystore for Redis instance from any Compute Engine VM that uses the instance's authorized network with a supported RFC 1918 IP address ."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: redis.googleapis.com \\_|\\_ Memorystore for Redis \\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/create_instance",
+        "source_id": "site-api-reference",
+        "final_score": 236,
+        "relevance": "",
+        "evidence_snippets": [
+          "A Redis [Instance] resource Instance JSON representation { \"name\" : string , \"displayName\" : string , \"labels\" : { string : string , ... } , \"locationId\" : string , \"alternativeLocationId\" : string , \"redisVersion\" : string , \"reservedIpRange\" : string , \"secondaryIpRange\" : string , \"host\" : string , \"port\" : integer , \"currentLocationId\" : string , \"createTime\" : string , \"state\" : enum ( State ) , \"statusMessage\" : string , \"redisConfigs\" : { string : string , ... } , \"tier\" : enum ( Tier ) , \"memorySizeGb\" : integer , \"authorizedNetwork\" : string , \"persistenceIamIdentity\" : string , \"connectMode\" : enum ( ConnectMode ) , \"authEnabled\" : boolean , \"serverCaCerts\" : [ { object ( TlsCertificate ) } ] , \"transitEncryptionMode\" : enum ( TransitEncryptionMode ) , \"maintenancePolicy\" : { object ( MaintenancePolicy ) } , \"maintenanceSchedule\" : { object ( MaintenanceSchedule ) } , \"replicaCount\" : integer , \"nodes\" : [ { object ( NodeInfo ) } ] , \"readEndpoint\" : string , \"readEndpointPort\" : integer , \"readReplicasMode\" : enum ( ReadReplicasMode ) , \"customerManagedKey\" : string , \"persistenceConfig\" : { object ( PersistenceConfig ) } , \"suspensionReasons\" : [ enum ( SuspensionReason ) ] , \"maintenanceVersion\" : string , \"availableMaintenanceVersions\" : [ string ] , \"tags\" : { string : string , ... } , // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . } Fields name string Required.",
+          "Unique name of the resource in this scope including project and location using the form: projects/{project id}/locations/{location id}/instances/{instance id} Note: Redis instances are managed and addressed at regional level so location id here refers to a GCP region; however, users may choose which specific zone (or collection of zones for cross-zone instances) an instance should be provisioned in.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Reference Send feedback MCP Tools Reference: redis.googleapis.com Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "redis.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/create_instance"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/create_instance"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/create_instance"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/create_instance"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/create_instance"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/create_instance"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/create_instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/create_instance"
+      ]
+    }
+  ]
+}

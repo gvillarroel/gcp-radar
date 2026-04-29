@@ -1,0 +1,173 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:47.011Z",
+  "source_step08_card": "data/step-08/current/products/cloud-cdn/card.json",
+  "product_name": "Cloud CDN",
+  "product_slug": "cloud-cdn",
+  "feature_name": "Cloud CDN cache policies in URL maps",
+  "feature_slug": "cloud-cdn-cache-policies-in-url-maps",
+  "summary": "Cloud CDN adds cache policy configuration in global external HTTP(S) Load Balancer URL maps with granular rules based on hostname, path, headers, and query parameters.",
+  "extended_definition": "Cloud CDN adds cache policy configuration in global external HTTP(S) Load Balancer URL maps with granular rules based on hostname, path, headers, and query parameters.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cdn/docs/caching",
+      "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket",
+      "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-mig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Caching overview \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/caching",
+        "source_id": "site-docs-reference-2",
+        "final_score": 164,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can configure cache policies in URL maps when: a single backend serves different types of content different paths require different caching behavior you want to enable caching for specific routes only For details on how to configure cache policies in URL map, see Configure a Cloud CDN cache policy .",
+          "Cache policy configuration methods Depending on how much control you need over caching behavior, you can configure caching behavior for Cloud CDN at the backend service, backend bucket, or at a more granular level in URL maps.",
+          "Cloud CDN doesn't allow the following headers to be included in the list of headers: Accept Accept-Encoding Authority , because this is controlled by configuration ( cdnPolicy.includeHost ) Authorization , typically per-user as in OAuth Bearer tokens CDN-Loop Connection Content-MD5 Content-Type Cookie Date Forwarded , often per-client or per-proxy From Host , because this is controlled by configuration ( cdnPolicy.includeHost ) If-Match , If-Modified-Since , or If-None-Match Origin Proxy-Authorization Range Referer (or Referrer ) User-Agent Want-Digest X-CSRFToken and X-CSRF-Token as used by Django and Ruby on Rails X-Forwarded-For , often per-client or per-proxy X-User-IP Any header starting with the following: Access-Control- , such as Access-Control-Request-Headers and Access-Control-Request-Method Sec-Fetch- Sec-GFE- Sec-Google- X-Amz- X-GFE- X-Goog- X-Google- Use custom variables with request headers Cache keys are helpful when you need to serve content differently based on each user's device and location."
+        ]
+      },
+      {
+        "title": "\"Set up a managed instance group backend \\_|\\_ Cloud CDN \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-mig",
+        "source_id": "site-docs-reference-2",
+        "final_score": 144,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To set up cache policies in URL maps, see Configure a Cloud CDN cache policy .",
+          "To create a global SSL policy: gcloud compute ssl-policies create my-ssl-policy \\ --profile MODERN \\ --min-tls-version 1.0 To attach the SSL policy to the global target HTTPS proxy: gcloud compute target-https-proxies update https-lb-proxy \\ --ssl-policy my-ssl-policy Set up an HTTP frontend Skip this section for HTTPS load balancers.",
+          "If you have not created any SSL policies, a default SSL policy is applied."
+        ]
+      },
+      {
+        "title": "Set up a backend bucket \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket",
+        "source_id": "site-docs-reference-2",
+        "final_score": 140,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To set up cache policies in URL maps, see Configure a Cloud CDN cache policy .",
+          "For an classic Application Load Balancer, use load-balancing-scheme=EXTERNAL . gcloud compute forwarding-rules create http-lb-forwarding-rule \\ --load-balancing-scheme= LOAD BALANCING SCHEME \\ --network-tier=PREMIUM \\ --address=example-ip \\ --global \\ --target-http-proxy=http-lb-proxy \\ --ports=80 Terraform Configure the backend To configure the backend, use the google compute backend bucket resource . backend bucket with CDN policy with default ttl settings resource \"google compute backend bucket\" \"default\" { name = \"cat-backend-bucket\" description = \"Contains beautiful images\" bucket name = google storage bucket.default.name enable cdn = true cdn policy { cache mode = \"CACHE ALL STATIC\" client ttl = 3600 default ttl = 3600 max ttl = 86400 negative caching = true serve while stale = 86400 } } Configure the URL map To configure the backend, use the google compute url map resource . url map resource \"google compute url map\" \"default\" { name = \"http-lb\" default service = google compute backend bucket.default.id } Configure the target proxy To configure the target proxy, use the google compute target http proxy resource or the google compute target https proxy resource . http proxy resource \"google compute target http proxy\" \"default\" { name = \"http-lb-proxy\" url map = google compute url map.default.id } Configure the forwarding rule To configure the forwarding rule, use the google compute global forwarding rule resource . forwarding rule resource \"google compute global forwarding rule\" \"default\" { name = \"http-lb-forwarding-rule\" ip protocol = \"TCP\" load balancing scheme = \"EXTERNAL\" port range = \"80\" target = google compute target http proxy.default.id ip address = google compute global address.default.id } For a global external Application Load Balancer, use with load balancing scheme=\"EXTERNAL MANAGED\" .",
+          "Click Save . gcloud gcloud storage buckets add-iam-policy-binding gs:// BUCKET NAME --member=allUsers --role=roles/storage.objectViewer Terraform To make your Cloud Storage bucket public, use the google storage bucket iam member resource . make bucket public resource \"google storage bucket iam member\" \"default\" { bucket = google storage bucket.default.name role = \"roles/storage.objectViewer\" member = \"allUsers\" } To learn how to apply or remove a Terraform configuration, see Basic Terraform commands ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "address.default.id",
+      "bucket.default.id",
+      "bucket.default.name",
+      "cats.jpg",
+      "map.default.id",
+      "proxy.default.id",
+      "storage.objectViewer",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-mig",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-mig",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-mig",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-mig",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-mig",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-mig",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-mig",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-mig",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-mig",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-mig",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket"
+      ]
+    }
+  ]
+}

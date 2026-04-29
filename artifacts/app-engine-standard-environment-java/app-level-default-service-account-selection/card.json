@@ -1,0 +1,129 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.059Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-java/card.json",
+  "product_name": "App Engine standard environment Java",
+  "product_slug": "app-engine-standard-environment-java",
+  "feature_name": "App-level default service account selection",
+  "feature_slug": "app-level-default-service-account-selection",
+  "summary": "App Engine applications can use any configured service account in the project as the app-level default service account during creation and update.",
+  "extended_definition": "App Engine applications can use any configured service account in the project as the app-level default service account during creation and update.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+      "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+      "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure App Engine service accounts \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "source_id": "site-docs-reference",
+        "final_score": 128,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To create a your App Engine application and assign an app-level default service account, you can use one of the following: gcloud Run the gcloud app create command: gcloud app create --service-account = SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com Replace: SERVICE ACCOUNT NAME with the name of the service account that you created.",
+          "All previously deployed versions will not use the new app-level default service account until you re-deploy that version. gcloud Run the gcloud app update command. gcloud app update --service-account = SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com Replace: SERVICE ACCOUNT NAME with the name of the service account that you created.",
+          "There are two types of service accounts in App Engine and any service account in your Cloud project can be assigned to act as either the app-level default or per-version service account: App-level default service account - This service account is used for all of your deployed services when you don't configure a \"per-version service account\"."
+        ]
+      },
+      {
+        "title": "\"appengine-web.xml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+        "source_id": "site-docs-reference-4",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "The default value is \"automatic.\" Keep the following in mind: A high maximum reduces the number of idle instances more gradually when load levels return to normal after a spike.",
+          "Warmup requests are enabled by default for Java applications.",
+          "Most applications don't need to change default behavior."
+        ]
+      },
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "Specify this element to change default settings for automatic scaling, such as setting minimum and maximum levels for number of instances, latency, and concurrent connections for a service.",
+          "Example automatic scaling : target cpu utilization : 0.65 min instances : 5 max instances : 100 min pending latency : 30ms max pending latency : automatic max concurrent requests : 50 basic scaling Applications that use an instance class of B1 or higher must specify either this element or manual scaling .",
+          "The following values are available depending on your service's scaling : Automatic scaling F1 , F2 , F4 , F4 1G Default: F1 Optionally use the automatic scaling element to change default settings for automatic scaling, such as minimum and maximum number of instances, latency, and concurrent connections."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "appengine.google.com",
+      "class.path",
+      "iam.gserviceaccount.com",
+      "java.base",
+      "java.lang",
+      "java.logging",
+      "java.nio.charset",
+      "java.util.concurrent",
+      "java.util.logging",
+      "library.path",
+      "main.jar",
+      "r.appspot.com",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
+      ]
+    }
+  ]
+}

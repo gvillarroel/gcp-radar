@@ -1,0 +1,179 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:20.101Z",
+  "source_step08_card": "data/step-08/current/products/identity-platform/card.json",
+  "product_name": "Identity Platform",
+  "product_slug": "identity-platform",
+  "feature_name": "SMS toll fraud protection for SMS-based flows on iOS",
+  "feature_slug": "sms-toll-fraud-protection-for-sms-based-flows-on-ios",
+  "summary": "Identity Platform's reCAPTCHA Enterprise integration adds SMS toll fraud protection for SMS-based flows on iOS.",
+  "extended_definition": "Identity Platform's reCAPTCHA Enterprise integration adds SMS toll fraud protection for SMS-based flows on iOS.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/identity-platform/docs/error-codes",
+      "https://docs.cloud.google.com/identity-platform/docs/how-to-configure-custom-claims",
+      "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/CreateSessionCookieResponse",
+      "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/GetAccountInfoResponse"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "CreateSessionCookieResponse \\_|\\_ Identity Platform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/CreateSessionCookieResponse",
+        "source_id": "site-api-reference",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Access and resource management Identity Platform Reference Send feedback CreateSessionCookieResponse Stay organized with collections Save and categorize content based on your preferences.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-05-30 UTC.\"],[],[]]",
+          "JSON representation { \"sessionCookie\" : string } Fields sessionCookie string The session cookie that has been created from the Identity Platform ID token specified in the request."
+        ]
+      },
+      {
+        "title": "GetAccountInfoResponse \\_|\\_ Identity Platform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/GetAccountInfoResponse",
+        "source_id": "site-api-reference",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Access and resource management Identity Platform Reference Send feedback GetAccountInfoResponse Stay organized with collections Save and categorize content based on your preferences.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-05-30 UTC.\"],[],[]]",
+          "JSON representation { \"kind\" : string , \"users\" : [ { object ( UserInfo ) } ] } Fields kind (deprecated) string This item is deprecated! users[] object ( UserInfo ) The information of specific user account(s) matching the parameters in the request."
+        ]
+      },
+      {
+        "title": "\"Configure custom claims on users \\_|\\_ Identity Platform \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/identity-platform/docs/how-to-configure-custom-claims",
+        "source_id": "site-docs-root",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Access and resource management Identity Platform Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "TryGetValue ( \"admin\" , out isAdmin )) { if (( bool ) isAdmin ) { // Allow access to requested admin resource. } } FirebaseAuthSnippets . cs To determine what custom claims are present for a user: Node.js // Lookup the user associated with the specified uid. getAuth () . getUser ( uid ) . then (( userRecord ) = > { // The claims can be accessed on the user record. console . log ( userRecord . customClaims [ 'admin' ]); }); custom claims . js Java // Lookup the user associated with the specified uid.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "Error codes \\_|\\_ Identity Platform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/identity-platform/docs/error-codes",
+        "source_id": "site-api-reference",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "E.164 phone numbers are written in the format: [+][country code][subscriber number including area code] . auth/missing-verification-code ERROR MISSING VERIFICATION CODE ERROR MISSING VERIFICATION CODE FirebaseAuthInvalidCredentialsException 17043 The phone auth credential was created with an empty SMS verification code. auth/invalid-verification-code ERROR INVALID VERIFICATION CODE ERROR INVALID VERIFICATION CODE FirebaseAuthInvalidCredentialsException 17044 The SMS verification code used to create the phone auth credential is invalid.",
+          "Home Documentation Access and resource management Identity Platform Reference Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Resend the verification code SMS, and be sure to use the verification code provided by the user. auth/missing-verification-id ERROR MISSING VERIFICATION ID ERROR MISSING VERIFICATION ID FirebaseAuthInvalidCredentialsException 17045 The phone authentication credential was created with an empty verification ID. auth/invalid-verification-id ERROR INVALID VERIFICATION ID ERROR INVALID VERIFICATION ID FirebaseAuthInvalidCredentialsException 17046 The verification ID used to create the phone auth credential is invalid. auth/code-expired ERROR SESSION EXPIRED ERROR SESSION EXPIRED FirebaseAuthInvalidCredentialsException 17051 The SMS code has expired."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accounts.lookup",
+      "projects.createSessionCookie"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/CreateSessionCookieResponse",
+        "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/GetAccountInfoResponse",
+        "https://docs.cloud.google.com/identity-platform/docs/how-to-configure-custom-claims",
+        "https://docs.cloud.google.com/identity-platform/docs/error-codes"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/CreateSessionCookieResponse",
+        "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/GetAccountInfoResponse",
+        "https://docs.cloud.google.com/identity-platform/docs/how-to-configure-custom-claims",
+        "https://docs.cloud.google.com/identity-platform/docs/error-codes"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/CreateSessionCookieResponse",
+        "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/GetAccountInfoResponse",
+        "https://docs.cloud.google.com/identity-platform/docs/how-to-configure-custom-claims",
+        "https://docs.cloud.google.com/identity-platform/docs/error-codes"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/CreateSessionCookieResponse",
+        "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/GetAccountInfoResponse",
+        "https://docs.cloud.google.com/identity-platform/docs/how-to-configure-custom-claims",
+        "https://docs.cloud.google.com/identity-platform/docs/error-codes"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/CreateSessionCookieResponse",
+        "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/GetAccountInfoResponse",
+        "https://docs.cloud.google.com/identity-platform/docs/how-to-configure-custom-claims",
+        "https://docs.cloud.google.com/identity-platform/docs/error-codes"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/CreateSessionCookieResponse",
+        "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/GetAccountInfoResponse",
+        "https://docs.cloud.google.com/identity-platform/docs/how-to-configure-custom-claims",
+        "https://docs.cloud.google.com/identity-platform/docs/error-codes"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/CreateSessionCookieResponse",
+        "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/GetAccountInfoResponse",
+        "https://docs.cloud.google.com/identity-platform/docs/how-to-configure-custom-claims",
+        "https://docs.cloud.google.com/identity-platform/docs/error-codes"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/CreateSessionCookieResponse",
+        "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/GetAccountInfoResponse",
+        "https://docs.cloud.google.com/identity-platform/docs/how-to-configure-custom-claims",
+        "https://docs.cloud.google.com/identity-platform/docs/error-codes"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/CreateSessionCookieResponse",
+        "https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/GetAccountInfoResponse",
+        "https://docs.cloud.google.com/identity-platform/docs/how-to-configure-custom-claims",
+        "https://docs.cloud.google.com/identity-platform/docs/error-codes"
+      ]
+    }
+  ]
+}

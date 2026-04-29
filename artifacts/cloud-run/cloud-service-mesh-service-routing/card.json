@@ -1,0 +1,180 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:51.589Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": "Cloud Service Mesh service routing",
+  "feature_slug": "cloud-service-mesh-service-routing",
+  "summary": "Cloud Service Mesh service routing lets Cloud Run route traffic to Cloud Run, GKE, and Compute Engine services and automatically authenticate calls with service account credentials.",
+  "extended_definition": "Cloud Service Mesh service routing lets Cloud Run route traffic to Cloud Run, GKE, and Compute Engine services and automatically authenticate calls with service account credentials.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2",
+      "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+      "https://docs.cloud.google.com/run/docs/tutorials/configure-service-health"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Package com.google.cloud.run.v2 (0.88.0) \\_|\\_ Java client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2",
+        "source_id": "site-java-reference",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "Traffic Target Holds a single traffic routing entry for the Service.",
+          "Builder Holds a single traffic routing entry for the Service.",
+          "Builder Probe describes a health check to be performed against a container to determine whether it is alive or ready to receive traffic. com. google. cloud. run. v2."
+        ]
+      },
+      {
+        "title": "Migrate Node.js apps from Heroku to Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "source_id": "site-docs-root",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "Deploy the sample app to Cloud Run In Cloud Shell, configure serverless vpc access to allow private traffic from Cloud Run to Cloud SQL: gcloud compute networks subnets create serverless-connector-subnet \\ --network=default \\ --range=10.0.0.0/28 \\ --region=us-central1 gcloud compute networks vpc-access connectors create serverless-connector \\ --region=us-central1 \\ --subnet=serverless-connector-subnet In Cloud Shell, create an environment variable that holds the connection name of the Cloud SQL instance that you created: export DB CONN NAME=$(gcloud sql instances describe $CLOUDSQL DB NAME --format='value(connectionName)') Create an environment variable called DATABASE URL to hold the connection string to connect to the Cloud SQL Proxy over a UNIX port. export DATABASE URL=\"socket:/cloudsql/${DB CONN NAME}?db=postgres&user=postgres&password= POSTGRES PASSWORD \" Create a service account for Cloud Run with an IAM role to connect to the database: gcloud iam service-accounts create sa-run-db-client gcloud projects add-iam-policy-binding PROJECT ID \\ --member=serviceAccount:sa-run-db-client@ PROJECT ID .iam.gserviceaccount.com \\ --role=roles/cloudsql.client Deploy the web app to Cloud Run: gcloud run deploy tasksapp- PROJECT ID \\ --image=$IMAGE NAME \\ --service-account=sa-run-db-client@ PROJECT ID .iam.gserviceaccount.com \\ --set-env-vars=DATABASE URL=$DATABASE URL \\ --add-cloudsql-instances $DB CONN NAME \\ --vpc-connector serverless-connector \\ --allow-unauthenticated The preceding command also links your Cloud Run container to the Cloud SQL database instance that you created.",
+          "Cloud Run is a managed compute platform that lets you run stateless containers that are invocable through HTTP requests.",
+          "A /tasks route at that URL lets you create new tasks."
+        ]
+      },
+      {
+        "title": "\"Automate cross-regional failover with service health \\_|\\_ Cloud Run \\_\\",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/configure-service-health",
+        "source_id": "site-docs-root-2",
+        "final_score": 89,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set up a global external Application Load Balancer To set up a global external Application Load Balancer to route traffic between us-west1 and europe-west1 , follow these steps: Create a backend service: gcloud compute backend-services create $SERVICE-bs \\ --load-balancing-scheme=EXTERNAL MANAGED \\ --global Set up a global static external IP address to reach your load balancer: gcloud compute addresses create $SERVICE-ip \\ --network-tier=PREMIUM \\ --ip-version=IPV4 \\ --global Create a URL map to route incoming requests to the backend service: gcloud compute url-maps create $SERVICE-lb \\ --default-service $SERVICE-bs Create a target HTTP proxy to route requests to your URL map: gcloud compute target-http-proxies create $SERVICE-hp \\ --url-map=$SERVICE-lb Create a forwarding rule to route incoming requests to the proxy: gcloud compute forwarding-rules create $SERVICE-fr \\ --load-balancing-scheme=EXTERNAL MANAGED \\ --network-tier=PREMIUM \\ --address=$SERVICE-ip \\ --target-http-proxy=$SERVICE-hp \\ --global \\ --ports=80 Add your services through a serverless NEG To add the services you deployed in us-west1 and europe-west1 using the Serverless NEG, follow these steps: Create a serverless network endpoint group (NEG) for your Cloud Run service in us-west1 and europe-west1 : gcloud compute network-endpoint-groups create $SERVICE-neg-$REGION A \\ --region $REGION A \\ --network-endpoint-type=serverless \\ --cloud-run-service=$SERVICE gcloud compute network-endpoint-groups create $SERVICE-neg-$REGION B \\ --region $REGION B \\ --network-endpoint-type=serverless \\ --cloud-run-service=$SERVICE Add the serverless NEG as a backend to the backend services in us-west1 and europe-west1 : gcloud compute backend-services add-backend $SERVICE-bs \\ --global \\ --network-endpoint-group=$SERVICE-neg-$REGION A \\ --network-endpoint-group-region=$REGION A gcloud compute backend-services add-backend $SERVICE-bs \\ --global \\ --network-endpoint-group=$SERVICE-neg-$REGION B \\ --network-endpoint-group-region=$REGION B For additional configuration options, see Set up a global external Application Load Balancer with Cloud Run .",
+          "Test failover To test failover for ensuring the reliability and resilience of your Cloud Run services, follow these steps: Run the following command to get your load balancer's IP address: LBIP=$(gcloud compute addresses describe $SERVICE-ip --global --format='value(address)') Optional: Send a request to your load balancer if your services require authentication: curl -H \"Authorization: Bearer $(gcloud auth print-identity-token)\" $LBIP Obtain the value of the LBIP variable by running the echo $LBIP command.",
+          "For Cloud Build to build your sources, ask your administrator to grant Cloud Run Builder ( roles/run.builder ) to the Compute Engine default service account on your project: gcloud projects add-iam-policy-binding PROJECT ID \\ --member = serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com \\ --role = roles/run.builder Replace PROJECT NUMBER with your Google Cloud project number, and PROJECT ID with your Google Cloud project ID."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.client",
+      "com.google.cloud.run.v2",
+      "developer.gserviceaccount.com",
+      "iam.gserviceaccount.com",
+      "run.builder",
+      "servicenetworking.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudsql.client",
+      "roles/run.builder"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/tutorials/configure-service-health",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/tutorials/configure-service-health",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/tutorials/configure-service-health",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/tutorials/configure-service-health",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/tutorials/configure-service-health",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/tutorials/configure-service-health",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/tutorials/configure-service-health",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/tutorials/configure-service-health",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/tutorials/configure-service-health",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/tutorials/configure-service-health",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/tutorials/configure-service-health",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+      ]
+    }
+  ]
+}

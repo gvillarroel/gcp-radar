@@ -1,0 +1,209 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:49.591Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "HTTP(S) load balancing rejected request logs",
+  "feature_slug": "http-s-load-balancing-rejected-request-logs",
+  "summary": "HTTP(S) load balancing logging includes logs for rejected requests such as invalid or expired URL signatures.",
+  "extended_definition": "HTTP(S) load balancing logging includes logs for rejected requests such as invalid or expired URL signatures.",
+  "lifecycle": {
+    "latest_feature_date": "2017-12-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis",
+      "https://docs.cloud.google.com/logging/docs/api/platform-logs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Cloud platform logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "source_id": "site-docs-reference",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "N/A DEFAULT Cloud Load Balancing Logging API service name: loadbalancing.googleapis.com Log ID Monitored resource Payload Labels Severities loadbalancing.googleapis.com%2Frequests internal http lb rule type.googleapis.com/google.cloud.loadbalancing.type.LoadBalancerLogEntry N/A INFO WARNING ERROR loadbalancing.googleapis.com%2Fexternal regional requests http external regional lb rule type.googleapis.com/google.cloud.loadbalancing.type.LoadBalancerLogEntry N/A INFO WARNING ERROR Cloud Locations Logging API service name: cloud.googleapis.com Log ID Monitored resource Payload Labels Severities cloud.googleapis.com%2Fipsec events vpn gateway VPN Tunnel logs from the VPN Gateway instance tunnel id DEBUG NOTICE Cloud Monitoring API Logging API service name: monitoring.googleapis.com Log ID Monitored resource Payload Labels Severities monitoring.googleapis.com%2Fuptime checks uptime url uptime url uptime check logs. check id checker location execution id uptime result type service directory endpoint ERROR INFO NOTICE monitoring.googleapis.com%2Fuptime checks gae app gae app uptime check logs. check id checker location execution id uptime result type service directory endpoint ERROR INFO NOTICE monitoring.googleapis.com%2Fuptime checks gce instance gce instance uptime check logs. check id checker location execution id uptime result type service directory endpoint ERROR INFO NOTICE monitoring.googleapis.com%2Fuptime checks aws ec2 instance aws ec2 instance uptime check logs. check id checker location execution id uptime result type service directory endpoint ERROR INFO NOTICE monitoring.googleapis.com%2Fuptime checks aws elb load balancer aws elb load balancer uptime check logs. check id checker location execution id uptime result type service directory endpoint ERROR INFO NOTICE monitoring.googleapis.com%2Fuptime checks k8s service k8s service uptime check logs. check id checker location execution id uptime result type service directory endpoint ERROR INFO NOTICE monitoring.googleapis.com%2Fuptime checks servicedirectory service servicedirectory service uptime check logs. check id checker location execution id uptime result type service directory endpoint ERROR INFO NOTICE monitoring.googleapis.com%2Fuptime checks cloud run revision cloud run revision uptime check logs. check id checker location execution id uptime result type service directory endpoint ERROR INFO NOTICE Cloud OS Config Logging API service name: osconfig.googleapis.com Log ID Monitored resource Payload Labels Severities osconfig.googleapis.com%2Fpatch job cloud osconfig patch job type.googleapis.com/google.cloud.osconfig.logging.PatchJobCompletedLog osconfig.googleapis.com/patch job INFO ERROR Cloud Run Logging API service name: run.googleapis.com Log ID Monitored resource Payload Labels Severities run.googleapis.com%2Fstdout cloud run revision Cloud Run stdout logs.",
+          "N/A DEFAULT DEBUG INFO NOTICE WARNING ERROR CRITICAL ALERT EMERGENCY Cloud Setup Logging API service name: cloudsetup.googleapis.com Log ID Monitored resource Payload Labels Severities cloudsetup.googleapis.com%2Fcomplete deployment api type.googleapis.com/google.cloud.cloudsetup.logging.v1.CompleteDeploymentEvent activity type name DEFAULT Cloud Storage Logging API service name: storage.googleapis.com Log ID Monitored resource Payload Labels Severities storage.googleapis.com%2Frelocate bucket errors gcs bucket type.googleapis.com/google.storage.platformlogs.v1.RelocateBucketError N/A ERROR Cloud VPN Logging API service name: vpn.googleapis.com Log ID Monitored resource Payload Labels Severities vpn.googleapis.com%2Fipsec events vpn gateway VPN Tunnel logs from the VPN Gateway instance tunnel id DEBUG NOTICE Cloud Workstations Logging API service name: workstations.googleapis.com Log ID Monitored resource Payload Labels Severities workstations.googleapis.com%2Fdisk assignments workstations.googleapis.com/Workstation Disk assignment logs disk NOTICE workstations.googleapis.com%2Fvm assignments workstations.googleapis.com/Workstation VM assignment logs external ip instance id internal ip instance name NOTICE workstations.googleapis.com%2Fworkstation shutdowns workstations.googleapis.com/Workstation Workstation shutdown logs external ip instance id internal ip instance name shutdown reason NOTICE Compute Engine Logging API service name: compute.googleapis.com Log ID Monitored resource Payload Labels Severities compute.googleapis.com%2Fgce disaster recovery gce instance type.googleapis.com/google.compute.logging.dr.v1.DisasterRecoveryEvent N/A N/A compute.googleapis.com%2Fgce disaster recovery gce disk type.googleapis.com/google.compute.logging.dr.v1.DisasterRecoveryEvent N/A N/A compute.googleapis.com%2Fgce disaster recovery gce snapshot type.googleapis.com/google.compute.logging.dr.v1.DisasterRecoveryEvent N/A N/A compute.googleapis.com%2Fgce disaster recovery gce instance template type.googleapis.com/google.compute.logging.dr.v1.DisasterRecoveryEvent N/A N/A compute.googleapis.com%2Fgce disaster recovery gce instance group manager type.googleapis.com/google.compute.logging.dr.v1.DisasterRecoveryEvent N/A N/A compute.googleapis.com%2Fgce disaster recovery gce resevered address type.googleapis.com/google.compute.logging.dr.v1.DisasterRecoveryEvent N/A N/A compute.googleapis.com%2Fgdnsusage gce instance type.googleapis.com/google.compute.logging.gdnsusage.v1.GdnsVmUsagePlatformLog resource name DEBUG compute.googleapis.com%2Fvm extension policies gce instance type.googleapis.com/google.compute.logging.agentcontrolplane.v1.VmExtensionEvent N/A INFO DEBUG ERROR WARNING Container Security API Logging API service name: containersecurity.googleapis.com Log ID Monitored resource Payload Labels Severities containersecurity.googleapis.com%2Ffinding k8s cluster type.googleapis.com/cloud.kubernetes.security.containersecurity logging.Finding N/A INFO Dataform Logging API service name: dataform.googleapis.com Log ID Monitored resource Payload Labels Severities dataform.googleapis.com%2Fworkflow invocation completion dataform.googleapis.com/Repository type.googleapis.com/google.cloud.dataform.logging.v1.WorkflowInvocationCompletionLogEntry N/A INFO WARNING ERROR dataform.googleapis.com%2Factas dry run result dataform.googleapis.com/Repository type.googleapis.com/google.cloud.dataform.logging.v1.ActAsDryRunResultLogEntry N/A INFO WARNING Datapipelines API Logging API service name: datapipelines.googleapis.com Log ID Monitored resource Payload Labels Severities datapipelines.googleapis.com%2Frequests datapipelines.googleapis.com/Location type.googleapis.com/google.cloud.datapipelines.logging.v1.RequestLogEntry N/A DEFAULT datapipelines.googleapis.com%2Frequests datapipelines.googleapis.com/Pipeline type.googleapis.com/google.cloud.datapipelines.logging.v1.RequestLogEntry N/A DEFAULT Dataproc Logging API service name: dataproc.googleapis.com Log ID Monitored resource Payload Labels Severities dataproc.googleapis.com%2Fautoscaler cloud dataproc cluster type.googleapis.com/google.cloud.dataproc.logging.AutoscalerLog N/A INFO WARNING ERROR CRITICAL dataproc.googleapis.com%2Fautoscaler cloud dataproc batch type.googleapis.com/google.cloud.dataproc.logging.AutoscalerLog N/A INFO WARNING ERROR CRITICAL dataproc.googleapis.com%2Fautoscaler cloud dataproc session type.googleapis.com/google.cloud.dataproc.logging.AutoscalerLog N/A INFO WARNING ERROR CRITICAL dataproc.googleapis.com%2Freconciler cloud dataproc session type.googleapis.com/google.cloud.dataproc.logging.ReconciliationLog N/A INFO dataproc.googleapis.com%2Freconciler cloud dataproc cluster type.googleapis.com/google.cloud.dataproc.logging.ReconciliationClusterHealLog N/A INFO dataproc.googleapis.com%2Fcluster reconciler cloud dataproc cluster type.googleapis.com/google.cloud.dataproc.logging.ReconciliationClusterHealLog N/A INFO dataproc.googleapis.com%2Fcluster reconciler ttl cloud dataproc cluster type.googleapis.com/google.cloud.dataproc.logging.ReconciliationClusterTtlLog N/A INFO Dataproc Metastore Logging API service name: metastore.googleapis.com Log ID Monitored resource Payload Labels Severities metastore.googleapis.com%2Fbackground metastore.googleapis.com/Service Dataproc Metastore background logs. logger DEFAULT ERROR INFO WARNING metastore.googleapis.com%2Fsystem metastore.googleapis.com/Service Service system logs. method service region DEFAULT ERROR INFO WARNING metastore.googleapis.com%2Frequests metastore.googleapis.com/Service Service request logs. method service region DEFAULT INFO metastore.googleapis.com%2Fscheduled backup metastore.googleapis.com/Service type.googleapis.com/google.cloud.metastore.logging.v1.ScheduledBackupLogEntry N/A DEFAULT INFO WARNING ERROR Developer Connect Logging API service name: developerconnect.googleapis.com Log ID Monitored resource Payload Labels Severities developerconnect.googleapis.com%2Fsdlc deployment k8s cluster type.googleapis.com/cloud.hosted.developerconnect.sdlc.logging.DeploymentEvent developerconnect.googleapis.com/insights config id developerconnect.googleapis.com/insights config deployment id INFO Event Threat Detection Logging API service name: threatdetection.googleapis.com Log ID Monitored resource Payload Labels Severities threatdetection.googleapis.com%2Fdetection threat detector Event Threat Detection finding.",
+          "N/A N/A Google Analytics Data API Logging API service name: analyticsdata.googleapis.com Log ID Monitored resource Payload Labels Severities analyticsdata.googleapis.com%2Ffresh bigquery export status analyticsdata.googleapis.com/FreshBigQueryExport type.googleapis.com/google.analytics.cloud.ExportStatusLog N/A DEFAULT INFO WARNING analyticsdata.googleapis.com%2Fbigquery daily export status analyticsdata.googleapis.com/BigQueryDailyExport type.googleapis.com/google.analytics.cloud.ExportStatusLog N/A DEFAULT INFO WARNING Google Binary Authorization API Logging API service name: binaryauthorization.googleapis.com Log ID Monitored resource Payload Labels Severities binaryauthorization.googleapis.com%2Fcontinuous validation k8s cluster v1beta1: type.googleapis.com/google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent N/A WARNING Google Maps Platform - Mobility Billing Logging API service name: mobilitybilling.googleapis.com Log ID Monitored resource Payload Labels Severities mobilitybilling.googleapis.com%2Fexternal cloud logs mobilitybilling.googleapis.com/Project type.googleapis.com/google.maps.mobilitybilling.logs.v1.ReportBillableEventLog environment DEFAULT ERROR Google Workspace Add-ons Logging API service name: gsuiteaddons.googleapis.com Log ID Monitored resource Payload Labels Severities gsuiteaddons.googleapis.com%2Ferrors g suite add ons type.googleapis.com/google.cloud.gsuiteaddons.logging.v1.GSuiteAddOnsLogEntry N/A ERROR Identity Toolkit Logging API service name: identitytoolkit.googleapis.com Log ID Monitored resource Payload Labels Severities identitytoolkit.googleapis.com%2Frequests identitytoolkit project type.googleapis.com/google.cloud.identitytoolkit.logging.RequestLog N/A INFO ERROR identitytoolkit.googleapis.com%2Frequests identitytoolkit tenant type.googleapis.com/google.cloud.identitytoolkit.logging.RequestLog N/A INFO ERROR Immersive Stream for XR Logging API service name: stream.googleapis.com Log ID Monitored resource Payload Labels Severities stream.googleapis.com%2Fsession event stream.googleapis.com/StreamInstance type.googleapis.com/google.cloud.stream.logging.v1.SessionEventLog N/A INFO ERROR Issuer Switch Service Logging API service name: issuerswitch.googleapis.com Log ID Monitored resource Payload Labels Severities issuerswitch.googleapis.com%2Fpgis activity issuerswitch.googleapis.com/UPIInstance type.googleapis.com/google.cloud.paymentgateway.issuerswitch.v1.UpiTransaction N/A DEBUG ERROR INFO Key Management Service Logging API service name: cloudkms.googleapis.com Log ID Monitored resource Payload Labels Severities cloudkms.googleapis.com%2Fcryptokey events cloudkms cryptokey type.googleapis.com/google.cloud.kms.logging.v1.CryptoKeyEvent N/A INFO ERROR cloudkms.googleapis.com%2Fcryptokeyversion events cloudkms cryptokeyversion type.googleapis.com/google.cloud.kms.logging.v1.CryptoKeyVersionEvent N/A INFO ERROR Live Stream API Logging API service name: livestream.googleapis.com Log ID Monitored resource Payload Labels Severities livestream.googleapis.com%2Fchannel activities livestream.googleapis.com/Channel type.googleapis.com/google.cloud.video.livestream.logging.v1.ChannelActivity N/A INFO DEBUG ERROR Local Rides and Deliveries API Logging API service name: fleetengine.googleapis.com Log ID Monitored resource Payload Labels Severities fleetengine.googleapis.com%2Fupdate vehicle attributes fleetengine.googleapis.com/Fleet type.googleapis.com/maps.fleetengine.v1.UpdateVehicleAttributesLog environment vehicle id DEFAULT ERROR Logging API Logging API service name: logging.googleapis.com Log ID Monitored resource Payload Labels Severities logging.googleapis.com%2Fsink error logging sink A report of an error encountered while trying to export data to a configured log sink. activity type name destination error code error detail log entity id log filter sink id ERROR logging.googleapis.com%2Fmetric throttled metric Informs customer that a metric associated with Logs-based metrics is being throttled. activity type name dropped labels label cardinalities limit type metric name user cardinality WARNING Memorystore Logging API service name: memorystore.googleapis.com Log ID Monitored resource Payload Labels Severities memorystore.googleapis.com%2Flog stream memorystore.googleapis.com/Instance type.googleapis.com/google.logging.v2.LogEntry CONSUMER PROJECT INSTANCE ID INFO WARNING ERROR Network Analyzer Logging API service name: networkanalyzer.googleapis.com Log ID Monitored resource Payload Labels Severities networkanalyzer.googleapis.com%2Fanalyzer reports networking.googleapis.com/Location type.googleapis.com/google.cloud.networkanalyzer.logging.v1.Report N/A DEFAULT Network Services API Logging API service name: networkservices.googleapis.com Log ID Monitored resource Payload Labels Severities networkservices.googleapis.com%2Fmesh events mesh A simple JSON payload containing a single 'description' field with event details."
+        ]
+      },
+      {
+        "title": "Configure the Logging agent \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "source_id": "site-docs-root",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If your log entry contains an exception stack trace, the exception stack trace should be set in this message JSON log field, so that the exception stack trace can be parsed and saved to Error Reporting. log (legacy Google Kubernetes Engine only) textPayload Only applies to legacy Google Kubernetes Engine: if, after moving special purpose fields, only a log field remains, then that field is saved as textPayload . httpRequest httpRequest A structured record in the format of the LogEntry HttpRequest field. \"httpRequest\":{\"requestMethod\":\"GET\"} time-related fields timestamp For more information, see Time-related fields . \"time\":\"2020-10-12T07:20:50.52Z\" logging.googleapis.com/insertId insertId For more information, see insertId on the LogEntry page. \"logging.googleapis.com/insertId\":\"42\" logging.googleapis.com/labels labels The value of this field must be a structured record.",
+          "JSON log field LogEntry field Cloud Logging agent function Example value severity severity The Logging agent attempts to match a variety of common severity strings, which includes the list of LogSeverity strings recognized by the Logging API. \"severity\":\"ERROR\" message textPayload (or part of jsonPayload ) The message that appears on the log entry line in the Logs Explorer. \"message\":\"There was an error in the application.\" Note : message is saved as textPayload if it is the only field remaining after the Logging agent moves the other special-purpose fields and detect json wasn't enabled; otherwise message remains in jsonPayload . detect json is not applicable to managed logging environments like Google Kubernetes Engine.",
+          "For more information, see traceSampled on the LogEntry page. \"logging.googleapis.com/trace sampled\": false Time-related fields In general, time-related information about a log entry is stored in the timestamp field of the LogEntry object: { insertId: \"1ad8d08f-6529-47ea-832e-467f869a2da4\" ... resource: {2} timestamp: \"2023-10-30T16:33:15.505196Z\" } When the source for a log entry is structured data, the Logging agent uses the following rules to search the fields in the jsonPayload entry for time-related information: Search for a timestamp field that is a JSON object that includes the seconds and nanos fields, representing, respectively, a signed number of seconds from the UTC epoch and a nonnegative number of fractional seconds: jsonPayload: { ... \"timestamp\": { \"seconds\": CURRENT SECONDS, \"nanos\": CURRENT NANOS } } If the previous search fails, then search for a pair of timestampSeconds and timestampNanos fields: jsonPayload: { ... \"timestampSeconds\": CURRENT SECONDS, \"timestampNanos\": CURRENT NANOS } If the previous search fails, then search for a time field that is a string in RFC 3339 format: jsonPayload: { ... \"time\": CURRENT TIME RFC3339 } When time-related information is found, the Logging agent uses that information to set the value of the LogEntry.timestamp , and it doesn't copy that information from the structured record into the LogEntry.jsonPayload object."
+        ]
+      },
+      {
+        "title": "Internet Information Services \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis",
+        "source_id": "site-docs-root-2",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Detailed fields inside the LogEntry are as follows. iis access logs contain the following fields in the LogEntry : Field Type Description httpRequest.referer string Contents of the Referer header httpRequest.remoteIp string IP of the client that made the request httpRequest.requestMethod string HTTP method httpRequest.requestUrl string Request URL (typically just the path part of the URL) httpRequest.serverIp string The server's IP and port that was requested httpRequest.status number HTTP status code httpRequest.userAgent string Contents of the User-Agent header jsonPayload.sc substatus number The substatus error code jsonPayload.sc win32 status number The Windows status code jsonPayload.time taken number The length of time that the action took, in milliseconds jsonPayload.user string Authenticated username for the request timestamp string ( Timestamp ) Time the request was received Configure v1 metrics collection The Ops Agent on a Microsoft Windows VM automatically collects IIS v1 metrics.",
+          "Metric type Kind, Type Monitored resources Labels workload.googleapis.com/iis.connection.active GAUGE , INT64 gce instance workload.googleapis.com/iis.connection.anonymous CUMULATIVE , INT64 gce instance workload.googleapis.com/iis.connection.attempt.count CUMULATIVE , INT64 gce instance workload.googleapis.com/iis.network.blocked CUMULATIVE , INT64 gce instance workload.googleapis.com/iis.network.file.count CUMULATIVE , INT64 gce instance direction workload.googleapis.com/iis.network.io CUMULATIVE , INT64 gce instance direction workload.googleapis.com/iis.request.count CUMULATIVE , INT64 gce instance request workload.googleapis.com/iis.request.queue.age.max GAUGE , INT64 gce instance workload.googleapis.com/iis.request.queue.count GAUGE , INT64 gce instance workload.googleapis.com/iis.request.rejected CUMULATIVE , INT64 gce instance workload.googleapis.com/iis.thread.active GAUGE , INT64 gce instance workload.googleapis.com/iis.uptime GAUGE , INT64 gce instance Verify the configuration This section describes how to verify that you correctly configured the IIS receiver.",
+          "The following table shows the mapping of v1 metrics to v2 metrics: v1 metric ( agent.googleapis.com/iis/ ) v2 metric ( workload.googleapis.com/ ) current connections iis.connection.active network/transferred bytes count iis.network.io new connection count iis.connection.attempt.count request count iis.request.count Prerequisites To collect IIS telemetry, you must install the Ops Agent : For metrics v1, install version 1.0.0 or higher."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "agent.googleapis.com",
+      "aiplatform.googleapis.com",
+      "analyticsdata.googleapis.com",
+      "binaryauthorization.googleapis.com",
+      "cloudkms.googleapis.com",
+      "cloudsetup.googleapis.com",
+      "compute.googleapis.com",
+      "containersecurity.googleapis.com",
+      "dataform.googleapis.com",
+      "datapipelines.googleapis.com",
+      "dataproc.googleapis.com",
+      "developerconnect.googleapis.com",
+      "fleetengine.googleapis.com",
+      "gsuiteaddons.googleapis.com",
+      "identitytoolkit.googleapis.com",
+      "iis.connection.active",
+      "iis.connection.anonymous",
+      "iis.connection.attempt.count",
+      "iis.network.blocked",
+      "iis.network.file.count",
+      "iis.network.io",
+      "iis.request.count",
+      "iis.request.queue.age.max",
+      "iis.request.queue.count",
+      "iis.request.rejected",
+      "iis.thread.active",
+      "iis.uptime",
+      "issuerswitch.googleapis.com",
+      "livestream.googleapis.com",
+      "loadbalancing.googleapis.com",
+      "logging.Finding",
+      "logging.googleapis.com",
+      "maps.fleetengine.v1.UpdateVehicleAttributesLog",
+      "memorystore.googleapis.com",
+      "metastore.googleapis.com",
+      "mobilitybilling.googleapis.com",
+      "monitoring.googleapis.com",
+      "networkanalyzer.googleapis.com",
+      "networking.googleapis.com",
+      "networkservices.googleapis.com",
+      "osconfig.googleapis.com",
+      "recaptchaenterprise.googleapis.com",
+      "run.googleapis.com",
+      "storage.googleapis.com",
+      "storagetransfer.googleapis.com",
+      "stream.googleapis.com",
+      "threatdetection.googleapis.com",
+      "trafficdirector.googleapis.com",
+      "type.googleapis.com",
+      "vpn.googleapis.com",
+      "websecurityscanner.googleapis.com",
+      "workflows.googleapis.com",
+      "workload.googleapis.com",
+      "workstations.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    }
+  ]
+}

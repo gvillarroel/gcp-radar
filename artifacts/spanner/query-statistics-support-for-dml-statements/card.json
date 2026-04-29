@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Query statistics support for DML statements",
+  "feature_slug": "query-statistics-support-for-dml-statements",
+  "summary": "Spanner extends query statistics to cover DML statements, including INSERT, UPDATE, and DELETE operations.",
+  "extended_definition": "Spanner extends query statistics to cover DML statements, including INSERT, UPDATE, and DELETE operations.",
+  "lifecycle": {
+    "latest_feature_date": "2022-02-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/information-schema",
+      "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+      "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Information schema for GoogleSQL-dialect databases \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "source_id": "site-docs-reference",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "SPANNER STATISTICS This table lists the available query optimizer statistics packages.",
+          "Returns empty if the default leader is not set: SELECT s . option name , s . option value FROM information schema . database options s WHERE s . option name = 'default leader' Return information about each index in the user's schema: SELECT t . table schema , t . table name , t . index name , t . parent table name FROM information schema . indexes AS t WHERE t . table catalog = '' AND t . table schema NOT IN ( 'information schema' , 'SPANNER SYS' ) AND t . index type != 'PRIMARY KEY' ORDER BY t . table catalog , t . table schema , t . table name , t . index name Returns all the columns that use options other than the default: SELECT t . table schema , t . table name , t . column name , t . option type , t . option value , t . option name FROM information schema . column options AS t WHERE t . table catalog = '' AND t . table schema NOT IN ( 'information schema' , 'SPANNER SYS' ) Returns the current optimizer related database options: SELECT s . option name , s . option value FROM information schema . database options s WHERE s . schema name = '' AND s . option name IN ( 'optimizer version' , 'optimizer statistics package' ) Returns all available statistics packages: SELECT FROM information schema . spanner statistics ; Return all sequences: SELECT FROM information schema . sequences ; Return all sequence options for the sequence named \"MySequence\" SELECT FROM information schema . sequence options WHERE name = \"MySequence\" ; Return the names of all property graphs and their definitions: SELECT property graph name , property graph metadata json FROM information schema . property graphs Return the names of all property graphs together with their labels and properties: SELECT property graph name , property graph metadata json . labels , property graph metadata json . propertyDeclarations FROM information schema . property graphs What's next Learn about available Introspection tools to help you investigate database issues.",
+          "For example, the following query fetches the names of all user-defined tables in a database: SELECT table schema , table name FROM information schema . tables WHERE table schema NOT IN ( 'information schema' , 'SPANNER SYS' ) AND table type = 'BASE TABLE' Fine-grained access control users see filtered results for some INFORMATION SCHEMA tables depending on their database role."
+        ]
+      },
+      {
+        "title": "\"JDBC session management commands (GoogleSQL) \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "source_id": "site-docs-reference",
+        "final_score": 103,
+        "relevance": "",
+        "evidence_snippets": [
+          "SHOW VARIABLE OPTIMIZER STATISTICS PACKAGE SET OPTIMIZER STATISTICS PACKAGE = { 'package' '' } Sets the optimizer statistics package to use for all following statements on the connection. <package> must be a valid package name.",
+          "SET OPTIMIZER STATISTICS PACKAGE = 'auto 20240124 06 47 29UTC' ; SELECT FirstName , LastName FROM Singers ORDER BY LastName ; -- Execute the same query with the default optimizer statistics package.",
+          "ROLLBACK ; Data Boost and partitioned query statements The partitionQuery API divides a query into smaller pieces, or partitions, and uses multiple machines to fetch the partitions in parallel."
+        ]
+      },
+      {
+        "title": "\"JDBC session management commands (PostgreSQL) \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat",
+        "source_id": "site-docs-reference",
+        "final_score": 103,
+        "relevance": "",
+        "evidence_snippets": [
+          "OPTIMIZER STATISTICS PACKAGE = 'auto 20240124 06 47 29UTC' ; SELECT FirstName , LastName FROM Singers ORDER BY LastName ; -- Execute the same query with the default optimizer statistics package.",
+          "ROLLBACK ; Data Boost and partitioned query statements The partitionQuery API divides a query into smaller pieces, or partitions, and uses multiple machines to fetch the partitions in parallel.",
+          "OPTIMIZER STATISTICS PACKAGE { TO = } { 'package' '' } Sets the optimizer statistics package to use for all following statements on the connection. <package> must be a valid package name."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat"
+      ]
+    }
+  ]
+}

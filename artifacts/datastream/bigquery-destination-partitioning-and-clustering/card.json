@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:05.419Z",
+  "source_step08_card": "data/step-08/current/products/datastream/card.json",
+  "product_name": "Datastream",
+  "product_slug": "datastream",
+  "feature_name": "BigQuery destination partitioning and clustering",
+  "feature_slug": "bigquery-destination-partitioning-and-clustering",
+  "summary": "Datastream supports partitioning and clustering for BigQuery destinations.",
+  "extended_definition": "Datastream supports partitioning and clustering for BigQuery destinations.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastream/docs/behavior-overview",
+      "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+      "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream",
+      "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a stream \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+        "source_id": "site-docs-root",
+        "final_score": 237,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you want to configure or modify partitioning and clustering settings for a table that already exists, first delete it from BigQuery, and then configure or modify its settings in Datastream.",
+          "If you want to configure or modify partitioning and clustering settings for a table that already exists, first delete it from BigQuery, and then configure or modify its settings in Datastream.",
+          "If you want to configure or modify partitioning and clustering settings for a table that already exists, first delete it from BigQuery, and then configure or modify its settings in Datastream."
+        ]
+      },
+      {
+        "title": "Key concepts and features \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/behavior-overview",
+        "source_id": "site-docs-root-2",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Destinations Datastream supports BigQuery, BigLake Iceberg tables and Cloud Storage as destinations .",
+          "Behavior and use cases Datastream gives users the ability to bring source data from a Relational Database Management System (RDBMS) and other sources into destinations such as BigQuery, BigLake Iceberg tables and Cloud Storage in near real-time fashion.",
+          "Events and streams Datastream ingests a lot of data in near real-time fashion from a variety of sources, and makes the data available for consumption in the destination."
+        ]
+      },
+      {
+        "title": "MCP Tools Reference: datastream \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream",
+        "source_id": "site-api-reference",
+        "final_score": 195,
+        "relevance": "",
+        "evidence_snippets": [
+          "GcsDestinationConfig JSON representation { \"path\" : string , \"fileRotationMb\" : integer , \"fileRotationInterval\" : string , // Union field file format can be only one of the following: \"avroFileFormat\" : { object ( AvroFileFormat ) } , \"jsonFileFormat\" : { object ( JsonFileFormat ) } // End of list of possible types for union field file format . } Fields path string Path inside the Cloud Storage bucket to write data to. fileRotationMb integer The maximum file size to be saved in the bucket. fileRotationInterval string ( Duration format) The maximum duration for which new events are added before a file is closed and a new file is created.",
+          "CustomizationRule JSON representation { // Union field rule can be only one of the following: \"bigqueryPartitioning\" : { object ( BigQueryPartitioning ) } , \"bigqueryClustering\" : { object ( BigQueryClustering ) } // End of list of possible types for union field rule . } Fields Union field rule .",
+          "Stream JSON representation { \"name\" : string , \"createTime\" : string , \"updateTime\" : string , \"labels\" : { string : string , ... } , \"displayName\" : string , \"sourceConfig\" : { object ( SourceConfig ) } , \"destinationConfig\" : { object ( DestinationConfig ) } , \"state\" : enum ( State ) , \"errors\" : [ { object ( Error ) } ] , \"lastRecoveryTime\" : string , \"ruleSets\" : [ { object ( RuleSet ) } ] , // Union field backfill strategy can be only one of the following: \"backfillAll\" : { object ( BackfillAllStrategy ) } , \"backfillNone\" : { object ( BackfillNoneStrategy ) } // End of list of possible types for union field backfill strategy . // Union field customer managed encryption key can be only one of the // following: \"customerManagedEncryptionKey\" : string // End of list of possible types for union field // customer managed encryption key . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . } Fields name string Output only."
+        ]
+      },
+      {
+        "title": "MCP Tools Reference: datastream \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+        "source_id": "site-api-reference",
+        "final_score": 195,
+        "relevance": "",
+        "evidence_snippets": [
+          "GcsDestinationConfig JSON representation { \"path\" : string , \"fileRotationMb\" : integer , \"fileRotationInterval\" : string , // Union field file format can be only one of the following: \"avroFileFormat\" : { object ( AvroFileFormat ) } , \"jsonFileFormat\" : { object ( JsonFileFormat ) } // End of list of possible types for union field file format . } Fields path string Path inside the Cloud Storage bucket to write data to. fileRotationMb integer The maximum file size to be saved in the bucket. fileRotationInterval string ( Duration format) The maximum duration for which new events are added before a file is closed and a new file is created.",
+          "CustomizationRule JSON representation { // Union field rule can be only one of the following: \"bigqueryPartitioning\" : { object ( BigQueryPartitioning ) } , \"bigqueryClustering\" : { object ( BigQueryClustering ) } // End of list of possible types for union field rule . } Fields Union field rule .",
+          "Stream JSON representation { \"name\" : string , \"createTime\" : string , \"updateTime\" : string , \"labels\" : { string : string , ... } , \"displayName\" : string , \"sourceConfig\" : { object ( SourceConfig ) } , \"destinationConfig\" : { object ( DestinationConfig ) } , \"state\" : enum ( State ) , \"errors\" : [ { object ( Error ) } ] , \"lastRecoveryTime\" : string , \"ruleSets\" : [ { object ( RuleSet ) } ] , // Union field backfill strategy can be only one of the following: \"backfillAll\" : { object ( BackfillAllStrategy ) } , \"backfillNone\" : { object ( BackfillNoneStrategy ) } // End of list of possible types for union field backfill strategy . // Union field customer managed encryption key can be only one of the // following: \"customerManagedEncryptionKey\" : string // End of list of possible types for union field // customer managed encryption key . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . } Fields name string Output only."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/behavior-overview",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/behavior-overview",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams"
+      ]
+    }
+  ]
+}

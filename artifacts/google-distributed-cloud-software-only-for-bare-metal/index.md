@@ -1,0 +1,81 @@
+# Google Distributed Cloud (software only) for bare metal
+
+Service card: [card.json](./card.json)
+
+Generated from Step 08 card: `data/step-06/current/products/google-distributed-cloud-software-only-for-bare-metal/extended-features.json`
+
+## Summary
+
+- Promoted features: 65
+- Step 07 product status: PASS
+- Corpus health: healthy
+- Latest feature date: 2026-02-13
+- Official source links: 37
+
+## Features
+
+- [NodePoolClaim taint mutability](./nodepoolclaim-taint-mutability/README.md)
+- [bmctl upgrade intermediate-version](./bmctl-upgrade-intermediate-version/README.md)
+- [Egress NAT gateway fast failover](./egress-nat-gateway-fast-failover/README.md)
+- [Prometheus-backed horizontal Pod autoscaling](./prometheus-backed-horizontal-pod-autoscaling/README.md)
+- [Prometheus-backed vertical Pod autoscaling](./prometheus-backed-vertical-pod-autoscaling/README.md)
+- [Skip minor version cluster upgrades](./skip-minor-version-cluster-upgrades/README.md)
+- [Bundled NVIDIA GPU Operator](./bundled-nvidia-gpu-operator/README.md)
+- [Dynamic Resource Allocation](./dynamic-resource-allocation/README.md)
+- [Envoy sidecar in GKE Identity Service](./envoy-sidecar-in-gke-identity-service/README.md)
+- [Node Agent](./node-agent/README.md)
+- [Per-node-pool pod density override](./per-node-pool-pod-density-override/README.md)
+- [Ubuntu 24.04 LTS support](./ubuntu-24-04-lts-support/README.md)
+- [Vertical Pod autoscaling](./vertical-pod-autoscaling/README.md)
+- [Automatic Keepalived VRRP configuration](./automatic-keepalived-vrrp-configuration/README.md)
+- [controlPlane.loadBalancer.keepalivedVRRPGARPMasterRepeat](./controlplane-loadbalancer-keepalivedvrrpgarpmasterrepeat/README.md)
+- [controlPlane.loadBalancer.mode](./controlplane-loadbalancer-mode/README.md)
+- [GKE Identity Service diagnostic utility](./gke-identity-service-diagnostic-utility/README.md)
+- [bmctl configure projects](./bmctl-configure-projects/README.md)
+- [bmctl update diff view](./bmctl-update-diff-view/README.md)
+- [Concurrent management of multiple user cluster versions](./concurrent-management-of-multiple-user-cluster-versions/README.md)
+- [Custom Scheduler Configuration](./custom-scheduler-configuration/README.md)
+- [Identity Service token session duration](./identity-service-token-session-duration/README.md)
+- [Keyless mode for clusters](./keyless-mode-for-clusters/README.md)
+- [kubectl attach/cp/exec via Connect Gateway](./kubectl-attach-cp-exec-via-connect-gateway/README.md)
+- [Node pool upgrade rollback](./node-pool-upgrade-rollback/README.md)
+- [Node-level private registry configuration](./node-level-private-registry-configuration/README.md)
+- [RHEL 9.2 support](./rhel-9-2-support/README.md)
+- [Eviction-based maintenance mode draining](./eviction-based-maintenance-mode-draining/README.md)
+- [GKE Identity Service v2](./gke-identity-service-v2/README.md)
+- [Intermediate CA cluster root CA](./intermediate-ca-cluster-root-ca/README.md)
+- [Pause and resume cluster upgrades](./pause-and-resume-cluster-upgrades/README.md)
+- [Selective node pool upgrades with two-minor-version skew](./selective-node-pool-upgrades-with-two-minor-version-skew/README.md)
+- [BGP community support](./bgp-community-support/README.md)
+- [Cluster upgrade pause and resume](./cluster-upgrade-pause-and-resume/README.md)
+- [Custom cluster certificate authorities](./custom-cluster-certificate-authorities/README.md)
+- [Direct Server Return load balancing](./direct-server-return-load-balancing/README.md)
+- [Fleet regional membership](./fleet-regional-membership/README.md)
+- [Kubernetes API server certificate extra SANs](./kubernetes-api-server-certificate-extra-sans/README.md)
+- [Multiple BGPLoadBalancer resources](./multiple-bgploadbalancer-resources/README.md)
+- [Red Hat Enterprise Linux 9.2 support](./red-hat-enterprise-linux-9-2-support/README.md)
+- [Automatic Anthos On-Prem API enrollment](./automatic-anthos-on-prem-api-enrollment/README.md)
+- [bmctl register target-cluster-name flag](./bmctl-register-target-cluster-name-flag/README.md)
+- [Custom resource drift health check](./custom-resource-drift-health-check/README.md)
+- [Dedicated etcd instance for etcd-events](./dedicated-etcd-instance-for-etcd-events/README.md)
+- [Independent worker node pool upgrades](./independent-worker-node-pool-upgrades/README.md)
+- [Kubelet image pull settings](./kubelet-image-pull-settings/README.md)
+- [LoadBalancer Services with externalTrafficPolicy=Local on bundled BGP](./loadbalancer-services-with-externaltrafficpolicy-local-on-bundled-bgp/README.md)
+- [Parallel worker node pool upgrades](./parallel-worker-node-pool-upgrades/README.md)
+- [Red Hat Enterprise Linux 8.8 support](./red-hat-enterprise-linux-8-8-support/README.md)
+- [Anthos clusters on bare metal 1.10.4](./anthos-clusters-on-bare-metal-1-10-4/README.md)
+- [Anthos clusters on bare metal 1.10.3](./anthos-clusters-on-bare-metal-1-10-3/README.md)
+- [Anthos clusters on bare metal 1.10.2](./anthos-clusters-on-bare-metal-1-10-2/README.md)
+- [Anthos clusters on bare metal 1.10.1](./anthos-clusters-on-bare-metal-1-10-1/README.md)
+- [Anthos clusters on bare metal 1.10.0](./anthos-clusters-on-bare-metal-1-10-0/README.md)
+- [Anthos multi-cluster connectivity](./anthos-multi-cluster-connectivity/README.md)
+- [bmctl backup and restore commands](./bmctl-backup-and-restore-commands/README.md)
+- [bmctl cluster snapshot contents](./bmctl-cluster-snapshot-contents/README.md)
+- [Cloud Logging issue severity levels](./cloud-logging-issue-severity-levels/README.md)
+- [cluster.gkeHubRegistrationStatus](./cluster-gkehubregistrationstatus/README.md)
+- [IPv4 flat mode networking](./ipv4-flat-mode-networking/README.md)
+- [IPv4/IPv6 dual-stack networking](./ipv4-ipv6-dual-stack-networking/README.md)
+- [Node Problem Detector](./node-problem-detector/README.md)
+- [OpenTelemetry-based application metrics pipeline](./opentelemetry-based-application-metrics-pipeline/README.md)
+- [SR-IOV support](./sr-iov-support/README.md)
+- [SSH-based node reset](./ssh-based-node-reset/README.md)

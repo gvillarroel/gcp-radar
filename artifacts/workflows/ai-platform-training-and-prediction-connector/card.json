@@ -1,0 +1,176 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:34.788Z",
+  "source_step08_card": "data/step-08/current/products/workflows/card.json",
+  "product_name": "Workflows",
+  "product_slug": "workflows",
+  "feature_name": "AI Platform Training and Prediction connector",
+  "feature_slug": "ai-platform-training-and-prediction-connector",
+  "summary": "This connector integrates Workflows with AI Platform Training and Prediction.",
+  "extended_definition": "This connector integrates Workflows with AI Platform Training and Prediction.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+      "https://docs.cloud.google.com/workflows/docs/reference/googleapis/aiplatform/Overview",
+      "https://docs.cloud.google.com/workflows/docs/tutorials/use-vertex-ai-models"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Vertex AI API Connector Overview \\_|\\_ Workflows \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/reference/googleapis/aiplatform/Overview",
+        "source_id": "site-docs-reference",
+        "final_score": 145,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Expected successful output: \"SUCCESS\" main : steps : - init : assign : - location : ${sys.get env(\"GOOGLE CLOUD LOCATION\")} - project : ${sys.get env(\"GOOGLE CLOUD PROJECT ID\")} Follow https://cloud.google.com/vertex-ai/docs/training/create-custom-container to build a custom container image for training. - container image uri : \"IMAGE URI\" - create custom job : call : googleapis.aiplatform.v1.projects.locations.customJobs.create args : parent : ${\"projects/\" + project + \"/locations/\" + location} region : ${location} body : displayName : \"example-custom-job\" jobSpec : workerPoolSpecs : - machineSpec : machineType : \"n1-standard-4\" acceleratorType : \"NVIDIA TESLA V100\" acceleratorCount : 1 replicaCount : 1 containerSpec : imageUri : ${container image uri} command : [] args : [] result : customJobsResponse - delete custom job : call : googleapis.aiplatform.v1.projects.locations.customJobs.delete args : name : ${customJobsResponse.name} region : ${location} result : deleteCustomJobResponse - return : return : \"SUCCESS\" JSON { \"main\" : { \"steps\" : [ { \"init\" : { \"assign\" : [ { \"location\" : \"${sys.get env(\\\"GOOGLE CLOUD LOCATION\\\")}\" }, { \"project\" : \"${sys.get env(\\\"GOOGLE CLOUD PROJECT ID\\\")}\" }, { \"container image uri\" : \"IMAGE URI\" } ] } }, { \"create custom job\" : { \"call\" : \"googleapis.aiplatform.v1.projects.locations.customJobs.create\" , \"args\" : { \"parent\" : \"${\\\"projects/\\\" + project + \\\"/locations/\\\" + location}\" , \"region\" : \"${location}\" , \"body\" : { \"displayName\" : \"example-custom-job\" , \"jobSpec\" : { \"workerPoolSpecs\" : [ { \"machineSpec\" : { \"machineType\" : \"n1-standard-4\" , \"acceleratorType\" : \"NVIDIA TESLA V100\" , \"acceleratorCount\" : 1 }, \"replicaCount\" : 1 , \"containerSpec\" : { \"imageUri\" : \"${container image uri}\" , \"command\" : [], \"args\" : [] } } ] } } }, \"result\" : \"customJobsResponse\" } }, { \"delete custom job\" : { \"call\" : \"googleapis.aiplatform.v1.projects.locations.customJobs.delete\" , \"args\" : { \"name\" : \"${customJobsResponse.name}\" , \"region\" : \"${location}\" }, \"result\" : \"deleteCustomJobResponse\" } }, { \"return\" : { \"return\" : \"SUCCESS\" } } ] } } Module: googleapis.aiplatform.v1.projects.locations.batchPredictionJobs Functions cancel Cancels a BatchPredictionJob.",
+          "Module: googleapis.aiplatform.v1.projects.locations.publishers.models Functions generateContent Generate content with multimodal inputs. predict Perform an online prediction. rawPredict Perform an online prediction with an arbitrary HTTP payload.",
+          "Module: googleapis.aiplatform.v1beta1.projects.locations.batchPredictionJobs Functions cancel Cancels a BatchPredictionJob."
+        ]
+      },
+      {
+        "title": "Connectors reference \\_|\\_ Workflows \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+        "source_id": "site-api-reference",
+        "final_score": 78,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "List of supported connectors Google Cloud product Connector Long-running operation type AI Platform Training ml Job Application Integration integrations None Batch batch Job Operation BigQuery bigquery Job BigQuery Data Transfer Service bigquerydatatransfer TransferRun Cloud Build cloudbuild Operation Cloud Run functions cloudfunctions Operation Cloud Natural Language API language None Cloud Run run None Cloud Scheduler cloudscheduler None Cloud SQL sqladmin Operation Cloud Storage storage None Cloud Tasks cloudtasks None Cloud Translation translate Operation Compute Engine compute Operation Dataflow dataflow Job Document AI documentai Operation Processor Firestore firestore Operation Google Forms forms None Google Kubernetes Engine container Operation Google Sheets sheets None Kubernetes API (control plane) gke None Pub/Sub pubsub None Resource Manager cloudresourcemanager None Secret Manager secretmanager None Spanner spanner Operation Storage Transfer Service storagetransfer Operation Transcoder API transcoder Job Vertex AI aiplatform (Vertex AI) Artifact Execution Job Operation Pipeline Schedule Study Trial Workflows workflows workflowexecutions Operation Execution Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "You can specify a timeout value and polling policy using the connector params block: - STEP NAME : call : CONNECTOR args : ARG : ARG VALUE [ ... ] body : KEY : KEY VALUE [...] connector params : timeout : TIMEOUT IN SECONDS polling policy : initial delay : INITIAL DELAY IN SECONDS multiplier : MULTIPLIER VALUE max delay : MAX DELAY IN SECONDS skip polling : SKIP POLLING SWITCH scopes : OAUTH2 SCOPE result : RESPONSE VALUE Replace the following: STEP NAME : the name of the step.",
+          "SKIP POLLING SWITCH : if set to True , the connector invocation call is non-blocking if the initial request to manage or update the resource succeeds (usually HTTP POST , HTTP UPDATE , or HTTP DELETE )."
+        ]
+      },
+      {
+        "title": "\"Access Gemini models from a workflow using Vertex AI \\_|\\_ Workflows \\_\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/tutorials/use-vertex-ai-models",
+        "source_id": "site-docs-root-2",
+        "final_score": 74,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "In the workflow editor, enter the following definition for your workflow: main : params : [ input ] steps : - assign file vars : assign : - file size : ${int(input.data.size)} - chunk size : 64000 - n chunks : ${int(file size / chunk size)} - summaries : [] - all summaries concatenated : \"\" - loop over chunks : parallel : shared : [ summaries ] for : value : chunk idx range : ${[0, n chunks]} steps : - assign bounds : assign : - lower bound : ${chunk idx chunk size} - upper bound : ${(chunk idx + 1) chunk size} - summaries : ${list.concat(summaries, \"\")} - dump file content : call : http.get args : url : ${\"https://storage.googleapis.com/storage/v1/b/\" + input.data.bucket + \"/o/\" + input.data.name + \"?alt=media\"} auth : type : OAuth2 headers : Range : ${\"bytes=\" + lower bound + \"-\" + upper bound} result : file content - assign chunk : assign : - chunk : ${file content.body} - generate chunk summary : call : ask gemini for summary args : textToSummarize : ${chunk} result : summary - assign summary : assign : - summaries[chunk idx] : ${summary} - concat summaries : for : value : summary in : ${summaries} steps : - append summaries : assign : - all summaries concatenated : ${all summaries concatenated + \"\\n\" + summary} - reduce summary : call : ask gemini for summary args : textToSummarize : ${all summaries concatenated} result : final summary - return result : return : - summaries : ${summaries} - final summary : ${final summary} ask gemini for summary : params : [ textToSummarize ] steps : - init : assign : - project : ${sys.get env(\"GOOGLE CLOUD PROJECT ID\")} - location : \"us-central1\" - model : \"gemini-2.5-pro\" - summary : \"\" - call gemini : call : http.post args : url : ${\"https://\" + location + \"-aiplatform.googleapis.com\" + \"/v1/projects/\" + project + \"/locations/\" + location + \"/publishers/google/models/\" + model + \":generateContent\"} auth : type : OAuth2 body : contents : role : user parts : - text : '${\"Make a summary of the following text:\\n\\n\" + textToSummarize}' generation config : temperature : 0.2 maxOutputTokens : 2000 topK : 10 topP : 0.9 result : gemini response Sometimes, there's no text, for example, due to safety settings - check text exists : switch : - condition : ${not(\"parts\" in gemini response.body.candidates[0].content)} next : return summary - extract text : assign : - summary : ${gemini response.body.candidates[0].content.parts[0].text} - return summary : return : ${summary} Click Deploy . gcloud Create a source code file for your workflow: touch gemini-pro-summaries.yaml In a text editor, copy the following workflow to your source code file: main : params : [ input ] steps : - assign file vars : assign : - file size : ${int(input.data.size)} - chunk size : 64000 - n chunks : ${int(file size / chunk size)} - summaries : [] - all summaries concatenated : \"\" - loop over chunks : parallel : shared : [ summaries ] for : value : chunk idx range : ${[0, n chunks]} steps : - assign bounds : assign : - lower bound : ${chunk idx chunk size} - upper bound : ${(chunk idx + 1) chunk size} - summaries : ${list.concat(summaries, \"\")} - dump file content : call : http.get args : url : ${\"https://storage.googleapis.com/storage/v1/b/\" + input.data.bucket + \"/o/\" + input.data.name + \"?alt=media\"} auth : type : OAuth2 headers : Range : ${\"bytes=\" + lower bound + \"-\" + upper bound} result : file content - assign chunk : assign : - chunk : ${file content.body} - generate chunk summary : call : ask gemini for summary args : textToSummarize : ${chunk} result : summary - assign summary : assign : - summaries[chunk idx] : ${summary} - concat summaries : for : value : summary in : ${summaries} steps : - append summaries : assign : - all summaries concatenated : ${all summaries concatenated + \"\\n\" + summary} - reduce summary : call : ask gemini for summary args : textToSummarize : ${all summaries concatenated} result : final summary - return result : return : - summaries : ${summaries} - final summary : ${final summary} ask gemini for summary : params : [ textToSummarize ] steps : - init : assign : - project : ${sys.get env(\"GOOGLE CLOUD PROJECT ID\")} - location : \"us-central1\" - model : \"gemini-2.5-pro\" - summary : \"\" - call gemini : call : http.post args : url : ${\"https://\" + location + \"-aiplatform.googleapis.com\" + \"/v1/projects/\" + project + \"/locations/\" + location + \"/publishers/google/models/\" + model + \":generateContent\"} auth : type : OAuth2 body : contents : role : user parts : - text : '${\"Make a summary of the following text:\\n\\n\" + textToSummarize}' generation config : temperature : 0.2 maxOutputTokens : 2000 topK : 10 topP : 0.9 result : gemini response Sometimes, there's no text, for example, due to safety settings - check text exists : switch : - condition : ${not(\"parts\" in gemini response.body.candidates[0].content)} next : return summary - extract text : assign : - summary : ${gemini response.body.candidates[0].content.parts[0].text} - return summary : return : ${summary} Deploy the workflow by entering the following command: gcloud workflows deploy gemini-pro-summaries \\ --source = gemini-pro-summaries.yaml \\ --location = us-central1 \\ --service-account = SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com Clean up To avoid incurring charges to your Google Cloud account for the resources used in this tutorial, either delete the project that contains the resources, or keep the project and delete the individual resources.",
+          "In the workflow editor, enter the following definition for your workflow: main : params : [ args ] steps : - init : assign : - project : ${sys.get env(\"GOOGLE CLOUD PROJECT ID\")} - location : \"us-central1\" - model : \"gemini-2.5-flash\" - histories : {} - loop over countries : parallel : shared : [ histories ] for : value : country in : ${args.countries} steps : - ask llm : call : googleapis.aiplatform.v1.projects.locations.endpoints.generateContent args : model : ${\"projects/\" + project + \"/locations/\" + location + \"/publishers/google/models/\" + model} region : ${location} body : contents : role : \"USER\" parts : text : ${\"Can you tell me about the history of \" + country} generation config : temperature : 0.5 max output tokens : 2048 top p : 0.8 top k : 40 result : llm response - add to histories : assign : - histories[country] : ${llm response.candidates[0].content.parts[0].text} - return result : return : ${histories} Click Deploy . gcloud Create a source code file for your workflow: touch gemini-pro-country-histories.yaml In a text editor, copy the following workflow to your source code file: main : params : [ args ] steps : - init : assign : - project : ${sys.get env(\"GOOGLE CLOUD PROJECT ID\")} - location : \"us-central1\" - model : \"gemini-2.5-flash\" - histories : {} - loop over countries : parallel : shared : [ histories ] for : value : country in : ${args.countries} steps : - ask llm : call : googleapis.aiplatform.v1.projects.locations.endpoints.generateContent args : model : ${\"projects/\" + project + \"/locations/\" + location + \"/publishers/google/models/\" + model} region : ${location} body : contents : role : \"USER\" parts : text : ${\"Can you tell me about the history of \" + country} generation config : temperature : 0.5 max output tokens : 2048 top p : 0.8 top k : 40 result : llm response - add to histories : assign : - histories[country] : ${llm response.candidates[0].content.parts[0].text} - return result : return : ${histories} Deploy the workflow by entering the following command: gcloud workflows deploy gemini-pro-country-histories \\ --source = gemini-pro-country-histories.yaml \\ --location = us-central1 \\ --service-account = SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com Execute the workflow Executing a workflow runs the current workflow definition associated with the workflow.",
+          "In the workflow editor, enter the following definition for your workflow: main : params : [ args ] steps : - init : assign : - project : ${sys.get env(\"GOOGLE CLOUD PROJECT ID\")} - location : \"us-central1\" - model : \"gemini-2.5-flash\" - text combined : \"\" - ask llm : call : googleapis.aiplatform.v1.projects.locations.endpoints.generateContent args : model : ${\"projects/\" + project + \"/locations/\" + location + \"/publishers/google/models/\" + model} region : ${location} body : contents : role : user parts : - fileData : mimeType : image/jpeg fileUri : ${args.image url} - text : Describe this picture in detail generation config : temperature : 0.4 max output tokens : 2048 top p : 1 top k : 32 result : llm response - return result : return : image url : ${args.image url} image description : ${llm response.candidates[0].content.parts[0].text} Click Deploy . gcloud Create a source code file for your workflow: touch describe-image.yaml In a text editor, copy the following workflow to your source code file: main : params : [ args ] steps : - init : assign : - project : ${sys.get env(\"GOOGLE CLOUD PROJECT ID\")} - location : \"us-central1\" - model : \"gemini-2.5-flash\" - text combined : \"\" - ask llm : call : googleapis.aiplatform.v1.projects.locations.endpoints.generateContent args : model : ${\"projects/\" + project + \"/locations/\" + location + \"/publishers/google/models/\" + model} region : ${location} body : contents : role : user parts : - fileData : mimeType : image/jpeg fileUri : ${args.image url} - text : Describe this picture in detail generation config : temperature : 0.4 max output tokens : 2048 top p : 1 top k : 32 result : llm response - return result : return : image url : ${args.image url} image description : ${llm response.candidates[0].content.parts[0].text} Deploy the workflow by entering the following command: gcloud workflows deploy describe-image \\ --source = describe-image.yaml \\ --location = us-central1 \\ --service-account = SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com Execute the workflow Executing a workflow runs the current workflow definition associated with the workflow."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "aiplatform.user",
+      "args.countries",
+      "args.image",
+      "content.body",
+      "content.parts",
+      "googleapis.aiplatform.v1.projects.locations.batchPredictionJobs",
+      "googleapis.aiplatform.v1.projects.locations.customJobs.create",
+      "googleapis.aiplatform.v1.projects.locations.customJobs.delete",
+      "googleapis.aiplatform.v1.projects.locations.endpoints.generateContent",
+      "googleapis.aiplatform.v1.projects.locations.publishers.models",
+      "googleapis.aiplatform.v1beta1.projects.locations.batchPredictionJobs",
+      "googleapis.aiplatform.v1beta1.projects.locations.trainingPipelines",
+      "histories.yaml",
+      "http.get",
+      "http.post",
+      "iam.gserviceaccount.com",
+      "image.yaml",
+      "input.data.bucket",
+      "input.data.name",
+      "input.data.size",
+      "list.concat",
+      "response.body.candidates",
+      "response.candidates",
+      "storage.googleapis.com",
+      "summaries.yaml",
+      "sys.get"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.user"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis/aiplatform/Overview",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/use-vertex-ai-models"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis/aiplatform/Overview",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/use-vertex-ai-models"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis/aiplatform/Overview",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/use-vertex-ai-models"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis/aiplatform/Overview",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/use-vertex-ai-models"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis/aiplatform/Overview",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/use-vertex-ai-models"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis/aiplatform/Overview",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/use-vertex-ai-models"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis/aiplatform/Overview",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/use-vertex-ai-models"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis/aiplatform/Overview",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/use-vertex-ai-models"
+      ]
+    }
+  ]
+}

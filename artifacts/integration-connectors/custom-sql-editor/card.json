@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:20.195Z",
+  "source_step08_card": "data/step-08/current/products/integration-connectors/card.json",
+  "product_name": "Integration Connectors",
+  "product_slug": "integration-connectors",
+  "feature_name": "Custom SQL editor",
+  "feature_slug": "custom-sql-editor",
+  "summary": "The custom SQL editor lets you run custom queries across supported connectors in the user interface.",
+  "extended_definition": "The custom SQL editor lets you run custom queries across supported connectors in the user interface.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/cockroachdb/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud SQL for PostgreSQL \\_|\\_ Integration Connectors \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 225,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Grant the following IAM roles to the service account that you want to use for the connector: roles/secretmanager.viewer roles/secretmanager.secretAccessor roles/cloudsql.editor A service account is a special type of Google account intended to represent a non-human user that needs to authenticate and be authorized to access data in Google APIs.",
+          "Cloud SQL for PostgreSQL The PostgreSQL connector type lets you insert, read, update, and delete rows in a PostgreSQL database.",
+          "To execute custom SQL queries, the connector provides the Execute custom query action."
+        ]
+      },
+      {
+        "title": "Cloud SQL for MySQL \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 225,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Grant the following IAM roles to the service account that you want to use for the connector: roles/secretmanager.viewer roles/secretmanager.secretAccessor roles/cloudsql.editor A service account is a special type of Google account intended to represent a non-human user that needs to authenticate and be authorized to access data in Google APIs.",
+          "Cloud SQL for MySQL The MySQL connector lets you insert, read, update and delete rows in a MySQL database.",
+          "To execute custom SQL queries, the connector provides the Execute custom query action."
+        ]
+      },
+      {
+        "title": "CockroachDB \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/cockroachdb/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Running this example, returns a response similar to the following in the Connector task's connectorOutputPayload output variable: { } Create connections using Terraform You can use the Terraform resource to create a new connection.",
+          "To configure the node values, do the following: If you are a pay-as-you-go customer, configure the minimum and maximum node value in the edit connection page.",
+          "You can use a question mark (?) in a SQL statement to represent a single parameter that must be specified in the query parameters list."
+        ]
+      },
+      {
+        "title": "Couchbase \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 189,
+        "relevance": "",
+        "evidence_snippets": [
+          "To execute custom SQL queries, the connector provides the Execute custom query action.",
+          "Supported values are: N1QL, Analytics create table ram quota STRING False The default RAM quota, in megabytes, to use when inserting buckets via the CREATE TABLE syntax. dataverse separator STRING False The character or characters used to denote Analytics dataverses and scopes/collections. flavor separator STRING False The character or characters used to denote flavors. n1 qlport STRING False The port for connecting to the Couchbase N1QL Endpoint. periods separator STRING False The character or characters used to denote hierarchy. query execution timeout STRING False This sets the server-side timeout for the query, which governs how long Couchbase will execute the query before returning a timeout error. strict comparison STRING False Adjusts how precisely to translate filters on SQL input queries into Couchbase queries.",
+          "Note: The results of all the actions will be available as a JSON response in the Connectors task's connectorOutputPayload response parameter after you run your integration."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.editor",
+      "e.g",
+      "secretmanager.secretAccessor",
+      "secretmanager.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudsql.editor",
+      "roles/secretmanager.secretAccessor",
+      "roles/secretmanager.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cockroachdb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cockroachdb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cockroachdb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cockroachdb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cockroachdb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure"
+      ]
+    }
+  ]
+}

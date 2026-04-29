@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:46.338Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing",
+  "feature_name": "Cloud Billing Budget API group and resource-label filters",
+  "feature_slug": "cloud-billing-budget-api-group-and-resource-label-filters",
+  "summary": "The Cloud Billing Budget API now supports budget filters for groups of subaccounts and resource labels.",
+  "extended_definition": "The Cloud Billing Budget API now supports budget filters for groups of subaccounts and resource labels.",
+  "lifecycle": {
+    "latest_feature_date": "2020-05-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+      "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets",
+      "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1beta1/billingAccounts.budgets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create, edit, or delete budgets and budget alerts \\_|\\_ Cloud Billing \\_\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+        "source_id": "site-docs-root",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "To create budgets for a project, you need a role that includes the following permissions on the project: resourcemanager.projects.get billing.resourceCosts.get (optional) billing.resourcebudgets.read billing.resourcebudgets.write To gain these permissions using a predefined role, ask your administrator to grant you one of the following IAM roles on your project: Project Owner Project Editor Optional project permission: A user with the billing.resourceCosts.get permission on the project can view the costs for the project, including reports and the cost trend chart that displays on the budget create or edit pages.",
+          "To manage budgets for a project, you need a role that includes the following permissions on the project: resourcemanager.projects.get billing.resourceCosts.get (optional) billing.resourcebudgets.read billing.resourcebudgets.write To gain these permissions using a predefined role, ask your administrator to grant you one of the following IAM roles on your project: Project Owner Project Editor Optional project permission: A user with the billing.resourceCosts.get permission on the project can view the costs for the project, including reports and the cost trend chart that displays on the budget create or edit pages.",
+          "To view a list of budgets for your project, you need a role that includes the following permissions on the project: resourcemanager.projects.get billing.resourceCosts.get (optional) billing.resourcebudgets.read To gain these permissions using a predefined role, ask your administrator to grant you one of the following IAM roles on your project: Project Owner Project Editor Project Viewer Optional project permission: A user with the billing.resourceCosts.get permission on the project can view the costs for the project, including reports and the cost trend chart that displays on the budget create or edit pages."
+        ]
+      },
+      {
+        "title": "\"REST Resource: billingAccounts.budgets \\_|\\_ Cloud Billing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets",
+        "source_id": "site-api-reference",
+        "final_score": 158,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Filters that define which resources are used to compute the actual spend against the budget amount, such as projects, services, and the budget's time period, as well as other filters. amount object ( BudgetAmount ) Required.",
+          "Home Documentation Costs and usage management Cloud Billing APIs & Reference Send feedback REST Resource: billingAccounts.budgets Stay organized with collections Save and categorize content based on your preferences.",
+          "A single label and value pair specifying that usage from only this set of labeled resources should be included in the budget."
+        ]
+      },
+      {
+        "title": "\"REST Resource: billingAccounts.budgets \\_|\\_ Cloud Billing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1beta1/billingAccounts.budgets",
+        "source_id": "site-api-reference",
+        "final_score": 158,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Filters that define which resources are used to compute the actual spend against the budget amount, such as projects, services, and the budget's time period, as well as other filters. amount object ( BudgetAmount ) Required.",
+          "Home Documentation Costs and usage management Cloud Billing APIs & Reference Send feedback REST Resource: billingAccounts.budgets Stay organized with collections Save and categorize content based on your preferences.",
+          "BILLING ACCOUNT Only billing account users have full access to the Budget , resource-level users have read-only access, provided that they have the required IAM permissions."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.resourcebudgets.read",
+      "billing.resourcebudgets.write",
+      "billing.resourceCosts.get",
+      "com.google.cloud.billing.budgets.v1.Budget.Builder"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+        "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets",
+        "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1beta1/billingAccounts.budgets"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+        "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets",
+        "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1beta1/billingAccounts.budgets"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+        "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets",
+        "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1beta1/billingAccounts.budgets"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+        "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets",
+        "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1beta1/billingAccounts.budgets"
+      ]
+    }
+  ]
+}

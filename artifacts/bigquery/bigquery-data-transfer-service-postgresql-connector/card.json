@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery Data Transfer Service PostgreSQL connector",
+  "feature_slug": "bigquery-data-transfer-service-postgresql-connector",
+  "summary": "BigQuery Data Transfer Service can transfer data from PostgreSQL into BigQuery.",
+  "extended_definition": "BigQuery Data Transfer Service can transfer data from PostgreSQL into BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/display-video-transfer",
+      "https://docs.cloud.google.com/bigquery/docs/doubleclick-campaign-transfer",
+      "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Load Campaign Manager data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/doubleclick-campaign-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "Data transfer options Support Supported reports The Campaign Manager connector supports the transfer of data from the following reports: Data Transfer v2 (Campaign Manager DTv2) files Data Transfer v2 (Campaign Manager DTv2) match tables For information on how Campaign Manager reports are transformed into BigQuery tables and views, see Campaign Manager report transformations .",
+          "Load Campaign Manager data into BigQuery You can load data from Campaign Manager to BigQuery using the BigQuery Data Transfer Service for Campaign Manager connector.",
+          "The automatically triggered backfill runs will either overwrite or incrementally update your BigQuery destination table, depending on whether or not incremental updates are supported in the BigQuery Data Transfer Service connector."
+        ]
+      },
+      {
+        "title": "Load Display & Video 360 data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/display-video-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "Load Display & Video 360 data into BigQuery You can load data from Display & Video 360 to BigQuery using the BigQuery Data Transfer Service for Display & Video 360 connector.",
+          "Partner Advertiser LineItem LineItemTargeting Campaign CampaignTargeting InsertionOrder InsertionOrderTargeting AdGroup AdGroupTargeting AdGroupAd Creative For more information about each type of configuration data, see the following links: About Partners Create an advertiser Create a line item Create a campaign Create an insertion order About YouTube & partners line items Manage creatives Data ingestion from Display & Video 360 transfers When you transfer data from Display & Video 360 into BigQuery, the data is loaded into BigQuery tables that are partitioned by date.",
+          "The automatically triggered backfill runs will either overwrite or incrementally update your BigQuery destination table, depending on whether or not incremental updates are supported in the BigQuery Data Transfer Service connector."
+        ]
+      },
+      {
+        "title": "Load Facebook Ads data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "Load Facebook Ads data into BigQuery You can load data from Facebook Ads to BigQuery using the BigQuery Data Transfer Service for Facebook Ads connector.",
+          "With every transfer run, the Facebook Ads connector transfers all available data from Facebook Ads into BigQuery.",
+          "Data transfer options Support Supported reports The BigQuery Data Transfer Service for Facebook Ads supports the transfer of the following Facebook Ads reports: AdAccounts AdInsights AdInsightsActions For information about how Facebook Ads reports are transformed into BigQuery tables and views, see Facebook Ads report transformation ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

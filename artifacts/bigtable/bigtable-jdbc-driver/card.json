@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:45.183Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Bigtable JDBC driver",
+  "feature_slug": "bigtable-jdbc-driver",
+  "summary": "The Bigtable JDBC driver enables Java applications and JDBC-capable reporting tools to connect to Bigtable.",
+  "extended_definition": "The Bigtable JDBC driver enables Java applications and JDBC-capable reporting tools to connect to Bigtable.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "Applications that are written for Hadoop and rely on the open source Apache HBase library for Java can connect without significant change to Bigtable.",
+          "For applications that don't require HBase compatibility, we recommend that you use the built-in Bigtable Java client.",
+          "The Cassandra to Bigtable client for Java is a seamless replacement for your Cassandra drivers."
+        ]
+      },
+      {
+        "title": "\"google-cloud-bigtable overview (2.74.0) \\_|\\_ Java client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/overview",
+        "source_id": "site-java-reference",
+        "final_score": 68,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Cloud Bigtable Product Reference GitHub Repository Maven artifact Getting Started In order to use this library, you first need to go through the following steps: Install a JDK (Java Development Kit) Select or create a Cloud Platform project Enable billing for your project Enable the API Set up authentication Use the Cloud Bigtable for Java To ensure that your project uses compatible versions of the libraries and their component artifacts, import com.google.cloud:libraries-bom and use the BOM to specify dependency versions.",
+          "Home Documentation Developer tools Java Client libraries Send feedback google-cloud-bigtable overview (2.74.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "Managing Library Versions We recommend using the com.google.cloud:libraries-bom installation method detailed above to streamline dependency management across multiple Cloud Java client libraries."
+        ]
+      },
+      {
+        "title": "\"Class BigtableInstanceAdminClient (2.74.0) \\_|\\_ Java client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient",
+        "source_id": "site-java-reference",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "Builder settingsBuilder = BigtableInstanceAdminSettings . newBuilder () . setProjectId ( \"my-project\" ); settingsBuilder . stubSettings () . setEndpoint ( myEndpoint ); BigtableInstanceAdminClient client = BigtableInstanceAdminClient . create ( settingsBuilder . build ()); Inheritance java.lang.Object > BigtableInstanceAdminClient Static Methods create(BigtableInstanceAdminSettings settings) public static BigtableInstanceAdminClient create ( BigtableInstanceAdminSettings settings ) Constructs an instance of BigtableInstanceAdminClient with the given settings.",
+          "Sample code: ApiFuture<Void> deleteFuture = client . deleteMaterializedViewAsync ( \"my-instance\" , \"my-materialized-view\" ); deleteFuture . get (); Parameters Name Description instanceId String materializedViewId String Returns Type Description ApiFuture < Void > disableClusterAutoscaling(String instanceId, String clusterId, int staticSize) public Cluster disableClusterAutoscaling ( String instanceId , String clusterId , int staticSize ) Disables autoscaling and enables manual scaling by setting a static node count for the cluster.",
+          "Sample code: Cluster cluster = client . disableClusterAutoscaling ( \"my-instance\" , \"my-cluster\" , 3 ); Parameters Name Description instanceId String clusterId String staticSize int Returns Type Description Cluster disableClusterAutoscalingAsync(String instanceId, String clusterId, int staticSize) public ApiFuture<Cluster> disableClusterAutoscalingAsync ( String instanceId , String clusterId , int staticSize ) Asynchronously disables autoscaling and enables manual scaling by setting a static node count for the cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud",
+      "com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient",
+      "com.google.cloud.bigtable.admin.v2.models",
+      "com.google.cloud.bigtable.admin.v2.models.AppProfile",
+      "com.google.cloud.bigtable.admin.v2.models.Cluster.State",
+      "e.g",
+      "java.lang.Object"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient"
+      ]
+    }
+  ]
+}

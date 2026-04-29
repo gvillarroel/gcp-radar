@@ -1,0 +1,165 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:47.918Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api",
+  "feature_name": "HL7v2 store multi-topic Pub/Sub notifications",
+  "feature_slug": "hl7v2-store-multi-topic-pub-sub-notifications",
+  "summary": "HL7v2 stores can now be configured with multiple Pub/Sub topics and message filters to route notifications to different topics.",
+  "extended_definition": "HL7v2 stores can now be configured with multiple Pub/Sub topics and message filters to route notifications to different topics.",
+  "lifecycle": {
+    "latest_feature_date": "2020-04-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Transmitting HL7v2 messages over TCP/IP connections \\_|\\_ Cloud Healthcare\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "source_id": "site-docs-root",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note the publish=true value in the ATTRIBUTES column, which indicates that the message was published to Pub/Sub: ┌----------------------------------------------------------------------------------------------------------------- ----------------- ---------------┐ DATA MESSAGE ID ATTRIBUTES ├----------------------------------------------------------------------------------------------------------------- ----------------- --------------- projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ HL7V2 MESSAGE ID 123456789012345 msgType = ADT publish = true └----------------------------------------------------------------------------------------------------------------- ----------------- ---------------┘ Publishing messages to different external receivers You can configure the HL7v2 store with multiple Pub/Sub topics and use filters to send notifications to different Pub/Sub topics.",
+          "If the request is successful, the server returns the response in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID \", \"notificationConfigs\": [ { \"pubsubTopic\": \"projects/ PROJECT ID /topics/ PUBSUB TOPIC \" } ] } Configuring Pub/Sub permissions To send notifications to Pub/Sub when an HL7v2 message is created or ingested, you need to configure Pub/Sub permissions on the Cloud Healthcare API.",
+          "In the directory where you downloaded hl7v2-sample1.json , call the messages.create method to create the message in an HL7v2 store: curl To create an HL7v2 message, make a POST request and specify the following information: The name of the parent dataset The name of the HL7v2 store A message An access token The following sample shows a POST request using curl and a sample JSON file, hl7v2-sample1.json . curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ --data-binary @hl7v2-sample1.json \\ \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages\" If the request is successful, the server returns the response in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID \", \"data\": \"TVNIfF5+XCZ8QXxTRU5EX0ZBQ0lMSVRZXzF8QXxBfDIwMTgwMTAxMDAwMDAwfHxUWVBFXkF8MjAxODAxMDEwMDAwMDB8VHwwLjB8fHxBQXx8MDB8QVNDSUkNRVZOfEEwMHwyMDE4MDEwMTA0MDAwMA1QSUR8fDE0ATExMV5eXl5NUk58MTExMTExMTFeXl5eTVJOfjExMTExMTExMTFeXl5eT1JHTk1CUg==\", \"sendFacility\": \"SEND FACILITY 1\", \"sendTime\": \"2018-01-01T00:00:00Z\", \"messageType\": \"TYPE\", \"createTime\": \"1970-01-01T00:00:00Z\", \"patientIds\": [ { \"value\": \"14\\u0001111\", \"type\": \"MRN\" }, { \"value\": \"11111111\", \"type\": \"MRN\" }, { \"value\": \"1111111111\", \"type\": \"ORGNMBR\" } ] } PowerShell To create an HL7v2 message, make a POST request and specify the following information: The name of the parent dataset The name of the HL7v2 store A message An access token The following sample shows a POST request using Windows PowerShell and a sample JSON file called hl7v2-sample1.json . $cred = gcloud auth application-default print-access-token $headers = @ { Authorization = \"Bearer $cred \" } Invoke-WebRequest -Method Post -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile hl7v2-sample1.json -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages\" Select-Object -Expand Content If the request is successful, the server returns the response in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID \", \"data\": \"TVNIfF5+XCZ8QXxTRU5EX0ZBQ0lMSVRZXzF8QXxBfDIwMTgwMTAxMDAwMDAwfHxUWVBFXkF8MjAxODAxMDEwMDAwMDB8VHwwLjB8fHxBQXx8MDB8QVNDSUkNRVZOfEEwMHwyMDE4MDEwMTA0MDAwMA1QSUR8fDE0ATExMV5eXl5NUk58MTExMTExMTFeXl5eTVJOfjExMTExMTExMTFeXl5eT1JHTk1CUg==\", \"sendFacility\": \"SEND FACILITY 1\", \"sendTime\": \"2018-01-01T00:00:00Z\", \"messageType\": \"TYPE\", \"createTime\": \"1970-01-01T00:00:00Z\", \"patientIds\": [ { \"value\": \"14\\u0001111\", \"type\": \"MRN\" }, { \"value\": \"11111111\", \"type\": \"MRN\" }, { \"value\": \"1111111111\", \"type\": \"ORGNMBR\" } ] } In this response, sendFacility is set to SEND FACILITY 1 , therefore the Pub/Sub notification is only sent to the first Pub/Sub topic."
+        ]
+      },
+      {
+        "title": "\"Configure DICOM Pub/Sub notifications \\_|\\_ Cloud Healthcare API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub",
+        "source_id": "site-docs-root-2",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before using any of the command data below, make the following replacements: PROJECT ID : the ID of your Google Cloud project PUBSUB SUBSCRIPTION ID : the ID of the subscription attached to the Pub/Sub topic configured on the DICOM store Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud pubsub subscriptions pull \\ projects/ PROJECT ID /subscriptions/ PUBSUB SUBSCRIPTION ID \\ --limit = 10 \\ --auto-ack \\ --format = json Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud pubsub subscriptions pull projects/ PROJECT ID /subscriptions/ PUBSUB SUBSCRIPTION ID --limit = 10 --auto-ack --format = json Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud pubsub subscriptions pull ^ projects/ PROJECT ID /subscriptions/ PUBSUB SUBSCRIPTION ID ^ --limit = 10 ^ --auto-ack ^ --format = json You should receive a response similar to the following: [ { \"ackId\": \"RFAGFixdRkhRNxkIaFEOT14jPzUgKEUaAggUBXx9cEFLdVhUcGhRDRlyfWB9bQ5GAgpGWixfURsHaE5tdR\", \"ackStatus\": \"SUCCESS\", \"message\": { \"attributes\": { \"action\": \"ImportDicomData\", \"lastUpdatedTime\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \", \"storeName\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID \", \"studyInstanceUID\": \"1.3.6.1.4.1.1129.5.111396399361969898205364400549799252857604\", \"seriesInstanceUID\": \"1.3.6.1.4.1.1129.5.111396399361969898205364400549799252857605\", \"sopInstanceUID\": \"1.3.6.1.4.1.1129.5.111396399361969898205364400549799252857606\", \"versionId\": \"MTY4MzA2MDQzOTI5NjIxMDAwMA\", \"modality\": \"CT\", \"storageClass\": \"STANDARD\", }, \"data\": \"cHJvamVjdHMvbXlwcm9qZWN0L2xvY2F0aW9ucy91cy1jZW50cmFsMS9kYXRhc2V0cy9teS1kYXRhc2V0L2RpY29tU3RvcmVzL215LWRpY29tLXN0b3JlL2RpY29tV2ViL3N0dWRpZXMvMS4zLjYuMS40LjEuMTExMjkuNS41LjExMTM5NjM5OTM2MTk2OTg5ODIwNTM2NDQwMDU0OTc5OTI1Mjg1NzYwNC9zZXJpZXMvMS4zLjYuMS40LjEuMTExMjkuNS41LjE5NTYyODIxMzY5NDMwMDQ5ODk0Njc2MDc2NzQ4MTI5MTI2MzUxMTcyNC9pbnN0YW5jZXMvMS4zLjYuMS40LjEuMTExMjkuNS41LjE1Mzc1MTAwOTgzNTEwNzYxNDY2NjgzNDU2MzI5NDY4NDMzOTc0NjQ4MA==\", \"messageId\": \"7586159156345265\", \"publishTime\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \" } } ] Migrate from notificationConfig to notificationConfigs For existing DICOM store users, if you are using the notificationConfig field to configure your Pub/Sub topic, you should migrate to the notificationConfigs field.",
+          "Before using any of the command data below, make the following replacements: PROJECT ID : the ID of your Google Cloud project LOCATION : the dataset location DATASET ID : the DICOM store's parent dataset DICOM STORE ID : the DICOM store ID PUBSUB TOPIC : a Pub/Sub topic to which messages are published when an event occurs in a data store Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare dicom-stores update DICOM STORE ID \\ --dataset = DATASET ID \\ --location = LOCATION \\ --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC \\ --send-for-bulk-import Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare dicom-stores update DICOM STORE ID --dataset = DATASET ID --location = LOCATION --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC --send-for-bulk-import Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare dicom-stores update DICOM STORE ID ^ --dataset = DATASET ID ^ --location = LOCATION ^ --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC ^ --send-for-bulk-import You should receive a response similar to the following: Response Updated dicomStore [ DICOM STORE ID ]. ... name: projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID notificationConfig: pubsubTopic: projects/ PROJECT ID /topics/ PUBSUB TOPIC sendForBulkImport: true Store or import a DICOM instance and view the Pub/Sub notification Permissions required for this task To perform this task, you must have been granted the following permissions or the following Identity and Access Management (IAM) roles: Permissions healthcare.dicomStores.dicomWebWrite to store DICOM instances in the requested DICOM store. healthcare.dicomStores.import to import DICOM instances into the requested DICOM store.",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"notificationConfigs\": [ { \"pubsubTopic\": \"projects/ PROJECT ID /topics/ PUBSUB TOPIC SAMPLE 1 \", }, { \"pubsubTopic\": \"projects/ PROJECT ID /topics/ PUBSUB TOPIC SAMPLE 2 \", } ] } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json ` -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID ?updateMask=notificationConfig,notificationConfigs\" Select-Object -Expand Content APIs Explorer Copy the request body and open the method reference page ."
+        ]
+      },
+      {
+        "title": "\"Creating and managing DICOM stores \\_|\\_ Cloud Healthcare API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "source_id": "site-docs-root",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/dicom before running the sample.\"\"\" Imports the Google API Discovery Service. from googleapiclient import discovery api version = \"v1\" service name = \"healthcare\" Returns an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the DICOM store's parent dataset ID dicom store id = 'my-dicom-store' # replace with the DICOM store's ID dicom store parent = \"projects/ {} /locations/ {} /datasets/ {} \" . format ( project id , location , dataset id ) request = ( client . projects () . locations () . datasets () . dicomStores () . create ( parent = dicom store parent , body = {}, dicomStoreId = dicom store id ) ) response = request . execute () print ( f \"Created DICOM store: { dicom store id } \" ) return response Editing a DICOM store The following samples show how to make the following changes to a DICOM store: Edit the Pub/Sub topic to which the Cloud Healthcare API sends notifications of DICOM store changes.",
+          "Before using any of the command data below, make the following replacements: LOCATION : the dataset location DATASET ID : the DICOM store's parent dataset DICOM STORE ID : the DICOM store ID PUBSUB TOPIC : a Pub/Sub topic to which messages are published when an event occurs in a data store Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare dicom-stores update DICOM STORE ID \\ --dataset = DATASET ID \\ --location = LOCATION \\ --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare dicom-stores update DICOM STORE ID --dataset = DATASET ID --location = LOCATION --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare dicom-stores update DICOM STORE ID ^ --dataset = DATASET ID ^ --location = LOCATION ^ --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC You should receive a response similar to the following: Response Updated dicomStore [ DICOM STORE ID ]. ... name: projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID notificationConfig: pubsubTopic: projects/ PROJECT ID /topics/ PUBSUB TOPIC REST To edit a DICOM store, use the projects.locations.datasets.dicomStores.patch method.",
+          "See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/dicom before running the sample.\"\"\" Imports the Google API Discovery Service. from googleapiclient import discovery api version = \"v1\" service name = \"healthcare\" Returns an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the DICOM store's parent dataset ID dicom store id = 'my-dicom-store' # replace with the DICOM store's ID pubsub topic = 'my-topic' # replace with an existing Pub/Sub topic dicom store parent = \"projects/ {} /locations/ {} /datasets/ {} \" . format ( project id , location , dataset id ) dicom store name = f \" { dicom store parent } /dicomStores/ { dicom store id } \" patch = { \"notificationConfig\" : { \"pubsubTopic\" : f \"projects/ { project id } /topics/ { pubsub topic } \" } } request = ( client . projects () . locations () . datasets () . dicomStores () . patch ( name = dicom store name , updateMask = \"notificationConfig\" , body = patch ) ) response = request . execute () print ( \"Patched DICOM store {} with Cloud Pub/Sub topic: {} \" . format ( dicom store id , pubsub topic ) ) return response Getting DICOM store details The following samples show how to get details about a DICOM store."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cmd.exe",
+      "github.com",
+      "healthcare.dicomStores.dicomWebWrite",
+      "healthcare.dicomStores.import",
+      "healthcare.googleapis.com",
+      "messages.create",
+      "projects.locations.datasets.dicomStores.patch",
+      "request.json",
+      "sample1.json",
+      "sample2.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom"
+      ]
+    }
+  ]
+}

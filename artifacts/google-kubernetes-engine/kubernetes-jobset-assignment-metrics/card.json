@@ -1,0 +1,113 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Kubernetes JobSet assignment metrics",
+  "feature_slug": "kubernetes-jobset-assignment-metrics",
+  "summary": "GKE provides system metrics that show which node pools and nodes are running Pods for a Kubernetes JobSet.",
+  "extended_definition": "GKE provides system metrics that show which node pools and nodes are running Pods for a Kubernetes JobSet.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Collect and view control plane metrics \\_|\\_ Google Kubernetes Engine (GKE)\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "source_id": "site-docs-reference-2",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, to measure the API server traffic per instance of the Kubernetes control plane, use the following PromQL query: sum by (instance) (increase(apiserver request total{cluster=\" CLUSTER NAME \"}[1m])) To query the unsuccessful requests, filter the code label for 4xx and 5xx values by using the following PromQL query: sum(rate(apiserver request total{code= \"[45]..\"}[5m])) To query the successful requests, filter the code label for 2xx values by using the following PromQL query: sum(rate(apiserver request total{code= \"2..\"}[5m])) To query the rejected requests by the API server per instance of the Kubernetes control plane, filter the code label for the value 429 ( http.StatusTooManyRequests ) by using the following PromQL query: sum by (instance) (increase(apiserver request total{cluster=\" CLUSTER NAME \", code=\"429\"}[1m])) Saturation You can measure the saturation in your system by using the apiserver current inflight requests and apiserver storage objects metrics.",
+          "Click Save Changes . gcloud Update your cluster to collect metrics emitted by the Kubernetes API server, Scheduler, and Controller Manager: gcloud container clusters update CLUSTER NAME \\ --location = COMPUTE LOCATION \\ --monitoring = SYSTEM,API SERVER,SCHEDULER,CONTROLLER MANAGER Replace the following: CLUSTER NAME : the name of the cluster.",
+          "The following tables of Kubernetes control plane metrics show two versions of each metric name: PromQL metric name : When using PromQL in Cloud Monitoring pages of the Google Cloud console or in PromQL fields of the Cloud Monitoring API , use the PromQL metric name."
+        ]
+      },
+      {
+        "title": "\"Collect and view kube state metrics \\_|\\_ Google Kubernetes Engine (GKE)\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "source_id": "site-docs-reference-2",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, to compare the number of replicas in a READY state to the expected number of replicas in a single JobSet, plot both metrics on a single chart by using the following PromQL queries: kube jobset specified replicas{cluster=\" CLUSTER \", namespace=\" NAMESPACE \", jobset name=\" JOBSET NAME \"} and kube jobset ready replicas{cluster=\" CLUSTER \", namespace=\" NAMESPACE \", jobset name=\" JOBSET NAME \"} To alert on a failed or unavailable JobSet rollout, you can use the following PromQL expression: kube jobset specified replicas{cluster=\" CLUSTER \", namespace=\" NAMESPACE \", jobset name=\" JOBSET NAME \"} kube jobset ready replicas{cluster=\" CLUSTER \", namespace=\" NAMESPACE \", jobset name=\" JOBSET NAME \"} The condition label on the kube jobset status condition metric can also help you detect when JobSets run into various failure modes, for example: The Failed condition indicates that the JobSet failed its execution: kube jobset status condition{jobset name=\" JOBSET NAME , condition=\"Failed\"} == 1 The Suspended condition indicates that the JobSet is suspended: kube jobset status condition{jobset name=\" JOBSET NAME , condition=\"Suspended\"} == 1 Some of the query and alert expressions in this section were adapted from the kubernetes-apps.yaml file in the Prometheus community Kubernetes Helm Charts repository on GitHub.",
+          "JobSet metrics A Jobset is a workload API that lets you manage a group of Kubernetes Jobs as a unit.",
+          "Sample queries for Pod metrics To determine if you have unschedulable Pods, use the following PromQL expression: sum(kube pod status unschedulable{cluster=\" CLUSTER \", namespace=\" NAMESPACE \"}) To alert on a number of unschedulable pods in a namespace, you can use the following PromQL expression: sum(kube pod status unschedulable{cluster=\" CLUSTER \", namespace=\" NAMESPACE \"}) > LIMIT You can use the kube pod container status waiting reason metric to create an alert for a container stuck in a specific waiting state by using a PromQL expression like the following: max over time(kube pod container status waiting reason{reason=\" REASON \", cluster=\" CLUSTER \", namespace=\" NAMESPACE \"}[5m]) >= 1 The value of REASON specifies the container's waiting state, for example: CrashLoopBackOff ImagePullBackOff ContainerCreating To create an alert for a container stuck in any of the waiting states, use the following PromQL expression: max over time(kube pod container status waiting reason{cluster=\" CLUSTER \", namespace=\" NAMESPACE \"}[5m]) >= 1 To determine how many containers are failing readiness checks, use the following PromQL expression sum(kube pod container status ready) by (pod, container) == 0 Some of the query and alert expressions in this section were adapted from the kubernetes-apps.yaml file in the Prometheus community Kubernetes Helm Charts repository on GitHub."
+        ]
+      },
+      {
+        "title": "\"Orchestrate Multislice workloads using JobSet and Kueue \\_|\\_ GKE AI/ML\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "To view the node pools where each JobSet in a specific cluster has scheduled Pods, run the following PromQL query: avg over time ( kubernetes io : jobset assigned node pools { monitored resource = \" k8s entity \", cluster name = \" multislice-cluster \"}[ ${ interval} ] ) To identify the node pools where a specific Jobset has been scheduled, run the following PromQL query: avg over time ( kubernetes io : jobset assigned node pools { monitored resource = \" k8s entity \", cluster name = \" multislice-cluster \", entity name = \" multislice-. \"}[ ${ interval} ] ) To identify the Jobsets that have been scheduled on a specific node pool, run the following PromQL query: avg over time ( kubernetes io : node pool assigned jobsets { monitored resource = \" k8s node pool \", cluster name = \" multislice-cluster \", node pool name = \" multislice-np \"}[ ${ interval} ] ) Monitor JobSet uptime, times to recover (TTR), and times between interruptions (TBI) The following metrics are useful for monitoring the availability of a JobSet: kubernetes.io/jobset/uptime : total time the JobSet has been available. kubernetes.io/jobset/times to recover : distribution of recovery period for a JobSet.",
+          "For this tutorial, check the JobSet completion with this PromQL query: kube jobset succeeded replicas { cluster = \" multislice-cluster \", jobset name = \" mulitslice-. \"} Monitor JobSet scheduling To monitor the scheduling of a JobSet, use the following metrics: kubernetes.io/jobset/assigned node pools : GKE node pools where a Kubernetes JobSet has scheduled Pods. kubernetes.io/node pool/assigned jobsets : Kubernetes JobSets that have scheduled Pods on a GKE node pool. kubernetes.io/jobset/assigned nodes : GKE nodes where a Kubernetes JobSet has scheduled Pods. kubernetes.io/node/assigned jobsets : Kubernetes JobSets that have scheduled Pods on a GKE node.",
+          "The following metrics are useful for monitoring the performance of a JobSet: kubernetes.io/jobset/scheduling goodput : the fraction of time that all the resources required to run the training JobSet are available. kubernetes.io/jobset/proxy runtime goodput : the fraction of time that all required accelerators are productive."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alpha.jobset.sigs.k8s.io",
+      "apps.yaml",
+      "github.com",
+      "http.StatusTooManyRequests",
+      "jax.device",
+      "jobset.x",
+      "k8s.io",
+      "kubernetes.io",
+      "kueue.x",
+      "manifests.yaml",
+      "multislice.yaml",
+      "releases.html",
+      "storage.googleapis.com",
+      "v0.8.1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:13.819Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Twinning",
+  "feature_slug": "twinning",
+  "summary": "Allows a primary extension and a secondary extension to operate as a single phone.",
+  "extended_definition": "Allows a primary extension and a secondary extension to operate as a single phone.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Salesforce integration guide \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "Configure the secondary lookup object the same way you configured the primary lookup object, except you don't need to select a primary phone number field.",
+          "Account and case behavior Account ID Account ID can be selected by: Clicking on the phone number from Account or Contact record Clicking the sync icon to sync when on the page of an Account or Contact record Entering an outbound phone number that is associated to an Account Clicking on a phone number in a Case that is associated with an Account ID and Case Case ID Case ID can be selected by: Once the Account ID is selected by one of the options above, CCAI Platform checks for one or more open cases for the selected Account ID and selects the most recent, or allows the agent to select based on your settings.",
+          "Configure account lookup and field mapping You can configure your Salesforce integration to provide flexible account lookup using primary and secondary lookup objects."
+        ]
+      },
+      {
+        "title": "\"Call settings \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "To assign extension numbers to your agents, do one of the following: To automatically generate phone extensions for your agents, select the Enable Auto-generated extension checkbox.",
+          "This means that each direct phone number can be assigned only once, to a single agent or queue, resulting in unambiguous phone number assignments.",
+          "To configure agent extensions, do the following: In the Extensions length list, select a length for the phone extensions for your agents."
+        ]
+      },
+      {
+        "title": "\"Android SDK guide \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 88,
+        "relevance": "",
+        "evidence_snippets": [
+          "Boolean true UjetOption ujetOption = new UjetOption.Builder () .setLogLevel ( Log.INFO ) .setDefaultLanguage ( \"en\" ) .setFallbackPhoneNumber ( \"+18001112222\" ) .setUncaughtExceptionHandlerEnabled ( false ) .setNetworkSensitivity ( 0 ) .setDarkModeEnabled ( true ) .setShowSingleChannelEnabled ( true ) .setAutoMinimizeCallView ( true ) .setShowAgentIconBorderEnabled ( true ) .setStaticFontSizeInPickerView ( true ) .setHideMediaAttachmentInChat ( true ) .setIgnoreReadPhoneStatePermission ( true ) .setCobrowseLicenseKey ( \"COBROWSE IO LICENSE KEY HERE\" ) .setCobrowseURL ( \"COBROWSE IO API URL HERE\" ) .setCustomChatHeaderTitle ( \"CHAT HEADER TITLE TEXT\" ) .setUjetStylesOptions ( new UjetStylesOptions.Builder () .setChatQuickReplyButtonsStyle ( QuickReplyButtonsStyle.INDIVIDUAL ) .setChatStyles ( new ChatStyles ( ... )) // See Content Cards Theme item .build () ) .setBlockChatTerminationByEndUser ( true ) .setHideStatusBar ( true ) .setLoadingSpinnerDrawableRes ( R.drawable.RESOURCE NAME ) .setLandscapeOrientationDisabled ( true ) .setShowCsatSkipButton ( false ) .setHideDownloadChatTranscript ( 0 ) // 0 to 3 .",
+          "Permission Description CAMERA Used for smart action to take photos and record videos MICROPHONE Allows app to use VoIP call through Twilio STORAGE Allows app to save photos and videos Deep linking setup ( optional ) If you want to use smart actions for an IVR (PSTN) call, you need to set up deep linking in your project.",
+          "For example, <!--Default style applies to both Light and Dark Mode Themes--> <style name = \"Ujet\" > <item name = \"ujet typeFace\" >ProximaNova-Reg.otf</item> <item name = \"ujet colorPrimary\" >@color/primaryDefault</item> <item name = \"ujet colorPrimaryDark\" >@color/primaryDarkDefault</item> <item name = \"ujet buttonRadius\" >10dp</item> <item name = \"ujet companyLogo\" >@drawable/your company logo default</item> <!-- You can customize the avatar in waiting UI before call or chat is connected by using the following option. --> <item name = \"ujet defaultAvatar\" >@drawable/your default avatar</item> </style> <!--This is optional and can be used to update style in Light Mode Theme only--> <style name = \"Ujet.Light\" > <item name = \"ujet typeFace\" >ProximaNova-Reg.otf</item> <item name = \"ujet colorPrimary\" >@color/primaryLightMode</item> <item name = \"ujet colorPrimaryDark\" >@color/primaryDarkLightMode</item> <item name = \"ujet buttonRadius\" >10dp</item> <item name = \"ujet companyLogo\" >@drawable/your company logo light mode</item> <!-- You can customize the avatar in waiting UI before call or chat is connected by using the following option. --> <item name = \"ujet defaultAvatar\" >@drawable/your default avatar</item> </style> <!--This is optional and can be used to update style in Dark Mode Theme only--> <style name = \"Ujet.Dark\" > <item name = \"ujet typeFace\" >ProximaNova-Reg.otf</item> <item name = \"ujet colorPrimary\" >@color/primaryDarkMode</item> <item name = \"ujet colorPrimaryDark\" >@color/primaryDarkForDarkMode</item> <item name = \"ujet buttonRadius\" >10dp</item> <item name = \"ujet companyLogo\" >@drawable/your company logo</item> <!-- You can customize the avatar in waiting UI before call or chat is connected by using the following option. --> <item name = \"ujet defaultAvatar\" >@drawable/your default avatar</item> </style> You can customize background color in the application by overriding keys for each style item in style.xml."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "drawable.RESOURCE",
+      "style.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide"
+      ]
+    }
+  ]
+}

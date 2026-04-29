@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.589Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "doPost request body access",
+  "feature_slug": "dopost-request-body-access",
+  "summary": "The request object passed to doPost now includes the POST body through e.postData.getDataAsString().",
+  "extended_definition": "The request object passed to doPost now includes the POST body through e.postData.getDataAsString().",
+  "lifecycle": {
+    "latest_feature_date": "2013-05-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/api/reference/rest/v1/processes/listScriptProcesses",
+      "https://developers.google.com/apps-script/guides/html/communication",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "May 09, 2013 Feature Issue 2158 : The request object passed in to doPost() methods now contains the POST body.",
+          "The following methods have been added to the Group , Image , Line , PageElement , Shape , SheetsChart , Table , Video , and WordArt classes: bringForward() bringToFront() sendBackward() sendToBack() setDescription(description) setTitle(title) The Spreadsheet service has been extended with the following new classes and methods that let you add and search for metadata strings attached to rows, columns, sheets, or spreadsheets: DeveloperMetadata DeveloperMetadataFinder DeveloperMetadataLocation DeveloperMetadataLocationType DeveloperMetadataVisibility Range.addDeveloperMetadata(key) Range.addDeveloperMetadata(key, visibility) Range.addDeveloperMetadata(key, value) Range.addDeveloperMetadata(key, value, visibility) Range.createDeveloperMetadataFinder() Range.getDeveloperMetadata() Sheet.addDeveloperMetadata(key) Sheet.addDeveloperMetadata(key, visibility) Sheet.addDeveloperMetadata(key, value) Sheet.addDeveloperMetadata(key, value, visibility) Sheet.createDeveloperMetadataFinder() Sheet.getDeveloperMetadata() Spreadsheet.addDeveloperMetadata(key) Spreadsheet.addDeveloperMetadata(key, visibility) Spreadsheet.addDeveloperMetadata(key, value) Spreadsheet.addDeveloperMetadata(key, value, visibility) Spreadsheet.createDeveloperMetadataFinder() Spreadsheet.getDeveloperMetadata() October 30, 2018 Feature The Spreadsheet service has been extended with the following new classes and methods: OverGridImage Sheet.getImages() Sheet.isColumnHiddenByUser(columnPosition) Sheet.isRowHiddenByFilter(rowPosition) Sheet.isRowHiddenByUser(rowPosition) Spreadsheet.getImages() Spreadsheet.isColumnHiddenByUser(columnPosition) Spreadsheet.isRowHiddenByFilter(rowPosition) Spreadsheet.isRowHiddenByUser(rowPosition) The following methods have been added to existing services: console service console.error() console.info() console.warn() DataStudio service Field.isHidden() Field.setIsHidden() Gmail service GmailAttachment.getHash() GmailMessage.getAttachments(options) Change The following methods in the Spreadsheet service now return an OverGridImage object instead of void: Sheet.insertImage(blobSource, column, row) Sheet.insertImage(blobSource, column, row, offsetX, offsetY) Sheet.insertImage(url, column, row) Sheet.insertImage(url, column, row, offsetX, offsetY) October 18, 2018 Feature The Card service has been extended with the following classes and methods to support Gmail add-on compose actions : CardService.UpdateDraftActionResponse CardService.UpdateDraftActionResponseBuilder CardService.UpdateDraftBodyAction CardService.ContentType CardService.UpdateDraftBodyType CardService.newUpdateDraftActionResponseBuilder() CardService.newUpdateDraftBodyAction() September 27, 2018 Announcement The Data Studio service is now available.",
+          "Change When an add-on is installed from the store, the onInstall() simple trigger is now passed an event parameter , e , which includes an authMode property."
+        ]
+      },
+      {
+        "title": "\"HTML Service: Communicate with Server Functions \\_|\\_ Apps Script \\_|\\_\\",
+        "url": "https://developers.google.com/apps-script/guides/html/communication",
+        "source_id": "site-docs-root",
+        "final_score": 101,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Code.gs function doGet() { return HtmlService.createHtmlOutputFromFile('Index'); } function getUnreadEmails() { // 'got' instead of 'get' throws an error. return GmailApp.gotInboxUnreadCount(); } Index.html <!DOCTYPE html> <html> <head> <base target=\" top\"> <script> function onFailure(error) { var div = document.getElementById('output'); div.innerHTML = \"ERROR: \" + error.message; } google.script.run.withFailureHandler(onFailure) .getUnreadEmails(); </script> </head> <body> <div id=\"output\"></div> </body> </html> User objects To reuse the same success or failure handler for multiple calls to the server, call withUserObject(object) to specify an object that's passed to the handler as a second parameter.",
+          "Code.gs function doGet() { return HtmlService.createHtmlOutputFromFile('Index'); } function processForm(formObject) { var formBlob = formObject.myFile; var driveFile = DriveApp.createFile(formBlob); return driveFile.getUrl(); } Index.html <!DOCTYPE html> <html> <head> <base target=\" top\"> <script> // Prevent forms from submitting. function preventFormSubmit() { var forms = document.querySelectorAll('form'); for (var i = 0; i < forms.length; i++) { forms[i].addEventListener('submit', function(event) { event.preventDefault(); }); } } window.addEventListener('load', preventFormSubmit); function handleFormSubmit(formObject) { google.script.run.withSuccessHandler(updateUrl).processForm(formObject); } function updateUrl(url) { var div = document.getElementById('output'); div.innerHTML = '<a href=\"' + url + '\">Got it!</a>'; } </script> </head> <body> <form id=\"myForm\" onsubmit=\"handleFormSubmit(this)\"> <input name=\"myFile\" type=\"file\" /> <input type=\"submit\" value=\"Submit\" /> </form> <div id=\"output\"></div> </body> </html> Script runners Think of google.script.run as a builder for a \"script runner.\" If you add a success handler, failure handler, or user object to a script runner, you aren't changing the existing runner; instead, you get back a new script runner with new behavior.",
+          "Code.gs function doGet() { return HtmlService.createHtmlOutputFromFile('Index'); } function getBankBalance() { var email = Session.getActiveUser().getEmail() return deepSecret (email); } function deepSecret (email) { // Do some secret calculations return email + ' has $1,000,000 in the bank.'; } var obj = { objectMethod: function() { // More secret calculations } }; Index.html <!DOCTYPE html> <html> <head> <base target=\" top\"> <script> function onSuccess(balance) { var div = document.getElementById('output'); div.innerHTML = balance; } google.script.run.withSuccessHandler(onSuccess) .getBankBalance(); </script> </head> <body> <div id=\"output\">No result yet...</div> </body> </html> Resize dialogs in Google Workspace applications Custom dialog boxes in Google Docs, Google Sheets, or Forms can be resized by calling the google.script.host methods setWidth(width) or setHeight(height) in client-side code. (To set the initial size of a dialog, use the HtmlOutput methods setWidth(width) and setHeight(height) .) Note that dialogs don't re-center in the parent window when resized, and it is not possible to resize sidebars ."
+        ]
+      },
+      {
+        "title": "\"Method: processes.listScriptProcesses \\_|\\_ Apps Script \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/apps-script/api/reference/rest/v1/processes/listScriptProcesses",
+        "source_id": "site-api-reference",
+        "final_score": 101,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"processes\" : [ { object ( Process ) } ] , \"nextPageToken\" : string } Fields processes[] object ( Process ) List of processes matching request parameters. nextPageToken string Token for the next page of results.",
+          "The ListScriptProcessesFilter object allows for filtering processes by deployment ID, function name, start and end time, process types, statuses, and user access levels.",
+          "HTTP request Query parameters Request body Response body JSON representation Authorization Scopes ListScriptProcessesFilter JSON representation Try it!"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "button.value",
+      "console.error",
+      "console.info",
+      "console.warn",
+      "developers.google.com",
+      "div.innerHTML",
+      "document.getElementById",
+      "document.querySelectorAll",
+      "e.postData.getDataAsString",
+      "error.message",
+      "event.preventDefault",
+      "forms.length",
+      "processes.list",
+      "processes.listScriptProcesses",
+      "window.addEventListener"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/processes/listScriptProcesses",
+        "https://developers.google.com/apps-script/guides/html/communication"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/processes/listScriptProcesses",
+        "https://developers.google.com/apps-script/guides/html/communication"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/processes/listScriptProcesses",
+        "https://developers.google.com/apps-script/guides/html/communication"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/processes/listScriptProcesses",
+        "https://developers.google.com/apps-script/guides/html/communication"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/processes/listScriptProcesses",
+        "https://developers.google.com/apps-script/guides/html/communication"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/processes/listScriptProcesses",
+        "https://developers.google.com/apps-script/guides/html/communication"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/processes/listScriptProcesses",
+        "https://developers.google.com/apps-script/guides/html/communication"
+      ]
+    }
+  ]
+}

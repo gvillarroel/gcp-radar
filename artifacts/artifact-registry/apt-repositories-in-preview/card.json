@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.828Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry",
+  "feature_name": "Apt repositories in Preview",
+  "feature_slug": "apt-repositories-in-preview",
+  "summary": "Artifact Registry introduces Apt repositories in Preview.",
+  "extended_definition": "Artifact Registry introduces Apt repositories in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2021-08-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+      "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.attachments",
+      "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.pagers.ListRepositoriesAsyncPager"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.repositories \\_|\\_ Artifact Registry \\_\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "source_id": "site-api-reference",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "Repositories that are generally available or in public preview use this to calculate storage costs. satisfiesPzs boolean Output only.",
+          "JSON representation { \"name\" : string , \"format\" : enum ( Format ) , \"description\" : string , \"labels\" : { string : string , ... } , \"createTime\" : string , \"updateTime\" : string , \"kmsKeyName\" : string , \"mode\" : enum ( Mode ) , \"cleanupPolicies\" : { string : { object ( CleanupPolicy ) } , ... } , \"sizeBytes\" : string , \"satisfiesPzs\" : boolean , \"cleanupPolicyDryRun\" : boolean , \"vulnerabilityScanningConfig\" : { object ( VulnerabilityScanningConfig ) } , \"disallowUnspecifiedMode\" : boolean , \"satisfiesPzi\" : boolean , \"registryUri\" : string , // Union field format config can be only one of the following: \"mavenConfig\" : { object ( MavenRepositoryConfig ) } , \"dockerConfig\" : { object ( DockerRepositoryConfig ) } // End of list of possible types for union field format config . // Union field mode config can be only one of the following: \"virtualRepositoryConfig\" : { object ( VirtualRepositoryConfig ) } , \"remoteRepositoryConfig\" : { object ( RemoteRepositoryConfig ) } // End of list of possible types for union field mode config . } Fields name string The name of the repository, for example: projects/p1/locations/us-central1/repositories/repo1 .",
+          "Methods create Creates a repository. delete Deletes a repository and all of its contents. exportArtifact Exports an artifact to a Cloud Storage bucket. get Gets a repository. getIamPolicy Gets the IAM policy for a given resource. list Lists repositories. patch Updates a repository. setIamPolicy Updates the IAM policy for a given resource. testIamPermissions Tests if the caller has a list of permissions on a resource."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.repositories.attachments \\_|\\_ Artifact\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.attachments",
+        "source_id": "site-api-reference",
+        "final_score": 55,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application development Artifact Registry Reference Send feedback REST Resource: projects.locations.repositories.attachments Stay organized with collections Save and categorize content based on your preferences.",
+          "E.g. projects/p1/locations/us-central1/repositories/repo1/files/sha:<sha-of-file> . ociVersionName string Output only.",
+          "E.g. projects/p1/locations/us-central1/repositories/repo1/packages/p1/versions/v1 . type string Type of attachment."
+        ]
+      },
+      {
+        "title": "\"Class ListRepositoriesAsyncPager (1.20.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.pagers.ListRepositoriesAsyncPager",
+        "source_id": "site-python-reference",
+        "final_score": 53,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.artifactregistry v1.types.ListRepositoriesRequest The initial request object. response google.cloud.artifactregistry v1.types.ListRepositoriesResponse The initial response object. retry google.api core.retry.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "Version latest keyboard arrow down 1.20.0 (latest) 1.19.0 1.18.0 1.17.0 1.16.1 1.15.2 1.14.0 1.13.1 1.12.0 1.11.5 1.10.0 1.9.0 1.8.4 1.7.0 1.6.1 1.5.0 1.4.1 1.3.3 1.2.1 1.1.2 1.0.2 0.5.0 0.4.1 0.3.3 0.2.2 0.1.0 ListRepositoriesAsyncPager ( method : typing .",
+          "Home Documentation Developer tools Python Client libraries Send feedback Class ListRepositoriesAsyncPager (1.20.0) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "core.retry.AsyncRetry",
+      "projects.locations.repositories",
+      "projects.locations.repositories.aptArtifacts",
+      "projects.locations.repositories.aptArtifacts.upload",
+      "projects.locations.repositories.attachments",
+      "v1.types.ListRepositoriesRequest",
+      "v1.types.ListRepositoriesResponse"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.attachments",
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.pagers.ListRepositoriesAsyncPager"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.attachments",
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.pagers.ListRepositoriesAsyncPager"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.attachments",
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.pagers.ListRepositoriesAsyncPager"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.attachments",
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.pagers.ListRepositoriesAsyncPager"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.attachments",
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.pagers.ListRepositoriesAsyncPager"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.attachments",
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.pagers.ListRepositoriesAsyncPager"
+      ]
+    }
+  ]
+}

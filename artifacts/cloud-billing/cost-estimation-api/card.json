@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:46.338Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing",
+  "feature_name": "Cost Estimation API",
+  "feature_slug": "cost-estimation-api",
+  "summary": "The Cost Estimation API has been deprecated in favor of using the Google Cloud Pricing Calculator for workload cost estimates; A preview Cost Estimation API was introduced to return customer-specific workload cost estimates including negotiated discounts and committed-use pricing effects; deprecated on 2024-05-17.",
+  "extended_definition": "The Cost Estimation API has been deprecated in favor of using the Google Cloud Pricing Calculator for workload cost estimates; A preview Cost Estimation API was introduced to return customer-specific workload cost estimates including negotiated discounts and committed-use pricing effects; deprecated on 2024-05-17.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-12",
+    "deprecation_date": "2024-05-17",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+      "https://docs.cloud.google.com/billing/docs/how-to/estimate-costs",
+      "https://docs.cloud.google.com/billing/docs/how-to/get-pricing-information-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Estimate your monthly costs \\_|\\_ Cloud Billing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/estimate-costs",
+        "source_id": "site-docs-root-2",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Custom role Predefined roles If you're using a custom role to access contract prices, you need a role granted on your Cloud Billing account that includes the following permissions : billing.accounts.get billing.accounts.list billing.billingAccountPrice.get billing.billingAccountPrices.list billing.billingAccountServices.get billing.billingAccountServices.list billing.billingAccountSkuGroupSkus.get billing.billingAccountSkuGroupSkus.list billing.billingAccountSkuGroups.get billing.billingAccountSkuGroups.list billing.billingAccountSkus.get billing.billingAccountSkus.list To gain the required permissions using a predefined role , ask your administrator to grant you one of the following Cloud Billing IAM roles on your Cloud Billing account: Billing Account Viewer Billing Account Administrator For more information about Cloud Billing permissions, see: Overview of Cloud Billing access control Create custom roles for Cloud Billing Understanding predefined Identity and Access Management roles for Cloud Billing Access the pricing calculator With the pricing calculator, you can estimate costs for a wide range of Google Cloud services and products.",
+          "Optional: Link your Cloud Billing account to the pricing calculator If your Cloud Billing account is associated with a custom pricing contract, you can link the billing account to the pricing calculator to get cost estimates that factor in your contract prices.",
+          "To get estimates for your planned Google Cloud workloads, use the Google Cloud pricing calculator to get an idea of the costs for hypothetical workloads."
+        ]
+      },
+      {
+        "title": "\"View and download the cost details of your invoice or statement \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+        "source_id": "site-docs-root",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "List cost N/A The List cost column is available for Cloud Billing accounts associated with a custom pricing contract , and represents the monthly cost of your usage calculated using list prices .",
+          "Prior to January 2022 , if any of your projects have been deleted or moved to a different Cloud Billing account , the project associated with the costs is identified only by the Project number .",
+          "Prior to January 2022 , if any of your projects have been deleted or moved to a different Cloud Billing account , the project associated with the costs is identified only by the Project number ."
+        ]
+      },
+      {
+        "title": "\"Get Google Cloud pricing information \\_|\\_ Cloud Billing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/get-pricing-information-api",
+        "source_id": "site-api-reference",
+        "final_score": 94,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "When all items have been listed, no token is returned. { \"billingAccountSkuGroups\": [ { \"name\": \"billingAccounts/012345-567890-ABCDEF/skuGroups/001234-group-id-1\", \"displayName\": \"SKU group name 1\" }, { \"name\": \"billingAccounts/012345-567890-ABCDEF/skuGroups/0045657-group-id-2\", \"displayName\": \"SKU group name 2\" }, ... \"nextPageToken\": \"A1234-alphanumeric-page-token\" } Get a list of SKUs in a SKU group for your Cloud Billing account The following example lists the SKUs in a SKU group that might be part of your custom pricing contract.",
+          "Home Documentation Costs and usage management Cloud Billing APIs & Reference Send feedback Get Google Cloud pricing information Stay organized with collections Save and categorize content based on your preferences.",
+          "When all items have been listed, no token is returned. { \"billingAccountPrices\": [ { \"name\": \"billingAccounts/01ABCD-EFGH23-UVWXYZ/skus/0000-9B70-F099/price\", \"currencyCode\": \"USD\", \"valueType\": \"rate\", \"rate\": { \"tiers\": [ { \"startAmount\": { \"value\": \"0\" }, \"listPrice\": { \"currencyCode\": \"USD\", \"nanos\": 690000000 }, \"contractPrice\": { \"currencyCode\": \"USD\", \"nanos\": 690000000 }, \"effectiveDiscountPercent\": { \"value\": \"0\" } } ], \"unitInfo\": { \"unit\": \"h\", \"unitDescription\": \"hour\", \"unitQuantity\": { \"value\": \"1\" } }, \"aggregationInfo\": { \"level\": \"LEVEL ACCOUNT\", \"interval\": \"INTERVAL MONTHLY\" } }, \"priceReason\": { \"type\": \"default-price\", \"defaultPrice\": {} } }, { \"name\": \"billingAccounts/01ABCD-EFGH23-UVWXYZ/skus/0002-17F9-0731/price\", \"currencyCode\": \"USD\", \"valueType\": \"rate\", \"rate\": { \"tiers\": [ { \"startAmount\": { \"value\": \"0\" }, \"listPrice\": { \"currencyCode\": \"USD\" }, \"contractPrice\": { \"currencyCode\": \"USD\" }, \"effectiveDiscountPercent\": { \"value\": \"0\" } }, { \"startAmount\": { \"value\": \"1\" }, \"listPrice\": { \"currencyCode\": \"USD\", \"nanos\": 390000000 }, \"contractPrice\": { \"currencyCode\": \"USD\", \"nanos\": 390000000 }, \"effectiveDiscountPercent\": { \"value\": \"0\" } }, { \"startAmount\": { \"value\": \"1024\" }, \"listPrice\": { \"currencyCode\": \"USD\", \"nanos\": 340000000 }, \"contractPrice\": { \"currencyCode\": \"USD\", \"nanos\": 340000000 }, \"effectiveDiscountPercent\": { \"value\": \"0\" } } ], \"unitInfo\": { \"unit\": \"GiBy.mo\", \"unitDescription\": \"gibibyte month\", \"unitQuantity\": { \"value\": \"1\" } }, \"aggregationInfo\": { \"level\": \"LEVEL ACCOUNT\", \"interval\": \"INTERVAL MONTHLY\" } }, \"priceReason\": { \"type\": \"default-price\", \"defaultPrice\": {} } } ], \"nextPageToken\": \"1234alphanumericCode\" } Get the prices for SKUs for your Cloud Billing account The following example gets the price that you're paying for a SKU."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.accounts.get",
+      "billing.accounts.list",
+      "billing.billingAccountPrice.get",
+      "billing.billingAccountPrices.list",
+      "billing.billingAccountServices.get",
+      "billing.billingAccountServices.list",
+      "billing.billingAccountSkuGroups.get",
+      "billing.billingAccountSkuGroups.list",
+      "billing.billingAccountSkuGroupSkus.get",
+      "billing.billingAccountSkuGroupSkus.list",
+      "billing.billingAccountSkus.get",
+      "billing.billingAccountSkus.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/estimate-costs",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+        "https://docs.cloud.google.com/billing/docs/how-to/get-pricing-information-api"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/estimate-costs",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+        "https://docs.cloud.google.com/billing/docs/how-to/get-pricing-information-api"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/estimate-costs",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+        "https://docs.cloud.google.com/billing/docs/how-to/get-pricing-information-api"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/estimate-costs",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+        "https://docs.cloud.google.com/billing/docs/how-to/get-pricing-information-api"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/estimate-costs",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+        "https://docs.cloud.google.com/billing/docs/how-to/get-pricing-information-api"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/estimate-costs",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+        "https://docs.cloud.google.com/billing/docs/how-to/get-pricing-information-api"
+      ]
+    }
+  ]
+}

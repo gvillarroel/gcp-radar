@@ -1,0 +1,171 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:54.168Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "Database auditing with pgAudit",
+  "feature_slug": "database-auditing-with-pgaudit",
+  "summary": "Cloud SQL for PostgreSQL supports database auditing through the pgAudit extension to log selected SQL operations; Cloud SQL for PostgreSQL supports database auditing through the pgAudit extension to log selected SQL operations.",
+  "extended_definition": "Cloud SQL for PostgreSQL supports database auditing through the pgAudit extension to log selected SQL operations; Cloud SQL for PostgreSQL supports database auditing through the pgAudit extension to log selected SQL operations.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/project-access-control",
+      "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks",
+      "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Authorize with authorized networks \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks",
+        "source_id": "site-iam-reference",
+        "final_score": 32,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Terraform To configure authorized networks, use a Terraform resource . resource \"google sql database instance\" \"default\" { name = \"postgres-instance-with-authorized-network\" region = \"us-central1\" database version = \"POSTGRES 14\" settings { tier = \"db-custom-2-7680\" ip configuration { authorized networks { name = \"Network Name\" value = \"192.0.2.0/24\" expiration time = \"3021-11-15T16:19:00.094Z\" } } } } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.",
+          "Home Documentation Databases Cloud SQL PostgreSQL Guides Send feedback Authorize with authorized networks Stay organized with collections Save and categorize content based on your preferences.",
+          "The filename must have the .tf extension—for example main.tf ."
+        ]
+      },
+      {
+        "title": "IAM authentication \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/project-access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 29,
+        "relevance": "",
+        "evidence_snippets": [
+          "Feature Built-in database authentication IAM database authentication (individual) IAM group authentication Authentication method Password Temporary authentication token Temporary authentication token Network traffic encryption SSL not required SSL required SSL required User management Manual Centralized through IAM Centralized through IAM and Cloud Identity groups IAM group authentication IAM group authentication lets you manage Cloud SQL users at a group level.",
+          "Administrators who have users log in through IAM database authentication can use IAM authentication to centrally manage access control to their instances using IAM policies.",
+          "For auditing purposes, you get the benefit of viewing which account performed which action in your database."
+        ]
+      },
+      {
+        "title": "Troubleshoot \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 29,
+        "relevance": "",
+        "evidence_snippets": [
+          "From a terminal, connect to your database: gcloud sql connect INSTANCE NAME Run this command to create the extension: CREATE EXTENSION pgaudit ; Exit the database, and from a terminal run the following command: gcloud sql instances patch INSTANCE NAME \\ --database-flags = cloudsql.enable pgaudit = on,pgaudit.log = all Manage instances Issue Troubleshooting You want to find out what queries are running now.",
+          "To download the logs as JSON: gcloud logging read \\ \"resource.type=cloudsql database \\ AND logName=projects/ PROJECT ID \\ /logs/cloudsql.googleapis.com%2F LOG NAME \" \\ --format json \\ --project = PROJECT ID \\ --freshness = \"1d\" \\ downloaded-log.json To download the logs as TEXT: gcloud logging read \\ \"resource.type=cloudsql database \\ AND logName=projects/ PROJECT ID \\ /logs/cloudsql.googleapis.com%2F LOG NAME \" \\ --format json \\ --project = PROJECT ID \\ --freshness = \"1d\" jq -rnc --stream 'fromstream(1 truncate stream(inputs)) \\ .textPayload' \\ --order = asc downloaded-log.txt Query logs are not found in PostgreSQL logs.",
+          "Connect to the database and run the following query: SELECT datname, username, application name as appname, client addr, state, now() - backend start as conn age, now() - xact start as xact age, now() - query start as query age, now() - state change as last activity age, wait event type, wait event, query FROM pg stat activity WHERE state <> 'idle' ORDER BY 8 DESC LIMIT 20; You want to find out what units are being used for a specific field."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.enable",
+      "cloudsql.googleapis.com",
+      "log.json",
+      "log.txt",
+      "main.tf",
+      "pgaudit.log",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/project-access-control",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/project-access-control",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/project-access-control",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/project-access-control",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/project-access-control",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/project-access-control",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/project-access-control",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/project-access-control",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/project-access-control",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks"
+      ]
+    }
+  ]
+}

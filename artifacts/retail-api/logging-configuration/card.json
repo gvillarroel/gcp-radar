@@ -1,0 +1,240 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:26.739Z",
+  "source_step08_card": "data/step-08/current/products/retail-api/card.json",
+  "product_name": "Retail API",
+  "product_slug": "retail-api",
+  "feature_name": "Logging configuration",
+  "feature_slug": "logging-configuration",
+  "summary": "Logging configuration lets you control which Retail API service logs are written to Cloud Logging and at what severity.",
+  "extended_definition": "Logging configuration lets you control which Retail API service logs are written to Cloud Logging and at what severity.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/retail/docs/audit-logging",
+      "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide",
+      "https://docs.cloud.google.com/retail/docs/create-controls",
+      "https://docs.cloud.google.com/retail/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create serving controls \\_|\\_ Vertex AI Search for commerce \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/retail/docs/create-controls",
+        "source_id": "site-docs-root",
+        "final_score": 191,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For field details, see the Controls API reference and the Controls.create API reference . curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -H \"X-Goog-User-Project: PROJECT NUMBER \" \\ --data '{ \"displayName\": \" DisplayName \", \"solutionTypes\": \"SOLUTION TYPE SEARCH\", \"searchSolutionUseCase\": [\" SEARCH SOLUTION USE CASE SEARCH \"], \"rule\": { \"condition\": { \"queryTerms\": [ { \"value\": \" Term1 \", \"fullMatch\": \" boolean: true / false \" }, { \"value\": \" Term2 \", \"fullMatch\": \" boolean: true / false \" }, ], \"activeTimeRange\": [ { \"startTime\": timestamp1 , \"endTime\": timestamp2 }, { \"startTime\": timestamp3 , \"endTime\": timestamp4 } ] }, \"pinAction\": { \"pinMap\" : { \" pin position1 \": \" product id \", \" pin position2 \": \" product id >\" } } } }' \\ \"https://retail.googleapis.com/v2alpha/projects/ PROJECT NUMBER /locations/ LOCATION /catalogs/default catalog/controls?controlId= CONTROL ID \" The pin position should be an integer between [1,10] inclusive and product id must exist in your catalog.",
+          "Next, attach the pinning control to your serving config: curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -H \"X-Goog-User-Project: PROJECT NUMBER \" \\ -d '{ \"controlId\": \" CONTROL ID \" }' \\ 'https://retail.googleapis.com/v2alpha/projects/ PROJECT NUMBER /locations/ LOCATION /catalogs/default catalog/servingConfigs/ SERVING CONFIG ID :addControl' In this case, CONTROL ID should be the pinning control id you created previously.",
+          "The following example shows fields for a browse-triggered control, where searchSolutionUseCase is set to SEARCH SOLUTION USE CASE BROWSE . curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ --data '{ \"displayName\": \" DISPLAY NAME \", \"solutionTypes\": [ \"SOLUTION TYPE SEARCH\" ], \"searchSolutionUseCase\": [ \"SEARCH SOLUTION USE CASE BROWSE\" ], \"rule\": { \"condition\": { \"queryTerms\": [ { \"value\": \" VALUE 1 \", \"fullMatch\": \" FULLMATCH BOOLEAN 1 \" }, { \"value\": \" VALUE 2 \", \"fullMatch\": \" FULLMATCH BOOLEAN 2 \" } ], \"activeTimeRange\": [ { \"startTime\": \" START TIMESTAMP 1 \", \"endTime\": \" END TIMESTAMP 1 \" }, { \"startTime\": \" START TIMESTAMP 2 \", \"endTime\": \" END TIMESTAMP 2 \" } ] }, \"redirectAction\": { \"redirectUri\": \" REDIRECT URI \", } } }' \\ \"https://retail.googleapis.com/v2beta/projects/ PROJECT NUMBER /locations/global/catalogs/default catalog/controls?controlId= CONTROL ID \" The following example shows fields for a search-triggered control, where searchSolutionUseCase is set to SEARCH SOLUTION USE CASE SEARCH . curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ --data '{ \"displayName\": \" DISPLAY NAME \", \"solutionTypes\": [ \"SOLUTION TYPE SEARCH\" ], \"searchSolutionUseCase\": [ \"SEARCH SOLUTION USE CASE SEARCH\" ], \"rule\": { \"condition\": { \"queryTerms\": [ { \"value\": \" VALUE 1 \", \"fullMatch\": \" FULLMATCH BOOLEAN 1 \" }, { \"value\": \" VALUE 2 \", \"fullMatch\": \" FULLMATCH BOOLEAN 2 \" } ], \"activeTimeRange\": [ { \"startTime\": \" START TIMESTAMP 1 \", \"endTime\": \" END TIMESTAMP 1 \" }, { \"startTime\": \" START TIMESTAMP 2 \", \"endTime\": \" END TIMESTAMP 2 \" } ] }, \"redirectAction\": { \"redirectUri\": \" REDIRECT URI \", } } }' \\ \"https://retail.googleapis.com/v2beta/projects/ PROJECT NUMBER /locations/global/catalogs/default catalog/controls?controlId= CONTROL ID \" To add a control to a serving config, use the ServingConfig.addControl method: For more about this method, see the ServingConfig.addControl API reference ."
+        ]
+      },
+      {
+        "title": "\"Vertex AI Search audit logging \\_|\\_ Vertex AI Search for commerce \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/retail/docs/audit-logging",
+        "source_id": "site-docs-reference",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permission type Methods DATA READ google.cloud.retail.v2.AnalyticsService.ExportAnalyticsMetrics google.cloud.retail.v2.CatalogService.GetAttributesConfig google.cloud.retail.v2.CatalogService.GetCompletionConfig google.cloud.retail.v2.CatalogService.GetDefaultBranch google.cloud.retail.v2.CatalogService.ListCatalogs google.cloud.retail.v2.CompletionService.CompleteQuery google.cloud.retail.v2.ControlService.GetControl google.cloud.retail.v2.ControlService.ListControls google.cloud.retail.v2.ModelService.GetModel google.cloud.retail.v2.ModelService.ListModels google.cloud.retail.v2.PredictionService.Predict google.cloud.retail.v2.ProductService.GetProduct google.cloud.retail.v2.ProductService.ListProducts google.cloud.retail.v2.SearchService.Search google.cloud.retail.v2.ServingConfigService.GetServingConfig google.cloud.retail.v2.ServingConfigService.ListServingConfigs google.cloud.retail.v2alpha.AnalyticsService.ExportAnalyticsMetrics (LRO) google.cloud.retail.v2alpha.BranchService.GetBranch google.cloud.retail.v2alpha.BranchService.ListBranches google.cloud.retail.v2alpha.CatalogService.GetAttributesConfig google.cloud.retail.v2alpha.CatalogService.GetCompletionConfig google.cloud.retail.v2alpha.CatalogService.GetDefaultBranch google.cloud.retail.v2alpha.CatalogService.ListCatalogs google.cloud.retail.v2alpha.CompletionService.CompleteQuery google.cloud.retail.v2alpha.ControlService.GetControl google.cloud.retail.v2alpha.ControlService.ListControls google.cloud.retail.v2alpha.ConversationalSearchService.ConversationalSearch google.cloud.retail.v2alpha.ModelService.GetModel google.cloud.retail.v2alpha.ModelService.ListModels google.cloud.retail.v2alpha.PredictionService.Predict google.cloud.retail.v2alpha.ProductService.ExportProducts (LRO) google.cloud.retail.v2alpha.ProductService.GetProduct google.cloud.retail.v2alpha.ProductService.ListProducts google.cloud.retail.v2alpha.ProjectService.GetAlertConfig google.cloud.retail.v2alpha.ProjectService.GetLoggingConfig google.cloud.retail.v2alpha.ProjectService.GetProject google.cloud.retail.v2alpha.ProjectService.ListEnrolledSolutions google.cloud.retail.v2alpha.SearchService.Search google.cloud.retail.v2alpha.ServingConfigService.GetServingConfig google.cloud.retail.v2alpha.ServingConfigService.ListServingConfigs google.cloud.retail.v2alpha.UserEventService.ExportUserEvents (LRO) google.cloud.retail.v2beta.AnalyticsService.ExportAnalyticsMetrics google.cloud.retail.v2beta.CatalogService.GetAttributesConfig google.cloud.retail.v2beta.CatalogService.GetCompletionConfig google.cloud.retail.v2beta.CatalogService.GetDefaultBranch google.cloud.retail.v2beta.CatalogService.ListCatalogs google.cloud.retail.v2beta.CompletionService.CompleteQuery google.cloud.retail.v2beta.ControlService.GetControl google.cloud.retail.v2beta.ControlService.ListControls google.cloud.retail.v2beta.ModelService.GetModel google.cloud.retail.v2beta.ModelService.ListModels google.cloud.retail.v2beta.PredictionService.Predict google.cloud.retail.v2beta.ProductService.ExportProducts (LRO) google.cloud.retail.v2beta.ProductService.GetProduct google.cloud.retail.v2beta.ProductService.ListProducts google.cloud.retail.v2beta.ProjectService.GetAlertConfig google.cloud.retail.v2beta.SearchService.Search google.cloud.retail.v2beta.ServingConfigService.GetServingConfig google.cloud.retail.v2beta.ServingConfigService.ListServingConfigs google.cloud.retail.v2beta.UserEventService.ExportUserEvents (LRO) DATA WRITE google.cloud.retail.v2.CatalogService.AddCatalogAttribute google.cloud.retail.v2.CatalogService.RemoveCatalogAttribute google.cloud.retail.v2.CatalogService.ReplaceCatalogAttribute google.cloud.retail.v2.CatalogService.SetDefaultBranch google.cloud.retail.v2.CatalogService.UpdateAttributesConfig google.cloud.retail.v2.CatalogService.UpdateCatalog google.cloud.retail.v2.CatalogService.UpdateCompletionConfig google.cloud.retail.v2.CompletionService.ImportCompletionData (LRO) google.cloud.retail.v2.ControlService.CreateControl google.cloud.retail.v2.ControlService.DeleteControl google.cloud.retail.v2.ControlService.UpdateControl google.cloud.retail.v2.ModelService.CreateModel google.cloud.retail.v2.ModelService.DeleteModel google.cloud.retail.v2.ModelService.PauseModel google.cloud.retail.v2.ModelService.ResumeModel google.cloud.retail.v2.ModelService.TuneModel google.cloud.retail.v2.ModelService.UpdateModel google.cloud.retail.v2.ProductService.AddFulfillmentPlaces google.cloud.retail.v2.ProductService.AddLocalInventories (LRO) google.cloud.retail.v2.ProductService.CreateProduct google.cloud.retail.v2.ProductService.DeleteProduct google.cloud.retail.v2.ProductService.ImportProducts (LRO) google.cloud.retail.v2.ProductService.PurgeProducts (LRO) google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces google.cloud.retail.v2.ProductService.RemoveLocalInventories (LRO) google.cloud.retail.v2.ProductService.SetInventory (LRO) google.cloud.retail.v2.ProductService.UpdateProduct google.cloud.retail.v2.ServingConfigService.AddControl google.cloud.retail.v2.ServingConfigService.CreateServingConfig google.cloud.retail.v2.ServingConfigService.DeleteServingConfig google.cloud.retail.v2.ServingConfigService.RemoveControl google.cloud.retail.v2.ServingConfigService.UpdateServingConfig google.cloud.retail.v2.UserEventService.ImportUserEvents (LRO) google.cloud.retail.v2.UserEventService.PurgeUserEvents (LRO) google.cloud.retail.v2.UserEventService.RejoinUserEvents (LRO) google.cloud.retail.v2.UserEventService.WriteUserEvent google.cloud.retail.v2alpha.CatalogService.AddCatalogAttribute google.cloud.retail.v2alpha.CatalogService.BatchRemoveCatalogAttributes google.cloud.retail.v2alpha.CatalogService.RemoveCatalogAttribute google.cloud.retail.v2alpha.CatalogService.ReplaceCatalogAttribute google.cloud.retail.v2alpha.CatalogService.SetDefaultBranch google.cloud.retail.v2alpha.CatalogService.UpdateAttributesConfig google.cloud.retail.v2alpha.CatalogService.UpdateCatalog google.cloud.retail.v2alpha.CatalogService.UpdateCompletionConfig google.cloud.retail.v2alpha.CompletionService.ImportCompletionData (LRO) google.cloud.retail.v2alpha.ControlService.CreateControl google.cloud.retail.v2alpha.ControlService.DeleteControl google.cloud.retail.v2alpha.ControlService.UpdateControl google.cloud.retail.v2alpha.ModelService.CreateModel (LRO) google.cloud.retail.v2alpha.ModelService.DeleteModel google.cloud.retail.v2alpha.ModelService.PauseModel google.cloud.retail.v2alpha.ModelService.ResumeModel google.cloud.retail.v2alpha.ModelService.TuneModel (LRO) google.cloud.retail.v2alpha.ModelService.UpdateModel google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces (LRO) google.cloud.retail.v2alpha.ProductService.AddLocalInventories (LRO) google.cloud.retail.v2alpha.ProductService.CreateProduct google.cloud.retail.v2alpha.ProductService.DeleteProduct google.cloud.retail.v2alpha.ProductService.ImportProducts (LRO) google.cloud.retail.v2alpha.ProductService.PurgeProducts (LRO) google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces (LRO) google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories (LRO) google.cloud.retail.v2alpha.ProductService.SetInventory (LRO) google.cloud.retail.v2alpha.ProductService.UpdateProduct google.cloud.retail.v2alpha.ProjectService.AcceptTerms google.cloud.retail.v2alpha.ProjectService.EnrollSolution (LRO) google.cloud.retail.v2alpha.ProjectService.UpdateAlertConfig google.cloud.retail.v2alpha.ProjectService.UpdateLoggingConfig google.cloud.retail.v2alpha.ServingConfigService.AddControl google.cloud.retail.v2alpha.ServingConfigService.CreateServingConfig google.cloud.retail.v2alpha.ServingConfigService.DeleteServingConfig google.cloud.retail.v2alpha.ServingConfigService.RemoveControl google.cloud.retail.v2alpha.ServingConfigService.UpdateServingConfig google.cloud.retail.v2alpha.UserEventService.ImportUserEvents (LRO) google.cloud.retail.v2alpha.UserEventService.PurgeUserEvents (LRO) google.cloud.retail.v2alpha.UserEventService.RejoinUserEvents google.cloud.retail.v2alpha.UserEventService.WriteUserEvent google.cloud.retail.v2beta.CatalogService.AddCatalogAttribute google.cloud.retail.v2beta.CatalogService.BatchRemoveCatalogAttributes google.cloud.retail.v2beta.CatalogService.RemoveCatalogAttribute google.cloud.retail.v2beta.CatalogService.ReplaceCatalogAttribute google.cloud.retail.v2beta.CatalogService.SetDefaultBranch google.cloud.retail.v2beta.CatalogService.UpdateAttributesConfig google.cloud.retail.v2beta.CatalogService.UpdateCatalog google.cloud.retail.v2beta.CatalogService.UpdateCompletionConfig google.cloud.retail.v2beta.CompletionService.ImportCompletionData google.cloud.retail.v2beta.ControlService.CreateControl google.cloud.retail.v2beta.ControlService.DeleteControl google.cloud.retail.v2beta.ControlService.UpdateControl google.cloud.retail.v2beta.ModelService.CreateModel google.cloud.retail.v2beta.ModelService.DeleteModel google.cloud.retail.v2beta.ModelService.PauseModel google.cloud.retail.v2beta.ModelService.ResumeModel google.cloud.retail.v2beta.ModelService.TuneModel google.cloud.retail.v2beta.ModelService.UpdateModel google.cloud.retail.v2beta.ProductService.AddFulfillmentPlaces google.cloud.retail.v2beta.ProductService.AddLocalInventories (LRO) google.cloud.retail.v2beta.ProductService.CreateProduct google.cloud.retail.v2beta.ProductService.DeleteProduct google.cloud.retail.v2beta.ProductService.ImportProducts (LRO) google.cloud.retail.v2beta.ProductService.PurgeProducts (LRO) google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces google.cloud.retail.v2beta.ProductService.RemoveLocalInventories google.cloud.retail.v2beta.ProductService.SetInventory google.cloud.retail.v2beta.ProductService.UpdateProduct google.cloud.retail.v2beta.ProjectService.UpdateAlertConfig google.cloud.retail.v2beta.ServingConfigService.AddControl google.cloud.retail.v2beta.ServingConfigService.CreateServingConfig google.cloud.retail.v2beta.ServingConfigService.DeleteServingConfig google.cloud.retail.v2beta.ServingConfigService.RemoveControl google.cloud.retail.v2beta.ServingConfigService.UpdateServingConfig google.cloud.retail.v2beta.UserEventService.ImportUserEvents (LRO) google.cloud.retail.v2beta.UserEventService.PurgeUserEvents (LRO) google.cloud.retail.v2beta.UserEventService.RejoinUserEvents google.cloud.retail.v2beta.UserEventService.WriteUserEvent API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Vertex AI Search. google.cloud.retail.v2.AnalyticsService The following audit logs are associated with methods belonging to google.cloud.retail.v2.AnalyticsService .",
+          "For more information about Cloud Audit Logs, see the following: Types of audit logs Audit log entry structure Storing and routing audit logs Cloud Logging pricing summary Enable Data Access audit logs Service name Vertex AI Search audit logs use the service name retail.googleapis.com .",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.retail.v2alpha.CompletionService.CompleteQuery\" ImportCompletionData Method : google.cloud.retail.v2alpha.CompletionService.ImportCompletionData Audit log type : Data access Permissions : retail.catalogs.import - DATA WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.retail.v2alpha.CompletionService.ImportCompletionData\" google.cloud.retail.v2alpha.ControlService The following audit logs are associated with methods belonging to google.cloud.retail.v2alpha.ControlService ."
+        ]
+      },
+      {
+        "title": "Vertex AI Search for commerce API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/retail/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v2beta.projects REST Resource: v2beta.projects.locations.catalogs REST Resource: v2beta.projects.locations.catalogs.attributesConfig REST Resource: v2beta.projects.locations.catalogs.branches.operations REST Resource: v2beta.projects.locations.catalogs.branches.products REST Resource: v2beta.projects.locations.catalogs.completionData REST Resource: v2beta.projects.locations.catalogs.controls REST Resource: v2beta.projects.locations.catalogs.generativeQuestion REST Resource: v2beta.projects.locations.catalogs.generativeQuestions REST Resource: v2beta.projects.locations.catalogs.models REST Resource: v2beta.projects.locations.catalogs.operations REST Resource: v2beta.projects.locations.catalogs.placements REST Resource: v2beta.projects.locations.catalogs.servingConfigs REST Resource: v2beta.projects.locations.catalogs.userEvents REST Resource: v2beta.projects.locations.operations REST Resource: v2beta.projects.operations REST Resource: v2alpha.projects REST Resource: v2alpha.projects.locations.catalogs REST Resource: v2alpha.projects.locations.catalogs.attributesConfig REST Resource: v2alpha.projects.locations.catalogs.branches REST Resource: v2alpha.projects.locations.catalogs.branches.operations REST Resource: v2alpha.projects.locations.catalogs.branches.places.operations REST Resource: v2alpha.projects.locations.catalogs.branches.products REST Resource: v2alpha.projects.locations.catalogs.completionData REST Resource: v2alpha.projects.locations.catalogs.controls REST Resource: v2alpha.projects.locations.catalogs.generativeQuestion REST Resource: v2alpha.projects.locations.catalogs.generativeQuestions REST Resource: v2alpha.projects.locations.catalogs.merchantCenterAccountLinks REST Resource: v2alpha.projects.locations.catalogs.models REST Resource: v2alpha.projects.locations.catalogs.operations REST Resource: v2alpha.projects.locations.catalogs.placements REST Resource: v2alpha.projects.locations.catalogs.servingConfigs REST Resource: v2alpha.projects.locations.catalogs.userEvents REST Resource: v2alpha.projects.locations.operations REST Resource: v2alpha.projects.operations REST Resource: v2alpha.projects.retailProject REST Resource: v2.projects.locations.catalogs REST Resource: v2.projects.locations.catalogs.attributesConfig REST Resource: v2.projects.locations.catalogs.branches.operations REST Resource: v2.projects.locations.catalogs.branches.products REST Resource: v2.projects.locations.catalogs.completionData REST Resource: v2.projects.locations.catalogs.controls REST Resource: v2.projects.locations.catalogs.generativeQuestion REST Resource: v2.projects.locations.catalogs.generativeQuestions REST Resource: v2.projects.locations.catalogs.models REST Resource: v2.projects.locations.catalogs.operations REST Resource: v2.projects.locations.catalogs.placements REST Resource: v2.projects.locations.catalogs.servingConfigs REST Resource: v2.projects.locations.catalogs.userEvents REST Resource: v2.projects.locations.operations REST Resource: v2.projects.operations Service: retail.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "REST Resource: v2alpha.projects Methods enrollSolution POST /v2alpha/{project=projects/ }:enrollSolution The method enrolls a solution of type Retail Search into a project. getAlertConfig GET /v2alpha/{name=projects/ /alertConfig} Get the AlertConfig of the requested project. getLoggingConfig GET /v2alpha/{name=projects/ /loggingConfig} Gets the LoggingConfig of the requested project. getRetailProject GET /v2alpha/{name=projects/ /retailProject} Gets the project. listEnrolledSolutions GET /v2alpha/{parent=projects/ }:enrolledSolutions Lists all the retail API solutions the project has enrolled. updateAlertConfig PATCH /v2alpha/{alertConfig.name=projects/ /alertConfig} Update the alert config of the requested project. updateLoggingConfig PATCH /v2alpha/{loggingConfig.name=projects/ /loggingConfig} Updates the LoggingConfig of the requested project.",
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://retail.googleapis.com REST Resource: v2beta.projects Methods getAlertConfig GET /v2beta/{name=projects/ /alertConfig} Get the AlertConfig of the requested project. updateAlertConfig PATCH /v2beta/{alertConfig.name=projects/ /alertConfig} Update the alert config of the requested project."
+        ]
+      },
+      {
+        "title": "\"Conversational filtering developer's guide \\_|\\_ Vertex AI Search for commerce\\",
+        "url": "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable the feature // Configuration for overall generative question feature state. message GenerativeQuestionsFeatureConfig { ... // Resource name of the affected catalog. // Format: projects/{project}/locations/{location}/catalogs/{catalog} string catalog = 1 [( google . api . field behavior ) = REQUIRED ]; // Determines whether questions are used at serving time. // Note: You cannot enable this until initial data requirements are // satisfied. bool feature enabled = 2 [( google . api . field behavior ) = OPTIONAL ]; // Minimum number of products in the response to trigger follow-up questions. // Value must be 0 or positive. int32 minimum products = 3 [( google . api . field behavior ) = OPTIONAL ]; } Conversation-relevant fields catalog string The resource name of the affected catalog at the project level.",
+          "The service interacts with the feature-level and question-level configuration files with two sets of handlers: GenerativeQuestionsFeatureConfig handlers (feature-level) : Update Lets you change minimum products and enable fields.",
+          "The data requirements validation is visible in the Search for commerce console, which, under the hood, calls the Conversational Configuration API."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "attribute.occasion",
+      "retail.catalogs.import",
+      "retail.googleapis.com",
+      "v2.projects.locations.catalogs",
+      "v2.projects.locations.catalogs.attributesConfig",
+      "v2.projects.locations.catalogs.branches.operations",
+      "v2.projects.locations.catalogs.branches.products",
+      "v2.projects.locations.catalogs.completionData",
+      "v2.projects.locations.catalogs.controls",
+      "v2.projects.locations.catalogs.generativeQuestion",
+      "v2.projects.locations.catalogs.generativeQuestions",
+      "v2.projects.locations.catalogs.models",
+      "v2.projects.locations.catalogs.operations",
+      "v2.projects.locations.catalogs.placements",
+      "v2.projects.locations.catalogs.servingConfigs",
+      "v2.projects.locations.catalogs.userEvents",
+      "v2.projects.locations.operations",
+      "v2.projects.operations",
+      "v2alpha.projects",
+      "v2alpha.projects.locations.catalogs",
+      "v2alpha.projects.locations.catalogs.attributesConfig",
+      "v2alpha.projects.locations.catalogs.branches",
+      "v2alpha.projects.locations.catalogs.branches.operations",
+      "v2alpha.projects.locations.catalogs.branches.places.operations",
+      "v2alpha.projects.locations.catalogs.branches.products",
+      "v2alpha.projects.locations.catalogs.completionData",
+      "v2alpha.projects.locations.catalogs.controls",
+      "v2alpha.projects.locations.catalogs.generativeQuestion",
+      "v2alpha.projects.locations.catalogs.generativeQuestions",
+      "v2alpha.projects.locations.catalogs.merchantCenterAccountLinks",
+      "v2alpha.projects.locations.catalogs.models",
+      "v2alpha.projects.locations.catalogs.operations",
+      "v2alpha.projects.locations.catalogs.placements",
+      "v2alpha.projects.locations.catalogs.servingConfigs",
+      "v2alpha.projects.locations.catalogs.userEvents",
+      "v2alpha.projects.locations.operations",
+      "v2alpha.projects.operations",
+      "v2alpha.projects.retailProject",
+      "v2beta.projects",
+      "v2beta.projects.locations.catalogs",
+      "v2beta.projects.locations.catalogs.attributesConfig",
+      "v2beta.projects.locations.catalogs.branches.operations",
+      "v2beta.projects.locations.catalogs.branches.products",
+      "v2beta.projects.locations.catalogs.completionData",
+      "v2beta.projects.locations.catalogs.controls",
+      "v2beta.projects.locations.catalogs.generativeQuestion",
+      "v2beta.projects.locations.catalogs.generativeQuestions",
+      "v2beta.projects.locations.catalogs.models",
+      "v2beta.projects.locations.catalogs.operations",
+      "v2beta.projects.locations.catalogs.placements",
+      "v2beta.projects.locations.catalogs.servingConfigs",
+      "v2beta.projects.locations.catalogs.userEvents",
+      "v2beta.projects.locations.operations",
+      "v2beta.projects.operations"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-controls",
+        "https://docs.cloud.google.com/retail/docs/audit-logging",
+        "https://docs.cloud.google.com/retail/docs/reference/rest",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-controls",
+        "https://docs.cloud.google.com/retail/docs/audit-logging",
+        "https://docs.cloud.google.com/retail/docs/reference/rest",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-controls",
+        "https://docs.cloud.google.com/retail/docs/audit-logging",
+        "https://docs.cloud.google.com/retail/docs/reference/rest",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-controls",
+        "https://docs.cloud.google.com/retail/docs/audit-logging",
+        "https://docs.cloud.google.com/retail/docs/reference/rest",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-controls",
+        "https://docs.cloud.google.com/retail/docs/audit-logging",
+        "https://docs.cloud.google.com/retail/docs/reference/rest",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-controls",
+        "https://docs.cloud.google.com/retail/docs/audit-logging",
+        "https://docs.cloud.google.com/retail/docs/reference/rest",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-controls",
+        "https://docs.cloud.google.com/retail/docs/audit-logging",
+        "https://docs.cloud.google.com/retail/docs/reference/rest",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-controls",
+        "https://docs.cloud.google.com/retail/docs/audit-logging",
+        "https://docs.cloud.google.com/retail/docs/reference/rest",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-controls",
+        "https://docs.cloud.google.com/retail/docs/audit-logging",
+        "https://docs.cloud.google.com/retail/docs/reference/rest",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-controls",
+        "https://docs.cloud.google.com/retail/docs/audit-logging",
+        "https://docs.cloud.google.com/retail/docs/reference/rest",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide"
+      ]
+    }
+  ]
+}

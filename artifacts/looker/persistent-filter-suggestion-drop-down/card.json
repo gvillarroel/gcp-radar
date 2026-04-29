@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:20.598Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "persistent filter suggestion drop-down",
+  "feature_slug": "persistent-filter-suggestion-drop-down",
+  "summary": "Keeps filter suggestion drop-downs open to make multi-select filtering easier for tag list and advanced filters.",
+  "extended_definition": "Keeps filter suggestion drop-downs open to make multi-select filtering easier for tag list and advanced filters.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-database-pdts",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Admin settings - Persistent Derived Tables \\_|\\_ Looker \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-database-pdts",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 150,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To open the Persistent Derived Tables page, follow these steps: Click the Looker Main menu icon menu and select Admin , if the Admin menu isn't already displayed. (If you are in the Explore or Develop section of the Looker Main menu , you may have to click the back arrow to see the Admin menu.) From the Admin menu, select Persistent Derived Tables .",
+          "Published as Stable View : A Boolean that filters the Persistent Derived Tables page for persisted tables and displays Yes for persisted tables that were published as a stable view, and No for persisted tables that were not published as a stable view, as determined by their publish as db view parameter value.",
+          "The following options are available: Not Triggered in the Last : Filters the Persistent Derived Tables page by persisted tables that have not been triggered in a specified number of hours and minutes."
+        ]
+      },
+      {
+        "title": "\"Admin settings - OpenID Connect authentication \\_|\\_ Looker \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "source_id": "site-docs-reference",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Looker User Attributes field, a drop-down list of Looker user attributes for the instance appears.",
+          "The Display pagination drop-down menu.",
+          "The Display pagination drop-down menu."
+        ]
+      },
+      {
+        "title": "Admin settings - General settings \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "source_id": "site-docs-reference",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "Creating a custom color collection To create a custom color collection, follow these steps: Select last New color collection option from the Default Visualization Colors collection drop-down menu.",
+          "When Reduce Filter Queries is enabled, Looker moves any filter that requests suggestions into a dialog where the filter won't fetch suggestions until a user clicks on it in the dialog.",
+          "Deleting a custom color collection You can delete a custom color collection by selecting the collection from the drop-down menu and clicking the Delete button that appears."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accounts.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-pdts",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-pdts",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-pdts",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-pdts",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-pdts",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    }
+  ]
+}

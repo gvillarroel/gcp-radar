@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:40.969Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Saved queries in AlloyDB Studio",
+  "feature_slug": "saved-queries-in-alloydb-studio",
+  "summary": "Saved queries in AlloyDB Studio let you save and manage SQL scripts directly in the Studio interface.",
+  "extended_definition": "Saved queries in AlloyDB Studio let you save and manage SQL scripts directly in the Studio interface.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+      "https://docs.cloud.google.com/alloydb/docs/ai/manage-data-agents",
+      "https://docs.cloud.google.com/alloydb/docs/ai/model-endpoint-console"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use model endpoint management in AlloyDB Studio \\_|\\_ AlloyDB for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/model-endpoint-console",
+        "source_id": "site-docs-root-required-3",
+        "final_score": 116,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Use model endpoint management in AlloyDB Studio Stay organized with collections Save and categorize content based on your preferences.",
+          "You can run the google ml.alter model() function in the Editor tab of AlloyDB Studio to modify model metadata of other registered model endpoints.",
+          "Call pre-registered embedding model endpoints The supported pre-registered embedding models are listed in the Explorer pane of AlloyDB Studio."
+        ]
+      },
+      {
+        "title": "\"Integrate QueryData with an application \\_|\\_ AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "source_id": "site-docs-root-2",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Gemini Data Analytics Source and Gemini Data Analytics QueryData Tool. kind : source name : gda-api-source type : cloud-gemini-data-analytics projectId : \" PROJECT ID \" --- kind : tool name : cloud gda query tool type : cloud-gemini-data-analytics-query source : gda-api-source description : Use this tool to send natural language queries to the Gemini Data Analytics API and receive SQL, natural language answers, and explanations. location : \" REGION ID \" context : datasourceReferences : alloydb : databaseReference : projectId : \" PROJECT ID \" region : \" REGION ID \" clusterId : \" CLUSTER ID \" instanceId : \" INSTANCE ID \" databaseId : \" DATABASE ID \" agentContextReference : contextSetId : \" CONTEXT SET ID \" generationOptions : generateQueryResult : true generateNaturalLanguageAnswer : true generateExplanation : true generateDisambiguationQuestion : true Replace the following: PROJECT ID : Your Google Cloud project ID.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Integrate QueryData with an application Stay organized with collections Save and categorize content based on your preferences.",
+          "Sign in to Studio using Identity and Access Management authentication."
+        ]
+      },
+      {
+        "title": "\"Manage context sets in AlloyDB Studio \\_|\\_ AlloyDB for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/manage-data-agents",
+        "source_id": "site-docs-root-2",
+        "final_score": 107,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Manage context sets in AlloyDB Studio Stay organized with collections Save and categorize content based on your preferences.",
+          "This document describes how to create context sets in AlloyDB for PostgreSQL Studio using a context set file.",
+          "Sign in to Studio using Identity and Access Management authentication."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ml.alter",
+      "ml.drop"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/model-endpoint-console",
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/ai/manage-data-agents"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/model-endpoint-console",
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/ai/manage-data-agents"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/model-endpoint-console",
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/ai/manage-data-agents"
+      ]
+    }
+  ]
+}

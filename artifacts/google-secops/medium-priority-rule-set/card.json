@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.119Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "Medium Priority rule set",
+  "feature_slug": "medium-priority-rule-set",
+  "summary": "The Applied Threat Intelligence Medium Priority rule set adds indicator prioritization for commodity malware.",
+  "extended_definition": "The Applied Threat Intelligence Medium Priority rule set adds indicator prioritization for commodity malware.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview",
+      "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+      "https://docs.cloud.google.com/chronicle/docs/detection/ati-prioritization"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Applied Threat Intelligence priority overview \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/ati-prioritization",
+        "source_id": "site-docs-reference",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Applied Threat Intelligence priority overview Supported in: Google secops SIEM Applied Threat Intelligence (ATI) alerts in Google Security Operations are IoC matches that have been contextualized by YARA-L rules using curated detection.",
+          "Priority models are used in the curated detection rules provided in the Applied Threat Intelligence - Curated prioritization rule pack.",
+          "Medium priority The Medium model prioritizes indicators identified by Google Threat Intelligence with a Malicious GTI Verdict and High GTI Severity, even if they weren't observed in Mandiant investigations."
+        ]
+      },
+      {
+        "title": "\"Applied Threat Intelligence curated detections overview \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "source_id": "site-docs-reference",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Curated detection rule sets The Curated Prioritization category includes the following rule sets that support the Applied Threat Intelligence feature in Google SecOps: Active Breach Priority Network Indicators : Detects network-related Indicators of Compromise (IoCs) in event data using Mandiant Threat Intelligence and prioritizes IoCs with the 'Active breach' label.",
+          "These fields, combined with prioritization features from Mandiant Threat Intelligence, help determine priority levels, such as Active breach, High, or Medium: network.direction security result.[]action event count (active breach IP address only) For IP address indicators, the network.direction is required.",
+          "Applied Threat Intelligence curated detections overview Supported in: Google secops SIEM This document provides an overview of the Curated Detection rule sets within the Applied Threat Intelligence Curated Prioritization category, available in Google Security Operations Enterprise Plus."
+        ]
+      },
+      {
+        "title": "\"Applied Threat Intelligence overview \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 172,
+        "relevance": "",
+        "evidence_snippets": [
+          "Google SecOps curated detections evaluate your event data against Mandiant threat intelligence data, and generates an alert when one or more rules identify a match to an IoC with an active breach or high priority.",
+          "Information about the IoC is displayed, including the following: GCTI priority GTI verdict Associations Campaigns You can also view detailed information about the events that triggered the IoC match, information from the threat intelligence source, and the rationale for the GTI score.",
+          "Applied Threat Intelligence overview Supported in: Google secops SIEM Applied Threat Intelligence (ATI) helps you identify and respond to threats."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "network.direction"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-prioritization",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-prioritization",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview"
+      ]
+    }
+  ]
+}

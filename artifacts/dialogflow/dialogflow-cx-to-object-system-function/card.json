@@ -1,0 +1,103 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:06.489Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Dialogflow CX TO_OBJECT system function",
+  "feature_slug": "dialogflow-cx-to-object-system-function",
+  "summary": "Dialogflow CX provides the TO_OBJECT system function.",
+  "extended_definition": "Dialogflow CX provides the TO_OBJECT system function.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/search-configure",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Code block system library \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library",
+        "source_id": "site-docs-reference",
+        "final_score": 85,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Reference Send feedback Code block system library Stay organized with collections Save and categorize content based on your preferences.",
+          "Sample: @Action def is prime ( n : int ): bool \"\"\"Returns true if n is prime.\"\"\" import math return ( all ([ False for i in range ( 2 , math . sqrt ( n ) if n % i == 0 ]) and not n < 2 ) For this function, the following will be sent to the LLM: Actions is prime: description: Returns true if n is prime. input: is prime input output: bool Schemas is prime input: type: object properties: - n: type: integer @BeforeActionTrigger @BeforeActionTrigger decorator triggers the function every time before the large language model executes an action.",
+          "Sample: try : tools . weather api . get weather ({ \"location\" : \"San Francisco\" }) except ToolError : respond ( \"I'm sorry, the weather is currently unavailable.\" ) ToolAction A tool action function object."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.dialogflow.v2 (4.94.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "source_id": "site-java-reference",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "This class provides the ability to make remote calls to the backing service through method com. google. cloud. dialogflow. v2.",
+          "This class provides the ability to make remote calls to the backing service through method com. google. cloud. dialogflow. v2.",
+          "This class provides the ability to make remote calls to the backing service through method com. google. cloud. dialogflow. v2."
+        ]
+      },
+      {
+        "title": "Data store search configuration \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/search-configure",
+        "source_id": "site-docs-root",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "Runtime substitution errors If a ConditionBoostSpec JSON string is valid and parsable but an error occurs during the runtime substitution of Dialogflow CX expressions within its fields (such as the condition string), these errors will be reported in diagnostic info as SystemFunctionResults .",
+          "For more information about expression syntax, see the Dialogflow CX conditions and system functions reference .",
+          "JSON of this format { \"condition\" : \"uri: ANY(\\\"http://www.example.com/docs/$session.params.doc id\\\")\" , \"boost\" : 0.5 } Example API input: If you are calling the API directly, you must provide ConditionBoostSpecs in a full SearchConfig object.The following search configuration describes a boost spec: \"searchConfig\" : { \"boostSpecs\" : [ { \"dataStores\" : [ \"DATASTORE ID\" ], \"spec\" : [ { \"conditionBoostSpecs\" : { \"condition\" : \"CONDITION\" , \"boost\" : \"1.0\" } } ] } ] } Note: DATASTORE ID is the full name of the data store: projects/your project id/locations/your location/collections/your collection name/dataStores/your datastore name , CONDITION must follow the Vertex AI Search's filter expression syntax , and the boost value must be between -1.0 and 1.0."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2",
+      "object.The",
+      "session.params.doc",
+      "session.params.min"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/search-configure",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/search-configure",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+      ]
+    }
+  ]
+}

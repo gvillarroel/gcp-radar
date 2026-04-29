@@ -1,0 +1,119 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.589Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Time-driven installable triggers for add-ons",
+  "feature_slug": "time-driven-installable-triggers-for-add-ons",
+  "summary": "Google Sheets and Docs add-ons can use time-driven installable triggers.",
+  "extended_definition": "Google Sheets and Docs add-ons can use time-driven installable triggers.",
+  "lifecycle": {
+    "latest_feature_date": "2014-10-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/triggers",
+      "https://developers.google.com/apps-script/guides/triggers/events",
+      "https://developers.google.com/apps-script/guides/triggers/installable"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Installable Triggers \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/triggers/installable",
+        "source_id": "site-docs-reference",
+        "final_score": 187,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example shows how to create two time-driven triggers—one that fires every 6 hours, and one that fires every Monday at 9 a.m. (in the time zone that your script is set to). triggers/triggers.gs View on GitHub / Creates two time-driven triggers. @see https://developers.google.com/apps-script/guides/triggers/installable#time-driven triggers / function createTimeDrivenTriggers () { // Trigger every 6 hours.",
+          "Installable triggers, however, offer more flexibility than simple triggers: they can call services that require authorization , they offer several additional types of events including time-driven (clock) triggers, and they can be controlled programmatically.",
+          "Time-driven triggers let scripts execute at a particular time or on a recurring interval, as frequently as every minute or as infrequently as once per month. (An add-on can use a time-driven trigger once per hour at most.) The time might be slightly randomized—for example, if you create a recurring 9 AM trigger, Apps Script chooses a time between 9 AM and 10 AM, then keeps that timing consistent from day to day so that 24 hours elapse before the trigger fires again."
+        ]
+      },
+      {
+        "title": "Simple Triggers \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/triggers",
+        "source_id": "site-docs-reference",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Event Simple triggers Installable triggers Open Sheets Slides Forms Docs function onOpen(e) Sheets Forms Docs Edit Sheets function onEdit(e) Sheets Selection change Sheets function onSelectionChange(e) Install Sheets Slides Forms Docs function onInstall(e) Change Sheets Form submit Sheets Forms Time-driven (clock) Sheets Slides Forms Docs Standalone Get Standalone function doGet(e) Post Standalone function doPost(e) The open event for Google Forms does not occur when a user opens a form to respond, but rather when an editor opens the form to modify it.",
+          "For example, Google Sheets, Slides, Forms, and Docs all support simple open triggers, but only Sheets, Docs and Forms support installable open triggers.",
+          "These restrictions don't apply to doGet(e) or doPost(e) . onOpen(e) The onOpen(e) trigger runs automatically when a user opens a spreadsheet, document, presentation, or form that they have permission to edit. (The trigger does not run when responding to a form, only when opening the form to edit it.) onOpen(e) is most commonly used to add custom menu items to Google Sheets, Slides, Docs, or Forms. triggers/triggers.gs View on GitHub / The event handler triggered when opening the spreadsheet. @param {Event} e The onOpen event. @see https://developers.google.com/apps-script/guides/triggers#onopene / function onOpen ( e ) { // Add a custom menu to the spreadsheet."
+        ]
+      },
+      {
+        "title": "Event Objects \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/triggers/events",
+        "source_id": "site-docs-reference",
+        "final_score": 149,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Time-driven events Time-driven triggers (also called clock triggers) let scripts execute at a particular time or on a recurring interval.",
+          "Time-driven ( installable ) authMode A value from the ScriptApp.AuthMode enum.",
+          "For example, the following sample code shows a simple onEdit(e) trigger for a Google Sheets script that uses the event object to determine which cell was edited. function onEdit ( e ){ // Set a comment on the edited cell to indicate when it was changed . var range = e . range ; range . setNote ( 'Last modified: ' + new Date ()); } This page describes the fields in the event object for different types of triggers."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a.m",
+      "developers.google.com",
+      "example.com",
+      "triggers.gs"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/triggers/installable",
+        "https://developers.google.com/apps-script/guides/triggers",
+        "https://developers.google.com/apps-script/guides/triggers/events"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/triggers/installable",
+        "https://developers.google.com/apps-script/guides/triggers",
+        "https://developers.google.com/apps-script/guides/triggers/events"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/triggers/installable",
+        "https://developers.google.com/apps-script/guides/triggers",
+        "https://developers.google.com/apps-script/guides/triggers/events"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/triggers/installable",
+        "https://developers.google.com/apps-script/guides/triggers",
+        "https://developers.google.com/apps-script/guides/triggers/events"
+      ]
+    }
+  ]
+}

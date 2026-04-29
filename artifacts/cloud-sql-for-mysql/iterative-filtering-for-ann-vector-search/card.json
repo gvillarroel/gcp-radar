@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:53.295Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Iterative filtering for ANN vector search",
+  "feature_slug": "iterative-filtering-for-ann-vector-search",
+  "summary": "This feature improves ANN vector search with filters by iteratively finding more results when selective WHERE clauses return too few matches.",
+  "extended_definition": "This feature improves ANN vector search with filters by iteratively finding more results when selective WHERE clauses return too few matches.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/feature_support",
+      "https://docs.cloud.google.com/sql/docs/mysql/admin-tools",
+      "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Build context sets using Gemini CLI \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable cloudsql vector flag. gcloud sql instances patch INSTANCE NAME --database-flags=cloudsql vector=on Enable enable-google-ml-integration flag to allow the Cloud SQL for MySQL instance to integrate with Vertex AI. gcloud sql instances patch INSTANCE NAME --enable-google-ml-integration Create a vector column to store city embeddings ALTER TABLE airports ADD COLUMN city embedding VECTOR ( 768 ); Generate and store vector embeddings for city names UPDATE airports SET city embedding = mysql . ml embedding ( 'text-embedding-005' , city ) WHERE city IS NOT NULL ; To enable the Cloud SQL for MySQL instance to perform trigram value searches, perform the following steps.",
+          "Prepare the database for value searches To use semantic and trigram value searches, you must configure your Cloud SQL for MySQL instance to support vector embeddings and n-gram indexing.",
+          "For more information about the context set file and facets, see Context sets overview Generate value search queries If you want to generate value searches that specify how the system should search for and match specific values within a concept type, then you can use the /generate targeted value searches command."
+        ]
+      },
+      {
+        "title": "Cloud SQL feature support by database engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/feature_support",
+        "source_id": "site-docs-root",
+        "final_score": 61,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud SQL features MySQL PostgreSQL SQL Server Data protection Backups ✓ ✓ ✓ Point-in-time recovery (PITR) ✓ ✓ ✓ High availability ✓ ✓ ✓ Cloning ✓ ✓ ✓ Disaster recovery ✓ ✓ ✓ Data migration Data migration to external servers ✓ Logs Instance logging ✓ ✓ ✓ Planned maintenance Maintenance windows ✓ ✓ ✓ Maintenance controls ✓ ✓ ✓ Self service maintenance ✓ ✓ ✓ Replication Read replicas ✓ ✓ ✓ Cross-region read replicas ✓ ✓ ✓ External read replicas ✓ ✓ ✓ Binary logging on read replicas ✓ Replication from an external server ✓ ✓ Read replica indexes stored procedures ✓ Logical replication ✓ Security Customer-managed encryption keys (CMEK) ✓ ✓ ✓ Cloud SQL Auth Proxy support ✓ ✓ ✓ Audit logging ✓ ✓ ✓ Connection organization policies ✓ ✓ ✓ IAM database authentication ✓ ✓ Access Transparency (AXT) ✓ ✓ ✓ Key Access Justification ✓ ✓ ✓ Private Service Connect ✓ ✓ ✓ Cloud Security Command Center Monitoring ✓ ✓ ✓ Cloud External Key Manager (EKM) ✓ ✓ ✓ VPC Service Controls ✓ ✓ ✓ Insights Query Insights ✓ ✓ Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Databases Cloud SQL Guides Send feedback Cloud SQL feature support by database engine Stay organized with collections Save and categorize content based on your preferences.",
+          "This page lists the main features of Cloud SQL and indicates which database engines support these features."
+        ]
+      },
+      {
+        "title": "\"Connect from other MySQL tools \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/admin-tools",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 58,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-tools"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-tools"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-tools"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-tools"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-tools"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-tools"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-tools"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-tools"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-tools"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-tools"
+      ]
+    }
+  ]
+}

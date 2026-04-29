@@ -1,0 +1,128 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:31.179Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "textembedding-gecko model tuning",
+  "feature_slug": "textembedding-gecko-model-tuning",
+  "summary": "This feature adds supervised fine-tuning support for the textembedding-gecko model.",
+  "extended_definition": "This feature adds supervised fine-tuning support for the textembedding-gecko model.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Vertex AI model evaluation notebook tutorials \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "source_id": "site-docs-reference-2",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "Tutorial steps Colab Colab Enterprise GitHub Vertex AI Workbench Tune text models by using supervised tuning Vertex AI Tuning a PEFT model .",
+          "Learn how to use Vertex AI LLM to download pretrained LLM model, make predictions and finetuning the model.",
+          "Learn more about Tune text models by using supervised tuning ."
+        ]
+      },
+      {
+        "title": "Vertex AI API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 122,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1beta1.projects.locations.tuningJobs Methods cancel POST /v1beta1/{name}:cancel Cancels a tuning job. create POST /v1beta1/{parent}/tuningJobs Creates a tuning job. get GET /v1beta1/{name} Gets a tuning job. list GET /v1beta1/{parent}/tuningJobs Lists tuning jobs in a location. rebaseTunedModel POST /v1beta1/{parent}/tuningJobs:rebaseTunedModel Rebase a tuned model.",
+          "REST Resource: v1.projects.locations.tuningJobs Methods cancel POST /v1/{name}:cancel Cancels a tuning job. create POST /v1/{parent}/tuningJobs Creates a tuning job. get GET /v1/{name} Gets a tuning job. list GET /v1/{parent}/tuningJobs Lists tuning jobs in a location. rebaseTunedModel POST /v1/{parent}/tuningJobs:rebaseTunedModel Rebase a tuned model.",
+          "REST Resource: v1beta1.projects.locations.endpoints Methods countTokens POST /v1beta1/{endpoint}:countTokens Perform a token counting. create POST /v1beta1/{parent}/endpoints Creates an Endpoint. delete DELETE /v1beta1/{name} Deletes an Endpoint. deployModel POST /v1beta1/{endpoint}:deployModel Deploys a Model into this Endpoint, creating a DeployedModel within it. directPredict POST /v1beta1/{endpoint}:directPredict Perform an unary online prediction request to a gRPC model server for Vertex first-party products and frameworks. directRawPredict POST /v1beta1/{endpoint}:directRawPredict Perform an unary online prediction request to a gRPC model server for custom containers. explain POST /v1beta1/{endpoint}:explain Perform an online explanation. get GET /v1beta1/{name} Gets an Endpoint. getIamPolicy POST /v1beta1/{resource}:getIamPolicy Gets the access control policy for a resource. list GET /v1beta1/{parent}/endpoints Lists Endpoints in a Location. mutateDeployedModel POST /v1beta1/{endpoint}:mutateDeployedModel Updates an existing deployed model. patch PATCH /v1beta1/{endpoint.name} Updates an Endpoint. predict POST /v1beta1/{endpoint}:predict Perform an online prediction. predictLongRunning POST /v1beta1/{endpoint}:predictLongRunning rawPredict POST /v1beta1/{endpoint}:rawPredict Perform an online prediction with an arbitrary HTTP payload. serverStreamingPredict POST /v1beta1/{endpoint}:serverStreamingPredict Perform a server-side streaming online prediction request for Vertex LLM streaming. setIamPolicy POST /v1beta1/{resource}:setIamPolicy Sets the access control policy on the specified resource. streamRawPredict POST /v1beta1/{endpoint}:streamRawPredict Perform a streaming online prediction with an arbitrary HTTP payload. testIamPermissions POST /v1beta1/{resource}:testIamPermissions Returns permissions that a caller has on the specified resource. undeployModel POST /v1beta1/{endpoint}:undeployModel Undeploys a Model from an Endpoint, removing a DeployedModel from it, and freeing all resources it's using. update POST /v1beta1/{endpoint.name}:update Updates an Endpoint with a long running operation."
+        ]
+      },
+      {
+        "title": "\"Vertex Explainable AI notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials",
+        "source_id": "site-docs-reference-2",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "Tutorial steps Colab Colab Enterprise GitHub Vertex AI Workbench Tune text models by using supervised tuning Vertex AI Tuning a PEFT model .",
+          "Learn how to use Vertex AI LLM to download pretrained LLM model, make predictions and finetuning the model.",
+          "Learn more about Tune text models by using supervised tuning ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "endpoint.name",
+      "v1.projects.locations.tuningJobs",
+      "v1beta1.projects.locations.endpoints",
+      "v1beta1.projects.locations.tuningJobs"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials"
+      ]
+    }
+  ]
+}

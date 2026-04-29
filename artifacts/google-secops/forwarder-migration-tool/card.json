@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.119Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "Forwarder migration tool",
+  "feature_slug": "forwarder-migration-tool",
+  "summary": "The forwarder migration tool helps migrate existing forwarder configurations into Bindplane-managed pipelines.",
+  "extended_definition": "The forwarder migration tool helps migrate existing forwarder configurations into Bindplane-managed pipelines.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/deprecations",
+      "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+      "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate CBN alerts to YARA-L detection rule alerts \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "source_id": "site-api-reference",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See the following example. metadata . vendor name = \"Microsoft\" metadata . product name = \"Windows Defender AV\" metadata . product event type = \"MALWAREPROTECTION STATE MALWARE DETECTED\" principal . asset . hostname = \"client02.example.local\" security result . action = \"BLOCK\" security result . severity = \"MEDIUM\" Create a new YARA-L detection engine rule. rule windows defender av monitored events { meta : author = \"Chronicle\" description = \"Migration of CBN alerts to Google SecOps YARA-L detection engine rule alert.\" // Severity is set at the Outcome level via security result.severity severity = \"INFORMATIONAL\" priority = \"INFORMATIONAL\" events : $ windows defender av . metadata . vendor name = \"Microsoft\" $ windows defender av . metadata . product name = \"Windows Defender AV\" $ windows defender av . metadata . product event type = \"MALWAREPROTECTION STATE MALWARE DETECTED\" $ windows defender av . principal . asset . hostname = $ host // optionally tune to only detection on ALLOW, i.e., failure to BLOCK //$windows defender av.security result.action = \"ALLOW\" // optionally tune on severity of detection //$windows defender av.security result.severity != \"LOW\" outcome : $ risk score = max ( if ( $ windows defender av . security result . severity = \"UNKNOWN SEVERITY\" , 0 ) + if ( $ windows defender av . security result . severity = \"LOW\" , 25 ) + if ( $ windows defender av . security result . severity = \"MEDIUM\" , 50 ) + if ( $ windows defender av . security result . severity = \"HIGH\" , 75 ) + if ( $ windows defender av . security result . severity = \"CRITICAL\" , 100 ) ) $ severity = array distinct ( $ windows defender av . security result . severity ) condition : $ windows defender av } CBN alert appears to use a field that was not parsed into UDM Using the parser extensions option you can quickly address this scenario.",
+          "Use UDM search Using the UDM search option, you can view events with the alert state set in the parsers: security result.alert state = \"ALERTING\" From the UDM search results, you can explore the following fields to understand which sources are generating CBN alerts in your environment: Metadata > Vendor Name Metadata > Product Name Download default CBN alerts using the Tools API and manually review The previous approach helps you to find alerts that have fired, but does not cover the scenario of alerts that you have not seen before.",
+          "We recommend that you migrate the existing CBN alerts to the YARA-L detection engine as described in this guide."
+        ]
+      },
+      {
+        "title": "\"Feature deprecations \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "source_id": "site-docs-reference-2",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "During this migration period, you can continue to use your existing reference lists until they're migrated.",
+          "Google Security Operations forwarder executable for Windows April 04, 2023 March 31, 2024 On or after March 31, 2024, existing Google Security Operations forwarder executable for Windows will be removed.",
+          "You can also self-migrate by replacing your existing data feeds using v1 connectors with new feeds using v2 connectors, by following the configuration guide for v2 connectors ."
+        ]
+      },
+      {
+        "title": "\"SOAR migration overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "source_id": "site-api-reference",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "What's Next SOAR migration pre-validation guide Migrate a SOAR standalone instance of an MSSP Migrate SOAR endpoints to the Chronicle API Migrate remote agents Migrate SOAR permissions to Google Cloud IAM Frequently asked questions Need more help?",
+          "Migrate SOAR permission groups to Google Cloud IAM Migrate the SOAR permission groups and permissions to IAM through a single-click of the migration script in Google Cloud.",
+          "SOAR migration overview Supported in: Google secops SOAR This document describes the process and timelines to migrate SOAR infrastructure to Google Cloud."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "av.security",
+      "client02.example.local",
+      "event1.idm.read",
+      "i.e",
+      "notice.key",
+      "notice.value.string",
+      "result.action",
+      "result.alert",
+      "result.severity",
+      "udm.additional.fields"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:51.589Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": ".env file environment variable configuration",
+  "feature_slug": "env-file-environment-variable-configuration",
+  "summary": "Cloud Run supports setting multiple environment variables from a .env file; Cloud Run supports setting multiple environment variables from a .env file for services, jobs, and worker pools.",
+  "extended_definition": "Cloud Run supports setting multiple environment variables from a .env file; Cloud Run supports setting multiple environment variables from a .env file for services, jobs, and worker pools.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.pagers.ListJobsAsyncPager",
+      "https://docs.cloud.google.com/run/docs/quickstarts/jobs/create-execute",
+      "https://docs.cloud.google.com/run/docs/quickstarts/workerpools/deploy-workerpool"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Deploy a sample worker pool to Google Cloud with Cloud Run \\_\\",
+        "url": "https://docs.cloud.google.com/run/docs/quickstarts/workerpools/deploy-workerpool",
+        "source_id": "site-docs-root-2",
+        "final_score": 62,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "Quickstart: Create and execute a job in Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/quickstarts/jobs/create-execute",
+        "source_id": "site-docs-reference-required-10",
+        "final_score": 54,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Class ListJobsAsyncPager (0.16.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.pagers.ListJobsAsyncPager",
+        "source_id": "site-python-reference",
+        "final_score": 50,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.run.v2.BuildWorkerPoolName",
+      "com.google.cloud.run.v2.BuildWorkerPoolName.Builder"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

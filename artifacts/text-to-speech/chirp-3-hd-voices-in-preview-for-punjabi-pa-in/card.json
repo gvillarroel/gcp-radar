@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:30.676Z",
+  "source_step08_card": "data/step-08/current/products/text-to-speech/card.json",
+  "product_name": "Text-to-Speech",
+  "product_slug": "text-to-speech",
+  "feature_name": "Chirp 3 HD voices in Preview for Punjabi (pa-IN)",
+  "feature_slug": "chirp-3-hd-voices-in-preview-for-punjabi-pa-in",
+  "summary": "The Text-to-Speech Chirp 3 HD voice model gained speech synthesis support in Preview for the Punjabi (pa-IN) language.",
+  "extended_definition": "The Text-to-Speech Chirp 3 HD voice model gained speech synthesis support in Preview for the Punjabi (pa-IN) language.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd",
+      "https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types",
+      "https://docs.cloud.google.com/text-to-speech/docs/voices"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Chirp 3: HD voices \\_|\\_ Cloud Text-to-Speech \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd",
+        "source_id": "site-docs-reference-2",
+        "final_score": 150,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Language BCP-47 Code Arabic (Generic) ar-XA Bengali (India) bn-IN Bulgarian (Bulgaria) bg-BG Chinese (Hong Kong) yue-HK Croatian (Croatia) hr-HR Czech (Czech Republic) cs-CZ Danish (Denmark) da-DK Dutch (Belgium) nl-BE Dutch (Netherlands) nl-NL English (Australia) en-AU English (India) en-IN English (United Kingdom) en-GB English (United States) en-US Estonian (Estonia) et-EE Finnish (Finland) fi-FI French (Canada) fr-CA French (France) fr-FR German (Germany) de-DE Greek (Greece) el-GR Gujarati (India) gu-IN Hebrew (Israel) he-IL Hindi (India) hi-IN Hungarian (Hungary) hu-HU Indonesian (Indonesia) id-ID Italian (Italy) it-IT Japanese (Japan) ja-JP Kannada (India) kn-IN Korean (South Korea) ko-KR Latvian (Latvia) lv-LV Lithuanian (Lithuania) lt-LT Malayalam (India) ml-IN Mandarin Chinese (China) cmn-CN Marathi (India) mr-IN Norwegian Bokmål (Norway) nb-NO Polish (Poland) pl-PL Portuguese (Brazil) pt-BR Punjabi (India) pa-IN Romanian (Romania) ro-RO Russian (Russia) ru-RU Serbian (Cyrillic) sr-RS Slovak (Slovakia) sk-SK Slovenian (Slovenia) sl-SI Spanish (Spain) es-ES Spanish (United States) es-US Swahili (Kenya) sw-KE Swedish (Sweden) sv-SE Tamil (India) ta-IN Telugu (India) te-IN Thai (Thailand) th-TH Turkish (Turkey) tr-TR Ukrainian (Ukraine) uk-UA Urdu (India) ur-IN Vietnamese (Vietnam) vi-VN Regional availability Chirp 3: HD voices are available in the following Google Cloud regions respectively: Google Cloud Zone Launch Readiness global GA us GA eu GA asia-southeast1 GA europe-west2 GA asia-northeast1 GA Supported output formats The default response format is LINEAR16, but other formats which are supported include: API Method Format streaming ALAW, MULAW, OGG OPUS and PCM batch ALAW, MULAW, MP3, OGG OPUS and PCM Use Chirp 3: HD voices Discover how to use Chirp 3: HD voices to synthesize speech.",
+          "Home Documentation AI and ML Cloud Text-to-Speech Guides Send feedback Chirp 3: HD voices Stay organized with collections Save and categorize content based on your preferences.",
+          "Try Chirp 3: HD voices in Vertex AI Studio Try in Colab View notebook on GitHub Cloud TTS Chirp 3: HD voices represent the latest generation of Text-to-Speech technology."
+        ]
+      },
+      {
+        "title": "\"Supported voices and languages \\_|\\_ Cloud Text-to-Speech \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/text-to-speech/docs/voices",
+        "source_id": "site-docs-reference",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "Replace PROJECT ID with your project ID. curl -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"x-goog-user-project: PROJECT ID \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ \"https://texttospeech.googleapis.com/v1/voices\" The Cloud Text-to-Speech API returns a JSON-formatted result that looks similar to the following: { \"voices\": [ { \"languageCodes\": [ \"es-ES\" ], \"name\": \"es-ES-Standard-A\", \"ssmlGender\": \"FEMALE\", \"naturalSampleRateHertz\": 24000 }, { \"languageCodes\": [ \"ja-JP\" ], \"name\": \"ja-JP-Standard-A\", \"ssmlGender\": \"FEMALE\", \"naturalSampleRateHertz\": 22050 }, { \"languageCodes\": [ \"pt-BR\" ], \"name\": \"pt-BR-Standard-A\", \"ssmlGender\": \"FEMALE\", \"naturalSampleRateHertz\": 24000 }, ... ] } Go To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries .",
+          "For more information, see Set up authentication for a local development environment . / Demonstrates using the Text to Speech client to list the client's supported voices. @throws Exception on TextToSpeechClient Errors. / public static List<Voice> listAllSupportedVoices () throws Exception { // Instantiates a client try ( TextToSpeechClient textToSpeechClient = TextToSpeechClient . create ()) { // Builds the text to speech list voices request ListVoicesRequest request = ListVoicesRequest . getDefaultInstance (); // Performs the list voices request ListVoicesResponse response = textToSpeechClient . listVoices ( request ); List<Voice> voices = response . getVoicesList (); for ( Voice voice : voices ) { // Display the voice's name.",
+          "TextToSpeechClient (); const [ result ] = await client . listVoices ({}); const voices = result . voices ; console . log ( 'Voices:' ); voices . forEach ( voice = > { console . log ( Name: ${ voice . name } ); console . log ( SSML Voice Gender: ${ voice . ssmlGender } ); console . log ( Natural Sample Rate Hertz: ${ voice . naturalSampleRateHertz } ); console . log ( ' Supported languages:' ); voice . languageCodes . forEach ( languageCode = > { console . log ( ${ languageCode } ); }); }); Python To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries ."
+        ]
+      },
+      {
+        "title": "\"Supported voices and languages \\_|\\_ Cloud Text-to-Speech \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types",
+        "source_id": "site-docs-root",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "Replace PROJECT ID with your project ID. curl -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"x-goog-user-project: PROJECT ID \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ \"https://texttospeech.googleapis.com/v1/voices\" The Cloud Text-to-Speech API returns a JSON-formatted result that looks similar to the following: { \"voices\": [ { \"languageCodes\": [ \"es-ES\" ], \"name\": \"es-ES-Standard-A\", \"ssmlGender\": \"FEMALE\", \"naturalSampleRateHertz\": 24000 }, { \"languageCodes\": [ \"ja-JP\" ], \"name\": \"ja-JP-Standard-A\", \"ssmlGender\": \"FEMALE\", \"naturalSampleRateHertz\": 22050 }, { \"languageCodes\": [ \"pt-BR\" ], \"name\": \"pt-BR-Standard-A\", \"ssmlGender\": \"FEMALE\", \"naturalSampleRateHertz\": 24000 }, ... ] } Go To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries .",
+          "For more information, see Set up authentication for a local development environment . / Demonstrates using the Text to Speech client to list the client's supported voices. @throws Exception on TextToSpeechClient Errors. / public static List<Voice> listAllSupportedVoices () throws Exception { // Instantiates a client try ( TextToSpeechClient textToSpeechClient = TextToSpeechClient . create ()) { // Builds the text to speech list voices request ListVoicesRequest request = ListVoicesRequest . getDefaultInstance (); // Performs the list voices request ListVoicesResponse response = textToSpeechClient . listVoices ( request ); List<Voice> voices = response . getVoicesList (); for ( Voice voice : voices ) { // Display the voice's name.",
+          "TextToSpeechClient (); const [ result ] = await client . listVoices ({}); const voices = result . voices ; console . log ( 'Voices:' ); voices . forEach ( voice = > { console . log ( Name: ${ voice . name } ); console . log ( SSML Voice Gender: ${ voice . ssmlGender } ); console . log ( Natural Sample Rate Hertz: ${ voice . naturalSampleRateHertz } ); console . log ( ' Supported languages:' ); voice . languageCodes . forEach ( languageCode = > { console . log ( ${ languageCode } ); }); }); Python To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "texttospeech.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd",
+        "https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types",
+        "https://docs.cloud.google.com/text-to-speech/docs/voices"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd",
+        "https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types",
+        "https://docs.cloud.google.com/text-to-speech/docs/voices"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd",
+        "https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types",
+        "https://docs.cloud.google.com/text-to-speech/docs/voices"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd",
+        "https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types",
+        "https://docs.cloud.google.com/text-to-speech/docs/voices"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd",
+        "https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types",
+        "https://docs.cloud.google.com/text-to-speech/docs/voices"
+      ]
+    }
+  ]
+}

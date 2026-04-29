@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Automatic application monitoring",
+  "feature_slug": "automatic-application-monitoring",
+  "summary": "Automatic application monitoring automatically collects metrics and provides out-of-the-box dashboards for supported workloads on GKE.",
+  "extended_definition": "Automatic application monitoring automatically collects metrics and provides out-of-the-box dashboards for supported workloads on GKE.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Analyze model serving performance and costs with GKE Inference Quickstart\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "source_id": "site-docs-reference-2",
+        "final_score": 185,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If you deploy from the GKE AI/ML page in the Google Cloud console, PodMonitoring and HPA resources are automatically created for you by using the targetNtpot configuration.",
+          "For more information about enabling and configuring auto-monitoring, see Configure automatic application monitoring for workloads .",
+          "The following is an example of a command to enable observability features: gcloud container clusters update $CLUSTER NAME \\ --project = $PROJECT ID \\ --location = $LOCATION \\ --enable-managed-prometheus \\ --logging = SYSTEM,WORKLOAD \\ --monitoring = SYSTEM,DEPLOYMENT,HPA,POD,DCGM \\ --auto-monitoring-scope = ALL For more information, see Monitor your inference workloads . (HPA only) Deploy a metrics adapter : A metrics adapter, such as the Custom Metrics Stackdriver Adapter , is necessary if HPA resources were generated in the deployment manifests."
+        ]
+      },
+      {
+        "title": "\"GKE Autopilot overview \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 165,
+        "relevance": "",
+        "evidence_snippets": [
+          "Autopilot clusters collect the following types of logs and metrics automatically, adhering to Google's best practices for telemetry collection: Logs for Cloud Logging System logs Workload logs Admin Activity audit logs Data Access audit logs Metrics for Cloud Monitoring System metrics Workload metrics (from Google Cloud Managed Service for Prometheus) No additional configuration is required to enable logging and monitoring.",
+          "Best practice : To automatically scale the number of Pods in your cluster, use a mechanism such as Kubernetes horizontal Pod autoscaling , which can scale Pods based on the built-in CPU and memory metrics, or based on custom metrics from Cloud Monitoring.",
+          "Scaling : when your workloads experience high load and you add more Pods to accommodate the traffic, such as with Kubernetes Horizontal Pod Autoscaling, GKE automatically provisions new nodes for those Pods, and automatically expands the resources in your existing nodes based on need."
+        ]
+      },
+      {
+        "title": "\"Collect and view logs and metrics for Ray clusters on Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 163,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This behavior is expected because GKE, by default, automatically collects all workload logs written to standard output or standard error.",
+          "Go to Ray on GKE Overview dashboard The dashboard is automatically populated when you enable metrics collection for your Ray cluster.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE AI/ML Guides Send feedback Collect and view logs and metrics for Ray clusters on Google Kubernetes Engine (GKE) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics"
+      ]
+    }
+  ]
+}

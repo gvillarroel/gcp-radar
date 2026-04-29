@@ -1,0 +1,129 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:10.745Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "Firestore table view",
+  "feature_slug": "firestore-table-view",
+  "summary": "Firestore includes a table view in the console data section.",
+  "extended_definition": "Firestore includes a table view in the console data section.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+      "https://docs.cloud.google.com/firestore/docs/manage-data/export-import",
+      "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Exporting and importing data \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/manage-data/export-import",
+        "source_id": "site-docs-reference",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the navigation menu, click Import/Export . gcloud Use the operations list command to see all running and recently completed export and import operations: gcloud firestore operations list Check operation status Google Cloud Console You can view the status of a recent export or import operation in the Import/Export page of the Google Cloud console.",
+          "Note: Exporting a collection group won't automatically export subcollections of the collections within the group. gcloud firestore export gs:// [BUCKET NAME] \\ --collection-ids= [COLLECTION GROUP ID 1] , [COLLECTION GROUP ID 2] \\ --database= [DATABASE] For example, you can design a restaurants collection in the foo database to include multiple subcollections, such as ratings , reviews , or outlets .",
+          "For example: gcloud firestore import gs://my-bucket/2017-05-25T23:54:39 76544/ --database='cymbal' You can confirm the location of your export files in the Cloud Storage browser in the Google Cloud console: Open Cloud Storage browser Once you start an import operation, closing the terminal does not cancel the operation, see cancel an operation ."
+        ]
+      },
+      {
+        "title": "\"Exporting and importing data \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "source_id": "site-docs-root-2",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the navigation menu, click Import/Export . gcloud Use the operations list command to see all running and recently completed export and import operations: gcloud firestore operations list Check operation status Google Cloud Console You can view the status of a recent export or import operation in the Import/Export page of the Google Cloud console.",
+          "Note: Exporting a collection group won't automatically export subcollections of the collections within the group. gcloud firestore export gs:// [BUCKET NAME] \\ --collection-ids= [COLLECTION GROUP ID 1] , [COLLECTION GROUP ID 2] \\ --database= [DATABASE] For example, you can design a restaurants collection in the foo database to include multiple subcollections, such as ratings , reviews , or outlets .",
+          "For example: gcloud firestore import gs://my-bucket/2017-05-25T23:54:39 76544/ --database='cymbal' You can confirm the location of your export files in the Cloud Storage browser in the Google Cloud console: Open Cloud Storage browser Once you start an import operation, closing the terminal does not cancel the operation, see cancel an operation ."
+        ]
+      },
+      {
+        "title": "Exporting and Importing Entities \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "source_id": "site-docs-root",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, a recently completed export operation shows the following information: { \"operations\": [ { \"name\": \"projects/ project-id /operations/ASAyMDAwOTEzBxp0bHVhZmVkBxJsYXJ0bmVjc3Utc2Jvai1uaW1kYRQKKhI\", \"metadata\": { \"@type\": \"type.googleapis.com/google.datastore.admin.v1.ExportEntitiesMetadata\", \"common\": { \"startTime\": \"2017-12-05T23:01:39.583780Z\", \"endTime\": \"2017-12-05T23:54:58.474750Z\", \"operationType\": \"EXPORT ENTITIES\" }, \"progressEntities\": { \"workCompleted\": \"21933027\", \"workEstimated\": \"21898182\" }, \"progressBytes\": { \"workCompleted\": \"12421451292\", \"workEstimated\": \"9759724245\" }, \"entityFilter\": { \"namespaceIds\": [ \"\" ] }, \"outputUrlPrefix\": \"gs:// bucket-name \" }, \"done\": true, \"response\": { \"@type\": \"type.googleapis.com/google.datastore.admin.v1.ExportEntitiesResponse\", \"outputUrl\": \"gs:// bucket-name /2017-05-25T23:54:39 76544/2017-05-25T23:54:39 76544.overall export metadata\" } } ] } Check operation status To view the status of a long-running operation: Console You can view a list of the most recent export and import operations in the Import/Export page of the Google Cloud console.",
+          "Export operations For export operations involving a bucket in another project, modify the permissions of the bucket to assign one of the following Identity and Access Management roles to the Datastore mode service agent of the project that contains your Datastore mode database: Storage Admin Owner (basic role) You can also create an IAM custom role with slightly different permissions than the ones contained in the roles listed earlier: storage.buckets.get storage.objects.create storage.objects.delete storage.objects.list Import operations For import operations involving a Cloud Storage bucket in another project, modify the permissions of the bucket to assign one of the following Cloud Storage roles to the Datastore mode service agent of the project that contains your Datastore mode database: Storage Admin Both Storage Object Viewer and Storage Legacy Bucket Reader You can also create an IAM custom role with the following permissions: storage.buckets.get storage.objects.get Starting managed export and import operations This section describes how to start a managed export or import operation.",
+          "In the Cloud Billing reports page , you can use this label to view costs related to import and export operations: Note: Export and import operations executed before September 8th, 2020 did not apply the goog-firestoremanaged label."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "storage.buckets.get",
+      "storage.objects.create",
+      "storage.objects.delete",
+      "storage.objects.get",
+      "storage.objects.list",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.658Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "Simplified onboarding for Pay-as-you-go",
+  "feature_slug": "simplified-onboarding-for-pay-as-you-go",
+  "summary": "Apigee X provides a simplified Google Cloud console onboarding flow for Pay-as-you-go provisioning with defaults and optional customization.",
+  "extended_definition": "Apigee X provides a simplified Google Cloud console onboarding flow for Pay-as-you-go provisioning with defaults and optional customization.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-handling-request-response-data",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/flow-callout-policy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Request and response variables \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-handling-request-response-data",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 58,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "Managing rate plans for API products \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 57,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following provides an example of the response output: { \"name\": \"4403a3a5-b366-44f0-aa4d-bd54dcfd3239\", \"apiproduct\": \"HelloworldProduct\", \"displayName\": \"myrateplan5\", \"billingPeriod\": \"MONTHLY\", \"currencyCode\": \"USD\", \"setupFee\": { \"currencyCode\": \"USD\", \"units\": \"10\" }, \"consumptionPricingType\": \"FIXED PER UNIT\", \"consumptionPricingRates\": [ { \"fee\": { \"currencyCode\": \"USD\", \"units\": \"3\" } } ], \"revenueShareType\": \"FIXED\", \"revenueShareRates\": [ { \"sharePercentage\": 1 } ], \"state\": \"DRAFT\" } For more information, see the Create rate plan API Previewing your rate plan in the UI In the Google Cloud console, go to the Distribution > Monetization page.",
+          "The following provides an example of the response output, including the two rate plans, myrateplan1 and myrateplan2 associated with HelloworldProduct API product: { \"ratePlans\": [ { \"name\": \"6b51b501-ac15-41b7-bb3e-621edb849e13\", \"apiproduct\": \"HelloworldProduct\", \"displayName\": \"myrateplan2\", \"billingPeriod\": \"MONTHLY\", \"currencyCode\": \"USD\", \"setupFee\": { \"currencyCode\": \"USD\", \"units\": \"20\" }, \"fixedRecurringFee\": { \"currencyCode\": \"USD\", \"units\": \"25\" }, \"fixedFeeFrequency\": 1, \"consumptionPricingType\": \"FIXED PER UNIT\", \"consumptionPricingRates\": [ { \"fee\": { \"currencyCode\": \"USD\", \"nanos\": 500000000 } } ], \"revenueShareType\": \"FIXED\", \"revenueShareRates\": [ { \"sharePercentage\": 2 } ], \"state\": \"DRAFT\" }, { \"name\": \"8c0b527c-ba2f-45f1-ac1c-b9e891546fc2\", \"apiproduct\": \"HelloworldProduct\", \"displayName\": \"myrateplan1\", \"billingPeriod\": \"MONTHLY\", \"currencyCode\": \"USD\", \"consumptionPricingType\": \"FIXED PER UNIT\", \"consumptionPricingRates\": [ { \"fee\": { \"currencyCode\": \"USD\", \"units\": \"3\" } } ], \"state\": \"PUBLISHED\", \"startTime\": \"1617302588000\" } ] } For more information about the API and its response payload, see the List rate plans API Viewing details for a rate plan using the API To view details for a rate plan, issue a GET request to the following API: https://apigee.googleapis.com/v1/organizations/ $ORG /apiproducts/ $APIPRODUCT /rateplans/ $RATEPLAN NAME To determine the name of the rate plan to pass in the resource path, see Listing the rate plans in an organization .",
+          "The following provides an example of the response output for the rate plan with the name 6b51b501-ac15-41b7-bb3e-621edb849e13 and display name myrateplan2 : { \"name\": \"6b51b501-ac15-41b7-bb3e-621edb849e13\", \"apiproduct\": \"HelloworldProduct\", \"displayName\": \"myrateplan2\", \"billingPeriod\": \"MONTHLY\", \"currencyCode\": \"USD\", \"setupFee\": { \"currencyCode\": \"USD\", \"units\": \"20\" }, \"fixedRecurringFee\": { \"currencyCode\": \"USD\", \"units\": \"25\" }, \"fixedFeeFrequency\": 1, \"consumptionPricingType\": \"FIXED PER UNIT\", \"consumptionPricingRates\": [ { \"fee\": { \"currencyCode\": \"USD\", \"nanos\": 500000000 } } ], \"revenueShareType\": \"FIXED\", \"revenueShareRates\": [ { \"sharePercentage\": 2 } ], \"state\": \"DRAFT\" } For more information about the API and its response payload, see the Get rate plan API ."
+        ]
+      },
+      {
+        "title": "FlowCallout policy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/flow-callout-policy",
+        "source_id": "site-api-reference",
+        "final_score": 54,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/flow-callout-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-handling-request-response-data"
+      ]
+    }
+  ]
+}

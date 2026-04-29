@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:24.820Z",
+  "source_step08_card": "data/step-08/current/products/network-intelligence-center/card.json",
+  "product_name": "Network Intelligence Center",
+  "product_slug": "network-intelligence-center",
+  "feature_name": "Performance Dashboard latency metrics between VMs and Internet endpoints",
+  "feature_slug": "performance-dashboard-latency-metrics-between-vms-and-internet-endpoints",
+  "summary": "Performance Dashboard shows latency metrics between VMs and Internet endpoints in project and Google Cloud performance views.",
+  "extended_definition": "Performance Dashboard shows latency metrics between VMs and Internet endpoints in project and Google Cloud performance views.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/concepts/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Performance Dashboard overview \\_|\\_ Network Intelligence Center - Performance\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/concepts/overview",
+        "source_id": "site-docs-root",
+        "final_score": 296,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Traffic between Google Cloud and internet locations Performance Dashboard shows latency metrics for regions where you have Compute Engine virtual machine (VM) instances and the internet locations of the end devices that communicate with the VMs.",
+          "Traffic between Google Cloud and internet locations Performance Dashboard shows latency metrics between VMs across all Google Cloud regions and internet endpoints.",
+          "The dashboard lets you see and understand the following: Packet loss summary Packet loss average between region pairs of the regions selected Packet loss average between zone pairs of selected regions Latency summary Latency median between region pairs of the regions selected Latency median between zone pairs of the regions selected Traffic between VM instances Performance Dashboard shows packet loss and latency metrics (in summary charts and heatmap views) for zones where you have Compute Engine virtual machine (VM) instances."
+        ]
+      },
+      {
+        "title": "\"Network Topology overview \\_|\\_ Network Intelligence Center - Network Topology\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Infrastructure view, the insights for metrics for the selected hour on the timeline include the following: High egress instances: aggregated hourly values for various types of egress High egress instance groups: aggregated hourly values for various types of egress In the GKE Enterprise view available for GKE Enterprise projects, the insights for metrics for the selected hour on the timeline include the following: High egress GKE workloads: aggregated hourly values for various types of egress for GKE workloads, in the GKE Enterprise view Filter the traffic based on the traffic types You can further filter the traffic based on the following traffic types: All egress traffic for an entity Cross-zonal egress traffic: useful for analyzing billable traffic Egress to internet: used for analyzing billable traffic and for analyzing the traffic that reaches external endpoints Hybrid egress: used to analyze the volume of traffic to on-premises, including Cloud Interconnect, Cloud VPN, and Router appliance connections In the GKE Enterprise view, you can further filter the traffic based on the following traffic types: All measured egress traffic from the selected entity Cross-zonal egress traffic: useful for analyzing billable traffic between Google Cloud zones Multiple projects Network Topology visualizes resources in your project, or you can use Cloud Monitoring, which can visualize metrics for multiple Google Cloud projects.",
+          "Metrics for the selected hour on the timeline include the following: Average hourly throughput available for most entities Average hourly packet loss available for traffic within Google Cloud regions and zones Hourly median latency (RTT) available for many entity types In the GKE Enterprise view available for GKE Enterprise projects, the metrics for the selected hour on the timeline also include the following: Average hourly throughput available for most entities Median latency available for traffic within Google Cloud regions and zones with GKE clusters Network verdict metrics displaying the GKE workloads with the most dropped and most forwarded traffic flows for the selected cluster You can also download the table of outliers in a CSV format for the High egress and Network verdict traffic insights.",
+          "It does not support the following access methods to Google-managed services: External traffic from the internet Direct Google access from the VMs Private Google Access from on-premises hosts Network Topology doesn't show traffic to or from some of the Google-managed services such as App Engine Memcache, Filestore, Memorystore, Cloud SQL, and partner and marketplace solutions."
+        ]
+      },
+      {
+        "title": "Network Intelligence Center overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "With these performance-monitoring capabilities, you can distinguish between a problem in your application and a problem in the underlying Google Cloud network.",
+          "Network Topology Network Topology is a visualization tool that shows the topology of your network infrastructure: Infrastructure view: Shows Virtual Private Cloud (VPC) networks, hybrid connectivity to and from your on-premises networks, connectivity to Google-managed services, and the associated metrics.",
+          "This view makes it easier to understand networking relationships between various workloads on Google Cloud and their current state, such as the traffic paths and throughput between virtual machine (VM) instances."
+        ]
+      },
+      {
+        "title": "\"Cloud Network Insights overview \\_|\\_ Network Intelligence Center - Cloud\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights",
+        "source_id": "site-iam-reference",
+        "final_score": 149,
+        "relevance": "",
+        "evidence_snippets": [
+          "View high-level metrics Google Cloud console View standard performance metrics (latency, loss, jitter) for your paths directly in Cloud Monitoring dashboards.",
+          "Metrics and logs All collected telemetry is exported to Google Cloud Observability to visualize your network architecture and performance in a single pane of glass.",
+          "Integrated monitoring : Access metrics and logs directly within Google Cloud, leveraging Cloud Monitoring and Cloud Logging for dashboards and alerting."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights"
+      ]
+    }
+  ]
+}

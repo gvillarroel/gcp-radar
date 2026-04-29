@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:14.895Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "Autoscale policies",
+  "feature_slug": "autoscale-policies",
+  "summary": "Autoscale policies automatically expand or shrink a cluster based on CPU utilization or storage capacity thresholds.",
+  "extended_definition": "Autoscale policies automatically expand or shrink a cluster based on CPU utilization or storage capacity thresholds.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+      "https://docs.cloud.google.com/vmware-engine/docs/howto-autoscale",
+      "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-use-storage-only-nodes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage autoscale \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/howto-autoscale",
+        "source_id": "site-docs-reference",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Manage autoscale Autoscale automatically expands or shrinks a cluster in a private cloud based on CPU, memory, and storage utilization thresholds.",
+          "Important: Adjustments to clusters based on autoscale count toward VMware Engine node quota corresponding to your Google Cloud project.",
+          "Google Cloud VMware Engine monitors the cluster based on defined metrics and adds or removes nodes from the cluster automatically."
+        ]
+      },
+      {
+        "title": "\"Manage storage-only nodes \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-use-storage-only-nodes",
+        "source_id": "site-docs-reference",
+        "final_score": 107,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Save . gcloud To expand or shrink a stretched cluster by adding or removing storage-only nodes using the Google Cloud CLI, use the gcloud vmware private-clouds clusters update command : gcloud vmware private-clouds clusters update STRETCHED CLUSTER NAME \\ --location= REGION \\ --project= PROJECT ID \\ --private-cloud= STRETCHED PC STORAGE NODE NAME \\ --node-type-config=type=standard-72,count= n \\ --node-type-config=type=storage-only-standard-72,count= m Replace the following: STRETCHED CLUSTER NAME : the name of the stretched cluster in this private cloud.",
+          "API To expand or shrink a stretched cluster by adding or removing storage-only nodes using the VMware Engine API, make a PATCH request: PATCH \"https://vmwareengine.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /privateClouds/ STRETCHED PC STORAGE NODE NAME /clusters/ STRETCHED CLUSTER NAME \" -d '{ \"nodeTypeConfigs\": { \"standard-72\": { \"nodeCount\": n }, \"storage-only-standard-72\": { \"nodeCount\": m } } }' Replace the following: PROJECT ID : the project ID for the request.",
+          "Expand or shrink a stretched cluster with storage-only nodes You can expand or shrink a stretched cluster by adding or removing storage-only nodes using the Google Cloud console, Google Cloud CLI, or VMware Engine API by doing the following: Console To expand or shrink a stretched cluster with storage-only nodes using the Google Cloud console, do the following: In the Google Cloud console, go to the Private clouds page."
+        ]
+      },
+      {
+        "title": "\"About VMware Engine private clouds \\_|\\_ Google Cloud VMware Engine \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "source_id": "site-docs-reference",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "Custom core counts Some licensing agreements charge you based on the number of CPU cores on the underlying physical node or in the cluster.",
+          "Node adjustments by autoscale policies aren't supported with a single-node private cloud.",
+          "The following table describes vSphere cluster limits in private clouds that meet SLA requirements: Resource Limit Minimum number of nodes to create a private cloud (first cluster) 3 Minimum number of nodes to create a cluster 3 Maximum number of nodes per cluster 32 Maximum number of nodes per private cloud 96 Maximum number of clusters per private cloud 32 Private cloud and cluster limitations The following limitations apply to private clouds and clusters: You can create private clouds with mixed node types, combining ve1 and ve2 nodes in a single private cloud."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "vmwareengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/howto-autoscale",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-use-storage-only-nodes"
+      ]
+    }
+  ]
+}

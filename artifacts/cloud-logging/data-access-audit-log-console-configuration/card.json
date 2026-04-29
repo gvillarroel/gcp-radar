@@ -1,0 +1,193 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:49.591Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Data Access audit log console configuration",
+  "feature_slug": "data-access-audit-log-console-configuration",
+  "summary": "The Google Cloud console lets users enable and configure Data Access audit logs.",
+  "extended_definition": "The Google Cloud console lets users enable and configure Data Access audit logs.",
+  "lifecycle": {
+    "latest_feature_date": "2018-06-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/access-control",
+      "https://docs.cloud.google.com/logging/docs/audit",
+      "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Audit Logs overview \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/audit",
+        "source_id": "site-docs-root",
+        "final_score": 198,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Storage : When Cloud Storage usage logs are enabled, Cloud Storage writes usage data to the Cloud Storage bucket, which generates Data Access audit logs for the bucket.",
+          "Publicly available resources that have the Identity and Access Management policies allAuthenticatedUsers or allUsers don't generate audit logs.",
+          "Data Access audit logs Data Access audit logs are log entries written by API calls that read the configuration or metadata of resources."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Console activity Required permissions Minimal read-only access logging.logEntries.list logging.logs.list logging.logServiceIndexes.list logging.logServices.list resourcemanager.projects.get View Data Access audit logs logging.privateLogEntries.list View log-based metrics logging.logMetrics.{list, get} View sinks logging.sinks.{list, get} View logs usage logging.usage.get Download logs logging.logEntries.{list, download} Only one of these permissions is necessary to download logs.",
+          "Roles required to create and use log-based metrics Following is a summary of the common roles and permissions that a principal needs to access log-based metrics: The Logs Configuration Writer ( roles/logging.configWriter ) role lets principals list, create, get, update, and delete log-based metrics.",
+          "However, this role doesn't let users create sinks, read Data Access audit logs that are in the Default bucket, or read logs that are in user-defined log buckets."
+        ]
+      },
+      {
+        "title": "View and analyze logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "source_id": "site-docs-root",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can send the link to users who have access to the Google Cloud project.",
+          "For more information about investigations, see the following documentation: Troubleshoot issues with Gemini Cloud Assist investigations Create a Gemini Cloud Assist investigation Manage Gemini Cloud Assist investigations View similar log entries You can view log entries that are similar to a selected log entry, which lets you focus on logs of interest.",
+          "A separate dialog opens with the following information: The pattern that was found The percentage of log entries that contain the pattern Example log entries that contain the pattern In this dialog, you can hide or show log entries: Hide similar log entries You can hide similar log entries, which lets you remove logs from your query results."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "logging.configWriter",
+      "logging.logEntries",
+      "logging.logEntries.list",
+      "logging.logMetrics",
+      "logging.logs.list",
+      "logging.logServiceIndexes.list",
+      "logging.logServices.list",
+      "logging.privateLogEntries.list",
+      "logging.sinks",
+      "logging.usage.get",
+      "monitoring.alertPolicyEditor",
+      "monitoring.notificationChannelEditor"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.configWriter",
+      "roles/monitoring.alertPolicyEditor",
+      "roles/monitoring.notificationChannelEditor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    }
+  ]
+}

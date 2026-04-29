@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:13.819Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Fallback IVR navigation settings",
+  "feature_slug": "fallback-ivr-navigation-settings",
+  "summary": "Administrators can configure global and queue-level fallback routing when an end user does not select a queue in IVR navigation.",
+  "extended_definition": "Administrators can configure global and queue-level fallback routing when an end user does not select a queue in IVR navigation.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Call settings \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "The number of dialed, failed, and completed calls are reported for the following types of calls: Calls to emergency services Conference calls with emergency services Calls to special services Conference calls with special services Configure global call settings You can configure global call settings on the Settings > Call page of CCAI Platform.",
+          "Configure overcapacity deflections at the global level To configure overcapacity deflections at the global level, follow these steps: In the CCAI Platform portal, click Settings > Call .",
+          "Configure after hours deflections at the global level To configure after hours deflections at the global level, follow these steps: In the CCAI Platform portal, click Settings > Call ."
+        ]
+      },
+      {
+        "title": "\"Queue and menu setup \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup",
+        "source_id": "site-docs-reference",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the side menu queue settings, navigate to Custom Fallback IVR Navigation and select Configure .",
+          "If an IVR queue menu is mapped as an Mobile PSTN fallback, the queue cannot be deleted without removing this association Rich data The following data is passed to the CRM ticket for the IVR fallback call: End-user's phone number To gather the phone number data, the end-user is required to input their phone number Example phone number gathering screen in Mobile: Selected queue menu When the end-user makes a call via PSTN, the system retrieves the queue name and custom data package via phone number lookup Custom data package (as configured by your mobile development team) The custom data package is mapped to the correct ticket based on the active call session with the phone number entered by the end-user in the app CCAI Platform portal configuration Go to Settings > Queue > Mobile .",
+          "Configuration iOS/Android Developer : With Multiple Mobile Apps in use, the threshold for PSTN Callback calls will be configured from within the Admin Portal in Settings > Developer Settings > Edit Mobile App > Fallback phone number/threshold ."
+        ]
+      },
+      {
+        "title": "\"Chat Settings and Features \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+        "source_id": "site-docs-reference",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "Dismissed chat details Dismissal settings can be set globally or per-queue When chats have been dismissed, they do not accrue wait time For a chat to be dismissed, both the consumer and agent have to have sent at least one message The dismiss eligibility timer starts from the latest message from an agent Only inbound chats can be dismissed When chats are dismissed and later reactivated, a consumer has to send at least one message afterward before the chat is eligible to be dismissed again Dismissed chats are ultimately ended when the chat timeout duration is met When chats are dismissed, activities are added to the chat transcript Chat Flow CCAI Platform portal configuration Dismissing chats - global setting A global configuration for all chat channels can be configured in Chat Settings.",
+          "Configure automatic redaction settings at the global level To configure automatic redaction settings at the global level, follow these steps: In the CCAI Platform portal, click Settings > Chat .",
+          "Configure chat check-in at the global level To configure chat check-in at the global level, follow these steps: In the CCAI Platform portal, click Settings > Chat ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

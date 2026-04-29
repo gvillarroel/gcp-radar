@@ -1,0 +1,167 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:40.969Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "AlloyDB Admin API client libraries",
+  "feature_slug": "alloydb-admin-api-client-libraries",
+  "summary": "Cloud Client Libraries are available for the AlloyDB Admin API in C++, C#, Go, and Java.",
+  "extended_definition": "Cloud Client Libraries are available for the AlloyDB Admin API in C++, C#, Go, and Java.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+      "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+      "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the AlloyDB remote MCP server \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "source_id": "site-docs-reference-2",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "To initialize the gcloud CLI, run the following command: gcloud init Required roles To get the permissions that you need to use the AlloyDB for PostgreSQL MCP server, ask your administrator to grant you the following IAM roles on the project where you want to use the AlloyDB for PostgreSQL MCP server: Make MCP tool calls: MCP Tool User ( roles/mcp.toolUser ) Create an AlloyDB instance: AlloyDB Admin ( roles/alloydb.admin ) Create an AlloyDB user: AlloyDB Admin ( roles/alloydb.admin ) Execute SQL queries in AlloyDB: AlloyDB Admin ( roles/alloydb.admin ) Studio Query User ( roles/databasesconsole.studioQueryUser ) Get a AlloyDB instance or list all AlloyDB instances in a project: AlloyDB Viewer ( roles/alloydb.viewer ) List AlloyDB users: AlloyDB Viewer ( roles/alloydb.viewer ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Configure an MCP client to use the AlloyDB MCP server AI applications and agents, such as Claude or Gemini CLI, can instantiate an MCP client that connects to a single MCP server.",
+          "Available tools To view details of available MCP tools and their descriptions for the AlloyDB MCP server, see the AlloyDB MCP reference ."
+        ]
+      },
+      {
+        "title": "\"Generate SQL queries using natural language questions \\_|\\_ AlloyDB for\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "SELECT psql FROM alloydb ai nl . template store view WHERE intent = 'How many accounts associated with loans are located in the Prague region?' ; This statement returns the following: SELECT COUNT(T1.account id) FROM account AS T1 INNER JOIN loan AS T2 ON T1.account id = T2.account id INNER JOIN district AS T3 ON T1.district id = T3.district id WHERE T3.\"A3\" = $1 Provide a customized parameterization To provide a customized parameterization for a SQL statement using the manual interface of the add template function, run the statement in the following example: SELECT alloydb ai nl . add template ( nl config id = > 'my app config' , intent = > 'Among the accounts opened, how many customers born before 1950 resided in Slokolov at the time of account opening?' , sql = > $$ SELECT COUNT ( DISTINCT T2 . client id ) FROM district AS T1 INNER JOIN client AS T2 ON T1 . district id = T2 . district id INNER JOIN account AS T3 ON T2 . client id IN ( SELECT client id FROM disp WHERE account id = T3 . account id ) WHERE to char ( T2 . birth date :: timestamp , 'YYYY' ) < '1950' AND T1 . \"A2\" = 'Slokolov' $$ , parameterized sql = > $$ SELECT COUNT ( DISTINCT T2 . client id ) FROM district AS T1 INNER JOIN client AS T2 ON T1 . district id = T2 . district id INNER JOIN account AS T3 ON T2 . client id IN ( SELECT client id FROM disp WHERE account id = T3 . account id ) WHERE to char ( T2 . birth date :: timestamp , 'YYYY' ) < $ 2 AND T1 . \"A2\" = $ 1 $$ , parameterized intent = > $$ Among the accounts opened , how many customers born before $ 2 resided in $ 1 at the time of account opening ? $$ , manifest = > $$ Among the accounts opened , how many customers born before a given date resided in a given city at the time of account opening ? $$ , check intent = > TRUE ); In the preceding definition, the parameterization of the SQL statement is provided.",
+          "To use natural language to get results from your database using the alloydb ai nl.get sql function, use the following example: SELECT alloydb ai nl . get sql ( 'my app config' , -- nl config 'What is the sum that client number 4''s account has following transaction 851?' -- nl question ); The following JSON output is returned: { \"sql\": \"SELECT T3.balance FROM public.client AS T1 INNER JOIN public.account AS T2 ON T1.district id = T2.district id INNER JOIN public.trans AS T3 ON T2.account id = T3.account id WHERE T1.client id = 4 AND T3.trans id = 851\", \"prompt\": \"\", \"retries\": 0, \"error msg\": \"\", \"nl question\": \"What is the sum that client number 4's account has following transaction 851?\" } Optional: To extract the generated SQL query as a text string, add ->>'sql' : SELECT alloydb ai nl . get sql ( 'my app config' , -- nl config 'What is the sum that client number 4''s account has following transaction 851?' -- nl question ) - >> 'sql' ; The ->> operator is used to extract a JSON value as text.",
+          "SELECT FROM alloydb ai nl . generated templates view ; The following is an example of the returned output: -[ RECORD 1 ]---------------------------------------------------------------- id 1 config my app config type Template manifest How many clients have a birth year of a given number? nl How many clients have a birth year of 1997? sql select count( ) from public.client as T where to char(T.birth date::timestamp, 'YYYY') = '1997'; intent How many clients have a birth year of 1997? psql select count( ) from public.client as T where to char(T.birth date::timestamp, 'YYYY') = $1; pintent How many clients have a birth year of $1? comment explanation weight 1 The manifest in the returned output is a general template or a broad description of the question type or the operation that can be performed."
+        ]
+      },
+      {
+        "title": "\"Connect from Google Kubernetes Engine (GKE) to AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "source_id": "site-docs-reference",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "This can take several minutes. gcloud In the Cloud Shell, check if the unused IP addresses (IPv4) range is already assigned to service peering: gcloud services vpc-peerings list --network = default Skip the next step if your output looks similar to the following: network: projects/493573376485/global/networks/default peering: servicenetworking-googleapis-com reservedPeeringRanges: - default-ip-range service: services/servicenetworking.googleapis.com In this output, the value of reservedPeeringRanges is default-ip-range , which you can use as IP RANGE NAME to create a private connection in step 3. (Skip when using the default value of reservedPeeringRanges ) To allocate unused IP addresses in the VPC, use the following command: gcloud compute addresses create IP RANGE NAME \\ --global \\ --purpose = VPC PEERING \\ --prefix-length = 16 \\ --description = \"VPC private service access\" \\ --network = default Replace IP RANGE NAME with your name for available internal IP addresses within an AlloyDB subnet, such as alloydb-gke-psa-01 .",
+          "To grant alloydb.client and serviceusage.serviceUsageConsumer roles to your application GSA, use the following commands: gcloud projects add-iam-policy-binding PROJECT ID --member = serviceAccount: GSA NAME @ PROJECT ID .iam.gserviceaccount.com --role = \"roles/alloydb.client\" gcloud projects add-iam-policy-binding PROJECT ID --member = serviceAccount: GSA NAME @ PROJECT ID .iam.gserviceaccount.com --role = \"roles/serviceusage.serviceUsageConsumer\" Configure Workload Identity Federation for GKE for the sample application You need to configure GKE to provide the service account to the AlloyDB Auth Proxy using the Workload Identity Federation for GKE feature.",
+          "To grant the roles/alloydb.client role, do the following: Click Select a role ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.admin",
+      "alloydb.client",
+      "alloydb.viewer",
+      "databasesconsole.studioQueryUser",
+      "iam.gserviceaccount.com",
+      "mcp.toolUser",
+      "nl.fragment",
+      "nl.get",
+      "public.account",
+      "public.client",
+      "public.trans",
+      "servicenetworking.googleapis.com",
+      "serviceusage.serviceUsageConsumer"
+    ],
+    "missing_inventory_roles": [
+      "roles/alloydb.admin",
+      "roles/alloydb.client",
+      "roles/alloydb.viewer",
+      "roles/databasesconsole.studioQueryUser",
+      "roles/mcp.toolUser",
+      "roles/serviceusage.serviceUsageConsumer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:34.271Z",
+  "source_step08_card": "data/step-08/current/products/vpc-service-controls/card.json",
+  "product_name": "VPC Service Controls",
+  "product_slug": "vpc-service-controls",
+  "feature_name": "BigQuery support",
+  "feature_slug": "bigquery-support",
+  "summary": "VPC Service Controls supports protecting BigQuery resources.",
+  "extended_definition": "VPC Service Controls supports protecting BigQuery resources.",
+  "lifecycle": {
+    "latest_feature_date": "2018-12-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc-service-controls/docs/resources",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported products and limitations \\_|\\_ VPC Service Controls \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "source_id": "site-docs-reference-2",
+        "final_score": 174,
+        "relevance": "",
+        "evidence_snippets": [
+          "Service name krmapihosting.googleapis.com Details To use Config Controller with VPC Service Controls, you must enable the following APIs inside your perimeter: Cloud Monitoring API ( monitoring.googleapis.com ) Container Registry API ( containerregistry.googleapis.com ) Google Cloud Observability API ( logging.googleapis.com ) Security Token Service API ( sts.googleapis.com ) Cloud Storage API ( storage.googleapis.com ) If you provision resources with Config Controller, you must enable the API for those resources in your service perimeter.",
+          "You get a response with a list of methods and permissions. availableOnRestrictedVip: RESTRICTED VIP STATUS knownLimitations: LIMITATIONS STATUS name: SERVICE ADDRESS serviceSupportStage: SERVICE STATUS supportedMethods: METHODS LIST . . . title: SERVICE NAME In this response, METHODS LIST lists all the methods and permissions supported by VPC Service Controls for the specified service.",
+          "Limitations VPC Service Controls supports Cloud Scheduler jobs only with the following targets: Cloud Run run.app endpoints Cloud Run functions functions.net endpoints Google Cloud APIs that are VPC Service Controls-compliant (either in Preview or GA)—can be in a different Google Cloud project from your Cloud Scheduler job."
+        ]
+      },
+      {
+        "title": "Resources \\_|\\_ VPC Service Controls \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/resources",
+        "source_id": "site-docs-reference",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking VPC Service Controls Resources Send feedback Resources Stay organized with collections Save and categorize content based on your preferences.",
+          "Quotas and limits Usage policies for your VPC Service Controls resources.",
+          "Known service limitations Known service limitations for VPC Service Controls."
+        ]
+      },
+      {
+        "title": "\"VPC networks management in service perimeters \\_|\\_ VPC Service Controls\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "source_id": "site-docs-reference-2",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Networking VPC Service Controls Guides Send feedback VPC networks management in service perimeters Stay organized with collections Save and categorize content based on your preferences.",
+          "You can also allow access from a VPC network that is not inside your perimeter to resources inside your perimeter by specifying an ingress rule.",
+          "If a VPC network has a custom subnet mode but if no subnets exist, then that VPC network cannot be added independently to VPC Service Controls."
+        ]
+      },
+      {
+        "title": "VPC accessible services \\_|\\_ VPC Service Controls \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+        "source_id": "site-docs-reference-2",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Because the two projects share a perimeter, the VPC network in my-authorized-compute-project has access to the resources of services in my-authorized-gcs-project , regardless of whether the perimeter protects those services.",
+          "Home Documentation Networking VPC Service Controls Guides Send feedback VPC accessible services Stay organized with collections Save and categorize content based on your preferences.",
+          "You have already configured your VPC network to use the restricted VIP, which limits access from your VPC network only to APIs that are supported by VPC Service Controls."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "containerregistry.googleapis.com",
+      "functions.net",
+      "krmapihosting.googleapis.com",
+      "logging.googleapis.com",
+      "monitoring.googleapis.com",
+      "run.app",
+      "storage.googleapis.com",
+      "sts.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/resources",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/resources",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/resources",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/resources",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/resources",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/resources",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/resources",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/resources",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/resources",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "INTERSECT DISTINCT operator",
+  "feature_slug": "intersect-distinct-operator",
+  "summary": "BigQuery standard SQL supports the INTERSECT DISTINCT set operator.",
+  "extended_definition": "BigQuery standard SQL supports the INTERSECT DISTINCT set operator.",
+  "lifecycle": {
+    "latest_feature_date": "2017-11-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/operators",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Query syntax \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "source_id": "site-docs-reference",
+        "final_score": 135,
+        "relevance": "",
+        "evidence_snippets": [
+          "SELECT item , purchases , category , LAST VALUE ( item ) OVER ( item window ) AS most popular FROM Produce WINDOW item window AS ( PARTITION BY category ORDER BY purchases ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING ) SELECT item , purchases , category , LAST VALUE ( item ) OVER ( d ) AS most popular FROM Produce WINDOW a AS ( PARTITION BY category ), b AS ( a ORDER BY purchases ), c AS ( b ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING ), d AS ( c ) SELECT item , purchases , category , LAST VALUE ( item ) OVER ( c ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING ) AS most popular FROM Produce WINDOW a AS ( PARTITION BY category ), b AS ( a ORDER BY purchases ), c AS b Set operators query expr [ { INNER [ { FULL LEFT } [ OUTER ] ] } ] { UNION { ALL DISTINCT } INTERSECT DISTINCT EXCEPT DISTINCT } [ { BY NAME [ ON ( column list ) ] [ STRICT ] CORRESPONDING [ BY ( column list ) ] } ] query expr Set operators combine or filter results from two or more input queries into a single result set.",
+          "WITH NumbersTable AS ( SELECT 1 AS one digit , 10 AS two digit UNION ALL SELECT 2 , 20 UNION ALL SELECT 3 , 30 ) SELECT one digit , two digit FROM NumbersTable INTERSECT DISTINCT STRICT CORRESPONDING SELECT 10 AS two digit , 1 AS one digit ; / -----------+-----------+ one digit two digit +-----------+-----------+ 1 10 +-----------+----------- / For more syntax examples with the BY NAME modifier, see the UNION set operator.",
+          "The following examples illustrate the use of parentheses with set operations: -- Same set operations, no parentheses. query1 UNION ALL query2 UNION ALL query3 ; -- Different set operations, parentheses needed. query1 UNION ALL ( query2 UNION DISTINCT query3 ); -- Invalid query1 UNION ALL query2 UNION DISTINCT query3 ; -- Same set operations, no parentheses. query1 EXCEPT DISTINCT query2 EXCEPT DISTINCT query3 ; -- Equivalent query with optional parentheses, returns same results. ( query1 EXCEPT DISTINCT query2 ) EXCEPT DISTINCT query3 ; -- Different execution order with a subquery, parentheses needed. query1 EXCEPT DISTINCT ( query2 EXCEPT DISTINCT query3 ); Set operator behavior with duplicate rows Consider a given row R that appears exactly m times in the first input query and n times in the second input query, where m >= 0 and n >= 0 : For UNION ALL , row R appears exactly m + n times in the result."
+        ]
+      },
+      {
+        "title": "\"Legacy SQL Syntax, Functions and Operators \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "source_id": "site-docs-reference",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "JOIN operator BigQuery supports multiple JOIN operators in each FROM clause.",
+          "Example: legacySQL SELECT state , / If 'is male' is True, return 'Male', / / otherwise return 'Female' / IF ( is male , 'Male' , 'Female' ) AS sex , / The count value is aliased as 'cnt' / / and used in the HAVING clause below. / COUNT ( ) AS cnt FROM [ bigquery - public - data : samples . natality ] WHERE state != '' GROUP BY state , sex HAVING cnt > 3000000 ORDER BY cnt DESC Returns: +-------+--------+---------+ state sex cnt +-------+--------+---------+ CA Male 7060826 CA Female 6733288 TX Male 5107542 TX Female 4879247 NY Male 4442246 NY Female 4227891 IL Male 3089555 +-------+--------+---------+ Arithmetic operators Arithmetic operators take numeric arguments and return a numeric result.",
+          "Example: legacySQL SELECT cigarette use , / Finds average and standard deviation / AVG ( weight pounds ) baby weight , STDDEV ( weight pounds ) baby weight stdev , AVG ( mother age ) mother age FROM [ bigquery - public - data : samples . natality ] WHERE year = 2003 AND state = 'OH' / Group the result values by those / / who smoked and those who didn't. / GROUP BY cigarette use ; Filter query results using an aggregated value In order to filter query results using an aggregated value (for example, filtering by the value of a SUM ), use the HAVING function."
+        ]
+      },
+      {
+        "title": "Operators \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/operators",
+        "source_id": "site-docs-root",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "GoogleSQL for BigQuery supports operators.",
+          "Even though the number of code points is different, the two strings are considered equal when the collation units are considered the same. '\\u0041\\u030A' is 'Å' (two code points) '\\u0061\\u030A' is 'å' (two code points) '\\u00C5' is 'Å' (one code point) In the following examples, the difference between '\\u0061\\u030A' and '\\u00C5' is tertiary. -- Returns FALSE ' \\ u0061 \\ u030A' LIKE '% \\ u00C5%' ; -- Returns TRUE COLLATE ( ' \\ u0061 \\ u030A' , 'und:ci' ) LIKE '% \\ u00C5%' ; -- Returns TRUE COLLATE ( ' \\ u0061 \\ u030A' , 'und:ci' ) = COLLATE ( ' \\ u00C5' , 'und:ci' ); In the following example, '\\u0083' is a NO BREAK HERE character and is ignored. -- Returns FALSE ' \\ u0083' LIKE '' ; -- Returns TRUE COLLATE ( ' \\ u0083' , 'und:ci' ) LIKE '' ; Quantified LIKE operator The quantified LIKE operator supports the following syntax: search value [ NOT ] LIKE quantifier patterns quantifier : { ANY SOME ALL } patterns : { ( expression [ , ... ] ) UNNEST ( array expression ) } Description Checks search value for matches against several patterns.",
+          "Examples The examples in this section reference a table called entry table : / -------+ entry +-------+ a b c NULL +------- / SELECT 'a' FROM entry table WHERE entry = 'a' -- a => 'a' = 'a' => TRUE -- b => 'b' = 'a' => FALSE -- NULL => NULL = 'a' => NULL / -------+ entry +-------+ a +------- / SELECT entry FROM entry table WHERE NOT ( entry = 'a' ) -- a => NOT('a' = 'a') => NOT(TRUE) => FALSE -- b => NOT('b' = 'a') => NOT(FALSE) => TRUE -- NULL => NOT(NULL = 'a') => NOT(NULL) => NULL / -------+ entry +-------+ b c +------- / SELECT entry FROM entry table WHERE entry IS NULL -- a => 'a' IS NULL => FALSE -- b => 'b' IS NULL => FALSE -- NULL => NULL IS NULL => TRUE / -------+ entry +-------+ NULL +------- / Graph logical operators GoogleSQL supports the following logical operators in element pattern label expressions : Name Syntax Description NOT !X Returns TRUE if X isn't included, otherwise, returns FALSE ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

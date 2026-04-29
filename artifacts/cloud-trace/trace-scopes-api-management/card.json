@@ -1,0 +1,231 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:56.733Z",
+  "source_step08_card": "data/step-08/current/products/cloud-trace/card.json",
+  "product_name": "Cloud Trace",
+  "product_slug": "cloud-trace",
+  "feature_name": "Trace scopes API management",
+  "feature_slug": "trace-scopes-api-management",
+  "summary": "Trace scopes can be created and managed programmatically through an API.",
+  "extended_definition": "Trace scopes can be created and managed programmatically through an API.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+      "https://docs.cloud.google.com/trace/docs/finding-traces",
+      "https://docs.cloud.google.com/trace/docs/otlp",
+      "https://docs.cloud.google.com/trace/docs/setup/cpp-ot"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Find and explore traces \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "source_id": "site-docs-root",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to view trace data by using the Google Cloud console and to or select a trace scope: To select a trace scope: cloudtrace.traceScopes.[get, list] To read the default trace scope: observability.scopes.get You might also be able to get these permissions with custom roles or other predefined roles .",
+          "What's next Create and manage trace scopes Share traces and spans Troubleshoot Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Before you begin To get the permissions that you need to view trace data by using the Google Cloud console and to or select a trace scope, ask your administrator to grant you the Cloud Trace User ( roles/cloudtrace.user ) IAM role on your project."
+        ]
+      },
+      {
+        "title": "\"Use the Ops Agent and OpenTelemetry Protocol (OTLP) \\_|\\_ Cloud Trace \\_\\",
+        "url": "https://docs.cloud.google.com/trace/docs/otlp",
+        "source_id": "site-docs-root-2",
+        "final_score": 235,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To grant this role to the service account, run the following gcloud projects add-iam-policy-binding command: gcloud projects add-iam-policy-binding PROJECT ID --member \"serviceAccount: SERVICE ACCT NAME @ PROJECT ID .iam.gserviceaccount.com\" --role=\"roles/cloudtrace.agent\" You can then run the gcloud projects get-iam-policy command to verify that the change has been made: gcloud projects get-iam-policy PROJECT ID --format=\"table(bindings.role)\" --flatten=\"bindings[].members\" --filter=\"bindings.members: SERVICE ACCT NAME @ PROJECT ID .iam.gserviceaccount.com\" The output now includes roles/cloudtrace.agent : ROLE roles/cloudtrace.agent roles/logging.logWriter roles/monitoring.metricWriter For more information about managing IAM roles, see Manage access to project, folders, and organizations .",
+          "Trivial PromQL queries for the example metrics look like the following: workload googleapis com:otlp test gauge{monitored resource=\"gce instance\"} workload googleapis com:otlp test cumulative{monitored resource=\"gce instance\"} The following screenshot shows the result of querying the workload.googleapis.com/otlp.test.gauge metric: The following screenshot shows the result of querying the workload.googleapis.com/otlp.test.cumulative metric: View metric usage and diagnostics in Cloud Monitoring The Cloud Monitoring Metrics Management page provides information that can help you control the amount you spend on billable metrics without affecting observability.",
+          "Benefits Before the availability of the OTLP plugin for the Ops Agent, the primary ways to instrument your applications to collect user-defined metrics and traces included the following: Using client libraries that implement the Monitoring API or the Trace API."
+        ]
+      },
+      {
+        "title": "C++ and OpenTelemetry \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/setup/cpp-ot",
+        "source_id": "site-docs-root-2",
+        "final_score": 219,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, to create a GKE cluster with only the Cloud Trace API enabled, do the following: gcloud container clusters create example-cluster-name --scopes=https://www.googleapis.com/auth/trace.append Running locally and elsewhere If your application is running outside of Google Cloud, then you must provide authentication credentials in the form of a service account to the client library.",
+          "For the following configurations, the default access-scope settings enable the Cloud Trace API: App Engine flexible environment App Engine standard environment Google Kubernetes Engine (GKE) Note: If you use Autopilot or if you enable Workload Identity Federation for GKE for your GKE cluster, then ensure that you configure your application to use Workload Identity Federation for GKE .",
+          "For gcloud users, specify access scopes using the --scopes flag and include the trace.append Cloud Trace API access scope."
+        ]
+      },
+      {
+        "title": "\"Collect and view multimodal prompts and responses \\_|\\_ Cloud Trace \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "source_id": "site-docs-root-2",
+        "final_score": 209,
+        "relevance": "",
+        "evidence_snippets": [
+          "It also describes how you can view, analyze, and evaluate your stored multimodal media: Use the Trace Explorer page to view individual prompts or responses or to view an entire conversation.",
+          "Enable the APIs To get the permissions that you need to configure the system so that you can view your multimodal prompts and responses in BigQuery, ask your administrator to grant you the following IAM roles on project: Logs Configuration Writer ( roles/logging.configWriter ) Storage Admin ( roles/storage.admin ) BigQuery Connection Admin ( roles/bigquery.connectionAdmin ) BigQuery Data Viewer ( roles/bigquery.dataViewer ) BigQuery Studio User ( roles/bigquery.studioUser ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "For example, the following example illustrates how prompts and responses appear, and how OpenTelemetry: Attributes are summarized: Before you begin To get the permissions that you need to view your multimodal prompts and responses, ask your administrator to grant you the following IAM roles on project: Cloud Trace User ( roles/cloudtrace.user ) Logs Viewer ( roles/logging.viewer ) Storage Object Viewer ( roles/storage.objectViewer ) For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ai.client.inference.operation.details",
+      "ai.input.messages",
+      "bigquery.connectionAdmin",
+      "bigquery.dataViewer",
+      "bigquery.studioUser",
+      "bindings.members",
+      "bindings.role",
+      "cloudtrace.agent",
+      "cloudtrace.traceScopes",
+      "cloudtrace.user",
+      "com.google.cloud.trace.v1.TraceServiceClient",
+      "credentials.json",
+      "iam.gserviceaccount.com",
+      "logging.configWriter",
+      "logging.logWriter",
+      "logging.viewer",
+      "monitoring.metricWriter",
+      "observability.scopes.get",
+      "otlp.test.cumulative",
+      "otlp.test.gauge",
+      "storage.admin",
+      "storage.objectViewer",
+      "trace.append",
+      "workload.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.connectionAdmin",
+      "roles/bigquery.dataViewer",
+      "roles/bigquery.studioUser",
+      "roles/cloudtrace.agent",
+      "roles/cloudtrace.user",
+      "roles/logging.configWriter",
+      "roles/logging.logWriter",
+      "roles/logging.viewer",
+      "roles/monitoring.metricWriter",
+      "roles/storage.admin",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/otlp",
+        "https://docs.cloud.google.com/trace/docs/setup/cpp-ot",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/otlp",
+        "https://docs.cloud.google.com/trace/docs/setup/cpp-ot",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/otlp",
+        "https://docs.cloud.google.com/trace/docs/setup/cpp-ot",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/otlp",
+        "https://docs.cloud.google.com/trace/docs/setup/cpp-ot",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/otlp",
+        "https://docs.cloud.google.com/trace/docs/setup/cpp-ot",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/otlp",
+        "https://docs.cloud.google.com/trace/docs/setup/cpp-ot",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/otlp",
+        "https://docs.cloud.google.com/trace/docs/setup/cpp-ot",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/otlp",
+        "https://docs.cloud.google.com/trace/docs/setup/cpp-ot",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/otlp",
+        "https://docs.cloud.google.com/trace/docs/setup/cpp-ot",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/otlp",
+        "https://docs.cloud.google.com/trace/docs/setup/cpp-ot",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/otlp",
+        "https://docs.cloud.google.com/trace/docs/setup/cpp-ot",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses"
+      ]
+    }
+  ]
+}

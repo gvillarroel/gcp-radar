@@ -1,0 +1,251 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:26.331Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager",
+  "feature_name": "Service account access token lifetime extension organization policy constraint",
+  "feature_slug": "service-account-access-token-lifetime-extension-organization-policy-constraint",
+  "summary": "Allows organizations to extend the maximum lifetime of OAuth 2.0 access tokens created for a service account.",
+  "extended_definition": "Allows organizations to extend the maximum lifetime of OAuth 2.0 access tokens created for a service account.",
+  "lifecycle": {
+    "latest_feature_date": "2020-08-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+      "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+      "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access control for organization resources with IAM \\_|\\_ Resource Manager\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "source_id": "site-iam-reference",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Project essentialcontacts. essentialcontacts. contacts. create essentialcontacts. contacts. delete essentialcontacts.contacts.get essentialcontacts. contacts. list essentialcontacts. contacts. send essentialcontacts. contacts. update iam.policybindings. iam.policybindings.get iam.policybindings.list orgpolicy.constraints.list orgpolicy.policies.list orgpolicy.policy.get resourcemanager.capabilities. resourcemanager. capabilities. get resourcemanager. capabilities. update resourcemanager. folders. createPolicyBinding resourcemanager. folders. deletePolicyBinding resourcemanager.folders.get resourcemanager. folders. getIamPolicy resourcemanager.folders.list resourcemanager. folders. searchPolicyBindings resourcemanager. folders. setIamPolicy resourcemanager. folders. updatePolicyBinding resourcemanager. organizations. resourcemanager. organizations. createPolicyBinding resourcemanager. organizations. deletePolicyBinding resourcemanager. organizations. get resourcemanager. organizations. getIamPolicy resourcemanager. organizations. searchPolicyBindings resourcemanager. organizations. setIamPolicy resourcemanager. organizations. updatePolicyBinding resourcemanager. projects. createPolicyBinding resourcemanager. projects. deletePolicyBinding resourcemanager.projects.get resourcemanager. projects. getIamPolicy resourcemanager.projects.list resourcemanager. projects. searchPolicyBindings resourcemanager. projects. setIamPolicy resourcemanager. projects. updatePolicyBinding Organization Viewer ( roles/ resourcemanager.organizationViewer ) Provides access to view an organization.",
+          "Lowest-level resources where you can grant this role: Organization cloudasset. assets. analyzeOrgPolicy cloudasset. assets. exportResource cloudasset.assets.listResource cloudasset. assets. searchAllResources orgpolicy. orgpolicy.constraints.list orgpolicy. customConstraints. create orgpolicy. customConstraints. delete orgpolicy. customConstraints. get orgpolicy. customConstraints. list orgpolicy. customConstraints. update orgpolicy.policies.create orgpolicy.policies.delete orgpolicy.policies.list orgpolicy.policies.update orgpolicy.policy.get orgpolicy.policy.set policysimulator. orgPolicyViolations. list policysimulator. orgPolicyViolationsPreviews. policysimulator. orgPolicyViolationsPreviews. create policysimulator. orgPolicyViolationsPreviews. get policysimulator. orgPolicyViolationsPreviews. list recommender. orgPolicyInsights. recommender. orgPolicyInsights. get recommender. orgPolicyInsights. list recommender. orgPolicyInsights. update recommender. orgPolicyRecommendations. recommender. orgPolicyRecommendations. get recommender. orgPolicyRecommendations. list recommender. orgPolicyRecommendations. update Browser ( roles/ browser ) Read access to browse the hierarchy for a project, including the folder, organization, and allow policy.",
+          "The Organization Policy constraint constraints/resourcemanager.accessBoundaries is a list constraint that is enforced on your organization resource."
+        ]
+      },
+      {
+        "title": "\"Manage Google Cloud security baseline constraints \\_|\\_ Resource Manager\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "source_id": "site-iam-reference",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "Organization policy name Organization policy constraint Description Impact of enforcement Disable service account key creation constraints/iam.managed.disableServiceAccountKeyCreation Prevent users from creating persistent keys for service accounts.",
+          "Disable organization policies To disable or delete an organization policy, run the following command: gcloud org-policies delete CONSTRAINT NAME --organization = ORGANIZATION ID Replace the following: CONSTRAINT NAME : the name of the organization policy constraint that you want to delete—for example, iam.allowedPolicyMemberDomains ORGANIZATION ID : the unique identifier of your organization What's next For more information about creating and managing organization policies, see Using constraints .",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to manage organization policies: orgpolicy.constraints.list orgpolicy.policies.create orgpolicy.policies.delete orgpolicy.policies.list orgpolicy.policies.update orgpolicy.policy.get orgpolicy.policy.set You might also be able to get these permissions with custom roles or other predefined roles ."
+        ]
+      },
+      {
+        "title": "Manage Essential Contacts \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts",
+        "source_id": "site-iam-reference",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Then, make the request: $cred = gcloud auth application-default print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://essentialcontacts.googleapis.com/v1/ RESOURCE TYPE / RESOURCE ID /contacts:compute?notificationCategories= NOTIFICATION CATEGORY &pageSize= PAGE SIZE &pageToken= NEXT PAGE TOKEN \" Select-Object -Expand Content After sending the request, you receive a JSON response similar to the following example: { \"contacts\": [ { \"name\": \"projects/my-projects/contacts/1\", \"email\": \"my-project-contact-1@example.com\", \"notificationCategorySubscriptions\": [ \"ALL\" ], \"languageTag\": \"en-US\" }, { \"name\": \"projects/my-projects/contacts/2\", \"email\": \"my-project-contact-2@example.com\", \"notificationCategorySubscriptions\": [ \"BILLING\" ], \"languageTag\": \"en-US\" }, { \"name\": \"organizations/my-organization/contacts/1\", \"email\": \"my-organization-contact@example.com\", \"notificationCategorySubscriptions\": [ \"ALL\" ], \"languageTag\": \"en-US\" } ] } Add a contact Important: Some Google Cloud services capture the list of recipients for a notification campaign, such as a Mandatory Service Announcement (MSA), in advance.",
+          "Then, save the request body in a JSON file called request.json and make the request: curl -X PATCH \\ -H \"Authorization: Bearer \"$(gcloud auth application-default print-access-token) \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ https://essentialcontacts.googleapis.com/v1/ RESOURCE TYPE / RESOURCE ID /contacts/ CONTACT ID ?updateMask=\" UPDATE MASK \" PowerShell (Windows) Set the GOOGLE APPLICATION CREDENTIALS environment variable to your service account private key path.",
+          "Then, save the request body in a JSON file called request.json and make the request: curl -X POST \\ -H \"Authorization: Bearer \"$(gcloud auth application-default print-access-token) \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ https://essentialcontacts.googleapis.com/v1/ RESOURCE TYPE / RESOURCE ID /contacts PowerShell (Windows) Set the GOOGLE APPLICATION CREDENTIALS environment variable to your service account private key path."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "cloudasset.assets.listResource",
+      "cloudresourcemanager.googleapis.com",
+      "essentialcontacts.contacts.get",
+      "essentialcontacts.googleapis.com",
+      "example.com",
+      "gmail.com",
+      "iam.allowedPolicyMemberDomains",
+      "iam.managed.disableServiceAccountKeyCreation",
+      "iam.policybindings",
+      "iam.policybindings.get",
+      "iam.policybindings.list",
+      "orgpolicy.constraints.list",
+      "orgpolicy.policies.create",
+      "orgpolicy.policies.delete",
+      "orgpolicy.policies.list",
+      "orgpolicy.policies.update",
+      "orgpolicy.policy.get",
+      "orgpolicy.policy.set",
+      "policy.json",
+      "request.json",
+      "resourcemanager.accessBoundaries",
+      "resourcemanager.capabilities",
+      "resourcemanager.folders.get",
+      "resourcemanager.folders.list",
+      "resourcemanager.organizationAdmin",
+      "resourcemanager.organizationViewer",
+      "resourcemanager.projectCreator",
+      "test.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/editor",
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.projectCreator"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    }
+  ]
+}

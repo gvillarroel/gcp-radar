@@ -1,0 +1,178 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:20.195Z",
+  "source_step08_card": "data/step-08/current/products/integration-connectors/card.json",
+  "product_name": "Integration Connectors",
+  "product_slug": "integration-connectors",
+  "feature_name": "Box connector",
+  "feature_slug": "box-connector",
+  "summary": "Provides a connector for Box.",
+  "extended_definition": "Provides a connector for Box.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/dropbox/configure"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Box \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 183,
+        "relevance": "",
+        "evidence_snippets": [
+          "OAuth authorization code connection type Field name Details Location us-central1 Connector Box Connector version 1 Connection Name box-conn Enable Cloud Logging yes Service Account XXXX@serviceaccount Impersonate User Mode User Authorization OAuth 2.0 - Authorization code Minimum number of nodes 2 Maximum number of nodes 2 Client ID XXXX Scopes root readwrite Client Secret XXXX Secret Version 1 For information about Box OAuth configuration, see Create your OAuth application .",
+          "Box Json for JWT Auth method connection type Field name Details Location us-central1 Connector Box Connector version 1 Connection Name gcp-box-conn-new Enable Cloud Logging yes Service Account XXXX@serviceaccount Impersonate User Mode User As User Id XXXX Minimum number of nodes 2 Maximum number of nodes 2 Authentication Box JSON Box JSON for JWT Auth XXXX Secret Version 1 You can use the Box account to set up Box Json for JWT auth.",
+          "Before you begin Before using the Box connector, do the following tasks: In your Google Cloud project: Ensure that network connectivity is set up."
+        ]
+      },
+      {
+        "title": "Dropbox \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/dropbox/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 175,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before you begin Before using the Dropbox connector, do the following tasks: In your Google Cloud project: Ensure that network connectivity is set up.",
+          "Dropbox The Dropbox connector lets you connect to a Dropbox instance and perform the supported operations.",
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"Id\" : \"id:8-07A6kHAoIAAAAAAAABcg\" , \"FileType\" : \"file\" } If the action is successful, the DownloadFile task's connectorOutputPayload response parameter will have a value similar to the following: [ { \"Success\" : \"true\" , \"Name\" : \"license.txt\" , \"Id\" : \"id:8-07A6kHAoIAAAAAAAABcg\" , \"ClientModified\" : \"2024-07-09T09:52:41Z\" , \"ServerModified\" : \"2024-07-09T09:52:41Z\" , \"Revision\" : \"61ccd7da2b987c0f52053\" , \"Size\" : \"11\" , \"LowerCasePath\" : \"/sahil kapoor/testingdropboxupdated/uploadfolderwithnestedfolder/nestedfolder2/license.txt\" , \"DisplayPath\" : \"/Sahil Kapoor/TestingDropBoxUpdated/uploadFolderWithNestedFolder/NestedFolder2/license.txt\" , \"PreviewURL\" : null , \"IsDownloadable\" : \"true\" , \"HasExplicitSharedMembers\" : null , \"ContentHash\" : \"f6dc724d119649460e47ce719139e521e082be8a9755c5bece181de046ee65fe\" , \"Owner\" : null , \"Title\" : null , \"MimeType\" : null , \"FileData\" : \"SGVsbG8gd29ybGQ=\" , \"parent shared folder id\" : \"3237290067\" , \"sharing info read only\" : \"false\" , \"sharing info parent shared folder id\" : \"3237290067\" , \"sharing info modified by\" : \"dbid:AACVLctlrEo-ouTSxUVSTi0loZCSZKc933A\" } ] Use the Dropbox connection in an integration After you create the connection, it becomes available in both Apigee Integration and Application Integration."
+        ]
+      },
+      {
+        "title": "\"Cloud SQL for SQL Server \\_|\\_ Integration Connectors \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported data types The following are the supported data types for this connector: BIGINT BINARY BIT BOOLEAN CHAR DATE DECIMAL DOUBLE FLOAT INTEGER LONGN VARCHAR LONG VARCHAR NCHAR NUMERIC NVARCHAR REAL SMALL INT TIME TIMESTAMP TINY INT VARBINARY VARCHAR Actions This section provides actions available in this connector.",
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"ID\": 3 } If the action is successful, the connector task's connectorOutputPayload response parameter will have a value similar to the following: [{ \"ID\": 3, \"Name\": \"Charlie\", \"City\": \"Paris\", \"SALARY\": 6500.0, \"Department\": \"IT\" }] Entity operation examples This section provides examples of entity operations available in this connector.",
+          "Grant the following IAM roles to the service account that you want to use for the connector: roles/secretmanager.viewer roles/secretmanager.secretAccessor roles/cloudsql.editor A service account is a special type of Google account intended to represent a non-human user that needs to authenticate and be authorized to access data in Google APIs."
+        ]
+      },
+      {
+        "title": "\"Cloud SQL for PostgreSQL \\_|\\_ Integration Connectors \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported data types The following are the supported data types for this connector: BIGINT BINARY BIT BOOLEAN CHAR DATE DECIMAL DOUBLE FLOAT INTEGER LONGN VARCHAR LONG VARCHAR NCHAR NUMERIC NVARCHAR REAL SMALL INT TIME TIMESTAMP TINY INT VARBINARY VARCHAR Actions This connector supports execution of the following actions: User-defined stored procedures and functions.",
+          "Grant the following IAM roles to the service account that you want to use for the connector: roles/secretmanager.viewer roles/secretmanager.secretAccessor roles/cloudsql.editor A service account is a special type of Google account intended to represent a non-human user that needs to authenticate and be authorized to access data in Google APIs.",
+          "Supported versions PostgreSQL versions 7.4 and later TimescaleDB Before you begin Before using the Cloud SQL for PostgreSQL connector, do the following tasks: In your Google Cloud project: Ensure that network connectivity is set up."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "authorize.net",
+      "cloudsql.editor",
+      "license.txt",
+      "pptxfile.pptx",
+      "secretmanager.secretAccessor",
+      "secretmanager.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudsql.editor",
+      "roles/secretmanager.secretAccessor",
+      "roles/secretmanager.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/dropbox/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/dropbox/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/dropbox/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/dropbox/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/dropbox/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/dropbox/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/dropbox/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/dropbox/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure"
+      ]
+    }
+  ]
+}

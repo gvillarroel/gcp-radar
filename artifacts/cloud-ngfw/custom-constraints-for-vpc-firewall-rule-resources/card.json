@@ -1,0 +1,169 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:51.227Z",
+  "source_step08_card": "data/step-08/current/products/cloud-ngfw/card.json",
+  "product_name": "Cloud NGFW",
+  "product_slug": "cloud-ngfw",
+  "feature_name": "Custom constraints for VPC firewall rule resources",
+  "feature_slug": "custom-constraints-for-vpc-firewall-rule-resources",
+  "summary": "Custom constraints provide granular and customizable control over specific fields for VPC firewall rule resources.",
+  "extended_definition": "Custom constraints provide granular and customizable control over specific fields for VPC firewall rule resources.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+      "https://docs.cloud.google.com/firewall/docs/custom-constraints",
+      "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+      "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage VPC firewall rule resources by using custom constraints \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/custom-constraints",
+        "source_id": "site-docs-root",
+        "final_score": 349,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud NGFW supported resources For VPC firewall rules , you can set custom constraints on the following resources and fields.",
+          "Home Documentation Networking Cloud NGFW Guides Send feedback Manage VPC firewall rule resources by using custom constraints Stay organized with collections Save and categorize content based on your preferences.",
+          "Example: Restrict ingress traffic to only standard web ports This constraint blocks the creation of ingress firewall rules that allow traffic from 0.0.0.0/0 on TCP ports other than 80 or 443 . gcloud Create a restrictWebPorts.yaml constraint file with the following information. name : organizations/ ORGANIZATION ID /customConstraints/custom.restrictWebPorts resource types : compute.googleapis.com/Firewall condition : \"resource.direction.matches('INGRESS') && resource.sourceRanges.all(range, range == '0.0.0.0/0') && resource.allowed.exists(allowed, allowed.IPProtocol != 'tcp' allowed.ports.exists(port, port != '80' && port != '443'))\" action type : DENY method types : CREATE display name : Limit firewall rules that allow ingress traffic from 0.0.0.0/0 description : Firewall rules that allow ingress traffic from 0.0.0.0/0 on TCP ports other than 80 or 443."
+        ]
+      },
+      {
+        "title": "\"Create and manage firewall rules for RoCE VPC networks \\_|\\_ Cloud Next\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "source_id": "site-docs-root",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This section describes how to perform the following tasks: Create an RoCE VPC network Create a regional network firewall policy that works with the RoCE VPC network Create rules in the regional network firewall policy Associate the regional network firewall policy with the RoCE VPC network Before you begin Make sure that you review the supported and unsupported features in VPC networks with an RDMA network profile.",
+          "Before you begin, review the following information: RDMA RoCE network profile Cloud NGFW for RoCE VPC networks Because the rules in a regional network firewall policy used by an RoCE VPC network rely heavily on target secure tags and source secure tags, ensure that you're familiar with how to create and manage secure tags and bind secure tags to the VM instances.",
+          "Home Documentation Networking Cloud NGFW Guides Send feedback Create and manage firewall rules for RoCE VPC networks Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Configure address groups for firewall policies \\_|\\_ Cloud Next Generation\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups",
+        "source_id": "site-docs-root",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Create . gcloud To let IAP access the VM instances in the vpc-producer network, run the following command: To create a firewall policy, run the following command: gcloud compute network-firewall-policies create fw-policy-addressgrp \\ --global To create a firewall rule that allows traffic to all destinations and enables logs, run the following command: gcloud compute network-firewall-policies rules create 100 \\ --firewall-policy=fw-policy-addressgrp \\ --direction=INGRESS \\ --action=ALLOW \\ --layer4-configs=tcp:22 \\ --src-ip-ranges=35.235.240.0/20 \\ --global-firewall-policy To associate the firewall policy with the producer VPC network, run the following command: gcloud compute network-firewall-policies associations create \\ --firewall-policy=fw-policy-addressgrp \\ --network=vpc-producer \\ --name=pol-association-vpc-producer \\ --global-firewall-policy To associate the firewall policy with the consumer VPC network, run the following command: gcloud compute network-firewall-policies associations create \\ --firewall-policy=fw-policy-addressgrp \\ --network=vpc-consumer \\ --name=pol-association-vpc-consumer \\ --global-firewall-policy Create a project-scoped address group Create a project-scoped address group that uses the IP address assigned to the subnet-consumer-allowed subnet of the vpc-consumer VPC network.",
+          "It walks through an example of creating a Virtual Private Cloud (VPC) network with subnets, creating a project-scoped address group, setting up a firewall policy that uses the address group with firewall rules, and then testing the firewall rules.",
+          "In the Hit count column, select the number for the rule you created during Add a firewall rule to allow traffic to an address group ."
+        ]
+      },
+      {
+        "title": "\"Configure a hierarchical firewall policy to allow egress traffic from a\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "source_id": "site-docs-root",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To verify that the egress traffic from testvpc-vm to testvpc-apache-vm is blocked, run the following command: curl < internal IP testvpc apache vm > -m 2 The preceding command returns a Connection timed out message, which is expected because you created a firewall rule to deny egress traffic from all VPC networks in the organization except from myvpc .",
+          "Add a firewall rule to enable IAP in all the VMs in the test-folder To enable IAP to connect to all the VMs in the test-folder , you need a firewall rule in the hierarchical firewall policy with the following characteristics: Applies to all VMs in the test-folder that you want to be accessible by using IAP TCP forwarding.",
+          "Add a firewall rule to delegate the egress traffic from the myvpc network to the next rule in the hierarchy Add a firewall rule that uses the goto next action to delegate the egress traffic from the myvpc network to the next rule in the firewall, which is the implied IPv4 allow egress VPC firewall rule."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "allowed.IPProtocol",
+      "allowed.ports.exists",
+      "compute.googleapis.com",
+      "custom.restrictSshRanges",
+      "custom.restrictWebPorts",
+      "range.startsWith",
+      "resource.allowed.containsFirewallPort",
+      "resource.allowed.exists",
+      "resource.direction.matches",
+      "resource.sourceRanges.all"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/custom-constraints",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/custom-constraints",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/custom-constraints",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/custom-constraints",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/custom-constraints",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/custom-constraints",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/custom-constraints",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc"
+      ]
+    }
+  ]
+}

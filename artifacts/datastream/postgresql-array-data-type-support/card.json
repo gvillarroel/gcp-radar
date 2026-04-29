@@ -1,0 +1,135 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:05.419Z",
+  "source_step08_card": "data/step-08/current/products/datastream/card.json",
+  "product_name": "Datastream",
+  "product_slug": "datastream",
+  "feature_name": "PostgreSQL ARRAY data type support",
+  "feature_slug": "postgresql-array-data-type-support",
+  "summary": "Datastream supports the PostgreSQL ARRAY data type.",
+  "extended_definition": "Datastream supports the PostgreSQL ARRAY data type.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastream/docs/bq-map-data-types",
+      "https://docs.cloud.google.com/datastream/docs/configure-your-source-postgresql-database",
+      "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+      "https://docs.cloud.google.com/datastream/docs/faq"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Data type mappings in BigQuery \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/bq-map-data-types",
+        "source_id": "site-docs-root-2",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Source data type Example value BigQuery JSON type value DOUBLE 3.1415926535 3.1415926535 STRING \"Hello, MongoDB!\" \"Hello, MongoDB!\" ARRAY [ \"item1\", 123, true, { subItem: \"object in array\" } ] [\"item1\",123,true,{\"subItem\":\"object in array\"}] BINARY DATA new BinData(0, \"SGVsbG8gQmluYXJ5IERhdGE=\") {\"$binary\":\"SGVsbG8gQmluYXJ5IERhdGE=\",\"$type\":\"00\"} BOOLEAN true true DATE 2024-12-25T10:30:00.000+00:00 {\"$date\": 1735122600000} NULL null null REGEX /^mongo(db)?$/i {\"$options\":\"i\",\"$regex\":\"^mongo(db)?$\"} JAVASCRIPT function() {return this.stringField.length;} {\"$code\":\"function() {\\n return this.stringField.length;\\n }\"} DECIMAL128 NumberDecimal(\"1234567890.1234567890\") {\"$numberDecimal\":\"1234567890.1234567890\"} OBJECTID ObjectId('673c5d8dbfe2e51808cc2c3d') {\"$oid\": \"673c5d8dbfe2e51808cc2c3d\"} LONG 3567587327 {\"$numberLong\": \"3567587327\"} INT32 42 42 INT64 1864712049423024127 {\"$numberLong\": \"1864712049423024127\"} TIMESTAMP new Timestamp(1747888877, 1) {\"$timestamp\":{\"i\":1,\"t\":1747888877}} Query a PostgreSQL array as a BigQuery array data type If you prefer to query a PostgreSQL array as a BigQuery ARRAY data type , you can convert the JSON values to a BigQuery array using the BigQuery JSON VALUE ARRAY function: SELECT ARRAY ( SELECT CAST ( element AS TYPE ) FROM UNNEST ( JSON VALUE ARRAY ( BQ COLUMN NAME , '$' )) AS element ) AS array col Replace the following: TYPE : the BigQuery type that matches the element type in the PostgreSQL source array.",
+          "Salesforce URL STRING Spanner (GoogleSQL) ARRAY JSON Spanner (GoogleSQL) BOOL BOOLEAN Spanner (GoogleSQL) BYTES BYTES Spanner (GoogleSQL) DATE DATE Spanner (GoogleSQL) FLOAT32 FLOAT64 Spanner (GoogleSQL) FLOAT64 FLOAT64 Spanner (GoogleSQL) INT64 INT64 Spanner (GoogleSQL) JSON JSON Spanner (GoogleSQL) NUMERIC NUMERIC Spanner (GoogleSQL) STRING STRING Spanner (GoogleSQL) TIMESTAMP TIMESTAMP WITH TIME ZONE Spanner (GoogleSQL) PROTO UNSUPPORTED Spanner (GoogleSQL) ENUM UNSUPPORTED Spanner (PostgreSQL) ARRAY JSON Spanner (PostgreSQL) BIGINT INT64 Spanner (PostgreSQL) BOOL BOOLEAN Spanner (PostgreSQL) BYTEA BYTES Spanner (PostgreSQL) DATE DATE Spanner (PostgreSQL) DECIMAL NUMERIC Spanner (PostgreSQL) DOUBLE PRECISION FLOAT64 Spanner (PostgreSQL) FLOAT8 FLOAT64 Spanner (PostgreSQL) INT8 INT64 Spanner (PostgreSQL) JSONB JSON Spanner (PostgreSQL) NUMERIC NUMERIC Spanner (PostgreSQL) TIMESTAMP WITH TIME ZONE TIMESTAMP WITH TIME ZONE Spanner (PostgreSQL) TIMESTAMPZ TIMESTAMP WITH TIME ZONE Spanner (PostgreSQL) VARCHAR STRING MongoDB data types MongoDB binary JSON (BSON) documents are written to BigQuery in MongoDB Extended JSON (v1) strict mode format.",
+          "PostgreSQL BIGINT INT64 PostgreSQL BIT BYTES PostgreSQL BIT VARYING BYTES PostgreSQL BOOLEAN BOOLEAN PostgreSQL BOX UNSUPPORTED PostgreSQL BYTEA BYTES PostgreSQL CHARACTER STRING PostgreSQL CHARACTER VARYING STRING PostgreSQL CIDR STRING PostgreSQL CIRCLE UNSUPPORTED PostgreSQL DATE DATE PostgreSQL DOUBLE PRECISION FLOAT64 PostgreSQL ENUM STRING PostgreSQL INET STRING PostgreSQL INTEGER INT64 PostgreSQL INTERVAL INTERVAL PostgreSQL JSON JSON PostgreSQL JSONB JSON PostgreSQL LINE UNSUPPORTED PostgreSQL LSEG UNSUPPORTED PostgreSQL MACADDR STRING PostgreSQL MONEY FLOAT64 PostgreSQL NUMERIC If precision = -1 , then STRING (BigQuery NUMERIC types require fixed precision)."
+        ]
+      },
+      {
+        "title": "Create a stream \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+        "source_id": "site-docs-root",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you select the JSON format, then two checkboxes appear: Include a Unified Types schema file in the file path : If you select this checkbox, then Datastream writes two files to Cloud Storage: a JSON data file and an Avro schema file .",
+          "If your source database is PostgreSQL, then Datastream performs the following checks: Check Description Connectivity to PostgreSQL database Datastream verifies that it can connect to the source PostgreSQL database.",
+          "Replication slot configuration Datastream verifies whether the PostgreSQL replication slot exists and is active, whether Datastream has the permissions required to access it, and whether it is configured correctly."
+        ]
+      },
+      {
+        "title": "FAQ \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/faq",
+        "source_id": "site-docs-root",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "Datastream takes the original source data type (for example, a MySQL or PostgreSQL NUMERIC type or an Oracle NUMBER type), and normalizes it into a Datastream unified type .",
+          "If you can't grant the GRANT SELECT ANY TABLE permission, then you can grant SELECT permissions to the following list of tables: ALL COL COMMENTS ALL CONS COLUMNS ALL CONSTRAINTS ALL DB LINKS ALL EXTERNAL TABLES ALL IND COLUMNS ALL INDEXES ALL LOG GROUPS ALL MVIEWS ALL OBJECTS ALL PART TABLES ALL SEQUENCES ALL SOURCE ALL SYNONYMS ALL TAB COLS ALL TAB COLUMNS ALL TAB COMMENTS ALL TABLES ALL TRIGGERS ALL TRIGGER COLS ALL TYPES ALL USERS ALL VIEWS DATABASE PROPERTIES DBA ROLE PRIVS DUAL PRODUCT COMPONENT VERSION ROLE SYS PRIVS USER ROLE PRIVS USER TAB PRIVS To stream changes using Datastream, you also need read access to all tables included in the stream.",
+          "You must grant the following roles and permissions to your Datastream user to replicate data from a SQL Server database: For the change tables CDC method: db owner db denydatawriter Additionally, for the transaction logs CDC method: SELECT permissions on the database and for the sys.fn dblog function SELECT permissions on the dbo.sysjobs table VIEW SERVER STATE For detailed information about configuring your source, see the respective configuration pages for your database type."
+        ]
+      },
+      {
+        "title": "\"Configure a source PostgreSQL database \\_|\\_ Datastream \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastream/docs/configure-your-source-postgresql-database",
+        "source_id": "site-docs-root-2",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported databases Datastream works with the following types of PostgreSQL databases: AlloyDB for PostgreSQL AlloyDB Omni Amazon Aurora PostgreSQL Amazon RDS for PostgreSQL Cloud SQL for PostgreSQL Self-managed PostgreSQL (on-premise or cloud-hosted) Datastream also supports replication from PostgreSQL read replica instances for PostgreSQL version 16 and later.",
+          "Home Documentation Data analytics Datastream Guides Send feedback Configure a source PostgreSQL database Stay organized with collections Save and categorize content based on your preferences.",
+          "A replication slot is a PostgreSQL feature which ensures that a stream of changes stored in a WAL log file is replicated to the destination in the correct order."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dbo.sysjobs",
+      "sys.fn",
+      "this.stringField.length"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/bq-map-data-types",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/configure-your-source-postgresql-database"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/bq-map-data-types",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/configure-your-source-postgresql-database"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/bq-map-data-types",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/configure-your-source-postgresql-database"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/bq-map-data-types",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/configure-your-source-postgresql-database"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:03.460Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "SQL Server to BigQuery template",
+  "feature_slug": "sql-server-to-bigquery-template",
+  "summary": "The SQL Server to BigQuery Dataflow template is generally available.",
+  "extended_definition": "The SQL Server to BigQuery Dataflow template is generally available.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-bigtable",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Spanner change streams to BigQuery template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "source_id": "site-api-reference",
+        "final_score": 116,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "POST h tt ps : //dataflow.googleapis.com/v1b3/projects/ PROJECT ID /locations/ LOCATION /flexTemplates:launch { \"launch parameter\" : { \"jobName\" : \" JOB NAME \" , \"parameters\" : { \"spannerInstanceId\" : \" SPANNER INSTANCE ID \" , \"spannerDatabase\" : \" SPANNER DATABASE \" , \"spannerMetadataInstanceId\" : \" SPANNER METADATA INSTANCE ID \" , \"spannerMetadataDatabase\" : \" SPANNER METADATA DATABASE \" , \"spannerChangeStreamName\" : \" SPANNER CHANGE STREAM \" , \"bigQueryDataset\" : \" BIGQUERY DATASET \" }, \"containerSpecGcsPath\" : \"gs://dataflow-templates- LOCATION / VERSION /flex/Spanner Change Streams to BigQuery\" , } } Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.",
+          "Mod changeStreamsMod : input . getMods ()) { Mod mod = new Mod ( changeStreamsMod . getKeysJson (), changeStreamsMod . getNewValuesJson (), input . getCommitTimestamp (), input . getServerTransactionId (), input . isLastRecordInTransactionInPartition (), input . getRecordSequence (), input . getTableName (), input . getRowType (). stream (). map ( ModColumnType :: new ). collect ( Collectors . toList ()), input . getModType (), input . getValueCaptureType (), input . getNumberOfRecordsInTransaction (), input . getNumberOfPartitionsInTransaction ()); String modJsonString ; try { modJsonString = mod . toJson (); } catch ( IOException e ) { // Ignore exception and print bad format. modJsonString = String . format ( \"\\\"%s\\\"\" , input ); } receiver . output ( modJsonString ); } } } } Production considerations When running the Spanner Change Streams to BigQuery template in a production environment, consider the following best practices to help ensure reliability and prevent data loss: Worker provisioning and scaling Set maxNumWorkers adequately: Insufficient Dataflow workers can cause the pipeline to fall behind in processing change stream data.",
+          "In your shell or terminal, run the template: gcloud dataflow flex-template run JOB NAME \\ --template-file-gcs-location = gs://dataflow-templates- REGION NAME / VERSION /flex/Spanner Change Streams to BigQuery \\ --region REGION NAME \\ --parameters \\ spannerInstanceId = SPANNER INSTANCE ID , \\ spannerDatabase = SPANNER DATABASE , \\ spannerMetadataInstanceId = SPANNER METADATA INSTANCE ID , \\ spannerMetadataDatabase = SPANNER METADATA DATABASE , \\ spannerChangeStreamName = SPANNER CHANGE STREAM , \\ bigQueryDataset = BIGQUERY DATASET Replace the following: JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes."
+        ]
+      },
+      {
+        "title": "\"BigQuery to Clickhouse template \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse",
+        "source_id": "site-api-reference",
+        "final_score": 105,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "POST h tt ps : //dataflow.googleapis.com/v1b3/projects/ PROJECT ID /locations/ LOCATION /flexTemplates:launch { \"launch parameter\" : { \"jobName\" : \" JOB NAME \" , \"parameters\" : { \"jdbcUrl\" : \" JDBC URL \" , \"clickHouseUsername\" : \" CLICKHOUSE USERNAME \" , \"clickHouseTable\" : \" CLICKHOUSE TABLE \" }, \"containerSpecGcsPath\" : \"gs://dataflow-templates- LOCATION / VERSION /flex/BigQuery to Clickhouse\" , } } Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice LOCATION : the region where you want to deploy your Dataflow job—for example, us-central1 VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.",
+          "In your shell or terminal, run the template: gcloud dataflow flex-template run JOB NAME \\ --project = PROJECT ID \\ --region = REGION NAME \\ --template-file-gcs-location = gs://dataflow-templates- REGION NAME / VERSION /flex/BigQuery to Clickhouse \\ --parameters \\ jdbcUrl = JDBC URL , \\ clickHouseUsername = CLICKHOUSE USERNAME , \\ clickHouseTable = CLICKHOUSE TABLE Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice REGION NAME : the region where you want to deploy your Dataflow job—for example, us-central1 VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.",
+          "BATCH , displayName = \"BigQuery to ClickHouse\" , description = \"The BigQuery to ClickHouse template is a batch pipeline that ingests data from a BigQuery table into ClickHouse table. \" + \"The template can either read the entire table or read specific records using a supplied query.\" , optionsClass = BigQueryToClickHouseOptions . class , skipOptions = { \"javascriptTextTransformReloadIntervalMinutes\" , \"pythonExternalTextTransformGcsPath\" , \"pythonExternalTextTransformFunctionName\" }, flexContainerName = \"bigquery-to-clickhouse\" , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse\" , contactInformation = \"https://cloud.google.com/support\" , preview = true , requirements = { \"The source BigQuery table must exist.\" , \"The ClickHouse target table must exist prior running.\" , \"This ClickHouse target table must have the exact same column names as the the source table/query.\" }) public class BigQueryToClickHouse { private static final Logger log = LoggerFactory . getLogger ( BigQueryToClickHouse . class ); / Main entry point for pipeline execution. @param args Command line arguments to the pipeline. / public static void main ( String [] args ) { UncaughtExceptionLogger . register (); BigQueryToClickHouseOptions options = PipelineOptionsFactory . fromArgs ( args ) . withValidation () . as ( BigQueryToClickHouseOptions . class ); run ( options ); } / Runs the pipeline with the supplied options. @param options The execution parameters to the pipeline. @return The result of the pipeline execution. / private static PipelineResult run ( BigQueryToClickHouseOptions options ) { try { checkArgument ( ! options . getJdbcUrl (). isEmpty (), \"The ClickHouse JDBC url must have the following template: jdbc:clickhouse://host:port/schema\" ); checkArgument ( ! options . getClickHouseTable (). isEmpty (), \"ClickHouse target table name is empty."
+        ]
+      },
+      {
+        "title": "BigQuery to Bigtable template \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-bigtable",
+        "source_id": "site-api-reference",
+        "final_score": 101,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "POST h tt ps : //dataflow.googleapis.com/v1b3/projects/ PROJECT ID /locations/ LOCATION /flexTemplates:launch { \"launch parameter\" : { \"jobName\" : \" JOB NAME \" , \"parameters\" : { \"readIdColumn\" : \" READ COLUMN ID \" , \"inputTableSpec\" : \" INPUT TABLE SPEC \" , \"bigtableWriteInstanceId\" : \" BIGTABLE INSTANCE ID \" , \"bigtableWriteTableId\" : \" BIGTABLE TABLE ID \" , \"bigtableWriteColumnFamily\" : \" BIGTABLE COLUMN FAMILY \" }, \"containerSpecGcsPath\" : \"gs://dataflow-templates- LOCATION / VERSION /flex/BigQuery to Bigtable\" , } } Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice LOCATION : the region where you want to deploy your Dataflow job—for example, us-central1 VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.",
+          "In your shell or terminal, run the template: gcloud dataflow flex-template run JOB NAME \\ --project = PROJECT ID \\ --region = REGION NAME \\ --template-file-gcs-location = gs://dataflow-templates- REGION NAME / VERSION /flex/BigQuery to Bigtable \\ --parameters \\ readIdColumn = READ COLUMN ID , \\ inputTableSpec = INPUT TABLE SPEC , \\ bigtableWriteInstanceId = BIGTABLE INSTANCE ID , \\ bigtableWriteTableId = BIGTABLE TABLE ID , \\ bigtableWriteColumnFamily = BIGTABLE COLUMN FAMILY Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice REGION NAME : the region where you want to deploy your Dataflow job—for example, us-central1 VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.",
+          "See the License for the specific language governing permissions and limitations under the License. / package com.google.cloud.teleport.v2.templates ; import static com.google.cloud.teleport.v2.bigtable.utils.BigtableConfig.generateCloudBigtableWriteConfiguration ; import com.google.cloud.bigtable.beam.CloudBigtableIO ; import com.google.cloud.bigtable.beam.CloudBigtableTableConfiguration ; import com.google.cloud.teleport.metadata.Template ; import com.google.cloud.teleport.metadata.TemplateCategory ; import com.google.cloud.teleport.metadata.TemplateParameter ; import com.google.cloud.teleport.v2.bigtable.options.BigtableCommonOptions ; import com.google.cloud.teleport.v2.bigtable.transforms.BigtableConverters ; import com.google.cloud.teleport.v2.common.UncaughtExceptionLogger ; import com.google.cloud.teleport.v2.templates.BigQueryToBigtable.BigQueryToBigtableOptions ; import com.google.cloud.teleport.v2.transforms.BigQueryConverters ; import org.apache.beam.sdk.Pipeline ; import org.apache.beam.sdk.extensions.gcp.options.GcpOptions ; import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO ; import org.apache.beam.sdk.options.Default ; import org.apache.beam.sdk.options.PipelineOptionsFactory ; import org.apache.beam.sdk.options.Validation.Required ; import org.apache.beam.sdk.transforms.DoFn ; import org.apache.beam.sdk.transforms.ParDo ; import org.apache.hadoop.hbase.client.Mutation ; import org.apache.hadoop.hbase.client.Put ; import org.apache.hadoop.hbase.util.Bytes ; import org.slf4j.Logger ; import org.slf4j.LoggerFactory ; / Dataflow template which reads BigQuery data and writes it to Bigtable."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.datasets.create",
+      "com.google.cloud.bigtable.beam.CloudBigtableIO",
+      "com.google.cloud.bigtable.beam.CloudBigtableTableConfiguration",
+      "com.google.cloud.teleport.metadata.Template",
+      "com.google.cloud.teleport.metadata.TemplateCategory",
+      "com.google.cloud.teleport.metadata.TemplateParameter",
+      "com.google.cloud.teleport.v2.bigtable.options.BigtableCommonOptions",
+      "com.google.cloud.teleport.v2.bigtable.transforms.BigtableConverters",
+      "com.google.cloud.teleport.v2.bigtable.utils.BigtableConfig.generateCloudBigtableWriteConfiguration",
+      "com.google.cloud.teleport.v2.common.UncaughtExceptionLogger",
+      "com.google.cloud.teleport.v2.templates",
+      "com.google.cloud.teleport.v2.templates.BigQueryToBigtable.BigQueryToBigtableOptions",
+      "com.google.cloud.teleport.v2.transforms.BigQueryConverters",
+      "dataflow.googleapis.com",
+      "org.apache.beam.sdk.extensions.gcp.options.GcpOptions",
+      "org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO",
+      "org.apache.beam.sdk.options.Default",
+      "org.apache.beam.sdk.options.PipelineOptionsFactory",
+      "org.apache.beam.sdk.options.Validation.Required",
+      "org.apache.beam.sdk.Pipeline",
+      "org.apache.beam.sdk.transforms.DoFn",
+      "org.apache.beam.sdk.transforms.ParDo",
+      "org.apache.hadoop.hbase.client.Mutation",
+      "org.apache.hadoop.hbase.client.Put",
+      "org.apache.hadoop.hbase.util.Bytes",
+      "org.slf4j.Logger",
+      "org.slf4j.LoggerFactory"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.datasets.create"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-bigtable"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-bigtable"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-bigtable"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-bigtable"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-bigtable"
+      ]
+    }
+  ]
+}

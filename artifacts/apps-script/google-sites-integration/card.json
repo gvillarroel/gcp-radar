@@ -1,0 +1,121 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.589Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Google Sites integration",
+  "feature_slug": "google-sites-integration",
+  "summary": "Apps Script can be run from within Google Sites.",
+  "extended_definition": "Apps Script can be run from within Google Sites.",
+  "lifecycle": {
+    "latest_feature_date": "2010-10-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/support/best-practices",
+      "https://developers.google.com/apps-script/guides/v8-runtime/bulk-migrate",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 54,
+        "relevance": "",
+        "evidence_snippets": [
+          "October 21, 2010 Feature Added integration with Google Sites, so that Apps Script can now be run from within Google Sites.",
+          "December 16, 2013 Fixed Issue 3461 : A yellow warning bar should no longer appear on Apps Script gadgets that are embedded in Google Sites.",
+          "There isn't a way to connect to new Sites with Apps Script."
+        ]
+      },
+      {
+        "title": "Best Practices \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/support/best-practices",
+        "source_id": "site-docs-root-3",
+        "final_score": 39,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Anything you accomplish within Google Apps Script itself is faster than fetching data from Google's servers or an external server, such as requests to Sheets, Docs, Sites, Sites, Translate, and UrlFetch.",
+          "Home Google Workspace Apps Script Support Send feedback Best Practices Stay organized with collections Save and categorize content based on your preferences.",
+          "You can use Connected Sheets to analyze large BigQuery datasets directly in Sheets, or use the BigQuery service to interact with data from Apps Script."
+        ]
+      },
+      {
+        "title": "\"Bulk migrate identical scripts from Rhino to V8 \\_|\\_ Apps Script \\_|\\_\\",
+        "url": "https://developers.google.com/apps-script/guides/v8-runtime/bulk-migrate",
+        "source_id": "site-docs-root-3",
+        "final_score": 38,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Code.gs function updateRhinoScripts () { // An array of script IDs of script projects to migrate. // TODO(developer): Replace with your script IDs. const scriptIds = [ 'abcdef12345678' , 'abcdef12345678' ]; // An array of file objects to replace the existing files in each script project. // Remember to include all files for the script, excluded files are deleted. // TODO(developer): Replace with your script files. const filesToUpdate = { \"files\" : [ { \"name\" : \"Code\" , \"type\" : \"SERVER JS\" , \"source\" : \"// New updates\\nfunction myFunction() {\\n console.log('Hello, world!');\\n}\" }, { \"name\" : \"appsscript\" , \"type\" : \"JSON\" , \"source\" : JSON . stringify ({ \"timeZone\" : \"America/New York\" , \"dependencies\" : {}, \"exceptionLogging\" : \"STACKDRIVER\" , \"runtimeVersion\" : \"V8\" }) } ] }; updateMultipleAppsScripts ( scriptIds , filesToUpdate ); } function updateMultipleAppsScripts ( scriptIds , filesToUpdate ) { // 'scriptIds' should be an array of script IDs // 'filesToUpdate' should be an array of objects, each with: // name: The filename (For example, \"Code\", \"Utilities\") // source: The source code for that file. scriptIds . forEach ( function ( scriptId ) { // Makes the API request. const response = UrlFetchApp . fetch ( https://script.googleapis.com/v1/projects/ ${ scriptId } /content , { method : \"PUT\" , headers : { Authorization : Bearer ${ ScriptApp . getOAuthToken () } }, contentType : \"application/json\" , payload : JSON . stringify ( filesToUpdate ), muteHttpExceptions : true } ); if ( response . getResponseCode () !== 200 ) { console . log ( Error updating script ${ scriptId } : ${ response . getContentText () } ); } else { console . log ( Script ${ scriptId } updated successfully! ); } }); } appsscript.json To use the Apps Script API in your Apps Script project, add the following OAuth scopes to your manifest file: \"https://www.googleapis.com/auth/script.projects\" \"https://www.googleapis.com/auth/script.external request\" To expose the manifest file in the editor, click Project Settings and check the Show \"appsscript.json\" manifest file in editor box.",
+          "Migrate scripts The following code sample shows how to use the Apps Script API to migrate identical scripts from Rhino to V8 by replacing the files in each Apps Script project with a set of V8-compatible files.",
+          "Home Google Workspace Apps Script Guides Send feedback Bulk migrate identical scripts from Rhino to V8 Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appsscript.json",
+      "console.log",
+      "developers.google.com",
+      "script.external",
+      "script.googleapis.com",
+      "script.projects"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/support/best-practices",
+        "https://developers.google.com/apps-script/guides/v8-runtime/bulk-migrate"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/support/best-practices",
+        "https://developers.google.com/apps-script/guides/v8-runtime/bulk-migrate"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/support/best-practices",
+        "https://developers.google.com/apps-script/guides/v8-runtime/bulk-migrate"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/support/best-practices",
+        "https://developers.google.com/apps-script/guides/v8-runtime/bulk-migrate"
+      ]
+    }
+  ]
+}

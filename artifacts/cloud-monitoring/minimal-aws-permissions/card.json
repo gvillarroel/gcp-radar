@@ -1,0 +1,147 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:50.221Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring",
+  "feature_name": "Minimal AWS Permissions",
+  "feature_slug": "minimal-aws-permissions",
+  "summary": "Documentation describes a reduced AWS permission set for using Monitoring with AWS.",
+  "extended_definition": "Documentation describes a reduced AWS permission set for using Monitoring with AWS.",
+  "lifecycle": {
+    "latest_feature_date": "2018-06-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/monitoring/managing-agent-policies",
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/managing-agent-policies",
+      "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use agent policies \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/monitoring/managing-agent-policies",
+        "source_id": "site-iam-reference",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "To enable the APIs, grant the necessary roles to the default service account, and enable the OS Config metadata for a project, run the script as follows: bash set-permissions.sh --project= PROJECT ID To additionally grant one of the OS Config roles to a user who does not have the Owner ( roles/owner ) role on the project, run the script as follows: bash set-permissions.sh --project= PROJECT ID \\ --iam-user= USER EMAIL \\ --iam-permission-role=guestPolicy [Admin Editor Viewer] To additionally grant one of the OS Config roles to a non-default service account, run the script as follows: bash set-permissions.sh --project= PROJECT ID \\ --iam-service-account= SERVICE ACCT EMAIL \\ --iam-permission-role=guestPolicy [Admin Editor Viewer] The diagnose.sh script Given a project ID, a Compute Engine instance ID, and the agent policy ID, the diagnose.sh script automatically collects the necessary information to help diagnose issues with the policy: The OS Config agent version The underlying OS Config guest policy The policies that are applicable to this Compute Engine instance The agent package repositories that are pulled on to this Compute Engine instance To invoke the script, run the following command: bash diagnose.sh --project-id= PROJECT ID \\ --gce-instance-id= INSTANCE ID \\ --policy-id= POLICY ID Terraform integration To learn how to apply or remove a Terraform configuration, see Basic Terraform commands .",
+          "To enable debug-level logging for the entire project, run the following command: gcloud compute project-info add-metadata \\ --project PROJECT ID \\ --metadata osconfig-log-level=debug To enable debug-level logging for one VM, run the following command: gcloud compute instances add-metadata INSTANCE ID \\ --project PROJECT ID \\ --metadata osconfig-log-level=debug Helper scripts This section provides additional information about the helper scripts described in this document: The set-permissions.sh script The diagnose.sh script The set-permissions.sh script After you download the set-permissions.sh script, you can use the script to perform the following actions, based on the arguments you provide: Enable the Cloud Logging API, the Cloud Monitoring API, and the OS Config API for the project.",
+          "If you haven't done so already, install the beta component of the gcloud CLI: gcloud components install beta To check if you have the beta component for the installed, run: gcloud components list If you previously installed the beta component, ensure you have the latest version: gcloud components update Download and use the following script to enable the APIs and to set the proper permissions for using the Google Cloud CLI: set-permissions.sh ."
+        ]
+      },
+      {
+        "title": "View application telemetry \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "source_id": "site-docs-reference-2",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "This is the project that you use to view your application's telemetry data: To get the permissions that you need to view log and metric data, and to create alerting policies and customize dashboards, ask your administrator to grant you the following IAM roles: Logs Viewer ( roles/logging.viewer ) on your App Hub host project or management project and any other projects listed in its default log scope.",
+          "Explore trace data Note: If your dashboards aren't displaying the trace data that you expect, then you might need to configure the default trace scope or you might need additional Identity and Access Management permissions.",
+          "Explore log data Note: If your dashboards aren't displaying the log data that you expect, then you might need to configure the default log scope or you might need additional Identity and Access Management permissions."
+        ]
+      },
+      {
+        "title": "Use agent policies (beta) \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/managing-agent-policies",
+        "source_id": "site-iam-reference",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "To enable the APIs, grant the necessary roles to the default service account, and enable the OS Config metadata for a project, run the script as follows: bash set-permissions.sh --project= PROJECT ID To additionally grant one of the OS Config roles to a user who does not have the Owner ( roles/owner ) role on the project, run the script as follows: bash set-permissions.sh --project= PROJECT ID \\ --iam-user= USER EMAIL \\ --iam-permission-role=guestPolicy [Admin Editor Viewer] To additionally grant one of the OS Config roles to a non-default service account, run the script as follows: bash set-permissions.sh --project= PROJECT ID \\ --iam-service-account= SERVICE ACCT EMAIL \\ --iam-permission-role=guestPolicy [Admin Editor Viewer] The diagnose.sh script Given a project ID, a Compute Engine instance ID, and the agent policy ID, the diagnose.sh script automatically collects the necessary information to help diagnose issues with the policy: The OS Config agent version The underlying OS Config guest policy The policies that are applicable to this Compute Engine instance The agent package repositories that are pulled on to this Compute Engine instance To invoke the script, run the following command: bash diagnose.sh --project-id= PROJECT ID \\ --gce-instance-id= INSTANCE ID \\ --policy-id= POLICY ID Terraform integration To learn how to apply or remove a Terraform configuration, see Basic Terraform commands .",
+          "To enable debug-level logging for the entire project, run the following command: gcloud compute project-info add-metadata \\ --project PROJECT ID \\ --metadata osconfig-log-level=debug To enable debug-level logging for one VM, run the following command: gcloud compute instances add-metadata INSTANCE ID \\ --project PROJECT ID \\ --metadata osconfig-log-level=debug Helper scripts This section provides additional information about the helper scripts described in this document: The set-permissions.sh script The diagnose.sh script The set-permissions.sh script After you download the set-permissions.sh script, you can use the script to perform the following actions, based on the arguments you provide: Enable the Cloud Logging API, the Cloud Monitoring API, and the OS Config API for the project.",
+          "If you haven't done so already, install the beta component of the gcloud CLI: gcloud components install beta To check if you have the beta component for the installed, run: gcloud components list If you previously installed the beta component, ensure you have the latest version: gcloud components update Download and use the following script to enable the APIs and to set the proper permissions for using the Google Cloud CLI: set-permissions.sh ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "diagnose.sh",
+      "logging.viewer",
+      "osconfig.guestPolicyAdmin",
+      "permissions.sh"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.viewer",
+      "roles/osconfig.guestPolicyAdmin",
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/monitoring/managing-agent-policies",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/managing-agent-policies"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/monitoring/managing-agent-policies",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/managing-agent-policies"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/monitoring/managing-agent-policies",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/managing-agent-policies"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/monitoring/managing-agent-policies",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/managing-agent-policies"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/monitoring/managing-agent-policies",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/managing-agent-policies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/monitoring/managing-agent-policies",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/managing-agent-policies"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/monitoring/managing-agent-policies",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/managing-agent-policies"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,278 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:33.557Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "DNS Peering for Private Services Access",
+  "feature_slug": "dns-peering-for-private-services-access",
+  "summary": "DNS peering is available for Private Services Access in Google Cloud Virtual Private Cloud in Preview.",
+  "extended_definition": "DNS peering is available for Private Services Access in Google Cloud Virtual Private Cloud in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2020-12-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services",
+      "https://docs.cloud.google.com/vpc/docs/private-services-access"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Private services access \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/private-services-access",
+        "source_id": "site-docs-root",
+        "final_score": 306,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported services The following Google VPC-hosted services support private services access: AI Platform Training AlloyDB for PostgreSQL Apigee Backup and DR Service Cloud Build Cloud Intrusion Detection System Cloud SQL (doesn't support DNS peering ) Cloud TPU Converge Enterprise Cloud with IBM Power for Google Cloud Filestore Google Cloud Managed Lustre Google Cloud NetApp Volumes Google Cloud VMware Engine Looker (Google Cloud core) Memorystore for Memcached Memorystore for Redis Vertex AI Note: When you use private services access as a service consumer, you are solely responsible for securing your VPC networks and all resources and data available on them.",
+          "Limitations The following limitations apply to private services access: Because a private connection is implemented as a VPC Network Peering connection, the behaviors and constraints of peering connections also apply to private connections.",
+          "Accessing through NCC For some services that are available through private services access, you can use NCC to make the service reachable by other spokes on a hub by creating a producer VPC spoke ."
+        ]
+      },
+      {
+        "title": "\"Configure Private Google Access for on-premises hosts \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid",
+        "source_id": "site-docs-root-2",
+        "final_score": 289,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For private.googleapis.com : For IPv4 connectivity: 199.36.153.8/30 For both IPv4 and IPv6 connectivity: 199.36.153.8/30,2600:2d00:0002:2000::/56 For restricted.googleapis.com : For IPv4 connectivity: 199.36.153.4/30 For both IPv4 and IPv6 connectivity: 199.36.153.4/30,2600:2d00:0002:1000::/56 Firewall considerations Google Cloud firewall rules in the VPC network to which your on-premises network connects have no effect upon: Packets sent through a Cloud VPN tunnel connected to the VPC network Packets sent through a VLAN attachment connected to the VPC network Incoming packets to Cloud DNS inbound forwarder IP addresses in the VPC network You should ensure that the firewall configuration of on-premises systems allows outbound traffic to and established responses from the appropriate IP addresses: If you use private.googleapis.com : For IPv4 connectivity: 199.36.153.8/30 For IPv6 connectivity: 2600:2d00:0002:2000::/56 If you use restricted.googleapis.com : For IPv4 connectivity: 199.36.153.4/30 For IPv6 connectivity: 2600:2d00:0002:1000::/56 Any Cloud DNS inbound forwarder IP addresses, if you're using Cloud DNS for the DNS configuration What's next If you need VMs in your Google Cloud VPC network to access Google APIs and services, see Configure Private Google Access for VPC .",
+          "DNS configuration Your on-premises network must have DNS zones and records configured so that the domain names of the services that you're accessing resolve to the set of IP addresses for either private.googleapis.com or restricted.googleapis.com .",
+          "Domain names that match: accounts.google.com (only supports paths needed for OAuth authentication of service accounts; user account authentication is interactive and not supported) .aiplatform-notebook.cloud.google.com .aiplatform-notebook.googleusercontent.com appengine.google.com .appspot.com .backupdr.cloud.google.com backupdr.cloud.google.com .backupdr.googleusercontent.com backupdr.googleusercontent.com .cloudfunctions.net .cloudproxy.app .composer.cloud.google.com .composer.googleusercontent.com .datafusion.cloud.google.com .datafusion.googleusercontent.com .dataproc.cloud.google.com dataproc.cloud.google.com .dataproc.googleusercontent.com dataproc.googleusercontent.com .developerconnect.dev dl.google.com gcr.io or .gcr.io .googleapis.com .gke.goog gstatic.com or .gstatic.com .kernels.googleusercontent.com .ltsapis.goog .notebooks.byoid.googleusercontent.com .notebooks.cloud.google.com notebooks.cloud.google.com .notebooks.googleusercontent.com packages.cloud.google.com pkg.dev or .pkg.dev pki.goog or .pki.goog .run.app source.developers.google.com storage.cloud.google.com Use private.googleapis.com to access Google APIs and services using a set of IP addresses only routable from within Google Cloud."
+        ]
+      },
+      {
+        "title": "\"About accessing published services through endpoints \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "source_id": "site-docs-root-2",
+        "final_score": 284,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Target producer Consumer configuration (endpoint) Consumer global access Hybrid access Automatic DNS configuration (IPv4-only) VPC Network Peering access NCC connection propagation (IPv4 only) Supported target services for IPv4 endpoints Supported target services for IPv6 endpoints Cross-region internal Application Load Balancer IPv4 services IPv4 services Internal passthrough Network Load Balancer Only if global access is enabled on the load balancer ( known issue ) IPv4 services IPv4 services IPv6 services Internal protocol forwarding (target instance) Only if global access is enabled on the producer forwarding rule ( known issue ) IPv4 services IPv4 services IPv6 services Port mapping services Only if global access is enabled on the producer forwarding rule IPv4 services IPv4 services IPv6 services Regional internal Application Load Balancer Only if global access is enabled on the load balancer before the service attachment is created IPv4 services IPv4 services Regional internal proxy Network Load Balancer Only if global access is enabled on the load balancer before the service attachment is created IPv4 services IPv4 services Secure Web Proxy IPv4 services IPv4 services Producer configuration This table summarizes the supported configuration options and capabilities of published services that are accessed by endpoints .",
+          "Producer type Producer configuration (published service) Supported producer backends PROXY protocol (TCP traffic only) IP version Cross-region internal Application Load Balancer GCE VM IP PORT zonal NEGs Hybrid NEGs Serverless NEGs Private Service Connect NEGs Instance groups IPv4 Internal passthrough Network Load Balancer GCE VM IP zonal NEGs Instance groups IPv4 IPv6 Internal protocol forwarding (target instance) Not applicable IPv4 IPv6 Port mapping services Port mapping NEG IPv4 IPv6 Regional internal Application Load Balancer GCE VM IP PORT zonal NEGs Hybrid NEGs Serverless NEGs Private Service Connect NEGs Instance groups Regional internet NEGs IPv4 Regional internal proxy Network Load Balancer GCE VM IP PORT zonal NEGs Hybrid NEGs Private Service Connect NEGs Instance groups IPv4 Secure Web Proxy Not applicable IPv4 Different load balancers support different port configurations; some load balancers support a single port, some support a range of ports, and some support all ports.",
+          "IP version translation For Private Service Connect endpoints that connect to published services (service attachments), the IP version of the consumer forwarding rule's IP address determines the IP version of the endpoint and traffic that egresses the endpoint."
+        ]
+      },
+      {
+        "title": "\"Access published services through endpoints \\_|\\_ Virtual Private Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services",
+        "source_id": "site-docs-root-2",
+        "final_score": 283,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to access published services through endpoints: To create, view, and delete endpoints in your project: compute.networks.use on your project compute.subnetworks.use on your project compute.addresses.createInternal on your project compute.addresses.deleteInternal on your project compute.addresses.get on your project compute.addresses.list on your project compute.addresses.use on your project compute.forwardingRules.create on your project compute.forwardingRules.delete on your project compute.forwardingRules.get on your project compute.forwardingRules.list on your project compute.forwardingRules.pscCreate on your project compute.forwardingRules.pscDelete on your project compute.regionOperations.get on your project servicedirectory.namespaces.create on your project servicedirectory.namespaces.delete on your project servicedirectory.services.create on your project servicedirectory.services.delete on your project To create, view, and delete endpoints in a service project that is attached to a Shared VPC network: compute.addresses.createInternal on the service project compute.addresses.deleteInternal on the service project compute.addresses.get on the service project compute.addresses.list on the service project compute.addresses.use on the service project compute.forwardingRules.create on the service project compute.forwardingRules.delete on the service project compute.forwardingRules.get on the service project compute.forwardingRules.list on the service project compute.forwardingRules.pscCreate on the service project compute.forwardingRules.pscDelete on the service project compute.regionOperations.get on the service project servicedirectory.namespaces.create on the service project servicedirectory.namespaces.delete on the service project servicedirectory.services.create on the service project servicedirectory.services.delete on the service project compute.networks.use on the host project compute.subnetworks.use on the host project To automatically or manually configure DNS entries for an endpoint in your project: dns.managedZones.create on your project dns.managedZones.delete on your project dns.networks.bindPrivateDNSZone on your project servicedirectory.namespaces.associatePrivateZone on your project To automatically or manually configure DNS entries for an endpoint in a Shared VPC network: dns.managedZones.create on the service project dns.managedZones.delete on the service project dns.networks.bindPrivateDNSZone on the service project servicedirectory.namespaces.associatePrivateZone on the service project To access the Private Service Connect page in the Google Cloud console: compute.forwardingRules.list on your project compute.globalForwardingRules.list on your project compute.networkEndpointGroups.list on your project compute.regionNetworkEndpointGroups.list on your project compute.urlMaps.list on your project compute.backendService.list on your project compute.regionBackendService.list on your project compute.backendBucket.list on your project compute.targetHttpProxy.list on your project compute.targetHttpsProxy.list on your project compute.regionTargetTcpProxy.list on your project compute.targetTcpProxy.list on your project compute.targetSslProxy.list on your project compute.sslCertificate.list on your project compute.sslPolicy.list on your project compute.regionHealthCheck.list on your project compute.healthCheck.list on your project compute.httpHealthCheck.list on your project compute.httpsHealthCheck.list on your project You might also be able to get these permissions with custom roles or other predefined roles .",
+          "For example, projects/ SERVICE PROJECT /regions/ REGION /serviceAttachments/ SERVICE NAME Required roles To get the permissions that you need to access published services through endpoints, ask your administrator to grant you the following IAM roles: Create, view, and delete endpoints in your project: Compute Network Admin ( roles/compute.networkAdmin ) on your project Create, view, and delete endpoints in a Shared VPC service project: Compute Network Admin ( roles/compute.networkAdmin ) on the service project Compute Network User ( roles/compute.networkUser ) on the host project Automatically or manually configure DNS entries for an endpoint in your project: DNS Administrator ( roles/dns.admin ) on your project Service Directory Editor ( roles/servicedirectory.editor ) on your project Automatically or manually configure DNS entries for an endpoint in a Shared VPC service project: DNS Administrator ( roles/dns.admin ) on the service project Service Directory Editor ( roles/servicedirectory.editor ) on the service project For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Go to Cloud DNS zones Look for a private zone with the name NAMESPACE -- REGION . gcloud Run the following command to list all private DNS zones: gcloud dns managed-zones list \\ --filter=\"visibility=private\" Run the following command to get details for a zone with the name NAMESPACE -- REGION . gcloud dns managed-zones describe NAMESPACE -- REGION If the zone is not present, view the details for the endpoint and check if the endpoint configuration includes a value for the namespace."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accounts.google.com",
+      "appengine.google.com",
+      "appspot.com",
+      "backupdr.cloud.google.com",
+      "backupdr.googleusercontent.com",
+      "cloudfunctions.net",
+      "cloudproxy.app",
+      "composer.cloud.google.com",
+      "composer.googleusercontent.com",
+      "compute.addresses.createInternal",
+      "compute.addresses.deleteInternal",
+      "compute.addresses.get",
+      "compute.addresses.list",
+      "compute.addresses.use",
+      "compute.backendBucket.list",
+      "compute.backendService.list",
+      "compute.forwardingRules.create",
+      "compute.forwardingRules.delete",
+      "compute.forwardingRules.get",
+      "compute.forwardingRules.list",
+      "compute.forwardingRules.pscCreate",
+      "compute.forwardingRules.pscDelete",
+      "compute.globalForwardingRules.list",
+      "compute.healthCheck.list",
+      "compute.httpHealthCheck.list",
+      "compute.httpsHealthCheck.list",
+      "compute.networkAdmin",
+      "compute.networkEndpointGroups.list",
+      "compute.networks.use",
+      "compute.networkUser",
+      "compute.regionBackendService.list",
+      "compute.regionHealthCheck.list",
+      "compute.regionNetworkEndpointGroups.list",
+      "compute.regionOperations.get",
+      "compute.regionTargetTcpProxy.list",
+      "compute.sslCertificate.list",
+      "compute.sslPolicy.list",
+      "compute.subnetworks.use",
+      "compute.targetHttpProxy.list",
+      "compute.targetHttpsProxy.list",
+      "compute.targetSslProxy.list",
+      "compute.targetTcpProxy.list",
+      "compute.urlMaps.list",
+      "datafusion.cloud.google.com",
+      "datafusion.googleusercontent.com",
+      "dataproc.cloud.google.com",
+      "dataproc.googleusercontent.com",
+      "developerconnect.dev",
+      "dl.google.com",
+      "dns.admin",
+      "dns.managedZones.create",
+      "dns.managedZones.delete",
+      "dns.networks.bindPrivateDNSZone",
+      "gcr.io",
+      "gke.goog",
+      "googleapis.com",
+      "gstatic.com",
+      "kernels.googleusercontent.com",
+      "ltsapis.goog",
+      "notebook.cloud.google.com",
+      "notebook.googleusercontent.com",
+      "notebooks.byoid.googleusercontent.com",
+      "notebooks.cloud.google.com",
+      "notebooks.googleusercontent.com",
+      "packages.cloud.google.com",
+      "pkg.dev",
+      "pki.goog",
+      "private.googleapis.com",
+      "restricted.googleapis.com",
+      "run.app",
+      "servicedirectory.editor",
+      "servicedirectory.namespaces.associatePrivateZone",
+      "servicedirectory.namespaces.create",
+      "servicedirectory.namespaces.delete",
+      "servicedirectory.services.create",
+      "servicedirectory.services.delete",
+      "source.developers.google.com",
+      "storage.cloud.google.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.networkAdmin",
+      "roles/compute.networkUser",
+      "roles/dns.admin",
+      "roles/servicedirectory.editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/private-services-access",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/private-services-access",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/private-services-access",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/private-services-access",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/private-services-access",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/private-services-access",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/private-services-access",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/private-services-access",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/private-services-access",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/private-services-access",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/private-services-access",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services"
+      ]
+    }
+  ]
+}

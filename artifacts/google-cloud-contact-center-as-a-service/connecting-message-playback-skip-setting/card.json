@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:13.819Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Connecting message playback skip setting",
+  "feature_slug": "connecting-message-playback-skip-setting",
+  "summary": "Administrators can configure an instance to skip playback of the connecting message when calls connect to agents.",
+  "extended_definition": "Administrators can configure an instance to skip playback of the connecting message when calls connect to agents.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Call settings \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 193,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can configure your instance to skip playback of the connecting message to shorten the time it takes to connect a call.",
+          "Overcapacity deflection message (if enabled) Estimated wait time announcement (if enabled) Connecting Message Record a Call Message (if enabled) Pre-Call Notification of CSAT survey (if enabled) Any other messages (if applicable) Wait Time SMS consent voice readout (if enabled and \"keep waiting\" is selected) Configure call settings This section explains configuration options in CCAI Platform.",
+          "Skip the connecting message playback A connecting message is the message that an end-user hears while the system is connecting their call to an agent—for example, \"Please wait while we connect your call to the next available agent.\" For more information about connecting messages, see Configuring IVR messages ."
+        ]
+      },
+      {
+        "title": "\"Customizing languages, recordings, & messages \\_|\\_ Google Cloud Contact\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages",
+        "source_id": "site-docs-reference-2",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Once the Display an After Hours Message Mobile option is enabled in Settings > Support Center Details , the After Hour messages can also be configured by queue in Settings > Queue > Mobile > Selected queue menu settings .",
+          "Overcapacity Deflection Message Options : lists the overcapacity deflection options that are configured in the Settings > Calls Overcapacity Deflection pane and indicates which number to press to select each option.",
+          "Setting mobile messages in global settings Mobile messages are available for the Android and iOS SDKs, and they can be configured by language and app if you use multiple apps."
+        ]
+      },
+      {
+        "title": "\"Chat Settings and Features \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+        "source_id": "site-docs-reference",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "Dismissed chat details Dismissal settings can be set globally or per-queue When chats have been dismissed, they do not accrue wait time For a chat to be dismissed, both the consumer and agent have to have sent at least one message The dismiss eligibility timer starts from the latest message from an agent Only inbound chats can be dismissed When chats are dismissed and later reactivated, a consumer has to send at least one message afterward before the chat is eligible to be dismissed again Dismissed chats are ultimately ended when the chat timeout duration is met When chats are dismissed, activities are added to the chat transcript Chat Flow CCAI Platform portal configuration Dismissing chats - global setting A global configuration for all chat channels can be configured in Chat Settings.",
+          "To configure the redaction settings, do the following: To redact sensitive data from all incoming messages, select the Automatically redact all incoming messages to agents checkbox.",
+          "To configure the redaction settings, do the following: To redact sensitive data from all incoming messages, select the Automatically redact all incoming messages to agents checkbox."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

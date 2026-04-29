@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.896Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr",
+  "feature_name": "SAP HANA backup using Compute Engine persistent disk snapshots",
+  "feature_slug": "sap-hana-backup-using-compute-engine-persistent-disk-snapshots",
+  "summary": "Backup and DR Service added support for backing up SAP HANA databases on Compute Engine as persistent disk snapshots.",
+  "extended_definition": "Backup and DR Service added support for backing up SAP HANA databases on Compute Engine as persistent disk snapshots.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-sap-hana",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+      "https://docs.cloud.google.com/compute/docs/disks/about-regional-persistent-disk"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Protect and recover SAP HANA databases in Compute Engine instances \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "source_id": "site-docs-reference",
+        "final_score": 228,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Advanced Policy Settings specific to HANA databases on Compute Engine Persistent Disks The policy template needs these specific advanced settings.",
+          "Note: SAP HANA Scale-Out isn't supported for backup to Persistent Disk snapshots.",
+          "Install the Backup and DR agent on the Compute Engine Create a backup plan for the SAP HANA database Discover and protect SAP HANA databases Mount an SAP HANA backup image as a standard mount Restore SAP HANA databases Install the Backup and DR agent on the host The Backup and DR agent connects the Compute Engine instance to the backup/recovery appliance."
+        ]
+      },
+      {
+        "title": "\"About synchronous disk replication \\_|\\_ Compute Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/compute/docs/disks/about-regional-persistent-disk",
+        "source_id": "site-docs-reference-2",
+        "final_score": 226,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Regional Persistent Disk and Hyperdisk Balanced High Availability are storage options that let you implement high availability (HA) services in Compute Engine.",
+          "Compute Engine automatically creates replica recovery checkpoints for each mounted Regional Persistent Disk or Hyperdisk Balanced High Availability disk.",
+          "About synchronous disk replication A Regional Persistent Disk or Hyperdisk Balanced High Availability volume, also referred to as a regional disk, or synchronously replicated disk, has a primary and a secondary zone within its region where it stores disk data: Primary zone is the same zone where the compute instance that you attach the disk to is located."
+        ]
+      },
+      {
+        "title": "Prepare SAP HANA for Backup and DR \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-sap-hana",
+        "source_id": "site-api-reference",
+        "final_score": 192,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Advanced Policy Settings specific to HANA databases on Compute Engine Persistent Disks The policy template needs these specific advanced settings.",
+          "Clean up SAP HANA Backint Backup If SAP HANA Backint is protected already with Compute Engine or any other third party, perform the following cleanup steps on the SAP HANA host before assigning a backup plan: Delete old Backint symbolic files from /usr/sap/(HANA SID)/SYS/global/hdb/opt .",
+          "Within the Advanced Settings dialog, find and set the following advanced settings: Snapshot location : Select the region where the Persistent Disk snapshots are to be stored."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/compute/docs/disks/about-regional-persistent-disk",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-sap-hana"
+      ]
+    }
+  ]
+}

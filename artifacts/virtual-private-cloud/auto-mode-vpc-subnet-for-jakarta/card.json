@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:33.557Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Auto mode VPC subnet for Jakarta",
+  "feature_slug": "auto-mode-vpc-subnet-for-jakarta",
+  "summary": "Auto mode VPC networks now include a new 10.184.0.0/20 subnet for the asia-southeast2 (Jakarta) region.",
+  "extended_definition": "Auto mode VPC networks now include a new 10.184.0.0/20 subnet for the asia-southeast2 (Jakarta) region.",
+  "lifecycle": {
+    "latest_feature_date": "2020-06-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+      "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+      "https://docs.cloud.google.com/vpc/docs/subnets",
+      "https://docs.cloud.google.com/vpc/docs/vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create and manage VPC networks \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "source_id": "site-docs-root",
+        "final_score": 227,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before setting the MTU to a value higher than 1460 , review Maximum transmission unit . resource \"google compute network\" \"vpc network\" { project = var.project id # Replace this with your project ID in quotes name = \"my-auto-mode-network\" auto create subnetworks = true mtu = 1460 } To learn how to apply or remove a Terraform configuration, see Basic Terraform commands .",
+          "Before setting the MTU to a value higher than 1460 , review Maximum transmission unit . resource \"google compute network\" \"vpc network\" { project = var.project id # Replace this with your project ID in quotes name = \"my-custom-mode-network\" auto create subnetworks = false mtu = 1460 } Next, add subnets to your network.",
+          "Click Create . gcloud Use the networks create command . gcloud compute networks create NETWORK \\ --subnet-mode=auto \\ --bgp-routing-mode= DYNAMIC ROUTING MODE \\ --mtu= MTU Replace the following: NETWORK : a name for the VPC network."
+        ]
+      },
+      {
+        "title": "VPC networks \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc",
+        "source_id": "site-docs-root",
+        "final_score": 217,
+        "relevance": "",
+        "evidence_snippets": [
+          "Considerations for auto mode VPC networks Auto mode VPC networks are easy to set up and use, and they are well suited for use cases with these attributes: Having subnets automatically created in each region is useful.",
+          "For example, auto mode VPC networks do create subnets that fit within a predefined auto mode IP range.",
+          "Subnets with IPv6 address ranges aren't supported in the following: Auto mode VPC networks, including the default network Legacy networks If you have an auto mode VPC network that you would like to add subnets with IPv6 address ranges to, you can do the following: Convert the auto mode network to custom mode ."
+        ]
+      },
+      {
+        "title": "Subnets \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/subnets",
+        "source_id": "site-docs-root",
+        "final_score": 201,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, auto mode VPC networks do create subnets that fit within a predefined auto mode IP range.",
+          "Auto mode VPC networks are built with one subnet per region at creation time and automatically receive new subnets in new regions.",
+          "Auto mode IPv4 ranges This table lists the IPv4 ranges for the automatically created subnets in an auto mode VPC network."
+        ]
+      },
+      {
+        "title": "Shared VPC \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "source_id": "site-docs-root",
+        "final_score": 193,
+        "relevance": "",
+        "evidence_snippets": [
+          "After new Shared VPC networks or new subnets are added to the host project, a Shared VPC Admin should review the permission bindings for the compute.networkUser role to ensure that the subnet-level permissions for all Service Project Admins match the intended configuration.",
+          "They perform various tasks necessary to set up Shared VPC , such as enabling host projects, attaching service projects to host projects, and delegating access to some or all of the subnets in Shared VPC networks to Service Project Admins.",
+          "A Service Project Admin for Service project C who has project-level permissions to the whole host project can create instances in any of the subnets in any of the VPC networks in the host project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.networkUser",
+      "var.project"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/subnets",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/subnets",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/subnets",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/subnets",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc"
+      ]
+    }
+  ]
+}

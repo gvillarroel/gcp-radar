@@ -1,0 +1,218 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:12.462Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "Customer-managed encryption keys (CMEK)",
+  "feature_slug": "customer-managed-encryption-keys-cmek",
+  "summary": "Agent Engine supports customer-managed encryption keys for protecting data at rest.",
+  "extended_definition": "Agent Engine supports customer-managed encryption keys for protecting data at rest.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Generative AI glossary \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "source_id": "site-docs-root",
+        "final_score": 215,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Customer-managed encryption keys (CMEK) . consumer VPC network A consumer VPC network is a Google Cloud Virtual Private Cloud (VPC) that privately accesses a service hosted in another VPC (known as the producer VPC).",
+          "Customer-managed encryption keys (cmek) Customer-managed encryption keys (CMEK) are integrations that allow customers to encrypt data in existing Google services using a key they manage in Cloud KMS (also known as Storky).",
+          "Vertex AI Agent Engine Vertex AI Agent Engine, a part of the Vertex AI Platform, is a set of services that enables developers to deploy, manage, and scale AI agents in production."
+        ]
+      },
+      {
+        "title": "\"Create a context cache \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create",
+        "source_id": "site-docs-root",
+        "final_score": 159,
+        "relevance": "",
+        "evidence_snippets": [
+          "Encryption key support Context caching supports Customer-Managed Encryption Keys (CMEKs), allowing you to control the encryption of your cached data and protect your sensitive information with encryption keys that you manage and own.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /cachedContents\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"name\": \"projects/ PROJECT NUMBER /locations/us-central1/cachedContents/ CACHE ID \", \"model\": \"projects/ PROJECT ID /locations/us-central1/publishers/google/models/gemini-2.0-flash-001\", \"createTime\": \"2024-06-04T01:11:50.808236Z\", \"updateTime\": \"2024-06-04T01:11:50.808236Z\", \"expireTime\": \"2024-06-04T02:11:50.794542Z\" } Example curl command LOCATION = \"us-central1\" MODEL ID = \"gemini-2.0-flash-001\" PROJECT ID = \"test-project\" MIME TYPE = \"video/mp4\" CACHED CONTENT URI = \"gs://path-to-bucket/video-file-name.mp4\" KMS KEY NAME = \"projects/ ${ PROJECT ID } /locations/{LOCATION}/keyRings/your-key-ring/cryptoKeys/your-key\" curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ https:// ${ LOCATION } -aiplatform.googleapis.com/v1/projects/ ${ PROJECT ID } /locations/ ${ LOCATION } /cachedContents -d \\ '{ \"model\": \"projects/{PROJECT ID}}/locations/{LOCATION}/publishers/google/models/{MODEL ID}\", \"contents\" : [ { \"role\": \"user\", \"parts\": [ { \"file data\": { \"mime type\":\"{MIME TYPE}\", \"file uri\":\"{CACHED CONTENT URI}\" } } ] } ], \"encryption spec\" : { \"kms key name\":\"{KMS KEY NAME}\" } }' GenAI SDK for Python Install pip install --upgrade google-genai To learn more, see the SDK reference documentation .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /cachedContents\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"name\": \"projects/ PROJECT NUMBER /locations/us-central1/cachedContents/ CACHE ID \", \"model\": \"projects/ PROJECT ID /locations/us-central1/publishers/google/models/gemini-2.0-flash-001\", \"createTime\": \"2024-06-04T01:11:50.808236Z\", \"updateTime\": \"2024-06-04T01:11:50.808236Z\", \"expireTime\": \"2024-06-04T02:11:50.794542Z\" } Example curl command LOCATION = \"us-central1\" MODEL ID = \"gemini-2.0-flash-001\" PROJECT ID = \"test-project\" MIME TYPE = \"video/mp4\" CACHED CONTENT URI = \"gs://path-to-bucket/video-file-name.mp4\" curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ https:// ${ LOCATION } -aiplatform.googleapis.com/v1/projects/ ${ PROJECT ID } /locations/ ${ LOCATION } /cachedContents -d \\ '{ \"model\":\"projects/${PROJECT ID}/locations/${LOCATION}/publishers/google/models/${MODEL ID}\", \"contents\": [ { \"role\": \"user\", \"parts\": [ { \"fileData\": { \"mimeType\": \"${MIME TYPE}\", \"fileUri\": \"${CACHED CONTENT URI}\" } } ] } ] }' Create a context cache with CMEK To implement context caching with CMEKs, create a CMEK by following the instructions and make sure the Vertex AI per-product, per-project service account (P4SA) has the necessary Cloud KMS CryptoKey Encrypter/Decrypter permissions on the key."
+        ]
+      },
+      {
+        "title": "\"Web Grounding for Enterprise \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "source_id": "site-docs-root",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "Because no customer data is persisted, customer-managed encryption keys (CMEK) and Access Transparency (AxT) aren't applicable.",
+          "The service doesn't log customer data and supports VPC service controls.",
+          "Index freshness and curation The web index of Web Grounding for Enterprise is automatically selected to meet the expected needs of customers in the healthcare, finance, and public sector verticals."
+        ]
+      },
+      {
+        "title": "RAG quickstart \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 78,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see an example of using RAG Engine, run the \"Intro to RAG Engine in Vertex AI\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Important: By default, a RAG corpus uses RagManagedDb .",
+          "The VPC-SC security controls and CMEK are supported by Vertex AI RAG Engine.",
+          "For more information, see the Python API reference documentation . from vertexai import rag from vertexai.generative models import GenerativeModel , Tool import vertexai Create a RAG Corpus, Import Files, and Generate a response TODO(developer): Update and un-comment below lines PROJECT ID = \"your-project-id\" display name = \"test corpus\" paths = [\"https://drive.google.com/file/d/123\", \"gs://my bucket/my files dir\"] # Supports Google Cloud Storage and Google Drive Links Initialize Vertex AI API once per session vertexai . init ( project = PROJECT ID , location = \"us-east4\" ) Create RagCorpus Configure embedding model, for example \"text-embedding-005\". embedding model config = rag ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "drive.google.com",
+      "name.mp4",
+      "request.json",
+      "vertexai.generative"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart"
+      ]
+    }
+  ]
+}

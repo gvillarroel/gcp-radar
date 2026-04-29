@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:22.051Z",
+  "source_step08_card": "data/step-08/current/products/managed-service-for-microsoft-active-directory/card.json",
+  "product_name": "Managed Service for Microsoft Active Directory",
+  "product_slug": "managed-service-for-microsoft-active-directory",
+  "feature_name": "User migration to Managed Microsoft AD",
+  "feature_slug": "user-migration-to-managed-microsoft-ad",
+  "summary": "You can migrate users from an existing domain to Managed Microsoft AD, including on-premises domains with SID History.",
+  "extended_definition": "You can migrate users from an existing domain to Managed Microsoft AD, including on-premises domains with SID History.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-trust",
+      "https://docs.cloud.google.com/managed-microsoft-ad/docs/domain-migration",
+      "https://docs.cloud.google.com/managed-microsoft-ad/docs/enable-migrate-permissions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Existing domain migration overview \\_|\\_ Managed Service for Microsoft Active\\",
+        "url": "https://docs.cloud.google.com/managed-microsoft-ad/docs/domain-migration",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 116,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "However, if you want to use the same users from your on-premises domain in Managed Microsoft AD, you can use Active Directory Migration Toolkit (ADMT) that helps you automate the migration of AD objects between two trusted domains.",
+          "Home Documentation Access and resource management Managed Microsoft AD Guides Send feedback Existing domain migration overview Stay organized with collections Save and categorize content based on your preferences.",
+          "This page explains how Google Cloud can help you migrate an existing Active Directory domain from on-premises to Managed Service for Microsoft Active Directory while preserving SID history."
+        ]
+      },
+      {
+        "title": "\"Enable permissions for migrating an on-premises domain with SID history\\",
+        "url": "https://docs.cloud.google.com/managed-microsoft-ad/docs/enable-migrate-permissions",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "Delegate permissions To delegate the ability to migrate an on-premises domain with SID history, add the global group or the single user to the following groups on Managed Microsoft AD: Cloud Service Administrators Cloud Service Migrate SID Administrators Managed Microsoft AD delegates the permissions to users added to the global group or the single user, which in turn lets them migrate SID history from the on-premises domain using ADMT.",
+          "To add the global group or the user to the required Managed Microsoft AD groups and delegate the permissions, run the following commands in PowerShell: Add-ADGroupMember -Identity 'Cloud Service Administrators' \\ -Members GROUP OR USER Add-ADGroupMember -Identity 'Cloud Service Migrate SID Administrators' \\ -Members GROUP OR USER Replace GROUP OR USER with the name of your global group or user.",
+          "To enable the permissions required for migrating your on-premises domain with SID history, run the following gcloud CLI command: gcloud beta active-directory domains migration enable DOMAIN NAME \\ --onprem-domains= SOURCE DOMAIN NAME \\ --disable-sid-filtering-domains= SID FILTERING DOMAIN NAME Replace the following: DOMAIN NAME : The name of your Managed Microsoft AD domain."
+        ]
+      },
+      {
+        "title": "\"Create a trust with an on-premises domain \\_|\\_ Managed Service for Microsoft\\",
+        "url": "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-trust",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 78,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It can take up to 10 minutes for setup to complete. gcloud To create a one-way trust, run the following gcloud CLI command: gcloud active-directory domains trusts create DOMAIN \\ --target-dns-ip-addresses= TARGET DNS IP ADDRESSES \\ --target-domain-name= TARGET DOMAIN NAME \\ --direction=OUTBOUND Replace the following: DOMAIN : The FQDN of the Managed Microsoft AD domain.",
+          "Home Documentation Access and resource management Managed Microsoft AD Guides Send feedback Create a trust with an on-premises domain Stay organized with collections Save and categorize content based on your preferences.",
+          "Configure the Managed Microsoft AD domain To establish the trust on the Managed Microsoft AD domain, complete the following steps: Console Open the Managed Microsoft AD page in the Google Cloud console."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/domain-migration",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/enable-migrate-permissions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-trust"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/domain-migration",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/enable-migrate-permissions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-trust"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/domain-migration",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/enable-migrate-permissions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-trust"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/domain-migration",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/enable-migrate-permissions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-trust"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/domain-migration",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/enable-migrate-permissions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-trust"
+      ]
+    }
+  ]
+}

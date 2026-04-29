@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:54.168Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "PostgreSQL 17 extension support",
+  "feature_slug": "postgresql-17-extension-support",
+  "summary": "Cloud SQL for PostgreSQL 17 adds support for a new set of PostgreSQL extensions and plugins.",
+  "extended_definition": "Cloud SQL for PostgreSQL 17 adds support for a new set of PostgreSQL extensions and plugins.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+      "https://docs.cloud.google.com/sql/docs/postgres/features",
+      "https://docs.cloud.google.com/sql/docs/postgres/import-export/import-export-dmp"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud SQL for PostgreSQL features \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/features",
+        "source_id": "site-docs-root",
+        "final_score": 67,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Unsupported features for Cloud SQL for PostgreSQL Any feature that requires SUPERUSER privileges with the following exceptions: You can use the CREATE EXTENSION statement only for supported extensions .",
+          "Supported PostgreSQL extensions for Cloud SQL Cloud SQL supports many PostgreSQL extensions.",
+          "For a complete list of these extensions, see Configure PostgreSQL extensions ."
+        ]
+      },
+      {
+        "title": "\"Build context sets using Gemini CLI \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "source_id": "site-iam-reference",
+        "final_score": 59,
+        "relevance": "",
+        "evidence_snippets": [
+          "To update the DB Context Enrichment extension, run the following command: gemini extensions update mcp-db-context-enrichment To update the DB Context Enrichment extension or to replace the GEMINI API KEY , run the following command: gemini extensions config mcp-db-context-enrichment GEMINI API KEY Replace GEMINI API KEY with your Gemini API key.",
+          "To install the DB Context Enrichment extension, follow these steps: Install the DB Context Enrichment Gemini CLI extension: gemini extensions install https://github.com/GoogleCloudPlatform/db-context-enrichment Note: The extension requires a Gemini API key at installation to authenticate with the Gemini API and enable context generation.",
+          "To verify the installed version of the extension, run the following command: gemini extensions list Make sure that the version is 0.4.2 or higher."
+        ]
+      },
+      {
+        "title": "\"Export and import using pg_dump, pg_dumpall, and pg_restore \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/import-export/import-export-dmp",
+        "source_id": "site-docs-root",
+        "final_score": 43,
+        "relevance": "",
+        "evidence_snippets": [
+          "See PostgreSQL Extensions for the list of supported extensions.",
+          "In addition, you must remove all of the following: Extension-related statements, if Cloud SQL does not support that extension.",
+          "EXTENSION )/; \\1/g' > DATABASE NAME .toc Post-processing from sed comments out all extension statements in the SQL dump file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "github.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/features",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/import-export/import-export-dmp"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/features",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/import-export/import-export-dmp"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/features",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/import-export/import-export-dmp"
+      ]
+    }
+  ]
+}

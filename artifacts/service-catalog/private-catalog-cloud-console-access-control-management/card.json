@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.390Z",
+  "source_step08_card": "data/step-08/current/products/service-catalog/card.json",
+  "product_name": "Service Catalog",
+  "product_slug": "service-catalog",
+  "feature_name": "Private Catalog Cloud Console access control management",
+  "feature_slug": "private-catalog-cloud-console-access-control-management",
+  "summary": "Private Catalog adds more Cloud Console options for managing access control.",
+  "extended_definition": "Private Catalog adds more Cloud Console options for managing access control.",
+  "lifecycle": {
+    "latest_feature_date": "2020-12-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-catalog/docs/access-control",
+      "https://docs.cloud.google.com/service-catalog/docs/assign-solutions",
+      "https://docs.cloud.google.com/service-catalog/docs/share-catalog",
+      "https://docs.cloud.google.com/service-catalog/docs/terraform-configuration"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Access control with IAM \\_|\\_ Service Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "source_id": "site-docs-reference",
+        "final_score": 247,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Access control with IAM This page explains how you grant and manage access to Service Catalog using Identity and Access Management (IAM).",
+          "Google Cloud offers Identity and Access Management (IAM) , which lets you give more granular access to specific Google Cloud resources and prevents unwanted access to other resources.",
+          "Home Documentation Access and resource management Service Catalog Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Creating a Terraform configuration \\_|\\_ Service Catalog \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-catalog/docs/terraform-configuration",
+        "source_id": "site-docs-reference",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You must have the following Identity and Access Management (IAM) roles : Catalog Admin OR Catalog Manager for the Google Cloud organization associated with the Google Cloud project which has Service Catalog enabled.",
+          "Home Documentation Access and resource management Service Catalog Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Creating a Cloud Storage bucket To set up Cloud Storage, create a bucket in the same project where you enabled Service Catalog for your organization: In the Google Cloud console, go to the Cloud Storage Buckets page."
+        ]
+      },
+      {
+        "title": "Sharing a catalog \\_|\\_ Service Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-catalog/docs/share-catalog",
+        "source_id": "site-docs-reference",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Grant the following Identity and Access Management (IAM) roles to users who will use the shared catalog: Catalog Consumer ( roles/cloudprivatecatalog.consumer ) OR the IAM Viewer ( roles/viewer ) role for the relevant organization, project, or folder.",
+          "Home Documentation Access and resource management Service Catalog Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "For details on Service Catalog's IAM roles and permissions, see Access control ."
+        ]
+      },
+      {
+        "title": "\"Assigning solutions to a catalog \\_|\\_ Service Catalog \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-catalog/docs/assign-solutions",
+        "source_id": "site-docs-reference",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Access and resource management Service Catalog Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "You must have the Catalog Admin ( roles/cloudprivatecatalogproducer.admin ) OR Catalog Manager ( roles/cloudprivatecatalogproducer.manager ) role for the Google Cloud project where Service Catalog is enabled.",
+          "If you've already shared the catalog to a Google Cloud resource, users who have access to the resource can now view and launch the solution."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudprivatecatalog.consumer",
+      "cloudprivatecatalogproducer.admin",
+      "cloudprivatecatalogproducer.manager"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudprivatecatalog.consumer",
+      "roles/cloudprivatecatalogproducer.admin",
+      "roles/cloudprivatecatalogproducer.manager",
+      "roles/viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/terraform-configuration",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog",
+        "https://docs.cloud.google.com/service-catalog/docs/assign-solutions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/terraform-configuration",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog",
+        "https://docs.cloud.google.com/service-catalog/docs/assign-solutions"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/terraform-configuration",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog",
+        "https://docs.cloud.google.com/service-catalog/docs/assign-solutions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/terraform-configuration",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog",
+        "https://docs.cloud.google.com/service-catalog/docs/assign-solutions"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/terraform-configuration",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog",
+        "https://docs.cloud.google.com/service-catalog/docs/assign-solutions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/terraform-configuration",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog",
+        "https://docs.cloud.google.com/service-catalog/docs/assign-solutions"
+      ]
+    }
+  ]
+}

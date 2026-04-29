@@ -1,0 +1,103 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.589Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Html Service",
+  "feature_slug": "html-service",
+  "summary": "Html Service was launched for building web apps with HTML, CSS, and JavaScript.",
+  "extended_definition": "Html Service was launched for building web apps with HTML, CSS, and JavaScript.",
+  "lifecycle": {
+    "latest_feature_date": "2012-06-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/html",
+      "https://developers.google.com/apps-script/guides/html/best-practices",
+      "https://developers.google.com/apps-script/guides/html/templates"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "HTML Service: Create and Serve HTML \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/html",
+        "source_id": "site-docs-root",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Page Summary outlined flag The HTML service in Google Apps Script allows you to serve web pages that can interact with server-side Apps Script functions, useful for building web apps or custom user interfaces in Google Docs, Sheets, and Forms, or generating email bodies.",
+          "To use the HTML service, you need to create HTML files within your Apps Script project where you can write standard HTML, CSS, and client-side JavaScript, along with template scriptlets.",
+          "Home Google Workspace Apps Script Guides Send feedback HTML Service: Create and Serve HTML Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "HTML Service: Best Practices \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/html/best-practices",
+        "source_id": "site-docs-root",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Although Apps Script requires client-side code to be in .html files, you should still separate CSS and client-side JavaScript into their own files and include them in the main HTML page with a custom function.",
+          "Code.gs function doGet(request) { return HtmlService.createTemplateFromFile('Page') .evaluate(); } function include(filename) { return HtmlService.createHtmlOutputFromFile(filename) .getContent(); } Page.html <!DOCTYPE html> <html> <head> <base target=\" top\"> <?!= include('Stylesheet'); ?> </head> <body> <h1>Welcome</h1> <p>Please enjoy this helpful script.</p> <?!= include('JavaScript'); ?> </body> </html> Stylesheet.html <style> p { color: green; } </style> JavaScript.html <script> window.addEventListener('load', function() { console.log('Page is loaded'); }); </script> Load data asynchronously, not in templates Templated HTML can be used to quickly build interfaces, but its use should be limited to ensure your UI is responsive.",
+          "Load JavaScript last Many web developers recommend loading JavaScript code at the bottom of the page to increase responsiveness, and this is even more important with the HTML service."
+        ]
+      },
+      {
+        "title": "HTML Service: Templated HTML \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/html/templates",
+        "source_id": "site-docs-root",
+        "final_score": 132,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Code.gs function doGet () { return HtmlService . createTemplateFromFile ( 'Index' ) . evaluate (); } function getData () { return SpreadsheetApp . openById ( '1234567890abcdefghijklmnopqrstuvwxyz' ) . getActiveSheet () . getDataRange () . getValues (); } Index.html <!DOCTYPE html> <html> <head> <base target=\" top\"> </head> <body> <? var data = getData(); ?> <table> <? for (var i = 0; i < data.length; i++) { ?> <tr> <? for (var j = 0; j < data[i].length; j++) { ?> <td><?= data[i][j] ?></td> <? } ?> </tr> <? } ?> </table> </body> </html> Call Apps Script APIs directly You can also use Apps Script code directly in scriptlets.",
+          "Contextual escaping means that Apps Script keeps track of the output's context on the page — inside an HTML attribute, inside a client-side script tag, or anywhere else — and automatically adds escape characters to protect against cross-site scripting (XSS) attacks .",
+          "HTML content outside of scriptlets (like the b tag) is appended using output. = (without contextual escaping ), and scriptlets are appended as JavaScript (with or without contextual escaping, depending on the type of scriptlet)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "console.log",
+      "data.length",
+      "developers.google.com",
+      "window.addEventListener"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/html",
+        "https://developers.google.com/apps-script/guides/html/best-practices",
+        "https://developers.google.com/apps-script/guides/html/templates"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/html",
+        "https://developers.google.com/apps-script/guides/html/best-practices",
+        "https://developers.google.com/apps-script/guides/html/templates"
+      ]
+    }
+  ]
+}

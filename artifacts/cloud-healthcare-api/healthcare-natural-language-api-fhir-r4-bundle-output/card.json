@@ -1,0 +1,155 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:47.918Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api",
+  "feature_name": "Healthcare Natural Language API FHIR R4 bundle output",
+  "feature_slug": "healthcare-natural-language-api-fhir-r4-bundle-output",
+  "summary": "The nlp.analyzeEntities method now supports Healthcare Natural Language API entity extraction output as an additional FHIR R4 Bundle format; The nlp.analyzeEntities method now supports Healthcare Natural Language API entity extraction output as an additional FHIR R4 Bundle format.",
+  "extended_definition": "The nlp.analyzeEntities method now supports Healthcare Natural Language API entity extraction output as an additional FHIR R4 Bundle format; The nlp.analyzeEntities method now supports Healthcare Natural Language API entity extraction output as an additional FHIR R4 Bundle format.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/concepts/nlp",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Healthcare Natural Language API \\_|\\_ Cloud Healthcare API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/concepts/nlp",
+        "source_id": "site-docs-root",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Healthcare Natural Language API supports the following relationships between entity mentions: Subject Object ANATOMICAL STRUCTURE MEDICAL DEVICE BODY FUNCTION BF RESULT BODY MEASUREMENT BM RESULT BODY MEASUREMENT BM UNIT BODY MEASUREMENT BM VALUE LABORATORY DATA LAB RESULT LABORATORY DATA LAB UNIT LABORATORY DATA LAB VALUE MEDICINE MED DOSE MEDICINE MED DURATION MEDICINE MED FORM MEDICINE MED FREQUENCY MEDICINE MED ROUTE MEDICINE MED STATUS MEDICINE MED STRENGTH MEDICINE MED TOTALDOSE MEDICINE MED UNIT PROBLEM ANATOMICAL STRUCTURE PROBLEM MEDICINE PROBLEM PROCEDURE PROBLEM SEVERITY PROCEDURE ANATOMICAL STRUCTURE PROCEDURE PROC METHOD PROCEDURE PROCEDURE RESULT SUBSTANCE ABUSE SEVERITY Healthcare Natural Language API output as a FHIR bundle When you request the analyzeEntities method with the alternativeOutputFormat field set to FHIR BUNDLE , the response includes the following JSON objects: The entity mentions, the entities, and the relationships A FHIR R4 bundle represented as a string, that includes all the entities, the entity mentions, and the relationships in JSON format To create the FHIR R4 bundle, the Healthcare Natural Language API maps the entity mentions, entities, and relationships to FHIR resources and their elements.",
+          "Healthcare Natural Language API entity mentions Medical Knowledge Category FHIR R4 resources and elements PROBLEM Condition PROBLEM Condition.category PROBLEM Condition.status PROBLEM ANATOMICAL STRUCTURE Condition.bodySite PROBLEM ANATOMICAL STRUCTURE Condition.evidence PROBLEM SEVERITY Condition.severity PROCEDURE Procedure PROCEDURE Procedure.status PROCEDURE Procedure.code PROCEDURE ANATOMICAL STRUCTURE Procedure.bodySite PROCEDURE MEDICAL DEVICE Procedure.usedCode PROCEDURE PROBLEM Procedure.reasonReference MEDICINE MedicationStatement MEDICINE MedicationStatement.status MEDICINE MedicationStatement.medication MEDICINE PROBLEM MedicationStatement.reasonReference MEDICINE MED DOSE MedicationStatement.dosage.doseAndRate.doseQuantity MEDICINE MED FREQUENCY MedicationStatement.dosage.text MEDICINE MED ROUTE MedicationStatement.dosage.route MEDICINE MED STRENGTH MedicationStatement.dosage.doseAndRate.doseQuantity MEDICINE MED UNIT MedicationStatement.dosage.doseAndRate.doseQuantity To extract entities from text as a FHIR R4 bundle, see Extract output as a FHIR R4 bundle .",
+          "Supported medical vocabularies The Healthcare Natural Language API supports the following medical vocabularies: Foundational Model of Anatomy Gene Ontology HUGO Gene Nomenclature Committee Human Phenotype Ontology ICD-10 Procedure Coding System ICD-10-CM ICD-9-CM LOINC MeSH MedlinePlus Health Topics Metathesaurus Names NCBI Taxonomy NCI Thesaurus National Drug File Online Mendelian Inheritance in Man RXNORM SNOMED CT (available for US users only) Supported medical knowledge categories The Healthcare Natural Language API assigns a medical knowledge category to the entityMentions.type field."
+        ]
+      },
+      {
+        "title": "\"Creating and managing FHIR resources \\_|\\_ Cloud Healthcare API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "source_id": "site-docs-root",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "Response { \"resourceType\": \"Bundle\", \"type\": \"searchset\", \"entry\": [ { \"fullUrl\": \"https://healthcare.googleapis.com/v1beta1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Encounter/c427ce3e-7677-400e-bc06-33a8cecfdd77\", \"resource\": { \"class\": { \"code\": \"AMB\", \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\" }, \"extension\": [ { \"extension\": [ { \"url\": \"http://standardhealthrecord.org/fhir/StructureDefinition/shr-action-Status-extension\", \"valueCode\": \"finished\" } ], \"url\": \"http://standardhealthrecord.org/fhir/StructureDefinition/shr-action-PerformedContext-extension\" } ], \"id\": \"c427ce3e-7677-400e-bc06-33a8cecfdd77\", \"meta\": { \"lastUpdated\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \", \"profile\": [ \"http://standardhealthrecord.org/fhir/StructureDefinition/shr-encounter-EncounterPerformed\" ], \"versionId\": \"MTcxOTUyMzQ1MzA0MjMwMDAwMA\" }, \"participant\": [ { \"individual\": { \"reference\": \"Practitioner/d22d7490-0710-4190-bd23-43bc6bca2649\" } } ], \"period\": { \"end\": \"2015-03-02T17:06:14-08:00\", \"start\": \"2015-03-02T16:51:14-08:00\" }, \"resourceType\": \"Encounter\", \"serviceProvider\": { \"reference\": \"Organization/69176529-fd1f-3b3f-abce-a0a3626769eb\" }, \"status\": \"finished\", \"subject\": { \"reference\": \"Patient/b0027145-32af-4030-bcb1-1f5b63d3f2e2\" }, \"type\": [ { \"coding\": [ { \"code\": \"185349003\", \"display\": \"Encounter for check up (procedure)\", \"system\": \"http://snomed.info/sct\" } ], \"text\": \"Encounter for check up (procedure)\" } ] } }, { \"fullUrl\": \"https://healthcare.googleapis.com/v1beta1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Organization/69176529-fd1f-3b3f-abce-a0a3626769eb\", \"resource\": { \"active\": true, \"address\": [ { \"city\": \"CAMBRIDGE\", \"country\": \"US\", \"line\": [ \"330 MOUNT AUBURN STREET\" ], \"postalCode\": \"02138\", \"state\": \"MA\" } ], \"contact\": [ { \"name\": { \"text\": \"Synthetic Provider\" } } ], \"id\": \"69176529-fd1f-3b3f-abce-a0a3626769eb\", \"identifier\": [ { \"system\": \"urn:ietf:rfc:3986\", \"value\": \"69176529-fd1f-3b3f-abce-a0a3626769eb\" }, { \"system\": \"https://github.com/synthetichealth/synthea\", \"value\": \"69176529-fd1f-3b3f-abce-a0a3626769eb\" } ], \"meta\": { \"lastUpdated\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \", \"profile\": [ \"http://standardhealthrecord.org/fhir/StructureDefinition/shr-entity-Organization\" ], \"versionId\": \"MTcxOTUyMzQ2Mjg2MzQ3NDAwMA\" }, \"name\": \"MOUNT AUBURN HOSPITAL\", \"resourceType\": \"Organization\", \"telecom\": [ { \"system\": \"phone\", \"value\": \"6174923500\" } ], \"type\": [ { \"coding\": [ { \"code\": \"prov\", \"display\": \"Healthcare Provider\", \"system\": \"http://terminology.hl7.org/CodeSystem/organization-type\" } ], \"text\": \"Healthcare Provider\" } ] } }, { \"fullUrl\": \"https://healthcare.googleapis.com/v1beta1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Patient/b0027145-32af-4030-bcb1-1f5b63d3f2e2\", \"resource\": { \"address\": [ { \"city\": \"Somerville\", \"country\": \"US\", \"extension\": [ { \"extension\": [ { \"url\": \"latitude\", \"valueDecimal\": 42.390566 }, { \"url\": \"longitude\", \"valueDecimal\": -71.101324 } ], \"url\": \"http://hl7.org/fhir/StructureDefinition/geolocation\" } ], \"line\": [ \"883 Howell Lane\" ], \"postalCode\": \"02138\", \"state\": \"Massachusetts\" } ], \"birthDate\": \"2008-03-10\", \"communication\": [ { \"language\": { \"coding\": [ { \"code\": \"es\", \"display\": \"Spanish\", \"system\": \"urn:ietf:bcp:47\" } ], \"text\": \"Spanish\" } } ], \"extension\": [ { \"extension\": [ { \"url\": \"ombCategory\", \"valueCoding\": { \"code\": \"2054-5\", \"display\": \"Black or African American\", \"system\": \"urn:oid:2.16.840.1.113883.6.238\" } }, { \"url\": \"text\", \"valueString\": \"Black or African American\" } ], \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\" }, { \"extension\": [ { \"url\": \"ombCategory\", \"valueCoding\": { \"code\": \"2186-5\", \"display\": \"Not Hispanic or Latino\", \"system\": \"urn:oid:2.16.840.1.113883.6.238\" } }, { \"url\": \"text\", \"valueString\": \"Not Hispanic or Latino\" } ], \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\" }, { \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName\", \"valueString\": \"Ariadna374 Lovato727\" }, { \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex\", \"valueCode\": \"F\" }, { \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\", \"valueAddress\": { \"city\": \"Portsmouth\", \"country\": \"DM\", \"state\": \"Saint John Parish\" } }, { \"url\": \"http://standardhealthrecord.org/fhir/StructureDefinition/shr-actor-FictionalPerson-extension\", \"valueBoolean\": true }, { \"url\": \"http://standardhealthrecord.org/fhir/StructureDefinition/shr-entity-FathersName-extension\", \"valueHumanName\": { \"text\": \"Joaquín233 Montemayor547\" } }, { \"url\": \"http://standardhealthrecord.org/fhir/StructureDefinition/shr-demographics-SocialSecurityNumber-extension\", \"valueString\": \"999-10-3430\" }, { \"url\": \"http://synthetichealth.github.io/synthea/disability-adjusted-life-years\", \"valueDecimal\": 0 }, { \"url\": \"http://synthetichealth.github.io/synthea/quality-adjusted-life-years\", \"valueDecimal\": 10 } ], \"gender\": \"female\", \"id\": \"b0027145-32af-4030-bcb1-1f5b63d3f2e2\", \"identifier\": [ { \"system\": \"https://github.com/synthetichealth/synthea\", \"value\": \"c04dc343-a9f2-445c-ab4b-42b403a9cdba\" }, { \"system\": \"http://hospital.smarthealthit.org\", \"type\": { \"coding\": [ { \"code\": \"MR\", \"display\": \"Medical Record Number\", \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\" } ], \"text\": \"Medical Record Number\" }, \"value\": \"c04dc343-a9f2-445c-ab4b-42b403a9cdba\" }, { \"system\": \"http://hl7.org/fhir/sid/us-ssn\", \"type\": { \"coding\": [ { \"code\": \"SS\", \"display\": \"Social Security Number\", \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\" } ], \"text\": \"Social Security Number\" }, \"value\": \"999-10-3430\" } ], \"maritalStatus\": { \"coding\": [ { \"code\": \"S\", \"display\": \"Never Married\", \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\" } ], \"text\": \"Never Married\" }, \"meta\": { \"lastUpdated\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \", \"profile\": [ \"http://standardhealthrecord.org/fhir/StructureDefinition/shr-entity-Patient\" ], \"versionId\": \"MTcxOTUyMzQ2MzIwNzY1MDAwMA\" }, \"multipleBirthBoolean\": false, \"name\": [ { \"family\": \"Montemayor547\", \"given\": [ \"Sonia106\" ], \"use\": \"official\" } ], \"resourceType\": \"Patient\", \"telecom\": [ { \"system\": \"phone\", \"use\": \"home\", \"value\": \"555-302-8948\" } ], \"text\": { \"div\": \"div xmlns=http://www.w3.org/1999/xhtml Generated by https://github.com/synthetichealth/synthea Synthea.",
+          "She was concerned about this.\" } ], \"resourceType\": \"Encounter\", \"status\": \"finished\", \"subject\": { \"reference\": \"Patient/ PATIENT ID \" } } }, { \"resource\": { \"encounter\": { \"reference\": \"Encounter/ ENCOUNTER ID \" }, \"effectiveDateTime\": \"2020-01-01T00:00:00+00:00\", \"id\": \" OBSERVATION ID \", \"resourceType\": \"Observation\", \"status\": \"final\", \"subject\": { \"reference\": \"Patient/ PATIENT ID \" }, \"valueQuantity\": { \"unit\": \"bpm\", \"value\": BPM VALUE } } } ], \"resourceType\": \"Bundle\", \"type\": \"searchset\" } PowerShell To get the resources in a patient compartment, make a GET request and specify the following information: The name of the parent dataset The name of the FHIR store The patient's ID An access token The following sample shows a GET request using PowerShell: $cred = gcloud auth application-default print-access-token $headers = @ { Authorization = \"Bearer $cred \" } Invoke-RestMethod -Method Get -Headers $headers -Uri 'https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Patient/ RESOURCE ID /$everything' ConvertTo-Json If the request is successful, the server returns a response similar to the following sample in JSON format: { \"entry\": [ { \"resource\": { \"birthDate\": \"1970-01-01\", \"gender\": \"female\", \"id\": \" PATIENT ID \", \"name\": [ { \"family\": \"Smith\", \"given\": [ \"Darcy\" ], \"use\": \"official\" } ], \"resourceType\": \"Patient\" } }, { \"resource\": { \"class\": { \"code\": \"IMP\", \"display\": \"inpatient encounter\", \"system\": \"http://hl7.org/fhir/v3/ActCode\" }, \"id\": \" ENCOUNTER ID \", \"reasonCode\": [ { \"text\": \"The patient had an abnormal heart rate.",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"type\": \"transaction\", \"resourceType\": \"Bundle\", \"entry\": [ { \"request\": { \"method\": \"PATCH\", \"url\": \"Patient/ PATIENT ID \" }, \"resource\": { \"resourceType\": \"Binary\", \"contentType\": \"application/json-patch+json\", \"data\": \"WyB7ICJvcCI6ICJyZXBsYWNlIiwgInBhdGgiOiAiL2JpcnRoRGF0ZSIsICJ2YWx1ZSI6ICIxOTkwLTAxLTAxIiB9IF0K\" } } ] } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/fhir+json\" -InFile request.json -Uri \"https://healthcare.googleapis.com/v1beta1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"entry\": [ { \"response\": { \"etag\": \"W/\\\"MTY0ODgzNjY5MjQyODAxMzAwMA\\\"\", \"lastModified\": \" LAST MODIFIED \", \"location\": \"https://healthcare.googleapis.com/v1beta1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Patient/ PATIENT ID \", \"status\": \"200 OK\" } } ], \"resourceType\": \"Bundle\", \"type\": \"transaction-response\" } Conditionally patching a FHIR resource The following samples show how to call the projects.locations.datasets.fhirStores.fhir.conditionalPatch method to patch a FHIR resource that matches a search query, rather than identifying the resource by its ID."
+        ]
+      },
+      {
+        "title": "\"Creating and managing FHIR stores \\_|\\_ Cloud Healthcare API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "source_id": "site-docs-root",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before using any of the command data below, make the following replacements: PROJECT ID : the ID of your Google Cloud project LOCATION : the dataset location DATASET ID : the FHIR store's parent dataset FHIR STORE ID : the FHIR store ID PUBSUB TOPIC ID : a Pub/Sub topic to which messages are published when an event occurs in a data store Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare fhir-stores update FHIR STORE ID \\ --dataset = DATASET ID \\ --location = LOCATION \\ --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC ID Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare fhir-stores update FHIR STORE ID --dataset = DATASET ID --location = LOCATION --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC ID Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare fhir-stores update FHIR STORE ID ^ --dataset = DATASET ID ^ --location = LOCATION ^ --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC ID You should receive a response similar to the following: Response Updated fhirStore [ FHIR STORE ID ]. name: projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID notificationConfig: pubsubTopic: projects/ PROJECT ID /topics/ PUBSUB TOPIC ID version: FHIR STORE VERSION REST To edit a FHIR store, use the projects.locations.datasets.fhirStores.patch method.",
+          "See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/fhir before running the sample.\"\"\" Imports the Google API Discovery Service. from googleapiclient import discovery api version = \"v1\" service name = \"healthcare\" Instantiates an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the dataset's location dataset id = 'my-dataset' # replace with your dataset ID fhir store id = 'my-fhir-store' # replace with the FHIR store's ID pubsub topic = 'projects/{project id}/topics/{topic id}' # replace with your Pub/Sub topic fhir store parent = \"projects/ {} /locations/ {} /datasets/ {} \" . format ( project id , location , dataset id ) fhir store name = f \" { fhir store parent } /fhirStores/ { fhir store id } \" patch = { \"notificationConfigs\" : [{ \"pubsubTopic\" : pubsub topic }] if pubsub topic else [] } request = ( client . projects () . locations () . datasets () . fhirStores () . patch ( name = fhir store name , updateMask = \"notificationConfigs\" , body = patch ) ) response = request . execute () print ( f \"Patched FHIR store { fhir store id } with Cloud Pub/Sub topic: { pubsub topic or 'None' } \" ) return response Getting FHIR store details The following samples show how to get details about a FHIR store.",
+          "See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/fhir before running the sample.\"\"\" Imports the Google API Discovery Service. from googleapiclient import discovery Imports Python's built-in \"json\" module import json api version = \"v1\" service name = \"healthcare\" Instantiates an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the parent dataset's ID fhir store id = 'my-fhir-store' # replace with the FHIR store ID fhir store parent = \"projects/ {} /locations/ {} /datasets/ {} \" . format ( project id , location , dataset id ) fhir store name = f \" { fhir store parent } /fhirStores/ { fhir store id } \" fhir stores = client . projects () . locations () . datasets () . fhirStores () response = fhir stores . fhir () . capabilities ( name = fhir store name ) . execute () print ( json . dumps ( response , indent = 2 )) return response Setting the base resource validation level By default, all resources in your FHIR store have base resource validation applied to them."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cmd.exe",
+      "dosage.doseAndRate.doseQuantity",
+      "dosage.route",
+      "dosage.text",
+      "github.com",
+      "healthcare.googleapis.com",
+      "hl7.org",
+      "hospital.smarthealthit.org",
+      "nlp.analyzeEntities",
+      "projects.locations.datasets.fhirStores.fhir.conditionalPatch",
+      "projects.locations.datasets.fhirStores.patch",
+      "request.json",
+      "snomed.info",
+      "standardhealthrecord.org",
+      "synthetichealth.github.io",
+      "terminology.hl7.org"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/nlp",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/nlp",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/nlp",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/nlp",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/nlp",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/nlp",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/nlp",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir"
+      ]
+    }
+  ]
+}

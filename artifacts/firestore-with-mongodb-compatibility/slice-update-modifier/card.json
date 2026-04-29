@@ -1,0 +1,175 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:11.019Z",
+  "source_step08_card": "data/step-08/current/products/firestore-with-mongodb-compatibility/card.json",
+  "product_name": "Firestore with MongoDB compatibility",
+  "product_slug": "firestore-with-mongodb-compatibility",
+  "feature_name": "$slice update modifier",
+  "feature_slug": "slice-update-modifier",
+  "summary": "Supports the $slice update modifier.",
+  "extended_definition": "Supports the $slice update modifier.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-import-from-source",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+      "https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported features: 8.0 \\_|\\_ Firestore with MongoDB compatibility \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "source_id": "site-docs-root",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "Array operators Operator Supported $ Yes $[] Yes $[<identifier>] Yes $addToSet Yes $percentile Yes $pop Yes $pull Yes $pullAll Yes $push Yes Bitwise operators Operator Supported $bit Yes Field operators Operator Supported $currentDate Yes $inc Yes $max Yes $min Yes $mul Yes $rename Yes $set Yes $setOnInsert Yes $unset Yes Update modifiers Modifier Supported $each Yes $position Yes $slice Yes $sort Yes Aggregation pipeline operators Firestore with MongoDB compatibility supports the following aggregation pipeline operators.",
+          "Query and projection operators Firestore with MongoDB compatibility supports the following query and projection operators: Array operators Operator Supported $all Yes $elemMatch Yes $size Yes Bitwise operators Operator Supported $bitsAllClear No $bitsAllSet No $bitsAnyClear No $bitsAnySet No Comment operator Operator Supported $comment No Comparison operators Operator Supported $eq Yes $gt Yes $gte Yes $in Yes $lt Yes $lte Yes $ne Yes $nin Yes Element operators Operator Supported $exists Yes $type Yes Evaluation query operators Operator Supported $expr Yes $jsonSchema No $mod Yes $regex Yes $text No $where No Logical operators Operator Supported $and Yes $nor Yes $not Yes $or Yes Projection operators Operator Supported $ Yes $elemMatch Yes $meta Partial (supports textScore) $slice Yes Update operators Firestore with MongoDB compatibility supports the following update operators.",
+          "Operator Supported $abs Yes $add Yes $ceil Yes $divide Yes $exp Yes $floor Yes $ln Yes $log Yes $log10 Yes $mod Yes $multiply Yes $pow Yes $round Yes $sqrt Yes $subtract Yes $trunc Yes Array operators Operator Supported $arrayElemAt Yes $arrayToObject Yes $concatArrays Yes $filter Yes $firstN Yes $in Yes $indexOfArray Yes $isArray Yes $lastN Yes $map Yes $maxN Yes $minN Yes $objectToArray Yes $range Yes $reduce Yes $reverseArray Yes $size Yes $slice Yes $sortArray Yes $zip Yes Boolean operators Operator Supported $and Yes $not Yes $or Yes Comparison operators Operator Supported $cmp Yes $eq Yes $gt Yes $gte Yes $lt Yes $lte Yes $ne Yes Conditional expression operators Operator Supported $cond Yes $ifNull Yes $switch Yes Data size operators Operator Supported $binarySize Yes $bsonSize Yes Date operators Operator Supported $dateAdd Yes $dateDiff Yes $dateFromParts Yes $dateFromString Yes $dateSubtract Yes $dateToParts Yes $dateToString Yes $dateTrunc Yes $dayOfMonth Yes $dayOfWeek Yes $dayOfYear Yes $hour Yes $isoDayOfWeek Yes $isoWeek Yes $isoWeekYear Yes $millisecond Yes $minute Yes $month Yes $second Yes $toDate Yes $week Yes $year Yes Timestamp operators Operator Supported $tsIncrement No $tsSecond No Miscellaneous operators Operator Supported $getField Yes $natural Yes (ascending) $rand Yes $sampleRate No $toHashedIndexKey No Literal expression operators Operator Supported $literal Yes Object operators Operator Supported $mergeObjects Yes $objectToArray Yes $setField No Set operators Operator Supported $allElementsTrue Yes $anyElementTrue Yes $setDifference Yes $setEquals Yes $setIntersection Yes $setIsSubset Yes $setUnion Yes Stage operators Operator Supported $addFields Yes $bucket Yes $bucketAuto No $changeStream No $collStats No $count Yes $currentOp No $documents Yes $facet Yes $geoNear No $graphLookup No $group Yes $indexStats No $limit Yes $listLocalSessions No $listSessions No $lookup Yes $match Yes $merge No $out No $planCacheStats No $project Yes $redact No $replaceRoot Yes $replaceWith Yes $sample Yes $set Yes $search No $setWindowFields No $skip Yes $sort Yes $sortByCount Yes $unionWith Yes $unset Yes $unwind Yes String operators Operator Supported $concat Yes $dateFromString Yes $dateToString Yes $indexOfBytes Yes $indexOfCP Yes $ltrim Yes $regexFind Yes $regexFindAll Yes $regexMatch Yes $replaceAll Yes $replaceOne Yes $rtrim Yes $split Yes $strcasecmp Yes $strLenBytes Yes $strLenCP Yes $substr Yes $substrBytes Yes $substrCP Yes $toLower Yes $toString Yes $toUpper Yes $trim Yes System variables Variable Supported $$CLUSTERTIME No $$CURRENT No $$DESCEND No $$KEEP No $$NOW Yes $$PRUNE No $$REMOVE Yes $$ROOT Yes Text operators Operator Supported $meta No Trigonometry operators Operator Supported $acos No $acosh No $asin No $asinh No $atan No $atan2 No $atanh No $cos No $cosh No $degreesToRadians No $radiansToDegrees No $sin No $sinh No $tan No $tanh No Type operators Operator Supported $convert Yes $isNumber Yes $toBool Yes $toDate Yes $toDecimal Yes $toDouble Yes $toInt Yes $toLong Yes $toObjectId Yes $toString Yes $type Yes Variable operators Operator Supported $let Yes Geospatial Firestore with MongoDB compatibility supports the following Geospatial operators."
+        ]
+      },
+      {
+        "title": "Add and update data \\_|\\_ Firestore in Native mode \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data",
+        "source_id": "site-docs-root-2",
+        "final_score": 82,
+        "relevance": "",
+        "evidence_snippets": [
+          "If not supplied, the client falls back to the default project inferred from the environment. firestore = Google :: Cloud :: Firestore . new project id : project id puts \"Created Cloud Firestore client with given project ID.\" quickstart . rb Set a document To create or overwrite a single document, use the following language-specific set() methods: Web version 9 Use the setDoc() method: import { doc , setDoc } from \"firebase/firestore\" ; // Add a new document in collection \"cities\" await setDoc ( doc ( db , \"cities\" , \"LA\" ), { name : \"Los Angeles\" , state : \"CA\" , country : \"USA\" }); set document . js Web version 8 Use the set() method: // Add a new document in collection \"cities\" db . collection ( \"cities\" ). doc ( \"LA\" ). set ({ name : \"Los Angeles\" , state : \"CA\" , country : \"USA\" }) . then (() = > { console . log ( \"Document successfully written!\" ); }) . catch (( error ) = > { console . error ( \"Error writing document: \" , error ); }); test . firestore . js Swift Use the setData() method: Note: This product is not available on watchOS and App Clip targets. // Add a new document in collection \"cities\" do { try await db . collection ( \"cities\" ). document ( \"LA\" ). setData ([ \"name\" : \"Los Angeles\" , \"state\" : \"CA\" , \"country\" : \"USA\" ]) print ( \"Document successfully written!\" ) } catch { print ( \"Error writing document: \\( error ) \" ) } ViewController . swift Objective-C Use the setData: method: Note: This product is not available on watchOS and App Clip targets. // Add a new document in collection \"cities\" [[[ self . db collectionWithPath : @\"cities\" ] documentWithPath : @\"LA\" ] setData : @{ @\"name\" : @\"Los Angeles\" , @\"state\" : @\"CA\" , @\"country\" : @\"USA\" } completion :^ ( NSError Nullable error ) { if ( error != nil ) { NSLog ( @\"Error writing document: %@\" , error ); } else { NSLog ( @\"Document successfully written!\" ); } }]; ViewController . m Kotlin Android Use the set() method: val city = hashMapOf ( \"name\" to \"Los Angeles\" , \"state\" to \"CA\" , \"country\" to \"USA\" , ) db . collection ( \"cities\" ). document ( \"LA\" ) . set ( city ) . addOnSuccessListener { Log . d ( TAG , \"DocumentSnapshot successfully written!\" ) } . addOnFailureListener { e - > Log . w ( TAG , \"Error writing document\" , e ) } DocSnippets . kt Java Android Use the set() method: Map<String , Object > city = new HashMap <> (); city . put ( \"name\" , \"Los Angeles\" ); city . put ( \"state\" , \"CA\" ); city . put ( \"country\" , \"USA\" ); db . collection ( \"cities\" ). document ( \"LA\" ) . set ( city ) . addOnSuccessListener ( new OnSuccessListener<Void> () { @Override public void onSuccess ( Void aVoid ) { Log . d ( TAG , \"DocumentSnapshot successfully written!\" ); } }) . addOnFailureListener ( new OnFailureListener () { @Override public void onFailure ( @NonNull Exception e ) { Log . w ( TAG , \"Error writing document\" , e ); } }); DocSnippets . java Dart Use the set() method: final city = < String , String > { \"name\" : \"Los Angeles\" , \"state\" : \"CA\" , \"country\" : \"USA\" }; db . collection ( \"cities\" ) . doc ( \"LA\" ) . set ( city ) . onError (( e , ) = > print ( \"Error writing document: $ e \" )); firestore . dart Java Use the set() method: // Create a Map to store the data we want to set Map<String , Object > docData = new HashMap <> (); docData . put ( \"name\" , \"Los Angeles\" ); docData . put ( \"state\" , \"CA\" ); docData . put ( \"country\" , \"USA\" ); docData . put ( \"regions\" , Arrays . asList ( \"west coast\" , \"socal\" )); // Add a new document (asynchronously) in collection \"cities\" with id \"LA\" ApiFuture<WriteResult> future = db . collection ( \"cities\" ). document ( \"LA\" ). set ( docData ); // ... // future.get() blocks on response System . out . println ( \"Update time : \" + future . get (). getUpdateTime ()); ManageDataSnippets . java Python Use the set() method: data = { \"name\" : \"Los Angeles\" , \"state\" : \"CA\" , \"country\" : \"USA\" } Add a new doc in collection 'cities' with ID 'LA' db . collection ( \"cities\" ) . document ( \"LA\" ) . set ( data ) snippets . py Python (Async) Use the set() method: data = { \"name\" : \"Los Angeles\" , \"state\" : \"CA\" , \"country\" : \"USA\" } Add a new doc in collection 'cities' with ID 'LA' await db . collection ( \"cities\" ) . document ( \"LA\" ) . set ( data ) snippets . py C++ Use the Set() method: // Add a new document in collection 'cities' db - > Collection ( \"cities\" ) .",
+          "FIRDocumentReference frankDocRef = [[ self . db collectionWithPath : @\"users\" ] documentWithPath : @\"frank\" ]; [ frankDocRef setData : @{ @\"name\" : @\"Frank\" , @\"favorites\" : @{ @\"food\" : @\"Pizza\" , @\"color\" : @\"Blue\" , @\"subject\" : @\"recess\" } , @\"age\" : @12 } ]; // To update age and favorite color: [ frankDocRef updateData : @{ @\"age\" : @13 , @\"favorites.color\" : @\"Red\" , } completion :^ ( NSError Nullable error ) { if ( error != nil ) { NSLog ( @\"Error updating document: %@\" , error ); } else { NSLog ( @\"Document successfully updated\" ); } }]; ViewController . m Kotlin Android // Assume the document contains: // { // name: \"Frank\", // favorites: { food: \"Pizza\", color: \"Blue\", subject: \"recess\" } // age: 12 // } // // To update age and favorite color: db . collection ( \"users\" ). document ( \"frank\" ) . update ( mapOf ( \"age\" to 13 , \"favorites.color\" to \"Red\" , ), ) DocSnippets . kt Java Android // Assume the document contains: // { // name: \"Frank\", // favorites: { food: \"Pizza\", color: \"Blue\", subject: \"recess\" } // age: 12 // } // // To update age and favorite color: db . collection ( \"users\" ). document ( \"frank\" ) . update ( \"age\" , 13 , \"favorites.color\" , \"Red\" ); DocSnippets . java Dart // Assume the document contains: // { // name: \"Frank\", // favorites: { food: \"Pizza\", color: \"Blue\", subject: \"recess\" } // age: 12 // } db . collection ( \"users\" ) . doc ( \"frank\" ) . update ({ \"age\" : 13 , \"favorites.color\" : \"Red\" }); firestore . dart Java // Create an initial document to update DocumentReference frankDocRef = db . collection ( \"users\" ). document ( \"frank\" ); Map<String , Object > initialData = new HashMap <> (); initialData . put ( \"name\" , \"Frank\" ); initialData . put ( \"age\" , 12 ); Map<String , Object > favorites = new HashMap <> (); favorites . put ( \"food\" , \"Pizza\" ); favorites . put ( \"color\" , \"Blue\" ); favorites . put ( \"subject\" , \"Recess\" ); initialData . put ( \"favorites\" , favorites ); ApiFuture<WriteResult> initialResult = frankDocRef . set ( initialData ); // Confirm that data has been successfully saved by blocking on the operation initialResult . get (); // Update age and favorite color Map<String , Object > updates = new HashMap <> (); updates . put ( \"age\" , 13 ); updates . put ( \"favorites.color\" , \"Red\" ); // Async update document ApiFuture<WriteResult> writeResult = frankDocRef . update ( updates ); // ...",
+          "Update fields in nested objects If your document contains nested objects, you can use the dot notation to reference nested fields within the document when you call update() : Web version 9 import { doc , setDoc , updateDoc } from \"firebase/firestore\" ; // Create an initial document to update. const frankDocRef = doc ( db , \"users\" , \"frank\" ); await setDoc ( frankDocRef , { name : \"Frank\" , favorites : { food : \"Pizza\" , color : \"Blue\" , subject : \"recess\" }, age : 12 }); // To update age and favorite color: await updateDoc ( frankDocRef , { \"age\" : 13 , \"favorites.color\" : \"Red\" }); update document nested . js Web version 8 Learn more about the tree-shakeable modular Web API and its advantages over the namespaced API. // Create an initial document to update. var frankDocRef = db . collection ( \"users\" ). doc ( \"frank\" ); frankDocRef . set ({ name : \"Frank\" , favorites : { food : \"Pizza\" , color : \"Blue\" , subject : \"recess\" }, age : 12 }); // To update age and favorite color: db . collection ( \"users\" ). doc ( \"frank\" ). update ({ \"age\" : 13 , \"favorites.color\" : \"Red\" }) . then (() = > { console . log ( \"Document successfully updated!\" ); }); test . firestore . js Swift Note: This product is not available on watchOS and App Clip targets. // Create an initial document to update. let frankDocRef = db . collection ( \"users\" ). document ( \"frank\" ) do { try await frankDocRef . setData ([ \"name\" : \"Frank\" , \"favorites\" : [ \"food\" : \"Pizza\" , \"color\" : \"Blue\" , \"subject\" : \"recess\" ], \"age\" : 12 ]) // To update age and favorite color: try await frankDocRef . updateData ([ \"age\" : 13 , \"favorites.color\" : \"Red\" ]) print ( \"Document successfully updated\" ) } catch { print ( \"Error updating document: \\( error ) \" ) } ViewController . swift Objective-C Note: This product is not available on watchOS and App Clip targets. // Create an initial document to update."
+        ]
+      },
+      {
+        "title": "\"Authenticate and connect to a database \\_|\\_ Firestore with MongoDB compatibility\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+        "source_id": "site-iam-reference",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "CopyFrom ( updated policy ) final policy = client . set iam policy ( set policy request ) print ( f 'Policy updated successfully { final policy } ' ) def provision firestore user creds and iam ( project id : str , database id : str , user name : str ): \"\"\"Provision user credentials and configure an IAM policy.\"\"\" user creds = create user creds ( project id , database id , user name ) Note the password returned in the UserCreds proto - it cannot be retrieved again after the initial call to the create user creds API. print ( f 'Created credentials for username: { user name } ' ) print ( f 'IAM principal: { user creds . resource identity . principal } ' ) print ( f 'Password: [ { user creds . secure password } ]' ) Provision an IAM binding for the principal associated with these user credentials. update iam policy for user creds ( project id , database id , user name , user creds ) Emit the password again print ( f 'Successfully configured IAM policy for database: { database id } ,' f ' username: { user name } ' ) print ( f 'Please make a note of the password: [ { user creds . secure password } ]' ) Use the following connection string to connect to your database with SCRAM: mongodb : // USERNAME : PASSWORD @ UID .",
+          "System . out . printf ( \"Successfully configured IAM policy for database: %s, username: %s\\n\" , databaseId , userName ); System . out . printf ( \"Please make a note of the password: [%s]\\n\" , userCreds . getSecurePassword ()); } / Provision new user credentials using the FirestoreAdminClient. / private static UserCreds createUserCreds ( String projectId , String databaseId , String userName ) throws Exception { FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient . create (); return firestoreAdminClient . createUserCreds ( CreateUserCredsRequest . newBuilder () . setParent ( String . format ( \"projects/%s/databases/%s\" , projectId , databaseId )) . setUserCredsId ( userName ) . build ()); } / Update the IAM policy using the Resource Manager ProjectsClient. / private static void updateIamPolicyForUserCreds ( String projectId , String databaseId , String userName , UserCreds userCreds ) throws Exception { try ( ProjectsClient projectsClient = ProjectsClient . create ()) { ProjectName projectName = ProjectName . of ( projectId ); // Get the current IAM policy.",
+          "Builder policyBuilder = currentPolicy . toBuilder (); Binding newBinding = Binding . newBuilder () . setRole ( role ) . setCondition ( Expr . newBuilder (). setTitle ( title ). setExpression ( expression ). build ()) . addMembers ( userCreds . getResourceIdentity (). getPrincipal ()) . build (); policyBuilder . addBindings ( newBinding ); // Update the policy SetIamPolicyRequest request = SetIamPolicyRequest . newBuilder () . setResource ( projectName . toString ()) . setPolicy ( policyBuilder . build ()) . setUpdateMask ( FieldMask . newBuilder (). addPaths ( \"bindings\" ). addPaths ( \"etag\" ). build ()) . build (); System . out . println ( request ); Policy updatedPolicy = projectsClient . setIamPolicy ( request ); System . out . println ( \"Policy updated successfully: \" + updatedPolicy ); } } } Python This section provides a code example for creating user credentials and configuring the IAM policy using Python administrative client libraries."
+        ]
+      },
+      {
+        "title": "\"Import from the source Mongo database \\_|\\_ Firestore with MongoDB compatibility\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-import-from-source",
+        "source_id": "site-iam-reference",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]",
+          "To activate the stream, run the following command: gcloud datastream streams update \" $DATASTREAM NAME \" \\ --location = \" $LOCATION \" \\ --state = RUNNING \\ --update-mask = state What's next Proceed to Write data into the destination database .",
+          "The database must continue to receive queries and updates until the migration reaches a specific milestone described later."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.yaml",
+      "datastore.user",
+      "favorites.color",
+      "future.get",
+      "resource.name"
+    ],
+    "missing_inventory_roles": [
+      "roles/datastore.user"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-import-from-source"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-import-from-source"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-import-from-source"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-import-from-source"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-import-from-source"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-import-from-source"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-import-from-source"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-import-from-source"
+      ]
+    }
+  ]
+}

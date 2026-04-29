@@ -1,0 +1,163 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:25.774Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub",
+  "feature_name": "Pub/Sub Lite regional availability",
+  "feature_slug": "pub-sub-lite-regional-availability",
+  "summary": "Pub/Sub Lite became available in the northamerica-northeast2 region; Pub/Sub Lite became available in additional regions.",
+  "extended_definition": "Pub/Sub Lite became available in the northamerica-northeast2 region; Pub/Sub Lite became available in additional regions.",
+  "lifecycle": {
+    "latest_feature_date": "2021-08-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/app-engine-writing-and-responding-to-pub-sub-messages",
+      "https://docs.cloud.google.com/pubsub/docs/choosing-pubsub-or-cloud-tasks",
+      "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+      "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Pub/Sub: Introduction to reliability \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "source_id": "site-docs-root",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Regional Isolation To minimize the infrastructure that publish and subscribe operations depend on outside a single region and to ensure that all data stays isolated to that region, follow these steps: Create a topic per region.",
+          "When using the regional endpoints , such as us-central1-pubsub.googleapis.com , or locational endpoints , such as pubsub.us-central1.rep.googleapis.com , publishers and subscribers connect to Pub/Sub in the specified region.",
+          "Failover If you don't need regional isolation, you may want to take advantage of Pub/Sub's ability to deliver messages efficiently across multiple regions in order to achieve multi-region failover capabilities."
+        ]
+      },
+      {
+        "title": "Choosing Pub/Sub or Cloud Tasks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/choosing-pubsub-or-cloud-tasks",
+        "source_id": "site-docs-root",
+        "final_score": 224,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Yes with ordering keys Explicit rate controls Yes Pull subscriber clients can implement flow control Pull via API No Yes Batch insert No Yes Multiple handlers/subscribers per message No Yes Task/message retention 30 days Up to 31 days Max size of task/message 1MB 10MB Max delivery rate 500 qps/queue No upper limit Geographic availability Regional Global Maximum push handler/subscriber processing duration 30 minutes (HTTP) 10 minutes (App Engine Standard automatic scaling) 24 hours (App Engine Standard manual or basic scaling) 60 minutes (App Engine Flexible) 10 minutes for push operations Number of queues/subscriptions per project 1,000/project, more available via quota increase request 10,000/project Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Data analytics Pub/Sub Guides Send feedback Choosing Pub/Sub or Cloud Tasks Stay organized with collections Save and categorize content based on your preferences.",
+          "Pub/Sub is optimal for more general event data ingestion and distribution patterns where some degree of control over execution can be sacrificed."
+        ]
+      },
+      {
+        "title": "Configure message storage policies \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction",
+        "source_id": "site-docs-root",
+        "final_score": 212,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: subscription/num retained acked messages by region Performance and availability implications The message storage policy does not affect the overall SLA, but it does introduce an availability-control trade-off when publishers or subscribers run outside Google Cloud or in regions not allowed by the policy.",
+          "When publishing from outside of Google Cloud, an additional layer of routing is involved to get the request to a nearby Google Cloud region where the Pub/Sub service is available.",
+          "Click Update . gcloud CLI To push the message storage policy defined in your organization's Resource Location Restriction policy to a topic, run the following gcloud pubsub topics update command: gcloud pubsub topics update TOPIC ID \\ --recompute-message-storage-policy To update the message storage policy of a topic with specific regions, run the gcloud pubsub topics update command with the --message-storage-policy-allowed-regions flag: gcloud pubsub topics update TOPIC ID \\ --message-storage-policy-allowed-regions = REGION1,REGION2 Replace the following: TOPIC ID : the ID of the topic you're updating."
+        ]
+      },
+      {
+        "title": "Use Pub/Sub with App Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/app-engine-writing-and-responding-to-pub-sub-messages",
+        "source_id": "site-docs-root-2",
+        "final_score": 208,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To learn how to combine these services, see the following App Engine tutorials: .NET: Writing and responding to Pub/Sub messages GO: Writing and responding to Pub/Sub messages Java: Writing and responding to Pub/Sub messages Node.JS: Writing and responding to Pub/Sub messages PHP: Writing and responding to Pub/Sub messages Python: Writing and responding to Pub/Sub messages Ruby: Writing and responding to Pub/Sub messages Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Data analytics Pub/Sub Guides Send feedback Use Pub/Sub with App Engine Stay organized with collections Save and categorize content based on your preferences.",
+          "You can use Pub/Sub and App Engine to send and receive Pub/Sub messages in an App Engine app for Python."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "body.json",
+      "central1.rep.googleapis.com",
+      "pubsub.googleapis.com",
+      "pubsub.us"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "https://docs.cloud.google.com/pubsub/docs/choosing-pubsub-or-cloud-tasks",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction",
+        "https://docs.cloud.google.com/pubsub/docs/app-engine-writing-and-responding-to-pub-sub-messages"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "https://docs.cloud.google.com/pubsub/docs/choosing-pubsub-or-cloud-tasks",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction",
+        "https://docs.cloud.google.com/pubsub/docs/app-engine-writing-and-responding-to-pub-sub-messages"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "https://docs.cloud.google.com/pubsub/docs/choosing-pubsub-or-cloud-tasks",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction",
+        "https://docs.cloud.google.com/pubsub/docs/app-engine-writing-and-responding-to-pub-sub-messages"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "https://docs.cloud.google.com/pubsub/docs/choosing-pubsub-or-cloud-tasks",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction",
+        "https://docs.cloud.google.com/pubsub/docs/app-engine-writing-and-responding-to-pub-sub-messages"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "https://docs.cloud.google.com/pubsub/docs/choosing-pubsub-or-cloud-tasks",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction",
+        "https://docs.cloud.google.com/pubsub/docs/app-engine-writing-and-responding-to-pub-sub-messages"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "https://docs.cloud.google.com/pubsub/docs/choosing-pubsub-or-cloud-tasks",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction",
+        "https://docs.cloud.google.com/pubsub/docs/app-engine-writing-and-responding-to-pub-sub-messages"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "https://docs.cloud.google.com/pubsub/docs/choosing-pubsub-or-cloud-tasks",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction",
+        "https://docs.cloud.google.com/pubsub/docs/app-engine-writing-and-responding-to-pub-sub-messages"
+      ]
+    }
+  ]
+}

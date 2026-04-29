@@ -1,0 +1,96 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.164Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-node-js/card.json",
+  "product_name": "App Engine standard environment Node.js",
+  "product_slug": "app-engine-standard-environment-node-js",
+  "feature_name": "Local package dependencies",
+  "feature_slug": "local-package-dependencies",
+  "summary": "Package.json can reference local file-based dependencies for deployment.",
+  "extended_definition": "Package.json can reference local file-based dependencies for deployment.",
+  "lifecycle": {
+    "latest_feature_date": "2018-08-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app/writing-web-service",
+      "https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime",
+      "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Specifying dependencies \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "source_id": "site-docs-reference-3",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can use any Node.js web framework including the following: Express.js Hapi.js Loopback.js Koa.js Kraken.js Restify.js Sails.js To use a particular web framework, such as Express.js , add the framework to your package.json file: Using npm : npm install express Using yarn : yarn add express Using pnpm : pnpm add express For example, the resulting package.json file might look as follows: { \"dependencies\" : { \"lodash\" : \"^4.0.1\" , \"express\" : \"^4.16.2\" } } Installing the Cloud Client Libraries The Cloud Client Libraries for Node.js is the idiomatic way for Node.js developers to integrate with Google Cloud services, such as Firestore in Datastore mode (Datastore) and Cloud Storage .",
+          "For example, if you want to specify Lodash as a dependency, your package.json file might look as follows: { \"dependencies\" : { \"lodash\" : \"^4.0.1\" } } During deployment, the Node.js runtime automatically installs all dependencies declared in your package.json file.",
+          "You specify the dependencies for your Node.js app by declaring them in the package.json file."
+        ]
+      },
+      {
+        "title": "\"Write your web service with Node.js \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app/writing-web-service",
+        "source_id": "site-docs-reference-4",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Here's an example: { ... \"dependencies\" : { \"express\" : \"^4.16.3\" } ... } Add a start script to your package.json file: \"scripts\" : { \"start\" : \"node server.js\" } Create a file called server.js in the same folder and add the following code: const express = require ( 'express' ); const app = express (); app . get ( '/' , ( req , res ) = > { res . send ( 'Hello from App Engine!' ); }); // Listen to the App Engine-specified port, or 8080 otherwise const PORT = process . env .",
+          "Add Express as a dependency by running: npm install express Confirm that Express appears in your package.json file's dependencies field.",
+          "Key points You can use dependencies by listing them in your package.json file."
+        ]
+      },
+      {
+        "title": "\"Node.js Runtime Environment \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime",
+        "source_id": "site-docs-root",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Because minor and patch versions are automatically updated, if present, the engines.node property in your package.json file can only specify the major version and be compatible with the Node.js version specified in your app.yaml file.",
+          "If you require additional control over your build steps before starting your application, you can provide a custom build step by adding a gcp-build script to your package.json file.",
+          "To prevent your build from running the npm run build script, you must either: Add a gcp-build script with an empty value in your package.json file: \"gcp-build\":\"\" ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "engines.node",
+      "package.json",
+      "server.js",
+      "x.x"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app/writing-web-service",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime"
+      ]
+    }
+  ]
+}

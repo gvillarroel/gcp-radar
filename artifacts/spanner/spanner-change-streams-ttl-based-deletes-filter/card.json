@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner Change Streams TTL-based deletes filter",
+  "feature_slug": "spanner-change-streams-ttl-based-deletes-filter",
+  "summary": "Spanner Change Streams now support a TTL-based deletes filter via the exclude_ttl_deletes option.",
+  "extended_definition": "Spanner Change Streams now support a TTL-based deletes filter via the exclude_ttl_deletes option.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/change-streams",
+      "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+      "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Change streams overview \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "source_id": "site-docs-root",
+        "final_score": 196,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Apply a TTL-based deletes filter to filter out TTL-based deletes from your change streams.",
+          "When you set this filter to exclude TTL-based deletes, only future TTL-based deletes are excluded from your change stream.",
+          "By default, change streams include all TTL-based deletes."
+        ]
+      },
+      {
+        "title": "Create and manage change streams \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "source_id": "site-docs-root",
+        "final_score": 194,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Apply a TTL-based deletes filter to filter out TTL-based deletes from your change streams.",
+          "Two examples: GoogleSQL CREATE CHANGE STREAM LongerDataRetention FOR ALL OPTIONS ( retention period = '36h' ); CREATE CHANGE STREAM MaximumDataRetention FOR ALL OPTIONS ( retention period = '7d' ); PostgreSQL CREATE CHANGE STREAM LongerDataRetention FOR ALL WITH ( retention period = '36h' ); CREATE CHANGE STREAM MaximumDataRetention FOR ALL WITH ( retention period = '7d' ); Specify a different value capture type To specify a change stream value capture type other than OLD AND NEW VALUES , set the value capture type to either NEW VALUES or NEW ROW , as shown in the following examples: GoogleSQL CREATE CHANGE STREAM NewRowChangeStream FOR ALL OPTIONS ( value capture type = 'NEW ROW' ); CREATE CHANGE STREAM NewValuesChangeStream FOR ALL OPTIONS ( value capture type = 'NEW VALUES' ); PostgreSQL CREATE CHANGE STREAM NewRowChangeStream FOR ALL WITH ( value capture type = 'NEW ROW' ); CREATE CHANGE STREAM NewValuesChangeStream FOR ALL WITH ( value capture type = 'NEW VALUES' ); Filter TTL-based deletes You can filter TTL-based deletes from your change stream's scope using the exclude ttl deletes filter.",
+          "GoogleSQL To create a change stream with the TTL-based deletes filter, run the following example: CREATE CHANGE STREAM CHANGE STREAM NAME FOR ALL OPTIONS ( exclude ttl deletes = true ) Replace the following: CHANGE STREAM NAME : the name of your new change stream The following example creates a change stream called NewFilterChangeStream that excludes all TTL-based deletes: CREATE CHANGE STREAM NewFilterChangeStream FOR ALL OPTIONS ( exclude ttl deletes = true ) PostgreSQL To create a change stream with the TTL-based deletes filter, run the following example: CREATE CHANGE STREAM CHANGE STREAM NAME FOR ALL WITH ( exclude ttl deletes = true ) Replace the following: CHANGE STREAM NAME : the name of your new change stream The following example creates a change stream called NewFilterChangeStream that excludes all TTL-based deletes: CREATE CHANGE STREAM NewFilterChangeStream FOR ALL WITH ( exclude ttl deletes = true ) To add or remove the TTL-based deletes filter from an existing change stream, see Modify TTL-based deletes filter ."
+        ]
+      },
+      {
+        "title": "\"Build change streams connections using Dataflow \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "source_id": "site-docs-root",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "These examples demonstrate how to filter change stream records based on user-defined transaction tags as well as system tags: User-defined tag filtering for my-tx-tag : pipeline . apply ( SpannerIO . readChangeStream () . withSpannerConfig ( SpannerConfig . create () . withProjectId ( \"my-project-id\" ) . withInstanceId ( \"my-instance-id\" ) . withDatabaseId ( \"my-database-id\" ) . withDatabaseRole ( \"my-database-role\" )) // Needed for fine-grained access control only . withChangeStreamName ( \"my-change-stream\" ) . withMetadataInstance ( \"my-metadata-instance-id\" ) . withMetadataDatabase ( \"my-metadata-database-id\" ) . withInclusiveStartAt ( Timestamp . now ())) . apply ( Filter . by ( record - > ! record . isSystemTransaction () && record . getTransactionTag (). equalsIgnoreCase ( \"my-tx-tag\" ))) // Subsequent processing goes here System tag filtering/ TTL auditing: pipeline . apply ( SpannerIO . readChangeStream () . withSpannerConfig ( SpannerConfig . create () . withProjectId ( \"my-project-id\" ) . withInstanceId ( \"my-instance-id\" ) . withDatabaseId ( \"my-database-id\" ) . withDatabaseRole ( \"my-database-role\" )) // Needed for fine-grained access control only . withChangeStreamName ( \"my-change-stream\" ) . withMetadataInstance ( \"my-metadata-instance-id\" ) . withMetadataDatabase ( \"my-metadata-database-id\" ) . withInclusiveStartAt ( Timestamp . now ())) . apply ( Filter . by ( record - > record . isSystemTransaction () && record . getTransactionTag (). equals ( \"RowDeletionPolicy\" ))) // Subsequent processing goes here Sample: Fetch full row This example works with a Spanner table named Singer that has the following definition: CREATE TABLE Singers ( SingerId INT64 NOT NULL , FirstName STRING ( 1024 ), LastName STRING ( 1024 ) ) PRIMARY KEY ( SingerId ); Under the default OLD AND NEW VALUES value capture mode of change streams, when there is an update to a Spanner row, the data change record received will contain only the columns that were changed.",
+          "For more information about the SortKey , see the sample implementation . private static class TransactionBoundaryFn extends DoFn<KV<String , DataChangeRecord > , KV<SortKey , Iterable<DataChangeRecord> >> { @StateId ( \"buffer\" ) private final StateSpec<BagState<DataChangeRecord> > buffer = StateSpecs . bag (); @StateId ( \"count\" ) private final StateSpec<ValueState<Integer> > countState = StateSpecs . value (); @ProcessElement public void process ( ProcessContext context , @StateId ( \"buffer\" ) BagState<DataChangeRecord> buffer , @StateId ( \"count\" ) ValueState<Integer> countState ) { final KV<String , DataChangeRecord > element = context . element (); final DataChangeRecord record = element . getValue (); buffer . add ( record ); int count = ( countState . read () != null ? countState . read () : 0 ); count = count + 1 ; countState . write ( count ); if ( count == record . getNumberOfRecordsInTransaction ()) { final List<DataChangeRecord> sortedRecords = StreamSupport . stream ( buffer . read (). spliterator (), false ) . sorted ( Comparator . comparing ( DataChangeRecord :: getRecordSequence )) . collect ( Collectors . toList ()); final Instant commitInstant = new Instant ( sortedRecords . get ( 0 ). getCommitTimestamp (). toSqlTimestamp () . getTime ()); context . outputWithTimestamp ( KV . of ( new SortKey ( sortedRecords . get ( 0 ). getCommitTimestamp (), sortedRecords . get ( 0 ). getServerTransactionId ()), sortedRecords ), commitInstant ); buffer . clear (); countState . clear (); } } } Sample: Filter by transaction tag When a transaction modifying user data is tagged, the corresponding tag and its type get stored as part of DataChangeRecord .",
+          "Home Documentation Databases Spanner Guides Send feedback Build change streams connections using Dataflow Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow"
+      ]
+    }
+  ]
+}

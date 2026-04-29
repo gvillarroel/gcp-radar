@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.509Z",
+  "source_step08_card": "data/step-08/current/products/application-integration/card.json",
+  "product_name": "Application Integration",
+  "product_slug": "application-integration",
+  "feature_name": "Rhino JavaScript execution engine",
+  "feature_slug": "rhino-javascript-execution-engine",
+  "summary": "Application Integration deprecates Rhino as the JavaScript execution engine, moving new JavaScript tasks to V8 while existing published Rhino tasks remain until migrated; deprecated on 2025-01-24.",
+  "extended_definition": "Application Integration deprecates Rhino as the JavaScript execution engine, moving new JavaScript tasks to V8 while existing published Rhino tasks remain until migrated; deprecated on 2025-01-24.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-23",
+    "deprecation_date": "2025-01-24",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing",
+      "https://docs.cloud.google.com/application-integration/docs/cancel-executions",
+      "https://docs.cloud.google.com/application-integration/docs/configure-javascript-task"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "JavaScript task \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-javascript-task",
+        "source_id": "site-docs-reference-2",
+        "final_score": 142,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To leverage the performance and security benefits of Google's open-source high-performance JavaScript engine, Rhino will be deprecated and all JavaScript executions will now utilize V8, Google's open-source high-performance JavaScript engine.",
+          "Benefits of V8 The V8 JavaScript engine offers the following benefits: Performance: V8 is significantly faster than Rhino, leading to improved execution speeds for your JavaScript tasks .",
+          "JavaScript execution engine Deprecated: Effective January 24, 2025, Application Integration will no longer support Rhino as the JavaScript execution engine."
+        ]
+      },
+      {
+        "title": "Cancel executions \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/cancel-executions",
+        "source_id": "site-docs-reference-2",
+        "final_score": 57,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "API Call the projects.locations.integrations.executions.cancel method and provide the ID of the execution that you want to cancel: curl -X POST https://integrations.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /integrations/ INTEGRATION NAME /executions/ EXECUTION ID :cancel -H \"Authorization: Bearer $TOKEN\" Limitations Cancel execution is subject to the following limitations: Canceling an execution that is triggered by a Schedule trigger isn't supported.",
+          "You can cancel an integration execution if the integration is in one of the following execution states : Suspended On hold Retry on hold Cancel an execution To cancel an execution, select one of the following options: Console In Application Integration , go to the Logs page.",
+          "You can't cancel an integration execution if the integration is in one of the following states: In process Succeeded Failed Canceled What's next Learn about logs in Application Integration ."
+        ]
+      },
+      {
+        "title": "\"Automate Salesforce case routing assignments \\_|\\_ Application Integration\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing",
+        "source_id": "site-docs-root",
+        "final_score": 56,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following edge condition controls the flow of the integration based on the type of the Salesforce case: Add an edge connection from the Get case type task to the Mapping for issue creation task with the following edge condition: $sf case type$ = \"Engineering\" Add another edge connection from the Get case type task to the Mapping for incident creation task with the following edge condition: $sf case type$ = \"Sales\" Sample integration flow The following figure shows a sample layout of the integration created using this tutorial.",
+          "Create new Jira issue Once you have extracted the Salesforce case type, and if the case is of type: Engineering , then route it to Jira Cloud as a new issue.",
+          "Upon successfully publishing your integration, you can view and inspect the execution logs of the published integration."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "integrations.googleapis.com",
+      "projects.locations.integrations.executions.cancel"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-javascript-task",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing",
+        "https://docs.cloud.google.com/application-integration/docs/cancel-executions"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-javascript-task",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing",
+        "https://docs.cloud.google.com/application-integration/docs/cancel-executions"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-javascript-task",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing",
+        "https://docs.cloud.google.com/application-integration/docs/cancel-executions"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-javascript-task",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing",
+        "https://docs.cloud.google.com/application-integration/docs/cancel-executions"
+      ]
+    }
+  ]
+}

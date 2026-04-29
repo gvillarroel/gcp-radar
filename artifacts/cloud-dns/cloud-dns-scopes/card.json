@@ -1,0 +1,179 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:47.677Z",
+  "source_step08_card": "data/step-08/current/products/cloud-dns/card.json",
+  "product_name": "Cloud DNS",
+  "product_slug": "cloud-dns",
+  "feature_name": "Cloud DNS scopes",
+  "feature_slug": "cloud-dns-scopes",
+  "summary": "Cloud DNS supports configuring DNS scopes.",
+  "extended_definition": "Cloud DNS supports configuring DNS scopes.",
+  "lifecycle": {
+    "latest_feature_date": "2021-05-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/create",
+      "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/delete",
+      "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/create",
+      "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/delete"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Method: projects.locations.dnsThreatDetectors.create \\_|\\_ Cloud DNS \\_\\",
+        "url": "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/create",
+        "source_id": "site-docs-reference",
+        "final_score": 122,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking Cloud DNS Reference Send feedback Method: projects.locations.dnsThreatDetectors.create Stay organized with collections Save and categorize content based on your preferences.",
+          "IAM Permissions Requires the following IAM permission on the parent resource: networksecurity.dnsThreatDetectors.create For more information, see the IAM documentation .",
+          "Authorization scopes Requires the following OAuth scope: https://www.googleapis.com/auth/cloud-platform For more information, see the Authentication Overview ."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.dnsThreatDetectors.create \\_|\\_ Cloud DNS \\_\\",
+        "url": "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/create",
+        "source_id": "site-docs-reference",
+        "final_score": 122,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking Cloud DNS Reference Send feedback Method: projects.locations.dnsThreatDetectors.create Stay organized with collections Save and categorize content based on your preferences.",
+          "IAM Permissions Requires the following IAM permission on the parent resource: networksecurity.dnsThreatDetectors.create For more information, see the IAM documentation .",
+          "Authorization scopes Requires the following OAuth scope: https://www.googleapis.com/auth/cloud-platform For more information, see the Authentication Overview ."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.dnsThreatDetectors.delete \\_|\\_ Cloud DNS \\_\\",
+        "url": "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/delete",
+        "source_id": "site-docs-reference",
+        "final_score": 122,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking Cloud DNS Reference Send feedback Method: projects.locations.dnsThreatDetectors.delete Stay organized with collections Save and categorize content based on your preferences.",
+          "IAM Permissions Requires the following IAM permission on the name resource: networksecurity.dnsThreatDetectors.delete For more information, see the IAM documentation .",
+          "Authorization scopes Requires the following OAuth scope: https://www.googleapis.com/auth/cloud-platform For more information, see the Authentication Overview ."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.dnsThreatDetectors.delete \\_|\\_ Cloud DNS \\_\\",
+        "url": "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/delete",
+        "source_id": "site-docs-reference",
+        "final_score": 122,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking Cloud DNS Reference Send feedback Method: projects.locations.dnsThreatDetectors.delete Stay organized with collections Save and categorize content based on your preferences.",
+          "IAM Permissions Requires the following IAM permission on the name resource: networksecurity.dnsThreatDetectors.delete For more information, see the IAM documentation .",
+          "Authorization scopes Requires the following OAuth scope: https://www.googleapis.com/auth/cloud-platform For more information, see the Authentication Overview ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "networksecurity.dnsThreatDetectors.create",
+      "networksecurity.dnsThreatDetectors.delete",
+      "networksecurity.googleapis.com",
+      "projects.locations.dnsThreatDetectors",
+      "projects.locations.dnsThreatDetectors.create",
+      "projects.locations.dnsThreatDetectors.delete",
+      "projects.locations.dnsThreatDetectors.get",
+      "projects.locations.dnsThreatDetectors.list",
+      "projects.locations.dnsThreatDetectors.patch"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/create",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/create",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/delete",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/delete"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/create",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/create",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/delete",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/delete"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/create",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/create",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/delete",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/delete"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/create",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/create",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/delete",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/delete"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/create",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/create",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/delete",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/delete"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/create",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/create",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/delete",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/delete"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/create",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/create",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/delete",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/delete"
+      ]
+    }
+  ]
+}

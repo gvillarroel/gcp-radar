@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:13.819Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Assigned agent tags on email lists",
+  "feature_slug": "assigned-agent-tags-on-email-lists",
+  "summary": "Email list views can display round tags with agent initials to show the assigned agent or unassigned emails.",
+  "extended_definition": "Email list views can display round tags with agent initials to show the assigned agent or unassigned emails.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Real-time dashboards and monitoring pages \\_|\\_ Google Cloud Contact Center\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages",
+        "source_id": "site-docs-reference",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "This list includes queues without Virtual Agents active so if no results show, be sure there is an online Virtual Agent assigned to the queue.",
+          "Assigned Agent : Agent last assigned to call, so if the call was transferred, the last agent to talk to the caller will be listed here.",
+          "Only voicemails listened via the Agent Adapter will be marked as read and not counted in this metric."
+        ]
+      },
+      {
+        "title": "\"Agent extensions guide \\_|\\_ Google Cloud Contact Center as a Service \\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Agent extensions allow agents to be assigned a phone number extension for agent to agent and end-user to agent calling.",
+          "Dial pad and extension directory If you are an agent with an extension assigned, you are able to dial extensions.",
+          "A list will appear showing all agents that meet the search criteria along with their availability."
+        ]
+      },
+      {
+        "title": "\"Salesforce integration guide \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Case owner and assignment After the default administrator is enabled, the default administrator is used as the owner for the following: Ticket/case and contact creation when a new chat is initiated before an agent is assigned to the chat Voicemail tickets/cases before receiving a callback call Call ticket/cases for abandoned calls (if enabled) Note: If the default user is not configured, CCAI Platform uses a random Agent When a call/chat is transferred: CCAI Platform assigns the case to the agent who the call is transferred to.",
+          "Sample UI of multiple CCAI Platform sessions related to a case CCAI Platform session object data hierarchy The session object is organized as follows: Session(s) related list: the list of session(s) related to a case or account object Session Detail : presents the core session object details Core session fields: lists any associated transfers and files File list: any files that have been uploaded or created as part of the session File detail: all details about a file, including access to file itself Actions: a list of actions that occurred during the session Action detail: additional info about a specific action Transfers: complete list of transfers that occurred during the session Transfer detail: displays all fields and data associated with a single transfer events CCAI Platform session overview After opening a session, the following view will be provided, listing all associated CCAI Platform session actions, attached files, and transfers.",
+          "Session type: call or chat Call duration: duration of session from start to end Queued at: time session entered the queue Assigned at: time session was assigned to agent Wait: total wait duration in queue before being assigned to an agent for the session Hold Duration: length of hold time does not include wait time (calls only) Answer Type: indicates whether session was auto (0) or manually (1) answered Fail reason: reason why a session \"failed\" and details."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+      ]
+    }
+  ]
+}

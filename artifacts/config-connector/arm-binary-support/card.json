@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:59.197Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "ARM binary support",
+  "feature_slug": "arm-binary-support",
+  "summary": "Config Connector supports ARM binaries for its software distribution.",
+  "extended_definition": "Config Connector supports ARM binaries for its software distribution.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/best-practices",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Install the config-connector CLI tool \\_|\\_ Config Connector \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 27,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Choose the appropriate binary for your operating system: Linux: ./linux/amd64/config-connector macOS: ./darwin/amd64/config-connector Windows: ./windows/amd64/config-connector Copy the binary to a location on your ${PATH} .",
+          "Install config-connector CLI tool Download the latest config-connector binary tar file: gcloud storage cp gs://cnrm/latest/cli.tar.gz .",
+          "Extract the tar file: tar zxf cli.tar.gz The tar file includes a binary executable for Linux, macOS, and Windows."
+        ]
+      },
+      {
+        "title": "Best practices for Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/best-practices",
+        "source_id": "site-docs-reference",
+        "final_score": 26,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 2 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cli.tar.gz"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/overview",
+        "https://docs.cloud.google.com/config-connector/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/overview",
+        "https://docs.cloud.google.com/config-connector/docs/best-practices"
+      ]
+    }
+  ]
+}

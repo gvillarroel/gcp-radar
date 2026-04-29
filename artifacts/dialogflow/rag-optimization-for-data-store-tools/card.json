@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:06.489Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "RAG optimization for data store tools",
+  "feature_slug": "rag-optimization-for-data-store-tools",
+  "summary": "Data store tools used by Dialogflow playbooks can be optimized for retrieval-augmented generation performance.",
+  "extended_definition": "Data store tools used by Dialogflow playbooks can be optimized for retrieval-augmented generation performance.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/performance",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Data store tools \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler",
+        "source_id": "site-docs-root",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "See the reference documentation for details. { \"toolUse\" : { \"tool\" : \"projects/PROJECT ID/locations/LOCATION ID/agents/AGENT ID/tools/TOOL ID\" , \"action\" : \"TOOL DISPLAY NAME\" , \"inputParameters\" : [ { \"name\" : \"TOOL DISPLAY NAME input\" , \"value\" : { \"query\" : \"QUERY\" } } ], \"outputParameters\" : [ { \"name\" : \"TOOL DISPLAY NAME output\" , \"value\" : { \"answer\" : \"ANSWER\" , \"snippets\" : [ { \"title\" : \"TITLE\" , \"text\" : \"TEXT FROM DATASTORE\" , \"uri\" : \"URI OF DATASTORE\" } ] } } ] } } (Playbooks-based agents only) Data store tool examples Note: Examples work with playbooks-based agents only.",
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Send feedback Data store tools Stay organized with collections Save and categorize content based on your preferences.",
+          "For more information see the dataStoreConnections reference . \"dataStoreConnections\" : [ { \"dataStoreType\" : \"PUBLIC WEB\" , \"dataStore\" : \"projects/PROJECT NUMBER/locations/LOCATION ID/collections/default collection/dataStores/DATASTORE ID\" }, { \"dataStoreType\" : \"UNSTRUCTURED\" , \"dataStore\" : \"projects/PROJECT NUMBER/locations/LOCATION ID/collections/default collection/dataStores/DATASTORE ID\" }, { \"dataStoreType\" : \"STRUCTURED\" , \"dataStore\" : \"projects/PROJECT NUMBER/locations/LOCATION ID/collections/default collection/dataStores/DATASTORE ID\" } ] Data store tool responses might also contain snippets about the content source that was used to generate the response."
+        ]
+      },
+      {
+        "title": "\"Data store performance improvements \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/performance",
+        "source_id": "site-docs-root",
+        "final_score": 124,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optimization of data store tools used by Playbooks This setting accelerates a data store's RAG response and improves latency by not rewriting the user query nor dynamically populating tool parameters.",
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Send feedback Data store performance improvements Stay organized with collections Save and categorize content based on your preferences.",
+          "This feature is only available for data store tools."
+        ]
+      },
+      {
+        "title": "Dialogflow API \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 109,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v3.projects.locations REST Resource: v3.projects.locations.agents REST Resource: v3.projects.locations.agents.changelogs REST Resource: v3.projects.locations.agents.entityTypes REST Resource: v3.projects.locations.agents.environments REST Resource: v3.projects.locations.agents.environments.continuousTestResults REST Resource: v3.projects.locations.agents.environments.deployments REST Resource: v3.projects.locations.agents.environments.experiments REST Resource: v3.projects.locations.agents.environments.sessions REST Resource: v3.projects.locations.agents.environments.sessions.entityTypes REST Resource: v3.projects.locations.agents.flows REST Resource: v3.projects.locations.agents.flows.pages REST Resource: v3.projects.locations.agents.flows.transitionRouteGroups REST Resource: v3.projects.locations.agents.flows.versions REST Resource: v3.projects.locations.agents.generators REST Resource: v3.projects.locations.agents.intents REST Resource: v3.projects.locations.agents.playbooks REST Resource: v3.projects.locations.agents.playbooks.examples REST Resource: v3.projects.locations.agents.playbooks.versions REST Resource: v3.projects.locations.agents.sessions REST Resource: v3.projects.locations.agents.sessions.entityTypes REST Resource: v3.projects.locations.agents.testCases REST Resource: v3.projects.locations.agents.testCases.results REST Resource: v3.projects.locations.agents.tools REST Resource: v3.projects.locations.agents.tools.versions REST Resource: v3.projects.locations.agents.transitionRouteGroups REST Resource: v3.projects.locations.agents.webhooks REST Resource: v3.projects.locations.operations REST Resource: v3.projects.locations.securitySettings REST Resource: v3.projects.operations Service: dialogflow.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "REST Resource: v3.projects.locations.agents.playbooks.versions Methods create POST /v3/{parent=projects/ /locations/ /agents/ /playbooks/ }/versions Creates a version for the specified Playbook. delete DELETE /v3/{name=projects/ /locations/ /agents/ /playbooks/ /versions/ } Deletes the specified version of the Playbook. get GET /v3/{name=projects/ /locations/ /agents/ /playbooks/ /versions/ } Retrieves the specified version of the Playbook. list GET /v3/{parent=projects/ /locations/ /agents/ /playbooks/ }/versions Lists versions for the specified Playbook. restore POST /v3/{name=projects/ /locations/ /agents/ /playbooks/ /versions/ }:restore Retrieves the specified version of the Playbook and stores it as the current playbook draft, returning the playbook with resources updated.",
+          "REST Resource: v3.projects.locations.agents.tools.versions Methods create POST /v3/{parent=projects/ /locations/ /agents/ /tools/ }/versions Creates a version for the specified Tool . delete DELETE /v3/{name=projects/ /locations/ /agents/ /tools/ /versions/ } Deletes the specified version of the Tool . get GET /v3/{name=projects/ /locations/ /agents/ /tools/ /versions/ } Retrieves the specified version of the Tool . list GET /v3/{parent=projects/ /locations/ /agents/ /tools/ }/versions List versions of the specified Tool . restore POST /v3/{name=projects/ /locations/ /agents/ /tools/ /versions/ }:restore Retrieves the specified version of the Tool and stores it as the current tool draft, returning the tool with resources updated."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dialogflow.googleapis.com",
+      "v3.projects.locations",
+      "v3.projects.locations.agents",
+      "v3.projects.locations.agents.changelogs",
+      "v3.projects.locations.agents.entityTypes",
+      "v3.projects.locations.agents.environments",
+      "v3.projects.locations.agents.environments.continuousTestResults",
+      "v3.projects.locations.agents.environments.deployments",
+      "v3.projects.locations.agents.environments.experiments",
+      "v3.projects.locations.agents.environments.sessions",
+      "v3.projects.locations.agents.environments.sessions.entityTypes",
+      "v3.projects.locations.agents.flows",
+      "v3.projects.locations.agents.flows.pages",
+      "v3.projects.locations.agents.flows.transitionRouteGroups",
+      "v3.projects.locations.agents.flows.versions",
+      "v3.projects.locations.agents.generators",
+      "v3.projects.locations.agents.intents",
+      "v3.projects.locations.agents.playbooks",
+      "v3.projects.locations.agents.playbooks.examples",
+      "v3.projects.locations.agents.playbooks.versions",
+      "v3.projects.locations.agents.sessions",
+      "v3.projects.locations.agents.sessions.entityTypes",
+      "v3.projects.locations.agents.testCases",
+      "v3.projects.locations.agents.testCases.results",
+      "v3.projects.locations.agents.tools",
+      "v3.projects.locations.agents.tools.versions",
+      "v3.projects.locations.agents.transitionRouteGroups",
+      "v3.projects.locations.agents.webhooks",
+      "v3.projects.locations.operations",
+      "v3.projects.locations.securitySettings",
+      "v3.projects.operations"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/performance",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3-overview"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:20.598Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "Google Cloud Terraform Provider support for Looker instance creation",
+  "feature_slug": "google-cloud-terraform-provider-support-for-looker-instance-creation",
+  "summary": "Looker (Google Cloud core) instances can now be created with the Google Cloud Terraform Provider using the google_looker_instance resource.",
+  "extended_definition": "Looker (Google Cloud core) instances can now be created with the Google Cloud Terraform Provider using the google_looker_instance resource.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+      "https://docs.cloud.google.com/looker/docs/looker-core-quickstart-public-ip-standard-edition"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create a Looker (Google Cloud core) public secure connection\\",
+        "url": "https://docs.cloud.google.com/looker/docs/looker-core-quickstart-public-ip-standard-edition",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 131,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you click the button, depending on what Looker instances already exist in this project, you'll see one of the following: If a Looker (Google Cloud core) instance already exists within this project, the Instances page will open.",
+          "If no Looker (Google Cloud core) instances have been created in this project, the Looker (Google Cloud core) product page will open.",
+          "For more information about creating and configuring an instance, see the Looker (Google Cloud core) documentation: Create a Looker (Google Cloud core) instance Set up a custom domain for a Looker (Google Cloud core) instance that uses public connections Configure an IP allowlist for Looker (Google Cloud core) Prepare a Looker (Google Cloud core) instance for users Connect to your database Use the sample LookML project on a Looker (Google Cloud core) instance Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Admin settings - OpenID Connect authentication \\_|\\_ Looker \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "source_id": "site-docs-reference",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "Additionally, Looker (Google Cloud core) customers who are using OIDC with a private connections instance, must ensure that their networks are set up to allow access to the OIDC provider.",
+          "This page is enabled on Looker (Google Cloud core) instances by default.",
+          "Enabling mirror OpenID Connect groups If you are using a Looker (Google Cloud core) instance, we recommend that you enable group mirroring for only the primary authentication method and don't enable group mirroring for the backup OAuth authentication ."
+        ]
+      },
+      {
+        "title": "Admin settings - SAML authentication \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "source_id": "site-docs-reference",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "This page is enabled on Looker (Google Cloud core) instances by default.",
+          "Enabling mirror SAML groups If you are using a Looker (Google Cloud core) instance, we recommend that you enable group mirroring for only the primary authentication method and don't enable group mirroring for the backup OAuth authentication .",
+          "Note: Customers who use Looker (Google Cloud core) should be aware of their responsibility for controlling access and permissions when using third-party identity providers."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/looker-core-quickstart-public-ip-standard-edition",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/looker-core-quickstart-public-ip-standard-edition",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/looker-core-quickstart-public-ip-standard-edition",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/looker-core-quickstart-public-ip-standard-edition",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/looker-core-quickstart-public-ip-standard-edition",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/looker-core-quickstart-public-ip-standard-edition",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/looker-core-quickstart-public-ip-standard-edition",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    }
+  ]
+}

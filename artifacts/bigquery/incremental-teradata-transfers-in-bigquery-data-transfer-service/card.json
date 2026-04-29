@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Incremental Teradata transfers in BigQuery Data Transfer Service",
+  "feature_slug": "incremental-teradata-transfers-in-bigquery-data-transfer-service",
+  "summary": "BigQuery Data Transfer Service supports incremental transfers when migrating data from Teradata data warehouses to BigQuery.",
+  "extended_definition": "BigQuery Data Transfer Service supports incremental transfers when migrating data from Teradata data warehouses to BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-intro",
+      "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview",
+      "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Introduction to Blob Storage transfers \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-intro",
+        "source_id": "site-api-reference",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "All BigQuery quotas and limits on load jobs apply to recurring Blob Storage transfers, with the following additional considerations: Limit Default Maximum size per load job transfer run 15 TB Maximum number of files per transfer run when the Blob Storage data path includes 0 or 1 wildcards 10,000,000 files Maximum number of files per transfer run when the Blob Storage data path includes 2 or more wildcards 10,000 files What's next Learn more about setting up a Blob Storage transfer .",
+          "If the BigQuery Data Transfer Service finds any files with a \"last modified time\" that have occurred after the timestamp of the last successful transfer, the BigQuery Data Transfer Service transfers those files in an incremental transfer.",
+          "Incremental transfers A transfer configuration with an APPEND or WRITE APPEND write preference, also called an incremental transfer, incrementally appends new data since the previous successful transfer to a BigQuery destination table."
+        ]
+      },
+      {
+        "title": "\"Introduction to Cloud Storage transfers \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview",
+        "source_id": "site-api-reference",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If the BigQuery Data Transfer Service finds any files with a \"last modified time\" that have occurred after the timestamp of the last successful transfer, the BigQuery Data Transfer Service transfers those files in an incremental transfer.",
+          "Incremental transfers A transfer configuration with an APPEND or WRITE APPEND write preference, also called an incremental transfer, incrementally appends new data since the previous successful transfer to a BigQuery destination table.",
+          "Data ingestion for Cloud Storage transfers You can specify how data is loaded into BigQuery by selecting a Write Preference in the transfer configuration when you set up a Cloud Storage transfer ."
+        ]
+      },
+      {
+        "title": "\"Migrate Apache Hive Metastore tables to Google Cloud \\_|\\_ BigQuery \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 159,
+        "relevance": "",
+        "evidence_snippets": [
+          "Incremental transfers When a transfer configuration is set up with a recurring schedule, every subsequent transfer updates the table on Google Cloud with the latest updates made to the source table.",
+          "If you are using a service account, grant the service agent the roles/iam.serviceAccountTokenCreator role with the following command: gcloud iam service-accounts add-iam-policy-binding SERVICE ACCOUNT --member serviceAccount:service- PROJECT NUMBER @gcp-sa-bigquerydatatransfer.iam.gserviceaccount.com --role roles/iam.serviceAccountTokenCreator Grant the Storage Transfer Service service agent ( project- PROJECT NUMBER @storage-transfer-service.iam.gserviceaccount.com ) the following roles in the project: roles/storage.admin If you are migrating from on-prem/HDFS, you must also grant the roles/storagetransfer.serviceAgent role.",
+          "30 2 PATH TO SCRIPT \\ --dumper-executable PATH TO DUMPER EXECUTABLE \\ --gcs-base-path GCS PATH TO UPLOAD DUMPER OUTPUT \\ --local-base-dir LOCAL PATH TO SAVE INTERMEDIARY FILES If your Hive Metastore instance requires Kerberos authentication, run the following command: Run the Hive dumper daily at 2 :30 AM for incremental BigQuery transfer with Kerberos authentication."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquerydatatransfer.iam.gserviceaccount.com",
+      "iam.serviceAccountTokenCreator",
+      "service.iam.gserviceaccount.com",
+      "storage.admin",
+      "storagetransfer.serviceAgent"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.serviceAccountTokenCreator",
+      "roles/storage.admin",
+      "roles/storagetransfer.serviceAgent"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-intro",
+        "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview",
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-intro",
+        "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview",
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-intro",
+        "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview",
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-intro",
+        "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview",
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-intro",
+        "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview",
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-intro",
+        "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview",
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer"
+      ]
+    }
+  ]
+}

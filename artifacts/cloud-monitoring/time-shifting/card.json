@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:50.221Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring",
+  "feature_name": "Time Shifting",
+  "feature_slug": "time-shifting",
+  "summary": "Time shifting lets users compare current metric data with data from earlier periods.",
+  "extended_definition": "Time shifting lets users compare current metric data with data from earlier periods.",
+  "lifecycle": {
+    "latest_feature_date": "2017-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.pagers.ListTimeSeriesAsyncPager",
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.pagers.ListTimeSeriesPager"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and manage metric usage \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "source_id": "site-docs-reference",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table includes regular expressions that might be useful for excluding metrics from statsd or similar dynamically named metrics: Block metrics with names containing Regex more than one underscore in a row . {2,}. more than 7 digits in a row (likely timestamp) . \\d{7,}. really long segments (likely label-parsing errors) . [a-zA-Z0-9]{20,}. hexadecimal substrings, including GUIDs . [A-F0-9]{10,}.",
+          "For examples that start with the Namespace Volume Ingestion chart and use Metrics Explorer to perform ingestion-volume attribution, see the following: Identify high-volume metrics Identify high-volume namespaces For more information about using Metrics Explorer to analyze data, including actions like comparing the current month's behavior to the last month's behavior, see Explore charted data .",
+          "Note: The Metrics Management page lists only alerting policies and custom dashboards defined in the current project; metrics listed with no alerting policies or custom dashboards might have alerting policies or custom dashboards in another project in your metrics scope."
+        ]
+      },
+      {
+        "title": "\"Class ListTimeSeriesAsyncPager (2.30.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.pagers.ListTimeSeriesAsyncPager",
+        "source_id": "site-python-reference",
+        "final_score": 99,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ListTimeSeriesResponse ], ], request : google . cloud . monitoring v3 . types . metric service .",
+          "ListTimeSeriesResponse ], ], request : google . cloud . monitoring v3 . types . metric service .",
+          "ListTimeSeriesRequest , response : google . cloud . monitoring v3 . types . metric service ."
+        ]
+      },
+      {
+        "title": "\"Class ListTimeSeriesPager (2.30.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.pagers.ListTimeSeriesPager",
+        "source_id": "site-python-reference",
+        "final_score": 99,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ListTimeSeriesResponse ], request : google . cloud . monitoring v3 . types . metric service .",
+          "ListTimeSeriesResponse ], request : google . cloud . monitoring v3 . types . metric service .",
+          "ListTimeSeriesRequest , response : google . cloud . monitoring v3 . types . metric service ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

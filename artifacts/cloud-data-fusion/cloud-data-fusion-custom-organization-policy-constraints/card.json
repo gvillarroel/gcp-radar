@@ -1,0 +1,181 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:47.114Z",
+  "source_step08_card": "data/step-08/current/products/cloud-data-fusion/card.json",
+  "product_name": "Cloud Data Fusion",
+  "product_slug": "cloud-data-fusion",
+  "feature_name": "Cloud Data Fusion custom organization policy constraints",
+  "feature_slug": "cloud-data-fusion-custom-organization-policy-constraints",
+  "summary": "Cloud Data Fusion now supports custom Organization Policy constraints for finer control over specific resource fields.",
+  "extended_definition": "Cloud Data Fusion now supports custom Organization Policy constraints for finer control over specific resource fields.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/data-fusion/docs/access-control",
+      "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc",
+      "https://docs.cloud.google.com/data-fusion/docs/reference/rest/Shared.Types/GetIamPolicyRequest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Access control with IAM \\_|\\_ Cloud Data Fusion \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/data-fusion/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 71,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Role Resource Permissions Cloud Data Fusion API Service Agent Associated services: BigQuery Bigtable Compute Engine Dataproc Cloud DNS Firebase Cloud Monitoring Network Connectivity Network Security Integration Network Services API Organization Policy Recommender API Cloud Resource Manager API Service Networking Service Usage Spanner Cloud Storage Cloud Service Mesh See the Cloud Data Fusion API Service Agent permissions .",
+          "API call Permission instances.create datafusion.instances.create instances.delete datafusion.instances.delete instances.list datafusion.instances.list instances.get datafusion.instances.get instances.update datafusion.instances.update operations.cancel datafusion.operations.cancel operations.list datafusion.operations.list operations.get datafusion.operations.get Permissions for common tasks Common tasks in Cloud Data Fusion require the following permissions: Task Permissions Accessing the Cloud Data Fusion web interface datafusion.instances.get Accessing the Cloud Data Fusion Instances page in the Google Cloud console datafusion.instances.list Accessing the Details page for an instance datafusion.instances.get Creating a new instance datafusion.instances.create Updating labels and advanced options to customize an instance datafusion.instances.update Deleting an instance datafusion.instances.delete What's next Learn more about access control between multiple projects .",
+          "Give permission to access resources in another project To grant the roles that give permission to access various resources, follow these steps: In the project where the target resource exists, add the Cloud Data Fusion Service Account ( service- CUSTOMER PROJECT NUMBER @gcp-sa-datafusion.iam.gserviceaccount.com ) as a principal."
+        ]
+      },
+      {
+        "title": "GetIamPolicyRequest \\_|\\_ Cloud Data Fusion \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/data-fusion/docs/reference/rest/Shared.Types/GetIamPolicyRequest",
+        "source_id": "site-api-reference",
+        "final_score": 69,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Cloud Data Fusion Reference Send feedback GetIamPolicyRequest Stay organized with collections Save and categorize content based on your preferences.",
+          "See Resource names for the appropriate value for this field. options object ( GetPolicyOptions ) OPTIONAL: A GetPolicyOptions object for specifying options to instances.getIamPolicy .",
+          "JSON representation { \"resource\" : string , \"options\" : { object ( GetPolicyOptions ) } } Fields resource string REQUIRED: The resource for which the policy is being requested."
+        ]
+      },
+      {
+        "title": "\"Dataproc provisioner properties \\_|\\_ Cloud Data Fusion \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc",
+        "source_id": "site-iam-reference",
+        "final_score": 66,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dataproc profile web interface properties mapped to JSON properties Dataproc profile UI property name Dataproc profile JSON property name Profile label name Profile name label Description description Project ID projectId Creator service account key accountKey Region region Zone zone Network network Network host project ID networkHostProjectId Subnet subnet Runner service account serviceAccount Number of masters masterNumNodes Master machine type masterMachineType Master cores masterCPUs Master memory (GB) masterMemoryMB Master disk size (GB) masterDiskGB Master disk type masterDiskType Number of primary workers workerNumNodes Number of secondary workers secondaryWorkerNumNodes Worker machine type workerMachineType Worker cores workerCPUs Worker memory (GB) workerMemoryMB Worker disk size (GB) workerDiskGB Worker disk type workerDiskType Metadata clusterMetaData Network tags networkTags Enable Secure Boot secureBootEnabled Enable vTPM vTpmEnabled Enable Integrity Monitoring integrityMonitoringEnabled Image version imageVersion Custom image URI customImageUri Cloud Storage bucket gcsBucket Encryption key name encryptionKeyName Autoscaling policy autoScalingPolicy Initialization actions initActions Cluster properties clusterProperties Labels clusterLabels Max idle time idleTTL Skip cluster delete skipDelete Enable Stackdriver Logging Integration stackdriverLoggingEnabled Enable Stackdriver Monitoring Integration stackdriverMonitoringEnabled Enable Component Gateway componentGatewayEnabled Prefer external IP preferExternalIP Create poll delay pollCreateDelay Create poll jitter pollCreateJitter Delete poll delay pollDeleteDelay Poll interval pollInterval Best Practices When you create a static cluster for your pipelines, refer to the cluster configuration best practices .",
+          "Home Documentation Data analytics Cloud Data Fusion Guides Send feedback Dataproc provisioner properties Stay organized with collections Save and categorize content based on your preferences.",
+          "The Dataproc provisioner in Cloud Data Fusion calls the Dataproc API to create and delete clusters in your Google Cloud projects."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datafusion.iam.gserviceaccount.com",
+      "datafusion.instances.create",
+      "datafusion.instances.delete",
+      "datafusion.instances.get",
+      "datafusion.instances.list",
+      "datafusion.instances.update",
+      "datafusion.operations.cancel",
+      "datafusion.operations.get",
+      "datafusion.operations.list",
+      "instances.create",
+      "instances.delete",
+      "instances.get",
+      "instances.getIamPolicy",
+      "instances.list",
+      "instances.update",
+      "operations.cancel",
+      "operations.get",
+      "operations.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/access-control",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest/Shared.Types/GetIamPolicyRequest",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/access-control",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest/Shared.Types/GetIamPolicyRequest",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/access-control",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest/Shared.Types/GetIamPolicyRequest",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/access-control",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest/Shared.Types/GetIamPolicyRequest",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/access-control",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest/Shared.Types/GetIamPolicyRequest",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/access-control",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest/Shared.Types/GetIamPolicyRequest",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/access-control",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest/Shared.Types/GetIamPolicyRequest",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/access-control",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest/Shared.Types/GetIamPolicyRequest",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/access-control",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest/Shared.Types/GetIamPolicyRequest",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/access-control",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest/Shared.Types/GetIamPolicyRequest",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.987Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "YARA-L 2.0",
+  "feature_slug": "yara-l-2-0",
+  "summary": "YARA-L 2.0 is the rule language used to define Detection Engine rules.",
+  "extended_definition": "YARA-L 2.0 is the rule language used to define Detection Engine rules.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/default-rules",
+      "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+      "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Detection Engine \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "source_id": "site-api-reference",
+        "final_score": 351,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Response Sample Heartbeat Response (can be ignored by clients) { \"heartbeat\": true } Sample Response (without detections list) { \"continuationTime\": \"2019-04-15T21:59:17.081331Z\" } Sample Response (with detections list including detections from both user-created rules and Google SecOps Rules) { \"continuationTime\": \"2019-05-29T05:00:04.123073Z\", \"detections\": [ { \"type\": \"RULE DETECTION\", \"detection\": [ { \"ruleName\": \"singleEventRule2\", \"urlBackToProduct\": \"https://customername.backstory.chronicle.security/ruleDetections? ruleId=ru 1f54ab4b-e523-48f7-ae25-271b5ea8337d&selectedList=RuleDetectionsViewTimeline& selectedParentDetectionId=de ce594791-09ed-9681-27fa-3b7c8fa6054c& selectedTimestamp=2020-12-03T16:50:47.647245Z\", \"ruleId\": \"ru 1f54ab4b-e523-48f7-ae25-271b5ea8337d\", \"ruleVersion\": \"ru 1f54ab4b-e523-48f7-ae25-271b5ea8337d@v 1605892822 687503000\", \"alertState\": \"ALERTING\", \"ruleType\": \"SINGLE EVENT\" } ], \"createdTime\": \"2020-12-03T19:19:21.325134Z\", \"id\": \"de ce594791-09ed-9681-27fa-3b7c8fa6054c\", \"timeWindow\": { \"startTime\": \"2020-12-03T16:50:47.647245Z\", \"endTime\": \"2020-12-03T16:50:47.647245Z\" }, \"collectionElements\": [ { \"references\": [ { \"event\": { \"metadata\": { \"eventTimestamp\": \"2020-12-03T16:50:47.647245Z\", \"collectedTimestamp\": \"2020-12-03T16:50:47.666064010Z\", \"eventType\": \"NETWORK DNS\", \"productName\": \"ProductName\", \"ingestedTimestamp\": \"2020-12-03T16:50:49.494542Z\" }, \"principal\": { \"ip\": [ \"127.0.0.1\" ] }, \"target\": { \"ip\": [ \"127.0.0.1\" ] }, \"securityResult\": [ { \"action\": [ \"UNKNOWN ACTION\" ] } ], \"network\": { \"applicationProtocol\": \"DNS\", \"dns\": { \"questions\": [ { \"name\": \"altostrat.com\", \"type\": 1, \"class\": 1 } ], \"id\": 12345, \"recursionDesired\": true } } } } ], \"label\": \"e\" } ], \"detectionTime\": \"2020-12-03T16:50:47.647245Z\" }, { \"type\": \"GCTI FINDING\", \"detection\": [ { \"ruleName\": \"Google Cloud Global SSH Keys\", \"urlBackToProduct\": \"https://customername.backstory.chronicle.security/ruleDetections ?ruleId=ur ttp GCP GlobalSSHKeys Added&selectedList=RuleDetectionsViewTimeline &ruleSource=ruleSet&selectedParentDetectionId=de 8e47ff9c-9bc4-df7c-1782-53ddf14c9b6c &selectedTimestamp=2020-12-03T16:50:47.647245Z\", \"ruleId\": \"ur ttp GCP GlobalSSHKeys Added\", \"alertState\": \"ALERTING\", \"ruleType\": \"SINGLE EVENT\", \"summary\": \"Rule Detection\", \"ruleSet\": \"11c505d4-b424-65e3-d918-1a81232cc76b\", \"ruleSetDisplayName\": \"Admin Action\", \"description\": \"Identifies instances of project-wide SSH keys being added where there were previously none.\", \"severity\": \"LOW\" } ], \"createdTime\": \"2020-12-03T19:19:21.325134Z\", \"id\": \"de ce594791-09ed-9681-27fa-3b7c8fa6054c\", \"timeWindow\": { \"startTime\": \"2020-12-03T16:50:47.647245Z\", \"endTime\": \"2020-12-03T16:50:47.647245Z\" }, \"collectionElements\": [ { \"references\": [ { \"event\": { \"metadata\": { \"eventTimestamp\": \"2020-12-03T16:50:47.647245Z\", \"collectedTimestamp\": \"2020-12-03T16:50:47.666064010Z\", \"eventType\": \"NETWORK DNS\", \"productName\": \"ProductName\", \"ingestedTimestamp\": \"2020-12-03T16:50:49.494542Z\" }, \"principal\": { \"ip\": [ \"127.0.0.1\" ] }, \"target\": { \"ip\": [ \"127.0.0.1\" ] }, \"securityResult\": [ { \"action\": [ \"UNKNOWN ACTION\" ] } ], \"network\": { \"applicationProtocol\": \"DNS\", \"dns\": { \"questions\": [ { \"name\": \"altostrat.com\", \"type\": 1, \"class\": 1 } ], \"id\": 12345, \"recursionDesired\": true } } } } ], \"label\": \"e\" } ], \"detectionTime\": \"2020-12-03T16:50:47.647245Z\", \"lastUpdatedTime\": \"2020-12-03T19:19:21.325134Z\", \"tags\": [\"TA0003\", \"TA0004\"] }, ... ] } Detections are returned in the same format defined for GetDetection .",
+          "Sample response { \"rules\": [ { \"ruleId\": \"ru e6abfcb5-1b85-41b0-b64c-695b3250436f\", \"versionId\": \"ru e6abfcb5-1b85-41b0-b64c-695b3250436f@v 1602631093 146879000\", \"ruleName\": \"SampleRule\", \"metadata\": { \"description\": \"Sample Description of the latest version of the Rule\", \"author\": \"author@example.com\" }, \"ruleText\": \"rule SampleRule { // Multi event rule to detect logins from a single user for // multiple cities within a 5 minute window. meta: description = \\\"Sample Description of the latest version of the Rule\\\" author = \\\"author@example.com\\\" events: $e.metadata.event type = \\\"USER LOGIN\\\" $e.principal.user.userid = $user $e.principal.location.city = $city match: $user over 5m condition: #city > 1 } \", \"liveRuleEnabled\": true, \"versionCreateTime\": \"2020-10-13T23:18:13.146879Z\", \"compilationState\": \"SUCCEEDED\", \"ruleType\": \"MULTI EVENT\", \"lastAlertStatusChangeTime\": \"2020-10-13T23:18:13.146879Z\" \"inputsUsed\": { \"usesUdm\": \"true\", }, }, { \"ruleId\": \"ru 1971c2ac-8d5b-41aa-bb30-f95d220e9439\", \"versionId\": \"ru 1971c2ac-8d5b-41aa-bb30-f95d220e9439@v 1598398482 260223000\", \"ruleName\": \"SampleRule2\", \"metadata\": { \"description\": \"Sample Description of the latest version of the Rule\", \"author\": \"author2@example.com\" }, \"ruleText\": \"rule SampleRule2 { meta: description = \\\"Sample Description of the latest version of the Rule\\\" author = \\\"author2@example.com\\\" events: // Single event rule to generate detections for network events involving example.com $event.network.dns.questions.name = \\\"example.com\\\" condition: $event } \", \"versionCreateTime\": \"2020-08-25T23:34:42.260223Z\", \"compilationState\": \"SUCCEEDED\", \"ruleType\": \"SINGLE EVENT\", \"lastAlertStatusChangeTime\": \"2020-08-25T23:34:42.260223Z\" \"inputsUsed\": { \"usesUdm\": \"true\", }, } ] } ListRuleVersions List all versions of a specific rule.",
+          "Sample response { \"rules\": [ { \"ruleId\": \"ru e6abfcb5-1b85-41b0-b64c-695b3250436f\", \"versionId\": \"ru e6abfcb5-1b85-41b0-b64c-695b3250436f@v 1602631093 146879000\", \"ruleName\": \"SampleRule\", \"metadata\": { \"description\": \"Sample Description of the latest version of the Rule\", \"author\": \"author@example.com\" }, \"ruleText\": \"rule SampleRule { // Multi event rule to detect logins from a single user for // multiple cities within a 5 minute window. meta: description = \\\"Sample Description of the latest version of the Rule\\\" author = \\\"author@example.com\\\" events: $e.metadata.event type = \\\"USER LOGIN\\\" $e.principal.user.userid = $user $e.principal.location.city = $city match: $user over 5m condition: #city > 1 } \", \"liveRuleEnabled\": true, \"versionCreateTime\": \"2020-10-13T23:18:13.146879Z\", \"compilationState\": \"SUCCEEDED\", \"ruleType\": \"MULTI EVENT\", \"lastAlertStatusChangeTime\": \"2020-10-13T23:18:13.146879Z\", \"inputsUsed\": { \"usesUdm\": \"true\", }, }, { \"ruleId\": \"ru e6abfcb5-1b85-41b0-b64c-695b3250436f\", \"versionId\": \"ru e6abfcb5-1b85-41b0-b64c-695b3250436f@v 1602519130 121984000\", \"ruleName\": \"SampleRule\", \"metadata\": { \"description\": \"Sample Description of an older version of the Rule\", \"author\": \"author@example.com\" }, \"ruleText\": \"rule SampleRule { meta: description = \\\"Sample Description of an older version of the Rule\\\" author = \\\"author@example.com\\\" events: // Single event rule that will generate lots of detections related to DNS events $event.metadata.event type = \\\"NETWORK DNS\\\" condition: $event } \", \"versionCreateTime\": \"2020-10-12T16:12:10.121984Z\", \"compilationState\": \"SUCCEEDED\", \"ruleType\": \"SINGLE EVENT\", \"lastAlertStatusChangeTime\": \"2020-10-12T16:12:10.121984Z\", \"inputsUsed\": { \"usesUdm\": \"true\", }, } ] } RunRetrohunt Initiate a retrohunt for the specified rule."
+        ]
+      },
+      {
+        "title": "\"Default detection rules \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/default-rules",
+        "source_id": "site-docs-root",
+        "final_score": 277,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When using time periods, the Google SecOps Detection Engine only examines the discrete blocks of time you specify. rule OutcomeRuleMultiEvent { meta: author = \"noone@google.com\" events: $u.udm.principal.hostname = $hostname $asset context.graph.entity.hostname = $hostname $severity = $asset context.graph.entity.asset.vulnerabilities.severity match: $hostname over 5m outcome: $risk score = max( 100 + if($hostname = \"my-hostname\", 100, 50) + if($severity = \"HIGH\", 10) + if($severity = \"MEDIUM\", 5) + if($severity = \"LOW\", 1) ) $asset id list = array( if($u.principal.asset id = \"\", \"Empty asset id\", $u.principal.asset id ) ) $asset id distinct list = array distinct($u.principal.asset id) $asset id count = count($u.principal.asset id) $asset id distinct count = count distinct($u.principal.asset id) condition: $u and $asset context and $risk score > 50 and not arrays.contains($asset id list, \"id 1234\") } Conclusion YARA-L is a flexible detection language which enables you to examine security events and not simply just return a data query.",
+          "Default detection rules Supported in: Google secops SIEM YARA-L rules language YARA-L is a detection rules language developed by Google.",
+          "Google Security Operations sample detection rules To help accelerate your adoption of the Google SecOps Detection Engine, there is a GitHub repository with sample rules ."
+        ]
+      },
+      {
+        "title": "Functions \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 215,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Param data types STRING , STRING Return type BOOL Code samples Example 1 IPv4 example: net.ip in range cidr($e.principal.ip, \"192.0.2.0/24\") Example 2 IPv6 example: net.ip in range cidr($e.network.dhcp.yiaddr, \"2001:db8::/32\") For an example rule using the net.ip in range cidr() statement, see the example rule in Single Event within Range of IP Addresses .) re.regex Supported in: Rules Search You can define regular expression matching in YARA-L 2.0 using either of the following syntax: Using YARA-L syntax — Related to events.",
+          "Here are examples of valid time zone specifiers, which you can pass as the second argument to time extraction functions: \"America/Los Angeles\", or \"-08:00\". (\"PST\" is not supported) \"America/New York\", or \"-05:00\". (\"EST\" is not supported) \"Europe/London\" \"UTC\" \"GMT\" Param data types INT , STRING , STRING Return type STRING Code samples Example 1 In this example, the time zone argument is omitted, so it defaults to GMT . $ts = $e.metadata.collected timestamp.seconds timestamp.get timestamp($ts) = \"2024-02-22 10:43:51\" Example 2 This example uses a string literal to define the time zone . $ts = $e.metadata.collected timestamp.seconds timestamp.get timestamp($ts, \"%F %T\", \"America/Los Angeles\") = \"2024-02-22 10:43:51\" Example 3 This example uses a string literal to define the timestamp format . $ts = $e.metadata.collected timestamp.seconds timestamp.get timestamp($ts, \"%Y-%m\", \"GMT\") = \"2024-02\" Example 4 This example formats a unix timestamp as a string at second granularity. timestamp.get timestamp(1708598631, \"SECOND\", \"GMT\") = \"2024-02-22 10:43:51\" Example 5 This example formats a unix timestamp as a string at minute granularity. timestamp.get timestamp(1708598631, \"MINUTE\", \"GMT\") = \"2024-02-22 10:43\" Example 6 This example formats a unix timestamp as a string at hour granularity. timestamp.get timestamp(1708598631, \"HOUR\", \"GMT\") = \"2024-02-22 10\" Example 7 This example formats a unix timestamp as a string at day granularity. timestamp.get timestamp(1708598631, \"DATE\", \"GMT\") = \"2024-02-22\" Example 8 This example formats a unix timestamp as a string at week granularity. timestamp.get timestamp(1708598631, \"WEEK\", \"GMT\") = \"2024-02-18\" Example 9 This example formats a unix timestamp as a string at month granularity. timestamp.get timestamp(1708598631, \"MONTH\", \"GMT\") = \"2024-02\" Example 10 This example formats a unix timestamp as a string at year granularity. timestamp.get timestamp(1708598631, \"YEAR\", \"GMT\") = \"2024\" timestamp.get week Supported in: Rules Search timestamp.get week(unix seconds [, time zone]) Description This function returns an integer in the range [0, 53] representing the week of the year.",
+          "Param data types INT FLOAT Return type FLOAT Code samples Example 1 This example returns the standard deviation of integers in a match window. // This rule creates a detection when the file size stddev in 5 minutes for a user is over a threshold. events: $e.user.userid = $userid match: $userid over 5m outcome: $p1 = window.stddev($e.file.size) // yields 4.0 if the event file size values in the match window are [10, 14, 18]. condition: $e and #p1 > 2 Example 2 This example returns the standard deviation of floats in a match window. events: $e.user.userid = $userid match: $userid over 5m outcome: $p1 = window.stddev($e.file.size) // yields 4.488686 if the event file size values in the match window are [10.00, 14.80, 18.97]. condition: $e and #p1 > 2 Example 3 This example returns the standard deviation in a match window that contains negative numbers. events: $e.user.userid = $userid match: $userid over 5m outcome: $p1 = window.stddev($e.file.size) // yields 48.644972 if the event file size values in the match window are [-1, -56, -98]. condition: $e and #p1 > 2 Example 4 This example returns with zero standard deviation when all values in the match window are the same. events: $e.user.userid = $userid match: $userid over 5m outcome: $p1 = window.stddev($e.file.size) // yields 0.000000 if the event file size values in the match window are [1, 1, 1]. condition: $e and #p1 > 2 Example 5 This example returns the standard deviation of a match window containing positive and negative numbers. events: $e.user.userid = $userid match: $userid over 5m outcome: $p1 = window.stddev($e.file.size) // yields 1.000000 if the event file size values in the match window are [1, 0, -1]. condition: $e and #p1 > 10 window.variance Supported in: Rules window.variance(values) Description This function returns the specified variance of the input values."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "altostrat.com",
+      "arrays.contains",
+      "backstory.googleapis.com",
+      "context.graph.entity.asset.vulnerabilities.severity",
+      "context.graph.entity.hostname",
+      "customername.backstory.chronicle.security",
+      "e.file.size",
+      "e.metadata.collected",
+      "e.metadata.event",
+      "e.network.dhcp.yiaddr",
+      "e.principal.ip",
+      "e.principal.location.city",
+      "e.principal.user.userid",
+      "e.user.userid",
+      "e1.metadata.event",
+      "e1.principal.hostname",
+      "e1.principal.user.userid",
+      "e2.metadata.event",
+      "e2.principal.hostname",
+      "e2.target.asset",
+      "event.metadata.event",
+      "event.network.dns.questions.name",
+      "example.com",
+      "net.ip",
+      "re.regex",
+      "timestamp.get",
+      "timestamp.seconds",
+      "u.principal.asset",
+      "u.udm.principal.hostname",
+      "window.stddev",
+      "window.variance"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules",
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules",
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules",
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules",
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    }
+  ]
+}

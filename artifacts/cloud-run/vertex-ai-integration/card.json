@@ -1,0 +1,224 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:51.589Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": "Vertex AI integration",
+  "feature_slug": "vertex-ai-integration",
+  "summary": "Vertex AI integration lets Cloud Run services connect to Vertex AI to access generative AI models.",
+  "extended_definition": "Vertex AI integration lets Cloud Run services connect to Vertex AI to access generative AI models.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/ai",
+      "https://docs.cloud.google.com/run/docs/configuring",
+      "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "AI/ML orchestration on Cloud Run documentation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/ai",
+        "source_id": "site-docs-root",
+        "final_score": 87,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Generative AI Vertex AI Flask Deployment Use case Use cases Deploying Gemma directly from AI Studio to Cloud Run Use the Gemma Python code from AI Studio and deploy it directly to a Cloud Run instance, leveraging Secret Manager for secure API key handling.",
+          "Monitoring MLOps Cost Efficiency Inference Use case Use cases Deploying a Google Cloud generative AI app in a website with Cloud Run Deploy a simple Flask application that calls the Vertex AI Generative AI API onto a scalable Cloud Run service.",
+          "Documentation resources Find quickstarts and guides, review key references, and get help with common issues. info Run AI solutions Concept Explore AI use cases Concept Host AI agents How-to Host A2A agents How-to Deploy A2A agents How-to Host MCP servers Tutorial Build and deploy a remote MCP server Concept Code execution Concept Browser and OS automation info Inference with GPUs Tutorial Run LLM inference on Cloud Run GPUs with Gemma 3 and Ollama How-to Run Gemma 3 models on Cloud Run Tutorial Run LLM inference on Cloud Run GPUs with Hugging Face Best practice Best practices: Cloud Run services with GPUs Tutorial Fine tune LLMs using GPUs with Cloud Run jobs Tutorial GPU-accelerated video transcoding with FFmpeg on Cloud Run jobs Best practice Best practices: Cloud Run jobs with GPUs Best practice Best practices: Cloud Run worker pools with GPUs info Troubleshoot Concept Cloud Run troubleshooting strategies How-to Troubleshoot all Cloud Run issues How-to Troubleshoot with Gemini Cloud Assist How-to Troubleshoot with Gemini Cloud Assist investigations Related resources Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services."
+        ]
+      },
+      {
+        "title": "Configure Cloud Run services \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/configuring",
+        "source_id": "site-docs-reference-2",
+        "final_score": 76,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Run volume mounts lets you access shared data stored in a local file system, such as a storage bucket or file server content, from your container.",
+          "The following table explains the features for this section: Section Feature Description A Service account The Cloud Run service identity is the service account that is used as the authenticated account for accessing Google Cloud APIs from your Cloud Run instance container.",
+          "The following table explains the features for this section: Section Feature Description A Authentication All Cloud Run services are deployed privately by default, which means that they can't be accessed without providing authentication credentials in the request."
+        ]
+      },
+      {
+        "title": "End user authentication for Cloud Run tutorial \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "source_id": "site-docs-root",
+        "final_score": 75,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Deploying the service Follow the steps to complete infrastructure provisioning and deployment: Create a Cloud SQL instance with postgreSQL database using the console or CLI: gcloud sql instances create CLOUD SQL INSTANCE NAME \\ --database-version = POSTGRES 16 \\ --region = CLOUD SQL REGION \\ --cpu = 2 \\ --memory = 7680MB \\ --root-password = DB PASSWORD Add your Cloud SQL credential values to postgres-secrets.json : Node.js { \"CLOUD SQL CONNECTION NAME\" : \"PROJECT ID:REGION:INSTANCE\" , \"DB NAME\" : \"postgres\" , \"DB USER\" : \"postgres\" , \"DB PASSWORD\" : \"PASSWORD SECRET\" } Python { \"CLOUD SQL CONNECTION NAME\" : \"PROJECT ID:REGION:INSTANCE\" , \"DB NAME\" : \"postgres\" , \"DB USER\" : \"postgres\" , \"DB PASSWORD\" : \"PASSWORD SECRET\" } Java { \"spring.cloud.gcp.sql.instance-connection-name\" : \"PROJECT ID:REGION:INSTANCE\" , \"spring.cloud.gcp.sql.database-name\" : \"postgres\" , \"spring.datasource.username\" : \"postgres\" , \"spring.datasource.password\" : \"PASSWORD SECRET\" } Create a versioned secret using the console or CLI: gcloud secrets create idp-sql-secrets \\ --replication-policy = \"automatic\" \\ --data-file = postgres-secrets.json Create a service account for the server using the console or CLI: gcloud iam service-accounts create idp-sql-identity Grant roles for Secret Manager and Cloud SQL access using the console or CLI: Allow the service account associated with the server to access the created secret: gcloud secrets add-iam-policy-binding idp-sql-secrets \\ --member serviceAccount:idp-sql-identity@ PROJECT ID .iam.gserviceaccount.com \\ --role roles/secretmanager.secretAccessor Allow the service account associated with the server to access Cloud SQL: gcloud projects add-iam-policy-binding PROJECT ID \\ --member serviceAccount:idp-sql-identity@ PROJECT ID .iam.gserviceaccount.com \\ --role roles/cloudsql.client Create an Artifact Registry: gcloud artifacts repositories create REPOSITORY \\ --repository-format docker \\ --location REGION REPOSITORY is the name of the repository.",
+          "URL . create ( drivername = \"postgresql+pg8000\" , username = db user , # e.g. \"my-database-user\" password = db pass , # e.g. \"my-database-password\" database = db name , # e.g. \"my-database-name\" query = { \"unix sock\" : f \" { db socket dir } / { cloud sql connection name } /.s.PGSQL.5432\" e.g. \"/cloudsql\", \"<PROJECT-NAME>:<INSTANCE-REGION>:<INSTANCE-NAME>\" }, ), db config , ) pool . dialect . description encoding = None logger . info ( \"Database engine initialized from unix connection\" ) return pool Java Use the Spring Cloud Google Cloud PostgreSQL starter integration to interact with your PostgreSQL databases in Cloud SQL using Spring JDBC libraries.",
+          "Remove the gcloud default region configuration you added during tutorial setup: gcloud config unset run / region Remove the project configuration: gcloud config unset project Delete other Google Cloud resources created in this tutorial: Delete the service container image from Artifact Registry Delete the service account vote-identity@PROJECT ID.iam.gserviceaccount.com Delete the Cloud SQL instance Delete the secret in Secret Manager What's next Dive deeper into Connecting from Cloud Run to Cloud SQL Learn more about sign in methods and managing users with Identity Platform Review other ways to authenticate developers, services, and users of services deployed to Cloud Run Explore other Cloud Run demos, tutorials, and samples Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "artifactregistry.repoAdmin",
+      "cloudbuild.builds.editor",
+      "cloudsql.admin",
+      "cloudsql.client",
+      "e.g",
+      "iam.gserviceaccount.com",
+      "iam.serviceAccountCreator",
+      "iam.serviceAccountUser",
+      "identityplatform.admin",
+      "oauthconfig.editor",
+      "resourcemanager.projectIamAdmin",
+      "run.admin",
+      "s.PGSQL.5432",
+      "secretmanager.admin",
+      "secretmanager.secretAccessor",
+      "secrets.json",
+      "serviceusage.serviceUsageConsumer",
+      "spring.cloud.gcp.sql.database",
+      "spring.cloud.gcp.sql.instance",
+      "spring.datasource.password",
+      "spring.datasource.username",
+      "storage.admin"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.repoAdmin",
+      "roles/cloudbuild.builds.editor",
+      "roles/cloudsql.admin",
+      "roles/cloudsql.client",
+      "roles/iam.serviceAccountCreator",
+      "roles/iam.serviceAccountUser",
+      "roles/identityplatform.admin",
+      "roles/oauthconfig.editor",
+      "roles/resourcemanager.projectIamAdmin",
+      "roles/run.admin",
+      "roles/secretmanager.admin",
+      "roles/secretmanager.secretAccessor",
+      "roles/serviceusage.serviceUsageConsumer",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/ai",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/configuring"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/ai",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/configuring"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/ai",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/configuring"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/ai",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/configuring"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/ai",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/configuring"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/ai",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/configuring"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/ai",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/configuring"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/ai",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/configuring"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/ai",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/configuring"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/ai",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/configuring"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/ai",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/configuring"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/ai",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/configuring"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/ai",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/configuring"
+      ]
+    }
+  ]
+}

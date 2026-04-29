@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.969Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution",
+  "feature_name": "Encryption and SSH key configuration during provisioning and reimaging",
+  "feature_slug": "encryption-and-ssh-key-configuration-during-provisioning-and-reimaging",
+  "summary": "You can now configure encryption keys and SSH keys when provisioning or reimaging a Bare Metal Solution server.",
+  "extended_definition": "You can now configure encryption keys and SSH keys when provisioning or reimaging a Bare Metal Solution server.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/bms-deploy",
+      "https://docs.cloud.google.com/bare-metal/docs/bms-encryption-keys",
+      "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Maintain the Bare Metal Solution environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "source_id": "site-docs-reference",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "It is assigned automatically during the provisioning from your services IP address range.",
+          "Example: nmcli connection modify bond0.114 +ipv4.routes \"192.168.122.0/24 172.16.80.254\" nmcli connection up bond0.114 (Optional) If you created a Client network and set it as the default gateway in Step 7 (Default gateway) of this procedure, follow these steps to update your OS configuration: Complete the previous step, that is, Step 9.c .",
+          "If you have an automated environment or need to work on other tasks during the restart operation, add the --async option to run this command in asynchronous mode. gcloud bms instances reset SERVER NAME --project= PROJECT ID --region= REGION The output displays the status of your server restart request."
+        ]
+      },
+      {
+        "title": "Deploy your Bare Metal Solution environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-deploy",
+        "source_id": "site-docs-reference",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "PROVISIONING —The resources in the configuration request are being provisioned.",
+          "Field Description Example Name Create a name for your server. server-1 Type Type of server found in Server configurations that specifies CPU cores, sockets, and RAM o2-standard-32-metal Enable hyperthreading (checkbox) Hyperthreading uses virtualization to provide additional threading capacity above the normal processing capabilities of a physical server.",
+          "Leave the checkbox empty to disable hyperthreading OS image Operating system for the server Red Hat Enterprise Linux 7.7 Encryption key for the server's password (Optional) Preview This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms ."
+        ]
+      },
+      {
+        "title": "\"Set up encryption keys for a server \\_|\\_ Bare Metal Solution \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-encryption-keys",
+        "source_id": "site-docs-reference",
+        "final_score": 105,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Set up encryption keys while provisioning a server You can set up an encryption key for a new Bare Metal Solution server while provisioning it through the Google Cloud console intake form .",
+          "Set up encryption keys while reimaging a server To set up encryption keys while reimaging a server, see Change the OS for a server .",
+          "To set up an encryption key while provisioning a server, see Use the Google Cloud console intake form to enter your selections ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bond0.114",
+      "ipv4.routes"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-deploy",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-encryption-keys"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-deploy",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-encryption-keys"
+      ]
+    }
+  ]
+}

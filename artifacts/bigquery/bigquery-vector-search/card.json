@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery vector search",
+  "feature_slug": "bigquery-vector-search",
+  "summary": "BigQuery vector search lets users search embeddings to identify semantically similar entities.",
+  "extended_definition": "BigQuery vector search lets users search embeddings to identify semantically similar entities.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/vector-index-text-search-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/vector-search-intro"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Introduction to embeddings and vector search \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "source_id": "site-docs-root",
+        "final_score": 244,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For a notebook that illustrates this scenario, see Log Anomaly Detection & Investigation with Text Embeddings + BigQuery Vector Search .",
+          "Introduction to embeddings and vector search This document provides an overview of embeddings and vector search in BigQuery.",
+          "Some possible use cases are as follows: Retrieval-augmented generation (RAG) : Parse documents, perform vector search on content, and generate summarized answers to natural language questions using Gemini models, all within BigQuery."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "Depending on the dataset, the embedding model, and the distance type used during VECTOR SEARCH , normalizing the embeddings might improve recall.",
+          "A vector index lets you perform a vector search more quickly, with the trade-off of reducing recall and so returning more approximate results.",
+          "CREATE TABLE dataset . complex table ( a STRING , my struct STRUCT < string field STRING , int field INT64 > , b ARRAY < STRING > ); CREATE SEARCH INDEX my index ON dataset . complex table ( a OPTIONS ( index granularity = 'GLOBAL' ), my struct , b ) OPTIONS ( analyzer = 'NO OP ANALYZER' , default index column granularity = 'COLUMN' ); CREATE VECTOR INDEX statement Creates a new vector index on a column of a table."
+        ]
+      },
+      {
+        "title": "\"Perform semantic search and retrieval-augmented generation \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/vector-index-text-search-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to BigQuery In the query editor, run the following SQL statement: SELECT query . query , base . publication number , base . title , base . abstract FROM VECTOR SEARCH ( TABLE bqml tutorial.embeddings , 'embedding' , ( SELECT embedding , content AS query FROM AI .",
+          "GENERATE TEXT ( MODEL bqml tutorial.text model , ( SELECT CONCAT ( 'Propose some project ideas to improve user password security using the context below: ' , STRING AGG ( FORMAT ( \"patent title: %s, patent abstract: %s\" , base . title , base . abstract ), ', \\n ' ) ) AS prompt , FROM VECTOR SEARCH ( TABLE bqml tutorial.embeddings , 'embedding' , ( SELECT embedding , content AS query FROM AI .",
+          "Go to BigQuery In the query editor, run the following SQL statement: CREATE OR REPLACE VECTOR INDEX my index ON bqml tutorial.embeddings ( embedding ) OPTIONS ( index type = 'IVF' , distance type = 'COSINE' , ivf options = '{\"num lists\":500}' ) Creating a vector index typically takes only a few seconds."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "tutorial.embeddings",
+      "tutorial.text"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/vector-index-text-search-tutorial"
+      ]
+    }
+  ]
+}

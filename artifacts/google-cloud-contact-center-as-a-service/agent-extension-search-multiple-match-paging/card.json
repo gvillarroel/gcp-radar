@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:13.819Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Agent extension search multiple-match paging",
+  "feature_slug": "agent-extension-search-multiple-match-paging",
+  "summary": "Improves extension directory searches by reading multiple matching agent results in groups of eight and adding guidance messages.",
+  "extended_definition": "Improves extension directory searches by reading multiple matching agent results in groups of eight and adding guidance messages.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Agent extensions guide \\_|\\_ Google Cloud Contact Center as a Service \\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Search the extension directory Click in the search field and begin typing a name in order to search for an agent extension.",
+          "Dial pad and extension directory If you are an agent with an extension assigned, you are able to dial extensions.",
+          "You can use the search field to search for an agent by name or extension."
+        ]
+      },
+      {
+        "title": "\"Call settings \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 165,
+        "relevance": "",
+        "evidence_snippets": [
+          "Multiple agents found : a message played when the end-user inputs an agent extension number and there are multiple agent matches.",
+          "No more matched agents : a message played when there are no additional matches in the extension directory.",
+          "Depending on how you configure your instance, an end-user can directly call an agent in one of two ways: enter the agent's extension number at the beginning of a call, or call the agent from the agent directory."
+        ]
+      },
+      {
+        "title": "\"Agent Assist \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist",
+        "source_id": "site-docs-reference",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "This lets you use Agent Assist with the following session types: Calls to direct phone numbers Calls to agent extension numbers Outbound calls where no queue is selected Chats transferred directly to another agent Note: When a chat is transferred, the originating agent sees Agent Assist as it's configured for the originating team or queue, and the receiving agent sees Agent Assist as it's configured for the receiving team or queue.",
+          "Searching for articles : Agents can manually search for specific knowledge articles by entering keywords into the Knowledge base search field Search results appear as tiles, similar to automatic suggestions, and can be clicked to view the article Note: If a chat is transferred to another agent, the knowledge articles remain accessible to the new agent until the session ends or the transferring agent exits.",
+          "Searching for articles : If agents need to search for a specific topic, they can manually enter keywords in the Knowledge base search field within the same panel."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist"
+      ]
+    }
+  ]
+}

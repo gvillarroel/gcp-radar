@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Regional endpoints",
+  "feature_slug": "regional-endpoints",
+  "summary": "BigQuery regional endpoints route request traffic directly to a specified region to support data residency and sovereignty requirements.",
+  "extended_definition": "BigQuery regional endpoints route request traffic directly to a specified region to support data residency and sovereignty requirements.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+      "https://docs.cloud.google.com/bigquery/docs/locations",
+      "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "bq command-line tool reference \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "The default value is true . --trace=token: TOKEN Specifies a tracing token to include in API requests. --use regional endpoints={true false} In preview .",
+          "If you create a Spanner connection and want to use Data Boost , include the \"useParallelism\":true and \"useDataBoost\":true pairs. --connection credential= CONNECTION CREDENTIAL The credentials of the connection in JSON format. username and password must be specified. --project id= PROJECT ID Specifies the ID of the project that the connection belongs to. --location= LOCATION Specifies the location that the connection will be stored. --display name= DISPLAY NAME Specifies an optional friendly name for the connection. --description= DESCRIPTION Specifies an optional description of the connection. --iam role id= ROLE ID For BigQuery Omni on AWS, specifies an IAM role that allows access to the resource.",
+          "For information about using the bq mk command with the BigQuery Data Transfer Service, see the following: Set up an Amazon S3 transfer Set up a Campaign Manager transfer Set up a Cloud Storage transfer Set up a Google Ad Manager transfer Set up a Google Ads transfer Set up a Google Merchant Center transfer (beta) Set up a Google Play transfer Set up a Search Ads 360 transfer (beta) Set up a YouTube Channel transfer Set up a YouTube Content Owner transfer Migrate data from Amazon Redshift Migrate data from Teradata bq mk --transfer run Creates a data transfer run at the specified time or time range using the specified data transfer configuration."
+        ]
+      },
+      {
+        "title": "BigQuery locations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/locations",
+        "source_id": "site-docs-root",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "BigQuery returns an error if the specified location does not match the location of the datasets in the request.",
+          "Virginia) aws-us-east-1 AWS - US West (Oregon) aws-us-west-2 AWS - Asia Pacific (Seoul) aws-ap-northeast-2 AWS - Asia Pacific (Sydney) aws-ap-southeast-2 AWS - Europe (Ireland) aws-eu-west-1 AWS - Europe (Frankfurt) aws-eu-central-1 Azure Azure - East US 2 azure-eastus2 Specify locations To ensure that BigQuery queries are stored in a specific region or multi-region, specify the location with the job request.",
+          "Query Bigtable data When you query data in Bigtable through a BigQuery external table , your Bigtable instance must be in the same location as your BigQuery dataset: Single region: If your BigQuery dataset is in the Belgium ( europe-west1 ) regional location, the corresponding Bigtable instance must be in the Belgium region."
+        ]
+      },
+      {
+        "title": "Loading CSV data from Cloud Storage \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "source_id": "site-docs-root",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "DAY , field = \"date\" , # Name of the column to use for partitioning. expiration ms = 7776000000 , # 90 days. ), ) uri = \"gs://cloud-samples-data/bigquery/us-states/us-states-by-date.csv\" load job = client . load table from uri ( uri , table id , job config = job config ) # Make an API request. load job . result () # Wait for the job to complete. table = client . get table ( table id ) print ( \"Loaded {} rows to table {} \" . format ( table . num rows , table id )) Appending to or overwriting a table with CSV data You can load additional data into a table either from source files or by appending query results.",
+          "CSV , skip leading rows = 1 , ) uri = \"gs://cloud-samples-data/bigquery/us-states/us-states.csv\" load job = client . load table from uri ( uri , table id , job config = job config ) # Make an API request. load job . result () # Waits for the job to complete. destination table = client . get table ( table id ) print ( \"Loaded {} rows.\" . format ( destination table . num rows )) Loading hive-partitioned CSV data BigQuery supports loading hive-partitioned CSV data stored on Cloud Storage and will populate the hive partitioning columns as columns in the destination BigQuery managed table.",
+          "CSV , ) uri = \"gs://cloud-samples-data/bigquery/us-states/us-states.csv\" load job = client . load table from uri ( uri , table id , job config = job config ) # Make an API request. load job . result () # Waits for the job to complete. destination table = client . get table ( table id ) # Make an API request. print ( \"Loaded {} rows.\" . format ( destination table . num rows )) Ruby Before trying this sample, follow the Ruby setup instructions in the BigQuery quickstart using client libraries ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "date.csv",
+      "states.csv"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/locations",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/locations",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/locations",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/locations",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/locations",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/locations",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv"
+      ]
+    }
+  ]
+}

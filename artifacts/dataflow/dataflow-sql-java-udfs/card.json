@@ -1,0 +1,208 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:03.460Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Dataflow SQL Java UDFs",
+  "feature_slug": "dataflow-sql-java-udfs",
+  "summary": "Dataflow SQL Java UDFs let you write user-defined functions for Dataflow SQL in Java.",
+  "extended_definition": "Dataflow SQL Java UDFs let you write user-defined functions for Dataflow SQL in Java.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-elasticsearch",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3.ContainerSpec"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"BigQuery to Elasticsearch template \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-elasticsearch",
+        "source_id": "site-api-reference",
+        "final_score": 121,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "RowToStringElementFn ())); } else { udfOut = readJsonDocuments . apply ( TransformTextViaJavascript . newBuilder () . setFileSystemPath ( options . getJavascriptTextTransformGcsPath ()) . setFunctionName ( options . getJavascriptTextTransformFunctionName ()) . build ()); } / Step #4: Write converted records to Elasticsearch / udfOut . apply ( \"WriteToElasticsearch\" , WriteToElasticsearch . newBuilder () . setUserAgent ( \"dataflow-bigquery-to-elasticsearch-template/v2\" ) . setOptions ( options . as ( BigQueryToElasticsearchOptions . class )) . build ()); return pipeline . run (); } } What's next Learn about Dataflow templates .",
+          "See the License for the specific language governing permissions and limitations under the License. / package com.google.cloud.teleport.v2.elasticsearch.templates ; import com.google.cloud.teleport.metadata.MultiTemplate ; import com.google.cloud.teleport.metadata.Template ; import com.google.cloud.teleport.metadata.TemplateCategory ; import com.google.cloud.teleport.v2.common.UncaughtExceptionLogger ; import com.google.cloud.teleport.v2.elasticsearch.options.BigQueryToElasticsearchOptions ; import com.google.cloud.teleport.v2.elasticsearch.transforms.WriteToElasticsearch ; import com.google.cloud.teleport.v2.transforms.BigQueryConverters.ReadBigQueryTableRows ; import com.google.cloud.teleport.v2.transforms.BigQueryConverters.TableRowToJsonFn ; import com.google.cloud.teleport.v2.transforms.JavascriptTextTransformer.TransformTextViaJavascript ; import com.google.cloud.teleport.v2.transforms.PythonExternalTextTransformer ; import com.google.common.base.Strings ; import org.apache.beam.sdk.Pipeline ; import org.apache.beam.sdk.PipelineResult ; import org.apache.beam.sdk.options.PipelineOptionsFactory ; import org.apache.beam.sdk.transforms.ParDo ; import org.apache.beam.sdk.values.PCollection ; / The {@link BigQueryToElasticsearch} pipeline exports data from a BigQuery table to Elasticsearch. <p>Check out <a href=\"https://github.com/GoogleCloudPlatform/DataflowTemplates/blob/main/v2/googlecloud-to-elasticsearch/README BigQuery to Elasticsearch.md\">README</a> for instructions on how to use or modify this template. / @MultiTemplate ({ @Template ( name = \"BigQuery to Elasticsearch\" , category = TemplateCategory .",
+          "Defaults to: PLAINTEXT. socketTimeout : If set, overwrites the default max retry timeout and default socket timeout (30000ms) in the Elastic RestClient. javascriptTextTransformGcsPath : The Cloud Storage URI of the .js file that defines the JavaScript user-defined function (UDF) to use."
+        ]
+      },
+      {
+        "title": "\"Cloud Storage Text to BigQuery template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery",
+        "source_id": "site-api-reference",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "For sample JavaScript UDFs, see UDF Examples (https://github.com/GoogleCloudPlatform/DataflowTemplates#udf-examples)\" , example = \"transform udf1\" ) String getJavascriptTextTransformFunctionName (); void setJavascriptTextTransformFunctionName ( String javascriptTextTransformFunctionName ); @Validation.Required @TemplateParameter.GcsWriteFolder ( order = 6 , optional = false , description = \"Temporary directory for BigQuery loading process\" , helpText = \"Temporary directory for BigQuery loading process.\" , example = \"gs://your-bucket/your-files/temp-dir\" ) String getBigQueryLoadingTemporaryDirectory (); void setBigQueryLoadingTemporaryDirectory ( String directory ); } private static final String BIGQUERY SCHEMA = \"BigQuery Schema\" ; private static final String NAME = \"name\" ; private static final String TYPE = \"type\" ; private static final String MODE = \"mode\" ; private static final String RECORD TYPE = \"RECORD\" ; private static final String FIELDS ENTRY = \"fields\" ; public static void main ( String [] args ) { UncaughtExceptionLogger . register (); Options options = PipelineOptionsFactory . fromArgs ( args ). withValidation (). as ( Options . class ); run ( options , () - > writeToBQTransform ( options )); } / Create the pipeline with the supplied options. @param options The execution parameters to the pipeline. @param writeToBQ the transform that outputs {@link TableRow}s to BigQuery. @return The result of the pipeline execution. / @VisibleForTesting static PipelineResult run ( Options options , Supplier<Write<TableRow> > writeToBQ ) { BigQueryIOUtils . validateBQStorageApiOptionsBatch ( options ); Pipeline pipeline = Pipeline . create ( options ); boolean useJavascriptUdf = !",
+          "See the License for the specific language governing permissions and limitations under the License. / package com.google.cloud.teleport.v2.templates ; import com.google.api.services.bigquery.model.TableFieldSchema ; import com.google.api.services.bigquery.model.TableRow ; import com.google.api.services.bigquery.model.TableSchema ; import com.google.cloud.teleport.metadata.MultiTemplate ; import com.google.cloud.teleport.metadata.Template ; import com.google.cloud.teleport.metadata.TemplateCategory ; import com.google.cloud.teleport.metadata.TemplateParameter ; import com.google.cloud.teleport.v2.common.UncaughtExceptionLogger ; import com.google.cloud.teleport.v2.options.BigQueryStorageApiBatchOptions ; import com.google.cloud.teleport.v2.transforms.BigQueryConverters ; import com.google.cloud.teleport.v2.transforms.JavascriptTextTransformer.TransformTextViaJavascript ; import com.google.cloud.teleport.v2.transforms.PythonExternalTextTransformer ; import com.google.cloud.teleport.v2.transforms.PythonExternalTextTransformer.PythonExternalTextTransformerOptions ; import com.google.cloud.teleport.v2.utils.BigQueryIOUtils ; import com.google.common.annotations.VisibleForTesting ; import com.google.common.base.Strings ; import java.nio.channels.Channels ; import java.nio.channels.ReadableByteChannel ; import java.nio.charset.StandardCharsets ; import java.util.ArrayList ; import java.util.List ; import java.util.function.Supplier ; import org.apache.beam.runners.dataflow.options.DataflowPipelineOptions ; import org.apache.beam.sdk.Pipeline ; import org.apache.beam.sdk.PipelineResult ; import org.apache.beam.sdk.io.FileSystems ; import org.apache.beam.sdk.io.TextIO ; import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO ; import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write ; import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write.CreateDisposition ; import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write.WriteDisposition ; import org.apache.beam.sdk.options.PipelineOptionsFactory ; import org.apache.beam.sdk.options.Validation ; import org.apache.beam.sdk.options.ValueProvider.StaticValueProvider ; import org.apache.beam.sdk.transforms.MapElements ; import org.apache.beam.sdk.transforms.ParDo ; import org.apache.beam.sdk.transforms.SimpleFunction ; import org.apache.beam.sdk.util.StreamUtils ; import org.apache.beam.sdk.values.PCollection ; import org.json.JSONArray ; import org.json.JSONObject ; / Templated pipeline to read text from TextIO, apply a javascript UDF to it, and write it to GCS. <p>Check out <a href=\"https://github.com/GoogleCloudPlatform/DataflowTemplates/blob/main/v2/googlecloud-to-googlecloud/README GCS Text to BigQuery Flex.md\">README</a> for instructions on how to use or modify this template. / @MultiTemplate ({ @Template ( name = \"GCS Text to BigQuery Flex\" , category = TemplateCategory .",
+          "PATH TO BIGQUERY SCHEMA JSON : the Cloud Storage path to the JSON file containing the schema definition PATH TO JAVASCRIPT UDF FILE : the Cloud Storage URI of the .js file that defines the JavaScript user-defined function (UDF) you want to use—for example, gs://my-bucket/my-udfs/my file.js PATH TO TEXT DATA : your Cloud Storage path to your text dataset BIGQUERY TABLE : your BigQuery table name PATH TO TEMP DIR ON GCS : your Cloud Storage path to the temp directory Template source code Java / Copyright (C) 2022 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License."
+        ]
+      },
+      {
+        "title": "\"Class ContainerSpec (0.92.0) \\_|\\_ Java client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3.ContainerSpec",
+        "source_id": "site-java-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Protobuf type google.dataflow.v1beta3.ContainerSpec Inheritance Object > AbstractMessageLite<MessageType,BuilderType> > AbstractMessage > GeneratedMessage > ContainerSpec Implements ContainerSpecOrBuilder Inherited Members AbstractMessage.equals(Object) AbstractMessage.findInitializationErrors() AbstractMessage.getInitializationErrorString() AbstractMessage.hashCode() AbstractMessage.hashFields(int,Map<Descriptors.FieldDescriptor,Object>) AbstractMessage.newBuilderForType(AbstractMessage.BuilderParent) AbstractMessage.toString() AbstractMessageLite.<T>addAll(Iterable<T>,List<? super T>) AbstractMessageLite.checkByteStringIsUtf8(ByteString) AbstractMessageLite.toByteArray() AbstractMessageLite.toByteString() AbstractMessageLite.writeDelimitedTo(OutputStream) AbstractMessageLite.writeTo(OutputStream) com.google.protobuf.GeneratedMessage.<ContainingT,T>newFileScopedGeneratedExtension(java.lang.Class<?>,com.google.protobuf.Message) com.google.protobuf.GeneratedMessage.<ContainingT,T>newMessageScopedGeneratedExtension(com.google.protobuf.Message,int,java.lang.Class<?>,com.google.protobuf.Message) com.google.protobuf.GeneratedMessage.<ListT>makeMutableCopy(ListT) com.google.protobuf.GeneratedMessage.<ListT>makeMutableCopy(ListT,int) GeneratedMessage.<M>parseDelimitedWithIOException(Parser<M>,InputStream) GeneratedMessage.<M>parseDelimitedWithIOException(Parser<M>,InputStream,ExtensionRegistryLite) GeneratedMessage.<M>parseWithIOException(Parser<M>,CodedInputStream) GeneratedMessage.<M>parseWithIOException(Parser<M>,CodedInputStream,ExtensionRegistryLite) GeneratedMessage.<M>parseWithIOException(Parser<M>,InputStream) GeneratedMessage.<M>parseWithIOException(Parser<M>,InputStream,ExtensionRegistryLite) com.google.protobuf.GeneratedMessage.<T>emptyList(java.lang.Class<T>) com.google.protobuf.GeneratedMessage.<V>serializeBooleanMapTo(com.google.protobuf.CodedOutputStream,com.google.protobuf.MapField<java.lang.Boolean,V>,com.google.protobuf.MapEntry<java.lang.Boolean,V>,int) com.google.protobuf.GeneratedMessage.<V>serializeIntegerMapTo(com.google.protobuf.CodedOutputStream,com.google.protobuf.MapField<java.lang.Integer,V>,com.google.protobuf.MapEntry<java.lang.Integer,V>,int) com.google.protobuf.GeneratedMessage.<V>serializeLongMapTo(com.google.protobuf.CodedOutputStream,com.google.protobuf.MapField<java.lang.Long,V>,com.google.protobuf.MapEntry<java.lang.Long,V>,int) com.google.protobuf.GeneratedMessage.<V>serializeStringMapTo(com.google.protobuf.CodedOutputStream,com.google.protobuf.MapField<java.lang.String,V>,com.google.protobuf.MapEntry<java.lang.String,V>,int) com.google.protobuf.GeneratedMessage.canUseUnsafe() GeneratedMessage.computeStringSize(int,Object) GeneratedMessage.computeStringSizeNoTag(Object) com.google.protobuf.GeneratedMessage.emptyBooleanList() com.google.protobuf.GeneratedMessage.emptyDoubleList() com.google.protobuf.GeneratedMessage.emptyFloatList() com.google.protobuf.GeneratedMessage.emptyIntList() com.google.protobuf.GeneratedMessage.emptyLongList() GeneratedMessage.getAllFields() GeneratedMessage.getDescriptorForType() GeneratedMessage.getField(Descriptors.FieldDescriptor) GeneratedMessage.getOneofFieldDescriptor(Descriptors.OneofDescriptor) GeneratedMessage.getParserForType() GeneratedMessage.getRepeatedField(Descriptors.FieldDescriptor,int) GeneratedMessage.getRepeatedFieldCount(Descriptors.FieldDescriptor) GeneratedMessage.getSerializedSize() GeneratedMessage.getUnknownFields() GeneratedMessage.hasField(Descriptors.FieldDescriptor) GeneratedMessage.hasOneof(Descriptors.OneofDescriptor) GeneratedMessage.internalGetFieldAccessorTable() GeneratedMessage.internalGetMapField(int) com.google.protobuf.GeneratedMessage.internalGetMapFieldReflection(int) GeneratedMessage.isInitialized() com.google.protobuf.GeneratedMessage.isStringEmpty(java.lang.Object) GeneratedMessage.makeExtensionsImmutable() com.google.protobuf.GeneratedMessage.mergeFromAndMakeImmutableInternal(com.google.protobuf.CodedInputStream,com.google.protobuf.ExtensionRegistryLite) com.google.protobuf.GeneratedMessage.newInstance(com.google.protobuf.GeneratedMessage.UnusedPrivateParameter) GeneratedMessage.parseUnknownField(CodedInputStream,UnknownFieldSet.Builder,ExtensionRegistryLite,int) com.google.protobuf.GeneratedMessage.parseUnknownFieldProto3(com.google.protobuf.CodedInputStream,com.google.protobuf.UnknownFieldSet.Builder,com.google.protobuf.ExtensionRegistryLite,int) GeneratedMessage.writeReplace() GeneratedMessage.writeString(CodedOutputStream,int,Object) GeneratedMessage.writeStringNoTag(CodedOutputStream,Object) GeneratedMessage.writeTo(CodedOutputStream) Object.clone() Object.finalize() Object.getClass() Object.notify() Object.notifyAll() Object.wait() Object.wait(long) Object.wait(long,int) Static Fields DEFAULT ENVIRONMENT FIELD NUMBER public static final int DEFAULT ENVIRONMENT FIELD NUMBER Field Value Type Description int IMAGE FIELD NUMBER public static final int IMAGE FIELD NUMBER Field Value Type Description int IMAGE REPOSITORY CERT PATH FIELD NUMBER public static final int IMAGE REPOSITORY CERT PATH FIELD NUMBER Field Value Type Description int IMAGE REPOSITORY PASSWORD SECRET ID FIELD NUMBER public static final int IMAGE REPOSITORY PASSWORD SECRET ID FIELD NUMBER Field Value Type Description int IMAGE REPOSITORY USERNAME SECRET ID FIELD NUMBER public static final int IMAGE REPOSITORY USERNAME SECRET ID FIELD NUMBER Field Value Type Description int METADATA FIELD NUMBER public static final int METADATA FIELD NUMBER Field Value Type Description int SDK INFO FIELD NUMBER public static final int SDK INFO FIELD NUMBER Field Value Type Description int Static Methods getDefaultInstance() public static ContainerSpec getDefaultInstance () Returns Type Description ContainerSpec getDescriptor() public static final Descriptors .",
+          "E.g., gcr.io/project/some-image string image = 1; Returns Type Description ByteString The bytes for image. getImageRepositoryCertPath() public String getImageRepositoryCertPath () Cloud Storage path to self-signed certificate of private registry. string image repository cert path = 7; Returns Type Description String The imageRepositoryCertPath. getImageRepositoryCertPathBytes() public ByteString getImageRepositoryCertPathBytes () Cloud Storage path to self-signed certificate of private registry. string image repository cert path = 7; Returns Type Description ByteString The bytes for imageRepositoryCertPath. getImageRepositoryPasswordSecretId() public String getImageRepositoryPasswordSecretId () Secret Manager secret id for password to authenticate to private registry. string image repository password secret id = 6; Returns Type Description String The imageRepositoryPasswordSecretId. getImageRepositoryPasswordSecretIdBytes() public ByteString getImageRepositoryPasswordSecretIdBytes () Secret Manager secret id for password to authenticate to private registry. string image repository password secret id = 6; Returns Type Description ByteString The bytes for imageRepositoryPasswordSecretId. getImageRepositoryUsernameSecretId() public String getImageRepositoryUsernameSecretId () Secret Manager secret id for username to authenticate to private registry. string image repository username secret id = 5; Returns Type Description String The imageRepositoryUsernameSecretId. getImageRepositoryUsernameSecretIdBytes() public ByteString getImageRepositoryUsernameSecretIdBytes () Secret Manager secret id for username to authenticate to private registry. string image repository username secret id = 5; Returns Type Description ByteString The bytes for imageRepositoryUsernameSecretId. getMetadata() public TemplateMetadata getMetadata () Metadata describing a template including description and validation rules. .google.dataflow.v1beta3.TemplateMetadata metadata = 2; Returns Type Description TemplateMetadata The metadata. getMetadataOrBuilder() public TemplateMetadataOrBuilder getMetadataOrBuilder () Metadata describing a template including description and validation rules. .google.dataflow.v1beta3.TemplateMetadata metadata = 2; Returns Type Description TemplateMetadataOrBuilder getParserForType() public Parser<ContainerSpec> getParserForType () Returns Type Description Parser < ContainerSpec > Overrides GeneratedMessage.getParserForType() getSdkInfo() public SDKInfo getSdkInfo () Required.",
+          "Builder newBuilder ( ContainerSpec prototype ) Parameter Name Description prototype ContainerSpec Returns Type Description ContainerSpec.Builder parseDelimitedFrom(InputStream input) public static ContainerSpec parseDelimitedFrom ( InputStream input ) Parameter Name Description input InputStream Returns Type Description ContainerSpec Exceptions Type Description IOException parseDelimitedFrom(InputStream input, ExtensionRegistryLite extensionRegistry) public static ContainerSpec parseDelimitedFrom ( InputStream input , ExtensionRegistryLite extensionRegistry ) Parameters Name Description input InputStream extensionRegistry ExtensionRegistryLite Returns Type Description ContainerSpec Exceptions Type Description IOException parseFrom(byte[] data) public static ContainerSpec parseFrom ( byte [] data ) Parameter Name Description data byte [] Returns Type Description ContainerSpec Exceptions Type Description InvalidProtocolBufferException parseFrom(byte[] data, ExtensionRegistryLite extensionRegistry) public static ContainerSpec parseFrom ( byte [] data , ExtensionRegistryLite extensionRegistry ) Parameters Name Description data byte [] extensionRegistry ExtensionRegistryLite Returns Type Description ContainerSpec Exceptions Type Description InvalidProtocolBufferException parseFrom(ByteString data) public static ContainerSpec parseFrom ( ByteString data ) Parameter Name Description data ByteString Returns Type Description ContainerSpec Exceptions Type Description InvalidProtocolBufferException parseFrom(ByteString data, ExtensionRegistryLite extensionRegistry) public static ContainerSpec parseFrom ( ByteString data , ExtensionRegistryLite extensionRegistry ) Parameters Name Description data ByteString extensionRegistry ExtensionRegistryLite Returns Type Description ContainerSpec Exceptions Type Description InvalidProtocolBufferException parseFrom(CodedInputStream input) public static ContainerSpec parseFrom ( CodedInputStream input ) Parameter Name Description input CodedInputStream Returns Type Description ContainerSpec Exceptions Type Description IOException parseFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) public static ContainerSpec parseFrom ( CodedInputStream input , ExtensionRegistryLite extensionRegistry ) Parameters Name Description input CodedInputStream extensionRegistry ExtensionRegistryLite Returns Type Description ContainerSpec Exceptions Type Description IOException parseFrom(InputStream input) public static ContainerSpec parseFrom ( InputStream input ) Parameter Name Description input InputStream Returns Type Description ContainerSpec Exceptions Type Description IOException parseFrom(InputStream input, ExtensionRegistryLite extensionRegistry) public static ContainerSpec parseFrom ( InputStream input , ExtensionRegistryLite extensionRegistry ) Parameters Name Description input InputStream extensionRegistry ExtensionRegistryLite Returns Type Description ContainerSpec Exceptions Type Description IOException parseFrom(ByteBuffer data) public static ContainerSpec parseFrom ( ByteBuffer data ) Parameter Name Description data ByteBuffer Returns Type Description ContainerSpec Exceptions Type Description InvalidProtocolBufferException parseFrom(ByteBuffer data, ExtensionRegistryLite extensionRegistry) public static ContainerSpec parseFrom ( ByteBuffer data , ExtensionRegistryLite extensionRegistry ) Parameters Name Description data ByteBuffer extensionRegistry ExtensionRegistryLite Returns Type Description ContainerSpec Exceptions Type Description InvalidProtocolBufferException parser() public static Parser<ContainerSpec> parser () Returns Type Description Parser < ContainerSpec > Methods equals(Object obj) public boolean equals ( Object obj ) Parameter Name Description obj Object Returns Type Description boolean Overrides AbstractMessage.equals(Object other) getDefaultEnvironment() public FlexTemplateRuntimeEnvironment getDefaultEnvironment () Default runtime environment for the job. .google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment default environment = 4; Returns Type Description FlexTemplateRuntimeEnvironment The defaultEnvironment. getDefaultEnvironmentOrBuilder() public FlexTemplateRuntimeEnvironmentOrBuilder getDefaultEnvironmentOrBuilder () Default runtime environment for the job. .google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment default environment = 4; Returns Type Description FlexTemplateRuntimeEnvironmentOrBuilder getDefaultInstanceForType() public ContainerSpec getDefaultInstanceForType () Returns Type Description ContainerSpec getImage() public String getImage () Name of the docker container image."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.api.services.bigquery.model.TableFieldSchema",
+      "com.google.api.services.bigquery.model.TableRow",
+      "com.google.api.services.bigquery.model.TableSchema",
+      "com.google.cloud.teleport.metadata.MultiTemplate",
+      "com.google.cloud.teleport.metadata.Template",
+      "com.google.cloud.teleport.metadata.TemplateCategory",
+      "com.google.cloud.teleport.metadata.TemplateParameter",
+      "com.google.cloud.teleport.v2.common.UncaughtExceptionLogger",
+      "com.google.cloud.teleport.v2.elasticsearch.options.BigQueryToElasticsearchOptions",
+      "com.google.cloud.teleport.v2.elasticsearch.templates",
+      "com.google.cloud.teleport.v2.elasticsearch.transforms.WriteToElasticsearch",
+      "com.google.cloud.teleport.v2.options.BigQueryStorageApiBatchOptions",
+      "com.google.cloud.teleport.v2.templates",
+      "com.google.cloud.teleport.v2.transforms.BigQueryConverters",
+      "com.google.cloud.teleport.v2.transforms.BigQueryConverters.ReadBigQueryTableRows",
+      "com.google.cloud.teleport.v2.transforms.BigQueryConverters.TableRowToJsonFn",
+      "com.google.cloud.teleport.v2.transforms.JavascriptTextTransformer.TransformTextViaJavascript",
+      "com.google.cloud.teleport.v2.transforms.PythonExternalTextTransformer",
+      "com.google.cloud.teleport.v2.transforms.PythonExternalTextTransformer.PythonExternalTextTransformerOptions",
+      "com.google.cloud.teleport.v2.utils.BigQueryIOUtils",
+      "com.google.common.annotations.VisibleForTesting",
+      "com.google.common.base.Strings",
+      "com.google.dataflow.v1beta3.ContainerSpec",
+      "com.google.protobuf.CodedInputStream",
+      "com.google.protobuf.CodedOutputStream",
+      "com.google.protobuf.ExtensionRegistryLite",
+      "com.google.protobuf.GeneratedMessage",
+      "com.google.protobuf.GeneratedMessage.canUseUnsafe",
+      "com.google.protobuf.GeneratedMessage.emptyBooleanList",
+      "com.google.protobuf.GeneratedMessage.emptyDoubleList",
+      "com.google.protobuf.GeneratedMessage.emptyFloatList",
+      "com.google.protobuf.GeneratedMessage.emptyIntList",
+      "com.google.protobuf.GeneratedMessage.emptyLongList",
+      "com.google.protobuf.GeneratedMessage.internalGetMapFieldReflection",
+      "com.google.protobuf.GeneratedMessage.isStringEmpty",
+      "com.google.protobuf.GeneratedMessage.mergeFromAndMakeImmutableInternal",
+      "com.google.protobuf.GeneratedMessage.newInstance",
+      "com.google.protobuf.GeneratedMessage.parseUnknownFieldProto3",
+      "com.google.protobuf.GeneratedMessage.UnusedPrivateParameter",
+      "com.google.protobuf.MapEntry",
+      "com.google.protobuf.MapField",
+      "com.google.protobuf.Message",
+      "com.google.protobuf.UnknownFieldSet.Builder",
+      "file.js",
+      "gcr.io",
+      "github.com",
+      "java.lang.Boolean",
+      "java.lang.Class",
+      "java.lang.Integer",
+      "java.lang.Long",
+      "java.lang.Object",
+      "java.lang.String",
+      "java.nio.channels.Channels",
+      "java.nio.channels.ReadableByteChannel",
+      "java.nio.charset.StandardCharsets",
+      "java.util.ArrayList",
+      "java.util.function.Supplier",
+      "java.util.List",
+      "org.apache.beam.runners.dataflow.options.DataflowPipelineOptions",
+      "org.apache.beam.sdk.io.FileSystems",
+      "org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO",
+      "org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write",
+      "org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write.CreateDisposition",
+      "org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write.WriteDisposition",
+      "org.apache.beam.sdk.io.TextIO",
+      "org.apache.beam.sdk.options.PipelineOptionsFactory",
+      "org.apache.beam.sdk.options.Validation",
+      "org.apache.beam.sdk.options.ValueProvider.StaticValueProvider",
+      "org.apache.beam.sdk.Pipeline",
+      "org.apache.beam.sdk.PipelineResult",
+      "org.apache.beam.sdk.transforms.MapElements",
+      "org.apache.beam.sdk.transforms.ParDo",
+      "org.apache.beam.sdk.transforms.SimpleFunction",
+      "org.apache.beam.sdk.util.StreamUtils",
+      "org.apache.beam.sdk.values.PCollection",
+      "org.json.JSONArray",
+      "org.json.JSONObject"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-elasticsearch",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3.ContainerSpec"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-elasticsearch",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3.ContainerSpec"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-elasticsearch",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3.ContainerSpec"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-elasticsearch",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3.ContainerSpec"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-elasticsearch",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3.ContainerSpec"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-elasticsearch",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3.ContainerSpec"
+      ]
+    }
+  ]
+}

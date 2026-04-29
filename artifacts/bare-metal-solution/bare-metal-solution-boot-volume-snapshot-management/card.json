@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.969Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution",
+  "feature_name": "Bare Metal Solution boot volume snapshot management",
+  "feature_slug": "bare-metal-solution-boot-volume-snapshot-management",
+  "summary": "Users can create, delete, and restore Bare Metal Solution boot volume snapshots.",
+  "extended_definition": "Users can create, delete, and restore Bare Metal Solution boot volume snapshots.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+      "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+      "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Maintain the Bare Metal Solution environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "source_id": "site-docs-reference",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "To clear all reservations, replace the end of the command with the following: -d \"{ 'reservations' : [] }\" Manage storage You can manage the storage in your Bare Metal Solution environment in the following ways: View storage volumes Organize storage volumes by using labels Rename a storage volume Provision storage volume resources Remove storage volume resources View boot volume snapshots and their details Create a boot volume snapshot Delete a boot volume snapshot Restore a boot volume snapshot View storage volumes Paying attention to your storage resources in the Bare Metal Solution environment helps you determine if your servers have enough storage capacity for applications and workloads.",
+          "On the Volume details page, in the Snapshots section, you can view the list of snapshots and their details. gcloud To list all the snapshots for a boot volume, issue the gcloud bms volumes snapshots list command. gcloud bms volumes snapshots list --project= PROJECT ID --region= REGION --volume= VOLUME NAME To view details of a specific boot volume snapshot, issue the gcloud bms volumes snapshots describe command. gcloud bms volumes snapshots describe --project= PROJECT ID --region= REGION --volume= VOLUME NAME --snapshot= SNAPSHOT NAME API To list all boot volume snapshots, enter your project ID, region, and volume name into the following curl command.",
+          "Copy the command, paste it into the Cloud Shell prompt, and press the Enter or Return key. curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"X-Goog-User-Project: PROJECT ID \" \\ -H \"Content-Type: application/json\" \\ \"https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /volumes/ VOLUME NAME /snapshots\" -d \\ '{\\''name\\'': \\''projects/ PROJECT ID /locations/ REGION /volumes/ VOLUME NAME /snapshots/ SNAPSHOT NAME \\'', \\''description\\'': \\'' DESCRIPTION \\''}' \\ Delete a boot volume snapshot You can delete boot volume snapshots."
+        ]
+      },
+      {
+        "title": "Plan for Bare Metal Solution \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "source_id": "site-docs-reference",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you place your order for data volume snapshots, you need to tell Google Cloud which action we should take when the snapshot reserve fills up: Delete the oldest snapshot first (recommended) Delete the newest snapshot first Take the volume offline Google Cloud takes snapshots of the boot OS volume automatically every day at 12:10 AM in the region where your Bare Metal Solution servers are located.",
+          "To delete data volume snapshots and bring a data volume back online, or restore an OS boot volume snapshot, contact Customer Care .",
+          "Snapshots are available as follows: OS boot volume: Google Cloud takes a daily snapshot by default."
+        ]
+      },
+      {
+        "title": "\"SAP NetWeaver planning guide \\_|\\_ SAP on Google Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide",
+        "source_id": "site-docs-reference-2",
+        "final_score": 106,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For more information about the different types of block storage offered by Compute Engine, their performance characteristics, and how to work with them, see the Compute Engine documentation: Storage options About Google Cloud Hyperdisk performance Persistent Disk performance Other factors that affect performance Adding or resizing zonal persistent disks Creating persistent disk snapshots Persistent disks deployed by the deployment templates If you deploy the host VM by using the Terraform configuration files that Google Cloud provides for SAP NetWeaver, then the deployment automation scripts attach two or three Persistent Disk or Hyperdisk volumes for the required SAP NetWeaver volumes or drives, depending on whether you are using Windows Server or Linux.",
+          "After a user with administrative privileges has connected to an instance through SSH or RDP, they can add other system users with standard Linux commands or Windows user-account management.",
+          "For example, it can simplify the use of persistent disk snapshots for specific volumes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "baremetalsolution.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    }
+  ]
+}

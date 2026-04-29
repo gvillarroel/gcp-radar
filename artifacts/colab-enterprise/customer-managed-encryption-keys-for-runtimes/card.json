@@ -1,0 +1,186 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:57.510Z",
+  "source_step08_card": "data/step-08/current/products/colab-enterprise/card.json",
+  "product_name": "Colab Enterprise",
+  "product_slug": "colab-enterprise",
+  "feature_name": "Customer-managed encryption keys for runtimes",
+  "feature_slug": "customer-managed-encryption-keys-for-runtimes",
+  "summary": "Customer-managed encryption keys can be used to protect Colab Enterprise runtimes.",
+  "extended_definition": "Customer-managed encryption keys can be used to protect Colab Enterprise runtimes.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/colab/docs/cmek",
+      "https://docs.cloud.google.com/colab/docs/default-runtimes-with-gpus",
+      "https://docs.cloud.google.com/colab/docs/introduction",
+      "https://docs.cloud.google.com/colab/docs/runtimes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use customer-managed encryption keys (CMEK) \\_|\\_ Colab Enterprise \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/colab/docs/cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 290,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Colab Enterprise.",
+          "For more information about your encryption options, see Customer-managed encryption keys (CMEK) .",
+          "Before you begin This guide assumes that you use two separate Google Cloud projects to configure CMEK for Colab Enterprise runtimes: A project for managing your encryption key (referred to as the \"Cloud KMS project\")."
+        ]
+      },
+      {
+        "title": "Introduction to Colab Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/colab/docs/introduction",
+        "source_id": "site-api-reference",
+        "final_score": 212,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you have specific compliance or regulatory requirements related to the keys that protect your data, you can use customer-managed encryption keys (CMEK) with your Colab Enterprise runtimes and notebooks.",
+          "For more information, see Use customer-managed encryption keys (CMEK) .",
+          "Use with customer-managed encryption keys (CMEK) By default, Google Cloud automatically encrypts data when it is at rest using encryption keys managed by Google."
+        ]
+      },
+      {
+        "title": "\"Enable default runtimes with GPUs \\_|\\_ Colab Enterprise \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/colab/docs/default-runtimes-with-gpus",
+        "source_id": "site-iam-reference",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable the APIs Required roles To ensure that your user account has the necessary permissions to enable default runtimes with GPUs in Colab Enterprise, ask your administrator to grant the Colab Enterprise Admin ( roles/aiplatform.colabEnterpriseAdmin ) IAM role to your user account on the project.",
+          "After the new default runtime template with GPUs is created, any user with the aiplatform.notebookRuntimes.assign permission on the project and the aiplatform.notebookRuntimeTemplates.apply permission on the runtime template can create and use a default runtime with GPUs.",
+          "Users who are granted the dataform.repositories.list permission or the Code Creator ( roles/dataform.codeCreator ) role in a project can list the names of code assets in that project by using the Dataform API or the Dataform command-line interface (CLI)."
+        ]
+      },
+      {
+        "title": "\"Runtimes and runtime templates \\_|\\_ Colab Enterprise \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/colab/docs/runtimes",
+        "source_id": "site-docs-root",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "Python version End of patch and support date End of availability date Python 3.12 To be determined To be determined Python 3.11 To be determined To be determined Python 3.10 February 23, 2026 August 17, 2026 Understand end of support dates Support for a Python version ends according to the following dates: End of patch and support date : After this date, the following changes take place: You can't create runtime templates that use this Python version.",
+          "Runtimes can be shared by notebooks You can connect more than one notebook to the same runtime but this isn't recommended.",
+          "Runtimes and runtime templates This page describes runtimes and runtime templates for Colab Enterprise."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.colabEnterpriseAdmin",
+      "aiplatform.notebookRuntimes.assign",
+      "aiplatform.notebookRuntimeTemplates.apply",
+      "aiplatform.notebookRuntimeTemplates.create",
+      "dataform.codeCreator",
+      "dataform.repositories.list"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.colabEnterpriseAdmin",
+      "roles/dataform.codeCreator"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/cmek",
+        "https://docs.cloud.google.com/colab/docs/introduction",
+        "https://docs.cloud.google.com/colab/docs/default-runtimes-with-gpus",
+        "https://docs.cloud.google.com/colab/docs/runtimes"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/cmek",
+        "https://docs.cloud.google.com/colab/docs/introduction",
+        "https://docs.cloud.google.com/colab/docs/default-runtimes-with-gpus",
+        "https://docs.cloud.google.com/colab/docs/runtimes"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/cmek",
+        "https://docs.cloud.google.com/colab/docs/introduction",
+        "https://docs.cloud.google.com/colab/docs/default-runtimes-with-gpus",
+        "https://docs.cloud.google.com/colab/docs/runtimes"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/cmek",
+        "https://docs.cloud.google.com/colab/docs/introduction",
+        "https://docs.cloud.google.com/colab/docs/default-runtimes-with-gpus",
+        "https://docs.cloud.google.com/colab/docs/runtimes"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/cmek",
+        "https://docs.cloud.google.com/colab/docs/introduction",
+        "https://docs.cloud.google.com/colab/docs/default-runtimes-with-gpus",
+        "https://docs.cloud.google.com/colab/docs/runtimes"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/cmek",
+        "https://docs.cloud.google.com/colab/docs/introduction",
+        "https://docs.cloud.google.com/colab/docs/default-runtimes-with-gpus",
+        "https://docs.cloud.google.com/colab/docs/runtimes"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/cmek",
+        "https://docs.cloud.google.com/colab/docs/introduction",
+        "https://docs.cloud.google.com/colab/docs/default-runtimes-with-gpus",
+        "https://docs.cloud.google.com/colab/docs/runtimes"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/cmek",
+        "https://docs.cloud.google.com/colab/docs/introduction",
+        "https://docs.cloud.google.com/colab/docs/default-runtimes-with-gpus",
+        "https://docs.cloud.google.com/colab/docs/runtimes"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/cmek",
+        "https://docs.cloud.google.com/colab/docs/introduction",
+        "https://docs.cloud.google.com/colab/docs/default-runtimes-with-gpus",
+        "https://docs.cloud.google.com/colab/docs/runtimes"
+      ]
+    }
+  ]
+}

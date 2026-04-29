@@ -1,0 +1,103 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.989Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-go/card.json",
+  "product_name": "App Engine standard environment Go",
+  "product_slug": "app-engine-standard-environment-go",
+  "feature_name": "Regional availability",
+  "feature_slug": "regional-availability",
+  "summary": "App Engine standard environment is available in additional Google Cloud regions; App Engine standard environment is available in additional Google Cloud regions.",
+  "extended_definition": "App Engine standard environment is available in additional Google Cloud regions; App Engine standard environment is available in additional Google Cloud regions.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/quotas",
+      "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+      "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/quotas",
+        "source_id": "site-docs-reference-4",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "Resource or API call Description System Limit Shared Centi Memcache Compute Units Per Region Per Minute For each project per region and minute, the available centi-MCUs, which are 1/100ths of an Memcache Compute Unit .",
+          "When a resource is depleted When an application consumes all of an allocated resource, the resource becomes unavailable until the quota is replenished.",
+          "In the Go API, the appengine.IsOverQuota function reports whether an error represents an API call failure due to insufficient available quota."
+        ]
+      },
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 58,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example The following is an example of an app.yaml file: runtime : python314 instance class : F2 env variables : BUCKET NAME : \"example-gcs-bucket\" handlers : Matches requests to /images/... to files in static/images/... - url : /images static dir : static/images - url : /. secure : always redirect http response code : 301 script : auto The following table provides YAML examples of available fields in an app.yaml file: Runtime and app elements Element Description app engine apis Optional.",
+          "Note that the scheduler might spawn a new instance before the actual maximum number of requests is reached. max pending latency The maximum amount of time that App Engine should allow a request to wait in the pending queue before starting additional instances to handle requests so that pending latency is reduced.",
+          "The following values are available depending on your service's scaling : Automatic scaling F1 , F2 , F4 , F4 1G Default: F1 Optionally use the automatic scaling element to change default settings for automatic scaling, such as minimum and maximum number of instances, latency, and concurrent connections."
+        ]
+      },
+      {
+        "title": "\"Connecting to a VPC network \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "source_id": "site-docs-reference",
+        "final_score": 54,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a connector using an existing subnet : gcloud compute networks vpc-access connectors create CONNECTOR NAME \\ --region REGION \\ --subnet SUBNET NAME \\ --subnet-project HOST PROJECT ID \\ --min-instances MIN \\ --max-instances MAX \\ --machine-type MACHINE TYPE Replace the following: CONNECTOR NAME : a name for your connector, matching Compute Engine naming conventions , with the additional requirements that the name must be less than 21 characters long, and that hyphens (-) count as two characters.",
+          "Create a connector and a new subnet : gcloud compute networks vpc-access connectors create CONNECTOR NAME \\ --region REGION \\ --network VPC NETWORK \\ --range IP RANGE --min-instances MIN \\ --max-instances MAX \\ --machine-type MACHINE TYPE Replace the following: CONNECTOR NAME : a name for your connector, matching Compute Engine naming conventions , with the additional requirements that the name must be less than 21 characters long, and that hyphens (-) count as two characters.",
+          "In the Name field, enter a name for your connector, matching Compute Engine naming conventions , with the additional requirements that the name must be less than 21 characters long, and that hyphens (-) count as two characters."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "appengine.IsOverQuota",
+      "myapp.settings",
+      "os.environ"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    }
+  ]
+}

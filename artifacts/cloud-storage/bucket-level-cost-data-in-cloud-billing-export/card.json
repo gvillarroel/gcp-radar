@@ -1,0 +1,210 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:55.943Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "Bucket-level cost data in Cloud Billing export",
+  "feature_slug": "bucket-level-cost-data-in-cloud-billing-export",
+  "summary": "Cloud Billing Detailed data export includes granular cost data for individual Cloud Storage buckets.",
+  "extended_definition": "Cloud Billing Detailed data export includes granular cost data for individual Cloud Storage buckets.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage/docs/audit-logging",
+      "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+      "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file",
+      "https://docs.cloud.google.com/storage/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Audit Logs with Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 175,
+        "relevance": "",
+        "evidence_snippets": [
+          "To read your Google Cloud project-level audit log entries, run the following command: gcloud logging read \"logName : projects/ PROJECT ID /logs/cloudaudit.googleapis.com\" \\ --project= PROJECT ID To read your folder-level audit log entries, run the following command: gcloud logging read \"logName : folders/ FOLDER ID /logs/cloudaudit.googleapis.com\" \\ --folder= FOLDER ID To read your organization-level audit log entries, run the following command: gcloud logging read \"logName : organizations/ ORGANIZATION ID /logs/cloudaudit.googleapis.com\" \\ --organization= ORGANIZATION ID To read your Cloud Billing account-level audit log entries, run the following command: gcloud logging read \"logName : billingAccounts/ BILLING ACCOUNT ID /logs/cloudaudit.googleapis.com\" \\ --billing-account= BILLING ACCOUNT ID Add the --freshness flag to your command to read logs that are more than 1 day old.",
+          "The Private Logs Viewer role (roles/logging.privateLogViewer ) includes the permissions contained in roles/logging.viewer , plus the ability to read Data Access audit logs in the Required and Default buckets.",
+          "For example, a rewrite operation's object GET request's log includes a destination field in the metadata field of its audit log to specify the bucket where the data has been copied to."
+        ]
+      },
+      {
+        "title": "Troubleshooting \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 166,
+        "relevance": "",
+        "evidence_snippets": [
+          "For organization policy failures, contact your administrator to grant you the project or bucket-level permissions to allow resource sharing by editing the organization policy for the organization, folder, or project resource .",
+          "In such a scenario, you can regain access to the bucket or object by granting yourself the necessary bucket-level or object-level permissions required to perform the actions you need.",
+          "To disable uniform bucket-level access, you'll need to first delete all managed folders in the bucket."
+        ]
+      },
+      {
+        "title": "Cloud Storage FUSE configuration file \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "source_id": "site-docs-reference",
+        "final_score": 165,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Storage FUSE configuration file format and fields The following YAML configuration example shows the format and fields available in Cloud Storage FUSE. app-name : \"APP NAME\" logging : file-path : \"FILE PATH\" format : FORMAT severity : SEVERITY log-rotate : max-file-size-mb : MAX FILE SIZE backup-file-count : BACKUP FILE COUNT compress : COMPRESS cache-dir : \"CACHE DIR\" file-cache : max-size-mb : MAX SIZE cache-file-for-range-read : CACHE FILE FOR RANGE READ enable-parallel-downloads : ENABLE PARALLEL DOWNLOADS exclude-regex : EXCLUDE REGEX include-regex : INCLUDE REGEX parallel-downloads-per-file : PARALLEL DOWNLOADS PER FILE max-parallel-downloads : MAX PARALLEL DOWNLOADS download-chunk-size-mb : DOWNLOAD CHUNK SIZE metadata-cache : negative-ttl-secs : ENABLE NEGATIVE TTL SECS stat-cache-max-size-mb : STAT CACHE MAX SIZE ttl-secs : TTL SECS enable-metadata-prefetch : ENABLE METADATA PREFETCH metadata-prefetch-entries-limit : METADATA PREFETCH ENTRIES LIMIT metadata-prefetch-max-workers : METADATA PREFETCH MAX WORKERS only-dir : \"ONLY DIR\" gcs-auth : anonymous-access : ANONYMOUS ACCESS key-file : \"KEY FILE\" reuse-token-from-url : REUSE TOKEN FROM URL token-url : \"TOKEN URL\" gcs-connection : billing-project : \"BILLING PROJECT\" client-protocol : CLIENT PROTOCOL custom-endpoint : \"CUSTOM ENDPOINT\" http-client-timeout : HTTP CLIENT TIMEOUT limit-bytes-per-sec : \"LIMIT BYTES PER SEC\" limit-ops-per-sec : \"LIMIT OPS PER SEC\" max-conns-per-host : MAX CONNS PER HOST max-idle-conns-per-host : MAX IDLE CONNS PER HOST sequential-read-size-mb : SEQUENTIAL READ SIZE implicit-dirs : IMPLICIT DIRS file-system : kernel-list-cache-ttl-secs : KERNEL LIST CACHE TTL SECS ignore-interrupts : IGNORE INTERRUPTS dir-mode : \"DIR MODE\" file-mode : \"FILE MODE\" fuse-options : FUSE OPTIONS gid : GID rename-dir-limit : RENAME DIR LIMIT temp-dir : \"TEMP DIR\" uid : UID foreground : FOREGROUND gcs-retries : max-retry-attempts : MAX RETRY ATTEMPTS max-retry-sleep : MAX RETRY SLEEP multiplier : \"MULTIPLIER\" metrics : cloud-metrics-export-interval-secs : CLOUD METRICS EXPORT INTERVAL prometheus-port : PROMETHEUS PORT debug : log-mutex : LOG MUTEX exit-on-invariant-violation : EXIT ON INVARIANT VIOLATION write : enable-streaming-writes : STREAMING WRITES global-max-blocks : MAXIMUM GLOBAL BLOCKS read : enable-buffered-read : ENABLE BUFFERED READ global-max-blocks : MAXIMUM GLOBAL READ BLOCKS profile : PROFILE Cloud Storage FUSE configuration file fields The following table describes the fields you can specify in your Cloud Storage FUSE configuration file.",
+          "This severity level also includes the information provided in the info , warning , and error severity levels. trace : contains granular details about each Cloud Storage FUSE operation and function call, outlining the gcsfuse interaction with the kernel FUSE driver and Cloud Storage.",
+          "This severity level also includes information about the warning and error severity levels. debug : contains logging information such as startup and shutdown messages, or information about successful mount operations, progress updates, and configuration settings."
+        ]
+      },
+      {
+        "title": "Cloud Storage FUSE configuration file \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file",
+        "source_id": "site-docs-reference",
+        "final_score": 165,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Storage FUSE configuration file format and fields The following YAML configuration example shows the format and fields available in Cloud Storage FUSE. app-name : \"APP NAME\" logging : file-path : \"FILE PATH\" format : FORMAT severity : SEVERITY log-rotate : max-file-size-mb : MAX FILE SIZE backup-file-count : BACKUP FILE COUNT compress : COMPRESS cache-dir : \"CACHE DIR\" file-cache : max-size-mb : MAX SIZE cache-file-for-range-read : CACHE FILE FOR RANGE READ enable-parallel-downloads : ENABLE PARALLEL DOWNLOADS exclude-regex : EXCLUDE REGEX include-regex : INCLUDE REGEX parallel-downloads-per-file : PARALLEL DOWNLOADS PER FILE max-parallel-downloads : MAX PARALLEL DOWNLOADS download-chunk-size-mb : DOWNLOAD CHUNK SIZE metadata-cache : negative-ttl-secs : ENABLE NEGATIVE TTL SECS stat-cache-max-size-mb : STAT CACHE MAX SIZE ttl-secs : TTL SECS enable-metadata-prefetch : ENABLE METADATA PREFETCH metadata-prefetch-entries-limit : METADATA PREFETCH ENTRIES LIMIT metadata-prefetch-max-workers : METADATA PREFETCH MAX WORKERS only-dir : \"ONLY DIR\" gcs-auth : anonymous-access : ANONYMOUS ACCESS key-file : \"KEY FILE\" reuse-token-from-url : REUSE TOKEN FROM URL token-url : \"TOKEN URL\" gcs-connection : billing-project : \"BILLING PROJECT\" client-protocol : CLIENT PROTOCOL custom-endpoint : \"CUSTOM ENDPOINT\" http-client-timeout : HTTP CLIENT TIMEOUT limit-bytes-per-sec : \"LIMIT BYTES PER SEC\" limit-ops-per-sec : \"LIMIT OPS PER SEC\" max-conns-per-host : MAX CONNS PER HOST max-idle-conns-per-host : MAX IDLE CONNS PER HOST sequential-read-size-mb : SEQUENTIAL READ SIZE implicit-dirs : IMPLICIT DIRS file-system : kernel-list-cache-ttl-secs : KERNEL LIST CACHE TTL SECS ignore-interrupts : IGNORE INTERRUPTS dir-mode : \"DIR MODE\" file-mode : \"FILE MODE\" fuse-options : FUSE OPTIONS gid : GID rename-dir-limit : RENAME DIR LIMIT temp-dir : \"TEMP DIR\" uid : UID foreground : FOREGROUND gcs-retries : max-retry-attempts : MAX RETRY ATTEMPTS max-retry-sleep : MAX RETRY SLEEP multiplier : \"MULTIPLIER\" metrics : cloud-metrics-export-interval-secs : CLOUD METRICS EXPORT INTERVAL prometheus-port : PROMETHEUS PORT debug : log-mutex : LOG MUTEX exit-on-invariant-violation : EXIT ON INVARIANT VIOLATION write : enable-streaming-writes : STREAMING WRITES global-max-blocks : MAXIMUM GLOBAL BLOCKS read : enable-buffered-read : ENABLE BUFFERED READ global-max-blocks : MAXIMUM GLOBAL READ BLOCKS profile : PROFILE Cloud Storage FUSE configuration file fields The following table describes the fields you can specify in your Cloud Storage FUSE configuration file.",
+          "This severity level also includes the information provided in the info , warning , and error severity levels. trace : contains granular details about each Cloud Storage FUSE operation and function call, outlining the gcsfuse interaction with the kernel FUSE driver and Cloud Storage.",
+          "This severity level also includes information about the warning and error severity levels. debug : contains logging information such as startup and shutdown messages, or information about successful mount operations, progress updates, and configuration settings."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "logging.privateLogViewer",
+      "logging.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.privateLogViewer",
+      "roles/logging.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file"
+      ]
+    }
+  ]
+}

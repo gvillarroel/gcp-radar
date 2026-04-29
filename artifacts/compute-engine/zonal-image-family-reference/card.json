@@ -1,0 +1,363 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:57.696Z",
+  "source_step08_card": "data/step-08/current/products/compute-engine/card.json",
+  "product_name": "Compute Engine",
+  "product_slug": "compute-engine",
+  "feature_name": "Zonal image family reference",
+  "feature_slug": "zonal-image-family-reference",
+  "summary": "Compute Engine can reference the latest public image in an image family for a specific zone to improve zonal fault tolerance.",
+  "extended_definition": "Compute Engine can reference the latest public image in an image family for a specific zone to improve zonal fault tolerance.",
+  "lifecycle": {
+    "latest_feature_date": "2021-08-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/compute/docs/reference/rest/v1",
+      "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+      "https://docs.cloud.google.com/compute/docs/reference/rest/v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "General-purpose machine family for Compute Engine | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+        "source_id": "site-docs-reference-required-9-http",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "General-purpose machine family for Compute Engine | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Compute Engine Start free Overview Guides APIs & Reference Samples Resources Technology areas More Overview Guides APIs & Reference Samples Resources Cross-product tools More Console Discover Product overview Compute Engine instances Instance groups Compute Engine machine resources Machine resource guide Machine type families General-purpose machines Storage-optimized machines Compute-optimized machines Memory-optimized machines Accelerator-optimized machines Benchmark VM scores CPU platforms GPUs About GPUs on Google Cloud GPU machine types Arm VMs Bare metal instances Regions and zones About regions and zones Accelerator locations GPU locations TPU locations About AI zones Global, regional, and zonal resources Get started Plan and prepare Work with regions and zones View available regions and zones Change the default region or zone Review VM deployment options Choose a deployment strategy About VM provisioning models About VM tenancy Design resilient systems Networking overview for VMs Images and operating systems OS images About OS images Operating system details OS image lifecycle Support policy Premium operating systems RHEL FAQ SLES FAQ Ubuntu Pro FAQ Microsoft Licensing on Google Cloud Microsoft licenses FAQ License Manager About License Manager Use License Manager for Microsoft Office View audit logs Access control Access control overview Manage access to Compute Engine resources Organization policies Overview Managed constraints Custom constraints IAM roles and permissions Service accounts Name resources Quickstarts Create a Linux VM Create a Windows Server VM Create a managed instance group Create instances Instance creation overview Create an instance Create and start an instance Create with a customized machine configuration Create with a custom hostname Create with a custom machine type Specify a minimum CPU platform for an instance Create with attached GPUs About GPU instances Create overview Create an A3 Ultra or A4 instance Create an A3 instance with GPUDirect enabled Create an A3 High or A2 instance Create a G2 or G4 instance Create an N1 instance that has attached GPUs Install drivers Install GPU drivers Install drivers for NVIDIA RTX Virtual Workstations (vWS) Drivers for NVIDIA RTX Virtual Workstations (vWS) Create with a customized OS configuration Create from a public image Create from a custom image Create from a shared image Create using a RHEL BYOS image Create with a customized networking configuration Create in a specific subnet Create with multiple network interfaces Create with IPv6 addresses Create an instance that uses Cloud RDMA Create with a customized observability configuration Create an instance for Ops Agent monitoring and logging Enable virtual displays on an instance Create with a customized security configuration Create an instance that uses a user-managed service account Create using an existing configuration Create using an instance template Create an instance similar to an existing instance Create using alternative provisioning models Create a Flex-start VM About Flex-start VMs Create a Flex-start VM Create a Spot VM About Spot VMs Create and use Spot VMs Create a reservation-bound VM About reservation-bound VMs Create a reservation-bound VM Create an instance that can be preempted About preemptible VMs Create and use preemptible VMs Create instances for specific workload types Create a Google-configured, workload-optimized instance Create an HPC-ready instance Create and manage a Windows Server instance Create a SQL Server instance Create custom images Requirements to build custom images Create custom images Create custom Windows BYOL base images Create custom Windows Server images Create and manage instance templates About instance templates Create instance templates Deterministic instance templates Get, list, and delete instance templates Create multiple VMs Create a managed instance group (MIG) Basic scenarios for creating MIGs Create a MIG in a single zone Create a MIG in multiple zones in a region Create a MIG with multiple machine types Create a MIG from an existing VM Create a MIG with autoscaling Create a MIG with preemptible VMs Create a MIG with GPU VMs Create a MIG with stateful configuration Bulk creation of VMs About bulk creation of VMs Create VMs in bulk Create GPU VMs in bulk Configure instance flexibility for VMs created in bulk Instance flexibility for VMs created in bulk Create VMs in bulk with instance flexibility Create HPC clusters with enhanced cluster management capabilities Overview of HPC cluster creation with H4D machine series Reserve capacity through your account team View reserved capacity for H4D instances Create an H4D Slurm cluster with enhanced management capabilities Bulk create HPC-optimized instances that use RDMA with enhanced management capabilities Create a HPC MIG with H4D machine series Examples for creating MIGs with H4D machine series Create a MIG with H4D machine types and flex-start Create a MIG for HPC workloads with reservation-bound consumption Create sole-tenant VMs Sole-tenancy overview Create sole-tenant node templates Create sole-tenant node groups Provision a sole-tenant VM Advanced maintenance control for sole-tenant nodes Sole-tenancy best practices Sole-tenancy accounting FAQ Create a virtual workstation About creating virtual workstations Create a virtual Linux workstation Create a virtual Windows workstation Create a virtual Linux workstation with an attached GPU Create a virtual Windows workstation with an attached GPU Use nested virtualization About nested virtualization Manage the nested virtualization constraint Enable nested virtualization Create nested VMs Manage VM boot disks Detach and reattach a boot disk Create a customized boot disk Migrate VMs Choose a migration path Bring your own licenses Import disks and images Prerequisites for importing and exporting VM images Automatic import Import virtual disks Import virtual appliances Manual import Manually import boot disks Manually configure imported disks Create a persistent disk image from an ISO file Move a VM within Google Cloud Move a VM between zones Migrate a VM between networks Copy VMs between projects Move an existing VM to a new VM Connect to VMs Connect to a VM About SSH connections Linux VMs Connect to VMs Connect through internal IP addresses Connection options for internal-only VMs Connect using IAP Connect using a bastion host Connect using Cloud VPN Connect as the root user Connect using service accounts Configure apps to use SSH Best practices Securely connect to VMs Windows VMs Connect to Windows VMs using RDP Connect to a Windows VM's SAC Connect to Windows VMs using SSH Connect to Windows VMs using PowerShell Manage access to VMs Linux VMs Choose an access management method About OS Login Set up OS Login Set up OS Login to require SSH certificates Enable security keys with OS Login Manage OS Login in an organization Monitor OS Login audit logs Windows VMs Manage accounts and credentials on Windows VMs Automate Windows password generation Manually manage SSH keys Create SSH keys Add SSH keys to VMs Restrict SSH keys from VMs Best practices for securing SSH access Overview Control network access Control SSH login access Protect SSH credentials Audit SSH access Manage tags for resources Transfer files to or from a VM Transfer files to Linux VMs Transfer files to Windows VMs IP addresses Internal DNS Overview of internal DNS Access VMs using internal DNS names Use zonal DNS Overview of zonal DNS Set zonal DNS as the default Migrate to zonal DNS Monitor DNS failure rates Create a PTR record for a VM Verify VM identity Manage storage Choose a disk type Disk types About Hyperdisk Hyperdisk overview Choose a Hyperdisk type Hyperdisk Balanced Hyperdisk Balanced High Availability Hyperdisk Extreme Hyperdisk ML Hyperdisk Throughput About Persistent Disk Extreme Persistent Disk About Local SSD Use pools to manage capacity and performance About Hyperdisk pools Choose a Hyperdisk pool type Hyperdisk Storage Pools Hyperdisk Exapools Create a Hyperdisk pool Manage Hyperdisk pools Add disks to VMs Create a VM with Local SSD disks Create a VM with additional non-boot disks Create a new Hyperdisk Create a new Persistent Disk Add disks from a storage pool to VMs Share a disk between VMs Attach a disk to a VM Mount in-memory RAM disks Configure disks Format and mount a non-boot disk on Linux Format and prepare a non-boot disk on Windows Access disks attached to a VM Best practice: Use persistent device names Symbolic links to disks Transfer data to disks attached to a VM Transfer files to Linux VMs Transfer files to Windows VMs View disk details Encrypt disks About disk encryption Encrypt disks with customer-supplied encryption keys Help protect resources by using Cloud KMS keys Modify disks Modify a Hyperdisk Change the disk type Increase the size of a Persistent Disk Modify a Persistent Disk Evaluate disk performance Hyperdisk performance overview Hyperdisk performance and size limits Persistent Disk performance overview Review disk performance Review disk performance metrics Analyze provisioned IOPS and throughput Benchmark disk performance Benchmark Hyperdisk performance Benchmark Persistent Disk performance on a Linux VM Benchmark Persistent Disk performance on a Windows VM Benchmark Local SSD performance Make disks highly available Replicate disks across regions About Asynchronous Replication Configure replication Manage replication Failover and failback disks Manage asynchronous disks Manage consistency groups Review performance metrics Cross-zonal synchronous disk replication About regional disks Build high availability services using regional disks Design considerations for resilient workloads with regional disks Create and manage regional disks Manage failures for regional disks Back up and restore Data protection options Configure the default backup setting Back up VMs Use machine images About machine images Create machine images Import machine images from virtual appliances Use Backup and DR backup plans About backup plans Apply backup plans to new instances Apply or change backup plans for existing instances Back up disks Back up disks in place About instant snapshots Create and manage instant snapshots Copy an instant snapshot to a different location Back up a disk for disaster recovery About disk snapshots Best practices for disk snapshots Set default storage location for globally scoped snapshots Set creation and restore locations for regionally scoped snapshots Create disk snapshots Manage disk snapshots Create application consistent snapshots Create Linux application consistent snapshots Create a Windows disk snapshot (VSS snapshots) Schedule disk backups About snapshot schedules Create snapshot schedules Manage snapshot schedules Configure alerts for snapshot schedules Duplicate a disk with clones Restore from a backup Create VMs from machine images Restore from a standard snapshot Restore from instant snapshots Recover a VM with a corrupted or full disk Manage VMs Basic operations and lifecycle VM instance lifecycle Schedule VM operations Schedule a VM to start and stop Limit the run time of a VM View VM properties Check that a VM is running View a list of VMs View the details of a VM View the UUID of a VM View the topology of a VM View the source image of a VM View referrers to VMs View network configuration of a VM View the number of visible CPU cores in a VM Stop or suspend a VM Stop or suspend VMs overview Stop or restart a VM Increase or decrease VM shutdown time Increase shutdown time Graceful shutdown overview Enable graceful shutdown View graceful shutdown Disable graceful shutdown Decrease shutdown time Suspend or resume a VM Reset a VM Update VM details Rename a VM Update VM properties Edit the machine type of a VM Add or remove GPUs Change the attached service account Update the physical location of a VM About placement policies Create and apply spread placement policies to VMs View placement policies Remove or delete placement policies Update network configuration for instances Configure static external IP addresses Configure static internal IP addresses Configure IPv6 for instances and instance templates Update network interfaces Delete VMs Delete a VM Prevent accidental VM deletion Update VM tenancy Manage multiple VMs Manage groups of VMs Work with managed VMs in a MIG View info about MIGs and managed instances Add or remove VMs in a MIG Limit the run time of VMs in a MIG Add GPU VMs all at once in a MIG About resize requests Create resize requests View, cancel, or delete resize requests Define the physical location of VMs About workload policies Create workload policies View workload policies Remove or delete workload policies Configure instance flexibility in a MIG About instance flexibility Add instance flexibility View instance flexibility Change or remove instance flexibility Distribute VMs across zones in a regional MIG About regional MIGs About target distribution shape Set a target distribution for VMs across zones Disable and reenable proactive instance redistribution Manually rebalance a regional MIG Simulate a zone outage for a regional MIG Work with suspended and stopped VMs in a MIG Overview Manually suspend or stop VMs in a MIG Accelerate scale out with suspended and stopped VMs Apply new VM configurations in a MIG About applying new VM configurations to VMs in a MIG Automatically apply VM configuration updates Selectively apply VM configuration updates Apply configuration updates during repairs Override instance template properties with an all-instances configuration Perform one-click OS image upgrades Maintain high availability during VM failures About repairing VMs for high availability Repair a VM when an application fails Set up an application-based health check and autohealing Monitor VM health state changes Disable and enable health state change logs Repair a VM in an alternate zone Turn off repairs in a MIG Support a stateful workload with a MIG About stateful MIGs Configure stateful MIGs Configure a stateful MIG Configure stateful persistent disks Configure stateful metadata Configure stateful IP addresses Apply, view, and remove stateful configuration How stateful MIGs work How operations affect preserved state Group VMs together Migrate an existing workload to a stateful managed instance group Group unmanaged VMs together Delete a MIG Manage HPC clusters with enhanced cluster management capabilities Enhanced HPC cluster management capabilities View H4D cluster topology Manage host events across reservations Manage host events across vms Report faulty host with H4D machines Host maintenance events About host events Live migration process Set the host maintenance policy Query metadata server for notices Simulate a host maintenance event Handle GPU host maintenance events Monitor and plan for a host maintenance event Manually start host maintenance Manage metadata About VM metadata Predefined metadata keys Set and remove custom metadata View and query VM metadata Set and query guest attributes Securing VMs About Shielded VMs Microsoft Secure Boot certificates expiration guide About Confidential VMs Protect resources with VPC Service Controls Monitor security risks with Security Command Center Manage operating systems Guest environment About the guest environment Install the guest environment Guest agent About the guest agent Guest agent functionality Configure the guest agent Manage operating systems using VM Manager Manage OS images Image management best practices Image families best practices Access Red Hat Knowledgebase Manage access to custom images Set up trusted image policies Export a custom image to Cloud Storage Set image versions in an image family Deprecate a custom image Delete a custom image Manage OS packages Manage licenses About licenses Manage licenses License changes and restrictions Switch between PAYG and BYOS Switch Windows Server from BYOL to PAYG Update licenses after an OS upgrade Append RHEL ELS licenses Upgrade from Ubuntu to Ubuntu Pro Manage VM extensions About VM Extension Manager Global VM extension policies Zonal VM extension policies Install VM extensions by using extension policies Manage VM extensions by using extension policies Use startup scripts Startup scripts overview Use startup scripts on Linux VMs Use startup scripts on Windows VMs Run shutdown scripts Configure time synchronization Time synchronization overview Configure network time protocol (NTP) Configure accurate time Enable the virtual random number generator (Virtio RNG) Deploy workloads Set up authentication for workloads Choose a workload authentication method Authenticate workloads to Google Cloud API using service accounts Authenticate workloads to other workloads over mTLS Agent for Compute Workloads overview Web servers Deploy an Apache server Deploy an IIS server Deploy a Flask server by using Terraform Applications Interactive: Build a to-do app with MongoDB Deploy an ASP.NET application Set up Joomla Set up LAMP Perform blue/green deployments using Cloud Build Send email from a VM About sending email Send email with SendGrid Send email with Mailgun Send email with Mailjet Databases MySQL MySQL on Compute Engine Install MySQL on Compute Engine Configure MySQL on Compute Engine Set up client access with a private IP address Cloning a MySQL database on Compute Engine Architectures for high availability of MySQL clusters on Compute Engine Deploying a highly available MySQL 5.6 cluster with DRBD on Compute Engine PostgreSQL Set up PostgreSQL on Compute Engine Set up a PostgreSQL data disk Set up PostgreSQL with hot standby SQL Server Best practices for SQL Server VMs Create Create a high-performance SQL Server VM Add a SQL Server license to an existing Linux server Add a SQL Server license to an existing Windows server Configure SQL Server on Google Cloud using Google Cloud NetApp Volumes Use file storage to configure SQL Server failover cluster instance Use block storage to configure SQL Server Always On availability groups Configure Set up AlwaysOn availability groups using an internal load balancer Set up AlwaysOn availability groups using a distributed network name Set up a failover cluster VM that uses S2D Set up a failover cluster VM with multi-writer disks Set up a SQL Server cluster on Linux with Always On availability groups and Pacemaker Migrate Migrate a SQL Server database from AWS EC2 to Compute Engine Migrate a SQL Server database from Windows to Linux Disaster recovery Disaster recovery for Microsoft SQL Server Disaster recovery for Microsoft SQL server on Persistent disk Disaster recovery for Microsoft SQL server on Hyperdisk Deploying Microsoft SQL Server for multi-regional disaster recovery Backup SQL Server databases to a Google Cloud Storage bucket Cloning a Microsoft SQL Server database on Compute Engine Load test SQL Server using HammerDB Redis Deployment Options for Redis on Google Cloud Containers Containers on Compute Engine Deploy containers on VMs and managed instance groups Configure options to run your container Transition from the container startup agent Prepare for the shutdown of the container startup agent Prevent the creation of VMs that use the container metadata Migrate containers that were deployed on VMs during VM creation OpenShift workloads OpenShift on Google Cloud overview Plan for OpenShift on Google Cloud Overview of Cluster Services for OpenShift Built-in integrations for OpenShift Best practices for high availability with OpenShift Disaster recovery for OpenShift on Google Cloud Disaster recovery strategies for active-passive and active-inactive setups with OpenShift Microsoft Windows Windows workloads Best practices for Windows Server VMs Setting up Active Directory Best practices for running Active Directory on Google Cloud Deploy Microsoft SharePoint Server on Compute Engine Deploying Microsoft Exchange Server 2016 on Compute Engine Windows Server Perform an in-place upgrade of Windows Server Run Windows Server failover clustering IBM Spectrum Symphony Integrate IBM Spectrum Symphony with Google Cloud Install the Compute Engine Symphony provider Install the Google Kubernetes Symphony provider Troubleshoot IBM Spectrum Symphony Others Load testing Distributed load testing using Kubernetes SSH port forwarding and load testing Analytics Monte Carlo methods using Apache Spark Machine learning Run TensorFlow inference workloads with TensorRT5 and NVIDIA T4 GPU Monitor Monitor logs View audit logs View usage reports View Compute Engine operations Migrate from activity logs to audit logs View activity logs Monitor resources Monitor VM and sole-tenant node usage Observe and monitor VMs Monitor GPU performance Monitor GPU performance on Linux VMs Monitor GPU performance on Windows VMs Monitor disks Monitor disk health Monitor the replica states of regional disks Monitor disks List of metrics for Pools Monitor Pools Monitor reservations Organize resources using labels Scale Autoscale groups of VMs About autoscaling groups of VMs Create and manage autoscalers Scale based on CPU utilization Scale based on predictions Scale based on load balancing serving capacity Scale based on Monitoring metrics Scale based on schedules Use an autoscaling policy with multiple signals Manage autoscalers Understand autoscaler decisions View autoscaler logs Autoscale node groups Reserve VM capacity Choose a reservation type Sharing reservations Best practices for shared reservations Allow a project to share reservations On-demand reservations About on-demand reservations Create an on-demand reservation For a single project For multiple projects Combine an on-demand reservation with a CUD Modify an on-demand reservation Delete an on-demand reservation Future reservations About future reservations Create a reservation request For a single project For multiple projects Modify a reservation request Delete a reservation request Future reservations in calendar mode About future reservations in calendar mode Create a reservation request in calendar mode View reservations or reservation requests Consume a reservation Prevent VMs from consuming reservations Load balancing About load balancing and scaling Add an instance group to a load balancer Request routing to a multi-region external HTTPS load balancer Cross-region load balancing for Microsoft IIS backends Set up Internal TCP/UDP Load Balancing Build reliable and scalable applications Use autohealing for highly available applications Use load balancing for highly available applications Use autoscaling for highly scalable applications Globally autoscale a web service on Compute Engine Patterns for scalable and resilient applications Patterns for using floating IP addresses on Compute Engine Optimize Resource utilization Use recommendations to manage resources Apply machine type recommendations to VMs Configure machine type recommendations Apply machine type recommendations to MIGs View and apply idle resources recommendations View and understand VM insights View and understand MIG insights Manage idle VM recommendations Idle VM recommendations overview View and apply idle VM recommendations Configure idle VM recommendations Manage reservation recommendations Reservation recommendations overview View and apply idle reservation recommendations View and apply underutilized reservation recommendations Configure idle reservation recommendations Configure underutilized reservation recommendations Overcommit CPUs on sole-tenant VMs Manual live migration About manual live migration Manually live migrate VMs Share sole-tenant node groups Next generation dynamic resource management Cost savings Get discounts for committed usage About commitments and committed use discounts (CUDs) Resource-based CUDs Manage resource-based commitments Renew commitments automatically Extend commitment terms Merge and split commitments Upgrade commitments Share resource-based CUDs across projects Get discounts for sustained usage Disk performance Optimize Hyperdisk performance Optimize Persistent Disk performance Optimize Local SSD performance Workload performance Set the number of threads per core Customize the number of visible CPU cores Analyze the CPU performance using the PMU PMU overview Enable the PMU in VMs Manage the PMU in VMs Network performance Network bandwidth Use Google Virtual NIC Use IRDMA network driver Use IDPF network interface Configure a VM with higher bandwidth Reduce latency by using compact placement policies Optimize TCP network communication Optimize TCP network performance Optimize TCP network resiliency Benchmark higher bandwidth VMs Optimize app latency with load balancing Use DPDK to improve network performance Network performance and GPU VMs Networking and GPU machines Use higher network bandwidth Patterns for using multiple host NICs Troubleshoot General tips Troubleshoot connectivity Troubleshoot RDP Troubleshoot SSH Troubleshoot OS Login Troubleshoot VMs Troubleshoot VM operations Troubleshoot VM creation Troubleshoot resource availability errors Troubleshoot bulk API VM creation Troubleshoot VM reboots and shutdowns Troubleshoot VM suspension Troubleshoot VM updates Troubleshoot unresponsive VMs Troubleshoot VM startup Troubleshoot fstab errors Troubleshoot kernel panic Collecting core dumps Rescue an inaccessible VM Troubleshoot CPU soft lockups Troubleshoot VM configurations Troubleshoot Arm VMs Troubleshoot GPU VMs Troubleshoot NVIDIA GPU errors Generate a NVIDIA bug report for Blackwell GPUs Troubleshoot nested virtualization Troubleshoot using VM screenshots Troubleshoot sole-tenant nodes Troubleshoot VM performance issues Troubleshoot sudoers files Troubleshoot Windows VMs Troubleshoot Windows VMs Collecting diagnostic information Troubleshoot using the serial console Troubleshoot using the serial console Viewing serial port output Troubleshoot instance groups Troubleshoot managed instance groups (MIGs) Troubleshoot OS management Troubleshoot licenses Troubleshoot image import and export Troubleshooting SLES pay-as-you-go registration Troubleshooting Ubuntu Pro Registration Troubleshoot metadata server Troubleshoot metadata server Troubleshoot networking issues Troubleshoot common networking issues Troubleshoot network drivers Troubleshoot VM performance issues Troubleshoot storage Troubleshoot full disks and disk resizing Troubleshoot disk encryption Troubleshoot NVMe disks Troubleshoot instant snapshots Troubleshoot standard snapshots Troubleshoot reservations and commitments Troubleshoot reservation creation Troubleshoot reservation consumption Troubleshooting reservation monitoring Troubleshoot reservation updates Troubleshoot future reservation creation and updates Troubleshoot automatic commitment renewal Troubleshoot quota errors Troubleshoot concurrent operation quota errors Troubleshoot workload authentication Troubleshoot default service accounts Troubleshoot workload to workload authentication AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Compute Compute Engine Guides Send feedback General-purpose machine family for Compute Engine Stay organized with collections Save and categorize content based on your preferences.",
+          "C3 bare metal instances don't support the following: Google Kubernetes Engine Shielded VM Nested virtualization Caution : When you purchase resource-based commitments for C3 and C3D resources, the machine family that is specified by the commitment type changes depending on the interface: In the gcloud CLI and REST, the commitment type values use Compute-optimized as the machine family, even though C3 and C3D are part of the general-purpose machine family.",
+          "Supported disk types for E2 VMs E2 VMs can use the following block storage types: Zonal and regional balanced Persistent Disk ( pd-balanced ) Zonal and regional SSD Persistent Disk ( pd-ssd ) Zonal and regional standard Persistent Disk ( pd-standard ) N1 machine series The N1 machine series is Compute Engine's first generation general-purpose machine series available on Intel Skylake, Broadwell, Haswell, Sandy Bridge, and Ivy Bridge CPU platforms."
+        ]
+      },
+      {
+        "title": "Compute Engine API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/reference/rest/v1",
+        "source_id": "site-docs-root",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: v1.acceleratorTypes REST Resource: v1.addresses REST Resource: v1.advice REST Resource: v1.autoscalers REST Resource: v1.backendBuckets REST Resource: v1.backendServices REST Resource: v1.crossSiteNetworks REST Resource: v1.diskTypes REST Resource: v1.disks REST Resource: v1.externalVpnGateways REST Resource: v1.firewallPolicies REST Resource: v1.firewalls REST Resource: v1.forwardingRules REST Resource: v1.futureReservations REST Resource: v1.globalAddresses REST Resource: v1.globalForwardingRules REST Resource: v1.globalNetworkEndpointGroups REST Resource: v1.globalOperations REST Resource: v1.globalOrganizationOperations REST Resource: v1.globalPublicDelegatedPrefixes REST Resource: v1.healthChecks REST Resource: v1.httpHealthChecks REST Resource: v1.httpsHealthChecks REST Resource: v1.imageFamilyViews REST Resource: v1.images REST Resource: v1.instanceGroupManagerResizeRequests REST Resource: v1.instanceGroupManagers REST Resource: v1.instanceGroups REST Resource: v1.instanceSettings REST Resource: v1.instanceTemplates REST Resource: v1.instances REST Resource: v1.instantSnapshots REST Resource: v1.interconnectAttachmentGroups REST Resource: v1.interconnectAttachments REST Resource: v1.interconnectGroups REST Resource: v1.interconnectLocations REST Resource: v1.interconnectRemoteLocations REST Resource: v1.interconnects REST Resource: v1.licenseCodes REST Resource: v1.licenses REST Resource: v1.machineImages REST Resource: v1.machineTypes REST Resource: v1.networkAttachments REST Resource: v1.networkEdgeSecurityServices REST Resource: v1.networkEndpointGroups REST Resource: v1.networkFirewallPolicies REST Resource: v1.networkProfiles REST Resource: v1.networks REST Resource: v1.nodeGroups REST Resource: v1.nodeTemplates REST Resource: v1.nodeTypes REST Resource: v1.organizationSecurityPolicies REST Resource: v1.packetMirrorings REST Resource: v1.previewFeatures REST Resource: v1.projects REST Resource: v1.publicAdvertisedPrefixes REST Resource: v1.publicDelegatedPrefixes REST Resource: v1.regionAutoscalers REST Resource: v1.regionBackendBuckets REST Resource: v1.regionBackendServices REST Resource: v1.regionCommitments REST Resource: v1.regionCompositeHealthChecks REST Resource: v1.regionDiskTypes REST Resource: v1.regionDisks REST Resource: v1.regionHealthAggregationPolicies REST Resource: v1.regionHealthCheckServices REST Resource: v1.regionHealthChecks REST Resource: v1.regionHealthSources REST Resource: v1.regionInstanceGroupManagerResizeRequests REST Resource: v1.regionInstanceGroupManagers REST Resource: v1.regionInstanceGroups REST Resource: v1.regionInstanceTemplates REST Resource: v1.regionInstances REST Resource: v1.regionInstantSnapshots REST Resource: v1.regionNetworkEndpointGroups REST Resource: v1.regionNetworkFirewallPolicies REST Resource: v1.regionNotificationEndpoints REST Resource: v1.regionOperations REST Resource: v1.regionSecurityPolicies REST Resource: v1.regionSslCertificates REST Resource: v1.regionSslPolicies REST Resource: v1.regionTargetHttpProxies REST Resource: v1.regionTargetHttpsProxies REST Resource: v1.regionTargetTcpProxies REST Resource: v1.regionUrlMaps REST Resource: v1.regionZones REST Resource: v1.regions REST Resource: v1.reservationBlocks REST Resource: v1.reservationSlots REST Resource: v1.reservationSubBlocks REST Resource: v1.reservations REST Resource: v1.resourcePolicies REST Resource: v1.routers REST Resource: v1.routes REST Resource: v1.securityPolicies REST Resource: v1.serviceAttachments REST Resource: v1.snapshotSettings REST Resource: v1.snapshots REST Resource: v1.sslCertificates REST Resource: v1.sslPolicies REST Resource: v1.storagePoolTypes REST Resource: v1.storagePools REST Resource: v1.subnetworks REST Resource: v1.targetGrpcProxies REST Resource: v1.targetHttpProxies REST Resource: v1.targetHttpsProxies REST Resource: v1.targetInstances REST Resource: v1.targetPools REST Resource: v1.targetSslProxies REST Resource: v1.targetTcpProxies REST Resource: v1.targetVpnGateways REST Resource: v1.urlMaps REST Resource: v1.vpnGateways REST Resource: v1.vpnTunnels REST Resource: v1.wireGroups REST Resource: v1.zoneOperations REST Resource: v1.zoneVmExtensionPolicies REST Resource: v1.zones Service: compute.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "REST Resource: v1.images Methods delete DELETE /compute/v1/projects/{project}/global/images/{image} Deletes the specified image. deprecate POST /compute/v1/projects/{project}/global/images/{image}/deprecate Sets the deprecation status of an image. get GET /compute/v1/projects/{project}/global/images/{image} Returns the specified image. getFromFamily GET /compute/v1/projects/{project}/global/images/family/{family} Returns the latest image that is part of an image family and is not deprecated. getIamPolicy GET /compute/v1/projects/{project}/global/images/{resource}/getIamPolicy Gets the access control policy for a resource. insert POST /compute/v1/projects/{project}/global/images Creates an image in the specified project using the data included in the request. list GET /compute/v1/projects/{project}/global/images Retrieves the list of custom images available to the specified project. patch PATCH /compute/v1/projects/{project}/global/images/{image} Patches the specified image with the data included in the request. setIamPolicy POST /compute/v1/projects/{project}/global/images/{resource}/setIamPolicy Sets the access control policy on the specified resource. setLabels POST /compute/v1/projects/{project}/global/images/{resource}/setLabels Sets the labels on an image. testIamPermissions POST /compute/v1/projects/{project}/global/images/{resource}/testIamPermissions Returns permissions that a caller has on the specified resource.",
+          "REST Resource: v1.imageFamilyViews Methods get GET /compute/v1/projects/{project}/zones/{zone}/imageFamilyViews/{family} Returns the latest image that is part of an image family, is not deprecated and is rolled out in the specified zone."
+        ]
+      },
+      {
+        "title": "Compute Engine API \\_|\\_ Google Cloud Documentation",
+        "url": "https://developers.google.com/compute/docs/reference/rest/v1",
+        "source_id": "site-docs-root-3",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: v1.acceleratorTypes REST Resource: v1.addresses REST Resource: v1.advice REST Resource: v1.autoscalers REST Resource: v1.backendBuckets REST Resource: v1.backendServices REST Resource: v1.crossSiteNetworks REST Resource: v1.diskTypes REST Resource: v1.disks REST Resource: v1.externalVpnGateways REST Resource: v1.firewallPolicies REST Resource: v1.firewalls REST Resource: v1.forwardingRules REST Resource: v1.futureReservations REST Resource: v1.globalAddresses REST Resource: v1.globalForwardingRules REST Resource: v1.globalNetworkEndpointGroups REST Resource: v1.globalOperations REST Resource: v1.globalOrganizationOperations REST Resource: v1.globalPublicDelegatedPrefixes REST Resource: v1.healthChecks REST Resource: v1.httpHealthChecks REST Resource: v1.httpsHealthChecks REST Resource: v1.imageFamilyViews REST Resource: v1.images REST Resource: v1.instanceGroupManagerResizeRequests REST Resource: v1.instanceGroupManagers REST Resource: v1.instanceGroups REST Resource: v1.instanceSettings REST Resource: v1.instanceTemplates REST Resource: v1.instances REST Resource: v1.instantSnapshots REST Resource: v1.interconnectAttachmentGroups REST Resource: v1.interconnectAttachments REST Resource: v1.interconnectGroups REST Resource: v1.interconnectLocations REST Resource: v1.interconnectRemoteLocations REST Resource: v1.interconnects REST Resource: v1.licenseCodes REST Resource: v1.licenses REST Resource: v1.machineImages REST Resource: v1.machineTypes REST Resource: v1.networkAttachments REST Resource: v1.networkEdgeSecurityServices REST Resource: v1.networkEndpointGroups REST Resource: v1.networkFirewallPolicies REST Resource: v1.networkProfiles REST Resource: v1.networks REST Resource: v1.nodeGroups REST Resource: v1.nodeTemplates REST Resource: v1.nodeTypes REST Resource: v1.organizationSecurityPolicies REST Resource: v1.packetMirrorings REST Resource: v1.previewFeatures REST Resource: v1.projects REST Resource: v1.publicAdvertisedPrefixes REST Resource: v1.publicDelegatedPrefixes REST Resource: v1.regionAutoscalers REST Resource: v1.regionBackendBuckets REST Resource: v1.regionBackendServices REST Resource: v1.regionCommitments REST Resource: v1.regionCompositeHealthChecks REST Resource: v1.regionDiskTypes REST Resource: v1.regionDisks REST Resource: v1.regionHealthAggregationPolicies REST Resource: v1.regionHealthCheckServices REST Resource: v1.regionHealthChecks REST Resource: v1.regionHealthSources REST Resource: v1.regionInstanceGroupManagerResizeRequests REST Resource: v1.regionInstanceGroupManagers REST Resource: v1.regionInstanceGroups REST Resource: v1.regionInstanceTemplates REST Resource: v1.regionInstances REST Resource: v1.regionInstantSnapshots REST Resource: v1.regionNetworkEndpointGroups REST Resource: v1.regionNetworkFirewallPolicies REST Resource: v1.regionNotificationEndpoints REST Resource: v1.regionOperations REST Resource: v1.regionSecurityPolicies REST Resource: v1.regionSslCertificates REST Resource: v1.regionSslPolicies REST Resource: v1.regionTargetHttpProxies REST Resource: v1.regionTargetHttpsProxies REST Resource: v1.regionTargetTcpProxies REST Resource: v1.regionUrlMaps REST Resource: v1.regionZones REST Resource: v1.regions REST Resource: v1.reservationBlocks REST Resource: v1.reservationSlots REST Resource: v1.reservationSubBlocks REST Resource: v1.reservations REST Resource: v1.resourcePolicies REST Resource: v1.routers REST Resource: v1.routes REST Resource: v1.securityPolicies REST Resource: v1.serviceAttachments REST Resource: v1.snapshotSettings REST Resource: v1.snapshots REST Resource: v1.sslCertificates REST Resource: v1.sslPolicies REST Resource: v1.storagePoolTypes REST Resource: v1.storagePools REST Resource: v1.subnetworks REST Resource: v1.targetGrpcProxies REST Resource: v1.targetHttpProxies REST Resource: v1.targetHttpsProxies REST Resource: v1.targetInstances REST Resource: v1.targetPools REST Resource: v1.targetSslProxies REST Resource: v1.targetTcpProxies REST Resource: v1.targetVpnGateways REST Resource: v1.urlMaps REST Resource: v1.vpnGateways REST Resource: v1.vpnTunnels REST Resource: v1.wireGroups REST Resource: v1.zoneOperations REST Resource: v1.zoneVmExtensionPolicies REST Resource: v1.zones Service: compute.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "REST Resource: v1.images Methods delete DELETE /compute/v1/projects/{project}/global/images/{image} Deletes the specified image. deprecate POST /compute/v1/projects/{project}/global/images/{image}/deprecate Sets the deprecation status of an image. get GET /compute/v1/projects/{project}/global/images/{image} Returns the specified image. getFromFamily GET /compute/v1/projects/{project}/global/images/family/{family} Returns the latest image that is part of an image family and is not deprecated. getIamPolicy GET /compute/v1/projects/{project}/global/images/{resource}/getIamPolicy Gets the access control policy for a resource. insert POST /compute/v1/projects/{project}/global/images Creates an image in the specified project using the data included in the request. list GET /compute/v1/projects/{project}/global/images Retrieves the list of custom images available to the specified project. patch PATCH /compute/v1/projects/{project}/global/images/{image} Patches the specified image with the data included in the request. setIamPolicy POST /compute/v1/projects/{project}/global/images/{resource}/setIamPolicy Sets the access control policy on the specified resource. setLabels POST /compute/v1/projects/{project}/global/images/{resource}/setLabels Sets the labels on an image. testIamPermissions POST /compute/v1/projects/{project}/global/images/{resource}/testIamPermissions Returns permissions that a caller has on the specified resource.",
+          "REST Resource: v1.imageFamilyViews Methods get GET /compute/v1/projects/{project}/zones/{zone}/imageFamilyViews/{family} Returns the latest image that is part of an image family, is not deprecated and is rolled out in the specified zone."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "developers.google.com",
+      "v1.acceleratorTypes",
+      "v1.addresses",
+      "v1.advice",
+      "v1.autoscalers",
+      "v1.backendBuckets",
+      "v1.backendServices",
+      "v1.crossSiteNetworks",
+      "v1.disks",
+      "v1.diskTypes",
+      "v1.externalVpnGateways",
+      "v1.firewallPolicies",
+      "v1.firewalls",
+      "v1.forwardingRules",
+      "v1.futureReservations",
+      "v1.globalAddresses",
+      "v1.globalForwardingRules",
+      "v1.globalNetworkEndpointGroups",
+      "v1.globalOperations",
+      "v1.globalOrganizationOperations",
+      "v1.globalPublicDelegatedPrefixes",
+      "v1.healthChecks",
+      "v1.httpHealthChecks",
+      "v1.httpsHealthChecks",
+      "v1.imageFamilyViews",
+      "v1.images",
+      "v1.instanceGroupManagerResizeRequests",
+      "v1.instanceGroupManagers",
+      "v1.instanceGroups",
+      "v1.instances",
+      "v1.instanceSettings",
+      "v1.instanceTemplates",
+      "v1.instantSnapshots",
+      "v1.interconnectAttachmentGroups",
+      "v1.interconnectAttachments",
+      "v1.interconnectGroups",
+      "v1.interconnectLocations",
+      "v1.interconnectRemoteLocations",
+      "v1.interconnects",
+      "v1.licenseCodes",
+      "v1.licenses",
+      "v1.machineImages",
+      "v1.machineTypes",
+      "v1.networkAttachments",
+      "v1.networkEdgeSecurityServices",
+      "v1.networkEndpointGroups",
+      "v1.networkFirewallPolicies",
+      "v1.networkProfiles",
+      "v1.networks",
+      "v1.nodeGroups",
+      "v1.nodeTemplates",
+      "v1.nodeTypes",
+      "v1.organizationSecurityPolicies",
+      "v1.packetMirrorings",
+      "v1.previewFeatures",
+      "v1.projects",
+      "v1.publicAdvertisedPrefixes",
+      "v1.publicDelegatedPrefixes",
+      "v1.regionAutoscalers",
+      "v1.regionBackendBuckets",
+      "v1.regionBackendServices",
+      "v1.regionCommitments",
+      "v1.regionCompositeHealthChecks",
+      "v1.regionDisks",
+      "v1.regionDiskTypes",
+      "v1.regionHealthAggregationPolicies",
+      "v1.regionHealthChecks",
+      "v1.regionHealthCheckServices",
+      "v1.regionHealthSources",
+      "v1.regionInstanceGroupManagerResizeRequests",
+      "v1.regionInstanceGroupManagers",
+      "v1.regionInstanceGroups",
+      "v1.regionInstances",
+      "v1.regionInstanceTemplates",
+      "v1.regionInstantSnapshots",
+      "v1.regionNetworkEndpointGroups",
+      "v1.regionNetworkFirewallPolicies",
+      "v1.regionNotificationEndpoints",
+      "v1.regionOperations",
+      "v1.regions",
+      "v1.regionSecurityPolicies",
+      "v1.regionSslCertificates",
+      "v1.regionSslPolicies",
+      "v1.regionTargetHttpProxies",
+      "v1.regionTargetHttpsProxies",
+      "v1.regionTargetTcpProxies",
+      "v1.regionUrlMaps",
+      "v1.regionZones",
+      "v1.reservationBlocks",
+      "v1.reservations",
+      "v1.reservationSlots",
+      "v1.reservationSubBlocks",
+      "v1.resourcePolicies",
+      "v1.routers",
+      "v1.routes",
+      "v1.securityPolicies",
+      "v1.serviceAttachments",
+      "v1.snapshots",
+      "v1.snapshotSettings",
+      "v1.sslCertificates",
+      "v1.sslPolicies",
+      "v1.storagePools",
+      "v1.storagePoolTypes",
+      "v1.subnetworks",
+      "v1.targetGrpcProxies",
+      "v1.targetHttpProxies",
+      "v1.targetHttpsProxies",
+      "v1.targetInstances",
+      "v1.targetPools",
+      "v1.targetSslProxies",
+      "v1.targetTcpProxies",
+      "v1.targetVpnGateways",
+      "v1.urlMaps",
+      "v1.vpnGateways",
+      "v1.vpnTunnels",
+      "v1.wireGroups",
+      "v1.zoneOperations",
+      "v1.zones",
+      "v1.zoneVmExtensionPolicies"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+        "https://developers.google.com/compute/docs/reference/rest/v1",
+        "https://docs.cloud.google.com/compute/docs/reference/rest/v1"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+        "https://developers.google.com/compute/docs/reference/rest/v1",
+        "https://docs.cloud.google.com/compute/docs/reference/rest/v1"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+        "https://developers.google.com/compute/docs/reference/rest/v1",
+        "https://docs.cloud.google.com/compute/docs/reference/rest/v1"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+        "https://developers.google.com/compute/docs/reference/rest/v1",
+        "https://docs.cloud.google.com/compute/docs/reference/rest/v1"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+        "https://developers.google.com/compute/docs/reference/rest/v1",
+        "https://docs.cloud.google.com/compute/docs/reference/rest/v1"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+        "https://developers.google.com/compute/docs/reference/rest/v1",
+        "https://docs.cloud.google.com/compute/docs/reference/rest/v1"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+        "https://developers.google.com/compute/docs/reference/rest/v1",
+        "https://docs.cloud.google.com/compute/docs/reference/rest/v1"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+        "https://developers.google.com/compute/docs/reference/rest/v1",
+        "https://docs.cloud.google.com/compute/docs/reference/rest/v1"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+        "https://developers.google.com/compute/docs/reference/rest/v1",
+        "https://docs.cloud.google.com/compute/docs/reference/rest/v1"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+        "https://developers.google.com/compute/docs/reference/rest/v1",
+        "https://docs.cloud.google.com/compute/docs/reference/rest/v1"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+        "https://developers.google.com/compute/docs/reference/rest/v1",
+        "https://docs.cloud.google.com/compute/docs/reference/rest/v1"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+        "https://developers.google.com/compute/docs/reference/rest/v1",
+        "https://docs.cloud.google.com/compute/docs/reference/rest/v1"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+        "https://developers.google.com/compute/docs/reference/rest/v1",
+        "https://docs.cloud.google.com/compute/docs/reference/rest/v1"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+        "https://developers.google.com/compute/docs/reference/rest/v1",
+        "https://docs.cloud.google.com/compute/docs/reference/rest/v1"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+        "https://developers.google.com/compute/docs/reference/rest/v1",
+        "https://docs.cloud.google.com/compute/docs/reference/rest/v1"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+        "https://developers.google.com/compute/docs/reference/rest/v1",
+        "https://docs.cloud.google.com/compute/docs/reference/rest/v1"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+        "https://developers.google.com/compute/docs/reference/rest/v1",
+        "https://docs.cloud.google.com/compute/docs/reference/rest/v1"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+        "https://developers.google.com/compute/docs/reference/rest/v1",
+        "https://docs.cloud.google.com/compute/docs/reference/rest/v1"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+        "https://developers.google.com/compute/docs/reference/rest/v1",
+        "https://docs.cloud.google.com/compute/docs/reference/rest/v1"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/general-purpose-machines",
+        "https://developers.google.com/compute/docs/reference/rest/v1",
+        "https://docs.cloud.google.com/compute/docs/reference/rest/v1"
+      ]
+    }
+  ]
+}

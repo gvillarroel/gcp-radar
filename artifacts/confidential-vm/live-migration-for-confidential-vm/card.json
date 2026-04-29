@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:59.004Z",
+  "source_step08_card": "data/step-08/current/products/confidential-vm/card.json",
+  "product_name": "Confidential VM",
+  "product_slug": "confidential-vm",
+  "feature_name": "Live migration for Confidential VM",
+  "feature_slug": "live-migration-for-confidential-vm",
+  "summary": "Confidential VM supports live migration for eligible N2D instances using AMD SEV and supported operating system images.",
+  "extended_definition": "Confidential VM supports live migration for eligible N2D instances using AMD SEV and supported operating system images.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-a-confidential-vm-instance",
+      "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-confidential-vm-instance",
+      "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/error-messages",
+      "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/troubleshoot-live-migration"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Live migration \\_|\\_ Confidential VM \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/troubleshoot-live-migration",
+        "source_id": "site-docs-reference",
+        "final_score": 287,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A Confidential VM instance must have the following configuration to support live migration : An N2D or a C3D machine type AMD SEV Confidential Computing technology An operating system image that supports live migration Be created after January 15, 2024 All other Confidential VM types don't support live migration, and must set their onHostMaintenance policy to TERMINATE when being created.",
+          "Minimize the impact of host maintenance events To minimize the impact of host maintenance events on Confidential VM instances that don't support live migration, you can do the following things: Monitor for host maintenance event notices Simulate a host maintenance event Change your workload Provision your Confidential VM instances on sole-tenancy nodes Monitor for maintenance event notices To receive advance notice of host events, monitor the /computeMetadata/v1/instance/maintenance-event metadata value.",
+          "Host maintenance events for Confidential VM instances that don't support live migration During host maintenance events, Confidential VM instances that don't support live migration and have default host maintenance policy settings are stopped."
+        ]
+      },
+      {
+        "title": "Live migration \\_|\\_ Confidential VM \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/error-messages",
+        "source_id": "site-docs-root",
+        "final_score": 267,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A Confidential VM instance must have the following configuration to support live migration : An N2D or a C3D machine type AMD SEV Confidential Computing technology An operating system image that supports live migration Be created after January 15, 2024 All other Confidential VM types don't support live migration, and must set their onHostMaintenance policy to TERMINATE when being created.",
+          "Minimize the impact of host maintenance events To minimize the impact of host maintenance events on Confidential VM instances that don't support live migration, you can do the following things: Monitor for host maintenance event notices Simulate a host maintenance event Change your workload Provision your Confidential VM instances on sole-tenancy nodes Monitor for maintenance event notices To receive advance notice of host events, monitor the /computeMetadata/v1/instance/maintenance-event metadata value.",
+          "Host maintenance events for Confidential VM instances that don't support live migration During host maintenance events, Confidential VM instances that don't support live migration and have default host maintenance policy settings are stopped."
+        ]
+      },
+      {
+        "title": "Create a Confidential VM instance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-a-confidential-vm-instance",
+        "source_id": "site-docs-reference",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can check the active account by running gcloud auth list . $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } $body = @\" { \"name\": \"my-instance\", \"confidentialInstanceConfig\": { \"confidentialInstanceType\": \"SEV SNP\" }, \"machineType\": \"zones/us-central1-a/machineTypes/n2d-standard-2\", \"minCpuPlatform\": \"AMD Milan\", \"scheduling\": { \"automaticRestart\": true, \"nodeAffinities\": [], \"onHostMaintenance\": \"TERMINATE\", \"preemptible\": false } \"disks\": [ { \"boot\": true, \"initializeParams\": { \"sourceImage\": \"projects/ubuntu-os-cloud/global/images/family/ubuntu-2404-lts-amd64\" } } ], \"networkInterfaces\": [ { \"nicType\": \"gVNIC\" } ] } \"@ Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -Body $body ` -Uri \"https://compute.googleapis.com/compute/projects/my-project/zones/us-central1-a/instances\" Select-Object -Expand Content Response A response to a creation request looks similar to the following example: { \"kind\" : \"compute#operation\" , \"id\" : \"0000000000000000000\" , \"name\" : \"operation-0000000000000-0000000000000-00000000-00000000\" , \"zone\" : \"https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a\" , \"operationType\" : \"insert\" , \"targetLink\" : \"https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/instances/my-instance\" , \"targetId\" : \"0000000000000000000\" , \"status\" : \"RUNNING\" , \"user\" : \"alex@example.com\" , \"progress\" : 0 , \"insertTime\" : \"2024-09-29T18:06:52.174-07:00\" , \"startTime\" : \"2024-09-29T18:06:52.175-07:00\" , \"selfLink\" : \"https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/operations/operation-0000000000000-0000000000000-00000000-00000000\" } You can check the VM creation progress by making a GET request to the selfLink : GET https://www.googleapis.com/compute/v1/projects/ PROJECT ID /zones/ ZONE NAME /operations/ OPERATION ID Enable higher network bandwidth for specific machine types Larger machine types support high-bandwidth networking.",
+          "MAINTENANCE POLICY : For N2D and C3D machine types that use SEV, set this to MIGRATE for live migration support.",
+          "MAINTENANCE POLICY : For N2D machine types that use SEV, set this to MIGRATE for live migration support."
+        ]
+      },
+      {
+        "title": "Create a Confidential VM instance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-confidential-vm-instance",
+        "source_id": "site-docs-root",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can check the active account by running gcloud auth list . $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } $body = @\" { \"name\": \"my-instance\", \"confidentialInstanceConfig\": { \"confidentialInstanceType\": \"SEV SNP\" }, \"machineType\": \"zones/us-central1-a/machineTypes/n2d-standard-2\", \"minCpuPlatform\": \"AMD Milan\", \"scheduling\": { \"automaticRestart\": true, \"nodeAffinities\": [], \"onHostMaintenance\": \"TERMINATE\", \"preemptible\": false } \"disks\": [ { \"boot\": true, \"initializeParams\": { \"sourceImage\": \"projects/ubuntu-os-cloud/global/images/family/ubuntu-2404-lts-amd64\" } } ], \"networkInterfaces\": [ { \"nicType\": \"gVNIC\" } ] } \"@ Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -Body $body ` -Uri \"https://compute.googleapis.com/compute/projects/my-project/zones/us-central1-a/instances\" Select-Object -Expand Content Response A response to a creation request looks similar to the following example: { \"kind\" : \"compute#operation\" , \"id\" : \"0000000000000000000\" , \"name\" : \"operation-0000000000000-0000000000000-00000000-00000000\" , \"zone\" : \"https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a\" , \"operationType\" : \"insert\" , \"targetLink\" : \"https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/instances/my-instance\" , \"targetId\" : \"0000000000000000000\" , \"status\" : \"RUNNING\" , \"user\" : \"alex@example.com\" , \"progress\" : 0 , \"insertTime\" : \"2024-09-29T18:06:52.174-07:00\" , \"startTime\" : \"2024-09-29T18:06:52.175-07:00\" , \"selfLink\" : \"https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/operations/operation-0000000000000-0000000000000-00000000-00000000\" } You can check the VM creation progress by making a GET request to the selfLink : GET https://www.googleapis.com/compute/v1/projects/ PROJECT ID /zones/ ZONE NAME /operations/ OPERATION ID Enable higher network bandwidth for specific machine types Larger machine types support high-bandwidth networking.",
+          "MAINTENANCE POLICY : For N2D and C3D machine types that use SEV, set this to MIGRATE for live migration support.",
+          "MAINTENANCE POLICY : For N2D machine types that use SEV, set this to MIGRATE for live migration support."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/troubleshoot-live-migration",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/error-messages",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-a-confidential-vm-instance",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-confidential-vm-instance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/troubleshoot-live-migration",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/error-messages",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-a-confidential-vm-instance",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-confidential-vm-instance"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/troubleshoot-live-migration",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/error-messages",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-a-confidential-vm-instance",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-confidential-vm-instance"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/troubleshoot-live-migration",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/error-messages",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-a-confidential-vm-instance",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-confidential-vm-instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/troubleshoot-live-migration",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/error-messages",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-a-confidential-vm-instance",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-confidential-vm-instance"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/troubleshoot-live-migration",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/error-messages",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-a-confidential-vm-instance",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-confidential-vm-instance"
+      ]
+    }
+  ]
+}

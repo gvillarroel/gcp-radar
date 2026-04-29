@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.828Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry",
+  "feature_name": "Artifact Registry customer-managed encryption keys",
+  "feature_slug": "artifact-registry-customer-managed-encryption-keys",
+  "summary": "Artifact Registry now supports using Customer-Managed Encryption Keys (CMEK) to protect repository data.",
+  "extended_definition": "Artifact Registry now supports using Customer-Managed Encryption Keys (CMEK) to protect repository data.",
+  "lifecycle": {
+    "latest_feature_date": "2020-07-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/cmek",
+      "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+      "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Enabling customer-managed encryption keys \\_|\\_ Artifact Registry \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/cmek",
+        "source_id": "site-docs-root-2",
+        "final_score": 230,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application development Artifact Registry Guides Send feedback Enabling customer-managed encryption keys Stay organized with collections Save and categorize content based on your preferences.",
+          "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Artifact Registry.",
+          "This page describes how to encrypt content stored in repositories with customer-managed encryption keys (CMEK)."
+        ]
+      },
+      {
+        "title": "\"Transition from Container Registry \\_|\\_ Artifact Registry \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "source_id": "site-docs-root",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enforcement of organization policy, including encryption with customer-managed encryption keys (CMEK) and location constraints .",
+          "Customer-managed encryption keys (CMEK) Use CMEK to encrypt the storage buckets that contain your images.",
+          "Image streaming Unavailable Stream images in Artifact Registry to GKE or Managed Service for Apache Spark for faster autoscaling, faster pod startup, and reduced latency when pulling large images."
+        ]
+      },
+      {
+        "title": "Repository overview \\_|\\_ Artifact Registry \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "source_id": "site-docs-root",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you have specific compliance or regulatory requirements related to the keys that protect your data, you can create repositories encrypted with customer-managed encryption keys (CMEK).",
+          "Data encryption By default, Google Cloud automatically encrypts data when it is at rest using Google-owned and Google-managed encryption keys.",
+          "You can only use image streaming in GKE and Managed Service for Apache Spark if your container images are stored in Artifact Registry repositories in the same region as your workloads or a multi-region that corresponds to the region with your workloads."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcr.io",
+      "projects.locations.repositories"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/cmek",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/cmek",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/cmek",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/cmek",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/cmek",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/cmek",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories"
+      ]
+    }
+  ]
+}

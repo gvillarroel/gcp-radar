@@ -1,0 +1,157 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:23.096Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-virtual-machines/card.json",
+  "product_name": "Migrate to Virtual Machines",
+  "product_slug": "migrate-to-virtual-machines",
+  "feature_name": "Agentless vSphere migration",
+  "feature_slug": "agentless-vsphere-migration",
+  "summary": "Supports agentless migration of vSphere source environments using the Migrate Connector appliance.",
+  "extended_definition": "Supports agentless migration of vSphere source environments using the Migrate Connector appliance.",
+  "lifecycle": {
+    "latest_feature_date": "2021-04-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-gcve-source",
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-vmware-source",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-gcve-source",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-vmware-source"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Prepare a VMware source for migration \\_|\\_ Migrate to Virtual Machines\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-vmware-source",
+        "source_id": "site-docs-root-2",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following diagram shows the architecture of a typical Migrate to Virtual Machines deployment: Follow these steps to install and configure a Migrate Connector, and create a VMware source: On vSphere , you must create a vCenter user account with the permissions required by the Migrate Connector to access your vSphere environment.",
+          "In that way, if one region goes down, you can still perform migrations by using a migration source associated with a different region.",
+          "To configure a migration source, you have to install and configure the Migrate Connector on your on-premises vSphere data center."
+        ]
+      },
+      {
+        "title": "\"Prepare a VMware source for migration \\_|\\_ Migrate to Virtual Machines\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-vmware-source",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following diagram shows the architecture of a typical Migrate to Virtual Machines deployment: Follow these steps to install and configure a Migrate Connector, and create a VMware source: On vSphere , you must create a vCenter user account with the permissions required by the Migrate Connector to access your vSphere environment.",
+          "In that way, if one region goes down, you can still perform migrations by using a migration source associated with a different region.",
+          "To configure a migration source, you have to install and configure the Migrate Connector on your on-premises vSphere data center."
+        ]
+      },
+      {
+        "title": "\"Prepare a Google Cloud VMware Engine source for migration \\_|\\_ Migrate\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-gcve-source",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In that way, if one region goes down, you can still perform migrations by using a migration source associated with a different region.",
+          "Note: Migrate to Virtual Machines supports migration to multiple regions using the same host project.",
+          "The following table lists the network connectivity requirements for the connector: Source Destination Firewall scope Protocol Port Migrate Connector vCenter Server Corp LAN HTTPS TCP/443 Migrate Connector vCenter Server Corp LAN VMW NBD TCP/902 Migrate Connector vSphere ESXi Corp LAN VMW NBD TCP/902 Migrate Connector Google Cloud APIs and Artifact Registry ( .googleapis.com, gcr.io) Internet, Cloud VPN , or Cloud Interconnect HTTPS TCP/443 Migrate Connector Corp DNS Server Corp LAN DNS TCP/UDP/53 If you configure the Migrate Connector VM on vSphere or VMware Engine to use a proxy server , traffic sent to Google Cloud APIs is directed over the proxy server."
+        ]
+      },
+      {
+        "title": "\"Prepare a Google Cloud VMware Engine source for migration \\_|\\_ Migrate\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-gcve-source",
+        "source_id": "site-docs-root-2",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In that way, if one region goes down, you can still perform migrations by using a migration source associated with a different region.",
+          "Note: Migrate to Virtual Machines supports migration to multiple regions using the same host project.",
+          "The following table lists the network connectivity requirements for the connector: Source Destination Firewall scope Protocol Port Migrate Connector vCenter Server Corp LAN HTTPS TCP/443 Migrate Connector vCenter Server Corp LAN VMW NBD TCP/902 Migrate Connector vSphere ESXi Corp LAN VMW NBD TCP/902 Migrate Connector Google Cloud APIs and Artifact Registry ( .googleapis.com, gcr.io) Internet, Cloud VPN , or Cloud Interconnect HTTPS TCP/443 Migrate Connector Corp DNS Server Corp LAN DNS TCP/UDP/53 If you configure the Migrate Connector VM on vSphere or VMware Engine to use a proxy server , traffic sent to Google Cloud APIs is directed over the proxy server."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcr.io",
+      "googleapis.com",
+      "iam.serviceAccountCreator",
+      "vmmigration.admin"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.serviceAccountCreator",
+      "roles/vmmigration.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-vmware-source",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-vmware-source",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-gcve-source",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-gcve-source"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-vmware-source",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-vmware-source",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-gcve-source",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-gcve-source"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-vmware-source",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-vmware-source",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-gcve-source",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-gcve-source"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-vmware-source",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-vmware-source",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-gcve-source",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-gcve-source"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-vmware-source",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-vmware-source",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-gcve-source",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-gcve-source"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-vmware-source",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-vmware-source",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-gcve-source",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/create-a-gcve-source"
+      ]
+    }
+  ]
+}

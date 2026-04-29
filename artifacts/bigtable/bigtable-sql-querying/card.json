@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:45.183Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Bigtable SQL querying",
+  "feature_slug": "bigtable-sql-querying",
+  "summary": "Bigtable now supports running SQL queries, available in preview.",
+  "extended_definition": "Bigtable now supports running SQL queries, available in preview.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+      "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "When comparing the two databases, you should understand how each database physically stores data differently in the following aspects: The data distribution strategy The number of cell versions available The storage disk type The data durability and replication mechanism Data distribution In Cassandra, a consistent hash of the primary key's partition columns is the recommended method of determining data distribution across the various SSTables served by cluster nodes.",
+          "When querying Bigtable using SQL, column families are treated like Cassandra's maps . map key : key that uniquely identifies a key-value entry in a Cassandra map column qualifier : a label for a value stored in a table that's indexed by the unique row key.",
+          "When querying Bigtable using SQL, columns are treated like keys of a map . column : the label for a value stored in a table that's indexed by the unique primary key. column : the label for a value stored in a table that's indexed by the unique row key."
+        ]
+      },
+      {
+        "title": "Bigtable for Aerospike users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "source_id": "site-docs-root-2",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the node that's responsible for the requested key range is overloaded or temporarily unavailable in a cluster, this profile provides automatic failover.",
+          "Distributes records based on hashes, so scanning many consecutive keys requires querying multiple nodes and aggregating results, which can be slower.",
+          "Additionally, there are read-modify-write and check-and-mutate operations, though these are not available with multi-cluster routing profiles."
+        ]
+      },
+      {
+        "title": "Continuous materialized views \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "source_id": "site-docs-reference-2",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "This helps to ensure that enough compute capacity is available during the execution of the continuously running SQL query.",
+          "During this time, the view is unavailable for querying.",
+          "Use counters instead of continuous materialized views for the following: Aggregations that don't require filters and don't need to be across rows If you need to immediately read your writes from the cluster they are written to Use continuous materialized views when you want to do the following: Generate a different key for queries against your aggregations See changes to the base table reflected in your aggregations Automatically combine data across multiple rows Use a combination of counters and continuous materialized views for use cases like when you want to do the following: Capture fresh metrics in an aggregate cell but keep historical rollups of those metrics Combine metrics in a continuous materialized view Resource provisioning and performance Ongoing processing for continuous materialized views occurs as a low-priority background job."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:49.591Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "App Engine log export to Cloud Storage and BigQuery",
+  "feature_slug": "app-engine-log-export-to-cloud-storage-and-bigquery",
+  "summary": "App Engine logs can be exported from Cloud Logging to Cloud Storage and BigQuery.",
+  "extended_definition": "App Engine logs can be exported from Cloud Logging to Cloud Storage and BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2015-01-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+      "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+      "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Cloud platform logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "source_id": "site-docs-reference",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "N/A N/A Google Analytics Data API Logging API service name: analyticsdata.googleapis.com Log ID Monitored resource Payload Labels Severities analyticsdata.googleapis.com%2Ffresh bigquery export status analyticsdata.googleapis.com/FreshBigQueryExport type.googleapis.com/google.analytics.cloud.ExportStatusLog N/A DEFAULT INFO WARNING analyticsdata.googleapis.com%2Fbigquery daily export status analyticsdata.googleapis.com/BigQueryDailyExport type.googleapis.com/google.analytics.cloud.ExportStatusLog N/A DEFAULT INFO WARNING Google Binary Authorization API Logging API service name: binaryauthorization.googleapis.com Log ID Monitored resource Payload Labels Severities binaryauthorization.googleapis.com%2Fcontinuous validation k8s cluster v1beta1: type.googleapis.com/google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent N/A WARNING Google Maps Platform - Mobility Billing Logging API service name: mobilitybilling.googleapis.com Log ID Monitored resource Payload Labels Severities mobilitybilling.googleapis.com%2Fexternal cloud logs mobilitybilling.googleapis.com/Project type.googleapis.com/google.maps.mobilitybilling.logs.v1.ReportBillableEventLog environment DEFAULT ERROR Google Workspace Add-ons Logging API service name: gsuiteaddons.googleapis.com Log ID Monitored resource Payload Labels Severities gsuiteaddons.googleapis.com%2Ferrors g suite add ons type.googleapis.com/google.cloud.gsuiteaddons.logging.v1.GSuiteAddOnsLogEntry N/A ERROR Identity Toolkit Logging API service name: identitytoolkit.googleapis.com Log ID Monitored resource Payload Labels Severities identitytoolkit.googleapis.com%2Frequests identitytoolkit project type.googleapis.com/google.cloud.identitytoolkit.logging.RequestLog N/A INFO ERROR identitytoolkit.googleapis.com%2Frequests identitytoolkit tenant type.googleapis.com/google.cloud.identitytoolkit.logging.RequestLog N/A INFO ERROR Immersive Stream for XR Logging API service name: stream.googleapis.com Log ID Monitored resource Payload Labels Severities stream.googleapis.com%2Fsession event stream.googleapis.com/StreamInstance type.googleapis.com/google.cloud.stream.logging.v1.SessionEventLog N/A INFO ERROR Issuer Switch Service Logging API service name: issuerswitch.googleapis.com Log ID Monitored resource Payload Labels Severities issuerswitch.googleapis.com%2Fpgis activity issuerswitch.googleapis.com/UPIInstance type.googleapis.com/google.cloud.paymentgateway.issuerswitch.v1.UpiTransaction N/A DEBUG ERROR INFO Key Management Service Logging API service name: cloudkms.googleapis.com Log ID Monitored resource Payload Labels Severities cloudkms.googleapis.com%2Fcryptokey events cloudkms cryptokey type.googleapis.com/google.cloud.kms.logging.v1.CryptoKeyEvent N/A INFO ERROR cloudkms.googleapis.com%2Fcryptokeyversion events cloudkms cryptokeyversion type.googleapis.com/google.cloud.kms.logging.v1.CryptoKeyVersionEvent N/A INFO ERROR Live Stream API Logging API service name: livestream.googleapis.com Log ID Monitored resource Payload Labels Severities livestream.googleapis.com%2Fchannel activities livestream.googleapis.com/Channel type.googleapis.com/google.cloud.video.livestream.logging.v1.ChannelActivity N/A INFO DEBUG ERROR Local Rides and Deliveries API Logging API service name: fleetengine.googleapis.com Log ID Monitored resource Payload Labels Severities fleetengine.googleapis.com%2Fupdate vehicle attributes fleetengine.googleapis.com/Fleet type.googleapis.com/maps.fleetengine.v1.UpdateVehicleAttributesLog environment vehicle id DEFAULT ERROR Logging API Logging API service name: logging.googleapis.com Log ID Monitored resource Payload Labels Severities logging.googleapis.com%2Fsink error logging sink A report of an error encountered while trying to export data to a configured log sink. activity type name destination error code error detail log entity id log filter sink id ERROR logging.googleapis.com%2Fmetric throttled metric Informs customer that a metric associated with Logs-based metrics is being throttled. activity type name dropped labels label cardinalities limit type metric name user cardinality WARNING Memorystore Logging API service name: memorystore.googleapis.com Log ID Monitored resource Payload Labels Severities memorystore.googleapis.com%2Flog stream memorystore.googleapis.com/Instance type.googleapis.com/google.logging.v2.LogEntry CONSUMER PROJECT INSTANCE ID INFO WARNING ERROR Network Analyzer Logging API service name: networkanalyzer.googleapis.com Log ID Monitored resource Payload Labels Severities networkanalyzer.googleapis.com%2Fanalyzer reports networking.googleapis.com/Location type.googleapis.com/google.cloud.networkanalyzer.logging.v1.Report N/A DEFAULT Network Services API Logging API service name: networkservices.googleapis.com Log ID Monitored resource Payload Labels Severities networkservices.googleapis.com%2Fmesh events mesh A simple JSON payload containing a single 'description' field with event details.",
+          "N/A DEFAULT DEBUG INFO NOTICE WARNING ERROR CRITICAL ALERT EMERGENCY Cloud Setup Logging API service name: cloudsetup.googleapis.com Log ID Monitored resource Payload Labels Severities cloudsetup.googleapis.com%2Fcomplete deployment api type.googleapis.com/google.cloud.cloudsetup.logging.v1.CompleteDeploymentEvent activity type name DEFAULT Cloud Storage Logging API service name: storage.googleapis.com Log ID Monitored resource Payload Labels Severities storage.googleapis.com%2Frelocate bucket errors gcs bucket type.googleapis.com/google.storage.platformlogs.v1.RelocateBucketError N/A ERROR Cloud VPN Logging API service name: vpn.googleapis.com Log ID Monitored resource Payload Labels Severities vpn.googleapis.com%2Fipsec events vpn gateway VPN Tunnel logs from the VPN Gateway instance tunnel id DEBUG NOTICE Cloud Workstations Logging API service name: workstations.googleapis.com Log ID Monitored resource Payload Labels Severities workstations.googleapis.com%2Fdisk assignments workstations.googleapis.com/Workstation Disk assignment logs disk NOTICE workstations.googleapis.com%2Fvm assignments workstations.googleapis.com/Workstation VM assignment logs external ip instance id internal ip instance name NOTICE workstations.googleapis.com%2Fworkstation shutdowns workstations.googleapis.com/Workstation Workstation shutdown logs external ip instance id internal ip instance name shutdown reason NOTICE Compute Engine Logging API service name: compute.googleapis.com Log ID Monitored resource Payload Labels Severities compute.googleapis.com%2Fgce disaster recovery gce instance type.googleapis.com/google.compute.logging.dr.v1.DisasterRecoveryEvent N/A N/A compute.googleapis.com%2Fgce disaster recovery gce disk type.googleapis.com/google.compute.logging.dr.v1.DisasterRecoveryEvent N/A N/A compute.googleapis.com%2Fgce disaster recovery gce snapshot type.googleapis.com/google.compute.logging.dr.v1.DisasterRecoveryEvent N/A N/A compute.googleapis.com%2Fgce disaster recovery gce instance template type.googleapis.com/google.compute.logging.dr.v1.DisasterRecoveryEvent N/A N/A compute.googleapis.com%2Fgce disaster recovery gce instance group manager type.googleapis.com/google.compute.logging.dr.v1.DisasterRecoveryEvent N/A N/A compute.googleapis.com%2Fgce disaster recovery gce resevered address type.googleapis.com/google.compute.logging.dr.v1.DisasterRecoveryEvent N/A N/A compute.googleapis.com%2Fgdnsusage gce instance type.googleapis.com/google.compute.logging.gdnsusage.v1.GdnsVmUsagePlatformLog resource name DEBUG compute.googleapis.com%2Fvm extension policies gce instance type.googleapis.com/google.compute.logging.agentcontrolplane.v1.VmExtensionEvent N/A INFO DEBUG ERROR WARNING Container Security API Logging API service name: containersecurity.googleapis.com Log ID Monitored resource Payload Labels Severities containersecurity.googleapis.com%2Ffinding k8s cluster type.googleapis.com/cloud.kubernetes.security.containersecurity logging.Finding N/A INFO Dataform Logging API service name: dataform.googleapis.com Log ID Monitored resource Payload Labels Severities dataform.googleapis.com%2Fworkflow invocation completion dataform.googleapis.com/Repository type.googleapis.com/google.cloud.dataform.logging.v1.WorkflowInvocationCompletionLogEntry N/A INFO WARNING ERROR dataform.googleapis.com%2Factas dry run result dataform.googleapis.com/Repository type.googleapis.com/google.cloud.dataform.logging.v1.ActAsDryRunResultLogEntry N/A INFO WARNING Datapipelines API Logging API service name: datapipelines.googleapis.com Log ID Monitored resource Payload Labels Severities datapipelines.googleapis.com%2Frequests datapipelines.googleapis.com/Location type.googleapis.com/google.cloud.datapipelines.logging.v1.RequestLogEntry N/A DEFAULT datapipelines.googleapis.com%2Frequests datapipelines.googleapis.com/Pipeline type.googleapis.com/google.cloud.datapipelines.logging.v1.RequestLogEntry N/A DEFAULT Dataproc Logging API service name: dataproc.googleapis.com Log ID Monitored resource Payload Labels Severities dataproc.googleapis.com%2Fautoscaler cloud dataproc cluster type.googleapis.com/google.cloud.dataproc.logging.AutoscalerLog N/A INFO WARNING ERROR CRITICAL dataproc.googleapis.com%2Fautoscaler cloud dataproc batch type.googleapis.com/google.cloud.dataproc.logging.AutoscalerLog N/A INFO WARNING ERROR CRITICAL dataproc.googleapis.com%2Fautoscaler cloud dataproc session type.googleapis.com/google.cloud.dataproc.logging.AutoscalerLog N/A INFO WARNING ERROR CRITICAL dataproc.googleapis.com%2Freconciler cloud dataproc session type.googleapis.com/google.cloud.dataproc.logging.ReconciliationLog N/A INFO dataproc.googleapis.com%2Freconciler cloud dataproc cluster type.googleapis.com/google.cloud.dataproc.logging.ReconciliationClusterHealLog N/A INFO dataproc.googleapis.com%2Fcluster reconciler cloud dataproc cluster type.googleapis.com/google.cloud.dataproc.logging.ReconciliationClusterHealLog N/A INFO dataproc.googleapis.com%2Fcluster reconciler ttl cloud dataproc cluster type.googleapis.com/google.cloud.dataproc.logging.ReconciliationClusterTtlLog N/A INFO Dataproc Metastore Logging API service name: metastore.googleapis.com Log ID Monitored resource Payload Labels Severities metastore.googleapis.com%2Fbackground metastore.googleapis.com/Service Dataproc Metastore background logs. logger DEFAULT ERROR INFO WARNING metastore.googleapis.com%2Fsystem metastore.googleapis.com/Service Service system logs. method service region DEFAULT ERROR INFO WARNING metastore.googleapis.com%2Frequests metastore.googleapis.com/Service Service request logs. method service region DEFAULT INFO metastore.googleapis.com%2Fscheduled backup metastore.googleapis.com/Service type.googleapis.com/google.cloud.metastore.logging.v1.ScheduledBackupLogEntry N/A DEFAULT INFO WARNING ERROR Developer Connect Logging API service name: developerconnect.googleapis.com Log ID Monitored resource Payload Labels Severities developerconnect.googleapis.com%2Fsdlc deployment k8s cluster type.googleapis.com/cloud.hosted.developerconnect.sdlc.logging.DeploymentEvent developerconnect.googleapis.com/insights config id developerconnect.googleapis.com/insights config deployment id INFO Event Threat Detection Logging API service name: threatdetection.googleapis.com Log ID Monitored resource Payload Labels Severities threatdetection.googleapis.com%2Fdetection threat detector Event Threat Detection finding.",
+          "The instance's operating system, BIOS, and other system-level entities often write output to the serial ports, which makes them useful for troubleshooting crashes, failed boots, startup issues, or shutdown issues. compute.googleapis.com/resource name is text escaped INFO DEBUG Storage Transfer Logging API service name: storagetransfer.googleapis.com Log ID Monitored resource Payload Labels Severities storagetransfer.googleapis.com%2Ftransfer activity storage transfer job type.googleapis.com/google.storagetransfer.logging.TransferActivityLog N/A INFO WARNING ERROR Traffic Director Logging API service name: trafficdirector.googleapis.com Log ID Monitored resource Payload Labels Severities trafficdirector.googleapis.com%2Fevents gce network type.googleapis.com/google.networking.trafficdirector.type.TrafficDirectorLogEntry N/A ERROR INFO WARNING trafficdirector.googleapis.com%2Fevents gateway scope type.googleapis.com/google.networking.trafficdirector.type.TrafficDirectorLogEntry N/A ERROR INFO trafficdirector.googleapis.com%2Fevents mesh type.googleapis.com/google.networking.trafficdirector.type.TrafficDirectorLogEntry N/A ERROR INFO Vertex AI API Logging API service name: aiplatform.googleapis.com Log ID Monitored resource Payload Labels Severities aiplatform.googleapis.com%2Fpipeline job events aiplatform.googleapis.com/PipelineJob type.googleapis.com/google.cloud.aiplatform.logging.PipelineJobLogEntry network pipeline name pipeline type service account template metadata version template uri vertex-ai-pipelines-run-billing-id vertex pipeline system label propagate labels ERROR INFO aiplatform.googleapis.com%2Fpipeline job task events aiplatform.googleapis.com/PipelineJob type.googleapis.com/google.cloud.aiplatform.logging.PipelineJobTaskLogEntry custom job id network pipeline name schedule name service account template metadata version template uri vertex-ai-pipelines-run-billing-id vertex pipeline system label propagate labels ERROR INFO Web Security Scanner API Logging API service name: websecurityscanner.googleapis.com Log ID Monitored resource Payload Labels Severities websecurityscanner.googleapis.com%2Fscan activity security scanner scan config type.googleapis.com/google.cloud.websecurityscanner.v1.ScanRunLog N/A ERROR WARNING INFO Workflows Logging API service name: workflows.googleapis.com Log ID Monitored resource Payload Labels Severities workflows.googleapis.com%2Fengine call workflows.googleapis.com/Workflow type.googleapis.com/google.cloud.workflows.type.EngineCallLog workflows.googleapis.com/execution id workflows.googleapis.com/revision id DEBUG workflows.googleapis.com%2Fexecutions system workflows.googleapis.com/Workflow type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog workflows.googleapis.com/execution id workflows.googleapis.com/revision id INFO ERROR reCAPTCHA Enterprise Logging API service name: recaptchaenterprise.googleapis.com Log ID Monitored resource Payload Labels Severities recaptchaenterprise.googleapis.com%2Fassessment recaptchaenterprise.googleapis.com/Key type.googleapis.com/google.cloud.recaptchaenterprise.v1.Assessment N/A DEFAULT ERROR recaptchaenterprise.googleapis.com%2Fannotation recaptchaenterprise.googleapis.com/Key type.googleapis.com/google.cloud.recaptchaenterprise.v1.AnnotateAssessmentRequest N/A DEFAULT ERROR Understand and manage platform logs The following sections provide basic information about using and managing platform logs in Cloud Logging."
+        ]
+      },
+      {
+        "title": "View and analyze logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "source_id": "site-docs-root",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "View Monitoring data For certain logs, such as GKE and Compute Engine logs, you can select the resource type from the log's summary line to display a menu with the following options: View monitoring details : opens a details panel for a GKE resource.",
+          "To view these logs, do the following: In the Google Cloud console, go to the VM instances page: Go to VM instances If you use the search bar to find this page, then select the result whose subheading is Compute Engine .",
+          "View Compute Engine logs For certain Compute Engine resource types, such as gce instance and gce network , you see the resource name with the resource ID as subtext in several places in the Logs Explorer."
+        ]
+      },
+      {
+        "title": "\"Monitored resources and services \\_|\\_ Cloud Logging \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "source_id": "site-docs-reference",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "The format of this field is \"aws:{region}\", where supported values for {region} are listed at http://docs.aws.amazon.com/general/latest/gr/rande.html . aws account : The AWS account number for the queue. backupdr.googleapis.com/BackupDRProject BackupDR Project A BackupDR Project. resource container : Backup and DR API enabled project. location : The GCP location. backupdr.googleapis.com/BackupPlan Backup Plan Represents a single Backup Plan resource. resource container : The identifier of the GCP project associated with this resource. location : The GCP location. backup plan id : The ID of the Backup Plan. backupdr.googleapis.com/BackupPlanAssociation Backup Plan Association Represents a single Backup Plan Association resource. resource container : The identifier of the GCP project associated with this resource. location : The GCP location. backup plan association id : The ID of the Backup Plan Association. backupdr.googleapis.com/BackupRecoveryAppliance Backup Recovery Appliance A Backup Recovery Appliance. resource container : Backup and DR API enabled project. location : The GCP location. backup recovery appliance id : The Backup recovery appliance Id. management server id : Name of the management server. backupdr.googleapis.com/BackupVault BackupVault A specialized storage for Google Cloud Backup and DR backups. resource container : The identifier of the GCP project on which the BackupDR API is enabled, such as \"my-project\". location : The GCP location. backup vault id : The BackupVault ID. backupdr.googleapis.com/ManagementConsole Management Console A Backup and DR management console. resource container : Backup and DR API enabled project. location : The GCP location. management server id : Name of the management server. baremetalsolution.googleapis.com/Instance Bare Metal Solution Instance Bare Metal Solution Instance. resource container : The identifier of the GCP project associated with this resource. location : The GCP location where the instance resource resides. instance id : The ID of the instance resource. batch.googleapis.com/Job Job A Google Batch job managed by the Google Batch service. resource container : The identifier of the GCP project associated with the job. location : The region where the job has been created. job id : The identifier of the Job. beyondcorp.googleapis.com/SecurityGateway Security Gateway Chrome Enterprise Premium Security Gateway. resource container : The GCP container associated with the Security Gateway. location : The region that contains the Security Gateway. security gateway id : The Security Gateway ID. bigquery.googleapis.com/ManagedRoutineInvocation BigQuery Managed Routine Invocation Logs and metrics from BigQuery Managed Routines. resource container : The identifier of the GCP resource container associated with this resource, such as \"my-project\" or \"organizations/123\". location : The cloud location of the managed routine. query job id : The identifier of the BigQuery job that invoked the managed routine. routine project id : The project id of the invoked routine. routine dataset id : The dataset id of the invoked routine. routine id : The id of the invoked routine. bigquery.googleapis.com/SparkJob BigQuery Spark Job Logs and metrics from BigQuery Spark Jobs. resource container : The identifier of the GCP resource container associated with this resource, such as \"my-project\" or \"organizations/123\". location : The Cloud location of the Spark job. spark job id : The ID of the Spark job. bigquery biengine model BigQuery BI Engine Model BigQuery BI Engine Model. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". location : The Google Cloud location of the resource. model id : The identifier of the BI model. bigquery dataset BigQuery Dataset A dataset in BigQuery. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". dataset id : The name of the BigQuery dataset. bigquery dts config BigQuery DTS Config A BigQuery Data Transfer Service configuration. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". location : The Google Cloud location of the resource config id : The id of the DTS configuration. bigquery project BigQuery Project BigQuery Project. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". location : Location of the resource. bigquery resource BigQuery A BigQuery resource. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". billing account Cloud Billing Account A Cloud Billing Account. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". account id : The unique id of the billing account. build Cloud Build A build in Cloud Build. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". build id : The unique id of the build. build trigger id : The unique id of the build trigger. businessaicode.googleapis.com/BAICInstance Business AI Code Instance An instance resource that represents a Business AI Code configuration. resource container : The identifier of the GCP container associated with this resource. location : The location of the resource. certificatemanager.googleapis.com/Project Certificate Manager project Certificate Manager project. resource container : The GCP container associated with the resource. location : GCP location. client auth config brand OAuth2 Brand Consent screen data shown to users during three-legged OAuth2 flows. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". brand id : The unique id of the brand. client auth config client OAuth2 Client A client used in OAuth2 flows. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". client id : The unique id of the client. cloud composer environment Cloud Composer Environment A Composer environment runs the managed Apache Airflow service. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". location : The Cloud Composer location in which the environment is running. environment name : The user-specified environment name. cloud dataproc batch Cloud Dataproc Batch A Dataproc batch execution. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". location : The Cloud Dataproc region to which the batch was submitted. batch id : The user-specified batch id. cloud dataproc cluster Cloud Dataproc Cluster A Dataproc cluster with separate cluster name and id labels. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". cluster name : The user-specified cluster name. cluster uuid : The generated cluster id. region : The Cloud Dataproc region in which the cluster is running. cloud dataproc job Cloud Dataproc Job A Dataproc job execution. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". region : The Cloud Dataproc region to which the job was submitted. job id : The user-specified job id. job uuid : The generated job uuid. cloud dataproc session Cloud Dataproc Session A Dataproc session execution. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". location : The Cloud Dataproc region in which the session was created. session id : The user-specified session id. cloud debugger resource Cloud Debugger A Google Cloud Debugger resource. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". app : The application to which the debugger is attached. cloud function Cloud Function A function in Google Cloud Functions. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". function name : The short function name. region : The region in which the function is running. cloud osconfig patch job OS Patch Job A Google Cloud OS Patch Job. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". patch job id : Identifier of the job. cloud run job Cloud Run Job A job in Cloud Run. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". job name : Name of the monitored job. location : Region where the job exists. cloud run revision Cloud Run Revision A revision in Cloud Run. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". service name : Name of the service. revision name : Name of the monitored revision. location : Region where the service is running. configuration name : Name of the configuration which created the monitored revision. cloud run worker pool Cloud Run Worker Pool A worker pool in Cloud Run. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". worker pool name : Name of the worker pool. revision name : Name of the monitored revision. location : Region where the worker pool is running. configuration name : Name of the configuration which created the monitored revision. cloud scheduler job Cloud Scheduler Job A Cloud Scheduler Job. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". location : The region of the job. job id : Identifier of the job. cloud tasks queue Cloud Tasks Queue A queue in Cloud Tasks. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". queue id : The name of the queue. target type : The target type the queue is dispatching to. location : The zone or region where the application is running. cloudaicompanion.googleapis.com/Instance Gemini for Google Cloud Instance An instance resource that represents a Gemini for Google Cloud configuration. resource container : The identifier of the GCP container associated with this resource. location : The location of the resource. instance id : The ID of the instance resource. cloudcontrolspartner.googleapis.com/Location Location A Google Cloud Resource. resource container : The identifier of the GCP container associated with the resource. location : The region in which the job is running. clouddeploy.googleapis.com/DeliveryPipeline Cloud Deploy Delivery Pipeline A Cloud Deploy Delivery Pipeline. resource container : The identifier of the Google Cloud project associated with this resource. location : The Google Cloud location where the resource resides. pipeline id : ID of the delivery pipeline resource. cloudkms cryptokey Cloud KMS CryptoKey Cryptographic key in the KMS. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". location : The region Crypto Key belongs to. key ring id : Key Ring the Crypto Key belongs to. crypto key id : Crypto Key Identifier. cloudkms cryptokeyversion Cloud KMS CryptoKeyVersion Version of a cryptographic key. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". location : The region Crypto Key Version belongs to. key ring id : Key Ring the Crypto Key Version belongs to. crypto key id : Crypto Key the Crypto Key Version belongs to. crypto key version id : Crypto Key Version Identifier. cloudkms keyring Cloud KMS Key Ring Collection of cryptographic keys. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". location : The region Key Ring belongs to. key ring id : Key Ring Identifier. cloudml job Cloud ML Job A Google Cloud ML job. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". job id : An immutable identifier for a job. region : Cloud ML region. cloudml model version Cloud ML Model Version A Google Cloud ML model version. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". model id : An immutable identifier for a model. version id : An immutable identifier for a version. region : Cloud ML region. cloudsql database Cloud SQL Database A Cloud SQL instance. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". database id : The Google Cloud SQL instance name. region : The Google Cloud SQL region in which the database is running. cloudvolumesgcp-api.netapp.com/CloudVolume Monitored Resource for NetApp CVS Monitored Resource for NetApp CVS. resource container : Project information. location : Region/Zone information. volume id : ID of the volume. service type : Service type of the volume or replication relationship. name : Name of the volume or replication relationship. connectors.googleapis.com/Connection Connectors Monitored resource for Connectors. resource container : The identifier of the GCP project associated with this resource. location : GCP region location of the connection. connection : The name of the connection. consumed api Consumed API An API used by customers. project id : The identifier of the GCP project associated with this resource, such as 'my-project'. service : The API service name, such as 'cloudsql.googleapis.com'. method : The API method name, such as 'disks.list'. version : The API version, such as 'v1'. location : The service specific notion of location.",
+          "For v1 backends, this will be \"global\". backend id : An identifier for the App Hosting Backend within a project. firebasecrashlytics.googleapis.com/App Firebase Crashlytics App A Firebase client using Crashlytics. resource container : The Firebase project for the application. location : Location for Firebase Apps is global. app id : A Firebase App ID. firebaserules release Releases for Firebase Rules Mapping of the ruleset to a release name. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". release name : Name of the release. region : The region in which the ruleset is on. firebaserules ruleset Ruleset for Firebase Rules Definition of the ruleset for firebase rules. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". ruleset name : Name of the ruleset. region : The region in which the ruleset is on. firebasevertexai.googleapis.com/Model Firebase AI Logic Model A Model supported by Firebase AI Logic. resource container : The GCP container associated with the model. location : The zone that served the model. publisher id : The publisher ID of the model, such as \"google\". model id : The model ID, such as \"gemini-0.0-flash-002\". firebasevertexai.googleapis.com/PromptTemplate Firebase AI Logic Server Prompt Template A Firebase AI Logic Server Prompt Template. resource container : The GCP container associated with the prompt template. location : The region that served the prompt template. template id : The prompt template ID. firestore.googleapis.com/Database Firestore Database A Firestore Database. resource container : The identifier of the GCP project associated with this resource. location : The location of the database. database id : The database id. fleetengine.googleapis.com/DeliveryFleet Fleet Engine Last Mile Fleet Solution A top-level resource for Fleet Engine Last Mile Fleet Solution metrics and logs. resource container : The identifier of the GCP container associated with DeliveryFleet. location : The region in which the Fleet Engine instance is running. fleetengine.googleapis.com/Fleet Fleet Engine On Demand Rides and Deliveries A top-level resource for Fleet Engine On Demand Rides and Deliveries metrics and logs. resource container : The identifier of the GCP container associated with Fleet. location : The region in which the Fleet Engine instance is running. folder Google Folder A Google Cloud Platform folder. folder id : Numeric id of the folder. gae app GAE Application An application running in Google App Engine (GAE). project id : The identifier of the GCP project associated with this resource, such as \"my-project\". module id : The service/module name. version id : The version name. zone : The GAE zone where the application is running. gateway scope Gateway Scope GatewayScope represents a set of Gateways with the same merged configs. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". location : The location of the control plane scope : The name of the gateway scope gce autoscaler Autoscaler A Google Compute Engine autoscaler. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". autoscaler id : Unique identifier of the autoscaler. location : Compute Engine zone or region where the autoscaler is running. gce backend bucket Backend Bucket A Google Compute Engine backend bucket. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". backend bucket id : Unique identifier of the backend bucket. gce backend service Cloud Load Balancing Backend Service A Compute Engine backend service. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". backend service id : Unique identifier of the backend service. location : Global or Compute Engine region containing the backend service gce client ssl policy Client SSL Policy A Google Compute Engine client SSL policy. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". client ssl policy id : Unique identifier of the client SSL policy. gce commitment Committed Use Discount A Google Compute Engine committed use discount. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". commitment id : Unique identifier of the committed use discount. location : Compute Engine region where the committed use discount is active. gce disk Disk A disk belonging to a Compute Engine instance. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". disk id : Unique identifier of the disk. zone : The Compute Engine zone where the disk resides. gce firewall rule Firewall Rule A Google Compute Engine firewall rule. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". firewall rule id : Unique identifier of the firewall rule. gce forwarding rule Forwarding Rule A Google Compute Engine Forwarding Rule. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". forwarding rule id : Unique identifier of the forewarding rule. region : Compute Engine region where the forwarding rule resides. gce health check Health Check A Google Compute Engine health check. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". health check id : Unique identifier of the health check. gce image Image A Google Compute Engine image resource. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". image id : Unique numerical identifier of the image. gce instance VM Instance A virtual machine instance hosted in Compute Engine. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". instance id : The numeric VM instance identifier assigned by Compute Engine. zone : The Compute Engine zone in which the VM is running. gce instance group Instance Group A Google Compute Engine instance group resource. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". instance group id : The unique numerical identifier of the instance group. instance group name : The unique user provided name of the instance group. location : Compute Engine zone containing the instance group. gce instance group manager Instance Group Manager A Google Compute Engine instance group manager resource. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". instance group manager id : The unique numerical identifier of the instance group manager. instance group manager name : The unique user provided name of the instance group manager. location : Compute Engine zone or region where the instance group manager is located. gce instance template Instance Template A Google Compute Engine instance template resource. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". instance template id : The unique numerical identifier of the instance template. instance template name : The unique user provided name of the instance template. gce license License A Google Compute Engine license. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". license id : Unique identifier of the license. gce network Network A Google Compute Engine network. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". network id : Unique identifier of the network. gce network endpoint group Network Endpoint Group A Compute Engine network endpoint group resource. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". zone : The name of the zone where the network endpoint group is located. network endpoint group id : The ID of the network endpoint group. gce network region Network Region A region of a Compute Engine network. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". network id : The ID of the Compute Engine network. region : The name of the network region. gce node group Node Group A Compute Engine node group. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". node group id : Unique identifier of the node group. zone : Zone of the node group. gce node template Node Template A Compute Engine node template. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". node template id : Unique identifier of the node template. region : Region of the node template. gce operation Operation A Google Compute Engine operation resource. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". operation name : The unique user provided name of the operation. location : Location of the resource. gce packet mirroring Packet Mirroring A Google Compute Engine packet mirroring. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". packet mirroring id : Unique identifier of the packet mirroring. region : Region of the packet mirroring. gce project Project A Google Compute Engine project resource. project id : Compute Engine specific numeric identifier of the project resource. gce reserved address Reserved Address A Google Compute Engine reserved address. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". reserved address id : Unique identifier of the reserved address. location : Global or Compute Engine region containing the reserved address gce resource policy Resource Policy A Compute Engine resource policy. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". resource policy id : Unique identifier of the resource policy. region : Region of the resource policy. gce route Route A Google Compute Engine route. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". route id : Unique identifier of the route. gce router Router A Google Compute Engine router. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". router id : Unique identifier of the router. region : Region of the router. gce service attachment Service Attachment A Private Service Connect Service Attachment. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". region : The region where the service attachment resides. service attachment id : Unique identifier of the service attachment. gce snapshot Snapshot A Google Compute Engine snapshot. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". snapshot id : Unique identifier of the snapshot. gce ssl certificate SSL Certificate A Google Compute Engine SSL certificate. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". ssl certificate id : The unique numerical identifier of the SSL certificate. ssl certificate name : The unique user provided name of the SSL Certificate. gce subnetwork Subnetwork A Compute Engine subnetwork. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". subnetwork id : The unique numerical identifier of the subnetwork. subnetwork name : The unique user provided name of the subnetwork. location : Location of the resource. gce target http instance Target HTTP Instance A Google Compute Engine target http instance. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". target http instance id : Unique identifier of the target http instance. zone : Compute Engine zone where the target http instance resides. gce target http proxy Target HTTP Proxy A Google Compute Engine target http proxy. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". target http proxy id : Unique identifier of the target http proxy. gce target https proxy Target HTTPS Proxy A Google Compute Engine target https proxy. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". target https proxy id : Unique identifier of the target https proxy. gce target pool Target Pool A Google Compute Engine target pool. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". target pool id : Unique identifier of the target pool. zone : Compute Engine zone where the pool resides. gce target ssl proxy Target SSL Proxy A Google Compute Engine target SSL proxy. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". target ssl proxy id : Unique identifier of the target ssl proxy. gce url map URL Map A Google Compute Engine URL map. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". url map id : Unique identifier of the url map. gcs bucket GCS Bucket A Google Cloud Storage (GCS) bucket. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". bucket name : An immutable name of the bucket. location : Location of the bucket. geminidataanalytics.googleapis.com/Location Gemini Data Analytics Location A Gemini Data Analytics Location. resource container : The identifier of the GCP project associated with this resource. location : The location of the GCP project associated with this resource. generic node Generic Node A generic node identifies a machine or other computational resource for which no more specific resource type is applicable.",
+          "It contains events and audit logs about cluster operations. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". cluster name : The name of the GKE Cluster. location : The location in which the GKE Cluster is running. gke nodepool GKE Node Pool Operations A Google Kubernetes Engine (GKE) Node Pool."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "analyticsdata.googleapis.com",
+      "api.netapp.com",
+      "assuredworkloads.googleapis.com",
+      "backupdr.googleapis.com",
+      "baremetalsolution.googleapis.com",
+      "batch.googleapis.com",
+      "beyondcorp.googleapis.com",
+      "bigquery.googleapis.com",
+      "bigquerydatatransfer.googleapis.com",
+      "binaryauthorization.googleapis.com",
+      "businessaicode.googleapis.com",
+      "certificatemanager.googleapis.com",
+      "cloudaicompanion.googleapis.com",
+      "cloudcontrolspartner.googleapis.com",
+      "clouddeploy.googleapis.com",
+      "cloudkms.googleapis.com",
+      "cloudsetup.googleapis.com",
+      "cloudsql.googleapis.com",
+      "compute.googleapis.com",
+      "connectors.googleapis.com",
+      "contactcenteraiplatform.googleapis.com",
+      "container.googleapis.com",
+      "containersecurity.googleapis.com",
+      "contextawareaccess.googleapis.com",
+      "dataform.googleapis.com",
+      "datafusion.googleapis.com",
+      "datamigration.googleapis.com",
+      "datapipelines.googleapis.com",
+      "dataplex.googleapis.com",
+      "dataproc.googleapis.com",
+      "developerconnect.googleapis.com",
+      "disks.list",
+      "firebasecrashlytics.googleapis.com",
+      "firebasevertexai.googleapis.com",
+      "firestore.googleapis.com",
+      "fleetengine.googleapis.com",
+      "geminidataanalytics.googleapis.com",
+      "gkebackup.googleapis.com",
+      "gsuiteaddons.googleapis.com",
+      "identitytoolkit.googleapis.com",
+      "integrations.googleapis.com",
+      "issuerswitch.googleapis.com",
+      "livestream.googleapis.com",
+      "logging.Finding",
+      "logging.googleapis.com",
+      "maps.fleetengine.v1.UpdateVehicleAttributesLog",
+      "memorystore.googleapis.com",
+      "metastore.googleapis.com",
+      "mobilitybilling.googleapis.com",
+      "networkanalyzer.googleapis.com",
+      "networking.googleapis.com",
+      "networkservices.googleapis.com",
+      "rande.html",
+      "recaptchaenterprise.googleapis.com",
+      "storage.googleapis.com",
+      "storagetransfer.googleapis.com",
+      "stream.googleapis.com",
+      "threatdetection.googleapis.com",
+      "trafficdirector.googleapis.com",
+      "type.googleapis.com",
+      "vpn.googleapis.com",
+      "websecurityscanner.googleapis.com",
+      "workflows.googleapis.com",
+      "workstations.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list"
+      ]
+    }
+  ]
+}

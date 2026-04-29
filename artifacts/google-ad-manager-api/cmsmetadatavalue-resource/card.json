@@ -1,0 +1,233 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:13.526Z",
+  "source_step08_card": "data/step-08/current/products/google-ad-manager-api/card.json",
+  "product_name": "Google Ad Manager API",
+  "product_slug": "google-ad-manager-api",
+  "feature_name": "CmsMetadataValue resource",
+  "feature_slug": "cmsmetadatavalue-resource",
+  "summary": "The API now includes the CmsMetadataValue resource.",
+  "extended_definition": "The API now includes the CmsMetadataValue resource.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/ad-manager/api/authentication",
+      "https://developers.google.com/ad-manager/api/beta/authentication",
+      "https://developers.google.com/ad-manager/api/beta/reference/rest",
+      "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Ad Manager API \\_|\\_ Ad Manager API (Beta) \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: v1.networks REST Resource: v1.networks.adUnitSizes REST Resource: v1.networks.adUnits REST Resource: v1.networks.applications REST Resource: v1.networks.audienceSegments REST Resource: v1.networks.bandwidthGroups REST Resource: v1.networks.browserLanguages REST Resource: v1.networks.browsers REST Resource: v1.networks.cmsMetadataKeys REST Resource: v1.networks.cmsMetadataValues REST Resource: v1.networks.companies REST Resource: v1.networks.contacts REST Resource: v1.networks.content REST Resource: v1.networks.contentBundles REST Resource: v1.networks.contentLabels REST Resource: v1.networks.creativeTemplates REST Resource: v1.networks.customFields REST Resource: v1.networks.customTargetingKeys REST Resource: v1.networks.customTargetingKeys.customTargetingValues REST Resource: v1.networks.customTargetingValues REST Resource: v1.networks.deviceCapabilities REST Resource: v1.networks.deviceCategories REST Resource: v1.networks.deviceManufacturers REST Resource: v1.networks.entitySignalsMappings REST Resource: v1.networks.geoTargets REST Resource: v1.networks.labels REST Resource: v1.networks.lineItems REST Resource: v1.networks.linkedDevices REST Resource: v1.networks.mobileCarriers REST Resource: v1.networks.mobileDeviceSubmodels REST Resource: v1.networks.mobileDevices REST Resource: v1.networks.operatingSystemVersions REST Resource: v1.networks.operatingSystems REST Resource: v1.networks.operations.reports.runs REST Resource: v1.networks.orders REST Resource: v1.networks.placements REST Resource: v1.networks.privateAuctionDeals REST Resource: v1.networks.privateAuctions REST Resource: v1.networks.programmaticBuyers REST Resource: v1.networks.reports REST Resource: v1.networks.reports.results REST Resource: v1.networks.roles REST Resource: v1.networks.sites REST Resource: v1.networks.taxonomyCategories REST Resource: v1.networks.teams REST Resource: v1.networks.users REST Resource: v1.networks.webProperties.adReviewCenterAds REST Resource: v1.operations Service: admanager.googleapis.com Discovery document A Discovery Document is a machine-readable specification for describing and consuming REST APIs.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-01 UTC.\"],[],[\"This API allows managing Ad Manager data through various REST resources.",
+          "REST Resource: v1.networks.cmsMetadataValues Methods batchActivate POST /v1/{parent}/cmsMetadataValues:batchActivate API to activate a list of CmsMetadataValue objects. batchDeactivate POST /v1/{parent}/cmsMetadataValues:batchDeactivate API to deactivate a list of CmsMetadataValue objects. get GET /v1/{name} API to retrieve a CmsMetadataValue object. list GET /v1/{parent}/cmsMetadataValues API to retrieve a list of CmsMetadataValue objects."
+        ]
+      },
+      {
+        "title": "Authentication \\_|\\_ Ad Manager API (Beta) \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/ad-manager/api/beta/authentication",
+        "source_id": "site-docs-root-2",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-03-05 UTC.\"],[],[\"To access the Ad Manager API, you need an access token, generated using Application Default Credentials (ADC) or custom credentials.",
+          "Install the Google Cloud CLI, then initialize it by running the following command: gcloud init Create local authentication credentials for your Google Account and set the project ID to a project where the Ad Manager API is enabled: gcloud auth application-default login --scopes = \"https://www.googleapis.com/auth/admanager\" gcloud auth application-default set-quota-project PROJECT ID Alternatively, authenticate as a Service Account setting the environment variable GOOGLE APPLICATION CREDENTIALS to the path of your key file.",
+          "Create credentials Click the tab for your authentication type and follow the instructions to create your credentials: Service Account On Google Cloud To authenticate a workload running on Google Cloud, you use the credentials of the service account attached to the compute resource where your code is running."
+        ]
+      },
+      {
+        "title": "Authentication \\_|\\_ Ad Manager SOAP API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/ad-manager/api/authentication",
+        "source_id": "site-docs-root",
+        "final_score": 119,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This section is intended for advanced users who are already familiar with the OAuth2 specification and know how to use OAuth2 with Google APIs .",
+          "The Ad Manager API (Beta) is now available.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-02-25 UTC.\"],[],[\"Google Ad Manager API access requires OAuth2 authorization."
+        ]
+      },
+      {
+        "title": "\"REST Resource: networks.adUnits \\_|\\_ Ad Manager API (Beta) \\_|\\_ Google\\",
+        "url": "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits",
+        "source_id": "site-api-reference",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "Page Summary outlined flag The AdUnit resource represents an ad unit and includes various fields such as name, ID, parent path, sizes, labels, and status.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-02-10 UTC.\"],[],[\"The content details the AdUnit resource, its JSON representation, and related components.",
+          "Resource: AdUnit JSON representation AdUnitParent JSON representation AdUnitStatus TargetWindow AdUnitSize JSON representation EnvironmentType LabelFrequencyCap JSON representation FrequencyCap JSON representation TimeUnit SmartSizeMode Methods Resource: AdUnit The AdUnit resource."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "admanager.googleapis.com",
+      "developers.google.com",
+      "networks.adUnits",
+      "networks.adUnitSizes",
+      "networks.applications",
+      "networks.audienceSegments",
+      "networks.bandwidthGroups",
+      "report.name",
+      "v1.networks",
+      "v1.networks.adUnits",
+      "v1.networks.adUnitSizes",
+      "v1.networks.applications",
+      "v1.networks.audienceSegments",
+      "v1.networks.bandwidthGroups",
+      "v1.networks.browserLanguages",
+      "v1.networks.browsers",
+      "v1.networks.cmsMetadataKeys",
+      "v1.networks.cmsMetadataValues",
+      "v1.networks.companies",
+      "v1.networks.contacts",
+      "v1.networks.content",
+      "v1.networks.contentBundles",
+      "v1.networks.contentLabels",
+      "v1.networks.creativeTemplates",
+      "v1.networks.customFields",
+      "v1.networks.customTargetingKeys",
+      "v1.networks.customTargetingKeys.customTargetingValues",
+      "v1.networks.customTargetingValues",
+      "v1.networks.deviceCapabilities",
+      "v1.networks.deviceCategories",
+      "v1.networks.deviceManufacturers",
+      "v1.networks.entitySignalsMappings",
+      "v1.networks.geoTargets",
+      "v1.networks.labels",
+      "v1.networks.lineItems",
+      "v1.networks.linkedDevices",
+      "v1.networks.mobileCarriers",
+      "v1.networks.mobileDevices",
+      "v1.networks.mobileDeviceSubmodels",
+      "v1.networks.operatingSystems",
+      "v1.networks.operatingSystemVersions",
+      "v1.networks.operations.reports.runs",
+      "v1.networks.orders",
+      "v1.networks.placements",
+      "v1.networks.privateAuctionDeals",
+      "v1.networks.privateAuctions",
+      "v1.networks.programmaticBuyers",
+      "v1.networks.reports",
+      "v1.networks.reports.results",
+      "v1.networks.roles",
+      "v1.networks.sites",
+      "v1.networks.taxonomyCategories",
+      "v1.networks.teams",
+      "v1.networks.users",
+      "v1.networks.webProperties.adReviewCenterAds",
+      "v1.operations"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits"
+      ]
+    }
+  ]
+}

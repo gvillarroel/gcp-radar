@@ -1,0 +1,148 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:23.409Z",
+  "source_step08_card": "data/step-08/current/products/migration-center/card.json",
+  "product_name": "Migration Center",
+  "product_slug": "migration-center",
+  "feature_name": "Local fit assessment report generation",
+  "feature_slug": "local-fit-assessment-report-generation",
+  "summary": "Migration Center can generate detailed fit assessment reports locally, including offline use for air-gapped environments.",
+  "extended_definition": "Migration Center can generate detailed fit assessment reports locally, including offline use for air-gapped environments.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migration-center/docs/generate-tco-report",
+      "https://docs.cloud.google.com/migration-center/docs/run-offline-assessment",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Generate an offline assessment \\_|\\_ Migration Center \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migration-center/docs/run-offline-assessment",
+        "source_id": "site-docs-root",
+        "final_score": 229,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It provides an overall fit assessment using one of the following scores: Excellent fit Good fit, with some findings that might require attention Needs minimal work before migrating Needs moderate work before migrating Needs major work before migrating No fit Insufficient data You can generate reports in HTML, Microsoft Excel, CSV, and JSON format.",
+          "The offline assessment creates reports that provide you with a high-level fit assessment result for migration and potential blockers for different migration journeys.",
+          "Home Documentation Migration Migration Center Guides Send feedback Generate an offline assessment Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Class MigrationCenterAsyncClient (0.4.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 213,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.migrationcenter v1.types.ReportConfig The groups and associated preference sets on which we can generate reports. get settings get settings ( request : typing .",
+          "Returns Type Description google.cloud.migrationcenter v1.types.ReportAssetFramesResponse A response to a call to ReportAssetFrame. report config path report config path ( project : str , location : str , report config : str ) - > str Returns a fully-qualified report config string. report path report path ( project : str , location : str , report config : str , report : str ) - > str Returns a fully-qualified report string. run import job run import job ( request : typing .",
+          "CreateReportConfigRequest ( parent=\"parent value\", report config id=\"report config id value\", report config=report config, ) Make the request operation = client. create report config (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.migrationcenter v1.types.CreateReportConfigRequest , dict]] The request object."
+        ]
+      },
+      {
+        "title": "\"Class MigrationCenterClient (0.4.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "source_id": "site-python-reference",
+        "final_score": 213,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.migrationcenter v1.types.ReportConfig The groups and associated preference sets on which we can generate reports. get settings get settings ( request : typing .",
+          "Returns Type Description google.cloud.migrationcenter v1.types.ReportAssetFramesResponse A response to a call to ReportAssetFrame. report config path report config path ( project : str , location : str , report config : str ) - > str Returns a fully-qualified report config string. report path report path ( project : str , location : str , report config : str , report : str ) - > str Returns a fully-qualified report string. run import job run import job ( request : typing .",
+          "CreateReportConfigRequest ( parent=\"parent value\", report config id=\"report config id value\", report config=report config, ) Make the request operation = client. create report config (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.migrationcenter v1.types.CreateReportConfigRequest , dict] The request object."
+        ]
+      },
+      {
+        "title": "Generate TCO reports \\_|\\_ Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/generate-tco-report",
+        "source_id": "site-docs-root",
+        "final_score": 197,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can view your TCO report directly in Migration Center, or export it to Google Slides or Google Sheets, or download it as a CSV file or a Microsoft Excel spreadsheet.",
+          "Limitations If you generate a TCO report for a group that contains a database deployment and its underlying server, Migration Center generates separate cost estimates for the server and the database.",
+          "Home Documentation Migration Migration Center Guides Send feedback Generate TCO reports Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.dev",
+      "mcdc.exe",
+      "operation.result",
+      "options.html",
+      "v1.types.CreateReportConfigRequest",
+      "v1.types.ReportAssetFramesResponse",
+      "v1.types.ReportConfig"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/run-offline-assessment",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/generate-tco-report"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/run-offline-assessment",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/generate-tco-report"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/run-offline-assessment",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/generate-tco-report"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/run-offline-assessment",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/generate-tco-report"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/run-offline-assessment",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/generate-tco-report"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:45.653Z",
+  "source_step08_card": "data/step-08/current/products/binary-authorization/card.json",
+  "product_name": "Binary Authorization",
+  "product_slug": "binary-authorization",
+  "feature_name": "Binary Authorization dry run mode",
+  "feature_slug": "binary-authorization-dry-run-mode",
+  "summary": "Binary Authorization now supports dry run mode, allowing non-conformant image deployments while logging policy violations to audit logs for testing.",
+  "extended_definition": "Binary Authorization now supports dry run mode, allowing non-conformant image deployments while logging policy violations to audit logs for testing.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/binary-authorization/docs/audit-logging",
+      "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console",
+      "https://docs.cloud.google.com/binary-authorization/docs/viewing-on-prem-logs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"View audit logs for Google Distributed Cloud \\_|\\_ Binary Authorization\\",
+        "url": "https://docs.cloud.google.com/binary-authorization/docs/viewing-on-prem-logs",
+        "source_id": "site-docs-root",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Configure a policy using the Google Cloud console \\_|\\_ Binary Authorization\\",
+        "url": "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console",
+        "source_id": "site-docs-root",
+        "final_score": 77,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Note: This page describes how to configure a policy for the container-based platforms that Binary Authorization supports, including Google Kubernetes Engine (GKE), Distributed Cloud, Cloud Run, and Cloud Service Mesh.",
+          "To set the evaluation mode, select one of the following options: Allow all images : Allows all images to be deployed.",
+          "To set the evaluation mode, select one of the following options: Allow all images : Allows all images to be deployed."
+        ]
+      },
+      {
+        "title": "Binary Authorization audit logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/binary-authorization/docs/audit-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console",
+        "https://docs.cloud.google.com/binary-authorization/docs/viewing-on-prem-logs",
+        "https://docs.cloud.google.com/binary-authorization/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console",
+        "https://docs.cloud.google.com/binary-authorization/docs/viewing-on-prem-logs",
+        "https://docs.cloud.google.com/binary-authorization/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console",
+        "https://docs.cloud.google.com/binary-authorization/docs/viewing-on-prem-logs",
+        "https://docs.cloud.google.com/binary-authorization/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console",
+        "https://docs.cloud.google.com/binary-authorization/docs/viewing-on-prem-logs",
+        "https://docs.cloud.google.com/binary-authorization/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console",
+        "https://docs.cloud.google.com/binary-authorization/docs/viewing-on-prem-logs",
+        "https://docs.cloud.google.com/binary-authorization/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console",
+        "https://docs.cloud.google.com/binary-authorization/docs/viewing-on-prem-logs",
+        "https://docs.cloud.google.com/binary-authorization/docs/audit-logging"
+      ]
+    }
+  ]
+}

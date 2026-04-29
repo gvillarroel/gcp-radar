@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:50.221Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring",
+  "feature_name": "Ops Agent MariaDB metrics and logs integration",
+  "feature_slug": "ops-agent-mariadb-metrics-and-logs-integration",
+  "summary": "The Ops Agent can collect MariaDB metrics and logs for Cloud Monitoring.",
+  "extended_definition": "The Ops Agent can collect MariaDB metrics and logs for Cloud Monitoring.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+      "https://docs.cloud.google.com/monitoring/docs/collect-metrics-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Collect metrics overview \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/collect-metrics-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Metrics from third-party monitoring applications Cloud Monitoring provides integrations that let you collect telemetry from applications such as Apache Web Server, MySQL, Redis, and others for deployments running on Compute Engine and Google Kubernetes Engine: When using Compute Engine, third-party telemetry is collected by the Ops Agent .",
+          "To collect additional system metrics from your Compute Engine instances, install an agent.",
+          "Home Documentation Observability Cloud Monitoring Guides Send feedback Collect metrics overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Ops Agent overview \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+        "source_id": "site-iam-reference",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Metrics collected include: cpu metrics disk metrics iis metrics (Windows only) interface metrics gpu metrics (Linux only) memory metrics mssql metrics (Windows only) pagefile metrics (Windows only) swap metrics network metrics processes metrics agent self metrics : Third-party application support Curated integrations for third-party application metrics , which collect common app metrics and offer sample dashboards and alert policies.",
+          "Combining the collection of logs, metrics, and traces into a single process, the Ops Agent uses Fluent Bit for logs, which supports high-throughput logging, and the OpenTelemetry Collector for metrics and traces.",
+          "You can install the Ops Agent on Managed Service for Apache Spark clusters that use image version 2.2 and later to collect syslog logs and host metrics."
+        ]
+      },
+      {
+        "title": "\"Collect OpenTelemetry Protocol (OTLP) metrics and traces \\_|\\_ Cloud Monitoring\\",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+        "source_id": "site-iam-reference",
+        "final_score": 170,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Open a PowerShell terminal with administrator privileges by right-clicking the PowerShell icon and selecting Run as Administrator To restart the agent, run the following PowerShell command: Restart-Service google-cloud-ops-agent -Force To confirm that the agent restarted, run the following command and verify that the components \"Metrics Agent\" and \"Logging Agent\" started: Get-Service google-cloud-ops-agent Collect OTLP metrics When you use the OTLP receiver to collect metrics from your OpenTelemetry applications, the primary configuration choice for the receiver is the API that you want to use to ingest the metrics.",
+          "Disable the OTLP receiver If you are collecting both OTLP metrics and traces by using the Ops Agent, and you want to disable the collection of either metrics or traces but not both, then do the following: Disable collection of either metrics or traces by making one of the following changes to the user configuration file, config.yaml : Remove the otlp pipeline from the metrics service.",
+          "Benefits Before the availability of the OTLP plugin for the Ops Agent, the primary ways to instrument your applications to collect user-defined metrics and traces included the following: Using client libraries that implement the Monitoring API or the Trace API."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/collect-metrics-overview",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/collect-metrics-overview",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp"
+      ]
+    }
+  ]
+}

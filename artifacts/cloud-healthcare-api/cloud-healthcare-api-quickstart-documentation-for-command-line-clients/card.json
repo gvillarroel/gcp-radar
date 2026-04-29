@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:47.918Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api",
+  "feature_name": "Cloud Healthcare API quickstart documentation for command-line clients",
+  "feature_slug": "cloud-healthcare-api-quickstart-documentation-for-command-line-clients",
+  "summary": "The Quickstart using curl or Windows PowerShell was updated with additional guidance for storing and viewing DICOM, FHIR, and HL7v2 data.",
+  "extended_definition": "The Quickstart using curl or Windows PowerShell was updated with additional guidance for storing and viewing DICOM, FHIR, and HL7v2 data.",
+  "lifecycle": {
+    "latest_feature_date": "2021-02-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+      "https://docs.cloud.google.com/healthcare-api/docs/quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Creating and managing FHIR resources \\_|\\_ Cloud Healthcare API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "source_id": "site-docs-root",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns: A dict representing the created Observation resource. \"\"\" Imports the Google API Discovery Service. from googleapiclient import discovery api version = \"v1\" service name = \"healthcare\" Returns an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' location = 'us-central1' dataset id = 'my-dataset' fhir store id = 'my-fhir-store' patient id = 'b682d-0e-4843-a4a9-78c9ac64' # replace with the associated Patient resource's ID encounter id = 'a7602f-ffba-470a-a5c1-103f993c6 # replace with the associated Encounter resource's ID fhir store parent = ( f \"projects/ { project id } /locations/ { location } /datasets/ { dataset id } \" ) fhir observation path = ( f \" { fhir store parent } /fhirStores/ { fhir store id } /fhir/Observation\" ) observation body = { \"resourceType\" : \"Observation\" , \"code\" : { \"coding\" : [ { \"system\" : \"http://loinc.org\" , \"code\" : \"8867-4\" , \"display\" : \"Heart rate\" , } ] }, \"status\" : \"final\" , \"subject\" : { \"reference\" : f \"Patient/ { patient id } \" }, \"effectiveDateTime\" : \"2019-01-01T00:00:00+00:00\" , \"valueQuantity\" : { \"value\" : 80 , \"unit\" : \"bpm\" }, \"context\" : { \"reference\" : f \"Encounter/ { encounter id } \" }, } request = ( client . projects () . locations () . datasets () . fhirStores () . fhir () . create ( parent = fhir observation path , type = \"Observation\" , body = observation body , ) ) Sets required application/fhir+json header on the googleapiclient.http.HttpRequest. request . headers [ \"content-type\" ] = \"application/fhir+json;charset=utf-8\" response = request . execute () print ( f \"Created Observation resource with ID { response [ 'id' ] } \" ) return response Conditionally create a FHIR resource The following curl sample shows how to use the projects.locations.datasets.fhirStores.fhir.create method to conditionally create a FHIR resource.",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"resourceType\": \"Observation\", \"status\": \"final\", \"subject\": { \"reference\": \"Patient/ PATIENT ID \" }, \"effectiveDateTime\": \"2020-01-01T00:00:00+00:00\", \"identifier\": [ { \"system\": \"my-code-system\", \"value\": \"ABC-12345\" } ], \"code\": { \"coding\": [ { \"system\": \"http://loinc.org\", \"code\": \"8867-4\", \"display\": \"Heart rate\" } ] }, \"valueQuantity\": { \"value\": 80, \"unit\": \"bpm\" }, \"encounter\": { \"reference\": \"Encounter/ ENCOUNTER ID \" } } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/fhir+json\" -InFile request.json -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Observation\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"code\": { \"coding\": [ { \"code\": \"8867-4\", \"display\": \"Heart rate\", \"system\": \"http://loinc.org\" } ] }, \"effectiveDateTime\": \"2020-01-01T00:00:00+00:00\", \"encounter\": { \"reference\": \"Encounter/ ENCOUNTER ID \" }, \"id\": \" OBSERVATION ID \", \"identifier\": [ { \"system\": \"my-code-system\", \"value\": \"ABC-12345\" } ], \"meta\": { \"lastUpdated\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \", \"versionId\": \" VERSION ID \" }, \"resourceType\": \"Observation\", \"status\": \"final\", \"subject\": { \"reference\": \"Patient/ PATIENT ID \" }, \"valueQuantity\": { \"unit\": \"bpm\", \"value\": 80 } } Python Before trying this sample, follow the Python setup instructions in the Cloud Healthcare API quickstart using client libraries .",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: cat > request.json OBSERVATION ID \", \"status\": \"final\", \"subject\": { \"reference\": \"Patient/ PATIENT ID \" }, \"effectiveDateTime\": \"2020-01-01T00:00:00+00:00\", \"identifier\": [ { \"system\": \"my-code-system\", \"value\": \"ABC-12345\" } ], \"code\": { \"coding\": [ { \"system\": \"http://loinc.org\", \"code\": \"8867-4\", \"display\": \"Heart rate\" } ] }, \"valueQuantity\": { \"value\": BPM VALUE , \"unit\": \"bpm\" }, \"encounter\": { \"reference\": \"Encounter/ ENCOUNTER ID \" } } EOF Then execute the following command to send your REST request: curl -X PUT \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Observation/ OBSERVATION ID \" PowerShell Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login ."
+        ]
+      },
+      {
+        "title": "\"Transmitting HL7v2 messages over TCP/IP connections \\_|\\_ Cloud Healthcare\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "source_id": "site-docs-root",
+        "final_score": 153,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the directory where you downloaded the file, call the messages.create method to create the message in an HL7v2 store: curl To create an HL7v2 message, make a POST request and specify the following information: The name of the parent dataset The name of the HL7v2 store A message An access token The following sample shows a POST request using curl and a sample JSON file called hl7v2-sample.json . curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ --data-binary @hl7v2-sample.json \\ \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages\" If the request is successful, the server returns the response in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID \", \"data\": \"TVNIfF5+XCZ8QXxTRU5EX0ZBQ0lMSVRZfEF8QXwyMDE4MDEwMTAwMDAwMHx8VFlQRV5BfDIwMTgwMTAxMDAwMDAwfFR8MC4wfHx8QUF8fDAwfEFTQ0lJDUVWTnxBMDB8MjAxODAxMDEwNDAwMDANUElEfHwxNAExMTFeXl5eTVJOfDExMTExMTExXl5eXk1STn4xMTExMTExMTExXl5eXk9SR05NQlI=\", \"sendFacility\": \"SEND FACILITY\", \"sendTime\": \"2018-01-01T00:00:00Z\", \"messageType\": \"TYPE\", \"createTime\": \"1970-01-01T00:00:00Z\", \"patientIds\": [ { \"value\": \"14\\u0001111\", \"type\": \"MRN\" }, { \"value\": \"11111111\", \"type\": \"MRN\" }, { \"value\": \"1111111111\", \"type\": \"ORGNMBR\" } ] } PowerShell To create an HL7v2 message, make a POST request and specify the following information: The name of the parent dataset The name of the HL7v2 store A message An access token The following sample shows a POST request using Windows PowerShell and a sample JSON file called hl7v2-sample.json . $cred = gcloud auth application-default print-access-token $headers = @ { Authorization = \"Bearer $cred \" } Invoke-WebRequest -Method Post -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile hl7v2-sample.json -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages\" Select-Object -Expand Content If the request is successful, the server returns the response in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID \", \"data\": \"TVNIfF5+XCZ8QXxTRU5EX0ZBQ0lMSVRZfEF8QXwyMDE4MDEwMTAwMDAwMHx8VFlQRV5BfDIwMTgwMTAxMDAwMDAwfFR8MC4wfHx8QUF8fDAwfEFTQ0lJDUVWTnxBMDB8MjAxODAxMDEwNDAwMDANUElEfHwxNAExMTFeXl5eTVJOfDExMTExMTExXl5eXk1STn4xMTExMTExMTExXl5eXk9SR05NQlI=\", \"sendFacility\": \"SEND FACILITY\", \"sendTime\": \"2018-01-01T00:00:00Z\", \"messageType\": \"TYPE\", \"createTime\": \"1970-01-01T00:00:00Z\", \"patientIds\": [ { \"value\": \"14\\u0001111\", \"type\": \"MRN\" }, { \"value\": \"11111111\", \"type\": \"MRN\" }, { \"value\": \"1111111111\", \"type\": \"ORGNMBR\" } ] } After creating the message, the MLLP adapter returns a response similar to the following: I0214 00:00:00.000000 1 healthapiclient.go:244] Started to fetch message from the Cloud Healthcare API HL7V2 Store I0214 00:00:00.000000 1 healthapiclient.go:283] Message was successfully fetched from the Cloud Healthcare API HL7V2 Store.",
+          "In the directory where you downloaded hl7v2-sample1.json , call the messages.create method to create the message in an HL7v2 store: curl To create an HL7v2 message, make a POST request and specify the following information: The name of the parent dataset The name of the HL7v2 store A message An access token The following sample shows a POST request using curl and a sample JSON file, hl7v2-sample1.json . curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ --data-binary @hl7v2-sample1.json \\ \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages\" If the request is successful, the server returns the response in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID \", \"data\": \"TVNIfF5+XCZ8QXxTRU5EX0ZBQ0lMSVRZXzF8QXxBfDIwMTgwMTAxMDAwMDAwfHxUWVBFXkF8MjAxODAxMDEwMDAwMDB8VHwwLjB8fHxBQXx8MDB8QVNDSUkNRVZOfEEwMHwyMDE4MDEwMTA0MDAwMA1QSUR8fDE0ATExMV5eXl5NUk58MTExMTExMTFeXl5eTVJOfjExMTExMTExMTFeXl5eT1JHTk1CUg==\", \"sendFacility\": \"SEND FACILITY 1\", \"sendTime\": \"2018-01-01T00:00:00Z\", \"messageType\": \"TYPE\", \"createTime\": \"1970-01-01T00:00:00Z\", \"patientIds\": [ { \"value\": \"14\\u0001111\", \"type\": \"MRN\" }, { \"value\": \"11111111\", \"type\": \"MRN\" }, { \"value\": \"1111111111\", \"type\": \"ORGNMBR\" } ] } PowerShell To create an HL7v2 message, make a POST request and specify the following information: The name of the parent dataset The name of the HL7v2 store A message An access token The following sample shows a POST request using Windows PowerShell and a sample JSON file called hl7v2-sample1.json . $cred = gcloud auth application-default print-access-token $headers = @ { Authorization = \"Bearer $cred \" } Invoke-WebRequest -Method Post -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile hl7v2-sample1.json -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages\" Select-Object -Expand Content If the request is successful, the server returns the response in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID \", \"data\": \"TVNIfF5+XCZ8QXxTRU5EX0ZBQ0lMSVRZXzF8QXxBfDIwMTgwMTAxMDAwMDAwfHxUWVBFXkF8MjAxODAxMDEwMDAwMDB8VHwwLjB8fHxBQXx8MDB8QVNDSUkNRVZOfEEwMHwyMDE4MDEwMTA0MDAwMA1QSUR8fDE0ATExMV5eXl5NUk58MTExMTExMTFeXl5eTVJOfjExMTExMTExMTFeXl5eT1JHTk1CUg==\", \"sendFacility\": \"SEND FACILITY 1\", \"sendTime\": \"2018-01-01T00:00:00Z\", \"messageType\": \"TYPE\", \"createTime\": \"1970-01-01T00:00:00Z\", \"patientIds\": [ { \"value\": \"14\\u0001111\", \"type\": \"MRN\" }, { \"value\": \"11111111\", \"type\": \"MRN\" }, { \"value\": \"1111111111\", \"type\": \"ORGNMBR\" } ] } In this response, sendFacility is set to SEND FACILITY 1 , therefore the Pub/Sub notification is only sent to the first Pub/Sub topic.",
+          "In the directory where you downloaded hl7v2-sample2.json , call the messages.create method to create the message in an HL7v2 store: curl To create an HL7v2 message, make a POST request and specify the following information: The name of the parent dataset The name of the HL7v2 store A message An access token The following sample shows a POST request using curl and a sample JSON file, hl7v2-sample2.json . curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ --data-binary @hl7v2-sample2.json \\ \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages\" If the request is successful, the server returns the response in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID \", \"data\": \"TVNIfF5+XCZ8QXxTRU5EX0ZBQ0lMSVRZXzJ8QXxBfDIwMTgwMTAxMDAwMDAwfHxUWVBFXkF8MjAxODAxMDEwMDAwMDB8VHwwLjB8fHxBQXx8MDB8QVNDSUkNRVZOfEEwMHwyMDE4MDEwMTA0MDAwMA1QSUR8fDE0ATExMV5eXl5NUk58MTExMTExMTFeXl5eTVJOfjExMTExMTExMTFeXl5eT1JHTk1CUg==\", \"sendFacility\": \"SEND FACILITY 2\", \"sendTime\": \"2018-01-01T00:00:00Z\", \"messageType\": \"TYPE\", \"createTime\": \"1970-01-01T00:00:00Z\", \"patientIds\": [ { \"value\": \"14\\u0001111\", \"type\": \"MRN\" }, { \"value\": \"11111111\", \"type\": \"MRN\" }, { \"value\": \"1111111111\", \"type\": \"ORGNMBR\" } ] } PowerShell To create an HL7v2 message, make a POST request and specify the following information: The name of the parent dataset The name of the HL7v2 store A message An access token The following sample shows a POST request using Windows PowerShell and a sample JSON file, hl7v2-sample2.json . $cred = gcloud auth application-default print-access-token $headers = @ { Authorization = \"Bearer $cred \" } Invoke-WebRequest -Method Post -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile hl7v2-sample2.json -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages\" Select-Object -Expand Content If the request is successful, the server returns the response in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID \", \"data\": \"TVNIfF5+XCZ8QXxTRU5EX0ZBQ0lMSVRZXzJ8QXxBfDIwMTgwMTAxMDAwMDAwfHxUWVBFXkF8MjAxODAxMDEwMDAwMDB8VHwwLjB8fHxBQXx8MDB8QVNDSUkNRVZOfEEwMHwyMDE4MDEwMTA0MDAwMA1QSUR8fDE0ATExMV5eXl5NUk58MTExMTExMTFeXl5eTVJOfjExMTExMTExMTFeXl5eT1JHTk1CUg==\", \"sendFacility\": \"SEND FACILITY 2\", \"sendTime\": \"2018-01-01T00:00:00Z\", \"messageType\": \"TYPE\", \"createTime\": \"1970-01-01T00:00:00Z\", \"patientIds\": [ { \"value\": \"14\\u0001111\", \"type\": \"MRN\" }, { \"value\": \"11111111\", \"type\": \"MRN\" }, { \"value\": \"1111111111\", \"type\": \"ORGNMBR\" } ] } Note that the sendFacility is SEND FACILITY 2 , therefore the Pub/Sub notification is only sent to the second Pub/Sub topic."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Store healthcare data with curl and PowerShell \\_|\\_ Cloud Healthcare\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following command in the terminal to create or overwrite this file in the current directory: cat > request.json Then execute the following command to send your REST request: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/datasets/my-dataset/fhirStores?fhirStoreId=my-fhir-store\" PowerShell Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login .",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: cat > request.json Then execute the following command to send your REST request: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/fhir+json\" \\ -d @request.json \\ \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/datasets/my-dataset/fhirStores/my-fhir-store/fhir/Patient\" PowerShell Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login .",
+          "Execute the following command: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ --data-binary @hl7v2-sample.json \\ \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/datasets/my-dataset/hl7V2Stores/my-hl7v2-store/messages\" PowerShell Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapiclient.http.HttpRequest",
+      "healthapiclient.go",
+      "healthcare.googleapis.com",
+      "loinc.org",
+      "messages.create",
+      "projects.locations.datasets.fhirStores.fhir.create",
+      "request.json",
+      "sample.json",
+      "sample1.json",
+      "sample2.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "https://docs.cloud.google.com/healthcare-api/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "https://docs.cloud.google.com/healthcare-api/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "https://docs.cloud.google.com/healthcare-api/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "https://docs.cloud.google.com/healthcare-api/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "https://docs.cloud.google.com/healthcare-api/docs/quickstart"
+      ]
+    }
+  ]
+}

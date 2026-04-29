@@ -1,0 +1,172 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:46.338Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing",
+  "feature_name": "Cloud Billing detailed export Cloud Logging log bucket granularity",
+  "feature_slug": "cloud-billing-detailed-export-cloud-logging-log-bucket-granularity",
+  "summary": "Cloud Billing detailed export now includes granular Cloud Logging log bucket cost data that can be filtered by the resource.global_name field.",
+  "extended_definition": "Cloud Billing detailed export now includes granular Cloud Logging log bucket cost data that can be filtered by the resource.global_name field.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 2,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "missing_exact_identifier_page",
+        "message": "No supporting page directly names the exact identifier(s): resource.global_name.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/authentication",
+      "https://docs.cloud.google.com/billing/docs/how-to/gemini/ai-cost-summary",
+      "https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_catalog.CloudCatalogClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Analyze your AI spend with the AI Cost Summary Agent \\_|\\_ Cloud Billing\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/gemini/ai-cost-summary",
+        "source_id": "site-docs-root-2",
+        "final_score": 64,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Permissions required to use the AI Cost Summary Agent To use the AI Cost Summary widget, you need a role that includes the following permissions on the Cloud Billing account: billing.anomalies.list billing.billingAccountPrices.list billing.billingAccountServices.list billing.billingAccountSkus.list To gain these permissions using a predefined role, ask your administrator to grant you one of the following Cloud Billing IAM role on your Cloud Billing account: Billing Account Viewer Billing Account Administrator Analyze your AI spend The AI Cost Summary Agent is presented as a widget on the Billing Overview page for your Cloud Billing account.",
+          "Home Documentation Costs and usage management Cloud Billing Guides Send feedback Analyze your AI spend with the AI Cost Summary Agent Stay organized with collections Save and categorize content based on your preferences.",
+          "To use the AI Cost Summary Agent, complete the following steps: In the Google Cloud console, go to the Billing Overview page for your Cloud Billing account."
+        ]
+      },
+      {
+        "title": "\"Class CloudCatalogClient (1.18.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_catalog.CloudCatalogClient",
+        "source_id": "site-python-reference",
+        "final_score": 58,
+        "relevance": "",
+        "evidence_snippets": [
+          "Exiting the with block will CLOSE the transport and may cause errors in other clients! common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import billing v1 def sample list services(): Create a client client = billing v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import billing v1 def sample list skus(): Create a client client = billing v1 ."
+        ]
+      },
+      {
+        "title": "Authenticate to Cloud Billing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/billing/docs/authentication",
+        "source_id": "site-api-reference",
+        "final_score": 58,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can access the API in the following ways: Client libraries Google Cloud CLI REST Client libraries The Cloud Billing Budget client libraries provide high-level language support for authenticating to Cloud Billing programmatically.",
+          "Home Documentation Costs and usage management Cloud Billing APIs & Reference Send feedback Authenticate to Cloud Billing Stay organized with collections Save and categorize content based on your preferences.",
+          "Google Cloud CLI When you use the gcloud CLI to access Cloud Billing, you log in to the gcloud CLI with a user account, which provides the credentials used by the gcloud CLI commands."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.anomalies.list",
+      "billing.billingAccountPrices.list",
+      "billing.billingAccountServices.list",
+      "billing.billingAccountSkus.list",
+      "googleapis.dev",
+      "options.html",
+      "resource.global_name",
+      "v1.types.ListSkusRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/ai-cost-summary",
+        "https://docs.cloud.google.com/billing/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_catalog.CloudCatalogClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/ai-cost-summary",
+        "https://docs.cloud.google.com/billing/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_catalog.CloudCatalogClient"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/ai-cost-summary",
+        "https://docs.cloud.google.com/billing/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_catalog.CloudCatalogClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/ai-cost-summary",
+        "https://docs.cloud.google.com/billing/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_catalog.CloudCatalogClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/ai-cost-summary",
+        "https://docs.cloud.google.com/billing/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_catalog.CloudCatalogClient"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/ai-cost-summary",
+        "https://docs.cloud.google.com/billing/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_catalog.CloudCatalogClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/ai-cost-summary",
+        "https://docs.cloud.google.com/billing/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_catalog.CloudCatalogClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/ai-cost-summary",
+        "https://docs.cloud.google.com/billing/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest/google.cloud.billing_v1.services.cloud_catalog.CloudCatalogClient"
+      ]
+    }
+  ]
+}

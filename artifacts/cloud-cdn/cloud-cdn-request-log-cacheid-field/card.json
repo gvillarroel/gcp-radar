@@ -1,0 +1,110 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:47.011Z",
+  "source_step08_card": "data/step-08/current/products/cloud-cdn/card.json",
+  "product_name": "Cloud CDN",
+  "product_slug": "cloud-cdn",
+  "feature_name": "Cloud CDN request log cacheId field",
+  "feature_slug": "cloud-cdn-request-log-cacheid-field",
+  "summary": "Cloud CDN request logs now include a cacheId field that identifies the edge cache node and location used to serve a response.",
+  "extended_definition": "Cloud CDN request logs now include a cacheId field that identifies the edge cache node and location used to serve a response.",
+  "lifecycle": {
+    "latest_feature_date": "2020-04-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+      "https://docs.cloud.google.com/cdn/docs/logging",
+      "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Logs and metrics for caching \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/logging",
+        "source_id": "site-docs-reference-2",
+        "final_score": 144,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Request served from the backend To confirm that a request is served from a Cloud CDN-enabled backend, there are three main fields to look for, as follows: httpRequest : When a request is served from a backend, you can see that the cache is filled and you can confirm the request URL. cacheFillBytes: NUMBER OF BYTES cacheLookup: True requestURL : URL jsonPayload : From the statusDetails field, you can confirm that the response was served by the backend. statusDetails: \"response sent by backend\" Request served from cache The following log entry shows a cache hit. { insertId: \"1oek5rg3l3fxj7\" jsonPayload: { @type: \"type.googleapis.com/google.cloud.loadbalancing.type.LoadBalancerLogEntry\" cacheId: \"SFO-fbae48ad\" statusDetails: \"response from cache\" } httpRequest: { requestMethod: \"GET\" requestUrl: \"http:// LOAD BALANCER IP ADDRESS /static/us/three-cats.jpg\" requestSize: \"577\" status: 304 responseSize: \"157\" userAgent: \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10 14 6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36\" remoteIp: \" CLIENT IP ADDRESS \" cacheHit: true cacheLookup: true } resource: { type: \"http load balancer\" labels: { zone: \"global\" url map name: \" URL MAP NAME \" forwarding rule name: \" FORWARDING RULE NAME \" target proxy name: \" TARGET PROXY NAME \" backend service name: \"\" project id: \" PROJECT ID \" } } timestamp: \"2020-06-08T23:41:30.078651Z\" severity: \"INFO\" logName: \"projects/ PROJECT ID /logs/requests\" trace: \"projects/ PROJECT ID /traces/241d69833e64b3bf83fabac8c873d992\" receiveTimestamp: \"2020-06-08T23:41:30.588272510Z\" spanId: \"7b6537d3672e08e1\" } What is logged In addition to general information contained in most logs, such as severity, project ID, project number, and timestamp, the external Application Load Balancer and Cloud CDN logs contain the following: The HttpRequest log field, which captures the HTTP status code, bytes returned, and whether a cache lookup or cache fill was performed.",
+          "To learn about the fields that are included in the httpRequest log entry, see HttpRequest .",
+          "A backend can be a Cloud Storage bucket, a Compute Engine VM group, or an external backend. histogram quantile( 0.95, sum by (proxy continent, le) ( rate({\"loadbalancing.googleapis.com/https/frontend tcp rtt bucket\", monitored resource=\"https lb rule\", backend target name=\"example-backend\" }[1m]) ) ) Request count broken out by response code class for Cloud CDN-enabled backends This query breaks out traffic by response code class (2xx, 3xx, 4xx, 5xx) to help separate client successes, client errors, and server errors. sum by (response code class) ( count over time( {\"loadbalancing.googleapis.com/https/request count\", monitored resource=\"https lb rule\", cache result!=\"DISABLED\" }[1h] ) ) Request count broken out by country of origin This query shows traffic broken out by country of origin, which is determined by using client IP addresses. sum by (client country) ( rate({\"loadbalancing.googleapis.com/https/request count\", monitored resource=\"https lb rule\"}[1m]) ) What's next To learn more about logging, including how to export logs to BigQuery, Pub/Sub, or Cloud Storage, and how to configure logs-based metrics for monitoring and alerting, see the Cloud Logging documentation ."
+        ]
+      },
+      {
+        "title": "\"Logs and metrics for backend services \\_|\\_ Cloud CDN \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "source_id": "site-docs-root-2",
+        "final_score": 127,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Updating logging optional mode from CUSTOM to others gcloud compute backend-services update BACKEND SERVICE \\ --global \\ --enable-logging \\ --logging-sample-rate= VALUE \\ --logging-optional= LOGGING OPTIONAL MODE \\ --logging-optional-fields= where --logging-optional lets you specify the optional fields that you want to include in the logs: INCLUDE ALL OPTIONAL to include all optional fields.",
+          "CUSTOM to include a custom list of optional fields that you specify in OPTIONAL FIELDS . --logging-optional-fields lets you specify a comma-separated list of optional fields that you want to include in the logs.",
+          "CUSTOM to include a custom list of optional fields that you specify in OPTIONAL FIELDS . --logging-optional-fields lets you specify a comma-separated list of optional fields that you want to include in the logs."
+        ]
+      },
+      {
+        "title": "Set up a backend bucket \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket",
+        "source_id": "site-docs-reference-2",
+        "final_score": 92,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Logs Explorer { insertId: \"1oek5rg3l3fxj7\" jsonPayload: { @type: \"type.googleapis.com/google.cloud.loadbalancing.type.LoadBalancerLogEntry\" cacheId: \"SFO-fbae48ad\" statusDetails: \"response from cache\" } httpRequest: { requestMethod: \"GET\" requestUrl: \"http:// LOAD BALANCER IP ADDRESS /never-fetch/three-cats.jpg\" requestSize: \"577\" status: 254 responseSize: \"157\" userAgent: \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10 14 6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36\" remoteIp: \" CLIENT IP ADDRESS \" cacheHit: true cacheLookup: true } resource: { type: \"http load balancer\" labels: { zone: \"global\" url map name: \" URL MAP NAME \" forwarding rule name: \" FORWARDING RULE NAME \" target proxy name: \" TARGET PROXY NAME \" backend service name: \"\" project id: \" PROJECT ID \" } } timestamp: \"2020-06-08T23:41:25.078651Z\" severity: \"INFO\" logName: \"projects/ PROJECT ID /logs/requests\" trace: \"projects/ PROJECT ID /traces/241d69833e64b3bf83fabac8c873d992\" receiveTimestamp: \"2020-06-08T23:41:25.588272510Z\" spanId: \"7b6537d3672e08e1\" } Console Note: For global external Application Load Balancers, the Google Cloud console isn't supported.",
+          "Note the IPv4 address that was reserved: gcloud compute addresses describe example-ip \\ --format=\"get(address)\" \\ --global Send a curl request: curl -D- -o /dev/null /dev/null http:// IP ADDRESS /never-fetch/three-cats.jpg Content is fetched from Cloud Storage, cached by Cloud CDN, and then validated and re-fetched when it expires or is otherwise evicted from the cache.",
+          "Note the IPv4 address that was reserved: gcloud compute addresses describe example-ip \\ --format=\"get(address)\" \\ --global Send a curl request: curl http:// IP ADDRESS /never-fetch/three-cats.jpg Verify that Cloud CDN is working If you reload the http:// IP ADDRESS /never-fetch/three-cats.jpg page several times in quick succession, there should be several cache hits."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cats.jpg",
+      "loadbalancing.googleapis.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/logging",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/logging",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/logging",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket"
+      ]
+    }
+  ]
+}

@@ -38,7 +38,7 @@ function relativeToCwd(target) {
 }
 
 function markdownTableRow(values) {
-  return `| ${values.map((value) => String(value || "").replace(/\n/g, " ").replace(/\|/g, "\\|")).join(" | ")} |`;
+  return `| ${values.map((value) => String(value ?? "").replace(/\n/g, " ").replace(/\|/g, "\\|")).join(" | ")} |`;
 }
 
 async function listProductDirs() {
@@ -267,7 +267,7 @@ function renderServiceCardsReport(products) {
     lines.push(markdownTableRow([
       `[${product.product_name}](../../artifacts/${product.product_slug}/card.json)`,
       service.validation?.product_status || product.promotion?.product_status || "unknown",
-      service.feature_count || product.features.length,
+      service.feature_count ?? product.features.length,
       service.lifecycle?.latest_feature_date || "unknown",
       iam.explicit || 0,
       iam.derived_from_permission_prefix || 0,

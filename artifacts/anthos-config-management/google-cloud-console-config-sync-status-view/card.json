@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.232Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management",
+  "feature_name": "Google Cloud console Config Sync status view",
+  "feature_slug": "google-cloud-console-config-sync-status-view",
+  "summary": "The Google Cloud console can display sync status for fleet-registered clusters and drill down into individual resource reconciliation status.",
+  "extended_definition": "The Google Cloud console can display sync status for fleet-registered clusters and drill down into individual resource reconciliation status.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/install-fleet",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deploy fleet packages \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages",
+        "source_id": "site-docs-root",
+        "final_score": 188,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "In the Settings tab, after a few minutes, you should see Enabled in the Status column for the clusters in your fleet. gcloud Enable the ConfigManagement fleet feature: gcloud beta container fleet config-management enable To enable Config Sync, create a file named apply-spec.yaml with the following content: applySpecVersion : 1 spec : configSync : enabled : true Apply the apply-spec.yaml file: gcloud beta container fleet config-management apply \\ --membership = MEMBERSHIP NAME \\ --config = apply-spec.yaml Replace MEMBERSHIP NAME with the fleet membership name that you chose when you registered your cluster.",
+          "When you install Config Sync in the Google Cloud console, selecting individual clusters automatically registers those clusters to your fleet.",
+          "Console To install Config Sync, all clusters must be registered to a fleet."
+        ]
+      },
+      {
+        "title": "Install Config Sync as a fleet default \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/install-fleet",
+        "source_id": "site-docs-root",
+        "final_score": 188,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Confirm that your membership configurations are synced with the fleet default: gcloud beta container fleet config-management status The output of this command should display as Yes for the Synced to Fleet Default status of the membership that you synced. console Go to Feature Manager : Go to Feature Manager: Config Sync In the cluster table, select the clusters that you want to sync to fleet settings.",
+          "Disable fleet defaults To disable Config Sync default settings across your fleet, follow these steps: To disable the fleet default configuration, run the following command: gcloud beta container fleet config-management disable --fleet-default-member-config Confirm that the fleet default configuration is disabled: gcloud beta container fleet config-management status What's next Learn how to upgrade Config Sync .",
+          "Update existing clusters to inherit fleet defaults To update existing clusters to use your default Config Sync settings, you can use the Google Cloud console or gcloud CLI to sync selected fleet clusters to your fleet defaults."
+        ]
+      },
+      {
+        "title": "Customize your Config Sync installation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync",
+        "source_id": "site-docs-root",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more details about the information supplied by nomos status , including reported errors, see Check Config Sync status in the nomos command-line tool documentation. console Complete the following steps: In the Google Cloud console, go to the Config page under the Features section.",
+          "After a few minutes, you should see Synced in the Sync status column for the cluster that you configured. gcloud Before you continue, make sure you've registered your clusters to a fleet .",
+          "When you install Config Sync in the Google Cloud console, selecting individual clusters automatically registers those clusters to your fleet."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "spec.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/install-fleet",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/install-fleet",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    }
+  ]
+}

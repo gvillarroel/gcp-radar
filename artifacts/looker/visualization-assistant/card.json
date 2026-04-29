@@ -1,0 +1,121 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:20.598Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "Visualization Assistant",
+  "feature_slug": "visualization-assistant",
+  "summary": "Visualization Assistant lets users customize Looker visualization formatting with natural-language prompts using Gemini assistance; Generates custom formatting options for Looker visualizations from natural-language prompts.",
+  "extended_definition": "Visualization Assistant lets users customize Looker visualization formatting with natural-language prompts using Gemini assistance; Generates custom formatting options for Looker visualizations from natural-language prompts.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-platform-gil",
+      "https://docs.cloud.google.com/looker/docs/advanced-visualization-editor",
+      "https://docs.cloud.google.com/looker/docs/chart-config-editor"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customizing visualizations using the Chart Config Editor \\_|\\_ Looker \\_\\",
+        "url": "https://docs.cloud.google.com/looker/docs/advanced-visualization-editor",
+        "source_id": "site-docs-reference",
+        "final_score": 174,
+        "relevance": "",
+        "evidence_snippets": [
+          "If Gemini in Looker features are enabled, you can use the Visualization Assistant to generate JSON formatting options from text-based prompts to accelerate the customization of Looker visualizations.",
+          "You can use the Chart Config Editor to customize formatting options on Looker visualizations that use the HighCharts API .",
+          "The following HighCharts JSON changes the dashStyle attribute of the Customers series to a dashed line, and the dashStyle attribute of the Sales series to a dotted line. { series : [{ name : 'Customers' , dashStyle : 'Dash' }, { name : 'Sales' , dashStyle : 'Dot' }] } Color the maximum, minimum, and percentile values See the Getting the most out of Looker visualizations cookbook: Conditional formatting customization in Cartesian charts page for an in-depth example about coloring the maximum, minimum, and percentile values of a Cartesian visualization."
+        ]
+      },
+      {
+        "title": "\"Customizing visualizations using the Chart Config Editor \\_|\\_ Looker \\_\\",
+        "url": "https://docs.cloud.google.com/looker/docs/chart-config-editor",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "If Gemini in Looker features are enabled, you can use the Visualization Assistant to generate JSON formatting options from text-based prompts to accelerate the customization of Looker visualizations.",
+          "You can use the Chart Config Editor to customize formatting options on Looker visualizations that use the HighCharts API .",
+          "The following HighCharts JSON changes the dashStyle attribute of the Customers series to a dashed line, and the dashStyle attribute of the Sales series to a dotted line. { series : [{ name : 'Customers' , dashStyle : 'Dash' }, { name : 'Sales' , dashStyle : 'Dot' }] } Color the maximum, minimum, and percentile values See the Getting the most out of Looker visualizations cookbook: Conditional formatting customization in Cartesian charts page for an in-depth example about coloring the maximum, minimum, and percentile values of a Cartesian visualization."
+        ]
+      },
+      {
+        "title": "Admin settings \\u2013 Gemini in Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-platform-gil",
+        "source_id": "site-docs-reference",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "Turn on the following toggles to enable each of their corresponding features: Conversational Analytics — enables Conversational Analytics Looker Assistants — enables the Visualization Assistant Optionally, select Enable Trusted Tester Features to grant users access to the Trusted Tester capabilities of Gemini in Looker features.",
+          "Expression Assistant — enables the Expression Assistant , which allows users to use natural language to write Looker expressions for table calculations and custom fields .",
+          "Explore Insight Assistant — enables the Insight Assistant , which allows users to ask natural language questions about an Explore, and create and modify queries based on the Explore."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "labels.style.color",
+      "title.style.color",
+      "tooltip.backgroundColor",
+      "tooltip.format",
+      "tooltip.shared",
+      "tooltip.style.color"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/advanced-visualization-editor",
+        "https://docs.cloud.google.com/looker/docs/chart-config-editor",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-gil"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/advanced-visualization-editor",
+        "https://docs.cloud.google.com/looker/docs/chart-config-editor",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-gil"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/advanced-visualization-editor",
+        "https://docs.cloud.google.com/looker/docs/chart-config-editor",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-gil"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/advanced-visualization-editor",
+        "https://docs.cloud.google.com/looker/docs/chart-config-editor",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-gil"
+      ]
+    }
+  ]
+}

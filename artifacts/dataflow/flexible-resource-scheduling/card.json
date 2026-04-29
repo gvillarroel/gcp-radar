@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:03.460Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Flexible Resource Scheduling",
+  "feature_slug": "flexible-resource-scheduling",
+  "summary": "Flexible Resource Scheduling optimizes Dataflow resource usage and cost for eligible jobs; Flexible Resource Scheduling optimizes Dataflow resource usage and cost for eligible jobs.",
+  "extended_definition": "Flexible Resource Scheduling optimizes Dataflow resource usage and cost for eligible jobs; Flexible Resource Scheduling optimizes Dataflow resource usage and cost for eligible jobs.",
+  "lifecycle": {
+    "latest_feature_date": "2020-04-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/cuds",
+      "https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline",
+      "https://docs.cloud.google.com/dataflow/docs/guides/flexrs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use Flexible Resource Scheduling in Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/flexrs",
+        "source_id": "site-docs-reference-2",
+        "final_score": 231,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Pipeline options Java To enable a FlexRS job, use the following pipeline option: --flexRSGoal=COST OPTIMIZED , where the cost-optimized goal means that the Dataflow service chooses any available discounted resources. --flexRSGoal=SPEED OPTIMIZED , where it optimizes for lower execution time.",
+          "Python To enable a FlexRS job, use the following pipeline option: --flexrs goal=COST OPTIMIZED , where the cost-optimized goal means that the Dataflow service chooses any available discounted resources. --flexrs goal=SPEED OPTIMIZED , where it optimizes for lower execution time.",
+          "Go To enable a FlexRS job, use the following pipeline option: --flexrs goal=COST OPTIMIZED , where the cost-optimized goal means that the Dataflow service chooses any available discounted resources. --flexrs goal=SPEED OPTIMIZED , where it optimizes for lower execution time."
+        ]
+      },
+      {
+        "title": "Deploy Dataflow pipelines \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline",
+        "source_id": "site-docs-reference-2",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dataflow Flexible Resource Scheduling Dataflow FlexRS reduces batch processing costs by using advanced scheduling techniques , the Dataflow Shuffle service, and a combination of preemptible virtual machine (VM) instances and regular VMs.",
+          "Fusion and combine optimizations Dataflow uses your pipeline code to create an execution graph that represents your pipeline's PCollection s and transforms, and optimizes the graph for the most efficient performance and resource usage.",
+          "For more information about FlexRS, see Using Flexible Resource Scheduling in Dataflow ."
+        ]
+      },
+      {
+        "title": "Committed use discounts \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/cuds",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 109,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "From here, you can calculate the monthly costs and savings that you would see under a one-year commitment with a 20% discount compared to a year of paying the full rates: Monthly cost of a one-year, $4.585/hour commitment 730 hours = $3,346.32 per month Total savings per month: $4,182.90 - $3,346.32 = $836.58 Total savings with a one-year, $5.73/hour commitment: $836.58 per month 12 months = $10,038.96 You can apply similar math to calculating the costs and savings of a three-year CUD, with its 40% discount compared to on-demand rates: Monthly cost of a three-year commitment: $3.438 per hour 730 hours = $2,509.74 per month Total savings per month: $4,182.90 - $2,509.74 = $1,673.16 Total savings with a three-year, $5.73/hour CUD: $1,673.16 per month 36 months = $60,233.76 A commitment that covers your expected minimum Dataflow streaming usage over the years to come can lead to significant savings.",
+          "Dataflow CUDs apply to your spending on the following resources: Worker CPU and memory for streaming jobs Streaming Engine data processed Streaming Engine compute units Data Compute Units (DCUs) for Dataflow Prime streaming jobs Dataflow CUDs don't apply to your spending on the following resources: Worker CPU and memory for batch and FlexRS jobs Dataflow Shuffle data processed Data Compute Units (DCUs) for Dataflow Prime batch jobs Persistent Disk storage GPUs and TPUs Snapshots Confidential VMs For a list of applicable SKUs, see Dataflow CUD Eligible SKUs .",
+          "Resources eligible for Dataflow CUDs Note: While Dataflow Committed Use Discounts (CUDs) don't apply to GPUs and TPUs, you can apply resource-based CUDs for these accelerators by purchasing Compute Engine resource-based commitments with specifically targeted reservations, and using these reservations with Dataflow."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.dataflow.v1beta3"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/flexrs",
+        "https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline",
+        "https://docs.cloud.google.com/dataflow/docs/cuds"
+      ]
+    }
+  ]
+}

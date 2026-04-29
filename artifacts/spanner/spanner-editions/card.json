@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner editions",
+  "feature_slug": "spanner-editions",
+  "summary": "Cloud Spanner now supports a tier-based editions model with Standard, Enterprise, and Enterprise Plus options to match features and pricing to workload needs.",
+  "extended_definition": "Cloud Spanner now supports a tier-based editions model with Standard, Enterprise, and Enterprise Plus options to match features and pricing to workload needs.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/graph/iso-standards",
+      "https://docs.cloud.google.com/spanner/docs/information-schema",
+      "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Spanner Graph and ISO standards \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/graph/iso-standards",
+        "source_id": "site-docs-reference",
+        "final_score": 135,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Spanner Graph is based on two ISO standards: ISO/IEC 9075-16:2023 - Information technology — Database languages SQL Property Graph Queries (SQL/PGQ) , Edition 1, 2023 ISO/IEC 39075:2024 - Information technology — Database languages — GQL , Edition 1, 2024 The following tables describe the high-level relationship between SQL/PGQ, GQL, and how Spanner Graph supports these standards.",
+          "Home Documentation Databases Spanner Reference Send feedback Spanner Graph and ISO standards Stay organized with collections Save and categorize content based on your preferences.",
+          "The page describes how Spanner Graph supports the ISO international standard query language for graph databases."
+        ]
+      },
+      {
+        "title": "\"Get started using Spanner for generative AI applications \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "PREDICT ( MODEL EmbeddingsModel , ( SELECT \"I'd like to buy a starter bike for my 3 year old child\" as content ) ) ) -- Use embedding to find the most similar entries in the database SELECT productName , productDescription , inventoryCount , ( APPROX COSINE DISTANCE ( productDescriptionEmbedding , embedding . values , options = > JSON '{\"num leaves to search\": 10}' )) as distance FROM products @{ force index = ProductDescriptionEmbeddingIndex } , embedding WHERE productDescriptionEmbedding IS NOT NULL AND inventoryCount > 0 ORDER BY distance LIMIT 5 ; Click Run .",
+          "In a new tab in Spanner Studio , copy and paste the following DDL statement to re-create the productDescriptionEmbedding column: ALTER TABLE products DROP COLUMN productDescriptionEmbedding ; ALTER TABLE products ADD COLUMN productDescriptionEmbedding ARRAY<FLOAT32> ( vector length = > VECTOR LENGTH VALUE ); Replace VECTOR LENGTH VALUE with the maximum output dimensions of the embedding model you've chosen.",
+          "Enter: CREATE MODEL EmbeddingsModel INPUT ( content STRING ( MAX ), ) OUTPUT ( embeddings STRUCT<values ARRAY<FLOAT32> > , ) REMOTE OPTIONS ( endpoint = '//aiplatform.googleapis.com/projects/ PROJECT ID /locations/us-central1/publishers/google/models/ TEXT EMBEDDING MODEL ' ); Replace the following: PROJECT ID : a permanent identifier that is unique for your Google Cloud project."
+        ]
+      },
+      {
+        "title": "\"Information schema for GoogleSQL-dialect databases \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "source_id": "site-docs-reference",
+        "final_score": 74,
+        "relevance": "",
+        "evidence_snippets": [
+          "All other principals can see privileges only for models on which EXECUTE fine-grained access control privilege is granted to the current database role, to roles of which the current database role is a member, or to public .",
+          "Home Documentation Databases Spanner Reference Send feedback Information schema for GoogleSQL-dialect databases Stay organized with collections Save and categorize content based on your preferences.",
+          "ROLE MODEL GRANTS This row-filtered table lists all fine-grained access control privileges granted on all models to any database role, including public ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/graph/iso-standards",
+        "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial",
+        "https://docs.cloud.google.com/spanner/docs/information-schema"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/graph/iso-standards",
+        "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial",
+        "https://docs.cloud.google.com/spanner/docs/information-schema"
+      ]
+    }
+  ]
+}

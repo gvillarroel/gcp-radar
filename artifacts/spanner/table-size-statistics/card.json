@@ -1,0 +1,174 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Table size statistics",
+  "feature_slug": "table-size-statistics",
+  "summary": "Spanner provides generally available table size statistics to give insights into the size of individual database tables.",
+  "extended_definition": "Spanner provides generally available table size statistics to give insights into the size of individual database tables.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/bulk-loading",
+      "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+      "https://docs.cloud.google.com/spanner/docs/commit-statistics"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Build change streams connections using Dataflow \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "source_id": "site-docs-root",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "WRITE APPEND ) . withSchema ( new TableSchema (). setFields ( Arrays . asList ( new TableFieldSchema () . setName ( \"SingerId\" ) . setType ( \"INT64\" ) . setMode ( \"REQUIRED\" ), new TableFieldSchema () . setName ( \"FirstName\" ) . setType ( \"STRING\" ) . setMode ( \"REQUIRED\" ), new TableFieldSchema () . setName ( \"LastName\" ) . setType ( \"STRING\" ) . setMode ( \"REQUIRED\" ) ))) . withAutoSharding () . optimizedWrites () . withFormatFunction (( String element ) - > { ObjectMapper objectMapper = new ObjectMapper (); JsonNode jsonNode = null ; try { jsonNode = objectMapper . readTree ( element ); } catch ( IOException e ) { e . printStackTrace (); } return new TableRow () . set ( \"SingerId\" , jsonNode . get ( \"SingerId\" ). asInt ()) . set ( \"FirstName\" , jsonNode . get ( \"FirstName\" ). asText ()) . set ( \"LastName\" , jsonNode . get ( \"LastName\" ). asText ()); } ) ); Note that the BigQuery sink provides at-least-once semantics by default.",
+          "This function breaks each data change record into separate data change records, one per mod. private static class BreakRecordByModFn extends DoFn<DataChangeRecord , DataChangeRecord > { @ProcessElement public void processElement ( @Element DataChangeRecord record , OutputReceiver<DataChangeRecord> outputReceiver ) { record . getMods (). stream () . map ( mod - > new DataChangeRecord ( record . getPartitionToken (), record . getCommitTimestamp (), record . getServerTransactionId (), record . isLastRecordInTransactionInPartition (), record . getRecordSequence (), record . getTableName (), record . getRowType (), Collections . singletonList ( mod ), record . getModType (), record . getValueCaptureType (), record . getNumberOfRecordsInTransaction (), record . getNumberOfPartitionsInTransaction (), record . getTransactionTag (), record . isSystemTransaction (), record . getMetadata ())) . forEach ( outputReceiver :: output ); } } KeyByIdFn This function takes in a DataChangeRecord and outputs a DataChangeRecord keyed by the Spanner primary key hashed to an integer value. private static class KeyByIdFn extends DoFn<DataChangeRecord , KV<String , DataChangeRecord >> { // NUMBER OF BUCKETS should be configured by the user to match their key cardinality // Here, we are choosing to hash the Spanner primary keys to a bucket index, in order to have a deterministic number // of states and timers for performance purposes. // Note that having too many buckets might have undesirable effects if it results in a low number of records per bucket // On the other hand, having too few buckets might also be problematic, since many keys will be contained within them. private static final int NUMBER OF BUCKETS = 1000 ; @ProcessElement public void processElement ( @Element DataChangeRecord record , OutputReceiver<KV<String , DataChangeRecord >> outputReceiver ) { int hashCode = ( int ) record . getMods (). get ( 0 ). getKeysJson (). hashCode (); // Hash the received keys into a bucket in order to have a // deterministic number of buffers and timers.",
+          "These examples demonstrate how to filter change stream records based on user-defined transaction tags as well as system tags: User-defined tag filtering for my-tx-tag : pipeline . apply ( SpannerIO . readChangeStream () . withSpannerConfig ( SpannerConfig . create () . withProjectId ( \"my-project-id\" ) . withInstanceId ( \"my-instance-id\" ) . withDatabaseId ( \"my-database-id\" ) . withDatabaseRole ( \"my-database-role\" )) // Needed for fine-grained access control only . withChangeStreamName ( \"my-change-stream\" ) . withMetadataInstance ( \"my-metadata-instance-id\" ) . withMetadataDatabase ( \"my-metadata-database-id\" ) . withInclusiveStartAt ( Timestamp . now ())) . apply ( Filter . by ( record - > ! record . isSystemTransaction () && record . getTransactionTag (). equalsIgnoreCase ( \"my-tx-tag\" ))) // Subsequent processing goes here System tag filtering/ TTL auditing: pipeline . apply ( SpannerIO . readChangeStream () . withSpannerConfig ( SpannerConfig . create () . withProjectId ( \"my-project-id\" ) . withInstanceId ( \"my-instance-id\" ) . withDatabaseId ( \"my-database-id\" ) . withDatabaseRole ( \"my-database-role\" )) // Needed for fine-grained access control only . withChangeStreamName ( \"my-change-stream\" ) . withMetadataInstance ( \"my-metadata-instance-id\" ) . withMetadataDatabase ( \"my-metadata-database-id\" ) . withInclusiveStartAt ( Timestamp . now ())) . apply ( Filter . by ( record - > record . isSystemTransaction () && record . getTransactionTag (). equals ( \"RowDeletionPolicy\" ))) // Subsequent processing goes here Sample: Fetch full row This example works with a Spanner table named Singer that has the following definition: CREATE TABLE Singers ( SingerId INT64 NOT NULL , FirstName STRING ( 1024 ), LastName STRING ( 1024 ) ) PRIMARY KEY ( SingerId ); Under the default OLD AND NEW VALUES value capture mode of change streams, when there is an update to a Spanner row, the data change record received will contain only the columns that were changed."
+        ]
+      },
+      {
+        "title": "\"Retrieve commit statistics for a transaction \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/commit-statistics",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "To help you better understand, optimize, and diagnose transaction issues, Spanner gives you access to transaction commit statistics.",
+          "SpannerOptions ; import java.util.Arrays ; public class GetCommitStatsSample { static void getCommitStats () { // TODO(developer): Replace these variables before running the sample. final String projectId = \"my-project\" ; final String instanceId = \"my-instance\" ; final String databaseId = \"my-database\" ; try ( Spanner spanner = SpannerOptions . newBuilder (). setProjectId ( projectId ). build (). getService ()) { final DatabaseClient databaseClient = spanner . getDatabaseClient ( DatabaseId . of ( projectId , instanceId , databaseId )); getCommitStats ( databaseClient ); } } static void getCommitStats ( DatabaseClient databaseClient ) { final CommitResponse commitResponse = databaseClient . writeWithOptions ( Arrays . asList ( Mutation . newInsertOrUpdateBuilder ( \"Albums\" ) . set ( \"SingerId\" ) . to ( \"1\" ) . set ( \"AlbumId\" ) . to ( \"1\" ) . set ( \"MarketingBudget\" ) . to ( \"200000\" ) . build (), Mutation . newInsertOrUpdateBuilder ( \"Albums\" ) . set ( \"SingerId\" ) . to ( \"2\" ) . set ( \"AlbumId\" ) . to ( \"2\" ) . set ( \"MarketingBudget\" ) . to ( \"400000\" ) . build () ), Options . commitStats ()); System . out . println ( \"Updated data with \" + commitResponse . getCommitStats (). getMutationCount () + \" mutations.\" ); } } Node.js The following code sets the returnCommitStats flag and returns a mutation count of 6, because we are inserting or updating 2 rows and 3 columns in each row. // Imports the Google Cloud client library. const { Spanner } = require ( ' @google-cloud/spanner ' ); / TODO(developer): Uncomment the following lines before running the sample. / // const projectId = 'my-project-id'; // const instanceId = 'my-instance'; // const databaseId = 'my-database'; // Creates a client. const spanner = new Spanner ({ projectId : projectId , }); // Gets a reference to a Cloud Spanner instance and database. const instance = spanner . instance ( instanceId ); const database = instance . database ( databaseId ); // Instantiate Spanner table objects. const albumsTable = database . table ( 'Albums' ); // Updates rows in the Venues table. try { const [ response ] = await albumsTable . upsert ( [ { SingerId : '1' , AlbumId : '1' , MarketingBudget : '200000' }, { SingerId : '2' , AlbumId : '2' , MarketingBudget : '400000' }, ], { returnCommitStats : true }, ); console . log ( Updated data with ${ response . commitStats . mutationCount } mutations. , ); } catch ( err ) { console . error ( 'ERROR:' , err ); } finally { // Close the database when finished. database . close (); } PHP use Google\\Cloud\\Spanner\\SpannerClient; use Google\\Cloud\\Spanner\\Transaction; / Creates a database and tables for sample data.",
+          "The MutationCount is then retrieved from this response and displayed. using Google.Cloud.Spanner.Data ; using Google.Cloud.Spanner.V1 ; using Google.Cloud.Spanner.V1.Internal.Logging ; using System ; using System.Collections.Generic ; using System.Diagnostics ; using System.Threading.Tasks ; public class LogCommitStatsAsyncSample { public async Task<long> LogCommitStatsAsync ( string projectId , string instanceId , string databaseId ) { // Commit statistics are logged at level Info by the default logger. // This sample uses a custom logger to access the commit statistics. // See https://googleapis.github.io/google-cloud-dotnet/docs/Google.Cloud.Spanner.Data/logging.html // for more information on how to use loggers. var logger = new CommitStatsSampleLogger (); var options = new SessionPoolOptions (); var poolManager = SessionPoolManager ."
+        ]
+      },
+      {
+        "title": "Bulk loading best practices \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/bulk-loading",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If your upload is larger than the total current size of the table being updated, delete your secondary indexes and then add them again after you upload the data.",
+          "Measuring test runs will give you insight into which approach provides the best performance for your dataset.",
+          "When writing relatively large rows, a commit size of 1 MB to 5 MB usually provides the best performance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.github.io",
+      "java.util.Arrays",
+      "logging.html",
+      "spanner.databases.beginOrRollbackReadWriteTransaction",
+      "spanner.databases.beginReadOnlyTransaction",
+      "spanner.databases.read",
+      "spanner.databases.select",
+      "spanner.databases.updateDdl",
+      "spanner.databases.write",
+      "spanner.sessions.create",
+      "spanner.sessions.get"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/bulk-loading",
+        "https://docs.cloud.google.com/spanner/docs/commit-statistics"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/bulk-loading",
+        "https://docs.cloud.google.com/spanner/docs/commit-statistics"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/bulk-loading",
+        "https://docs.cloud.google.com/spanner/docs/commit-statistics"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/bulk-loading",
+        "https://docs.cloud.google.com/spanner/docs/commit-statistics"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/bulk-loading",
+        "https://docs.cloud.google.com/spanner/docs/commit-statistics"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/bulk-loading",
+        "https://docs.cloud.google.com/spanner/docs/commit-statistics"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/bulk-loading",
+        "https://docs.cloud.google.com/spanner/docs/commit-statistics"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/bulk-loading",
+        "https://docs.cloud.google.com/spanner/docs/commit-statistics"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/bulk-loading",
+        "https://docs.cloud.google.com/spanner/docs/commit-statistics"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/bulk-loading",
+        "https://docs.cloud.google.com/spanner/docs/commit-statistics"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:46.245Z",
+  "source_step08_card": "data/step-08/current/products/chrome-enterprise-premium/card.json",
+  "product_name": "Chrome Enterprise Premium",
+  "product_slug": "chrome-enterprise-premium",
+  "feature_name": "Chrome OCR",
+  "feature_slug": "chrome-ocr",
+  "summary": "Chrome OCR adds optical character recognition scanning for sensitive content in image files and images embedded in PDFs.",
+  "extended_definition": "Chrome OCR adds optical character recognition scanning for sensitive content in image files and images embedded in PDFs.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine",
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Secure access to private web applications \\_|\\_ Chrome Enterprise Premium\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "source_id": "site-docs-root",
+        "final_score": 42,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following example adds new-group@example.com : { \"version\" : 3 , \"bindings\" : [ { \"role\" : \"roles/beyondcorp.securityGatewayUser\" , \"members\" : [ \"group:existing-group@example.com\" , \"group:new-group@example.com\" ] } ], \"etag\" : \"BwXN8 d-bOM=\" } You can also add other types of members, such as serviceAccount , user , group , principal , and principalSet , in policy bindings.",
+          "The following example adds new-group@example.com : { \"version\" : 3 , \"bindings\" : [ { \"role\" : \"roles/beyondcorp.securityGatewayUser\" , \"members\" : [ \"group:existing-group@example.com\" , \"group:new-group@example.com\" ] } ], \"etag\" : \"BwXN8 d-bOM=\" } You can also add other types of members, such as serviceAccount , user , group , principal , and principalSet , in policy bindings.",
+          "The ID can be up to 63 characters and can contain lowercase letters, numbers, and hyphens."
+        ]
+      },
+      {
+        "title": "\"Secure access to SaaS applications \\_|\\_ Chrome Enterprise Premium \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "source_id": "site-docs-root",
+        "final_score": 42,
+        "relevance": "",
+        "evidence_snippets": [
+          "The hostname can be up to 253 characters long, and must adhere to one of the following formats: A valid IPv4 address A valid IPv6 address A valid DNS name An asterisk ( ) An asterisk ( ) followed by a valid DNS name Secure gateway parameters SECURITY GATEWAY ID = SECURITY GATEWAY ID SECURITY GATEWAY DISPLAY NAME = \" SECURITY GATEWAY DISPLAY NAME \" Replace the following: SECURITY GATEWAY ID : The ID of the secure gateway.",
+          "The following example adds new-group@example.com : { \"version\" : 3 , \"bindings\" : [ { \"role\" : \"roles/beyondcorp.securityGatewayUser\" , \"members\" : [ \"group:existing-group@example.com\" , \"group:new-group@example.com\" ] } ], \"etag\" : \"BwXN8 d-bOM=\" } You can also add other types of members, such as serviceAccount , user , group , principal , and principalSet , in policy bindings.",
+          "The following example adds new-group@example.com : { \"version\" : 3 , \"bindings\" : [ { \"role\" : \"roles/beyondcorp.securityGatewayUser\" , \"members\" : [ \"group:existing-group@example.com\" , \"group:new-group@example.com\" ] } ], \"etag\" : \"BwXN8 d-bOM=\" } You can also add other types of members, such as serviceAccount , user , group , principal , and principalSet , in policy bindings."
+        ]
+      },
+      {
+        "title": "\"Securing Compute Engine apps and resources with IAP \\_|\\_ Chrome Enterprise\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine",
+        "source_id": "site-iam-reference",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "beyondcorp.securityGatewayUser",
+      "example.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/beyondcorp.securityGatewayUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-compute-engine"
+      ]
+    }
+  ]
+}

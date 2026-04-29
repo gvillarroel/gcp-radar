@@ -1,0 +1,156 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:10.745Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "Vector search",
+  "feature_slug": "vector-search",
+  "summary": "Firestore supports K-nearest neighbor vector searches, including inequality filters, returned vector distance, and distance thresholds.",
+  "extended_definition": "Firestore supports K-nearest neighbor vector searches, including inequality filters, returned vector distance, and distance thresholds.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/docs/concepts/index-overview",
+      "https://docs.cloud.google.com/firestore/docs/query-data/multiple-range-fields",
+      "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Query with range and inequality filters on multiple fields overview \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/query-data/multiple-range-fields",
+        "source_id": "site-docs-reference",
+        "final_score": 31,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Query with range and inequality filters on multiple fields overview Firestore supports using range and inequality filters on multiple fields in a single query.",
+          "WhereLessThan ( \"density\" , 10000 ); Dart final citiesRef = FirebaseFirestore . instance . collection ( 'cities' ) final query = citiesRef . where ( \"population\" , isGreaterThan: 1000000 ) . where ( \"density\" , isLessThan: 10000 ); Indexing considerations Before you run your queries, read about queries and the Firestore data model .",
+          "Where ( \"density\" , \"<\" , 10000 ) Java db . collection ( \"cities\" ) . whereGreaterThan ( \"population\" , 1000000 ) . whereLessThan ( \"density\" , 10000 ); Node.js db . collection ( \"cities\" ) . where ( 'population' , '>' , 1000000 ), . where ( 'density' , '<' , 10000 ) Python from google.cloud import firestore db = firestore ."
+        ]
+      },
+      {
+        "title": "\"Use Firestore with MCP, Gemini CLI, and other agents \\_|\\_ Firestore in\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 30,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before you begin To use the tools in the Gemini CLI extension for Firestore, you must have one of the following Identity and Access Management (IAM) roles, or a custom role with equivalent permissions: Task Role name Required Identity and Access Management (IAM) role Read and write data in Firestore database Cloud Datastore User roles/datastore.user View and test security rules Firebase Rules Viewer roles/firebaserules.viewer Set up Firestore Create a new Google Cloud project or select an existing one .",
+          "This page describes how to use the MCP Toolbox for Databases to expose your developer assistance tools to a Firestore instance using the following IDEs: Gemini CLI Gemini Code Assist Cursor Windsurf (Codium) Visual Studio Code (Copilot) Cline (VS Code extension) Claude desktop Claude code About Gemini CLI and extensions Gemini CLI is an open-source AI agent designed to assist with development workflows by assisting with coding, debugging, data exploration, and content creation.",
+          "The FIRESTORE DATABASE variable is optional and defaults to (default) . { \"mcpServers\": { \"firestore\": { \"command\": \"./PATH/TO/toolbox\", \"args\": [\"--prebuilt\",\"firestore\",\"--stdio\"], \"env\": { \"FIRESTORE PROJECT\": \" PROJECT ID \", \"FIRESTORE DATABASE\": \" DATABASE NAME \" } } } } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Standard edition index overview \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/concepts/index-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 21,
+        "relevance": "",
+        "evidence_snippets": [
+          "Vector Supports FindNearest query clauses on the field.",
+          "The app uses combinations of equality clauses for category , city , and editors pick while always sorting by ascending star rating : Web db.collection(\"restaurants\").where(\"category\", \"==\", \"burgers\") .orderBy(\"star rating\") db.collection(\"restaurants\").where(\"city\", \"==\", \"San Francisco\") .orderBy(\"star rating\") db.collection(\"restaurants\").where(\"category\", \"==\", \"burgers\") .where(\"city\", \"==\", \"San Francisco\") .orderBy(\"star rating\") db.collection(\"restaurants\").where(\"category\", \"==\", \"burgers\") .where(\"city\", \"==\" \"San Francisco\") .where(\"editors pick\", \"==\", true ) .orderBy(\"star rating\") You could create an index for each query: Collection Fields indexed Query scope restaurants arrow upward category, arrow upward star rating Collection restaurants arrow upward city, arrow upward star rating Collection restaurants arrow upward category, arrow upward city, arrow upward star rating Collection restaurants arrow upward category, arrow upward city, arrow upward editors pick, arrow upward star rating Collection As a better solution, you can reduce the number of indexes by taking advantage of Firestore Standard edition's ability to merge indexes for equality clauses: Collection Fields indexed Query scope restaurants arrow upward category, arrow upward star rating Collection restaurants arrow upward city, arrow upward star rating Collection restaurants arrow upward editors pick, arrow upward star rating Collection Not only is this set of indexes smaller, it also supports an additional query: Web db.collection(\"restaurants\").where(\"editors pick\", \"==\", true) .orderBy(\"star rating\") Indexing limits The following limits apply to indexes.",
+          "Document /cities/SF city name : \"San Francisco\" temperatures : {summer: 67, winter: 55} neighborhoods : [\"Mission\", \"Downtown\", \"Marina\"] Automatic indexes city name ASC city name DESC neighborhoods ASC neighborhoods DESC temperatures ASC temperatures DESC temperatures.summer ASC temperatures.summer DESC temperatures.winter ASC temperatures.winter DESC neighborhoods Array Contains Manual indexes city name ASC, neighborhoods ARRAY city name DESC, neighborhoods ARRAY Index entries This indexing configuration results in the following index entries for the document: Index Indexed data Automatic index entries city name ASC city name: \"San Francisco\" city name DESC city name: \"San Francisco\" neighborhoods ASC neighborhoods: [\"Mission\", \"Downtown\", \"Marina\"] neighborhoods DESC neighborhoods: [\"Mission\", \"Downtown\", \"Marina\"] temperatures ASC temperatures: {summer: 67, winter: 55} temperatures DESC temperatures: {summer: 67, winter: 55} temperatures.summer ASC temperatures.summer: 67 temperatures.summer DESC temperatures.summer: 67 temperatures.winter ASC temperatures.winter: 55 temperatures.winter DESC temperatures.winter: 55 neighborhoods Array Contains neighborhoods: \"Mission\" neighborhoods Array Contains neighborhoods: \"Downtown\" neighborhoods Array Contains neighborhoods: \"Marina\" Manual index entries city name ASC, neighborhoods ARRAY city name: \"San Francisco\", neighborhoods: \"Mission\" city name ASC, neighborhoods ARRAY city name: \"San Francisco\", neighborhoods: \"Downtown\" city name ASC, neighborhoods ARRAY city name: \"San Francisco\", neighborhoods: \"Marina\" city name DESC, neighborhoods ARRAY city name: \"San Francisco\", neighborhoods: \"Mission\" city name DESC, neighborhoods ARRAY city name: \"San Francisco\", neighborhoods: \"Downtown\" city name DESC, neighborhoods ARRAY city name: \"San Francisco\", neighborhoods: \"Marina\" Indexes and pricing Indexes contribute to the storage costs of your application."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datastore.user",
+      "db.collection",
+      "firebaserules.viewer",
+      "temperatures.summer",
+      "temperatures.winter"
+    ],
+    "missing_inventory_roles": [
+      "roles/datastore.user",
+      "roles/firebaserules.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/query-data/multiple-range-fields",
+        "https://docs.cloud.google.com/firestore/docs/concepts/index-overview",
+        "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/query-data/multiple-range-fields",
+        "https://docs.cloud.google.com/firestore/docs/concepts/index-overview",
+        "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/query-data/multiple-range-fields",
+        "https://docs.cloud.google.com/firestore/docs/concepts/index-overview",
+        "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/query-data/multiple-range-fields",
+        "https://docs.cloud.google.com/firestore/docs/concepts/index-overview",
+        "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/query-data/multiple-range-fields",
+        "https://docs.cloud.google.com/firestore/docs/concepts/index-overview",
+        "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/query-data/multiple-range-fields",
+        "https://docs.cloud.google.com/firestore/docs/concepts/index-overview",
+        "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/query-data/multiple-range-fields",
+        "https://docs.cloud.google.com/firestore/docs/concepts/index-overview",
+        "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox"
+      ]
+    }
+  ]
+}

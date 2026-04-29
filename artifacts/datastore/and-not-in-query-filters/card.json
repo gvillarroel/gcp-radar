@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:05.164Z",
+  "source_step08_card": "data/step-08/current/products/datastore/card.json",
+  "product_name": "Datastore",
+  "product_slug": "datastore",
+  "feature_name": "and NOT_IN query filters",
+  "feature_slug": "and-not-in-query-filters",
+  "summary": "Queries support the not-equal, IN, and NOT_IN filter operators in client libraries; Queries support the not-equal, IN, and NOT_IN filter operators in the console and client libraries.",
+  "extended_definition": "Queries support the not-equal, IN, and NOT_IN filter operators in client libraries; Queries support the not-equal, IN, and NOT_IN filter operators in the console and client libraries.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+      "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+      "https://docs.cloud.google.com/datastore/docs/concepts/queries",
+      "https://docs.cloud.google.com/datastore/docs/store-query-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Optimizing Indexes \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+        "source_id": "site-iam-reference",
+        "final_score": 265,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The perfect composite index for a query, which allows the query to be executed most efficiently, is defined on the following properties, in order: Properties used in equality filters Properties used in sort orders Properties used in distinctOn filter Properties used in range & inequality filters (that are not already included in sort orders) Properties used in aggregations and projections (that are not already included in sort orders and range & inequality filters) This ensures that all results for every possible execution of the query are accounted.",
+          "Client () query owner id = client . query ( kind = \"Photo\" , filters = [( \"owner id\" , \"=\" , \"user1234\" )]) query size = client . query ( kind = \"Photo\" , filters = [( \"size\" , \"=\" , 2 )]) query coloration = client . query ( kind = \"Photo\" , filters = [( \"coloration\" , \"=\" , 2 )]) The Photo filter feature also requires queries that combine multiple equality filters with a logical AND : Python from google.cloud import datastore For help authenticating your client, visit https://cloud.google.com/docs/authentication/getting-started client = datastore .",
+          "Selecting indexes for your app You can select optimal indexes for your Datastore mode database by using two approaches: Use index merging to support additional queries Requires less composite indexes Reduces storage cost per entity Improves write latency Avoids exploding indexes Performance depends on the shape of the data Define a composite index that matches multiple filters in a query Improves query performance Consistent query performance that's not dependent on shape of data Must stay under the limit of composite indexes Increased storage cost per entity Increased write latency When figuring out the optimal indexes for your app, the answer can change as the shape of your data changes."
+        ]
+      },
+      {
+        "title": "Indexes \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "source_id": "site-iam-reference",
+        "final_score": 251,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Composite indexes are required for queries of the following form: Queries with ancestor and inequality filters Queries with one or more inequality filters on a property and one or more equality filters on other properties Queries with a sort order on keys in descending order Queries with multiple sort orders Queries with one or more filters and one or more sort orders Composite indexes are defined in the application's index configuration file ( index.yaml ). (Built-in indexes are not contained in the index configuration file.) Composite indexes are composed of multiple properties and require that each individual property must not be excluded from your indexes .",
+          "For example, suppose you had an existing query like SELECT FROM Task WHERE priority > 1 ORDER BY priority, percent complete which requires the index: indexes: - kind: Task properties: - name: priority - name: percent complete Converting this to either of the projection queries SELECT created FROM Task WHERE priority > 1 ORDER BY priority , percent complete SELECT priority , percent complete , created FROM Task WHERE priority > 1 ORDER BY priority , percent complete introduces a new property ( created ) and thus will require building a new index: indexes: - kind: Task properties: - name: priority - name: percent complete - name: created However, SELECT priority, percent complete FROM Task WHERE priority > 1 ORDER BY priority, percent complete would not change the required index, since the projected properties priority and percent complete were already included in the existing query.",
+          "Index configuration Firestore in Datastore mode provides built-in , or automatic, indexes for queries of the following forms: Kindless queries using only ancestor and key filters Queries using only ancestor and equality filters Queries using only inequality filters (which are limited to a single property ) Queries using only ancestor filters, equality filters on properties, and inequality filters on keys Queries with no filters and only one sort order on a property, either ascending or descending As an example, by default, Datastore mode databases automatically predefine two single property indexes for each property of each entity kind, one in ascending order and one in descending order."
+        ]
+      },
+      {
+        "title": "Datastore queries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/concepts/queries",
+        "source_id": "site-iam-reference",
+        "final_score": 247,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If a multi-valued property is used in an inequality or an NOT IN filter: and the query results are sorted in ascending order by the property, the smallest value that satisfies all of the query's inequality filters is used for ordering. and the query results are sorted in descending order by the property, the greatest value that satisfies all of the query's inequality filters is used for ordering.",
+          "Restrictions Sort orders have the following restrictions: Because of the way Datastore mode executes queries, if a query specifies inequality filters on a property and sort orders on other properties, the property used in the inequality filters must be ordered before the other properties .",
+          "For more information, see Set up authentication for a local development environment . query = datastore . query ( \"Task\" ) . where ( \"priority\" , \">\" , 3 ) . order ( \"priority\" ) . order ( \"created\" ) GQL SELECT FROM Task WHERE priority > 3 ORDER BY priority , created This query is not valid, because it doesn't sort on the property used in the inequality filter: C# To learn how to install and use the client library for Cloud Datastore, see Cloud Datastore client libraries ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Store and query data in Firestore in Datastore mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "source_id": "site-docs-root",
+        "final_score": 232,
+        "relevance": "",
+        "evidence_snippets": [
+          "Store and query data in Firestore in Datastore mode This page shows you how to store and query data in Firestore in Datastore mode using the Google Cloud console.",
+          "Clean up Click Query by kind and ensure Task is the selected kind.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datastore.databases.create",
+      "index.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/concepts/queries",
+        "https://docs.cloud.google.com/datastore/docs/store-query-data"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/concepts/queries",
+        "https://docs.cloud.google.com/datastore/docs/store-query-data"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/concepts/queries",
+        "https://docs.cloud.google.com/datastore/docs/store-query-data"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/concepts/queries",
+        "https://docs.cloud.google.com/datastore/docs/store-query-data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/concepts/queries",
+        "https://docs.cloud.google.com/datastore/docs/store-query-data"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/concepts/queries",
+        "https://docs.cloud.google.com/datastore/docs/store-query-data"
+      ]
+    }
+  ]
+}

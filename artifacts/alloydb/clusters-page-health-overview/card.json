@@ -1,0 +1,137 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:40.969Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Clusters page health overview",
+  "feature_slug": "clusters-page-health-overview",
+  "summary": "The AlloyDB Clusters page shows summary cards and a resource table for monitoring database fleet health and performance.",
+  "extended_definition": "The AlloyDB Clusters page shows summary cards and a resource table for monitoring database fleet health and performance.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/high-availability",
+      "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+      "https://docs.cloud.google.com/alloydb/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Monitor the health of your clusters and instances \\_|\\_ AlloyDB for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "source_id": "site-docs-reference-2",
+        "final_score": 168,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Before you begin To monitor AlloyDB health issues in the Google Cloud console, you must have the following (Identity and Access Management (IAM)) roles: AlloyDB Administrator ( roles/alloydb.admin ) alloydb.instances.list alloydb.clusters.get Monitoring Viewer ( roles/monitoring.viewer ) monitoring.timeSeries.list Note: This role is required to view insight charts in the Clusters page, but it isn't required to view Database Center health issues.",
+          "Database Center Viewer ( roles/databasecenter.viewer ) or Database Center Administrator ( roles/databasecenter.admin ) databasecenter.databaseGroups.list databasecenter.fleetHealthStats.list Monitor AlloyDB cluster health The AlloyDB Clusters page in the Google Cloud includes a Health issues section, which displays the most critical cluster issues across your project.",
+          "View and resolve issues for a specific instance You can view a summarized list of health issues on the Overview page for any AlloyDB primary or read pool instance."
+        ]
+      },
+      {
+        "title": "AlloyDB overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "Quickstart: Create and connect to a database Perform a vector search Migration overview Connection overview Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback AlloyDB overview Stay organized with collections Save and categorize content based on your preferences.",
+          "AlloyDB resource hierarchy AlloyDB organizes its resources into three levels: clusters, instances, and nodes."
+        ]
+      },
+      {
+        "title": "\"AlloyDB high availability overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/high-availability",
+        "source_id": "site-docs-reference-2",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback AlloyDB high availability overview Stay organized with collections Save and categorize content based on your preferences.",
+          "This document provides an overview of the high availability (HA) configuration for AlloyDB for PostgreSQL instances.",
+          "The AlloyDB health monitoring system periodically checks whether the active node is healthy."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.admin",
+      "alloydb.clusters.get",
+      "alloydb.instances.list",
+      "databasecenter.admin",
+      "databasecenter.databaseGroups.list",
+      "databasecenter.fleetHealthStats.list",
+      "databasecenter.viewer",
+      "monitoring.timeSeries.list",
+      "monitoring.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/alloydb.admin",
+      "roles/databasecenter.admin",
+      "roles/databasecenter.viewer",
+      "roles/monitoring.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/high-availability"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/high-availability"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/high-availability"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/high-availability"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/high-availability"
+      ]
+    }
+  ]
+}

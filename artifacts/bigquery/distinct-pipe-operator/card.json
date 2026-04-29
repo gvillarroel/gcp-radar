@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "DISTINCT pipe operator",
+  "feature_slug": "distinct-pipe-operator",
+  "summary": "The DISTINCT pipe operator selects distinct rows in pipe syntax queries.",
+  "extended_definition": "The DISTINCT pipe operator selects distinct rows in pipe syntax queries.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/pipe-syntax-guide",
+      "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Legacy SQL Syntax, Functions and Operators \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "source_id": "site-docs-reference",
+        "final_score": 198,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The window frame comprises two rows that move with the current row. legacySQL SELECT name , value , AVG ( value ) OVER ( ORDER BY value ROWS BETWEEN 1 PRECEDING AND CURRENT ROW ) AS MovingAverage FROM ( SELECT \"a\" AS name , 0 AS value ), ( SELECT \"b\" AS name , 1 AS value ), ( SELECT \"c\" AS name , 2 AS value ), ( SELECT \"d\" AS name , 3 AS value ), ( SELECT \"e\" AS name , 4 AS value ); Return value: +------+-------+---------------+ name value MovingAverage +------+-------+---------------+ a 0 0.0 b 1 0.5 c 2 1.5 d 3 2.5 e 4 3.5 +------+-------+---------------+ Syntax Window functions AVG() COUNT( ) COUNT([DISTINCT]) MAX() MIN() STDDEV() SUM() The same operation as the corresponding Aggregate functions , but are computed over a window defined by the OVER clause.",
+          "Syntax Operator Description Example & Bitwise AND SELECT (1 + 3) & 1 Returns: 0 Bitwise OR SELECT 24 12 Returns: 28 ^ Bitwise XOR SELECT 1 ^ 0 Returns: 1 << Bitwise shift left SELECT 1 << (2 + 2) Returns: 16 > Bitwise shift right SELECT (6 + 2) >> 2 Returns: 2 Bitwise NOT SELECT 2 Returns: -3 BIT COUNT( <numeric expr> ) Returns the number of bits that are set in <numeric expr> .",
+          "Syntax Operator Description Example + Addition SELECT 6 + (5 - 1); Returns: 10 - Subtraction SELECT 6 - (4 + 1); Returns: 1 Multiplication SELECT 6 (5 - 1); Returns: 24 / Division SELECT 6 / (2 + 2); Returns: 1.5 % Modulo SELECT 6 % (2 + 2); Returns: 2 Bitwise functions Bitwise functions operate at the level of individual bits and require numerical arguments."
+        ]
+      },
+      {
+        "title": "Query syntax \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "source_id": "site-docs-reference",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "SELECT item , purchases , category , LAST VALUE ( item ) OVER ( item window ) AS most popular FROM Produce WINDOW item window AS ( PARTITION BY category ORDER BY purchases ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING ) SELECT item , purchases , category , LAST VALUE ( item ) OVER ( d ) AS most popular FROM Produce WINDOW a AS ( PARTITION BY category ), b AS ( a ORDER BY purchases ), c AS ( b ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING ), d AS ( c ) SELECT item , purchases , category , LAST VALUE ( item ) OVER ( c ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING ) AS most popular FROM Produce WINDOW a AS ( PARTITION BY category ), b AS ( a ORDER BY purchases ), c AS b Set operators query expr [ { INNER [ { FULL LEFT } [ OUTER ] ] } ] { UNION { ALL DISTINCT } INTERSECT DISTINCT EXCEPT DISTINCT } [ { BY NAME [ ON ( column list ) ] [ STRICT ] CORRESPONDING [ BY ( column list ) ] } ] query expr Set operators combine or filter results from two or more input queries into a single result set.",
+          "Angle brackets <> Literal angle brackets SQL syntax query statement : query expr query expr : [ WITH [ RECURSIVE ] { non recursive cte recursive cte }[, ...] ] { select ( query expr ) set operation } [ ORDER BY expression [{ ASC DESC }] [, ...] ] [ LIMIT count [ OFFSET skip rows ] ] select : SELECT [ WITH differential privacy clause ] [ { ALL DISTINCT } ] [ AS { STRUCT VALUE } ] select list [ FROM from clause [, ...] ] [ WHERE bool expression ] [ GROUP BY group by specification ] [ HAVING bool expression ] [ QUALIFY bool expression ] [ WINDOW window clause ] SELECT statement SELECT [ WITH differential privacy clause ] [ { ALL DISTINCT } ] [ AS { STRUCT VALUE } ] select list select list : { select all select expression } [, ...] select all : [ expression . ] [ EXCEPT ( column name [, ...] ) ] [ REPLACE ( expression AS column name [, ...] ) ] select expression : expression [ [ AS ] alias ] The SELECT list defines the columns that the query will return.",
+          "The following examples illustrate the use of parentheses with set operations: -- Same set operations, no parentheses. query1 UNION ALL query2 UNION ALL query3 ; -- Different set operations, parentheses needed. query1 UNION ALL ( query2 UNION DISTINCT query3 ); -- Invalid query1 UNION ALL query2 UNION DISTINCT query3 ; -- Same set operations, no parentheses. query1 EXCEPT DISTINCT query2 EXCEPT DISTINCT query3 ; -- Equivalent query with optional parentheses, returns same results. ( query1 EXCEPT DISTINCT query2 ) EXCEPT DISTINCT query3 ; -- Different execution order with a subquery, parentheses needed. query1 EXCEPT DISTINCT ( query2 EXCEPT DISTINCT query3 ); Set operator behavior with duplicate rows Consider a given row R that appears exactly m times in the first input query and n times in the second input query, where m >= 0 and n >= 0 : For UNION ALL , row R appears exactly m + n times in the result."
+        ]
+      },
+      {
+        "title": "Work with pipe query syntax \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/pipe-syntax-guide",
+        "source_id": "site-docs-reference-2",
+        "final_score": 172,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Produce AS ( SELECT 'apples' AS item , 2 AS sales , 'fruit' AS category UNION ALL SELECT 'apples' AS item , 7 AS sales , 'fruit' AS category UNION ALL SELECT 'carrots' AS item , 0 AS sales , 'vegetable' AS category UNION ALL SELECT 'bananas' AS item , 15 AS sales , 'fruit' AS category ); The following queries each contain valid pipe syntax that shows how you can build a query sequentially.",
+          "ItemData USING ( item ); / ---------+-------------+-----------+-----+ item total sales num sales id +---------+-------------+-----------+-----+ apples 9 2 123 bananas 15 1 456 +---------+-------------+-----------+----- / Key differences from standard syntax Pipe syntax differs from standard syntax in the following ways: Queries can start with a FROM clause .",
+          "FROM ( SELECT 1 AS x , 2 AS y , 3 AS z ) AS t > RENAME y AS w ; / ---+---+---+ x w z +---+---+---+ 1 2 3 +---+---+--- / AGGREGATE pipe operator To perform aggregation in pipe syntax, use the AGGREGATE pipe operator , followed by any number of aggregate functions, followed by a GROUP BY clause."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/pipe-syntax-guide"
+      ]
+    }
+  ]
+}

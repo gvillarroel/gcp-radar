@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:46.068Z",
+  "source_step08_card": "data/step-08/current/products/chat-api/card.json",
+  "product_name": "Chat API",
+  "product_slug": "chat-api",
+  "feature_name": "Google Groups in spaces",
+  "feature_slug": "google-groups-in-spaces",
+  "summary": "The Chat API can add and remove Google Groups as members of a Chat space.",
+  "extended_definition": "The Chat API can add and remove Google Groups as members of a Chat space.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members",
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/delete",
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/list"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "REST Resource: spaces.members \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members",
+        "source_id": "site-api-reference",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-02-24 UTC.\"],[],[\"Membership resource defines relationships within Google Chat spaces, indicating if a user or app is invited, present, or absent.",
+          "Format: groups/{group} Methods create Creates a membership for the calling Chat app, a user, or a Google Group. delete Deletes a membership. get Returns details about a membership. list Lists memberships in a space. patch Updates a membership.",
+          "Home Google Workspace Google Chat Reference Send feedback REST Resource: spaces.members Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Method: spaces.members.delete \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/delete",
+        "source_id": "site-api-reference",
+        "final_score": 171,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supports the following types of authentication : App authentication with administrator approval and the authorization scope: https://www.googleapis.com/auth/chat.app.memberships User authentication with one of the following authorization scopes: https://www.googleapis.com/auth/chat.memberships https://www.googleapis.com/auth/chat.memberships.app (to remove the calling app from the space) https://www.googleapis.com/auth/chat.import (import mode spaces only) User authentication grants administrator privileges when an administrator account authenticates, useAdminAccess is true , and the following authorization scope is used: https://www.googleapis.com/auth/chat.admin.memberships App authentication is not supported for the following use cases: Removing a Google Group from a space.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-07-25 UTC.\"],[],[\"This API action deletes a membership using a DELETE request to https://chat.googleapis.com/v1/{name=spaces/ /members/ }.",
+          "When deleting a human membership, requires the chat.memberships scope with user authentication or the chat.memberships.app scope with app authentication and the spaces/{space}/members/{member} format."
+        ]
+      },
+      {
+        "title": "Method: spaces.members.list \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/list",
+        "source_id": "site-docs-root-2",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supports the following types of authentication : App authentication with one of the following authorization scopes: https://www.googleapis.com/auth/chat.bot https://www.googleapis.com/auth/chat.app.memberships (requires administrator approval ) User authentication with one of the following authorization scopes: https://www.googleapis.com/auth/chat.memberships.readonly https://www.googleapis.com/auth/chat.memberships https://www.googleapis.com/auth/chat.import (import mode spaces only) User authentication grants administrator privileges when an administrator account authenticates, useAdminAccess is true , and one of the following authorization scopes is used: https://www.googleapis.com/auth/chat.admin.memberships.readonly https://www.googleapis.com/auth/chat.admin.memberships HTTP request GET https://chat.googleapis.com/v1/{parent=spaces/ }/members The URL uses gRPC Transcoding syntax.",
+          "Home Google Workspace Google Chat Reference Send feedback Method: spaces.members.list Stay organized with collections Save and categorize content based on your preferences.",
+          "Key actions involve sending a GET request to https://chat.googleapis.com/v1/{parent=spaces/ }/members, with a required parent path parameter specifying the space."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chat.admin.memberships",
+      "chat.admin.memberships.readonly",
+      "chat.app.memberships",
+      "chat.bot",
+      "chat.googleapis.com",
+      "chat.import",
+      "chat.memberships",
+      "chat.memberships.app",
+      "chat.memberships.readonly",
+      "developers.google.com",
+      "spaces.members",
+      "spaces.members.create",
+      "spaces.members.delete",
+      "spaces.members.get",
+      "spaces.members.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/delete",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/list"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/delete",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/list"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/delete",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/list"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/delete",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/list"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/delete",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/list"
+      ]
+    }
+  ]
+}

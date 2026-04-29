@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.119Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "Malicious extension response actions",
+  "feature_slug": "malicious-extension-response-actions",
+  "summary": "Google SecOps can block or remove malicious extensions and delete blocked extensions from the extension policy.",
+  "extended_definition": "Google SecOps can block or remove malicious extensions and delete blocked extensions from the extension policy.",
+  "lifecycle": {
+    "latest_feature_date": "2026-04-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid",
+      "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Google Unified Security \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "source_id": "site-docs-reference-2",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "Automated response :Leveraging native playbook orchestration capabilities, security teams can also automate response actions on Chrome Enterprise, such as blocking malicious URLs, blocking extensions, and even quarantining devices, directly from the Google SecOps platform.",
+          "Getting Started with Google Chrome and Google SecOps Configure the Chrome Enterprise Premium Reporting Connector to send data to Google SecOps Connect Chrome Enterprise Premium to Google SecOps Enable Chrome Enterprise Threats Curated Detections Examples Investigating Malicious Browser Extensions A user downloads and installs a malicious browser extension from outside the Chrome Web Store, that once installed, reads their session cookies and posts them to a server on a suspicious domain that was registered within the last week.",
+          "Using browser extension telemetry a security analyst can determine how many users have installed this extension and take remediation actions to remove it from their devices."
+        ]
+      },
+      {
+        "title": "\"Response integrations community contribution guidelines \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "source_id": "site-docs-reference",
+        "final_score": 129,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Response integrations community contribution guidelines Supported in: Google secops SOAR This document outlines the guidelines for submitting Response Integrations to Google SecOps through community contributions.",
+          "You should validate the logo on the following pages: Response > Integration Setup Response > Playbooks > Playbook Designer Cases > Alert > Alert Playbook View The following is an example of an SVG logo, designed to match our style guide: <?xml version=\"1.0\" encoding=\"UTF-8\"?><svg id=\"Layer 1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 21 23\"> <defs> <style> .cls-1 { stroke-width: 0px; } </style> </defs> <path class=\"cls-1\" d=\"M15.51,4.79H5.49c-.4,0-.72.32-.72.72v5.75c0,2.3,1.71,4.15,3.69,5.38.54.34,1.1.62,1.66.86l.09.04c.06.02.12.05.18.06.03,0,.07,0,.1,0,.1,0,.19-.03.28-.07l.09-.04c.76-.33,2.22-1.03,3.46-2.24,1.24-1.22,1.89-2.6,1.89-4v-5.75c0-.4-.32-.72-.72-.72ZM14.32,11.26c0,.88-.44,1.77-1.32,2.63-.65.64-1.55,1.22-2.5,1.68-.95-.46-1.84-1.04-2.5-1.68-.88-.86-1.32-1.75-1.32-2.63v-4.55h7.64v4.55ZM20.28,0H.72c-.4,0-.72.32-.72.72v10.77c0,2.56,1.18,4.99,3.51,7.21,2.29,2.18,5.12,3.56,6.61,4.2l.09.04s.1.04.15.05c.04,0,.09.01.13.01.1,0,.19-.02.28-.06l.09-.04c.53-.23,1.23-.55,2.02-.97,1.42-.75,3.11-1.82,4.59-3.23,2.33-2.22,3.51-4.64,3.51-7.21V.72c0-.4-.32-.72-.72-.72ZM16.17,17.31c-1.9,1.81-4.24,3.04-5.67,3.69-1.43-.65-3.77-1.88-5.67-3.69-1.94-1.84-2.92-3.8-2.92-5.82V1.92h17.18v9.57c0,2.02-.98,3.98-2.92,5.82Z\"/></svg> Be sure to encode the SVG before adding it to the integration definition file, as can be found in other integrations in the Content Hub.",
+          "For example, the following JSON object represents a poor structure as it would be unusable inside playbooks: { \"10.10.10.10\": { \"is malicious\": \"false\" } } Instead, format it like this: [ { \"is malicious\": \"false\", \"ip\": \"10.10.10.10\" } ] If you're using entities inside the action and return results Per Entity, then the best practice is to structure the JSON Result like this: [ { \"Entity\": \"10.10.10.10\", \"EntityResult\": { \"is malicious\": \"false\", } } ] Always consider how the output of the action can be used inside automation."
+        ]
+      },
+      {
+        "title": "\"Integrate APIVoid with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid",
+        "source_id": "site-api-reference",
+        "final_score": 116,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action results Entity enrichment Mark entity as suspicious if the number of negative engines is equal or above the given threshold. if data.get(\"report\", {}).get(\"risk score\", {}).get(\"result\") > threshold Enrichment field name Logic - When to apply domain blacklist Returns if it exists in JSON result html forms Returns if it exists in JSON result server details Returns if it exists in JSON result response headers Returns if it exists in JSON result redirection Returns if it exists in JSON result file type Returns if it exists in JSON result risk score Returns if it exists in JSON result security checks Returns if it exists in JSON result geo location Returns if it exists in JSON result url parts Returns if it exists in JSON result site category Returns if it exists in JSON result web page Returns if it exists in JSON result dns records Returns if it exists in JSON result Script result Script result name Value options Example is success True/False is success:False JSON result [ { \"EntityResult\" : { \"domain blacklist\" : { \"detections\" : 0 , \"engines\" : [{ \"detected\" : false , \"name\" : \"SpamhausDBL\" , \"reference\" : \"https://www.spamhaus.org/lookup/\" }, { \"detected\" : false , \"name\" : \"ThreatLog\" , \"reference\" : \"http://www.threatlog.com/\" }, { \"detected\" : false , \"name\" : \"OpenPhish\" , \"reference\" : \"http://www.openphish.com/\" }, { \"detected\" : false , \"name\" : \"PhishTank\" , \"reference\" : \"http://www.phishtank.com/\" }, { \"detected\" : false , \"name\" : \"Phishing.Database\" , \"reference\" : \"https://github.com/mitchellkrogza/Phishing.Database\" }, { \"detected\" : false , \"name\" : \"PhishStats\" , \"reference\" : \"https://phishstats.info/\" }, { \"detected\" : false , \"name\" : \"URLVir\" , \"reference\" : \"http://www.urlvir.com/\" }, { \"detected\" : false , \"name\" : \"URLhaus\" , \"reference\" : \"https://urlhaus.abuse.ch/\" }, { \"detected\" : false , \"name\" : \"RPiList Not Serious\" , \"reference\" : \"https://github.com/RPiList/specials\" }, { \"detected\" : false , \"name\" : \"precisionsec\" , \"reference\" : \"https://precisionsec.com/\" }, { \"detected\" : false , \"name\" : \"AntiSocial Blacklist\" , \"reference\" : \"https://theantisocialengineer.com/\" }, { \"detected\" : false , \"name\" : \"PhishFeed\" , \"reference\" : \"https://phishfeed.com/\" }, { \"detected\" : false , \"name\" : \"Spam404\" , \"reference\" : \"https://www.spam404.com/\" }]}, \"html forms\" : { \"number of total input fields\" : 0 , \"email field present\" : false , \"number of total forms\" : 0 , \"password field present\" : false , \"two text inputs in a form\" : false , \"credit card field present\" : false }, \"server details\" : { \"continent name\" : \"Asia\" , \"hostname\" : \"example.com\" , \"region name\" : \"Seoul-teukbyeolsi\" , \"ip\" : \"192.0.2.141\" , \"isp\" : \"Example Corporation\" , \"continent code\" : \"AS\" , \"country name\" : \"Korea (Republic of)\" , \"city name\" : \"Seoul\" , \"longitude\" : 126.97782897949219 , \"country code\" : \"KR\" , \"latitude\" : 37.568260192871094 }, \"response headers\" : { \"status\" : \"HTTP/1.1 404 Not Found\" , \"content-length\" : \"177\" , \"code\" : 404 , \"server\" : \"nginx/1.4.6 (Ubuntu)\" , \"connection\" : \"keep-alive\" , \"date\" : \"Wed, 15 Jul 2020 08:21:54 GMT\" , \"content-type\" : \"text/html\" }, \"redirection\" : { \"url\" : null , \"found\" : false , \"external\" : false }, \"file type\" : { \"headers\" : \"HTML\" , \"extension\" : \"HTML\" , \"signature\" : \" \" }, \"risk score\" : { \"result\" : 10 }, \"security checks\" : { \"is suspended page\" : false , \"is defaced heuristic\" : false , \"is windows exe file\" : false , \"is credit card field\" : false , \"is windows exe file on free hosting\" : false , \"is masked linux elf file\" : false , \"is exe on directory listing\" : false , \"is php on directory listing\" : false , \"is masked windows exe file\" : false , \"is sinkholed domain\" : false , \"is robots noindex\" : false , \"is windows exe file on free dynamic dns\" : false , \"is doc on directory listing\" : false , \"is non standard port\" : false , \"is linux elf file on free dynamic dns\" : false , \"is suspicious domain\" : false , \"is suspicious url pattern\" : false , \"is china country\" : false , \"is risky geo location\" : false , \"is pdf on directory listing\" : false , \"is valid https\" : false , \"is external redirect\" : false , \"is windows exe file on ipv4\" : false , \"is phishing heuristic\" : false , \"is linux elf file on ipv4\" : false , \"is email address on url query\" : false , \"is uncommon clickable url\" : false , \"is most abused tld\" : false , \"is domain blacklisted\" : false , \"is host an ipv4\" : false , \"is linux elf file on free hosting\" : false , \"is zip on directory listing\" : false , \"is password field\" : false , \"is linux elf file\" : false , \"is empty page title\" : false , \"is directory listing\" : false , \"is masked file\" : false , \"is suspicious file extension\" : false , \"is suspicious content\" : false }, \"geo location\" : { \"countries\" : [ \"KR\" ] }, \"url parts\" : { \"host nowww\" : \"example.com\" , \"host\" : \"www.example.com\" , \"path\" : \"/dynamic/example.html\" , \"query\" : null , \"scheme\" : \"http\" , \"port\" : 80 }, \"site category\" : { \"is vpn provider\" : false , \"is url shortener\" : false , \"is anonymizer\" : false , \"is torrent\" : false , \"is free dynamic dns\" : false , \"is free hosting\" : false }, \"web page\" : { \"keywords\" : \"\" , \"description\" : \"\" , \"title\" : \"404 Not Found\" }, \"dns records\" : { \"ns\" : { \"records\" : [{ \"country name\" : \"Korea (Republic of)\" , \"ip\" : \"192.0.2.95\" , \"isp\" : \"Example Corporation\" , \"target\" : \"example.com\" , \"country code\" : \"KR\" }, { \"country name\" : \"Korea (Republic of)\" , \"ip\" : \"192.0.2.26\" , \"isp\" : \"LX\" , \"target\" : \"example.com\" , \"country code\" : \"KR\" }]}, \"mx\" : { \"records\" : [] }}}, \"Entity\" : \"www.example.com:80/dynamic/example.html\" } ] Case wall Result type Description Type Output message Successful entities: \"APIVoid: Fetched reputation for the following entities: <entities identifer list> Failed entities: \"An error occurred on the following entities: <entities identifer list>\" Missing entities (no data): 'Can not found reputation for the following entities: <entities identifer list>\" Alert without URL entities: \"APIVoid: No URLs found.\" General CSV Case wall If data available create new entity csv table: domain blocklist report: data.get(\"report\",{}).get(\"domain blacklist\",{}).get(\"engines\", []) General Enrichment If data available add the following as entity enrichment: (don't forget to add prefix \"APIVoid\") geo location: data.get(\"report\",{}).get(\"geo location\",{}).get(\"countries\", []) is suspicious domain: data.get(\"report\",{}).get(\"security checks\",{}).get(\"is suspicious domain\") is domain blacklisted: data.get(\"report\",{}).get(\"security checks\",{}).get(\"is domain blacklisted\") is risky geo location: data.get(\"report\",{}).get(\"security checks\",{}).get(\"is risky geo location\") risk score: data.get(\"report\", {}).get(\"risk score\", {}).get(\"result\") is external redirect: data.get(\"report\",{}).get(\"security checks\",{}).get(\"is external redirect\") Entity Get Screenshot Capture a high-quality screenshot of any website or URL.",
+          "The multiple domain blocklist services identify potentially malicious and fraudulent websites involved in malware distribution, phishing incidents, and fake online shops.",
+          "Action results Entity enrichment Mark entity as suspicious if the number of negative engines is equal or above the given threshold. is suspicious: if data.get(\"score\") > threshold Enrichment field name Logic - When to apply domain Returns if it exists in JSON result should block Returns if it exists in JSON result score Returns if it exists in JSON result disposable Returns if it exists in JSON result has mx records Returns if it exists in JSON result has spf records Returns if it exists in JSON result Script result Script result name Value options Example is success True/False is success:False JSON result [ { \"EntityResult\" : { \"domain\" : \"example.com\" , \"valid tld\" : true , \"email\" : \"user@example.co\" , \"role address\" : false , \"should block\" : false , \"risky tld\" : false , \"dirty words username\" : false , \"suspicious domain\" : false , \"score\" : 100 , \"educational domain\" : false , \"dirty words domain\" : false , \"did you mean\" : \" \" , \"username\" : \"user\" , \"valid format\" : true , \"is spoofable \" : false , \"disposable\" : false , \"government domain\" : false , \"has spf records\" : true , \"domain popular\" : false , \"has mx records\" : true , \"china free email\" : false , \"free email\" : false , \"russian free email\" : false , \"police domain\" : false , \"dmarc enforced\" : false , \"suspicious username\" : false }, \"Entity\" : \"USER@EXAMPLE.COM\" } ] Case wall Result type Description Type Output message Successful entities: \"APIVoid: Added screenshots for the following entities: <entities identifier list>\" Failed entities: \"An error occurred on the following entities: <entities identifier list>\" Missing entities (no data): 'No screenshots found for the following entities: <entities identifier list>\" Alert without URL entities: \"APIVoid: No URL entities found for capturing screenshots.\" To big entities (attachment file size > 3MB): \"Failed to add screenshots as attachments on the following entities: <<entities identifier list>>\" General Attachments If data is available, create a new file object: attachment title: 'Screenshot - {0}'.format(entity.identifier) filename should be the URL without the suffix (https/http) + ' capture.<file format>' screenshot is returned in base64 encoded string --> file content should be b64decode(data.get('base64 file')) Don't forget to add try, except - we have 3MB limitation from the platform."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.get",
+      "entity.identifier",
+      "example.co",
+      "example.com",
+      "example.html",
+      "github.com",
+      "phishfeed.com",
+      "phishstats.info",
+      "precisionsec.com",
+      "theantisocialengineer.com",
+      "urlhaus.abuse.ch"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid"
+      ]
+    }
+  ]
+}

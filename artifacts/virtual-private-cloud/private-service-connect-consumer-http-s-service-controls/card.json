@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:33.557Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Private Service Connect consumer HTTP(S) service controls",
+  "feature_slug": "private-service-connect-consumer-http-s-service-controls",
+  "summary": "Private Service Connect now supports using consumer HTTP(S) service controls to access supported regional service endpoints in Preview.",
+  "extended_definition": "Private Service Connect now supports using consumer HTTP(S) service controls to access supported regional service endpoints in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2021-08-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+      "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping",
+      "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Publish services by using Private Service Connect \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "source_id": "site-docs-root-2",
+        "final_score": 264,
+        "relevance": "",
+        "evidence_snippets": [
+          "Health check failures with global access Private Service Connect NEGs There is a known issue with consumer Private Service Connect NEGs that are configured for global access.",
+          "To publish a service and explicitly approve consumers based on VPC network, send the following request: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ ATTACHMENT REGION /serviceAttachments { \"name\": \" ATTACHMENT NAME \", \"region\": \" ATTACHMENT REGION \", \"connectionPreference\": \"ACCEPT MANUAL\", \"targetService\": \" TARGET SERVICE \", \"enableProxyProtocol\": false, \"natSubnets\": [ \" PSC SUBNET 1 URI \", \" PSC SUBNET 2 URI \" ], \"consumerRejectLists\": [ \"projects/ REJECTED PROJECT ID 1 /global/networks/ REJECTED NETWORK 1 \", \"projects/ REJECTED PROJECT ID 2 /global/networks/ REJECTED NETWORK 2 \" ], \"consumerAcceptLists\": [ { \"networkUrl\": \"projects/ ACCEPTED PROJECT ID 1 /global/networks/ ACCEPTED NETWORK 1 \", \"connectionLimit\": \" LIMIT 1 \" }, { \"networkUrl\": \"projects/ ACCEPTED PROJECT ID 2 /global/networks/ ACCEPTED NETWORK 2 \", \"connectionLimit\": \" LIMIT 2 \" } ], \"propagatedConnectionLimit\": PROPAGATED CONNECTION LIMIT , \"domainNames\": [ \" DOMAIN NAME \" ] } Replace the following: REJECTED PROJECT ID 1 and REJECTED PROJECT ID 2 : the IDs of the parent projects of the networks that you want to reject. consumerRejectLists is optional and can contain one or more networks.",
+          "To create an IPv4-only Private Service Connect subnet, do the following: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks { \"ipCidrRange\": \" SUBNET RANGE \", \"name\": \" SUBNET NAME \", \"network\": \"projects/ PROJECT ID /global/networks/ NETWORK NAME \", \"purpose\": \"PRIVATE SERVICE CONNECT\" } To create a dual-stack Private Service Connect subnet, do the following: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks { \"ipCidrRange\": \" SUBNET RANGE \", \"name\": \" SUBNET NAME \", \"network\": \"projects/ PROJECT ID /global/networks/ NETWORK NAME \", \"purpose\": \"PRIVATE SERVICE CONNECT\", \"stackType\": \"IPV4 IPV6\", \"ipv6AccessType\": \"INTERNAL\" } To create an IPv6-only Private Service Connect subnet, do the following: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks { \"name\": \" SUBNET NAME \", \"network\": \"projects/ PROJECT ID /global/networks/ NETWORK NAME \", \"purpose\": \"PRIVATE SERVICE CONNECT\", \"stackType\": \"IPV6 ONLY\", \"ipv6AccessType\": \"INTERNAL\" } Replace the following: PROJECT ID : the project for the subnet."
+        ]
+      },
+      {
+        "title": "\"About published services \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+        "source_id": "site-docs-root-2",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Producer type Producer configuration (published service) Supported producer backends Forwarding rule protocols Forwarding rule ports PROXY protocol IP version Private Service Connect health support Cross-region internal Application Load Balancer GCE VM IP PORT zonal NEGs Hybrid NEGs Serverless NEGs Private Service Connect NEGs Instance groups TCP HTTP HTTPS HTTP/2 gRPC Supports one, multiple, or all ports IPv4 Internal passthrough Network Load Balancer GCE VM IP zonal NEGs Instance groups TCP See Producer port configuration IPv4 Regional internal Application Load Balancer GCE VM IP PORT zonal NEGs Hybrid NEGs Serverless NEGs Private Service Connect NEGs Instance groups HTTP HTTPS HTTP/2 Supports a single port IPv4 Regional internal proxy Network Load Balancer Note: Connections from consumer global external Application Load Balancers aren't supported.",
+          "Producer port configuration When an internal passthrough Network Load Balancer is published by using Private Service Connect, consumers who use Private Service Connect backends to access the service need to know which port to use to communicate with the service.",
+          "Establishing a Private Service Connect connection between consumer and producer projects that are not in the same VPC Service Controls perimeter does not require explicit authorization with egress policies."
+        ]
+      },
+      {
+        "title": "\"About Private Service Connect interfaces \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+        "source_id": "site-docs-root-2",
+        "final_score": 214,
+        "relevance": "",
+        "evidence_snippets": [
+          "This Private Service Connect interface connection lets producer and consumer organizations configure their VPC networks so that the two networks are connected and can communicate by using internal IP addresses.",
+          "Consider using dynamic Private Service Connect interfaces when the following is true: You need to dynamically manage connections to consumer VPC networks.",
+          "The analytics service can initiate connections to the consumer VPC network by using a Private Service Connect interface."
+        ]
+      },
+      {
+        "title": "\"About Private Service Connect port mapping \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping",
+        "source_id": "site-docs-root-2",
+        "final_score": 213,
+        "relevance": "",
+        "evidence_snippets": [
+          "Private Service Connect port mapping lets consumer VMs communicate with specific producer VMs through the following process: The consumer VM sends packets to the endpoint's IP address, using a designated client destination port.",
+          "Specifications Private Service Connect port mapping has the following specifications: A Private Service Connect port mapping connection requires a Private Service Connect endpoint in a consumer VPC network that connects to a service attachment in a producer VPC network.",
+          "Private Service Connect port mapping lets consumer virtual machine (VM) instances privately communicate with specific service ports on specific producer VMs through a single Private Service Connect endpoint."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping"
+      ]
+    }
+  ]
+}

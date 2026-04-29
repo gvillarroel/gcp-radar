@@ -1,0 +1,96 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:40.902Z",
+  "source_step08_card": "data/step-08/current/products/aerial-view-api/card.json",
+  "product_name": "Aerial View API",
+  "product_slug": "aerial-view-api",
+  "feature_name": "lookupVideoMetadata method",
+  "feature_slug": "lookupvideometadata-method",
+  "summary": "Added the lookupVideoMetadata API method to return video metadata, including imagery freshness, video length, and video existence confirmation.",
+  "extended_definition": "Added the lookupVideoMetadata API method to return video metadata, including imagery freshness, video length, and video existence confirmation.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/aerial-view/lookup-video",
+      "https://developers.google.com/maps/documentation/aerial-view/lookup-video-metadata",
+      "https://developers.google.com/maps/documentation/aerial-view/reference/rest/v1/videos/lookupVideoMetadata"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Retrieve a video's metadata \\_|\\_ Google Maps Aerial View API \\_|\\_ Google\\",
+        "url": "https://developers.google.com/maps/documentation/aerial-view/lookup-video-metadata",
+        "source_id": "site-docs-root",
+        "final_score": 196,
+        "relevance": "",
+        "evidence_snippets": [
+          "Given a valid address or videoID, the lookupVideoMetadata method returns metadata associated with a given video.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[\"The lookupVideoMetadata method retrieves metadata for a given video using a URL-encoded address or videoID.",
+          "How to use the API Call this endpoint by passing it a URL-encoded US postal address or a videoId . curl - X GET \"https://aerialview.googleapis.com/v1/videos:lookupVideoMetadata?key= YOUR API KEY &address= POSTAL ADDRESS \" The API then returns one of the following two responses: If the video exists, lookupVideoMetadata returns the video's metadata."
+        ]
+      },
+      {
+        "title": "\"Method: videos.lookupVideoMetadata \\_|\\_ Google Maps Aerial View API \\_\\",
+        "url": "https://developers.google.com/maps/documentation/aerial-view/reference/rest/v1/videos/lookupVideoMetadata",
+        "source_id": "site-api-reference",
+        "final_score": 194,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Products Google Maps Platform Documentation Aerial View API Reference Send feedback Method: videos.lookupVideoMetadata Stay organized with collections Save and categorize content based on your preferences.",
+          "This method is a free-to-call alternative to videos.lookupVideo , and returns all available video data excluding playback URIs.",
+          "HTTP request GET https://aerialview.googleapis.com/v1/videos:lookupVideoMetadata The URL uses gRPC Transcoding syntax."
+        ]
+      },
+      {
+        "title": "Fetch a video \\_|\\_ Google Maps Aerial View API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/aerial-view/lookup-video",
+        "source_id": "site-docs-root",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "Page Summary outlined flag The Aerial View API's lookupVideo method retrieves video URIs for valid addresses or video IDs if available, returning metadata and landscape/portrait URIs for active videos.",
+          "Use the lookupVideoMetadata method to initially check for the existence of a video for a specific address.",
+          "To check if a video exists, use the lookupVideoMetadata method."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aerialview.googleapis.com",
+      "developers.google.com",
+      "videos.lookupVideo",
+      "videos.lookupVideoMetadata",
+      "videos.renderVideo"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/aerial-view/lookup-video-metadata",
+        "https://developers.google.com/maps/documentation/aerial-view/reference/rest/v1/videos/lookupVideoMetadata",
+        "https://developers.google.com/maps/documentation/aerial-view/lookup-video"
+      ]
+    }
+  ]
+}

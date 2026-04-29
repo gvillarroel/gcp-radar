@@ -1,0 +1,148 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.741Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-admin-api/card.json",
+  "product_name": "App Engine Admin API",
+  "product_slug": "app-engine-admin-api",
+  "feature_name": "App Engine Firewall",
+  "feature_slug": "app-engine-firewall",
+  "summary": "App Engine Firewall was made generally available.",
+  "extended_definition": "App Engine Firewall was made generally available.",
+  "lifecycle": {
+    "latest_feature_date": "2017-10-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/application-security",
+      "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+      "https://docs.cloud.google.com/appengine/docs/standard/creating-firewalls"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Creating App Engine firewall rules \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/creating-firewalls",
+        "source_id": "site-docs-reference",
+        "final_score": 112,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Examples: Use the following examples to help you create your firewall: Add a rule that allows an IPv6 address and subnet mask, and then test that rule to ensure it gets evaluated prior to your other rules: gcloud app firewall-rules create 123 --source-range fe80::3636:3bff:fecc:8778/128 --action allow gcloud app firewall-rules test-ip fe80::3636:3bff:fecc:8778 Add a rule to deny an IPv4 address and subnet mask, and then test that rule to ensure that it gets appropriately evaluated: gcloud app firewall-rules create 123456 --source-range \"74.125.0.0/16\" --action deny gcloud app firewall-rules test-ip 74 .125.0.8 Update and then test the default rule to ensure that it restricts all IP addresses that don't match any other rules: gcloud app firewall-rules update default --action deny gcloud app firewall-rules test-ip 123 .456.7.89 API To programmatically create firewall rules for your App Engine app, you can use the apps.firewall.ingressRules methods in the Admin API.",
+          "Before you begin Before you can create App Engine firewall rules for your app, you must have one of the following App Engine IAM roles , which include the necessary privileges for creating or modifying firewall rules: App Engine Admin Editor Owner Creating firewall rules Use one of the following methods to create a firewall rule.",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Creating App Engine firewall rules Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Connecting to a VPC network \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "source_id": "site-docs-reference",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "However, if you create a connector in a service project and the connector targets a Shared VPC network in the host project, you must add firewall rules to allow necessary traffic for the connector's operation from the following ranges: Serverless infrastructure IP range : 35.199.224.0/19 Health check probe IP ranges : 35.191.0.0/16 , 35.191.192.0/18 , and 130.211.0.0/22 These ranges are used by the Google infrastructure underlying Cloud Run, Cloud Run functions, and App Engine standard environment.",
+          "Set the priority for this rule to be a lower value than the priority of the rule you made in the previous step. gcloud compute firewall-rules create RULE NAME \\ --allow = PROTOCOL \\ --destination-ranges = RESOURCE CIDR RANGE \\ --direction = EGRESS \\ --network = VPC NETWORK \\ --target-tags = VPC CONNECTOR NETWORK TAG \\ --priority = PRIORITY Replace the following: RULE NAME : the name of your new firewall rule.",
+          "Set the priority for this rule to be a lower value than the priority of the rule you made in the previous step. gcloud compute firewall-rules create RULE NAME \\ --allow = PROTOCOL \\ --source-ranges = VPC CONNECTOR CIDR RANGE \\ --direction = INGRESS \\ --network = VPC NETWORK \\ --target-tags = RESOURCE TAG \\ --priority = PRIORITY Replace the following: RULE NAME : the name of your new firewall rule."
+        ]
+      },
+      {
+        "title": "\"Overview of app security \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/application-security",
+        "source_id": "site-docs-reference",
+        "final_score": 77,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Block abusive IP addresses While Google Cloud has many mechanisms in place to prevent attacks, you can use the App Engine firewall to block traffic to your app from IP addresses that present malicious intent or shield your app from denial of service attacks and similar forms of abuse.",
+          "App Engine firewall The App Engine firewall enables you to control access to your App Engine app through a set of rules that can either allow or deny requests from the specified ranges of IP addresses.",
+          "Security scanner The Google Cloud Web Security Scanner discovers vulnerabilities by crawling your App Engine app, following all that links within the scope of your starting URLs, and attempting to exercise as many user inputs and event handlers as possible."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apps.firewall.ingressRules"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/creating-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/standard/application-security",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/creating-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/standard/application-security",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/creating-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/standard/application-security",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/creating-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/standard/application-security",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/creating-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/standard/application-security",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/creating-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/standard/application-security",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/creating-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/standard/application-security",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/creating-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/standard/application-security",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    }
+  ]
+}

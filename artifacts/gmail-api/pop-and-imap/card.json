@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:13.415Z",
+  "source_step08_card": "data/step-08/current/products/gmail-api/card.json",
+  "product_name": "Gmail API",
+  "product_slug": "gmail-api",
+  "feature_name": "POP and IMAP",
+  "feature_slug": "pop-and-imap",
+  "summary": "New endpoints are available for managing POP and IMAP settings in mail settings.",
+  "extended_definition": "New endpoints are available for managing POP and IMAP settings in mail settings.",
+  "lifecycle": {
+    "latest_feature_date": "2016-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/gmail/api/guides/migrate-from-email-settings",
+      "https://developers.google.com/workspace/gmail/api/guides/pop_imap_settings",
+      "https://developers.google.com/workspace/gmail/api/reference/rest/v1/ImapSettings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure POP and IMAP settings with the Gmail API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/guides/pop_imap_settings",
+        "source_id": "site-docs-root",
+        "final_score": 203,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Related topics IMAP, POP, and SMTP for Gmail IMAP API Choose your IMAP email client settings for Gmail Read Gmail messages on other email clients using POP Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "You can use the settings resource of the Gmail API to configure how Gmail handles POP and IMAP protocols: settings.getPop settings.updatePop settings.getImap settings.updateImap POP You can manage POP settings for an account using the PopSettings object.",
+          "Home Google Workspace Gmail Guides Send feedback Configure POP and IMAP settings with the Gmail API Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Migrate from the Email Settings API \\_|\\_ Gmail \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/guides/migrate-from-email-settings",
+        "source_id": "site-docs-root",
+        "final_score": 147,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Old setting New setting Notes enable accessWindow Disabled when set to disabled enableFor accessWindow ALL MAIL is now allMail MAIL FROM NOW ON is now fromNowOn action disposition KEEP is now leaveInInbox ARCHIVE is now archive DELETE is now trash MARK READ is now markRead Manage IMAP settings To manage IMAP access in the Gmail API, use the settings resource.",
+          "Old setting New setting name displayName address sendAsEmail replyTo replyToAddress makeDefault isDefault Manage web clips Web Clip settings are not available in the Gmail API.",
+          "Manage general settings General settings are not available in the Gmail API."
+        ]
+      },
+      {
+        "title": "ImapSettings \\_|\\_ Gmail \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/ImapSettings",
+        "source_id": "site-docs-reference",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Google Workspace Gmail Reference Send feedback ImapSettings Stay organized with collections Save and categorize content based on your preferences.",
+          "Otherwise, Gmail will wait for an update from the client before expunging messages marked as deleted. expungeBehavior enum ( ExpungeBehavior ) The action that will be executed on a message when it is marked as deleted and expunged from the last visible IMAP folder. maxFolderSize integer An optional limit on the number of messages that an IMAP folder may contain.",
+          "JSON representation { \"enabled\" : boolean , \"autoExpunge\" : boolean , \"expungeBehavior\" : enum ( ExpungeBehavior ) , \"maxFolderSize\" : integer } Fields enabled boolean Whether IMAP is enabled for the account. autoExpunge boolean If this value is true, Gmail will immediately expunge a message when it is marked as deleted in IMAP."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apis.google.com",
+      "developers.google.com",
+      "schemas.google.com",
+      "settings.getImap",
+      "settings.getPop",
+      "settings.updateImap",
+      "settings.updatePop"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/guides/pop_imap_settings",
+        "https://developers.google.com/workspace/gmail/api/guides/migrate-from-email-settings",
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/ImapSettings"
+      ]
+    }
+  ]
+}

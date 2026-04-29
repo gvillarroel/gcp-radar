@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:54.168Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "Custom subject alternative name for Cloud SQL instances",
+  "feature_slug": "custom-subject-alternative-name-for-cloud-sql-instances",
+  "summary": "Custom subject alternative names let Cloud SQL instances use custom DNS names for connections when configured with customer-managed CAS CA.",
+  "extended_definition": "Custom subject alternative names let Cloud SQL instances use custom DNS names for connections when configured with customer-managed CAS CA.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+      "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+      "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 185,
+        "relevance": "",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances Request JSON body: { \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"databaseVersion\": \" DATABASE VERSION \", \"rootPassword\": \" PASSWORD \", \"settings\": { \"tier\": \" MACHINE TYPE \", \"edition\": \" EDITION TYPE \", \"enableGoogleMlIntegration\": \" true \" \" false \" \"databaseFlags\": [ { \"name\": \"cloudsql.enable google ml integration\", \"value\": \" on \" \" off \" } ] \"dataCacheConfig\": { \"dataCacheEnabled\": DATA CACHE ENABLED }, \"backupConfiguration\": { \"enabled\": true }, \"passwordValidationPolicy\": { \"enablePasswordPolicy\": true \"minLength\": \" MIN LENGTH \", \"complexity\": COMPLEXITY DEFAULT, \"reuseInterval\": \" REUSE INTERVAL \", \"disallowUsernameSubstring\": \" DISALLOW USERNAME SUBSTRING \", \"passwordChangeInterval\": \" PASSWORD CHANGE INTERVAL \" }, \"ipConfiguration\": { \"privateNetwork\": \" PRIVATE NETWORK \", \"authorizedNetworks\": [ AUTHORIZED NETWORKS ], \"ipv4Enabled\": false, \"enablePrivatePathForGoogleCloudServices\": true, \"serverCaMode\": \" CA MODE \", \"serverCertificateRotationMode\": \" SERVER CERTIFICATE ROTATION MODE \", \"customSubjectAlternativeNames\": \" DNS NAMES \" }, \"dataApiAccess\": \"ALLOW DATA API\" }, \"sqlNetworkArchitecture\": \"NEW NETWORK ARCHITECTURE\" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances Request JSON body: { \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"databaseVersion\": \" DATABASE VERSION \", \"rootPassword\": \" PASSWORD \", \"settings\": { \"tier\": \" MACHINE TYPE \", \"edition\": \" EDITION TYPE \", \"enableGoogleMlIntegration\": \" true \" \" false \" \"databaseFlags\": [ { \"name\": \"cloudsql.enable google ml integration\", \"value\": \" on \" \" off \" } ] \"dataCacheConfig\": { \"dataCacheEnabled\": DATA CACHE ENABLED }, \"backupConfiguration\": { \"enabled\": true }, \"passwordValidationPolicy\": { \"enablePasswordPolicy\": true \"minLength\": \" MIN LENGTH \", \"complexity\": COMPLEXITY DEFAULT, \"reuseInterval\": \" REUSE INTERVAL \", \"disallowUsernameSubstring\": \" DISALLOW USERNAME SUBSTRING \", \"passwordChangeInterval\": \" PASSWORD CHANGE INTERVAL \" }, \"ipConfiguration\": { \"privateNetwork\": \" PRIVATE NETWORK \", \"authorizedNetworks\": [ AUTHORIZED NETWORKS ], \"ipv4Enabled\": false, \"enablePrivatePathForGoogleCloudServices\": true, \"serverCaMode\": \" CA MODE \", \"serverCertificateRotationMode\": \" SERVER CERTIFICATE ROTATION MODE \", \"customSubjectAlternativeNames\": \" DNS NAMES \" }, \"dataApiAccess\": \"ALLOW DATA API\" }, \"sqlNetworkArchitecture\": \"NEW NETWORK ARCHITECTURE\" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Custom SAN Add a custom subject alternative name (SAN) --custom-subject-alternative-names= DNS NAMES If you want to use a custom DNS name to connect to a Cloud SQL instance instead of using an IP address, then configure the custom subject alternative name (SAN) setting while creating the instance."
+        ]
+      },
+      {
+        "title": "\"REST Resource: instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "source_id": "site-api-reference",
+        "final_score": 179,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"ipv4Enabled\" : boolean , \"privateNetwork\" : string , \"requireSsl\" : boolean , \"authorizedNetworks\" : [ { object ( AclEntry ) } ] , \"allocatedIpRange\" : string , \"enablePrivatePathForGoogleCloudServices\" : boolean , \"sslMode\" : enum ( SslMode ) , \"customSubjectAlternativeNames\" : [ string ] , \"pscConfig\" : { object ( PscConfig ) } , \"serverCaMode\" : enum ( CaMode ) , \"serverCaPool\" : string , \"serverCertificateRotationMode\" : enum ( ServerCertificateRotationMode ) } Fields ipv4Enabled boolean Whether the instance is assigned a public IP address or not. privateNetwork string The resource link for the VPC network from which the Cloud SQL instance is accessible for private IP.",
+          "In this case, MySQL and PostgreSQL databases respect sslMode and accepts only SSL connections. customSubjectAlternativeNames[] string Optional.",
+          "Custom Subject Alternative Name(SAN)s for a Cloud SQL instance. pscConfig object ( PscConfig ) PSC settings for this instance. serverCaMode enum ( CaMode ) Specify what type of CA is used for the server certificate. serverCaPool string Optional."
+        ]
+      },
+      {
+        "title": "REST Resource: instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "source_id": "site-iam-reference",
+        "final_score": 179,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"ipv4Enabled\" : boolean , \"privateNetwork\" : string , \"requireSsl\" : boolean , \"authorizedNetworks\" : [ { object ( AclEntry ) } ] , \"allocatedIpRange\" : string , \"enablePrivatePathForGoogleCloudServices\" : boolean , \"sslMode\" : enum ( SslMode ) , \"customSubjectAlternativeNames\" : [ string ] , \"pscConfig\" : { object ( PscConfig ) } , \"serverCaMode\" : enum ( CaMode ) , \"serverCaPool\" : string , \"serverCertificateRotationMode\" : enum ( ServerCertificateRotationMode ) } Fields ipv4Enabled boolean Whether the instance is assigned a public IP address or not. privateNetwork string The resource link for the VPC network from which the Cloud SQL instance is accessible for private IP.",
+          "In this case, MySQL and PostgreSQL databases respect sslMode and accepts only SSL connections. customSubjectAlternativeNames[] string Optional.",
+          "Custom Subject Alternative Name(SAN)s for a Cloud SQL instance. pscConfig object ( PscConfig ) PSC settings for this instance. serverCaMode enum ( CaMode ) Specify what type of CA is used for the server certificate. serverCaPool string Optional."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.enable",
+      "connect.get",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    }
+  ]
+}

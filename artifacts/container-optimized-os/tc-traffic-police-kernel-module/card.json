@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:02.340Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os",
+  "feature_name": "TC Traffic Police kernel module",
+  "feature_slug": "tc-traffic-police-kernel-module",
+  "summary": "Container-Optimized OS provides TC Traffic Police as a kernel module; Container-Optimized OS provides TC Traffic Police as a kernel module.",
+  "extended_definition": "Container-Optimized OS provides TC Traffic Police as a kernel module; Container-Optimized OS provides TC Traffic Police as a kernel module.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/secure-apparmor"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Running instances with GPU accelerators \\_|\\_ Container-Optimized OS \\_\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "source_id": "site-docs-reference",
+        "final_score": 60,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, on a COS VM, you could use the following command to install the NVIDIA driver and load the nvidia.ko kernel module with the NVreg EnableGpuFirmware=0 parameter. sudo cos-extensions install gpu -- --module-arg nvidia.NVreg EnableGpuFirmware=0 Preload the driver You can preload the GPU driver on your Container-Optimized OS instance even when no GPU device is attached.",
+          "Security Just like other kernel modules on Container-Optimized OS, GPU drivers are cryptographically signed and verified by keys that are built into the Container-Optimized OS kernel.",
+          "Unlike some other distros, Container-Optimized OS does not allow users to enroll their Machine Owner Key (MOK) and use the keys to sign custom kernel modules."
+        ]
+      },
+      {
+        "title": "\"Securing containers with AppArmor \\_|\\_ Container-Optimized OS \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/secure-apparmor",
+        "source_id": "site-docs-reference",
+        "final_score": 55,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can also specify unconfined with the apparmor option to indicate that the container is to be run with no security profile, as in the following example: docker run --rm -it --security-opt apparmor=unconfined debian:jessie bash -i Viewing the active AppArmor security profiles You can see what AppArmor profile, if any, applies to the processes on your Container-Optimized OS instance by inspecting the /proc/<pid>/attr/current file, where <pid> is the process ID.",
+          "To ensure that your custom security profile is present when your Container-Optimized OS instance boots, and remains persistent across reboots, you can use cloud-init to install the profile in /etc/apparmor.d .",
+          "Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Securing containers with AppArmor Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Security Overview \\_|\\_ Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security",
+        "source_id": "site-docs-reference",
+        "final_score": 46,
+        "relevance": "",
+        "evidence_snippets": [
+          "Security-hardened kernel Container-Optimized OS enables several security-hardening kernel features, including Integrity Measurement Architecture (IMA), Audit, Kernel Page Table Isolation (KPTI), and some Linux Security Modules (LSMs) from Chromium OS.",
+          "Testing and qualification process Before we publish a new Container-Optimized OS image to Google Cloud, we test it at multiple levels—including kernel fuzz testing by syzkaller , cluster-level Kubernetes tests, integration testing with Compute Engine features, and several performance benchmarks.",
+          "Built from source at Google Each package in Container-Optimized OS, including the Linux kernel itself, is built from source from ChromiumOS code repositories."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apparmor.d",
+      "nvidia.ko",
+      "nvidia.NVreg"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/secure-apparmor",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/secure-apparmor",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/secure-apparmor",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/secure-apparmor",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/secure-apparmor",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security"
+      ]
+    }
+  ]
+}

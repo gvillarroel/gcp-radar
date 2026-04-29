@@ -1,0 +1,219 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:20.028Z",
+  "source_step08_card": "data/step-08/current/products/identity-aware-proxy/card.json",
+  "product_name": "Identity-Aware Proxy",
+  "product_slug": "identity-aware-proxy",
+  "feature_name": "Workforce Identity Federation with IAP",
+  "feature_slug": "workforce-identity-federation-with-iap",
+  "summary": "Identity-Aware Proxy can use Workforce Identity Federation to let external workforce identities access protected resources; Identity-Aware Proxy supports Workforce Identity Federation so extended workforce identities can access protected applications without Cloud Identity sync.",
+  "extended_definition": "Identity-Aware Proxy can use Workforce Identity Federation to let external workforce identities access protected resources; Identity-Aware Proxy supports Workforce Identity Federation so extended workforce identities can access protected applications without Cloud Identity sync.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iap/docs/authentication-howto",
+      "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+      "https://docs.cloud.google.com/iap/docs/concepts-overview",
+      "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "IapSettings \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "source_id": "site-api-reference",
+        "final_score": 273,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security Identity-Aware Proxy Reference Send feedback IapSettings Stay organized with collections Save and categorize content based on your preferences.",
+          "Only one workforce pool is accepted. oauth2 object ( OAuth2 ) OAuth 2.0 settings for IAP to perform OIDC flow with workforce identity federation services.",
+          "JSON representation AccessSettings JSON representation GcipSettings JSON representation CorsSettings JSON representation OAuthSettings JSON representation ReauthSettings JSON representation Method PolicyType AllowedDomainsSettings JSON representation WorkforceIdentitySettings JSON representation OAuth2 JSON representation IdentitySource ApplicationSettings JSON representation CsmSettings JSON representation AccessDeniedPageSettings JSON representation AttributePropagationSettings JSON representation OutputCredentials The IAP configurable settings."
+        ]
+      },
+      {
+        "title": "Identity-Aware Proxy overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "source_id": "site-docs-root",
+        "final_score": 261,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Learn how to configure IAP with Workforce Identity Federation .",
+          "How IAP works When an application or resource is protected by IAP, it can only be accessed through the proxy by principals , also known as users, who have the correct Identity and Access Management (IAM) role .",
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Identity-Aware Proxy overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Setting up context-aware access with Identity-Aware Proxy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "source_id": "site-docs-root",
+        "final_score": 259,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Setting up context-aware access with Identity-Aware Proxy Stay organized with collections Save and categorize content based on your preferences.",
+          "This guide describes how to extend Identity-Aware Proxy (IAP) access policies using access levels and the Identity and Access Management (IAM) Conditions Framework .",
+          "Example policy.json file { \"policy\" : { \"bindings\" : [ { \"role\" : \"roles/iap.httpsResourceAccessor\" , \"members\" : [ \"group\" : EXAMPLE GROUP@GOOGLE.COM , \"user: EXAMPLE USER@GOOGLE.COM \" ], \"condition\" : { \"expression\" : \"\" accessPolicies/ ORGANIZATION NUMBER /accessLevels/ ACCESS LEVEL NAME \" in request.auth.access levels && request.path.startsWith(\" / \")\" , \"title\" : \" CONDITION NAME \" } } ] } } Set your new policy.json file using the setIamPolicy method. curl -i -H \"Content-Type:application/json\" \\ -H \"Authentication: Bearer $(gcloud auth print-access-token)\" \\ ${IAP BASE URL}/compute/services/${BACKEND SERVICE NAME}:setIamPolicy \\ -d @${JSON NEW POLICY} Use hostname and path conditions Access to your app can be secured using the hostname and path of a request URL."
+        ]
+      },
+      {
+        "title": "\"Programmatic authentication \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "source_id": "site-docs-root",
+        "final_score": 255,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . import ( \"context\" \"fmt\" \"io\" \"net/http\" \"google.golang.org/api/idtoken\" ) // makeIAPRequest makes a request to an application protected by Identity-Aware // Proxy with the given audience. func makeIAPRequest ( w io .",
+          "Authenticate with a service account JWT IAP supports service account JWT authentication for Google identities, Identity Platform, and Workforce Identity Federation configured applications.",
+          "Returns: The page body, or raises an exception if the page couldn't be retrieved. \"\"\" Set the default timeout, if missing if \"timeout\" not in kwargs : kwargs [ \"timeout\" ] = 90 Obtain an OpenID Connect (OIDC) token from metadata server or using service account. open id connect token = id token . fetch id token ( Request (), client id ) Fetch the Identity-Aware Proxy-protected URL, including an Authorization header containing \"Bearer \" followed by a Google-issued OpenID Connect token for the service account. resp = requests . request ( method , url , headers = { \"Authorization\" : \"Bearer {} \" . format ( open id connect token )}, kwargs ) if resp . status code == 403 : raise Exception ( \"Service account does not have permission to \" \"access the IAP-protected application.\" ) elif resp . status code != 200 : raise Exception ( \"Bad response from application: {!r} / {!r} / {!r} \" . format ( resp . status code , resp . headers , resp . text ) ) else : return resp . text Ruby To authenticate to IAP, set up Application Default Credentials."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "iap.httpsResourceAccessor",
+      "policy.json",
+      "request.auth.access",
+      "request.path.startsWith"
+    ],
+    "missing_inventory_roles": [
+      "roles/iap.httpsResourceAccessor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto"
+      ]
+    }
+  ]
+}

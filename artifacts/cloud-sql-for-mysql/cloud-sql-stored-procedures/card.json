@@ -1,0 +1,151 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:53.295Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Cloud SQL stored procedures",
+  "feature_slug": "cloud-sql-stored-procedures",
+  "summary": "Cloud SQL for MySQL provides stored procedures for operations such as adding or dropping secondary indexes on read replicas.",
+  "extended_definition": "Cloud SQL for MySQL provides stored procedures for operations such as adding or dropping secondary indexes on read replicas.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+      "https://docs.cloud.google.com/sql/docs/mysql/create-manage-databases",
+      "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-sql"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and manage databases \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/create-manage-databases",
+        "source_id": "site-docs-reference-3",
+        "final_score": 92,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DROP DATABASE [ database name ]; Note: If the database's directory contains any files not directly used by the database, the DROP DATABASE command will generate errors indicating that the database directory couldn't be deleted, such as: Error dropping database (can't rmdir './ database name ', errno: 39) Error dropping database (can't rmdir './ database name ', errno: 17) Examples of such files are #sql- files created from interrupted ALTER TABLE operations in MySQL 5.6 and MySQL 5.7.",
+          "Examples of such files are #sql- files created from interrupted ALTER TABLE operations in MySQL 5.6 and MySQL 5.7. gcloud For reference information, see gcloud sql databases delete . gcloud sql databases delete DATABASE NAME \\ --instance = INSTANCE NAME Note: Deleting a database removes all files in the database's directory, including any files not directly used by the database.",
+          "Examples of such files are #sql- files created from interrupted ALTER TABLE operations in MySQL 5.6 and MySQL 5.7."
+        ]
+      },
+      {
+        "title": "\"Export and import using SQL dump files \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-sql",
+        "source_id": "site-docs-root",
+        "final_score": 92,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "From a command line, run mysqldump : mysqldump --databases DATABASE NAME -h INSTANCE IP -u USERNAME -p \\ --hex-blob --single-transaction --set-gtid-purged = OFF \\ --default-character-set = utf8mb4 > SQL FILE .sql Note: To export stored procedures from a Cloud SQL instance, include the --routines flag.",
+          "If binary logging is enabled and you want to export triggers and stored procedures, you must also set the log bin trust function creators flag in your MySQL database.",
+          "To export triggers and/or stored procedures, use the mysqldump tool."
+        ]
+      },
+      {
+        "title": "\"Manage users with IAM database authentication \\_|\\_ Cloud SQL for MySQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "source_id": "site-docs-reference-3",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "Assign database roles while adding an IAM account to an instance To create a custom database role in MySQL, see Using roles . gcloud Create a user account Use the email, such as example-user@example.com , to identify the user. gcloud sql users create USERNAME \\ --instance = INSTANCE NAME \\ --type = cloud iam user \\ --database-roles = ROLE 1 , ROLE 2 Replace the following: USERNAME : the email address for the user.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PUT -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID /users\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID \", \"status\": \"DONE\", \"user\": \"user@example.com\", \"insertTime\": \"2025-10-07T22:44:16.656Z\", \"startTime\": \"2025-10-07T22:44:16.686Z\", \"endTime\": \"2025-10-07T22:44:20.437Z\", \"operationType\": \"CREATE USER\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } REST v1beta4 Before using any of the request data, make the following replacements: PROJECT ID : the project ID INSTANCE ID : the instance ID for the instance you are adding the user to USERNAME : the email address for the user USER TYPE : the Cloud SQL user type, which can be one of the following IAM user types: CLOUD IAM USER CLOUD IAM SERVICE ACCOUNT CLOUD IAM GROUP ROLE 1 , ROLE 2 ..., ROLE N : the database role or roles to assign to the IAM user, service account, or group REVOKE EXISTING ROLES : set to true to revoke the user's existing roles, set to false to keep the user's existing roles HTTP method and URL: PUT https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID /users Request JSON body: { \"name\": \" USERNAME \", \"type\": \" USER TYPE \", \"databaseRoles\": [ \" ROLE 1 \", \" ROLE 2 \" ], \"revokeExistingRoles\": REVOKE EXISTING ROLES } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID /users\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID \", \"status\": \"DONE\", \"user\": \"user@example.com\", \"insertTime\": \"2025-10-07T22:44:16.656Z\", \"startTime\": \"2025-10-07T22:44:16.686Z\", \"endTime\": \"2025-10-07T22:44:20.437Z\", \"operationType\": \"CREATE USER\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } REST v1beta4 Before using any of the request data, make the following replacements: PROJECT ID : the project ID INSTANCE ID : the instance ID for the instance you are adding the user to USERNAME : the email address for the user USER TYPE : the Cloud SQL user type, which is one of the following IAM user types: CLOUD IAM USER CLOUD IAM SERVICE ACCOUNT CLOUD IAM GROUP ROLE 1 , ROLE 2 ..., ROLE N : the database role or roles to assign to the IAM user, service account, or group HTTP method and URL: POST https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID /users Request JSON body: { \"name\": \" USERNAME \", \"type\": \"CLOUD IAM USER\", \"databaseRoles\": [ \" ROLE 1 \", \" ROLE 2 \" ] } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "request.json",
+      "sqladmin.googleapis.com",
+      "sqldumpfile.gz"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-databases",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-sql"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-databases",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-sql"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-databases",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-sql"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-databases",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-sql"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-databases",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-sql"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-databases",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-sql"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-databases",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-sql"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-databases",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-sql"
+      ]
+    }
+  ]
+}

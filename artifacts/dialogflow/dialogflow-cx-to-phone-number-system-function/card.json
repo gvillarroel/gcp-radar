@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:06.489Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Dialogflow CX TO_PHONE_NUMBER system function",
+  "feature_slug": "dialogflow-cx-to-phone-number-system-function",
+  "summary": "Dialogflow CX provides the TO_PHONE_NUMBER system function.",
+  "extended_definition": "Dialogflow CX provides the TO_PHONE_NUMBER system function.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/tutorials/deploy/webhook",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Package com.google.cloud.dialogflow.v2 (4.94.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "source_id": "site-java-reference",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "Conversation Phone Number Or Builder com. google. cloud. dialogflow. v2.",
+          "Telephony Connection Info The information about phone calls connected via phone gateway to the conversation. com. google. cloud. dialogflow. v2.",
+          "This class provides the ability to make remote calls to the backing service through method com. google. cloud. dialogflow. v2."
+        ]
+      },
+      {
+        "title": "\"General agent design best practices \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+        "source_id": "site-docs-root",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: Annotated training phrase Semantic meaning of annotated text I am 7 years old A person's age The contract is valid for 7 years A time duration Dialogflow CX's machine learning models consider semantic meaning when matching system entities.",
+          "Dialogflow CX API If none of the ready-to-use integrations are suitable, or you would like to customize the interface for your system, you can use the Dialogflow CX API directly .",
+          "Instead, you should select \"7\" for the annotation and use the @sys.number system entity."
+        ]
+      },
+      {
+        "title": "Create a webhook service \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/tutorials/deploy/webhook",
+        "source_id": "site-docs-root",
+        "final_score": 98,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Context , request webhookRequest ) ( webhookResponse , error ) { // Create session parameters that are populated in the response . // This example hard codes values , but a real system // might look up this value in a database . p := map [ string ] any { \"anomaly detect\" : \"false\" , \"purchase\" : \"device protection\" , \"purchase amount\" : \"12.25\" , \"bill without purchase\" : \"54.34\" , \"total bill\" : \"66.59\" , \"first month\" : \"January 1\" , } // Build and return the response . response := webhookResponse { SessionInfo : sessionInfo { Parameters : p , }, } return response , nil } // validatePhoneLine handles same - named tag . func validatePhoneLine ( ctx context .",
+          "Context , request webhookRequest ) ( webhookResponse , error ) { // Create session parameters that are populated in the response . // This example hard codes values , but a real system // might look up this value in a database . p := map [ string ] any { \"domestic coverage\" : \"true\" , \"phone line verified\" : \"true\" , } // Build and return the response . response := webhookResponse { SessionInfo : sessionInfo { Parameters : p , }, } return response , nil } // cruisePlanCoverage handles same - named tag . func cruisePlanCoverage ( ctx context .",
+          "What is your phone number with us?"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2",
+      "sys.number"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

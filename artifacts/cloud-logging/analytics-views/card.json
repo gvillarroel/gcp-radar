@@ -1,0 +1,129 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:49.591Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Analytics views",
+  "feature_slug": "analytics-views",
+  "summary": "Analytics views transform log data into a custom format that can be queried with SQL.",
+  "extended_definition": "Analytics views transform log data into a custom format that can be queried with SQL.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/access-control",
+      "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+      "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "OpsAnalyticsQuery \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "source_id": "site-docs-reference",
+        "final_score": 136,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The alias must be defined in the QueryBuilderConfig 's fieldSources list, otherwise the model is invalid. projectedField object ( ProjectedField ) A projected field option for when a user wants to use a field with some additional transformations such as casting or extractions.",
+          "Use ProjectedField when you need more than just the raw source field name (for which you might use FieldSource directly in QueryBuilderConfig's fieldSources list if no transformations or specific operation type are needed).",
+          "It specifies the source field and optionally applies transformations like aggregation, casting, regex extraction, or assigns an alias."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "Save and use private queries logging.queries.usePrivate logging.queries.{listShared,getShared} Save and use shared queries logging.queries.{share, getShared, updateShared, deleteShared, listShared} Use recent queries logging.queries.{create, list} Create and manage log scopes logging.logScopes.{create, delete, get, list, update} Set and manage the default log scope observability.scopes.{get, update} Create and manage analytics views observability.analyticsViews.{create, delete, get, list, update} Create and manage linked datasets logging.links.{create, delete, get, list} You might need additional IAM roles to query the linked dataset.",
+          "This role lets you create or modify any of the following: Log sinks Log buckets Log views Linked data sets Log scopes Analytics views This role isn't sufficient to create log-based metrics or log-based alerting policies .",
+          "For information about creating log views and granting access, see Configure log views on a log bucket ."
+        ]
+      },
+      {
+        "title": "View and analyze logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "source_id": "site-docs-root",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "For information about creating charts from your query results and saving charts to a custom dashboard, see Chart query results with Observability Analytics .",
+          "Set preferences for viewing log data To customize how your logs data is presented in the query results, click the settings Preferences button, and select View , Format , or Manage summary fields : To show or hide the Timeline and Fields panes, to hide summary chips in your query results, or to change the sorting order of your logs, select View .",
+          "The copied URL has the corresponding absolute time range represented by the time range of your query; for example, 7:49:37 PM - 8:49:37 PM . settings Preferences : Adjust the view of the Logs Explorer page, and customize the format of your query results."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "logging.links",
+      "logging.logScopes",
+      "logging.queries",
+      "logging.queries.usePrivate",
+      "observability.analyticsViews",
+      "observability.scopes"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:10.745Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "Active Connections metric",
+  "feature_slug": "active-connections-metric",
+  "summary": "Cloud Firestore added the Active Connections metric to Stackdriver Monitoring.",
+  "extended_definition": "Cloud Firestore added the Active Connections metric to Stackdriver Monitoring.",
+  "lifecycle": {
+    "latest_feature_date": "2019-07-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+      "https://docs.cloud.google.com/firestore/docs/monitor-usage",
+      "https://docs.cloud.google.com/firestore/native/docs/use-firestore-mcp"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Monitor usage \\_|\\_ Firestore in Native mode \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/firestore/docs/monitor-usage",
+        "source_id": "site-docs-reference",
+        "final_score": 121,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Monitoring includes the following Firestore metrics: Metric Name Description Document Reads The number of successful document reads.",
+          "Realtime updates usage Use the active connections and snapshot listeners metrics to measure your usage of realtime updates .",
+          "Aggregated usage dashboard If your project has multiple Firestore databases, you can view aggregated usage metrics in the Google Cloud console or Firebase console."
+        ]
+      },
+      {
+        "title": "\"Use the Firestore remote MCP server \\_|\\_ Firestore in Native mode \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/use-firestore-mcp",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 62,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following metrics are available for the firestore.googleapis.com/Database monitored resource: mcp/request count (Beta): The count of Firestore MCP calls. mcp/request latencies (Beta): The distribution of latencies for Firestore MCP calls.",
+          "Monitor MCP usage You can monitor the usage and latency of your Firestore MCP tools through Cloud Monitoring .",
+          "For more information about Firestore metrics, see Firestore metrics ."
+        ]
+      },
+      {
+        "title": "Exporting and Importing Entities \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "source_id": "site-docs-root",
+        "final_score": 54,
+        "relevance": "",
+        "evidence_snippets": [
+          "An alert reports the success or failure of your managed import request. gcloud Use the gcloud firestore import command to import all entities that were previously exported with the managed export service. gcloud firestore import gs:// bucket-name/file-path/file-name .overall export metadata \\ --async \\ --database= DATABASE where bucket-name/file-path/file-name is the path to your overall export metadata file within your Cloud Storage bucket.",
+          "An alert reports the success or failure of your managed import request. gcloud gcloud firestore import --collection-ids=\" KIND1,KIND2 \" \\ --namespaces=\" (default),NAMESPACE2 \" \\ gs:// bucket-name/file-path/file-name overall export metadata \\ --async \\ --database= DATABASE where bucket-name/file-path/file-name is the path to your overall export metadata file within your Cloud Storage bucket.",
+          "An alert reports the success or failure of your managed export request. gcloud Use the gcloud firestore export command to export all entities in your database. gcloud firestore export gs:// bucket-name --async --database= DATABASE where bucket-name is the name of your Cloud Storage bucket and an optional prefix, for example, bucket-name /datastore-exports/export-name ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.firestore.ExplainMetrics",
+      "firestore.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/monitor-usage",
+        "https://docs.cloud.google.com/firestore/native/docs/use-firestore-mcp",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities"
+      ]
+    }
+  ]
+}

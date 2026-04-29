@@ -1,0 +1,129 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:10.146Z",
+  "source_step08_card": "data/step-08/current/products/enterprise-knowledge-graph/card.json",
+  "product_name": "Enterprise Knowledge Graph",
+  "product_slug": "enterprise-knowledge-graph",
+  "feature_name": "Entity reconciliation job cancellation and deletion",
+  "feature_slug": "entity-reconciliation-job-cancellation-and-deletion",
+  "summary": "Allows users to cancel or delete an entity reconciliation job.",
+  "extended_definition": "Allows users to cancel or delete an entity reconciliation job.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/enterprise-knowledge-graph/docs/reference/rest/v1/projects.locations.entityReconciliationJobs/cancel",
+      "https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.CancelEntityReconciliationJobRequest",
+      "https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.CreateEntityReconciliationJobRequest",
+      "https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.DeleteEntityReconciliationJobRequest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Method: projects.locations.entityReconciliationJobs.cancel \\_|\\_ Enterprise\\",
+        "url": "https://docs.cloud.google.com/enterprise-knowledge-graph/docs/reference/rest/v1/projects.locations.entityReconciliationJobs/cancel",
+        "source_id": "site-api-reference",
+        "final_score": 215,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Enterprise Knowledge Graph Reference Send feedback Method: projects.locations.entityReconciliationJobs.cancel Stay organized with collections Save and categorize content based on your preferences.",
+          "Format: projects/{project}/locations/{location}/entityReconciliationJobs/{entityReconciliationJob} It takes the form projects/{project}/locations/{location}/entityReconciliationJobs/{entityreconciliationjob} .",
+          "IAM Permissions Requires the following IAM permission on the name resource: enterpriseknowledgegraph.entityReconciliationJobs.cancel For more information, see the IAM documentation ."
+        ]
+      },
+      {
+        "title": "\"Class CancelEntityReconciliationJobRequest (0.6.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.CancelEntityReconciliationJobRequest",
+        "source_id": "site-python-reference",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Format: projects/{project}/locations/{location}/entityReconciliationJobs/{entity reconciliation job} Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Developer tools Python Client libraries Send feedback Class CancelEntityReconciliationJobRequest (0.6.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "0.6.0 (latest) 0.5.0 0.4.0 0.3.17 0.2.1 0.1.0 CancelEntityReconciliationJobRequest ( mapping = None , , ignore unknown fields = False , kwargs ) Request message for CancelEntityReconciliationJob."
+        ]
+      },
+      {
+        "title": "\"Class CreateEntityReconciliationJobRequest (0.6.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.CreateEntityReconciliationJobRequest",
+        "source_id": "site-python-reference",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Python Client libraries Send feedback Class CreateEntityReconciliationJobRequest (0.6.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "0.6.0 (latest) 0.5.0 0.4.0 0.3.17 0.2.1 0.1.0 CreateEntityReconciliationJobRequest ( mapping = None , , ignore unknown fields = False , kwargs ) Request message for CreateEntityReconciliationJob.",
+          "Format: projects/{project}/locations/{location} entity reconciliation job google.cloud.enterpriseknowledgegraph v1.types.EntityReconciliationJob Required."
+        ]
+      },
+      {
+        "title": "\"Class DeleteEntityReconciliationJobRequest (0.6.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.DeleteEntityReconciliationJobRequest",
+        "source_id": "site-python-reference",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Format: projects/{project}/locations/{location}/entityReconciliationJobs/{entity reconciliation job} Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Developer tools Python Client libraries Send feedback Class DeleteEntityReconciliationJobRequest (0.6.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "0.6.0 (latest) 0.5.0 0.4.0 0.3.17 0.2.1 0.1.0 DeleteEntityReconciliationJobRequest ( mapping = None , , ignore unknown fields = False , kwargs ) Request message for DeleteEntityReconciliationJob."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "enterpriseknowledgegraph.entityReconciliationJobs.cancel",
+      "projects.locations.entityReconciliationJobs",
+      "projects.locations.entityReconciliationJobs.cancel",
+      "projects.locations.entityReconciliationJobs.create",
+      "projects.locations.entityReconciliationJobs.delete",
+      "v1.types.EntityReconciliationJob"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/enterprise-knowledge-graph/docs/reference/rest/v1/projects.locations.entityReconciliationJobs/cancel",
+        "https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.CancelEntityReconciliationJobRequest",
+        "https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.CreateEntityReconciliationJobRequest",
+        "https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.DeleteEntityReconciliationJobRequest"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/enterprise-knowledge-graph/docs/reference/rest/v1/projects.locations.entityReconciliationJobs/cancel",
+        "https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.CancelEntityReconciliationJobRequest",
+        "https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.CreateEntityReconciliationJobRequest",
+        "https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.DeleteEntityReconciliationJobRequest"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/enterprise-knowledge-graph/docs/reference/rest/v1/projects.locations.entityReconciliationJobs/cancel",
+        "https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.CancelEntityReconciliationJobRequest",
+        "https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.CreateEntityReconciliationJobRequest",
+        "https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.DeleteEntityReconciliationJobRequest"
+      ]
+    }
+  ]
+}

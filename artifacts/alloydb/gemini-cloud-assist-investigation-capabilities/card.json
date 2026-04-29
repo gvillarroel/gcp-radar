@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:40.969Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Gemini Cloud Assist investigation capabilities",
+  "feature_slug": "gemini-cloud-assist-investigation-capabilities",
+  "summary": "Gemini Cloud Assist investigation capabilities help troubleshoot AlloyDB issues such as slow queries with AI assistance.",
+  "extended_definition": "Gemini Cloud Assist investigation capabilities help troubleshoot AlloyDB issues such as slow queries with AI assistance.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/ai/alloydb-ai-use-cases",
+      "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+      "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Integrate QueryData with an application \\_|\\_ AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "source_id": "site-docs-root-2",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Gemini creates a filename INSTANCE ID DATABASE ID context set TIMESTAMP .json in the same directory, with the following content: { \"templates\" : [ { \"nl query\" : \"Tell me flights that can help me beat nighttime traffic if traveling from New York\" , \"sql\" : \"SELECT f.airline, f.flight number, a.name AS airport name, f.departure time FROM flights f JOIN airports a ON f.departure airport = a.iata WHERE a.city = 'New York' AND (EXTRACT(HOUR FROM f.departure time) < 17 OR EXTRACT(HOUR FROM f.departure time) >= 19) ORDER BY f.departure time;\" , \"intent\" : \"Tell me flights that can help me beat nighttime traffic if traveling from New York\" , \"manifest\" : \"Tell me flights that can help me beat nighttime traffic if traveling from a given city\" , \"parameterized\" : { \"parameterized sql\" : \"SELECT f.airline, f.flight number, a.name AS airport name, f.departure time FROM flights f JOIN airports a ON f.departure airport = a.iata WHERE a.city = $1 AND (EXTRACT(HOUR FROM f.departure time) < 17 OR EXTRACT(HOUR FROM f.departure time) >= 19) ORDER BY f.departure time;\" , \"parameterized intent\" : \"Tell me flights that can help me beat nighttime traffic if traveling from $1\" } } ], \"value searches\" : [ { \"query\" : \"/ Requires extensions: vector, google ml integration / WITH SemanticMetrics AS ( SELECT T.city AS original value, ( (google ml.embedding('gemini-embedding-001', $value)::vector <=> google ml.embedding('gemini-embedding-001', T.city)::vector) / 2.0 ) AS normalized dist FROM airports T WHERE T.city IS NOT NULL) SELECT original value AS value, 'airports.city' AS columns, 'Airport City' AS concept type, normalized dist AS distance, ''::text AS context FROM SemanticMetrics\" , \"concept type\" : \"Airport City\" , \"description\" : \"Semantic search for airport city name\" } ] } Upload context set file to the QueryData In this section, you upload the context set file to QueryData, so that it improves the QueryData's SQL generation capabilities on your database.",
+          "For more information, see Gemini Data Analytics Source and Gemini Data Analytics QueryData Tool. kind : source name : gda-api-source type : cloud-gemini-data-analytics projectId : \" PROJECT ID \" --- kind : tool name : cloud gda query tool type : cloud-gemini-data-analytics-query source : gda-api-source description : Use this tool to send natural language queries to the Gemini Data Analytics API and receive SQL, natural language answers, and explanations. location : \" REGION ID \" context : datasourceReferences : alloydb : databaseReference : projectId : \" PROJECT ID \" region : \" REGION ID \" clusterId : \" CLUSTER ID \" instanceId : \" INSTANCE ID \" databaseId : \" DATABASE ID \" agentContextReference : contextSetId : \" CONTEXT SET ID \" generationOptions : generateQueryResult : true generateNaturalLanguageAnswer : true generateExplanation : true generateDisambiguationQuestion : true Replace the following: PROJECT ID : Your Google Cloud project ID.",
+          "Gemini creates a filename INSTANCE ID DATABASE ID context set TIMESTAMP .json in the same directory, with the following content: { \"templates\" : [ { \"nl query\" : \"Tell me flights that can help me beat nighttime traffic if traveling from New York\" , \"sql\" : \"SELECT f.airline, f.flight number, a.name AS airport name, f.departure time FROM flights f JOIN airports a ON f.departure airport = a.iata WHERE a.city = 'New York' AND (EXTRACT(HOUR FROM f.departure time) < 17 OR EXTRACT(HOUR FROM f.departure time) >= 19) ORDER BY f.departure time;\" , \"intent\" : \"Tell me flights that can help me beat nighttime traffic if traveling from New York\" , \"manifest\" : \"Tell me flights that can help me beat nighttime traffic if traveling from a given city\" , \"parameterized\" : { \"parameterized sql\" : \"SELECT f.airline, f.flight number, a.name AS airport name, f.departure time FROM flights f JOIN airports a ON f.departure airport = a.iata WHERE a.city = ?"
+        ]
+      },
+      {
+        "title": "\"Build generative AI applications \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/alloydb-ai-use-cases",
+        "source_id": "site-docs-reference",
+        "final_score": 97,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Codelab: Installing and Setting-up Toolbox for your Generative AI & Agentic Applications on AlloyDB Build and deploy a personalized fashion styling assistant The following codelabs show you how to build and deploy a personalized style assistant with Gemini, model endpoint management, vector search, Vertex AI, and agents.",
+          "Codelab: Part 1: Build a Smart Shopping Assistant with AlloyDB and AI Applications Codelab: Part 2: Deploy a Smart Shopping Assistant with AlloyDB and AI Applications Build an LLM and RAG-based chat application using AlloyDB AI and LangChain This codelab guides you through deploying the GenAI Databases Retrieval Service and then shows you how to build a sample interactive application using your newly set up environment.",
+          "Tutorial: Deploying a RAG Application with AlloyDB to Agent Engine Integrate hybrid search and AI functions into your search application This demo illustrates the AI capabilities of Google Cloud AlloyDB, integrating hybrid search including SQL, vector, and full-text search with AI functions, all applied to a sample ecommerce dataset from Cymbal Shops."
+        ]
+      },
+      {
+        "title": "\"Use AlloyDB for PostgreSQL with MCP, Gemini CLI, and other agents \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "source_id": "site-docs-reference-2",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use the Gemini CLI extension for AlloyDB in two ways: A standalone command-line tool Integrated into your IDE with Gemini Code Assist Gemini CLI Install the Gemini CLI .",
+          "Start interacting with your AlloyDB instance using natural language directly within the Gemini Code Assist chat.",
+          "Add the following configuration, replace the environment variables with your values, and save. { \"servers\": { \"alloydb\": { \"command\": \"./PATH/TO/toolbox\", \"args\": [\"--prebuilt\",\"alloydb-postgres\",\"--stdio\"], \"env\": { \"ALLOYDB POSTGRES PROJECT\": \" PROJECT ID \", \"ALLOYDB POSTGRES REGION\": \" REGION \", \"ALLOYDB POSTGRES CLUSTER\": \" CLUSTER NAME \", \"ALLOYDB POSTGRES INSTANCE\": \" INSTANCE NAME \", \"ALLOYDB POSTGRES DATABASE\": \" DATABASE NAME \", \"ALLOYDB POSTGRES USER\": \" USERNAME \", \"ALLOYDB POSTGRES PASSWORD\": \" PASSWORD \" } } } } Note: To connect using a private IP address, add the following line to the env object: \"ALLOYDB POSTGRES IP TYPE\": \"private\" Windsurf Open Windsurf and navigate to Cascade assistant."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a.city",
+      "a.iata",
+      "a.name",
+      "airports.city",
+      "f.airline",
+      "f.departure",
+      "f.flight",
+      "github.com",
+      "ml.embedding"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/ai/alloydb-ai-use-cases",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/ai/alloydb-ai-use-cases",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/ai/alloydb-ai-use-cases",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox"
+      ]
+    }
+  ]
+}

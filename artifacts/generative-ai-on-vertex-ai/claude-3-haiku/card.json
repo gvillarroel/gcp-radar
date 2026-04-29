@@ -1,0 +1,155 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:12.462Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "Claude 3 Haiku",
+  "feature_slug": "claude-3-haiku",
+  "summary": "An Anthropic partner model that was deprecated and is scheduled for shutdown on 2026-08-23; deprecated on 2026-02-23.",
+  "extended_definition": "An Anthropic partner model that was deprecated and is scheduled for shutdown on 2026-08-23; deprecated on 2026-02-23.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-23",
+    "deprecation_date": "2026-02-23",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/control-model-access",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/partner-models",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Model deprecations (MaaS) \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/partner-models",
+        "source_id": "site-docs-root",
+        "final_score": 210,
+        "relevance": "",
+        "evidence_snippets": [
+          "Model ID claude-3-haiku Launch stage deprecated Supported inputs & outputs Inputs: Text , Code , Images Outputs: Text Token limits Maximum input tokens: 200,000 Maximum output tokens: 8,000 Capabilities Supported Prompt caching Function calling Count tokens Not supported Batch predictions Extended thinking Usage types Supported Fixed quota Provisioned Throughput Not supported Technical specifications Images Limitation and specifications: See Vision in Anthropic's documentation Documents Limitation and specifications: See PDF support in Anthropic's documentation Knowledge cutoff date August 2023 Versions claude-3-haiku Launch stage: Deprecated Release date: March 19, 2024 Supported regions Model availability (Includes fixed quota & Provisioned Throughput) United States us-east5 Europe europe-west1 Asia Pacific asia-southeast1 ML processing United States Multi-region Europe Multi-region Asia Pacific asia-southeast1 Quota limits us-east5: QPM: 245 TPM: 600,000 (input and output) Context length: 200,000 europe-west1: QPM: 75 TPM: 181,000 (input and output) Context length: 200,000 asia-southeast1: QPM: 70 TPM: 174,000 (input and output) Context length: 200,000 Pricing See Pricing .",
+          "View model card in Model Garden Model ID claude-3-5-haiku Launch stage deprecated Supported inputs & outputs Inputs: Text , Code , Images Outputs: Text Token limits Maximum input tokens: 200,000 Maximum output tokens: 8,000 Capabilities Supported Batch predictions Prompt caching Function calling Count tokens Not supported Extended thinking Usage types Supported Fixed quota Provisioned Throughput Not supported Technical specifications Images Limitation and specifications: See Vision in Anthropic's documentation Documents Limitation and specifications: See PDF support in Anthropic's documentation Knowledge cutoff date July 2024 Versions claude-3-5-haiku Launch stage: Deprecated Release date: October 22, 2024 Supported regions Model availability (Includes fixed quota & Provisioned Throughput) United States us-east5 Europe europe-west1 ML processing United States Multi-region Europe Multi-region Quota limits us-east5: QPM: 80 TPM: 350,000 (input and output) Context length: 200,000 europe-west1: QPM: 90 TPM: 400,000 (input and output) Context length: 200,000 Pricing See Pricing .",
+          "Anthropic's Claude 3 Haiku is Anthropic's fastest vision and text model for near-instant responses to basic queries, meant for seamless AI experiences mimicking human interactions."
+        ]
+      },
+      {
+        "title": "\"Control access to Model Garden models \\_|\\_ Generative AI on Vertex AI \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/control-model-access",
+        "source_id": "site-docs-root",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "Allow a set of models and deny all other models The following example allows actions on a specific set of models. name : organizations/ ORGANIZATION ID /policies/vertexai.allowedModels spec : rules : values : allowedValues : - publishers/meta/models/llama3:deploy - publishers/google/models/gemini-2.0-flash-001:tune - publishers/hf-google/models/gemma-2b:deploy Enable web search for partner models To enable the web search feature for partner models, you can specify the following: All features for all models from a specific publisher, for example: publishers/anthropic All features for a specific model, for example: publishers/anthropic/models/ MODEL NAME The web search feature for a specific model, for example: publishers/anthropic/models/ MODEL NAME :web search The following example enables web search for all models from Anthropic: name : organizations/ ORGANIZATION ID /policies/vertexai.allowedPartnerModelFeatures spec : rules : values : allowedValues : Allow all features of this publisher - publishers/anthropic Allow all features of this model - publishers/anthropic/models/ MODEL NAME Allow this feature - publishers/anthropic/models/ MODEL NAME :web search What's next Guide Use models in Model Garden Use generative models from Model Garden in the Google Cloud Console.",
+          "To specify models in a custom policy and a model action , use the following format: publishers/ PUBLISHER /models/ MODEL NAME : ACTION Replace the following: PUBLISHER : the name of the publisher who owns the model that your policy applies to.",
+          "Setting a Model Garden policy might be useful, for example, if you have a set of approved Google and third-party models that can be used in production environments."
+        ]
+      },
+      {
+        "title": "\"Deploy and inference Gemma using Model Garden and Vertex AI GPU-backed endpoints\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 152,
+        "relevance": "",
+        "evidence_snippets": [
+          "Run the following command in the terminal to create or overwrite this file in the current directory: cat > request.json MODEL ID \", \"deploy config\": { \"dedicated resources\": { \"machine spec\": { \"machine type\": \" MACHINE TYPE \", \"accelerator type\": \" ACCELERATOR TYPE \", \"accelerator count\": ACCELERATOR COUNT , \"reservation affinity\": { \"reservation affinity type\": \"ANY RESERVATION\" } }, \"spot\": \"false\" } }, \"model config\": { \"accept eula\": \"true\", \"container spec\": { \"image uri\": \" IMAGE URI \", \"args\": [ CONTAINER ARGS ], \"ports\": [ { \"container port\": CONTAINER PORT } ] } }, \"deploy config\": { \"fast tryout enabled\": false }, } EOF Then execute the following command to send your REST request: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION :deploy\" PowerShell Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login .",
+          "HTTP method and URL: POST https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION :deploy Request JSON body: { \"publisher model name\": \" MODEL ID \", \"deploy config\": { \"dedicated resources\": { \"machine spec\": { \"machine type\": \" MACHINE TYPE \", \"accelerator type\": \" ACCELERATOR TYPE \", \"accelerator count\": ACCELERATOR COUNT , \"reservation affinity\": { \"reservation affinity type\": \"ANY RESERVATION\" } }, \"spot\": \"false\" } }, \"model config\": { \"accept eula\": \"true\", \"container spec\": { \"image uri\": \" IMAGE URI \", \"args\": [ CONTAINER ARGS ], \"ports\": [ { \"container port\": CONTAINER PORT } ] } }, \"deploy config\": { \"fast tryout enabled\": false }, } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: cat > request.json MODEL ID \", \"hugging face access token\": \" ACCESS TOKEN \", \"model config\": { \"accept eula\": \"true\" } } EOF Then execute the following command to send your REST request: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION :deploy\" PowerShell Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login ."
+        ]
+      },
+      {
+        "title": "\"Deploy and inference Gemma using Model Garden and Vertex AI TPU-backed endpoints\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "source_id": "site-docs-root",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "The aiplatform Go client library Go support for Protocol Buffers Google API Extensions for Go (gax-go) go get cloud.google.com/go/aiplatform go get google.golang.org/protobuf go get github.com/googleapis/gax-go/v2 Deploy Gemma using Model Garden You deploy the Gemma 2 2B model to a ct5lp-hightpu-1t Compute Engine machine type that is optimized for small to medium scale training.",
+          "You must deploy a model to an endpoint before that model can be used to serve online predictions.",
+          "Online predictions are synchronous requests made to a model that is deployed to an endpoint."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "github.com",
+      "request.json",
+      "vertexai.allowedModels",
+      "vertexai.allowedPartnerModelFeatures"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/partner-models",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/control-model-access",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/partner-models",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/control-model-access",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/partner-models",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/control-model-access",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/partner-models",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/control-model-access",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/partner-models",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/control-model-access",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/partner-models",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/control-model-access",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:10.390Z",
+  "source_step08_card": "data/step-08/current/products/eventarc/card.json",
+  "product_name": "Eventarc",
+  "product_slug": "eventarc",
+  "feature_name": "Default Pub/Sub service account IAM grant",
+  "feature_slug": "default-pub-sub-service-account-iam-grant",
+  "summary": "Eventarc grants roles/iam.serviceAccountTokenCreator to the Pub/Sub service account by default.",
+  "extended_definition": "Eventarc grants roles/iam.serviceAccountTokenCreator to the Pub/Sub service account by default.",
+  "lifecycle": {
+    "latest_feature_date": "2021-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/eventarc/standard/docs/gke/quickstart-pubsub",
+      "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub",
+      "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Trigger Workflows using Pub/Sub messages (Google Cloud CLI)\\",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub",
+        "source_id": "site-iam-reference",
+        "final_score": 271,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required permissions To get the permissions that you need to complete this quickstart, ask your administrator to grant you the following IAM roles on your project: Eventarc Admin ( roles/eventarc.admin ) Logs View Accessor ( roles/logging.viewAccessor ) Project IAM Admin ( roles/resourcemanager.projectIamAdmin ) Pub/Sub Publisher ( roles/pubsub.publisher ) Service Account Admin ( roles/iam.serviceAccountAdmin ) Service Account User ( roles/iam.serviceAccountUser ) Service Usage Admin ( roles/serviceusage.serviceUsageAdmin ) Workflows Admin ( roles/workflows.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Grant the Workflows Invoker role ( roles/workflows.invoker ) on the project to the Compute Engine default service account so that the account has permission to trigger your workflow execution. gcloud projects add-iam-policy-binding PROJECT ID \\ --member = serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com \\ --role = roles/workflows.invoker If you enabled the Cloud Pub/Sub service agent on or before April 8, 2021, to support authenticated Pub/Sub push requests, grant the Service Account Token Creator role ( roles/iam.serviceAccountTokenCreator ) to the service agent.",
+          "Otherwise, this role is granted by default: gcloud projects add-iam-policy-binding PROJECT ID \\ --member = serviceAccount:service- PROJECT NUMBER @gcp-sa-pubsub.iam.gserviceaccount.com \\ --role = roles/iam.serviceAccountTokenCreator Create and deploy a workflow Create and deploy a workflow that gets executed when a message published to a Pub/Sub topic triggers a workflow with an HTTP request."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Receive events using Pub/Sub message (Google Cloud CLI) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/gke/quickstart-pubsub",
+        "source_id": "site-iam-reference",
+        "final_score": 263,
+        "relevance": "",
+        "evidence_snippets": [
+          "Grant the Pub/Sub Subscriber role ( roles/pubsub.subscriber ) on the project to the Compute Engine default service account so that the Eventarc trigger can pull events from Pub/Sub. gcloud projects add-iam-policy-binding PROJECT ID \\ --member = serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com \\ --role = roles/pubsub.subscriber If you enabled the Cloud Pub/Sub service agent on or before April 8, 2021, to support authenticated Pub/Sub push requests, grant the Service Account Token Creator role ( roles/iam.serviceAccountTokenCreator ) to the service agent.",
+          "Required permissions To get the permissions that you need to complete this quickstart, ask your administrator to grant you the following IAM roles on your project: Eventarc Admin ( roles/eventarc.admin ) Kubernetes Engine Admin ( roles/container.admin ) Logs View Accessor ( roles/logging.viewAccessor ) Project IAM Admin ( roles/resourcemanager.projectIamAdmin ) Pub/Sub Publisher ( roles/pubsub.publisher ) Service Account Admin ( roles/iam.serviceAccountAdmin ) Service Account User ( roles/iam.serviceAccountUser ) Service Usage Admin ( roles/serviceusage.serviceUsageAdmin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Otherwise, this role is granted by default: gcloud projects add-iam-policy-binding PROJECT ID \\ --member = serviceAccount:service- PROJECT NUMBER @gcp-sa-pubsub.iam.gserviceaccount.com \\ --role = roles/iam.serviceAccountTokenCreator Create a GKE cluster A GKE cluster consists of at least one cluster control plane machine and multiple worker machines called nodes."
+        ]
+      },
+      {
+        "title": "\"Class EventarcAsyncClient (1.20.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 241,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON Example :: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [\"user:eve@example.com\"], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ]=\"\" }=\"\" yaml=\"\" example =\"\" ::=\"\" bindings:=\"\" -=\"\" members:=\"\" -=\"\" user:mike@example.com=\"\" -=\"\" group:admins@example.com=\"\" -=\"\" domain:google.com=\"\" -=\"\" serviceaccount:my-project-id@appspot.gserviceaccount.com=\"\" role:=\"\" roles/resourcemanager.organizationadmin=\"\" -=\"\" members:=\"\" -=\"\" user:eve@example.com=\"\" role:=\"\" roles/resourcemanager.organizationviewer=\"\" condition:=\"\" title:=\"\" expirable=\"\" access=\"\" description:=\"\" does=\"\" not=\"\" grant=\"\" access=\"\" after=\"\" sep=\"\" 2020=\"\" expression:=\"\" request.time=\"\">< timestamp('2020-10-01t00:00:00.000z')=\"\" for=\"\" a=\"\" description=\"\" of=\"\" iam=\"\" and=\"\" its=\"\" features,=\"\" see=\"\" the=\"\"> IAM developer's guide . test iam permissions test iam permissions ( request : typing .",
+          "JSON Example :: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [\"user:eve@example.com\"], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ]=\"\" }=\"\" yaml=\"\" example =\"\" ::=\"\" bindings:=\"\" -=\"\" members:=\"\" -=\"\" user:mike@example.com=\"\" -=\"\" group:admins@example.com=\"\" -=\"\" domain:google.com=\"\" -=\"\" serviceaccount:my-project-id@appspot.gserviceaccount.com=\"\" role:=\"\" roles/resourcemanager.organizationadmin=\"\" -=\"\" members:=\"\" -=\"\" user:eve@example.com=\"\" role:=\"\" roles/resourcemanager.organizationviewer=\"\" condition:=\"\" title:=\"\" expirable=\"\" access=\"\" description:=\"\" does=\"\" not=\"\" grant=\"\" access=\"\" after=\"\" sep=\"\" 2020=\"\" expression:=\"\" request.time=\"\">< timestamp('2020-10-01t00:00:00.000z')=\"\" for=\"\" a=\"\" description=\"\" of=\"\" iam=\"\" and=\"\" its=\"\" features,=\"\" see=\"\" the=\"\"> IAM developer's guide . get location get location ( request : typing .",
+          "Channel () channel.pubsub topic = \"pubsub topic value\" channel.name = \"name value\" request = eventarc v1 ."
+        ]
+      },
+      {
+        "title": "\"Class EventarcClient (1.20.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "source_id": "site-python-reference",
+        "final_score": 241,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON Example :: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [\"user:eve@example.com\"], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ]=\"\" }=\"\" yaml=\"\" example =\"\" ::=\"\" bindings:=\"\" -=\"\" members:=\"\" -=\"\" user:mike@example.com=\"\" -=\"\" group:admins@example.com=\"\" -=\"\" domain:google.com=\"\" -=\"\" serviceaccount:my-project-id@appspot.gserviceaccount.com=\"\" role:=\"\" roles/resourcemanager.organizationadmin=\"\" -=\"\" members:=\"\" -=\"\" user:eve@example.com=\"\" role:=\"\" roles/resourcemanager.organizationviewer=\"\" condition:=\"\" title:=\"\" expirable=\"\" access=\"\" description:=\"\" does=\"\" not=\"\" grant=\"\" access=\"\" after=\"\" sep=\"\" 2020=\"\" expression:=\"\" request.time=\"\">< timestamp('2020-10-01t00:00:00.000z')=\"\" for=\"\" a=\"\" description=\"\" of=\"\" iam=\"\" and=\"\" its=\"\" features,=\"\" see=\"\" the=\"\"> IAM developer's guide . test iam permissions test iam permissions ( request : typing .",
+          "JSON Example :: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [\"user:eve@example.com\"], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ]=\"\" }=\"\" yaml=\"\" example =\"\" ::=\"\" bindings:=\"\" -=\"\" members:=\"\" -=\"\" user:mike@example.com=\"\" -=\"\" group:admins@example.com=\"\" -=\"\" domain:google.com=\"\" -=\"\" serviceaccount:my-project-id@appspot.gserviceaccount.com=\"\" role:=\"\" roles/resourcemanager.organizationadmin=\"\" -=\"\" members:=\"\" -=\"\" user:eve@example.com=\"\" role:=\"\" roles/resourcemanager.organizationviewer=\"\" condition:=\"\" title:=\"\" expirable=\"\" access=\"\" description:=\"\" does=\"\" not=\"\" grant=\"\" access=\"\" after=\"\" sep=\"\" 2020=\"\" expression:=\"\" request.time=\"\">< timestamp('2020-10-01t00:00:00.000z')=\"\" for=\"\" a=\"\" description=\"\" of=\"\" iam=\"\" and=\"\" its=\"\" features,=\"\" see=\"\" the=\"\"> IAM developer's guide . get location get location ( request : typing .",
+          "Channel () channel.pubsub topic = \"pubsub topic value\" channel.name = \"name value\" request = eventarc v1 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "channel.name",
+      "channel.pubsub",
+      "container.admin",
+      "developer.gserviceaccount.com",
+      "eventarc.admin",
+      "example.com",
+      "iam.automaticIamGrantsForDefaultServiceAccounts",
+      "iam.serviceAccountAdmin",
+      "iam.serviceAccountTokenCreator",
+      "iam.serviceAccountUser",
+      "logging.viewAccessor",
+      "pubsub.iam.gserviceaccount.com",
+      "pubsub.publisher",
+      "pubsub.subscriber",
+      "request.time",
+      "resourcemanager.organizationadmin",
+      "resourcemanager.organizationAdmin",
+      "resourcemanager.organizationviewer",
+      "resourcemanager.organizationViewer",
+      "resourcemanager.projectIamAdmin",
+      "serviceusage.serviceUsageAdmin",
+      "workflows.admin",
+      "workflows.invoker"
+    ],
+    "missing_inventory_roles": [
+      "roles/container.admin",
+      "roles/eventarc.admin",
+      "roles/iam.serviceAccountAdmin",
+      "roles/iam.serviceAccountTokenCreator",
+      "roles/iam.serviceAccountUser",
+      "roles/logging.viewAccessor",
+      "roles/pubsub.publisher",
+      "roles/pubsub.subscriber",
+      "roles/resourcemanager.organizationadmin",
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.organizationviewer",
+      "roles/resourcemanager.organizationViewer",
+      "roles/resourcemanager.projectIamAdmin",
+      "roles/serviceusage.serviceUsageAdmin",
+      "roles/workflows.admin",
+      "roles/workflows.invoker"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/quickstart-pubsub",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/quickstart-pubsub",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/quickstart-pubsub",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/quickstart-pubsub",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/quickstart-pubsub",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/quickstart-pubsub",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/quickstart-pubsub",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/quickstart-pubsub",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/quickstart-pubsub",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/quickstart-pubsub",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/quickstart-pubsub",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient"
+      ]
+    }
+  ]
+}

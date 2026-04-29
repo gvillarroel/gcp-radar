@@ -1,0 +1,129 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "GKE SLA coverage for the Regular release channel",
+  "feature_slug": "gke-sla-coverage-for-the-regular-release-channel",
+  "summary": "Extends the GKE Service Level Agreement to cover the Regular release channel for Standard and Autopilot modes.",
+  "extended_definition": "Extends the GKE Service Level Agreement to cover the Regular release channel for Standard and Autopilot modes.",
+  "lifecycle": {
+    "latest_feature_date": "2021-03-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About release channels \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels",
+        "source_id": "site-docs-reference-2",
+        "final_score": 173,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Upgrade timing Aligned with the respective release channel Same auto-upgrade start date as the Stable channel for minor versions Same available minor versions, patch auto-upgrade versions, and default version as the Regular channel Same available patch versions as the Rapid channel for those minor versions available in the Regular channel Accelerated patch auto-upgrades Available Not available Control of node pool disruption Node auto-upgrades by default You can disable node auto-upgrades at cluster level until the minor version end of support date by creating a maintenance exclusion with the \"No minor or node upgrades\" scope You can disable node auto-repair for a Standard cluster node pool Node auto-upgrades by default You can disable node-auto upgrades at the node pool level.",
+          "You are responsible for ensuring your cluster adheres to version and version skew policies You can disable node-upgrades at cluster level for up to 30 days by creating maintenance exclusion with the \"No upgrades\" scope Maintenance windows Available Available Maintenance exclusions Available maintenance exclusion scopes : \"No upgrades\" (30 days) \"No minor upgrades\" (until the end of support) \"No minor or node upgrades\" (until the end of support) Restricted to \"No upgrades\" scope (30 days) Rollout sequencing Available Not available Long-term support Available with the Extended release channel only Not available Autopilot Available Not available Differences between Rapid-channel clusters and alpha clusters Clusters created using the Rapid release channel are not alpha clusters .",
+          "The following diagram illustrates the adoption cycle for release channels: As this diagram shows, the available release channels use versions in the middle of the adoption cycle, including Early adopters (Rapid channel), Early majority (Regular channel), and Majority (Stable channel)."
+        ]
+      },
+      {
+        "title": "\"GKE release schedule \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule",
+        "source_id": "site-docs-reference-2",
+        "final_score": 141,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "See the following schedule for clusters enrolled in a release channel follow this schedule: Minor version ( release date ) Rapid Regular Stable Extended End of standard support (formerly end of life ) 3 End of extended support 3 Available 1 Auto Upgrade 2 Available 1 Auto Upgrade 2 Available 1 Auto Upgrade 2 Available 1 Auto Upgrade 2 1.29 2024-01-05 2024-04-16 2024-01-26 2024-07-09 2024-06-11 2024-08-09 2024-01-25 2026-01-25 5 2025-04-12 2026-01-25 1.30 2024-04-30 2024-07-30 2024-07-30 2024-09-17 2024-08-13 2024-09-24 2024-07-30 2025-12-03 2025-09-30 2026-07-30 1.31 2024-08-20 2024-09-17 2024-10-22 2025-03-11 2025-01-28 2025-04-30 2024-10-22 2026-05 4 2026-01-16 2026-10-22 1.32 2024-12-17 2025-03-11 2025-02-11 2025-05-13 2025-03-04 2025-07-22 2025-02-11 2026-Q3 4 2026-04-27 2027-02-11 1.33 2025-05-07 2025-06-10 2025-06-04 2025-09-09 2025-07-22 2025-10-14 2025-06-04 2026-Q4 4 2026-08-03 2027-06-03 1.34 2025-09-02 2025-10-28 2025-11-26 2026-03-10 2026-02-18 2026-06 4 2025-12-03 2027-Q2 4 2027-01-25 2027-11-25 1.35 2025-12-24 2026-02-11 2026-02-11 2026-04 4 2026-04-07 2026-06 4 2026-02-11 2027-Q3 4 2027-04-11 2028-02-11 Caution: GKE version 1.29 and earlier have reached end of support and are no longer supported.",
+          "Clusters not enrolled in a release channel follow this availability and support schedule: Available date: The same available date for the Kubernetes minor version on the Regular Channel, and the same available patch versions as the Rapid channel for those minor versions available in the Regular channel Auto upgrade date: The same auto upgrade date for the Kubernetes minor version on the Stable Channel, and the same auto upgrade date for patch versions as the Regular channel End of standard support (formerly known as end of life ): The same end of support date for the Kubernetes minor version on release channels other than the Extended channel Notes Note: Dates are updated monthly and subject to change.",
+          "On/after the auto upgrades start date, clusters subscribed to release channels will be auto upgraded to the referenced minor version. ↩ End of support : For clusters in the Rapid, Regular, Stable channels, or no channel, new features, security patches, or bug fixes will be made available for this minor version until its end of standard support (formerly known as end of life ) date."
+        ]
+      },
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "For security purposes, even if you have node auto-upgrade enabled, we recommend that you manually upgrade your node pools to one of the following GKE versions: Container-Optimized OS: 1.19.16-gke.13800 1.20.15-gke.8000 1.21.12-gke.1500 1.22.9-gke.1300 1.23.6-gke.1500 1.24.1-gke.1400 Ubuntu: 1.20.15-gke.9600 1.21.13-gke.900 1.22.10-gke.600 1.23.7-gke.1400 1.24.1-gke.1400 A recent feature of release channels allows you to apply a patch without having to unsubscribe from a channel.",
+          "For security purposes, even if you have node auto-upgrades enabled, we recommend that you manually upgrade your node pools to one of the following GKE versions: Container-Optimized OS: 1.21.14-gke.7100 and later Ubuntu: 1.21.14-gke.9400 and later 1.22.15-gke.2400 and later 1.23.13-gke.800 and later 1.24.7-gke.800 and later 1.25.3-gke.700 and later A recent feature of release channels lets you apply a patch without having to unsubscribe from a channel.",
+          "Upgrade your Container-Optimized OS node pools to one of the following versions or later: 1.27.5-gke.200 1.28.2-gke.1157000 Upgrade your Ubuntu node pools to one of the following versions or later: 1.25.14-gke.1421000 1.26.9-gke.1437000 1.27.6-gke.1248000 1.28.2-gke.1157000 You can apply patch versions from newer release channels if your cluster runs the same minor version in its own release channel."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "gke.1008000",
+      "gke.1052000",
+      "gke.1157000",
+      "gke.1225000",
+      "gke.1248000",
+      "gke.1300",
+      "gke.13800",
+      "gke.1400",
+      "gke.1421000",
+      "gke.1437000",
+      "gke.1500",
+      "gke.200",
+      "gke.2400",
+      "gke.600",
+      "gke.700",
+      "gke.7100",
+      "gke.800",
+      "gke.8000",
+      "gke.900",
+      "gke.9400",
+      "gke.9600"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    }
+  ]
+}

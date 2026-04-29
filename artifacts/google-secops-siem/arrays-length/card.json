@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.987Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "arrays.length()",
+  "feature_slug": "arrays-length",
+  "summary": "YARA-L 2.0 now includes arrays.length() to return the number of elements in a repeated field.",
+  "extended_definition": "YARA-L 2.0 now includes arrays.length() to return the number of elements in a repeated field.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Functions \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 354,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Param data types ARRAY STRINGS , STRING Return type STRING Code samples Here are some examples of how to use the function: Example 1 This example joins an array with non-null elements and a delimiter. arrays.join string([\"foo\", \"bar\"], \",\") = \"foo,bar\" Example 2 This example joins an array with a null element and a delimiter. arrays.join string([\"foo\", NULL, \"bar\"], \",\") = \"foo,bar\" Example 3 This example joins an array with non-null elements and no delimiter. arrays.join string([\"foo\", \"bar\"]) = \"foobar\" arrays.length Supported in: Rules Search arrays.length(repeatedField) Description Returns the number of repeated field elements.",
+          "Param data types LIST Return type NUMBER Code samples Example 1 Returns the number of repeated field elements. arrays.length($e.principal.ip) = 2 Example 2 If multiple repeated fields are along the path, returns the total number of repeated field elements. arrays.length($e.intermediary.ip) = 3 arrays.max Supported in: Rules Search arrays.max(array of ints or floats) Description Returns the greatest element in an array or zero if the array is empty.",
+          "You can use these functions in the following parts of a YARA-L query: events section BOOL CLAUSE of a conditional in the outcome section arrays.concat Supported in: Rules Search arrays.concat(string array, string array) Description Returns a new string array by copying elements from original string arrays."
+        ]
+      },
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "Search for events and alerts Supported in: Google secops SIEM The search function lets you find Unified Data Model (UDM) events and alerts in your Google Security Operations instance using YARA-L 2.0 syntax .",
+          "If your Group by value is one of the IP fields, you have the following additional Transform options: (IP) CIDR Prefix length in bits : You can specify 1 through 32 for IPv4 addresses.",
+          "You can summarize by the following options: sum count count distinct average stddev min max Specify a value of Event count to return the number of events identified for this particular search and Pivot Table."
+        ]
+      },
+      {
+        "title": "\"Applied Threat Intelligence Fusion Feed overview \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/ati-fusion-feed",
+        "source_id": "site-api-reference",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "Condition section The condition section ensures that e1 , context graph , and matched conditions exist and or match the specified condition. condition: // Ensure $e1, $context graph and $matched conditions conditions are met. $e1 AND $context graph AND $matched conditions = 1 Complete YARA-L rule At this point the rule is ready for use and should look like the following: rule fusion feed example principal process file md5 { meta: rule name = \"File Hash - Applied Threat Intelligence\" description = \"Matches file hashes against the Applied Threat Intelligence Fusion Feed.\" events: // Filter graph $context graph.graph.metadata.product name = \"MANDIANT FUSION IOC\" $context graph.graph.metadata.vendor name = \"MANDIANT FUSION IOC\" $context graph.graph.metadata.entity type = \"FILE\" $context graph.graph.metadata.source type = \"GLOBAL CONTEXT\" // Do join $ioc = $context graph.graph.entity.file.md5 $ioc = $e1.principal.process.file.md5 match: $ioc over 1h outcome: // Extract the Mandiant Automated Intel confidence score of maliciousness $confidence score = max(if($context graph.graph.metadata.threat.verdict info.source provider = \"Mandiant Automated Intel\", $context graph.graph.metadata.threat.verdict info.confidence score, 0)) // Extract the status of the indicator as seen in a breached environment $breached = max(if($context graph.graph.metadata.threat.verdict info.pwn = true, 1, 0)) // Intermediary outcome variable to combine conditions of intelligence extracted in the previous outcome variables. // Return 1 if conditions are met, otherwise return 0. $matched conditions = if($confidence score >= 80 AND $breached = 1, 1, 0) condition: // Ensure $e1, $context graph and $matched conditions conditions are met. $e1 AND $context graph AND $matched conditions = 1 } ATI Fusion Feed context entity fields You can use many fields from the ATI Fusion Feed in rules.",
+          "This can all be done in the outcome section of the rule. outcome: // Extract the Mandiant Automated Intel confidence score of maliciousness $confidence score = max(if($context graph.graph.metadata.threat.verdict info.source provider = \"Mandiant Automated Intel\", $context graph.graph.metadata.threat.verdict info.confidence score, 0)) // Extract the status of the indicator as seen in a breached environment $breached = max(if($context graph.graph.metadata.threat.verdict info.pwn = true, 1, 0)) // Intermediary outcome variable to combine conditions of intelligence extracted in the previous outcome variables. // Return 1 if conditions are met, otherwise return 0. $matched conditions = if($confidence score >= 80 AND $breached = 1, 1, 0) In the outcome section of the YARA-L rule, the confidence score is extracted using an if statement wrapped in a max function.",
+          "Flexible joins in YARA-L rule To reduce the number of rules required, you can use flexible joins between IoCs to connect multiple UDM fields to a context entity."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "arrays.concat",
+      "arrays.join",
+      "arrays.length",
+      "arrays.max",
+      "arrays.size",
+      "bytes.to",
+      "e.intermediary.ip",
+      "e.principal.ip",
+      "e1.principal.process.file.md5",
+      "graph.graph.entity.file.md5",
+      "graph.graph.metadata.entity",
+      "graph.graph.metadata.product",
+      "graph.graph.metadata.source",
+      "graph.graph.metadata.threat.verdict",
+      "graph.graph.metadata.vendor",
+      "info.confidence",
+      "info.global",
+      "info.pwn",
+      "info.source",
+      "metadata.threat.verdict"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    }
+  ]
+}

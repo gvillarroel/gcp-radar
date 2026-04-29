@@ -1,0 +1,183 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:24.033Z",
+  "source_step08_card": "data/step-08/current/products/navigation-sdk-for-android/card.json",
+  "product_name": "Navigation SDK for Android",
+  "product_slug": "navigation-sdk-for-android",
+  "feature_name": "Road closure callouts on alternate routes",
+  "feature_slug": "road-closure-callouts-on-alternate-routes",
+  "summary": "Adds road closure callouts to alternate routes as well as the current route.",
+  "extended_definition": "Adds road closure callouts to alternate routes as well as the current route.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/navigation-points",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/real-time-disruptions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Navigation SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/real-time-disruptions",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Road closure callouts appear on both the current route and alternate routes.",
+          "You can control the display and tappability of disruption callouts during active navigation using setTrafficPromptsEnabled , which also controls the display of callouts along routes and the display of automated alerts when a user approaches a disruption . // Using the SupportNavigationFragment mNavFragment . setTrafficPromptsEnabled ( true ); // Using the NavigationView navigationView . setTrafficPromptsEnabled ( true ); Note: setTrafficPromptsEnabled only controls the display of callouts for user-reported disruptions.",
+          "You can control the display of disruption callouts along routes using setTrafficPromptsEnabled , which also controls the display of automated alerts when a user approaches a disruption . // Using the SupportNavigationFragment mNavFragment . setTrafficPromptsEnabled ( true ); // Using the NavigationView navigationView . setTrafficPromptsEnabled ( true ); Notes: setTrafficPromptsEnabled only controls the display of callouts for user-reported disruptions."
+        ]
+      },
+      {
+        "title": "\"Modify the navigation UI \\_|\\_ Navigation SDK for Android \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "source_id": "site-docs-root",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "When the user interface becomes cluttered with too much information, you can reduce clutter by displaying fewer alternate routes than the default (two), or by displaying no alternate routes at all.",
+          "The following code example demonstrates how to hide alternate routes altogether.",
+          "LOCATION PERMISSION MISSING : displayMessage ( \"Error loading Navigation SDK: Location permission \" + \"is missing.\" ); break ; default : displayMessage ( \"Error loading Navigation SDK: \" + errorCode ); } } }); } / Customizes the navigation UI and the map . / private void customizeNavigationUI () { // Set custom colors for the navigator . mNavFragment . setStylingOptions ( new StylingOptions () . primaryDayModeThemeColor ( 0xff1A237E ) . secondaryDayModeThemeColor ( 0xff3F51B5 ) . primaryNightModeThemeColor ( 0xff212121 ) . secondaryNightModeThemeColor ( 0xff424242 ) . headerLargeManeuverIconColor ( 0xffffff00 ) . headerSmallManeuverIconColor ( 0xffffa500 ) . headerNextStepTypefacePath ( \"/system/fonts/NotoSerif-BoldItalic.ttf\" ) . headerNextStepTextColor ( 0xff00ff00 ) . headerNextStepTextSize ( 20 f ) . headerDistanceTypefacePath ( \"/system/fonts/NotoSerif-Italic.ttf\" ) . headerDistanceValueTextColor ( 0xff00ff00 ) . headerDistanceUnitsTextColor ( 0xff0000ff ) . headerDistanceValueTextSize ( 20 f ) . headerDistanceUnitsTextSize ( 18 f ) . headerInstructionsTypefacePath ( \"/system/fonts/NotoSerif-BoldItalic.ttf\" ) . headerInstructionsTextColor ( 0xffffff00 ) . headerInstructionsFirstRowTextSize ( 24 f ) . headerInstructionsSecondRowTextSize ( 20 f ) . headerGuidanceRecommendedLaneColor ( 0xffffa500 )); mMap . setTrafficEnabled ( false ); // Place a marker at the final destination . if ( mNavigator . getCurrentRouteSegment () != null ) { LatLng destinationLatLng = mNavigator . getCurrentRouteSegment () . getDestinationLatLng (); Bitmap destinationMarkerIcon = BitmapFactory . decodeResource ( getResources (), R . drawable . ic person pin 48dp ); mMap . addMarker ( new MarkerOptions () . position ( destinationLatLng ) . icon ( BitmapDescriptorFactory . fromBitmap ( destinationMarkerIcon )) . title ( \"Destination marker\" )); // Listen for a tap on the marker . mMap . setOnMarkerClickListener ( new GoogleMap ."
+        ]
+      },
+      {
+        "title": "\"Route to navigation points \\_|\\_ Navigation SDK for Android \\_|\\_ Google\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/navigation-points",
+        "source_id": "site-docs-root",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Summary of valid waypoint configurations Method setLatLng() setPlaceIdString() setNavigationPointToken() Routing behavior Destination highlighting Latitude/longitude coordinates only set absent absent Routes to road segment nearest to the defined coordinates Shown if destination can be inferred with high confidence Place ID only absent set absent Routes to the default navigation point for the Place ID From Place ID Navigation point token only absent absent set Routes to the precise navigation point represented by the token From destination defined in original destinations method of the Geocoding API request Latitude/longitude coordinates and Place ID combined set set absent Routes to road segment nearest to the defined coordinates From Place ID, though not shown if Place ID is too far from the latitude/longitude coordinates Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The result might snap to the nearest road segment, which may not be the most convenient or correct navigation point.",
+          "This allows the Navigation SDK to provide a richer arrival experience by highlighting the destination building or showing nearby points of interest related to the Place ID. // Assuming 'placeId' is the Place ID String // Assuming 'lat' and 'lng' are the double values for latitude and longitude // Assuming 'destinationName' is a String title for the waypoint Waypoint waypointWithPlaceIdAndLatLng = Waypoint . builder () . setTitle ( destinationName ) . setPlaceIdString ( placeId ) . setLatLng ( lat , lng ) . build (); // Use this waypoint in navigator.setDestinations() Considerations When you provide both placeId and latlng : The route primarily targets the specified latlng ."
+        ]
+      },
+      {
+        "title": "\"Navigate a multi-destination route \\_|\\_ Navigation SDK for Android \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+        "source_id": "site-docs-root",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "Current waypoint: \" + mNavigator . getCurrentRouteSegment () . getDestinationWaypoint () . getTitle (), DISPLAY LOG ); } }; // Listens for changes in the route . mNavigator . addRouteChangedListener ( mRouteChangedListener ); // Listens for road - snapped location updates . mRoadSnappedLocationProvider = NavigationApi . getRoadSnappedLocationProvider ( getApplication ()); mLocationListener = new RoadSnappedLocationProvider .",
+          "LocationListener mLocationListener ; private Bundle mSavedInstanceState ; private static final String KEY JOURNEY IN PROGRESS = \"journey in progress\" ; private boolean mJourneyInProgress = false ; // Set fields for requesting location permission . private static final int PERMISSIONS REQUEST ACCESS FINE LOCATION = 1 ; private boolean mLocationPermissionGranted ; / Sets up the navigator when the activity is created . @param savedInstanceState The activity state bundle . / @Override protected void onCreate ( Bundle savedInstanceState ) { super . onCreate ( savedInstanceState ); // Save the navigator state , used to determine whether a journey is in progress . mSavedInstanceState = savedInstanceState ; if ( mSavedInstanceState != null && mSavedInstanceState . containsKey ( KEY JOURNEY IN PROGRESS )) { mJourneyInProgress = ( mSavedInstanceState . getInt ( KEY JOURNEY IN PROGRESS ) != 0 ); } setContentView ( R . layout . activity main ); // Initialize the Navigation SDK . initializeNavigationSdk (); } / Releases navigation listeners when the activity is destroyed . / @Override protected void onDestroy () { super . onDestroy (); if (( mJourneyInProgress ) && ( this . isFinishing ())) { mNavigator . removeArrivalListener ( mArrivalListener ); mNavigator . removeRouteChangedListener ( mRouteChangedListener ); mNavigator . removeRemainingTimeOrDistanceChangedListener ( mRemainingTimeOrDistanceChangedListener ); if ( mRoadSnappedLocationProvider != null ) { mRoadSnappedLocationProvider . removeLocationListener ( mLocationListener ); } displayMessage ( \"OnDestroy: Released navigation listeners.\" , DISPLAY LOG ); } } / Saves the state of the app when the activity is paused . / @Override protected void onSaveInstanceState ( Bundle outState ) { super . onSaveInstanceState ( outState ); if ( mJourneyInProgress ) { outState . putInt ( KEY JOURNEY IN PROGRESS , 1 ); } else { outState . putInt ( KEY JOURNEY IN PROGRESS , 0 ); } } / Starts the Navigation SDK and sets the camera to follow the device 's location.",
+          "See the code Show/Hide the Java code for the navigation activity. package com . example . navsdkmultidestination ; import android.content.pm.PackageManager ; import android.location.Location ; import android.os.Bundle ; import android.util.Log ; import android.widget.Toast ; import androidx.annotation.NonNull ; import androidx.appcompat.app.AppCompatActivity ; import androidx.core.app.ActivityCompat ; import androidx.core.content.ContextCompat ; import com.google.android.gms.maps.GoogleMap.CameraPerspective ; import com.google.android.libraries.navigation.ArrivalEvent ; import com.google.android.libraries.navigation.ListenableResultFuture ; import com.google.android.libraries.navigation.NavigationApi ; import com.google.android.libraries.navigation.Navigator ; import com.google.android.libraries.navigation.RoadSnappedLocationProvider ; import com.google.android.libraries.navigation.SimulationOptions ; import com.google.android.libraries.navigation.SupportNavigationFragment ; import com.google.android.libraries.navigation.TimeAndDistance ; import com.google.android.libraries.navigation.Waypoint ; import java.util.ArrayList ; import java.util.List ; / An activity that displays a map and a navigation UI , guiding the user from their current location to multiple destinations , also known as waypoints . / public class NavigationActivityMultiDestination extends AppCompatActivity { private static final String TAG = NavigationActivityMultiDestination . class . getSimpleName (); private static final String DISPLAY BOTH = \"both\" ; private static final String DISPLAY TOAST = \"toast\" ; private static final String DISPLAY LOG = \"log\" ; private Navigator mNavigator ; private RoadSnappedLocationProvider mRoadSnappedLocationProvider ; private SupportNavigationFragment mNavFragment ; private final List<Waypoint> mWaypoints = new ArrayList <> (); private Navigator ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "android.content.pm.PackageManager",
+      "android.location.Location",
+      "android.os.Bundle",
+      "android.util.Log",
+      "android.widget.Toast",
+      "androidx.annotation.NonNull",
+      "androidx.appcompat.app.AppCompatActivity",
+      "androidx.core.app.ActivityCompat",
+      "androidx.core.content.ContextCompat",
+      "com.google.android.gms.maps.GoogleMap.CameraPerspective",
+      "com.google.android.libraries.navigation.ArrivalEvent",
+      "com.google.android.libraries.navigation.ListenableResultFuture",
+      "com.google.android.libraries.navigation.NavigationApi",
+      "com.google.android.libraries.navigation.Navigator",
+      "com.google.android.libraries.navigation.RoadSnappedLocationProvider",
+      "com.google.android.libraries.navigation.SimulationOptions",
+      "com.google.android.libraries.navigation.SupportNavigationFragment",
+      "com.google.android.libraries.navigation.TimeAndDistance",
+      "com.google.android.libraries.navigation.Waypoint",
+      "developers.google.com",
+      "java.util.ArrayList",
+      "java.util.List",
+      "navigator.setDestinations",
+      "v7.4"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/real-time-disruptions",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/navigation-points",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/real-time-disruptions",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/navigation-points",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/real-time-disruptions",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/navigation-points",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/real-time-disruptions",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/navigation-points",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/real-time-disruptions",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/navigation-points",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/real-time-disruptions",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/navigation-points",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/real-time-disruptions",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/navigation-points",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination"
+      ]
+    }
+  ]
+}

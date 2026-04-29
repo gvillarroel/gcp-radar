@@ -1,0 +1,269 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "IAM custom roles for BigQuery",
+  "feature_slug": "iam-custom-roles-for-bigquery",
+  "summary": "BigQuery supports IAM custom roles.",
+  "extended_definition": "BigQuery supports IAM custom roles.",
+  "lifecycle": {
+    "latest_feature_date": "2017-11-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/access-control",
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacities",
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacity-changes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "BigQuery IAM roles and permissions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "source_id": "site-docs-reference-2",
+        "final_score": 35,
+        "relevance": "",
+        "evidence_snippets": [
+          "Vertex AI Batch Prediction Service Agent ( roles/ aiplatform.batchPredictionServiceAgent ) Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent ) Vertex AI Model Monitoring Service Agent ( roles/ aiplatform.modelMonitoringServiceAgent ) Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent ) Vertex AI Service Agent ( roles/ aiplatform.serviceAgent ) Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent ) Audit Manager Auditing Service Agent ( roles/ auditmanager.serviceAgent ) AutoML Service Agent ( roles/ automl.serviceAgent ) Recommendations AI Service Agent ( roles/ automlrecommendations.serviceAgent ) Connected Sheets Service Agent ( roles/ bigquery.connectedSheetsServiceAgent ) Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent ) Cloud Asset Service Agent ( roles/ cloudasset.serviceAgent ) Cloud Deployment Manager Service Agent ( roles/ clouddeploymentmanager.serviceAgent ) Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent ) Contact Center AI Insights Service Agent ( roles/ contactcenterinsights.serviceAgent ) Kubernetes Engine Service Agent ( roles/ container.serviceAgent ) Cloud Dataflow Service Agent ( roles/ dataflow.serviceAgent ) Cloud Data Fusion API Service Agent ( roles/ datafusion.serviceAgent ) Data Labeling Service Agent ( roles/ datalabeling.serviceAgent ) Dataplex Discovery Publishing Service Agent ( roles/ dataplex.discoveryPublishingServiceAgent ) Cloud Dataplex Service Agent ( roles/ dataplex.serviceAgent ) Dataprep Service Agent ( roles/ dataprep.serviceAgent ) Datastream Service Agent ( roles/ datastream.serviceAgent ) Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent ) DLP API Service Agent ( roles/ dlp.serviceAgent ) Enterprise Knowledge Graph Service Agent ( roles/ enterpriseknowledgegraph.serviceAgent ) Firebase Service Management Service Agent ( roles/ firebase.managementServiceAgent ) Firebase Crashlytics Service Agent ( roles/ firebasecrashlytics.serviceAgent ) FleetEngine Service Agent ( roles/ fleetengine.serviceAgent ) Cloud Logging Service Agent ( roles/ logging.serviceAgent ) Looker Service Agent ( roles/ looker.serviceAgent ) AI Platform Service Agent ( roles/ ml.serviceAgent ) Observability Service Agent ( roles/ observability.serviceAgent ) Retail Service Agent ( roles/ retail.serviceAgent ) Security Center Control Service Agent ( roles/ securitycenter.controlServiceAgent ) Security Health Analytics Service Agent ( roles/ securitycenter.securityHealthAnalyticsServiceAgent ) Security Center Service Agent ( roles/ securitycenter.serviceAgent ) Cloud Vision AI Service Agent ( roles/ visionai.serviceAgent ) bigquery.datasets.getIamPolicy Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) BigQuery Admin ( roles/ bigquery.admin ) Bigquerydatapolicy Editor ( roles/ bigquerydatapolicy.editor ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) BigQuery Data Editor ( roles/ bigquery.dataEditor ) BigQuery Data Owner ( roles/ bigquery.dataOwner ) BigQuery Data Viewer ( roles/ bigquery.dataViewer ) BigQuery Metadata Viewer ( roles/ bigquery.metadataViewer ) BigQuery Security Admin ( roles/ bigquery.securityAdmin ) BigQuery Studio Admin ( roles/ bigquery.studioAdmin ) BigQuery User ( roles/ bigquery.user ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Data Scientist ( roles/ iam.dataScientist ) Databases Admin ( roles/ iam.databasesAdmin ) ML Engineer ( roles/ iam.mlEngineer ) Security Auditor ( roles/ iam.securityAuditor ) Site Reliability Engineer ( roles/ iam.siteReliabilityEngineer ) Support User ( roles/ iam.supportUser ) SLZ BQDW Blueprint Project Level Remediator ( roles/ securedlandingzone.bqdwProjectRemediator ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "Vertex AI Batch Prediction Service Agent ( roles/ aiplatform.batchPredictionServiceAgent ) Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent ) Vertex AI Model Monitoring Service Agent ( roles/ aiplatform.modelMonitoringServiceAgent ) Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent ) Vertex AI Service Agent ( roles/ aiplatform.serviceAgent ) Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent ) AutoML Service Agent ( roles/ automl.serviceAgent ) Recommendations AI Service Agent ( roles/ automlrecommendations.serviceAgent ) Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent ) Chronicle Service Agent ( roles/ chronicle.serviceAgent ) Cloud Asset Service Agent ( roles/ cloudasset.serviceAgent ) Cloud Deployment Manager Service Agent ( roles/ clouddeploymentmanager.serviceAgent ) Contact Center AI Insights Service Agent ( roles/ contactcenterinsights.serviceAgent ) Kubernetes Engine Service Agent ( roles/ container.serviceAgent ) Cloud Dataflow Service Agent ( roles/ dataflow.serviceAgent ) Cloud Data Fusion API Service Agent ( roles/ datafusion.serviceAgent ) Data Labeling Service Agent ( roles/ datalabeling.serviceAgent ) Datapipelines Service Agent ( roles/ datapipelines.serviceAgent ) Cloud Dataplex Service Agent ( roles/ dataplex.serviceAgent ) Dataprep Service Agent ( roles/ dataprep.serviceAgent ) Datastream Service Agent ( roles/ datastream.serviceAgent ) Dialogflow Service Agent ( roles/ dialogflow.serviceAgent ) Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent ) DLP API Service Agent ( roles/ dlp.serviceAgent ) Enterprise Knowledge Graph Service Agent ( roles/ enterpriseknowledgegraph.serviceAgent ) Firebase Crashlytics Service Agent ( roles/ firebasecrashlytics.serviceAgent ) Looker Service Agent ( roles/ looker.serviceAgent ) AI Platform Service Agent ( roles/ ml.serviceAgent ) Retail Service Agent ( roles/ retail.serviceAgent ) Cloud Vision AI Service Agent ( roles/ visionai.serviceAgent ) bigquery.tables.getData BigQuery Admin ( roles/ bigquery.admin ) BigQuery Data Editor ( roles/ bigquery.dataEditor ) BigQuery Data Owner ( roles/ bigquery.dataOwner ) BigQuery Data Viewer ( roles/ bigquery.dataViewer ) BigQuery Authorized Routine Admin ( roles/ bigquery.routineAdmin ) BigQuery Authorized Routine Data Editor ( roles/ bigquery.routineDataEditor ) BigQuery Authorized Routine Data Viewer ( roles/ bigquery.routineDataViewer ) BigQuery Studio Admin ( roles/ bigquery.studioAdmin ) Dataplex Storage Data Owner ( roles/ dataplex.storageDataOwner ) Dataplex Storage Data Reader ( roles/ dataplex.storageDataReader ) Datastream Bigquery Writer ( roles/ datastream.bigqueryWriter ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Data Scientist ( roles/ iam.dataScientist ) Databases Admin ( roles/ iam.databasesAdmin ) ML Engineer ( roles/ iam.mlEngineer ) Site Reliability Engineer ( roles/ iam.siteReliabilityEngineer ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "Vertex AI Batch Prediction Service Agent ( roles/ aiplatform.batchPredictionServiceAgent ) Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent ) Vertex AI Model Monitoring Service Agent ( roles/ aiplatform.modelMonitoringServiceAgent ) Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent ) Vertex AI Service Agent ( roles/ aiplatform.serviceAgent ) Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent ) AutoML Service Agent ( roles/ automl.serviceAgent ) Recommendations AI Service Agent ( roles/ automlrecommendations.serviceAgent ) Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent ) Chronicle Service Agent ( roles/ chronicle.serviceAgent ) Cloud Deployment Manager Service Agent ( roles/ clouddeploymentmanager.serviceAgent ) Contact Center AI Insights Service Agent ( roles/ contactcenterinsights.serviceAgent ) Kubernetes Engine Service Agent ( roles/ container.serviceAgent ) Cloud Dataflow Service Agent ( roles/ dataflow.serviceAgent ) Cloud Data Fusion API Service Agent ( roles/ datafusion.serviceAgent ) Data Labeling Service Agent ( roles/ datalabeling.serviceAgent ) Dataplex Discovery Publishing Service Agent ( roles/ dataplex.discoveryPublishingServiceAgent ) Cloud Dataplex Service Agent ( roles/ dataplex.serviceAgent ) Dataprep Service Agent ( roles/ dataprep.serviceAgent ) Datastream Service Agent ( roles/ datastream.serviceAgent ) Dialogflow Service Agent ( roles/ dialogflow.serviceAgent ) Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent ) DLP API Service Agent ( roles/ dlp.serviceAgent ) Enterprise Knowledge Graph Service Agent ( roles/ enterpriseknowledgegraph.serviceAgent ) Firebase Service Management Service Agent ( roles/ firebase.managementServiceAgent ) Firebase Crashlytics Service Agent ( roles/ firebasecrashlytics.serviceAgent ) FleetEngine Service Agent ( roles/ fleetengine.serviceAgent ) Cloud Logging Service Agent ( roles/ logging.serviceAgent ) AI Platform Service Agent ( roles/ ml.serviceAgent ) Observability Service Agent ( roles/ observability.serviceAgent ) Retail Service Agent ( roles/ retail.serviceAgent ) Spectrum SAS Service Agent ( roles/ spectrumsas.serviceAgent ) StorageInsights Service Agent ( roles/ storageinsights.serviceAgent ) Cloud Vision AI Service Agent ( roles/ visionai.serviceAgent ) bigquery. datasets. createTagBinding Owner ( roles/ owner ) BigQuery Admin ( roles/ bigquery.admin ) Tag User ( roles/ resourcemanager.tagUser ) BigQuery Data Owner ( roles/ bigquery.dataOwner ) BigQuery Security Admin ( roles/ bigquery.securityAdmin ) BigQuery Studio Admin ( roles/ bigquery.studioAdmin ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Databases Admin ( roles/ iam.databasesAdmin ) ML Engineer ( roles/ iam.mlEngineer ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents ."
+        ]
+      },
+      {
+        "title": "\"INFORMATION_SCHEMA.BI_CAPACITIES view \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacities",
+        "source_id": "site-api-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "BI CAPACITIES The result looks similar to the following: +---------------+----------------+------------------+--------------+-----------------------------------------------------------------------------------------------+ project id project number bi capacity name size preferred tables +---------------+----------------+------------------+--------------+-----------------------------------------------------------------------------------------------+ my-project-id 123456789000 default 268435456000 \"my-company-project-id.dataset1.table1\",\"bigquery-public-data.chicago taxi trips.taxi trips\"] +---------------+----------------+------------------+--------------+-----------------------------------------------------------------------------------------------+ The following example returns size of BI Engine capacity in gigabytes for the query project: SELECT project id , size / 1024.0 / 1024.0 / 1024.0 AS size gb FROM region-us .",
+          "Required permission To query the INFORMATION SCHEMA.BI CAPACITIES view, you need the bigquery.bireservations.get Identity and Access Management (IAM) permission for BI Engine reservations.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"INFORMATION_SCHEMA.BI_CAPACITY_CHANGES view \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacity-changes",
+        "source_id": "site-api-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "BI CAPACITY CHANGES WHERE user email = \"email@mycompanymail.com\" The result looks similar to the following: +---------------------+---------------+----------------+------------------+--------------+---------------------+----------------------------------------------------------------------------------------+ change timestamp project id project number bi capacity name size user email preferred tables +---------------------+---------------+----------------+------------------+--------------+---------------------+----------------------------------------------------------------------------------------+ 2022-06-14 02:22:18 my-project-id 123456789000 default 268435456000 email@mycompany.com [\"my-project-id.dataset1.table1\",\"bigquery-public-data.chicago taxi trips.taxi trips\"] 2022-06-08 20:25:51 my-project-id 123456789000 default 268435456000 email@mycompany.com [\"bigquery-public-data.chicago taxi trips.taxi trips\"] 2022-04-01 21:06:49 my-project-id 123456789000 default 161061273600 email@mycompany.com [\"\"] +---------------------+---------------+----------------+------------------+--------------+---------------------+----------------------------------------------------------------------------------------+ The following example gets BI Engine capacity changes for the last seven days: SELECT change timestamp , size , user email , preferred tables FROM my-project-id.region-us .",
+          "Required permission To query the INFORMATION SCHEMA.BI CAPACITY CHANGES view, you need the bigquery.bireservations.get Identity and Access Management (IAM) permission for BI Engine reservations.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.batchPredictionServiceAgent",
+      "aiplatform.customCodeServiceAgent",
+      "aiplatform.modelMonitoringServiceAgent",
+      "aiplatform.ragServiceAgent",
+      "aiplatform.serviceAgent",
+      "aiplatform.tuningServiceAgent",
+      "auditmanager.serviceAgent",
+      "automl.serviceAgent",
+      "automlrecommendations.serviceAgent",
+      "bigquery.admin",
+      "bigquery.bireservations.get",
+      "bigquery.connectedSheetsServiceAgent",
+      "bigquery.dataEditor",
+      "bigquery.dataOwner",
+      "bigquery.datasets.getIamPolicy",
+      "bigquery.dataViewer",
+      "bigquery.metadataViewer",
+      "bigquery.routineAdmin",
+      "bigquery.routineDataEditor",
+      "bigquery.routineDataViewer",
+      "bigquery.securityAdmin",
+      "bigquery.studioAdmin",
+      "bigquery.tables.getData",
+      "bigquery.tables.getIamPolicy",
+      "bigquery.user",
+      "bigquerydatapolicy.editor",
+      "ces.serviceAgent",
+      "chronicle.serviceAgent",
+      "cloudasset.serviceAgent",
+      "clouddeploymentmanager.serviceAgent",
+      "cloudsecuritycompliance.serviceAgent",
+      "contactcenterinsights.serviceAgent",
+      "container.serviceAgent",
+      "data.chicago",
+      "dataflow.serviceAgent",
+      "datafusion.serviceAgent",
+      "datalabeling.serviceAgent",
+      "datapipelines.serviceAgent",
+      "dataplex.discoveryPublishingServiceAgent",
+      "dataplex.serviceAgent",
+      "dataplex.storageDataOwner",
+      "dataplex.storageDataReader",
+      "dataprep.serviceAgent",
+      "datastream.bigqueryWriter",
+      "datastream.serviceAgent",
+      "dialogflow.serviceAgent",
+      "discoveryengine.serviceAgent",
+      "dlp.orgdriver",
+      "dlp.projectdriver",
+      "dlp.serviceAgent",
+      "dspm.serviceAgent",
+      "enterpriseknowledgegraph.serviceAgent",
+      "firebase.managementServiceAgent",
+      "firebasecrashlytics.serviceAgent",
+      "fleetengine.serviceAgent",
+      "iam.databasesAdmin",
+      "iam.dataScientist",
+      "iam.mlEngineer",
+      "iam.securityAdmin",
+      "iam.securityAuditor",
+      "iam.securityReviewer",
+      "iam.siteReliabilityEngineer",
+      "iam.supportUser",
+      "id.dataset1.table1",
+      "id.region",
+      "logging.serviceAgent",
+      "looker.serviceAgent",
+      "ml.serviceAgent",
+      "mycompany.com",
+      "mycompanymail.com",
+      "observability.serviceAgent",
+      "resourcemanager.tagUser",
+      "retail.serviceAgent",
+      "securedlandingzone.bqdwProjectRemediator",
+      "securitycenter.controlServiceAgent",
+      "securitycenter.securityHealthAnalyticsServiceAgent",
+      "securitycenter.serviceAgent",
+      "spectrumsas.serviceAgent",
+      "storageinsights.serviceAgent",
+      "trips.taxi",
+      "visionai.serviceAgent"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacities",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacity-changes"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacities",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacity-changes"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacities",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacity-changes"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacities",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacity-changes"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacities",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacity-changes"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacities",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacity-changes"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacities",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacity-changes"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacities",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacity-changes"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacities",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacity-changes"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacities",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacity-changes"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacities",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacity-changes"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacities",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacity-changes"
+      ]
+    }
+  ]
+}

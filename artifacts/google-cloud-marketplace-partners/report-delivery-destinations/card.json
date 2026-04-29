@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:14.779Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-marketplace-partners/card.json",
+  "product_name": "Google Cloud Marketplace Partners",
+  "product_slug": "google-cloud-marketplace-partners",
+  "feature_name": "Report delivery destinations",
+  "feature_slug": "report-delivery-destinations",
+  "summary": "This feature lets publishers deliver reports to a Google Drive folder, a Cloud Storage bucket, or both.",
+  "extended_definition": "This feature lets publishers deliver reports to a Google Drive folder, a Cloud Storage bucket, or both.",
+  "lifecycle": {
+    "latest_feature_date": "2019-09-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+      "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/choose-pricing",
+      "https://docs.cloud.google.com/marketplace/docs/partners/receive-payments",
+      "https://docs.cloud.google.com/marketplace/docs/partners/reporting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Reports for your Cloud Marketplace products \\_|\\_ Google Cloud Marketplace\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/reporting",
+        "source_id": "site-docs-root",
+        "final_score": 136,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After you're set up to receive reports, your reports are delivered to a Google Drive folder, a Cloud Storage bucket, or both.",
+          "For steps to set up your report destinations, see Set up to receive reports .",
+          "Home Documentation Access and resource management Google Cloud Marketplace Partners Go to market Send feedback Reports for your Cloud Marketplace products Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Receiving payments from Google \\_|\\_ Google Cloud Marketplace Partners \\_\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/receive-payments",
+        "source_id": "site-docs-root",
+        "final_score": 77,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Marketplace also generates reports that you can use to reconcile the payments you receive, and to get information about how your customers are deploying your solution.",
+          "A service from your organization, or a service that you deploy in your customer's Google Cloud project, which reports usage through the Service Control API.",
+          "When customers use your products, Google calculates billing and payments using the following method: Your service reports usage to Cloud Billing."
+        ]
+      },
+      {
+        "title": "\"Add your AI agent's pricing information \\_|\\_ Google Cloud Marketplace Partners\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/choose-pricing",
+        "source_id": "site-iam-reference",
+        "final_score": 55,
+        "relevance": "",
+        "evidence_snippets": [
+          "This information is captured to ensure accurate withholding and reporting on your earned income.",
+          "Previous arrow back Update existing AI agent listings for enhanced discovery Next Add your Agent Card arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For each metric that you add, you must enter a Display name , a Reporting unit , and a Display unit , and then click either Done or Add another metric ."
+        ]
+      },
+      {
+        "title": "\"Configure access control for Producer Portal users \\_|\\_ Google Cloud Marketplace\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 55,
+        "relevance": "",
+        "evidence_snippets": [
+          "Access control for viewing reseller discounts in Producer Portal For users to view resources and configurations related to reseller discounts in Producer Portal, grant them the following roles: Commerce Business Enablement Reseller Discount Viewer ( roles/commercebusinessenablement.resellerDiscountViewer ) Commerce Price Management Viewer ( roles/commercepricemanagement.viewer ) Access control for creating and managing reseller discounts in Producer Portal For users to create and manage resources and configurations related to reseller discounts in Producer Portal, grant them the following roles: Commerce Business Enablement Reseller Discount Admin ( roles/commercebusinessenablement.resellerDiscountAdmin ) Commerce Price Management Viewer ( roles/commercepricemanagement.viewer ) Access control for managing analytics and reports in Producer Portal For users to manage analytics, test accounts, sales lead management, and reports for your products in the Analytics , Test billing accounts , Sales lead management , and Reports tabs of Producer Portal, grant them the following roles: Commerce Business Enablement Configuration Admin ( roles/commercebusinessenablement.admin ) Commerce Producer Viewer ( roles/commerceproducer.viewer ) Project Viewer ( roles/viewer ) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Additional roles for software as a service (SaaS) products For SaaS products, where you need to create a service account to interact with the Cloud Commerce Consumer Procurement API and report usage to us, grant your users the Service Account Admin role.",
+          "This page describes the Identity and Access Management (IAM) roles and permissions that you'll need to grant to members of your team who use Producer Portal ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "commercebusinessenablement.admin",
+      "commercebusinessenablement.resellerDiscountAdmin",
+      "commercebusinessenablement.resellerDiscountViewer",
+      "commercepricemanagement.viewer",
+      "commerceproducer.viewer",
+      "providers.entitlements"
+    ],
+    "missing_inventory_roles": [
+      "roles/commercebusinessenablement.admin",
+      "roles/commercebusinessenablement.resellerDiscountAdmin",
+      "roles/commercebusinessenablement.resellerDiscountViewer",
+      "roles/commercepricemanagement.viewer",
+      "roles/commerceproducer.viewer",
+      "roles/viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/reporting",
+        "https://docs.cloud.google.com/marketplace/docs/partners/receive-payments",
+        "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/choose-pricing",
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/reporting",
+        "https://docs.cloud.google.com/marketplace/docs/partners/receive-payments",
+        "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/choose-pricing",
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/reporting",
+        "https://docs.cloud.google.com/marketplace/docs/partners/receive-payments",
+        "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/choose-pricing",
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/reporting",
+        "https://docs.cloud.google.com/marketplace/docs/partners/receive-payments",
+        "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/choose-pricing",
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/reporting",
+        "https://docs.cloud.google.com/marketplace/docs/partners/receive-payments",
+        "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/choose-pricing",
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control"
+      ]
+    }
+  ]
+}

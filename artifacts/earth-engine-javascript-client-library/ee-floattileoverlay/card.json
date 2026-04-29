@@ -1,0 +1,76 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:09.313Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-javascript-client-library/card.json",
+  "product_name": "Earth Engine JavaScript Client Library",
+  "product_slug": "earth-engine-javascript-client-library",
+  "feature_name": "ee.FloatTileOverlay",
+  "feature_slug": "ee-floattileoverlay",
+  "summary": "The legacy float tile overlay class was deprecated and replaced by newer layer overlays; deprecated on 2016-09-29.",
+  "extended_definition": "The legacy float tile overlay class was deprecated and replaced by newer layer overlays; deprecated on 2016-09-29.",
+  "lifecycle": {
+    "latest_feature_date": "2016-09-29",
+    "deprecation_date": "2016-09-29",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+      "https://developers.google.com/earth-engine/guides/landsat"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud GeoTiff-Backed Earth Engine Assets \\_|\\_ Google Earth Engine \\_|\\_\\",
+        "url": "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+        "source_id": "site-docs-reference",
+        "final_score": 64,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The band order of the resulting asset is mixed from the input COGs (e.g. output band 0 is from Tileset 0, while output band 1 is from Tileset 1). request = { 'imageManifest' : { 'name' : f 'projects/ { ee project } /assets/cogdemo2' , 'uriPrefix' : 'gs://ee-docs-demos/external image demo/' , 'tilesets' : [ { 'id' : '0' , 'sources' : [ { 'uris' : [ 'b4b3b2.tif' ] } ] }, { 'id' : '1' , 'sources' : [ { 'uris' : [ 'b5b6b7.tif' ] } ] }, ], 'bands' : [ { 'id' : 'red' , 'tilesetId' : '0' , 'tilesetBandIndex' : 0 }, { 'id' : 'rededge3' , 'tilesetId' : '1' , 'tilesetBandIndex' : 2 }, { 'id' : 'rededge2' , 'tilesetId' : '1' , 'tilesetBandIndex' : 1 }, { 'id' : 'green' , 'tilesetId' : '0' , 'tilesetBandIndex' : 1 }, { 'id' : 'blue' , 'tilesetId' : '1' , 'tilesetBandIndex' : 0 }, { 'id' : 'rededge1' , 'tilesetId' : '0' , 'tilesetBandIndex' : 2 }, ], }, } pprint ( request ) Details on COG-backed assets Location The Cloud Storage bucket location must be one of: The US multi-region Any US dual-region that includes US-CENTRAL1 The region US-CENTRAL1 Storage class The storage class of the bucket must be \"Standard storage\".",
+          "The following gdal translate command will convert a raster into a band-interleaved, zstd-compressed, Cloud Optimized GeoTIFF that will perform well in Earth Engine: gdal translate in .tif out.tif \\ -co COPY SRC OVERVIEWS = YES \\ -co TILED = YES \\ -co BLOCKXSIZE = 512 \\ -co BLOCKYSIZE = 512 \\ -co COMPRESS = ZSTD \\ -co ZSTD LEVEL = 22 \\ -co INTERLEAVE = BAND \\ -co NUM THREADS = ALL CPUS It may be possible to reduce the output file size further by specifying a predictor ( -co PREDICTOR=2 for integer data types and -co PREDICTOR=3 for floating point data types).",
+          "COGs must be properly configured (tiled, with IFDs at the beginning) and storage location/class requirements are outlined."
+        ]
+      },
+      {
+        "title": "Landsat Algorithms \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/landsat",
+        "source_id": "site-docs-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "This example creates a simple composite using default parameters and compares it to a composite using custom parameters for the cloud score threshold and the percentile: Code Editor (JavaScript) // Load a raw Landsat 5 ImageCollection for a single year. var collection = ee .",
+          "Landsat . simpleComposite ( collection ); // Create a cloud-free composite with custom parameters for // cloud score threshold and percentile. var customComposite = ee .",
+          "Landsat . simpleComposite ( collection ) Create a cloud-free composite with custom parameters for cloud score threshold and percentile. custom composite = ee ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 2 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "b4b3b2.tif",
+      "b5b6b7.tif",
+      "demo.tif",
+      "developers.google.com",
+      "e.g",
+      "ee.FloatTileOverlay",
+      "out.tif"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

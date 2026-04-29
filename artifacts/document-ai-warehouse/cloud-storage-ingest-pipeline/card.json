@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:08.783Z",
+  "source_step08_card": "data/step-08/current/products/document-ai-warehouse/card.json",
+  "product_name": "Document AI Warehouse",
+  "product_slug": "document-ai-warehouse",
+  "feature_name": "Cloud Storage ingest pipeline",
+  "feature_slug": "cloud-storage-ingest-pipeline",
+  "summary": "Ingests documents from Cloud Storage into Document AI Warehouse.",
+  "extended_definition": "Ingests documents from Cloud Storage into Document AI Warehouse.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-warehouse/docs",
+      "https://docs.cloud.google.com/document-warehouse/docs/overview",
+      "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Document AI Warehouse overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 133,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Doc extractors (DocAI and others) Documents may be extracted by an AI pipeline, so that the extractions can be ingested and managed in Document AI Warehouse (as Metadata) along with the Raw Document.",
+          "Note that Document AI Warehouse can work with any extraction pipeline that calls Document AI Warehouse APIs to ingest/update documents.",
+          "Migrate vs Federate flexibility : The product supports a flexible architecture such that your document content can be migrated to Document AI Warehouse or stay-in-place if there are constraints in migrating content (we simply index the content and metadata) Integrated with Document Workflows - this integrates with Google Workflows and other document processing workflows by supporting: Properties - that represent the state of a document in a workflow and APIs that workflows can use to update the state of documents Doc Explorer interface - to track the progress of documents through a workflow pipeline, enabling a human to inspect, manage failures and stalled documents in the workflow pipeline."
+        ]
+      },
+      {
+        "title": "Document AI Warehouse overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-warehouse/docs",
+        "source_id": "site-api-reference",
+        "final_score": 133,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Doc extractors (DocAI and others) Documents may be extracted by an AI pipeline, so that the extractions can be ingested and managed in Document AI Warehouse (as Metadata) along with the Raw Document.",
+          "Note that Document AI Warehouse can work with any extraction pipeline that calls Document AI Warehouse APIs to ingest/update documents.",
+          "Migrate vs Federate flexibility : The product supports a flexible architecture such that your document content can be migrated to Document AI Warehouse or stay-in-place if there are constraints in migrating content (we simply index the content and metadata) Integrated with Document Workflows - this integrates with Google Workflows and other document processing workflows by supporting: Properties - that represent the state of a document in a workflow and APIs that workflows can use to update the state of documents Doc Explorer interface - to track the progress of documents through a workflow pipeline, enabling a human to inspect, manage failures and stalled documents in the workflow pipeline."
+        ]
+      },
+      {
+        "title": "Document AI Warehouse \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document",
+        "source_id": "site-api-reference",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "This can include one or more parent (when documents are merged.) This field represents the index into the revisions field. parentIds[] string The revisions that this revision is based on.",
+          "It is an interchange format that provides insights into documents and allows for collaboration between users and Document AI to iterate and optimize for quality.",
+          "The indices may be out of bounds which indicate that the text extends into another document shard for large sharded documents."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document"
+      ]
+    }
+  ]
+}

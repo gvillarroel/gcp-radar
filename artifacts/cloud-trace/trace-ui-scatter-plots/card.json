@@ -1,0 +1,137 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:56.733Z",
+  "source_step08_card": "data/step-08/current/products/cloud-trace/card.json",
+  "product_name": "Cloud Trace",
+  "product_slug": "cloud-trace",
+  "feature_name": "Trace UI scatter plots",
+  "feature_slug": "trace-ui-scatter-plots",
+  "summary": "The Stackdriver Trace UI includes a scatter-plot selection tool for identifying, viewing, and comparing traces.",
+  "extended_definition": "The Stackdriver Trace UI includes a scatter-plot selection tool for identifying, viewing, and comparing traces.",
+  "lifecycle": {
+    "latest_feature_date": "2017-02-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.stub.TraceServiceStubSettings.Builder",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceSettings.Builder",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v2.TraceServiceSettings.Builder"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class TraceServiceClient (2.88.0) \\_|\\_ Java client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient",
+        "source_id": "site-java-reference",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( TraceServiceClient traceServiceClient = TraceServiceClient . create ()) { ListTracesRequest request = ListTracesRequest . newBuilder () . setProjectId ( \"projectId-894832108\" ) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . setStartTime ( Timestamp . newBuilder (). build ()) . setEndTime ( Timestamp . newBuilder (). build ()) . setFilter ( \"filter-1274492040\" ) . setOrderBy ( \"orderBy-1207110587\" ) . build (); ApiFuture<Trace> future = traceServiceClient . listTracesPagedCallable (). futureCall ( request ); // Do something. for ( Trace element : future . get (). iterateAll ()) { // doThingsWith(element); } } Returns Type Description UnaryCallable < ListTracesRequest , ListTracesPagedResponse > patchTraces(PatchTracesRequest request) public final void patchTraces ( PatchTracesRequest request ) Sends new traces to Stackdriver Trace or updates existing traces.",
+          "Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( TraceServiceClient traceServiceClient = TraceServiceClient . create ()) { PatchTracesRequest request = PatchTracesRequest . newBuilder () . setProjectId ( \"projectId-894832108\" ) . setTraces ( Traces . newBuilder (). build ()) . build (); traceServiceClient . patchTraces ( request ); } Parameter Name Description request PatchTracesRequest The request object containing all of the parameters for the API call. patchTraces(String projectId, Traces traces) public final void patchTraces ( String projectId , Traces traces ) Sends new traces to Stackdriver Trace or updates existing traces.",
+          "For example: To customize credentials: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library TraceServiceSettings traceServiceSettings = TraceServiceSettings . newBuilder () . setCredentialsProvider ( FixedCredentialsProvider . create ( myCredentials )) . build (); TraceServiceClient traceServiceClient = TraceServiceClient . create ( traceServiceSettings ); To customize the endpoint: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library TraceServiceSettings traceServiceSettings = TraceServiceSettings . newBuilder (). setEndpoint ( myEndpoint ). build (); TraceServiceClient traceServiceClient = TraceServiceClient . create ( traceServiceSettings ); To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over the wire: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library TraceServiceSettings traceServiceSettings = TraceServiceSettings . newHttpJsonBuilder (). build (); TraceServiceClient traceServiceClient = TraceServiceClient . create ( traceServiceSettings ); Please refer to the GitHub repository's samples for more quickstart code snippets."
+        ]
+      },
+      {
+        "title": "\"Class TraceServiceSettings.Builder (2.88.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceSettings.Builder",
+        "source_id": "site-java-reference",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "Inheritance java.lang.Object > ClientSettings.Builder > TraceServiceSettings.Builder Inherited Members ClientSettings.Builder.applyToAllUnaryMethods(Iterable<UnaryCallSettings.Builder<?,?>>,ApiFunction<UnaryCallSettings.Builder<?,?>,Void>) ClientSettings.Builder.build() ClientSettings.Builder.getApiKey() ClientSettings.Builder.getBackgroundExecutorProvider() ClientSettings.Builder.getClock() ClientSettings.Builder.getCredentialsProvider() ClientSettings.Builder.getEndpoint() ClientSettings.Builder.getExecutorProvider() ClientSettings.Builder.getGdchApiAudience() ClientSettings.Builder.getHeaderProvider() ClientSettings.Builder.getInternalHeaderProvider() ClientSettings.Builder.getQuotaProjectId() ClientSettings.Builder.getStubSettings() ClientSettings.Builder.getTransportChannelProvider() ClientSettings.Builder.getWatchdogCheckInterval() ClientSettings.Builder.getWatchdogCheckIntervalDuration() ClientSettings.Builder.getWatchdogProvider() ClientSettings.Builder.self() ClientSettings.Builder.setApiKey(String) ClientSettings.Builder.setBackgroundExecutorProvider(ExecutorProvider) ClientSettings.Builder.setClock(ApiClock) ClientSettings.Builder.setCredentialsProvider(CredentialsProvider) ClientSettings.Builder.setEndpoint(String) ClientSettings.Builder.setExecutorProvider(ExecutorProvider) ClientSettings.Builder.setGdchApiAudience(String) ClientSettings.Builder.setHeaderProvider(HeaderProvider) ClientSettings.Builder.setInternalHeaderProvider(HeaderProvider) ClientSettings.Builder.setQuotaProjectId(String) ClientSettings.Builder.setTransportChannelProvider(TransportChannelProvider) ClientSettings.Builder.setUniverseDomain(String) ClientSettings.Builder.setWatchdogCheckInterval(Duration) ClientSettings.Builder.setWatchdogCheckIntervalDuration(Duration) ClientSettings.Builder.setWatchdogProvider(WatchdogProvider) ClientSettings.Builder.toString() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.wait() Object.wait(long) Object.wait(long,int) Constructors Builder() protected Builder () Builder(ClientContext clientContext) protected Builder ( ClientContext clientContext ) Parameter Name Description clientContext ClientContext Builder(TraceServiceSettings settings) protected Builder ( TraceServiceSettings settings ) Parameter Name Description settings TraceServiceSettings Builder(TraceServiceStubSettings.Builder stubSettings) protected Builder ( TraceServiceStubSettings .",
+          "Returns Type Description Builder < PatchTracesRequest , Empty > Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Builder<PatchTracesRequest , Empty > patchTracesSettings () Returns the builder for the settings used for calls to patchTraces."
+        ]
+      },
+      {
+        "title": "\"Class TraceServiceSettings.Builder (2.88.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v2.TraceServiceSettings.Builder",
+        "source_id": "site-java-reference",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "Inheritance java.lang.Object > ClientSettings.Builder > TraceServiceSettings.Builder Inherited Members ClientSettings.Builder.applyToAllUnaryMethods(Iterable<UnaryCallSettings.Builder<?,?>>,ApiFunction<UnaryCallSettings.Builder<?,?>,Void>) ClientSettings.Builder.build() ClientSettings.Builder.getApiKey() ClientSettings.Builder.getBackgroundExecutorProvider() ClientSettings.Builder.getClock() ClientSettings.Builder.getCredentialsProvider() ClientSettings.Builder.getEndpoint() ClientSettings.Builder.getExecutorProvider() ClientSettings.Builder.getGdchApiAudience() ClientSettings.Builder.getHeaderProvider() ClientSettings.Builder.getInternalHeaderProvider() ClientSettings.Builder.getQuotaProjectId() ClientSettings.Builder.getStubSettings() ClientSettings.Builder.getTransportChannelProvider() ClientSettings.Builder.getWatchdogCheckInterval() ClientSettings.Builder.getWatchdogCheckIntervalDuration() ClientSettings.Builder.getWatchdogProvider() ClientSettings.Builder.self() ClientSettings.Builder.setApiKey(String) ClientSettings.Builder.setBackgroundExecutorProvider(ExecutorProvider) ClientSettings.Builder.setClock(ApiClock) ClientSettings.Builder.setCredentialsProvider(CredentialsProvider) ClientSettings.Builder.setEndpoint(String) ClientSettings.Builder.setExecutorProvider(ExecutorProvider) ClientSettings.Builder.setGdchApiAudience(String) ClientSettings.Builder.setHeaderProvider(HeaderProvider) ClientSettings.Builder.setInternalHeaderProvider(HeaderProvider) ClientSettings.Builder.setQuotaProjectId(String) ClientSettings.Builder.setTransportChannelProvider(TransportChannelProvider) ClientSettings.Builder.setUniverseDomain(String) ClientSettings.Builder.setWatchdogCheckInterval(Duration) ClientSettings.Builder.setWatchdogCheckIntervalDuration(Duration) ClientSettings.Builder.setWatchdogProvider(WatchdogProvider) ClientSettings.Builder.toString() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.wait() Object.wait(long) Object.wait(long,int) Constructors Builder() protected Builder () Builder(ClientContext clientContext) protected Builder ( ClientContext clientContext ) Parameter Name Description clientContext ClientContext Builder(TraceServiceSettings settings) protected Builder ( TraceServiceSettings settings ) Parameter Name Description settings TraceServiceSettings Builder(TraceServiceStubSettings.Builder stubSettings) protected Builder ( TraceServiceStubSettings .",
+          "Builder getStubSettingsBuilder () Returns Type Description TraceServiceStubSettings.Builder Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Returns Type Description Builder < BatchWriteSpansRequest , Empty > build() public TraceServiceSettings build () Returns Type Description TraceServiceSettings Overrides ClientSettings.Builder<SettingsT,B>.build() Exceptions Type Description IOException createSpanSettings() public UnaryCallSettings ."
+        ]
+      },
+      {
+        "title": "\"Class TraceServiceStubSettings.Builder (2.88.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.stub.TraceServiceStubSettings.Builder",
+        "source_id": "site-java-reference",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "Inheritance java.lang.Object > StubSettings.Builder > TraceServiceStubSettings.Builder Inherited Members StubSettings.Builder.<B>build() StubSettings.Builder.applyToAllUnaryMethods(Iterable<UnaryCallSettings.Builder<?,?>>,ApiFunction<UnaryCallSettings.Builder<?,?>,Void>) StubSettings.Builder.getApiKey() StubSettings.Builder.getBackgroundExecutorProvider() StubSettings.Builder.getClock() StubSettings.Builder.getCredentialsProvider() StubSettings.Builder.getEndpoint() StubSettings.Builder.getExecutorProvider() StubSettings.Builder.getGdchApiAudience() StubSettings.Builder.getHeaderProvider() StubSettings.Builder.getInternalHeaderProvider() StubSettings.Builder.getMtlsEndpoint() StubSettings.Builder.getQuotaProjectId() StubSettings.Builder.getStreamWatchdogCheckInterval() StubSettings.Builder.getStreamWatchdogCheckIntervalDuration() StubSettings.Builder.getStreamWatchdogProvider() StubSettings.Builder.getTracerFactory() StubSettings.Builder.getTransportChannelProvider() StubSettings.Builder.self() StubSettings.Builder.setApiKey(String) StubSettings.Builder.setBackgroundExecutorProvider(ExecutorProvider) StubSettings.Builder.setClock(ApiClock) StubSettings.Builder.setCredentialsProvider(CredentialsProvider) StubSettings.Builder.setEndpoint(String) StubSettings.Builder.setExecutorProvider(ExecutorProvider) StubSettings.Builder.setGdchApiAudience(String) StubSettings.Builder.setHeaderProvider(HeaderProvider) StubSettings.Builder.setInternalHeaderProvider(HeaderProvider) StubSettings.Builder.setMtlsEndpoint(String) StubSettings.Builder.setQuotaProjectId(String) StubSettings.Builder.setStreamWatchdogCheckInterval(Duration) StubSettings.Builder.setStreamWatchdogCheckIntervalDuration(Duration) StubSettings.Builder.setStreamWatchdogProvider(WatchdogProvider) StubSettings.Builder.setSwitchToMtlsEndpointAllowed(boolean) StubSettings.Builder.setTracerFactory(ApiTracerFactory) StubSettings.Builder.setTransportChannelProvider(TransportChannelProvider) StubSettings.Builder.setUniverseDomain(String) StubSettings.Builder.toString() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.wait() Object.wait(long) Object.wait(long,int) Constructors Builder() protected Builder () Builder(ClientContext clientContext) protected Builder ( ClientContext clientContext ) Parameter Name Description clientContext ClientContext Builder(TraceServiceStubSettings settings) protected Builder ( TraceServiceStubSettings settings ) Parameter Name Description settings TraceServiceStubSettings Methods applyToAllUnaryMethods(ApiFunction<UnaryCallSettings.Builder<?,?>,Void> settingsUpdater) public TraceServiceStubSettings .",
+          "Builder<PatchTracesRequest , Empty > patchTracesSettings () Returns the builder for the settings used for calls to patchTraces.",
+          "Builder<GetTraceRequest , Trace > getTraceSettings () Returns the builder for the settings used for calls to getTrace."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.trace.v1.stub.TraceServiceStubSettings.Builder",
+      "com.google.cloud.trace.v1.TraceServiceClient",
+      "com.google.cloud.trace.v1.TraceServiceSettings.Builder",
+      "com.google.cloud.trace.v2.TraceServiceSettings.Builder",
+      "java.lang.Object"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceSettings.Builder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v2.TraceServiceSettings.Builder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.stub.TraceServiceStubSettings.Builder"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceSettings.Builder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v2.TraceServiceSettings.Builder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.stub.TraceServiceStubSettings.Builder"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceSettings.Builder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v2.TraceServiceSettings.Builder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.stub.TraceServiceStubSettings.Builder"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceSettings.Builder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v2.TraceServiceSettings.Builder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.stub.TraceServiceStubSettings.Builder"
+      ]
+    }
+  ]
+}

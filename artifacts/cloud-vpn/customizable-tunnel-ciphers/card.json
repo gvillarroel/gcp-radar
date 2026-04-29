@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:57.046Z",
+  "source_step08_card": "data/step-08/current/products/cloud-vpn/card.json",
+  "product_name": "Cloud VPN",
+  "product_slug": "cloud-vpn",
+  "feature_name": "Customizable tunnel ciphers",
+  "feature_slug": "customizable-tunnel-ciphers",
+  "summary": "Cloud VPN lets you configure VPN tunnel cipher options to meet security requirements; Cloud VPN lets you configure VPN tunnel cipher options to meet security requirements.",
+  "extended_definition": "Cloud VPN lets you configure VPN tunnel cipher options to meet security requirements; Cloud VPN lets you configure VPN tunnel cipher options to meet security requirements.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/best-practices",
+      "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+      "https://docs.cloud.google.com/network-connectivity/docs/vpn/support/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create an HA VPN gateway to a peer VPN gateway \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+        "source_id": "site-docs-root",
+        "final_score": 210,
+        "relevance": "",
+        "evidence_snippets": [
+          "To create the first tunnel, run the following command: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /vpnTunnels { \"name\": \"ha-vpn-gw-a-tunnel-0\", \"ikeVersion\": 2, \"peerExternalGateway\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /global/externalVpnGateways/my-peer-gateway\", \"peerExternalGatewayInterface\": 0, \"router\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /routers/router-a\", \"sharedSecret\": \" SHARED SECRET \", \"vpnGateway\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /vpnGateways/ha-vpn-gw-a\", \"vpnGatewayInterface\": 0 } If you plan to enable IPv6 in the BGP session associated with this tunnel, or configure ciphers, you must specify 2 for the ikeVersion .",
+          "NAME REGION GATEWAY VPN INTERFACE PEER GATEWAY PEER INTERFACE tunnel-a-to-on-prem-if-1 us-central1 ha-vpn-gw-a 1 peer-gw 0 Configure ciphers For both the previous options, you can also configure cipher algorithms when creating Cloud VPN tunnels.",
+          "Configure ciphers You can configure ciphers when creating Cloud VPN tunnels."
+        ]
+      },
+      {
+        "title": "Cloud VPN overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 204,
+        "relevance": "",
+        "evidence_snippets": [
+          "Configure ciphers in Cloud VPN tunnel With Cloud VPN, you can configure ciphers that help you tailor your VPN connections to meet compliance and security needs.",
+          "You must configure ciphers from the supported list of ciphers that meet the following criteria: If you specify AEAD ciphers for encryption, you cannot specify separate ciphers for integrity because Cloud VPN uses the same encryption ciphers for handling integrity.",
+          "You can configure cipher options when you create Cloud VPN tunnels."
+        ]
+      },
+      {
+        "title": "Best practices for Cloud VPN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/best-practices",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you have not configured the cipher algorithms, then the Cloud VPN tunnel proposes the cipher algorithms in the order shown in the supported cipher tables for each cipher role.",
+          "To prevent frequent changes in cipher selection, configure your peer VPN gateway and the Cloud VPN tunnel to propose and accept only one cipher for each cipher role.",
+          "For HA VPN tunnel pairs, configure both HA VPN tunnels on your peer VPN gateway to use the same cipher and IKE Phase 2 lifetime values."
+        ]
+      },
+      {
+        "title": "Troubleshooting \\_|\\_ Cloud VPN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/support/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "",
+        "evidence_snippets": [
+          "Make sure that you use supported ciphers to configure your peer VPN gateway.",
+          "If the VPN logs show a no-proposal-chosen error, this error indicates that Cloud VPN and your peer VPN gateway were unable to agree on a set of ciphers.",
+          "To avoid this error, create a VPN tunnel that connects your HA VPN gateway to one of the following: Another HA VPN gateway An external VPN gateway that is not hosted in Google Cloud Compute Engine virtual machine (VM) instances Unable to connect to external destination through HA VPN When you use an HA VPN gateway, Google Cloud resources use the VPN tunnel to connect to only the destinations that are advertised by the peer router."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/best-practices",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/support/troubleshooting"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/best-practices",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/support/troubleshooting"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/best-practices",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/support/troubleshooting"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/best-practices",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/support/troubleshooting"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/best-practices",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/support/troubleshooting"
+      ]
+    }
+  ]
+}

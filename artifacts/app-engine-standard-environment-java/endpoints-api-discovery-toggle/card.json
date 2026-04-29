@@ -1,0 +1,94 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.059Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-java/card.json",
+  "product_name": "App Engine standard environment Java",
+  "product_slug": "app-engine-standard-environment-java",
+  "feature_name": "Endpoints API discovery toggle",
+  "feature_slug": "endpoints-api-discovery-toggle",
+  "summary": "The Endpoints API provides a discoverable parameter on the @Api annotation to disable API discovery.",
+  "extended_definition": "The Endpoints API provides a discoverable parameter on the @Api annotation to disable API discovery.",
+  "lifecycle": {
+    "latest_feature_date": "2015-12-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/managing-costs",
+      "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref",
+      "https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 55,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example The following is an example of an app.yaml file: runtime : java25 instance class : F2 env variables : BUCKET NAME : \"example-gcs-bucket\" handlers : - url : /stylesheets static dir : stylesheets - url : /. secure : always redirect http response code : 301 script : auto The following table provides YAML examples of available fields in an app.yaml file: Runtime and app elements Element Description build env variables Optional.",
+          "This parameter specifies the CPU usage threshold at which new instances will be started to handle traffic, enabling you to balance between performance and cost, with lower values increasing performance and increasing cost, and higher values decreasing performance but also decreasing cost.",
+          "Example vpc access connector : name : \"projects/ PROJECT ID /locations/ REGION /connectors/ CONNECTOR NAME \" egress setting : all-traffic Handlers element The handlers element provides a list of URL patterns and descriptions of how they should be handled."
+        ]
+      },
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 55,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example The following is an example of an app.yaml file: runtime : python314 instance class : F2 env variables : BUCKET NAME : \"example-gcs-bucket\" handlers : Matches requests to /images/... to files in static/images/... - url : /images static dir : static/images - url : /. secure : always redirect http response code : 301 script : auto The following table provides YAML examples of available fields in an app.yaml file: Runtime and app elements Element Description app engine apis Optional.",
+          "This parameter specifies the CPU usage threshold at which new instances will be started to handle traffic, enabling you to balance between performance and cost, with lower values increasing performance and increasing cost, and higher values decreasing performance but also decreasing cost.",
+          "Example vpc access connector : name : \"projects/ PROJECT ID /locations/ REGION /connectors/ CONNECTOR NAME \" egress setting : all-traffic Handlers element The handlers element provides a list of URL patterns and descriptions of how they should be handled."
+        ]
+      },
+      {
+        "title": "\"Manage App Engine costs \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/managing-costs",
+        "source_id": "site-docs-reference-4",
+        "final_score": 44,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If the function and the app are in separate projects , change the source code so APP NAME identifies the project that contains the app you want to disable . import base64 import json import os from googleapiclient import discovery APP NAME = os . getenv ( \"GCP PROJECT\" ) def limit use appengine ( data , context ): pubsub data = base64 . b64decode ( data [ \"data\" ]) . decode ( \"utf-8\" ) pubsub json = json . loads ( pubsub data ) cost amount = pubsub json [ \"costAmount\" ] budget amount = pubsub json [ \"budgetAmount\" ] if cost amount < = budget amount : print ( f \"No action necessary. (Current cost: { cost amount } )\" ) return appengine = discovery . build ( \"appengine\" , \"v1\" , cache discovery = False ) apps = appengine . apps () Get the target app's serving status target app = apps . get ( appsId = APP NAME ) . execute () current status = target app [ \"servingStatus\" ] Disable target app, if necessary if current status == \"SERVING\" : print ( f \"Attempting to disable app { APP NAME } ...\" ) body = { \"servingStatus\" : \"USER DISABLED\" } apps . patch ( appsId = APP NAME , updateMask = \"serving status\" , body = body ) . execute () Add the following dependencies to your function's requirements.txt file: google-api-python-client==2.131.0 Under Function to execute enter limit use appengine .",
+          "To limit the costs of your App Engine app, you can use any of the following mechanisms: Specify the maximum number of instances Create budget alerts Disable your app manually Disable your app programmatically Specify the maximum number of instances Since App Engine costs usually scale based on the amount of traffic your app receives, you can limit your costs by limiting the number of instances App Engine can create.",
+          "When creating the function: Use the following source code: Note: The source code assumes that the function you are creating and the app you want to disable are in the same Google Cloud project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "requirements.txt",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/managing-costs"
+      ]
+    }
+  ]
+}

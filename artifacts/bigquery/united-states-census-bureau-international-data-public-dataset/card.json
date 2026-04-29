@@ -1,0 +1,89 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "United States Census Bureau International Data public dataset",
+  "feature_slug": "united-states-census-bureau-international-data-public-dataset",
+  "summary": "The BigQuery public datasets program includes the United States Census Bureau International Data dataset.",
+  "extended_definition": "The BigQuery public datasets program includes the United States Census Bureau International Data dataset.",
+  "lifecycle": {
+    "latest_feature_date": "2017-05-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/arima-time-series-forecasting-with-limits-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-columns",
+      "https://docs.cloud.google.com/bigquery/docs/tables"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Limit forecasted values for an ARIMA_PLUS time series model \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/arima-time-series-forecasting-with-limits-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the following sample, bigquery-public-data.new york.citibike trips indicates that you are querying the citibike trips table in the new york dataset. import bigframes.pandas as bpd df = bpd . read gbq ( \"bigquery-public-data.new york.citibike trips\" ) features = bpd .",
+          "SQL In the following query, the FROM bigquery-public-data.new york.citibike trips clause indicates that you are querying the citibike trips table in the new york dataset.",
+          "This option causes the model to only forecast values that are greater than 0, based on the values in the column specified by the time series data col argument, in this case num trips . #standardSQL CREATE OR REPLACE MODEL bqml tutorial . nyc citibike arima model OPTIONS ( model type = 'ARIMA PLUS' , time series timestamp col = 'date' , time series data col = 'num trips' , time series id col = 'start station id' , forecast limit lower bound = 0 ) AS SELECT EXTRACT ( DATE FROM starttime ) AS date , COUNT ( ) AS num trips , start station id FROM bigquery-public-data . new york . citibike trips WHERE starttime > '2014-07-11' AND starttime '2015-02-11' GROUP BY date , start station id ; Run the CREATE MODEL query to create and train your model: In the Google Cloud console, click the Compose new query button."
+        ]
+      },
+      {
+        "title": "Create and use tables \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/tables",
+        "source_id": "site-docs-root",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "Because the table you're querying is in another project, the bigquery-public-data project, you add the project ID to the dataset in the following format: project id . dataset .INFORMATION SCHEMA. view ; for example, bigquery-public-data.census bureau usa.INFORMATION SCHEMA.TABLES .",
+          "TABLES WHERE table name = 'population by zip 2010' ; The result is similar to the following: +------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ table name ddl +------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ population by zip 2010 CREATE TABLE bigquery-public-data.census bureau usa.population by zip 2010 ( geo id STRING OPTIONS(description=\"Geo code\"), zipcode STRING NOT NULL OPTIONS(description=\"Five digit ZIP Code Tabulation Area Census Code\"), population INT64 OPTIONS(description=\"The total count of the population for this segment.\"), minimum age INT64 OPTIONS(description=\"The minimum age in the age range.",
+          "In this example, the value is bigquery-public-data.census bureau usa.INFORMATION SCHEMA.TABLES ."
+        ]
+      },
+      {
+        "title": "COLUMNS view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-columns",
+        "source_id": "site-api-reference",
+        "final_score": 99,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Because the table you're querying is in another project, the bigquery-public-data project, you add the project ID to the dataset in the following format: project id . dataset .INFORMATION SCHEMA. view ; for example, bigquery-public-data.census bureau usa.INFORMATION SCHEMA.TABLES .",
+          "SELECT EXCEPT ( is updatable ) FROM bigquery-public-data . census bureau usa .",
+          "Example The following example retrieves metadata from the INFORMATION SCHEMA.COLUMNS view for the population by zip 2010 table in the census bureau usa dataset."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigframes.pandas",
+      "data.census",
+      "data.new",
+      "tutorial.nyc",
+      "usa.INFORMATION",
+      "usa.population",
+      "york.citibike"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

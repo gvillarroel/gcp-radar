@@ -1,0 +1,121 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Parquet export",
+  "feature_slug": "parquet-export",
+  "summary": "BigQuery can export table data in Parquet format; BigQuery supports exporting table data in Parquet format.",
+  "extended_definition": "BigQuery can export table data in Parquet format; BigQuery supports exporting table data in Parquet format.",
+  "lifecycle": {
+    "latest_feature_date": "2021-08-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+      "https://docs.cloud.google.com/bigquery/docs/exporting-data",
+      "https://docs.cloud.google.com/bigquery/docs/loading-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Export table data to Cloud Storage \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/exporting-data",
+        "source_id": "site-docs-root",
+        "final_score": 24,
+        "relevance": "",
+        "evidence_snippets": [
+          "String projectName = \"MY PROJECT NAME\" ; String datasetName = \"MY DATASET NAME\" ; String tableName = \"MY TABLE NAME\" ; String bucketName = \"MY-BUCKET-NAME\" ; String destinationUri = \"gs://\" + bucketName + \"/path/to/file\" ; // For more information on export formats available see: // https://cloud.google.com/bigquery/docs/exporting-data#export formats and compression types String compressed = \"gzip\" ; // For more information on Job see: // https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/bigquery/package-summary.html String dataFormat = \"CSV\" ; extractTableCompressed ( projectName , datasetName , tableName , destinationUri , dataFormat , compressed ); } public static void extractTableCompressed ( String projectName , String datasetName , String tableName , String destinationUri , String dataFormat , String compressed ) { try { // Initialize client that will be used to send requests.",
+          "String projectId = \"bigquery-public-data\" ; String datasetName = \"samples\" ; String tableName = \"shakespeare\" ; String bucketName = \"my-bucket\" ; String destinationUri = \"gs://\" + bucketName + \"/path/to/file\" ; // For more information on export formats available see: // https://cloud.google.com/bigquery/docs/exporting-data#export formats and compression types // For more information on Job see: // https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/bigquery/package-summary.html String dataFormat = \"CSV\" ; extractTableToCsv ( projectId , datasetName , tableName , destinationUri , dataFormat ); } // Exports datasetName:tableName to destinationUri as raw CSV public static void extractTableToCsv ( String projectId , String datasetName , String tableName , String destinationUri , String dataFormat ) { try { // Initialize client that will be used to send requests.",
+          "Note: If you are exporting data to the Parquet format, it might be faster to use the BigQuery export to Parquet (via BigQuery Storage API) template rather than writing a custom solution. (Optional) Specify your location in the location property in the jobReference section of the job resource ."
+        ]
+      },
+      {
+        "title": "Introduction to loading data \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/loading-data",
+        "source_id": "site-docs-root",
+        "final_score": 24,
+        "relevance": "",
+        "evidence_snippets": [
+          "For an overview of ELT and ETL approaches, see Introduction to loading, transforming, and exporting data .",
+          "BigQuery supports accessing select external data sources through Cloud Storage and federated queries.",
+          "For more information about loading from Dataflow to BigQuery, see Write from Dataflow to BigQuery ."
+        ]
+      },
+      {
+        "title": "\"Introduction to BigLake external tables \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "source_id": "site-docs-reference-5",
+        "final_score": 23,
+        "relevance": "",
+        "evidence_snippets": [
+          "BigLake tables support the following formats: Avro CSV Delta Lake Iceberg JSON ORC Parquet You can't use cached metadata with Apache Iceberg external tables ; BigQuery already uses the metadata that Iceberg captures in manifest files.",
+          "To find information about metadata refresh jobs, query the INFORMATION SCHEMA.JOBS view , as shown in the following example: SELECT FROM region-us.INFORMATION SCHEMA.JOBS BY PROJECT WHERE job id LIKE '%metadata cache refresh%' AND creation time > TIMESTAMP SUB ( CURRENT TIMESTAMP (), INTERVAL 6 HOUR ) ORDER BY start time DESC LIMIT 10 ; For Cloud Storage BigLake tables that are based on Parquet files, table statistics are collected during the metadata cache refresh and used to improve query plans.",
+          "If you use cached metadata , then the following limitations apply: You can only use cached metadata with BigLake tables that use Avro, ORC, Parquet, JSON, and CSV formats."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "file.csv",
+      "googleapis.dev",
+      "index.html",
+      "summary.html",
+      "us.INFORMATION"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/exporting-data",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/exporting-data",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/exporting-data",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    }
+  ]
+}

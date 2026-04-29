@@ -1,0 +1,153 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:47.011Z",
+  "source_step08_card": "data/step-08/current/products/cloud-cdn/card.json",
+  "product_name": "Cloud CDN",
+  "product_slug": "cloud-cdn",
+  "feature_name": "Cloud CDN cache invalidation for a single host",
+  "feature_slug": "cloud-cdn-cache-invalidation-for-a-single-host",
+  "summary": "Cloud CDN supports invalidating cached objects scoped to a single host.",
+  "extended_definition": "Cloud CDN supports invalidating cached objects scoped to a single host.",
+  "lifecycle": {
+    "latest_feature_date": "2017-01-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cdn/docs/cache-invalidation-overview",
+      "https://docs.cloud.google.com/cdn/docs/caching",
+      "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cache invalidation overview \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/cache-invalidation-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 33,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Cloud CDN supports the use of cache tags and invalidation matchers, such as host and URL path, for invalidation requests.",
+          "Invalidation for a single host Cache invalidation invalidates the path for all your hostnames.",
+          "Consider an example with the following cached objects: Cached object #1 with URL https://staging.example.com/img/cat.jpg and tag a Cached object #2 with URL https://example.com/img/cat.jpg and tag a Cached object #3 with URL https://staging.example.com/js/cat.js and tag a Cached object #4 with URL https://staging.example.com/img/logo.jpg and tag b When you issue a request to invalidate objects where the host is staging.example.com , the path /img/ , and the tag a , only object #1 is invalidated."
+        ]
+      },
+      {
+        "title": "Caching overview \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/caching",
+        "source_id": "site-docs-reference-2",
+        "final_score": 33,
+        "relevance": "",
+        "evidence_snippets": [
+          "To learn about invalidating caches, see Cache invalidation overview .",
+          "Request type Default behavior Configurable Benefits of collapsing Chunk requests Enabled No Can significantly reduce origin bandwidth Item requests Enabled Yes Can reduce origin request volume To disable item request collapsing using the Google Cloud CLI for a backend bucket that references a Cloud Storage bucket: Note: Google Cloud CLI support for the --request-coalescing flag was introduced in Google Cloud CLI version 330.0.0 . gcloud Use the gcloud compute backend-services or backend-buckets command: gcloud compute backend-services update BACKEND SERVICE NAME \\ --no-request-coalescing To enable item request collapsing on a backend bucket using the Google Cloud CLI: gcloud Use the gcloud compute backend-buckets command: gcloud compute backend-buckets update BACKEND BUCKET NAME \\ --request-coalescing To enable item request collapsing using the Google Cloud CLI for a backend service, including VM groups and external backends: gcloud Use the gcloud compute backend-services command: gcloud compute backend-services update BACKEND SERVICE NAME \\ --request-coalescing Requests initiated by Cloud CDN When your origin server supports byte range requests , Cloud CDN can send multiple requests to your origin server in reaction to a single client request.",
+          "Cloud CDN doesn't allow the following headers to be included in the list of headers: Accept Accept-Encoding Authority , because this is controlled by configuration ( cdnPolicy.includeHost ) Authorization , typically per-user as in OAuth Bearer tokens CDN-Loop Connection Content-MD5 Content-Type Cookie Date Forwarded , often per-client or per-proxy From Host , because this is controlled by configuration ( cdnPolicy.includeHost ) If-Match , If-Modified-Since , or If-None-Match Origin Proxy-Authorization Range Referer (or Referrer ) User-Agent Want-Digest X-CSRFToken and X-CSRF-Token as used by Django and Ruby on Rails X-Forwarded-For , often per-client or per-proxy X-User-IP Any header starting with the following: Access-Control- , such as Access-Control-Request-Headers and Access-Control-Request-Method Sec-Fetch- Sec-GFE- Sec-Google- X-Amz- X-GFE- X-Goog- X-Google- Use custom variables with request headers Cache keys are helpful when you need to serve content differently based on each user's device and location."
+        ]
+      },
+      {
+        "title": "\"Logs and metrics for backend services \\_|\\_ Cloud CDN \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "source_id": "site-docs-root-2",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": [
+          "Multiple queries are sent to the same backend for different chunks of data to support a single client request. proxy continent Continent of the HTTP(S) GFE that terminated the HTTP(S) connection—for example, America , Europe , Asia protocol Protocol used by the client, one of HTTP/1.0 , HTTP/1.1 , HTTP/2.0 , QUIC/HTTP/2.0 , UNKNOWN . response code The HTTP status code of the request. response code class The HTTP status code class of the request: 200 , 300 , 400 , 500 or 0 for none. cache result Cache result for serving HTTP request by proxy: HIT , MISS , DISABLED , PARTIAL HIT (for a request served partially from cache and partially from backend), or UNKNOWN . client country Country of the client that issued the HTTP request—for example, United States or Germany . load balancing scheme The load balancing scheme used.",
+          "Any cacheable response code is possible. response from cache validated The return code was set from a Cloud CDN cached entry that was validated by a backend.",
+          "To finish editing the load balancer, click Update . gcloud Create a backend service and enable logging by using the gcloud compute backend-services create command . gcloud compute backend-services create BACKEND SERVICE \\ --global \\ --enable-logging \\ --logging-sample-rate= VALUE \\ --load-balancing-scheme=EXTERNAL MANAGED \\ --logging-optional= LOGGING OPTIONAL MODE \\ --logging-optional-fields= OPTIONAL FIELDS The gcloud compute backend-services create command supports the following fields: --global indicates that the backend service is global."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cat.jpg",
+      "cat.js",
+      "example.com",
+      "logo.jpg",
+      "media.example.com",
+      "staging.example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cache-invalidation-overview",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cache-invalidation-overview",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cache-invalidation-overview",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cache-invalidation-overview",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cache-invalidation-overview",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cache-invalidation-overview",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cache-invalidation-overview",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cache-invalidation-overview",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
+      ]
+    }
+  ]
+}

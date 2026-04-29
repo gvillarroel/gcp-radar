@@ -1,0 +1,144 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:04.393Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Identity and Access Management support",
+  "feature_slug": "identity-and-access-management-support",
+  "summary": "Identity and Access Management support lets users control permissions for Dataproc clusters, jobs, and operations with IAM.",
+  "extended_definition": "Identity and Access Management support lets users control permissions for Dataproc clusters, jobs, and operations with IAM.",
+  "lifecycle": {
+    "latest_feature_date": "2016-09-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/iam-and-access-control",
+      "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.BatchControllerAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.BatchControllerClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Dataproc Metastore: Access control with IAM \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/iam-and-access-control",
+        "source_id": "site-docs-root-2",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Access control options for users To give users the ability to create and manage your Dataproc Metastore resources, you can add users as team members to your project or to specific resources and grant them permissions using IAM roles .",
+          "Google Cloud offers Identity and Access Management (IAM) , which lets you give more granular access to specific Google Cloud resources and prevents unwanted access to other resources.",
+          "This page explains the ways you can add new users to your project and how to set access control for your Dataproc Metastore resources."
+        ]
+      },
+      {
+        "title": "\"Class BatchControllerAsyncClient (5.26.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.BatchControllerAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 170,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "TestIamPermissionsResponse Tests the specified IAM permissions against the IAM access control policy for a function.",
+          "Returns Type Description .policy pb2.Policy Defines an Identity and Access Management (IAM) policy.",
+          "Returns Type Description .policy pb2.Policy Defines an Identity and Access Management (IAM) policy."
+        ]
+      },
+      {
+        "title": "\"Class BatchControllerClient (5.26.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.BatchControllerClient",
+        "source_id": "site-python-reference",
+        "final_score": 170,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "TestIamPermissionsResponse Tests the specified IAM permissions against the IAM access control policy for a function.",
+          "Returns Type Description .policy pb2.Policy Defines an Identity and Access Management (IAM) policy.",
+          "Returns Type Description .policy pb2.Policy Defines an Identity and Access Management (IAM) policy."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "example.com",
+      "pb2.Policy",
+      "request.time",
+      "resourcemanager.organizationadmin",
+      "resourcemanager.organizationAdmin",
+      "resourcemanager.organizationviewer",
+      "resourcemanager.organizationViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/resourcemanager.organizationadmin",
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.organizationviewer",
+      "roles/resourcemanager.organizationViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/iam-and-access-control",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.BatchControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.BatchControllerClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/iam-and-access-control",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.BatchControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.BatchControllerClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/iam-and-access-control",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.BatchControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.BatchControllerClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/iam-and-access-control",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.BatchControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.BatchControllerClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/iam-and-access-control",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.BatchControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.BatchControllerClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/iam-and-access-control",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.BatchControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.batch_controller.BatchControllerClient"
+      ]
+    }
+  ]
+}

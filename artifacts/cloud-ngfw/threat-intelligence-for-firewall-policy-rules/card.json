@@ -1,0 +1,213 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:51.227Z",
+  "source_step08_card": "data/step-08/current/products/cloud-ngfw/card.json",
+  "product_name": "Cloud NGFW",
+  "product_slug": "cloud-ngfw",
+  "feature_name": "Threat Intelligence for firewall policy rules",
+  "feature_slug": "threat-intelligence-for-firewall-policy-rules",
+  "summary": "Threat Intelligence for firewall policy rules secures networks by allowing or blocking traffic based on threat intelligence data.",
+  "extended_definition": "Threat Intelligence for firewall policy rules secures networks by allowing or blocking traffic based on threat intelligence data.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+      "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+      "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+      "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Address groups for firewall policies \\_|\\_ Cloud Next Generation Firewall\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "source_id": "site-docs-root",
+        "final_score": 280,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "What's next Use address groups Firewall policy rule components Google Threat Intelligence for firewall policy rules Fully qualified domain name objects Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For information about how source address groups work with other source filters in the ingress rules, see Sources for ingress rules in hierarchical firewall policies and Sources for ingress rules in network firewall policies .",
+          "For both project-scoped and organization-scoped address groups, the location of the address group must match with the location of the firewall policy."
+        ]
+      },
+      {
+        "title": "\"Create and manage firewall rules for RoCE VPC networks \\_|\\_ Cloud Next\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "source_id": "site-docs-root",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This section describes how to perform the following tasks: Create an RoCE VPC network Create a regional network firewall policy that works with the RoCE VPC network Create rules in the regional network firewall policy Associate the regional network firewall policy with the RoCE VPC network Before you begin Make sure that you review the supported and unsupported features in VPC networks with an RDMA network profile.",
+          "Before you begin, review the following information: RDMA RoCE network profile Cloud NGFW for RoCE VPC networks Because the rules in a regional network firewall policy used by an RoCE VPC network rely heavily on target secure tags and source secure tags, ensure that you're familiar with how to create and manage secure tags and bind secure tags to the VM instances.",
+          "NETWORK URL : the URL of the VPC network where you're adding the subnet SUBNET : a name for the subnet Create a regional network firewall policy RoCE VPC networks only support regional network firewall policies that have a policy type of RDMA ROCE POLICY ."
+        ]
+      },
+      {
+        "title": "\"Configure a global network firewall policy to allow egress traffic to an\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "source_id": "site-docs-root",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to create a custom VPC network, VM, Cloud Router, Cloud NAT, global network firewall policy and its rules, and to view the logs, ask your administrator to grant you the following IAM roles on the project: Compute Network Admin role ( roles/compute.networkAdmin ) Compute Instance Admin (v1) role ( roles/compute.instanceAdmin.v1 ) Compute Security Admin role ( roles/compute.securityAdmin ) Logs Viewer role ( roles/logging.viewer ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "This quickstart creates a Virtual Private Cloud (VPC) network with a subnet, creates a virtual machine (VM) instance in the VPC network, sets up a firewall policy that uses egress rules, and then tests the firewall policy from the VM.",
+          "Create a global network firewall policy to allow IAP TCP tunneling To allow Identity-Aware Proxy tunneling for the VMs in your network, create a global network firewall policy and add a firewall rule to the policy."
+        ]
+      },
+      {
+        "title": "\"Configure a hierarchical firewall policy to allow egress traffic from a\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "source_id": "site-docs-root",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a hierarchical firewall policy and add firewall rules Create a hierarchical firewall policy and add the following firewall policy rules to it: Enable IAP for all the VMs in test-folder to enable administrative access to the VMs.",
+          "The page walks through an example of creating two VPC networks, creating virtual machine (VM) instances in the VPC networks, setting up a hierarchical firewall policy with firewall rules, and then testing the firewall policy.",
+          "For firewall policy rules concepts, see the Firewall policy rule components ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.instanceAdmin.v1",
+      "compute.networkAdmin",
+      "compute.securityAdmin",
+      "logging.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.instanceAdmin.v1",
+      "roles/compute.networkAdmin",
+      "roles/compute.securityAdmin",
+      "roles/logging.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc"
+      ]
+    }
+  ]
+}

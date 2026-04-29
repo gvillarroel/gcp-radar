@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:13.819Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Agent-level deflections",
+  "feature_slug": "agent-level-deflections",
+  "summary": "Agent-level deflections let agents choose how to route agent-to-agent calls for over-capacity, after-hours, and automatic redirection scenarios.",
+  "extended_definition": "Agent-level deflections let agents choose how to route agent-to-agent calls for over-capacity, after-hours, and automatic redirection scenarios.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-set-desktop-layouts",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Call settings \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 161,
+        "relevance": "",
+        "evidence_snippets": [
+          "Emergency queues don't support the following: Virtual agents Overcapacity deflections Automatic redirections Target metrics Blended SMS Presession SMS deflections Call redaction Surveys CSAT ratings IVR payments Custom URLs Before you begin To configure an emergency service callback queue, you'll need a phone number that is dedicated to emergency or special services calls .",
+          "Deflections for agent to agent, end-user to agent, and direct calls When you set up agent to agent calling , end-user to agent calling or direct inbound calling , Google recommends configuring deflections or redirects for times when agents aren't available.",
+          "Configure deflections at the agent level For agent to agent , end-user to agent or direct inbound call types, you can configure the following deflection types at the agent level: after hours, overcapacity, and automatic redirection."
+        ]
+      },
+      {
+        "title": "\"Standard Reports Agent and Teams Data Sets \\_|\\_ Google Cloud Contact Center\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set",
+        "source_id": "site-docs-reference",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "Date and Timestamp Agent Status Summary and Timeline Report Agent statuses, also known as Aux codes, are used to track time spent on different tasks, make agents available for calls or chats, and are used extensively for workforce management.",
+          "Summary Metrics Service Level : Count of interactions that were answered by an Agent before the service level target has been reached / Count of offered interactions that are eligible for service level.",
+          "This field always displays the value set at the individual agent level an does not show the global concurrency setting, even if the concurrency limit is disabled for a user."
+        ]
+      },
+      {
+        "title": "\"Configure desktop layouts for agents \\_|\\_ Google Cloud Contact Center as\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-set-desktop-layouts",
+        "source_id": "site-docs-root",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure desktop layouts at the team level You can configure desktop layouts at the team level for agents receiving inbound calls, placing outbound calls, and handling messages.",
+          "Configure desktop layouts at the queue level You can configure desktop layouts at the queue level for agents receiving inbound calls and handling messages (mobile and web only).",
+          "Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Configure desktop layouts for agents Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

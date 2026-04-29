@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:02.843Z",
+  "source_step08_card": "data/step-08/current/products/cortex/card.json",
+  "product_name": "Cortex",
+  "product_slug": "cortex",
+  "feature_name": "Cloud Build regional build support",
+  "feature_slug": "cloud-build-regional-build-support",
+  "summary": "Cloud Build regional build support lets Cortex Framework deployments run builds in a specified region.",
+  "extended_definition": "Cloud Build regional build support lets Cortex Framework deployments run builds in a specified region.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cortex/docs/deployment-step-five",
+      "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+      "https://docs.cloud.google.com/cortex/docs/deployment-step-six"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Step 4: Set up components \\_|\\_ Google Cloud Cortex Framework \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "source_id": "site-docs-reference",
+        "final_score": 111,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Assign the Service Account Token Creator role. gcloud Create a service account through an IAM policy with the following command: gcloud iam service-accounts create cortex-deployer \\ --description = \"Cortex Deployer Service Account\" \\ --display-name = \"Cortex Deployer\" Add the IAM policy to your Google Cloud project with the following command: gcloud projects add-iam-policy-binding SOURCE PROJECT \\ --member = \"serviceAccount: cortex-deployer @ SOURCE PROJECT .iam.gserviceaccount.com\" \\ --role = \"roles/cloudbuild.builds.editor\" Add the ID of all users (including your own) who can run the deployment through the service account, and assign them the Service Account Token Creator role with the following command: gcloud iam service-accounts add-iam-policy-binding cortex-deployer @ SOURCE PROJECT .iam.gserviceaccount.com \\ --member = \"user: USER EMAIL \" \\ --role = \"roles/iam.serviceAccountTokenCreator\" Replace the following: SOURCE PROJECT with the source project for Cortex Framework Data Foundation deployment.",
+          "This section guides you through creating a dedicated service account for Cortex Framework deployments and granting the necessary permissions to the Cloud Build service account.",
+          "As a best practice, we recommend that you specify your own service account to run your builds for Cortex Framework."
+        ]
+      },
+      {
+        "title": "\"Step 5: Configure deployment \\_|\\_ Google Cloud Cortex Framework \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/deployment-step-five",
+        "source_id": "site-docs-reference",
+        "final_score": 95,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: When installing multiple Cortex Framework workloads, you need to increase the Build and Operation Get requests per minute and Build and Operation Get requests per minute per user quotas.",
+          "The configuration files for each workload are located in the following paths within the Cortex Framework Data Foundation repository: Data Source Settings files Operational - SAP src/SAP/SAP REPORTING/reporting settings ecc.yaml Operational - Salesforce Sales Cloud src/SFDC/config/reporting settings.yaml Operational - Oracle EBS src/oracleEBS/config/reporting settings.yaml Marketing - Google Ads src/marketing/src/GoogleAds/config/reporting settings.yaml Marketing - CM360 src/marketing/src/CM360/config/reporting settings.yaml Marketing - Meta src/marketing/src/Meta/config/reporting settings.yaml Marketing - Salesforce Marketing Cloud src/marketing/src/SFMC/config/reporting settings.yaml Marketing - TikTok src/marketing/src/TikTok/config/reporting settings.yaml Marketing - YouTube (with DV360) src/marketing/src/DV360/config/reporting settings.yaml Marketing - Google Analytics 4 src/marketing/src/GA4/config/reporting settings.yaml Marketing - Cross Media & Product Connected Insights src/marketing/src/CrossMedia/config/reporting settings.yaml Customizing reporting settings file The reporting settings files drives how the BigQuery objects (tables or views) are created for reporting datasets.",
+          "For more information, see Task dependent DAGs . turboMode Deploy in Turbo mode . true Execute all views builds as a step in the same Cloud Build process, in parallel for a faster deployment."
+        ]
+      },
+      {
+        "title": "\"Step 6: Execute deployment \\_|\\_ Google Cloud Cortex Framework \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/deployment-step-six",
+        "source_id": "site-docs-reference",
+        "final_score": 95,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following command to locate yourself in the cloned repository: cd cortex-data-foundation Run the build command with the target log bucket: gcloud builds submit \\ --substitutions = GCS BUCKET = LOGS BUCKET NAME , BUILD ACCOUNT = 'projects/ SOURCE PROJECT /serviceAccounts/ CLOUD BUILD SA @ SOURCE PROJECT .iam.gserviceaccount.com' Replace the following: LOGS BUCKET NAME with the bucket name for logs storage.",
+          "A pipeline can reuse the cloudbuild.yaml scripts to trigger end-to-end deployment periodically, or based on git operations depending on your repository of choice by automating builds .",
+          "Home Documentation Data analytics Google Cloud Cortex Framework Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.colabEnterpriseAdmin",
+      "aiplatform.colabServiceAgent",
+      "aiplatform.notebookRuntimeAdmin",
+      "bigquery.dataViewer",
+      "bigquery.jobUser",
+      "bigquery.readSessionUser",
+      "cloudbuild.builds.editor",
+      "cloudbuild.yaml",
+      "ecc.yaml",
+      "iam.gserviceaccount.com",
+      "iam.serviceAccountTokenCreator",
+      "logging.logWriter",
+      "settings.yaml",
+      "storage.admin",
+      "storage.objectUser"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.colabEnterpriseAdmin",
+      "roles/aiplatform.colabServiceAgent",
+      "roles/aiplatform.notebookRuntimeAdmin",
+      "roles/bigquery.dataViewer",
+      "roles/bigquery.jobUser",
+      "roles/bigquery.readSessionUser",
+      "roles/cloudbuild.builds.editor",
+      "roles/iam.serviceAccountTokenCreator",
+      "roles/logging.logWriter",
+      "roles/storage.admin",
+      "roles/storage.objectUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-six",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-five"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-six",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-five"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-six",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-five"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-six",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-five"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-six",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-five"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-six",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-five"
+      ]
+    }
+  ]
+}

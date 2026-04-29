@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.509Z",
+  "source_step08_card": "data/step-08/current/products/application-integration/card.json",
+  "product_name": "Application Integration",
+  "product_slug": "application-integration",
+  "feature_name": "XSLT Transform data transformer function",
+  "feature_slug": "xslt-transform-data-transformer-function",
+  "summary": "The XSLT Transform function converts an XML string using a specified XSL string in data transformation workflows.",
+  "extended_definition": "The XSLT Transform function converts an XML string using a specified XSL string in data transformation workflows.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task",
+      "https://docs.cloud.google.com/application-integration/docs/data-mapping-functions-reference",
+      "https://docs.cloud.google.com/application-integration/docs/data-transformer-functions-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data Transformer functions \\_|\\_ Application Integration \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/data-transformer-functions-reference",
+        "source_id": "site-api-reference",
+        "final_score": 136,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Recommendation Lean how to add and configure a Data Transformer Script task ( Preview ) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Data Transformer functions This page describes the additional set of predefined Jsonnet functions for Data Transformer Script task available in Application Integration.",
+          "Preview — Data Transformer Script task This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms ."
+        ]
+      },
+      {
+        "title": "Data Transformer task \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task",
+        "source_id": "site-docs-reference-2",
+        "final_score": 130,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Jsonnet script local f = impor t \"functions\" ; // Import predefined Data Transformer function library local s tr 1 = f .ex t Var( \"inputVar1\" ); // Access integration input variable \"Inputstr1\" with value \"Hello\" local s tr 2 = f .ex t Var( \"inputVar2\" ); // Access integration input variable \"Inputstr2\" with value \"World\" { Ou t pu t Var : s tr 1 + \" \" + s tr 2 + \"!\" , // Write to Jsonnet output variable \"OutputVar\" \"output-str-var\" : s tr 1 + \" Integration \" + s tr 2 + \"!\" , // Write to Jsonnet output variable \"output-str-var\" } Output Jsonnet usage reference Jsonnet is a purely functional language and its programs are composed of expressions.",
+          "The following image shows the sample layout of the Data Transformer Script editor : Access integration variables To read an existing integration variable from the Data Transformer Script editor use the extVar function from the predefined functions library.",
+          "The Data Transformer Script editor provides the following features to enrich your scripting experience: Syntax/code highlighting, indentation, and line numbering for easier code readability and structure recognition."
+        ]
+      },
+      {
+        "title": "\"Data Mapping functions \\_|\\_ Application Integration \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/data-mapping-functions-reference",
+        "source_id": "site-api-reference",
+        "final_score": 107,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "CONTAINS Checks the occurrence of the specified value in a given string or string array.",
+          "CONCAT Concatenates the specified characters to an existing string.",
+          "TO LOWERCASE Converts all the characters in a string to lowercase."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/data-transformer-functions-reference",
+        "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task",
+        "https://docs.cloud.google.com/application-integration/docs/data-mapping-functions-reference"
+      ]
+    }
+  ]
+}

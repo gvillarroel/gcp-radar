@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:46.338Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing",
+  "feature_name": "Committed use discounts for Cloud Run",
+  "feature_slug": "committed-use-discounts-for-cloud-run",
+  "summary": "Introduces public preview committed use discounts for aggregated Cloud Run CPU, memory, and request usage within a region.",
+  "extended_definition": "Introduces public preview committed use discounts for aggregated Cloud Run CPU, memory, and request usage within a region.",
+  "lifecycle": {
+    "latest_feature_date": "2021-05-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/cud-analysis",
+      "https://docs.cloud.google.com/billing/docs/how-to/pricing-table",
+      "https://docs.cloud.google.com/billing/docs/how-to/reports"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Analyze billing data and cost trends with Reports \\_|\\_ Cloud Billing \\_\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "source_id": "site-docs-root",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Legacy spend-based CUD credits : For spend-based committed use discounts (CUDs) that aren't part of the new pricing model, this is the credit earned in exchange for your commitment to spend a minimum amount for a service in a particular region.",
+          "Usage-specific savings : This includes any credits or discounts that were applied directly to the SKU usage, such as sustained use discounts,committed use discounts, or free trial and other promotional credits that were applied.",
+          "Savings programs Savings programs include the various committed use discounts (CUDs) options, which lower the cost of your Google Cloud usage by offering discounts and credits tied to your resource usage or spending."
+        ]
+      },
+      {
+        "title": "\"Optimize costs with Committed Use Discounts \\_|\\_ Cloud Billing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/cud-analysis",
+        "source_id": "site-docs-root",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "Related topics Overview of committed use discounts Purchasing spend-based committed use discounts Purchasing resource-based committed use discounts View your Cloud Billing reports and cost trends Understand your savings with cost breakdown reports Export Cloud Billing data to BigQuery View your cost and payment history Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Costs and usage management Cloud Billing Guides Send feedback Optimize costs with Committed Use Discounts Stay organized with collections Save and categorize content based on your preferences.",
+          "Committed use discounts (CUDs) provide discounted prices in exchange for your commitment to use a minimum level of resources for a one-year or three-year period."
+        ]
+      },
+      {
+        "title": "\"View and download prices for Google's cloud services \\_|\\_ Cloud Billing\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/pricing-table",
+        "source_id": "site-docs-root",
+        "final_score": 101,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Note : This document discusses some spend-based committed use discounts (CUDs) that automatically migrate to a new consumption model, which leverages discounts rather than credits.",
+          "The SKU pricing information doesn't include credits (such as promotions, sustained use discounts, committed use discounts, or spending based discounts) or the cost of support.",
+          "To gain this permission, ask your administrator to grant you one of the following Cloud Billing IAM roles on your Cloud Billing account: Billing Account Costs Manager Billing Account User The limited report view includes the following: The report displays only the publicly-available list prices and SKUs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/cud-analysis",
+        "https://docs.cloud.google.com/billing/docs/how-to/pricing-table"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/cud-analysis",
+        "https://docs.cloud.google.com/billing/docs/how-to/pricing-table"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/cud-analysis",
+        "https://docs.cloud.google.com/billing/docs/how-to/pricing-table"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/cud-analysis",
+        "https://docs.cloud.google.com/billing/docs/how-to/pricing-table"
+      ]
+    }
+  ]
+}

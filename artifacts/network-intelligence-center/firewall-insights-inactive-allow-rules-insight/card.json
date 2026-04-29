@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:24.820Z",
+  "source_step08_card": "data/step-08/current/products/network-intelligence-center/card.json",
+  "product_name": "Network Intelligence Center",
+  "product_slug": "network-intelligence-center",
+  "feature_name": "Firewall Insights inactive allow rules insight",
+  "feature_slug": "firewall-insights-inactive-allow-rules-insight",
+  "summary": "Firewall Insights identifies allow rules that are no longer active based on usage patterns and trends.",
+  "extended_definition": "Firewall Insights identifies allow rules that are no longer active based on usage patterns and trends.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/overview",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Firewall Insights overview \\_|\\_ Network Intelligence Center - Firewall\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "source_id": "site-docs-root",
+        "final_score": 277,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, Firewall Insights identifies rules that it classifies as overly permissive.",
+          "Overly permissive rule insights, including each of the following: Allow rules with no hits Allow rules that are obsolete based on adaptive analysis Allow rules with unused attributes Allow rules with overly permissive IP addresses or port ranges Deny rule insights with no hits during the observation period .",
+          "Insights help you identify firewall rules that overlap existing rules, rules with no hits, and unused firewall rule attributes such as IP address and port ranges."
+        ]
+      },
+      {
+        "title": "\"Cloud Network Insights overview \\_|\\_ Network Intelligence Center - Cloud\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights",
+        "source_id": "site-iam-reference",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Network Insights is an out-of-the-box solution offered in partnership with AppNeta by Broadcom that provides visibility into network health and application performance across complex, multicloud, and hybrid environments.",
+          "Cloud Network Insights uses active synthetic probing to monitor these complex paths from the perspective of the user or the application, allowing you to monitor network routes even when no user traffic is present.",
+          "You can query these logs in the Logs Explorer to perform root-cause analysis or create log-based alerts for immediate notification. networkmanagement.googleapis.com/insights alarm : Triggered when performance deviates from your defined baselines. networkmanagement.googleapis.com/insights event : Triggered by structural changes, such as when a Monitoring Point goes offline and online again, or a network route change (path change)."
+        ]
+      },
+      {
+        "title": "\"Cloud Network Insights overview \\_|\\_ Network Intelligence Center - Cloud\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/overview",
+        "source_id": "site-iam-reference",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Network Insights is an out-of-the-box solution offered in partnership with AppNeta by Broadcom that provides visibility into network health and application performance across complex, multicloud, and hybrid environments.",
+          "Cloud Network Insights uses active synthetic probing to monitor these complex paths from the perspective of the user or the application, allowing you to monitor network routes even when no user traffic is present.",
+          "You can query these logs in the Logs Explorer to perform root-cause analysis or create log-based alerts for immediate notification. networkmanagement.googleapis.com/insights alarm : Triggered when performance deviates from your defined baselines. networkmanagement.googleapis.com/insights event : Triggered by structural changes, such as when a Monitoring Point goes offline and online again, or a network route change (path change)."
+        ]
+      },
+      {
+        "title": "\"Set up logging \\_|\\_ Network Intelligence Center - Cloud Network Insights\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Network Insights logging tracks when the metrics collected by Monitoring Points violate thresholds you configure with alarm rules in AppNeta.",
+          "Cloud Network Insights logs use one of the following for logName : Alarm logs - networkmanagement.googleapis.com/insights alarm Event logs - networkmanagement.googleapis.com/insights event For more information, see Build and save queries by using the Logging query language .",
+          "This page provides information about how Cloud Network Insights integrates with AppNeta for alarm generation and how these alarms are sent to Google Cloud for analysis, viewing, and alert policy creation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "networkmanagement.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging"
+      ]
+    }
+  ]
+}

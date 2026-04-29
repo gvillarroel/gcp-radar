@@ -1,0 +1,156 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:51.589Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": "Artifact Registry repository selection for functions",
+  "feature_slug": "artifact-registry-repository-selection-for-functions",
+  "summary": "Cloud Run functions can specify an Artifact Registry image repository for storing built containers.",
+  "extended_definition": "Cloud Run functions can specify an Artifact Registry image repository for storing built containers.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/deploy-functions",
+      "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-console",
+      "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deploy a Cloud Run function \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 159,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When specifying an Artifact Registry repository located in a different project or region, you must consider the following: IAM configurations: Ensure that you have configured IAM permissions to deploy images from other Google Cloud projects Additionally, ensure that the build service account has authorized access to read and write to the REPOSITORY .",
+          "To specify a self-created Artifact Registry repository, use the following command: gcloud gcloud run deploy FUNCTION \\ --source . \\ --function FUNCTION ENTRYPOINT \\ --base-image BASE IMAGE \\ --region REGION \\ --image IMAGE URL Replace the following: FUNCTION with the name of the function you are deploying.",
+          "Specify an image repository Cloud Run function deployments use Artifact Registry to store artifacts and manage container images."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Deploy a Cloud Run function using the gcloud CLI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud",
+        "source_id": "site-docs-reference-2",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Write the sample function To write an application, follow these steps: Node.js Create a new directory named helloworld and change directory into it: mkdir helloworld cd helloworld Create a package.json file in the helloworld directory to specify Node.js dependencies: { \"name\" : \"nodejs-docs-samples-functions-hello-world-get\" , \"version\" : \"0.0.1\" , \"private\" : true , \"license\" : \"Apache-2.0\" , \"author\" : \"Google Inc.\" , \"repository\" : { \"type\" : \"git\" , \"url\" : \"https://github.com/GoogleCloudPlatform/nodejs-docs-samples.git\" }, \"engines\" : { \"node\" : \">=16.0.0\" }, \"scripts\" : { \"test\" : \"c8 mocha -p -j 2 test/ .test.js --timeout=6000 --exit\" }, \"dependencies\" : { \"@google-cloud/functions-framework\" : \"^3.1.0\" }, \"devDependencies\" : { \"c8\" : \"^10.0.0\" , \"gaxios\" : \"^6.0.0\" , \"mocha\" : \"^10.0.0\" , \"wait-port\" : \"^1.0.4\" } } Create an index.js file in the helloworld directory with the following Node.js sample: const functions = require ( '@google-cloud/functions-framework' ); // Register an HTTP function with the Functions Framework that will be executed // when you make an HTTP request to the deployed function's endpoint. functions . http ( 'helloGET' , ( req , res ) = > { res . send ( 'Hello World!' ); }); Python Create a new directory named helloworld and change directory into it: mkdir helloworld cd helloworld Create a requirements.txt file in the helloworld directory, to specify Python dependencies: functions - framework == 3.9.2 flask == 3.0.3 google - cloud - error - reporting == 1.11.1 MarkupSafe == 2.1.3 This adds packages needed by the sample.",
+          "See the License for the specific language governing permissions and limitations under the License . -- > < project xmlns = \"http://maven.apache.org/POM/4.0.0\" xmlns : xsi = \"http://www.w3.org/2001/XMLSchema-instance\" xsi : schemaLocation = \"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\" > < modelVersion>4 .0.0 < / modelVersion > < groupId>com . example . functions < / groupId > < artifactId>functions - hello - world < / artifactId > < version>1 .0.0 - SNAPSHOT < / version > < parent > < groupId>com . google . cloud . samples < / groupId > < artifactId>shared - configuration < / artifactId > < version>1 .2.0 < / version > < / parent > < dependencyManagement > < dependencies > < dependency > < artifactId>libraries - bom < / artifactId > < groupId>com . google . cloud < / groupId > < scope>import < / scope > < type>pom < / type > < version>26 .32.0 < / version > < / dependency > < / dependencies > < / dependencyManagement > < properties > < maven . compiler . target>11 < / maven . compiler . target > < maven . compiler . source>11 < / maven . compiler . source > < / properties > < dependencies > < !-- Required for Function primitives -- > < dependency > < groupId>com . google . cloud . functions < / groupId > < artifactId>functions - framework - api < / artifactId > < version>1 .1.0 < / version > < scope>provided < / scope > < / dependency > < !-- The following dependencies are only required for testing -- > < dependency > < groupId>com . google . truth < / groupId > < artifactId>truth < / artifactId > < version>1 .4.0 < / version > < scope>test < / scope > < / dependency > < dependency > < groupId>com . google . guava < / groupId > < artifactId>guava - testlib < / artifactId > < scope>test < / scope > < / dependency > < dependency > < groupId>org . mockito < / groupId > < artifactId>mockito - core < / artifactId > < version>5 .10.0 < / version > < scope>test < / scope > < / dependency > < / dependencies > < build > < plugins > < plugin > < !-- Google Cloud Functions Framework Maven plugin This plugin allows you to run Cloud Functions Java code locally .",
+          "HelloWorld < / functionTarget > < / configuration > < / plugin > < plugin > < groupId>org . apache . maven . plugins < / groupId > < artifactId>maven - surefire - plugin < / artifactId > < !-- version 3.0.0 - M4 does not load JUnit5 correctly -- > < !-- see https : //issues.apache.org/jira/browse/SUREFIRE-1750 -- > < version>3 .2.5 < / version > < configuration > < includes > < include > / Test . java < / include > < / includes > < skipTests>$ { skipTests } < / skipTests > < reportNameSuffix>sponge log < / reportNameSuffix > < trimStackTrace>false < / trimStackTrace > < / configuration > < / plugin > < / plugins > < / build > < / project > Ruby Create a new directory named helloworld and change directory into it: mkdir helloworld cd helloworld Create a file named app.rb and paste the following code into it: require \"functions framework\" FunctionsFramework . http \"hello get\" do request The request parameter is a Rack::Request object."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Deploy a Cloud Run function using the Google Cloud console \\_\\",
+        "url": "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-console",
+        "source_id": "site-docs-reference-2",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To delete Artifact Registry repositories, follow the steps in Delete repositories in the Artifact Registry documentation.",
+          "However, you might still be charged for storing the container image in Artifact Registry .",
+          "Enable the Artifact Registry, Cloud Build, Cloud Run Admin API, and Cloud Logging APIs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.rb",
+      "github.com",
+      "index.js",
+      "issues.apache.org",
+      "maven.apache.org",
+      "package.json",
+      "requirements.txt",
+      "samples.git",
+      "test.js"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-console"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-console"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-console"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-console"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-console"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-console"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-console"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-console"
+      ]
+    }
+  ]
+}

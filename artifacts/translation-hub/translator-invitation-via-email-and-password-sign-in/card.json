@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:31.061Z",
+  "source_step08_card": "data/step-08/current/products/translation-hub/card.json",
+  "product_name": "Translation Hub",
+  "product_slug": "translation-hub",
+  "feature_name": "Translator invitation via email and password sign-in",
+  "feature_slug": "translator-invitation-via-email-and-password-sign-in",
+  "summary": "Administrators can invite translators using the email and password sign-in method.",
+  "extended_definition": "Administrators can invite translators using the email and password sign-in method.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/translation-hub/docs/admin-enable-post-edits",
+      "https://docs.cloud.google.com/translation-hub/docs/admin-enable-translations",
+      "https://docs.cloud.google.com/translation-hub/docs/translator-edit",
+      "https://docs.cloud.google.com/translation-hub/docs/user-post-edit"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Enable post-editing requests \\_|\\_ Translation Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translation-hub/docs/admin-enable-post-edits",
+        "source_id": "site-iam-reference",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Each line of the CSV file uses the following format that contains the translator's email address, sign-in method, post-editing group names, and fluent language pairs: EMAIL ADDRESS , SIGN IN METHOD , GROUP NAME 1 ; GROUP NAME 2 , LANGUAGE CODE:LANGUAGE CODE ; LANGUAGE CODE:LANGUAGE CODE The sign-in method can be google for Google Accounts or email/password for all other email addresses.",
+          "The sign-in method specifies whether translators sign in with an email and password or with their Google Account (such as a Google Workspace account).",
+          "To invite translators in bulk, provide a CSV file where each line specifies a translator's email address, sign-in method, associated post-editing groups (optional), and fluent language pairs."
+        ]
+      },
+      {
+        "title": "\"Enable users to request translations \\_|\\_ Translation Hub \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/translation-hub/docs/admin-enable-translations",
+        "source_id": "site-docs-root",
+        "final_score": 175,
+        "relevance": "",
+        "evidence_snippets": [
+          "Each line of the CSV file uses the following format that contains the user's email address, sign-in method, and portal IDs: EMAIL ADDRESS , SIGN IN METHOD , PORTAL ID 1 ; PORTAL ID 2 The sign-in method can be google for Google Accounts or email/password for all other email addresses.",
+          "The sign-in method specifies whether users sign in with an email and password or with their Google Account (such as a Google Workspace account).",
+          "Don't include a header row for column names. amal@altostrat.com,email/password,123abc45def678f;234abc45def678g charlie@altostrat.com,email/password, hao@myownpersonaldomain.com,email/password,123abc45def678f Translation Hub has a limit on the number of rows and CSV file size."
+        ]
+      },
+      {
+        "title": "Review and edit translations \\_|\\_ Translation Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translation-hub/docs/translator-edit",
+        "source_id": "site-iam-reference",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you are part of a post-editing group, you and all the other group members receive an email notification for each new post-edit request.",
+          "If you're assigned to multiple projects or roles, choose a project and then choose the translator role.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "Post-editing \\_|\\_ Translation Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translation-hub/docs/user-post-edit",
+        "source_id": "site-iam-reference",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Post-editing in progress section, Translation Hub shows if your request is in one of the following states: Assigned : You have submitted a request but a translator has not yet accepted the editing task.",
+          "Translation Hub shows you post-editing groups that contain a translator who is fluent in your source and translated content language pairs.",
+          "Or, you can contact your Google Cloud administrators and request that they add a translator with the relevant language capabilities."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "altostrat.com",
+      "myownpersonaldomain.com",
+      "translationhub.cloud.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translation-hub/docs/admin-enable-post-edits",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-enable-translations",
+        "https://docs.cloud.google.com/translation-hub/docs/translator-edit",
+        "https://docs.cloud.google.com/translation-hub/docs/user-post-edit"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translation-hub/docs/admin-enable-post-edits",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-enable-translations",
+        "https://docs.cloud.google.com/translation-hub/docs/translator-edit",
+        "https://docs.cloud.google.com/translation-hub/docs/user-post-edit"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translation-hub/docs/admin-enable-post-edits",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-enable-translations",
+        "https://docs.cloud.google.com/translation-hub/docs/translator-edit",
+        "https://docs.cloud.google.com/translation-hub/docs/user-post-edit"
+      ]
+    }
+  ]
+}

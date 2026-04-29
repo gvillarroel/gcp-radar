@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.121Z",
+  "source_step08_card": "data/step-08/current/products/google-distributed-cloud-software-only-for-bare-metal/card.json",
+  "product_name": "Google Distributed Cloud (software only) for bare metal",
+  "product_slug": "google-distributed-cloud-software-only-for-bare-metal",
+  "feature_name": "Fleet regional membership",
+  "feature_slug": "fleet-regional-membership",
+  "summary": "Lets you specify a fleet membership's region with gkeConnect.location.",
+  "extended_definition": "Lets you specify a fleet membership's region with gkeConnect.location.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/admin-cluster-creation",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/create-user-cluster-api",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a user cluster using GKE On-Prem API clients \\_|\\_ Google Distributed\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/create-user-cluster-api",
+        "source_id": "site-docs-reference-2",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "MetalLB This example shows how to create a user cluster with the bundled MetalLB load balancer. gcloud container bare-metal clusters create USER CLUSTER NAME \\ --project= FLEET HOST PROJECT ID \\ --admin-cluster-membership= ADMIN CLUSTER NAME \\ --admin-cluster-membership-project= FLEET HOST PROJECT ID \\ --admin-cluster-membership-location= ADMIN CLUSTER REGION \\ --location= REGION \\ --version= VERSION \\ --admin-users= YOUR EMAIL ADDRESS \\ --admin-users= ANOTHER EMAIL ADDRESS \\ --metal-lb-address-pools='pool= NAME ,avoid-buggy-ips= True False ,manual-assign= True False ,addresses= IP ADDRESS RANGE 1 ; IP ADDRESS RANGE 2 ;...' \\ --control-plane-node-configs='node-ip= CP IP ADDRESS 1 ,labels= CP KEY 1.1 = CP VALUE 1.1 ; CP KEY 1.2 = CP VALUE 1.2 ;...' \\ --control-plane-vip= CONTROL PLANE VIP \\ --control-plane-load-balancer-port= CONTROL PLANE LB PORT \\ --ingress-vip= INGRESS VIP \\ --island-mode-service-address-cidr-blocks= SERVICE CIDR BLOCK \\ --island-mode-pod-address-cidr-blocks= POD CIDR BLOCK \\ --lvp-share-path=/mnt/localpv-share \\ --lvp-share-storage-class=local-shared \\ --lvp-node-mounts-config-path=/mnt/localpv-disk \\ --lvp-node-mounts-config-storage-class=local-disks Replace the following: USER CLUSTER NAME : A name of your choice for your user cluster.",
+          "Be sure to scroll over if needed to fill in the ADMIN CLUSTER NAME placeholder for the --admin-cluster-membership flag. gcloud container bare-metal clusters create USER CLUSTER NAME \\ --project= FLEET HOST PROJECT ID \\ --admin-cluster-membership= ADMIN CLUSTER NAME \\ --admin-cluster-membership-project= FLEET HOST PROJECT ID \\ --admin-cluster-membership-location= ADMIN CLUSTER REGION \\ --location= REGION \\ --version= VERSION \\ --admin-users= YOUR EMAIL ADDRESS \\ --admin-users= ANOTHER EMAIL ADDRESS \\ --enable-manual-lb \\ --control-plane-node-configs='node-ip= CP IP ADDRESS 1 ,labels= CP KEY 1.1 = CP VALUE 1.1 ; CP KEY 1.2 = CP VALUE 1.2 ;...' \\ --control-plane-vip= CONTROL PLANE VIP \\ --control-plane-load-balancer-port= CONTROL PLANE LB PORT \\ --ingress-vip= INGRESS VIP \\ --island-mode-service-address-cidr-blocks= SERVICE CIDR BLOCK \\ --island-mode-pod-address-cidr-blocks= POD CIDR BLOCK \\ --lvp-share-path=/mnt/localpv-share \\ --lvp-share-storage-class=local-shared \\ --lvp-node-mounts-config-path=/mnt/localpv-disk \\ --lvp-node-mounts-config-storage-class=local-disks Replace the following: USER CLUSTER NAME : A name of your choice for your user cluster.",
+          "This setting specifies the region where the following APIs and services run: GKE On-Prem API ( gkeonprem.googleapis.com ) Fleet service ( gkehub.googleapis.com ) Connect service ( gkeconnect.googleapis.com ) This setting also controls the region in which the following are stored: The user cluster metadata that the GKE On-Prem API needs to manage the cluster lifecycle The Cloud Logging and Cloud Monitoring data of system components The Admin Audit log created by Cloud Audit Logs The cluster name, project, and location together uniquely identify the cluster in Google Cloud."
+        ]
+      },
+      {
+        "title": "\"Cluster configuration field reference \\_|\\_ Google Distributed Cloud (software\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "source_id": "site-docs-root",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "Optionally, you can use gkeConnect.location to specify the Google Cloud region in which the Fleet and the Connect services run, so that traffic is restricted to your region.",
+          "The fleet membership can be global or regional.",
+          "The fleet membership for your clusters is managed by the Fleet service ( gkehub.googleapis.com ) and the Connect service ( gkeconnect.googleapis.com )."
+        ]
+      },
+      {
+        "title": "\"Create admin clusters \\_|\\_ Google Distributed Cloud (software only) for\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/admin-cluster-creation",
+        "source_id": "site-docs-reference-2",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optionally, you can add gkeConnect.location to the cluster spec to specify the Google Cloud region in which the Fleet and the Connect services run.",
+          "This regional membership restricts fleet service traffic to your region.",
+          "If you include gkeConnect.location in the cluster spec, the region that you specify must be the same as the region configured in clusterOperations.location ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "connect.json",
+      "gcr.json",
+      "gkeconnect.googleapis.com",
+      "gkehub.googleapis.com",
+      "gkeonprem.googleapis.com",
+      "ops.json",
+      "register.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/create-user-cluster-api",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/admin-cluster-creation"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/create-user-cluster-api",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/admin-cluster-creation"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/create-user-cluster-api",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/admin-cluster-creation"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/create-user-cluster-api",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/admin-cluster-creation"
+      ]
+    }
+  ]
+}

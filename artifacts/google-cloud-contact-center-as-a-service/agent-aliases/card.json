@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:13.819Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Agent aliases",
+  "feature_slug": "agent-aliases",
+  "summary": "Agents can communicate with end users using aliases instead of their real names.",
+  "extended_definition": "Agents can communicate with end users using aliases instead of their real names.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/add-edit-user",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-alias",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Agent aliases \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-alias",
+        "source_id": "site-docs-reference",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Bulk user management templates Let agents create their own aliases You can grant agents permissions to create their own aliases.",
+          "Do a bulk import of agent aliases To do a bulk import of agent aliases, follow these steps: Click menu Menu , and then click Settings > Users and teams .",
+          "Agent aliases are displayed to end-users only with the mobile and web SDKs."
+        ]
+      },
+      {
+        "title": "\"Add, view, and edit users \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/add-edit-user",
+        "source_id": "site-docs-reference",
+        "final_score": 122,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example: Parent team A (450 users) - all 450 agents are assigned to sub-teams, none are directly assigned to team A - user list will show: 0 users Team A-1 (200 users) - user list will show: 200 users Team A-2 (150 users) - user list will show: 150 users Team A-3 (100 users) - user list will show: 0 users Team A-3.1 (90 users) - user list will show: 90 users Team A-3.2 (10 users) - user list will show: 10 users The filter drop-down can be used to restrict the users that are displayed.",
+          "Edit users User information can be edited by clicking on the pencil icon next to the user's name: Tip: Best practice is to only edit agent information when the agent is not signed in to the CCAI Platform instance.",
+          "To avoid confusion and not show an agent or user assigned to a sub-team multiple times in any higher-level teams, users only show in the team they are directly assigned to."
+        ]
+      },
+      {
+        "title": "\"Standard Reports Agent and Teams Data Sets \\_|\\_ Google Cloud Contact Center\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set",
+        "source_id": "site-docs-reference",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "Date and Timestamp Agent Status Summary and Timeline Report Agent statuses, also known as Aux codes, are used to track time spent on different tasks, make agents available for calls or chats, and are used extensively for workforce management.",
+          "Total Preset SMS Sent: Total number of preset SMS sent by Agents using SMS Blending features like In Call and Wait Time SMS.",
+          "Total Auto Answered Calls: Total number of interactions that were assigned to Agents via auto answer."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-alias",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/add-edit-user",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set"
+      ]
+    }
+  ]
+}

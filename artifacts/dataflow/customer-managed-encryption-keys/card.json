@@ -1,0 +1,131 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:03.460Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Customer-managed encryption keys",
+  "feature_slug": "customer-managed-encryption-keys",
+  "summary": "Dataflow supports customer-managed encryption keys through Cloud Key Management Service; Dataflow supports customer-managed encryption keys through Cloud Key Management Service.",
+  "extended_definition": "Dataflow supports customer-managed encryption keys through Cloud Key Management Service; Dataflow supports customer-managed encryption keys through Cloud Key Management Service.",
+  "lifecycle": {
+    "latest_feature_date": "2020-02-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+      "https://docs.cloud.google.com/dataflow/docs/guides/data-sampling",
+      "https://docs.cloud.google.com/dataflow/docs/resources/shared-responsibility"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use customer-managed encryption keys \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+        "source_id": "site-docs-reference-2",
+        "final_score": 42,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Cloud Dataflow Guides Send feedback Use customer-managed encryption keys Stay organized with collections Save and categorize content based on your preferences.",
+          "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Dataflow.",
+          "For Encryption type: \"Google-Managed key\" For Encryption type: \"Customer-Managed key\" CLI Run the describe command using the gcloud CLI: gcloud dataflow jobs describe JOB ID Search for the line that contains serviceKmsKeyName ."
+        ]
+      },
+      {
+        "title": "\"Use data sampling to observe pipeline data \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/data-sampling",
+        "source_id": "site-docs-reference-2",
+        "final_score": 40,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In particular, consider the following additional security measures: Use a customer-managed encryption key (CMEK) to encrypt the Cloud Storage bucket.",
+          "What's next Develop and test Dataflow pipelines Use the Dataflow monitoring interface Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "When running a Dataflow template, use the additional-experiments flag to disable exception sampling: --additional-experiments=disable always on exception sampling Security considerations Dataflow writes the sampled data to a Cloud Storage bucket that you create and manage."
+        ]
+      },
+      {
+        "title": "Dataflow shared responsibility \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/resources/shared-responsibility",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 40,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Learn more about Customer-managed encryption keys , networks and VPC Service Controls , and permissions best practices .",
+          "Customer's responsibilities Use and update your environment to the latest versions of Dataflow containers and VM images : Dataflow provides prebuilt containers and VM images to simplify the use of its services.",
+          "Home Documentation Data analytics Cloud Dataflow Resources Send feedback Dataflow shared responsibility Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+        "https://docs.cloud.google.com/dataflow/docs/resources/shared-responsibility",
+        "https://docs.cloud.google.com/dataflow/docs/guides/data-sampling"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+        "https://docs.cloud.google.com/dataflow/docs/resources/shared-responsibility",
+        "https://docs.cloud.google.com/dataflow/docs/guides/data-sampling"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+        "https://docs.cloud.google.com/dataflow/docs/resources/shared-responsibility",
+        "https://docs.cloud.google.com/dataflow/docs/guides/data-sampling"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+        "https://docs.cloud.google.com/dataflow/docs/resources/shared-responsibility",
+        "https://docs.cloud.google.com/dataflow/docs/guides/data-sampling"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+        "https://docs.cloud.google.com/dataflow/docs/resources/shared-responsibility",
+        "https://docs.cloud.google.com/dataflow/docs/guides/data-sampling"
+      ]
+    }
+  ]
+}

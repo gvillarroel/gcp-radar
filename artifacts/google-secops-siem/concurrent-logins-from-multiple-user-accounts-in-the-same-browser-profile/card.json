@@ -1,0 +1,184 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.987Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "Concurrent logins from multiple user accounts in the same browser profile",
+  "feature_slug": "concurrent-logins-from-multiple-user-accounts-in-the-same-browser-profile",
+  "summary": "Google SecOps will no longer support concurrent logins for multiple accounts within the same browser profile; deprecated on 2025-02-10.",
+  "extended_definition": "Google SecOps will no longer support concurrent logins for multiple accounts within the same browser profile; deprecated on 2025-02-10.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-26",
+    "deprecation_date": "2025-02-10",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+      "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following examples show supported boolean operators ( AND , OR , and NOT ): A AND B A OR B Use parentheses ( ) to group expressions and control evaluation order: (A OR B) AND (B OR C) AND (C OR NOT D) Examples: Search for login events on the finance server: metadata.event type = \"USER LOGIN\" and target.hostname = \"finance-svr\" Use the operator (>) to search for connections where more than 10 MB of data was sent: metadata.event type = \"NETWORK CONNECTION\" and network.sent bytes > 10000000 Use multiple conditions to search for winword.exe launching cmd.exe or powershell.exe : metadata.event type = \"PROCESS LAUNCH\" and principal.process.file.full path = /winword/ and ( target.process.file.full path = /cmd.exe/ or target.process.file.full path = /powershell.exe/ ) Search key-value pairs in additional and labels fields: The additional and labels fields act as customizable containers for event data that doesn't map to standard UDM fields.",
+          "For example, if you have a database called suspicious with a column of IP addresses you know are problematic, you can reference that database in Search instead of manually entering individual IP addresses in Search: events: $e.principal.ip in %susupicious.ip You can narrow your results by searching for specific metadata in addition to IP addresses, for example you might be specifically concerned with changes to user resources: events: $e.metadata.event type = \"USER RESOURCE UPDATE CONTENT\" $e.principal.ip in %susupicious.ip You can narrow a search against interrelated UDM fields and match against multiple data table columns.",
+          "Search for events that use multiple keys with the same name, using a regular expression: additional.fields.key = /myKeynumber / Use regular expressions and the nocase operator: additional.fields[\"pod name\"] = /br/ additional.fields[\"pod name\"] = bar nocase Use block and single-line comments."
+        ]
+      },
+      {
+        "title": "\"Cloud Threats category overview \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "source_id": "site-api-reference",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "Google Workspace-related rule sets The following rule sets detect patterns in Google Workspace data: Potential Insider Data Exfiltration from Chrome Potential Insider Data Exfiltration from Drive Potential Insider Data Exfiltration from Gmail Potential Workspace Account Compromise Suspicious Workspace Administrative Actions These rule sets require the following log types, listed by product name and Google SecOps ingestion label: Workspace Activities ( WORKSPACE ACTIVITY ) Workspace Alerts ( WORKSPACE ALERTS ) Workspace ChromeOS Devices ( WORKSPACE CHROMEOS ) Workspace Mobile Devices ( WORKSPACE MOBILE ) Workspace Users ( WORKSPACE USERS ) Google Chrome Browser Cloud Management ( CHROME MANAGEMENT ) Gmail logs ( GMAIL LOGS ) To ingest the required data, do the following: Collect the data listed in the All rule sets section of this document.",
+          "Azure - Identity : Detects activity related to authentication and authorization, indicating unusual behavior, including concurrent access from multiple geographic locations, overly permissive access management policies, or Azure RBAC activity from suspicious tools.",
+          "AWS - Identity : Detections for AWS activity associated with IAM and authentication activity, including unusual logins from multiple geo-locations, overly permissive role creation, or IAM activity from suspicious tools."
+        ]
+      },
+      {
+        "title": "\"Composite detections \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Goal : Build a profile of risky data handling by a single user across multiple devices and actions.",
+          "Then, use a composite rule with a long match window (for example, 24 hours) to trigger on an initial suspicious login and correlate it with any of the following detections from the same user: A user clearing their command-line history.",
+          "Add a second condition to provide additional qualification, such as \"alert only if this detection happens 5 times for the same user in one hour\" or if it's combined with a detection from a different rule."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "additional.fields",
+      "additional.fields.key",
+      "cmd.exe",
+      "e.metadata.event",
+      "e.principal.ip",
+      "metadata.event",
+      "network.sent",
+      "powershell.exe",
+      "principal.process.file.full",
+      "susupicious.ip",
+      "target.hostname",
+      "target.process.file.full",
+      "winword.exe"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:11.988Z",
+  "source_step08_card": "data/step-08/current/products/gemini-enterprise/card.json",
+  "product_name": "Gemini Enterprise",
+  "product_slug": "gemini-enterprise",
+  "feature_name": "Confluence federated connector",
+  "feature_slug": "confluence-federated-connector",
+  "summary": "Gemini Enterprise provides a federated connector for Confluence.",
+  "extended_definition": "Gemini Enterprise provides a federated connector for Confluence.",
+  "lifecycle": {
+    "latest_feature_date": "2026-04-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/third-party-config",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/confluence-datacenter-configuration",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Set up a Confluence Cloud data store \\_|\\_ Gemini Enterprise \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "source_id": "site-docs-root",
+        "final_score": 259,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To enable real-time sync for a Confluence data store, follow these steps: Generate a webhook URL Navigate to the Gemini Enterprise page, and in the navigation menu, click Data Stores .",
+          "After creating the data store, create an app , connect it to the Confluence Cloud data store , and authorize Gemini Enterprise to access Confluence Cloud before executing any queries.",
+          "Create Confluence Cloud data store To create a Confluence Cloud data store, perform the following steps: In the Google Cloud console, go to the Gemini Enterprise page."
+        ]
+      },
+      {
+        "title": "\"Set up a Confluence Data Center data store \\_|\\_ Gemini Enterprise \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "source_id": "site-docs-root",
+        "final_score": 259,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create the Confluence Data Center data store To create the Confluence Data Center data store, perform the following steps: In the Google Cloud console, go to the Gemini Enterprise page.",
+          "Authorize Gemini Enterprise to Confluence Data Center before executing any queries.",
+          "Provide the authentication details: For Federated search , provide the following details: Instance URI: The base URL of your Confluence Data Center instance, for example, https://your-confluence-instance.com ."
+        ]
+      },
+      {
+        "title": "\"Confluence Cloud configuration \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/third-party-config",
+        "source_id": "site-docs-root",
+        "final_score": 247,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure minimum application scopes To configure OAuth 2.0 and retrieve the required credentials for your Confluence connector setup, do the following: To configure scopes, do the following: Click Permissions .",
+          "Grant administrator roles To grant the Confluence administrator the Discovery Engine Editor role in the Google Cloud console, do the following: In the Google Cloud console, go to the Gemini Enterprise page.",
+          "Home Documentation AI and ML Gemini Enterprise Send feedback Confluence Cloud configuration Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Confluence Data Center configuration \\_|\\_ Gemini Enterprise \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/confluence-datacenter-configuration",
+        "source_id": "site-docs-root",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Gemini Enterprise Send feedback Confluence Data Center configuration Stay organized with collections Save and categorize content based on your preferences.",
+          "To connect Gemini Enterprise to your Confluence Data Center instance, complete the following configuration steps.",
+          "For information about the Business edition, see the Gemini Enterprise - Business edition Help Center ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "instance.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/third-party-config",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/confluence-datacenter-configuration"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/third-party-config",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/confluence-datacenter-configuration"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/third-party-config",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/confluence-datacenter-configuration"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/third-party-config",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/confluence-datacenter-configuration"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/third-party-config",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/confluence-datacenter-configuration"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/third-party-config",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/confluence-datacenter-configuration"
+      ]
+    }
+  ]
+}

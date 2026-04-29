@@ -1,0 +1,183 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:13.643Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-armor/card.json",
+  "product_name": "Google Cloud Armor",
+  "product_slug": "google-cloud-armor",
+  "feature_name": "IP list: VPN providers",
+  "feature_slug": "ip-list-vpn-providers",
+  "summary": "A Network Threat Intelligence feed for VPN providers is now available.",
+  "extended_definition": "A Network Threat Intelligence feed for VPN providers is now available.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Integrate Amazon GuardDuty with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "source_id": "site-docs-root-2",
+        "final_score": 154,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Possible values: Plaintext Structured Threat Information Expression (STIX) Open Threat Exchange (OTX) CSV FireEye iSIGHT Threat Intelligence CSV Proofpoint ET Intelligence Feed CSV AlienVault Reputation Feed File Location String https://s3.amazonaws.com/{bucket-name}/file.txt Yes Specify the URI location, where the file is located Activate Checkbox Checked Yes If enabled, the newly created Trusted IP List is activated.",
+          "Action results Script result Script result name Value options Example is success True or False is success=False JSON result { \"Format\" : \"TXT\" , \"Location\" : \"https: //example.s3.amazonaws.com/test.txt\" , \"Name\" : \"API Test\" , \"ResponseMetadata\" : { \"HTTPHeaders\" : { \"connection\" : \"keep-alive\" , \"content-length\" : \"149\" , \"content-type\" : \"application/json\" , \"date\" : \"Mon,19 Oct 2020 06: 23: 22 GMT\" , \"x-amz-apigw-id\" : \" ID \" , \"x-amzn-requestid\" : \" REQUEST ID \" , \"x-amzn-trace-id\" : \" TRACE ID \" }, \"HTTPStatusCode\" : 200 , \"RequestId\" : \" REQUEST ID \" , \"RetryAttempts\" : 0 }, \"Status\" : \"ERROR\" , \"Tags\" : {} } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successfully returned details about at list one set (is success=true): \"Successfully retrieved details about the following Threat Intelligence Sets from Amazon GuardDuty:\\n{0}.\".format(list of ids)\" If unsuccessful for some of the IDs (is success=true): \"Action wasn't able to retrieve details about the following Threat Intelligence Sets from Amazon GuardDuty:\\n{0}.\".format(list of ids)\" If no IDs are used: \"No details were retrieved about the provided Threat Intelligence Sets.\".format(list of ids) The action should fail and stop a playbook execution: If a fatal error, SDK error, like wrong credentials, no connection to the server, other is reported: \"Error executing action \"List Threat Intelligence Sets\".",
+          "Action results Script result Script result name Value options Example is success True or False is success=False Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successfully returned details about at list one set (is success=true): \"Successfully deleted the following Threat Intelligence Sets in Amazon GuardDuty:\\n{0}.\".format(list of ids) If unsuccessful for some of the IDs (is success=true): \"Action wasn't able to delete the following Threat Intelligence Sets in Amazon GuardDuty:\\n{0}.\".format(list of ids) If no IDs are used: \"No Threat Intelligence Sets were deleted.\".format(list of ids) The action should fail and stop a playbook execution: Invalid detector ID should raise an exception as well, stop the playbook and set is success to false."
+        ]
+      },
+      {
+        "title": "\"Configure custom rules language attributes \\_|\\_ Google Cloud Armor \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples The following expression matches the incoming request against the Google Threat Intelligence iplist-known-malicious-ips feed for protection from the known list of malicious IPs: evaluateThreatIntelligence('iplist-known-malicious-ips') The following expression matches the incoming request against the Google Threat Intelligence iplist-known-malicious-ips feed for protection from the known list of malicious IPs except for IPs in 203.0.113.0/24 : evaluateThreatIntelligence('iplist-known-malicious-ips', ['203.0.113.0/24']) The following expression matches the custom request header for user IP against the address group named my-own-list-of-bad-ips : evaluateAddressGroup('my-own-list-of-bad-ips', origin.user ip) What's next Configure Cloud Armor security policies Tune Cloud Armor preconfigured WAF rules Troubleshoot Cloud Armor issues Quotas and limit Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The first argument is the Google Threat Intelligence feed name, such as iplist-known-malicious-ips .",
+          "Preconfigured WAF rule examples The following expression uses the xss-v422-stable preconfigured WAF rule to mitigate XSS attacks: evaluatePreconfiguredWaf('xss-v422-stable') The following expression uses all the expressions from the xss-v422-stable preconfigured WAF rule except for member IDs 941100 and 941110 : evaluatePreconfiguredWaf('xss-v422-stable', {'opt out rule ids': ['owasp-crs-v042200-id941100-xss', 'owasp-crs-v042200-id941110-xss']}) The following expression uses a preconfigured WAF rule to mitigate SQLi attacks from the 198.51.100.0/24 IP address range: inIpRange(origin.ip, '198.51.100.0/24') && evaluatePreconfiguredWaf('sqli-v422-stable') The following expression uses the xss-v422-stable preconfigured WAF rule to mitigate XSS attacks for requests to example.com , excluding paths that start with /login/api/ : request.headers['host'].lower() == 'example.com' && !request.path.startswith('/login/api/') && evaluatePreconfiguredWaf('xss-v422-stable') Other operators Expressions Description evaluateThreatIntelligence(string) evaluateThreatIntelligence(string, LIST) evaluateThreatIntelligence(string, string, LIST) Returns true if the client IP address matches any of the IP ranges in the given IP list, unless explicitly excluded with the exclusion list."
+        ]
+      },
+      {
+        "title": "\"Integrate Anomali ThreatStream with Google SecOps \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "source_id": "site-docs-root-2",
+        "final_score": 144,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run on This action runs on the following entities: Hash IP Address URL Email Action results Script result Script result name Value options Example is success True or False is success:False Entity enrichment Enrichment field name Logic - When to apply id When available in JSON status When available in JSON itype When available in JSON expiration time When available in JSON ip When available in JSON feed id When available in JSON confidence When available in JSON uuid When available in JSON retina confidence When available in JSON trusted circle ids When available in JSON source When available in JSON latitude When available in JSON type When available in JSON description When available in JSON tags When available in JSON threat score When available in JSON source confidence When available in JSON modification time When available in JSON org name When available in JSON asn When available in JSON creation time When available in JSON tlp When available in JSON country When available in JSON longitude When available in JSON severity When available in JSON subtype When available in JSON report When available in JSON Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one of the provided entities is enriched (is success=true): \"Successfully enriched the following entities using Anomali ThreatStream: \\n {0}\".format(entity.identifier list) If failed to enrich specific entities (is success=true): \"Action was not able to enrich the following entities using Anomali ThreatStream\\n: {0}\".format([entity.identifier]) If failed to enrich all entities (is success=false): \"No entities were enriched.\" The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: \"Error executing action \"Enrich Entities\".",
+          "Run on This action runs on the following entities: Hash IP Address URL Email Action results Script result Script result name Value options Example is success True or False is success:False JSON result approved jobs = [ { \"id\" :, \"entity\" : { e nt i t y.ide nt i f ier } } ] jobs wi t h excluded e nt i t ies = [ { \"id\" :, \"entity\" : { e nt i t y.ide nt i f ier } } ] Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one hash across entities is found(is success=true): \"Successfully submitted and approved the following entities in Anomali ThreatStream:\\n{0}\".format(entity.identifier list) If fails to enrich some entities (rejected entities) (is success=true): \"Action was not able to successfully submit and approve the following entities in Anomali ThreatStream\\n: {0}\".format([entity.identifier]) If fails to enrich for all entities (is success=false): \"No entities were successfully submitted to Anomali ThreatStream.\" The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: \"Error executing action \"Submit Observables\".",
+          "Run on This action runs on the following entities: Hash IP Address URL Email Address (user entity that matches email regex) Action results Script result Script result name Value options Example is success True or False is success:False Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one hash across entities is found (is success=true): \"Successfully reported the following entities as false positive in Anomali ThreatStream:\\n{0}\".format(entity.identifier list) If fail to mark specific entities (is success=true): \"Action was not able to report the following entities as false positive in Anomali ThreatStream\\n: {0}\".format([entity.identifier]) If fail to enrich all entities (is success=false): \"No entities were reported as false positive.\" The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: \"Error executing action \"Report As False Positive\"."
+        ]
+      },
+      {
+        "title": "\"Integrate APIVoid with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid",
+        "source_id": "site-docs-root-2",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action results Entity enrichment Mark entity as suspicious if the number of negative engines is equal or above the given threshold. if data.get(\"report\", {}).get(\"risk score\", {}).get(\"result\") > threshold Enrichment field name Logic - When to apply domain blacklist Returns if it exists in JSON result html forms Returns if it exists in JSON result server details Returns if it exists in JSON result response headers Returns if it exists in JSON result redirection Returns if it exists in JSON result file type Returns if it exists in JSON result risk score Returns if it exists in JSON result security checks Returns if it exists in JSON result geo location Returns if it exists in JSON result url parts Returns if it exists in JSON result site category Returns if it exists in JSON result web page Returns if it exists in JSON result dns records Returns if it exists in JSON result Script result Script result name Value options Example is success True/False is success:False JSON result [ { \"EntityResult\" : { \"domain blacklist\" : { \"detections\" : 0 , \"engines\" : [{ \"detected\" : false , \"name\" : \"SpamhausDBL\" , \"reference\" : \"https://www.spamhaus.org/lookup/\" }, { \"detected\" : false , \"name\" : \"ThreatLog\" , \"reference\" : \"http://www.threatlog.com/\" }, { \"detected\" : false , \"name\" : \"OpenPhish\" , \"reference\" : \"http://www.openphish.com/\" }, { \"detected\" : false , \"name\" : \"PhishTank\" , \"reference\" : \"http://www.phishtank.com/\" }, { \"detected\" : false , \"name\" : \"Phishing.Database\" , \"reference\" : \"https://github.com/mitchellkrogza/Phishing.Database\" }, { \"detected\" : false , \"name\" : \"PhishStats\" , \"reference\" : \"https://phishstats.info/\" }, { \"detected\" : false , \"name\" : \"URLVir\" , \"reference\" : \"http://www.urlvir.com/\" }, { \"detected\" : false , \"name\" : \"URLhaus\" , \"reference\" : \"https://urlhaus.abuse.ch/\" }, { \"detected\" : false , \"name\" : \"RPiList Not Serious\" , \"reference\" : \"https://github.com/RPiList/specials\" }, { \"detected\" : false , \"name\" : \"precisionsec\" , \"reference\" : \"https://precisionsec.com/\" }, { \"detected\" : false , \"name\" : \"AntiSocial Blacklist\" , \"reference\" : \"https://theantisocialengineer.com/\" }, { \"detected\" : false , \"name\" : \"PhishFeed\" , \"reference\" : \"https://phishfeed.com/\" }, { \"detected\" : false , \"name\" : \"Spam404\" , \"reference\" : \"https://www.spam404.com/\" }]}, \"html forms\" : { \"number of total input fields\" : 0 , \"email field present\" : false , \"number of total forms\" : 0 , \"password field present\" : false , \"two text inputs in a form\" : false , \"credit card field present\" : false }, \"server details\" : { \"continent name\" : \"Asia\" , \"hostname\" : \"example.com\" , \"region name\" : \"Seoul-teukbyeolsi\" , \"ip\" : \"192.0.2.141\" , \"isp\" : \"Example Corporation\" , \"continent code\" : \"AS\" , \"country name\" : \"Korea (Republic of)\" , \"city name\" : \"Seoul\" , \"longitude\" : 126.97782897949219 , \"country code\" : \"KR\" , \"latitude\" : 37.568260192871094 }, \"response headers\" : { \"status\" : \"HTTP/1.1 404 Not Found\" , \"content-length\" : \"177\" , \"code\" : 404 , \"server\" : \"nginx/1.4.6 (Ubuntu)\" , \"connection\" : \"keep-alive\" , \"date\" : \"Wed, 15 Jul 2020 08:21:54 GMT\" , \"content-type\" : \"text/html\" }, \"redirection\" : { \"url\" : null , \"found\" : false , \"external\" : false }, \"file type\" : { \"headers\" : \"HTML\" , \"extension\" : \"HTML\" , \"signature\" : \" \" }, \"risk score\" : { \"result\" : 10 }, \"security checks\" : { \"is suspended page\" : false , \"is defaced heuristic\" : false , \"is windows exe file\" : false , \"is credit card field\" : false , \"is windows exe file on free hosting\" : false , \"is masked linux elf file\" : false , \"is exe on directory listing\" : false , \"is php on directory listing\" : false , \"is masked windows exe file\" : false , \"is sinkholed domain\" : false , \"is robots noindex\" : false , \"is windows exe file on free dynamic dns\" : false , \"is doc on directory listing\" : false , \"is non standard port\" : false , \"is linux elf file on free dynamic dns\" : false , \"is suspicious domain\" : false , \"is suspicious url pattern\" : false , \"is china country\" : false , \"is risky geo location\" : false , \"is pdf on directory listing\" : false , \"is valid https\" : false , \"is external redirect\" : false , \"is windows exe file on ipv4\" : false , \"is phishing heuristic\" : false , \"is linux elf file on ipv4\" : false , \"is email address on url query\" : false , \"is uncommon clickable url\" : false , \"is most abused tld\" : false , \"is domain blacklisted\" : false , \"is host an ipv4\" : false , \"is linux elf file on free hosting\" : false , \"is zip on directory listing\" : false , \"is password field\" : false , \"is linux elf file\" : false , \"is empty page title\" : false , \"is directory listing\" : false , \"is masked file\" : false , \"is suspicious file extension\" : false , \"is suspicious content\" : false }, \"geo location\" : { \"countries\" : [ \"KR\" ] }, \"url parts\" : { \"host nowww\" : \"example.com\" , \"host\" : \"www.example.com\" , \"path\" : \"/dynamic/example.html\" , \"query\" : null , \"scheme\" : \"http\" , \"port\" : 80 }, \"site category\" : { \"is vpn provider\" : false , \"is url shortener\" : false , \"is anonymizer\" : false , \"is torrent\" : false , \"is free dynamic dns\" : false , \"is free hosting\" : false }, \"web page\" : { \"keywords\" : \"\" , \"description\" : \"\" , \"title\" : \"404 Not Found\" }, \"dns records\" : { \"ns\" : { \"records\" : [{ \"country name\" : \"Korea (Republic of)\" , \"ip\" : \"192.0.2.95\" , \"isp\" : \"Example Corporation\" , \"target\" : \"example.com\" , \"country code\" : \"KR\" }, { \"country name\" : \"Korea (Republic of)\" , \"ip\" : \"192.0.2.26\" , \"isp\" : \"LX\" , \"target\" : \"example.com\" , \"country code\" : \"KR\" }]}, \"mx\" : { \"records\" : [] }}}, \"Entity\" : \"www.example.com:80/dynamic/example.html\" } ] Case wall Result type Description Type Output message Successful entities: \"APIVoid: Fetched reputation for the following entities: <entities identifer list> Failed entities: \"An error occurred on the following entities: <entities identifer list>\" Missing entities (no data): 'Can not found reputation for the following entities: <entities identifer list>\" Alert without URL entities: \"APIVoid: No URLs found.\" General CSV Case wall If data available create new entity csv table: domain blocklist report: data.get(\"report\",{}).get(\"domain blacklist\",{}).get(\"engines\", []) General Enrichment If data available add the following as entity enrichment: (don't forget to add prefix \"APIVoid\") geo location: data.get(\"report\",{}).get(\"geo location\",{}).get(\"countries\", []) is suspicious domain: data.get(\"report\",{}).get(\"security checks\",{}).get(\"is suspicious domain\") is domain blacklisted: data.get(\"report\",{}).get(\"security checks\",{}).get(\"is domain blacklisted\") is risky geo location: data.get(\"report\",{}).get(\"security checks\",{}).get(\"is risky geo location\") risk score: data.get(\"report\", {}).get(\"risk score\", {}).get(\"result\") is external redirect: data.get(\"report\",{}).get(\"security checks\",{}).get(\"is external redirect\") Entity Get Screenshot Capture a high-quality screenshot of any website or URL.",
+          "Script result Script result name Value options Example success True/False success:False JSON result [ { \"EntityResult\" : { \"information\" : { \"is proxy\" : false , \"is vpn\" : false , \"region name\" : \"Zhejiang\" , \"is webproxy\" : false , \"latitude\" : 28.680280685424805 , \"isp\" : \"ChinaNet Zhejiang Province Network\" , \"continent code\" : \"AS\" , \"is tor\" : false , \"reverse dns\" : \" \" , \"detections\" : 18 , \"engines count\" : 76 , \"longitude\" : 121.44277954101562 , \"city name\" : \"Jiaojiang\" , \"country name\" : \"China\" , \"continent name\" : \"Asia\" , \"detection rate\" : \"24%\" , \"country code\" : \"CN\" , \"is hosting\" : false }, \"blacklists\" : { \"scantime\" : \"0.57\" , \"detection rate\" : \"24%\" , \"detections\" : 18 , \"engines count\" : 76 , \"engines\" : [{ \"engine\" : \"PlonkatronixBL\" , \"detected\" : false , \"reference\" : \"http://bl.plonkatronix.com/\" }, { \"engine\" : \"Engine\" , \"detected\" : true , \"reference\" : \"https://home.nuug.no/ engine/\" }, { \"engine\" : \"Malc0de\" , \"detected\" : false , \"reference\" : \"http://malc0de.com/database/index.php\" }]}, \"anonymity\" : { \"is tor\" : false , \"is proxy\" : false , \"is vpn\" : false , \"is webproxy\" : false , \"is hosting\" : false }, \"ip\" : \"192.0.2.1\" }, \"Entity\" : \"192.0.2.1\" } ] Get URL Reputation Get safety reputation and risk score of a URL.",
+          "Script result Script result name Value options Example success True/False success:False JSON result [ { \"EntityResult\" : { \"alexa top 100k\" : false , \"domain length\" : 17 , \"alexa top 10k\" : false , \"blacklists\" : { \"scantime\" : \"0.07\" , \"detection rate\" : \"0%\" , \"detections\" : 0 , \"engines count\" : 29 , \"engines\" : [{ \"engine\" : \"ThreatLog\" , \"detected\" : false , \"confidence\" : \"high\" , \"reference\" : \"http://www.threatlog.com/\" }, { \"engine\" : \"Threat Sourcing\" , \"detected\" : false , \"confidence\" : \"high\" , \"reference\" : \"https://www.threatsourcing.com/\" }, { \"engine\" : \"URLVir\" , \"detected\" : false , \"confidence\" : \"high\" , \"reference\" : \"http://www.urlvir.com/\" }]}, \"server\" : { \"region name\" : null , \"reverse dns\" : \" \" , \"ip\" : \" \" , \"isp\" : null , \"continent code\" : null , \"latitude\" : null , \"city name\" : null , \"longitude\" : null , \"country code\" : null , \"country name\" : null , \"continent name\" : null }, \"host\" : \"example.com\" , \"most abused tld\" : false , \"alexa top 250k\" : false }, \"Entity\" : \"example.com\" }, { \"EntityResult\" : { \"alexa top 100k\" : false , \"domain length\" : 9 , \"alexa top 10k\" : false , \"blacklists\" : { \"scantime\" : \"0.03\" , \"detection rate\" : \"0%\" , \"detections\" : 0 , \"engines count\" : 29 , \"engines\" : [{ \"engine\" : \"ThreatLog\" , \"detected\" : false , \"confidence\" : \"high\" , \"reference\" : \"http://www.threatlog.com/\" }, { \"engine\" : \"Threat Sourcing\" , \"detected\" : false , \"confidence\" : \"high\" , \"reference\" : \"https://www.threatsourcing.com/\" }, { \"engine\" : \"URLVir\" , \"detected\" : false , \"confidence\" : \"high\" , \"reference\" : \"http://www.urlvir.com/\" }]}, \"server\" : { \"region name\" : null , \"reverse dns\" : \" \" , \"ip\" : \" \" , \"isp\" : null , \"continent code\" : null , \"latitude\" : null , \"city name\" : null , \"longitude\" : null , \"country code\" : null , \"country name\" : null , \"continent name\" : null }, \"host\" : \"192.0.2.1\" , \"most abused tld\" : false , \"alexa top 250k\" : false }, \"Entity\" : \"192.0.2.1\" } ] Get Ip Reputation IP Reputation API detects potentially malicious IP addresses which are commonly used for spam, website attacks or fraudulent activity."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bl.plonkatronix.com",
+      "data.get",
+      "entity.identifier",
+      "example.co",
+      "example.com",
+      "example.html",
+      "example.s3.amazonaws.com",
+      "file.txt",
+      "github.com",
+      "home.nuug.no",
+      "index.php",
+      "malc0de.com",
+      "origin.ip",
+      "origin.user",
+      "phishfeed.com",
+      "phishstats.info",
+      "precisionsec.com",
+      "request.headers",
+      "request.path.startswith",
+      "s3.amazonaws.com",
+      "test.txt",
+      "theantisocialengineer.com",
+      "urlhaus.abuse.ch",
+      "y.ide"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid"
+      ]
+    }
+  ]
+}

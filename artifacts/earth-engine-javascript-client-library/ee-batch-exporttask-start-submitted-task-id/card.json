@@ -1,0 +1,203 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:09.313Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-javascript-client-library/card.json",
+  "product_name": "Earth Engine JavaScript Client Library",
+  "product_slug": "earth-engine-javascript-client-library",
+  "feature_name": "ee.batch.ExportTask.start() submitted task ID",
+  "feature_slug": "ee-batch-exporttask-start-submitted-task-id",
+  "summary": "Ee.batch.ExportTask.start() returns the submitted task ID.",
+  "extended_definition": "Ee.batch.ExportTask.start() returns the submitted task ID.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/apidocs/export-image-toasset",
+      "https://developers.google.com/earth-engine/apidocs/export-table-todrive",
+      "https://developers.google.com/earth-engine/guides/processing_environments"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Export.image.toAsset | Google Earth Engine | Google for Developers",
+        "url": "https://developers.google.com/earth-engine/apidocs/export-image-toasset",
+        "source_id": "feature-recovery-http",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "Export . image . toAsset ( image = image , description = 'image_export_crstransform' , assetId = 'projects/<project-name>/assets/<asset-name>' , # <> modify these region = region , crsTransform = [ 30 , 0 , - 2493045 , 0 , - 30 , 3310005 ], crs = 'EPSG:5070' ) task . start () # If the export has more than 1e8 pixels, set \"maxPixels\" higher. task = ee . batch .",
+          "BBox ( - 122.24 , 37.13 , - 122.11 , 37.20 ) # Set the export \"scale\" and \"crs\" parameters. task = ee . batch .",
+          "To view an image's CRS transform: # display(image.projection()) task = ee . batch ."
+        ]
+      },
+      {
+        "title": "Export.table.toDrive | Google Earth Engine | Google for Developers",
+        "url": "https://developers.google.com/earth-engine/apidocs/export-table-todrive",
+        "source_id": "feature-recovery-http",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "Export . table . toDrive ( collection = samp , description = 'image_sample_demo_prop_subset' , folder = 'earth_engine_demos' , fileFormat = 'GeoJSON' , selectors = [ 'B8' , 'B11' , 'B12' , '.geo' ], ) task . start () # Export the image sample feature collection to Drive as a shapefile. task = ee . batch .",
+          "Export . table . toDrive ( collection = samp , description = 'image_sample_demo_csv' , folder = 'earth_engine_demos' , fileFormat = 'CSV' , ) task . start () # Export a subset of collection properties: three bands and the geometry # as GeoJSON. task = ee . batch .",
+          "Map () m . set_center ( - 122.359 , 37.428 , 9 ) m . add_layer ( img , { 'bands' : [ 'B11' , 'B8' , 'B3' ], 'min' : 100 , 'max' : 3500 }, 'img' ) # Sample the image at 20 m scale, a point feature collection is returned. samp = img . sample ( scale = 20 , numPixels = 50 , geometries = True ) m . add_layer ( samp , { 'color' : 'white' }, 'samp' ) display ( m ) display ( 'Image sample feature collection' , samp ) # Export the image sample feature collection to Drive as a CSV file. task = ee . batch ."
+        ]
+      },
+      {
+        "title": "محیط های پردازش، محیط های پردازش | Google Earth Engine | Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/processing_environments",
+        "source_id": "feature-recovery-http",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST API درخواست‌های REST خود را به https://earthengine-highvolume.googleapis.com هدایت کنید (به‌عنوان مثال، به جای https://earthengine.googleapis.com ، همانطور که در REST API Quickstart نشان داده شده است). محیط دسته ای اصطلاح کلیدی: دسته ای - محاسبات را به صورت ناهمزمان اجرا کنید و نتایج را برای دسترسی بعدی (در Google Cloud Storage، فروشگاه دارایی Earth Engine و غیره) به دست آورید. این محیط که پشته \"ناهمزمان\" یا \"آفلاین\" نیز نامیده می شود، برای پردازش موازی با تأخیر بالا مقادیر زیادی داده بهینه شده است. درخواست‌ها به‌عنوان وظایف به نقاط پایانی پردازش دسته‌ای ارسال می‌شوند، معمولاً با فراخوانی توابع واردات یا صادرات داده (مثلاً Export.* و ee.batch.* ) از کتابخانه‌های مشتری Earth Engine. هر کار دسته ای حداکثر ده روز طول عمر دارد. هر پروژه تا 3000 کار معلق را پشتیبانی می کند، اما هر کاربر به تعداد کمی از وظایف همزمان محدود می شود. چرخه حیات وظیفه وظایف به یک صف ارسال می‌شوند و بر اساس اولویت (اول بالاترین) و زمان ارسال (اول زودترین) مرتب می‌شوند. هنگامی که وظایف به یک پردازنده دسته ای اختصاص داده می شوند، از حالت SUBMITTED (در صف) به حالت RUNNING تغییر می کنند. هر پردازنده مسئول تنظیم تعداد متفاوتی از کارگران دسته ای برای اجرای محاسبات و تولید نتایج کار است. تعداد کارگران برای یک کار با توانایی سرویس EE برای موازی کردن کار تعیین می شود و توسط کاربر قابل تنظیم نیست. هنگام استفاده از پروژه Cloud، وظایف برای هر کسی که مجوز فهرست کردن وظایف را در سطح پروژه داشته باشد قابل مشاهده است. اگر پروژه برای دسترسی پولی Earth Engine ثبت شده باشد، وظایف در یک صف پروژه سازماندهی می شوند. اگر پروژه برای دسترسی بدون پرداخت (تحقیق) ثبت شده باشد، وظایف به طور مستقل برای هر فرد برنامه ریزی می شود اما همچنان در بین کاربران پروژه قابل مشاهده است. کارها با ایجاد مصنوعات لازم (دارایی های موتور زمین، فایل ها در Google Cloud Storage و غیره) با موفقیت انجام می شوند. مدیریت وظایف وظایف را می توان با استفاده از رابط های زیر مشاهده و لغو کرد: صفحه وظایف در Cloud Console مدیریت کار را در سطح پروژه Cloud فعال می کند. در آینده، این رابط کاربری اصلی برای مدیریت وظایف است. صفحه Task Manager این رابط وظایف را در سطح کاربر و پروژه نشان می دهد و از فیلتر کردن بر اساس نام وظیفه پشتیبانی می کند. تب وظایف ویرایشگر کد به نظارت بر وظایف در کنار یک اسکریپت ویرایشگر کد اجازه می دهد.",
+          "REST API درخواست‌های REST خود را به https://earthengine-highvolume.googleapis.com هدایت کنید (به‌عنوان مثال، به جای https://earthengine.googleapis.com ، همانطور که در REST API Quickstart نشان داده شده است). محیط دسته ای اصطلاح کلیدی: دسته ای - محاسبات را به صورت ناهمزمان اجرا کنید و نتایج را برای دسترسی بعدی (در Google Cloud Storage، فروشگاه دارایی Earth Engine و غیره) به دست آورید. این محیط که پشته \"ناهمزمان\" یا \"آفلاین\" نیز نامیده می شود، برای پردازش موازی با تأخیر بالا مقادیر زیادی داده بهینه شده است. درخواست‌ها به‌عنوان وظایف به نقاط پایانی پردازش دسته‌ای ارسال می‌شوند، معمولاً با فراخوانی توابع واردات یا صادرات داده (مثلاً Export.* و ee.batch.* ) از کتابخانه‌های مشتری Earth Engine. هر کار دسته ای حداکثر ده روز طول عمر دارد. هر پروژه تا 3000 کار معلق را پشتیبانی می کند، اما هر کاربر به تعداد کمی از وظایف همزمان محدود می شود. چرخه حیات وظیفه وظایف به یک صف ارسال می‌شوند و بر اساس اولویت (اول بالاترین) و زمان ارسال (اول زودترین) مرتب می‌شوند. هنگامی که وظایف به یک پردازنده دسته ای اختصاص داده می شوند، از حالت SUBMITTED (در صف) به حالت RUNNING تغییر می کنند. هر پردازنده مسئول تنظیم تعداد متفاوتی از کارگران دسته ای برای اجرای محاسبات و تولید نتایج کار است. تعداد کارگران برای یک کار با توانایی سرویس EE برای موازی کردن کار تعیین می شود و توسط کاربر قابل تنظیم نیست. هنگام استفاده از پروژه Cloud، وظایف برای هر کسی که مجوز فهرست کردن وظایف را در سطح پروژه داشته باشد قابل مشاهده است. اگر پروژه برای دسترسی پولی Earth Engine ثبت شده باشد، وظایف در یک صف پروژه سازماندهی می شوند. اگر پروژه برای دسترسی بدون پرداخت (تحقیق) ثبت شده باشد، وظایف به طور مستقل برای هر فرد برنامه ریزی می شود اما همچنان در بین کاربران پروژه قابل مشاهده است. کارها با ایجاد مصنوعات لازم (دارایی های موتور زمین، فایل ها در Google Cloud Storage و غیره) با موفقیت انجام می شوند. مدیریت وظایف وظایف را می توان با استفاده از رابط های زیر مشاهده و لغو کرد: صفحه وظایف در Cloud Console مدیریت کار را در سطح پروژه Cloud فعال می کند. در آینده، این رابط کاربری اصلی برای مدیریت وظایف است. صفحه Task Manager این رابط وظایف را در سطح کاربر و پروژه نشان می دهد و از فیلتر کردن بر اساس نام وظیفه پشتیبانی می کند. تب وظایف ویرایشگر کد به نظارت بر وظایف در کنار یک اسکریپت ویرایشگر کد اجازه می دهد.",
+          "Batch, or asynchronous, processing handles large datasets via tasks, submitted to a queue with priority and time ordering."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "array.values",
+      "batch.ExportTask.start",
+      "developers.google.com",
+      "earthengine.googleapis.com",
+      "ee.apply",
+      "ee.batch",
+      "ee.batch.ExportTask.start",
+      "ee.call",
+      "ee.data",
+      "ee.data.newTaskId",
+      "ee.initialize",
+      "ee.reset",
+      "ee.String",
+      "ee.Terrain",
+      "feature.byFeature",
+      "feature.byProperty",
+      "feature.groups",
+      "feature.histogram",
+      "highvolume.googleapis.com",
+      "image.byClass",
+      "image.byRegion",
+      "image.doySeries",
+      "image.doySeriesByRegion",
+      "image.doySeriesByYear",
+      "image.histogram",
+      "image.projection",
+      "image.regions",
+      "image.series",
+      "image.seriesByRegion",
+      "image.toAsset",
+      "projects.algorithms",
+      "projects.assets",
+      "projects.classifier",
+      "projects.featureView",
+      "projects.featureViews",
+      "projects.featureViews.tiles",
+      "projects.filmstripThumbnails",
+      "projects.image",
+      "projects.imageCollection",
+      "projects.locations.assets",
+      "projects.locations.filmstripThumbnails",
+      "projects.locations.maps",
+      "projects.locations.tables",
+      "projects.locations.thumbnails",
+      "projects.locations.videoThumbnails",
+      "projects.map",
+      "projects.maps",
+      "projects.maps.tiles",
+      "projects.operations",
+      "projects.table",
+      "projects.tables",
+      "projects.thumbnails",
+      "projects.value",
+      "projects.video",
+      "projects.videoThumbnails",
+      "table.toDrive",
+      "ui.Button",
+      "ui.Chart",
+      "ui.Checkbox",
+      "ui.data",
+      "ui.DateSlider",
+      "ui.Label",
+      "ui.Map",
+      "ui.Panel",
+      "ui.root",
+      "ui.Select",
+      "ui.Slider",
+      "ui.SplitPanel",
+      "ui.Textbox",
+      "ui.Thumbnail",
+      "ui.url",
+      "ui.util"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs/export-image-toasset",
+        "https://developers.google.com/earth-engine/guides/processing_environments",
+        "https://developers.google.com/earth-engine/apidocs/export-table-todrive"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs/export-image-toasset",
+        "https://developers.google.com/earth-engine/guides/processing_environments",
+        "https://developers.google.com/earth-engine/apidocs/export-table-todrive"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs/export-image-toasset",
+        "https://developers.google.com/earth-engine/guides/processing_environments",
+        "https://developers.google.com/earth-engine/apidocs/export-table-todrive"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs/export-image-toasset",
+        "https://developers.google.com/earth-engine/guides/processing_environments",
+        "https://developers.google.com/earth-engine/apidocs/export-table-todrive"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs/export-image-toasset",
+        "https://developers.google.com/earth-engine/guides/processing_environments",
+        "https://developers.google.com/earth-engine/apidocs/export-table-todrive"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs/export-image-toasset",
+        "https://developers.google.com/earth-engine/guides/processing_environments",
+        "https://developers.google.com/earth-engine/apidocs/export-table-todrive"
+      ]
+    }
+  ]
+}

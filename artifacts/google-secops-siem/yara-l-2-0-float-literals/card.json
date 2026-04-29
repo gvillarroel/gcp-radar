@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.987Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "YARA-L 2.0 float literals",
+  "feature_slug": "yara-l-2-0-float-literals",
+  "summary": "Rules Engine's YARA-L 2.0 language now supports float literals.",
+  "extended_definition": "Rules Engine's YARA-L 2.0 language now supports float literals.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/default-rules",
+      "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+      "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Detection Engine \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "source_id": "site-api-reference",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use the following format to specify the rule: {ruleId}@v {int64} {int64} Sample request https://backstory.googleapis.com/v2/detect/rules/ru 30979d84-aa89-47d6-bf4d-b4bb0eacb497@v 1612472807 179679000/retrohunts/oh 126c03c9-8179-4620-8b72-258d2f4fd039 Response Response fields Field Name Type Description retrohuntId string Unique identifier for the retrohunt. ruleId string Unique rule identifier for this retrohunt. versionId string Identifier for the version of the rule generating the retrohunt. eventStartTime string Start time for the time range of logs being processed, in RFC 3339 format. eventEndTime string End time for the time range of logs being processed, in RFC 3339 format. retrohuntStartTime string Start time for the retrohunt, in RFC 3339 format. retrohuntEndTime string End time for the retrohunt (assuming the retrohunt completes), in RFC 3339 format. state enum Current state of the retrohunt: STATE UNSPECIFIED RUNNING DONE CANCELED progressPercentage float Percentage progress towards retrohunt completion (0.00 to 100.00).",
+          "Request POST https://backstory.googleapis.com/v2/detect/rules:streamTestRule Request body { \"rule\": { \"ruleText\": \"<ruleText here>\" }, \"startTime\": \"<startTime here>\", \"endTime\": \"<endTime here>\", \"maxResults\": \"<maxResults here>\", } Body parameters Parameter Name Value Required Description rule.ruleText string Required Text of the new rule in YARA-L 2.0 format. startTime string Required Start time for the time range of logs being processed, in RFC 3339 format. endTime string Required End time for the time range of logs being processed, in RFC 3339 format. maxResults integer Optional Maximum number of results to return.",
+          "Request POST https://backstory.googleapis.com/v2/detect/rules:verifyRule Request body { \"ruleText\": \"<ruleText here>\" } Body parameters Parameter Name Type Required Description ruleText string Required Text of the new rule in YARA-L 2.0 format."
+        ]
+      },
+      {
+        "title": "Functions \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "Param data types INT FLOAT , BOOL Return type FLOAT Code samples Example 1 This example returns the median when the input values aren't zero. rule median file size { meta: events: $e.metadata.event type = \"FILE COPY\" $userid = $e.principal.user.userid match: $userid over 1h outcome: $median file size = window.median($e.principal.file.size) // returns 2 if the file sizes in the match window are [1, 2, 3] condition: $e } Example 2 This example returns the median when the input includes some zero values that shouldn't be ignored. rule median file size { meta: events: $e.metadata.event type = \"FILE COPY\" $userid = $e.principal.user.userid match: $userid over 1h outcome: $median file size = window.median($e.principal.file.size) // returns 1 if the file sizes in the match window are [0,0, 1, 2, 3] condition: $e } Example 3 This example returns the median when the input includes some zero values which should be ignored. rule median file size { meta: events: $e.metadata.event type = \"FILE COPY\" $userid = $e.principal.user.userid match: $userid over 1h outcome: $median file size = window.median($e.principal.file.size, true) // returns 2 if the file sizes in the match window are [0,0, 1, 2, 3] condition: $e } Example 4 This example returns the median when the input includes all zero values which should be ignored. rule median file size { meta: events: $e.metadata.event type = \"FILE COPY\" $userid = $e.principal.user.userid match: $userid over 1h outcome: $median file size = window.median($e.principal.file.size) // returns 0 if the file sizes in the match window are [0,0] condition: $e } Example 5 This example shows that, when there are multiple medians, only one median is returned. rule median file size { meta: events: $e.metadata.event type = \"FILE COPY\" $userid = $e.principal.user.userid match: $userid over 1h outcome: $median file size = window.median($e.principal.file.size) // returns 1 if the file sizes in the match window are [1, 2, 3, 4] condition: $e } window.mode Supported in: Rules window.mode(values) Description Return the mode of the input values.",
+          "Param data types INT FLOAT Return type FLOAT Code samples Example 1 This example returns the standard deviation of integers in a match window. // This rule creates a detection when the file size stddev in 5 minutes for a user is over a threshold. events: $e.user.userid = $userid match: $userid over 5m outcome: $p1 = window.stddev($e.file.size) // yields 4.0 if the event file size values in the match window are [10, 14, 18]. condition: $e and #p1 > 2 Example 2 This example returns the standard deviation of floats in a match window. events: $e.user.userid = $userid match: $userid over 5m outcome: $p1 = window.stddev($e.file.size) // yields 4.488686 if the event file size values in the match window are [10.00, 14.80, 18.97]. condition: $e and #p1 > 2 Example 3 This example returns the standard deviation in a match window that contains negative numbers. events: $e.user.userid = $userid match: $userid over 5m outcome: $p1 = window.stddev($e.file.size) // yields 48.644972 if the event file size values in the match window are [-1, -56, -98]. condition: $e and #p1 > 2 Example 4 This example returns with zero standard deviation when all values in the match window are the same. events: $e.user.userid = $userid match: $userid over 5m outcome: $p1 = window.stddev($e.file.size) // yields 0.000000 if the event file size values in the match window are [1, 1, 1]. condition: $e and #p1 > 2 Example 5 This example returns the standard deviation of a match window containing positive and negative numbers. events: $e.user.userid = $userid match: $userid over 5m outcome: $p1 = window.stddev($e.file.size) // yields 1.000000 if the event file size values in the match window are [1, 0, -1]. condition: $e and #p1 > 10 window.variance Supported in: Rules window.variance(values) Description This function returns the specified variance of the input values.",
+          "Param data types INT FLOAT Return type FLOAT Code samples Example 1 This example shows the integer average. // This rule sets the outcome $size mode to the average // file size in the 5 minute match window. events: $e.user.userid = $userid match: $userid over 5m outcome: $size mode = window.avg($e.file.size) // yields 2.5 if the event file size values in the match window are 1, 2, 3 and 4 Example 2 This example shows the float average. events: $e.user.userid = $userid match: $userid over 5m outcome: $size mode = window.avg($e.file.size) // yields 1.75 if the event file size values in the match window are 1.1 and 2.4 Example 3 Negative input average events: $e.user.userid = $userid match: $userid over 5m outcome: $size mode = window.avg($e.file.size) // yields 0.6 if the event file size values in the match window are -1.1, 1.1, 0.0 and 2.4 Example 4 0 returns 0 events: $e.user.userid = $userid match: $userid over 5m outcome: $size mode = window.avg($e.file.size) // yields 0 if the event file size values in the match window is 0 Example 5 Ignoring 0 values events: $e.user.userid = $userid match: $userid over 5m outcome: $size mode = window.avg($e.file.size, true) // yields 394 if the event file size values in the match window are 0, 0, 0 and 394 window.first Supported in: Rules window.first(values to sort by, values to return) Description This aggregation function returns a string value derived from an event with the lowest correlated int value in the match window."
+        ]
+      },
+      {
+        "title": "\"Default detection rules \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/default-rules",
+        "source_id": "site-docs-root",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "When using time periods, the Google SecOps Detection Engine only examines the discrete blocks of time you specify. rule OutcomeRuleMultiEvent { meta: author = \"noone@google.com\" events: $u.udm.principal.hostname = $hostname $asset context.graph.entity.hostname = $hostname $severity = $asset context.graph.entity.asset.vulnerabilities.severity match: $hostname over 5m outcome: $risk score = max( 100 + if($hostname = \"my-hostname\", 100, 50) + if($severity = \"HIGH\", 10) + if($severity = \"MEDIUM\", 5) + if($severity = \"LOW\", 1) ) $asset id list = array( if($u.principal.asset id = \"\", \"Empty asset id\", $u.principal.asset id ) ) $asset id distinct list = array distinct($u.principal.asset id) $asset id count = count($u.principal.asset id) $asset id distinct count = count distinct($u.principal.asset id) condition: $u and $asset context and $risk score > 50 and not arrays.contains($asset id list, \"id 1234\") } Conclusion YARA-L is a flexible detection language which enables you to examine security events and not simply just return a data query.",
+          "Default detection rules Supported in: Google secops SIEM YARA-L rules language YARA-L is a detection rules language developed by Google.",
+          "Google Security Operations sample detection rules To help accelerate your adoption of the Google SecOps Detection Engine, there is a GitHub repository with sample rules ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "arrays.contains",
+      "arrays.index",
+      "backstory.googleapis.com",
+      "context.graph.entity.asset.vulnerabilities.severity",
+      "context.graph.entity.hostname",
+      "e.file.size",
+      "e.metadata.event",
+      "e.principal.file.size",
+      "e.principal.user.userid",
+      "e.user.userid",
+      "rule.ruleText",
+      "u.principal.asset",
+      "u.udm.principal.hostname",
+      "window.avg",
+      "window.first",
+      "window.median",
+      "window.mode",
+      "window.stddev",
+      "window.variance"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules"
+      ]
+    }
+  ]
+}

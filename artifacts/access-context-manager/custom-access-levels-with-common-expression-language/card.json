@@ -1,0 +1,123 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:40.868Z",
+  "source_step08_card": "data/step-08/current/products/access-context-manager/card.json",
+  "product_name": "Access Context Manager",
+  "product_slug": "access-context-manager",
+  "feature_name": "Custom access levels with Common Expression Language",
+  "feature_slug": "custom-access-levels-with-common-expression-language",
+  "summary": "Access Context Manager supports custom access levels using Common Expression Language across APIs, gcloud, and the Cloud Console advanced mode.",
+  "extended_definition": "Access Context Manager supports custom access levels using Common Expression Language across APIs, gcloud, and the Cloud Console advanced mode.",
+  "lifecycle": {
+    "latest_feature_date": "2020-06-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+      "https://docs.cloud.google.com/access-context-manager/docs/custom-access-levels",
+      "https://docs.cloud.google.com/access-context-manager/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Custom access levels \\_|\\_ Access Context Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/custom-access-levels",
+        "source_id": "site-iam-reference",
+        "final_score": 40,
+        "relevance": "",
+        "evidence_snippets": [
+          "Custom access levels use boolean expressions written in a subset of Common Expression Language (CEL) to test the attributes of a client making a request.",
+          "To learn more about building CEL expressions for custom access levels, see the custom access level specification .",
+          "Custom access levels enable your organization to use the device and context data of third-party security and endpoint management vendors to permit access to Google Cloud resources."
+        ]
+      },
+      {
+        "title": "\"Custom access level specification \\_|\\_ Access Context Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "source_id": "site-api-reference",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": [
+          "This page details the objects and attributes that are used to the build the Common Expression Language (CEL) expressions for custom access levels.",
+          "Example: // Checks if the enterprise certificate associated with the origin matches the device. device.certificates.exists ( cert , cert.is valid && cert.cert fingerprint == origin.clientCertFingerprint ()) Macros for CEL expressions You can use the following macros in the CEL expressions for custom access levels: Macro Description has(e.f) Tests whether a field is available.",
+          "Example: // Checks if the device has at least one valid enterprise certificate. device.certificates.exists ( cert , cert.is valid == true ) Functions Access Context Manager provides the following functions for use in the CEL expressions for custom access levels."
+        ]
+      },
+      {
+        "title": "Access Context Manager Overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": [
+          "Custom access levels are created using a subset of Common Expression Language.",
+          "Learn more Quickstart: Create an access level for Access Context Manager Create a basic access level Create a custom access level Example Access Level YAML Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "In addition to the request context used for basic access levels, you can also use custom access levels to permit requests based on data from third-party services."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cert.cert",
+      "cert.is",
+      "device.certificates.exists",
+      "e.f",
+      "levels.ip",
+      "origin.clientCertFingerprint",
+      "origin.region"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-levels",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-levels",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-levels",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview"
+      ]
+    }
+  ]
+}

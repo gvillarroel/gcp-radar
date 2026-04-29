@@ -1,0 +1,175 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:04.221Z",
+  "source_step08_card": "data/step-08/current/products/dataplex/card.json",
+  "product_name": "Dataplex",
+  "product_slug": "dataplex",
+  "feature_name": "Data lineage path visualization",
+  "feature_slug": "data-lineage-path-visualization",
+  "summary": "Dataplex can visualize lineage paths between two selected resources.",
+  "extended_definition": "Dataplex can visualize lineage paths between two selected resources.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+      "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+      "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use data lineage with Google Cloud systems \\_|\\_ Knowledge Catalog \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "source_id": "site-docs-root",
+        "final_score": 226,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the focused Graph view, select a node, and then in the node's details panel, click Visualize Path to visualize the lineage path from the selected node back to the root entry (only in focused view).",
+          "In the focused Graph view, select a node, and then in the node's details panel, click Visualize Path to visualize the lineage path from the selected node back to the root entry (only in focused view).",
+          "In the focused Graph view, select a node, and then in the node's details panel, click Visualize Path to visualize the lineage path from the selected node back to the root entry (only in focused view)."
+        ]
+      },
+      {
+        "title": "\"Track data lineage for a BigQuery table \\_|\\_ Knowledge Catalog \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to view lineage visualization graphs, ask your administrator to grant you the following IAM roles: Dataplex Catalog Viewer ( roles/dataplex.catalogViewer ) on the Knowledge Catalog (formerly Dataplex Universal Catalog) resource project Data Lineage Viewer ( roles/datalineage.viewer ) on the project where you use BigQuery BigQuery Data Viewer ( roles/bigquery.dataViewer ) on the project where you use BigQuery For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "View a lineage visualization graph for all three operations.",
+          "Enable the Dataplex, BigQuery, and Data Lineage APIs."
+        ]
+      },
+      {
+        "title": "About metadata management in Knowledge Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "source_id": "site-docs-root",
+        "final_score": 145,
+        "relevance": "",
+        "evidence_snippets": [
+          "Data Catalog API method Dataplex API method projects.locations.entryGroups.entries.tags.create (REST) CreateTag (RPC) projects.locations.entryGroups.entries.patch (REST) UpdateEntry (RPC) projects.locations.entryGroups.entries.tags.list (REST) ListTags (RPC) projects.locations.entryGroups.entries.get (REST) GetEntry (RPC) Note: To limit the response to only the required aspects, use the views , aspect types , and paths parameters. projects.locations.entryGroups.entries.tags.patch (REST) UpdateTag (RPC) projects.locations.entryGroups.entries.patch (REST) UpdateEntry (RPC) projects.locations.entryGroups.entries.tags.delete (REST) DeleteTag (RPC) projects.locations.entryGroups.entries.patch (REST) UpdateEntry (RPC) Policy tags and taxonomies These APIs are not changing and therefore don't need to be migrated.",
+          "Data Catalog API method Dataplex API method projects.locations.entryGroups.entries.create (REST) CreateEntry (RPC) projects.locations.entryGroups.entries.create (REST) CreateEntry (RPC) projects.locations.entryGroups.entries.get (REST) GetEntry (RPC) projects.locations.entryGroups.entries.get (REST) GetEntry (RPC) projects.locations.entryGroups.entries.patch (REST) UpdateEntry (RPC) projects.locations.entryGroups.entries.patch (REST) UpdateEntry (RPC) Note: You can also use the projects.locations.modifyEntry (REST) and ModifyEntry (RPC) methods to update system entries using source-system permissions instead of Knowledge Catalog permissions. projects.locations.entryGroups.entries.delete (REST) DeleteEntry (RPC) projects.locations.entryGroups.entries.delete (REST) DeleteEntry (RPC) projects.locations.entryGroups.entries.list (REST) ListEntries (RPC) projects.locations.entryGroups.entries.list (REST) ListEntries (RPC) entries.lookup (REST) LookupEntry (RPC) projects.locations.lookupEntry (REST) LookupEntry (RPC) Note: To use the projects.locations.lookupEntry (REST) and LookupEntry (RPC) methods, you must provide the Knowledge Catalog entry name.",
+          "Data Catalog API method Dataplex API method projects.locations.tagTemplates.fields.create (REST) CreateTagTemplateField (RPC) projects.locations.aspectTypes.patch (REST) UpdateAspectType (RPC) projects.locations.tagTemplates.fields.patch (REST) UpdateTagTemplateField (RPC) projects.locations.aspectTypes.patch (REST) UpdateAspectType (RPC) projects.locations.tagTemplates.fields.rename (REST) RenameTagTemplateField (RPC) projects.locations.aspectTypes.patch (REST) UpdateAspectType (RPC) projects.locations.tagTemplates.fields.delete (REST) DeleteTagTemplateField (RPC) projects.locations.aspectTypes.patch (REST) UpdateAspectType (RPC) Tag template field enum values Similar to tag template fields, you can edit enum values in the Dataplex API by modifying the metadata template field in the corresponding aspect type."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.dataplex.v1 (1.86.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "source_id": "site-java-reference",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partition Style The structure of paths within the entity, which represent partitions. com. google. cloud. dataplex. v1.",
+          "Multiple DataScan log events may exist, each with different publishing information depending on the type of publishing triggered. com. google. cloud. dataplex. v1.",
+          "Multiple DataScan log events may exist, each with different publishing information depending on the type of publishing triggered. com. google. cloud. dataplex. v1."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.dataViewer",
+      "com.google.cloud.dataplex.v1",
+      "datalineage.viewer",
+      "dataplex.catalogViewer",
+      "entries.lookup",
+      "projects.locations.aspectTypes.patch",
+      "projects.locations.entryGroups.entries.create",
+      "projects.locations.entryGroups.entries.delete",
+      "projects.locations.entryGroups.entries.get",
+      "projects.locations.entryGroups.entries.list",
+      "projects.locations.entryGroups.entries.patch",
+      "projects.locations.entryGroups.entries.tags.create",
+      "projects.locations.entryGroups.entries.tags.delete",
+      "projects.locations.entryGroups.entries.tags.list",
+      "projects.locations.entryGroups.entries.tags.patch",
+      "projects.locations.lookupEntry",
+      "projects.locations.modifyEntry",
+      "projects.locations.tagTemplates.fields.create",
+      "projects.locations.tagTemplates.fields.delete",
+      "projects.locations.tagTemplates.fields.patch",
+      "projects.locations.tagTemplates.fields.rename"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataViewer",
+      "roles/datalineage.viewer",
+      "roles/dataplex.catalogViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    }
+  ]
+}

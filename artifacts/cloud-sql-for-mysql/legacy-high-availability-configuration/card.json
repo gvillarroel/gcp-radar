@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:53.295Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Legacy high availability configuration",
+  "feature_slug": "legacy-high-availability-configuration",
+  "summary": "The legacy high availability configuration for Cloud SQL for MySQL instances is deprecated in favor of the current regional persistent disk-based HA configuration; The legacy high availability configuration for Cloud SQL for MySQL instances is deprecated in favor of the current HA configuration; deprecated on 2025-01-13.",
+  "extended_definition": "The legacy high availability configuration for Cloud SQL for MySQL instances is deprecated in favor of the current regional persistent disk-based HA configuration; The legacy high availability configuration for Cloud SQL for MySQL instances is deprecated in favor of the current HA configuration; deprecated on 2025-01-13.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-13",
+    "deprecation_date": "2025-01-13",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/configure-ha",
+      "https://docs.cloud.google.com/sql/docs/mysql/configure-legacy-ha",
+      "https://docs.cloud.google.com/sql/docs/mysql/high-availability"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Legacy configuration for high availability \\_|\\_ Cloud SQL for MySQL \\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/configure-legacy-ha",
+        "source_id": "site-docs-reference-3",
+        "final_score": 267,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "MySQL PostgreSQL SQL Server Important: As of January 13, 2025, the legacy configuration for high availability (HA) is deprecated for all instances.",
+          "Starting on May 1, 2025, Cloud SQL will begin updating any instances that use the legacy high availability configuration to use the current regional persistent disk-based high availability configuration automatically.",
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback Legacy configuration for high availability Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "About high availability \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/high-availability",
+        "source_id": "site-docs-root",
+        "final_score": 245,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Important: As of January 13, 2025, the legacy configuration for high availability (HA) is deprecated for all instances.",
+          "Starting on May 1, 2025, Cloud SQL will begin updating any instances that use the legacy high availability configuration to use the current regional persistent disk-based high availability configuration automatically.",
+          "You can't create instances with legacy high availability configuration, and you can't enable legacy high availability configuration on any existing instances."
+        ]
+      },
+      {
+        "title": "\"Enable and disable high availability \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/configure-ha",
+        "source_id": "site-docs-reference-3",
+        "final_score": 233,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Important: As of January 13, 2025, the legacy configuration for high availability (HA) is deprecated for all instances.",
+          "Starting on May 1, 2025, Cloud SQL will begin updating any instances that use the legacy high availability configuration to use the current regional persistent disk-based high availability configuration automatically.",
+          "You can't create instances with legacy high availability configuration, and you can't enable legacy high availability configuration on any existing instances."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

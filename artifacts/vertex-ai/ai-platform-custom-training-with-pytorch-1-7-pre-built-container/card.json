@@ -1,0 +1,86 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:31.179Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "AI Platform custom training with PyTorch 1.7 pre-built container",
+  "feature_slug": "ai-platform-custom-training-with-pytorch-1-7-pre-built-container",
+  "summary": "A pre-built container was added to enable custom training jobs using PyTorch 1.7.",
+  "extended_definition": "A pre-built container was added to enable custom training jobs using PyTorch 1.7.",
+  "lifecycle": {
+    "latest_feature_date": "2021-03-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/start/training-guide",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/training"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Custom training notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks",
+        "source_id": "site-docs-reference-2",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Tutorial steps Create a PyTorch distributed training application Package the training application with prebuilt containers Create a custom job on Vertex AI with Reduction Server Submit and monitor the job Colab Colab Enterprise GitHub Vertex AI Workbench Custom training Custom training using Python package, managed text dataset, and TF Serving container .",
+          "Learn how to build, train and deploy a PyTorch image classification model using prebuilt containers for custom training and prediction.",
+          "Tutorial steps Create custom Ray on Vertex AI container image Create a Ray cluster on Vertex AI using custom container image Run Spark interactively on the cluster using RayDP Run Spark application on cluster via Ray Job API Read files from Google Cloud Storage in Spark application Pandas UDF in Spark application on Ray on Vertex AI Delete the Ray cluster on Vertex AI Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Training Vertex AI Reduction Server PyTorch distributed training with Vertex AI Reduction Server ."
+        ]
+      },
+      {
+        "title": "\"Hello custom training: Train a custom image classification model \\_|\\_ Vertex\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/training",
+        "source_id": "site-docs-reference-2",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "On the Training container step, provide Vertex AI with information it needs to use the training package that you uploaded to Cloud Storage: Select Prebuilt container .",
+          "To learn more, run the following notebooks in the environment of your choice: \"Use the Vertex AI SDK for Python to train and deploy a custom image classification model for batch prediction.\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Use the Vertex AI SDK for Python to train and deploy a custom image classification model for online prediction.\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub This page shows you how to run a TensorFlow Keras training application on Vertex AI.",
+          "You can now view your new training pipeline , which is named hello custom , on the Training page. (You might need to refresh the page.) The training pipeline does two main things: The training pipeline creates a custom job resource named hello custom-custom-job ."
+        ]
+      },
+      {
+        "title": "Custom training beginner's guide \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/start/training-guide",
+        "source_id": "site-docs-reference-2",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Notebooks To see examples of how to enable Profiler for a custom training job, run the following notebooks in the environment of your choice: \"Training, tuning and deploying a PyTorch text sentiment classification model on Vertex AI\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Get started with Vertex AI Distributed Training\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Run hyperparameter tuning for a TensorFlow model\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Vertex AI TensorBoard custom training with prebuilt container\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"PyTorch distributed training with Vertex AI Reduction Server\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Custom training and batch prediction (image classification)\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Custom training and online prediction (image classification)\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Video Training custom models Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Under the Training Container section, select either prebuilt or custom container, depending on how you packaged your application.",
+          "Recommended training application structure If you choose to package up your code as a Python source distribution or as a custom container, it's recommended that you structure your application as follows: training-application-dir/ ....setup.py ....Dockerfile trainer/ ....task.py ....model.py ....utils.py Create a directory to store all of your training application code, in this case, training-application-dir ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "model.py",
+      "setup.py",
+      "task.py",
+      "utils.py"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

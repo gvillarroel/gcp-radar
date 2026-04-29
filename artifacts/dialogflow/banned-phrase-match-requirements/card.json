@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:06.489Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Banned phrase match requirements",
+  "feature_slug": "banned-phrase-match-requirements",
+  "summary": "Dialogflow CX lets you configure banned phrases to use either partial-match or full-match behavior across playbooks, datastores, and generators.",
+  "extended_definition": "Dialogflow CX lets you configure banned phrases to use either partial-match or full-match behavior across playbooks, datastores, and generators.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/basics",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/performance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "source_id": "site-docs-root",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "Generative AI settings The following generative AI settings are available: General Banned phrases List of phrases that are banned for generative AI.",
+          "ML settings Dialogflow CX uses machine learning (ML) algorithms to understand end-user inputs, match them to intents, and extract structured data.",
+          "If a banned phrase appears in the prompt or the generated response, the agent will return a fallback response instead."
+        ]
+      },
+      {
+        "title": "Flow-based agent basics \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/basics",
+        "source_id": "site-docs-root",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "When end-user input resembles one of these phrases, Dialogflow CX matches the intent.",
+          "There are two types of state handlers with differing handler requirements: Term Definition Routes Routes are called when an end-user input matches an intent and/or some condition on the session status is met.",
+          "You don't have to define every possible example, because Dialogflow CX's built-in machine learning expands on your list with other, similar phrases."
+        ]
+      },
+      {
+        "title": "\"Data store performance improvements \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/performance",
+        "source_id": "site-docs-root",
+        "final_score": 84,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Handle undesired intent matches If your agent is matching intents when it should be using a data store handler, you can try the following to correct this: Delete or modify training phrases that are vague, so that all of your training phrases precisely handle the desired intention and do not conflict with your data store content.",
+          "To ban certain phrases, see agent settings: banned phrases .",
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Send feedback Data store performance improvements Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2.Agent.MatchMode"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

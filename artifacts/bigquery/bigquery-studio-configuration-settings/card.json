@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery Studio configuration settings",
+  "feature_slug": "bigquery-studio-configuration-settings",
+  "summary": "Configuration settings let administrators customize the BigQuery Studio experience by showing or hiding user interface elements for a project or organization.",
+  "extended_definition": "Configuration settings let administrators customize the BigQuery Studio experience by showing or hiding user interface elements for a project or organization.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+      "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references BigQuery configurations Setting up DBT Partner Advantage page Direct link Dell Boomi Solution Boomi Category ETL & Data Integration Description Experience the power of connectedness with a single platform that integrates applications, APIs, data, and AI agents.",
+          "Partner references BigQuery Export Integration BigQuery Import Integration BigQuery Version 2 Export Partner Advantage page Direct link Union.ai Solution Union AI orchestrator Category BI, ML, & Advanced Analytics Description The Union platform empowers AI development teams to rapidly ship high-quality code to production by offering optimized performance, unparalleled resource efficiency, and a delightful workflow authoring experience.",
+          "Partner references Magnitude Simba Google BigQuery JDBC Data Connector: Installation and Configuration Guide Drivers for Google BigQuery Partner Advantage page Direct link Simba ODBC Driver Solution Simba ODBC Driver Category Connectors & Developer Tools Description Google has collaborated with Magnitude Simba to provide ODBC and JDBC drivers that leverage the power of BigQuery's GoogleSQL."
+        ]
+      },
+      {
+        "title": "\"Monitor health, resource utilization, and jobs \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+        "source_id": "site-docs-reference-2",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "Each metric has the following default settings, which you can edit in the Chart configuration pane by clicking the metric's name: The default usage data is from the reservation resource and the capacity data is from the edition resource.",
+          "Each metric has the following default settings, which you can edit in the Chart configuration pane by clicking the metric's name: The default usage data is from the reservation resources.",
+          "Each metric has the following default settings, which you can edit in the Chart configuration pane by clicking the metric's name: The default resource is the reservation resource."
+        ]
+      },
+      {
+        "title": "\"Migrate code with the batch SQL translator \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "source_id": "site-docs-reference-5",
+        "final_score": 82,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following example shows a translation configuration YAML file for a Teradata to BigQuery translation: tasks: translation task: type: Teradata2BigQuery Translation translationDetails: sourceTargetMapping: - sourceSpec: baseUri: gs://bq-translations/input targetSpec: relativePath: output targetBaseUri: gs://bq-translations targetTypes: - sql sourceEnvironment: defaultDatabase: default db schemaSearchPath: - foo The following example shows a translation configuration JSON file for a Teradata to BigQuery translation: { \"tasks\" : { \"translation task\" : { \"type\" : \"Teradata2BigQuery Translation\" , \"translationDetails\" : { \"sourceTargetMapping\" : [ { \"sourceSpec\" : { \"literal\" : { \"literalString\" : \"sel 1\" , \"relativePath\" : \"my input 1\" } , \"encoding\" : \"UTF-8\" } } , { \"sourceSpec\" : { \"literal\" : { \"literalString\" : \"sel 2\" , \"relativePath\" : \"my input 2\" } , \"encoding\" : \"UTF-8\" } } ] , \"targetReturnLiterals\" : [ \"sql/my input 1\" , \"sql/my input 2\" ] } } } } Once the translation configuration is created, run the following command to run the translation job. bq mk --migration workflow --location = LOCATION --config file = CONFIG FILE NAME .json Replace the following: LOCATION : the location of the Google Cloud project that is running this translation job.",
+          "Decide how to submit the translation job You have three options for submitting a batch translation job: Batch translation client : Configure a job by changing settings in a configuration file, and submit the job using the command line.",
+          "After you complete a batch translation job, BigQuery generates a translation configuration ID that contains information about the job's metadata, the object mapping, or the schema search path, as applicable to the query."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator"
+      ]
+    }
+  ]
+}

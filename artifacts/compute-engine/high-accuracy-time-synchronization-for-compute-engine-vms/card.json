@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:57.696Z",
+  "source_step08_card": "data/step-08/current/products/compute-engine/card.json",
+  "product_name": "Compute Engine",
+  "product_slug": "compute-engine",
+  "feature_name": "High-accuracy time synchronization for Compute Engine VMs",
+  "feature_slug": "high-accuracy-time-synchronization-for-compute-engine-vms",
+  "summary": "Compute Engine VMs can synchronize with the host clock using chrony and ptp_kvm to achieve supported accuracy within 1 ms.",
+  "extended_definition": "Compute Engine VMs can synchronize with the host clock using chrony and ptp_kvm to achieve supported accuracy within 1 ms.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/compute/docs/tutorials/high-availability-autohealing",
+      "https://docs.cloud.google.com/compute/docs/tutorials/high-availability-load-balancing",
+      "https://docs.cloud.google.com/compute/docs/tutorials/high-scalability-autoscaling"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Using autohealing for highly available apps \\_|\\_ Compute Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/compute/docs/tutorials/high-availability-autohealing",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 96,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Compute Compute Engine Guides Send feedback Using autohealing for highly available apps Stay organized with collections Save and categorize content based on your preferences.",
+          "This interactive tutorial shows how to use autohealing to build highly available apps on Compute Engine.",
+          "Click Create . gcloud Create a health check using the health-checks create http command . gcloud compute health-checks create http autohealer-check \\ --region europe-west1 \\ --check-interval 10 \\ --timeout 5 \\ --healthy-threshold 2 \\ --unhealthy-threshold 3 \\ --request-path \"/health\" check-interval defines the amount of time from the start of one probe to the start of the next one. timeout defines the amount of time that Google Cloud waits for a response to a probe."
+        ]
+      },
+      {
+        "title": "\"Using autoscaling for highly scalable applications \\_|\\_ Compute Engine\\",
+        "url": "https://docs.cloud.google.com/compute/docs/tutorials/high-scalability-autoscaling",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 88,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Compute Compute Engine Guides Send feedback Using autoscaling for highly scalable applications Stay organized with collections Save and categorize content based on your preferences.",
+          "After a few minutes, the CPU utilization will surpass the target value, prompting the autoscaling to increase the instance group size. export MACHINES=$(gcloud --project=$PROJECT ID compute instances list --format=\"csv(name,networkInterfaces[0].accessConfigs[0].natIP)\" grep \"autoscaling-web-app-group\") for i in $MACHINES; do NAME=$(echo \"$i\" cut -f1 -d,) IP=$(echo \"$i\" cut -f2 -d,) echo \"Simulating high load for instance $NAME\" curl -q -s \"http://$IP/startLoad\" >/dev/null --retry 2 done Open the Monitoring tab in the Google Cloud console.",
+          "Pro Tip: When creating a regional managed instance group, Compute Engine recommends that you provision enough instances so that, if all of the instances in any one zone are unavailable, the remaining instances still meet the minimum number of instances that you require."
+        ]
+      },
+      {
+        "title": "\"Using load balancing for highly available applications \\_|\\_ Compute Engine\\",
+        "url": "https://docs.cloud.google.com/compute/docs/tutorials/high-availability-load-balancing",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 85,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Compute Compute Engine Guides Send feedback Using load balancing for highly available applications Stay organized with collections Save and categorize content based on your preferences.",
+          "Pro Tip: When creating a regional managed instance group, Compute Engine recommends that you provision enough instances so that, if all of the instances in any one zone are unavailable, the remaining instances still meet the minimum number of instances that you require.",
+          "Application architecture The application includes the following Compute Engine components: VPC network : a virtual network within Google Cloud that can provide global connectivity using its own routes and firewall rules."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/tutorials/high-availability-autohealing",
+        "https://docs.cloud.google.com/compute/docs/tutorials/high-availability-load-balancing",
+        "https://docs.cloud.google.com/compute/docs/tutorials/high-scalability-autoscaling"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/tutorials/high-availability-autohealing",
+        "https://docs.cloud.google.com/compute/docs/tutorials/high-availability-load-balancing",
+        "https://docs.cloud.google.com/compute/docs/tutorials/high-scalability-autoscaling"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/tutorials/high-availability-autohealing",
+        "https://docs.cloud.google.com/compute/docs/tutorials/high-availability-load-balancing",
+        "https://docs.cloud.google.com/compute/docs/tutorials/high-scalability-autoscaling"
+      ]
+    }
+  ]
+}

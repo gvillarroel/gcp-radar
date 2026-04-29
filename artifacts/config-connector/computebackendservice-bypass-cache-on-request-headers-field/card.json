@@ -1,0 +1,250 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:59.197Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "ComputeBackendService bypass cache on request headers field",
+  "feature_slug": "computebackendservice-bypass-cache-on-request-headers-field",
+  "summary": "Config Connector now supports the bypassCacheOnRequestHeaders field for the ComputeBackendService resource.",
+  "extended_definition": "Config Connector now supports the bypassCacheOnRequestHeaders field for the ComputeBackendService resource.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeurlmap"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "ComputeBackendService | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "source_id": "feature-recovery-http",
+        "final_score": 294,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource. selfLink string Sample YAML(s) External Load Balancing Backend Service # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeBackendService metadata : name : computebackendservice-sample-externalloadbalancing spec : description : External backend service with cookie-based session affinity. portName : cookie-cloud timeoutSec : 30 healthChecks : - healthCheckRef : name : computebackendservice-dep-externalloadbalancing loadBalancingScheme : EXTERNAL location : global protocol : HTTPS affinityCookieTtlSec : 360 connectionDrainingTimeoutSec : 60 securityPolicyRef : name : computebackendservice-dep-externalloadbalancing sessionAffinity : GENERATED_COOKIE customRequestHeaders : - \"Trailer: custom-trailer\" logConfig : enable : true sampleRate : 0.5 backend : - balancingMode : RATE capacityScaler : 1 description : A network endpoint group serving this backend with all its available capacity, as calculated by number of simultaneous connections. maxRatePerEndpoint : 10 group : networkEndpointGroupRef : name : computebackendservice-dep-externalloadbalancing --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeHealthCheck metadata : name : computebackendservice-dep-externalloadbalancing spec : httpsHealthCheck : port : 443 location : global --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeInstanceGroup metadata : name : computebackendservice-dep-externalloadbalancing spec : namedPort : - name : cookie-cloud port : 8444 zone : us-central1-a networkRef : name : computebackendservice-dep-externalloadbalancing --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : computebackendservice-dep-externalloadbalancing spec : routingMode : GLOBAL autoCreateSubnetworks : false --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetworkEndpointGroup metadata : name : computebackendservice-dep-externalloadbalancing spec : networkRef : name : computebackendservice-dep-externalloadbalancing subnetworkRef : name : computebackendservice-dep-externalloadbalancing location : us-west1-a --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeSecurityPolicy metadata : name : computebackendservice-dep-externalloadbalancing spec : rule : - action : deny(403) priority : 2147483647 match : versionedExpr : SRC_IPS_V1 config : srcIpRanges : - \"*\" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeSubnetwork metadata : name : computebackendservice-dep-externalloadbalancing spec : ipCidrRange : 10.2.0.0/16 region : us-west1 networkRef : name : computebackendservice-dep-externalloadbalancing Internal Managed Load Balancing Backend Service # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeBackendService metadata : name : computebackendservice-sample-internalmanagedloadbalancing spec : description : Internal managed backend service with Maglev session affinity. localityLbPolicy : MAGLEV timeoutSec : 86400 consistentHash : httpHeaderName : \"Hash_String\" healthChecks : - healthCheckRef : name : computebackendservice-dep-internalmanagedloadbalancing loadBalancingScheme : INTERNAL_MANAGED location : us-east1 protocol : HTTP connectionDrainingTimeoutSec : 10 sessionAffinity : HEADER_FIELD circuitBreakers : connectTimeout : nanos : 999999999 seconds : 0 maxConnections : 1024 maxPendingRequests : 1024 maxRequests : 1024 maxRequestsPerConnection : 1 maxRetries : 3 logConfig : enable : false outlierDetection : consecutiveGatewayFailure : 5 enforcingConsecutiveErrors : 100 enforcingSuccessRate : 100 successRateMinimumHosts : 5 successRateRequestVolume : 100 baseEjectionTime : nanos : 999999999 seconds : 29 consecutiveErrors : 5 enforcingConsecutiveGatewayFailure : 0 interval : nanos : 999999999 seconds : 9 maxEjectionPercent : 10 successRateStdevFactor : 1900 backend : - balancingMode : RATE capacityScaler : 0.9 description : An instance group serving this backend with 90% of its capacity, as calculated by requests per second. maxRate : 10000 group : instanceGroupRef : name : computebackendservice-dep-internalmanagedloadbalancing --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeHealthCheck metadata : name : computebackendservice-dep-internalmanagedloadbalancing spec : httpHealthCheck : port : 80 location : global --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeInstanceGroup metadata : name : computebackendservice-dep-internalmanagedloadbalancing spec : zone : us-east1-c networkRef : name : computebackendservice-dep-internalmanagedloadbalancing --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : computebackendservice-dep-internalmanagedloadbalancing spec : routingMode : REGIONAL autoCreateSubnetworks : false Oauth2clientid Backend Service # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeBackendService metadata : name : computebackendservice-sample-oauth2clientid spec : description : Internal managed backend service with Maglev session affinity. localityLbPolicy : MAGLEV timeoutSec : 86400 consistentHash : httpHeaderName : \"Hash string\" healthChecks : - healthCheckRef : name : computebackendservice-dep-oauth2clientid loadBalancingScheme : INTERNAL_MANAGED location : us-east1 protocol : HTTP connectionDrainingTimeoutSec : 10 sessionAffinity : HEADER_FIELD circuitBreakers : connectTimeout : nanos : 999999999 seconds : 0 maxConnections : 1024 maxPendingRequests : 1024 maxRequests : 1024 maxRequestsPerConnection : 1 maxRetries : 3 logConfig : enable : false outlierDetection : consecutiveGatewayFailure : 5 enforcingConsecutiveErrors : 100 enforcingSuccessRate : 100 successRateMinimumHosts : 5 successRateRequestVolume : 100 baseEjectionTime : nanos : 999999999 seconds : 29 consecutiveErrors : 5 enforcingConsecutiveGatewayFailure : 0 interval : nanos : 999999999 seconds : 9 maxEjectionPercent : 10 successRateStdevFactor : 1900 backend : - balancingMode : RATE capacityScaler : 0.9 description : An instance group serving this backend with 90% of its capacity, as calculated by requests per second. maxRate : 10000 group : instanceGroupRef : name : computebackendservice-dep-oauth2clientid iap : oauth2ClientIdRef : external : computebackendservice-dep-oauth2clientid oauth2ClientSecret : value : \"test-secret-value\" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeHealthCheck metadata : name : computebackendservice-dep-oauth2clientid spec : httpHealthCheck : port : 80 location : global --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeInstanceGroup metadata : name : computebackendservice-dep-oauth2clientid spec : zone : us-east1-c networkRef : name : computebackendservice-dep-oauth2clientid --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : computebackendservice-dep-oauth2clientid spec : routingMode : REGIONAL autoCreateSubnetworks : false --- apiVersion : iap.cnrm.cloud.google.com/v1beta1 kind : IAPBrand metadata : name : computebackendservice-dep-oauth2clientid spec : applicationTitle : \"test brand\" supportEmail : \"support@example.com\" --- apiVersion : iap.cnrm.cloud.google.com/v1beta1 kind : IAPIdentityAwareProxyClient metadata : name : computebackendservice-dep-oauth2clientid spec : displayName : \"Test Client\" brandRef : name : computebackendservice-dep-oauth2clientid Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .",
+          "ComputeBackendService | Config Connector | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Config Connector Start free Overview Guides API and reference Resources Technology areas More Overview Guides API and reference Resources Cross-product tools More Console Config Connector API resources overview AccessContextManager AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AccessContextManagerServicePerimeterResource AlloyDB AlloyDBBackup AlloyDBCluster AlloyDBInstance AlloyDBUser API Gateway APIGatewayAPI App Hub AppHubApplication Apigee ApigeeEndpointAttachment ApigeeEnvgroup ApigeeEnvgroupAttachment ApigeeEnvironment ApigeeInstance ApigeeInstanceAttachment ApigeeOrganization ArtifactRegistry ArtifactRegistryRepository Backup and DR BackupDRBackupPlan BackupDRBackupPlanAssociation BackupDRBackupVault BigQueryAnalyticsHub BigQueryAnalyticsHubDataExchange BigQueryAnalyticsHubListing BigQuery BigLake BigLakeTable BigQuery BigqueryConnectionConnection BigQueryDataset BigQueryJob BigQueryRoutine BigQueryTable BigQueryDataTransferConfig BigQuery Reservation BigQueryReservationAssignment BigQueryReservationReservation BillingBudgets BillingBudgetsBudget BinaryAuthorization BinaryAuthorizationAttestor BinaryAuthorizationPolicy Certificate Manager CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CertificateManagerDNSAuthorization Cloud Asset Inventory AssetFeed AssetSavedQuery Cloud Bigtable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable Cloud Build CloudBuildTrigger CloudBuildWorkerPool Cloud Composer ComposerEnvironment Cloud Deploy CloudDeployDeliveryPipeline Cloud Quotas APIQuotaAdjusterSettings APIQuotaPreference Cloud Functions CloudFunctionsFunction Cloud Identity CloudIdentityGroup CloudIdentityMembership Cloud Intrusion Detection System CloudIDSEndpoint Cloud Scheduler CloudSchedulerJob Config Controller ConfigControllerInstance Cloud DLP DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType Cloud DNS DNSManagedZone DNSPolicy DNSRecordSet Cloud Key Management Service KMSAutokeyConfig KMSCryptoKey KMSImportJob KMSKeyHandle KMSKeyRing Eventarc EventarcTrigger Identity and Access Management (IAM) IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider Identity-Aware Proxy (IAP) IAPBrand IAPIdentityAwareProxyClient IAPSettings Identity Platform IdentityPlatformConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig IdentityPlatformOAuthIDPConfig Cloud Logging LoggingLink LoggingLogBucket LoggingLogExclusion LoggingLogMetric LoggingLogSink LoggingLogView Cloud Memorystore for Memcached MemcacheInstance Cloud Monitoring MonitoringAlertPolicy MonitoringDashboard MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig OS Config OSConfigGuestPolicy OSConfigOSPolicyAssignment Organization Policy OrgPolicyCustomConstraint Cloud Source Repositories SourceRepoRepository Speech-to-Text SpeechCustomClass SpeechPhraseSet SpeechRecognizer Cloud Spanner SpannerBackupSchedule SpannerDatabase SpannerInstance Cloud SQL SQLDatabase SQLInstance SQLSSLCert SQLUser Cloud Storage StorageBucket StorageAnywhereCache StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification Compute Engine ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeFirewallPolicyRule ComputeForwardingRule ComputeHealthCheck ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeManagedSSLCertificate ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkFirewallPolicyAssociation ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSSLCertificate ComputeSSLPolicy ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel Container Analysis ContainerAnalysisNote Container Attached ContainerAttachedCluster Data Catalog DataCatalogPolicyTag DataCatalogTaxonomy Dataflow DataflowJob DataflowFlexTemplateJob Dataform DataformRepository Data Fusion DataFusionInstance Dataproc DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate Dataproc Metastore MetastoreBackup Filestore FilestoreBackup FilestoreInstance Firestore FirestoreDatabase FirestoreIndex Google Kubernetes Engine (GKE) ContainerCluster ContainerNodePool Distributed Cloud Edge EdgeContainerCluster EdgeContainerNodePool EdgeContainerVPNConnection EdgeNetworkNetwork EdgeNetworkSubnet Document AI DocumentAIProcessorVersion Essential Contacts EssentialContactsContact GKE Hub GKEHubFeature GKEHubFeatureMembership GKEHubMembership Managed Kafka ManagedKafkaCluster ManagedKafkaTopic Memorystore (Redis) RedisCluster RedisInstance Memorystore for Valkey MemorystoreInstance Network Connectivity NetworkConnectivityHub NetworkConnectivitySpoke Network Security NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy Network Services NetworkServicesEndpointPolicy NetworkServicesGateway NetworkServicesGRPCRoute NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute Notebooks NotebooksInstance Private CA PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Privileged Access Manager PrivilegedAccessManagerEntitlement Pub/Sub PubSubSchema PubSubSnapshot PubSubSubscription PubSubTopic Pub/Sub Lite PubSubLiteReservation reCAPTCHA Enterprise RecaptchaEnterpriseKey Resource Manager Folder Project ResourceManagerLien ResourceManagerPolicy Cloud Run RunJob RunService SecretManager SecretManagerSecret SecretManagerSecretVersion SecureSourceManager SecureSourceManagerInstance SecureSourceManagerRepository Service Directory ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService Service Networking ServiceNetworkingConnection Service Usage Service ServiceIdentity Storage Transfer Service StorageTransferJob Tags TagsLocationTagBinding TagsTagBinding TagsTagKey TagsTagValue Vertex AI VertexAIDataset VertexAIEndpoint VertexAIIndex VertexAIMetadataStore VMware Engine VMwareEngineExternalAddress VPC Access VPCAccessConnector Workstations WorkstationCluster WorkstationConfig Workstation Annotations AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Access and resource management Config Connector API and reference Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/project-id Spec Schema affinityCookieTtlSec : integer backend : - balancingMode : string capacityScaler : float description : string failover : boolean group : instanceGroupRef : external : string name : string namespace : string networkEndpointGroupRef : external : string name : string namespace : string maxConnections : integer maxConnectionsPerEndpoint : integer maxConnectionsPerInstance : integer maxRate : integer maxRatePerEndpoint : float maxRatePerInstance : float maxUtilization : float cdnPolicy : bypassCacheOnRequestHeaders : - headerName : string cacheKeyPolicy : includeHost : boolean includeHttpHeaders : - string includeNamedCookies : - string includeProtocol : boolean includeQueryString : boolean queryStringBlacklist : - string queryStringWhitelist : - string cacheMode : string clientTtl : integer defaultTtl : integer maxTtl : integer negativeCaching : boolean negativeCachingPolicy : - code : integer ttl : integer serveWhileStale : integer signedUrlCacheMaxAgeSec : integer circuitBreakers : connectTimeout : nanos : integer seconds : integer maxConnections : integer maxPendingRequests : integer maxRequests : integer maxRequestsPerConnection : integer maxRetries : integer compressionMode : string connectionDrainingTimeoutSec : integer connectionTrackingPolicy : connectionPersistenceOnUnhealthyBackends : string enableStrongAffinity : boolean idleTimeoutSec : integer trackingMode : string consistentHash : httpCookie : name : string path : string ttl : nanos : integer seconds : integer httpHeaderName : string minimumRingSize : integer customRequestHeaders : - string customResponseHeaders : - string description : string edgeSecurityPolicyRef : external : string name : string namespace : string enableCdn : boolean failoverPolicy : disableConnectionDrainOnFailover : boolean dropTrafficIfUnhealthy : boolean failoverRatio : float healthChecks : - healthCheckRef : external : string name : string namespace : string httpHealthCheckRef : external : string name : string namespace : string iap : oauth2ClientId : string oauth2ClientIdRef : external : string name : string namespace : string oauth2ClientSecret : value : string valueFrom : secretKeyRef : key : string name : string oauth2ClientSecretSha256 : string loadBalancingScheme : string localityLbPolicies : - customPolicy : data : string name : string policy : name : string localityLbPolicy : string location : string logConfig : enable : boolean sampleRate : float networkRef : external : string name : string namespace : string outlierDetection : baseEjectionTime : nanos : integer seconds : integer consecutiveErrors : integer consecutiveGatewayFailure : integer enforcingConsecutiveErrors : integer enforcingConsecutiveGatewayFailure : integer enforcingSuccessRate : integer interval : nanos : integer seconds : integer maxEjectionPercent : integer successRateMinimumHosts : integer successRateRequestVolume : integer successRateStdevFactor : integer portName : string protocol : string resourceID : string securityPolicy : string securityPolicyRef : external : string name : string namespace : string securitySettings : clientTLSPolicyRef : external : string name : string namespace : string subjectAltNames : - string sessionAffinity : string subsetting : policy : string timeoutSec : integer Fields affinityCookieTtlSec Optional integer Lifetime of cookies in seconds if session_affinity is GENERATED_COOKIE."
+        ]
+      },
+      {
+        "title": "ComputeURLMap | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeurlmap",
+        "source_id": "feature-recovery-http",
+        "final_score": 151,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Replace ${PROJECT_ID?} with your project ID. name : ${PROJECT_ID?}-computeurl-dep Regional Compute Url Map L7 Ilb Path # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeURLMap metadata : name : computeurlmap-sample spec : description : \"Regional ComputeURLMap L7 Ilb Path\" location : us-central1 defaultService : backendServiceRef : name : computeurlmap-dep hostRule : - hosts : - \"mysite.com\" pathMatcher : \"allpaths\" pathMatcher : - name : \"allpaths\" defaultService : backendServiceRef : name : computeurlmap-dep pathRule : - paths : - \"/home\" routeAction : corsPolicy : allowCredentials : true allowHeaders : - \"Allowed content\" allowMethods : - \"GET\" allowOrigins : - \"Allowed origin\" exposeHeaders : - \"Exposed header\" maxAge : 30 disabled : false faultInjectionPolicy : abort : httpStatus : 234 percentage : 5.6 delay : fixedDelay : seconds : \"0\" nanos : 50000 percentage : 7.8 requestMirrorPolicy : backendServiceRef : name : computeurlmap-dep retryPolicy : numRetries : 4 perTryTimeout : seconds : \"30\" retryConditions : - \"5xx\" - \"deadline-exceeded\" timeout : seconds : \"20\" nanos : 750000000 urlRewrite : hostRewrite : \"A replacement header\" pathPrefixRewrite : \"A replacement path\" weightedBackendServices : - backendServiceRef : name : computeurlmap-dep weight : 400 headerAction : requestHeadersToRemove : - \"RemoveMe\" requestHeadersToAdd : - headerName : \"AddMe\" headerValue : \"MyValue\" replace : true responseHeadersToRemove : - \"RemoveMe\" responseHeadersToAdd : - headerName : \"AddMe\" headerValue : \"MyValue\" replace : false test : - service : backendServiceRef : name : computeurlmap-dep host : \"hi.com\" path : \"/home\" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeBackendService metadata : name : computeurlmap-dep spec : location : us-central1 healthChecks : - healthCheckRef : name : computeurlmap-dep protocol : \"HTTP\" timeoutSec : 10 loadBalancingScheme : \"INTERNAL_MANAGED\" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeHealthCheck metadata : name : computeurlmap-dep spec : checkIntervalSec : 10 httpHealthCheck : port : 80 location : us-central1 Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .",
+          "Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight. pathMatcher[].routeRules[].routeAction.weightedBackendServices[].backendServiceRef.external Optional string Allowed value: The `selfLink` field of a `ComputeBackendService` resource. pathMatcher[].routeRules[].routeAction.weightedBackendServices[].backendServiceRef.name Optional string Name of the referent.",
+          "Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight. pathMatcher[].pathRule[].routeAction.weightedBackendServices[].backendServiceRef.external Optional string Allowed value: The `selfLink` field of a `ComputeBackendService` resource. pathMatcher[].pathRule[].routeAction.weightedBackendServices[].backendServiceRef.name Optional string Name of the referent."
+        ]
+      },
+      {
+        "title": "Ignore unspecified fields \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "source_id": "site-docs-reference",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "Kinds with Merge support The following are all the Config Connector kinds that support Merge populating behavior: AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AlloyDBBackup AlloyDBCluster AlloyDBUser ApigeeEnvironment ApigeeOrganization ArtifactRegistryRepository BigQueryDataset BigQueryJob BigQueryTable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable BillingBudgetsBudget BinaryAuthorizationAttestor BinaryAuthorizationPolicy CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CloudBuildTrigger CloudFunctionsFunction CloudIdentityGroup CloudIdentityMembership CloudSchedulerJob ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeForwardingRule ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSSLCertificate ComputeSSLPolicy ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel ConfigControllerInstance ContainerAnalysisNote ContainerAttachedCluster ContainerCluster ContainerNodePool DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType DNSManagedZone DNSPolicy DNSRecordSet DataFusionInstance DataflowFlexTemplateJob DataflowJob DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate EdgeContainerCluster EdgeContainerNodePool EdgeContainerVpnConnection EdgeNetworkNetwork EdgeNetworkSubnet EventarcTrigger FilestoreBackup FilestoreInstance FirestoreIndex Folder GKEHubFeature GKEHubMembership IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider IAPBrand IAPIdentityAwareProxyClient IdentityPlatformConfig IdentityPlatformOAuthIDPConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig KMSCryptoKey KMSKeyRing LoggingLogBucket LoggingLogExclusion LoggingLogSink LoggingLogView MemcacheInstance MonitoringAlertPolicy MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig NetworkConnectivityHub NetworkConnectivitySpoke NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy NetworkServicesEndpointPolicy NetworkServicesGRPCRoute NetworkServicesGateway NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute OSConfigGuestPolicy OSConfigOSPolicyAssignment PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Project PubSubLiteReservation PubSubSchema PubSubSubscription PubSubTopic RecaptchaEnterpriseKey RedisInstance ResourceManagerLien ResourceManagerPolicy RunJob RunService SQLDatabase SQLSSLCert SQLUser SecretManagerSecret SecretManagerSecretVersion Service ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService ServiceIdentity ServiceNetworkingConnection SourceRepoRepository SpannerDatabase SpannerInstance StorageBucket StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification StorageTransferJob VPCAccessConnector The following kinds don't support the Merge populating behavior starting from the corresponding version: Kind Name Version LoggingLogMetric 1.118.1 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "This means in future reconciliations , Config Connector may send a PUT/PATCH request to the underlying Google Cloud API, with these unspecified field values learned from the GET request.",
+          "This is usually not a problem, but it is possible some Google Cloud APIs will reject the PUT/PATCH request because of these unspecified field values."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cnrm.cloud.google.com",
+      "compute.cnrm.cloud.google.com",
+      "example.com",
+      "hi.com",
+      "iap.cnrm.cloud.google.com",
+      "metadata.generation",
+      "mysite.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeurlmap",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeurlmap",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeurlmap",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeurlmap",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeurlmap",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeurlmap",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeurlmap",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeurlmap",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeurlmap",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeurlmap",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeurlmap",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeurlmap",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeurlmap",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeurlmap",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeurlmap",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeurlmap",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeurlmap",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeurlmap",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeurlmap",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeurlmap",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    }
+  ]
+}

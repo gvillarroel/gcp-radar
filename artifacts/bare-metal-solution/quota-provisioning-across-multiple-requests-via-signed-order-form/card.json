@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.969Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution",
+  "feature_name": "Quota provisioning across multiple requests via signed Order Form",
+  "feature_slug": "quota-provisioning-across-multiple-requests-via-signed-order-form",
+  "summary": "Adds the ability to provision quota from a signed order form across multiple request entries.",
+  "extended_definition": "Adds the ability to provision quota from a signed order form across multiple request entries.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+      "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide",
+      "https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Maintain the Bare Metal Solution environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "source_id": "site-docs-reference",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: You can also configure multiple networks on a server while provisioning through the Google Cloud console intake form.",
+          "It is assigned automatically during the provisioning from your services IP address range.",
+          "Follow these steps: Identify the disk in Oracle ASM that you want to remove. sqlplus / as sysasm set lines 999; col diskgroup for a15 col diskname for a15 col path for a35 select a.name DiskGroup,b.name DiskName, b.total mb, (b.total mb-b.free mb) Used MB, b.free mb,b.path,b.header status from v$asm disk b, v$asm diskgroup a where a.group number (+) =b.group number order by b.group number,b.name; DISKGROUP DISKNAME TOTAL MB USED MB FREE MB PATH HEADER STATU --------------- --------------- ---------- ---------- ---------- ----------------------------------- ------------ DATA DATA 0000 25600 5676 19924 /dev/asmdisks/DATA1 MEMBER DEMO DEMO 0000 25600 16 25584 /dev/asmdisks/DEMO1 MEMBER DEMO DEMO 0001 102400 51 102349 /dev/asmdisks/DEMO2 MEMBER RECO RECO 0000 25600 3896 21704 /dev/asmdisks/RECO1 MEMBER Sample output: DISKGROUP DISKNAME TOTAL MB USED MB FREE MB PATH HEADER STATU --------------- --------------- ---------- ---------- ---------- ----------------------------------- ------------ DATA DATA 0000 25600 5676 19924 /dev/asmdisks/DATA1 MEMBER DEMO DEMO 0000 25600 16 25584 /dev/asmdisks/DEMO1 MEMBER DEMO DEMO 0001 102400 51 102349 /dev/asmdisks/DEMO2 MEMBER RECO RECO 0000 25600 3896 21704 /dev/asmdisks/RECO1 MEMBER The output of the query shows that the device associated with the disk DEMO 0001 is /dev/asmdisks/DEMO2 ."
+        ]
+      },
+      {
+        "title": "\"SAP NetWeaver planning guide \\_|\\_ SAP on Google Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide",
+        "source_id": "site-docs-reference-2",
+        "final_score": 121,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "In this architecture, the SAP NetWeaver system distributes work across multiple NetWeaver Application Servers (AS) hosted on multiple VMs.",
+          "If you use the following RHEL or SLES \"for SAP\" OS images that Google Cloud provides, then Google Cloud's Agent for SAP is packaged with the OS images: RHEL: all \"for SAP\" images SLES: SLES 15 SP4 for SAP and later versions Scale-out of SAP NetWeaver application servers SAP supports a scale-out architecture that uses multiple application servers, which supports a higher workload.",
+          "Using Cloud Storage for object storage Cloud Storage is an object store for files of any type or format; it has virtually unlimited storage, and you do not have to worry about provisioning it or adding more capacity."
+        ]
+      },
+      {
+        "title": "SAP HANA planning guide \\_|\\_ SAP on Google Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide",
+        "source_id": "site-docs-reference-2",
+        "final_score": 117,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Balanced Persistent Disk Compute Engine machine type vCPU Memory (GB) Quota (GB) n1-highmem-32 32 208 943 n1-highmem-64 64 416 1,155 n1-highmem-96 96 624 1,716 n2-highmem-32 32 256 943 n2-highmem-48 48 384 1,068 n2-highmem-64 64 512 1,414 n2-highmem-80 80 640 1,760 n2-highmem-96 96 768 2,105 n2-highmem-128 128 864 2,364 c3-standard-44 44 176 507 c3-highmem-44 44 352 982 c3-highmem-88 88 704 1,932 c3-highmem-176 176 1,408 3,257 m1-megamem-96 96 1,433 3,287 m1-ultramem-40 40 961 2,626 m1-ultramem-80 80 1,922 3,874 m1-ultramem-160 160 3,844 6,180 m2-megamem-416 416 5,888 8,633 m2-ultramem-208 208 5,888 8,633 m2-ultramem-416 416 11,766 15,660 m2-hypermem-416 416 8,832 12,166 m3-ultramem-32 32 976 2,667 m3-ultramem-64 64 1,952 3,910 m3-ultramem-128 128 3,904 6,252 m3-megamem-64 64 976 2,667 m3-megamem-128 128 1,952 3,910 SSD Persistent Disk Compute Engine machine type vCPU Memory (GB) Quota (GB) n1-highmem-32 32 208 593 n1-highmem-64 64 416 1,155 n1-highmem-96 96 624 1,716 n2-highmem-32 32 256 723 n2-highmem-48 48 384 1,068 n2-highmem-64 64 512 1,414 n2-highmem-80 80 640 1,760 n2-highmem-96 96 768 2,105 n2-highmem-128 128 864 2,364 c3-standard-44 44 176 507 c3-highmem-44 44 352 982 c3-highmem-88 88 704 1,932 c3-highmem-176 176 1,408 3,257 m1-megamem-96 96 1,433 3,287 m1-ultramem-40 40 961 2,626 m1-ultramem-80 80 1,922 3,874 m1-ultramem-160 160 3,844 6,180 m2-megamem-416 416 5,888 8,633 m2-ultramem-208 208 5,888 8,633 m2-ultramem-416 416 11,766 15,660 m2-hypermem-416 416 8,832 12,166 m3-ultramem-32 32 976 2,667 m3-ultramem-64 64 1,952 3,910 m3-ultramem-128 128 3,904 6,252 m3-megamem-64 64 976 2,667 m3-megamem-128 128 1,952 3,910 Hyperdisk Extreme Compute Engine machine type vCPU Memory (GB) Quota (GB) n2-highmem-80 80 640 1,760 n2-highmem-96 96 768 2,105 n2-highmem-128 128 864 2,364 c3-highmem-88 88 704 1,932 c3-highmem-176 176 1,408 3,257 c3-highmem-192-metal 192 1,536 3,411 c4-highmem-96 96 744 2,040 c4-highmem-144 144 1,116 2,907 c4-highmem-192 192 1,488 3,353 c4-highmem-288 288 2,232 4,246 c4-highmem-288-metal 288 2,232 4,246 m1-megamem-96 96 1,433 3,287 m1-ultramem-80 80 1,922 3,874 m1-ultramem-160 160 3,844 6,180 m2-megamem-416 416 5,888 8,633 m2-ultramem-208 208 5,888 8,633 m2-ultramem-416 416 11,766 15,660 m2-hypermem-416 416 8,832 12,166 m3-ultramem-64 64 1,952 3,910 m3-ultramem-128 128 3,904 6,252 m3-megamem-64 64 976 2,667 m3-megamem-128 128 1,952 3,910 m4-megamem-112 112 1,488 3,353 m4-megamem-224 224 2,976 5,139 m4-ultramem-112 112 2,976 5,139 m4-ultramem-224 224 5,952 8,710 Note : From December 12, 2025, the naming convention for X4 machine types has changed to clarify the memory they offer.",
+          "While this naming change is backwards compatible, we recommend that you use the updated names for new deployments. x4-480-6t-metal 480 6,144 7,712 x4-480-8t-metal 480 8,192 9,760 x4-960-12t-metal 960 12,288 13,856 x4-960-16t-metal 960 16,384 17,952 x4-1440-24t-metal 1,440 24,576 26,144 x4-1920-32t-metal 1,920 32,768 34,336 Hyperdisk Balanced Compute Engine machine type vCPU Memory (GB) Quota (GB) c3-standard-44 44 176 507 c3-highmem-44 44 352 982 c3-highmem-88 88 704 1,932 c3-highmem-176 176 1,408 3,257 c3-highmem-192-metal 192 1,536 3,411 c4-highmem-32 32 248 701 c4-highmem-48 48 372 1,036 c4-highmem-96 96 744 2,040 c4-highmem-144 144 1,116 2,907 c4-highmem-192 192 1,488 3,353 c4-highmem-288 288 2,232 4,246 c4-highmem-288-metal 288 2,232 4,246 m1-megamem-96 96 1,433 3,287 m1-ultramem-40 40 961 2,626 m1-ultramem-80 80 1,922 3,874 m1-ultramem-160 160 3,844 6,180 m2-megamem-416 416 5,888 8,633 m2-ultramem-208 208 5,888 8,633 m2-ultramem-416 416 11,766 15,660 m2-hypermem-416 416 8,832 12,166 m3-ultramem-32 32 976 2,667 m3-ultramem-64 64 1,952 3,910 m3-ultramem-128 128 3,904 6,252 m3-megamem-64 64 976 2,667 m3-megamem-128 128 1,952 3,910 m4-megamem-28 28 372 1,036 m4-megamem-56 56 744 892 m4-megamem-112 112 1,488 3,353 m4-megamem-224 224 2,976 5,139 m4-ultramem-56 56 2,976 3,353 m4-ultramem-112 112 2,976 5,139 m4-ultramem-224 224 5,952 8,710 m4-hypermem-16 16 248 701 m4-hypermem-32 32 496 1,371 m4-hypermem-64 64 992 2,710 Note : From December 12, 2025, the naming convention for X4 machine types has changed to clarify the memory they offer.",
+          "While this naming change is backwards compatible, we recommend that you use the updated names for new deployments. x4-480-6t-metal 480 6,144 7,712 x4-480-8t-metal 480 8,192 9,760 x4-960-12t-metal 960 12,288 13,856 x4-960-16t-metal 960 16,384 17,952 x4-1440-24t-metal 1,440 24,576 26,144 x4-1920-32t-metal 1,920 32,768 34,336 Standard Persistent Disk Compute Engine machine type vCPU Memory (GB) Quota (GB) n1-highmem-32 32 208 448 n1-highmem-64 64 416 864 n1-highmem-96 96 624 1,280 n2-highmem-32 32 256 544 n2-highmem-48 48 384 800 n2-highmem-64 64 512 1,056 n2-highmem-80 80 640 1,312 n2-highmem-96 96 768 1,568 n2-highmem-128 128 864 1,760 m1-megamem-96 96 1,433 2,898 m1-ultramem-40 40 961 1,954 m1-ultramem-80 80 1,922 3,876 m1-ultramem-160 160 3,844 7,720 m2-megamem-416 416 5,888 11,832 m2-ultramem-208 208 5,888 11,832 m2-ultramem-416 416 11,766 23,564 m2-hypermem-416 416 8,832 17,696 Licensing Running SAP HANA on Google Cloud requires you to bring your own license (BYOL)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a.group",
+      "a.name",
+      "asmdevices.rules",
+      "b.free",
+      "b.group",
+      "b.header",
+      "b.name",
+      "b.path",
+      "b.total",
+      "rules.d"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

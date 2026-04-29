@@ -1,0 +1,144 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:21.495Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-assessment-tool/card.json",
+  "product_name": "Mainframe Assessment Tool",
+  "product_slug": "mainframe-assessment-tool",
+  "feature_name": "Vertex AI cached context support",
+  "feature_slug": "vertex-ai-cached-context-support",
+  "summary": "Supports Vertex AI cached context to improve performance and reduce costs.",
+  "extended_definition": "Supports Vertex AI cached context to improve performance and reduce costs.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings",
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project",
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Mainframe Assessment Tool overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "Languages Mainframe Assessment Tool supports the analysis of the following languages: COBOL programs and copybooks JCL jobs, procedures, includes, and card data HLASM programs PL/I programs ( Preview ) RPG/RPGLE programs and include files Easytrieve programs Natural for z/OS ( Preview ) Fortran ( Preview ) Database schemas Mainframe Assessment Tool supports the following database schemas: DB2: through Embedded SQL IMS DB: through EXEC DLI and CBLTDLI calls Transaction monitors Mainframe Assessment Tool supports the following transaction monitors: CICS: through EXEC CICS statements IMS DC: through CBLTDLI calls Scheduler configurations Mainframe Assessment Tool supports the following scheduler configurations: BMC Control-M Mainframe migration journey The following diagram illustrates the overall migration journey of mainframe applications: The migration journey has the following phases: Discover and assess your existing codebase: Mainframe Assessment Tool helps you perform an assessment of the mainframe application footprint, technology stack, and dependencies.",
+          "Generative AI assisted code generation and specifications creation: use Gemini Code Assist , generative AI, and mainframe-specific context to analyze and reimagine legacy mainframe code into modern languages, such as Java, C#, and Python.",
+          "You can use Mainframe Code Rewrite to rewrite legacy mainframe applications into modern cloud applications in Java, C#, or Python faster and with reduced costs."
+        ]
+      },
+      {
+        "title": "Configure settings \\_|\\_ Mainframe Assessment Tool \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings",
+        "source_id": "site-docs-reference",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: To improve performance and accuracy for subsequent assessments on the same files, don't clear the cache.",
+          "To improve availability with the global Vertex AI endpoint, select Use the global Vertex AI endpoint .",
+          "Mainframe Assessment Tool supports all zones in all the Vertex AI regions ."
+        ]
+      },
+      {
+        "title": "\"Configure your Google Cloud project for Mainframe Assessment Tool \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project",
+        "source_id": "site-docs-reference",
+        "final_score": 29,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable Vertex AI API Configure firewall rules To enable secure access to the Mainframe Assessment Tool instance through IAP, create the following firewall rules: Create a firewall rule to allow ingress traffic on TCP port 4000 by using IAP for TCP forwarding : gcloud compute firewall-rules create allow-ingress-from-iap \\ --direction=INGRESS \\ --action=allow \\ --rules=tcp:4000\\ --source-ranges=35.235.240.0/20 Create a firewall rule to deny all other ingress traffic to your Mainframe Assessment Tool instance: gcloud compute firewall-rules create deny-all-other-ingress \\ --direction=ingress \\ --action=deny \\ --rules=all \\ --source-ranges=0.0.0.0/0 \\ --network=your-network-name \\ --priority=65535 Assign IAM roles and permissions To ensure that the dedicated service account that you created has the necessary permissions to give the Mainframe Assessment Tool components the required access to the Vertex AI API and other services, ask your administrator to grant the following IAM roles to the dedicated service account that you created: Important: You must grant these roles to the dedicated service account that you created, not to your user account.",
+          "Vertex AI User ( roles/aiplatform.user ) Cloud Logging: Cloud Logging Writer ( roles/logging.logWriter ) What's next Learn how to Set up and access Mainframe Assessment Tool .",
+          "Enable Compute Engine API Enable the Vertex AI API."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.user",
+      "logging.logWriter"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.user",
+      "roles/logging.logWriter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-settings",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+      ]
+    }
+  ]
+}

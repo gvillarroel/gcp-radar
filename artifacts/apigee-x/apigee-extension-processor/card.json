@@ -1,0 +1,127 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.658Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "Apigee Extension Processor",
+  "feature_slug": "apigee-extension-processor",
+  "summary": "The Apigee Extension Processor adds Apigee API management capabilities to services exposed through Cloud Load Balancing.",
+  "extended_definition": "The Apigee Extension Processor adds Apigee API management capabilities to services exposed through Cloud Load Balancing.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Get started with the Apigee Extension Processor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "source_id": "site-docs-reference",
+        "final_score": 218,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Add the AssignMessage policy for Google authentication If you want to use your Extension Processor to provide API management for a Google-authenticated service, you can inject a Google access token or Google ID token into requests sent to the backend service using the AssignMessage policy .",
+          "The following sections guide you through the steps to configure the key elements of the Apigee Extension Processor: Configure a load balancer for a backend service .",
+          "Create the Extension Processor proxy The Extension Processor proxy is an Apigee API proxy that is used to apply API management policies to the load balancer traffic."
+        ]
+      },
+      {
+        "title": "Glossary \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+        "source_id": "site-api-reference",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "An Apigee service in the management plane that processes incoming analytics, debug, and deployment status data and makes it available to you through the Apigee hybrid UI or the Apigee APIs .",
+          "M management plane The Google-hosted central services that communicate with the runtime plane through service accounts.",
+          "These services communicate through service accounts with the management plane."
+        ]
+      },
+      {
+        "title": "AssignMessage policy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy",
+        "source_id": "site-api-reference",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "Optional Type Array of <FormParam> elements Parent Element <Add> Child Elements <FormParam> The <FormParams> element uses the following syntax: Syntax < AssignMessage continueOnError = \"[false true]\" enabled = \"[true false]\" name = \" POLICY NAME \" > < Add > < FormParams > < FormParam name = \" FORMPARAM NAME \" > FORMPARAM VALUE < / FormParam > ... < / FormParams > < AssignTo createNew = \"[true false]\" transport = \"http\" type = \"[request response]\" > DESTINATION VARIABLE NAME < / AssignTo > < / Add > < / AssignMessage > Example 1 The following example adds a single form parameter ( answer ) and a static value ( 42 ) to the request: <AssignMessage name=\"AM-add-formparams-1\"> <Add> <FormParams> <FormParam name=\"answer\">42</FormParam> </FormParams> </Add> <AssignTo>request</AssignTo> </AssignMessage> Example 2 The following example gets the value of the name query parameter and adds it to the request as a form parameter, and then removes the query parameter: <AssignMessage name=\"AM-Swap-QueryParam-to-FormParams\"> <Add> <FormParam name=\"name\">{request.queryparam.name}</FormParam> </Add> <Remove> <QueryParam name=\"name\"/> </Remove> </AssignMessage> Note that this example does not specify a target with <AssignTo> .",
+          "Examples The following examples show some of the ways in which you can use the AssignMessage policy: 1: Add header The following example adds a header to the request with the <Add> element: <AssignMessage name=\"AM-add-headers-1\"> <Add> <Headers> <Header name=\"partner-id\">{verifyapikey.VAK-1.developer.app.partner-id}</Header> </Headers> </Add> <AssignTo>request</AssignTo> </AssignMessage> 2: Remove payload The following example deletes the payload from the response with the <Remove> element: < AssignMessage name = \"AM-remove-1\" > < DisplayName>remove - 1 < / DisplayName > < Remove > < Payload>true < / Payload > < / Remove > < AssignTo>response < / AssignTo > < / AssignMessage > 3: Modify response The following example modifies an existing response object by adding a header to it: <AssignMessage name=\"AM-modify-response\"> <Set> <Headers> <Header name=\"Cache-Hit\">{lookupcache.LookupCache-1.cachehit}</Header> </Headers> </Set> <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables> <AssignTo>response</AssignTo> </AssignMessage> This example does not create a new message.",
+          "Optional Type Boolean Parent Element <Copy> Child Elements None The <Version> element uses the following syntax: Syntax <AssignMessage continueOnError=\"[false true]\" enabled=\"[true false]\" name=\" POLICY NAME \" > <Copy source=\" VARIABLE NAME \"> <Version>[false true]</Version> </Copy> </AssignMessage> Example 1 The following example sets <Version> to true on the request, which copies the version from the default request object to a new, custom request object: < AssignMessage name = \"copy-version-1\" > < Copy source = \"request\" > < Version>true < / Version > < / Copy > < AssignTo createNew = \"true\" transport = \"http\" type = \"request\" > MyCustomRequest < / AssignTo > < / AssignMessage > You can use <Copy> / <Version> only when the following criteria are met: The Message type for both source and destination is request <DisplayName> Use in addition to the name attribute to label the policy in the management UI proxy editor with a different, more natural-sounding name."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developer.app.partner",
+      "lookupcache.LookupCache",
+      "request.queryparam.name",
+      "verifyapikey.VAK"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    }
+  ]
+}

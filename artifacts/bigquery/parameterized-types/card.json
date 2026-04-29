@@ -1,0 +1,182 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Parameterized types",
+  "feature_slug": "parameterized-types",
+  "summary": "BigQuery supports parameterized data types such as bounded STRING and BYTES and precision-constrained NUMERIC and BIGNUMERIC types; Parameterized types let BigQuery define STRING, BYTES, NUMERIC, and BIGNUMERIC values with explicit length, precision, or scale constraints.",
+  "extended_definition": "BigQuery supports parameterized data types such as bounded STRING and BYTES and precision-constrained NUMERIC and BIGNUMERIC types; Parameterized types let BigQuery define STRING, BYTES, NUMERIC, and BIGNUMERIC values with explicit length, precision, or scale constraints.",
+  "lifecycle": {
+    "latest_feature_date": "2021-11-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 2,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-clustering-model",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Run queries using the BigQuery DataFrames bigframes.pandas APIs \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 68,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . import bigframes.pandas as bpd Load data from BigQuery query or table = \"bigquery-public-data.ml datasets.penguins\" bq df = bpd . read gbq ( query or table ) Inspect one of the columns (or series) of the DataFrame: bq df [ \"body mass g\" ] Compute the mean of this series: average body mass = bq df [ \"body mass g\" ] . mean () print ( f \"average body mass: { average body mass } \" ) Find the heaviest species using the groupby operation to calculate the mean body mass g: ( bq df [ \"body mass g\" ] . groupby ( by = bq df [ \"species\" ]) . mean () . sort values ( ascending = False ) . head ( 10 ) ) What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "Explore further For detailed documentation that includes this code sample, see the following: Use BigQuery DataFrames Code sample Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "Home Documentation Data analytics BigQuery Samples Run queries using the BigQuery DataFrames bigframes.pandas APIs Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Create a dataset with a customer-managed encryption key \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 60,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see the Terraform provider reference documentation . resource \"google bigquery dataset\" \"default\" { dataset id = \"mydataset\" default partition expiration ms = 2592000000 # 30 days default table expiration ms = 31536000000 # 365 days description = \"dataset description\" location = \"US\" max time travel hours = 96 # 4 days default encryption configuration { kms key name = google kms crypto key.crypto key.id } labels = { billing group = \"accounting\" , pii = \"sensitive\" } depends on = [ google project iam member.service account access ] } resource \"google kms crypto key\" \"crypto key\" { name = \"example-key\" key ring = google kms key ring.key ring.id } resource \"random id\" \"default\" { byte length = 8 } resource \"google kms key ring\" \"key ring\" { name = \"${random id.default.hex}-example-keyring\" location = \"us\" } Enable the BigQuery service account to encrypt/decrypt Cloud KMS keys data \"google project\" \"project\" { } resource \"google project iam member\" \"service account access\" { project = data.google project.project.project id role = \"roles/cloudkms.cryptoKeyEncrypterDecrypter\" member = \"serviceAccount:bq-${data.google project.project.number}@bigquery-encryption.iam.gserviceaccount.com\" } What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "Home Documentation Data analytics BigQuery Samples Create a dataset with a customer-managed encryption key Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Create a clustering model with BigQuery DataFrames \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-clustering-model",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 60,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . from bigframes.ml.cluster import KMeans import bigframes.pandas as bpd Load data from BigQuery query or table = \"bigquery-public-data.ml datasets.penguins\" bq df = bpd . read gbq ( query or table ) Create the KMeans model cluster model = KMeans ( n clusters = 10 ) cluster model . fit ( bq df [ \"culmen length mm\" ], bq df [ \"sex\" ]) Predict using the model result = cluster model . predict ( bq df ) Score the model score = cluster model . score ( bq df ) What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "Explore further For detailed documentation that includes this code sample, see the following: Use BigQuery DataFrames Code sample Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "Home Documentation Data analytics BigQuery Samples Create a clustering model with BigQuery DataFrames Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigframes.ml.cluster",
+      "bigframes.pandas",
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "data.google",
+      "data.ml",
+      "datasets.penguins",
+      "encryption.iam.gserviceaccount.com",
+      "id.default.hex",
+      "key.crypto",
+      "key.id",
+      "member.service",
+      "project.project.number",
+      "project.project.project",
+      "ring.id",
+      "ring.key"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-clustering-model"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-clustering-model"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-clustering-model"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-clustering-model"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-clustering-model"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-clustering-model"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-clustering-model"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-clustering-model"
+      ]
+    }
+  ]
+}

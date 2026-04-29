@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:51.227Z",
+  "source_step08_card": "data/step-08/current/products/cloud-ngfw/card.json",
+  "product_name": "Cloud NGFW",
+  "product_slug": "cloud-ngfw",
+  "feature_name": "Regional firewall policies for managed Envoy proxies",
+  "feature_slug": "regional-firewall-policies-for-managed-envoy-proxies",
+  "summary": "Regional firewall policies can protect managed Envoy proxies used by internal Application Load Balancers and internal proxy Network Load Balancers.",
+  "extended_definition": "Regional firewall policies can protect managed Envoy proxies used by internal Application Load Balancers and internal proxy Network Load Balancers.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+      "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+      "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+      "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Address groups for firewall policies \\_|\\_ Cloud Next Generation Firewall\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "source_id": "site-docs-root",
+        "final_score": 224,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can share the IP addresses across firewall policies and define more complex, consistent, and robust firewall policies for your network with reduced maintenance overhead.",
+          "Organization-scoped address groups can be used in hierarchical firewall policies , global network firewall policies , and regional network firewall policies .",
+          "Project-scoped address groups can only be used in global network firewall policies and regional network firewall policies ."
+        ]
+      },
+      {
+        "title": "\"Create and manage firewall rules for RoCE VPC networks \\_|\\_ Cloud Next\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "source_id": "site-docs-root",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Create . gcloud To create a regional network firewall policy for a RoCE VPC network, use the gcloud compute network-firewall-policies create command : gcloud compute network-firewall-policies create FIREWALL POLICY \\ --region REGION \\ --policy-type=RDMA ROCE POLICY Replace the following: FIREWALL POLICY : a name for the network firewall policy REGION : a region you want to apply to the policy.",
+          "NETWORK URL : the URL of the VPC network where you're adding the subnet SUBNET : a name for the subnet Create a regional network firewall policy RoCE VPC networks only support regional network firewall policies that have a policy type of RDMA ROCE POLICY .",
+          "Click Create . gcloud To create an ingress rule that uses the --src-ip-ranges=0.0.0.0/0 flag and applies to all network interfaces in the RoCE VPC network, use the gcloud compute network-firewall-policies rules create command : gcloud compute network-firewall-policies rules create PRIORITY \\ --direction=ingress \\ --layer4-configs=all \\ --enable-logging \\ --action ACTION \\ --firewall-policy FIREWALL POLICY NAME \\ --firewall-policy-region FIREWALL POLICY REGION \\ --src-ip-ranges=0.0.0.0/0 To create an ingress rule that uses a source secure tag and applies to specific network interfaces of VMs with an associated secure tag value, use the gcloud compute network-firewall-policies rules create command : gcloud compute network-firewall-policies rules create PRIORITY \\ --direction=ingress \\ --layer4-configs=all \\ --enable-logging \\ --action ALLOW \\ --firewall-policy FIREWALL POLICY NAME \\ --firewall-policy-region FIREWALL POLICY REGION \\ --src-secure-tag SRC SECURE TAG [, SRC SECURE TAG ,...] \\ --target-secure-tag TARGET SECURE TAG [, TARGET SECURE TAG ,...] Replace the following: PRIORITY : the priority of the rule ACTION : the action on match of the rule If you use --src-ip-ranges=0.0.0.0/0 , you can use either ALLOW or DENY ."
+        ]
+      },
+      {
+        "title": "\"Cloud NGFW overview \\_|\\_ Cloud Next Generation Firewall \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+        "source_id": "site-docs-reference",
+        "final_score": 172,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Remote Direct Memory Access (RDMA) network : You can protect RDMA networks by applying regional network firewall policies .",
+          "For more information, see Global network firewall policies and Regional network firewall policies .",
+          "What's next Cloud NGFW tiers Firewall policies and rules Evaluation order for firewall policies and rules Network profiles Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Configure address groups for firewall policies \\_|\\_ Cloud Next Generation\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups",
+        "source_id": "site-docs-root",
+        "final_score": 165,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Networking Cloud NGFW Guides Send feedback Configure address groups for firewall policies Stay organized with collections Save and categorize content based on your preferences.",
+          "For more information about the project-scoped address groups, see Use address groups in firewall policies .",
+          "This tutorial describes how to create and configure address groups for firewall policies in your network."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups"
+      ]
+    }
+  ]
+}

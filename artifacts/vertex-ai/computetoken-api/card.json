@@ -1,0 +1,137 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:31.179Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "ComputeToken API",
+  "feature_slug": "computetoken-api",
+  "summary": "ComputeToken API provides tokenization output by returning a list of tokens for a given prompt.",
+  "extended_definition": "ComputeToken API provides tokenization output by returning a list of tokens for a given prompt.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens",
+        "source_id": "site-api-reference",
+        "final_score": 151,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "GenerationConfig JSON representation { \"stopSequences\" : [ string ] , \"responseMimeType\" : string , \"responseModalities\" : [ enum ( Modality ) ] , \"thinkingConfig\" : { object ( ThinkingConfig ) } , \"modelConfig\" : { object ( ModelConfig ) } , // Union field temperature can be only one of the following: \"temperature\" : number // End of list of possible types for union field temperature . // Union field top p can be only one of the following: \"topP\" : number // End of list of possible types for union field top p . // Union field top k can be only one of the following: \"topK\" : number // End of list of possible types for union field top k . // Union field candidate count can be only one of the following: \"candidateCount\" : integer // End of list of possible types for union field candidate count . // Union field max output tokens can be only one of the following: \"maxOutputTokens\" : integer // End of list of possible types for union field max output tokens . // Union field response logprobs can be only one of the following: \"responseLogprobs\" : boolean // End of list of possible types for union field response logprobs . // Union field logprobs can be only one of the following: \"logprobs\" : integer // End of list of possible types for union field logprobs . // Union field presence penalty can be only one of the following: \"presencePenalty\" : number // End of list of possible types for union field presence penalty . // Union field frequency penalty can be only one of the following: \"frequencyPenalty\" : number // End of list of possible types for union field frequency penalty . // Union field seed can be only one of the following: \"seed\" : integer // End of list of possible types for union field seed . // Union field response schema can be only one of the following: \"responseSchema\" : { object ( Schema ) } // End of list of possible types for union field response schema . // Union field response json schema can be only one of the following: \"responseJsonSchema\" : value // End of list of possible types for union field response json schema . // Union field routing config can be only one of the following: \"routingConfig\" : { object ( RoutingConfig ) } // End of list of possible types for union field routing config . // Union field audio timestamp can be only one of the following: \"audioTimestamp\" : boolean // End of list of possible types for union field audio timestamp . // Union field media resolution can be only one of the following: \"mediaResolution\" : enum ( MediaResolution ) // End of list of possible types for union field media resolution . // Union field speech config can be only one of the following: \"speechConfig\" : { object ( SpeechConfig ) } // End of list of possible types for union field speech config . // Union field enable affective dialog can be only one of the following: \"enableAffectiveDialog\" : boolean // End of list of possible types for union field enable affective dialog . // Union field image config can be only one of the following: \"imageConfig\" : { object ( ImageConfig ) } // End of list of possible types for union field image config . } Fields stopSequences[] string Optional.",
+          "MediaResolution JSON representation { // Union field value can be only one of the following: \"level\" : enum ( Level ) // End of list of possible types for union field value . } Fields Union field value . value can be only one of the following: level enum ( Level ) The tokenization quality used for given media.",
+          "ImageConfig JSON representation { // Union field image output options can be only one of the following: \"imageOutputOptions\" : { object ( ImageOutputOptions ) } // End of list of possible types for union field image output options . // Union field aspect ratio can be only one of the following: \"aspectRatio\" : string // End of list of possible types for union field aspect ratio . // Union field person generation can be only one of the following: \"personGeneration\" : enum ( PersonGeneration ) // End of list of possible types for union field person generation . // Union field image size can be only one of the following: \"imageSize\" : string // End of list of possible types for union field image size . } Fields Union field image output options . image output options can be only one of the following: imageOutputOptions object ( ImageOutputOptions ) Optional."
+        ]
+      },
+      {
+        "title": "Vertex AI API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1beta1.projects.locations.endpoints Methods countTokens POST /v1beta1/{endpoint}:countTokens Perform a token counting. create POST /v1beta1/{parent}/endpoints Creates an Endpoint. delete DELETE /v1beta1/{name} Deletes an Endpoint. deployModel POST /v1beta1/{endpoint}:deployModel Deploys a Model into this Endpoint, creating a DeployedModel within it. directPredict POST /v1beta1/{endpoint}:directPredict Perform an unary online prediction request to a gRPC model server for Vertex first-party products and frameworks. directRawPredict POST /v1beta1/{endpoint}:directRawPredict Perform an unary online prediction request to a gRPC model server for custom containers. explain POST /v1beta1/{endpoint}:explain Perform an online explanation. get GET /v1beta1/{name} Gets an Endpoint. getIamPolicy POST /v1beta1/{resource}:getIamPolicy Gets the access control policy for a resource. list GET /v1beta1/{parent}/endpoints Lists Endpoints in a Location. mutateDeployedModel POST /v1beta1/{endpoint}:mutateDeployedModel Updates an existing deployed model. patch PATCH /v1beta1/{endpoint.name} Updates an Endpoint. predict POST /v1beta1/{endpoint}:predict Perform an online prediction. predictLongRunning POST /v1beta1/{endpoint}:predictLongRunning rawPredict POST /v1beta1/{endpoint}:rawPredict Perform an online prediction with an arbitrary HTTP payload. serverStreamingPredict POST /v1beta1/{endpoint}:serverStreamingPredict Perform a server-side streaming online prediction request for Vertex LLM streaming. setIamPolicy POST /v1beta1/{resource}:setIamPolicy Sets the access control policy on the specified resource. streamRawPredict POST /v1beta1/{endpoint}:streamRawPredict Perform a streaming online prediction with an arbitrary HTTP payload. testIamPermissions POST /v1beta1/{resource}:testIamPermissions Returns permissions that a caller has on the specified resource. undeployModel POST /v1beta1/{endpoint}:undeployModel Undeploys a Model from an Endpoint, removing a DeployedModel from it, and freeing all resources it's using. update POST /v1beta1/{endpoint.name}:update Updates an Endpoint with a long running operation.",
+          "REST Resource: v1beta1.projects.locations.featureOnlineStores.featureViews Methods create POST /v1beta1/{parent}/featureViews Creates a new FeatureView in a given FeatureOnlineStore. delete DELETE /v1beta1/{name} Deletes a single FeatureView. directWrite POST /v1beta1/{featureView}:directWrite Bidirectional streaming RPC to directly write to feature values in a feature view. fetchFeatureValues POST /v1beta1/{featureView}:fetchFeatureValues Fetch feature values under a FeatureView. generateFetchAccessToken POST /v1beta1/{featureView}:generateFetchAccessToken RPC to generate an access token for the given feature view. get GET /v1beta1/{name} Gets details of a single FeatureView. getIamPolicy POST /v1beta1/{resource}:getIamPolicy Gets the access control policy for a resource. list GET /v1beta1/{parent}/featureViews Lists FeatureViews in a given FeatureOnlineStore. patch PATCH /v1beta1/{featureView.name} Updates the parameters of a single FeatureView. searchNearestEntities POST /v1beta1/{featureView}:searchNearestEntities Search the nearest entities under a FeatureView. setIamPolicy POST /v1beta1/{resource}:setIamPolicy Sets the access control policy on the specified resource. streamingFetchFeatureValues POST /v1beta1/{featureView}:streamingFetchFeatureValues Bidirectional streaming RPC to fetch feature values under a FeatureView. sync POST /v1beta1/{featureView}:sync Triggers on-demand sync for the FeatureView. testIamPermissions POST /v1beta1/{resource}:testIamPermissions Returns permissions that a caller has on the specified resource.",
+          "REST Resource: v1beta1.projects.locations.featurestores.entityTypes Methods create POST /v1beta1/{parent}/entityTypes Creates a new EntityType in a given Featurestore. delete DELETE /v1beta1/{name} Deletes a single EntityType. deleteFeatureValues POST /v1beta1/{entityType}:deleteFeatureValues Delete Feature values from Featurestore. exportFeatureValues POST /v1beta1/{entityType}:exportFeatureValues Exports Feature values from all the entities of a target EntityType. get GET /v1beta1/{name} Gets details of a single EntityType. getIamPolicy POST /v1beta1/{resource}:getIamPolicy Gets the access control policy for a resource. importFeatureValues POST /v1beta1/{entityType}:importFeatureValues Imports Feature values into the Featurestore from a source storage. list GET /v1beta1/{parent}/entityTypes Lists EntityTypes in a given Featurestore. patch PATCH /v1beta1/{entityType.name} Updates the parameters of a single EntityType. readFeatureValues POST /v1beta1/{entityType}:readFeatureValues Reads Feature values of a specific entity of an EntityType. setIamPolicy POST /v1beta1/{resource}:setIamPolicy Sets the access control policy on the specified resource. streamingReadFeatureValues POST /v1beta1/{entityType}:streamingReadFeatureValues Reads Feature values for multiple entities. testIamPermissions POST /v1beta1/{resource}:testIamPermissions Returns permissions that a caller has on the specified resource. writeFeatureValues POST /v1beta1/{entityType}:writeFeatureValues Writes Feature values of one or more entities of an EntityType."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "source_id": "site-api-reference-2",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "RolloutOptions JSON representation { \"previousDeployedModel\" : string , \"revisionNumber\" : integer , // Union field max unavailable can be only one of the following: \"maxUnavailableReplicas\" : integer , \"maxUnavailablePercentage\" : integer // End of list of possible types for union field max unavailable . // Union field max surge can be only one of the following: \"maxSurgeReplicas\" : integer , \"maxSurgePercentage\" : integer // End of list of possible types for union field max surge . } Fields previousDeployedModel string ID of the DeployedModel that this deployment should replace. revisionNumber integer Output only.",
+          "ExplanationParameters JSON representation { \"topK\" : integer , \"outputIndices\" : array , // Union field method can be only one of the following: \"sampledShapleyAttribution\" : { object ( SampledShapleyAttribution ) } , \"integratedGradientsAttribution\" : { object ( IntegratedGradientsAttribution ) } , \"xraiAttribution\" : { object ( XraiAttribution ) } , \"examples\" : { object ( Examples ) } // End of list of possible types for union field method . } Fields topK integer If populated, returns attributions for top K indices of outputs (defaults to 1).",
+          "SystemLabelsEntry JSON representation { \"key\" : string , \"value\" : string } Fields key string value string SpeculativeDecodingSpec JSON representation { \"speculativeTokenCount\" : integer , // Union field speculation can be only one of the following: \"draftModelSpeculation\" : { object ( DraftModelSpeculation ) } , \"ngramSpeculation\" : { object ( NgramSpeculation ) } // End of list of possible types for union field speculation . } Fields speculativeTokenCount integer The number of speculative tokens to generate at each step."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "endpoint.name",
+      "v1.projects.locations.featurestores.entityTypes",
+      "v1beta1.projects.locations.endpoints",
+      "v1beta1.projects.locations.featureOnlineStores.featureViews",
+      "v1beta1.projects.locations.featurestores.entityTypes"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint"
+      ]
+    }
+  ]
+}

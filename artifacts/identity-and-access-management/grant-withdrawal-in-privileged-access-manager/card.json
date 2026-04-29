@@ -1,0 +1,295 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:19.434Z",
+  "source_step08_card": "data/step-08/current/products/identity-and-access-management/card.json",
+  "product_name": "Identity and Access Management",
+  "product_slug": "identity-and-access-management",
+  "feature_name": "Grant withdrawal in Privileged Access Manager",
+  "feature_slug": "grant-withdrawal-in-privileged-access-manager",
+  "summary": "Privileged Access Manager supports withdrawing granted access.",
+  "extended_definition": "Privileged Access Manager supports withdrawing granted access.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-pam",
+      "https://docs.cloud.google.com/iam/docs/configuring-temporary-access",
+      "https://docs.cloud.google.com/iam/docs/granting-changing-revoking-access",
+      "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Privileged Access Manager audit logging \\_|\\_ Identity and Access Management\\",
+        "url": "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-pam",
+        "source_id": "site-docs-root-2",
+        "final_score": 251,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager.CheckOnboardingStatus google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager.GetEntitlement google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager.GetGrant google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager.ListEntitlements google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager.ListGrants google.cloud.privilegedaccessmanager.v1alpha.PrivilegedAccessManager.CheckOnboardingStatus google.cloud.privilegedaccessmanager.v1alpha.PrivilegedAccessManager.GetEntitlement google.cloud.privilegedaccessmanager.v1alpha.PrivilegedAccessManager.GetGrant google.cloud.privilegedaccessmanager.v1alpha.PrivilegedAccessManager.ListEntitlements google.cloud.privilegedaccessmanager.v1alpha.PrivilegedAccessManager.ListGrants google.cloud.privilegedaccessmanager.v1beta.PrivilegedAccessManager.CheckOnboardingStatus google.cloud.privilegedaccessmanager.v1beta.PrivilegedAccessManager.GetEntitlement google.cloud.privilegedaccessmanager.v1beta.PrivilegedAccessManager.GetGrant google.cloud.privilegedaccessmanager.v1beta.PrivilegedAccessManager.ListEntitlements google.cloud.privilegedaccessmanager.v1beta.PrivilegedAccessManager.ListGrants ADMIN WRITE google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager.ApproveGrant google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager.CreateEntitlement (LRO) google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager.CreateGrant google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager.DeleteEntitlement (LRO) google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager.DenyGrant google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager.RevokeGrant (LRO) google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager.UpdateEntitlement (LRO) google.cloud.privilegedaccessmanager.v1alpha.PrivilegedAccessManager.ApproveGrant google.cloud.privilegedaccessmanager.v1alpha.PrivilegedAccessManager.CreateEntitlement (LRO) google.cloud.privilegedaccessmanager.v1alpha.PrivilegedAccessManager.CreateGrant google.cloud.privilegedaccessmanager.v1alpha.PrivilegedAccessManager.DeleteEntitlement (LRO) google.cloud.privilegedaccessmanager.v1alpha.PrivilegedAccessManager.DenyGrant google.cloud.privilegedaccessmanager.v1alpha.PrivilegedAccessManager.RevokeGrant (LRO) google.cloud.privilegedaccessmanager.v1alpha.PrivilegedAccessManager.UpdateEntitlement (LRO) google.cloud.privilegedaccessmanager.v1beta.PrivilegedAccessManager.ApproveGrant google.cloud.privilegedaccessmanager.v1beta.PrivilegedAccessManager.CreateEntitlement (LRO) google.cloud.privilegedaccessmanager.v1beta.PrivilegedAccessManager.CreateGrant google.cloud.privilegedaccessmanager.v1beta.PrivilegedAccessManager.DeleteEntitlement (LRO) google.cloud.privilegedaccessmanager.v1beta.PrivilegedAccessManager.DenyGrant google.cloud.privilegedaccessmanager.v1beta.PrivilegedAccessManager.RevokeGrant (LRO) google.cloud.privilegedaccessmanager.v1beta.PrivilegedAccessManager.UpdateEntitlement (LRO) API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Privileged Access Manager. google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager The following audit logs are associated with methods belonging to google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager .",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.privilegedaccessmanager.v1alpha.PrivilegedAccessManager.ListGrants\" RevokeGrant Method : google.cloud.privilegedaccessmanager.v1alpha.PrivilegedAccessManager.RevokeGrant Audit log type : Admin activity Permissions : privilegedaccessmanager.grants.revoke - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.privilegedaccessmanager.v1alpha.PrivilegedAccessManager.RevokeGrant\" UpdateEntitlement Method : google.cloud.privilegedaccessmanager.v1alpha.PrivilegedAccessManager.UpdateEntitlement Audit log type : Admin activity Permissions : privilegedaccessmanager.entitlements.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.privilegedaccessmanager.v1alpha.PrivilegedAccessManager.UpdateEntitlement\" google.cloud.privilegedaccessmanager.v1beta.PrivilegedAccessManager The following audit logs are associated with methods belonging to google.cloud.privilegedaccessmanager.v1beta.PrivilegedAccessManager .",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager.ListGrants\" RevokeGrant Method : google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager.RevokeGrant Audit log type : Admin activity Permissions : privilegedaccessmanager.grants.revoke - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager.RevokeGrant\" UpdateEntitlement Method : google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager.UpdateEntitlement Audit log type : Admin activity Permissions : privilegedaccessmanager.entitlements.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.privilegedaccessmanager.v1.PrivilegedAccessManager.UpdateEntitlement\" google.cloud.privilegedaccessmanager.v1alpha.PrivilegedAccessManager The following audit logs are associated with methods belonging to google.cloud.privilegedaccessmanager.v1alpha.PrivilegedAccessManager ."
+        ]
+      },
+      {
+        "title": "\"Access Context Manager roles and permissions \\_|\\_ Identity and Access Management\\",
+        "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "source_id": "site-api-reference",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create, edit, and change access levels, access zones and authorized orgs descs. accesscontextmanager. accessLevels. accesscontextmanager. accessLevels. create accesscontextmanager. accessLevels. delete accesscontextmanager. accessLevels. get accesscontextmanager. accessLevels. list accesscontextmanager. accessLevels. replaceAll accesscontextmanager. accessLevels. update accesscontextmanager. authorizedOrgsDescs. accesscontextmanager. authorizedOrgsDescs. create accesscontextmanager. authorizedOrgsDescs. delete accesscontextmanager. authorizedOrgsDescs. get accesscontextmanager. authorizedOrgsDescs. list accesscontextmanager. authorizedOrgsDescs. update accesscontextmanager. policies. create accesscontextmanager. policies. delete accesscontextmanager. policies. get accesscontextmanager. policies. getIamPolicy accesscontextmanager. policies. list accesscontextmanager. policies. update accesscontextmanager. servicePerimeters. accesscontextmanager. servicePerimeters. commit accesscontextmanager. servicePerimeters. create accesscontextmanager. servicePerimeters. delete accesscontextmanager. servicePerimeters. get accesscontextmanager. servicePerimeters. list accesscontextmanager. servicePerimeters. replaceAll accesscontextmanager. servicePerimeters. update cloudasset. assets. searchAllResources resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list Access Context Manager Reader ( roles/ accesscontextmanager.policyReader ) Read access to policies, access levels, access zones and authorized orgs descs. accesscontextmanager. accessLevels. get accesscontextmanager. accessLevels. list accesscontextmanager. authorizedOrgsDescs. get accesscontextmanager. authorizedOrgsDescs. list accesscontextmanager. policies. get accesscontextmanager. policies. getIamPolicy accesscontextmanager. policies. list accesscontextmanager. servicePerimeters. get accesscontextmanager. servicePerimeters. list resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer ) accesscontextmanager. accessLevels. get accesscontextmanager. accessLevels. list accesscontextmanager. authorizedOrgsDescs. get accesscontextmanager. authorizedOrgsDescs. list accesscontextmanager. policies. get accesscontextmanager. policies. getIamPolicy accesscontextmanager. policies. list accesscontextmanager. servicePerimeters. get accesscontextmanager. servicePerimeters. list logging.exclusions.get logging.exclusions.list logging.logEntries.list logging.logMetrics.get logging.logMetrics.list logging.logServiceIndexes.list logging.logServices.list logging.logs.list logging.sinks.get logging.sinks.list logging.usage.get resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list Access Context Manager permissions Permission Included in roles accesscontextmanager. accessLevels. create Owner ( roles/ owner ) Editor ( roles/ editor ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "Cloud Deployment Manager Service Agent ( roles/ clouddeploymentmanager.serviceAgent ) accesscontextmanager. authorizedOrgsDescs. create Owner ( roles/ owner ) Editor ( roles/ editor ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) accesscontextmanager. authorizedOrgsDescs. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) accesscontextmanager. authorizedOrgsDescs. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) Access Context Manager Reader ( roles/ accesscontextmanager.policyReader ) VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) accesscontextmanager. authorizedOrgsDescs. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) Access Context Manager Reader ( roles/ accesscontextmanager.policyReader ) VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) accesscontextmanager. authorizedOrgsDescs. update Owner ( roles/ owner ) Editor ( roles/ editor ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) accesscontextmanager. gcpUserAccessBindings. create Owner ( roles/ owner ) Editor ( roles/ editor ) Cloud Access Binding Admin ( roles/ accesscontextmanager.gcpAccessAdmin ) accesscontextmanager. gcpUserAccessBindings. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Cloud Access Binding Admin ( roles/ accesscontextmanager.gcpAccessAdmin ) accesscontextmanager. gcpUserAccessBindings. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Cloud Access Binding Admin ( roles/ accesscontextmanager.gcpAccessAdmin ) Cloud Access Binding Reader ( roles/ accesscontextmanager.gcpAccessReader ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "Security Center Control Service Agent ( roles/ securitycenter.controlServiceAgent ) Security Center Service Agent ( roles/ securitycenter.serviceAgent ) accesscontextmanager. gcpUserAccessBindings. update Owner ( roles/ owner ) Editor ( roles/ editor ) Cloud Access Binding Admin ( roles/ accesscontextmanager.gcpAccessAdmin ) accesscontextmanager. policies. create Owner ( roles/ owner ) Editor ( roles/ editor ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) accesscontextmanager. policies. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) accesscontextmanager. policies. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) Access Context Manager Reader ( roles/ accesscontextmanager.policyReader ) VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) accesscontextmanager. policies. getIamPolicy Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) Access Context Manager Reader ( roles/ accesscontextmanager.policyReader ) VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) accesscontextmanager. policies. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) Access Context Manager Reader ( roles/ accesscontextmanager.policyReader ) VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents ."
+        ]
+      },
+      {
+        "title": "\"Configure temporary access \\_|\\_ Identity and Access Management (IAM) \\_\\",
+        "url": "https://docs.cloud.google.com/iam/docs/configuring-temporary-access",
+        "source_id": "site-docs-root",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to manage conditional role bindings, ask your administrator to grant you the following IAM roles: To manage access to projects: Project IAM Admin ( roles/resourcemanager.projectIamAdmin ) on the project To manage access to folders: Folder Admin ( roles/resourcemanager.folderAdmin ) on the folder To manage access to projects, folders, and organizations: Organization Admin ( roles/resourcemanager.organizationAdmin ) on the organization To manage access to almost all Google Cloud resources: Security Admin ( roles/iam.securityAdmin ) on the project, folder, or organization whose resources you want to manage access to For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "The gcloud CLI updates the version automatically: { \"bindings\" : [ { \"members\" : [ \"user:my-user@example.com\" ], \"role\" : \"roles/owner\" }, { \"members\" : [ \"group:my-group@example.com\" ], \"role\" : \"roles/bigquery.dataViewer\" , \"condition\" : { \"title\" : \"Business hours\" , \"description\" : \"Business hours Monday-Friday\" , \"expression\" : \"request.time.getHours('Europe/Berlin') >= 9 && request.time.getHours('Europe/Berlin') <= 17 && request.time.getDayOfWeek('Europe/Berlin') >= 1 && request.time.getDayOfWeek('Europe/Berlin') <= 5\" } } ], \"etag\" : \"BwWKmjvelug=\" , \"version\" : 3 } Next, set the new allow policy by executing the gcloud projects set-iam-policy command: gcloud projects set-iam-policy project-id filepath The new allow policy is applied, and the group's role grant will allow access between the specified days and times.",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to manage conditional role bindings: To manage access to projects: resourcemanager.projects.getIamPolicy on the project resourcemanager.projects.setIamPolicy on the project To manage access to folders: resourcemanager.folders.getIamPolicy on the folder resourcemanager.folders.setIamPolicy on the folder To manage access to organizations: resourcemanager.organizations.getIamPolicy on the organization resourcemanager.organizations.setIamPolicy on the organization You might also be able to get these permissions with custom roles or other predefined roles ."
+        ]
+      },
+      {
+        "title": "\"Manage access to projects, folders, and organizations \\_|\\_ Identity and\\",
+        "url": "https://docs.cloud.google.com/iam/docs/granting-changing-revoking-access",
+        "source_id": "site-docs-root",
+        "final_score": 180,
+        "relevance": "",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to manage access to a project, folder, or organization, ask your administrator to grant you the following IAM roles on the resource that you want to manage access for (project, folder, or organization): To manage access to a project: Project IAM Admin ( roles/resourcemanager.projectIamAdmin ) To manage access to a folder: Folder Admin ( roles/resourcemanager.folderAdmin ) To manage access to projects, folders, and organizations: Organization Admin ( roles/resourcemanager.organizationAdmin ) To manage access to almost all Google Cloud resources: Security Admin ( roles/iam.securityAdmin ) These predefined roles contain the permissions required to manage access to a project, folder, or organization.",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to manage access to a project, folder, or organization: To manage access to projects: resourcemanager.projects.getIamPolicy resourcemanager.projects.setIamPolicy To manage access to folders: resourcemanager.folders.getIamPolicy resourcemanager.folders.setIamPolicy To manage access to organizations: resourcemanager.organizations.getIamPolicy resourcemanager.organizations.setIamPolicy You might also be able to get these permissions with custom roles or other predefined roles .",
+          "For example, imagine the allow policy contains the following role binding, which grants the Security Reviewer role ( roles/iam.securityReviewer ) to Kai: { \"role\" : \"roles/iam.securityReviewer\" , \"members\" : [ \"user:kai@example.com\" ] } To grant that same role to Raha, add Raha's principal identifier to the existing role binding: { \"role\" : \"roles/iam.securityReviewer\" , \"members\" : [ \"user:kai@example.com\" , \"user:raha@example.com\" ] } C# To authenticate to Resource Manager, set up Application Default Credentials."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accesscontextmanager.gcpAccessAdmin",
+      "accesscontextmanager.gcpAccessReader",
+      "accesscontextmanager.policyAdmin",
+      "accesscontextmanager.policyEditor",
+      "accesscontextmanager.policyReader",
+      "accesscontextmanager.vpcScTroubleshooterViewer",
+      "bigquery.dataViewer",
+      "clouddeploymentmanager.serviceAgent",
+      "cloudresourcemanager.googleapis.com",
+      "example.com",
+      "iam.securityAdmin",
+      "iam.securityAuditor",
+      "iam.securityReviewer",
+      "iam.supportUser",
+      "logging.exclusions.get",
+      "logging.exclusions.list",
+      "logging.logEntries.list",
+      "logging.logMetrics.get",
+      "logging.logMetrics.list",
+      "logging.logs.list",
+      "logging.logServiceIndexes.list",
+      "logging.logServices.list",
+      "logging.sinks.get",
+      "logging.sinks.list",
+      "logging.usage.get",
+      "privilegedaccessmanager.entitlements.update",
+      "privilegedaccessmanager.grants.revoke",
+      "request.json",
+      "request.time.getDayOfWeek",
+      "request.time.getHours",
+      "resourcemanager.folderAdmin",
+      "resourcemanager.folders.getIamPolicy",
+      "resourcemanager.folders.setIamPolicy",
+      "resourcemanager.organizationAdmin",
+      "resourcemanager.organizations.getIamPolicy",
+      "resourcemanager.organizations.setIamPolicy",
+      "resourcemanager.projectIamAdmin",
+      "resourcemanager.projects.getIamPolicy",
+      "resourcemanager.projects.setIamPolicy",
+      "securedlandingzone.bqdwOrgRemediator",
+      "securitycenter.controlServiceAgent",
+      "securitycenter.serviceAgent"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataViewer",
+      "roles/iam.securityAdmin",
+      "roles/iam.securityReviewer",
+      "roles/owner",
+      "roles/resourcemanager.folderAdmin",
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.projectIamAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-pam",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/configuring-temporary-access",
+        "https://docs.cloud.google.com/iam/docs/granting-changing-revoking-access"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-pam",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/configuring-temporary-access",
+        "https://docs.cloud.google.com/iam/docs/granting-changing-revoking-access"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-pam",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/configuring-temporary-access",
+        "https://docs.cloud.google.com/iam/docs/granting-changing-revoking-access"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-pam",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/configuring-temporary-access",
+        "https://docs.cloud.google.com/iam/docs/granting-changing-revoking-access"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-pam",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/configuring-temporary-access",
+        "https://docs.cloud.google.com/iam/docs/granting-changing-revoking-access"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-pam",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/configuring-temporary-access",
+        "https://docs.cloud.google.com/iam/docs/granting-changing-revoking-access"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-pam",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/configuring-temporary-access",
+        "https://docs.cloud.google.com/iam/docs/granting-changing-revoking-access"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-pam",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/configuring-temporary-access",
+        "https://docs.cloud.google.com/iam/docs/granting-changing-revoking-access"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-pam",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/configuring-temporary-access",
+        "https://docs.cloud.google.com/iam/docs/granting-changing-revoking-access"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-pam",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/configuring-temporary-access",
+        "https://docs.cloud.google.com/iam/docs/granting-changing-revoking-access"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-pam",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/configuring-temporary-access",
+        "https://docs.cloud.google.com/iam/docs/granting-changing-revoking-access"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-pam",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/configuring-temporary-access",
+        "https://docs.cloud.google.com/iam/docs/granting-changing-revoking-access"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-pam",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/configuring-temporary-access",
+        "https://docs.cloud.google.com/iam/docs/granting-changing-revoking-access"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-pam",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/configuring-temporary-access",
+        "https://docs.cloud.google.com/iam/docs/granting-changing-revoking-access"
+      ]
+    }
+  ]
+}

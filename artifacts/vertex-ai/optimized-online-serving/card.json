@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:31.179Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Optimized online serving",
+  "feature_slug": "optimized-online-serving",
+  "summary": "Optimized online serving enables feature serving with ultra-low latency.",
+  "extended_definition": "Optimized online serving enables feature serving with ultra-low latency.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-onlinestore",
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/online-serving-types",
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Online serving types \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/online-serving-types",
+        "source_id": "site-docs-reference-3",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Vertex AI Feature Store offers the following types of online serving that you can use to serve features for online predictions: Bigtable online serving Optimized online serving ( Deprecated ), where you can choose one of the following configurations: Optimized online serving with public endpoint Optimized online serving with Private Service Connect endpoint Bigtable online serving Bigtable online serving is suitable for large data volumes (in the order of terabytes of data) with high data durability.",
+          "Optimized online serving with public endpoint By default, an online store created for Optimized online serving lets you serve features with a public endpoint.",
+          "With Optimized online serving, you can serve feature values from either a public endpoint or a Private Service Connect endpoint."
+        ]
+      },
+      {
+        "title": "About Vertex AI Feature Store \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+        "source_id": "site-docs-reference-3",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optimized online serving ( Deprecated ) lets you online serve features at ultra-low latencies.",
+          "Embedding management and vector retrieval Vertex AI Feature Store Optimized online serving is deprecated .",
+          "Optimized online serving in Vertex AI Feature Store supports embedding management."
+        ]
+      },
+      {
+        "title": "Create an online store instance \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-onlinestore",
+        "source_id": "site-docs-reference-3",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// LOCATION ID -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION ID /featureOnlineStores?feature online store id= FEATUREONLINESTORE NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION ID /featureOnlineStores/ FEATUREONLINESTORE NAME /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.aiplatform.v1.CreateFeatureOnlineStoreOperationMetadata\", \"genericMetadata\": { \"createTime\": \"2023-09-18T17:49:23.847496Z\", \"updateTime\": \"2023-09-18T17:49:23.847496Z\" } } } Create an online store for Optimized online serving with a Private Service Connect endpoint Use the following samples to create an online store for Optimized online serving with Private Service Connect .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// LOCATION ID -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION ID /featureOnlineStores?feature online store id= FEATUREONLINESTORE NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION ID /featureOnlineStores/ FEATUREONLINESTORE NAME /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.aiplatform.v1.CreateFeatureOnlineStoreOperationMetadata\", \"genericMetadata\": { \"createTime\": \"2023-09-18T17:49:23.847496Z\", \"updateTime\": \"2023-09-18T17:49:23.847496Z\" } } } Create an online store for Optimized online serving Vertex AI Feature Store Optimized online serving is deprecated .",
+          "HTTP method and URL: POST https:// LOCATION ID -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION ID /featureOnlineStores?feature online store id= FEATUREONLINESTORE NAME Request JSON body: { \"optimized\": {}, \"dedicated serving endpoint\": { \"private service connect config\": { \"enable private service connect\": true, \"project allowlist\": [\" PROJECT NAMES \"] } } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "request.json",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/online-serving-types",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-onlinestore"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/online-serving-types",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-onlinestore"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/online-serving-types",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-onlinestore"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/online-serving-types",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-onlinestore"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/online-serving-types",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-onlinestore"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/online-serving-types",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-onlinestore"
+      ]
+    }
+  ]
+}

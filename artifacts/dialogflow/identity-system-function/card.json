@@ -1,0 +1,113 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:06.489Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "IDENTITY system function",
+  "feature_slug": "identity-system-function",
+  "summary": "Dialogflow CX provides the IDENTITY system function for copying composite parameter objects in parameter presets.",
+  "extended_definition": "Dialogflow CX provides the IDENTITY system function for copying composite parameter objects in parameter presets.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+      "https://docs.cloud.google.com/dialogflow/docs/intents-actions-parameters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Actions and parameters \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/docs/intents-actions-parameters",
+        "source_id": "site-docs-root-2",
+        "final_score": 103,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can retrieve the explicit partial match, where Dialogflow substitutes the unknown part with U s using the following format: $parameter-name.partial You can retrieve the nearest date in the past using the following format: $parameter-name.recent For example, if today's date is August 11, 2021, your parameter name is date , and the user says \"August 13\": Parameter reference Resolved value $date 2021-08-13 $date.partial UUUU-08-13 $date.recent 2020-08-13 Parameter reference for a composite entity Composite entities are entities that contain other sub-entities.",
+          "Parameter reference for ambiguous dates When a parameter is associated with the @sys.date system entity, and the end-user supplies a partial date (not specifying month, day, and year), Dialogflow will match to the nearest date in the future.",
+          "When an intent is matched at runtime, Dialogflow provides parameter data to your fulfillment webhook request or the API interaction response."
+        ]
+      },
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable consent-based end-user input redaction If this setting is enabled, it lets you use a special session parameter to control whether end-user input and parameters are redacted from conversation history and Cloud logging , by default the session parameter is true .",
+          "Enable consent-based end-user input redaction If this setting is enabled, it lets you use a special session parameter to control whether end-user input and parameters are redacted from conversation history and Cloud logging .",
+          "If you are using telephony gateway, make sure the Dialogflow Service Agent service account service- PROJECT NUMBER @gcp-sa-dialogflow.iam.gserviceaccount.com is granted with \"AutoML Predictor\" in your custom voice project."
+        ]
+      },
+      {
+        "title": "\"General agent design best practices \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+        "source_id": "site-docs-root",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following lists the conversation control granularity of agent resources in increasing granularity order: Agents (one agent handles all conversations) Flows (one flow handles one or more related conversation topics) Pages (one page handles one or more related conversation turns) Routes (one route handles a user intent or condition check) Intent parameters versus form parameters The main way in which your system gets structured data from the end-user is with parameters .",
+          "For example: Annotated training phrase Semantic meaning of annotated text I am 7 years old A person's age The contract is valid for 7 years A time duration Dialogflow CX's machine learning models consider semantic meaning when matching system entities.",
+          "Dialogflow CX API If none of the ready-to-use integrations are suitable, or you would like to customize the interface for your system, you can use the Dialogflow CX API directly ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "date.partial",
+      "date.recent",
+      "dialogflow.iam.gserviceaccount.com",
+      "name.partial",
+      "name.recent",
+      "sys.date"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/docs/intents-actions-parameters",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/docs/intents-actions-parameters",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/docs/intents-actions-parameters",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings"
+      ]
+    }
+  ]
+}

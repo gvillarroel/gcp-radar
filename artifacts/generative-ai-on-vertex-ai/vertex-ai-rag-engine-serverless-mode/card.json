@@ -1,0 +1,180 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:12.462Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "Vertex AI RAG Engine Serverless mode",
+  "feature_slug": "vertex-ai-rag-engine-serverless-mode",
+  "summary": "A fully managed database mode for Vertex AI RAG Engine that abstracts database provisioning and scaling.",
+  "extended_definition": "A fully managed database mode for Vertex AI RAG Engine that abstracts database provisioning and scaling.",
+  "lifecycle": {
+    "latest_feature_date": "2026-04-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Generative AI glossary \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "source_id": "site-docs-root",
+        "final_score": 288,
+        "relevance": "",
+        "evidence_snippets": [
+          "Vertex AI offers a suite of APIs to help you build your own Retrieval Augmented Generation (RAG) applications or to build your own Search engine.",
+          "For more information, see Use Vertex AI Search as a retrieval backend using RAG Engine .",
+          "Examples include learning rate, dropout rate, and number of training steps. partition In Slurm, a logical grouping of nodes, often used to separate nodes with different hardware configurations. performance tier A configuration setting for a Managed Lustre instance that defines its throughput speed (in MBps per TiB) and affects its minimum and maximum capacity. perplexity Perplexity is a metric used to evaluate the performance of language models."
+        ]
+      },
+      {
+        "title": "RAG quickstart \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 287,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Generate content. { \"contents\": { \"role\": \"USER\", \"parts\": { \"text\": \" INPUT PROMPT \" } }, \"tools\": { \"retrieval\": { \"disable attribution\": false, \"vertex rag store\": { \"rag resources\": { \"rag corpus\": \" RAG CORPUS RESOURCE \" }, \"similarity top k\": \" SIMILARITY TOP K \", \"vector distance threshold\": VECTOR DISTANCE THRESHOLD } } } } curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /publishers/google/models/MODEL ID:GENERATION METHOD\" For more information, see RAG Engine API .",
+          "To see an example of using RAG Engine, run the \"Intro to RAG Engine in Vertex AI\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Important: By default, a RAG corpus uses RagManagedDb .",
+          "For more information, see the Python API reference documentation . from vertexai import rag from vertexai.generative models import GenerativeModel , Tool import vertexai Create a RAG Corpus, Import Files, and Generate a response TODO(developer): Update and un-comment below lines PROJECT ID = \"your-project-id\" display name = \"test corpus\" paths = [\"https://drive.google.com/file/d/123\", \"gs://my bucket/my files dir\"] # Supports Google Cloud Storage and Google Drive Links Initialize Vertex AI API once per session vertexai . init ( project = PROJECT ID , location = \"us-east4\" ) Create RagCorpus Configure embedding model, for example \"text-embedding-005\". embedding model config = rag ."
+        ]
+      },
+      {
+        "title": "\"Grounding with Vertex AI Search \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "source_id": "site-docs-root",
+        "final_score": 279,
+        "relevance": "",
+        "evidence_snippets": [
+          "Grounding Gemini to your data If you want to do retrieval-augmented generation (RAG), connect your model to your website data or your sets of documents, then use Grounding with Vertex AI Search .",
+          "Select a grounding source option from the following table: Grounding option Description Input Vertex AI RAG Engine Grounds using your data and do-it-yourself components.",
+          "Vertex AI Search Grounds using your data with a Google-managed search engine."
+        ]
+      },
+      {
+        "title": "\"Vertex AI GenAI API \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 261,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: v1beta1.projects.locations.cachedContents Methods create POST /v1beta1/{parent}/cachedContents Creates cached content, this call will initialize the cached content in the data storage, and users need to pay for the cache data storage. delete DELETE /v1beta1/{name} Deletes cached content get GET /v1beta1/{name} Gets cached content configurations list GET /v1beta1/{parent}/cachedContents Lists cached contents in a project patch PATCH /v1beta1/{cachedContent.name} Updates cached content configurations REST Resource: v1beta1.projects.locations.endpoints Methods computeTokens POST /v1beta1/{endpoint}:computeTokens Return a list of tokens based on the input text. countTokens POST /v1beta1/{endpoint}:countTokens Perform a token counting. fetchPredictOperation POST /v1beta1/{endpoint}:fetchPredictOperation Fetch an asynchronous online prediction operation. generateContent POST /v1beta1/{model}:generateContent Generate content with multimodal inputs. getIamPolicy POST /v1beta1/{resource}:getIamPolicy Gets the access control policy for a resource. predict POST /v1beta1/{endpoint}:predict Request message for running inference on Google's generative AI models on Vertex AI. predictLongRunning POST /v1beta1/{endpoint}:predictLongRunning rawPredict POST /v1beta1/{endpoint}:rawPredict Perform an online prediction with an arbitrary HTTP payload. serverStreamingPredict POST /v1beta1/{endpoint}:serverStreamingPredict Perform a server-side streaming online prediction request for Vertex LLM streaming. setIamPolicy POST /v1beta1/{resource}:setIamPolicy Sets the access control policy on the specified resource. streamGenerateContent POST /v1beta1/{model}:streamGenerateContent Generate content with multimodal inputs with streaming support. streamRawPredict POST /v1beta1/{endpoint}:streamRawPredict Perform a streaming online prediction with an arbitrary HTTP payload. testIamPermissions POST /v1beta1/{resource}:testIamPermissions Returns permissions that a caller has on the specified resource.",
+          "REST Resource: v1.projects.locations.cachedContents Methods create POST /v1/{parent}/cachedContents Creates cached content, this call will initialize the cached content in the data storage, and users need to pay for the cache data storage. delete DELETE /v1/{name} Deletes cached content get GET /v1/{name} Gets cached content configurations list GET /v1/{parent}/cachedContents Lists cached contents in a project patch PATCH /v1/{cachedContent.name} Updates cached content configurations REST Resource: v1.projects.locations.endpoints Methods computeTokens POST /v1/{endpoint}:computeTokens Return a list of tokens based on the input text. countTokens POST /v1/{endpoint}:countTokens Perform a token counting. fetchPredictOperation POST /v1/{endpoint}:fetchPredictOperation Fetch an asynchronous online prediction operation. generateContent POST /v1/{model}:generateContent Generate content with multimodal inputs. predict POST /v1/{endpoint}:predict Request message for running inference on Google's generative AI models on Vertex AI. predictLongRunning POST /v1/{endpoint}:predictLongRunning rawPredict POST /v1/{endpoint}:rawPredict Perform an online prediction with an arbitrary HTTP payload. serverStreamingPredict POST /v1/{endpoint}:serverStreamingPredict Perform a server-side streaming online prediction request for Vertex LLM streaming. streamGenerateContent POST /v1/{model}:streamGenerateContent Generate content with multimodal inputs with streaming support. streamRawPredict POST /v1/{endpoint}:streamRawPredict Perform a streaming online prediction with an arbitrary HTTP payload.",
+          "REST Resource: v1beta1.projects.locations.publishers.models Methods computeTokens POST /v1beta1/{endpoint}:computeTokens Return a list of tokens based on the input text. countTokens POST /v1beta1/{endpoint}:countTokens Perform a token counting. embedContent POST /v1beta1/{model}:embedContent Embed content with multimodal inputs. fetchPredictOperation POST /v1beta1/{endpoint}:fetchPredictOperation Fetch an asynchronous online prediction operation. generateContent POST /v1beta1/{model}:generateContent Generate content with multimodal inputs. getIamPolicy POST /v1beta1/{resource}:getIamPolicy Gets the access control policy for a resource. predict POST /v1beta1/{endpoint}:predict Request message for running inference on Google's generative AI models on Vertex AI. predictLongRunning POST /v1beta1/{endpoint}:predictLongRunning rawPredict POST /v1beta1/{endpoint}:rawPredict Perform an online prediction with an arbitrary HTTP payload. serverStreamingPredict POST /v1beta1/{endpoint}:serverStreamingPredict Perform a server-side streaming online prediction request for Vertex LLM streaming. streamGenerateContent POST /v1beta1/{model}:streamGenerateContent Generate content with multimodal inputs with streaming support. streamRawPredict POST /v1beta1/{endpoint}:streamRawPredict Perform a streaming online prediction with an arbitrary HTTP payload."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "dmv.gov",
+      "drive.google.com",
+      "request.json",
+      "v1.projects.locations.cachedContents",
+      "v1.projects.locations.endpoints",
+      "v1beta1.projects.locations",
+      "v1beta1.projects.locations.cachedContents",
+      "v1beta1.projects.locations.endpoints",
+      "v1beta1.projects.locations.publishers.models",
+      "vertexai.generative",
+      "vertexaisearch.cloud.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest"
+      ]
+    }
+  ]
+}

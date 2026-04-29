@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:27.397Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection",
+  "feature_name": "Cloud SQL data profiling",
+  "feature_slug": "cloud-sql-data-profiling",
+  "summary": "Sensitive Data Protection discovery can profile Cloud SQL tables at the organization, folder, or project level.",
+  "extended_definition": "Sensitive Data Protection discovery can profile Cloud SQL tables at the organization, folder, or project level.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/known-issues",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-org-folder-cloud-sql",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Known issues \\_|\\_ Sensitive Data Protection \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/known-issues",
+        "source_id": "site-docs-reference-3",
+        "final_score": 144,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you have row-level security policies applied to your BigQuery tables, we recommend that you set a TRUE filter and include the service agent in the grantee list: If you're profiling data at the organization or folder level , include the service agent of the container project in the grantee list.",
+          "Organizations or projects with more than 500 million tables Sensitive Data Protection returns an error if you attempt to profile an organization or project that has more than 500 million tables.",
+          "Rows with row-level security can't be scanned Row-level security policies can prevent Sensitive Data Protection from inspecting and profiling the protected BigQuery tables."
+        ]
+      },
+      {
+        "title": "\"Profile Cloud SQL data in a single project \\_|\\_ Sensitive Data Protection\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql",
+        "source_id": "site-docs-reference-3",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Frequency section, specify whether the discovery service should profile the tables you selected and, if so, how often: If you never want the tables to be profiled, turn off Do profile this data .",
+          "PROFILES TABLE ID latest v1 AS profiles table ON findings table . data profile resource name = profiles table . table profile . name To save sample findings to a BigQuery table, follow these steps: Turn on Save sample discovery findings to BigQuery .",
+          "Example query: Show sample findings related to table data profiles This example requires both Save data profile copies to BigQuery and Save sample discovery findings to BigQuery to be enabled."
+        ]
+      },
+      {
+        "title": "\"Profile Cloud SQL data in an organization or folder \\_|\\_ Sensitive Data\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-org-folder-cloud-sql",
+        "source_id": "site-docs-reference-3",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Frequency section, specify whether the discovery service should profile the tables you selected and, if so, how often: If you never want the tables to be profiled, turn off Do profile this data .",
+          "PROFILES TABLE ID latest v1 AS profiles table ON findings table . data profile resource name = profiles table . table profile . name To save sample findings to a BigQuery table, follow these steps: Turn on Save sample discovery findings to BigQuery .",
+          "Example query: Show sample findings related to table data profiles This example requires both Save data profile copies to BigQuery and Save sample discovery findings to BigQuery to be enabled."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/known-issues",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-org-folder-cloud-sql",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql"
+      ]
+    }
+  ]
+}

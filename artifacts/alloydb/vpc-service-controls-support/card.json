@@ -1,0 +1,226 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:40.969Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "VPC Service Controls support",
+  "feature_slug": "vpc-service-controls-support",
+  "summary": "AlloyDB supports VPC Service Controls to help mitigate data exfiltration risk.",
+  "extended_definition": "AlloyDB supports VPC Service Controls to help mitigate data exfiltration risk.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+      "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search",
+      "https://docs.cloud.google.com/alloydb/docs/vpc-sc/configure-vpc-service-controls"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure VPC Service Controls | AlloyDB for PostgreSQL | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/vpc-sc/configure-vpc-service-controls",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 39,
+        "relevance": "",
+        "evidence_snippets": [
+          "VPC Service Controls helps mitigate the risk of data exfiltration from AlloyDB instances.",
+          "Configure VPC Service Controls | AlloyDB for PostgreSQL | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in AlloyDB for PostgreSQL Start free Overview Guides Reference Resources Technology areas More Overview Guides Reference Resources Cross-product tools More Console Discover Product overview What's new in documentation Security, privacy, risk, and compliance overview What is AlloyDB AI?",
+          "Explore AlloyDB AI use cases and examples Get started Try it out Free trial clusters Free trial clusters overview Create a free trial cluster Create and query a database Connect from Compute Engine Connect from Cloud Shell Perform a vector search Create and manage Choose a machine type Create a cluster and its primary instance Create and manage a database Manage your data using AlloyDB Studio Manage clusters View the list of clusters View the list of instances in a cluster View cluster details Delete a cluster Create and manage instances Create a read pool instance Create a primary instance View instance details Configure database flags Configure database extensions Scale an instance Start, stop, or restart instances Delete an instance Manage instance high availability High availability overview Fail over a primary or secondary instance manually Test a primary instance for high availability Reduce costs using basic instances Cluster and instance settings Manage maintenance operations Overview Manage cluster maintenance windows Perform self-service maintenance Manage cross-region replication Overview Work with cross-region replication Upgrade a major database version Upgrade a cluster's major server version Upgrade in place Overview Perform an in-place major version database upgrade Organize resources using tags Tags overview Attach and manage tags Manage your resources using Knowledge Catalog Connect Overview Choose a connectivity option Install psql Connect using gcloud Connect from Cloud Run Connect from Google Kubernetes Engine Connect to an instance using public IP Connect to an instance using private IP Overview Set up private services access Overview Enable private services access Increase private services access address space Remove a private services access allocated range Set up Private Service Connect Overview Connect to an instance using Private Service Connect Connect securely using the AlloyDB Auth Proxy Overview Connect using the Auth Proxy Best practices for using the Auth Proxy Troubleshoot Auth Proxy connections AlloyDB language connectors Overview Connect using the AlloyDB language connectors Connect to a cluster from outside a VPC Configure managed connection pooling Develop database applications Use the remote MCP server Use saved queries Overview Create and manage saved queries Access BigQuery data from AlloyDB Overview Access BigQuery from AlloyDB Full-text search Full-text search overview Create and manage RUM index Develop AI and ML applications Build generative AI applications using AlloyDB AI Configure user access to Vertex AI models Natural language and agents Natural language Natural language overview Generate SQL statements from natural language Use natural language to generate SQL Query database in natural language with QueryData Use context sets Context sets overview Build context sets using Gemini CLI Manage context sets in AlloyDB Studio Query your agentic application data QueryData overview Test QueryData in AlloyDB Studio Integrate QueryData with an application Secure and control access to application data AI-powered search Vector indexing Vector indexing overview Run a vector similarity search Store vector embeddings Create and manage vector indexes Choose a vector index Create indexes Create a ScaNN index Create an HNSW index Create an IVF index Create an IVFFLAT index Tune vector query performance AlloyDB AI functions AlloyDB AI functions overview Query using AI powered SQL operators Rank search results Hybrid search Run a hybrid vector similarity search Inference Forecasting with time series models Perform time-series forecasting Call models using model endpoints Overview Register a model Manage model endpoints using AlloyDB Studio Generate embeddings Generate text embeddings Generate multimodal embeddings Generate and manage auto vector embeddings for large tables Invoke predictions Build realtime vector embedding pipeline for AlloyDB with Dataflow Build AI applications using frameworks Build LLM-powered applications using LangChain Build LLM-powered applications using LlamaIndex Use AlloyDB with agents Best practices for securing agent interactions with MCP Write SQL with Gemini assistance Secure and control access Grant AlloyDB access to other users Use Secret Manager to handle secrets Secure access Secure connections using SSL mode Control connector enforcement Secure data with customer-managed encryption keys (CMEK) Overview Use CMEK Parameterized secure views Overview Manage application data security Use parameterized secure views Organization policies Overview Use predefined organization policies Use custom organization policies Secure resources and data using VPC Service Controls Manage database users Overview Built-in database authentication IAM database authentication Manage PostgreSQL users with built-in authentication Manage IAM authentication Manage password policies Connect using an IAM account Enforce data residency requirements Maintain Manage maintenance updates Overview Manage cluster maintenance windows Manage AlloyDB maintenance updates using a staging cluster Maintenance changelogs Overview PostgreSQL 14 maintenance changelog PostgreSQL 15 maintenance changelog PostgreSQL 16 maintenance changelog PostgreSQL 17 maintenance changelog Migrate Migration overview Migrate PostgreSQL data using Database Migration Service Migrate from Cloud SQL for PostgreSQL to AlloyDB Migrate data from a vector database to AlloyDB Back up and restore Overview Manage enhanced backups Manage standard backups Configure backup plans Create an on-demand backup View a list of backups View backup details Delete a backup Cancel an in-progress backup Restore a cluster Use point-in-time recovery (PITR) Restore from a backup Import and export Best practices for importing and exporting data Import data Import a CSV file Import a DMP file Import a SQL file Cancel an import operation Import BigQuery and Iceberg data to AlloyDB Export data Export a DMP file Export a CSV file Export a SQL file Cancel an export operation Monitor and optimize Monitor and troubleshoot with AI assistance Best practices for improving performance and availability Monitor the health of your clusters and instances Sizing and deployment recommendations Instance performance Monitor instances Database performance Monitor and analyze query performance About query insights Improve query performance using query insights Advanced query insights overview Improve query performance using advanced query insights Monitor active queries Get and analyze execution plans Analyze performance using pgbench Benchmark OLTP performance on AlloyDB Improve query performance Index advisor overview Use the index advisor Use the index advisor with query insights Optimize database performance by comparing snapshots Improve INSERT SELECT performance with parallel SELECT Find and fix inconsistent indexes Find and fix foreign key violations Create and manage named hints Measure and address table and index bloat Enable cache-aware costs for index scan query plans Manage query plans Accelerate analytical queries using the columnar engine About the columnar engine Configure the columnar engine Manage column store content using auto-columnarization Manage column store content manually Optimize queries with virtual columns for expressions Monitor the columnar engine Tune the columnar engine Maintain freshness of column store data Configure adaptive autovacuum Apply recommendations Enable backup plans Enable database auditing Enable high availability Enable password policy Enforce SSL/TLS encryption Increase backup retention Increase cluster storage quota Optimize underprovisioned instances Measure vector query recall Optimize vector query performance for ScaNN ScaNN Vector query performance overview Best practices for tuning ScaNN indexes Filtered vector search performance Filtered vector search overview Understand adaptive filtering Activate adaptive filtering Maintain vector indexes Monitor access using audit logs Monitor session and object access using pgAudit About pgAudit Enable pgAudit Configure logging behavior View audit logs Disable pgAudit Troubleshoot Troubleshoot ScaNN indexes in the columnar engine Troubleshoot with AI assistance High database load Slow queries Troubleshoot backups and restores Troubleshoot read pool queries Troubleshoot replication issues Troubleshoot ScaNN index errors Troubleshoot auto embedding issues Troubleshoot an in-place major version upgrade Database in-place major version upgrade errors Troubleshoot network configuration errors Troubleshoot AlloyDB maintenance Troubleshoot the columnar engine AlloyDB Omni AlloyDB Omni documentation AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Configure VPC Service Controls Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Migrate data from a vector database to AlloyDB \\_|\\_ AlloyDB for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "source_id": "site-docs-root-2",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "To initialize a vector store object, run the following command: Pinecone from langchain google alloydb pg import AlloyDBVectorStore vs = await AlloyDBVectorStore . create ( engine = alloydb engine , embedding service = embeddings service , table name = alloydb table , ) Weaviate from langchain google alloydb pg import AlloyDBVectorStore vs = await AlloyDBVectorStore . create ( engine = alloydb engine , embedding service = embeddings service , table name = alloydb table , ) Chroma from langchain google alloydb pg import AlloyDBVectorStore vs = await AlloyDBVectorStore . create ( engine = alloydb engine , embedding service = embeddings service , table name = alloydb table , ) Qdrant from langchain google alloydb pg import AlloyDBVectorStore vs = await AlloyDBVectorStore . create ( engine = alloydb engine , embedding service = embeddings service , table name = alloydb table , ) Milvus from langchain google alloydb pg import AlloyDBVectorStore vs = await AlloyDBVectorStore . create ( engine = alloydb engine , embedding service = embeddings service , table name = alloydb table , ) Insert data into the AlloyDB table: Pinecone pending : set [ Any ] = set () for ids , contents , embeddings , metadatas in data iterator : pending . add ( asyncio . ensure future ( vs . aadd embeddings ( texts = contents , embeddings = embeddings , metadatas = metadatas , ids = ids , ) ) ) if len ( pending ) > = max concurrency : , pending = await asyncio . wait ( pending , return when = asyncio .",
+          "Pinecone from langchain google alloydb pg import Column await alloydb engine . ainit vectorstore table ( table name = alloydb table , vector size = vector size , Customize the ID column types if not using the UUID data type id column=Column(\"langchain id\", \"TEXT\"), # Default is Column(\"langchain id\", \"UUID\") overwrite existing=True, # Drop the old table and Create a new vector store table ) Weaviate await alloydb engine . ainit vectorstore table ( table name = alloydb table , vector size = vector size , Customize the ID column types with id column if not using the UUID data type ) Chroma await alloydb engine . ainit vectorstore table ( table name = alloydb table , vector size = vector size , Customize the ID column types with id column if not using the UUID data type ) Qdrant await alloydb engine . ainit vectorstore table ( table name = alloydb table , vector size = vector size , Customize the ID column types with id column if not using the UUID data type ) Milvus await alloydb engine . ainit vectorstore table ( table name = alloydb table , vector size = vector size , Customize the ID column types with id column if not using the UUID data type ) Initialize a vector store object This code adds additional vector embedding metadata to the langchain metadata column in a JSON format.",
+          "In the Enable APIs step, click Enable to enable the following: AlloyDB API Compute Engine API Service Networking API Required roles To get the permissions that you need to complete the tasks in this tutorial, have the following Identity and Access Management (IAM) roles which allow for table creation and data insertion: Owner ( roles/owner ) or Editor ( roles/editor ) If the user is not an owner or editor, the following IAM roles and PostgreSQL privileges are required: AlloyDB Instance Client ( roles/alloydb.client ) Cloud AlloyDB Admin ( roles/alloydb.admin ) Compute Network User ( roles/compute.networkUser ) If you want to authenticate to your database using IAM authentication instead of using the built-in authentication in this tutorial, use the notebook that shows how to use AlloyDB for PostgreSQL to store vector embeddings with the AlloyDBVectorStore class ."
+        ]
+      },
+      {
+        "title": "\"Perform a vector search \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 31,
+        "relevance": "",
+        "evidence_snippets": [
+          "To use the gcloud CLI, you can install and initialize the gcloud CLI. gcloud beta alloydb instances update INSTANCE ID \\ --cluster = CLUSTER ID \\ --region = REGION ID \\ --project = PROJECT ID \\ --database-flags = google columnar engine.enabled = on,google columnar engine.enable vector support = on Add the items table to the columnar engine: SELECT google columnar engine add ( 'items' ); Measure the performance of the vector similarity search using the columnar engine.",
+          "Even though the word music isn't included in the product description, the result shows products that are relevant to the query: SET LOCAL scann . num leaves to search = 2 ; SELECT FROM product ORDER BY embedding < = > embedding ( 'text-embedding-005' , 'music' ):: vector LIMIT 3 ; The query results are as follows: The scann.num leaves to search query parameter controls the number of leaf nodes that are searched during a similarity search.",
+          "Install required extensions Run the following query to install the vector and alloydb scann extensions: CREATE EXTENSION IF NOT EXISTS vector ; CREATE EXTENSION IF NOT EXISTS alloydb scann ; Insert product and product inventory data and perform a basic vector search Run the following statement to create a product table that does the following: Stores basic product information."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.admin",
+      "alloydb.client",
+      "compute.networkUser",
+      "engine.enable",
+      "engine.enabled",
+      "github.com",
+      "python.git",
+      "scann.num"
+    ],
+    "missing_inventory_roles": [
+      "roles/alloydb.admin",
+      "roles/alloydb.client",
+      "roles/compute.networkUser",
+      "roles/editor",
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/vpc-sc/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/vpc-sc/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/vpc-sc/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/vpc-sc/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/vpc-sc/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/vpc-sc/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/vpc-sc/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/vpc-sc/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/vpc-sc/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/vpc-sc/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/vpc-sc/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/vpc-sc/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/vpc-sc/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/vpc-sc/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/vpc-sc/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:26.331Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager",
+  "feature_name": "Resource usage restriction organization policy constraint",
+  "feature_slug": "resource-usage-restriction-organization-policy-constraint",
+  "summary": "This organization policy constraint restricts resource usage.",
+  "extended_definition": "This organization policy constraint restricts resource usage.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+      "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+      "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage resources with custom constraints \\_|\\_ Resource Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "source_id": "site-docs-reference-2",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "As the organization policy administrator , you can define an organization policy, which is a set of restrictions called constraints that apply to Google Cloud resources and descendants of those resources in the Google Cloud resource hierarchy .",
+          "This page shows you how to use Organization Policy Service custom constraints to restrict specific operations on the following Google Cloud resources: cloudresourcemanager.googleapis.com/Project cloudresourcemanager.googleapis.com/Folder To learn more about Organization Policy, see Custom organization policies .",
+          "Set up a custom constraint A custom constraint is defined in a YAML file by the resources, methods, conditions, and actions that are supported by the service on which you are enforcing the organization policy."
+        ]
+      },
+      {
+        "title": "\"ListAvailableOrgPolicyConstraintsResponse \\_|\\_ Resource Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "source_id": "site-api-reference",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "Constraints can be configured by the organization's policy administrator to fit the needs of the organzation by setting Policies for Constraints at different locations in the organization's resource hierarchy.",
+          "The Google Cloud Console will try to default to a configuration that matches the value specified in this Constraint . supportsUnder boolean Indicates whether subtrees of Cloud Resource Manager resource hierarchy can be used in Policy.allowed values and Policy.denied values .",
+          "Constraints have a default behavior determined by the constraintDefault field, which is the enforcement behavior that is used in the absence of a Policy being defined or inherited for the resource in question."
+        ]
+      },
+      {
+        "title": "\"Introduction to organization restrictions \\_|\\_ Resource Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For managed devices in an organization, the organization restrictions feature restricts access only to resources in authorized Google Cloud organizations.",
+          "Common use cases Here are some common organization restrictions use cases: Restrict access to employees in your organization so that employees can access resources only in your Google Cloud organization and not other organizations.",
+          "Home Documentation Security Resource Manager Guides Send feedback Introduction to organization restrictions Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudresourcemanager.googleapis.com",
+      "folders.listAvailableOrgPolicyConstraints"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview"
+      ]
+    }
+  ]
+}

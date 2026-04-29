@@ -1,0 +1,127 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:57.696Z",
+  "source_step08_card": "data/step-08/current/products/compute-engine/card.json",
+  "product_name": "Compute Engine",
+  "product_slug": "compute-engine",
+  "feature_name": "E2 shared-core custom VMs",
+  "feature_slug": "e2-shared-core-custom-vms",
+  "summary": "E2 shared-core custom VMs let you create custom shared-core virtual machines in the E2 family.",
+  "extended_definition": "E2 shared-core custom VMs let you create custom shared-core virtual machines in the E2 family.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+      "https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/create-ha-vpn-connections-google-cloud-aws",
+      "https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/create-ha-vpn-connections-google-cloud-azure"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create HA VPN connections between Google Cloud and AWS \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/create-ha-vpn-connections-google-cloud-aws",
+        "source_id": "site-docs-reference-3",
+        "final_score": 132,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Virtual private gateway Create a VPN connection with dynamic routing between the virtual private gateway and the customer gateways, and apply tags to the VPN connection: aws ec2 create-vpn-connection \\ --type ipsec.1 \\ --customer-gateway-id CUSTOMER GATEWAY 1 \\ --vpn-gateway-id VPN GATEWAY ID \\ --options TunnelOptions = '[{TunnelInsideCidr= AWS T1 IP ,PreSharedKey= SHARED SECRET 1 },{TunnelInsideCidr= AWS T2 IP ,PreSharedKey= SHARED SECRET 2 }]' aws ec2 create-vpn-connection \\ --type ipsec.1 \\ --customer-gateway-id CUSTOMER GATEWAY 2 \\ --vpn-gateway-id VPN GATEWAY ID \\ --options TunnelOptions = '[{TunnelInsideCidr= AWS T3 IP ,PreSharedKey= SHARED SECRET 3 },{TunnelInsideCidr= AWS T4 IP ,PreSharedKey= SHARED SECRET 4 }]' Replace the following: CUSTOMER GATEWAY 1 : Google Cloud VPN gateway, interface 0 CUSTOMER GATEWAY 2 : Google Cloud VPN gateway, interface 1 AWS T1 IP : Inside IP address for virtual private gateway for connection 1, tunnel 1 AWS T2 IP : Inside IP address for virtual private gateway for connection 1, tunnel 2 AWS T3 IP : Inside IP address for virtual private gateway for connection 2, tunnel 1 AWS T4 IP : Inside IP address for virtual private gateway for connection 2, tunnel 2 SHARED SECRET 1 : Pre-shared key for connection 1, tunnel 1 SHARED SECRET 2 : Pre-shared key for connection 1, tunnel 2 SHARED SECRET 3 : Pre-shared key for connection 2, tunnel 1 SHARED SECRET 4 : Pre-shared key for connection 2, tunnel 2 Transit gateway Create a VPN connection with dynamic routing between the transit gateway and the customer gateways: aws ec2 create-vpn-connection \\ --type ipsec.1 \\ --customer-gateway-id CUSTOMER GATEWAY 1 \\ --transit-gateway-id TRANSIT GATEWAY ID \\ --options TunnelOptions = '[{TunnelInsideCidr= AWS T1 IP ,PreSharedKey= SHARED SECRET 1 },{TunnelInsideCidr= AWS T2 IP ,PreSharedKey= SHARED SECRET 2 }]' aws ec2 create-vpn-connection \\ --type ipsec.1 \\ --customer-gateway-id CUSTOMER GATEWAY 2 \\ --transit-gateway-id TRANSIT GATEWAY ID \\ --options TunnelOptions = '[{TunnelInsideCidr= AWS T3 IP ,PreSharedKey= SHARED SECRET 3 },{TunnelInsideCidr= AWS T4 IP ,PreSharedKey= SHARED SECRET 4 }]' Replace the following: CUSTOMER GATEWAY 1 : Google Cloud VPN gateway, interface 0 CUSTOMER GATEWAY 2 : Google Cloud VPN gateway, interface 1 TRANSIT GATEWAY ID : The ID of the transit gateway associated with the VPN connection AWS T1 IP : Inside IP address for virtual private gateway for connection 1, tunnel 1 AWS T2 IP : Inside IP address for virtual private gateway for connection 1, tunnel 2 AWS T3 IP : Inside IP address for virtual private gateway for connection 2, tunnel 1 AWS T4 IP : Inside IP address for virtual private gateway for connection 2, tunnel 2 SHARED SECRET 1 : Pre-shared key for connection 1, tunnel 1 SHARED SECRET 2 : Pre-shared key for connection 1, tunnel 2 SHARED SECRET 3 : Pre-shared key for connection 2, tunnel 1 SHARED SECRET 4 : Pre-shared key for connection 2, tunnel 2 CUSTOMER GATEWAY 1 : Google Cloud VPN gateway, interface 0 CUSTOMER GATEWAY 2 : Google Cloud VPN gateway, interface 1 TRANSIT GATEWAY ID : The ID of the transit gateway associated with the VPN connection AWS T1 IP : Inside IP address for virtual private gateway for connection 1, tunnel 1 AWS T2 IP : Inside IP address for virtual private gateway for connection 1, tunnel 2 AWS T3 IP : Inside IP address for virtual private gateway for connection 2, tunnel 1 AWS T4 IP : Inside IP address for virtual private gateway for connection 2, tunnel 2 SHARED SECRET 1 : Pre-shared key for connection 1, tunnel 1 SHARED SECRET 2 : Pre-shared key for connection 1, tunnel 2 SHARED SECRET 3 : Pre-shared key for connection 2, tunnel 1 SHARED SECRET 4 : Pre-shared key for connection 2, tunnel 2 AWS reserves some CIDR ranges, so you can't use values in these ranges as inside IP addresses ( AWS T1 IP , AWS T2 IP , AWS T3 IP , AWS T4 IP ).",
+          "Tunnel 1: gcloud compute vpn-tunnels create tunnel-1 \\ --peer-external-gateway PEER GATEWAY NAME \\ --peer-external-gateway-interface 0 \\ --region REGION \\ --ike-version 2 \\ --shared-secret SHARED SECRET 1 \\ --router ROUTER NAME \\ --vpn-gateway HA VPN GATEWAY NAME \\ --interface 0 Tunnel 2: gcloud compute vpn-tunnels create tunnel-2 \\ --peer-external-gateway PEER GATEWAY NAME \\ --peer-external-gateway-interface 1 \\ --region REGION \\ --ike-version 2 \\ --shared-secret SHARED SECRET 2 \\ --router ROUTER NAME \\ --vpn-gateway HA VPN GATEWAY NAME \\ --interface 0 Tunnel 3: gcloud compute vpn-tunnels create tunnel-3 \\ --peer-external-gateway PEER GATEWAY NAME \\ --peer-external-gateway-interface 2 \\ --region REGION \\ --ike-version 2 \\ --shared-secret SHARED SECRET 3 \\ --router ROUTER NAME \\ --vpn-gateway HA VPN GATEWAY NAME \\ --interface 1 Tunnel 4: gcloud compute vpn-tunnels create tunnel-4 \\ --peer-external-gateway PEER GATEWAY NAME \\ --peer-external-gateway-interface 3 \\ --region REGION \\ --ike-version 2 \\ --shared-secret SHARED SECRET 4 \\ --router ROUTER NAME \\ --vpn-gateway HA VPN GATEWAY NAME \\ --interface 1 Replace the following: PEER GATEWAY NAME : a name of the external peer gateway that you created in step 1 REGION : the Google Cloud region where you create the tunnel SHARED SECRET : your pre-shared key (PSK), which must correspond with the pre-shared key for the partner tunnel that you create on your peer gateway; to generate a strong pre-shared key, see Generate a strong pre-shared key ROUTER NAME : the name of the Cloud Router gateway that you created in the Create the HA VPN gateway and Cloud Router on Google Cloud section.",
+          "To create a custom VPC network with a single subnet, use the gcloud compute networks create command : gcloud compute networks create NETWORK \\ --subnet-mode SUBNET MODE \\ --bgp-routing-mode BGP ROUTING MODE Replace the following: NETWORK : The name of the network SUBNET MODE : The subnet mode BGP ROUTING MODE : The BGP routing mode For example, the following command creates a custom VPC network named gc-vpc with a single subnet: gcloud compute networks create gc-vpc \\ --subnet-mode custom \\ --bgp-routing-mode global To create one subnet to host the test VMs, use the gcloud compute networks subnets create command : gcloud compute networks subnets create SUBNET NAME \\ --network NETWORK \\ --region SUBNET REGION \\ --range IP ADDRESS RANGE Replace the following: SUBNET NAME : The subnet name SUBNET REGION : The region in which to create the subnet IP ADDRESS RANGE : The IP address range for the subnet For example, the following command creates a subnet named subnet-east4 in the VPC network gc-vpc . gcloud compute networks subnets create subnet-east4 \\ --network gc-vpc \\ --region us-east4 \\ --range 10.1.1.0/24 To create a HA VPN gateway, use the gcloud compute vpn-gateways create command : gcloud compute vpn-gateways create HA VPN GATEWAY NAME \\ --network NETWORK \\ --region REGION Replace HA VPN GATEWAY NAME with the name for the HA VPN gateway."
+        ]
+      },
+      {
+        "title": "\"Create HA VPN connections between Google Cloud and Azure \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/create-ha-vpn-connections-google-cloud-azure",
+        "source_id": "site-docs-reference-3",
+        "final_score": 132,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use the following steps to create the VPN tunnels: Create the VPN tunnel for interface 0: gcloud compute vpn-tunnels create TUNNEL NAME IF0 \\ --peer-external-gateway = AZURE GW NAME \\ --peer-external-gateway-interface = AZURE GW INT NUM 0 \\ --region = REGION \\ --ike-version = IKE VERS \\ --shared-secret = SHARED SECRET \\ --router = ROUTER NAME \\ --vpn-gateway = HA VPN GATEWAY NAME \\ --interface = INT NUM 0 The command should look similar to the following example: gcloud compute vpn-tunnels create azure-tunnel-1 \\ --peer-external-gateway azure-peer-gw \\ --peer-external-gateway-interface 0 \\ --region us-central1 \\ --ike-version 2 \\ --shared-secret xo2aTKHipD/oE1GAXgj3lMwjBmJXZjqD \\ --router cloud-router \\ --vpn-gateway ha-vpn-gw-a \\ --interface 0 Create the VPN tunnel for interface 1: gcloud compute vpn-tunnels create TUNNEL NAME IF1 \\ --peer-external-gateway = AZURE GW NAME \\ --peer-external-gateway-interface = AZURE GW INT NUM 1 \\ --region = REGION \\ --ike-version = IKE VERS \\ --shared-secret = SHARED SECRET \\ --router = ROUTER NAME \\ --vpn-gateway = HA VPN GATEWAY NAME \\ --interface = INT NUM 1 The command should look similar to the following example: gcloud compute vpn-tunnels create azure-tunnel-2 \\ --peer-external-gateway azure-peer-gw \\ --peer-external-gateway-interface 1 \\ --region us-central1 \\ --ike-version 2 \\ --shared-secret xo2aTKHipD/oE1GAXgj3lMwjBmJXZjqD \\ --router cloud-router \\ --vpn-gateway ha-vpn-gw-a \\ --interface 1 Create BGP sessions For dynamic routing, you use Cloud Router to establish BGP sessions between Google Cloud and Azure.",
+          "The command should look similar to the following example: gcloud compute vpn-tunnels describe azure-tunnel-2 --region=us-central1 The expected output for the tunnel should look similar to the following example: creationTimestamp: '2022-09-28T17:13:21.592-07:00' description: '' detailedStatus: Tunnel is up and running. id: '5665972275117479944' ikeVersion: 2 kind: compute#vpnTunnel localTrafficSelector: - 0.0.0.0/0 name: azure-tunnel-2 peerExternalGateway: https://www.googleapis.com/compute/v1/projects/PROJECT-ID/global/externalVpnGateways/azure-peer-gw peerExternalGatewayInterface: 1 peerIp: 203.0.113.2 region: https://www.googleapis.com/compute/v1/projects/PROJECT-ID/regions/us-central1 remoteTrafficSelector: - 0.0.0.0/0 router: https://www.googleapis.com/compute/v1/projects/PROJECT-ID/regions/us-central1/routers/cloud-router selfLink: https://www.googleapis.com/compute/v1/projects/PROJECT-ID/regions/us-central1/vpnTunnels/azure-tunnel-2 sharedSecret: ' ' sharedSecretHash: ALDZGgSMUxj8KFahMoG L0Fz9ddd Test connectivity To test HA VPN connections, you first need to create VMs on each side of the tunnel.",
+          "The command should look similar to the following example: gcloud compute networks create google-to-azure-vpc \\ --subnet-mode custom \\ --bgp-routing-mode global Create one subnet to host the test VMs: gcloud compute networks subnets create SUBNET NAME \\ --network NETWORK \\ --region SUBNET REGION \\ --range SUBNET IP ADDRESS RANGE Replace the following: SUBNET NAME : The subnet name."
+        ]
+      },
+      {
+        "title": "Create an HA VPN gateway to a peer VPN gateway \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+        "source_id": "site-docs-reference-3",
+        "final_score": 122,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: The VPN tunnels that you create aren't available until the corresponding partner tunnels have been created on your peer VPN gateway or gateways. gcloud compute vpn-tunnels create TUNNEL NAME IF0 \\ --peer-external-gateway= PEER GW NAME \\ --peer-external-gateway-interface= PEER EXT GW IF0 \\ --region= REGION \\ --ike-version= IKE VERS \\ --shared-secret= SHARED SECRET \\ --router= ROUTER NAME \\ --vpn-gateway= GW NAME \\ [--vpn-gateway-region= VPN GATEWAY REGION ] \\ --interface= INT NUM 0 gcloud compute vpn-tunnels create TUNNEL NAME IF1 \\ --peer-external-gateway= PEER GW NAME \\ --peer-external-gateway-interface= PEER EXT GW IF1 \\ --region= REGION \\ --ike-version= IKE VERS \\ --shared-secret= SHARED SECRET \\ --router= ROUTER NAME \\ --vpn-gateway= GW NAME \\ [--vpn-gateway-region= VPN GATEWAY REGION ] \\ --interface= INT NUM 1 Replace the following: TUNNEL NAME IF0 and TUNNEL NAME IF1 : a name for the tunnel; naming the tunnels by including the gateway interface name can help identify the tunnels later PEER GW NAME : a name of the external peer gateway created earlier PEER EXT GW IF0 and PEER EXT GW IF1 : the interface number configured earlier on the external peer gateway IKE VERS : 1 for IKEv1 or 2 for IKEv2; if possible, use IKEv2 for the IKE version.",
+          "Note: The VPN tunnels that you create are not available until the corresponding partner tunnels have been created on your peer VPN gateway or gateways. gcloud compute vpn-tunnels create TUNNEL NAME IF0 \\ --peer-external-gateway= PEER GW NAME \\ --peer-external-gateway-interface= PEER EXT GW IF0 \\ --region= REGION \\ --ike-version= IKE VERS \\ --shared-secret= SHARED SECRET \\ --router= ROUTER NAME \\ --vpn-gateway= GW NAME \\ [--vpn-gateway-region= VPN GATEWAY REGION ] \\ --interface= INT NUM 0 gcloud compute vpn-tunnels create TUNNEL NAME IF1 \\ --peer-external-gateway= PEER GW NAME \\ --peer-external-gateway-interface= PEER EXT GW IF0 \\ --region= REGION \\ --ike-version= IKE VERS \\ --shared-secret= SHARED SECRET \\ --router= ROUTER NAME \\ --vpn-gateway= GW NAME \\ [--vpn-gateway-region= VPN GATEWAY REGION ] \\ --interface= INT NUM 1 Replace the following: TUNNEL NAME IF0 and TUNNEL NAME IF1 : a name for the tunnel; naming the tunnels by including the gateway interface name can help identify the tunnels later PEER GW NAME : the name of the external peer gateway created earlier PEER EXT GW IF0 : the interface number configured earlier on the external peer gateway IKE VERS : 1 for IKEv1 or 2 for IKEv2.",
+          "For example, to configure cipher algorithms for the Cloud VPN tunnel that connects to interface 0 of the external Cloud VPN gateway, run the following command: gcloud compute vpn-tunnels create TUNNEL NAME IF0 \\ --peer-external-gateway= PEER GW NAME \\ --peer-external-gateway-interface= PEER EXT GW IF0 \\ --region= REGION \\ --ike-version= IKE VERS \\ --shared-secret= SHARED SECRET \\ --router= ROUTER NAME \\ --vpn-gateway= GW NAME \\ [--vpn-gateway-region= VPN GATEWAY REGION ] \\ --interface= INT NUM 0 \\ --phase1-encryption= PH1 ENCRYPT ALGRTHS \\ --phase1-integrity= PH1 INTEGRITY ALGRTHS \\ --phase1-prf= PH1 PRF ALGRTHS \\ --phase1-dh= PH1 DH GROUP \\ --phase2-encryption= PH2 ENCRYPT ALGRTHS \\ --phase2-integrity= PH2 INTEGRITY ALGRTHS \\ --phase2-pfs = PH2 PFS ALGRTHS Replace the following: PH1 ENCRYPT ALGRTHS : a comma-separated list of encryption algorithms that are supported for phase 1 IKE security association (SA) negotiations."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "core.project",
+      "developers.google.com",
+      "ipsec.1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/create-ha-vpn-connections-google-cloud-aws",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/create-ha-vpn-connections-google-cloud-azure",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/create-ha-vpn-connections-google-cloud-aws",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/create-ha-vpn-connections-google-cloud-azure",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/create-ha-vpn-connections-google-cloud-aws",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/create-ha-vpn-connections-google-cloud-azure",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/create-ha-vpn-connections-google-cloud-aws",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/create-ha-vpn-connections-google-cloud-azure",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/create-ha-vpn-connections-google-cloud-aws",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/create-ha-vpn-connections-google-cloud-azure",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn"
+      ]
+    }
+  ]
+}

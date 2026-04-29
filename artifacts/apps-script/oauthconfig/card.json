@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.589Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "OAuthConfig",
+  "feature_slug": "oauthconfig",
+  "summary": "OAuthConfig was the URL Fetch service class for connecting to OAuth 1.0 APIs; deprecated on 2015-03-04.",
+  "extended_definition": "OAuthConfig was the URL Fetch service class for connecting to OAuth 1.0 APIs; deprecated on 2015-03-04.",
+  "lifecycle": {
+    "latest_feature_date": "2015-03-04",
+    "deprecation_date": "2015-03-04",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/services/external",
+      "https://developers.google.com/apps-script/guides/sheets/connected-sheets",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "March 04, 2015 Deprecated Deprecated the URL Fetch service's class OAuthConfig , which provided the ability to connect to OAuth 1.0 APIs.",
+          "May 20, 2015 Deprecated Deprecated the following OAuth class and methods in favor of OAuth libraries : + OAuthConfig + UrlFetchApp.addOAuthService(serviceName) + UrlFetchApp.removeOAuthService(serviceName) Feature Added the following enum and methods to the Script service to allow scripts to identify their installation source and project keys: InstallationSource ScriptApp.getInstallationSource() ScriptApp.getProjectKey() Added several new web-safe base-64 encoding and decoding methods: Utilities.base64DecodeWebSafe(String) Utilities.base64DecodeWebSafe(String, Charset) Utilities.base64EncodeWebSafe(Byte) Utilities.base64EncodeWebSafe(String) Utilities.base64EncodeWebSafe(String, Charset) April 23, 2015 Announcement Add-ons are now out of developer preview.",
+          "Bookmark NamedRange RangeBuilder Document.addBookmark(position) Document.addNamedRange(name, range) Document.getBookmark(id) Document.getBookmarks() Document.getNamedRangeById(id) Document.getNamedRanges() Document.getNamedRanges(name) Document.newPosition(element, offset) Document.newRange() Document.setCursor(position) Document.setSelection(range) Position.insertBookmark() Added the following ScriptApp class and methods, which allow scripts to create state tokens that can be used in callback APIs (like OAuth flows), as well as to retrieve the script's own OAuth 2.0 access token."
+        ]
+      },
+      {
+        "title": "External APIs \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/services/external",
+        "source_id": "site-docs-root-2",
+        "final_score": 86,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This API request does not require authorization or an API key. var query = '\"Apps Script\" stars:\">=100\"' ; var url = 'https://api.github.com/search/repositories' + '?sort=stars' + '&q=' + encodeURIComponent ( query ); var response = UrlFetchApp . fetch ( url , { 'muteHttpExceptions' : true }); Logger . log ( response ); Make requests to services with OAuth APIs that act on behalf of a user usually require authorization, often using the OAuth protocol .",
+          "Page Summary outlined flag Google Apps Script can interact with various web APIs using the UrlFetch service.",
+          "For APIs requiring user authorization via OAuth, open source libraries for OAuth1 and OAuth2 are available."
+        ]
+      },
+      {
+        "title": "Use Connected Sheets \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/sheets/connected-sheets",
+        "source_id": "site-docs-root-2",
+        "final_score": 80,
+        "relevance": "",
+        "evidence_snippets": [
+          "It adds a Drive OAuth scope in addition to the minimum required spreadsheet and bigquery.readonly OAuth scopes: { ... \"oauthScopes\" : [ \"https://www.googleapis.com/auth/bigquery.readonly\" , \"https://www.googleapis.com/auth/spreadsheets\" , \"https://www.googleapis.com/auth/drive\" ], ... } Example: Create and refresh a data source object The following examples shows how to add a data source, create a data source object from the data source, refresh the data source object, and get the execution status.",
+          "The following sample shows the SpreadsheetApp.enableLookerExecution() method called within a function: function addDataSource () { SpreadsheetApp . enableLookerExecution (); var spreadsheet = SpreadsheetApp . getActive (); } Add additional OAuth scopes to the manifest file When connecting with BigQuery, most OAuth scopes are automatically added to the manifest file based on the functions used in your code.",
+          "Common actions with Connected Sheets, such as connecting to a data source or adding charts, are performed using specific DataSource classes and methods in Apps Script."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "api.github.com",
+      "bigquery.readonly",
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/services/external",
+        "https://developers.google.com/apps-script/guides/sheets/connected-sheets"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/services/external",
+        "https://developers.google.com/apps-script/guides/sheets/connected-sheets"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/services/external",
+        "https://developers.google.com/apps-script/guides/sheets/connected-sheets"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/services/external",
+        "https://developers.google.com/apps-script/guides/sheets/connected-sheets"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/services/external",
+        "https://developers.google.com/apps-script/guides/sheets/connected-sheets"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/services/external",
+        "https://developers.google.com/apps-script/guides/sheets/connected-sheets"
+      ]
+    }
+  ]
+}

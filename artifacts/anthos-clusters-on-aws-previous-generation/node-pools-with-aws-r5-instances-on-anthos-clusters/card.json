@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.133Z",
+  "source_step08_card": "data/step-08/current/products/anthos-clusters-on-aws-previous-generation/card.json",
+  "product_name": "Anthos clusters on AWS (previous generation)",
+  "product_slug": "anthos-clusters-on-aws-previous-generation",
+  "feature_name": "Node pools with AWS R5 instances on Anthos clusters",
+  "feature_slug": "node-pools-with-aws-r5-instances-on-anthos-clusters",
+  "summary": "Anthos clusters on AWS now support launching node pools backed by AWS R5 instance types.",
+  "extended_definition": "Anthos clusters on AWS now support launching node pools backed by AWS R5 instance types.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools/create",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools/list"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.awsClusters.awsNodePools \\_|\\_ GKE Multi-Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+        "source_id": "site-api-reference",
+        "final_score": 144,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE Multi-Cloud GKE Multi-Cloud Reference Send feedback REST Resource: projects.locations.awsClusters.awsNodePools Stay organized with collections Save and categorize content based on your preferences.",
+          "Configuration for provisioning EC2 Spot instances When specified, the node pool will provision Spot instances from the set of spotConfig.instance types.",
+          "Node pool names are formatted as projects/<project-number>/locations/<region>/awsClusters/<cluster-id>/awsNodePools/<node-pool-id> ."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.awsClusters.awsNodePools.list \\_|\\_ GKE Multi-Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools/list",
+        "source_id": "site-api-reference",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "Regardless of the pageSize value, the response can include a partial list and a caller should only rely on response's nextPageToken to determine if there are more instances left to be queried. pageToken string The nextPageToken value returned from a previous awsNodePools.list request, if any.",
+          "If successful, the response body contains data with the following structure: JSON representation { \"awsNodePools\" : [ { object ( AwsNodePool ) } ] , \"nextPageToken\" : string } Fields awsNodePools[] object ( AwsNodePool ) A list of AwsNodePool resources in the specified AwsCluster . nextPageToken string Token to retrieve the next page of results, or empty if there are no more results in the list.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE Multi-Cloud GKE Multi-Cloud Reference Send feedback Method: projects.locations.awsClusters.awsNodePools.list Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.awsClusters.awsNodePools.create \\_|\\_ GKE Multi-Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools/create",
+        "source_id": "site-api-reference",
+        "final_score": 123,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE Multi-Cloud GKE Multi-Cloud Reference Send feedback Method: projects.locations.awsClusters.awsNodePools.create Stay organized with collections Save and categorize content based on your preferences.",
+          "The provided ID will be part of the AwsNodePool resource name formatted as projects/<project-id>/locations/<region>/awsClusters/<cluster-id>/awsNodePools/<node-pool-id> .",
+          "IAM Permissions Requires the following IAM permission on the parent resource: gkemulticloud.awsNodePools.create For more information, see the IAM documentation ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gkemulticloud.awsNodePools.create",
+      "gkemulticloud.awsNodePools.list",
+      "projects.locations.awsClusters.awsNodePools",
+      "projects.locations.awsClusters.awsNodePools.create",
+      "projects.locations.awsClusters.awsNodePools.delete",
+      "projects.locations.awsClusters.awsNodePools.get",
+      "projects.locations.awsClusters.awsNodePools.list",
+      "projects.locations.awsClusters.awsNodePools.patch"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools/list",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools/create"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools/list",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools/create"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools/list",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools/create"
+      ]
+    }
+  ]
+}

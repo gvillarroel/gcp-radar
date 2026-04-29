@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:49.160Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "Connected network access for internal HTTP(S) Load Balancing",
+  "feature_slug": "connected-network-access-for-internal-http-s-load-balancing",
+  "summary": "Internal HTTP(S) Load Balancing can be accessed from connected networks over VPC Peering, Cloud VPN, and Cloud Interconnect.",
+  "extended_definition": "Internal HTTP(S) Load Balancing can be accessed from connected networks over VPC Peering, Cloud VPN, and Cloud Interconnect.",
+  "lifecycle": {
+    "latest_feature_date": "2020-02-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/internal",
+      "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+      "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Internal proxy Network Load Balancer overview \\_|\\_ Cloud Load Balancing\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "source_id": "site-docs-root",
+        "final_score": 200,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table shows the forwarding rule requirements for internal proxy Network Load Balancers: Load balancer mode Forwarding rule, IP address, and proxy-only subnet --purpose Routing from the client to the load balancer's frontend Regional internal proxy Network Load Balancer Regional forwardingRules Regional IP address Load balancing scheme: INTERNAL MANAGED Proxy-only subnet --purpose : REGIONAL MANAGED PROXY IP address --purpose : SHARED LOADBALANCER VIP You can enable global access to allow clients from any region to access your load balancer.",
+          "Load balancer mode Load balancer type Access type Region Regional internal proxy Network Load Balancer Network (Proxy) Internal Specifies a region Cross-region internal proxy Network Load Balancer Network (Proxy) Internal gcloud To determine the mode of a load balancer, run the following command: gcloud compute forwarding-rules describe FORWARDING RULE NAME In the command output, check the load balancing scheme, region, and network tier.",
+          "Cross-region internal proxy Network Load Balancer Global globalForwardingRules Regional IP addresses Load balancing scheme: INTERNAL MANAGED Proxy-only subnet --purpose : GLOBAL MANAGED PROXY IP address --purpose : SHARED LOADBALANCER VIP Global access is enabled by default to allow clients from any region to access your load balancer."
+        ]
+      },
+      {
+        "title": "\"Internal passthrough Network Load Balancer overview \\_|\\_ Cloud Load Balancing\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 196,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table summarizes how to use these settings for different protocols: Traffic to be load-balanced Forwarding rule protocol Backend service protocol TCP (IPv4 or IPv6) TCP TCP or UNSPECIFIED UDP (IPv4 or IPv6) UDP UDP or UNSPECIFIED TCP, UDP, ICMP, ICMPv6, SCTP, ESP, AH, and GRE L3 DEFAULT UNSPECIFIED Forwarding rules and global access An internal passthrough Network Load Balancer's forwarding rules are regional, even when global access is enabled.",
+          "An internal passthrough Network Load Balancer doesn't support the following: Backend VMs in multiple regions Balancing traffic that originates from the internet, unless you're using it with an external load balancer IPv6 packets with fragmented headers Internal IP address Internal passthrough Network Load Balancers support IPv4-only, dual-stack, and IPv6-only subnets.",
+          "Home Documentation Networking Load Balancing Guides Send feedback Internal passthrough Network Load Balancer overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Internal Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "source_id": "site-docs-root",
+        "final_score": 184,
+        "relevance": "",
+        "evidence_snippets": [
+          "Load balancer mode Load balancer type Access type Region Cross-region internal Application Load Balancer Application Internal Regional internal Application Load Balancer Application Internal Specifies a region gcloud To determine the mode of a load balancer, run the following command: gcloud compute forwarding-rules describe FORWARDING RULE NAME In the command output, check the load balancing scheme, region, and network tier.",
+          "Accessing connected networks Your clients can access an internal Application Load Balancer in your VPC network from a connected network by using the following: VPC Network Peering Cloud VPN and Cloud Interconnect For detailed examples, see Internal Application Load Balancers and connected networks .",
+          "Table: Supported session affinity settings Product Session affinity options Cross-region internal Application Load Balancer Regional internal Application Load Balancer None ( NONE ) Client IP ( CLIENT IP ) Generated cookie ( GENERATED COOKIE ) Header field ( HEADER FIELD ) HTTP cookie ( HTTP COOKIE ) Stateful cookie-based affinity ( STRONG COOKIE AFFINITY ) Also note: The effective default value of the load balancing locality policy ( localityLbPolicy ) changes according to your session affinity settings."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "addresses.insert"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "TEMP statements with OR REPLACE and IF NOT EXISTS in sessions",
+  "feature_slug": "temp-statements-with-or-replace-and-if-not-exists-in-sessions",
+  "summary": "Session statements that use the TEMP keyword can also use OR REPLACE and IF NOT EXISTS.",
+  "extended_definition": "Session statements that use the TEMP keyword can also use OR REPLACE and IF NOT EXISTS.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 159,
+        "relevance": "",
+        "evidence_snippets": [
+          "Syntax To create a SQL UDF, use the following syntax: CREATE [ OR REPLACE ] [ TEMPORARY TEMP ] FUNCTION [ IF NOT EXISTS ] [[ project name . ] dataset name . ] function name ( [ named parameter [ , ... ]] ) ( [ named parameter [ , ... ]] ) [ RETURNS data type ] AS ( sql expression ) [ OPTIONS ( function option list ) ] named parameter : param name param type To create a JavaScript UDF, use the following syntax: CREATE [ OR REPLACE ] [ TEMPORARY TEMP ] FUNCTION [ IF NOT EXISTS ] [[ project name . ] dataset name . ] function name ( [ named parameter [ , ... ]] ) RETURNS data type [ determinism specifier ] LANGUAGE js [ OPTIONS ( function option list ) ] AS javascript code named parameter : param name param type determinism specifier : { DETERMINISTIC NOT DETERMINISTIC } To create a Python UDF, use the following syntax: Preview This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "Syntax CREATE [ OR REPLACE ] [ TEMP TEMPORARY ] TABLE [ IF NOT EXISTS ] table name [ ( column constraint definition [ , ... ] ) ] [ DEFAULT COLLATE collate specification ] [ PARTITION BY partition expression ] [ CLUSTER BY clustering column list ] [ WITH CONNECTION connection name ] [ OPTIONS ( table option list ) ] [ AS query statement ] column := column definition constraint definition := [ primary key ] [[ CONSTRAINT constraint name ] foreign key , ... ] primary key := PRIMARY KEY ( column name [ , ... ] ) NOT ENFORCED foreign key := FOREIGN KEY ( column name [ , ... ] ) foreign reference foreign reference := REFERENCES primary key table ( column name [ , ... ] ) NOT ENFORCED Arguments OR REPLACE : Replaces any table with the same name if it exists.",
+          "CREATE [ OR REPLACE ] FUNCTION [ IF NOT EXISTS ] [ project name .] dataset name . function name ([ named parameter [, ...]]) RETURNS data type LANGUAGE python [ WITH CONNECTION connection path ] OPTIONS ( function option list ) AS python code named parameter : param name param type To create a remote function, use the following syntax: CREATE [ OR REPLACE ] [ TEMPORARY TEMP ] FUNCTION [ IF NOT EXISTS ] [[ project name . ] dataset name . ] function name ( [ named parameter [ , ... ]] ) RETURNS data type REMOTE WITH CONNECTION connection path [ OPTIONS ( function option list ) ] named parameter : param name param type Routine names must contain only letters, numbers, and underscores, and be at most 256 characters long."
+        ]
+      },
+      {
+        "title": "bq command-line tool reference \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "Synopsis bq insert [ FLAGS ] TABLE FILE Examples bq insert --ignore unknown values --template suffix = insert myDataset.myTable /tmp/myData.json echo '{\"a\":1, \"b\":2}' bq insert myDataset.myTable Flags and arguments The bq insert command uses the following flags and arguments: --ignore unknown values={true false} or -i={true false} When set to true , BigQuery ignores any key-value pairs that don't match the table's schema, and inserts the row with the data that does match the schema.",
+          "For example: bq --location=us mk --reservation --project id=project reservation name You can specify command arguments in the following ways: -- FLAG ARGUMENT (as shown in the previous examples) -- FLAG = ARGUMENT -- FLAG =' ARGUMENT ' -- FLAG =\" ARGUMENT \" -- FLAG ' ARGUMENT ' -- FLAG \" ARGUMENT \" Replace the following: FLAG : a global or command-specific flag ARGUMENT : the flag's argument Some commands require the use of quotes around arguments.",
+          "If --autodetect is false , and no schema is specified by using the --schema flag, and the destination table exists, then the schema of the destination table is used. --clustering fields= COLUMNS A comma-separated list of up to four column names that specifies the fields to use for table clustering . --column name character map= SCOPE Defines the scope and handling of characters in column names, with the option of enabling flexible column names ."
+        ]
+      },
+      {
+        "title": "\"Data manipulation language (DML) statements in GoogleSQL \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax",
+        "source_id": "site-docs-reference",
+        "final_score": 119,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Warehouse t2 ON t1 . warehouse = t2 . warehouse ) S ON T . product = S . product WHEN MATCHED AND state = 'CA' THEN UPDATE SET quantity = T . quantity + S . quantity WHEN MATCHED THEN DELETE These are the tables before you run the query: Warehouse +--------------+-------+ warehouse state +--------------+-------+ warehouse #1 WA warehouse #2 CA warehouse #3 WA +--------------+-------+ NewArrivals +-----------------+----------+--------------+ product quantity warehouse +-----------------+----------+--------------+ dryer 20 warehouse #2 refrigerator 25 warehouse #2 top load washer 30 warehouse #1 +-----------------+----------+--------------+ Inventory +-----------------+----------+ product quantity +-----------------+----------+ dryer 50 microwave 20 oven 35 refrigerator 25 top load washer 30 +-----------------+----------+ This is the Inventory table after you run the query: Inventory +--------------+----------+ product quantity +--------------+----------+ dryer 70 microwave 20 oven 35 refrigerator 50 +--------------+----------+ Example 7 In the following example, a runtime error is returned because the query attempts to update a target table when the source contains more than one matched row.",
+          "NewArrivals WHERE warehouse <> 'warehouse #2' ) S ON T . product = S . product WHEN MATCHED AND T . warehouse = 'warehouse #1' THEN UPDATE SET quantity = T . quantity + 20 WHEN MATCHED THEN DELETE This is the NewArrivals table before you run the query: NewArrivals +-----------------+----------+--------------+ product quantity warehouse +-----------------+----------+--------------+ dryer 20 warehouse #2 oven 30 warehouse #3 refrigerator 25 warehouse #2 top load washer 10 warehouse #1 +-----------------+----------+--------------+ This is the NewArrivals table after you run the query: NewArrivals +-----------------+----------+--------------+ product quantity warehouse +-----------------+----------+--------------+ dryer 20 warehouse #2 refrigerator 25 warehouse #2 top load washer 30 warehouse #1 +-----------------+----------+--------------+ Example 4 In the following example, the query replaces all products like '%washer%' in the Inventory table by using the values in the NewArrivals table.",
+          "NewArrivals ) Before: Inventory +-------------------+----------+--------------------+ product quantity supply constrained +-------------------+----------+--------------------+ dishwasher 30 NULL dryer 30 NULL front load washer 20 NULL microwave 20 NULL oven 5 NULL refrigerator 10 NULL top load washer 10 NULL +-------------------+----------+--------------------+ NewArrivals +-----------------+----------+--------------+ product quantity warehouse +-----------------+----------+--------------+ dryer 200 warehouse #2 oven 300 warehouse #3 top load washer 100 warehouse #1 +-----------------+----------+--------------+ After: Inventory +-----------------+----------+--------------------+ product quantity supply constrained +-----------------+----------+--------------------+ dryer 30 NULL oven 5 NULL top load washer 10 NULL +-----------------+----------+--------------------+ Alternately, you can use DELETE with the EXISTS clause: DELETE dataset ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax"
+      ]
+    }
+  ]
+}

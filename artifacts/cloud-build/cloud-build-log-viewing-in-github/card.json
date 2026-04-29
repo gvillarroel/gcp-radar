@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:46.721Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build",
+  "feature_name": "Cloud Build log viewing in GitHub",
+  "feature_slug": "cloud-build-log-viewing-in-github",
+  "summary": "Cloud Build users can view build logs directly inside GitHub or GitHub Enterprise.",
+  "extended_definition": "Cloud Build users can view build logs directly inside GitHub or GitHub Enterprise.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github",
+      "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github-enterprise",
+      "https://docs.cloud.google.com/build/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Building repositories from GitHub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github",
+        "source_id": "site-docs-root-2",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To learn how to view build logs, see Viewing build logs .",
+          "The following table compares GitHub legacy triggers, GitHub triggers, and GitHub Enterprise triggers: Feature GitHub legacy triggers GitHub triggers GitHub Enterprise triggers Execute builds on pushes to the source code Yes Yes Yes Execute builds on pull requests No Yes Yes Create trigger using Google Cloud console Yes Yes Yes Create trigger using the Cloud Build API No Yes Yes Create trigger using the Cloud Build GitHub app No Yes Yes View build status on Google Cloud console Yes Yes Yes View build status on GitHub No Yes Yes Data sharing The data sent to GitHub from Cloud Build helps you identify triggers by name and see build results on GitHub.",
+          "API To create a GitHub trigger with the API, use the following JSON template: { \"filename\" : \"cloudbuild.yaml\" , \"name\" : \" TRIGGER NAME \" , \"description\" : \" TRIGGER DESCRIPTION \" , \"serviceAccount\" : \" SERVICE ACCOUNT \" , \"github\" : { \"owner\" : \" OWNER \" , \"name\" : \" REPO NAME \" , \"push\" : { \"branch\" : \". \" }, }, \"include build logs\" : i n clude - build - logs - value } Where: TRIGGER NAME is a name for the trigger."
+        ]
+      },
+      {
+        "title": "Building repositories from GitHub Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github-enterprise",
+        "source_id": "site-docs-root-2",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "To learn how to view build logs, see Viewing build logs .",
+          "API To create a GitHub Enterprise trigger with the API, use the following JSON template: { \"filename\" : \"cloudbuild.yaml\" , \"name\" : \" TRIGGER NAME \" , \"description\" : \" TRIGGER DESCRIPTION \" , \"serviceAccount\" : \" SERVICE ACCOUNT \" , \"github\" : { \"owner\" : \" OWNER \" , \"name\" : \" REPO NAME \" , \"push\" : { \"branch\" : \". \" }, \"enterprise config resource name\" : \"projects/ PROJECT NUMBER /githubEnterpriseConfigs/ CONNECTION ID \" }, \"include build logs\" : i n clude - build - logs - value } Where: TRIGGER NAME is a name for the trigger.",
+          "In the API, this connection is represented as a GitHubEnterpriseConfig resource, or an association between Cloud Build and your GitHub Enterprise Server. include-build-logs-value is the value of the optional include build logs field."
+        ]
+      },
+      {
+        "title": "Overview of Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Viewing build results You can view your build results using the gcloud CLI, the Cloud Build API or use the Build History page in the Cloud Build section in Google Cloud console, which displays details and logs for every build Cloud Build executes.",
+          "Build details : Details of the build such as the builder and the link to view logs.",
+          "For more information, see Viewing build provenance ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudbuild.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github",
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github-enterprise",
+        "https://docs.cloud.google.com/build/docs/overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github",
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github-enterprise",
+        "https://docs.cloud.google.com/build/docs/overview"
+      ]
+    }
+  ]
+}

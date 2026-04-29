@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:46.338Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing",
+  "feature_name": "Cloud Billing project-account link lock",
+  "feature_slug": "cloud-billing-project-account-link-lock",
+  "summary": "Cloud Billing added a lock mechanism to secure the link between a Google Cloud project and its billing account, preventing accidental billing-state changes.",
+  "extended_definition": "Cloud Billing added a lock mechanism to secure the link between a Google Cloud project and its billing account, preventing accidental billing-state changes.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/create-billing-account",
+      "https://docs.cloud.google.com/billing/docs/how-to/view-linked",
+      "https://docs.cloud.google.com/billing/docs/onboarding-checklist"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View projects linked to Cloud Billing accounts \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/view-linked",
+        "source_id": "site-docs-root",
+        "final_score": 190,
+        "relevance": "",
+        "evidence_snippets": [
+          "For information about unlocking or locking this link, see Secure the link between a project and its billing account .",
+          "For information about unlocking or locking this link, see Secure the link between a project and its billing account .",
+          "A padlock icon lock displays next to each project that's locked to its linked Cloud Billing account."
+        ]
+      },
+      {
+        "title": "Create a new self-serve Cloud Billing account \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/create-billing-account",
+        "source_id": "site-docs-root",
+        "final_score": 138,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Related topics Modify your Cloud Billing account Close or re-open your Cloud Billing account View projects linked to a Cloud Billing account Enable, disable, or change billing for a project Add, remove, or update a payment method Resolve billing issues View your cost and payment history View your billing reports and cost trends Try it for yourself If you're new to Google Cloud, create an account to evaluate how our products perform in real-world scenarios.",
+          "Product Billing account needed to pay for product usage costs Google Cloud Cloud Billing account Google Maps Platform Cloud Billing account Google Cloud & Google Maps Platform 1 Cloud Billing account Google Workspace Google Workspace billing account Google Cloud & Google Workspace 1 Cloud Billing account + 1 Google Workspace billing account A project and its service-level resources are linked to one Cloud Billing account at a time.",
+          "If you want to change the Cloud Billing account that you're using to pay for a project (that is, link a project to a different Cloud Billing account), see Enable, disable, or change billing for a project ."
+        ]
+      },
+      {
+        "title": "\"Guide to Cloud Billing Resource Organization and Access Management \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/billing/docs/onboarding-checklist",
+        "source_id": "site-docs-root",
+        "final_score": 120,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Important Roles monetization on Role: Billing Account Admin The Billing Account Admin can: Manage payment instruments Enable Billing Export View costs and spend and set budget alerts Link and unlink projects Manage other user roles tied to the Billing Account Recommended Assignee This role is typically filled by someone with financial control at your company, for example, a business lead that owns the P&L or a technical team member with budget management responsibility.",
+          "Importantly, because this role is required to contact Billing Support, you shouldn't use a service account or mailing list as a billing administrator. monetization on Role: Billing User Billing Users can: Link projects to billing accounts, but can't unlink them View costs Recommended Assignee This role is usually issued broadly in concert with the Project Creator role.",
+          "Note: If you have many projects to move, try our gcloud tool to link projects to a billing account . ❑ star Settle and close any other billing accounts that you no longer intend to use to avoid potential issues in the future."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/view-linked",
+        "https://docs.cloud.google.com/billing/docs/how-to/create-billing-account",
+        "https://docs.cloud.google.com/billing/docs/onboarding-checklist"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/view-linked",
+        "https://docs.cloud.google.com/billing/docs/how-to/create-billing-account",
+        "https://docs.cloud.google.com/billing/docs/onboarding-checklist"
+      ]
+    }
+  ]
+}

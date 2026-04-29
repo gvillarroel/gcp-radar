@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:20.598Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "Sample dashboards on the Looker homepage",
+  "feature_slug": "sample-dashboards-on-the-looker-homepage",
+  "summary": "The Looker homepage can show sample dashboards when an instance does not yet have any Looks or dashboards.",
+  "extended_definition": "The Looker homepage can show sample dashboards when an instance does not yet have any Looks or dashboards.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-homepage",
+      "https://docs.cloud.google.com/looker/docs/best-practices/rendered-format-options-downloading-delivering-dashboards",
+      "https://docs.cloud.google.com/looker/docs/looker-core-create-dashboard-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Downloading or delivering dashboards in rendered formats \\_|\\_ Looker \\_\\",
+        "url": "https://docs.cloud.google.com/looker/docs/best-practices/rendered-format-options-downloading-delivering-dashboards",
+        "source_id": "site-docs-reference",
+        "final_score": 153,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Important : Starting in Looker 26.4, table charts, scatterplot charts, and Google Maps charts that have increased row limits are subject to the following limitations when you download, send, or schedule dashboards in PDF format: The query results for each table chart on a dashboard will display up to 50,000 rows, to a maximum total limit of 200,000 cells per dashboard.",
+          "Home Documentation Data analytics Looker Best Practices Send feedback Downloading or delivering dashboards in rendered formats Stay organized with collections Save and categorize content based on your preferences.",
+          "Table charts on a dashboard PDF will display more rows than are displayed on the dashboard tile thumbnail only when the Expand tables to show all rows option is selected."
+        ]
+      },
+      {
+        "title": "Admin settings - Homepage \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-homepage",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: If you are using Looker (Google Cloud core), the pre-built homepage also displays the following sections in addition to the Recently Viewed and Favorites tabs: A Sample Dashboards section, which displays the sample dashboards from the sample LookML project, unless the sample LookML project has been removed .",
+          "Setting a default homepage for your instance The Looker homepage appears when users log in to Looker or navigate to the homepage by clicking Home in the left navigation panel or by clicking the Looker logo.",
+          "The homepage options for your instance are available on the Homepage page under Set a default homepage for your organization : Looker's pre-built homepage : The pre-built Looker homepage displays tabs for recently viewed content and favorited content."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Build a dashboard with sample data \\_|\\_ Looker \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/looker/docs/looker-core-create-dashboard-quickstart",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "Looker permissions You'll need to have the following Looker permissions on your Looker (Google Cloud core) instance (or a Looker role that includes these permissions): access data : Access the sample data in the Intermediate Ecommerce Explore explore (and its parent permission, see looks ): Access the Explore page and run queries in the Intermediate Ecommerce Explore. see user dashboards (and its parent permission, see looks ): View the Sales and Customer Insights dashboard. save dashboards (and its parent permission, save content ): Save and edit the Sales and Customer Insights dashboard. save looks (and its parent permission, save content ): Save the Weekly Shipping Trends (Last 8 Weeks) Look (if you complete the Build a Look with sample data quickstart). create table calculations : Create the table calculations for the Yearly Sales Goal Tracking (2024) tile.",
+          "Build a dashboard with sample data Learn how to create a dashboard with sample data from the Intermediate Ecommerce Explore in the sample LookML project on your Looker (Google Cloud core) instance.",
+          "Before you begin To follow along with this quickstart, you'll need access to a Looker (Google Cloud core) instance that includes the sample LookML project ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/best-practices/rendered-format-options-downloading-delivering-dashboards",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-homepage",
+        "https://docs.cloud.google.com/looker/docs/looker-core-create-dashboard-quickstart"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/best-practices/rendered-format-options-downloading-delivering-dashboards",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-homepage",
+        "https://docs.cloud.google.com/looker/docs/looker-core-create-dashboard-quickstart"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/best-practices/rendered-format-options-downloading-delivering-dashboards",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-homepage",
+        "https://docs.cloud.google.com/looker/docs/looker-core-create-dashboard-quickstart"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.119Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "SecOps Labs",
+  "feature_slug": "secops-labs",
+  "summary": "SecOps Labs lets users run Gemini and other intelligence experiments in Google SecOps without disrupting production systems.",
+  "extended_definition": "SecOps Labs lets users run Gemini and other intelligence experiments in Google SecOps without disrupting production systems.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection",
+      "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+      "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Answer Threat Intelligence questions with Gemini \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "source_id": "site-docs-reference",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Answer Threat Intelligence questions with Gemini Supported in: Google secops SIEM Gemini can answer questions related to threat intelligence about topics such as threat actors, their associations, and their behavior patterns, including questions about MITRE TTPs .",
+          "You can ask Gemini questions about MITRE tactics, techniques, and procedures (TTPs), and receive contextually relevant answers that include the following MITRE details: Tactic Technique Sub-technique Detection suggestions Procedures Mitigations Gemini returns a link to the curated detections Google SecOps makes available for each TTP.",
+          "Specifically, threat intelligence data is more limited in product editions other than Enterprise Plus because they don't include full access to Mandiant and VirusTotal."
+        ]
+      },
+      {
+        "title": "\"Use Triage and Investigation Agent to investigate alerts \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "source_id": "site-docs-reference-2",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "Default Supported Log Types The agent supports automatic investigation for alerts that contain events with the following metadata.log type values: Source metadata.log type values Amazon AWS CLOUDTRAIL , AWS IAM , AWS NETWORK FIREWALL , AWS VPC FLOW Cisco CISCO ASA FIREWALL, CISCO FIREPOWER FIREWALL, CISCO ISE, CISCO MERAKI CrowdStrike CROWDSTRIKE IOC , CS ALERTS , CS CEF EDR , CS DETECTS , CS EDR , CS IDP Fortinet FORTINET FIREWALL , FORTINET FORTIEDR , FORTINET WEBPROXY Google GCP CLOUDAUDIT , GCP CLOUDIDENTITY DEVICES , GCP CLOUDIDENTITY DEVICEUSERS , GCP DNS , GCP NGFW ENTERPRISE , GCP VPC FLOW , WORKSPACE ACTIVITY , WORKSPACE ALERTS , WORKSPACE USERS Microsoft ADFS , AZURE AD , AZURE AD AUDIT , AZURE AD CONTEXT , AZURE AD SIGNIN , AZURE FIREWALL , AZURE NSG FLOW , GITHUB , MICROSOFT DEFENDER ATP , MICROSOFT DEFENDER ENDPOINT , MICROSOFT DEFENDER ENDPOINT IOS , MICROSOFT DEFENDER IDENTITY , MICROSOFT GRAPH ALERT , OFFICE 365 , SENTINELONE ACTIVITY , SENTINELONE ALERT , SENTINELONE CF , SENTINEL DV , SENTINEL EDR , WINDOWS AD , WINDOWS DEFENDER ATP , WINDOWS DEFENDER AV , WINDOWS DHCP , WINDOWS DNS , WINDOWS FIREWALL , WINDOWS SYSMON , WINEVTLOG Okta OKTA , OKTA ACCESS GATEWAY , OKTA USER CONTEXT Other BARRACUDA FIREWALL , BOX , BRO DNS , CB APP CONTROL , CB DEFENSE , CB EDR , CHECKPOINT EDR , CHECKPOINT FIREWALL , CLOUDFLARE WAF , CYBERARK EPM , CYBEREASON EDR , DUO AUTH , DUO USER CONTEXT , ELASTIC EDR , F5 AFM , F5 ASM , F5 BIGIP LTM , FIREEYE HX , FIREEYE NX , FORCEPOINT FIREWALL , INFOBLOX DNS , JUNIPER FIREWALL , KEYCLOAK , LIMACHARLIE EDR , MALWAREBYTES EDR , MCAFEE EDR , NETFILTER IPTABLES , ONELOGIN SSO , ONE IDENTITY IDENTITY MANAGER , OPENSSH , PAN FIREWALL , PING , SALESFORCE , SEP , SOPHOS EDR , SOPHOS FIREWALL , SQUID WEBPROXY , SURICATA EVE , SURICATA IDS , SYMANTEC EDR , TANIUM EDR , TANIUM THREAT RESPONSE , TRENDMICRO EDR , UMBRELLA DNS , UMBRELLA FIREWALL , UMBRELLA WEBPROXY , ZEEK , ZSCALER FIREWALL , ZSCALER WEBPROXY .",
+          "View an alert or re-run an investigation The investigation panel lets you take the following actions: View alert : Opens the alert details in the Google SecOps SIEM view.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-13 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "\"Threat Intelligence overview \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection",
+        "source_id": "site-docs-reference",
+        "final_score": 96,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can integrate and use Google Threat Intelligence within Google SecOps using the following integration methods: Applied Threat Intelligence (ATI) This fully managed, native pipeline automatically curates and applies Google's threat intelligence.",
+          "Bring your own license (BYOL) Google Threat Intelligence integration This customer-deployed pipeline ingests licensed Google Threat Intelligence (GTI) data (Threat Lists, IoC Streams, and adversary context) into Google SecOps.",
+          "This method lets you deploy and manage resources (such as Cloud Run functions, Cloud Scheduler, Secret Manager) in your Google SecOps environment to fetch data from the Chronicle API and stream it to Google SecOps."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "metadata.log"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/detection"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/detection"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/detection"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/detection"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/detection"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/detection"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/detection"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/detection"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/detection"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/detection"
+      ]
+    }
+  ]
+}

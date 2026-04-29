@@ -1,0 +1,141 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Cross-region batch load and export",
+  "feature_slug": "cross-region-batch-load-and-export",
+  "summary": "BigQuery now supports loading and exporting data between any regions or multi-regions with a single statement or command.",
+  "extended_definition": "BigQuery now supports loading and exporting data between any regions or multi-regions with a single statement or command.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/batch-loading-data",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Batch loading data \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/batch-loading-data",
+        "source_id": "site-docs-reference-5",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Loading data from Cloud Storage BigQuery supports loading data from any of the following Cloud Storage storage classes : Standard Nearline Coldline Archive To learn how to load data into BigQuery, see the page for your data format: CSV JSON Avro Parquet ORC Datastore exports Firestore exports To learn how to configure a recurring load from Cloud Storage into BigQuery, see Cloud Storage transfers .",
+          "The source data can be in any of the following formats: Avro Comma-separated values (CSV) JSON (newline-delimited) ORC Parquet Datastore exports stored in Cloud Storage Firestore exports stored in Cloud Storage You can also use BigQuery Data Transfer Service to set up recurring loads from Cloud Storage into BigQuery.",
+          "Loading compressed and uncompressed data For Avro, Parquet, and ORC formats, BigQuery supports loading files where the file data has been compressed using a supported codec."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "ALTER PROJECT project id SET OPTIONS ( region-us.default time zone = \"America/New York\" , region-us.default job query timeout ms = 1800000 ); The following example sets the default time zone, the default query job timeout, the default Cloud KMS key to NULL , and the default interactive and batch queue timeouts and default sql dialect, clearing the project level default settings: ALTER PROJECT project id SET OPTIONS ( region-us.default time zone = NULL , region-us.default kms key name = NULL , region-us.default query job timeout ms = NULL , region-us.default interactive query queue timeout ms = NULL , region-us.default batch query queue timeout ms = NULL , region-us.default sql dialect option = NULL ); ALTER BI CAPACITY SET OPTIONS statement Sets the options on BigQuery BI Engine capacity.",
+          "Required permissions This statement requires the following IAM permissions : Permission Resource bigquery.bireservations.update BI Engine reservation Examples Allocating BI Engine capacity without preferred tables ALTER BI CAPACITY my-project.region-us.default SET OPTIONS ( size gb = 250 ) Deallocating BI capacity ALTER BI CAPACITY my-project.region-us.default SET OPTIONS ( size gb = 0 ) Removing a set of preferred tables from reservation ALTER BI CAPACITY my-project.region-us.default SET OPTIONS ( preferred tables = NULL ) Allocating BI Capacity with preferred tables list ALTER BI CAPACITY my-project.region-us.default SET OPTIONS ( size gb = 250 , preferred tables = [ \"data project1.dataset1.table1\" , \"data project2.dataset2.table2\" ] ) Overwriting list of preferred tables without changing the size ALTER BI CAPACITY region-us.default SET OPTIONS ( preferred tables = [ \"dataset1.table1\" , \"data project2.dataset2.table2\" ] ) ALTER CAPACITY SET OPTIONS statement Alters an existing capacity commitment.",
+          "Examples The following example sets the default time zone to America/Chicago and the default query job timeout to one hour for an organization in the US region: ALTER ORGANIZATION SET OPTIONS ( region-us.default time zone = \"America/Chicago\" , region-us.default job query timeout ms = 3600000 ); The following example sets the default time zone, the default query job timeout, the default interactive and batch queue timeouts, and the default Cloud KMS key, clearing the organization level default settings: ALTER ORGANIZATION SET OPTIONS ( region-us.default time zone = NULL , region-us.default kms key name = NULL , region-us.default query job timeout ms = NULL , region-us.default interactive query queue timeout ms = NULL , region-us.default batch query queue timeout ms = NULL ); ALTER PROJECT SET OPTIONS statement Sets the options on a project."
+        ]
+      },
+      {
+        "title": "Troubleshoot quota and limit errors \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "source_id": "site-docs-root",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "To see all copy jobs in all regions, you can use the following filter in Cloud Logging: resource.type=\"bigquery resource\" protoPayload.methodName=\"jobservice.insert\" protoPayload.serviceData.jobInsertRequest.resource.jobConfiguration.tableCopy: Resolution If the goal of the frequent copy operations is to create a snapshot of data, consider using table snapshots instead.",
+          "Identify API calls Go to the Google Cloud navigation menu menu, and then select Logging > Logs Explorer : Go to the Logs Explorer Filter logs to view table operations by running the following query: resource.type=\"bigquery dataset\" protoPayload.resourceName=\"projects/my-project-id/datasets/my dataset/tables/my table\" (protoPayload.methodName=\"google.cloud.bigquery.v2.TableService.PatchTable\" OR protoPayload.methodName=\"google.cloud.bigquery.v2.TableService.UpdateTable\" OR protoPayload.methodName=\"google.cloud.bigquery.v2.TableService.InsertTable\") Identify jobs The following query returns a list of jobs that modify the affected table in the project within the past day.",
+          "To identify the method that reached the limit, do the following: In the Google Cloud console, go to the Google Cloud navigation menu menu and then select Logging > Logs Explorer for your project: Go to the Logs Explorer Filter logs by running the following query: resource.type=\"bigquery resource\" protoPayload.authenticationInfo.principalEmail=\"<user email or service account>\" \"Too many API requests per user per method for this user method\" In the log entry, you can find the method name under the property protoPayload.method name."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.bireservations.update",
+      "dataset1.table1",
+      "jobservice.insert",
+      "myotherdataset.orders",
+      "project.region",
+      "project1.dataset1.table1",
+      "project2.dataset2.table2",
+      "resource.jobConfiguration.tableCopy",
+      "resource.type",
+      "us.default"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/batch-loading-data",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/batch-loading-data",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/batch-loading-data",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/batch-loading-data",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/batch-loading-data",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/batch-loading-data",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    }
+  ]
+}

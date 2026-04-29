@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.969Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution",
+  "feature_name": "Bare Metal Solution resource labeling",
+  "feature_slug": "bare-metal-solution-resource-labeling",
+  "summary": "Users can organize Bare Metal Solution resources by labels and apply labels to servers, networks, storage volumes, and NFS storage.",
+  "extended_definition": "Users can organize Bare Metal Solution resources by labels and apply labels to servers, networks, storage volumes, and NFS storage.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/bms-security",
+      "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources",
+      "https://docs.cloud.google.com/iam/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Order Bare Metal Solution resources \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources",
+        "source_id": "site-docs-reference",
+        "final_score": 77,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use procurements to order the following Bare Metal Solution resources: Servers ( available server configurations ) Storage ( available storage choices ) Partner Interconnect bandwidth To procure any other Bare Metal Solution resource, contact Google Cloud sales .",
+          "As your resources are procured, you can provision them through the following options and start using them: Google Cloud console intake form Create a network UI Create a storage volume UI Create an NFS volume UI What's next Deploy your Bare Metal Solution environment .",
+          "After you've executed a simplified, one-time Bare Metal Solution Order Form, you can order your Bare Metal Solution resources online by creating procurements through the Google Cloud console."
+        ]
+      },
+      {
+        "title": "\"IAM overview \\_|\\_ Identity and Access Management (IAM) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iam/docs/overview",
+        "source_id": "site-iam-reference",
+        "final_score": 67,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Policy inheritance Google Cloud has container resources—such as projects, folders, and organizations—that let you organize your resources in a parent-child hierarchy.",
+          "Allow policies are directly attached to some Google Cloud resources, which are organized hierarchically —for example, projects contain service-specific resources.",
+          "These container resources are organized hierarchically, which lets child resources inherit the policies of their parent resources."
+        ]
+      },
+      {
+        "title": "\"Provide security for enterprise workloads in a Bare Metal Solution environment\\",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-security",
+        "source_id": "site-docs-reference",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "Figure 5: VPC peering and the Bare Metal Solution environment As shown in Figure 6 , use a shared VPC architecture to allow resources from different projects to access the Bare Metal Solution servers.",
+          "Home Documentation Distributed, hybrid, and multicloud Bare Metal Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "If you need to allow or deny access to specific resources, use firewall policies to restrict the default behavior that permits access to all Bare Metal Solution resources."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-security",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-security",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-security",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-security",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-security",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-security",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-security",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-security",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-security",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    }
+  ]
+}

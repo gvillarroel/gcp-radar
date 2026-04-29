@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:53.295Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Read pool autoscaling",
+  "feature_slug": "read-pool-autoscaling",
+  "summary": "This feature automatically scales Cloud SQL for MySQL read pools based on CPU usage and client connections.",
+  "extended_definition": "This feature automatically scales Cloud SQL for MySQL read pools based on CPU usage and client connections.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/1st-2nd-gen-differences",
+      "https://docs.cloud.google.com/sql/docs/mysql/about-read-pools",
+      "https://docs.cloud.google.com/sql/docs/mysql/features"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About read pools \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/about-read-pools",
+        "source_id": "site-docs-reference-3",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Read pool autoscaling To see how to configure your read pool to automatically resize to adapt to your application's changing workload needs, see Read pool autoscaling .",
+          "What's next Create and manage read pools Read pool autoscaling Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "When you modify read pool node settings such as storage, connectivity, or database configuration flags, the changes are automatically applied uniformly across each read pool node in the read pool."
+        ]
+      },
+      {
+        "title": "Cloud SQL for MySQL features \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "source_id": "site-docs-root",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Support for read pools and read pool autoscaling Storage shrink.",
+          "MySQL features unsupported for Cloud SQL Federated Engine Memory Storage Engine The following feature is unsupported for Cloud SQL for MySQL 5.6 and 5.7: The SUPER privilege Note: Because Cloud SQL is a managed service, it restricts access to certain system procedures and tables that require advanced privileges.",
+          "Cloud SQL features unsupported in Cloud SQL for MySQL 8.0 and later versions Cloud SQL for MySQL 8.0 and later versions don't support the legacy Cloud SQL for MySQL high availability (HA) configuration that uses failover replicas."
+        ]
+      },
+      {
+        "title": "Cloud SQL for MySQL features \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/1st-2nd-gen-differences",
+        "source_id": "site-docs-reference-3",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Support for read pools and read pool autoscaling Storage shrink.",
+          "MySQL features unsupported for Cloud SQL Federated Engine Memory Storage Engine The following feature is unsupported for Cloud SQL for MySQL 5.6 and 5.7: The SUPER privilege Note: Because Cloud SQL is a managed service, it restricts access to certain system procedures and tables that require advanced privileges.",
+          "Cloud SQL features unsupported in Cloud SQL for MySQL 8.0 and later versions Cloud SQL for MySQL 8.0 and later versions don't support the legacy Cloud SQL for MySQL high availability (HA) configuration that uses failover replicas."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/about-read-pools",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/1st-2nd-gen-differences"
+      ]
+    }
+  ]
+}

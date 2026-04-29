@@ -1,0 +1,151 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Row-level access policies with BigQuery Storage Read API",
+  "feature_slug": "row-level-access-policies-with-bigquery-storage-read-api",
+  "summary": "BigQuery row-level access policies are now supported with the BigQuery Storage Read API.",
+  "extended_definition": "BigQuery row-level access policies are now supported with the BigQuery Storage Read API.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+      "https://docs.cloud.google.com/bigquery/docs/reference/storage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Control access to resources with IAM \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "source_id": "site-docs-reference-5",
+        "final_score": 174,
+        "relevance": "",
+        "evidence_snippets": [
+          "DatasetId datasetId = DatasetId . of ( projectId , datasetName ); Dataset dataset = bigquery . getDataset ( datasetId ); // Create a new Entity with the corresponding type and email // \"user-or-group-to-add@example.com\" // For more information on the types of Entities available see: // https://cloud.google.com/java/docs/reference/google-cloud-bigquery/latest/com.google.cloud.bigquery.Acl.Entity // and // https://cloud.google.com/java/docs/reference/google-cloud-bigquery/latest/com.google.cloud.bigquery.Acl.Entity.Type Entity entity = new Group ( entityEmail ); // Create a new ACL granting the READER role to the group with the entity email // \"user-or-group-to-add@example.com\" // For more information on the types of ACLs available see: // https://cloud.google.com/storage/docs/access-control/lists Acl newEntry = Acl . of ( entity , Role .",
+          "This permission is required for creating replica materialized views. bigquery.tables.restoreSnapshot Table Restore a table snapshot. bigquery.tables.setCategory Table Set policy tags in the table's schema. bigquery.tables.setColumnDataPolicy Table Set column-level access policies on a table. bigquery.tables.setIamPolicy Table Set access controls on a table. bigquery.tables.update Table Update table. metadata. bigquery.tables.get is also required to update table metadata in the console. bigquery.tables.updateData Table Update table data. bigquery.tables.updateIndex Table Update a search index on the table.",
+          "Then call the IAM().SetPolicy() function to save changes to the access policy for a table or view. import ( \"context\" \"fmt\" \"io\" \"cloud.google.com/go/bigquery\" \"cloud.google.com/go/iam\" ) // revokeTableOrViewAccessPolicies creates a new ACL removing the VIEWER role to group \"example-analyst-group@google.com\" // For more information on the types of ACLs available see: // https://cloud.google.com/storage/docs/access-control/lists func revokeTableOrViewAccessPolicies ( w io ."
+        ]
+      },
+      {
+        "title": "\"Use the BigQuery Storage Read API to read table data \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/storage",
+        "source_id": "site-docs-reference",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you're working in an older version of the Storage Read API, then use the appropriate version of Arrow as follows: v1beta1: Arrow 0.14 and earlier v1: Arrow 0.15 and later Regardless of API version, to access API functions, we recommend that you use the BigQuery Storage API client libraries .",
+          "Use the BigQuery Storage Read API to read table data The BigQuery Storage Read API provides fast access to BigQuery-managed storage by using an rpc-based protocol.",
+          "Monitor Storage Read API use To monitor the data egress and processing associated with the Storage Read API, specific fields are available in the BigQuery AuditLogs ."
+        ]
+      },
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 166,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references Move your data to BigQuery with millisecond latency BigQuery materialization connector BigQuery Batch Query Connector Partner Advantage page Direct link Fivetran Fivetran Data Pipelines Solution Fivetran Data Pipelines Category ETL & Data Integration Description Fivetran is a leader in automated data integration and delivers ready-to-use connectors that automatically adapt as schemas and APIs change, ensuring consistent, reliable access to data.",
+          "Partner references SAS/ACCESS BigQuery Interface Guide SAS Google BigQuery Data Connector Partner Advantage page Direct link Segment by Twilio Solution Segment Category BI, ML, & Advanced Analytics Description Twilio Segment provides AI-ready data for personalized customer experiences across channels, including messaging, email, customer service, voice, and video interactions.",
+          "Partner references DataHub BigQuery Integration BigQuery Ingestion Guide Immuta Solution Immuta Data Security Platform Category Data Governance, Security, & MDM Description Immuta provides data access and security mechanisms to complex data policies."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.tables.get",
+      "bigquery.tables.restoreSnapshot",
+      "bigquery.tables.setCategory",
+      "bigquery.tables.setColumnDataPolicy",
+      "bigquery.tables.setIamPolicy",
+      "bigquery.tables.update",
+      "bigquery.tables.updateData",
+      "bigquery.tables.updateIndex",
+      "com.google.cloud.bigquery.Acl.Entity",
+      "com.google.cloud.bigquery.Acl.Entity.Type",
+      "dataset.Update",
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/reference/storage",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/reference/storage",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/reference/storage",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/reference/storage",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/reference/storage",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/reference/storage",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/reference/storage",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    }
+  ]
+}

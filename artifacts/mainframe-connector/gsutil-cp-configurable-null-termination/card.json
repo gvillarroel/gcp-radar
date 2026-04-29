@@ -1,0 +1,97 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:21.812Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-connector/card.json",
+  "product_name": "Mainframe Connector",
+  "product_slug": "mainframe-connector",
+  "feature_name": "gsutil cp configurable null termination",
+  "feature_slug": "gsutil-cp-configurable-null-termination",
+  "summary": "The gsutil cp command can configure null termination.",
+  "extended_definition": "The gsutil cp command can configure null termination.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding",
+      "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Mainframe Connector command-line reference \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 183,
+        "relevance": "",
+        "evidence_snippets": [
+          "Synopsis gsutil cp [options] gcsUri [dest] Flags and arguments You can use this command for the following different purposes: Copy and transcode a file from a Mainframe or a linux environment to Cloud Storage.",
+          "The gsutil cp command uses the following flags and arguments: dest (Optional) The local path or data source name (DSN).",
+          "Synopsis cloud run job cancel [-h] --project= PROJECT --region= REGION EXECUTION Flags and arguments The cloud run job cancel command uses the following flags and arguments: EXECUTION Specify the name of the Cloud Run job execution id. --help or -h (Optional) Display this help message. --project = PROJECT Specify the project ID. --region = REGION Specify the region in which the resource can be found. cloud run job execute Execute a specific job."
+        ]
+      },
+      {
+        "title": "Mainframe Connector API commands \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can also perform the following tasks with the gsutil cp command: Perform a dry run of the gsutil cp command Copy a file from Cloud Storage to your Mainframe Fine tune performance of the gsutil cp command Use customized character sets with the gsutil cp .",
+          "You can perform a dry run of the gsutil cp command using the dry run flag and test the following steps: Parse a COBOL copybook or data file and check whether it is compatible with Mainframe Connector.",
+          "Copy a file from Cloud Storage to your Mainframe You can use the gsutil cp command to copy a file from Cloud Storage to a Mainframe dataset."
+        ]
+      },
+      {
+        "title": "\"Move data transcoded locally on the mainframe to Google Cloud \\_|\\_ Mainframe\\",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding",
+        "source_id": "site-docs-root",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following sections describe in detail how you can move data transcoded locally on the mainframe to Google Cloud using qsam or vsam commands and the gsutil cp command .",
+          "Using qsam commands (release 5.16.0 and later) Using the vsam decode command (release 5.18.0 and later) Using the gsutil cp command Advantages of qsam and vsam commands The qsam and vsam commands provide the following advantages: Support for compound data types, including the OCCURS clause (lists), REDEFINES clause, and nested records.",
+          "Transcoding is done during the qsam decode , vsam decode , or gsutil cp operations (based on the command you choose), where a mainframe extended binary coded decimal interchange code (EBCDIC) dataset is converted to the ORC format in UTF-8 during the copy to a Cloud Storage bucket."
+        ]
+      },
+      {
+        "title": "Run Mainframe Connector in standalone mode \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode",
+        "source_id": "site-docs-root-2",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "Transcode data using Mainframe Connector in standalone mode on Cloud Run Mainframe Connector provides two ways in which you can run Mainframe Connector as a standalone job on Google Cloud: Using qsam commands (release 5.16.0 and later) Using the gsutil cp command Advantages of qsam commands The qsam commands provide the following advantages: Support for compound data types, including the OCCURS clause (lists), REDEFINES clause, and nested records.",
+          "In the following sample, read the data from the INFILE dataset , and the record layout from the COPYBOOK DD . environmentVariables: - name: \"INFILE\" value: \" INFILE \" - name: \"INFILE DSN\" value: \" INFILE DSN \" - name: \"GCSDSNURI\" value: \" INFILE DSN FILEPATH \" - name: \"COPYBOOK\" value: \" COPYBOOK FILEPATH \" - name: \"LOG PROJECT\" value: \" LOG PROJECT \" - name: \"IBM JAVA OPTIONS\" value: \"-XX:+UseContainerSupport\" command: gsutil cp gs://outputbucket/output --parallelism 8 --maxChunkSize \"512Mib\" --parser type=copybook Replace the following: INFILE : The name of the input file.",
+          "The following is an example YAML file: environmentVariables: - name: \"INFILE\" value: \"input.dat\" - name: \"INFILE DSN\" value: \"input.dat\" - name: \"GCSDSNURI\" value: \"gs://inputbucket/inputfolder\" - name: \"COPYBOOK\" value: \"gs://inputbucket/copybook.cpy\" - name: \"LOG PROJECT\" value: \"the log project\" - name: \"IBM JAVA OPTIONS\" value: \"-XX:+UseContainerSupport\" command: gsutil cp gs://outputbucket/output --parallelism 8 --maxChunkSize \"512Mib\" --parser type=copybook Note Variables with the suffix FILLER are ignored during the import process."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "copybook.cpy",
+      "input.dat"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

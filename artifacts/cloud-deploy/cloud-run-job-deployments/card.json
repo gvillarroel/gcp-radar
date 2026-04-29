@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:47.389Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deploy/card.json",
+  "product_name": "Cloud Deploy",
+  "product_slug": "cloud-deploy",
+  "feature_name": "Cloud Run job deployments",
+  "feature_slug": "cloud-run-job-deployments",
+  "summary": "Cloud Deploy supports deploying Cloud Run jobs in addition to Cloud Run services.",
+  "extended_definition": "Cloud Deploy supports deploying Cloud Run jobs in addition to Cloud Run services.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deploy/docs/analysis",
+      "https://docs.cloud.google.com/deploy/docs/automation-rules",
+      "https://docs.cloud.google.com/deploy/docs/hooks"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Run analysis jobs in Cloud Deploy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/analysis",
+        "source_id": "site-docs-reference-2",
+        "final_score": 45,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported metrics providers Cloud Deploy supports analysis using metrics provided in either of the following ways: Direct integration with Google Cloud Observability alerting policies , based on telemetry and logs in Google Cloud Observability Integration with non-Google metrics system (for example, Prometheus or Datadog) This type of custom analysis requires that your organization provide a container with functionality to support the specific metrics system.",
+          "Home Documentation Application development Cloud Deploy Guides Send feedback Run analysis jobs in Cloud Deploy Stay organized with collections Save and categorize content based on your preferences.",
+          "Deploy your application The analysis job runs after the deploy job, and after the verify job, if your release includes one, but before any post-deploy jobs , if your release includes any."
+        ]
+      },
+      {
+        "title": "\"Run hooks before and after deploying \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deploy/docs/hooks",
+        "source_id": "site-docs-reference-2",
+        "final_score": 43,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can configure each hook to run in a specified Cloud Deploy execution environment , but if you're deploying to Google Kubernetes Engine you can optionally configure it to run on the GKE cluster where you're deploying your application.",
+          "Home Documentation Application development Cloud Deploy Guides Send feedback Run hooks before and after deploying Stay organized with collections Save and categorize content based on your preferences.",
+          "Deploy parameters as environment variables In addition to the environment variables listed in this section, Cloud Deploy can pass to your custom containers any deploy parameters you've set."
+        ]
+      },
+      {
+        "title": "Using automation rules \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/automation-rules",
+        "source_id": "site-docs-reference-2",
+        "final_score": 41,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Available automation rules The following automation rules are available in Cloud Deploy: Rule Description timedPromoteReleaseRule Automatically promote from one target to the next based on a cron schedule. promoteReleaseRule Automatically promotes a release into the indicated target after successful rollout in the previous target in the progression. advanceRolloutRule Automatically advances a rollout from the indicated phase to the next phase. repairRolloutRule Automatically retry the failed job or jobs in the rollout a specified number of times, and roll back if all retries fail.",
+          "This automation rule is useful for canary deployments.",
+          "Abort a repairRolloutRule automation run If you run any of the following commands on your rollout, the repairRolloutRule automation is aborted: Retry job Cancel rollout Ignore job Terminate job run Example The following is an example of an automation configuration with a repairRolloutRule : apiVersion : deploy.cloud.google.com/v1 kind : Automation metadata : name : regular-repair/regular description : repair regular rollouts suspended : false serviceAccount : (REDACTED) selector : targets : - id : t1 rules : - repairRolloutRule : id : \"repair-rollout\" repairPhases : - retry : attempts : 3 wait : 1m backoffMode : LINEAR - rollback : destinationPhase : \"stable\" In this automation, if a rollout fails on the identified target, that rollout is retried up to 3 times, with a one-minute wait between retry attempt."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "deploy.cloud.google.com",
+      "projects.locations.deliveryPipelines"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

@@ -183,6 +183,9 @@ function renderProductIndex(card, promotedFeatures) {
   for (const feature of promotedFeatures) {
     lines.push(`- [${feature.feature_name}](./${feature.feature_slug}/README.md)`);
   }
+  if (promotedFeatures.length === 0) {
+    lines.push("No promoted feature artifacts.");
+  }
 
   return `${lines.join("\n")}\n`;
 }

@@ -1,0 +1,112 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "BigQuery support for Spanner external datasets",
+  "feature_slug": "bigquery-support-for-spanner-external-datasets",
+  "summary": "BigQuery now supports querying Spanner external datasets with authorized views, authorized routines, and Cloud Resource Connections.",
+  "extended_definition": "BigQuery now supports querying Spanner external datasets with authorized views, authorized routines, and Cloud Resource Connections.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+      "https://docs.cloud.google.com/spanner/docs/change-streams/details",
+      "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Change stream partitions, records, and queries \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/details",
+        "source_id": "site-docs-root",
+        "final_score": 48,
+        "relevance": "",
+        "evidence_snippets": [
+          "If NULL or not specified, this means the reader is querying the change stream for the first time, and has not obtained any specific partition tokens to query from. heartbeat milliseconds INT64 Required Determines how frequently a heartbeat ChangeRecord is returned in case there are no transactions committed in this partition.",
+          "If NULL or not specified, this means the reader is querying the change stream for the first time, and has not obtained any specific partition tokens to query from. heartbeat milliseconds bigint Required Determines how frequently a heartbeat ChangeRecord is returned when there are no transactions committed in this partition.",
+          "When querying a child partition, the query should specify the child partition token and a start timestamp greater than or equal to child partitions token.start timestamp ."
+        ]
+      },
+      {
+        "title": "\"Access a database with fine-grained access control \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+        "source_id": "site-docs-root",
+        "final_score": 46,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Create a Spanner free trial instance and sample application \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 44,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: A Spanner free trial instance supports Standard edition features, and Enterprise edition features, such as KNN vector distance functions , full-text search , and Spanner Graph .",
+          "If an authentication error is returned, and you are using an external identity provider (IdP), confirm that you have signed in to the gcloud CLI with your federated identity .",
+          "If an authentication error is returned, and you are using an external identity provider (IdP), confirm that you have signed in to the gcloud CLI with your federated identity ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "token.start"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/details",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "https://docs.cloud.google.com/spanner/docs/access-with-fgac"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/details",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "https://docs.cloud.google.com/spanner/docs/access-with-fgac"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/details",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "https://docs.cloud.google.com/spanner/docs/access-with-fgac"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/details",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "https://docs.cloud.google.com/spanner/docs/access-with-fgac"
+      ]
+    }
+  ]
+}

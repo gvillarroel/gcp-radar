@@ -1,0 +1,119 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:33.557Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Private Service Connect regional Google API IPv6 endpoint support",
+  "feature_slug": "private-service-connect-regional-google-api-ipv6-endpoint-support",
+  "summary": "Private Service Connect endpoints for regional Google APIs can now be configured with IPv6 addresses for IPv6 client access.",
+  "extended_definition": "Private Service Connect endpoints for regional Google APIs can now be configured with IPv6 addresses for IPv6 client access.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/about-accessing-google-apis-endpoints",
+      "https://docs.cloud.google.com/vpc/docs/about-accessing-regional-google-apis-endpoints",
+      "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About accessing regional endpoints through Private Service Connect endpoints\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-accessing-regional-google-apis-endpoints",
+        "source_id": "site-docs-root-2",
+        "final_score": 358,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configuration Details Consumer configuration (endpoint) Global reachability If global access is enabled Cloud Interconnect traffic Cloud VPN traffic Access through VPC Network Peering Connection propagation through NCC DNS configuration Manual DNS configuration IP version IPv4 or IPv6 Producer Supported services Supported regional Google APIs Specifications Public hostnames for regional endpoints have the following format: SERVICE .",
+          "About accessing regional endpoints through Private Service Connect endpoints This page provides an overview of using Private Service Connect endpoints to access regional endpoints for supported Google APIs in supported regions .",
+          "An endpoint lets service consumers send traffic from the consumer's VPC network to regional service endpoints for supported Google APIs through a service attachment that is managed by Google (click to enlarge)."
+        ]
+      },
+      {
+        "title": "\"Access regional Google APIs through endpoints \\_|\\_ Virtual Private Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints",
+        "source_id": "site-docs-root-2",
+        "final_score": 346,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example request tests that an endpoint with IP address 192.168.1.100 can request the Cloud Spanner API discovery document from the regional endpoint in me-central2 . curl --connect-to spanner.me-central2.rep.googleapis.com:443:192.168.1.100:443 \\ 'https://spanner.me-central2.rep.googleapis.com/$discovery/rest?version=v1' Create a private DNS entry for the endpoint You must create private DNS entries so that clients can direct requests to your Private Service Connect endpoint.",
+          "To verify an IPv4 endpoint, do the following: curl --connect-to REP DNS NAME :443: ADDRESS :443 \\ 'https:// REP DNS NAME / PATH ' To verify an IPv6 endpoint, do the following: curl -6 --connect-to REP DNS NAME :443:[ ADDRESS ]:443 \\ 'https:// REP DNS NAME / PATH ' Replace the following: REP DNS NAME : the public DNS name of the target regional endpoint—for example, spanner.me-central2.rep.googleapis.com .",
+          "Create a regional Private Service Connect endpoint You can create a regional Private Service Connect endpoint to send requests to a regional endpoint for a target Google API."
+        ]
+      },
+      {
+        "title": "\"About accessing Google APIs through endpoints \\_|\\_ Virtual Private Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-accessing-google-apis-endpoints",
+        "source_id": "site-docs-root-2",
+        "final_score": 290,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Quotas The number of Private Service Connect endpoints that you can create for accessing Google APIs is controlled by the PSC Google APIs Forwarding Rules per VPC Network quota.",
+          "Configuration Details Consumer configuration (endpoint) Global reachability Uses an internal global IP address Cloud Interconnect traffic Cloud VPN traffic Access through VPC Network Peering Connection propagation through NCC Automatic DNS configuration IP version IPv4 Producer Supported services Supported global Google APIs On-premises access Private Service Connect endpoints that you use to access Google APIs can be accessed from supported connected on-premises hosts.",
+          "When you create an endpoint, the following DNS configurations are created: A Service Directory private DNS zone is created for p.googleapis.com DNS records are created in p.googleapis.com for some commonly used Google APIs and services that are available using Private Service Connect and have default DNS names that end in googleapis.com ."
+        ]
+      },
+      {
+        "title": "\"Publish services by using Private Service Connect \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "source_id": "site-docs-root-2",
+        "final_score": 288,
+        "relevance": "",
+        "evidence_snippets": [
+          "To create an IPv4-only Private Service Connect subnet, do the following: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks { \"ipCidrRange\": \" SUBNET RANGE \", \"name\": \" SUBNET NAME \", \"network\": \"projects/ PROJECT ID /global/networks/ NETWORK NAME \", \"purpose\": \"PRIVATE SERVICE CONNECT\" } To create a dual-stack Private Service Connect subnet, do the following: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks { \"ipCidrRange\": \" SUBNET RANGE \", \"name\": \" SUBNET NAME \", \"network\": \"projects/ PROJECT ID /global/networks/ NETWORK NAME \", \"purpose\": \"PRIVATE SERVICE CONNECT\", \"stackType\": \"IPV4 IPV6\", \"ipv6AccessType\": \"INTERNAL\" } To create an IPv6-only Private Service Connect subnet, do the following: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks { \"name\": \" SUBNET NAME \", \"network\": \"projects/ PROJECT ID /global/networks/ NETWORK NAME \", \"purpose\": \"PRIVATE SERVICE CONNECT\", \"stackType\": \"IPV6 ONLY\", \"ipv6AccessType\": \"INTERNAL\" } Replace the following: PROJECT ID : the project for the subnet.",
+          "For each endpoint in the list of connected endpoints, the endpointWithId field contains the endpoint's ID-based URI that you can use to accept or reject connections from individual Private Service Connect endpoints. gcloud compute service-attachments describe \\ ATTACHMENT NAME --region= REGION Replace the following: ATTACHMENT NAME : the name of the service attachment.",
+          "Details are displayed for each endpoint, including the Endpoint ID that you can use to accept or reject connections from individual Private Service Connect endpoints. gcloud To view details for a published service, use the gcloud compute service-attachments describe command ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "central2.rep.googleapis.com",
+      "compute.googleapis.com",
+      "googleapis.com",
+      "p.googleapis.com",
+      "spanner.me"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-regional-google-apis-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-google-apis-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-regional-google-apis-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-google-apis-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Fine-grained access control for Iceberg tables",
+  "feature_slug": "fine-grained-access-control-for-iceberg-tables",
+  "summary": "BigQuery metastore Iceberg tables now support fine-grained access control.",
+  "extended_definition": "BigQuery metastore Iceberg tables now support fine-grained access control.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+      "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+      "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use the BigLake metastore Iceberg REST catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "source_id": "site-docs-reference-5",
+        "final_score": 203,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Table limitations Tables managed through the REST catalog do not support fine-grained access control (FGAC), such as row-level and column-level security.",
+          "Enable the API Required roles To get the permissions that you need to use the Iceberg REST catalog in BigLake metastore, ask your administrator to grant you the following IAM roles: Perform administrative tasks, such as managing catalog user access, storage access, and the catalog's credential vending mode: BigLake Admin ( roles/biglake.admin ) on the project Storage Admin ( roles/storage.admin ) on the Cloud Storage bucket Read table data in credential vending mode: BigLake Viewer ( roles/biglake.viewer ) on the project Write table data in credential vending mode: BigLake Editor ( roles/biglake.editor ) on the project Read catalog resources and table data in non-credential vending mode: BigLake Viewer ( roles/biglake.viewer ) on the project Storage Object Viewer ( roles/storage.objectViewer ) on the Cloud Storage bucket Manage catalog resources and write table data in non-credential vending mode: BigLake Editor ( roles/biglake.editor ) on the project Storage Object User ( roles/storage.objectUser ) on the Cloud Storage bucket Perform data manipulation language (DML) operations with BigQuery catalog federation: BigQuery Data Editor ( roles/bigquery.dataEditor ) on the project Storage Admin ( roles/storage.admin ) on the Cloud Storage bucket.",
+          "It supports features like credential vending for fine-grained access control and cross-region replication and disaster recovery ."
+        ]
+      },
+      {
+        "title": "Control access to resources with IAM \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "source_id": "site-docs-reference-5",
+        "final_score": 192,
+        "relevance": "",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to modify IAM policies for resources: To get a dataset's access policy: bigquery.datasets.get To set a dataset's access policy: bigquery.datasets.update To get a dataset's access policy (Google Cloud console only): bigquery.datasets.getIamPolicy To set a dataset's access policy (console only): bigquery.datasets.setIamPolicy To get a table or view's policy: bigquery.tables.getIamPolicy To set a table or view's policy: bigquery.tables.setIamPolicy To get a routine's access policy: bigquery.routines.getIamPolicy To set a routine's access policy: bigquery.routines.setIamPolicy To create bq tool or SQL BigQuery jobs (optional): bigquery.jobs.create You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Find more details about Policy and Binding objects here: https://cloud.google.com/security-command-center/docs/reference/rest/Shared.Types/Policy https://cloud.google.com/security-command-center/docs/reference/rest/Shared.Types/Binding binding = { \"role\" : role , \"members\" : [ principal id , ], } policy . bindings . append ( binding ) Set the IAM access policy with updated bindings. updated policy = client . set iam policy ( full resource name , policy ) Show a success message. print ( f \"Role ' { role } ' granted for principal ' { principal id } '\" f \" on resource ' { full resource name } '.\" ) Predefined roles that grant access to tables and views Views are treated as table resources in BigQuery.",
+          "This permission is required for creating replica materialized views. bigquery.tables.restoreSnapshot Table Restore a table snapshot. bigquery.tables.setCategory Table Set policy tags in the table's schema. bigquery.tables.setColumnDataPolicy Table Set column-level access policies on a table. bigquery.tables.setIamPolicy Table Set access controls on a table. bigquery.tables.update Table Update table. metadata. bigquery.tables.get is also required to update table metadata in the console. bigquery.tables.updateData Table Update table data. bigquery.tables.updateIndex Table Update a search index on the table."
+        ]
+      },
+      {
+        "title": "\"Introduction to BigLake external tables \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "source_id": "site-docs-reference-5",
+        "final_score": 185,
+        "relevance": "",
+        "evidence_snippets": [
+          "BigLake tables on object stores For data lake administrators, BigLake lets you set access controls on tables rather than files, which gives you finer-grained options when setting user access to data in the data lake.",
+          "CMETA provides fine-grained metadata at the column and block level, accessible through system tables.",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to run a cross-cloud join: bigquery.jobs.create bigquery.tables.getData You might also be able to get these permissions with custom roles or other predefined roles ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "biglake.admin",
+      "biglake.editor",
+      "biglake.viewer",
+      "bigquery.dataEditor",
+      "bigquery.dataOwner",
+      "bigquery.datasets.get",
+      "bigquery.datasets.getIamPolicy",
+      "bigquery.datasets.setIamPolicy",
+      "bigquery.datasets.update",
+      "bigquery.dataViwer",
+      "bigquery.jobs.create",
+      "bigquery.routines.getIamPolicy",
+      "bigquery.routines.setIamPolicy",
+      "bigquery.tables.get",
+      "bigquery.tables.getData",
+      "bigquery.tables.getIamPolicy",
+      "bigquery.tables.restoreSnapshot",
+      "bigquery.tables.setCategory",
+      "bigquery.tables.setColumnDataPolicy",
+      "bigquery.tables.setIamPolicy",
+      "bigquery.tables.update",
+      "bigquery.tables.updateData",
+      "bigquery.tables.updateIndex",
+      "datasets.get",
+      "example.com",
+      "storage.admin",
+      "storage.objectUser",
+      "storage.objectViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/biglake.admin",
+      "roles/biglake.editor",
+      "roles/biglake.viewer",
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.dataOwner",
+      "roles/bigquery.dataViwer",
+      "roles/storage.admin",
+      "roles/storage.objectUser",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    }
+  ]
+}

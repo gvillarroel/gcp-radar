@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:45.183Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Bigtable tiered storage",
+  "feature_slug": "bigtable-tiered-storage",
+  "summary": "Bigtable tiered storage allows optimized storage usage to reduce costs and retain data longer.",
+  "extended_definition": "Bigtable tiered storage allows optimized storage usage to reduce costs and retain data longer.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+      "https://docs.cloud.google.com/bigtable/docs/choosing-ssd-hdd",
+      "https://docs.cloud.google.com/bigtable/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Bigtable overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 140,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Compactions Bigtable periodically rewrites your tables to remove deleted entries, to reorganize your data so that reads and writes are more efficient, and to move data as part of tiered storage.",
+          "Bigtable also excels as a storage engine for batch MapReduce operations, stream processing/analytics, and machine-learning applications.",
+          "On average, it takes a week for a compaction to complete and execute tasks such as data deletion or moving data to tiered storage."
+        ]
+      },
+      {
+        "title": "Autoscaling \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "source_id": "site-docs-reference-2",
+        "final_score": 130,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, on an SSD cluster, if you set a storage utilization target of 2.5 TB (50%) per node, and your infrequent access usage is high enough to push the storage usage with tiered storage over the limit, Bigtable adds nodes.",
+          "3 TB 60% 3 TB 0 TB 3 TB 1 SSD usage almost exceeds the SSD usage target, and tiered usage almost exceeds the tiered storage limit.",
+          "5 TB 100% 6 TB 0 TB 6 TB 2 SSD usage and infrequent access usage are within the tiered storage limit."
+        ]
+      },
+      {
+        "title": "Choose between SSD and HDD storage \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/choosing-ssd-hdd",
+        "source_id": "site-docs-root-2",
+        "final_score": 104,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following table compares Bigtable storage types in the context of tiered storage: Instance and tier Node capacity Expected latency Operations Best for SSD instance, SSD storage tier 5 TB Write/read: single-digit ms Write, read, update, delete High write/read throughput and low latency workloads SSD instance, tiered storage enabled 32 TB (up to 5 TB SSD) Write: single-digit ms Read: low double-digit ms Write, read, update, delete Large datasets with infrequently accessed data HDD instance, HDD tier 16 TB Write: single-digit ms Read: low double-digit ms Write, read, update, delete Large datasets with latency-insensitive workloads For more information about the performance of Bigtable storage types, see Understand performance .",
+          "In a cluster that uses HDD storage, it's possible to reach the maximum throughput before CPU usage reaches 100%, a situation you can monitor using the disk load metric.",
+          "SSD storage supports a tiered storage option for infrequently accessed data ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigtableadmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/overview",
+        "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "https://docs.cloud.google.com/bigtable/docs/choosing-ssd-hdd"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/overview",
+        "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "https://docs.cloud.google.com/bigtable/docs/choosing-ssd-hdd"
+      ]
+    }
+  ]
+}

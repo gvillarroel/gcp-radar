@@ -1,0 +1,208 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:14.745Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-marketplace/card.json",
+  "product_name": "Google Cloud Marketplace",
+  "product_slug": "google-cloud-marketplace",
+  "feature_name": "VM solution trials",
+  "feature_slug": "vm-solution-trials",
+  "summary": "Vendors of VM solutions can offer software trials without charging the software license during the trial.",
+  "extended_definition": "Vendors of VM solutions can offer software trials without charging the software license during the trial.",
+  "lifecycle": {
+    "latest_feature_date": "2018-07-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/marketplace/docs/billing",
+      "https://docs.cloud.google.com/marketplace/docs/deploy-security-software-agents",
+      "https://docs.cloud.google.com/marketplace/docs/deploy-through-CLI",
+      "https://docs.cloud.google.com/marketplace/docs/manage-deployments"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Billing for Google Cloud Marketplace products \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/marketplace/docs/billing",
+        "source_id": "site-iam-reference",
+        "final_score": 116,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Vendors can create private offers that let you purchase their products at a discount.",
+          "How you're charged for software Vendors offering Cloud Marketplace products choose how they set up their products' pricing plans.",
+          "For more information about accepting private offers for Cloud Marketplace products, see Accept a private offer from a vendor ."
+        ]
+      },
+      {
+        "title": "Managing deployments \\_|\\_ Google Cloud Marketplace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/marketplace/docs/manage-deployments",
+        "source_id": "site-docs-root",
+        "final_score": 116,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "One of the labels is marketplace-suppress-benign-warnings , which blocks warnings that are typically not relevant for Cloud Marketplace solutions.",
+          "If you want to disable Monitoring and Logging, do the following: For each VM instance in your deployment, run the following gcloud command to disable Cloud Monitoring: gcloud compute instances add - metadata [ YOUR INSTANCE NAME ] \\ --metadata google-monitoring-enable=0,google-logging-enable=0 Sign in to each of your VMs using SSH, and restart the agents using the following commands: sudo service stackdriver-agent restart sudo service google-fluentd restart For tips on controlling your costs, see the pricing information .",
+          "From either of those pages you can connect to the individual instances to manually install additional software or modify the software packages. (You cannot deploy multiple products to a single instance.) Use Cloud Monitoring to track the performance and availability of your cloud-powered apps."
+        ]
+      },
+      {
+        "title": "\"Deploy virtual machine (VM) products using the command-line interface (CLI)\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/deploy-through-CLI",
+        "source_id": "site-docs-root",
+        "final_score": 115,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Virtual machine (VM) products offered through Google Cloud Marketplace are custom VM instances that you can run on Compute Engine.",
+          "If you use impersonation, instead of creating service account keys that anyone can use to access your deployment, you manage access by granting or revoking the Service Account Token Creator ( roles/iam.serviceAccountTokenCreator ) IAM role to specific principals.",
+          "To download the included module or generated code snippet, complete the following steps: Included Terraform module From the Command-line deployment tab of the VM product's Cloud Marketplace listing, click the Download button."
+        ]
+      },
+      {
+        "title": "\"Deploying security software agents \\_|\\_ Google Cloud Marketplace \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/deploy-security-software-agents",
+        "source_id": "site-iam-reference",
+        "final_score": 115,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before you begin Enable OS Configuration Management: Enable the OS Configuration Management API Install the OS Configuration agent on your VMs Configure the project metadata You must have the following permissions: osconfig.guestPolicies.create osconfig.guestPolicies.delete osconfig.guestPolicies.get osconfig.guestPolicies.list storage.buckets.create storage.buckets.get storage.objects.create storage.objects.delete We recommend creating an Identity and Access Management custom role with these permissions, and assigning the role to users who can deploy security software agents from Cloud Marketplace.",
+          "You can deploy security software agents from Cloud Marketplace to the VM instances in your project.",
+          "For example, if you want to create an Identity and Access Management custom role called Security Agent Deployer, you first create a SecurityAgentDeployer.yaml file: title: SecurityAgentDeployer description: Role for Users who deploy Security Agents in a project stage: GA includedPermissions: - osconfig.guestPolicies.create - osconfig.guestPolicies.delete - osconfig.guestPolicies.get - osconfig.guestPolicies.list - storage.buckets.create - storage.buckets.get - storage.objects.create - storage.objects.delete After you create your YAML file, to create the {iam name} custom role, run the following command: gcloud iam roles create role-id --project=project-id \\ --file=SecurityAgentDeployer.yaml After you create the {iam name} custom role Security Agent Deployer, grant it to your users who you expect to deploy security agents: gcloud projects add - iam - policy - binding < project - id > \\ --member=user:my-user@example.com \\ --role=projects/<project-id>/roles/SecurityAgentDeployer Configure the project metadata You can use the Google Cloud console or Google Cloud CLI to configure the project metadata for the OS Configuration agent installed in the VM instances."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "iam.serviceAccountTokenCreator",
+      "osconfig.guestPolicies.create",
+      "osconfig.guestPolicies.delete",
+      "osconfig.guestPolicies.get",
+      "osconfig.guestPolicies.list",
+      "storage.buckets.create",
+      "storage.buckets.get",
+      "storage.objects.create",
+      "storage.objects.delete"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.serviceAccountTokenCreator",
+      "roles/SecurityAgentDeployer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/billing",
+        "https://docs.cloud.google.com/marketplace/docs/manage-deployments",
+        "https://docs.cloud.google.com/marketplace/docs/deploy-through-CLI",
+        "https://docs.cloud.google.com/marketplace/docs/deploy-security-software-agents"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/billing",
+        "https://docs.cloud.google.com/marketplace/docs/manage-deployments",
+        "https://docs.cloud.google.com/marketplace/docs/deploy-through-CLI",
+        "https://docs.cloud.google.com/marketplace/docs/deploy-security-software-agents"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/billing",
+        "https://docs.cloud.google.com/marketplace/docs/manage-deployments",
+        "https://docs.cloud.google.com/marketplace/docs/deploy-through-CLI",
+        "https://docs.cloud.google.com/marketplace/docs/deploy-security-software-agents"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/billing",
+        "https://docs.cloud.google.com/marketplace/docs/manage-deployments",
+        "https://docs.cloud.google.com/marketplace/docs/deploy-through-CLI",
+        "https://docs.cloud.google.com/marketplace/docs/deploy-security-software-agents"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/billing",
+        "https://docs.cloud.google.com/marketplace/docs/manage-deployments",
+        "https://docs.cloud.google.com/marketplace/docs/deploy-through-CLI",
+        "https://docs.cloud.google.com/marketplace/docs/deploy-security-software-agents"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/billing",
+        "https://docs.cloud.google.com/marketplace/docs/manage-deployments",
+        "https://docs.cloud.google.com/marketplace/docs/deploy-through-CLI",
+        "https://docs.cloud.google.com/marketplace/docs/deploy-security-software-agents"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/billing",
+        "https://docs.cloud.google.com/marketplace/docs/manage-deployments",
+        "https://docs.cloud.google.com/marketplace/docs/deploy-through-CLI",
+        "https://docs.cloud.google.com/marketplace/docs/deploy-security-software-agents"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/billing",
+        "https://docs.cloud.google.com/marketplace/docs/manage-deployments",
+        "https://docs.cloud.google.com/marketplace/docs/deploy-through-CLI",
+        "https://docs.cloud.google.com/marketplace/docs/deploy-security-software-agents"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/billing",
+        "https://docs.cloud.google.com/marketplace/docs/manage-deployments",
+        "https://docs.cloud.google.com/marketplace/docs/deploy-through-CLI",
+        "https://docs.cloud.google.com/marketplace/docs/deploy-security-software-agents"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/billing",
+        "https://docs.cloud.google.com/marketplace/docs/manage-deployments",
+        "https://docs.cloud.google.com/marketplace/docs/deploy-through-CLI",
+        "https://docs.cloud.google.com/marketplace/docs/deploy-security-software-agents"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/billing",
+        "https://docs.cloud.google.com/marketplace/docs/manage-deployments",
+        "https://docs.cloud.google.com/marketplace/docs/deploy-through-CLI",
+        "https://docs.cloud.google.com/marketplace/docs/deploy-security-software-agents"
+      ]
+    }
+  ]
+}

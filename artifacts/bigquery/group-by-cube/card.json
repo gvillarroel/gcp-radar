@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "GROUP BY CUBE",
+  "feature_slug": "group-by-cube",
+  "summary": "BigQuery supports the GROUP BY CUBE clause for producing aggregated data across grouping set permutations; BigQuery queries support the GROUP BY CUBE clause for aggregating over grouping set permutations.",
+  "extended_definition": "BigQuery supports the GROUP BY CUBE clause for producing aggregated data across grouping set permutations; BigQuery queries support the GROUP BY CUBE clause for aggregating over grouping set permutations.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-authorized-dataset",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataset-exists"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Authorize a BigQuery Dataset \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-authorized-dataset",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 68,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: Only views target types are supported for now. @param source project id [String] The ID of the source Google Cloud project. @param source database id [String] The ID of the source database. @param user project id [String] The ID of the user Google Cloud project. @param user database id [String] The ID of the user database. @param target types [Array<String>] List of target types for authorization. def authorized dataset source project id :, source database id :, user project id :, user database id :, target types : Initialize client and get source dataset's references source bigquery = Google :: Cloud :: Bigquery . new project id : source project id source dataset = source bigquery . dataset source database id Initialize client and get user dataset's references user bigquery = Google :: Cloud :: Bigquery . new project id : user project id user dataset = user bigquery . dataset user database id Add the user dataset's DatasetAccessEntry object to the existing source dataset rules source dataset . access do access access . add reader dataset user dataset . build access entry ( target types : target types ) end puts \"Dataset #{ user dataset . dataset id } added as authorized dataset in dataset #{ source dataset . dataset id } \" end What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "DatasetAclEntity ( userDatasetId , targetTypes ); sourceDatasetAcl . add ( Acl . of ( userDatasetAclEntity )); // update the source dataset with user dataset's ACL Dataset updatedSourceDataset = sourceDataset . toBuilder (). setAcl ( sourceDatasetAcl ). build (). update (); System . out . printf ( \"Dataset %s updated with the added authorization\\n\" , updatedSourceDataset . getDatasetId ()); } catch ( BigQueryException e ) { System . out . println ( \"Dataset Authorization failed due to error: \\n\" + e ); } } } Ruby Before trying this sample, follow the Ruby setup instructions in the BigQuery quickstart using client libraries .",
+          "BigQuery bigquery = BigQueryOptions . getDefaultInstance (). getService (); // Get both source and user dataset's references Dataset sourceDataset = bigquery . getDataset ( sourceDatasetId ); Dataset userDataset = bigquery . getDataset ( userDatasetId ); // Get the source dataset's ACL List<Acl> sourceDatasetAcl = new ArrayList <> ( sourceDataset . getAcl ()); // Add the user dataset's DatasetAccessEntry object to the existing sourceDatasetAcl List<String> targetTypes = ImmutableList . of ( \"VIEWS\" ); Acl ."
+        ]
+      },
+      {
+        "title": "Check dataset existence \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataset-exists",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 68,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BigQuery bigquery = BigQueryOptions . getDefaultInstance (). getService (); Dataset dataset = bigquery . getDataset ( DatasetId . of ( datasetName )); if ( dataset != null ) { System . out . println ( \"Dataset already exists.\" ); } else { System . out . println ( \"Dataset not found.\" ); } } catch ( BigQueryException e ) { System . out . println ( \"Something went wrong. \\n\" + e . toString ()); } } } Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "Explore further For detailed documentation that includes this code sample, see the following: Listing datasets Code sample Java Before trying this sample, follow the Java setup instructions in the BigQuery quickstart using client libraries .",
+          "For more information, see Set up authentication for client libraries . from google.cloud import bigquery from google.cloud.exceptions import NotFound client = bigquery ."
+        ]
+      },
+      {
+        "title": "SCHEMATA view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+        "source_id": "site-docs-reference-3",
+        "final_score": 64,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Each of the following predefined IAM roles includes the permissions that you need in order to get the SCHEMATA view: roles/bigquery.admin roles/bigquery.dataEditor roles/bigquery.dataOwner roles/bigquery.dataViewer For more information about BigQuery permissions, see Access control with IAM .",
+          "Before you begin To query the SCHEMATA view for dataset metadata, you need the bigquery.datasets.get Identity and Access Management (IAM) permission at the project level.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.admin",
+      "bigquery.dataEditor",
+      "bigquery.dataOwner",
+      "bigquery.datasets.get",
+      "bigquery.dataViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.admin",
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.dataOwner",
+      "roles/bigquery.dataViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-authorized-dataset",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataset-exists",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-authorized-dataset",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataset-exists",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-authorized-dataset",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataset-exists",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-authorized-dataset",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataset-exists",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-authorized-dataset",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataset-exists",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-authorized-dataset",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataset-exists",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-authorized-dataset",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataset-exists",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata"
+      ]
+    }
+  ]
+}

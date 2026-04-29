@@ -1,0 +1,221 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:34.271Z",
+  "source_step08_card": "data/step-08/current/products/vpc-service-controls/card.json",
+  "product_name": "VPC Service Controls",
+  "product_slug": "vpc-service-controls",
+  "feature_name": "VPC Service Controls integration with Service Account Credentials API",
+  "feature_slug": "vpc-service-controls-integration-with-service-account-credentials-api",
+  "summary": "This integration lets VPC Service Controls protect use of the Service Account Credentials API.",
+  "extended_definition": "This integration lets VPC Service Controls protect use of the Service Account Credentials API.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported products and limitations \\_|\\_ VPC Service Controls \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "source_id": "site-docs-reference-2",
+        "final_score": 276,
+        "relevance": "",
+        "evidence_snippets": [
+          "Limitations The Service Account Credentials integration with VPC Service Controls has no known limitations.",
+          "Service name contactcenterinsights.googleapis.com Details To use CX Insights with VPC Service Controls you must have the following additional APIs inside your perimeter, depending on your integration.",
+          "Service name iamcredentials.googleapis.com Details The API for Service Account Credentials can be protected by VPC Service Controls and the product can be used normally inside service perimeters."
+        ]
+      },
+      {
+        "title": "\"Troubleshoot common VPC Service Controls issues with Google Cloud services\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "source_id": "site-docs-root-2",
+        "final_score": 255,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Container Registry API requests blocked by VPC Service Controls despite being allowed in an ingress or egress rule If you have allowed access to Container Registry using ingress rules with the identity type field set to ANY USER ACCOUNT or ANY SERVICE ACCOUNT , access is blocked by VPC Service Controls.",
+          "You can resolve this issue by creating an egress rule that allows the service agent cloud-cicd-artifact-registry-copier@system.gserviceaccount.com access to the storage.googleapis.com service in the project mentioned in the VPC Service Controls error logs.",
+          "To resolve this issue, add an ingress rule with the aforementioned service agents access to the cloudkms.googleapis.com service in the project mentioned in the VPC Service Controls error logs."
+        ]
+      },
+      {
+        "title": "VPC Service Controls audit logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging",
+        "source_id": "site-docs-reference",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To find audit logs for VPC Service Controls, use the following queries in the Logs Explorer: Query description Expression Violation details based on a denial ID log id ( \"cloudaudit.googleapis.com/policy\" ) severity = ERROR resource . type = \"audited resource\" protoPayload . metadata . \"@type\" = \"type.googleapis.com/google.cloud.audit.VpcServiceControlAuditMetadata\" protoPayload . metadata . vpcServiceControlsUniqueId = \" UNIQUE ID \" Replace UNIQUE ID with the unique ID of the denial.",
+          "Audited operations The following table summarizes which API operations correspond to each audit log type in VPC Service Controls: Audit logs category VPC Service Controls methods Policy Denied audit logs The methods of the services that integrate with VPC Service Controls are supported.",
+          "Violations for an IP address log id ( \"cloudaudit.googleapis.com/policy\" ) severity = ERROR resource . type = \"audited resource\" protoPayload . metadata . \"@type\" = \"type.googleapis.com/google.cloud.audit.VpcServiceControlAuditMetadata\" protoPayload . requestMetadata . callerIp = \" IP ADDRESS \" Replace IP ADDRESS with the IP address of the caller."
+        ]
+      },
+      {
+        "title": "Overview of VPC Service Controls \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Security benefits of VPC Service Controls VPC Service Controls helps mitigate the following security risks without sacrificing the performance advantages of direct private access to Google Cloud resources: Access from unauthorized networks using stolen credentials : By allowing private access only from authorized VPC networks, VPC Service Controls helps protect against the risk of data exfiltration presented by clients using stolen OAuth or service account credentials.",
+          "You can configure a perimeter to control the following types of communications: From public internet to customer resources within managed services From virtual machines (VMs) to a Google Cloud service (API) Between Google Cloud services VPC Service Controls doesn't require you to have a Virtual Private Cloud (VPC) network.",
+          "Glossary In this topic, you have learned about several new concepts introduced by VPC Service Controls: VPC Service Controls Technology that enables you to define a service perimeter around resources of Google-managed services to control communication to and between those services. service perimeter A service perimeter around Google-managed resources."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "cloudkms.googleapis.com",
+      "contactcenterinsights.googleapis.com",
+      "iamcredentials.googleapis.com",
+      "restricted.googleapis.com",
+      "storage.googleapis.com",
+      "system.gserviceaccount.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview"
+      ]
+    }
+  ]
+}

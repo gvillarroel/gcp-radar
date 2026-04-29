@@ -1,0 +1,153 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:12.462Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "Prompt sharing in Vertex AI Studio",
+  "feature_slug": "prompt-sharing-in-vertex-ai-studio",
+  "summary": "Vertex AI Studio prompt sharing no longer requires administrator enablement.",
+  "extended_definition": "Vertex AI Studio prompt sharing no longer requires administrator enablement.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/express-mode/vertex-ai-studio-express-mode-quickstart",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/deploy-vais-prompt"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Tutorial: Vertex AI Studio in express mode \\_|\\_ Generative AI on Vertex\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/express-mode/vertex-ai-studio-express-mode-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 329,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "View and try a list of sample prompts To view and try a sample prompt in Vertex AI Studio, do the following: In the Vertex AI section of the Google Cloud console, go to the Vertex AI Studio page.",
+          "This quickstart shows you how to perform the following tasks in Vertex AI Studio in express mode: View and try a list of sample prompts.",
+          "Create and save your own prompts To create and save a prompt in Vertex AI Studio, do the following."
+        ]
+      },
+      {
+        "title": "\"Grounding with Vertex AI Search \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "source_id": "site-docs-root",
+        "final_score": 327,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https:// LOCATION -aiplatform.googleapis.com/v1beta1/projects/ PROJECT ID /locations/ LOCATION /publishers/google/models/ MODEL ID :generateContent Request JSON body: { \"contents\": [{ \"role\": \"user\", \"parts\": [{ \"text\": \" PROMPT \" }] }], \"tools\": [{ \"retrieval\": { \"vertexAiSearch\": { \"datastore\": projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATASTORE ID } } }], \"model\": \"projects/ PROJECT ID /locations/ LOCATION /publishers/google/models/ MODEL ID \" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Client ( http options = HttpOptions ( api version = \"v1\" )) Replace with your Vertex AI Search data store details DATASTORE PATH = \"projects/ PROJECT ID /locations/global/collections/default collection/dataStores/DATASTORE ID\" tool = Tool ( retrieval = Retrieval ( vertex ai search = VertexAISearch ( datastore = DATASTORE PATH ) ) ) response = client . models . generate content ( model = \"gemini-2.5-flash\" , # Or another supported model contents = \"What information can you find about topic X in the provided documents?\" , # Your query config = GenerateContentConfig ( tools = [ tool ], ), ) print ( response . text ) REST To test a text prompt by using the Vertex AI API, send a POST request to the publisher model endpoint.",
+          "Console To ground your model output to AI Applications by using Vertex AI Studio in the Google Cloud console, follow these steps: In the Google Cloud console, go to the Vertex AI Studio page."
+        ]
+      },
+      {
+        "title": "\"Grounding with Google Maps in Vertex AI \\_|\\_ Generative AI on Vertex AI\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "source_id": "site-docs-root",
+        "final_score": 309,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Routing tool supports the following: Modes of transportation : Routing for driving, walking, bicycling, transit, and two-wheeled motorized vehicles (not all travel modes are available in all countries) Multiple waypoints : Up to 13 intermediate stops between origin and destination Real-time traffic : Accounting for current traffic conditions to provide accurate \"live\" travel times rather than static averages The following are examples of the types of questions that the Routing tool supports: Proximity based on travel time : \"What are some American restaurants within a 10-minute walk from the Hilton Hotel on 1335 6th Ave in NYC?\" Commute estimation : \"How long does it take to take public transit from Pike Place Market to Capitol Hill in Seattle?\" Understand the response When a prompt triggers the Routing tool, the model generates a natural language answer backed by structured metadata.",
+          "HTTP method and URL: POST https:// LOCATION -aiplatform.googleapis.com/v1beta1/projects/ PROJECT ID /locations/ LOCATION /publishers/google/models/ MODEL ID :generateContent Request JSON body: { \"contents\": [{ \"role\": \"user\", \"parts\": [{ \"text\": \" PROMPT \" }] }], \"tools\": [{ \"googleMaps\": { \"enableWidget\": \" ENABLE WIDGET \" } }], \"toolConfig\": { \"retrievalConfig\": { \"latLng\": { \"latitude\": LATITUDE , \"longitude\": LONGITUDE }, \"languageCode\": \"en US\" } }, \"model\": \"projects/ PROJECT ID /locations/ LOCATION /publishers/google/models/ MODEL ID \" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Console To use Grounding with Google Maps with Vertex AI, follow these steps: In the Google Cloud console, go to the Vertex AI Studio page."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Deploy your Vertex AI Studio prompt as a web application \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/deploy-vais-prompt",
+        "source_id": "site-docs-root",
+        "final_score": 299,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In this quick start, you will: Create a prompt with prompt variables Deploy your prompt as a web application Monitor deployment progress and test the deployed application Update and re-deploy your prompt Test out prompt submission with multimodal supports Before you start If you have never used Vertex AI Studio before, you can follow another quickstart guide or take the Google Cloud Skills Boost course to learn the basics of Vertex AI Studio.",
+          "Required roles To get the permissions that you need to deploy a Vertex AI Studio prompt as a web application, ask your administrator to grant you the following IAM roles on your project: Vertex AI User ( roles/aiplatform.user ) Enable the required APIs: Service Usage Admin ( roles/serviceusage.serviceUsageAdmin ) Grant required roles to the Compute Engine default service account: Project IAM Admin ( roles/resourcemanager.projectIamAdmin ) Deploy a Cloud Run application: Cloud Run Admin ( roles/run.admin ) Cloud Run Source Developer ( roles/run.sourceDeveloper ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Create a prompt with prompt variables Navigate to the create prompt page of Vertex AI Studio, and then click data object Add variable in the prompt input box."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "aiplatform.user",
+      "resourcemanager.projectIamAdmin",
+      "run.admin",
+      "run.sourceDeveloper",
+      "serviceusage.serviceUsageAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.user",
+      "roles/resourcemanager.projectIamAdmin",
+      "roles/run.admin",
+      "roles/run.sourceDeveloper",
+      "roles/serviceusage.serviceUsageAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/express-mode/vertex-ai-studio-express-mode-quickstart",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/deploy-vais-prompt"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/express-mode/vertex-ai-studio-express-mode-quickstart",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/deploy-vais-prompt"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/express-mode/vertex-ai-studio-express-mode-quickstart",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/deploy-vais-prompt"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/express-mode/vertex-ai-studio-express-mode-quickstart",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/deploy-vais-prompt"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/express-mode/vertex-ai-studio-express-mode-quickstart",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/deploy-vais-prompt"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "TPU slice node shutdown notifications",
+  "feature_slug": "tpu-slice-node-shutdown-notifications",
+  "summary": "GKE sends SIGTERM-based imminent shutdown notifications to TPU slice nodes so workloads can terminate gracefully.",
+  "extended_definition": "GKE sends SIGTERM-based imminent shutdown notifications to TPU slice nodes so workloads can terminate gracefully.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/cluster-notifications-slack"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure cluster notifications for third-party services \\_|\\_ Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/cluster-notifications-slack",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 109,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Deploy the Cloud Run function You can deploy the Cloud Run function using either the Google Cloud CLI or the Google Cloud console. gcloud To deploy the function, run the following command in the gke slack directory: gcloud functions deploy slackNotifier \\ --gen2 \\ --trigger-topic = TOPIC NAME \\ --runtime = nodejs24 \\ --entry-point = slackNotifier \\ --region = REGION \\ --source = . \\ --set-env-vars = \"SLACK WEBHOOK= WEBHOOK URL \" Replace the following: TOPIC NAME : the name of the Pub/Sub topic you created when enabling cluster notifications .",
+          "If you used a Standard cluster, verify notifications as follows: Upgrade a specific node pool to a new version .",
+          "Write a Cloud Run function that sends Pub/Sub notifications to Slack."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "NodeKubeletConfig JSON representation { \"cpuManagerPolicy\" : string , \"topologyManager\" : { object ( TopologyManager ) } , \"memoryManager\" : { object ( MemoryManager ) } , \"cpuCfsQuota\" : boolean , \"cpuCfsQuotaPeriod\" : string , \"podPidsLimit\" : string , \"imageGcLowThresholdPercent\" : integer , \"imageGcHighThresholdPercent\" : integer , \"imageMinimumGcAge\" : string , \"imageMaximumGcAge\" : string , \"containerLogMaxSize\" : string , \"containerLogMaxFiles\" : integer , \"allowedUnsafeSysctls\" : [ string ] , \"evictionSoft\" : { object ( EvictionSignals ) } , \"evictionSoftGracePeriod\" : { object ( EvictionGracePeriod ) } , \"evictionMinimumReclaim\" : { object ( EvictionMinimumReclaim ) } , \"evictionMaxPodGracePeriodSeconds\" : integer , \"maxParallelImagePulls\" : integer , \"crashLoopBackOff\" : { object ( CrashLoopBackOffConfig ) } , // Union field insecure kubelet readonly port enabled can be only one of the // following: \"insecureKubeletReadonlyPortEnabled\" : boolean // End of list of possible types for union field // insecure kubelet readonly port enabled . // Union field single process oom kill can be only one of the following: \"singleProcessOomKill\" : boolean // End of list of possible types for union field single process oom kill . // Union field shutdown grace period seconds can be only one of the following: \"shutdownGracePeriodSeconds\" : integer // End of list of possible types for union field // shutdown grace period seconds . // Union field shutdown grace period critical pods seconds can be only one of // the following: \"shutdownGracePeriodCriticalPodsSeconds\" : integer // End of list of possible types for union field // shutdown grace period critical pods seconds . } Fields cpuManagerPolicy string Control the CPU management policy on the node.",
+          "Union field shutdown grace period critical pods seconds . shutdown grace period critical pods seconds can be only one of the following: shutdownGracePeriodCriticalPodsSeconds integer Optional. shutdown grace period critical pods seconds is the maximum allowed grace period (in seconds) used to terminate critical pods during a node shutdown.",
+          "Union field shutdown grace period seconds . shutdown grace period seconds can be only one of the following: shutdownGracePeriodSeconds integer Optional. shutdown grace period seconds is the maximum allowed grace period (in seconds) the total duration that the node should delay the shutdown during a graceful shutdown."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "source_id": "site-api-reference",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "NodeKubeletConfig JSON representation { \"cpuManagerPolicy\" : string , \"topologyManager\" : { object ( TopologyManager ) } , \"memoryManager\" : { object ( MemoryManager ) } , \"cpuCfsQuota\" : boolean , \"cpuCfsQuotaPeriod\" : string , \"podPidsLimit\" : string , \"imageGcLowThresholdPercent\" : integer , \"imageGcHighThresholdPercent\" : integer , \"imageMinimumGcAge\" : string , \"imageMaximumGcAge\" : string , \"containerLogMaxSize\" : string , \"containerLogMaxFiles\" : integer , \"allowedUnsafeSysctls\" : [ string ] , \"evictionSoft\" : { object ( EvictionSignals ) } , \"evictionSoftGracePeriod\" : { object ( EvictionGracePeriod ) } , \"evictionMinimumReclaim\" : { object ( EvictionMinimumReclaim ) } , \"evictionMaxPodGracePeriodSeconds\" : integer , \"maxParallelImagePulls\" : integer , \"crashLoopBackOff\" : { object ( CrashLoopBackOffConfig ) } , // Union field insecure kubelet readonly port enabled can be only one of the // following: \"insecureKubeletReadonlyPortEnabled\" : boolean // End of list of possible types for union field // insecure kubelet readonly port enabled . // Union field single process oom kill can be only one of the following: \"singleProcessOomKill\" : boolean // End of list of possible types for union field single process oom kill . // Union field shutdown grace period seconds can be only one of the following: \"shutdownGracePeriodSeconds\" : integer // End of list of possible types for union field // shutdown grace period seconds . // Union field shutdown grace period critical pods seconds can be only one of // the following: \"shutdownGracePeriodCriticalPodsSeconds\" : integer // End of list of possible types for union field // shutdown grace period critical pods seconds . } Fields cpuManagerPolicy string Control the CPU management policy on the node.",
+          "Union field shutdown grace period critical pods seconds . shutdown grace period critical pods seconds can be only one of the following: shutdownGracePeriodCriticalPodsSeconds integer Optional. shutdown grace period critical pods seconds is the maximum allowed grace period (in seconds) used to terminate critical pods during a node shutdown.",
+          "Union field shutdown grace period seconds . shutdown grace period seconds can be only one of the following: shutdownGracePeriodSeconds integer Optional. shutdown grace period seconds is the maximum allowed grace period (in seconds) the total duration that the node should delay the shutdown during a graceful shutdown."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "container.googleapis.com",
+      "hooks.slack.com",
+      "kubernetes.io",
+      "pubsub.googleapis.com",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/cluster-notifications-slack",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/cluster-notifications-slack",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    }
+  ]
+}

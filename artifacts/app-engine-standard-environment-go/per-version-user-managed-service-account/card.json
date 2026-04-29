@@ -1,0 +1,141 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.989Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-go/card.json",
+  "product_name": "App Engine standard environment Go",
+  "product_slug": "app-engine-standard-environment-go",
+  "feature_name": "Per-version user-managed service account",
+  "feature_slug": "per-version-user-managed-service-account",
+  "summary": "Each App Engine version can be deployed with a specified user-managed service account; Each App Engine version can be deployed with a specified user-managed service account.",
+  "extended_definition": "Each App Engine version can be deployed with a specified user-managed service account; Each App Engine version can be deployed with a specified user-managed service account.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+      "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+      "https://docs.cloud.google.com/appengine/docs/standard/go/user-managed-service-accounts"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Mapping custom domains \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+        "source_id": "site-docs-reference-4",
+        "final_score": 134,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Delegating ownership to other Google Cloud users or service accounts If you need to delegate the ownership of your domain to other users or service accounts, you can add permission through the Search Console page.",
+          "If the user browses a domain that matches an application version name or service name, the application serves that version.",
+          "Under Properties , click the domain for which you want to add a user or service account."
+        ]
+      },
+      {
+        "title": "\"Configure App Engine service accounts \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/user-managed-service-accounts",
+        "source_id": "site-docs-reference-4",
+        "final_score": 128,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Using a version-specific service account lets you grant different privileges to each application version, based on the specific tasks it performs, and avoid granting more privileges than necessary.",
+          "Each new version that you deploy hereafter uses the new app-level default service account unless you explicitly assign a version-specific service account.",
+          "Each new version that you deploy hereafter uses the new app-level default service account unless you explicitly assign a version-specific service account."
+        ]
+      },
+      {
+        "title": "\"Setting up access control \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "source_id": "site-docs-reference",
+        "final_score": 126,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If you need to use a unique identity for a version of your App Engine app when accessing other Google Cloud services or executing tasks, you can specify a user-managed service account in App Engine.",
+          "If you don't specify credentials when constructing // the client, the client library will look for credentials in the // environment. const storage = new Storage (); // Makes an authenticated API request. async function listBuckets () { try { const results = await storage . getBuckets (); const [ buckets ] = results ; console . log ( 'Buckets:' ); buckets . forEach ( bucket = > { console . log ( bucket . name ); }); } catch ( err ) { console . error ( 'ERROR:' , err ); } } listBuckets (); PHP // Imports the Cloud Storage client library. use Google\\Cloud\\Storage\\StorageClient; / Authenticate to a cloud client library using a service account implicitly. @param string $projectId The Google project ID. / function auth cloud implicit($projectId) { $config = [ 'projectId' => $projectId, ]; If you don't specify credentials when constructing the client, the client library will look for credentials in the environment. $storage = new StorageClient($config); Make an authenticated API request (listing storage buckets) foreach ($storage->buckets() as $bucket) { printf('Bucket: %s' .",
+          "Client () Make an authenticated API request buckets = list ( storage client . list buckets ()) print ( buckets ) Ruby project id = \"Your Google Cloud project ID\" require \"google/cloud/storage\" If you don't specify credentials when constructing the client, the client library will look for credentials in the environment. storage = Google :: Cloud :: Storage . new project : project id Make an authenticated API request storage . buckets . each do bucket puts bucket . name end By default, the app's environment contains credentials from the default App Engine service account ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "iam.gserviceaccount.com",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/user-managed-service-accounts"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/user-managed-service-accounts"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/user-managed-service-accounts"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/user-managed-service-accounts"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/user-managed-service-accounts"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/user-managed-service-accounts"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/user-managed-service-accounts"
+      ]
+    }
+  ]
+}

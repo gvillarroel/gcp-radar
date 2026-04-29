@@ -1,0 +1,136 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:04.393Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Customer-managed encryption keys on Compute Engine",
+  "feature_slug": "customer-managed-encryption-keys-on-compute-engine",
+  "summary": "Customer-managed encryption keys on Compute Engine let users manage the encryption key for Persistent Disks attached to Dataproc cluster VMs.",
+  "extended_definition": "Customer-managed encryption keys on Compute Engine let users manage the encryption key for Persistent Disks attached to Dataproc cluster VMs.",
+  "lifecycle": {
+    "latest_feature_date": "2018-10-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+      "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Encrypt data with customer-managed encryption keys \\_|\\_ Dataproc Metastore\\",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "source_id": "site-docs-root-2",
+        "final_score": 188,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Dataproc Metastore Guides Send feedback Encrypt data with customer-managed encryption keys Stay organized with collections Save and categorize content based on your preferences.",
+          "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Dataproc Metastore.",
+          "For more information about your encryption options, see Customer-managed encryption keys (CMEK) ."
+        ]
+      },
+      {
+        "title": "\"Use the Cloud Storage connector with Apache Spark \\_|\\_ Managed Service\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 170,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the command, below, to create a single-node Managed Service for Apache Spark cluster in the specified Compute Engine zone . gcloud dataproc clusters create ${CLUSTER} \\ --project=${PROJECT} \\ --region=${REGION} \\ --single-node The above command installs the default cluster image version .",
+          "Costs In this document, you use the following billable components of Google Cloud: Compute Engine Managed Service for Apache Spark Cloud Storage To generate a cost estimate based on your projected usage, use the pricing calculator .",
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment)."
+        ]
+      },
+      {
+        "title": "\"ClusterConfig \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "source_id": "site-docs-reference",
+        "final_score": 161,
+        "relevance": "",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "The following base set of scopes is always included: https://www.googleapis.com/auth/cloud.useraccounts.readonly https://www.googleapis.com/auth/devstorage.read write https://www.googleapis.com/auth/logging.write If no scopes are specified, the following defaults are also provided: https://www.googleapis.com/auth/bigquery https://www.googleapis.com/auth/bigtable.admin.table https://www.googleapis.com/auth/bigtable.data https://www.googleapis.com/auth/devstorage.full control tags[] string The Compute Engine network tags to add to all instances (see Tagging instances ). metadata map (key: string, value: string) Optional.",
+          "You can test a node's role metadata to run an executable on a master or worker node, as shown below using curl (you can also use wget ): ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role) if [[ \"${ROLE}\" == 'Master' ]]; then ... master specific actions ... else ... worker specific actions ... fi encryptionConfig object ( EncryptionConfig ) Optional."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigtable.admin.table",
+      "bigtable.data",
+      "devstorage.full",
+      "devstorage.read",
+      "logging.write"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    }
+  ]
+}

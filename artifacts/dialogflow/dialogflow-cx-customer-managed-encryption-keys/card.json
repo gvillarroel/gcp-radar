@@ -1,0 +1,185 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:06.489Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Dialogflow CX customer-managed encryption keys",
+  "feature_slug": "dialogflow-cx-customer-managed-encryption-keys",
+  "summary": "Customer-managed encryption keys (CMEK) is now generally available; Dialogflow CX supports Customer-Managed Encryption Keys for encrypting customer data.",
+  "extended_definition": "Customer-managed encryption keys (CMEK) is now generally available; Dialogflow CX supports Customer-Managed Encryption Keys for encrypting customer data.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/cmek",
+      "https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Dialogflow CX \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/cmek",
+        "source_id": "site-docs-root",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Send feedback Customer-managed encryption keys (CMEK) Stay organized with collections Save and categorize content based on your preferences.",
+          "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Dialogflow CX.",
+          "For more information about your encryption options, see Customer-managed encryption keys (CMEK) ."
+        ]
+      },
+      {
+        "title": "Compliance and security controls \\_|\\_ Dialogflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls",
+        "source_id": "site-docs-root-2",
+        "final_score": 88,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Certifications Dialogflow CX is compliant with the following: Compliance Certification Dialogflow CX (including generative features ) Dialogflow ES HIPAA ✔ ✔ ISO 27001 , ISO 27017 , ISO 27018 , and ISO 27701 ✔ ✔ SOC 1 , SOC 2 , SOC 3 ✔ ✔ Security controls Dialogflow CX provides the following security controls: Security controls compliance Dialogflow CX (including generative features ) Dialogflow ES Data Residency Regionalization and location settings Regionalization and data residency Customer-managed encryption keys (CMEK) Customer-managed encryption keys (CMEK) - VPC Service Controls (VPC-SC) Using VPC Service Controls Using VPC Service Controls Access Transparency Access Transparency - Government authorizations Dialogflow CX has received the following authorizations: Authorization Dialogflow CX (including generative features ) Dialogflow ES FedRAMP High Authorization - Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation AI and ML Dialogflow Resources Send feedback Compliance and security controls Stay organized with collections Save and categorize content based on your preferences.",
+          "This page provides information on compliance certifications and security controls that are supported by Dialogflow CX."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.dialogflow.v2 (4.94.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "source_id": "site-java-reference",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "Encryption Spec A customer-managed encryption key specification that can be applied to all created resources (e.g.",
+          "Builder A customer-managed encryption key specification that can be applied to all created resources (e.g.",
+          "Answer Feedback Represents feedback the customer has about the quality & correctness of a certain answer in a conversation. com. google. cloud. dialogflow. v2."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "cmek.iam.gserviceaccount.com",
+      "com.google.cloud.dialogflow.v2",
+      "e.g"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/cmek",
+        "https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/cmek",
+        "https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/cmek",
+        "https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/cmek",
+        "https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/cmek",
+        "https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/cmek",
+        "https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/cmek",
+        "https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/cmek",
+        "https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/cmek",
+        "https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/cmek",
+        "https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/cmek",
+        "https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/cmek",
+        "https://docs.cloud.google.com/dialogflow/docs/compliance-security-controls",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+      ]
+    }
+  ]
+}

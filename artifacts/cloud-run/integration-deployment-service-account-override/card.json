@@ -1,0 +1,160 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:51.589Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": "Integration deployment service account override",
+  "feature_slug": "integration-deployment-service-account-override",
+  "summary": "Integration deployment service account override lets you set and override the deployment service account for Cloud Run integrations through the Google Cloud CLI.",
+  "extended_definition": "Integration deployment service account override lets you set and override the deployment service account for Cloud Run integrations through the Google Cloud CLI.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2.BuildConfig.Builder",
+      "https://docs.cloud.google.com/run/docs/configuring",
+      "https://docs.cloud.google.com/run/docs/quickstarts/frameworks/deploy-angular-ssr-service"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class BuildConfig.Builder (0.88.0) \\_|\\_ Java client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2.BuildConfig.Builder",
+        "source_id": "site-java-reference",
+        "final_score": 100,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Cloud Build name of the latest successful deployment of the function. string name = 1 [(.google.api.field behavior) = OUTPUT ONLY, (.google.api.resource reference) = { ... } Returns Type Description ByteString The bytes for name. getServiceAccount() public String getServiceAccount () Optional.",
+          "The Cloud Build name of the latest successful deployment of the function. string name = 1 [(.google.api.field behavior) = OUTPUT ONLY, (.google.api.resource reference) = { ... } Returns Type Description BuildConfig.Builder This builder for chaining. clearServiceAccount() public BuildConfig .",
+          "FieldAccessorTable internalGetFieldAccessorTable () Returns Type Description FieldAccessorTable Overrides GeneratedMessage.Builder<BuilderType>.internalGetFieldAccessorTable() internalGetMapFieldReflection(int number) protected MapFieldReflectionAccessor internalGetMapFieldReflection ( int number ) Parameter Name Description number int Returns Type Description com.google.protobuf.MapFieldReflectionAccessor Overrides com.google.protobuf.GeneratedMessage.Builder.internalGetMapFieldReflection(int) internalGetMutableMapFieldReflection(int number) protected MapFieldReflectionAccessor internalGetMutableMapFieldReflection ( int number ) Parameter Name Description number int Returns Type Description com.google.protobuf.MapFieldReflectionAccessor Overrides com.google.protobuf.GeneratedMessage.Builder.internalGetMutableMapFieldReflection(int) isInitialized() public final boolean isInitialized () Returns Type Description boolean Overrides GeneratedMessage.Builder<BuilderType>.isInitialized() mergeFrom(BuildConfig other) public BuildConfig ."
+        ]
+      },
+      {
+        "title": "Configure Cloud Run services \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/configuring",
+        "source_id": "site-docs-reference-2",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "Manual scaling lets you set a specific instance count, regardless of traffic or utilization, and without requiring redeployment.",
+          "The following table explains the features for this section: Section Feature Description A Service account The Cloud Run service identity is the service account that is used as the authenticated account for accessing Google Cloud APIs from your Cloud Run instance container.",
+          "D Service mesh Cloud Service Mesh lets you enable mesh advanced traffic management capabilities, such as weighted traffic splitting and global load balancing, as well as observability and security policies for traffic from one Cloud Run service to another."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Build and deploy a Angular SSR web app to Google Cloud with\\",
+        "url": "https://docs.cloud.google.com/run/docs/quickstarts/frameworks/deploy-angular-ssr-service",
+        "source_id": "site-docs-reference-2",
+        "final_score": 89,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Delete a Google Cloud project: gcloud projects delete PROJECT ID What's next For more information on building a container from code source and pushing to a repository, see: Developing Cloud Run services Building Containers Test a Cloud Run service locally Deploying from source code For automatic GitHub integration and optimized deployments with CDN for server-rendered Angular apps, consider using Firebase App Hosting .",
+          "Grant the Cloud Build service account access to your project Cloud Build automatically uses the Compute Engine default service account as the default Cloud Build service account to build your source code and Cloud Run resource, unless you override this behavior.",
+          "Note: For automatic GitHub integration and optimized deployments with CDN for server-rendered Angular apps, consider using Firebase App Hosting ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.run.v2.BuildConfig.Builder",
+      "com.google.protobuf.GeneratedMessage.Builder.internalGetMapFieldReflection",
+      "com.google.protobuf.GeneratedMessage.Builder.internalGetMutableMapFieldReflection",
+      "com.google.protobuf.MapFieldReflectionAccessor",
+      "iam.serviceAccountUser",
+      "logging.viewer",
+      "run.admin",
+      "run.sourceDeveloper"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.serviceAccountUser",
+      "roles/logging.viewer",
+      "roles/run.admin",
+      "roles/run.sourceDeveloper"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/configuring",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2.BuildConfig.Builder",
+        "https://docs.cloud.google.com/run/docs/quickstarts/frameworks/deploy-angular-ssr-service"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/configuring",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2.BuildConfig.Builder",
+        "https://docs.cloud.google.com/run/docs/quickstarts/frameworks/deploy-angular-ssr-service"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/configuring",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2.BuildConfig.Builder",
+        "https://docs.cloud.google.com/run/docs/quickstarts/frameworks/deploy-angular-ssr-service"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/configuring",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2.BuildConfig.Builder",
+        "https://docs.cloud.google.com/run/docs/quickstarts/frameworks/deploy-angular-ssr-service"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/configuring",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2.BuildConfig.Builder",
+        "https://docs.cloud.google.com/run/docs/quickstarts/frameworks/deploy-angular-ssr-service"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/configuring",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2.BuildConfig.Builder",
+        "https://docs.cloud.google.com/run/docs/quickstarts/frameworks/deploy-angular-ssr-service"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/configuring",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2.BuildConfig.Builder",
+        "https://docs.cloud.google.com/run/docs/quickstarts/frameworks/deploy-angular-ssr-service"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/configuring",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2.BuildConfig.Builder",
+        "https://docs.cloud.google.com/run/docs/quickstarts/frameworks/deploy-angular-ssr-service"
+      ]
+    }
+  ]
+}

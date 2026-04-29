@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.589Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Add-on installable trigger support",
+  "feature_slug": "add-on-installable-trigger-support",
+  "summary": "Google Sheets and Docs add-ons can use most installable triggers.",
+  "extended_definition": "Google Sheets and Docs add-ons can use most installable triggers.",
+  "lifecycle": {
+    "latest_feature_date": "2014-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/triggers",
+      "https://developers.google.com/apps-script/guides/triggers/events",
+      "https://developers.google.com/apps-script/guides/triggers/installable"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Installable Triggers \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/triggers/installable",
+        "source_id": "site-docs-reference",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, a standalone script can programmatically create an installable trigger for an arbitrary Google Sheets file by calling TriggerBuilder.forSpreadsheet(key) and passing in the spreadsheet's ID.",
+          "For example, the installable open trigger for Google Sheets activates whenever the spreadsheet is opened by any user who has edit access, just like the simple onOpen() trigger.",
+          "If you have previously stored the ID of a trigger, delete it by passing the ID as an argument to the following function. triggers/triggers.gs View on GitHub / Deletes a trigger. @param {string} triggerId The Trigger ID. @see https://developers.google.com/apps-script/guides/triggers/installable / function deleteTrigger ( triggerId ) { // Loop over all triggers. const allTriggers = ScriptApp . getProjectTriggers (); for ( let index = 0 ; index < allTriggers . length ; index ++ ) { // If the current trigger is the correct one, delete it. if ( allTriggers [ index ]. getUniqueId () === triggerId ) { ScriptApp . deleteTrigger ( allTriggers [ index ]); break ; } } } Before creating a trigger, verify that the associated function has all the necessary OAuth permissions ."
+        ]
+      },
+      {
+        "title": "Simple Triggers \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/triggers",
+        "source_id": "site-docs-reference",
+        "final_score": 133,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Event Simple triggers Installable triggers Open Sheets Slides Forms Docs function onOpen(e) Sheets Forms Docs Edit Sheets function onEdit(e) Sheets Selection change Sheets function onSelectionChange(e) Install Sheets Slides Forms Docs function onInstall(e) Change Sheets Form submit Sheets Forms Time-driven (clock) Sheets Slides Forms Docs Standalone Get Standalone function doGet(e) Post Standalone function doPost(e) The open event for Google Forms does not occur when a user opens a form to respond, but rather when an editor opens the form to modify it.",
+          "For example, Google Sheets, Slides, Forms, and Docs all support simple open triggers, but only Sheets, Docs and Forms support installable open triggers.",
+          "These restrictions don't apply to doGet(e) or doPost(e) . onOpen(e) The onOpen(e) trigger runs automatically when a user opens a spreadsheet, document, presentation, or form that they have permission to edit. (The trigger does not run when responding to a form, only when opening the form to edit it.) onOpen(e) is most commonly used to add custom menu items to Google Sheets, Slides, Docs, or Forms. triggers/triggers.gs View on GitHub / The event handler triggered when opening the spreadsheet. @param {Event} e The onOpen event. @see https://developers.google.com/apps-script/guides/triggers#onopene / function onOpen ( e ) { // Add a custom menu to the spreadsheet."
+        ]
+      },
+      {
+        "title": "Event Objects \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/triggers/events",
+        "source_id": "site-docs-reference",
+        "final_score": 103,
+        "relevance": "",
+        "evidence_snippets": [
+          "This page details the fields within the event object for various trigger types across different Google services like Sheets, Docs, Slides, Forms, Calendar, and Workspace add-ons.",
+          "For example, the following sample code shows a simple onEdit(e) trigger for a Google Sheets script that uses the event object to determine which cell was edited. function onEdit ( e ){ // Set a comment on the edited cell to indicate when it was changed . var range = e . range ; range . setNote ( 'Last modified: ' + new Date ()); } This page describes the fields in the event object for different types of triggers.",
+          "4034124084959907503 values Array with values in the same order as they appear in the spreadsheet. [ '2015/05/04 15:00', 'amin@example.com', 'Bob', '27', 'Bill', '28', 'Susan', '25' ] Google Docs events Triggers allow Docs to respond when a user opens a document."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "example.com",
+      "triggers.gs"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/triggers/installable",
+        "https://developers.google.com/apps-script/guides/triggers",
+        "https://developers.google.com/apps-script/guides/triggers/events"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/triggers/installable",
+        "https://developers.google.com/apps-script/guides/triggers",
+        "https://developers.google.com/apps-script/guides/triggers/events"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/triggers/installable",
+        "https://developers.google.com/apps-script/guides/triggers",
+        "https://developers.google.com/apps-script/guides/triggers/events"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/triggers/installable",
+        "https://developers.google.com/apps-script/guides/triggers",
+        "https://developers.google.com/apps-script/guides/triggers/events"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/triggers/installable",
+        "https://developers.google.com/apps-script/guides/triggers",
+        "https://developers.google.com/apps-script/guides/triggers/events"
+      ]
+    }
+  ]
+}

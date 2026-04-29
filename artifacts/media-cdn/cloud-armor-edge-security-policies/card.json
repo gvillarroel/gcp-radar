@@ -1,0 +1,164 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:22.242Z",
+  "source_step08_card": "data/step-08/current/products/media-cdn/card.json",
+  "product_name": "Media CDN",
+  "product_slug": "media-cdn",
+  "feature_name": "Cloud Armor edge security policies",
+  "feature_slug": "cloud-armor-edge-security-policies",
+  "summary": "Media CDN can use globally scoped Cloud Armor edge security policies to filter Layer 7 requests; Media CDN can use globally scoped Cloud Armor edge security policies to filter Layer 7 requests.",
+  "extended_definition": "Media CDN can use globally scoped Cloud Armor edge security policies to filter Layer 7 requests; Media CDN can use globally scoped Cloud Armor edge security policies to filter Layer 7 requests.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/media-cdn/docs/logging",
+      "https://docs.cloud.google.com/media-cdn/docs/overview",
+      "https://docs.cloud.google.com/media-cdn/docs/routing",
+      "https://docs.cloud.google.com/service-extensions/docs/media-cdn-extensions-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Media CDN overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 307,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Armor also supports Autonomous System Numbers (ASNs) in edge security policies for Media CDN.",
+          "Google Cloud Armor support Media CDN supports Cloud Armor edge security policies.",
+          "You can use Media CDN with your existing origin infrastructure, whether the content is hosted within Cloud Storage, in another cloud, or within your on-premises infrastructure."
+        ]
+      },
+      {
+        "title": "Request logging overview \\_|\\_ Media CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/logging",
+        "source_id": "site-docs-root",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example log entry The following provides an example log entry for a response served from cache: { \"insertId\" : \"617fa16e-0000-2ac9-9993-d4f547fe67d4@a1\" , \"jsonPayload\" : { \"@type\" : \"type.googleapis.com/google.cloud.edgecache.v1.EdgeCacheLogEntry\" , \"tlsVersion\" : \"TLS 1.3\" , \"tlsCipherSuite\" : \"009C\" , \"cacheId\" : \"maa-132eed13faa13\" , \"clientAsn\" : \"9299\" , \"origin\" : \"example origin\" , \"clientRegionCode\" : \"IN\" , \"metroIataCode\" : \"bom\" , \"clientCity\" : \"Mumbai\" , \"latency\" : \"0.005105200s\" , \"proxyStatus\" : \"Google-Edge-Cache\" , \"httpTtfb\" : \"0.005056080s\" , \"cacheMode\" : \"FORCE CACHE ALL\" , \"cacheKeyFingerprint\" : \"c360ac18849b6336\" , \"cacheStatus\" : \"hit,stale\" , \"compressionAlgorithmApplied\" : \"br\" , \"enforcedSecurityPolicy\" : { \"outcome\" : \"ACCEPT\" , \"configuredAction\" : \"ACCEPT\" , \"name\" : \"example policy\" , \"priority\" : 1000 , \"configuredAction\" : \"DENY\" , \"threatIntelligence\" : { \"categories\" : [ 0 : \"iplist-public-clouds\" ] } }, \"originalRequestId\" : \"19d92668-3948-49d8-9244-25f8252043e5\" , \"proxyRegionCode\" : \"IN\" , \"requestId\" : \"4bde6381-cd17-47e1-8c2a-1aaa424a1156\" , \"originIp\" : \"74.125.128.128\" }, \"httpRequest\" : { \"requestMethod\" : \"GET\" , \"requestUrl\" : \"https://example.com/image.jpg\" , \"requestSize\" : \"3545\" , \"status\" : 200 , \"responseSize\" : \"3716\" , \"userAgent\" : \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10 15 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36\" , \"remoteIp\" : \"62.36.0.43\" , \"protocol\" : \"HTTP/2\" }, \"resource\" : { \"type\" : \"edgecache.googleapis.com/EdgeCacheRouteRule\" , \"labels\" : { \"matched path\" : \"/\" , \"path matcher name\" : \"routes\" , \"service name\" : \"example service\" , \"resource container\" : \"projects/123456789\" , \"location\" : \"global\" , \"route destination\" : \"projects/123456789/locations/global/edgeCacheOrigins/example origin\" , \"route type\" : \"ORIGIN\" } }, \"timestamp\" : \"2022-11-19T00:24:13.695328200Z\" , \"logName\" : \"projects/my-project/logs/edgecache.googleapis.com%2Fedge cache request\" , \"receiveTimestamp\" : \"2022-11-19T00:24:16.715871645Z\" } You can configure request logging in a few ways.",
+          "Populated only if this is different than request id for cached responses. originIp The IP address used to contact the EdgeCacheOrigin resource from which the response was proxied. previewSecurityPolicy The Google Cloud Armor edge security policy that applies to the client's request, with the preview rules taken into account.",
+          "The value can be one of the following: DEFAULT GLOBAL : indicates that flexible shielding isn't configured SHIELDED : indicates that the region configured using flexShieldingRegion was used to serve the request SPILLED : indicates that the region configured using flexShieldingRegion couldn't be used for the request; the default origin was used This field appears only in logs for cache fill from an EdgeCacheOrigin resource. httpTtfb 0.157228207s The Duration from when the proxy begins receiving request bytes until the first byte of the response is sent (not received). latency 0.157415635s The Duration from when the proxy begins receiving request bytes until it has finished writing the response to the client. location The Location header in the response. metroIataCode MAA The IATA (airport) code of the city nearest the proxy. origin The EdgeCacheOrigin resource from which the response was proxied. originalRequestId 19d92668-3948-49d8-9244-25f8252043e4 The unique identifier assigned to the request that originally generated this response."
+        ]
+      },
+      {
+        "title": "\"Media CDN extensions overview \\_|\\_ Service Extensions \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-extensions/docs/media-cdn-extensions-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 247,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "How Media CDN plugins work On the Media CDN request path, plugins run after route matching and Google Cloud Armor edge security policies but before cache key calculation and the addition of custom headers to the origin.",
+          "As Figure 1 shows, with Service Extensions, you can use plugins to place custom code that implements specific actions at the edge, in front of the cache in the Media CDN processing path.",
+          "For example, you might need to normalize headers to improve caching, use a custom URL signing algorithm, or port legacy behavior from an existing CDN to Media CDN."
+        ]
+      },
+      {
+        "title": "Configure service routes \\_|\\_ Media CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/routing",
+        "source_id": "site-docs-root",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use the gcloud edge-cache services import command . gcloud edge - cache services import SERVICE NAME \\ -- source = FILENAME . yaml Match requests A Media CDN configuration contains a set of routes defined in the Routing section for an EdgeCacheService resource.",
+          "In the following example, you can see that the /live/us/ route would never be matched because the /live/ route is at a higher priority: routeRules : - priority : 1 description : \"Live routes\" matchRules : - prefixMatch : /live/ routeAction : cdnPolicy : defaultTtl : 5s - priority : 2 description : \"U.S based live streams\" matchRules : This would never be matched, as the /live/ prefixMatch at priority 1 would always take precedence. - prefixMatch : /live/us/ routeAction : cdnPolicy : defaultTtl : 5s - priority : 999 description : \"Catch-all route\" matchRules : - prefixMatch : / To address this, you put the more specific (longer) route at a higher priority: routeRules : - priority : 1 description : \"U.S based live streams\" matchRules : The more specific (longer) match is at a higher priority, and now matches requests as expected. - prefixMatch : /live/us/ routeAction : cdnPolicy : defaultTtl : 5s - priority : 2 description : \"Live routes\" matchRules : - prefixMatch : /live/ routeAction : cdnPolicy : defaultTtl : 5s - priority : 999 description : \"Catch-all route\" matchRules : - prefixMatch : / This allows the more specific route to match requests correctly.",
+          "The following configuration demonstrates how to configure your Media CDN routing to support this: name : prod-service routing : hostRules : - hosts : - media.example.com pathMatcher : example routes pathMatchers : - name : example routes routeRules : the first route only matches video manifests - priority : 1 matchRules : - pathTemplateMatch : \"/ .m3u8\" # \" \" matches all path segments - pathTemplateMatch : \"/ .mpd\" origin : manifest-origin routeAction : cdnPolicy : cacheMode : FORCE CACHE ALL defaultTtl : 5s the second route matches video segments, fetches them from a separate origin server, caching them for a longer duration (1 day). - priority : 2 matchRules : - pathTemplateMatch : \"/ .ts\" - pathTemplateMatch : \"/ .m4s\" origin : segment-origin routeAction : cdnPolicy : cacheMode : FORCE CACHE ALL defaultTtl : 86400s Example: Capture path variables The following example shows how to use named variables to describe one or more path segments."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "edgecache.googleapis.com",
+      "example.com",
+      "image.jpg",
+      "media.example.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/logging",
+        "https://docs.cloud.google.com/service-extensions/docs/media-cdn-extensions-overview",
+        "https://docs.cloud.google.com/media-cdn/docs/routing"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/logging",
+        "https://docs.cloud.google.com/service-extensions/docs/media-cdn-extensions-overview",
+        "https://docs.cloud.google.com/media-cdn/docs/routing"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/logging",
+        "https://docs.cloud.google.com/service-extensions/docs/media-cdn-extensions-overview",
+        "https://docs.cloud.google.com/media-cdn/docs/routing"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/logging",
+        "https://docs.cloud.google.com/service-extensions/docs/media-cdn-extensions-overview",
+        "https://docs.cloud.google.com/media-cdn/docs/routing"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/logging",
+        "https://docs.cloud.google.com/service-extensions/docs/media-cdn-extensions-overview",
+        "https://docs.cloud.google.com/media-cdn/docs/routing"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/logging",
+        "https://docs.cloud.google.com/service-extensions/docs/media-cdn-extensions-overview",
+        "https://docs.cloud.google.com/media-cdn/docs/routing"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/logging",
+        "https://docs.cloud.google.com/service-extensions/docs/media-cdn-extensions-overview",
+        "https://docs.cloud.google.com/media-cdn/docs/routing"
+      ]
+    }
+  ]
+}

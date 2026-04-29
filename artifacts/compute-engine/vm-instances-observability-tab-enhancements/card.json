@@ -1,0 +1,187 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:57.696Z",
+  "source_step08_card": "data/step-08/current/products/compute-engine/card.json",
+  "product_name": "Compute Engine",
+  "product_slug": "compute-engine",
+  "feature_name": "VM instances Observability tab enhancements",
+  "feature_slug": "vm-instances-observability-tab-enhancements",
+  "summary": "The VM instances Observability tab adds disk and network charts, detected integration links, and recommended alert setups.",
+  "extended_definition": "The VM instances Observability tab adds disk and network charts, detected integration links, and recommended alert setups.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/compute/docs/instances/create-start-instance",
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/creating-router-appliances",
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/working-with-hubs-spokes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create router appliance instances \\_|\\_ Network Connectivity Center \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/creating-router-appliances",
+        "source_id": "site-docs-reference-2",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "POST https://compute.googleapis.com/compute/v1/projects/ PROJECT /zones/ ZONE /instances { \"machineType\": \"zones/ ZONE /machineTypes/ MACHINE TYPE \", \"name\": \" INSTANCE NAME \", \"canIpForward\": \"true\", \"networkInterfaces\": [{ \"subnetwork\": \"regions/ REGION /subnetworks/ SUBNET \", \"networkIP\": \" INTERNAL IP ADDRESS \", \"accessConfigs\": [{ \"networkTier\": \" NETWORK TIER , }] }], \"disks\": [{ \"initializeParams\": { \"sourceImage\": \"projects/ IMAGE PROJECT /global/images/ IMAGE \" }, \"boot\": true }] } Replace the following: PROJECT : the name of the project that contains the router appliance VMs—for example, my-project ZONE : the Google Cloud zone that the VM is located in—for example, us-west1-a MACHINE TYPE : the machine type resource to use for the VM—for example, zones/us-west1-a/machineTypes/n1-standard-2 INSTANCE NAME : the name of the VM—for example, router-app-a or router-app-b REGION : the region that contains the VM—for example, us-west1 SUBNET : the subnet assigned to the primary network interface for the VM—for example, regions/us-west1/subnetworks/subnet-a-1 INTERNAL IP ADDRESS : the RFC 1918 internal IP address that is assigned to the VM; configure the address for the VM interface that connects to the Cloud Router—for example, 10.0.1.10 NETWORK TIER : when creating the router appliance VMs, set the network tier to premium ; this choice maximizes the extent to which traffic uses Google's network IMAGE PROJECT : the name of the project that contains the image that you specify when creating the VM—for example, debian-cloud IMAGE : the name of the image to use when creating the VM—for example, debian-10-buster-v20210217 Create a firewall rule to allow BGP Create a firewall rule that allows BGP traffic to network-a on TCP port 179 .",
+          "In this sample, the spoke does not use the site-to-site data transfer feature. (To enable data transfer, add one more flag: --site-to-site-data-transfer .) gcloud network-connectivity spokes linked-router-appliances create NAME \\ --hub=\" HUB NAME \" \\ --description=\" DESCRIPTION \" \\ --router-appliance=instance=\" ROUTER APPLIANCE URI \",ip= IP ADDRESS \\ --router-appliance=instance=\" ROUTER APPLIANCE URI 2 \",ip= IP ADDRESS 2 \\ --region= REGION \\ --labels=\" KEY \"=\" VALUE \" Replace the following values: NAME : the name of the spoke HUB NAME : the name of the hub that you are attaching the spoke to DESCRIPTION : optional text that describes the spoke—for example, us-vpn-spoke ROUTER APPLIANCE URI : the URI of the first router appliance instance—for example, https://www.googleapis.com/compute/projects/ PROJECT ID /zones/ ZONE /instances/ INSTANCE NAME IP ADDRESS : the internal IP address of the first router appliance instance ROUTER APPLIANCE URI 2 : the URI of the second router appliance instance IP ADDRESS 2 : the internal IP address of the second router appliance instance REGION : the Google Cloud region where you want to locate the spoke—for example, us-west1 KEY : the key in the key-value pair for the optional label text VALUE : the value in the key-value pair for the optional label text For example, the following command creates a router appliance spoke that uses router-app-a and router-app-b as its underlying resources: gcloud network-connectivity spokes linked-router-appliances create my-spoke \\ --hub=my-hub \\ --description=\"Test spoke 1\" \\ --router-appliance=instance=\"https://www.googleapis.com/compute/v1/projects/my-project/zones/us-west1-a/instances/router-app-a\",ip=10.0.1.10 \\ --router-appliance=instance=\"https://www.googleapis.com/compute/v1/projects/my-project/zones/us-west1-b/instances/router-app-b\",ip=10.0.1.11 \\ --region=us-west1 \\ --labels=\"environment\"=\"test\" To create the same spoke but enable data transfer, use the following command: gcloud network-connectivity spokes linked-router-appliances create my-spoke \\ --hub=my-hub \\ --description=\"Test spoke 1\" \\ --router-appliance=instance=\"https://www.googleapis.com/compute/v1/projects/my-project/zones/us-west1-a/instances/router-app-a\",ip=10.0.1.10 \\ --router-appliance=instance=\"https://www.googleapis.com/compute/v1/projects/my-project/zones/us-west1-b/instances/router-app-b\",ip=10.0.1.11 \\ --region=us-west1 \\ --labels=\"environment\"=\"test\" --site-to-site-data-transfer API To create a Router appliance spoke, use the networkconnectivity.spokes.create method .",
+          "POST https://networkconnectivity.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /spokes/ SPOKE NAME { \"hub\": \" HUB URI \", \"labels\": {\" KEY \": \" VALUE \"}, \"linkedRouterApplianceInstances\": { \"instances\": [ { \"virtualMachine\": \" ROUTER APPLIANCE URI \", \"ipAddress\": INTERNAL IP ADDRESS , }, { \"virtualMachine\": \" ROUTER APPLIANCE URI 2 , \"ipAddress\": INTERNAL IP ADDRESS 2 , } ], \"siteToSiteDataTransfer\": BOOLEAN } } Replace the following values: PROJECT ID : the project ID of your project REGION : the Google Cloud region where you want to locate the spoke—for example, us-west1 SPOKE NAME : the name you want to give the spoke HUB URI : the URI of the hub that you are attaching the spoke to—for example, http://networkconnectivity.googleapis.com/v1/projects/ PROJECT NAME /locations/global/hubs/ HUB NAME KEY : the key in the key-value pair for the optional label text VALUE : the value in the key-value pair for the optional label text ROUTER APPLIANCE URI : the URI of the first router appliance instance—for example, https://www.googleapis.com/compute/projects/ PROJECT ID /zones/ ZONE /instances/ INSTANCE NAME IP ADDRESS : the internal IP address of the first router appliance instance ROUTER APPLIANCE URI 2 : the URI of the second router appliance instance IP ADDRESS 2 : the internal IP address of the second router appliance instance BOOLEAN : a value that determines whether site-to-site data transfer is enabled for this spoke For example, to create a spoke that uses router-app-a and router-app-b as its underlying resources, the body of your request should be structured as follows: { \"hub\": \"http://networkconnectivity.googleapis.com/v1/projects/my-project/locations/global/hubs/my-hub\", \"labels\": { \"environment\" : \"test\" }, \"linkedRouterApplianceInstances\": { \"instances\": [ { \"virtualMachine\": \"https://www.googleapis.com/compute/v1/projects/my-project/zones/us-west1-a/instances/router-app-a\", \"ipAddress\": \"10.0.1.10\", }, { \"virtualMachine\": \"https://www.googleapis.com/compute/v1/projects/my-project/zones/us-west1-b/instances/router-app-b\", \"ipAddress\": \"10.0.1.11\", } ], \"siteToSiteDataTransfer\": true } } Set up a Cloud Router Router appliance uses a Cloud Router to exchange routes with your VPC network."
+        ]
+      },
+      {
+        "title": "\"Work with hubs and spokes \\_|\\_ Network Connectivity Center \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/working-with-hubs-spokes",
+        "source_id": "site-docs-reference-2",
+        "final_score": 122,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, to create a spoke that contains two router appliance instances, use the following request: POST https://networkconnectivity.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /spokes/ SPOKE NAME { \"hub\": \" HUB NAME \", \"labels\": {\" KEY \": \" VALUE \"}, \"linkedRouterApplianceInstances\": { \"instances\": [ { \"virtualMachine\": \" ROUTER APPLIANCE URI \", \"ipAddress\": \" IP ADDRESS \", }, { \"virtualMachine\": \" ROUTER APPLIANCE URI 2 , \"ipAddress\": \" IP ADDRESS 2 \", } ], \"siteToSiteDataTransfer\": BOOLEAN \"includeExportRanges\": [INCLUDE EXPORT RANGES,...] \"excludeExportRanges\": [EXCLUDE EXPORT RANGES,...] \"includeImportRanges\": [INCLUDE IMPORT RANGES,...] \"excludeImportRanges\": [EXCLUDE IMPORT RANGES,...] } } Replace the following values: PROJECT ID : the project ID of your project REGION : the Google Cloud region where you want to locate the spoke—for example, us-west1 SPOKE NAME : the name for the spoke HUB NAME : the name of the hub that you are attaching the spoke to KEY : the key in the key-value pair for the optional label text VALUE : the value in the key-value pair for the optional label text ROUTER APPLIANCE URI : the URI of the first router appliance instance—for example, https://www.googleapis.com/compute/projects/ PROJECT ID /zones/ ZONE /instances/ INSTANCE NAME IP ADDRESS : the internal IP address of the first router appliance instance ROUTER APPLIANCE URI 2 : the URI of the second router appliance instance IP ADDRESS 2 : the internal IP address of the second router appliance instance BOOLEAN : a value that determines whether site-to-site data transfer is enabled for this spoke; for more information about this use case, see Site-to-site data transfer overview INCLUDE EXPORT RANGES : a comma-delimited list of keywords, IP address ranges, or a combination of keywords and IP address ranges that define which dynamic routes can be exported to the hub.",
+          "For more information about this use case, see Site-to-site data transfer overview . gcloud network-connectivity spokes linked-router-appliances create NAME \\ --hub= HUB NAME \\ --description=\" DESCRIPTION \" \\ --router-appliance=instance=\" ROUTER APPLIANCE URI \",ip= IP ADDRESS \\ --router-appliance=instance=\" ROUTER APPLIANCE URI 2 \",ip= IP ADDRESS 2 \\ --region= REGION \\ --labels=\" KEY \"=\" VALUE \" \\ --include-export-ranges= [INCLUDE EXPORT RANGES,...] \\ --exclude-export-ranges= [EXCLUDE EXPORT RANGES,...] \\ --include-import-ranges= [INCLUDE IMPORT RANGES,...] \\ --exclude-import-ranges= [EXCLUDE IMPORT RANGES,...] Replace the following values: NAME : the name of the spoke HUB NAME : the name of the hub DESCRIPTION : an optional description of the spoke ROUTER APPLIANCE URI : the URI of the first router appliance instance—for example, https://www.googleapis.com/compute/projects/ PROJECT ID /zones/ ZONE /instances/ INSTANCE NAME IP ADDRESS : the internal IP address of the first router appliance instance ROUTER APPLIANCE URI 2 : the URI of the second router appliance instance IP ADDRESS 2 : the internal IP address of the second router appliance instance REGION : the Google Cloud region where the spoke is located—for example, us-west1 KEY : the key in the key-value pair for the optional label text VALUE : the value in the key-value pair for the optional label text INCLUDE EXPORT RANGES : a comma-delimited list of keywords, IP address ranges, or a combination of keywords and IP address ranges that define which dynamic routes can be exported to the hub.",
+          "To replace the existing resource with a new one, use the following request: PATCH https://networkconnectivity.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /spokes/ SPOKE { \"linkedRouterApplianceInstances\": { \"instances\": [ { \"virtualMachine\": \" ROUTER APPLIANCE URI \", \"ipAddress\": \" IP ADDRESS \", } ] } } Replace the following values: PROJECT ID : the project ID of the project that contains the spoke REGION : the region where the spoke is located—for example, us-west1 SPOKE : the name of the spoke ROUTER APPLIANCE URI : the URI of the new router appliance instance to associate with the spoke—for example, \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /zones/ ZONE /instances/ INSTANCE NAME \" IP ADDRESS : the internal IP address of the new router appliance instance Delete a spoke When you delete a spoke, you also detach the resources from that spoke."
+        ]
+      },
+      {
+        "title": "Create and start a Compute Engine instance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/instances/create-start-instance",
+        "source_id": "site-docs-root",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "Preconfigured for you Create a Google-configured, workload-optimized instance Customized machine configuration Create an instance with a custom hostname Create an instance with a custom machine type Create an instance with attached GPUs Specify a minimum CPU platform for an instance Customized OS configuration Create an instance from a public image Create an instance from a custom image Create an instance from a shared image Create an instance using a RHEL BYOS image Customized networking configuration Create an instance in a specific subnet Create an instance that uses IPv6 addresses Create instances that use the gVNIC network interface Configure an instance with higher bandwidth Customized observability configuration Create an instance that's configured for Ops Agent monitoring and logging Enable virtual displays on an instance Customized security configuration Create an instance that uses a user-managed service account Create VMs with managed workload identities enabled Enable OS Login during VM creation Configured for disaster recovery Create an instance with a Backup and DR backup plan From a backup Create an instance from a machine image Create an instance from a disk snapshot Restore an instance from a backup vault From existing configurations Create an instance from an instance template Create an instance similar to an existing instance Configured for specific workloads Create an instance to deploy a container Create Windows Server instances Create SQL Server instances Create an instance with a high performance computing (HPC) image Customized provisioning type Create a Spot instance Create instances that consume reserved instances Multiple instances at once Create instances in bulk Create a managed instance group (MIG) Sole-tenant nodes Create instances on sole-tenant nodes Efficient instances Create an instance with an attached instance schedule Troubleshooting To find methods for resolving common instance creation errors, see Troubleshooting instance creation .",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create instances: compute.instances.create on the project To use a custom image to create the VM: compute.images.useReadOnly on the image To use a snapshot to create the VM: compute.snapshots.useReadOnly on the snapshot To use an instance template to create the VM: compute.instanceTemplates.useReadOnly on the instance template To specify a subnet for your VM: compute.subnetworks.use on the project or on the chosen subnet To specify a static IP address for the VM: compute.addresses.use on the project To assign an external IP address to the VM when using a VPC network: compute.subnetworks.useExternalIp on the project or on the chosen subnet To assign a legacy network to the VM: compute.networks.use on the project To assign an external IP address to the VM when using a legacy network: compute.networks.useExternalIp on the project To set VM instance metadata for the VM: compute.instances.setMetadata on the project To set tags for the VM: compute.instances.setTags on the VM To set labels for the VM: compute.instances.setLabels on the VM To set a service account for the VM to use: compute.instances.setServiceAccount on the VM To create a new disk for the VM: compute.disks.create on the project To attach an existing disk in read-only or read-write mode: compute.disks.use on the disk To attach an existing disk in read-only mode: compute.disks.useReadOnly on the disk You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Create and start instances with specific configurations Each of the following documents provides instructions for how to create and start an instance that uses one or more specific configuration options."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.addresses.use",
+      "compute.disks.create",
+      "compute.disks.use",
+      "compute.disks.useReadOnly",
+      "compute.googleapis.com",
+      "compute.images.useReadOnly",
+      "compute.instanceAdmin.v1",
+      "compute.instances.create",
+      "compute.instances.insert",
+      "compute.instances.setLabels",
+      "compute.instances.setMetadata",
+      "compute.instances.setServiceAccount",
+      "compute.instances.setTags",
+      "compute.instanceTemplates.useReadOnly",
+      "compute.networks.use",
+      "compute.networks.useExternalIp",
+      "compute.snapshots.useReadOnly",
+      "compute.subnetworks.use",
+      "compute.subnetworks.useExternalIp",
+      "developers.google.com",
+      "networkconnectivity.googleapis.com",
+      "networkconnectivity.spokes.create"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.instanceAdmin.v1"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/creating-router-appliances",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/working-with-hubs-spokes",
+        "https://docs.cloud.google.com/compute/docs/instances/create-start-instance"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/creating-router-appliances",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/working-with-hubs-spokes",
+        "https://docs.cloud.google.com/compute/docs/instances/create-start-instance"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/creating-router-appliances",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/working-with-hubs-spokes",
+        "https://docs.cloud.google.com/compute/docs/instances/create-start-instance"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/creating-router-appliances",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/working-with-hubs-spokes",
+        "https://docs.cloud.google.com/compute/docs/instances/create-start-instance"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/creating-router-appliances",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/working-with-hubs-spokes",
+        "https://docs.cloud.google.com/compute/docs/instances/create-start-instance"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/creating-router-appliances",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/working-with-hubs-spokes",
+        "https://docs.cloud.google.com/compute/docs/instances/create-start-instance"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/creating-router-appliances",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/working-with-hubs-spokes",
+        "https://docs.cloud.google.com/compute/docs/instances/create-start-instance"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/creating-router-appliances",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/working-with-hubs-spokes",
+        "https://docs.cloud.google.com/compute/docs/instances/create-start-instance"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/creating-router-appliances",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/working-with-hubs-spokes",
+        "https://docs.cloud.google.com/compute/docs/instances/create-start-instance"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/creating-router-appliances",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/working-with-hubs-spokes",
+        "https://docs.cloud.google.com/compute/docs/instances/create-start-instance"
+      ]
+    }
+  ]
+}

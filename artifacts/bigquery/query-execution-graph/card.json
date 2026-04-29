@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Query execution graph",
+  "feature_slug": "query-execution-graph",
+  "summary": "The query execution graph helps diagnose query performance issues and provides query performance insights; The query execution graph helps diagnose BigQuery query performance issues and provides performance insights.",
+  "extended_definition": "The query execution graph helps diagnose query performance issues and provides query performance insights; The query execution graph helps diagnose BigQuery query performance issues and provides performance insights.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/admin-jobs-explorer",
+      "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery",
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 219,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Partner references BigQuery and Monte Carlo How Resident Reduced Data Issues with Monte Carlo New Relic Solution New Relic Infrastructure Monitoring Category Data Quality, Observability, & FinOps Description New Relic provides performance, availability, and monitoring services that improve your product, improve your business, and keep your customers happy.",
+          "Partner references Google BigQuery as a source in Validio Partner Advantage page Direct link ETL & Data Integration Ab Initio Solution Ab Initio Platform Category ETL & Data Integration Description Ab Initio provides a high-performance software suite for data integration, batch processing, data quality, and metadata management.",
+          "Partner references Generating SQL for BigQuery Partner Advantage page Direct link Windsor.ai Solution Windsor.ai Marketing data Attribution Category BI, ML, & Advanced Analytics Description Windsor.ai is a marketing data attribution software that helps performance marketers and data engineers get their job done efficiently."
+        ]
+      },
+      {
+        "title": "Use administrative jobs explorer \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/admin-jobs-explorer",
+        "source_id": "site-docs-reference-2",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can also select individual jobs to open the job details page , which provides query details such as execution graphs, SQL text, and execution history to help you diagnose and troubleshoot queries.",
+          "The Performance tab compiles query information including the execution graph, the SQL text, and execution history.",
+          "This helps you troubleshoot potential performance issues between two query jobs."
+        ]
+      },
+      {
+        "title": "\"Best practices for multi-tenant workloads on BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery",
+        "source_id": "site-docs-reference-5",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A dataset-per-tenant design helps to mitigate the following concerns that an organization experiences when it scales to thousands of tenants: Administrative complexity : the total number of new projects and cloud resources on a per customer basis End-to-end latency : how up to date the datastore is for both the tenants and cross-customer analytics solutions Performance expectations : ensuring that tenant performance stays within acceptable limits Configure datasets for each tenant Within a project that is dedicated to storing customer data, each customer's data is separated by BigQuery datasets.",
+          "Sensitive Data Protection Sensitive Data Protection provides APIs and scanning utilities that help you identify and mitigate sensitive content that is stored inside BigQuery or Cloud Storage datasets.",
+          "Best practices for multi-tenant workloads on BigQuery This document provides techniques and best practices for common patterns that are used in multi-tenant data platforms and enterprise data marts."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/admin-jobs-explorer",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery"
+      ]
+    }
+  ]
+}

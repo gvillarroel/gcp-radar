@@ -1,0 +1,94 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.295Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-python/card.json",
+  "product_name": "App Engine standard environment Python",
+  "product_slug": "app-engine-standard-environment-python",
+  "feature_name": "Per-URL error reporting",
+  "feature_slug": "per-url-error-reporting",
+  "summary": "Per-URL error reporting shows server and client error status more accurately in the App Engine dashboard.",
+  "extended_definition": "Per-URL error reporting shows server and client error status more accurately in the App Engine dashboard.",
+  "lifecycle": {
+    "latest_feature_date": "2016-07-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+      "https://cloud.google.com/appengine/docs/standard/python3/services/access",
+      "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"How requests are handled \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "source_id": "site-docs-reference",
+        "final_score": 87,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If a script handler generates a response larger than this limit, the server sends back an empty response with a 500 Internal Server Error status code.",
+          "Depending on a variety of factors, such as which type of response data is cached first, which Vary headers you have specified in the response, and which headers are included in the request, a client could request compressed data but receive uncompressed data, and the other way around.",
+          "Response caching The Google Front End, and potentially the user's browser and other intermediate caching proxy servers, will cache your app's responses as instructed by standard caching headers that you specify in the response."
+        ]
+      },
+      {
+        "title": "\"How requests are handled \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "source_id": "site-docs-reference-3",
+        "final_score": 87,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If a script handler generates a response larger than this limit, the server sends back an empty response with a 500 Internal Server Error status code.",
+          "Depending on a variety of factors, such as which type of response data is cached first, which Vary headers you have specified in the response, and which headers are included in the request, a client could request compressed data but receive uncompressed data, and the other way around.",
+          "Response caching The Google Front End, and potentially the user's browser and other intermediate caching proxy servers, will cache your app's responses as instructed by standard caching headers that you specify in the response."
+        ]
+      },
+      {
+        "title": "\"Access legacy bundled services for Python 3 \\_|\\_ App Engine standard environment\\",
+        "url": "https://cloud.google.com/appengine/docs/standard/python3/services/access",
+        "source_id": "site-docs-reference-3",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: python3 CLOUD SDK ROOT / bin / dev appserver . py -- runtime python path = \"python27=/user/bin/python2.7,python3=/usr/bin/python3\" Important: When using the local development server to test Python 3 apps that use the Deferred API , you must set the following environment variable in your app.yaml : DEFERRED USE CROSS COMPATIBLE PICKLE PROTOCOL: 'True' Pickle Compatibility Shared services including Memcache, Cloud NDB and deferred use the pickle module to serialize and share Python objects.",
+          "For example: python3 CLOUD SDK ROOT / bin / dev appserver . py -- runtime python path =/ usr / bin / python3 You can also set the argument to a comma-separated list of [RUNTIME ID]=[PYTHON INTERPRETER PATH] pairs.",
+          "Client ( unpickler = unpickle factory )) The latin1 encoding, defines a mapping for each of the 256 possible values of each byte in a Python 2 string ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "appserver.py",
+      "python2.7"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "https://cloud.google.com/appengine/docs/standard/python3/services/access"
+      ]
+    }
+  ]
+}

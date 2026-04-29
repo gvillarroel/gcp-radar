@@ -1,0 +1,110 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.221Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-php/card.json",
+  "product_name": "App Engine standard environment PHP",
+  "product_slug": "app-engine-standard-environment-php",
+  "feature_name": "Cloud Tasks",
+  "feature_slug": "cloud-tasks",
+  "summary": "Cloud Tasks reached general availability, enabling asynchronous task execution outside user requests.",
+  "extended_definition": "Cloud Tasks reached general availability, enabling asynchronous task execution outside user requests.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services",
+      "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks",
+      "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Run asynchronous tasks \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks",
+        "source_id": "site-docs-reference",
+        "final_score": 170,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Run asynchronous tasks Stay organized with collections Save and categorize content based on your preferences.",
+          "To run asynchronous tasks, you can: Create Cloud Tasks queues, see Create Cloud Tasks queues .",
+          "Create App Engine tasks in the form of an HTTP request and then place them in Cloud Tasks queues, see Create App Engine tasks ."
+        ]
+      },
+      {
+        "title": "\"How requests are handled \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "source_id": "site-docs-reference",
+        "final_score": 111,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "With Cloud Tasks, HTTP requests are long-lived and return a response only after any asynchronous work ends.",
+          "When a service receives standard HTTP traffic at high volume while also serving Task queue or Cloud Tasks traffic at much lower volume, there is a disproportionate impact on the latency of the Task queue or the Cloud Tasks traffic.",
+          "You should also consider serving latency sensitive requests from Cloud Tasks with a dedicated major version or service."
+        ]
+      },
+      {
+        "title": "\"Communicating between your services \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services",
+        "source_id": "site-docs-reference",
+        "final_score": 69,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Note: The \"internal\" traffic setting blocks all traffic from additional Google Cloud services that do not use the VPC network, such as URLFetch, Cloud Tasks, and Pub/Sub, even within the same project.",
+          "Additionally, services in the standard environment that reside within the same Google Cloud project can also use one of the App Engine APIs for the following tasks: Share a single memcache instance.",
+          "Learn how to authorize the requests between your services and other Google Cloud services: Provide credentials for Application Default Credentials Using user-managed service accounts Your App Engine services can also communicate using Pub/Sub , which provides reliable asynchronous many-to-many messaging between processes, including App Engine."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "appspot.com",
+      "private.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks",
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks",
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks",
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    }
+  ]
+}

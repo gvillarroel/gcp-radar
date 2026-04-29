@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:40.969Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Basic instances",
+  "feature_slug": "basic-instances",
+  "summary": "AlloyDB basic instances provide a lower-cost single-node primary instance option for non-production use cases.",
+  "extended_definition": "AlloyDB basic instances provide a lower-cost single-node primary instance option for non-production use cases.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/overview",
+      "https://docs.cloud.google.com/alloydb/docs/reference/execution-plan-nodes",
+      "https://docs.cloud.google.com/alloydb/docs/reference/indexing-strategies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "AlloyDB overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 148,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Automatic and adaptive database features The fully PostgreSQL-compatible database engine that powers every AlloyDB node has several features that continuously analyze the structure and frequency of the queries that your instances handle, using this information to suggest schema improvements or automatically apply optimizations: An index advisor helps you find opportunities to optimize your database schema using new indexes based on your usage patterns.",
+          "Clusters operating in non-production environments that don't require HA can optionally use basic, single-zone primary instances instead.",
+          "AlloyDB resource hierarchy AlloyDB organizes its resources into three levels: clusters, instances, and nodes."
+        ]
+      },
+      {
+        "title": "\"Execution plan node types \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/execution-plan-nodes",
+        "source_id": "site-api-reference",
+        "final_score": 139,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This join node works well for bulk operations, but if an ORDER BY provides the sorted data, then this access method might be slower than others.",
+          "551 ms Aggregate node types Aggregate node types combine multiple input rows into a single result row, often in conjunction with aggregate functions like COUNT , SUM , AVG , MAX , or MIN , or when a GROUP BY clause is present.",
+          "216 ms AlloyDB query id : 18229116469546507386 AlloyDB plan id : 17462269545806790969 Materialize Typically seen in Common Table Expressions (CTEs), the Materialize node builds an in-memory tuple store for later reuse."
+        ]
+      },
+      {
+        "title": "\"AlloyDB database indexing strategies \\_|\\_ AlloyDB for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/indexing-strategies",
+        "source_id": "site-api-reference",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "It provides faster query time, lower memory footprint, and higher write throughput than a similar HNSW-based index.",
+          "554 ms The Bloom index also occupies less space than a similarly constructed B-tree index: \\dt+ public.bloom test List of relations Schema Name Type Owner Persistence Access method Size Description --------+------------+-------+----------+-------------+---------------+---------+------------- public bloom test table postgres permanent heap 9663 MB NULL -------------------------------------------------------------------------------------------------------- \\di+ idx bloom test List of relations Schema Name Type Owner Table Persistence Access method Size --------+----------------------+-------+----------+------------+-------------+---------------+---------+ public idx bloom test index postgres bloom test permanent bloom 2112 MB -------------------------------------------------------------------------------------------------------- \\di+ idx btree bloom test List of relations Schema Name Type Owner Table Persistence Access method Size public idx btree bloom test index postgres bloom test permanent btree 4723 MB For multi-column or variable column predicate support that uses equality predicates, a Bloom index can be a good alternative to creating multiple single- or dual-column indexes.",
+          "You can also run the advisor manually at any time by altering the search path in the session and following these steps: Given the following table with 10m rows in it and no indexes: Table \"idx advisor.user test\" + ------------------+--------------------------------+-----------+----------+---------+---------+-------- Column Type Collation Nullable Default Storage + ------------------+--------------------------------+-----------+----------+---------+---------+-------- id integer not null plain value numeric main user id integer plain product id integer plain product meas val integer plain effective date timestamp ( 3 ) without time zone plain + ------------------+--------------------------------+-----------+----------+---------+---------+-------- Access method : heap Run a query that could possibly benefit from an index: SELECT from idx advisor . user test where id = 500533 ; + ------------------------------------------------------------------------------------------------------- QUERY PLAN + ------------------------------------------------------------------------------------------------------- Gather ( cost = 1000 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "advisor.user",
+      "public.bloom"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/reference/execution-plan-nodes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/indexing-strategies"
+      ]
+    }
+  ]
+}

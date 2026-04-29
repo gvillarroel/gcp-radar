@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.362Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-ruby/card.json",
+  "product_name": "App Engine standard environment Ruby",
+  "product_slug": "app-engine-standard-environment-ruby",
+  "feature_name": "Dashboard per-URL error metrics",
+  "feature_slug": "dashboard-per-url-error-metrics",
+  "summary": "Server Errors and Client Errors in the App Engine dashboard more accurately reflect per-URL status errors.",
+  "extended_definition": "Server Errors and Client Errors in the App Engine dashboard more accurately reflect per-URL status errors.",
+  "lifecycle": {
+    "latest_feature_date": "2016-07-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+      "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+      "https://docs.cloud.google.com/appengine/docs/standard/ruby/connecting-vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connecting to a VPC network \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "source_id": "site-docs-reference",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "Errors Service account needs Service Agent role error If you use the Restrict Resource Service Usage organization policy constraint to block Cloud Deployment Manager ( deploymentmanager.googleapis.com ), you might see the following error message: Serverless VPC Access service account (service-<PROJECT NUMBER>@gcp-sa-vpcaccess.iam.gserviceaccount.com) needs Serverless VPC Access Service Agent role in the project.",
+          "Connection refused error If you receive connection refused or connection timeout errors that degrade network performance, your connections could be growing without limit across invocations of your serverless application.",
+          "To display charts for the connector's throughput, number of instances, and CPU utilization metrics over time by using the Google Cloud console: Go to the Serverless VPC Access overview page."
+        ]
+      },
+      {
+        "title": "\"Connecting to a VPC network \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/ruby/connecting-vpc",
+        "source_id": "site-docs-reference-4",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "Errors Service account needs Service Agent role error If you use the Restrict Resource Service Usage organization policy constraint to block Cloud Deployment Manager ( deploymentmanager.googleapis.com ), you might see the following error message: Serverless VPC Access service account (service-<PROJECT NUMBER>@gcp-sa-vpcaccess.iam.gserviceaccount.com) needs Serverless VPC Access Service Agent role in the project.",
+          "Connection refused error If you receive connection refused or connection timeout errors that degrade network performance, your connections could be growing without limit across invocations of your serverless application.",
+          "To display charts for the connector's throughput, number of instances, and CPU utilization metrics over time by using the Google Cloud console: Go to the Serverless VPC Access overview page."
+        ]
+      },
+      {
+        "title": "\"How requests are handled \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "source_id": "site-docs-reference",
+        "final_score": 91,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Response headers that exceed this limit will return HTTP 502 errors, with logs showing upstream sent too big header while reading response header from upstream .",
+          "If a script handler generates a response larger than this limit, the server sends back an empty response with a 500 Internal Server Error status code.",
+          "Requests to these runtimes with header fields exceeding 8 kilobytes will return HTTP 400 errors."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "deploymentmanager.googleapis.com",
+      "vpcaccess.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled"
+      ]
+    }
+  ]
+}

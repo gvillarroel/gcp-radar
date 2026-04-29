@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.119Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "Serverless Threats rule set",
+  "feature_slug": "serverless-threats-rule-set",
+  "summary": "Cloud Threat Detections added a Serverless Threats rule set for detecting compromise or abuse of serverless resources such as Cloud Run and Cloud Functions.",
+  "extended_definition": "Cloud Threat Detections added a Serverless Threats rule set for detecting compromise or abuse of serverless resources such as Cloud Run and Cloud Functions.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/chrome-enterprise-threats-category",
+      "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+      "https://docs.cloud.google.com/chronicle/docs/detection/emerging-threats-detailed-view"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud Threats category overview \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "source_id": "site-docs-reference",
+        "final_score": 224,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following export filter exports Google Cloud Cloud Run ( GCP RUN ) logs, in addition to the default logs both through the direct ingestion mechanism as well as through Cloud Storage and Sinks : log id(\"run.googleapis.com/stdout\") OR log id(\"run.googleapis.com/stderr\") OR log id(\"run.googleapis.com/requests\") OR log id(\"run.googleapis.com/varlog/system) Curated detections for AWS rule sets AWS rule sets in this category help identify threats in AWS environments using event and context data, and includes the following rule sets: AWS - Compute : Detects anomalous activity surrounding AWS compute resources, including EC2 and Lambda.",
+          "Curated detections for Office 365 data Office 365 rule sets in this category help identify threats in Office 365 environments using event and context data, and includes the following rule sets: Office 365 - Administrative : Detects malicious, suspicious and high-risk activities in Office 365, including backup policy changes, Microsoft Purview, and ATP detections.",
+          "Curated detections for Google Cloud data Google Cloud rule sets help identify threats in Google Cloud environments using event and context data, and includes the following rule sets: Admin Action : Activity associated with administrative actions, deemed suspicious but potentially legitimate depending on organizational use."
+        ]
+      },
+      {
+        "title": "\"Emerging Threats Center detail view \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/emerging-threats-detailed-view",
+        "source_id": "site-docs-root",
+        "final_score": 163,
+        "relevance": "",
+        "evidence_snippets": [
+          "Automatically highlight detection coverage : The system runs the simulated log events against the Google Cloud Threat Intelligence (GCTI) curated detection rules and coverage reports that show where Google SecOps has detections and where gaps exist.",
+          "The Emerging Threats Center detailed view includes the following panels: Associated Rules Disabled Rules Recent Associated Entities IOCs Associated Rules Note: Coverage analysis applies only to Endpoint Detection and Response (EDR) data sources.",
+          "Rule set Identifies the rule source, such as Mandiant Frontline Threats, Mandiant Hunt Rules, or Mandiant Intel Emerging Threats ."
+        ]
+      },
+      {
+        "title": "\"Overview of Chrome Enterprise Premium Threats Category \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/chrome-enterprise-threats-category",
+        "source_id": "site-docs-reference",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported devices and log types The rule sets in the Chrome Enterprise Premium Threats category require logs from the following Google Security Operations data sources: Chrome Management Logs ( CHROME MANAGEMENT ) To feed these logs to Google SecOps, follow the steps in Collect Google Chrome logs .",
+          "This document provides an overview of the rule sets within the Chrome Enterprise Threats category, the required data sources, and configuration you can use to tune the alerts generated by each rule set.",
+          "This category includes the following rule sets: Chrome Extension Threats : Detects activities related to Chrome extensions that could indicate malicious or suspicious behavior."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "run.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/emerging-threats-detailed-view",
+        "https://docs.cloud.google.com/chronicle/docs/detection/chrome-enterprise-threats-category"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/emerging-threats-detailed-view",
+        "https://docs.cloud.google.com/chronicle/docs/detection/chrome-enterprise-threats-category"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/emerging-threats-detailed-view",
+        "https://docs.cloud.google.com/chronicle/docs/detection/chrome-enterprise-threats-category"
+      ]
+    }
+  ]
+}

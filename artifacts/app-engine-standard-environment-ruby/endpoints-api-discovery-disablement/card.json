@@ -1,0 +1,85 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.362Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-ruby/card.json",
+  "product_name": "App Engine standard environment Ruby",
+  "product_slug": "app-engine-standard-environment-ruby",
+  "feature_name": "Endpoints API discovery disablement",
+  "feature_slug": "endpoints-api-discovery-disablement",
+  "summary": "The Endpoints API supports a discoverable boolean annotation parameter to disable API discovery.",
+  "extended_definition": "The Endpoints API supports a discoverable boolean annotation parameter to disable API discovery.",
+  "lifecycle": {
+    "latest_feature_date": "2015-11-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/admin-api",
+      "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+      "https://docs.cloud.google.com/appengine/docs/standard/ruby/config/appref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/ruby/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 41,
+        "relevance": "",
+        "evidence_snippets": [
+          "This parameter specifies the CPU usage threshold at which new instances will be started to handle traffic, enabling you to balance between performance and cost, with lower values increasing performance and increasing cost, and higher values decreasing performance but also decreasing cost.",
+          "When a user's request is redirected, the HTTP status code will be set to the value of the redirect http response code parameter.",
+          "You can set the parameter to the value 0 to allow scaling to 0 instances to lower costs when no requests are being served."
+        ]
+      },
+      {
+        "title": "\"An Overview of the Admin API \\_|\\_ App Engine Admin API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "source_id": "site-docs-reference",
+        "final_score": 40,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "APIs and Reference \\_|\\_ App Engine Admin API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/appengine/docs/admin-api",
+        "source_id": "site-docs-reference-4",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "apps.services.versions.patch"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/admin-api"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:04.221Z",
+  "source_step08_card": "data/step-08/current/products/dataplex/card.json",
+  "product_name": "Dataplex",
+  "product_slug": "dataplex",
+  "feature_name": "Automated cataloging of Looker metadata",
+  "feature_slug": "automated-cataloging-of-looker-metadata",
+  "summary": "Dataplex can automatically ingest and catalog metadata from Looker (Google Cloud core).",
+  "extended_definition": "Dataplex can automatically ingest and catalog metadata from Looker (Google Cloud core).",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+      "https://docs.cloud.google.com/dataplex/docs/export-metadata",
+      "https://docs.cloud.google.com/dataplex/docs/import-metadata",
+      "https://docs.cloud.google.com/dataplex/docs/use-data-profiling"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and use data profile scans \\_|\\_ Knowledge Catalog \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/use-data-profiling",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "Export table schema If you want to export the data profile scan results to an existing BigQuery table, make sure that it is compatible with the following table schema: Column name Column data type Sub field name (if applicable) Sub field data type Mode Example data profile scan struct/record resource name string nullable //dataplex.googleapis.com/projects/test-project/locations/europe-west2/datascans/test-datascan project id string nullable test-project location string nullable us-central1 data scan id string nullable test-datascan data source struct/record resource name string nullable Entity case: //dataplex.googleapis.com/projects/test-project/locations/europe-west2/lakes/test-lake/zones/test-zone/entities/test-entity Table case: //bigquery.googleapis.com/projects/test-project/datasets/test-dataset/tables/test-table dataplex entity project id string nullable test-project dataplex entity project number integer nullable 123456789012 dataplex lake id string nullable (Valid only if source is entity) test-lake dataplex zone id string nullable (Valid only if source is entity) test-zone dataplex entity id string nullable (Valid only if source is entity) test-entity table project id string nullable dataplex-table table project number int64 nullable 345678901234 dataset id string nullable (Valid only if source is table) test-dataset table id string nullable (Valid only if source is table) test-table data profile job id string nullable caeba234-cfde-4fca-9e5b-fe02a9812e38 data profile job configuration json trigger string nullable ondemand / schedule incremental boolean nullable true / false sampling percent float nullable (0-100) 20.0 (indicates 20%) row filter string nullable col1 >= 0 AND col2 column filter json nullable {\"include fields\":[\"col1\",\"col2\"], \"exclude fields\":[\"col3\"]} job labels json nullable {\"key1\":value1} job start time timestamp nullable 2023-01-01 00:00:00 UTC job end time timestamp nullable 2023-01-01 00:00:00 UTC job rows scanned integer nullable 7500 column name string nullable column-1 column type string nullable string column mode string nullable repeated percent null float nullable (0.0-100.0) 20.0 (indicates 20%) percent unique float nullable (0.0-100.0) 92.5 min string length integer nullable (Valid only if column type is string) 10 max string length integer nullable (Valid only if column type is string) 4 average string length float nullable (Valid only if column type is string) 7.2 min value float nullable (Valid only if column type is numeric - integer/float) max value float nullable (Valid only if column type is numeric - integer/float) average value float nullable (Valid only if column type is numeric - integer/float) standard deviation float nullable (Valid only if column type is numeric - integer/float) quartile lower integer nullable (Valid only if column type is numeric - integer/float) quartile median integer nullable (Valid only if column type is numeric - integer/float) quartile upper integer nullable (Valid only if column type is numeric - integer/float) top n struct/record - repeated value string nullable \"4009\" count integer nullable 20 percent float nullable 10 (indicates 10%) Export table setup When you export to BigQueryExport tables, follow these guidelines: For the field resultsTable , use the format: //bigquery.googleapis.com/projects/{project-id}/datasets/{dataset-id}/tables/{table-id} .",
+          "ListDataScanJobsRequest ; public class SyncListDataScanJobs { public static void main ( String [] args ) throws Exception { syncListDataScanJobs (); } public static void syncListDataScanJobs () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DataScanServiceClient dataScanServiceClient = DataScanServiceClient . create ()) { ListDataScanJobsRequest request = ListDataScanJobsRequest . newBuilder () . setParent ( DataScanName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[DATASCAN]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . setFilter ( \"filter-1274492040\" ) . build (); for ( DataScanJob element : dataScanServiceClient . listDataScanJobs ( request ). iterateAll ()) { // doThingsWith(element); } } } } Python Python Before trying this sample, follow the Python setup instructions in the Knowledge Catalog quickstart using client libraries .",
+          "LocationName ; public class SyncCreateDataScan { public static void main ( String [] args ) throws Exception { syncCreateDataScan (); } public static void syncCreateDataScan () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DataScanServiceClient dataScanServiceClient = DataScanServiceClient . create ()) { CreateDataScanRequest request = CreateDataScanRequest . newBuilder () . setParent ( LocationName . of ( \"[PROJECT]\" , \"[LOCATION]\" ). toString ()) . setDataScan ( DataScan . newBuilder (). build ()) . setDataScanId ( \"dataScanId1260787906\" ) . setValidateOnly ( true ) . build (); DataScan response = dataScanServiceClient . createDataScanAsync ( request ). get (); } } } Python Python Before trying this sample, follow the Python setup instructions in the Knowledge Catalog quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "About metadata management in Knowledge Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "source_id": "site-docs-root",
+        "final_score": 180,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported sources Automatic discovery of Cloud Storage data Metadata from the following Google Cloud sources is automatically ingested into Knowledge Catalog: BigQuery sharing (formerly Analytics Hub) exchanges and listings BigQuery datasets, tables, views, models, routines, connections, and linked datasets Bigtable instances, clusters, and tables (including column family details) Dataform repositories and code assets Dataproc Metastore services, databases, and tables Looker (Google Cloud core) instances, dashboards, dashboard elements, Looks, LookML projects, models, Explores, and views ( Preview ) Pub/Sub topics Spanner instances, databases, tables, and views Vertex AI models, datasets, feature groups, feature views, and online store instances If Knowledge Catalog integration is enabled, then metadata from the following Google Cloud sources is automatically ingested into Knowledge Catalog: AlloyDB for PostgreSQL clusters, instances, databases, schemas, tables, views—see Enable the AlloyDB for PostgreSQL integration ( Preview ) Cloud SQL instances, databases, schemas, tables, views—see Enable the Cloud SQL integration To import metadata from a third-party source into Knowledge Catalog, you can use a managed connectivity pipeline.",
+          "Data Catalog API method Dataplex API method projects.locations.entryGroups.entries.create (REST) CreateEntry (RPC) projects.locations.entryGroups.entries.create (REST) CreateEntry (RPC) projects.locations.entryGroups.entries.get (REST) GetEntry (RPC) projects.locations.entryGroups.entries.get (REST) GetEntry (RPC) projects.locations.entryGroups.entries.patch (REST) UpdateEntry (RPC) projects.locations.entryGroups.entries.patch (REST) UpdateEntry (RPC) Note: You can also use the projects.locations.modifyEntry (REST) and ModifyEntry (RPC) methods to update system entries using source-system permissions instead of Knowledge Catalog permissions. projects.locations.entryGroups.entries.delete (REST) DeleteEntry (RPC) projects.locations.entryGroups.entries.delete (REST) DeleteEntry (RPC) projects.locations.entryGroups.entries.list (REST) ListEntries (RPC) projects.locations.entryGroups.entries.list (REST) ListEntries (RPC) entries.lookup (REST) LookupEntry (RPC) projects.locations.lookupEntry (REST) LookupEntry (RPC) Note: To use the projects.locations.lookupEntry (REST) and LookupEntry (RPC) methods, you must provide the Knowledge Catalog entry name.",
+          "Data Catalog API method Dataplex API method projects.locations.tagTemplates.create (REST) CreateTagTemplate (RPC) projects.locations.aspectTypes.create (REST) CreateAspectType (RPC) projects.locations.tagTemplates.get (REST) GetTagTemplate (RPC) projects.locations.aspectTypes.get (REST) GetAspectType (RPC) projects.locations.tagTemplates.patch (REST) UpdateTagTemplate (RPC) projects.locations.aspectTypes.patch (REST) UpdateAspectType (RPC) projects.locations.tagTemplates.delete (REST) DeleteTagTemplate (RPC) projects.locations.aspectTypes.delete (REST) DeleteAspectType (RPC) catalog.search (REST) with type=tag template predicate SearchCatalog (RPC) with type=tag template predicate projects.locations.aspectTypes.list (REST) ListAspectTypes (RPC) Tag template fields Tag template fields correspond to the contents of the metadata template field in an aspect type."
+        ]
+      },
+      {
+        "title": "\"Import metadata using a custom pipeline \\_|\\_ Knowledge Catalog \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/import-metadata",
+        "source_id": "site-docs-root-2",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Empty ; public class SyncCancelMetadataJob { public static void main ( String [] args ) throws Exception { syncCancelMetadataJob (); } public static void syncCancelMetadataJob () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( CatalogServiceClient catalogServiceClient = CatalogServiceClient . create ()) { CancelMetadataJobRequest request = CancelMetadataJobRequest . newBuilder () . setName ( MetadataJobName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[METADATAJOB]\" ). toString ()) . build (); catalogServiceClient . cancelMetadataJob ( request ); } } } Python Python Before trying this sample, follow the Python setup instructions in the Knowledge Catalog quickstart using client libraries .",
+          "HTTP method and URL: POST https://dataplex.googleapis.com/v1/projects/ PROJECT NUMBER /locations/ LOCATION ID /metadataJobs?metadataJobId= METADATA JOB ID Request JSON body: { \"type\": \"IMPORT\", \"import spec\": { \"source storage uri\": \"gs:// CLOUD STORAGE URI /\", \"scope\": { \"entryGroups\": [ \" ENTRY GROUP \" ], \"entry types\": [ \" ENTRY TYPE \" ], \"aspect types\": [ \" ASPECT TYPE \" ] }, \"entry sync mode\": \" ENTRY SYNC MODE \", \"aspect sync mode\": \"INCREMENTAL\", \"log level\": \" LOG LEVEL \" } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "For more information, see Set up authentication for a local development environment . using Google.Cloud.Dataplex.V1 ; public sealed partial class GeneratedCatalogServiceClientSnippets { /// <summary>Snippet for CancelMetadataJob</summary> /// <remarks> /// This snippet has been automatically generated and should be regarded as a code template only. /// It will require modifications to work: /// - It may require correct/in-range values for request initialization. /// - It may require specifying regional endpoints when creating the service client as shown in /// https://cloud.google.com/dotnet/docs/reference/help/client-configuration#endpoint. /// </remarks> public void CancelMetadataJobRequestObject () { // Create client CatalogServiceClient catalogServiceClient = CatalogServiceClient ."
+        ]
+      },
+      {
+        "title": "Export metadata \\_|\\_ Knowledge Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataplex/docs/export-metadata",
+        "source_id": "site-docs-root-2",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https://dataplex.googleapis.com/v1/projects/ JOB PROJECT /locations/ LOCATION ID /metadataJobs?metadataJobId= METADATA JOB ID Request JSON body: { \"type\": \"EXPORT\", \"export spec\": { \"output path\": \"gs:// BUCKET /\", \"scope\": { \"organizationLevel\": true, \"entry types\": [ \" ENTRY TYPE \", Additional entry types ], \"aspect types\": [ \" ASPECT TYPE \", Additional aspect types ] }, } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https://dataplex.googleapis.com/v1/projects/ JOB PROJECT /locations/ LOCATION ID /metadataJobs?metadataJobId= METADATA JOB ID Request JSON body: { \"type\": \"EXPORT\", \"export spec\": { \"output path\": \"gs:// BUCKET /\", \"scope\": { \"projects\": [ \"projects/ METADATA SOURCE PROJECT \", Additional projects ], }, } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https://dataplex.googleapis.com/v1/projects/ JOB PROJECT /locations/ LOCATION ID /metadataJobs?metadataJobId= METADATA JOB ID Request JSON body: { \"type\": \"EXPORT\", \"export spec\": { \"output path\": \"gs:// BUCKET /\", \"scope\": { \"entryGroups\": [ \" ENTRY GROUP \", Additional entry groups ], }, } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.googleapis.com",
+      "bigquery.tables.get",
+      "bigquery.tables.getData",
+      "bigquery.tables.update",
+      "catalog.search",
+      "dataplex.dataScanJobs.get",
+      "dataplex.dataScanJobs.list",
+      "dataplex.datascans.create",
+      "dataplex.datascans.delete",
+      "dataplex.datascans.get",
+      "dataplex.datascans.getData",
+      "dataplex.datascans.list",
+      "dataplex.datascans.run",
+      "dataplex.datascans.update",
+      "dataplex.entries.update",
+      "dataplex.entryGroups.useDataProfileAspect",
+      "dataplex.googleapis.com",
+      "entries.lookup",
+      "projects.locations.aspectTypes.create",
+      "projects.locations.aspectTypes.delete",
+      "projects.locations.aspectTypes.get",
+      "projects.locations.aspectTypes.list",
+      "projects.locations.aspectTypes.patch",
+      "projects.locations.entryGroups.entries.create",
+      "projects.locations.entryGroups.entries.delete",
+      "projects.locations.entryGroups.entries.get",
+      "projects.locations.entryGroups.entries.list",
+      "projects.locations.entryGroups.entries.patch",
+      "projects.locations.lookupEntry",
+      "projects.locations.modifyEntry",
+      "projects.locations.tagTemplates.create",
+      "projects.locations.tagTemplates.delete",
+      "projects.locations.tagTemplates.fields.create",
+      "projects.locations.tagTemplates.fields.delete",
+      "projects.locations.tagTemplates.fields.patch",
+      "projects.locations.tagTemplates.fields.rename",
+      "projects.locations.tagTemplates.get",
+      "projects.locations.tagTemplates.patch"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/import-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/export-metadata"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/import-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/export-metadata"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/import-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/export-metadata"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/import-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/export-metadata"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/import-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/export-metadata"
+      ]
+    }
+  ]
+}

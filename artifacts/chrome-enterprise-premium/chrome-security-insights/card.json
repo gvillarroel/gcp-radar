@@ -1,0 +1,173 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:46.245Z",
+  "source_step08_card": "data/step-08/current/products/chrome-enterprise-premium/card.json",
+  "product_name": "Chrome Enterprise Premium",
+  "product_slug": "chrome-enterprise-premium",
+  "feature_name": "Chrome Security Insights",
+  "feature_slug": "chrome-security-insights",
+  "summary": "Chrome Security Insights enables enhanced monitoring of Chrome activity to help detect insider risk and data loss; Chrome Security Insights is available to protect against insider risk and data loss through enhanced monitoring of Chrome activity across an organization.",
+  "extended_definition": "Chrome Security Insights enables enhanced monitoring of Chrome activity to help detect insider risk and data loss; Chrome Security Insights is available to protect against insider risk and data loss through enhanced monitoring of Chrome activity across an organization.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/manage-security-gateway",
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Secure access to private web applications \\_|\\_ Chrome Enterprise Premium\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "source_id": "site-docs-root",
+        "final_score": 61,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To create the application resource, click Create . gcloud To create the application resource using gcloud, run the following command: gcloud beyondcorp security-gateways applications create APPLICATION ID \\ --project = PROJECT ID \\ --security-gateway = SECURITY GATEWAY ID \\ --location = global \\ --display-name = \" APP DISPLAY NAME \" \\ --endpoint-matchers = \"hostname= HOST NAME ,ports=[ 443 ]\" \\ --upstreams = network = name = \" PRIVATE NETWORK RESOURCE NAME \" To specify an egress region (for example, when using static routes), add the --egress-regions flag: gcloud beyondcorp security-gateways applications create APPLICATION ID \\ --project = PROJECT ID \\ --security-gateway = SECURITY GATEWAY ID \\ --location = global \\ --display-name = \" APP DISPLAY NAME \" \\ --endpoint-matchers = \"hostname= HOST NAME ,ports=[ 443 ]\" \\ --upstreams = network = name = \" PRIVATE NETWORK RESOURCE NAME \" ,egressPolicy = regions = us-central1 Replace us-central1 with the Google Cloud region (such as europe-west1 or asia-northeast1 ) that aligns with your regional static routing setup.",
+          "You can track the progress in the Notifications section of the Google Cloud console. gcloud To create a secure gateway using gcloud, run the following command: gcloud beyondcorp security-gateways create SECURITY GATEWAY ID \\ --project = PROJECT ID \\ --location = global \\ --display-name = \" SECURITY GATEWAY DISPLAY NAME \" REST To create a secure gateway using the REST API, run the following command: curl \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -X POST \\ -d '{ \"display name\": \" SECURITY GATEWAY DISPLAY NAME \" }' \\ \"https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways?security gateway id= SECURITY GATEWAY ID \" Configure a private web application Before you can define specific application resources in the secure gateway, you must configure the necessary permissions and network settings to enable connectivity and proper routing.",
+          "This command uses the etag from your file to ensure that you update the correct version. jq '{policy: .}' policy.json curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -d @- \\ \"https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID /applications/ APPLICATION ID :setIamPolicy\" Replace the following: PROJECT ID : the ID of the project where the secure gateway is configured SECURITY GATEWAY ID : the ID of the secure gateway APPLICATION ID : the ID of the application resource Add a conditional access policy You can also set access policies with conditions."
+        ]
+      },
+      {
+        "title": "\"Secure access to SaaS applications \\_|\\_ Chrome Enterprise Premium \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "source_id": "site-docs-root",
+        "final_score": 57,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To create, save your settings and create the application, click Create . gcloud To create a SaaS application using gcloud, run the following command: gcloud beyondcorp security-gateways applications create APPLICATION ID \\ --project = PROJECT ID \\ --security-gateway = SECURITY GATEWAY ID \\ --location = global \\ --display-name = \" APPLICATION DISPLAY NAME \" \\ --endpoint-matchers = \"hostname= HOST NAME ,ports= 443 \" REST To create a SaaS application using the REST API, run the following command: curl \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -X POST \\ -d \"{ \\\"display name\\\": \\\" APPLICATION DISPLAY NAME \\\", \\\"endpoint matchers\\\": [{hostname: \\\" HOST NAME \\\", ports: 443 }] }\" \\ \"https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID /applications?application id= APPLICATION ID \" Configure Google Chrome proxy mode You can route application traffic through the secure gateway by applying a PAC file in the Chrome settings in the Google Admin console.",
+          "In the example, hubs are created in the us-central1 and us-east1 regions, and all of the IP addresses returned in the response must be allowed in the SaaS application. { \"securityGateways\" : [ { \"name\" : \"projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID \" , \"createTime\" : \"CREATE TIME\" , \"updateTime\" : \"UPDATE TIME\" , \"displayName\" : \"My secure gateway\" , \"state\" : \"RUNNING\" , \"hubs\" : { \"us-central1\" : { \"internetGateway\" : { \"assignedIps\" : [ \"IP ADDRESS 1\" , \"IP ADDRESS 2\" , ] } }, \"us-east1\" : { \"internetGateway\" : { \"assignedIps\" : [ \"IP ADDRESS 1\" , \"IP ADDRESS 2\" , ] } } } } ] } Add the IP addresses to the IP allowlist of your SaaS application.",
+          "This command uses the etag from your file to ensure that you update the correct version. jq '{policy: .}' policy.json curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -d @- \\ \"https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID /applications/ APPLICATION ID :setIamPolicy\" Replace the following: PROJECT ID : the ID of the project where the secure gateway is configured SECURITY GATEWAY ID : the ID of the secure gateway APPLICATION ID : the ID of the application resource Add a conditional access policy You can also set access policies with conditions."
+        ]
+      },
+      {
+        "title": "\"Manage a secure gateway \\_|\\_ Chrome Enterprise Premium \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/manage-security-gateway",
+        "source_id": "site-iam-reference",
+        "final_score": 41,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To update the egress hubs, click Save . gcloud gcloud beyondcorp security-gateways update SECURITY GATEWAY ID \\ --project = PROJECT ID \\ --location = global \\ --hubs = us-central1,us-east1 REST curl \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -X PATCH \\ -d \"{ \\\"hubs\\\": {\\\"us-central1\\\": {}, \\\"us-east1\\\": {}} }\" \\ \"https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID ?update mask=hubs\" Get a secure gateway's details To get the details for a secure gateway, run the following command. gcloud gcloud beyondcorp security-gateways describe SECURITY GATEWAY ID \\ --project = PROJECT ID \\ --location = global REST curl \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID \" List secure gateways To list all of the secure gateways in a project, run the following command. gcloud gcloud beyondcorp security-gateways list \\ --project = PROJECT ID \\ --location = global REST curl \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways\" Delete a secure gateway To delete a secure gateway, run the following command. gcloud gcloud beyondcorp security-gateways delete SECURITY GATEWAY ID \\ --project = PROJECT ID \\ --location = global REST curl \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -X DELETE \\ \"https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID \" Enable secure gateway logging To enable secure gateway logging, run the following command.",
+          "Go to Applications The page displays a table listing all the application resources for the secure gateway, showing details such as Type and Name. gcloud To list all of the applications in a secure gateway, run the following command. gcloud beyondcorp security-gateways applications list \\ --project = PROJECT ID \\ --security-gateway = SECURITY GATEWAY ID \\ --location = global REST To list all the applications in a secure gateway, run the following command. curl \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID /applications\" Delete an application resource console To delete an application resource, do the following: Go to the Applications page.",
+          "To view the application details, click the application name or go to the More actions menu ( more vert ) and select View Details . gcloud To get the details of an application, run the following command: gcloud beyondcorp security-gateways applications describe APPLICATION ID \\ --project = PROJECT ID \\ --security-gateway = SECURITY GATEWAY ID \\ --location = global REST To get the details of an application, run the following command: curl \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID /applications/ APPLICATION ID \" List application resources console To list all the application resources, do the following: Go to the Applications page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "beyondcorp.googleapis.com",
+      "policy.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/manage-security-gateway"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/manage-security-gateway"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/manage-security-gateway"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/manage-security-gateway"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/manage-security-gateway"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/manage-security-gateway"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/manage-security-gateway"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/manage-security-gateway"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/manage-security-gateway"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/manage-security-gateway"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/manage-security-gateway"
+      ]
+    }
+  ]
+}

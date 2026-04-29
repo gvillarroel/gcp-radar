@@ -1,0 +1,183 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:12.462Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "virtual-try-on-preview-08-04",
+  "feature_slug": "virtual-try-on-preview-08-04",
+  "summary": "A deprecated virtual try-on preview endpoint scheduled for shutdown on 2026-03-19; deprecated on 2026-03-19.",
+  "extended_definition": "A deprecated virtual try-on preview endpoint scheduled for shutdown on 2026-03-19; deprecated on 2026-03-19.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-17",
+    "deprecation_date": "2026-03-19",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/partner-models",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Get information about a context cache \\_|\\_ Generative AI on Vertex AI \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo",
+        "source_id": "site-docs-root",
+        "final_score": 188,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This client only needs to be created // once , and can be reused for multiple requests . try ( Client client = Client . builder () . location ( \"global\" ) . vertexAI ( true ) . httpOptions ( HttpOptions . builder () . apiVersion ( \"v1\" ) . build ()) . build ()) { for ( CachedContent content : client . caches . list ( ListCachedContentsConfig . builder () . build ())) { content . name () . ifPresent ( name - > System . out . println ( \"Name: \" + name )); content . model () . ifPresent ( model - > System . out . println ( \"Model: \" + model )); content . updateTime () . ifPresent ( time - > System . out . println ( \"Last updated at: \" + time )); content . expireTime () . ifPresent ( time - > System . out . println ( \"Expires at: \" + time )); } // Example response : // Name : projects / 111111111111 / locations / global / cachedContents / 1111111111111111111 // Model : // projects / 111111111111 / locations / global / publishers / google / models / gemini - 2.5 - flash // Last updated at : 2025 - 07 - 28 T21 : 54 : 19.125825 Z // Expires at : 2025 - 08 - 04 T21 : 54 : 18.328233500 Z // ... } } } Node.js Install npm install @google/genai To learn more, see the SDK reference documentation .",
+          "GOOGLE CLOUD LOCATION 'global' ; async function listContentCaches ( projectId = GOOGLE CLOUD PROJECT , location = GOOGLE CLOUD LOCATION ) { const client = new GoogleGenAI ({ vertexai : true , project : projectId , location : location , httpOptions : { apiVersion : 'v1' , }, }); const contentCacheList = await client . caches . list (); // Access individual properties of a ContentCache object ( s ) const contentCacheNames = []; for ( const contentCache of contentCacheList . pageInternal ) { console . log ( Cache \\ $ { contentCache . name } \\ for model \\ $ { contentCache . model } \\ ` ); console . log ( Last updated at : $ { contentCache . updateTime } ); console . log ( Expires at : $ { contentCache . expireTime } ); contentCacheNames . push ( contentCache . name ); } console . log ( contentCacheNames ); // Example response : // Cache projects / 111111111111 / locations / us - central1 / cachedContents / 1111111111111111111 for // model projects / 111111111111 / locations / us - central1 / publishers / google / models / gemini - XXX - pro - XXX // Last updated at : 2025 - 02 - 13 14 : 46 : 42.620490 + 00 : 00 // CachedContentUsageMetadata ( audio duration seconds = None , image count = 167 , text count = 153 , total token count = 43130 , video duration seconds = None ) // ... return contentCacheNames ; } REST The following shows how to use REST to list the context caches associated with a Google Cloud project by sending a GET request to the publisher model endpoint.",
+          "UsageMetadata ) } // Example response : // Cache name : projects / 111111111111 / locations / us - central1 / cachedContents / 1234567890123456789 // Display name : product recommendations prompt // Model : models / gemini - 2.5 - flash // Create time : 2025 - 04 - 08 T02 : 15 : 23 Z // Update time : 2025 - 04 - 08 T03 : 05 : 11 Z // Expire time : 2025 - 04 - 20 T03 : 05 : 11 Z ( in 167 h59m59s ) // Usage metadata : & { AudioDurationSeconds : 0 ImageCount : 167 TextCount : 153 TotalTokenCount : 43124 VideoDurationSeconds : 0 } return nil } Java Learn how to install or update the Java ."
+        ]
+      },
+      {
+        "title": "\"Get multimodal embeddings \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 185,
+        "relevance": "",
+        "evidence_snippets": [
+          "128 dimensions: { \"predictions\": [ { \"imageEmbedding\": [ 0.0279239565, [...128 dimension vector...] 0.00403284049 ], \"textEmbedding\": [ 0.202921599, [...128 dimension vector...] -0.0365431122 ] } ], \"deployedModelId\": \" DEPLOYED MODEL ID \" } 256 dimensions: { \"predictions\": [ { \"imageEmbedding\": [ 0.248620048, [...256 dimension vector...] -0.0646447465 ], \"textEmbedding\": [ 0.0757875815, [...256 dimension vector...] -0.02749932 ] } ], \"deployedModelId\": \" DEPLOYED MODEL ID \" } 512 dimensions: { \"predictions\": [ { \"imageEmbedding\": [ -0.0523675755, [...512 dimension vector...] -0.0444030389 ], \"textEmbedding\": [ -0.0592851527, [...512 dimension vector...] 0.0350437127 ] } ], \"deployedModelId\": \" DEPLOYED MODEL ID \" } Python import vertexai from vertexai.vision models import Image , MultiModalEmbeddingModel TODO(developer): Update & uncomment line below PROJECT ID = \"your-project-id\" vertexai . init ( project = PROJECT ID , location = \"us-central1\" ) TODO(developer): Try different dimenions: 128, 256, 512, 1408 embedding dimension = 128 model = MultiModalEmbeddingModel . from pretrained ( \"multimodalembedding@001\" ) image = Image . load from file ( \"gs://cloud-samples-data/vertex-ai/llm/prompts/landmark1.png\" ) embeddings = model . get embeddings ( image = image , contextual text = \"Colosseum\" , dimension = embedding dimension , ) print ( f \"Image Embedding: { embeddings . image embedding } \" ) print ( f \"Text Embedding: { embeddings . text embedding } \" ) Example response: Image Embedding: [0.0622573346, -0.0406507477, 0.0260440577, ...] Text Embedding: [0.27469793, -0.146258667, 0.0222803634, ...] Go import ( \"context\" \"encoding/json\" \"fmt\" \"io\" aiplatform \"cloud.google.com/go/aiplatform/apiv1beta1\" aiplatformpb \"cloud.google.com/go/aiplatform/apiv1beta1/aiplatformpb\" \"google.golang.org/api/option\" \"google.golang.org/protobuf/encoding/protojson\" \"google.golang.org/protobuf/types/known/structpb\" ) // generateWithLowerDimension shows how to generate lower-dimensional embeddings for text and image inputs. func generateWithLowerDimension ( w io .",
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample.\\ (Not necessary if passing values as arguments) / // const project = 'YOUR PROJECT ID'; // const location = 'YOUR PROJECT LOCATION'; // const baseImagePath = 'YOUR BASE IMAGE PATH'; // const textPrompt = 'YOUR TEXT PROMPT'; const aiplatform = require ( ' @google-cloud/aiplatform ' ); // Imports the Google Cloud Prediction service client const { PredictionServiceClient } = aiplatform . v1 ; // Import the helper module for converting arbitrary protobuf.Value objects. const { helpers } = aiplatform ; // Specifies the location of the api endpoint const clientOptions = { apiEndpoint : 'us-central1-aiplatform.googleapis.com' , }; const publisher = 'google' ; const model = 'multimodalembedding@001' ; // Instantiates a client const predictionServiceClient = new PredictionServiceClient ( clientOptions ); async function predictImageFromImageAndText () { // Configure the parent resource const endpoint = projects/ ${ project } /locations/ ${ location } /publishers/ ${ publisher } /models/ ${ model } ; const fs = require ( 'fs' ); const imageFile = fs . readFileSync ( baseImagePath ); // Convert the image data to a Buffer and base64 encode it. const encodedImage = Buffer . from ( imageFile ). toString ( 'base64' ); const prompt = { text : textPrompt , image : { bytesBase64Encoded : encodedImage , }, }; const instanceValue = helpers . toValue ( prompt ); const instances = [ instanceValue ]; const parameter = { sampleCount : 1 , }; const parameters = helpers . toValue ( parameter ); const request = { endpoint , instances , parameters , }; // Predict request const [ response ] = await predictionServiceClient . predict ( request ); console . log ( 'Get image embedding response' ); const predictions = response . predictions ; console . log ( '\\tPredictions :' ); for ( const prediction of predictions ) { console . log ( \\t\\tPrediction : ${ JSON . stringify ( prediction ) } ); } } await predictImageFromImageAndText (); Java Before trying this sample, follow the Java setup instructions in the Vertex AI quickstart using client libraries .",
+          "Response (7 second video, no videoSegmentConfig specified): { \"predictions\": [ { \"videoEmbeddings\": [ { \"endOffsetSec\": 7, \"embedding\": [ -0.0045467657, 0.0258095954, 0.0146885719, 0.00945400633, [...] -0.0023291884, -0.00493789, 0.00975185353, 0.0168156829 ], \"startOffsetSec\": 0 } ] } ], \"deployedModelId\": \" DEPLOYED MODEL ID \" } Response (59 second video, with the following video segment config: \"videoSegmentConfig\": { \"startOffsetSec\": 0, \"endOffsetSec\": 60, \"intervalSec\": 10 } ): { \"predictions\": [ { \"videoEmbeddings\": [ { \"endOffsetSec\": 10, \"startOffsetSec\": 0, \"embedding\": [ -0.00683252793, 0.0390476175, [...] 0.00657121744, 0.013023301 ] }, { \"startOffsetSec\": 10, \"endOffsetSec\": 20, \"embedding\": [ -0.0104404651, 0.0357737206, [...] 0.00509833824, 0.0131902946 ] }, { \"startOffsetSec\": 20, \"embedding\": [ -0.0113538112, 0.0305239167, [...] -0.00195809244, 0.00941874553 ], \"endOffsetSec\": 30 }, { \"embedding\": [ -0.00299320649, 0.0322436653, [...] -0.00993082579, 0.00968887936 ], \"startOffsetSec\": 30, \"endOffsetSec\": 40 }, { \"endOffsetSec\": 50, \"startOffsetSec\": 40, \"embedding\": [ -0.00591270532, 0.0368893594, [...] -0.00219071587, 0.0042470959 ] }, { \"embedding\": [ -0.00458270218, 0.0368121453, [...] -0.00317760976, 0.00595594104 ], \"endOffsetSec\": 59, \"startOffsetSec\": 50 } ] } ], \"deployedModelId\": \" DEPLOYED MODEL ID \" } Python To learn how to install or update the Vertex AI SDK for Python, see Install the Vertex AI SDK for Python ."
+        ]
+      },
+      {
+        "title": "\"Model deprecations (MaaS) \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/partner-models",
+        "source_id": "site-docs-root",
+        "final_score": 185,
+        "relevance": "",
+        "evidence_snippets": [
+          "Model ID claude-3-7-sonnet Launch stage deprecated Supported inputs & outputs Inputs: Text , Code , Images Outputs: Text Token limits Maximum input tokens: 200,000 Maximum output tokens: 128,000 Capabilities Supported Batch predictions Prompt caching Function calling Count tokens Not supported Extended thinking Usage types Supported Fixed quota Provisioned Throughput Not supported Technical specifications Images Limitation and specifications: See Vision in Anthropic's documentation Documents Limitation and specifications: See PDF support in Anthropic's documentation Knowledge cutoff date November 2024 Versions claude-3-7-sonnet Launch stage: Deprecated Release date: March 20, 2025 Supported regions Model availability (Includes fixed quota & Provisioned Throughput) United States us-east5 Europe europe-west1 Global global endpoint ML processing United States Multi-region Europe Multi-region Quota limits us-east5: QPM: 55 TPM: 500,000 ( uncached input and output) Context length: 200,000 europe-west1: QPM: 40 TPM: 300,000 ( uncached input and output) Context length: 200,000 global endpoint: QPM: 35 TPM: 300,000 ( uncached input and output) Context length: 200,000 Pricing See Pricing .",
+          "Try in Vertex AI Model ID claude-3-5-sonnet-v2 Launch stage GA Supported inputs & outputs Inputs: Text , Code , Images Outputs: Text Token limits Maximum input tokens: 200,000 Maximum output tokens: 8,000 Capabilities Supported Batch predictions Prompt caching Function calling Count tokens Not supported Extended thinking Usage types Supported Fixed quota Provisioned Throughput Not supported Technical specifications Images Limitation and specifications: See Vision in Anthropic's documentation Documents Limitation and specifications: See PDF support in Anthropic's documentation Knowledge cutoff date August 2024 Versions claude-3-5-sonnet-v2 Launch stage: Generally available Release date: October 22, 2024 Supported regions Model availability (Includes fixed quota & Provisioned Throughput) United States us-east5 Europe europe-west1 Global global endpoint ML processing United States Multi-region Europe Multi-region Quota limits us-east5: QPM: 90 TPM: 540,000 (input and output) Context length: 200,000 europe-west1: QPM: 55 TPM: 330,000 (input and output) Context length: 200,000 global endpoint: QPM: 25 TPM: 140,000 (input and output) Context length: 200,000 Pricing See Pricing .",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "\"Create a context cache \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create",
+        "source_id": "site-docs-root",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /cachedContents\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"name\": \"projects/ PROJECT NUMBER /locations/us-central1/cachedContents/ CACHE ID \", \"model\": \"projects/ PROJECT ID /locations/us-central1/publishers/google/models/gemini-2.0-flash-001\", \"createTime\": \"2024-06-04T01:11:50.808236Z\", \"updateTime\": \"2024-06-04T01:11:50.808236Z\", \"expireTime\": \"2024-06-04T02:11:50.794542Z\" } Example curl command LOCATION = \"us-central1\" MODEL ID = \"gemini-2.0-flash-001\" PROJECT ID = \"test-project\" MIME TYPE = \"video/mp4\" CACHED CONTENT URI = \"gs://path-to-bucket/video-file-name.mp4\" KMS KEY NAME = \"projects/ ${ PROJECT ID } /locations/{LOCATION}/keyRings/your-key-ring/cryptoKeys/your-key\" curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ https:// ${ LOCATION } -aiplatform.googleapis.com/v1/projects/ ${ PROJECT ID } /locations/ ${ LOCATION } /cachedContents -d \\ '{ \"model\": \"projects/{PROJECT ID}}/locations/{LOCATION}/publishers/google/models/{MODEL ID}\", \"contents\" : [ { \"role\": \"user\", \"parts\": [ { \"file data\": { \"mime type\":\"{MIME TYPE}\", \"file uri\":\"{CACHED CONTENT URI}\" } } ] } ], \"encryption spec\" : { \"kms key name\":\"{KMS KEY NAME}\" } }' GenAI SDK for Python Install pip install --upgrade google-genai To learn more, see the SDK reference documentation .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /cachedContents\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"name\": \"projects/ PROJECT NUMBER /locations/us-central1/cachedContents/ CACHE ID \", \"model\": \"projects/ PROJECT ID /locations/us-central1/publishers/google/models/gemini-2.0-flash-001\", \"createTime\": \"2024-06-04T01:11:50.808236Z\", \"updateTime\": \"2024-06-04T01:11:50.808236Z\", \"expireTime\": \"2024-06-04T02:11:50.794542Z\" } Example curl command LOCATION = \"us-central1\" MODEL ID = \"gemini-2.0-flash-001\" PROJECT ID = \"test-project\" MIME TYPE = \"video/mp4\" CACHED CONTENT URI = \"gs://path-to-bucket/video-file-name.mp4\" curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ https:// ${ LOCATION } -aiplatform.googleapis.com/v1/projects/ ${ PROJECT ID } /locations/ ${ LOCATION } /cachedContents -d \\ '{ \"model\":\"projects/${PROJECT ID}/locations/${LOCATION}/publishers/google/models/${MODEL ID}\", \"contents\": [ { \"role\": \"user\", \"parts\": [ { \"fileData\": { \"mimeType\": \"${MIME TYPE}\", \"fileUri\": \"${CACHED CONTENT URI}\" } } ] } ] }' Create a context cache with CMEK To implement context caching with CMEKs, create a CMEK by following the instructions and make sure the Vertex AI per-product, per-project service account (P4SA) has the necessary Cloud KMS CryptoKey Encrypter/Decrypter permissions on the key.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "landmark1.png",
+      "name.mp4",
+      "protobuf.Value",
+      "request.json",
+      "vertexai.vision"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/partner-models",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/partner-models",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/partner-models",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/partner-models",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/partner-models",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/partner-models",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/partner-models",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/partner-models",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deprecations/partner-models",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create"
+      ]
+    }
+  ]
+}

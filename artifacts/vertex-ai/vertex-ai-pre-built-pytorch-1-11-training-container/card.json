@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:31.179Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Vertex AI pre-built PyTorch 1.11 training container",
+  "feature_slug": "vertex-ai-pre-built-pytorch-1-11-training-container",
+  "summary": "Provides a pre-built container image to run custom training jobs using PyTorch 1.11 in Vertex AI.",
+  "extended_definition": "Provides a pre-built container image to run custom training jobs using PyTorch 1.11 in Vertex AI.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/experiments/run-training-job-experiments",
+      "https://docs.cloud.google.com/vertex-ai/docs/start/training-guide",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Custom training notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks",
+        "source_id": "site-docs-reference-2",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "Tutorial steps Package training application into a Python source distribution Configure and run training job in a prebuilt container Package model artifacts in a model archive file Upload model for deployment Deploy model using a prebuilt container for prediction Make online predictions Colab Colab Enterprise GitHub Vertex AI Workbench Ray on Vertex AI overview Get started with PyTorch on Ray on Vertex AI .",
+          "Tutorial steps Create a PyTorch distributed training application Package the training application with prebuilt containers Create a custom job on Vertex AI with Reduction Server Submit and monitor the job Colab Colab Enterprise GitHub Vertex AI Workbench Custom training Custom training using Python package, managed text dataset, and TF Serving container .",
+          "Tutorial steps Create custom Ray on Vertex AI container image Create a Ray cluster on Vertex AI using custom container image Run Spark interactively on the cluster using RayDP Run Spark application on cluster via Ray Job API Read files from Google Cloud Storage in Spark application Pandas UDF in Spark application on Ray on Vertex AI Delete the Ray cluster on Vertex AI Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Training Vertex AI Reduction Server PyTorch distributed training with Vertex AI Reduction Server ."
+        ]
+      },
+      {
+        "title": "Custom training beginner's guide \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/start/training-guide",
+        "source_id": "site-docs-reference-2",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "Notebooks To see examples of how to enable Profiler for a custom training job, run the following notebooks in the environment of your choice: \"Training, tuning and deploying a PyTorch text sentiment classification model on Vertex AI\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Get started with Vertex AI Distributed Training\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Run hyperparameter tuning for a TensorFlow model\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Vertex AI TensorBoard custom training with prebuilt container\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"PyTorch distributed training with Vertex AI Reduction Server\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Custom training and batch prediction (image classification)\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Custom training and online prediction (image classification)\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Video Training custom models Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "You can use this option if all of the code needed to execute your training application is in one Python file and one of the prebuilt Vertex AI training containers has all of the libraries needed to run your application.",
+          "Vertex AI provides prebuilt containers for TensorFlow, PyTorch, XGBoost, and Scikit-learn."
+        ]
+      },
+      {
+        "title": "\"Run training job with experiment tracking \\_|\\_ Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/experiments/run-training-job-experiments",
+        "source_id": "site-docs-reference-3",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can find these Project IDs in the Google Cloud console welcome page. location : See List of available locations. staging bucket : The name you gave your bucket, for example, my bucket . display name : The user-defined name of the CustomJob . script path : The path, relative to the working directory on your local file system, to the script that is the entry point for your training code. container uri : The URI of the training container image can be a Vertex AI prebuilt training container or a custom container service account : See Create a service account with required permissions . experiment : Provide a name for your experiment.",
+          "You can find these Project IDs in the Google Cloud console welcome page. location : See List of available locations staging bucket : The name you gave your bucket, for example, my bucket . display name : The user-defined name of the CustomJob . script path : The path, relative to the working directory on your local file system, to the script that is the entry point for your training code. container uri : The URI of the training container image can be a Vertex AI prebuilt training container , or a custom container .",
+          "Both prebuilt training containers and custom containers are supported are supported."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "model.joblib"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks",
+        "https://docs.cloud.google.com/vertex-ai/docs/start/training-guide",
+        "https://docs.cloud.google.com/vertex-ai/docs/experiments/run-training-job-experiments"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks",
+        "https://docs.cloud.google.com/vertex-ai/docs/start/training-guide",
+        "https://docs.cloud.google.com/vertex-ai/docs/experiments/run-training-job-experiments"
+      ]
+    }
+  ]
+}

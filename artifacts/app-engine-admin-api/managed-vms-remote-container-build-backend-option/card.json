@@ -1,0 +1,178 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.741Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-admin-api/card.json",
+  "product_name": "App Engine Admin API",
+  "product_slug": "app-engine-admin-api",
+  "feature_name": "Managed VMs remote container build backend option",
+  "feature_slug": "managed-vms-remote-container-build-backend-option",
+  "summary": "For App Engine Managed VMs, `gcloud preview app deploy` can build containers using either a default remote Compute Engine VM or Cloud Build, configurable via `app/use_cloud_build`.",
+  "extended_definition": "For App Engine Managed VMs, `gcloud preview app deploy` can build containers using either a default remote Compute Engine VM or Cloud Build, configurable via `app/use_cloud_build`.",
+  "lifecycle": {
+    "latest_feature_date": "2016-02-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+      "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+      "https://docs.cloud.google.com/appengine/docs/standard/go/building-app"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Package google.appengine.v1 \\_|\\_ App Engine Admin API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "source_id": "site-docs-reference-4",
+        "final_score": 134,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Index Applications (interface) AuthorizedCertificates (interface) AuthorizedDomains (interface) DomainMappings (interface) Firewall (interface) Instances (interface) Services (interface) Versions (interface) ApiConfigHandler (message) ApiEndpointHandler (message) Application (message) Application.DatabaseType (enum) Application.FeatureSettings (message) Application.IdentityAwareProxy (message) Application.ServingStatus (enum) AuthFailAction (enum) AuthorizedCertificate (message) AuthorizedCertificateView (enum) AuthorizedDomain (message) AutomaticScaling (message) BasicScaling (message) BatchUpdateIngressRulesRequest (message) BatchUpdateIngressRulesResponse (message) CertificateRawData (message) CloudBuildOptions (message) ContainerInfo (message) CpuUtilization (message) CreateApplicationRequest (message) CreateAuthorizedCertificateRequest (message) CreateDomainMappingRequest (message) CreateIngressRuleRequest (message) CreateVersionMetadataV1 (message) CreateVersionRequest (message) DebugInstanceRequest (message) DeleteAuthorizedCertificateRequest (message) DeleteDomainMappingRequest (message) DeleteIngressRuleRequest (message) DeleteInstanceRequest (message) DeleteServiceRequest (message) DeleteVersionRequest (message) Deployment (message) DiskUtilization (message) DomainMapping (message) DomainOverrideStrategy (enum) EndpointsApiService (message) EndpointsApiService.RolloutStrategy (enum) Entrypoint (message) ErrorHandler (message) ErrorHandler.ErrorCode (enum) FileInfo (message) FirewallRule (message) FirewallRule.Action (enum) FlexibleRuntimeSettings (message) GetApplicationRequest (message) GetAuthorizedCertificateRequest (message) GetDomainMappingRequest (message) GetIngressRuleRequest (message) GetInstanceRequest (message) GetServiceRequest (message) GetVersionRequest (message) HealthCheck (message) InboundServiceType (enum) Instance (message) Instance.Availability (enum) Instance.Liveness (message) Instance.Liveness.LivenessState (enum) Library (message) ListAuthorizedCertificatesRequest (message) ListAuthorizedCertificatesResponse (message) ListAuthorizedDomainsRequest (message) ListAuthorizedDomainsResponse (message) ListDomainMappingsRequest (message) ListDomainMappingsResponse (message) ListIngressRulesRequest (message) ListIngressRulesResponse (message) ListInstancesRequest (message) ListInstancesResponse (message) ListServicesRequest (message) ListServicesResponse (message) ListVersionsRequest (message) ListVersionsResponse (message) LivenessCheck (message) LocationMetadata (message) LoginRequirement (enum) ManagedCertificate (message) ManagementStatus (enum) ManualScaling (message) Network (message) NetworkSettings (message) NetworkSettings.IngressTrafficAllowed (enum) NetworkUtilization (message) OperationMetadataV1 (message) ReadinessCheck (message) RepairApplicationRequest (message) RequestUtilization (message) ResourceRecord (message) ResourceRecord.RecordType (enum) Resources (message) ScriptHandler (message) SecurityLevel (enum) Service (message) ServingStatus (enum) SslSettings (message) SslSettings.SslManagementType (enum) StandardSchedulerSettings (message) StaticFilesHandler (message) TrafficSplit (message) TrafficSplit.ShardBy (enum) UpdateApplicationRequest (message) UpdateAuthorizedCertificateRequest (message) UpdateDomainMappingRequest (message) UpdateIngressRuleRequest (message) UpdateServiceRequest (message) UpdateVersionRequest (message) UrlDispatchRule (message) UrlMap (message) UrlMap.RedirectHttpResponseCode (enum) Version (message) VersionView (enum) Volume (message) VpcAccessConnector (message) VpcAccessConnector.EgressSetting (enum) ZipInfo (message) Applications Manages App Engine applications.",
+          "The Google Container Registry domain used for storing managed build docker images for this application. database type DatabaseType The type of the Cloud Firestore or Cloud Datastore database associated with this application. feature settings FeatureSettings The feature specific settings to be used in the application.",
+          "Only applicable for instances running in the App Engine flexible environment. zip ZipInfo The zip file for this deployment, if this is a zip deployment. cloud build options CloudBuildOptions Options for any Google Cloud Build builds created as a part of this deployment."
+        ]
+      },
+      {
+        "title": "\"Build a Go app on App Engine \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/building-app",
+        "source_id": "site-docs-reference",
+        "final_score": 66,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Due to changes in the default behavior for how Cloud Build uses service accounts in new projects, and secure-by-default organization policy changes , you might need to grant additional roles to your deploying service account.",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Build a Go app on App Engine Stay organized with collections Save and categorize content based on your preferences.",
+          "After you build your app, you can read other tutorials to learn how to integrate with other Google Cloud services and add more features to your app."
+        ]
+      },
+      {
+        "title": "\"Setting up access control \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "source_id": "site-docs-reference",
+        "final_score": 57,
+        "relevance": "",
+        "evidence_snippets": [
+          "Storage storage = StorageOptions . getDefaultInstance (). getService (); System . out . println ( \"Buckets:\" ); Page<Bucket> buckets = storage . list (); for ( Bucket bucket : buckets . iterateAll ()) { System . out . println ( bucket . toString ()); } } Node.js // Imports the Google Cloud client library. const { Storage } = require ( ' @google-cloud/storage ' ); // Instantiates a client.",
+          "A user account can be used to authenticate from the following tools: Google Cloud console Google Cloud CLI IDEs and build tools that use the gcloud CLI to test and deploy App Engine apps A service account , which is intended to represent an application or a process instead of a person.",
+          "A service account can be used to authenticate from the following tools: gcloud CLI IDEs and build tools that use gcloud CLI tools to test and deploy App Engine apps Creating a user account Open the IAM page in the Google Cloud console."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/building-app",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/building-app",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/building-app",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/building-app",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/building-app",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/building-app",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/building-app",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/building-app",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/building-app",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/building-app",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/building-app",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/building-app",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    }
+  ]
+}

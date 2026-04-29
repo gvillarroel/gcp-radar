@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:06.489Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Generative phrase and synonym translation",
+  "feature_slug": "generative-phrase-and-synonym-translation",
+  "summary": "Dialogflow CX can auto-generate and auto-translate intent training phrases, entity synonyms, and fulfillment phrases into a selected language.",
+  "extended_definition": "Dialogflow CX can auto-generate and auto-translate intent training phrases, entity synonyms, and fulfillment phrases into a selected language.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-multilingual",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/entity-options"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Multilingual agents \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-multilingual",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you enable a non-default language, Dialogflow CX does not automatically translate any existing reference values and synonyms.",
+          "Requests that do not supply an agent's language When Dialogflow receives a request that does not supply a language supported by the agent, the following rules apply: When a request does not supply a language, Dialogflow automatically determines the input language and responds in that language if automatic language detection is enabled .",
+          "Entity Synonyms XS XS, extra pequeño S S, pequeño M M, medio L L, grande XL XL, extra grande AI generate language-specific data Dialogflow CX gives you the option to speed up the process of adding language-specific data by using AI generation to provide the data for you, instead of manually entering it by hand."
+        ]
+      },
+      {
+        "title": "Entity options \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/entity-options",
+        "source_id": "site-docs-root",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "See the following options for any existing entities (some of these may only be visible after expanding Advanced options ): Entities only (no synonyms) Regexp entities Automatically add entities Fuzzy matching Redact in log Entity exclusions If you are building an agent using the API instead of the console, see the EntityType type.",
+          "Use AI generation to auto-generate synonyms Instead of entering synonyms manually, you can use an AI generator to auto-generate synonyms for your reference value.",
+          "When you initially enter a reference value with the console, it is automatically added as a synonym."
+        ]
+      },
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "source_id": "site-docs-root",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you are using telephony gateway, make sure the Dialogflow Service Agent service account service- PROJECT NUMBER @gcp-sa-dialogflow.iam.gserviceaccount.com is granted with \"AutoML Predictor\" in your custom voice project.",
+          "If you are using telephony gateway, make sure the Dialogflow Service Agent service account service- PROJECT NUMBER @gcp-sa-dialogflow.iam.gserviceaccount.com is granted with \"AutoML Predictor\" in your custom voice project.",
+          "For regular API calls, make sure the service account used to call Dialogflow CX is granted with \"AutoML Predictor\" role in your custom voice project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2",
+      "dialogflow.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-multilingual",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/entity-options",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-multilingual",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/entity-options",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings"
+      ]
+    }
+  ]
+}

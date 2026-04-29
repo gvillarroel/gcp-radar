@@ -1,0 +1,128 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Fine-grained access control",
+  "feature_slug": "fine-grained-access-control",
+  "summary": "Spanner fine-grained access control is now generally available, combining IAM with traditional SQL role-based access control; Fine-grained access control for Cloud Spanner lets you secure databases at the table and column level using RDBMS-style roles with GRANT and REVOKE SQL statements.",
+  "extended_definition": "Spanner fine-grained access control is now generally available, combining IAM with traditional SQL role-based access control; Fine-grained access control for Cloud Spanner lets you secure databases at the table and column level using RDBMS-style roles with GRANT and REVOKE SQL statements.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+      "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+      "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access a database with fine-grained access control \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+        "source_id": "site-docs-root",
+        "final_score": 270,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Databases Spanner Guides Send feedback Access a database with fine-grained access control Stay organized with collections Save and categorize content based on your preferences.",
+          "If you have only fine-grained access control privileges and no IAM database-level permissions, you must have been granted access to the spanner sys reader system role or one of its member roles.",
+          "As a fine-grained access control user, you must select a database role to use to execute SQL statements and queries, and to perform row operations on a database."
+        ]
+      },
+      {
+        "title": "Configure fine-grained access control \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "source_id": "site-docs-root",
+        "final_score": 238,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Ruby require \"google/cloud/spanner\" def spanner add and drop database role project id :, instance id :, database id : project id = \"Your Google Cloud project ID\" instance id = \"Your Spanner instance ID\" database id = \"Your Spanner database ID\" admin client = Google :: Cloud :: Spanner :: Admin :: Database :: V1 :: DatabaseAdmin :: Client . new role parent = \"new parent\" role child = \"new child\" db path = admin client . database path project : project id , instance : instance id , database : database id job = admin client . update database ddl database : db path , statements : [ \"CREATE ROLE #{ role parent } \" , \"GRANT SELECT ON TABLE Singers TO ROLE #{ role parent } \" , \"CREATE ROLE #{ role child } \" , \"GRANT ROLE #{ role parent } TO ROLE #{ role child } \" ] job . wait until done! puts \"Created roles #{ role parent } and #{ role child } and granted privileges\" job = admin client . update database ddl database : db path , statements : [ \"REVOKE ROLE #{ role parent } FROM ROLE #{ role child } \" , \"DROP ROLE #{ role child } \" ] job . wait until done! puts \"Revoked privileges and dropped role #{ role child } \" end More information About fine-grained access control Fine-grained access control for change streams Fine-grained access control privileges GoogleSQL DDL reference Make schema updates Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Ruby require \"google/cloud/spanner\" def spanner enable fine grained access project id :, instance id :, database id :, iam member :, database role :, title : project id = \"Your Google Cloud project ID\" instance id = \"Your Spanner instance ID\" database id = \"Your Spanner database ID\" iam member = \"user:alice@example.com\" database role = \"new parent\" title = \"condition title\" admin client = Google :: Cloud :: Spanner :: Admin :: Database :: V1 :: DatabaseAdmin :: Client . new db path = admin client . database path project : project id , instance : instance id , database : database id policy = admin client . get iam policy resource : db path , options : { requested policy version : 3 } policy . version = 3 if policy . version < 3 binding = Google :: Iam :: V1 :: Binding . new ( role : \"roles/spanner.fineGrainedAccessUser\" , members : [ iam member ] , condition : Google :: Type :: Expr . new ( title : title , expression : \"resource.name.endsWith('/databaseRoles/ #{ database role } ')\" ) ) policy . bindings << binding result = admin client . set iam policy resource : db path , policy : policy puts \"Enabled fine-grained access in IAM.\" end Inform users and developers to start using database roles After initial fine-grained access control configuration is complete, inform users and application developers that they must begin using database roles.",
+          "Then on the Edit condition page, click Condition editor , make corrections, and click Save twice. gcloud Enable fine-grained access control for the principal by using the gcloud spanner databases add-iam-policy-binding command as follows: gcloud spanner databases add-iam-policy-binding DATABASE NAME \\ --instance = INSTANCE NAME \\ --role = roles/spanner.fineGrainedAccessUser \\ --member = MEMBER NAME \\ --condition = None MEMBER NAME is the identifier for the principal."
+        ]
+      },
+      {
+        "title": "\"Information schema for PostgreSQL-dialect databases \\_|\\_ Spanner \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "source_id": "site-docs-reference",
+        "final_score": 184,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For PostgreSQL-dialect databases, the default is public . change stream name character varying The name of the change stream. option name character varying The name of the change stream option. option type character varying The data type of the change stream option. option value character varying The value of the change stream option. change stream privileges This row-filtered view lists all fine-grained access control privileges granted on all change streams to any database role, including public .",
+          "The value of this column is parsable as part of a query. option type character varying A data type name that is the type of this option value. column privileges This row-filtered view lists all fine-grained access control privileges granted on all columns to any database role, including public .",
+          "All other principals can see only tables that meet either of the following requirements: The SELECT , INSERT , UPDATE , or DELETE fine-grained access control privileges are granted on the table to the current database role, to roles of which the current database role is a member, or to public ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "resource.name.endsWith",
+      "spanner.fineGrainedAccessUser"
+    ],
+    "missing_inventory_roles": [
+      "roles/spanner.fineGrainedAccessUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    }
+  ]
+}

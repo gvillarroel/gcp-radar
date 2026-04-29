@@ -1,0 +1,99 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:10.308Z",
+  "source_step08_card": "data/step-08/current/products/error-reporting/card.json",
+  "product_name": "Error Reporting",
+  "product_slug": "error-reporting",
+  "feature_name": "GKE App Errors tab",
+  "feature_slug": "gke-app-errors-tab",
+  "summary": "Error Reporting shows recent application errors for Google Kubernetes Engine services and clusters on an App Errors tab.",
+  "extended_definition": "Error Reporting shows recent application errors for Google Kubernetes Engine services and clusters on an App Errors tab.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/error-reporting/docs/check-app-crash",
+      "https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.error_stats_service.ErrorStatsServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.report_errors_service.ReportErrorsServiceAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class ReportErrorsServiceAsyncClient (1.15.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.report_errors_service.ReportErrorsServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 80,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Callable [ [ ... ], google . cloud . errorreporting v1beta1 . services . report errors service . transports . base .",
+          "Callable [ [ ... ], google . cloud . errorreporting v1beta1 . services . report errors service . transports . base .",
+          "Union [ str , google . cloud . errorreporting v1beta1 . services . report errors service . transports . base ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Check a crashed app for errors by using Error Reporting \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/error-reporting/docs/check-app-crash",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 77,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Simulate an error To generate 11 sample errors, run the following script in Cloud Shell: COUNTER = 0 while [ $COUNTER -lt 11 ] ; do gcloud beta error-reporting events report --service tutorial --service-version v $(( COUNTER / 10 + 1 )) \\ --message \"java.lang.RuntimeException: Error rendering template $COUNTER at com.example.TestClass.test(TestClass.java:51) at com.example.AnotherClass(AnotherClass.java:25) at javax.servlet.http.HttpServlet.service (HttpServlet.java:617) at javax.servlet.http.HttpServlet.service (HttpServlet.java:717)\" if [ $COUNTER -eq 10 ] ; then echo \"All sample errors reported.\" fi let COUNTER = COUNTER+1 done When the script finishes generating all of the errors, it prints the following line: All sample errors reported.",
+          "To generate new types of errors, click terminal Activate Cloud shell and run the following script: COUNTER = 0 while [ $COUNTER -lt 3 ] ; do gcloud beta error-reporting events report --service tutorial --service-version v1 \\ --message \"java.lang.ArrayIndexOutOfBoundsException: $COUNTER at com.example.AppController.createUser(AppController.java:42) at com.example.User(User.java:31) at javax.servlet.http.HttpServlet.service (HttpServlet.java:617) at javax.servlet.http.HttpServlet.service (HttpServlet.java:717)\" if [ $COUNTER -eq 10 ] ; then echo \"All sample errors reported.\" fi let COUNTER = COUNTER+1 done When the script finishes generating all of the errors, it prints the following line: All sample errors reported.",
+          "Generate error messages from a App Engine app While the sample messages you generated from the scripts fully simulate error conditions in Error Reporting, if you want to generate errors from a real service running in your Google Cloud project, follow the steps in this section."
+        ]
+      },
+      {
+        "title": "\"Class ErrorStatsServiceAsyncClient (1.15.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.error_stats_service.ErrorStatsServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 70,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ErrorStatsServiceAsyncClient () Initialize request argument(s) request = errorreporting v1beta1.",
+          "ErrorStatsServiceAsyncClient () Initialize request argument(s) request = errorreporting v1beta1.",
+          "ErrorStatsServiceAsyncClient () Initialize request argument(s) request = errorreporting v1beta1."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.example.AnotherClass",
+      "com.example.AppController.createUser",
+      "com.example.TestClass.test",
+      "com.example.User",
+      "java.lang.ArrayIndexOutOfBoundsException",
+      "java.lang.RuntimeException",
+      "javax.servlet.http.HttpServlet.service",
+      "v1beta1.types.DeleteEventsResponse"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/error-reporting/docs/check-app-crash",
+        "https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.report_errors_service.ReportErrorsServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.error_stats_service.ErrorStatsServiceAsyncClient"
+      ]
+    }
+  ]
+}

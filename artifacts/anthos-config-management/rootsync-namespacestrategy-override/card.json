@@ -1,0 +1,113 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.232Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management",
+  "feature_name": "RootSync namespaceStrategy override",
+  "feature_slug": "rootsync-namespacestrategy-override",
+  "summary": "The RootSync API adds the spec.override.namespaceStrategy field to control implicit Namespace creation when Namespace configs are missing.",
+  "extended_definition": "The RootSync API adds the spec.override.namespaceStrategy field to control implicit Namespace creation when Namespace configs are missing.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/architecture",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Monitor RootSync and RepoSync objects \\_|\\_ Config Sync \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+        "source_id": "site-docs-root",
+        "final_score": 208,
+        "relevance": "",
+        "evidence_snippets": [
+          "To change log verbosity, use the .spec.override.logLevels field as shown in the following example: apiVersion : configsync.gke.io/v1beta1 kind : RootSync metadata : name : root-sync namespace : config-management-system spec : override : logLevels : - containerName : \"reconciler\" logLevel : 0 - containerName : \"git-sync\" logLevel : 10 The value in the containerName field must be one of the following: reconciler , git-sync , hydration-controller , oci-sync , or helm-sync .",
+          "View errors RootSync and RepoSync objects use the status field to track errors encountered when syncing the configs from the source of truth to a cluster.",
+          "View synced commits You can check which commit is synced to the cluster by checking the .status.sync field in the RootSync or RepoSync object."
+        ]
+      },
+      {
+        "title": "Config Sync architecture \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/architecture",
+        "source_id": "site-docs-root",
+        "final_score": 170,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If needed, you can change these permissions by configuring the spec.override.roleRefs fields.",
+          "Deployment name CPU request (m) per replica Memory request (Mi) per replica config-management-operator 100 200 resource-group-controller-manager 110 300 admission-webhook 1 10 100 otel-collector 200 400 reconciler-manager 20 150 reconciler (one per RootSync and RepoSync) See reconciler resource requests for details.",
+          "RootSync and RepoSync objects RootSync objects configure Config Sync to create a root reconciler that watches the specified source of truth and apply objects from that source to the cluster."
+        ]
+      },
+      {
+        "title": "Error reference \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors",
+        "source_id": "site-docs-reference",
+        "final_score": 158,
+        "relevance": "",
+        "evidence_snippets": [
+          "If a kustomize build error happens when pulling remote bases from public repositories, you need to set spec.override.enableShellInRendering to true .",
+          "To resolve this issue, first, you can verify whether the caCertSecretRef field has been configured correctly in your RootSync or RepoSync object, and also check if the Secret object exists.",
+          "If the RepoSync applies first, the RootSync overwrites the RepoSync's object and the RepoSync reports a KNV1060 status error when it sees the update."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "configsync.gke.io",
+      "spec.override.enableShellInRendering",
+      "spec.override.logLevels",
+      "spec.override.namespaceStrategy",
+      "spec.override.roleRefs",
+      "status.sync"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/architecture",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/architecture",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/architecture",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    }
+  ]
+}

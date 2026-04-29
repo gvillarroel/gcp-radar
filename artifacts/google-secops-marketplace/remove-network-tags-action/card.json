@@ -1,0 +1,201 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.653Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-marketplace/card.json",
+  "product_name": "Google SecOps Marketplace",
+  "product_slug": "google-secops-marketplace",
+  "feature_name": "Remove Network Tags action",
+  "feature_slug": "remove-network-tags-action",
+  "summary": "Adds an action that removes network tags from a Google Cloud Compute resource.",
+  "extended_definition": "Adds an action that removes network tags from a Google Cloud Compute resource.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/axonius"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Integrate Amazon EC2 with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action Results Script Result Script result name Value options Example is success True/False is success:False JSON Result \"EC2 Instances\" : [ { \"AmiLaunchIndex\" : 0 , \"ImageId\" : \"ami-047a51fa27710816e\" , \"InstanceId\" : \"i-044c08c5bfe1a7f98\" , \"InstanceType\" : \"t2.micro\" , \"KeyName\" : \"\\\"Key\\\": \\\"Test\\\", \\\"Value\\\":\\\"Test\\\"\" , \"LaunchTime\" : \"2021-1-30\" , \"Monitoring\" :{ \"State\" : \"disabled\" }, \"Placement\" :{ \"AvailabilityZone\" : \"us-east-1d\" , \"GroupName\" : \"\" , \"Tenancy\" : \"default\" }, \"PrivateDnsName\" : \"ip-192-0-2-220.ec2.internal\" , \"PrivateIpAddress\" : \"192.0.2.220\" , \"ProductCodes\" :[ ], \"PublicDnsName\" : \"ec2-192-0-2-218.compute-1.amazonaws.com\" , \"PublicIpAddress\" : \"192.0.2.218\" , \"State\" :{ \"Code\" : 16 , \"Name\" : \"running\" }, \"StateTransitionReason\" : \"\" , \"SubnetId\" : \"subnet-1b1fda3a\" , \"VpcId\" : \"vpc- ID \" , \"Architecture\" : \"x86 64\" , \"BlockDeviceMappings\" :[ { \"DeviceName\" : \"/dev/xvda\" , \"Ebs\" :{ \"AttachTime\" : \"2021-1-30\" , \"DeleteOnTermination\" : true , \"Status\" : \"attached\" , \"VolumeId\" : \"vol-00f70681a43e5d86e\" } } ], \"ClientToken\" : \"\" , \"EbsOptimized\" : false , \"EnaSupport\" : true , \"Hypervisor\" : \"xen\" , \"NetworkInterfaces\" :[ { \"Association\" :{ \"IpOwnerId\" : \"amazon\" , \"PublicDnsName\" : \"ec2-192-0-2-218.compute-1.amazonaws.com\" , \"PublicIp\" : \"192.0.2.218\" }, \"Attachment\" :{ \"AttachTime\" : \"\" , \"AttachmentId\" : \"eni-attach-06bc5e5901ce99ef2\" , \"DeleteOnTermination\" : true , \"DeviceIndex\" : 0 , \"Status\" : \"attached\" , \"NetworkCardIndex\" : 0 }, \"Description\" : \"\" , \"Groups\" :[ { \"GroupName\" : \"launch-wizard-2\" , \"GroupId\" : \"sg-001700ccddac4189a\" } ], \"Ipv6Addresses\" :[ ], \"MacAddress\" : \"12:34:56:ab:cd:ef\" , \"NetworkInterfaceId\" : \"eni-020fa83efd417e32d\" , \"OwnerId\" : \" ID \" , \"PrivateDnsName\" : \"ip-192-0-2-220.ec2.internal\" , \"PrivateIpAddress\" : \"192.0.2.220\" , \"PrivateIpAddresses\" :[ { \"Association\" :{ \"IpOwnerId\" : \"amazon\" , \"PublicDnsName\" : \"ec2-192-0-2-218.compute-1.amazonaws.com\" , \"PublicIp\" : \"192.0.2.218\" }, \"Primary\" : true , \"PrivateDnsName\" : \"ip-192-0-2-220.ec2.internal\" , \"PrivateIpAddress\" : \"192.0.2.220\" } ], \"SourceDestCheck\" : true , \"Status\" : \"in-use\" , \"SubnetId\" : \"subnet-1b1fda3a\" , \"VpcId\" : \"vpc- ID \" , \"InterfaceType\" : \"interface\" } ], \"RootDeviceName\" : \"/dev/xvda\" , \"RootDeviceType\" : \"ebs\" , \"SecurityGroups\" :[ { \"GroupName\" : \"launch-wizard-2\" , \"GroupId\" : \"sg-001700ccddac4189a\" } ], \"SourceDestCheck\" : true , \"Tags\" :[ { \"Key\" : \"Owner\" , \"Value\" : \"Example\" }, { \"Key\" : \"Name\" , \"Value\" : \"Example test\" } ], \"VirtualizationType\" : \"hvm\" , \"CpuOptions\" :{ \"CoreCount\" : 1 , \"ThreadsPerCore\" : 1 }, \"CapacityReservationSpecification\" :{ \"CapacityReservationPreference\" : \"open\" }, \"HibernationOptions\" :{ \"Configured\" : false }, \"MetadataOptions\" :{ \"State\" : \"applied\" , \"HttpTokens\" : \"optional\" , \"HttpPutResponseHopLimit\" : 1 , \"HttpEndpoint\" : \"enabled\" }, \"EnclaveOptions\" :{ \"Enabled\" : false } } ] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If successfully listed instances(is success = true): \"Successfully described Amazon EC2 instances.\" If no available values(is success = false): \"No instances were found in Amazon EC2\" The action should fail and stop a playbook execution: if fatal error, invalid instance ID, SDK error, like wrong credentials, no connection to server, other: \"Error executing action \"List Instances\".",
+          "Action Results Script Result Script result name Value options Example is success True/False is success:False JSON Result \"EC2 Security Groups\" : [ { \"Description\" : \"launch-wizard-2 created 2021-01-30T19:37:11.523+02:00\" , \"GroupName\" : \"launch-wizard-2\" , \"IpPermissions\" :[ { \"FromPort\" : 22 , \"IpProtocol\" : \"tcp\" , \"IpRanges\" :[ { \"CidrIp\" : \"192.0.2.0/0\" } ], \"Ipv6Ranges\" :[ ], \"PrefixListIds\" :[ ], \"ToPort\" : 22 , \"UserIdGroupPairs\" :[ ] } ], \"OwnerId\" : \"582302349248\" , \"GroupId\" : \"sg-001700ccddac4189a\" , \"IpPermissionsEgress\" :[ { \"IpProtocol\" : \"-1\" , \"IpRanges\" :[ { \"CidrIp\" : \"192.0.2.0/0\" } ], \"Ipv6Ranges\" :[ ], \"PrefixListIds\" :[ ], \"UserIdGroupPairs\" :[ ] } ], \"Tags\" :[ { \"Key\" : \"Team\" , \"Value\" : \"A-Team\" }, { \"Key\" : \"Owner\" , \"Value\" : \"Example\" } ], \"VpcId\" : \"vpc- ID \" } ] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If successfully listed groups(is success = true): \"Successfully described Amazon EC2 security groups.\" If no available values(is success = false): \"No security groups were found in Amazon EC2\" The action should fail and stop a playbook execution: if fatal error, invalid group ID/Name, SDK error, like wrong credentials, no connection to server, other: \"Error executing action \"List Security Groups\".",
+          "Action Results Script Result Script result name Value options Example is success True/False is success:False JSON Result { \"EC2 Snapshot\" : [ { \"Description\" : \"\" , \"Tags\" : [], \"Encrypted\" : false , \"VolumeId\" : \"vol- ID \" , \"State\" : \"pending\" , \"VolumeSize\" : 8 , \"StartTime\" : \"2022-11-13 15:45:44.795000+00:00\" , \"Progress\" : \"\" , \"OwnerId\" : \" OWNER ID \" , \"SnapshotId\" : \"snap- ID \" } ] } Terminate Instance Terminates an instance."
+        ]
+      },
+      {
+        "title": "\"Integrate AWS WAF with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "source_id": "site-docs-root",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run On This action runs on the following entities: IP Address URL Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True Case Wall Result type Value/Description Type (Entity \\ General) Output message The action should not fail nor stop a playbook execution: If successful and at least one entity was removed from one IP set: \"Successfully removed the following entity patterns from the {0} Regex Pattern Set '{1}' in AWS WAF: \\n {2}\".format(\"Regional\"/\"Cloudfront\", full name, list of entity patterns) If entity never existed in that Regex Pattern Set: \"The following patterns were not found in the {0} Regex Pattern Set '{1}' in AWS WAF: \\n {2}\".format(\"Regional\"/\"Cloudfront\", full name, list of entity patterns) If fail to remove all entities on all IP sets: \"No patterns were removed from the provided Regex Pattern Sets.\" If fail to find one of the IP sets: \"Action wasn't able to find the following '{0}' Regex Pattern Sets in the AWS WAF:\\n {1}\".format(\"Regional\"/Cloudfront\",list of IP sets that were not found in that scope) If fail to find all of the provided Regex Pattern sets in the desired scope or scopes: \"Action didn't find the provided Regex Pattern sets.\" The action should fail and stop a playbook execution: If a fatal error, SDK error, like wrong credentials, no connection to the server, other is reported: \"Error executing action \"Remove Entity From Regex Pattern Set\".",
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one rule was removed from one Rule Group: \"Successfully removed a rule from the following {0} Rule Groups '{1}' in AWS WAF.\".format(\"Regional\"/\"Cloudfront\", list of names) If unsuccessful for one Rule Group: \"Action wasn't able to remove a rule from the following {0} Rule Groups '{1}' in AWS WAF.\".format(\"Regional\"/\"Cloudfront\", list of names) If unsuccessful for one Rule Group, because rule wasn't found in one Rule Group: \"Action wasn't able to find the specified rule in the following {0} Rule Groups '{1}' in AWS WAF.\".format(\"Regional\"/\"Cloudfront\", list of rule group names) If fail to find one of the Rule Group: \"Action wasn't able to find the following '{0}' Rule Groups in the AWS WAF:\\n {1}\".format(\"Regional\"/Cloudfront\", list of Rule Group that were not found in that scope) If fail to find all of the provided sets in the desired scope or scopes: \"Action didn't find the provided Rule Groups.\" The action should fail and stop a playbook execution: If a fatal error, SDK error, like wrong credentials, no connection to the server, other is reported: \"Error executing action \"Remove Rule From Rule Group\".",
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful and at least one rule was removed from one Rule Group: print \"Successfully removed a rule from the following {0} Web ACLs '{1}' in AWS WAF.\".format(\"Regional\"/\"Cloudfront\", list of names) if unsuccessful for one Rule Group: print \"Action wasn't able to remove a rule from the following {0} Web ACLs '{1}' in AWS WAF.\".format(\"Regional\"/\"Cloudfront\", list of names) if unsuccessful for one Web ACL, because rule wasn't found in one ACL: print \"Action wasn't able to find the specified rule in the following {0} Web ACLs '{1}' in AWS WAF.\".format(\"Regional\"/\"Cloudfront\", list of names Web ACL) If fail to find one of the Rule Group: Print \"Action wasn't able to find the following '{0}' Web ACLs in the AWS WAF:\\n {1}\".format(\"Regional\"/Cloudfront\", list of Rule Group that were not found in that scope) If fail to find all of the provided sets in the desired scope or scopes: Print \"Action didn't find the provided Web ACLs.\" The action should fail and stop a playbook execution: if fatal error, SDK error, like wrong credentials, no connection to server, other: print \"Error executing action \"Remove Rule From Web ACL\"."
+        ]
+      },
+      {
+        "title": "\"Integrate Axonius with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/axonius",
+        "source_id": "site-docs-root",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to the server, other is reported: \"Error executing action \"Remove Tags\".",
+          "Parameters Parameter Display Name Type Default Value Is Mandatory Description Tags CSV Yes Specify a comma-separated list of tags that must be removed from the entities.",
+          "Run On This action runs on the following entities: Hostname IP Address Mac Address User Email Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result - for Endpoint: { \"adapters\" : [ { \"accurate for datetime\" : \"Sun, 21 Mar 2021 03:44:19 GMT\" , \"client used\" : \" DOMAIN \\\\axoniusSvc\" , \"raw\" : { \"ad distinguished name\" : \"CN=DESKTOP- ID ,OU=Computers,DC=demo,DC=local\" , \"ad object class\" : [ \"top\" , \"person\" , \"organizationalperson\" , \"user\" , \"computer\" ], \"ad sAMAccountName\" : \"\" , \"ad site location\" : \"Richmond\" , \"ad site name\" : \"\" , \"device disabled\" : false , \"device managed by\" : \"Example User\" , \"domain\" : \"example.example\" , \"hostname\" : \" HOSTNAME \" , \"id\" : \"CN= ID ,OU=Computers,DC=demo,DC=local\" , \"last seen\" : \"Tue, 16 Mar 2021 19:44:05 GMT\" , \"name\" : \" NAME \" , \"network interfaces\" : [ { \"ips\" : [ \" IP \" ], \"ips raw\" : [ \" IP RAW \" ], \"ips v4\" : [ \" IP V4 \" ], \"ips v4 raw\" : [ \" IP V4 RAW \" ] } ], \"os\" : { \"bitness\" : 64 , \"distribution\" : \"10\" , \"is windows server\" : false , \"os str\" : \"windows 10 pro 64-bit\" , \"type\" : \"Windows\" , \"type distribution\" : \"Windows 10\" }, \"part of domain\" : true }, \"plugin name\" : \"\" , \"plugin type\" : \"Adapter\" , \"plugin unique name\" : \"\" , \"quick id\" : \"active directory adapter 0!CN= ID ,OU= OU ,DC= DOMAIN ,DC= DOMAIN \" , \"type\" : \"entitydata\" }, { \"accurate for datetime\" : \"Sun, 21 Mar 2021 03:43:52 GMT\" , \"client used\" : \"https:// DOMAIN \" , \"raw\" : { \"hostname\" : \" HOSTNAME \" , \"id\" : \" ID \" , \"last seen\" : \"Sun, 21 Mar 2021 01:50:28 GMT\" , \"name\" : \" NAME \" , \"network id\" : \" NETWORK ID \" , \"network interfaces\" : [ { \"ips\" : [ \" IP \" ], \"ips raw\" : [ \" IP RAW \" ], \"ips v4\" : [ \" IP V4 \" ], \"ips v4 raw\" : [ \" IP V4 RAW \" ], \"mac\" : \"01:23:45:AB:CD:EF\" , \"manufacturer\" : \"(Intel Corporate)\" } ] }, \"plugin name\" : \"Example\" , \"plugin type\" : \"Adapter\" , \"plugin unique name\" : \"Example\" , \"quick id\" : \" ID \" , \"type\" : \"entitydata\" } ], \"Notes\" : [], \"internal axon id\" : \"\" , \"labels\" : [] } JSON Result - for Users: { \"adapters\" : [ { \"accurate for datetime\" : \"Sun, 21 Mar 2021 03:45:01 GMT\" , \"client used\" : \" DOMAIN \\\\axoniusSvc\" , \"raw\" : { \"account disabled\" : false , \"ad display name\" : \"\" , \"ad distinguished name\" : \"CN=example, DC=example\" , \"ad sid\" : \"S-1-5-21-70119-3234025\" , \"ad uac dont expire password\" : false , \"ad uac password not required\" : false , \"display name\" : \"\" , \"domain\" : \"example.example\" , \"employee id\" : \" ID \" , \"first name\" : \"Example\" , \"id\" : \"CN=example, DC=example\" , \"is admin\" : false , \"is local\" : false , \"is locked\" : false , \"last name\" : \"Example\" , \"last password change\" : \"Wed, 17 Mar 2021 09:12:11 GMT\" , \"last seen\" : \"Thu, 18 Mar 2021 09:25:08 GMT\" , \"mail\" : \"email@example.com\" , \"password never expires\" : false , \"password not required\" : false , \"user city\" : \"Boston\" , \"user telephone number\" : \"(800) 555-0175\" , \"username\" : \"user@example.com\" }, \"user city\" : \"Boston\" , \"user telephone number\" : \"(800) 555-0175\" , \"username\" : \"user@example.com\" , \"plugin name\" : \"active directory adapter\" , \"plugin type\" : \"Adapter\" , \"plugin unique name\" : \"active directory adapter 0\" , \"quick id\" : \"active directory adapter 0!CN=example,DC=example\" , \"type\" : \"entitydata\" } ], \"Notes\" : [], \"internal axon id\" : \"\" , \"labels\" : [] } Entity Enrichment - for Endpoints: Enrichment Field Name Logic - When to apply object classes When available in JSON site name When available in JSON device disabled When available in JSON device managed by When available in JSON hostname When available in JSON ad distinguished name When available in JSON asset name When available in JSON ips When available in JSON os When available in JSON id When available in JSON link When available in JSON Entity Enrichment - for Users: Enrichment Field Name Logic - When to apply account disabled When available in JSON ad display name When available in JSON ad distinguished name When available in JSON ad sid When available in JSON employee id When available in JSON is admin When available in JSON is local When available in JSON is locked When available in JSON mail When available in JSON user telephone number When available in JSON id When available in JSON link When available in JSON Case Wall Result type Value/Description Type (Entity \\ General) Output message The action should not fail nor stop a playbook execution: If enriched some(is success = true): \"Successfully enriched the following entities using Axonius:\\n\".format(entity.identifier) If didn't enrich some (is success = true): \"Action wasn't able to enriche the following entities using Axonius:\\n\".format(entity.identifier) If didn't enrich all (is success = false): \"No entities were enriched\"."
+        ]
+      },
+      {
+        "title": "\"Integrate Anomali ThreatStream with Google SecOps \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "source_id": "site-docs-root",
+        "final_score": 159,
+        "relevance": "",
+        "evidence_snippets": [
+          "Run on This action runs on the following entities: Hash IP Address URL Email Action results Script result Script result name Value options Example is success True or False is success:False Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one tag is removed from one entity (is success=true): \"Successfully removed the following tags from the \"{entity.identifier}\" entity in Anomali ThreatStream:\\n{0}\".format(tags) If one tag is not found for one entity (is success=true): \"The following tags were already not a part of \"{entity.identifier}\" entity in Anomali ThreatStream:\\n{0}\".format(tags) If all tags are not found for one entity (is success=true): \"None of the provided tags were part of \"{entity.identifier}\" entity in Anomali ThreatStream.\" If one entity is not found (is success=true): \"The following entities were not found in Anomali ThreatStream\\n: {0}\".format([entity.identifier]) If all entities are not found (is success=false): \"None of the provided entities were found.\" The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: \"Error executing action \"Remove Tags From Entities\".",
+          "Parameters Parameter name Type Default value Is mandatory Description Tags CSV N/A Yes Specify a comma-separated list of tags that need to be removed from entities in Anomali ThreatStream.",
+          "Run on This action runs on the following entities: Hash IP Address URL Email Action results Script result Script result name Value options Example is success True or False is success:False Entity enrichment Enrichment field name Logic - When to apply id When available in JSON status When available in JSON itype When available in JSON expiration time When available in JSON ip When available in JSON feed id When available in JSON confidence When available in JSON uuid When available in JSON retina confidence When available in JSON trusted circle ids When available in JSON source When available in JSON latitude When available in JSON type When available in JSON description When available in JSON tags When available in JSON threat score When available in JSON source confidence When available in JSON modification time When available in JSON org name When available in JSON asn When available in JSON creation time When available in JSON tlp When available in JSON country When available in JSON longitude When available in JSON severity When available in JSON subtype When available in JSON report When available in JSON Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one of the provided entities is enriched (is success=true): \"Successfully enriched the following entities using Anomali ThreatStream: \\n {0}\".format(entity.identifier list) If failed to enrich specific entities (is success=true): \"Action was not able to enrich the following entities using Anomali ThreatStream\\n: {0}\".format([entity.identifier]) If failed to enrich all entities (is success=false): \"No entities were enriched.\" The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: \"Error executing action \"Enrich Entities\"."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "amazonaws.com",
+      "ec2.internal",
+      "entity.identifier",
+      "example.com",
+      "example.example",
+      "t2.micro"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/axonius",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/axonius",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/axonius",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/axonius",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/axonius",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/axonius",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/axonius",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/axonius",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/axonius",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/axonius",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/axonius",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream"
+      ]
+    }
+  ]
+}

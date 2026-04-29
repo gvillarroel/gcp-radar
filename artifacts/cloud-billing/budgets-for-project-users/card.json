@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:46.338Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing",
+  "feature_name": "Budgets for project users",
+  "feature_slug": "budgets-for-project-users",
+  "summary": "Makes project users (owners, editors, viewers) generally able to create and manage single-project budgets without additional Cloud Billing account permissions; Makes project users in preview able to create and manage single-project budgets without requiring full Cloud Billing account access.",
+  "extended_definition": "Makes project users (owners, editors, viewers) generally able to create and manage single-project budgets without additional Cloud Billing account permissions; Makes project users in preview able to create and manage single-project budgets without requiring full Cloud Billing account access.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+      "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets",
+      "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1beta1/billingAccounts.budgets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: billingAccounts.budgets \\_|\\_ Cloud Billing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets",
+        "source_id": "site-api-reference",
+        "final_score": 142,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Resource: Budget JSON representation Filter JSON representation CreditTypesTreatment CalendarPeriod CustomPeriod JSON representation BudgetAmount JSON representation LastPeriodAmount ThresholdRule JSON representation Basis NotificationsRule JSON representation OwnershipScope Methods Resource: Budget A budget is a plan that describes what you expect to spend on Cloud projects, plus the rules to execute as spend is tracked against that plan, (for example, send an alert when 90% of the target spend is met).",
+          "ALL USERS Both billing account-level users and project-level users have full access to the budget, if the users have the required IAM permissions.",
+          "The ownership scope and users' IAM permissions determine who has full access to the budget's data."
+        ]
+      },
+      {
+        "title": "\"REST Resource: billingAccounts.budgets \\_|\\_ Cloud Billing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1beta1/billingAccounts.budgets",
+        "source_id": "site-api-reference",
+        "final_score": 142,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Resource: Budget JSON representation Filter JSON representation CreditTypesTreatment CalendarPeriod CustomPeriod JSON representation BudgetAmount JSON representation LastPeriodAmount ThresholdRule JSON representation Basis AllUpdatesRule JSON representation OwnershipScope Methods Resource: Budget A budget is a plan that describes what you expect to spend on Cloud projects, plus the rules to execute as spend is tracked against that plan, (for example, send an alert when 90% of the target spend is met).",
+          "Currently, project level recipients are the users with Owner role on a cloud project.",
+          "Enums OWNERSHIP SCOPE UNSPECIFIED Unspecified ownership scope, same as ALL USERS."
+        ]
+      },
+      {
+        "title": "\"Create, edit, or delete budgets and budget alerts \\_|\\_ Cloud Billing \\_\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+        "source_id": "site-docs-root",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "For billing account users : Launch the create budgets tutorial For project users : Launch the create budgets tutorial To set up a new budget, you need to complete the following steps: Create and name the budget (Single-project budgets) Control access to the budget Set the budget scope Set the budget amount Set the budget threshold rules and actions Click finish to save the new budget For a deeper discussion about budgets, including all the options and considerations available in each step, continue reading this page.",
+          "To view a list of budgets for your Cloud Billing account, do the following: Using the procedure that fits your level of access to Cloud Billing accounts, sign in to the Budgets & alerts page in the Billing section of the Google Cloud console: Users with Cloud Billing account permissions Users with project-level permissions only If you have Cloud Billing account permissions, you can select from a list of billing accounts that you have permissions to access.",
+          "To modify or delete a budget, do the following: Using the procedure that fits your level of access to Cloud Billing accounts, sign in to the Budgets & alerts page in the Billing section of the Google Cloud console: Users with Cloud Billing account permissions Users with project-level permissions only If you have Cloud Billing account permissions, you can select from a list of billing accounts that you have permissions to access."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets",
+        "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1beta1/billingAccounts.budgets",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets",
+        "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1beta1/billingAccounts.budgets",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets",
+        "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1beta1/billingAccounts.budgets",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets",
+        "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1beta1/billingAccounts.budgets",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:20.028Z",
+  "source_step08_card": "data/step-08/current/products/identity-aware-proxy/card.json",
+  "product_name": "Identity-Aware Proxy",
+  "product_slug": "identity-aware-proxy",
+  "feature_name": "Authorization policy delegation for IAP and IAM",
+  "feature_slug": "authorization-policy-delegation-for-iap-and-iam",
+  "summary": "Authorization policies can delegate authorization decisions to Identity-Aware Proxy and Identity and Access Management.",
+  "extended_definition": "Authorization policies can delegate authorization decisions to Identity-Aware Proxy and Identity and Access Management.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iap/docs/auth-policies",
+      "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+      "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/getIamPolicy",
+      "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/setIamPolicy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use authorization policies to delegate authorization to IAP and IAM \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "source_id": "site-docs-root",
+        "final_score": 314,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "API Configure permission at the organization level organization/ ORGANIZATION Configure permission at the folder level folders/ FOLDER Configure permission at the project level projects/ PROJECT ID Configure permission for all global forwarding rules in a project projects/ PROJECT ID /forwarding rule Configure permission for all forwarding rules in a project in a region projects/ PROJECT ID /iap web/forwarding rule- REGION Configure permission for a specific global forwarding rule in a project projects/ PROJECT ID /iap web/forwarding rule/services/ SERVICE Configure permission for a specific forwarding rule in a project in a region projects/ PROJECT ID /iap web/forwarding rule- REGION /services/ SERVICE Set the authorization policy curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Accept: application/json\" \\ -H \"Content-Type: application/json\" \\ -d @policy.json \\ \"https://iap.googleapis.com/v1/RESOURCE NAME:setIamPolicy\" For policy.json , you can create the JSON file by running the following command.",
+          "API Run the following command to prepare a policy.json file. cat << EOF > policy.json { \"name\": \" AUTHZ POLICY NAME \", \"target\": { \"loadBalancingScheme\": \"INTERNAL MANAGED\", \"resources\": [ \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ LOCATION /forwardingRules/ FORWARDING RULE ID \" ], }, \"action\": \"CUSTOM\", \"httpRules\": [ { \"from\": { \"sources\": { \"ipBlocks\": [ { \"prefix\": \"10.0.0.0\", \"length\": 24 } ] } } } ], \"customProvider\": { \"cloudIap\": {} } } EOF Run the following command to enable IAP on a forwarding rule. curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Accept: application/json\" \\ -H \"Content-Type: application/json\" \\ -d @policy.json \\ \"https://networksecurity.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /authzPolicies\" Replace the following: PROJECT ID : The Google Cloud project ID.",
+          "The policy allows clients with an IP address range of 10.0.0.0/24 to enable IAP on a forwarding rule. $ cat << EOF > policy.yaml action : CUSTOM description : authz policy with Cloud IAP name : AUTHZ POLICY NAME httpRules : - from : sources : - ipBlocks : - prefix : \"10.0.0.0\" length : 24 customProvider : cloudIap : {} target : loadBalancingScheme : EXTERNAL MANAGED resources : - https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ LOCATION /forwardingRules/ FORWARDING RULE ID EOF Run the following command to enable IAP on a forwarding rule. gcloud network-security authz-policies import AUTHZ POLICY NAME \\ --source=policy.yaml \\ --location= LOCATION \\ --project= PROJECT ID Replace the following: PROJECT ID : The Google Cloud project ID."
+        ]
+      },
+      {
+        "title": "\"Enable IAP for Compute Engine \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "source_id": "site-docs-root",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "API Run the following command to prepare a policy.json file. cat << EOF > policy.json { \"name\": \" AUTHZ POLICY NAME \", \"target\": { \"loadBalancingScheme\": \"INTERNAL MANAGED\", \"resources\": [ \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ LOCATION /forwardingRules/ FORWARDING RULE ID \" ], }, \"action\": \"CUSTOM\", \"httpRules\": [ { \"from\": { \"sources\": { \"ipBlocks\": [ { \"prefix\": \"10.0.0.0\", \"length\": 24 } ] } } } ], \"customProvider\": { \"cloudIap\": {} } } EOF Run the following command to enable IAP on a forwarding rule. curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Accept: application/json\" \\ -H \"Content-Type: application/json\" \\ -d @policy.json \\ \"https://networksecurity.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /authzPolicies\" Replace the following: PROJECT ID : The Google Cloud project ID.",
+          "Enable IAP on a forwarding rule You can enable IAP on a forwarding rule by using the load balancer authorization policies framework. gcloud Run the following command to prepare a policy.yaml file.",
+          "The policy allows clients with an IP address range of 10.0.0.0/24 to enable IAP on a forwarding rule. $ cat << EOF > policy.yaml action : CUSTOM description : authz policy with Cloud IAP name : AUTHZ POLICY NAME httpRules : - from : sources : - ipBlocks : - prefix : \"10.0.0.0\" length : 24 customProvider : cloudIap : {} target : loadBalancingScheme : EXTERNAL MANAGED resources : - https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ LOCATION /forwardingRules/ FORWARDING RULE ID EOF Run the following command to enable IAP on a forwarding rule. gcloud network-security authz-policies import AUTHZ POLICY NAME \\ --source=policy.yaml \\ --location= LOCATION \\ --project= PROJECT ID Replace the following: PROJECT ID : The Google Cloud project ID."
+        ]
+      },
+      {
+        "title": "Method: getIamPolicy \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/getIamPolicy",
+        "source_id": "site-api-reference",
+        "final_score": 228,
+        "relevance": "",
+        "evidence_snippets": [
+          "IAM Permissions Requires one of the following IAM permissions on the resource resource, depending on the resource type: iap.gateway.getIamPolicy iap.tunnel.getIamPolicy iap.tunnelDestGroups.getIamPolicy iap.tunnelInstances.getIamPolicy iap.tunnelLocations.getIamPolicy iap.tunnelZones.getIamPolicy iap.web.getIamPolicy iap.webServices.getIamPolicy iap.webServiceVersions.getIamPolicy iap.webTypes.getIamPolicy For more information, see the IAM documentation .",
+          "More information about managing access via IAP can be found at: https://cloud.google.com/iap/docs/managing-access#managing access via the api HTTP request POST https://iap.googleapis.com/v1/{resource= }:getIamPolicy The URL uses gRPC Transcoding syntax.",
+          "Request body The request body contains data with the following structure: JSON representation { \"options\" : { object ( GetPolicyOptions ) } } Fields options object ( GetPolicyOptions ) OPTIONAL: A GetPolicyOptions object for specifying options to v1.getIamPolicy ."
+        ]
+      },
+      {
+        "title": "Method: setIamPolicy \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/setIamPolicy",
+        "source_id": "site-docs-reference",
+        "final_score": 228,
+        "relevance": "",
+        "evidence_snippets": [
+          "IAM Permissions Requires one of the following IAM permissions on the resource resource, depending on the resource type: iap.gateway.setIamPolicy iap.tunnel.setIamPolicy iap.tunnelDestGroups.setIamPolicy iap.tunnelInstances.setIamPolicy iap.tunnelLocations.setIamPolicy iap.tunnelZones.setIamPolicy iap.web.setIamPolicy iap.webServices.setIamPolicy iap.webServiceVersions.setIamPolicy iap.webTypes.setIamPolicy For more information, see the IAM documentation .",
+          "More information about managing access via IAP can be found at: https://cloud.google.com/iap/docs/managing-access#managing access via the api HTTP request POST https://iap.googleapis.com/v1/{resource= }:setIamPolicy The URL uses gRPC Transcoding syntax.",
+          "Home Documentation Security Identity-Aware Proxy Reference Send feedback Method: setIamPolicy Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "iap.gateway.getIamPolicy",
+      "iap.gateway.setIamPolicy",
+      "iap.googleapis.com",
+      "iap.httpsResourceAccessor",
+      "iap.tunnel.getIamPolicy",
+      "iap.tunnel.setIamPolicy",
+      "iap.tunnelDestGroups.getIamPolicy",
+      "iap.tunnelDestGroups.setIamPolicy",
+      "iap.tunnelInstances.getIamPolicy",
+      "iap.tunnelInstances.setIamPolicy",
+      "iap.tunnelLocations.getIamPolicy",
+      "iap.tunnelLocations.setIamPolicy",
+      "iap.tunnelZones.getIamPolicy",
+      "iap.tunnelZones.setIamPolicy",
+      "iap.web.getIamPolicy",
+      "iap.web.setIamPolicy",
+      "iap.webServices.getIamPolicy",
+      "iap.webServices.setIamPolicy",
+      "iap.webServiceVersions.getIamPolicy",
+      "iap.webServiceVersions.setIamPolicy",
+      "iap.webTypes.getIamPolicy",
+      "iap.webTypes.setIamPolicy",
+      "networksecurity.googleapis.com",
+      "policy.json",
+      "policy.yaml",
+      "settings.json",
+      "v1.getIamPolicy"
+    ],
+    "missing_inventory_roles": [
+      "roles/iap.httpsResourceAccessor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/getIamPolicy",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/setIamPolicy"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/getIamPolicy",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/setIamPolicy"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/getIamPolicy",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/setIamPolicy"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/getIamPolicy",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/setIamPolicy"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/getIamPolicy",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/setIamPolicy"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/getIamPolicy",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/setIamPolicy"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/getIamPolicy",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/setIamPolicy"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/getIamPolicy",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/setIamPolicy"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/getIamPolicy",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/setIamPolicy"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/getIamPolicy",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/setIamPolicy"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/getIamPolicy",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/TopLevel/setIamPolicy"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Custom health checks for Ingress",
+  "feature_slug": "custom-health-checks-for-ingress",
+  "summary": "Custom health checks for Ingress are generally available across all Ingress types, with parameters specified in a Kubernetes BackendConfig.",
+  "extended_definition": "Custom health checks for Ingress are generally available across all Ingress types, with parameters specified in a Kubernetes BackendConfig.",
+  "lifecycle": {
+    "latest_feature_date": "2020-11-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 167,
+        "relevance": "",
+        "evidence_snippets": [
+          "Ingress-nginx custom snippets allows retrieval of ingress-nginx service account tokens and secrets across all namespaces.",
+          "Ingress-nginx custom snippets allows retrieval of ingress-nginx service account tokens and secrets across all namespaces.",
+          "Ingress-nginx custom snippets allows retrieval of ingress-nginx service account tokens and secrets across all namespaces."
+        ]
+      },
+      {
+        "title": "\"Set up an external Application Load Balancer with Ingress \\_|\\_ GKE networking\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "source_id": "site-docs-root",
+        "final_score": 145,
+        "relevance": "",
+        "evidence_snippets": [
+          "Remarks By default, Ingress performs a periodic health check by making a GET request on the / path to determine the health of the application, and expects a HTTP 200 response.",
+          "It might take a few minutes to update the existing Ingress resource, re-configure the load balancer, and propagate the load balancing rules across the globe.",
+          "In comparison, Google Cloud health checks perform an internal check against the Pod IPs, determining availability at the instance level."
+        ]
+      },
+      {
+        "title": "Harden your cluster's security \\_|\\_ GKE security \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "source_id": "site-docs-reference-2",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see the following documents: Deploy an enterprise developer platform on Google Cloud Best practices for enterprise multi-tenancy Use tags to group Google Cloud resources Recommended : use tags to organize GKE resources for conditional policy enforcement and improved accountability across your teams.",
+          "Best practices Enforce policies across the Google Cloud resource hierarchy Enforce policies during workload admission Enforce policies across the Google Cloud resource hierarchy Recommended : to enforce security practices in your organization, folder, or project, use Organization Policy Service .",
+          "To implement and enforce the best practices in this document across your organization, consider the following services: Security Command Center : automatically check whether your clusters implement many of these best practices and check for other common misconfigurations."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster"
+      ]
+    }
+  ]
+}

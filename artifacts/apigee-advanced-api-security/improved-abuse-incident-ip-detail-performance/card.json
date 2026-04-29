@@ -1,0 +1,146 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.409Z",
+  "source_step08_card": "data/step-08/current/products/apigee-advanced-api-security/card.json",
+  "product_name": "Apigee Advanced API Security",
+  "product_slug": "apigee-advanced-api-security",
+  "feature_name": "Improved abuse incident IP detail performance",
+  "feature_slug": "improved-abuse-incident-ip-detail-performance",
+  "summary": "Abuse Detection now loads IP address-specific incident detail information faster for high-traffic IPs.",
+  "extended_definition": "Abuse Detection now loads IP address-specific incident detail information faster for high-traffic IPs.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+      "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+      "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Abuse detection \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 163,
+        "relevance": "",
+        "evidence_snippets": [
+          "Insights : Abuse detection incident details might include generative AI insights created using Google Cloud generative AI large language models (LLMs) .",
+          "Exclude traffic using the abuse detection incident details page To exclude one or multiple IP addresses : View the details for an incident.",
+          "You can access abuse detection either through the Apigee UI, as described below, or through the Incidents API or the Security stats API See Required roles and permissions for abuse detection for the roles and permissions needed to use abuse detection."
+        ]
+      },
+      {
+        "title": "Security actions overview and UI | Apigee | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-actions",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "The information displayed in the Attributes page is similar the Attributes view for the Abuse detection Incident details attributes .",
+          "API MONITORING API Monitoring overview Compare API Monitoring with Apigee Analytics Using the Timeline view Using the Investigate view Using the Recent view Setting up alerts and notifications Examples of alerts Fault codes ADVANCED API SECURITY Overview of Advanced API Security Apigee and Apigee hybrid Overview Getting started Detection rules Best practices Security reports Overview Manage security reports in the UI Manage security reports using the API Risk assessment Risk assessment overview and UI Security scores and profiles API Abuse detection Abuse detection UI Security stats API Incidents API Security feedback API Security alerts Security actions Security actions overview and UI Security actions API Multi-gateway risk assessment Overview API OBSERVATION Overview of API Observation Shadow APIs Shadow API Discovery overview Shadow API Discovery management APIs Shadow API Discovery audit logging Application Integration Use Application Integration Application Integration and Apigee proxy Integration target Subscription entitlements Application Integration policies IntegrationCallout policy SetIntegrationRequest policy Connectors Overview Get started with connectors Release notes API HUB What is Apigee API hub?",
+          "One way to identify which requests to take action on is to use the Abuse detection Detected traffic or Incident views, which show IP addresses and API keys that are sources of abuse."
+        ]
+      },
+      {
+        "title": "Detection rules \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note that one incident might be triggered by multiple detection rules, in which case all of the rules that triggered the incident are listed in the Abuse detection Environment details view.",
+          "Note: The Advanced API Security Abuse detection page uses detection rules to detect security incidents.",
+          "Model behavior To reduce the risk that bad actors can exploit the model, we do not expose specific details about how the model works or how incidents are detected."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:04.393Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Console link to Stackdriver logs",
+  "feature_slug": "console-link-to-stackdriver-logs",
+  "summary": "The cluster details page in the Google Cloud console includes a button that links directly to Stackdriver logs for a cluster.",
+  "extended_definition": "The cluster details page in the Google Cloud console includes a button that links directly to Stackdriver logs for a cluster.",
+  "lifecycle": {
+    "latest_feature_date": "2018-02-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-job-output",
+      "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-console",
+      "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-console"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Job output and logs \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-job-output",
+        "source_id": "site-docs-root",
+        "final_score": 170,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Spark driver logs The following tables list the effect of different property settings on the destination of Spark driver logs. spark: spark.submit.deployMode dataproc: dataproc.logging.stackdriver.job.driver.enable dataproc: dataproc.logging.stackdriver.job.yarn.container.enable Driver Output client false (default) true or false Streamed to client In Cloud Storage at the Managed Service for Apache Spark-generated driverOutputResourceUri Not in Logging client true true or false Streamed to client In Cloud Storage at the Managed Service for Apache Spark-generated driverOutputResourceUri In Logging: dataproc.job.driver under the job resource cluster false (default) false Not streamed to client Not in Cloud Storage In Logging yarn-userlogs under the cluster resource cluster true true Not streamed to client Not in Cloud Storage In Logging: dataproc.job.yarn.container under the job resource Spark executor logs The following tables list the effect of different property settings on the destination of Spark executor logs. dataproc: dataproc.logging.stackdriver.job.yarn.container.enable Executor log false (default) In Logging: yarn-userlogs under the cluster resource true In Logging dataproc.job.yarn.container under the job resource Spark jobs submitted without using the Managed Service for Apache Spark jobs API This section lists the effect of different property settings on the destination of Spark job logs when jobs are submitted without using the Managed Service for Apache Spark jobs API, for example when submitting a job directly on a cluster node using spark-submit or when using a Jupyter or Zeppelin notebook.",
+          "Note: The following cluster property settings are also required to enable job driver logs in Logging, and are set by default when a cluster is created: dataproc:dataproc.logging.stackdriver.enable=true and dataproc:jobs.file-backed-output.enable=true dataproc:dataproc.logging.stackdriver.job.yarn.container.enable true or false false Must be set at cluster creation time.",
+          "Spark driver logs The following tables list the effect of different property settings on the destination of Spark driver logs for jobs not submitted through the Managed Service for Apache Spark jobs API. spark: spark.submit.deployMode Driver Output client Streamed to client Not in Cloud Storage Not in Logging cluster Not streamed to client Not in Cloud Storage In Logging yarn-userlogs under the cluster resource Spark executor logs When Spark jobs are not submitted through the Managed Service for Apache Spark jobs API, executor logs are in Logging yarn-userlogs under the cluster resource."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a cluster by using the Google Cloud console \\_|\\_ Managed\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-console",
+        "source_id": "site-docs-reference",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a cluster by using the Google Cloud console This page shows you how to use the Google Cloud console to create a Managed Service for Apache Spark cluster, run a basic Apache Spark job in the cluster, and then modify the number of workers in the cluster.",
+          "Create a cluster In the Google Cloud console, go to the Managed Service for Apache Spark Clusters page.",
+          "To delete the cluster, on the Cluster details page for example-cluster , click delete Delete ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a cluster by using the Google Cloud console \\_|\\_ Managed\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-console",
+        "source_id": "site-docs-root",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a cluster by using the Google Cloud console This page shows you how to use the Google Cloud console to create a Managed Service for Apache Spark cluster, run a basic Apache Spark job in the cluster, and then modify the number of workers in the cluster.",
+          "Create a cluster In the Google Cloud console, go to the Managed Service for Apache Spark Clusters page.",
+          "To delete the cluster, on the Cluster details page for example-cluster , click delete Delete ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataproc.job.driver",
+      "dataproc.job.yarn.container",
+      "dataproc.logging.stackdriver.enable",
+      "dataproc.logging.stackdriver.job.driver.enable",
+      "dataproc.logging.stackdriver.job.yarn.container.enable",
+      "jobs.file",
+      "output.enable",
+      "spark.submit.deployMode"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-job-output",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-console",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-console"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:53.295Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "MySQL 8.0.30 support",
+  "feature_slug": "mysql-8-0-30-support",
+  "summary": "Cloud SQL for MySQL supports MySQL minor version 8.0.30.",
+  "extended_definition": "Cloud SQL for MySQL supports MySQL minor version 8.0.30.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 2,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/authorize-networks",
+      "https://docs.cloud.google.com/sql/docs/mysql/client-side-encryption",
+      "https://docs.cloud.google.com/sql/docs/mysql/cmek"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About client-side encryption \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/client-side-encryption",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 28,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a connection pool and create a new table in the database Java import com.zaxxer.hikari.HikariConfig ; import com.zaxxer.hikari.HikariDataSource ; import java.sql.Connection ; import java.sql.PreparedStatement ; import java.sql.SQLException ; import javax.sql.DataSource ; public class CloudSqlConnectionPool { public static DataSource createConnectionPool ( String dbUser , String dbPass , String dbName , String instanceConnectionName ) { HikariConfig config = new HikariConfig (); config . setJdbcUrl ( String . format ( \"jdbc:mysql:///%s\" , dbName )); config . setUsername ( dbUser ); config . setPassword ( dbPass ); config . addDataSourceProperty ( \"socketFactory\" , \"com.google.cloud.sql.mysql.SocketFactory\" ); config . addDataSourceProperty ( \"cloudSqlInstance\" , instanceConnectionName ); DataSource pool = new HikariDataSource ( config ); return pool ; } public static void createTable ( DataSource pool , String tableName ) throws SQLException { // Safely attempt to create the table schema. try ( Connection conn = pool . getConnection ()) { String stmt = String . format ( \"CREATE TABLE IF NOT EXISTS %s ( \" + \"vote id SERIAL NOT NULL, time cast timestamp NOT NULL, team CHAR(6) NOT NULL,\" + \"voter email VARBINARY(255), PRIMARY KEY (vote id) );\" , tableName ); try ( PreparedStatement createTableStatement = conn . prepareStatement ( stmt );) { createTableStatement . execute (); } } } } Python import sqlalchemy def init tcp connection engine ( db user : str , db pass : str , db name : str , db host : str ) - > sqlalchemy . engine . base .",
+          "String email = new String ( envAead . decrypt ( voteResults . getBytes ( 3 ), team . getBytes ())); System . out . println ( String . format ( \"%s\\t%s\\t%s\" , team , timeCast , email )); } } } } } Python import os import sqlalchemy import tink from .cloud kms env aead import init tink env aead from .cloud sql connection pool import init db from .encrypt and insert data import encrypt and insert data def main () - > None : \"\"\" Connects to the database, inserts encrypted data and retrieves encrypted data. \"\"\" db user = os . environ [ \"DB USER\" ] # e.g. \"root\", \"mysql\" db pass = os . environ [ \"DB PASS\" ] # e.g. \"mysupersecretpassword\" db name = os . environ [ \"DB NAME\" ] # e.g. \"votes db\" Set if connecting using TCP: db host = os . environ [ \"DB HOST\" ] # e.g. \"127.0.0.1\" Set if connecting using Unix sockets: db socket dir = os . environ . get ( \"DB SOCKET DIR\" , \"/cloudsql\" ) instance connection name = os . environ [ \"INSTANCE CONNECTION NAME\" ] e.g. \"project-name:region:instance-name\" credentials = os . environ . get ( \"GOOGLE APPLICATION CREDENTIALS\" , \"\" ) key uri = \"gcp-kms://\" + os . environ [ \"GCP KMS URI\" ] e.g. \"gcp-kms://projects/...path/to/key Tink uses the \"gcp-kms://\" prefix for paths to keys stored in Google Cloud KMS.",
+          "If it fails, an error will be thrown. voteStmt . execute (); System . out . println ( String . format ( \"Successfully inserted row into table %s\" , tableName )); } } } } Python import datetime import logging import os import sqlalchemy import tink from .cloud kms env aead import init tink env aead from .cloud sql connection pool import init db logger = logging . getLogger ( name ) def main () - > None : \"\"\" Connects to the database, encrypts and inserts some data. \"\"\" db user = os . environ [ \"DB USER\" ] # e.g. \"root\", \"mysql\" db pass = os . environ [ \"DB PASS\" ] # e.g. \"mysupersecretpassword\" db name = os . environ [ \"DB NAME\" ] # e.g. \"votes db\" Set if connecting using TCP: db host = os . environ [ \"DB HOST\" ] # e.g. \"127.0.0.1\" Set if connecting using Unix sockets: db socket dir = os . environ . get ( \"DB SOCKET DIR\" , \"/cloudsql\" ) instance connection name = os . environ [ \"INSTANCE CONNECTION NAME\" ] e.g. \"project-name:region:instance-name\" credentials = os . environ . get ( \"GOOGLE APPLICATION CREDENTIALS\" , \"\" ) key uri = \"gcp-kms://\" + os . environ [ \"GCP KMS URI\" ] e.g. \"gcp-kms://projects/...path/to/key Tink uses the \"gcp-kms://\" prefix for paths to keys stored in Google Cloud KMS."
+        ]
+      },
+      {
+        "title": "\"About customer-managed encryption keys (CMEK) \\_|\\_ Cloud SQL for MySQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+        "source_id": "site-docs-reference-3",
+        "final_score": 28,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Customer-managed encryption keys use the following format: projects / [ KMS PROJECT ID ] / locations / [ LOCATION ] / keyRings / [ KEY RING ] / cryptoKeys / [ KEY NAME ] If Cloud SQL is unable to access the key (such as if you disable the key version), Cloud SQL suspends the instance.",
+          "You can't use customer-managed encryption keys to encrypt: External servers (external primary instances and external replicas) Instance metadata, such as the instance ID, database version, machine type, flags, backup schedule, etc.",
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback About customer-managed encryption keys (CMEK) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Authorize with authorized networks \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/authorize-networks",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 28,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Terraform To configure authorized networks, use a Terraform resource . resource \"google sql database instance\" \"instance\" { name = \"mysql-instance-with-authorized-network\" region = \"us-central1\" database version = \"MYSQL 8 0\" settings { tier = \"db-f1-micro\" ip configuration { authorized networks { name = \"Network Name\" value = \"192.0.2.0/24\" expiration time = \"3021-11-15T16:19:00.094Z\" } } } set deletion protection to true, will ensure that one cannot accidentally delete this instance by use of Terraform whereas deletion protection enabled flag protects this instance at the GCP level. deletion protection = false } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.",
+          "You only need to do this once per directory. terraform init Optionally, to use the latest Google provider version, include the -upgrade option: terraform init -upgrade Apply the changes Review the configuration and verify that the resources that Terraform is going to create or update match your expectations: terraform plan Make corrections to the configuration as necessary.",
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback Authorize with authorized networks Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.sql.mysql.SocketFactory",
+      "com.zaxxer.hikari.HikariConfig",
+      "com.zaxxer.hikari.HikariDataSource",
+      "e.g",
+      "java.sql.Connection",
+      "java.sql.PreparedStatement",
+      "java.sql.SQLException",
+      "javax.sql.DataSource"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-networks",
+        "https://docs.cloud.google.com/sql/docs/mysql/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-networks",
+        "https://docs.cloud.google.com/sql/docs/mysql/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-networks",
+        "https://docs.cloud.google.com/sql/docs/mysql/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-networks",
+        "https://docs.cloud.google.com/sql/docs/mysql/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-networks",
+        "https://docs.cloud.google.com/sql/docs/mysql/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-networks",
+        "https://docs.cloud.google.com/sql/docs/mysql/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-networks",
+        "https://docs.cloud.google.com/sql/docs/mysql/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-networks",
+        "https://docs.cloud.google.com/sql/docs/mysql/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek"
+      ]
+    }
+  ]
+}

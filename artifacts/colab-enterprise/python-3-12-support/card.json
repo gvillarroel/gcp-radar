@@ -1,0 +1,196 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:57.510Z",
+  "source_step08_card": "data/step-08/current/products/colab-enterprise/card.json",
+  "product_name": "Colab Enterprise",
+  "product_slug": "colab-enterprise",
+  "feature_name": "Python 3.12 support",
+  "feature_slug": "python-3-12-support",
+  "summary": "Colab Enterprise supports Python 3.12 as the latest default Python version.",
+  "extended_definition": "Colab Enterprise supports Python 3.12 as the latest default Python version.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/colab/docs/authentication",
+      "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+      "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+      "https://docs.cloud.google.com/colab/docs/runtimes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Runtimes and runtime templates \\_|\\_ Colab Enterprise \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/colab/docs/runtimes",
+        "source_id": "site-docs-root",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Python versions Starting in May, 2025, when Colab Enterprise creates a default runtime template, the default runtime template is configured to use the latest version of Python (currently Python 3.12).",
+          "This means that when a new version of Python is available in Colab Enterprise, new runtimes created from the default runtime template will use the latest Python version.",
+          "Default runtime specifications Default runtimes and their corresponding default runtime templates include the following specifications: Specification Default Default with GPU Python version Latest available (currently Python 3.12) Latest available (currently Python 3.12) Machine type e2-standard-4 Depends on regional availability."
+        ]
+      },
+      {
+        "title": "Authenticate to Vertex AI \\_|\\_ Colab Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/colab/docs/authentication",
+        "source_id": "site-api-reference",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Colab Enterprise Reference Send feedback Authenticate to Vertex AI Stay organized with collections Save and categorize content based on your preferences.",
+          "How you authenticate to Colab Enterprise through Vertex AI depends on the interface you use to access the API and the environment where your code is running.",
+          "This document describes how to authenticate to Colab Enterprise through Vertex AI programmatically."
+        ]
+      },
+      {
+        "title": "Idle shutdown \\_|\\_ Colab Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "source_id": "site-iam-reference",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable the APIs Required roles To get the permissions that you need to create a runtime in Colab Enterprise, ask your administrator to grant you the Colab Enterprise Admin ( roles/aiplatform.colabEnterpriseAdmin ) IAM role on the project.",
+          "The default is Latest (currently Python 3.12).",
+          "Console To create a runtime template with specific idle shutdown settings: In the Google Cloud console, go to the Colab Enterprise Runtime templates page."
+        ]
+      },
+      {
+        "title": "Create a runtime template in Colab Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "source_id": "site-docs-root",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following sample uses the google colab runtime template Terraform resource to create a Colab Enterprise runtime template. resource \"google compute network\" \"my network\" { name = \"{{index $.Vars \"network name\"}}\" auto create subnetworks = false } resource \"google compute subnetwork\" \"my subnetwork\" { name = \"{{index $.Vars \"network name\"}}\" network = google compute network.my network.id region = \"us-central1\" ip cidr range = \"10.0.1.0/24\" } resource \"google colab runtime template\" \"{{$.PrimaryResourceId}}\" { name = \"{{index $.Vars \"runtime template name\"}}\" display name = \"Runtime template full\" location = \"us-central1\" description = \"Full runtime template\" machine spec { machine type = \"n1-standard-2\" accelerator type = \"NVIDIA TESLA T4\" accelerator count = \"1\" } data persistent disk spec { disk type = \"pd-standard\" disk size gb = 200 } network spec { enable internet access = true network = google compute network.my network.id subnetwork = google compute subnetwork.my subnetwork.id } labels = { k = \"val\" } idle shutdown config { idle timeout = \"3600s\" } euc config { euc disabled = false } shielded vm config { enable secure boot = false } network tags = [ \"abc\", \"def\" ] encryption spec { kms key name = \"{{index $.Vars \"key name\"}}\" } software config { env { name = \"TEST\" value = 1 } post startup script config { post startup script = \"echo 'hello world'\" post startup script url = \"gs://colab-enterprise-pss-secure/secure pss.sh\" post startup script behavior = \"RUN ONCE\" } colab image { release name = \"py312\" } } } Granting access to the runtime template After you create a runtime template, you must grant access to it for a principal to be able to use it.",
+          "To ensure that the Colab Enterprise service agent has the necessary permissions to use scheduled notebooks within a Shared VPC network, ask your administrator to grant the Compute Network User ( roles/compute.networkUser ) IAM role to the Colab Enterprise service agent on the host project.",
+          "Enable the APIs Required roles To get the permissions that you need to create a runtime template in Colab Enterprise, ask your administrator to grant you the Colab Enterprise Admin ( roles/aiplatform.colabEnterpriseAdmin ) IAM role on the project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.colabEnterpriseAdmin",
+      "compute.networkUser",
+      "network.id",
+      "network.my",
+      "pss.sh",
+      "subnetwork.id",
+      "subnetwork.my"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.colabEnterpriseAdmin",
+      "roles/compute.networkUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/authentication",
+        "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/authentication",
+        "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/authentication",
+        "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/authentication",
+        "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/authentication",
+        "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/authentication",
+        "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/authentication",
+        "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/authentication",
+        "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/authentication",
+        "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/authentication",
+        "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template"
+      ]
+    }
+  ]
+}

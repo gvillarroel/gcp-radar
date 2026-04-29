@@ -1,0 +1,150 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:51.449Z",
+  "source_step08_card": "data/step-08/current/products/cloud-quotas/card.json",
+  "product_name": "Cloud Quotas",
+  "product_slug": "cloud-quotas",
+  "feature_name": "Ongoing rollouts",
+  "feature_slug": "ongoing-rollouts",
+  "summary": "Cloud Quotas lets users view ongoing quota rollout activity.",
+  "extended_definition": "Cloud Quotas lets users view ongoing quota rollout activity.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/docs/quotas/known-issues",
+      "https://docs.cloud.google.com/docs/quotas/reference/rest/v1/folders.locations.services.quotaInfos",
+      "https://docs.cloud.google.com/docs/quotas/view-manage",
+      "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Known issues \\_|\\_ Cloud Quotas \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/quotas/known-issues",
+        "source_id": "site-docs-reference",
+        "final_score": 210,
+        "relevance": "",
+        "evidence_snippets": [
+          "If a quota rollout is in progress, an informational message appears at the top of the Cloud Quotas page and the rolling update indicator appears next to the quota values impacted by ongoing rollouts.",
+          "For more information, see View ongoing rollouts .",
+          "For details, see View ongoing rollouts ."
+        ]
+      },
+      {
+        "title": "View and manage quotas \\_|\\_ Cloud Quotas \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "source_id": "site-docs-root",
+        "final_score": 190,
+        "relevance": "",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to request quota adjustments, ask your administrator to grant you the following IAM roles on the project, folder, or organization: To view quotas: Quota Viewer ( roles/servicemanagement.quotaViewer ) To request quota adjustments: Quota Administrator ( roles/servicemanagement.quotaAdmin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "To view quota usage and values for all resources in your project, follow these steps: Console In the Google Cloud console, go to the IAM & Admin > Quotas & System Limits page: Go to Quotas & System Limits To focus on the information that you need, filter and sort the list as follows: To filter the list, enter the properties and values in the field.",
+          "Use the console view that you prefer: Console To view API-specific quotas from the Quotas & System Limits page using a filter: In the Google Cloud console, go to the IAM & Admin > Quotas & System Limits page: Go to Quotas & System Limits Click filter list Filter and select Service from the menu that appears."
+        ]
+      },
+      {
+        "title": "\"REST Resource: folders.locations.services.quotaInfos \\_|\\_ Cloud Quotas\\",
+        "url": "https://docs.cloud.google.com/docs/quotas/reference/rest/v1/folders.locations.services.quotaInfos",
+        "source_id": "site-api-reference",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Concurrent quotas are enforced on the total number of concurrent operations in flight at any given time. serviceRequestQuotaUri string URI to the page where users can request more quota for the cloud service—for example, https://console.cloud.google.com/iam-admin/quotas .",
+          "JSON representation { \"ongoingRollout\" : boolean } Fields ongoingRollout boolean Whether there is an ongoing rollout for a quota or not.",
+          "Resource: QuotaInfo JSON representation ContainerType QuotaIncreaseEligibility JSON representation IneligibilityReason DimensionsInfo JSON representation QuotaDetails JSON representation RolloutInfo JSON representation Methods Resource: QuotaInfo QuotaInfo represents information about a particular quota for a given project, folder or organization."
+        ]
+      },
+      {
+        "title": "\"Class CloudQuotasAsyncClient (0.6.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ClientInfo ) The Cloud Quotas API is an infrastructure service for Google Cloud that lets service consumers list and manage their resource usage limits.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import cloudquotas v1 async def sample create quota preference(): Create a client client = cloudquotas v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import cloudquotas v1 async def sample update quota preference(): Create a client client = cloudquotas v1 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "console.cloud.google.com",
+      "folders.locations.services.quotaInfos",
+      "googleapis.dev",
+      "options.html",
+      "servicemanagement.quotaAdmin",
+      "servicemanagement.quotaViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/servicemanagement.quotaAdmin",
+      "roles/servicemanagement.quotaViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/known-issues",
+        "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "https://docs.cloud.google.com/docs/quotas/reference/rest/v1/folders.locations.services.quotaInfos",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/known-issues",
+        "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "https://docs.cloud.google.com/docs/quotas/reference/rest/v1/folders.locations.services.quotaInfos",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/known-issues",
+        "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "https://docs.cloud.google.com/docs/quotas/reference/rest/v1/folders.locations.services.quotaInfos",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/known-issues",
+        "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "https://docs.cloud.google.com/docs/quotas/reference/rest/v1/folders.locations.services.quotaInfos",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/known-issues",
+        "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "https://docs.cloud.google.com/docs/quotas/reference/rest/v1/folders.locations.services.quotaInfos",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient"
+      ]
+    }
+  ]
+}

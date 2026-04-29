@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Containerd on Windows Server node images",
+  "feature_slug": "containerd-on-windows-server-node-images",
+  "summary": "Supports Containerd as the container runtime for Windows Server LTSC and SAC node images in supported GKE versions.",
+  "extended_definition": "Supports Containerd as the container runtime for Windows Server LTSC and SAC node images in supported GKE versions.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-images",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/building-windows-multi-arch-images"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Node images \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-images",
+        "source_id": "site-docs-reference-2",
+        "final_score": 257,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Ubuntu Ubuntu with containerd ( ubuntu containerd ) Windows Server Windows Server LTSC with containerd ( windows ltsc containerd ) (Supports both LTSC2022 and LTSC2019 node images) Container-Optimized OS The Container-Optimized OS from Google node images are based on a recent version of the Linux kernel and are optimized to enhance node security.",
+          "For more information about creating Windows Server 2022 node pools, see Create Windows Node Pools For more information about containerd node images, see Containerd node images .",
+          "Node image source projects The available node images for GKE clusters are contained in the following source projects: Container-Optimized OS images: gke-node-images Ubuntu images: ubuntu-os-gke-cloud Windows Server images: gke-windows-node-images In addition to the source projects listed above, GKE also uses the following source projects for exclusive usage by the GKE team : ubuntu-os-gke-cloud-private (reserved for exclusive usage of the GKE team) ubuntu-os-gke-cloud-devel (reserved for exclusive usage of the GKE team) You might need to know the source project names while setting up highly-secure clusters."
+        ]
+      },
+      {
+        "title": "\"Migrate nodes to containerd 2 \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+        "source_id": "site-docs-reference-2",
+        "final_score": 255,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "How GKE is transitioning to containerd 2 Review the following timeline to understand how GKE is transitioning existing clusters to use containerd 2: For Linux nodes with 1.32 and Windows Server nodes with 1.34, GKE uses containerd 1.7. containerd 1.7 deprecated both Docker Schema 1 images and the Container Runtime Interface (CRI) v1alpha2 API.",
+          "For Linux nodes with 1.33 and Windows Server nodes with 1.35, GKE uses containerd 2.0, which removes support for Docker Schema 1 images and the CRI v1alpha2 API.",
+          "Windows Server nodes : Windows Server nodes that run GKE 1.34 or earlier, with containerd node images, use containerd 1.7 or earlier versions."
+        ]
+      },
+      {
+        "title": "\"Building Windows Server multi-arch images \\_|\\_ Kubernetes Engine \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/building-windows-multi-arch-images",
+        "source_id": "site-docs-root",
+        "final_score": 220,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "However, Docker on Windows Server supports multi-arch (or multi-platform) container images that can run across multiple Windows Server versions.",
+          "For example: GKE version 1.15 supports Windows Server 1809 GKE version 1.16 supports Windows Server 1909 To upgrade from one GKE version to a later version automatically, you must build multi-arch images for your Windows workloads.",
+          "With multi-arch images, you can upgrade your Google Kubernetes Engine (GKE) Windows Server node pools to your preferred Windows Server version without rebuilding the image and changing the Pod specs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "docker.pkg.dev"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-images",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/building-windows-multi-arch-images"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-images",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/building-windows-multi-arch-images"
+      ]
+    }
+  ]
+}

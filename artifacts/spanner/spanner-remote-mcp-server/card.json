@@ -1,0 +1,123 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner remote MCP server",
+  "feature_slug": "spanner-remote-mcp-server",
+  "summary": "Spanner remote MCP server enables agentic AI applications such as Gemini CLI, Gemini Code Assist agent mode, and Claude.ai to interact with Spanner instances and databases, and is available in Preview.",
+  "extended_definition": "Spanner remote MCP server enables agentic AI applications such as Gemini CLI, Gemini Code Assist agent mode, and Claude.ai to interact with Spanner instances and databases, and is available in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/cloud-run-remote-function",
+      "https://docs.cloud.google.com/spanner/docs/query-operators-distributed",
+      "https://docs.cloud.google.com/spanner/docs/reference/mcp"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Spanner remote functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/cloud-run-remote-function",
+        "source_id": "site-docs-root",
+        "final_score": 80,
+        "relevance": "",
+        "evidence_snippets": [
+          "MAX LOSSLESS = 9007199254740992 @functions framework . http def batch add ( request ): try : return value = [] request json = request . get json () calls = request json [ 'calls' ] for call in calls : return value . append ( sum ([ int ( x ) if isinstance ( x , str ) else x for x in call if x is not None ])) replies = [ str ( x ) if x > MAX LOSSLESS or x < - MAX LOSSLESS else x for x in return value ] return json = jsonify ( { \"replies\" : replies } ) return return json except Exception as e : return jsonify ( { \"errorMessage\" : str ( e ) } ), 400 Assuming that the function is deployed in the project PROJECT ID in region us-east1 as the function name remote add , it can be accessed using the endpoint https://us-east1- PROJECT ID .cloudfunctions.net/remote add .",
+          "Required roles To ensure that your Spanner agent service account (service- PROJECT ID @gcp-sa-spanner.iam.gserviceaccount.com) has the necessary permissions to use Spanner remote functions, ask your administrator to grant the Spanner API Service Agent ( roles/spanner.serviceAgent ) IAM role to your Spanner agent service account (service- PROJECT ID @gcp-sa-spanner.iam.gserviceaccount.com) on the project.",
+          "Create a remote function To create a remote function: SQL Run the following CREATE FUNCTION statement in Spanner: CREATE FUNCTION REMOTE FUNCTION NAME ( x INT64 , y INT64 ) RETURNS INT64 NOT DETERMINISTIC LANGUAGE REMOTE OPTIONS ( endpoint = ENDPOINT URL , max batching rows = MAX BATCHING ROWS ); Replace the following: REMOTE FUNCTION NAME : the name of your remote function."
+        ]
+      },
+      {
+        "title": "MCP Reference: spanner.googleapis.com \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/reference/mcp",
+        "source_id": "site-docs-reference",
+        "final_score": 71,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "MCP servers connect AI applications to external systems such as databases and web services, translating their responses into a format that the AI application can understand.",
+          "For more information about using Google and Google Cloud remote MCP servers, see Google Cloud MCP servers overview .",
+          "Spanner MCP Server provides tools to interact with Spanner Server Endpoints An MCP service endpoint is the network address and communication interface (usually a URL) of the MCP server that an AI application (the Host for the MCP client) uses to establish a secure, standardized connection."
+        ]
+      },
+      {
+        "title": "Distributed operators \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/query-operators-distributed",
+        "source_id": "site-docs-reference",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following query demonstrates this operator: SELECT s . songname , s . songgenre FROM songs AS s WHERE s . singerid = 2 AND s . songgenre = 'ROCK' ; / -----------------+-----------+ SongName SongGenre +-----------------+-----------+ Starting Again ROCK The Second Time ROCK Fight Story ROCK +-----------------+----------- / The execution plan appears as follows: The distributed union operator sends subplans to remote servers, which perform a table scan across splits that satisfy the query's predicate WHERE s.SingerId = 2 AND s.SongGenre = 'ROCK' .",
+          "A distributed merge union executes the following steps: The root server sends a subquery to each remote server that hosts a split of the queried data.",
+          "Split pruning means the remote servers execute subplans only on splits that satisfy the predicate, improving latency and query performance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudfunctions.net",
+      "s.SingerId",
+      "s.SongGenre",
+      "spanner.googleapis.com",
+      "spanner.iam.gserviceaccount.com",
+      "spanner.serviceAgent"
+    ],
+    "missing_inventory_roles": [
+      "roles/spanner.serviceAgent"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/reference/mcp",
+        "https://docs.cloud.google.com/spanner/docs/cloud-run-remote-function",
+        "https://docs.cloud.google.com/spanner/docs/query-operators-distributed"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/reference/mcp",
+        "https://docs.cloud.google.com/spanner/docs/cloud-run-remote-function",
+        "https://docs.cloud.google.com/spanner/docs/query-operators-distributed"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/reference/mcp",
+        "https://docs.cloud.google.com/spanner/docs/cloud-run-remote-function",
+        "https://docs.cloud.google.com/spanner/docs/query-operators-distributed"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/reference/mcp",
+        "https://docs.cloud.google.com/spanner/docs/cloud-run-remote-function",
+        "https://docs.cloud.google.com/spanner/docs/query-operators-distributed"
+      ]
+    }
+  ]
+}

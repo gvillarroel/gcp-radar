@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner PostgreSQL spanner.date_bin function",
+  "feature_slug": "spanner-postgresql-spanner-date-bin-function",
+  "summary": "Spanner supports the PostgreSQL spanner.date_bin function in the PostgreSQL dialect.",
+  "extended_definition": "Spanner supports the PostgreSQL spanner.date_bin function in the PostgreSQL dialect.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 2,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "missing_exact_identifier_page",
+        "message": "No supporting page directly names the exact identifier(s): spanner.date_bin.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli",
+      "https://docs.cloud.google.com/spanner/docs/information-schema",
+      "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Information schema for PostgreSQL-dialect databases \\_|\\_ Spanner \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "source_id": "site-docs-reference",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "The default is public for PostgreSQL-dialect databases. table name character varying The name of the table or view that contains the column. column name character varying The name of the column. privilege type character varying The type of the privilege ( SELECT , INSERT , or UPDATE ). is grantable character varying Not used.",
+          "The default is public for PostgreSQL-dialect databases. table name character varying The name of the table or view that contains the column. column name character varying The name of the column. privilege type character varying The type of the privilege ( SELECT , INSERT , or UPDATE ). is grantable character varying Not used.",
+          "The default is public for PostgreSQL-dialect databases. table name character varying The name of the table or view. privilege type character varying The type of the privilege ( SELECT , INSERT , UPDATE , or DELETE ). is grantable character varying Not used."
+        ]
+      },
+      {
+        "title": "\"Information schema for GoogleSQL-dialect databases \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "source_id": "site-docs-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you are using a PostgreSQL-dialect database, see Information schema for PostgreSQL-dialect databases .",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]",
+          "All other principals can see only indexes that meet either of the following requirements: Any of the SELECT , INSERT , or UPDATE fine-grained access control privileges are granted at the column level on all columns in the index to the current database role, to roles of which the current database role is a member, or to public ."
+        ]
+      },
+      {
+        "title": "Build context sets using Gemini CLI \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli",
+        "source_id": "site-docs-root",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "PostgreSQL interface note: The examples in this topic are intended for GoogleSQL-dialect databases.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-09 UTC.\"],[],[]]",
+          "To update the DB Context Enrichment extension, run the following command: gemini extensions update mcp-db-context-enrichment To update the DB Context Enrichment extension or to replace the GEMINI API KEY , run the following command: gemini extensions config mcp-db-context-enrichment GEMINI API KEY Replace GEMINI API KEY with your Gemini API key."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "spanner.date_bin"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli",
+        "https://docs.cloud.google.com/spanner/docs/information-schema"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli",
+        "https://docs.cloud.google.com/spanner/docs/information-schema"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli",
+        "https://docs.cloud.google.com/spanner/docs/information-schema"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:22.154Z",
+  "source_step08_card": "data/step-08/current/products/manufacturing-data-engine/card.json",
+  "product_name": "Manufacturing Data Engine",
+  "product_slug": "manufacturing-data-engine",
+  "feature_name": "Lookup buckets",
+  "feature_slug": "lookup-buckets",
+  "summary": "Lets parsers retrieve reference data.",
+  "extended_definition": "Lets parsers retrieve reference data.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/lifecycle",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/contextualize/how-to-create-a-metadata-instance",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket-version"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a metadata bucket version \\_|\\_ Manufacturing Data Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket-version",
+        "source_id": "site-docs-reference",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Lookup buckets only serve as source of reference data that can be retrieved by a parser using the Whistle function lookupByKey and used to enrich records.",
+          "The natural key of a metadata instance in a LOOKUP bucket can be any key, but records can't reference instances in a lookup bucket, and the instances are not written to any data sink.",
+          "Types and parsers always reference a specific bucket version, so when you create a new version, it doesn't affect the existing data processing pipelines."
+        ]
+      },
+      {
+        "title": "\"Create a metadata bucket \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket",
+        "source_id": "site-docs-reference",
+        "final_score": 115,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Lookup buckets only serve as source of reference data that can be retrieved by the parser using the Whistle function lookupByKey and used to enrich records.",
+          "The natural key of a metadata instance in a LOOKUP bucket can be any key, but records can't reference instances in a lookup bucket, and the instances are not written to any data sink.",
+          "Reference : Buckets that define a set of key value pairs between a user-defined Key and an instance."
+        ]
+      },
+      {
+        "title": "\"Create metadata instances \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/contextualize/how-to-create-a-metadata-instance",
+        "source_id": "site-docs-reference",
+        "final_score": 111,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Metadata instances creation dynamically from parsers Metadata instances can be created dynamically from parsers when you use the lookup by value method of resolving metadata instance references.",
+          "You can use the API to load metadata instances into MDE from external sources and to populate lookup buckets with reference data.",
+          "Dynamically from parsers (record and tag buckets only)."
+        ]
+      },
+      {
+        "title": "Package lifecycle \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/lifecycle",
+        "source_id": "site-docs-reference",
+        "final_score": 79,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Response body (JSON) : { \"configurationPackages\" : [ { \"id\" : \"0505ed17-ad20-458d-9128-d44783704acb\" , \"name\" : \"default-configuration-package\" , \"provider\" : \"google\" , \"latestStatus\" : \"ACTIVATED\" , \"status\" : [ { \"code\" : \"NOT LOADED\" , \"updatedTime\" : \"1742501535249\" , \"messages\" : [] }, { \"code\" : \"VALIDATED\" , \"updatedTime\" : \"1742501535249\" , \"messages\" : [ { \"severity\" : \"INFO\" , \"message\" : \"Successfully validated all buckets in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully validated all message classes in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully validated all metadata-instances in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully validated all parsers in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully validated all types in the package\" } ] }, { \"code\" : \"LOADED\" , \"updatedTime\" : \"1742501536740\" , \"messages\" : [ { \"severity\" : \"INFO\" , \"message\" : \"Successfully applied all message classes in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully applied all buckets in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully validated all metadata-instances in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully applied all types in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully applied all parsers in the package\" } ] }, { \"code\" : \"ACTIVATED\" , \"updatedTime\" : \"1742501537289\" , \"messages\" : [ { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all ingestion-specification, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all message classes, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all buckets, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all metadata instance, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all types, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all parsers, if there is any, in the package\" } ] } ] }, { \"id\" : \"4adaecc2-54b9-482b-90d6-380f5d4b2be6\" , \"name\" : \"basic-configuration\" , \"provider\" : \"google\" , \"latestStatus\" : \"ACTIVATED\" , \"status\" : [ { \"code\" : \"NOT LOADED\" , \"updatedTime\" : \"1742566718210\" , \"messages\" : [] }, { \"code\" : \"VALIDATED\" , \"updatedTime\" : \"1742566718210\" , \"messages\" : [ { \"severity\" : \"INFO\" , \"message\" : \"Successfully validated all message classes in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully validated all parsers in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully validated all types in the package\" } ] }, { \"code\" : \"LOADED\" , \"updatedTime\" : \"1742566718696\" , \"messages\" : [ { \"severity\" : \"INFO\" , \"message\" : \"Successfully applied all message classes in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully applied all types in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully applied all parsers in the package\" } ] }, { \"code\" : \"ACTIVATED\" , \"updatedTime\" : \"1742566718792\" , \"messages\" : [ { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all ingestion-specification, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all message classes, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all buckets, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all metadata instance, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all types, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all parsers, if there is any, in the package\" } ] } ] } ], \"nextPageToken\" : \"\" } Console You can see the list of existing configuration packages on the Cloud Configuration section, in the Configurations page.",
+          "REST Execute the REST API request with the following information: Method : DELETE Endpoint : /configuration/v1/configuration-packages/$PACKAGE-ID Response code : 200 OK Response body (JSON) : { \"id\" : \"87e160db-8ff9-403a-a873-e6674f6ac3cb\" , \"name\" : \"postman-test-configuration-package\" , \"provider\" : \"google\" , \"latestStatus\" : \"DELETED\" , \"status\" : [ { \"code\" : \"NOT LOADED\" , \"updatedTime\" : \"1742550114832\" , \"messages\" : [] }, { \"code\" : \"VALIDATED\" , \"updatedTime\" : \"1742550114832\" , \"messages\" : [ { \"severity\" : \"INFO\" , \"message\" : \"Successfully validated all buckets in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully validated all ingestion-specifications in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully validated all message classes in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully validated all metadata-instances in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully validated all parsers in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully validated all types in the package\" } ] }, { \"code\" : \"LOADED\" , \"updatedTime\" : \"1742550115241\" , \"messages\" : [ { \"severity\" : \"INFO\" , \"message\" : \"Successfully applied all ingestion-specification in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully applied all message classes in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully applied all buckets in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully validated all metadata-instances in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully applied all types in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully applied all parsers in the package\" } ] }, { \"code\" : \"ACTIVATED\" , \"updatedTime\" : \"1742550115327\" , \"messages\" : [ { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all ingestion-specification, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all message classes, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all buckets, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all metadata instance, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all types, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all parsers, if there is any, in the package\" } ] }, { \"code\" : \"DELETED\" , \"updatedTime\" : \"1742567553260\" , \"messages\" : [ { \"severity\" : \"INFO\" , \"message\" : \"Successfully deleted all parsers, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully deleted all message classes, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully deleted all types, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all metadata instance, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully deleted all buckets, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully deleted all ingestion-specification, if there is any, in the package\" } ] } ] } Console Click Cloud Configuration .",
+          "Response body (JSON) : { \"id\" : \"4adaecc2-54b9-482b-90d6-380f5d4b2be6\" , \"name\" : \"basic-configuration\" , \"provider\" : \"google\" , \"latestStatus\" : \"ACTIVATED\" , \"status\" : [ { \"code\" : \"NOT LOADED\" , \"updatedTime\" : \"1742566718210\" , \"messages\" : [] }, { \"code\" : \"VALIDATED\" , \"updatedTime\" : \"1742566718210\" , \"messages\" : [ { \"severity\" : \"INFO\" , \"message\" : \"Successfully validated all message classes in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully validated all parsers in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully validated all types in the package\" } ] }, { \"code\" : \"LOADED\" , \"updatedTime\" : \"1742566718696\" , \"messages\" : [ { \"severity\" : \"INFO\" , \"message\" : \"Successfully applied all message classes in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully applied all types in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully applied all parsers in the package\" } ] }, { \"code\" : \"ACTIVATED\" , \"updatedTime\" : \"1742566718792\" , \"messages\" : [ { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all ingestion-specification, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all message classes, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all buckets, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all metadata instance, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all types, if there is any, in the package\" }, { \"severity\" : \"INFO\" , \"message\" : \"Successfully activated all parsers, if there is any, in the package\" } ] } ] } Console Click Cloud Configuration ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "v1.5.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket-version",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/contextualize/how-to-create-a-metadata-instance",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/lifecycle"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket-version",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/contextualize/how-to-create-a-metadata-instance",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/lifecycle"
+      ]
+    }
+  ]
+}

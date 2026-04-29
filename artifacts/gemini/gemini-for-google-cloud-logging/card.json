@@ -1,0 +1,172 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:11.292Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini",
+  "feature_name": "Gemini for Google Cloud logging",
+  "feature_slug": "gemini-for-google-cloud-logging",
+  "summary": "You can enable collection and storage of user input, contextual information, and responses for Gemini for Google Cloud.",
+  "extended_definition": "You can enable collection and storage of user input, contextual information, and responses for Gemini for Google Cloud.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+      "https://docs.cloud.google.com/gemini/docs/configure-logging",
+      "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure Gemini Code Assist Standard and Enterprise logging \\_|\\_ Gemini\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "source_id": "site-docs-root-2",
+        "final_score": 307,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If the command succeeds, it returns a response body that shows the log prompts and responses and log metadata set to false : { \"name\": \"projects/ CONTAINER PROJECT NAME /locations/global/loggingSettings/ LOGS SETTING ID \", \"createTime\": \"2025-01-23T15:22:49.717166932Z\", \"updateTime\": \"2025-01-23T15:22:49.717166932Z\", \"log prompts and responses\": false, \"log metadata\": false } Set up multi-project logging You can use logs from Gemini Code Assist to create metrics and dashboards for monitoring per-project usage.",
+          "Configure Gemini Code Assist logging The following sections provide steps required to enable the collection and storage of Gemini Code Assist Standard and Enterprise activity in Cloud Logging, including: Gemini Code Assist Standard and Enterprise prompts and response logs, such as user input, contextual information, and responses.",
+          "API To enable logging for Gemini Code Assist Standard and Enterprise, use the loggingSettings resource to define the logging settings you want, and use the loggingSettings.settingBindings resource to bind the settings to a project: Verify that you have enabled the Cloud Logging API in the project."
+        ]
+      },
+      {
+        "title": "\"Generate Gemini Code Assist metrics \\_|\\_ Gemini for Google Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "source_id": "site-docs-root",
+        "final_score": 295,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "List the number of unique users The following instructions describe how to use the gcloud CLI to list the number of unique users of Gemini Code Assist in the most recent 28-day period: In a shell environment, ensure that you have updated all installed components of the gcloud CLI to the latest version: gcloud components update Read the log entries for Gemini Code Assist users and usage: gcloud logging read 'resource.type=cloudaicompanion.googleapis.com/Instance labels.product= \"code assist\"' \\ --freshness 28d \\ --project PROJECT ID \\ --format \"csv(timestamp.date('%Y-%m-%d'),labels.user id)\" Replace PROJECT ID with your Google Cloud project ID.",
+          "For example, you can generate metrics that report the daily active usage or the acceptance of code recommendations for a variety of Google Cloud products, including Cloud Logging, Google Cloud CLI, Cloud Monitoring, and BigQuery.",
+          "Home Documentation AI and ML Gemini for Google Cloud Guides Send feedback Generate Gemini Code Assist metrics Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Set up Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 285,
+        "relevance": "",
+        "evidence_snippets": [
+          "Any custom roles that you create need the following permissions for you to assign and manage Gemini Code Assist licenses: consumerprocurement.orders.get consumerprocurement.orders.licensePools. consumerprocurement.orders.licensePools.update consumerprocurement.orders.licensePools.get consumerprocurement.orders.licensePools.assign consumerprocurement.orders.licensePools.unassign consumerprocurement.orders.licensePools.enumerateLicensedUsers Also note that for any of the preceding permissions to work, the Gemini for Google Cloud API needs to be enabled in the same Google Cloud project where you've assigned each permission.",
+          "Any custom roles that you create need the following permissions for you to access Gemini Code Assist Standard and Enterprise: cloudaicompanion.companions.generateChat cloudaicompanion.companions.generateCode cloudaicompanion.instances.completeCode cloudaicompanion.instances.completeTask cloudaicompanion.instances.generateCode cloudaicompanion.instances.generateText cloudaicompanion.instances.exportMetrics cloudaicompanion.instances.queryEffectiveSetting cloudaicompanion.instances.queryEffectiveSettingBindings serviceusage.services.enable Assign and manage licenses.",
+          "Enable the Gemini for Google Cloud API for Gemini using the gcloud services enable command : gcloud services enable cloudaicompanion.googleapis.com If you want to enable the Gemini for Google Cloud API in a different Google Cloud project, add the --project parameter: gcloud services enable cloudaicompanion.googleapis.com --project PROJECT ID Replace PROJECT ID with your Google Cloud project ID."
+        ]
+      },
+      {
+        "title": "\"Set up Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 285,
+        "relevance": "",
+        "evidence_snippets": [
+          "Any custom roles that you create need the following permissions for you to assign and manage Gemini Code Assist licenses: consumerprocurement.orders.get consumerprocurement.orders.licensePools. consumerprocurement.orders.licensePools.update consumerprocurement.orders.licensePools.get consumerprocurement.orders.licensePools.assign consumerprocurement.orders.licensePools.unassign consumerprocurement.orders.licensePools.enumerateLicensedUsers Also note that for any of the preceding permissions to work, the Gemini for Google Cloud API needs to be enabled in the same Google Cloud project where you've assigned each permission.",
+          "Any custom roles that you create need the following permissions for you to access Gemini Code Assist Standard and Enterprise: cloudaicompanion.companions.generateChat cloudaicompanion.companions.generateCode cloudaicompanion.instances.completeCode cloudaicompanion.instances.completeTask cloudaicompanion.instances.generateCode cloudaicompanion.instances.generateText cloudaicompanion.instances.exportMetrics cloudaicompanion.instances.queryEffectiveSetting cloudaicompanion.instances.queryEffectiveSettingBindings serviceusage.services.enable Assign and manage licenses.",
+          "Enable the Gemini for Google Cloud API for Gemini using the gcloud services enable command : gcloud services enable cloudaicompanion.googleapis.com If you want to enable the Gemini for Google Cloud API in a different Google Cloud project, add the --project parameter: gcloud services enable cloudaicompanion.googleapis.com --project PROJECT ID Replace PROJECT ID with your Google Cloud project ID."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaicompanion.companions.generateChat",
+      "cloudaicompanion.companions.generateCode",
+      "cloudaicompanion.googleapis.com",
+      "cloudaicompanion.instances.completeCode",
+      "cloudaicompanion.instances.completeTask",
+      "cloudaicompanion.instances.exportMetrics",
+      "cloudaicompanion.instances.generateCode",
+      "cloudaicompanion.instances.generateText",
+      "cloudaicompanion.instances.queryEffectiveSetting",
+      "cloudaicompanion.instances.queryEffectiveSettingBindings",
+      "consumerprocurement.orders.get",
+      "consumerprocurement.orders.licensePools",
+      "consumerprocurement.orders.licensePools.assign",
+      "consumerprocurement.orders.licensePools.enumerateLicensedUsers",
+      "consumerprocurement.orders.licensePools.get",
+      "consumerprocurement.orders.licensePools.unassign",
+      "consumerprocurement.orders.licensePools.update",
+      "labels.product",
+      "labels.user",
+      "resource.type",
+      "serviceusage.services.enable",
+      "timestamp.date"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini"
+      ]
+    }
+  ]
+}

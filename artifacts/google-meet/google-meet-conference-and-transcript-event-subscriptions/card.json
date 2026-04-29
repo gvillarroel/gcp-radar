@@ -1,0 +1,145 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.049Z",
+  "source_step08_card": "data/step-08/current/products/google-meet/card.json",
+  "product_name": "Google Meet",
+  "product_slug": "google-meet",
+  "feature_name": "Google Meet conference and transcript event subscriptions",
+  "feature_slug": "google-meet-conference-and-transcript-event-subscriptions",
+  "summary": "Calendar invitees can subscribe to Google Meet conference started and transcript file generated events through the Google Workspace Events API or Google Cloud Pub/Sub.",
+  "extended_definition": "Calendar invitees can subscribe to Google Meet conference started and transcript file generated events through the Google Workspace Events API or Google Cloud Pub/Sub.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/meet/api/guides/events-overview",
+      "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration",
+      "https://developers.google.com/workspace/meet/api/guides/overview",
+      "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Observe meeting events with Python and the Google Meet REST API \\_|\\_ Google\\",
+        "url": "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "source_id": "site-docs-root",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "AuthorizedSession ( USER CREDENTIALS ) body = { 'targetResource' : f \"//meet.googleapis.com/ { space name } \" , \"eventTypes\" : [ \"google.workspace.meet.conference.v2.started\" , \"google.workspace.meet.conference.v2.ended\" , \"google.workspace.meet.participant.v2.joined\" , \"google.workspace.meet.participant.v2.left\" , \"google.workspace.meet.recording.v2.fileGenerated\" , \"google.workspace.meet.transcript.v2.fileGenerated\" , ], \"payloadOptions\" : { \"includeResource\" : False , }, \"notificationEndpoint\" : { \"pubsubTopic\" : topic name }, \"ttl\" : \"86400s\" , } response = session . post ( \"https://workspaceevents.googleapis.com/v1/subscriptions\" , json = body ) return response Next, add the corresponding code to pull and process the events.",
+          "AuthorizedSession ( USER CREDENTIALS ) body = { \"targetResource\" : f \"//cloudidentity.googleapis.com/users/ { user name } \" , \"eventTypes\" : [ \"google.workspace.meet.conference.v2.started\" , \"google.workspace.meet.conference.v2.ended\" , \"google.workspace.meet.participant.v2.joined\" , \"google.workspace.meet.participant.v2.left\" , \"google.workspace.meet.recording.v2.fileGenerated\" , \"google.workspace.meet.transcript.v2.fileGenerated\" , ], \"payloadOptions\" : { \"includeResource\" : False , }, \"notificationEndpoint\" : { \"pubsubTopic\" : topic name }, \"ttl\" : \"86400s\" , } response = session . post ( \"https://workspaceevents.googleapis.com/v1/subscriptions\" , json = body ) return response service = build ( \"people\" , \"v1\" , credentials = USER CREDENTIALS ) response = ( service . people () . get ( resourceName = \"people/me\" , personFields = \"names,emailAddresses\" ) . execute () ) resource name = response . get ( \"resourceName\" ) if resource name . startswith ( \"people/\" ): resource name = resource name [ len ( \"people/\" ) :] subscription = subscribe to user ( topic name = TOPIC NAME , user name = resource name ) Make sure to add \"https://www.googleapis.com/auth/userinfo.profile\" in the authorize method in the credential samples above.",
+          "Message ) - > None : \"\"\"Handles an incoming event from the Google Cloud Pub/Sub API.\"\"\" event type = message . attributes . get ( \"ce-type\" ) handler = { \"google.workspace.meet.conference.v2.started\" : on conference started , \"google.workspace.meet.conference.v2.ended\" : on conference ended , \"google.workspace.meet.participant.v2.joined\" : on participant joined , \"google.workspace.meet.participant.v2.left\" : on participant left , \"google.workspace.meet.recording.v2.fileGenerated\" : on recording ready , \"google.workspace.meet.transcript.v2.fileGenerated\" : on transcript ready , } . get ( event type ) try : if handler is not None : handler ( message ) message . ack () except Exception as error : print ( \"Unable to process event\" ) print ( error ) def listen for events ( subscription name : str = None ): \"\"\"Subscribe to events on the subscription.\"\"\" subscriber = pubsub v1 ."
+        ]
+      },
+      {
+        "title": "Google Meet REST API overview \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/meet/api/guides/overview",
+        "source_id": "site-docs-root",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Common terms The following is a list of common terms used in this API: Artifact A file generated by Meet in response to a conference , such as recordings and transcripts .",
+          "For more information, see: Respond to events from Google Meet Subscribe to events using the Google Workspace Events API Subscribe to Google Meet events Use cases Apps can integrate with the Meet REST API to perform the following tasks: Before a conference : Tailor the conference experience as needed by creating the meeting space.",
+          "Calendar event An event in Google Calendar with multiple attendees, typically created by a meeting organizer , containing the joining info of a meeting."
+        ]
+      },
+      {
+        "title": "\"Configure meeting spaces and members \\_|\\_ Google Meet \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration",
+        "source_id": "site-docs-root",
+        "final_score": 198,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "OAuth scopes for settings Setting or accessing meetings settings requires the following OAuth scopes: Use case Scope code Set auto artifact generation for spaces created by other apps. https://www.googleapis.com/auth/meetings.space.settings Get or list artifacts from conferences created by other apps. https://www.googleapis.com/auth/meetings.space.readonly Get or list other pre-meeting settings of a meeting space created by a third-party app. https://www.googleapis.com/auth/meetings.space.created https://www.googleapis.com/auth/meetings.space.readonly Read and edit the settings for all meeting spaces a user can access through any other app, such as Calendar. https://www.googleapis.com/auth/meetings.space.settings For more information on OAuth scopes, see Meet REST API scopes .",
+          "Related topics Start or schedule a Google Meet video meeting \"Take notes for me\" in Google Meet Use Transcripts with Google Meet Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Difference between transcripts and smart notes While both meeting transcripts and smart notes (also known as \"take notes for me\") capture information from your meeting, these features serve different purposes and produce different artifacts."
+        ]
+      },
+      {
+        "title": "Respond to events from Google Meet \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/meet/api/guides/events-overview",
+        "source_id": "site-docs-root",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Limitations Calendar invitees and other participants invited to a conference can only receive the following events: google.workspace.meet.conference.v2.started and google.workspace.meet.transcript.v2.fileGenerated .",
+          "API Google Workspace Events API Meet REST API Source of events Conference record and users Space and conference record Supported events Conference record For a list of supported event types, see Event types for creating subscriptions in the Google Workspace Events API documentation.",
+          "In the meeting space, a participant joins an active conference, which populates a ParticipantSession resource and triggers a new event."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudidentity.googleapis.com",
+      "developers.google.com",
+      "main.py",
+      "meet.googleapis.com",
+      "meetings.space.created",
+      "meetings.space.readonly",
+      "meetings.space.settings",
+      "transcripts.entries",
+      "transcripts.entries.get",
+      "transcripts.entries.list",
+      "transcripts.get",
+      "userinfo.profile",
+      "workspaceevents.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/overview",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration",
+        "https://developers.google.com/workspace/meet/api/guides/events-overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/overview",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration",
+        "https://developers.google.com/workspace/meet/api/guides/events-overview"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/overview",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration",
+        "https://developers.google.com/workspace/meet/api/guides/events-overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/overview",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration",
+        "https://developers.google.com/workspace/meet/api/guides/events-overview"
+      ]
+    }
+  ]
+}

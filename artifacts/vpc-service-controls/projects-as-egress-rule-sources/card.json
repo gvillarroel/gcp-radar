@@ -1,0 +1,205 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:34.271Z",
+  "source_step08_card": "data/step-08/current/products/vpc-service-controls/card.json",
+  "product_name": "VPC Service Controls",
+  "product_slug": "vpc-service-controls",
+  "feature_name": "Projects as egress rule sources",
+  "feature_slug": "projects-as-egress-rule-sources",
+  "summary": "Lets service perimeter egress rules specify projects as allowed source entities.",
+  "extended_definition": "Lets service perimeter egress rules specify projects as allowed source entities.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/create-service-perimeters",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Ingress and egress rules \\_|\\_ VPC Service Controls \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "source_id": "site-docs-reference",
+        "final_score": 285,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Ingress and egress rules allow you to grant access to Google Cloud resources in a perimeter based on the context of the API request: Constrain identity types or identities that can be used given a source network, IP address, or device.",
+          "Unsupported features The following features are currently unsupported for ingress and egress rules: Identifying Google Cloud resources by labels instead of projects.",
+          "VPC Service Controls uses ingress and egress rules to allow access to and from the resources and clients protected by service perimeters."
+        ]
+      },
+      {
+        "title": "\"Configure IAM roles in ingress and egress rules \\_|\\_ VPC Service Controls\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "source_id": "site-docs-reference",
+        "final_score": 247,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This page describes how to use Identity and Access Management (IAM) roles in ingress and egress rules to allow access to resources protected by service perimeters.",
+          "VPC Service Controls uses ingress and egress rules to allow access to and from the resources and clients protected by service perimeters.",
+          "Unsupported IAM roles The following table lists the unsupported IAM roles from specific services: Product Unsupported roles Identity and Access Management roles/iam.denyReviewer roles/iam.oauthClientViewer roles/iam.operationViewer roles/iam.workforcePoolEditor roles/iam.workforcePoolViewer roles/iam.workloadIdentityPoolViewer roles/iam.workforcePoolEditor roles/iam.workforcePoolViewer Limitations You can't use a role-based ingress or egress rule to allow requests to set the IAM allow policy of a project across the perimeter boundary."
+        ]
+      },
+      {
+        "title": "\"Secure data exchange with ingress and egress rules \\_|\\_ VPC Service Controls\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange",
+        "source_id": "site-docs-root",
+        "final_score": 247,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Assume that you have defined the following three perimeters: Sensitive 1 name: accessPolicies/222/servicePerimeters/Sensitive1 status: resources: - projects/111 restrictedServices: - bigquery.googleapis.com - containerregistry.googleapis.com - logging.googleapis.com vpcAccessibleServices: enableRestriction: true allowedServices: - RESTRICTED SERVICES title: Sensitive Data 1 Sensitive 2 name: accessPolicies/222/servicePerimeters/Sensitive2 status: resources: - projects/222 restrictedServices: - bigquery.googleapis.com - containerregistry.googleapis.com - logging.googleapis.com vpcAccessibleServices: enableRestriction: true allowedServices: - RESTRICTED SERVICES title: Sensitive Data 2 #Logs name: accessPolicies/222/servicePerimeters/Logs status: resources: - projects/777 restrictedServices: - logging.googleapis.com vpcAccessibleServices: enableRestriction: true allowedServices: - RESTRICTED SERVICES title: Logs Perimeter To allow Sensitive1 and Sensitive2 to write logs to Logs perimeter, define the following egress rule in a file and save the file as logsegress.yaml : echo \"\"\" - egressTo: operations: - serviceName: logging.googleapis.com methodSelectors: - method: LoggingServiceV2.WriteLogEntries - method: LoggingService.WriteLogEntries resources: - projects/777 egressFrom: identityType: ANY IDENTITY \"\"\" > logsegress.yaml Apply the egress rules by running the following commands: gcloud beta access-context-manager perimeters update Sensitive1 --set-egress-policies=logsegress.yaml gcloud beta access-context-manager perimeters update Sensitive2 --set-egress-policies=logsegress.yaml A similar configuration can be specified for any other sensitive data perimeter that needs to write to the logs perimeter.",
+          "You can define the following ingress and egress rules: Anon Perimeter echo \"\"\" - ingressFrom: identityType: ANY IDENTITY sources: - resource: projects/111 ingressTo: operations: - serviceName: storage.googleapis.com methodSelectors: - method: google.storage.Write - method: google.storage.objects.create resources: - \\\" \\\" \"\"\" > anoningress.yaml echo \"\"\" - egressTo: operations: - serviceName: storage.googleapis.com methodSelectors: - method: google.storage.Write - method: google.storage.objects.create resources: - projects/999 egressFrom: identityType: ANY IDENTITY \"\"\" > anonegress.yaml PHI Perimeter echo \"\"\" - egressTo: operations: - serviceName: storage.googleapis.com methodSelectors: - method: \\\" \\\" resources: - projects/222 egressFrom: identityType: ANY IDENTITY \"\"\" > phiegress.yaml Apply the ingress and egress rules by running the following commands: gcloud beta access-context-manager perimeters update AnonPerimeter --set-ingress-policies=anoningress.yaml --set-egress-policies=anonegress.yaml gcloud beta access-context-manager perimeters update PhiPerimeter --set-egress-policies=phiegress.yaml Grant access to a third-party Compute Engine disk image The following diagram shows a Compute Engine resource in a service perimeter that requires access to a Compute Engine disk image in a third-party image project that is outside the perimeter: Assume that you have defined the following perimeter: name: accessPolicies/222/servicePerimeters/Example status: resources: - projects/111 - projects/222 restrictedServices: - compute.googleapis.com - containerregistry.googleapis.com title: Example You now need to grant read access to disk images in project 999 , which is in a different organization.",
+          "Share data by using Pub/Sub between two organizations that use VPC Service Controls The following diagram shows two organizations, Org1 and Org2 , which use VPC Service Controls and share data by using a Pub/Sub topic: Assume that you have defined the following perimeters: Org 1 Perimeter Definition name: accessPolicies/222/servicePerimeters/Example1 status: resources: - projects/111 restrictedServices: - pubsub.googleapis.com title: Example1 Org 2 Perimeter Definition name: accessPolicies/333/servicePerimeters/Example2 status: resources: - projects/222 restrictedServices: - pubsub.googleapis.com title: Example2 To enable data exchange, Org1 must define the following egress rule that allows the subscription and save the file as org1egress.yaml : Org1: Org1's perimeter must allow a Pub/Sub subscription to project 222. echo \"\"\" - egressTo: operations: - serviceName: pubsub.googleapis.com methodSelectors: - method: Subscriber.CreateSubscription resources: - projects/222 egressFrom: identityType: ANY IDENTITY \"\"\" > org1egress.yaml Org2 must define a corresponding ingress rule allowing the subscription and save the file as org2ingress.yaml ."
+        ]
+      },
+      {
+        "title": "\"Create a service perimeter \\_|\\_ VPC Service Controls \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/create-service-perimeters",
+        "source_id": "site-docs-reference",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To allow access that involves an API client or resources within the perimeter to resources outside a perimeter, do the following: In the Egress rules pane, click Add an egress rule .",
+          "For example, the following command creates a new dry run mode perimeter named ProdPerimeter that includes projects example-project and example-project2 , and restricts the Cloud Storage and BigQuery APIs. gcloud access-context-manager perimeters \\ dry-run create ProdPerimeter --perimeter-title = \"Production Perimeter\" \\ --perimeter-type = \"regular\" \\ --perimeter-resources = projects/12345,projects/67890 \\ --perimeter-restricted-services = storage.googleapis.com,bigquery.googleapis.com \\ --perimeter-ingress-policies = ingress.yaml \\ --perimeter-egress-policies = egress.yaml \\ --policy = 330193482019 API To create a service perimeter, call accessPolicies.servicePerimeters.create .",
+          "To allow access to resources within a perimeter from API clients outside the perimeter, do the following: In the Ingress rules pane, click Add an ingress rule ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "anonegress.yaml",
+      "anoningress.yaml",
+      "bigquery.googleapis.com",
+      "compute.googleapis.com",
+      "compute.yaml",
+      "containerregistry.googleapis.com",
+      "egress.yaml",
+      "iam.denyReviewer",
+      "iam.oauthClientViewer",
+      "iam.operationViewer",
+      "iam.workforcePoolEditor",
+      "iam.workforcePoolViewer",
+      "iam.workloadIdentityPoolViewer",
+      "ingress.yaml",
+      "logging.googleapis.com",
+      "logsegress.yaml",
+      "org1egress.yaml",
+      "org2ingress.yaml",
+      "phiegress.yaml",
+      "pubsub.googleapis.com",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.denyReviewer",
+      "roles/iam.oauthClientViewer",
+      "roles/iam.operationViewer",
+      "roles/iam.workforcePoolEditor",
+      "roles/iam.workforcePoolViewer",
+      "roles/iam.workloadIdentityPoolViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/create-service-perimeters"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/create-service-perimeters"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/create-service-perimeters"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/create-service-perimeters"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/create-service-perimeters"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/create-service-perimeters"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/create-service-perimeters"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/create-service-perimeters"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/create-service-perimeters"
+      ]
+    }
+  ]
+}

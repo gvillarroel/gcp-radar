@@ -1,0 +1,119 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Google Sheets external table sheet and range selection",
+  "feature_slug": "google-sheets-external-table-sheet-and-range-selection",
+  "summary": "BigQuery external tables linked to Google Sheets can target a specific sheet or cell range.",
+  "extended_definition": "BigQuery external tables linked to Google Sheets can target a specific sheet or cell range.",
+  "lifecycle": {
+    "latest_feature_date": "2019-08-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/connected-sheets",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/tables"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create and use tables \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/tables",
+        "source_id": "site-docs-root",
+        "final_score": 218,
+        "relevance": "",
+        "evidence_snippets": [
+          "TABLES WHERE table name = 'population by zip 2010' ; The result is similar to the following: +------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ table name ddl +------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ population by zip 2010 CREATE TABLE bigquery-public-data.census bureau usa.population by zip 2010 ( geo id STRING OPTIONS(description=\"Geo code\"), zipcode STRING NOT NULL OPTIONS(description=\"Five digit ZIP Code Tabulation Area Census Code\"), population INT64 OPTIONS(description=\"The total count of the population for this segment.\"), minimum age INT64 OPTIONS(description=\"The minimum age in the age range.",
+          "Supported values for CREATE EXTERNAL TABLE include: AVRO , CLOUD BIGTABLE , CSV , DATASTORE BACKUP , DELTA LAKE ( preview ), GOOGLE SHEETS , NEWLINE DELIMITED JSON (or JSON ), ORC , PARQUET .",
+          "Applies to: CSV, JSON, and Google Sheets data. max staleness INTERVAL Applicable for BigLake tables and object tables ."
+        ]
+      },
+      {
+        "title": "Using Connected Sheets \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/connected-sheets",
+        "source_id": "site-docs-reference-5",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Open tables in Connected Sheets To open a table in Connected Sheets, follow these steps: In the Google Cloud console, go to the BigQuery page.",
+          "With Connected Sheets, you can preview your BigQuery data and use it in pivot tables, formulas, and charts built from the entire set of data.",
+          "When you use Connected Sheets to create a chart, pivot table, formula, or other computed cell from your data, Connected Sheets runs a query in BigQuery on your behalf."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example: replication interval seconds=900 Required permissions This statement requires the following IAM permissions : bigquery.tables.create bigquery.tables.get bigquery.tables.getData bigquery.tables.replicateData bigquery.jobs.create Example The following example creates a materialized view replica named mv replica in bq dataset : CREATE MATERIALIZED VIEW myproject . bq dataset . mv replica OPTIONS ( replication interval seconds = 600 ) AS REPLICA OF myproject.s3 dataset.my s3 mv CREATE EXTERNAL SCHEMA statement Creates a new federated dataset.",
+          "Required permissions This statement requires the following IAM permissions : Permission Resource bigquery.tables.delete The external table to delete. bigquery.tables.get The external table to delete.",
+          "Supported values for CREATE EXTERNAL TABLE include: AVRO , CLOUD BIGTABLE , CSV , DATASTORE BACKUP , DELTA LAKE ( preview ), GOOGLE SHEETS , NEWLINE DELIMITED JSON (or JSON ), ORC , PARQUET ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.jobs.create",
+      "bigquery.tables.create",
+      "bigquery.tables.delete",
+      "bigquery.tables.get",
+      "bigquery.tables.getData",
+      "bigquery.tables.replicateData",
+      "data.census",
+      "data.usa",
+      "dataset.my",
+      "myproject.s3",
+      "names.usa",
+      "usa.population"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/connected-sheets",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/connected-sheets",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/connected-sheets",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    }
+  ]
+}

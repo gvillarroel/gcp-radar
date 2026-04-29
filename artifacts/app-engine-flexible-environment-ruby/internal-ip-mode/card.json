@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.949Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-ruby/card.json",
+  "product_name": "App Engine flexible environment Ruby",
+  "product_slug": "app-engine-flexible-environment-ruby",
+  "feature_name": "Internal IP mode",
+  "feature_slug": "internal-ip-mode",
+  "summary": "Internal IP mode lets App Engine flexible environment instances run without external ephemeral IP addresses; Internal IP mode lets App Engine flexible environment instances run without external ephemeral IP addresses.",
+  "extended_definition": "Internal IP mode lets App Engine flexible environment instances run without external ephemeral IP addresses; Internal IP mode lets App Engine flexible environment instances run without external ephemeral IP addresses.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip",
+      "https://docs.cloud.google.com/appengine/docs/flexible/lifecycle/runtime-lifecycle",
+      "https://docs.cloud.google.com/appengine/docs/flexible/ruby/disable-external-ip"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure private internal-only services \\_|\\_ App Engine flexible environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip",
+        "source_id": "site-docs-reference",
+        "final_score": 72,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This ensures that you are using a version of the gcloud CLI that supports private IP addresses for flexible environment apps. gcloud components update In your app.yaml file, add the instance ip mode field to the network section and set it to internal .",
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Configure private internal-only services Stay organized with collections Save and categorize content based on your preferences.",
+          "This page shows the required configuration for exposing an App Engine flexible environment service only on its internal IP address."
+        ]
+      },
+      {
+        "title": "\"Configure private internal-only services \\_|\\_ App Engine flexible environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/ruby/disable-external-ip",
+        "source_id": "site-docs-reference-2",
+        "final_score": 72,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This ensures that you are using a version of the gcloud CLI that supports private IP addresses for flexible environment apps. gcloud components update In your app.yaml file, add the instance ip mode field to the network section and set it to internal .",
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Configure private internal-only services Stay organized with collections Save and categorize content based on your preferences.",
+          "This page shows the required configuration for exposing an App Engine flexible environment service only on its internal IP address."
+        ]
+      },
+      {
+        "title": "\"Runtime lifecycle \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/lifecycle/runtime-lifecycle",
+        "source_id": "site-docs-reference-2",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Resources Send feedback Runtime lifecycle Stay organized with collections Save and categorize content based on your preferences.",
+          "The App Engine flexible environment runtimes use open source components that are maintained by their respective communities.",
+          "Upon notification, you should prepare to upgrade your application to a newer runtime that is supported in the flexible environment ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip",
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/disable-external-ip",
+        "https://docs.cloud.google.com/appengine/docs/flexible/lifecycle/runtime-lifecycle"
+      ]
+    }
+  ]
+}

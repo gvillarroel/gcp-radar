@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Surge upgrades",
+  "feature_slug": "surge-upgrades",
+  "summary": "Surge upgrades let you configure the speed and disruption of node upgrades.",
+  "extended_definition": "Surge upgrades let you configure the speed and disruption of node upgrades.",
+  "lifecycle": {
+    "latest_feature_date": "2020-02-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/upgrading-stateful-workload"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Node upgrade strategies \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies",
+        "source_id": "site-docs-reference-2",
+        "final_score": 212,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Tune surge upgrade settings to balance speed and disruption The following table describes four different upgrade profiles as examples to help you understand different configurations: Description Configuration Typical use case Balanced (Default), slower but least disruptive maxSurge=1 maxUnavailable=0 Most workloads Fast, no surge resources, most disruptive maxSurge=0 maxUnavailable=20 Large node pools after jobs have to run to completion Fast, most surge resources and less disruptive maxSurge=20 maxUnavailable=0 Large node pools Slowest, disruptive, no surge resources maxSurge=0 maxUnavailable=1 Resource-constrained node pool with reservation Balanced (Default) The simplest way to take advantage of surge upgrades is to use the default configuration, maxSurge=1;maxUnavailable=0.",
+          "Surge upgrades are optimal for the following scenarios: if you want to optimize for the speed of upgrades. if workloads are more tolerant of disruptions, where graceful termination up to 60 minutes is acceptable. if you want to control costs by minimizing the creation of new nodes.",
+          "For more information about which node upgrade strategy is right for your environment, see the following: When to choose surge upgrades When to choose blue-green upgrades When to choose autoscaled blue-green upgrades With each of these strategies, you can configure upgrade settings to optimize the process based on your environment's needs."
+        ]
+      },
+      {
+        "title": "\"Deploy a Redis cluster on GKE \\_|\\_ Kubernetes Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/upgrading-stateful-workload",
+        "source_id": "site-docs-root-2",
+        "final_score": 170,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Configure a node upgrade strategy There are two node upgrade strategies you can use for the node pools in your GKE cluster: Blue-green upgrades and surge upgrades .",
+          "You use this value when you create scripts to test your application in the next section: export IP = EXTERNAL IP Configure best practices for node pool upgrades Perform these best practices for stateful applications to optimize for better availability during node pool upgrades.",
+          "Perform these best practices for node pool upgrades: Set up the Pod Disruption Budget (PDB) ."
+        ]
+      },
+      {
+        "title": "Run GPUs in GKE Standard node pools \\_|\\_ GKE AI/ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "source_id": "site-docs-root",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can also configure a node upgrade strategy for your node pool, such as surge upgrades , blue-green upgrades or short-lived upgrades .",
+          "By configuring these strategies, you can ensure that the node pools are upgraded in a way that achieves the optimal balance between speed and disruption for your environment.",
+          "To configure GKE to terminate your workloads gracefully within this notification timeframe, follow the steps in Manage GKE node disruption for GPUs and TPUs ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/upgrading-stateful-workload",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.987Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "array and array_distinct limit increase",
+  "feature_slug": "array-and-array-distinct-limit-increase",
+  "summary": "Raises the array and array_distinct aggregation limit from 25 to 1,000 elements.",
+  "extended_definition": "Raises the array and array_distinct aggregation limit from 25 to 1,000 elements.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Functions \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "Param data types ARRAY STRINGS , STRING Return type STRING Code samples Here are some examples of how to use the function: Example 1 This example joins an array with non-null elements and a delimiter. arrays.join string([\"foo\", \"bar\"], \",\") = \"foo,bar\" Example 2 This example joins an array with a null element and a delimiter. arrays.join string([\"foo\", NULL, \"bar\"], \",\") = \"foo,bar\" Example 3 This example joins an array with non-null elements and no delimiter. arrays.join string([\"foo\", \"bar\"]) = \"foobar\" arrays.length Supported in: Rules Search arrays.length(repeatedField) Description Returns the number of repeated field elements.",
+          "Since re.capture all() returns an array, you can use arrays.join string() to merge these matches into a single, readable list. rule CaptureAllIPs { meta: author = \"user@example.com\" events: $e.network.http.user agent != \"\" $captured ips = arrays.join string(re.capture all($e.network.http.user agent, \\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}), \", \") condition: $e } Known limitations Single capturing group: The regular expression used with re.capture all() must not contain more than one capturing group.",
+          "The output is in the form of a string. arrays.index to str([1, 3, 2], 2) // \"2\" arrays.join string Supported in: Rules Search arrays.join string(array of strings, optional delimiter) Description Converts an array of strings into a single string separated by the optional parameter."
+        ]
+      },
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 77,
+        "relevance": "",
+        "evidence_snippets": [
+          "Feature Programmatic access limit Web interface limit QPH limit 2,000 1,000 Simple query concurrency 40 40 Complex query concurrency 10 10 Concurrency limits Concurrency limits define the number of simultaneous search operations allowed per tenant: Simple queries: Queries that span less than one day, use a single data source, and don't include stats.",
+          "Understand suggestion ranking The editor organizes suggestions into three distinct categories to help you find fields quickly: Recently used fields : The top seven suggestions are based on fields you have used recently that match your typed field.",
+          "Grouped fields can also be used in combination with regular UDM fields as shown in the following example: ip = \"5.6.7.8\" AND metadata.event type = \"NETWORK CONNECTION\" Grouped fields have a separate section in Aggregations ."
+        ]
+      },
+      {
+        "title": "\"Composite detections \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example : rule CheckCuratedDetection with EDR and EG { meta: author = \"noone@cymbal.com\" events: $d.detection.detection.rule name = /SCC: Custom Modules: Configurable Bad Domain/ $d.detection.collection elements.references.event.network.dns.questions.name = $domain $d.detection.collection elements.references.event.principal.asset.hostname = $hostname $e.metadata.log type = \"LIMACHARLIE EDR\" $e.metadata.product event type = \"NETWORK CONNECTIONS\" $domain = re.capture($e.principal.process.command line, \"\\\\s([a-zA-Z0-9.-]+\\\\.[a-zA-Z0-9.-]+)$\") $hostname = re.capture($e.principal.hostname, \"([^.] )\") $prevalence.graph.metadata.entity type = \"DOMAIN NAME\" $prevalence.graph.metadata.source type = \"DERIVED CONTEXT\" $prevalence.graph.entity.hostname = $domain $prevalence.graph.entity.domain.prevalence.day count = 10 $prevalence.graph.entity.domain.prevalence.rolling max <= 5 $prevalence.graph.entity.domain.prevalence.rolling max > 0 match: $hostname over 1h outcome: $risk score = 80 $CL target = array($domain) condition: $e and $d and $prevalence } View composite detection findings You can view composite detection results in the Detections page.",
+          "Tip: Because the number of outcome variables is limited to 20, we recommend establishing a common taxonomy of outcome variables (such as hostname , ip address , user , and file bytes ) to reuse consistently across a wide range of rules.",
+          "When designing and implementing composite detections, consider the following limitations: SOAR case data availability : Composite detections don't have access to all SOAR case data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "arrays.index",
+      "arrays.join",
+      "arrays.length",
+      "cymbal.com",
+      "d.detection.collection",
+      "d.detection.detection.rule",
+      "e.file.size",
+      "e.metadata.log",
+      "e.metadata.product",
+      "e.network.http.user",
+      "e.principal.hostname",
+      "e.principal.process.command",
+      "e.user.userid",
+      "elements.references.event.network.dns.questions.name",
+      "elements.references.event.principal.asset.hostname",
+      "example.com",
+      "metadata.event",
+      "prevalence.graph.entity.domain.prevalence.day",
+      "prevalence.graph.entity.domain.prevalence.rolling",
+      "prevalence.graph.entity.hostname",
+      "prevalence.graph.metadata.entity",
+      "prevalence.graph.metadata.source",
+      "re.capture",
+      "window.avg",
+      "window.first"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    }
+  ]
+}

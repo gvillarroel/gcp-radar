@@ -1,0 +1,163 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:40.969Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "AlloyDB instance monitoring",
+  "feature_slug": "alloydb-instance-monitoring",
+  "summary": "AlloyDB instances can be monitored through System Insights, Cloud Monitoring, and cluster overview metrics.",
+  "extended_definition": "AlloyDB instances can be monitored through System Insights, Cloud Monitoring, and cluster overview metrics.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+      "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration",
+      "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Monitor the health of your clusters and instances \\_|\\_ AlloyDB for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "source_id": "site-docs-reference-2",
+        "final_score": 134,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Before you begin To monitor AlloyDB health issues in the Google Cloud console, you must have the following (Identity and Access Management (IAM)) roles: AlloyDB Administrator ( roles/alloydb.admin ) alloydb.instances.list alloydb.clusters.get Monitoring Viewer ( roles/monitoring.viewer ) monitoring.timeSeries.list Note: This role is required to view insight charts in the Clusters page, but it isn't required to view Database Center health issues.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Monitor the health of your clusters and instances Stay organized with collections Save and categorize content based on your preferences.",
+          "Filter the cluster list by issue The Issues column in the AlloyDB cluster list displays the highest priority issue affecting that cluster or any of its primary and read pool instances."
+        ]
+      },
+      {
+        "title": "\"Use AlloyDB for PostgreSQL with MCP, Gemini CLI, and other agents \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "source_id": "site-docs-reference-2",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before you begin To connect to your AlloyDB instance and use the available tools, you must have one of the following Identity and Access Management (IAM) roles, or a custom role with equivalent permissions: Task Role name Required Identity and Access Management (IAM) role Use read-only tools to list and get AlloyDB resources AlloyDB Viewer roles/alloydb.viewer Connect to an instance and run queries Cloud AlloyDB Client roles/alloydb.client Service Usage Consumer roles/serviceusage.serviceUsageConsumer Perform administrative tasks (such as creating or managing clusters, instances, and users) AlloyDB Admin roles/alloydb.admin Use the observability extension Monitoring Viewer roles/monitoring.viewer Before you can connect to your AlloyDB instance, complete the following steps to set up your project and database.",
+          "Resource management clusters, instances, users create cluster Create an AlloyDB cluster named sales-quarterly-db in the us-east1 region. get cluster Get the details for the cluster sales-quarterly-db . list clusters List all of my AlloyDB clusters. create instance Create a new read instance in the sales-quarterly-db cluster. get instance Show me the information for the instance sales-quarterly-db-rp . list instances List all instances in the sales-quarterly-db cluster. create user Note: The create user tool can create two types of database users: Database users with built-in authentication : these users are managed within the database and authenticate with a password.",
+          "Add the following configuration, replace the environment variables with your values, and save. { \"mcpServers\": { \"alloydb\": { \"command\": \"./PATH/TO/toolbox\", \"args\": [\"--prebuilt\",\"alloydb-postgres\",\"--stdio\"], \"env\": { \"ALLOYDB POSTGRES PROJECT\": \" PROJECT ID \", \"ALLOYDB POSTGRES REGION\": \" REGION \", \"ALLOYDB POSTGRES CLUSTER\": \" CLUSTER NAME \", \"ALLOYDB POSTGRES INSTANCE\": \" INSTANCE NAME \", \"ALLOYDB POSTGRES DATABASE\": \" DATABASE NAME \", \"ALLOYDB POSTGRES USER\": \" USERNAME \", \"ALLOYDB POSTGRES PASSWORD\": \" PASSWORD \" } } } } Note: To connect using a private IP address, add the following line to the env object: \"ALLOYDB POSTGRES IP TYPE\": \"private\" Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Manage your AlloyDB resources using Knowledge Catalog \\_|\\_ AlloyDB for\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration",
+        "source_id": "site-iam-reference",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "Knowledge Catalog automatically retrieves the following metadata from AlloyDB clusters, instances, databases, tables, columns, and views: Name Location (Region) Labels (for clusters and instances) Dataplex Integration Enabled (for clusters) Database Version Machine CPU Count (for instances) Availability Type (for instances) Charset (for databases) Collation (for databases) Owner Description (for table, views, columns, and foreign keys) Type (for clusters, instances, and machines) Columns Data Type Mode Primary Key Foreign Keys Referenced Table Column Mappings Creation Time Last modification Time Note: Knowledge Catalog refers to resources in AlloyDB and in other Google Cloud services as assets .",
+          "Knowledge Catalog operation AlloyDB resource Roles or permissions required Search for AlloyDB resources Cluster alloydb.clusters.get Columns alloydb.databases.get Instance alloydb.instances.get Database alloydb.databases.get Tables alloydb.databases.get Views alloydb.databases.get Caution: If you grant the roles/alloydb.viewer role at the project level, principals with this role can view the metadata for all AlloyDB instances in the project.",
+          "Because AlloyDB syncs in near real-time to Knowledge Catalog, the following resources are available: Clusters Columns Databases Instances Tables Views After discovery is complete, search for these assets— customers table and active users —in the Knowledge Catalog page of the Google Cloud console or by using the API."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.admin",
+      "alloydb.client",
+      "alloydb.clusters.get",
+      "alloydb.databases.get",
+      "alloydb.instances.get",
+      "alloydb.instances.list",
+      "alloydb.viewer",
+      "monitoring.timeSeries.list",
+      "monitoring.viewer",
+      "serviceusage.serviceUsageConsumer"
+    ],
+    "missing_inventory_roles": [
+      "roles/alloydb.admin",
+      "roles/alloydb.client",
+      "roles/alloydb.viewer",
+      "roles/monitoring.viewer",
+      "roles/serviceusage.serviceUsageConsumer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration"
+      ]
+    }
+  ]
+}

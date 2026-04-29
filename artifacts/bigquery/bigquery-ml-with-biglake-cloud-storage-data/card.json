@@ -1,0 +1,182 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery ML with BigLake Cloud Storage data",
+  "feature_slug": "bigquery-ml-with-biglake-cloud-storage-data",
+  "summary": "BigQuery ML can build models using Cloud Storage data through BigLake tables.",
+  "extended_definition": "BigQuery ML can build models using Cloud Storage data through BigLake tables.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+      "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Introduction to BigLake external tables \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "source_id": "site-docs-reference-5",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "The BigQuery Storage API enforces row- and column-level governance policies on all data access to BigLake tables, including through connectors.",
+          "BigQuery ML You can use BigQuery ML to train and run models on BigLake in Cloud Storage.",
+          "Supported data stores You can use BigLake tables with the following data stores: Amazon S3 by using BigQuery Omni Blob Storage by using BigQuery Omni Cloud Storage Temporary table support BigLake tables based on Cloud Storage can be temporary or permanent."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can add Spark properties using the following format: [(\"key1\",\"value1\"),(\"key2\", \"value2\")] For example: bq query --nouse legacy sql --dry run 'CREATE PROCEDURE my bq project.my dataset.spark proc() WITH CONNECTION my-project-id.us.my-connection OPTIONS( engine=\"SPARK\", main file uri=\"gs://my-bucket/my-pyspark-main.py\", properties=[ (\"spark.executor.instances\", \"3\"), (\"spark.yarn.am.memory\", \"3g\") ]) LANGUAGE PYTHON' Error in query string: Invalid value: \\ Invalid properties: \\ Attempted to set unsupported properties: \\ [ spark:spark.yarn.am.memory ] at [ 1 :1 ] Note: You can use the BigQuery dry run feature to validate your stored procedure without creating it. main file uri STRING The Cloud Storage URI of the main Python, Scala, or Java JAR file of the Spark application.",
+          "BigQuery bigquery = BigQueryOptions . getDefaultInstance (). getService (); QueryJobConfiguration config = QueryJobConfiguration . newBuilder ( ddl ). build (); // create a view using query and it will wait to complete job.",
+          "The source materialized view must be over an Amazon Simple Storage Service (Amazon S3) BigLake table."
+        ]
+      },
+      {
+        "title": "Use the BigLake metastore Iceberg REST catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "source_id": "site-docs-reference-5",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "To use credential vending, you must use a catalog in credential vending mode and add the X-Iceberg-Access-Delegation header to Iceberg REST catalog requests with a value of vended-credentials by adding the following line to the SparkSession builder: . config ( f 'spark.sql.catalog. { catalog name } .header.X-Iceberg-Access-Delegation' , 'vended-credentials' ) Example with credential vending The following example configures the query engine with credential vending: import pyspark from pyspark.context import SparkContext from pyspark.sql import SparkSession catalog name = \" CATALOG NAME \" spark = SparkSession . builder . appName ( \" APP NAME \" ) \\ . config ( f 'spark.sql.catalog. { catalog name } ' , 'org.apache.iceberg.spark.SparkCatalog' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .type' , 'rest' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .uri' , 'https://biglake.googleapis.com/iceberg/v1/restcatalog' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .warehouse' , 'gs:// CLOUD STORAGE BUCKET NAME ' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .header.x-goog-user-project' , ' PROJECT ID ' ) \\ . config ( f \"spark.sql.catalog. { catalog name } .token\" , \" TOKEN \" ) \\ . config ( f \"spark.sql.catalog. { catalog name } .oauth2-server-uri\" , \"https://oauth2.googleapis.com/token\" ) \\ . config ( f 'spark.sql.catalog. { catalog name } .io-impl' , 'org.apache.iceberg.gcp.gcs.GCSFileIO' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .header.X-Iceberg-Access-Delegation' , 'vended-credentials' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .rest-metrics-reporting-enabled' , 'false' ) \\ . config ( 'spark.sql.extensions' , 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions' ) \\ . config ( 'spark.sql.defaultCatalog' , ' CATALOG NAME ' ) \\ . getOrCreate () For more information, see the Headers in the RESTCatalog section of the Iceberg documentation.",
+          "Configure with credential vending To use credential vending, you must use a catalog in credential vending mode and add the X-Iceberg-Access-Delegation header to Iceberg REST catalog requests with a value of vended-credentials by adding the following line to the SparkSession builder: . config ( f 'spark.sql.catalog. { catalog name } .header.X-Iceberg-Access-Delegation' , 'vended-credentials' ) Example with credential vending The following example configures the query engine with credential vending: import pyspark from pyspark.context import SparkContext from pyspark.sql import SparkSession catalog name = \" CATALOG NAME \" spark = SparkSession . builder . appName ( \" APP NAME \" ) \\ . config ( f 'spark.sql.catalog. { catalog name } ' , 'org.apache.iceberg.spark.SparkCatalog' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .type' , 'rest' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .uri' , 'https://biglake.googleapis.com/iceberg/v1/restcatalog' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .warehouse' , 'gs:// CLOUD STORAGE BUCKET NAME ' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .header.x-goog-user-project' , ' PROJECT ID ' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .rest.auth.type' , 'org.apache.iceberg.gcp.auth.GoogleAuthManager' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .io-impl' , 'org.apache.iceberg.gcp.gcs.GCSFileIO' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .header.X-Iceberg-Access-Delegation' , 'vended-credentials' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .rest-metrics-reporting-enabled' , 'false' ) \\ . config ( 'spark.sql.extensions' , 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions' ) \\ . config ( 'spark.sql.defaultCatalog' , ' CATALOG NAME ' ) \\ . getOrCreate () For more information, see the Headers in the RESTCatalog section of the Iceberg documentation.",
+          "To use credential vending, you must use a catalog in credential vending mode and add the X-Iceberg-Access-Delegation header to Iceberg REST catalog requests with a value of vended-credentials by adding the following line to the SparkSession builder: . config ( f 'spark.sql.catalog. { catalog name } .header.X-Iceberg-Access-Delegation' , 'vended-credentials' ) Example with credential vending The following example configures the query engine with credential vending: import pyspark from pyspark.context import SparkContext from pyspark.sql import SparkSession catalog name = \" CATALOG NAME \" spark = SparkSession . builder . appName ( \" APP NAME \" ) \\ . config ( f 'spark.sql.catalog. { catalog name } ' , 'org.apache.iceberg.spark.SparkCatalog' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .type' , 'rest' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .uri' , 'https://biglake.googleapis.com/iceberg/v1/restcatalog' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .warehouse' , 'gs:// CLOUD STORAGE BUCKET NAME ' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .header.x-goog-user-project' , ' PROJECT ID ' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .rest.auth.type' , 'org.apache.iceberg.gcp.auth.GoogleAuthManager' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .io-impl' , 'org.apache.iceberg.gcp.gcs.GCSFileIO' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .header.X-Iceberg-Access-Delegation' , 'vended-credentials' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .rest-metrics-reporting-enabled' , 'false' ) \\ . config ( 'spark.sql.extensions' , 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions' ) \\ . config ( 'spark.sql.defaultCatalog' , ' CATALOG NAME ' ) \\ . getOrCreate () For more information, see the Headers in the RESTCatalog section of the Iceberg documentation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "biglake.admin",
+      "biglake.editor",
+      "biglake.googleapis.com",
+      "biglake.viewer",
+      "bigquery.dataEditor",
+      "dataset.spark",
+      "header.x",
+      "header.X",
+      "id.us.my",
+      "main.py",
+      "oauth2.googleapis.com",
+      "org.apache.iceberg.gcp.auth.GoogleAuthManager",
+      "org.apache.iceberg.gcp.gcs.GCSFileIO",
+      "org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions",
+      "org.apache.iceberg.spark.SparkCatalog",
+      "project.my",
+      "pyspark.context",
+      "pyspark.sql",
+      "rest.auth.type",
+      "spark.executor.instances",
+      "spark.sql.catalog",
+      "spark.sql.defaultCatalog",
+      "spark.sql.extensions",
+      "spark.yarn.am.memory",
+      "storage.admin",
+      "storage.objectUser",
+      "storage.objectViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/biglake.admin",
+      "roles/biglake.editor",
+      "roles/biglake.viewer",
+      "roles/bigquery.dataEditor",
+      "roles/storage.admin",
+      "roles/storage.objectUser",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    }
+  ]
+}

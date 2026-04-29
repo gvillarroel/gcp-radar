@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.658Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "VerifyAPIKey app group flow variables",
+  "feature_slug": "verifyapikey-app-group-flow-variables",
+  "summary": "The VerifyAPIKey policy now exposes app_group_app and app_group_name flow variables.",
+  "extended_definition": "The VerifyAPIKey policy now exposes app_group_app and app_group_name flow variables.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/introduction-flow-variables",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/flow-callout-policy",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Flow variables reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 177,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The AssignMessage policy lets you modify the variables in your API proxy flow. apigee A helper variable that provides information about execution time of the policy.",
+          "This flow variable is added by the VerifyAPIKey or VerifyAccessToken policy attached to the API proxy.",
+          "This flow variable is added by the VerifyAPIKey or VerifyAccessToken policy attached to the API proxy."
+        ]
+      },
+      {
+        "title": "FlowCallout policy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/flow-callout-policy",
+        "source_id": "site-api-reference",
+        "final_score": 156,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The shared flow can retrieve these variables for use in its own code. <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?> <FlowCallout async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"String-Handler\"> <DisplayName>String Handler</DisplayName> <Parameters> <Parameter name=\"input\">Gladys Kravitz</Parameter> <Parameter name=\"operations\">concatenate tolowercase</Parameter> <Parameter name=\"outputVariable\">string.handler.output</Parameter> </Parameters> <SharedFlowBundle>StringHandler</SharedFlowBundle> </FlowCallout> The following default shared flow includes a SharedStringFunctions JavaScript policy that executes when the shared flow is called from a FlowCallout policy. <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?> <SharedFlow name=\"default\"> <Step> <Name>SharedStringFunctions</Name> </Step> </SharedFlow> In the shared flow, the following SharedStringFunctions JavaScript policy specifies the SharedStringFunctions.js JavaScript file with the code to execute. <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?> <Javascript async=\"false\" continueOnError=\"false\" enabled=\"true\" timeLimit=\"200\" name=\"SharedStringFunctions\"> <DisplayName>SharedStringFunctions</DisplayName> <Properties/> <ResourceURL>jsc://SharedStringFunctions.js</ResourceURL> </Javascript> The following JavaScript, SharedStringFunctions.js , executes from the SharedStringFunctions JavaScript policy.",
+          "This script retrieves values from variables created from FlowCallout policy Parameter elements. // Input value from the calling API proxy . var handledString = context . getVariable ( \"input\" ); // Variable to use for output from this script . var outputVariable = context . getVariable ( \"outputVariable\" ); // A space - separated list of things to do to the input string . // Convert to lower case to handle unintentional capitals in configuration . var operation = context . getVariable ( \"operations\" ) . toLowerCase (); // If \"lowercase\" was given as an operation , convert the input to lowercase . if ( operation . includes ( \"tolowercase\" )) { handledString = handledString . toLowerCase (); } // If \"concatenate\" was given as an operation , concatenate the input . if ( operation . includes ( \"concatenate\" )) { handledString = handledString . replace ( / \\ s +/ g , '' ); } // Assign the resulting string to the output variable specified by // the calling API proxy . context . setVariable ( outputVariable , handledString ); Execution flows back from the JavaScript policy, to the shared flow, then to the FlowCallout policy in the originating API proxy.",
+          "The following shared flow definition includes a Verify-API-Key policy that executes when the shared flow is called from a FlowCallout policy in an API proxy. <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?> <SharedFlow name=\"default\"> <Step> <Name>Verify-API-Key</Name> </Step> </SharedFlow> The VerifyAPIKey policy within the preceding shared flow retrieves the key value and verifies it. <VerifyAPIKey async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"Verify-API-Key\"> <DisplayName>Verify API Key</DisplayName> <APIKey ref=\"request.queryparam.apikey\"/> </VerifyAPIKey> The following FlowCallout policy, used in an API proxy, calls the preceding shared flow to verify the API key."
+        ]
+      },
+      {
+        "title": "Using flow variables \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/introduction-flow-variables",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 154,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, the following AssignMessage policy takes the value of the variable client.ip and puts it in a request header called Client-IP . < AssignMessage name = \"set-ip-in-header\" > < AssignTo createNew = \"false\" transport = \"http\" type = \"request\" > request < / AssignTo > < Set > < Headers > < Header name = \"Client-IP\" > { client . ip } < / Header > < / Headers > < / Set > < IgnoreUnresolvedVariables>true < / IgnoreUnresolvedVariables > < / AssignMessage > In conditional flows, the curly braces are not necessary.",
+          "If set on the response flow, the header is sent back to the client app. < AssignMessage name = \"set-ip-in-header\" > < AssignTo createNew = \"false\" transport = \"http\" type = \"request\" > request < / AssignTo > < Set > < Headers > < Header name = \"My-Client-IP\" > { client . ip } < / Header > < / Headers > < / Set > < IgnoreUnresolvedVariables>true < / IgnoreUnresolvedVariables > < / AssignMessage > For another example, when a Quota policy executes, several flow variables are populated with policy-related values.",
+          "For example, this code sets a response header with the value obtained from the flow variable target.name. context.setVariable(\"response.header.X-Apigee-Target\", context.getVariable(\"target.name\")); This technique of using JavaScript to read and set variables is similar to the work you can do with the AssignMessage policy (shown previously)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "client.ip",
+      "context.getVariable",
+      "context.setVariable",
+      "request.queryparam.apikey",
+      "request.verb",
+      "response.header.X",
+      "string.handler.output",
+      "system.time",
+      "target.name"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/introduction-flow-variables",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/flow-callout-policy"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/introduction-flow-variables",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/flow-callout-policy"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/introduction-flow-variables",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/flow-callout-policy"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/introduction-flow-variables",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/flow-callout-policy"
+      ]
+    }
+  ]
+}

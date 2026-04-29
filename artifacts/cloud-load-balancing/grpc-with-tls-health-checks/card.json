@@ -1,0 +1,113 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:49.160Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "GRPC_WITH_TLS health checks",
+  "feature_slug": "grpc-with-tls-health-checks",
+  "summary": "Cloud Load Balancing supports GRPC_WITH_TLS health checks for gRPC backends with TLS enabled.",
+  "extended_definition": "Cloud Load Balancing supports GRPC_WITH_TLS health checks for gRPC backends with TLS enabled.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use health checks \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/health-checks",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 47,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To associate a health check with a backend service, use one of these API calls: backendServices.update backendServices.patch Associate legacy health checks with target pool-based regional external passthrough Network Load Balancers To associate a legacy health check with a new regional external passthrough Network Load Balancer, refer to Set up a regional external passthrough Network Load Balancer with a target pool .",
+          "Some load balancers might reference more than one health check if they can reference more than one backend service. gcloud compute backend-services update BACKEND SERVICE NAME \\ --region= REGION \\ --health-checks= HEALTH CHECK NAME \\ --health-checks-region= REGION API You can list backend services with the backendServices.list API call.",
+          "Home Documentation Networking Load Balancing Guides Send feedback Use health checks Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Health checks overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 41,
+        "relevance": "",
+        "evidence_snippets": [
+          "Google Cloud supports two types of gRPC health checks: GRPC WITH TLS health checks are used for health checking gRPC backends with TLS enabled.",
+          "Certain Envoy-based load balancers that use hybrid NEG backends don't support gRPC health checks.",
+          "Load balancer mode Legacy health checks supported Global external Application Load Balancer Classic Application Load Balancer Yes, if both of the following are true: The backends are instance groups."
+        ]
+      },
+      {
+        "title": "\"Backend authenticated TLS and backend mTLS overview \\_|\\_ Cloud Load Balancing\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/backend-authenticated-tls-backend-mtls",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": [
+          "Backend authenticated TLS and backend mTLS isn't supported for the following backend types: Global internet NEG backends App Engine backends Health checks used by backends don't implement TLS authentication or mTLS capabilities.",
+          "Home Documentation Networking Load Balancing Guides Send feedback Backend authenticated TLS and backend mTLS overview Stay organized with collections Save and categorize content based on your preferences.",
+          "Backend authenticated TLS and backend mTLS add the following capabilities to Application Load Balancers: The load balancer can validate certificates presented by backends against your own trust anchors."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts"
+      ]
+    }
+  ]
+}

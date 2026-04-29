@@ -1,0 +1,127 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.459Z",
+  "source_step08_card": "data/step-08/current/products/apigee-api-hub/card.json",
+  "product_name": "Apigee API hub",
+  "product_slug": "apigee-api-hub",
+  "feature_name": "gcloud CLI support for API hub",
+  "feature_slug": "gcloud-cli-support-for-api-hub",
+  "summary": "Adds Google Cloud CLI support to manage API hub catalog, API versions, and lifecycle metadata from the command line.",
+  "extended_definition": "Adds Google Cloud CLI support to manage API hub catalog, API versions, and lifecycle metadata from the command line.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/apihub/gcloud-cli-apihub",
+      "https://docs.cloud.google.com/apigee/docs/apihub/manage-api-deployments",
+      "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "gcloud CLI for API hub \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/gcloud-cli-apihub",
+        "source_id": "site-docs-reference-2",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "Uploading a specification gcloud CLI apihub apis versions specs create \"openapi-spec\" --api=\"my-api\" --version=\"v1\" --display-name=\"OpenAPI 3.0 Spec\" --contents='{\"openapi\": \"3.0.0\", ...}' --contents-mime-type=\"application/json\" --project=$PROJECT --location=$LOCATION Considerations Creating resources without specifying an ID is not supported in the CLI.",
+          "Command group Description apis Manage top-level API resources. apis versions Manage versions associated with an API. apis versions specs Manage API specifications. deployments Manage API deployments. attributes Manage user-defined and system attributes. runtime-project-attachments Manage attachments for runtime projects.",
+          "Listing APIs gcloud CLI apihub apis list --project=$PROJECT --location=$LOCATION Adding a version to an API gcloud CLI apihub apis versions create \"v1\" --api=\"my-api\" --display-name=\"Version 1.0\" --project=$PROJECT --location=$LOCATION You can specify the version as a positional argument or using the --version flag."
+        ]
+      },
+      {
+        "title": "Manage attributes \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 123,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following example shows the API call update the API Visibility user defined attribute. curl -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -d '{\"name\": \"projects/test-15/locations/us-central1/attributes/API Visibility\", display name\" : \"API Visibility Updated\", \"allowedValues\": [ { \"id\": \"internal\", \"displayName\": \"Internal\", \"description\": \"The API is visible internally in an organization\" }, { \"id\": \"external\", \"displayName\": \"External\", \"description\": \"The API is visible externally in an organization\" }, { \"id\": \"public\", \"displayName\": \"Public\", \"description\": \"The API is visible public in an organization\" } ]}' \\ -X PATCH https://autopush-apihub.sandbox.googleapis.com/v1/projects/common-dev-15/locations/us-central1/attributes/API Visibility?update mask=display name,allowed values It's important to understand how API hub interprets the request payload for the UpdateAttribute API.",
+          "The following example shows the API call to create the attribute-01 user defined attribute. curl -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -d '{ \"display name\" : \"custom attribute\", \"description\" : \"custom attribute details\", \"definition type\" : \"USER DEFINED\", \"scope\" : \"API\", \"data type\" : \"ENUM\", \"allowed values\" : [ { \"id\" : \"value-1\", \"display name\" : \"Value 1\", \"description\" : \"Value 1 test description\", \"immutable\" : false, }, { \"id\" : \"value-2\", \"display name\" : \"Value 2\", \"description\" : \"Value 2 test description\", \"immutable\" : false, }, ], \"cardinality\" : 4, \"mandatory\" : false }' \\ -X POST https://apihub.googleapis.com/v1/projects/test-15/locations/us-central1/attributes?attribute id=attribute-01 Edit a user defined attribute Caution: Avoid adding sensitive data to user defined attributes.",
+          "The following example shows the API call to update the values of the Business unit attribute. curl -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -d '{\"allowed values\": [ { \"id\": \"bu1\", \"display name\": \"Business unit 1\", \"description\": \"The API can be used by business unit 1\" }, { \"id\": \"bu2\", \"display name\": \"Business unit 2\", \"description\": \"The API can be used by business unit 2\" }, { \"id\": \"bu3\", \"display name\": \"Business unit 3\", \"description\": \"The API can be used by business unit 3\" }]}' \\ -X PATCH https://apihub.googleapis.com/v1/projects/test-15/locations/us-central1/attributes/system-business-unit?update mask=allowed values It's important to understand how API hub interprets the request payload for the UpdateAttribute API."
+        ]
+      },
+      {
+        "title": "Manage deployments \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/manage-api-deployments",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 115,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "REST To unlink a deployment from an API, use the Patch deployment API: curl -H \"Authorization: Bearer $(gcloud auth print-access-token)\" -H \"Content-Type: application/json\" -d '{ \"deployments\": [ \" DEPLOYMENT NAME \", \" DEPLOYMENT NAME \" ] }' -X PATCH https://apihub.googleapis.com/v1/projects/ HUB PROJECT /locations/ HUB LOCATION /apis/ API NAME /versions/ VERSION ID ?update mask=deployments Replace the following: HUB PROJECT : The name of your API hub host project.",
+          "REST Example linking a deployment to a version: curl \"https://apihub.googleapis.com/v1/projects/ HUB PROJECT /locations/ HUB LOCATION /apis/ API NAME /versions/ VERSION ID \" -H \"Authorization: Bearer: $(gcloud auth print-access-token)\" -X PATCH -H \"Content-Type: application/json\" \\ '{ \"deployments\": \" DEPLOYMENTS \" }' Replace the following: HUB PROJECT : The name of your API hub host project.",
+          "REST To add a new deployment using the Create a deployment API: curl -X POST -H \"Authorization: Bearer $(gcloud auth print-access-token)\" -H \"Content-Type: application/json\" -d '{ \"display name\": \" DISPLAY NAME \", \"description\": \" DESCRIPTION \", \"deployment type\": { \"enum values\": { \"values\": [ { \"id\": \" DEPLOYMENT TYPE \" } ] } }, \"resource uri\": \" RESOURCE URI \", \"endpoints\": [ \" ENDPOINT \" ] }' https://apihub.googleapis.com/v1/projects/ HUB PROJECT /locations/ HUB LOCATION /deployments?deployment id= DEPLOYMENT ID Replace the following: DISPLAY NAME : (Required) The display name of the deployment."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apihub.googleapis.com",
+      "apihub.sandbox.googleapis.com",
+      "attributes.projects",
+      "values.values"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/gcloud-cli-apihub",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-api-deployments"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/gcloud-cli-apihub",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-api-deployments"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/gcloud-cli-apihub",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-api-deployments"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/gcloud-cli-apihub",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-api-deployments"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/gcloud-cli-apihub",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-api-deployments"
+      ]
+    }
+  ]
+}

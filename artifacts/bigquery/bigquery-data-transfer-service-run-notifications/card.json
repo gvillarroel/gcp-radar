@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery Data Transfer Service run notifications",
+  "feature_slug": "bigquery-data-transfer-service-run-notifications",
+  "summary": "BigQuery Data Transfer Service can send notifications for transfer runs.",
+  "extended_definition": "BigQuery Data Transfer Service can send notifications for transfer runs.",
+  "lifecycle": {
+    "latest_feature_date": "2018-02-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/css-center-transfer-schedule-transfers",
+      "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer",
+      "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Schedule a Comparison Shopping Service Center Transfer \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/css-center-transfer-schedule-transfers",
+        "source_id": "site-api-reference",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see BigQuery Data Transfer Service Run Notifications .",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create a BigQuery Data Transfer Service data transfer: BigQuery Data Transfer Service permissions: bigquery.transfers.update bigquery.transfers.get BigQuery permissions: bigquery.datasets.get bigquery.datasets.getIamPolicy bigquery.datasets.update bigquery.datasets.setIamPolicy bigquery.jobs.create You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Required BigQuery roles To get the permissions that you need to create a BigQuery Data Transfer Service data transfer, ask your administrator to grant you the BigQuery Admin ( roles/bigquery.admin ) IAM role on your project."
+        ]
+      },
+      {
+        "title": "Load Facebook Ads data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In this example, when a daily transfer occurs, the BigQuery Data Transfer Service creates a new BigQuery destination table partition with a copy of your source table data from the current day, then automatically triggers backfill runs to update the BigQuery destination table partitions with your source table data from the past two days.",
+          "The automatically triggered backfill runs will either overwrite or incrementally update your BigQuery destination table, depending on whether or not incremental updates are supported in the BigQuery Data Transfer Service connector.",
+          "When this data transfer runs, the BigQuery Data Transfer Service automatically populates the following tables."
+        ]
+      },
+      {
+        "title": "Load Google Ads data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Transfer configuration for Customer ID 1234567890 A transfer configuration for the root manager account (Customer ID 1234567890) would generate data transfer runs that include the following Customer IDs: 1111 (via sub-manager account 1234) 2222 (via sub-manager account 1234) 3333 (via sub-manager account 1234) 4444 (via sub-manager account 1234) 5555 (via sub-manager account 567 and sub-manager account 1234) 6666 (via sub-manager account 567 and sub-manager account 1234) 7777 (via sub-manager account 567 and sub-manager account 1234) 8888 (via sub-manager account 89) 9999 (via sub-manager account 89) 0000 (individual Customer ID) Transfer configuration for Customer ID 1234 A transfer configuration for sub-manager account 123 (Customer ID 1234) would generate data transfer runs that include the following Customer IDs: 1111 2222 3333 4444 5555 (via sub-manager account 567) 6666 (via sub-manager account 567) 7777 (via sub-manager account 567) Transfer configuration for Customer ID 567 A transfer configuration for sub-manager account 567 (Customer ID 567) would generate data transfer runs that include the following Customer IDs: 5555 6666 7777 Transfer configuration for Customer ID 89 A transfer configuration for sub-manager account 89 (Customer ID 89) would generate data transfer runs that include the following Customer IDs: 8888 9999 Transfer configuration for Customer ID 0000 A transfer configuration for Customer ID 0000 would generate data transfer runs that include only the individual Customer ID: 0000 Migrate Google Ads data to MCCs To migrate your existing Google Ads data in BigQuery Data Transfer Service to the MCC structure, you can set up a backfill to add your existing data to the tables created by the transfer configuration linked to the manager account.",
+          "In this example, when a daily transfer occurs, the BigQuery Data Transfer Service creates a new BigQuery destination table partition with a copy of your source table data from the current day, then automatically triggers backfill runs to update the BigQuery destination table partitions with your source table data from the past two days.",
+          "The automatically triggered backfill runs will either overwrite or incrementally update your BigQuery destination table, depending on whether or not incremental updates are supported in the BigQuery Data Transfer Service connector."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.admin",
+      "bigquery.datasets.get",
+      "bigquery.datasets.getIamPolicy",
+      "bigquery.datasets.setIamPolicy",
+      "bigquery.datasets.update",
+      "bigquery.jobs.create",
+      "bigquery.transfers.get",
+      "bigquery.transfers.update"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/css-center-transfer-schedule-transfers",
+        "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/css-center-transfer-schedule-transfers",
+        "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/css-center-transfer-schedule-transfers",
+        "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/css-center-transfer-schedule-transfers",
+        "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer"
+      ]
+    }
+  ]
+}

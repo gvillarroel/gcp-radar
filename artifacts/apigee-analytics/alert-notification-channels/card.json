@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.448Z",
+  "source_step08_card": "data/step-08/current/products/apigee-analytics/card.json",
+  "product_name": "Apigee Analytics",
+  "product_slug": "apigee-analytics",
+  "feature_name": "Alert notification channels",
+  "feature_slug": "alert-notification-channels",
+  "summary": "API Monitoring supports sending alert notifications through email, PagerDuty, Slack, and webhooks.",
+  "extended_definition": "API Monitoring supports sending alert notifications through email, PagerDuty, Slack, and webhooks.",
+  "lifecycle": {
+    "latest_feature_date": "2021-02-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-deploy",
+      "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/cluster-monitoring-guidelines",
+      "https://docs.cloud.google.com/apigee/docs/hybrid/v1.11/cluster-monitoring-guidelines"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cluster monitoring guidelines \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/cluster-monitoring-guidelines",
+        "source_id": "site-docs-root",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use Warning and Critical threshold for notifications and alerting.",
+          "Cloud Monitoring dashboard MQL query : fetch apigee.googleapis.com/ProxyV2 metric 'apigee.googleapis.com/proxyv2/response count' filter (metric.response code != '200') align rate(1m) every 1m group by [metric.method, metric.response code, metric.fault code, metric.fault source, metric.apigee fault], [value response count aggregate: aggregate(value.response count)] Example Google Cloud operation Alert policy MQL : fetch apigee.googleapis.com/ProxyV2::apigee.googleapis.com/proxyv2/response count { filter (metric.response code == '500') ; ident } group by drop[metric.response code ], sliding(5m), .sum ratio scale '%' every (30s) condition val() > 5'%' Target error response count Use case : Use the targetv2/response count to monitor the API Target error response rate.",
+          "For example: In production, trigger an event notification if the read clientrequest latency value of 99thPercentile is 5 seconds for 3 minutes Cloud Monitoring dashboard MQL query : fetch k8s container metric 'apigee.googleapis.com/cassandra/clientrequest latency' filter (metric.scope == 'Read' && metric.unit == '99thPercentile') group by 1m, [value clientrequest latency mean: mean(value.clientrequest latency)] every 1m group by [metric.scope, metric.unit], [value clientrequest latency mean aggregate: aggregate(value clientrequest latency mean)] Cassandra write request latency Use case : The cassandra/clientrequest latency (with scope=Write) SLI metric provides Cassandra services write request latency (at 99th percentile, 95th percentile, or 75th percentile)."
+        ]
+      },
+      {
+        "title": "Cluster monitoring guidelines \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.11/cluster-monitoring-guidelines",
+        "source_id": "site-docs-root",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use Warning and Critical threshold for notifications and alerting.",
+          "Cloud Monitoring dashboard MQL query : fetch apigee.googleapis.com/ProxyV2 metric 'apigee.googleapis.com/proxyv2/response count' filter (metric.response code != '200') align rate(1m) every 1m group by [metric.method, metric.response code, metric.fault code, metric.fault source, metric.apigee fault], [value response count aggregate: aggregate(value.response count)] Example Google Cloud operation Alert policy MQL : fetch apigee.googleapis.com/ProxyV2::apigee.googleapis.com/proxyv2/response count { filter (metric.response code == '500') ; ident } group by drop[metric.response code ], sliding(5m), .sum ratio scale '%' every (30s) condition val() > 5'%' Target error response count Use case : Use the targetv2/response count to monitor the API Target error response rate.",
+          "For example: In production, trigger an event notification if the read clientrequest latency value of 99thPercentile is 5 seconds for 3 minutes Cloud Monitoring dashboard MQL query : fetch k8s container metric 'apigee.googleapis.com/cassandra/clientrequest latency' filter (metric.scope == 'Read' && metric.unit == '99thPercentile') group by 1m, [value clientrequest latency mean: mean(value.clientrequest latency)] every 1m group by [metric.scope, metric.unit], [value clientrequest latency mean aggregate: aggregate(value clientrequest latency mean)] Cassandra write request latency Use case : The cassandra/clientrequest latency (with scope=Write) SLI metric provides Cassandra services write request latency (at 99th percentile, 95th percentile, or 75th percentile)."
+        ]
+      },
+      {
+        "title": "\"Step 3: Configure and deploy an environment \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-deploy",
+        "source_id": "site-docs-reference",
+        "final_score": 52,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "metric.apigee",
+      "metric.fault",
+      "metric.method",
+      "metric.response",
+      "metric.scope",
+      "metric.unit",
+      "v1.10",
+      "v1.11",
+      "value.clientrequest",
+      "value.response"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/cluster-monitoring-guidelines",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.11/cluster-monitoring-guidelines",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-deploy"
+      ]
+    }
+  ]
+}

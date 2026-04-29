@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:51.326Z",
+  "source_step08_card": "data/step-08/current/products/cloud-profiler/card.json",
+  "product_name": "Cloud Profiler",
+  "product_slug": "cloud-profiler",
+  "feature_name": "Istio on Google Kubernetes Engine support",
+  "feature_slug": "istio-on-google-kubernetes-engine-support",
+  "summary": "Cloud Profiler supports profiling Istio services on Google Kubernetes Engine for Go, Java, Python, and Node.js workloads.",
+  "extended_definition": "Cloud Profiler supports profiling Istio services on Google Kubernetes Engine for Go, Java, Python, and Node.js workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2019-12-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/profiler/docs/profiling-go",
+      "https://docs.cloud.google.com/profiler/docs/profiling-java",
+      "https://docs.cloud.google.com/profiler/docs/profiling-nodejs",
+      "https://docs.cloud.google.com/profiler/docs/profiling-python"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Profiling Python applications \\_|\\_ Cloud Profiler \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/profiler/docs/profiling-python",
+        "source_id": "site-docs-root",
+        "final_score": 273,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported environments: Compute Engine Google Kubernetes Engine (GKE) App Engine flexible environment App Engine standard environment (requires Python 3 runtime environment ) Outside of Google Cloud (For information on the additional configuration requirements, see Profiling applications running outside of Google Cloud .) Enabling the Profiler API Before you use the profiling agent, ensure that the underlying Profiler API is enabled.",
+          "The Python profiling agent for Linux Alpine is supported only for Google Kubernetes Engine configurations.",
+          "Compute Engine For Compute Engine, do the following: Install the C/C++ compiler and development tools: sudo apt - get install - y build - essential Install pip: sudo apt - get install - y python3 - pip Install the Profiler package: pip3 install google - cloud - profiler Import the googlecloudprofiler module and call the googlecloudprofiler.start function as early as possible in your initialization code: import googlecloudprofiler def main (): Profiler initialization."
+        ]
+      },
+      {
+        "title": "Profiling Java applications \\_|\\_ Cloud Profiler \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/profiler/docs/profiling-java",
+        "source_id": "site-docs-root",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported environments: Compute Engine Google Kubernetes Engine (GKE) App Engine flexible environment App Engine standard environment (requires App Engine SDK version 1.9.64 or later) Managed Service for Apache Spark (For information, see Configuring Cloud Profiler for Managed Service for Apache Spark Spark and Hadoop jobs .) Outside of Google Cloud (For information on the additional configuration requirements, see Profiling applications running outside of Google Cloud .) Enabling the Profiler API Before you use the profiling agent, ensure that the underlying Profiler API is enabled.",
+          "Standard Environment Java 21 runtime environment If you don't use legacy bundled services, enable the profiler collection by modifying the app.yaml file to specify the agentpath flag using either of the following methods: Set the JAVA TOOL OPTIONS environment variable: runtime: java21 env variables: JAVA TOOL OPTIONS: \"-agentpath:/opt/cprof/profiler java agent.so=-logtostderr,-cprof enable heap sampling=true\" Specify the agentpath using the entrypoint element: runtime: java21 entrypoint: java \\ -agentpath:/opt/cprof/profiler java agent.so = -logtostderr,-cprof enable heap sampling = true \\ Main.java If you use legacy bundled services, enable the profiler collection by modifying the appengine-web.xml file to specify the agentpath flag using either of the following methods: Set the JAVA USER OPTS environment variable: <?xml version=\"1.0\" encoding=\"utf-8\"?> <appengine-web-app xmlns=\"http://appengine.google.com/ns/1.0\"> <env-variables> <env-var name=\"JAVA USER OPTS\" value=\"-agentpath:/opt/cprof/profiler java agent.so=-logtostderr,-cprof enable heap sampling=true\" /> </env-variables> </appengine-web-app> Set the CPROF ENABLE environment variable: <?xml version=\"1.0\" encoding=\"utf-8\"?> <appengine-web-app xmlns=\"http://appengine.google.com/ns/1.0\"> <env-variables> <env-var name=\"CPROF ENABLE\" value=\"-agentpath:/opt/cprof/profiler java agent.so=-logtostderr,-cprof enable heap sampling=true\" /> </env-variables> </appengine-web-app> Specify the agentpath using the entrypoint element: <?xml version=\"1.0\" encoding=\"utf-8\"?> <appengine-web-app xmlns=\"http://appengine.google.com/ns/1.0\"> <entrypoint> java -agentpath:/opt/cprof/profiler java agent.so=-logtostderr,-cprof enable heap sampling=true </entrypoint> </appengine-web-app> If a new profile type is configured for collection, ensure that you specify a new service version when you deploy your application.",
+          "If the profiling agent can't communicate with the metadata service, then you need to use this option. -cprof gce metadata server retry count -cprof gce metadata server retry sleep sec Together, these two options define the retry policy that the profiler agent uses when it communicates with the Compute Engine metadata service . to gather your Google Cloud project ID and zone information."
+        ]
+      },
+      {
+        "title": "Profiling Go applications \\_|\\_ Cloud Profiler \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/profiler/docs/profiling-go",
+        "source_id": "site-docs-root",
+        "final_score": 249,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported environments: Compute Engine Google Kubernetes Engine (GKE) App Engine flexible environment App Engine standard environment (requires Go 1.11 or higher) Outside of Google Cloud (For information on the additional configuration requirements, see Profiling applications running outside of Google Cloud .) Enabling the Profiler API Before you use the profiling agent, ensure that the underlying Profiler API is enabled.",
+          "Running with Linux Alpine The Go profiling agent for Linux Alpine is supported only for Google Kubernetes Engine configurations.",
+          "Config { // Service and ServiceVersion can be automatically inferred when running // on App Engine. // ProjectID must be set if not running on GCP. // ProjectID: \"my-project\", }); err != nil { // TODO: Handle error. } } When you run the application locally, set the ProjectID (the ID of your Google Cloud project) and Service parameters in profiler.Config , since they cannot be derived from a local environment."
+        ]
+      },
+      {
+        "title": "Profiling Node.js applications \\_|\\_ Cloud Profiler \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/profiler/docs/profiling-nodejs",
+        "source_id": "site-docs-root",
+        "final_score": 249,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported environments: Compute Engine Google Kubernetes Engine (GKE) App Engine flexible environment App Engine standard environment Outside of Google Cloud (For information on the additional configuration requirements, see Profiling applications running outside of Google Cloud .) Enabling the Profiler API Before you use the profiling agent, ensure that the underlying Profiler API is enabled.",
+          "Set the logLevel value in the same object that provides the service context: require ( '@google-cloud/profiler' ). start ( { serviceContext : { ... } logLevel : 3 } ); Running with Linux Alpine The Node.js profiling agent for Linux Alpine is supported only for Google Kubernetes Engine configurations.",
+          "See Service name and version arguments for more information on these configuration options: require ( ' @google-cloud/profiler ' ). start ({ serviceContext : { service : 'your-service' , version : '1.0.0' , }, }); App Engine For App Engine flexible environment and for App Engine standard environment, the require code is similar to the following: require ( ' @google-cloud/profiler ' ). start (); In App Engine, the service and version parameters are derived from the environment, so you don't have to specify them."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "agent.so",
+      "app.yaml",
+      "appengine.google.com",
+      "googlecloudprofiler.start",
+      "profiler.Config",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/profiler/docs/profiling-python",
+        "https://docs.cloud.google.com/profiler/docs/profiling-java",
+        "https://docs.cloud.google.com/profiler/docs/profiling-go",
+        "https://docs.cloud.google.com/profiler/docs/profiling-nodejs"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/profiler/docs/profiling-python",
+        "https://docs.cloud.google.com/profiler/docs/profiling-java",
+        "https://docs.cloud.google.com/profiler/docs/profiling-go",
+        "https://docs.cloud.google.com/profiler/docs/profiling-nodejs"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/profiler/docs/profiling-python",
+        "https://docs.cloud.google.com/profiler/docs/profiling-java",
+        "https://docs.cloud.google.com/profiler/docs/profiling-go",
+        "https://docs.cloud.google.com/profiler/docs/profiling-nodejs"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/profiler/docs/profiling-python",
+        "https://docs.cloud.google.com/profiler/docs/profiling-java",
+        "https://docs.cloud.google.com/profiler/docs/profiling-go",
+        "https://docs.cloud.google.com/profiler/docs/profiling-nodejs"
+      ]
+    }
+  ]
+}

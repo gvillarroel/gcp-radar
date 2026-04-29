@@ -1,0 +1,22 @@
+# Cloud Location Finder
+
+Service card: [card.json](../../artifacts/cloud-location-finder/card.json)
+
+Artifacts index: [cloud-location-finder](../../artifacts/cloud-location-finder/index.md)
+
+## Summary
+
+- Promoted features: 5
+- Skipped features during promotion: 0
+- Latest feature date: 2026-01-13
+- Service IAM status: {"explicit":3,"derived_from_permission_prefix":0,"unknown":2}
+
+## Features
+
+| Feature | IAM | Roles | Permissions | Coverage | Official sources |
+| --- | --- | --- | --- | --- | --- |
+| [Google Cloud CLI commands](../../artifacts/cloud-location-finder/google-cloud-cli-commands/README.md) | explicit | `roles/accessapproval.admin`<br>`roles/accessapproval.approver`<br>`roles/accessapproval.configEditor` | `accessapproval.requests.approve`<br>`accessapproval.requests.dismiss`<br>`accessapproval.requests.get`<br>`accessapproval.requests.invalidate`<br>`accessapproval.requests.list`<br>`accessapproval.serviceAccounts.get`<br>`accessapproval.settings.delete`<br>`accessapproval.settings.get` | MEDIUM | [source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)<br>[source](https://docs.cloud.google.com/location-finder/docs/quickstart)<br>[source](https://docs.cloud.google.com/python/docs/reference/google-cloud-locationfinder/latest/google.cloud.locationfinder_v1.services.cloud_location_finder.CloudLocationFinderAsyncClient) |
+| [Google Distributed Cloud connected locations support](../../artifacts/cloud-location-finder/google-distributed-cloud-connected-locations-support/README.md) | unknown | none | none | MEDIUM | [source](https://docs.cloud.google.com/location-finder/docs/reference/rest/v1/projects.locations.cloudLocations)<br>[source](https://docs.cloud.google.com/location-finder/docs/reference/rest/v1/projects.locations.cloudLocations/list)<br>[source](https://docs.cloud.google.com/location-finder/docs/reference/rest/v1alpha/projects.locations.cloudLocations) |
+| [Latency data between location types](../../artifacts/cloud-location-finder/latency-data-between-location-types/README.md) | unknown | none | none | MEDIUM | [source](https://docs.cloud.google.com/python/docs/reference/google-cloud-locationfinder/latest/google.cloud.locationfinder_v1.services.cloud_location_finder.CloudLocationFinderAsyncClient)<br>[source](https://docs.cloud.google.com/python/docs/reference/google-cloud-locationfinder/latest/google.cloud.locationfinder_v1.services.cloud_location_finder.CloudLocationFinderClient)<br>[source](https://docs.cloud.google.com/python/docs/reference/google-cloud-locationfinder/latest/google.cloud.locationfinder_v1.services.cloud_location_finder.pagers.ListCloudLocationsAsyncPager) |
+| [REST API](../../artifacts/cloud-location-finder/rest-api/README.md) | explicit | `roles/accessapproval.admin`<br>`roles/accessapproval.approver`<br>`roles/accessapproval.configEditor` | `accessapproval.requests.approve`<br>`accessapproval.requests.dismiss`<br>`accessapproval.requests.get`<br>`accessapproval.requests.invalidate`<br>`accessapproval.requests.list`<br>`accessapproval.serviceAccounts.get`<br>`accessapproval.settings.delete`<br>`accessapproval.settings.get` | MEDIUM | [source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)<br>[source](https://docs.cloud.google.com/location-finder/docs/reference/rest)<br>[source](https://docs.cloud.google.com/python/docs/reference/google-cloud-locationfinder/latest/google.cloud.locationfinder_v1.services.cloud_location_finder.CloudLocationFinderAsyncClient) |
+| [Virtual Private Cloud Service Controls support](../../artifacts/cloud-location-finder/virtual-private-cloud-service-controls-support/README.md) | explicit | `roles/accessapproval.admin`<br>`roles/accessapproval.approver`<br>`roles/accessapproval.configEditor` | `accessapproval.requests.approve`<br>`accessapproval.requests.dismiss`<br>`accessapproval.requests.get`<br>`accessapproval.requests.invalidate`<br>`accessapproval.requests.list`<br>`accessapproval.serviceAccounts.get`<br>`accessapproval.settings.delete`<br>`accessapproval.settings.get` | MEDIUM | [source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)<br>[source](https://docs.cloud.google.com/location-finder/docs/reference/rest/v1/projects.locations.cloudLocations/search)<br>[source](https://docs.cloud.google.com/python/docs/reference/google-cloud-locationfinder/latest/google.cloud.locationfinder_v1.services.cloud_location_finder.CloudLocationFinderAsyncClient) |

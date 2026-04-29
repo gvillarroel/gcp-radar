@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.509Z",
+  "source_step08_card": "data/step-08/current/products/application-integration/card.json",
+  "product_name": "Application Integration",
+  "product_slug": "application-integration",
+  "feature_name": "Manifest XML data transformer function",
+  "feature_slug": "manifest-xml-data-transformer-function",
+  "summary": "Application Integration added a Manifest XML data transformer function that converts JSON into an XML string.",
+  "extended_definition": "Application Integration added a Manifest XML data transformer function that converts JSON into an XML string.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task",
+      "https://docs.cloud.google.com/application-integration/docs/data-mapping-functions-reference",
+      "https://docs.cloud.google.com/application-integration/docs/data-transformer-functions-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Data Transformer task \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task",
+        "source_id": "site-docs-reference-2",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "Jsonnet script local f = impor t \"functions\" ; // Import predefined Data Transformer function library local s tr 1 = f .ex t Var( \"inputVar1\" ); // Access integration input variable \"Inputstr1\" with value \"Hello\" local s tr 2 = f .ex t Var( \"inputVar2\" ); // Access integration input variable \"Inputstr2\" with value \"World\" { Ou t pu t Var : s tr 1 + \" \" + s tr 2 + \"!\" , // Write to Jsonnet output variable \"OutputVar\" \"output-str-var\" : s tr 1 + \" Integration \" + s tr 2 + \"!\" , // Write to Jsonnet output variable \"output-str-var\" } Output Jsonnet usage reference Jsonnet is a purely functional language and its programs are composed of expressions.",
+          "The Data Transformer Script editor by default imports functions , a predefined custom library containing a set of Jsonnet functions for data mapping in Application Integration.",
+          "The Data Transformer editor appears displaying a default commented Jsonnet template example."
+        ]
+      },
+      {
+        "title": "\"Data Transformer functions \\_|\\_ Application Integration \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/data-transformer-functions-reference",
+        "source_id": "site-api-reference",
+        "final_score": 98,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Data Transformer functions This page describes the additional set of predefined Jsonnet functions for Data Transformer Script task available in Application Integration.",
+          "Importing the functions library lets you use both the standard Jsonnet functions and the predefined Data Transformer functions.",
+          "Recommendation Lean how to add and configure a Data Transformer Script task ( Preview ) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Data Mapping functions \\_|\\_ Application Integration \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/data-mapping-functions-reference",
+        "source_id": "site-api-reference",
+        "final_score": 60,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "TO BOOLEAN ARRAY Converts a JSON array to a boolean array.",
+          "TO DOUBLE ARRAY Converts a JSON array to a double array.",
+          "TO STRING ARRAY Converts a JSON array to a string array."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task",
+        "https://docs.cloud.google.com/application-integration/docs/data-transformer-functions-reference",
+        "https://docs.cloud.google.com/application-integration/docs/data-mapping-functions-reference"
+      ]
+    }
+  ]
+}

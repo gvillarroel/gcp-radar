@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:24.154Z",
+  "source_step08_card": "data/step-08/current/products/navigation-sdk-for-ios/card.json",
+  "product_name": "Navigation SDK for iOS",
+  "product_slug": "navigation-sdk-for-ios",
+  "feature_name": "Unpaved road callouts",
+  "feature_slug": "unpaved-road-callouts",
+  "summary": "The navigation route can display callouts for unpaved road segments in supported regions and driving modes.",
+  "extended_definition": "The navigation route can display callouts for unpaved road segments in supported regions and driving modes.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-google-nav",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/nav-only-feed",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/navigation-points",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/route"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Navigate a route \\_|\\_ Navigation SDK for iOS \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/route",
+        "source_id": "site-docs-root",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set the travelMode property of the map view, as shown in the following example: Swift self . mapView . travelMode = . cycling Objective-C mapView . travelMode = GMSNavigationTravelModeCycling ; Set roads to avoid Use the avoidsHighways and avoidsTolls BOOL properties to avoid highways and/or toll roads along a route.",
+          "UNUserNotificationCenter center = [ UNUserNotificationCenter currentNotificationCenter ]; UNAuthorizationOptions options = UNAuthorizationOptionAlert ; [ center requestAuthorizationWithOptions : options completionHandler : ^ ( BOOL granted , NSError Nullable error ) { if ( ! error && granted ) { NSLog ( @\"iOS Notification Permission: newly Granted\" ); } else { NSLog ( @\"iOS Notification Permission: Failed or Denied\" ); } }]; } else { // Handle rejection of the terms and conditions. } }]; self . view = mapView ; [ self makeButton ]; } // Create a route and initiate navigation. - ( void ) startNav { NSArray<GMSNavigationWaypoint > destinations = @[ [[ GMSNavigationWaypoint alloc ] initWithPlaceID : @\"ChIJnUYTpNASkFQR gSty5kyoUk\" title : @\"PCC Natural Market\" ], [[ GMSNavigationWaypoint alloc ] initWithPlaceID : @\"ChIJJ326ROcSkFQRBfUzOL2DSbo\" title : @\"Marina Park\" ] ] ; [ mapView . navigator setDestinations : destinations callback : ^ ( GMSRouteStatus routeStatus ){ [ mapView . locationSimulator simulateLocationsAlongExistingRoute ]; mapView . navigator . guidanceActive = YES ; mapView . navigator . sendsBackgroundNotifications = YES ; mapView . cameraMode = GMSNavigationCameraModeFollowing ; }]; } // Add a button to the view. - ( void ) makeButton { // A button to start navigation.",
+          "UNUserNotificationCenter . current () . requestAuthorization ( options : [ . alert ]) { granted , error in // Handle denied authorization to display notifications . if ! granted error != nil { print ( \"User rejected request to display notifications.\" ) } } } else { // Handle rejection of terms and conditions . } } view = mapView makeButton () } // Create a route and start guidance . func startNav () { var destinations = GMSNavigationWaypoint destinations . append ( GMSNavigationWaypoint . init ( placeID : \"ChIJnUYTpNASkFQR gSty5kyoUk\" , title : \"PCC Natural Market\" ) ! ) destinations . append ( GMSNavigationWaypoint . init ( placeID : \"ChIJJ326ROcSkFQRBfUzOL2DSbo\" , title : \"Marina Park\" ) ! ) mapView . navigator ? . setDestinations ( destinations ) { routeStatus in guard routeStatus == ."
+        ]
+      },
+      {
+        "title": "\"Details about the turn-by-turn data feed \\_|\\_ Navigation SDK for iOS \\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/nav-only-feed",
+        "source_id": "site-docs-root",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It provides upcoming maneuvers with elements you supply: icons (left, right, U-turn) turn numbers in roundabouts road names estimated distances and time to the next navigation step or final destination You can use the turn-by-turn feed to create experiences where the full Navigation SDK UI is not appropriate, such as for small screen displays.",
+          "Shown below are example event listeners for the didChangeNavInfo event: Swift // ViewController.swift class SomeViewController : UIViewController { ... mapView . navigator ? . add ( self ); ... } extension SomeViewController : GMSNavigatorListener { func navigator ( navigator : GMSNavigator , didUpdateNavInfo navInfo : GMSNavigationNavInfo ) { // Get the current step information if navInfo . navState == . enroute { if let currentStep = navInfo . currentStep { ... roadNameLabel . text = currentStep . simpleRoadName ... } } } } Objective-C // ViewController.h @ interface SomeViewController () < GMSNavigatorListener > @ end // ViewController.m @ implementation SomeViewController // Some initialization code. ... { ... [ mapView . navigator addListener : self ]; ... } #pragma mark GMSNavigatorListener - ( void ) navigator : ( GMSNavigator ) navigator didUpdateNavInfo : ( GMSNavigationNavInfo ) navInfo { // Get the current step information if ( navInfo . navState == GMSNavigationNavStateEnroute ) { GMSNavigationStepInfo currentStep = navInfo . currentStep ; if ( currentStep ) { ... roadNameLabel . text = currentStep . simpleRoadName ; ... } } ... } Navigation states Use navState property of GMSNavigationNavInfo to get the current state of navigation, which is one of the following: Enroute - The GMSNavigationNavStateEnroute state means that guided navigation is active and the user is on the provided route.",
+          "Essential navigation display elements The primary fields for each navigation step are the full road name, maneuver, and total distance of the step, which are available in GMSNavigationStepInfo ."
+        ]
+      },
+      {
+        "title": "\"Route to Navigation points \\_|\\_ Navigation SDK for iOS \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/navigation-points",
+        "source_id": "site-docs-root",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Summary of Valid Waypoint Configurations Specification location placeID navigationPointToken Routing behavior Destination highlighting Location coordinates only set absent absent Routes to road segment nearest to the defined coordinates Shown if destination can be inferred with high confidence Place ID only absent set absent Routes to the default navigation point for the Place ID From Place ID Navigation point token only absent absent set Routes to the precise navigation point represented by the token From destination defined in original destinations method of the Geocoding API request Location coordinates and Place ID combined se set absent Routes to road segment nearest to the defined coordinates From Place ID, though not shown if Place ID is too far from the latitude/longitude coordinates Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Swift // Create a waypoint using a navigation endpoint token let waypointTwo = GMSNavigationWaypoint ( navigationPointToken : \"ChIJALijSXPhQkARHmIozCCbXsASEgkFVjYHGH6PgBFrbM7wl3..\" title : \"Sydney Opera House\" ) // Route to the waypoint navigator . setDestinations ([ waypointTwo ]) { [ weak self ] routeStatus in self ?. handleRouteCallback ( status : routeStatus ) } Objective-C GMSNavigationWaypoint waypointTwo = [[ GMSNavigationWaypoint alloc ] initWithNavigationPointToek : @\"sampleNavigationPointToken\" Combine Place ID and Location Starting with v10.10, you can provide both a Place ID and location coordinates when creating a waypoint.",
+          "Swift // Create a waypoint using both the latlng and placeID let waypoint = GMSNavigationWaypoint ( location : CLLocationCoordinate2DMake ( - 33.85657945261524 , 151.21535034203333 ), placeID : \"ChIJ3S-JXmauEmsRUcIaWtf4MzE\" , title : \"Sydney Opera House\" ) // Route to the waypoint navigator . setDestinations ([ waypoint ]) { [ weak self ] routeStatus in self ?. handleRouteCallback ( status : routeStatus ) } Objective-C CLLocationCoordinate2D location = CLLocationCoordinate2DMake ( 47.67 , -122.20 ); GMSNavigationWaypoint waypoint = [[ GMSNavigationWaypoint alloc ] initWithLocation : placeID : coordinate title : @\"waypoint from location and placeiD\" ]; Considerations: When you provide both placeID and location : The route primarily targets the specified location ."
+        ]
+      },
+      {
+        "title": "\"The Google navigation experience \\_|\\_ Navigation SDK for iOS \\_|\\_ Google\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-google-nav",
+        "source_id": "site-docs-root",
+        "final_score": 171,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Modification Details Modified navigation guidance: show/hide headers, colors and fonts, directions, alternate routes, and trip progress Map UI controls Navigation header and footer Navigation header accessory view Display directions list Hide alternate routes Display trip progress Adjust traffic information and speed limit information Display the speedometer Adjust speedometer alerts Enable traffic lights and stop signs Change the map experience UI and adjust the camera.",
+          "As an alternative, if you need more customization than is available with the Google navigation experience, you can request a turn-by-turn navigation feed from the Navigation SDK and then provide and manage your own UI elements.",
+          "For advanced customization beyond the provided options, developers can opt for a custom navigation experience by requesting a turn-by-turn navigation feed and building their own UI."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "v10.10"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/nav-only-feed",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/navigation-points",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-google-nav"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/nav-only-feed",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/navigation-points",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-google-nav"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/nav-only-feed",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/navigation-points",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-google-nav"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/nav-only-feed",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/navigation-points",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-google-nav"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/nav-only-feed",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/navigation-points",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-google-nav"
+      ]
+    }
+  ]
+}

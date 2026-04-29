@@ -1,0 +1,150 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:04.393Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Default command-line tools",
+  "feature_slug": "default-command-line-tools",
+  "summary": "Dataproc cluster nodes include vim, git, and bash-completion by default.",
+  "extended_definition": "Dataproc cluster nodes include vim, git, and bash-completion by default.",
+  "lifecycle": {
+    "latest_feature_date": "2015-12-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-gcloud",
+      "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+      "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"View cluster diagnostic data \\_|\\_ Managed Service for Apache Spark \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "source_id": "site-docs-root",
+        "final_score": 156,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Daemons and services information Command executed Location in archive yarn node -list -all /system/yarn-nodes.log hdfs dfsadmin -report -live -decommissioning /system/hdfs-nodes.log hdfs dfs -du -h /system/hdfs-du.log service --status-all /system/service.log systemctl --type service /system/systemd-services.log curl \"http://${HOSTNAME}:8088/jmx\" /metrics/resource manager jmx curl \"http://${HOSTNAME}:8088/ws/v1/cluster/apps\" /metrics/yarn app info curl \"http://${HOSTNAME}:8088/ws/v1/cluster/nodes\" /metrics/yarn node info curl \"http://${HOSTNAME}:9870/jmx\" /metrics/namenode jmx JVM information Command executed Location in archive jstack -l \"${DATAPROC AGENT PID}\" jstack/agent ${DATAPROC AGENT PID}.jstack jstack -l \"${PRESTO PID}\" jstack/agent ${PRESTO PID}.jstack jstack -l \"${JOB DRIVER PID}\" jstack/driver ${JOB DRIVER PID}.jstack jinfo \"${DATAPROC AGENT PID}\" jinfo/agent ${DATAPROC AGENT PID}.jstack jinfo \"${PRESTO PID}\" jinfo/agent ${PRESTO PID}.jstack jinfo \"${JOB DRIVER PID}\" jinfo/agent ${JOB DRIVER PID}.jstack Linux system information Command executed Location in archive df -h /system/df.log ps aux /system/ps.log free -m /system/free.log netstat -anp /system/netstat.log sysctl -a /system/sysctl.log uptime /system/uptime.log cat /proc/sys/fs/file-nr /system/fs-file-nr.log ping -c 1 /system/cluster-ping.log Log files Item included Location in archive All logs in /var/log with the following prefixes in their filename: cloud-sql-proxy dataproc druid gcdp google hadoop hdfs hive knox presto spark syslog yarn zookeeper Files are placed in the archive logs folder, and keep their original filenames.",
+          "Checkpoint data location Managed Service for Apache Spark saves checkpoint diagnostic data in the cluster temp bucket in Cloud Storage in the following folder (the checkpoint diagnostic data folder ): gs:// TEMP BUCKET /google-cloud-dataproc-diagnostic/ CLUSTER UUID You can run the gcloud dataproc clusters describe CLUSTER NAME command to list the cluster temp bucket The default cluster temp bucket has a TTL retention period of 90 days.",
+          "Command executed Location in diagnostic folder yarn node -list -all .../nodes/ timestamp /yarn-nodes.log hdfs dfsadmin -report -live -decommissioning .../nodes/ timestamp /hdfs-nodes.log cp gs:// STAGING BUCKET /google-cloud-dataproc-metainfo/ CLUSTER UUID /nodes exclude.xml .../nodes/ timestamp /nodes exclude.xml Note: Node detail snapshots capture cluster updates."
+        ]
+      },
+      {
+        "title": "\"Create a cluster by using the gcloud CLI \\_|\\_ Managed Service for Apache\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-gcloud",
+        "source_id": "site-docs-root",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To decrease the number of worker nodes to the original value of 2 , run the following command: gcloud dataproc clusters update example-cluster \\ --region= REGION \\ --num-workers 2 Clean up To avoid incurring charges to your Google Cloud account for the resources used on this page, follow these steps.",
+          "User roles To get the permissions that you need to create a Managed Service for Apache Spark cluster, ask your administrator to grant you the following IAM roles: Dataproc Editor ( roles/dataproc.editor ) on the project Service Account User ( roles/iam.serviceAccountUser ) on the Compute Engine default service account Service account role To ensure that the Compute Engine default service account has the necessary permissions to create a Managed Service for Apache Spark cluster, ask your administrator to grant the Dataproc Worker ( roles/dataproc.worker ) IAM role to the Compute Engine default service account on the project.",
+          "Update a cluster To change the number of workers in the cluster to five, run the following command: gcloud dataproc clusters update example-cluster \\ --region= REGION \\ --num-workers 5 The command output displays cluster details: workerConfig: ... instanceNames: - example-cluster-w-0 - example-cluster-w-1 - example-cluster-w-2 - example-cluster-w-3 - example-cluster-w-4 numInstances: 5 statusHistory: ... - detail: Add 3 workers."
+        ]
+      },
+      {
+        "title": "\"Write a MapReduce job with the BigQuery connector \\_|\\_ Managed Service\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example",
+        "source_id": "site-docs-root",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Also serves \" + \"as the default project for table IDs that don't explicitly specify a project for \" + \"the table. \\n \" + \" QualifiedInputTableId - Input table ID of the form \" + \"(Optional ProjectId):[DatasetId].[TableId] \\n \" + \" InputTableFieldName - Name of the field to count in the input table, e.g., \" + \"'word' in publicdata:samples.shakespeare or 'repository name' in \" + \"publicdata:samples.github timeline. \\n \" + \" QualifiedOutputTableId - Input table ID of the form \" + \"(Optional ProjectId):[DatasetId].[TableId] \\n \" + \" GcsOutputPath - The output path to store temporary Cloud Storage data, e.g., \" + \"gs://bucket/dir/\" ); System . exit ( 1 ); } // Get the individual parameters from the command line .",
+          "The Hadoop BigQuery connector is installed by default on all Managed Service for Apache Spark 1.0-1.2 cluster nodes under /usr/lib/hadoop/lib/ .",
+          "QualifiedOutputTableId - Input table ID of the form ( Optional ProjectId ):[ DatasetId ] . [ TableId ] GcsOutputPath - The output path to store temporary Cloud Storage data , e . g . , gs : // bucket / dir / @param args a String [] containing ProjectId , QualifiedInputTableId , InputTableFieldName , QualifiedOutputTableId , and GcsOutputPath . @throws IOException on IO Error . @throws InterruptedException on Interrupt . @throws ClassNotFoundException if not all classes are present . / public static void main ( String [] args ) throws IOException , InterruptedException , ClassNotFoundException { // GenericOptionsParser is a utility to parse command line arguments // generic to the Hadoop framework ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataproc.editor",
+      "dataproc.properties",
+      "dataproc.worker",
+      "df.log",
+      "diagnostic.capture.access",
+      "du.log",
+      "e.g",
+      "examples.jar",
+      "exclude.xml",
+      "free.log",
+      "iam.serviceAccountUser",
+      "netstat.log",
+      "nodes.log",
+      "nr.log",
+      "org.apache.spark.examples.SparkPi",
+      "ping.log",
+      "ps.log",
+      "samples.github",
+      "samples.shakespeare",
+      "service.log",
+      "services.log",
+      "sysctl.log",
+      "uptime.log"
+    ],
+    "missing_inventory_roles": [
+      "roles/dataproc.editor",
+      "roles/dataproc.worker",
+      "roles/iam.serviceAccountUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-gcloud"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-gcloud"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-gcloud"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-gcloud"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-gcloud"
+      ]
+    }
+  ]
+}

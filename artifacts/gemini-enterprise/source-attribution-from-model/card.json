@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:11.988Z",
+  "source_step08_card": "data/step-08/current/products/gemini-enterprise/card.json",
+  "product_name": "Gemini Enterprise",
+  "product_slug": "gemini-enterprise",
+  "feature_name": "Source attribution from model",
+  "feature_slug": "source-attribution-from-model",
+  "summary": "Gemini Enterprise shows other sources used by the Gemini models in the Sources panel of an answer.",
+  "extended_definition": "Gemini Enterprise shows other sources used by the Gemini models in the Sources panel of an answer.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/libraries"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Gemini Enterprise client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/libraries",
+        "source_id": "site-docs-reference",
+        "final_score": 244,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can iterate over elements, and API calls will be issued to fetch pages as needed. result . each do item Each element is of type ::Google::Cloud::DiscoveryEngine::V1beta::SearchResponse::SearchResult. p item end end Additional resources C# The following list contains links to more resources related to the client library for C#: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code Java The following list contains links to more resources related to the client library for Java: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code Node.js The following list contains links to more resources related to the client library for Node.js: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code PHP The following list contains links to more resources related to the client library for PHP: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code Python The following list contains links to more resources related to the client library for Python: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code Ruby The following list contains links to more resources related to the client library for Ruby: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "This page shows how to get started with the Cloud Client Libraries for the Gemini Enterprise API.",
+          "Home Documentation AI and ML Gemini Enterprise Reference Send feedback Gemini Enterprise client libraries Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Configure advanced autocomplete \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+        "source_id": "site-docs-root",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example command and result curl -X POST -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/1234/locations/global/collections/default collection/engines/my app/completionConfig:completeQuery\" \\ - d { \"query\": \"C\", \"suggestionTypes\": [\"CONTENT\"] }' { \"contentSuggestions\": [{ \"suggestion\": \"critical crash in payment module\", \"document\": { \"name\": \"projects/1234/locations/global/collections/default collection/dataStores/my data store/branches/0/documents/10000\", \"derivedStructData\": { \"title\": \"Critical Crash in Payment Module\", \"uri\": \"https://cymballabs.atlassian.net/browse/CPT-1\", \"source type\": \"jira\", \"entity type\": \"issue\" } }, \"dataStore\": \"projects/1234/locations/global/collections/default collection/dataStores/my data store\" }] } Note: If you specify suggestionTypes as CONTENT , then any boostSpec , queryModel , or includeTailSuggestions parameters in your curl command are ignored.",
+          "Use an imported list of autocomplete suggestions You can choose to provide your own list of autocomplete suggestions instead of using autocomplete suggestions generated from an autocomplete data model.",
+          "Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Configure autocomplete \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "source_id": "site-docs-root",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DataStoreName ; public class SyncCompleteQuery { public static void main ( String [] args ) throws Exception { syncCompleteQuery (); } public static void syncCompleteQuery () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( CompletionServiceClient completionServiceClient = CompletionServiceClient . create ()) { CompleteQueryRequest request = CompleteQueryRequest . newBuilder () . setDataStore ( DataStoreName . ofProjectLocationDataStoreName ( \"[PROJECT]\" , \"[LOCATION]\" , \"[DATA STORE]\" ) . toString ()) . setQuery ( \"query107944136\" ) . setQueryModel ( \"queryModel-184930495\" ) . setUserPseudoId ( \"userPseudoId-1155274652\" ) . setIncludeTailSuggestions ( true ) . build (); CompleteQueryResponse response = completionServiceClient . completeQuery ( request ); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the Gemini Enterprise quickstart using client libraries .",
+          "Example command and result curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-User-Project: my-project-123\" \\ https://discoveryengine.googleapis.com/v1alpha/projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig?updateMask=numUniqueUsersThreshold \\ -d '{ \"name\": \"projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig\", \"numUniqueUsersThreshold\": 6 }' { \"name\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/completionConfig\", \"matchingOrder\": \"exact-prefix\", \"maxSuggestions\": 20, \"minPrefixLength\": 1, \"queryModel\": \"automatic\", \"enableMode\": \"AUTOMATIC\", \"numUniqueUsersThreshold\": 6, \"queryFrequencyThreshold\": 30 } Update completable field annotations in schema To turn on autocomplete for fields in structured data schema, follow these steps: Console In the Google Cloud console, go to the Gemini Enterprise page.",
+          "Gemini Enterprise applies the Sensitive Data Protection inspection service to look for and block common types of PII from appearing as suggestions."
+        ]
+      },
+      {
+        "title": "NotebookLM Enterprise, Gemini Enterprise, or both? \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+        "source_id": "site-docs-root",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "NotebookLM Enterprise Gemini Enterprise Primary Goal Centralized knowledge, content generation from your own documents Enterprise-wide data search, multi-modal content generation, and agent orchestration Input Your uploaded documents, websites, and specific sources Broad queries and data from across enterprise systems (Google and third-party SaaS) Output Synthesized insights, generated content (FAQs, timelines), interactive audio podcasts, and chat-based questions and answers confined to sources Answers from diverse data, text and multi-modal content from across your enterprise, and automated actions by agents User Individual knowledge workers, small teams, content creators Process owners, developers, IT, operations, business analysts, general knowledge seekers, and content creators Complexity Focused knowledge management and document-specific chat experiences Orchestrating multi-agent systems for business processes and general AI assistance Core Function Understanding and extracting from unstructured text, generating content based on your sources Comprehensive information retrieval, multi-modal content creation, and autonomous agent execution How NotebookLM Enterprise and Gemini Enterprise work together NotebookLM Enterprise and Gemini Enterprise are complementary products , enhancing each other's value.",
+          "Gemini Enterprise provides broad, enterprise data search that often leads to the discovery of new, valuable sources from Google systems and third-party SaaS applications.",
+          "Key features of NotebookLM Enterprise NotebookLM Enterprise includes the following key features: Centralized knowledge : Notebooks serve as a single, trusted reference for specific topics, projects, or departments, built from your intentionally selected sources."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cymballabs.atlassian.net",
+      "discoveryengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/libraries",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/libraries",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/libraries",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/libraries",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/libraries",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product"
+      ]
+    }
+  ]
+}

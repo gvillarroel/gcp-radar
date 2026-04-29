@@ -1,0 +1,146 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.164Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-node-js/card.json",
+  "product_name": "App Engine standard environment Node.js",
+  "product_slug": "app-engine-standard-environment-node-js",
+  "feature_name": "Dependency installation cache bypass",
+  "feature_slug": "dependency-installation-cache-bypass",
+  "summary": "A deployment flag can force Node.js dependencies to be reinstalled instead of using the build cache.",
+  "extended_definition": "A deployment flag can force Node.js dependencies to be reinstalled instead of using the build cache.",
+  "lifecycle": {
+    "latest_feature_date": "2018-09-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+      "https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app",
+      "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connecting to a VPC network \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "source_id": "site-docs-reference",
+        "final_score": 74,
+        "relevance": "",
+        "evidence_snippets": [
+          "To enforce the organization policy in dry-run mode , run the following command with the dryRunSpec flag: gcloud org-policies set-policy POLICY PATH --update-mask = dryRunSpec Replace POLICY PATH with the full path to your organization policy YAML file.",
+          "After you verify that the organization policy in dry-run mode works as intended, set the live policy by clicking Set policy . gcloud To create an organization policy with boolean rules, create a policy YAML file that references the constraint: name : projects/ PROJECT ID /policies/ CONSTRAINT NAME spec : rules : - enforce : true dryRunSpec : rules : - enforce : true Replace the following: PROJECT ID : the project that you want to enforce your constraint on.",
+          "Use the following gcloud command to delete a connector: gcloud compute networks vpc-access connectors delete CONNECTOR NAME --region= REGION Replace the following: CONNECTOR NAME with the name of the connector you want to delete REGION with the region where the connector is located Manage custom constraints for projects This section describes how to create custom constraints for Serverless VPC Access connectors and enforce them at the project level."
+        ]
+      },
+      {
+        "title": "\"Build a Node.js app on App Engine \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app",
+        "source_id": "site-docs-reference-2",
+        "final_score": 46,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Specifying dependencies \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "source_id": "site-docs-reference-3",
+        "final_score": 44,
+        "relevance": "",
+        "evidence_snippets": [
+          "To install an uncached version of the dependency, use the command: gcloud app deploy -- no - cache Support and limitations for the package.json file in the standard environment: You can use any Linux-compatible Node.js package with App Engine, including packages that require native (C) extensions.",
+          "For example, if you want to specify Lodash as a dependency, your package.json file might look as follows: { \"dependencies\" : { \"lodash\" : \"^4.0.1\" } } During deployment, the Node.js runtime automatically installs all dependencies declared in your package.json file.",
+          "By default, App Engine caches fetched dependencies to reduce build times."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "deploymentmanager.googleapis.com",
+      "package.json",
+      "vpcaccess.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app"
+      ]
+    }
+  ]
+}

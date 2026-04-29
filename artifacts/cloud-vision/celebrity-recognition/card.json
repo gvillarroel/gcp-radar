@@ -1,0 +1,162 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:56.958Z",
+  "source_step08_card": "data/step-08/current/products/cloud-vision/card.json",
+  "product_name": "Cloud Vision",
+  "product_slug": "cloud-vision",
+  "feature_name": "Celebrity recognition",
+  "feature_slug": "celebrity-recognition",
+  "summary": "Celebrity recognition identifies known celebrities in images.",
+  "extended_definition": "Celebrity recognition identifies known celebrities in images.",
+  "lifecycle": {
+    "latest_feature_date": "2019-10-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vision/docs/celebrity-recognition",
+      "https://docs.cloud.google.com/vision/docs/detect-labels-image-command-line",
+      "https://docs.cloud.google.com/vision/docs/features-list",
+      "https://docs.cloud.google.com/vision/docs/handwriting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Celebrity recognition \\_|\\_ Cloud Vision API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vision/docs/celebrity-recognition",
+        "source_id": "site-iam-reference",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT ID \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://vision.googleapis.com/v1p4beta1/images:annotate\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"responses\": [ { \"faceAnnotations\": [ { \"boundingPoly\": { \"vertices\": [ { \"x\": 203 }, { \"x\": 570 }, { \"x\": 570, \"y\": 368 }, { \"x\": 203, \"y\": 368 } ] }, \"fdBoundingPoly\": { \"vertices\": [ { \"x\": 254, \"y\": 48 }, { \"x\": 524, \"y\": 48 }, { \"x\": 524, \"y\": 318 }, { \"x\": 254, \"y\": 318 } ] }, \"landmarks\": [ { \"type\": \"LEFT EYE\", \"position\": { \"x\": 328.92297, \"y\": 135.14728, \"z\": -0.00084506406 } }, { \"type\": \"RIGHT EYE\", \"position\": { \"x\": 440.65927, \"y\": 131.96986, \"z\": -0.18113805 } }, { \"type\": \"LEFT OF LEFT EYEBROW\", \"position\": { \"x\": 290.14877, \"y\": 114.45657, \"z\": 11.400304 } }, { \"type\": \"RIGHT OF LEFT EYEBROW\", \"position\": { \"x\": 357.85278, \"y\": 109.40719, \"z\": -21.749352 } }, { \"type\": \"LEFT OF RIGHT EYEBROW\", \"position\": { \"x\": 411.14322, \"y\": 108.33092, \"z\": -21.866737 } }, { \"type\": \"RIGHT OF RIGHT EYEBROW\", \"position\": { \"x\": 480.46622, \"y\": 110.60321, \"z\": 11.405331 } }, { \"type\": \"MIDPOINT BETWEEN EYES\", \"position\": { \"x\": 384.6528, \"y\": 129.57939, \"z\": -23.62145 } }, { \"type\": \"NOSE TIP\", \"position\": { \"x\": 383.5203, \"y\": 196.91586, \"z\": -55.91733 } }, { \"type\": \"UPPER LIP\", \"position\": { \"x\": 387.36368, \"y\": 236.28792, \"z\": -29.9772 } }, { \"type\": \"LOWER LIP\", \"position\": { \"x\": 385.20834, \"y\": 277.3345, \"z\": -21.621998 } }, { \"type\": \"MOUTH LEFT\", \"position\": { \"x\": 341.77988, \"y\": 248.98514, \"z\": 0.5651365 } }, { \"type\": \"MOUTH RIGHT\", \"position\": { \"x\": 439.91428, \"y\": 244.32759, \"z\": 2.6951885 } }, { \"type\": \"MOUTH CENTER\", \"position\": { \"x\": 385.44574, \"y\": 254.93304, \"z\": -21.696716 } }, { \"type\": \"NOSE BOTTOM RIGHT\", \"position\": { \"x\": 415.55923, \"y\": 201.68005, \"z\": -13.386427 } }, { \"type\": \"NOSE BOTTOM LEFT\", \"position\": { \"x\": 354.17462, \"y\": 205.03098, \"z\": -12.758772 } }, { \"type\": \"NOSE BOTTOM CENTER\", \"position\": { \"x\": 385.9818, \"y\": 213.22089, \"z\": -30.45643 } }, { \"type\": \"LEFT EYE TOP BOUNDARY\", \"position\": { \"x\": 329.98587, \"y\": 128.55806, \"z\": -7.625594 } }, { \"type\": \"LEFT EYE RIGHT CORNER\", \"position\": { \"x\": 350.25543, \"y\": 136.96538, \"z\": 0.3162137 } }, { \"type\": \"LEFT EYE BOTTOM BOUNDARY\", \"position\": { \"x\": 327.47772, \"y\": 142.9333, \"z\": -1.0234838 } }, { \"type\": \"LEFT EYE LEFT CORNER\", \"position\": { \"x\": 307.4751, \"y\": 137.34349, \"z\": 10.214714 } }, { \"type\": \"LEFT EYE PUPIL\", \"position\": { \"x\": 328.45987, \"y\": 136.19621, \"z\": -3.1551569 } }, { \"type\": \"RIGHT EYE TOP BOUNDARY\", \"position\": { \"x\": 440.0691, \"y\": 126.8801, \"z\": -7.779711 } }, { \"type\": \"RIGHT EYE RIGHT CORNER\", \"position\": { \"x\": 464.28534, \"y\": 135.34042, \"z\": 10.301969 } }, { \"type\": \"RIGHT EYE BOTTOM BOUNDARY\", \"position\": { \"x\": 441.76584, \"y\": 140.32564, \"z\": -1.2271972 } }, { \"type\": \"RIGHT EYE LEFT CORNER\", \"position\": { \"x\": 422.21207, \"y\": 135.32939, \"z\": 0.33341154 } }, { \"type\": \"RIGHT EYE PUPIL\", \"position\": { \"x\": 441.37714, \"y\": 134.46259, \"z\": -3.4412556 } }, { \"type\": \"LEFT EYEBROW UPPER MIDPOINT\", \"position\": { \"x\": 324.93048, \"y\": 96.94437, \"z\": -13.394134 } }, { \"type\": \"RIGHT EYEBROW UPPER MIDPOINT\", \"position\": { \"x\": 444.3336, \"y\": 95.093765, \"z\": -13.487409 } }, { \"type\": \"LEFT EAR TRAGION\", \"position\": { \"x\": 261.2239, \"y\": 191.10706, \"z\": 136.27896 } }, { \"type\": \"RIGHT EAR TRAGION\", \"position\": { \"x\": 513.192, \"y\": 187.88185, \"z\": 136.99525 } }, { \"type\": \"FOREHEAD GLABELLA\", \"position\": { \"x\": 384.6936, \"y\": 107.73683, \"z\": -26.120888 } }, { \"type\": \"CHIN GNATHION\", \"position\": { \"x\": 388.01538, \"y\": 322.47537, \"z\": -6.83534 } }, { \"type\": \"CHIN LEFT GONION\", \"position\": { \"x\": 274.37195, \"y\": 261.15628, \"z\": 91.56324 } }, { \"type\": \"CHIN RIGHT GONION\", \"position\": { \"x\": 500.2335, \"y\": 257.99966, \"z\": 91.12145 } } ], \"rollAngle\": -0.8706148, \"panAngle\": -0.0915068, \"tiltAngle\": 0.05244069, \"detectionConfidence\": 0.99914575, \"landmarkingConfidence\": 0.7713903, \"joyLikelihood\": \"VERY LIKELY\", \"sorrowLikelihood\": \"VERY UNLIKELY\", \"angerLikelihood\": \"VERY UNLIKELY\", \"surpriseLikelihood\": \"VERY UNLIKELY\", \"underExposedLikelihood\": \"VERY UNLIKELY\", \"blurredLikelihood\": \"VERY UNLIKELY\", \"headwearLikelihood\": \"VERY UNLIKELY\", \"recognitionResult\": [ { \"celebrity\": { \"name\": \"builtin/ celebrity-mid \", \"displayName\": \" celebrity-name \" }, \"confidence\": 0.82625544 } ] } ] } ] } Request celebrity opt-out If you are a celebrity and would like not to be included in this feature for either Cloud Vision or Video Intelligence API, please fill out and submit this form .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT ID \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://vision.googleapis.com/v1p4beta1/images:annotate\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"responses\": [ { \"faceAnnotations\": [ { \"boundingPoly\": { \"vertices\": [ { \"x\": 203 }, { \"x\": 570 }, { \"x\": 570, \"y\": 368 }, { \"x\": 203, \"y\": 368 } ] }, \"fdBoundingPoly\": { \"vertices\": [ { \"x\": 254, \"y\": 48 }, { \"x\": 524, \"y\": 48 }, { \"x\": 524, \"y\": 318 }, { \"x\": 254, \"y\": 318 } ] }, \"landmarks\": [ { \"type\": \"LEFT EYE\", \"position\": { \"x\": 328.92297, \"y\": 135.14728, \"z\": -0.00084506406 } }, { \"type\": \"RIGHT EYE\", \"position\": { \"x\": 440.65927, \"y\": 131.96986, \"z\": -0.18113805 } }, { \"type\": \"LEFT OF LEFT EYEBROW\", \"position\": { \"x\": 290.14877, \"y\": 114.45657, \"z\": 11.400304 } }, { \"type\": \"RIGHT OF LEFT EYEBROW\", \"position\": { \"x\": 357.85278, \"y\": 109.40719, \"z\": -21.749352 } }, { \"type\": \"LEFT OF RIGHT EYEBROW\", \"position\": { \"x\": 411.14322, \"y\": 108.33092, \"z\": -21.866737 } }, { \"type\": \"RIGHT OF RIGHT EYEBROW\", \"position\": { \"x\": 480.46622, \"y\": 110.60321, \"z\": 11.405331 } }, { \"type\": \"MIDPOINT BETWEEN EYES\", \"position\": { \"x\": 384.6528, \"y\": 129.57939, \"z\": -23.62145 } }, { \"type\": \"NOSE TIP\", \"position\": { \"x\": 383.5203, \"y\": 196.91586, \"z\": -55.91733 } }, { \"type\": \"UPPER LIP\", \"position\": { \"x\": 387.36368, \"y\": 236.28792, \"z\": -29.9772 } }, { \"type\": \"LOWER LIP\", \"position\": { \"x\": 385.20834, \"y\": 277.3345, \"z\": -21.621998 } }, { \"type\": \"MOUTH LEFT\", \"position\": { \"x\": 341.77988, \"y\": 248.98514, \"z\": 0.5651365 } }, { \"type\": \"MOUTH RIGHT\", \"position\": { \"x\": 439.91428, \"y\": 244.32759, \"z\": 2.6951885 } }, { \"type\": \"MOUTH CENTER\", \"position\": { \"x\": 385.44574, \"y\": 254.93304, \"z\": -21.696716 } }, { \"type\": \"NOSE BOTTOM RIGHT\", \"position\": { \"x\": 415.55923, \"y\": 201.68005, \"z\": -13.386427 } }, { \"type\": \"NOSE BOTTOM LEFT\", \"position\": { \"x\": 354.17462, \"y\": 205.03098, \"z\": -12.758772 } }, { \"type\": \"NOSE BOTTOM CENTER\", \"position\": { \"x\": 385.9818, \"y\": 213.22089, \"z\": -30.45643 } }, { \"type\": \"LEFT EYE TOP BOUNDARY\", \"position\": { \"x\": 329.98587, \"y\": 128.55806, \"z\": -7.625594 } }, { \"type\": \"LEFT EYE RIGHT CORNER\", \"position\": { \"x\": 350.25543, \"y\": 136.96538, \"z\": 0.3162137 } }, { \"type\": \"LEFT EYE BOTTOM BOUNDARY\", \"position\": { \"x\": 327.47772, \"y\": 142.9333, \"z\": -1.0234838 } }, { \"type\": \"LEFT EYE LEFT CORNER\", \"position\": { \"x\": 307.4751, \"y\": 137.34349, \"z\": 10.214714 } }, { \"type\": \"LEFT EYE PUPIL\", \"position\": { \"x\": 328.45987, \"y\": 136.19621, \"z\": -3.1551569 } }, { \"type\": \"RIGHT EYE TOP BOUNDARY\", \"position\": { \"x\": 440.0691, \"y\": 126.8801, \"z\": -7.779711 } }, { \"type\": \"RIGHT EYE RIGHT CORNER\", \"position\": { \"x\": 464.28534, \"y\": 135.34042, \"z\": 10.301969 } }, { \"type\": \"RIGHT EYE BOTTOM BOUNDARY\", \"position\": { \"x\": 441.76584, \"y\": 140.32564, \"z\": -1.2271972 } }, { \"type\": \"RIGHT EYE LEFT CORNER\", \"position\": { \"x\": 422.21207, \"y\": 135.32939, \"z\": 0.33341154 } }, { \"type\": \"RIGHT EYE PUPIL\", \"position\": { \"x\": 441.37714, \"y\": 134.46259, \"z\": -3.4412556 } }, { \"type\": \"LEFT EYEBROW UPPER MIDPOINT\", \"position\": { \"x\": 324.93048, \"y\": 96.94437, \"z\": -13.394134 } }, { \"type\": \"RIGHT EYEBROW UPPER MIDPOINT\", \"position\": { \"x\": 444.3336, \"y\": 95.093765, \"z\": -13.487409 } }, { \"type\": \"LEFT EAR TRAGION\", \"position\": { \"x\": 261.2239, \"y\": 191.10706, \"z\": 136.27896 } }, { \"type\": \"RIGHT EAR TRAGION\", \"position\": { \"x\": 513.192, \"y\": 187.88185, \"z\": 136.99525 } }, { \"type\": \"FOREHEAD GLABELLA\", \"position\": { \"x\": 384.6936, \"y\": 107.73683, \"z\": -26.120888 } }, { \"type\": \"CHIN GNATHION\", \"position\": { \"x\": 388.01538, \"y\": 322.47537, \"z\": -6.83534 } }, { \"type\": \"CHIN LEFT GONION\", \"position\": { \"x\": 274.37195, \"y\": 261.15628, \"z\": 91.56324 } }, { \"type\": \"CHIN RIGHT GONION\", \"position\": { \"x\": 500.2335, \"y\": 257.99966, \"z\": 91.12145 } } ], \"rollAngle\": -0.8706148, \"panAngle\": -0.0915068, \"tiltAngle\": 0.05244069, \"detectionConfidence\": 0.99914575, \"landmarkingConfidence\": 0.7713903, \"joyLikelihood\": \"VERY LIKELY\", \"sorrowLikelihood\": \"VERY UNLIKELY\", \"angerLikelihood\": \"VERY UNLIKELY\", \"surpriseLikelihood\": \"VERY UNLIKELY\", \"underExposedLikelihood\": \"VERY UNLIKELY\", \"blurredLikelihood\": \"VERY UNLIKELY\", \"headwearLikelihood\": \"VERY UNLIKELY\", \"recognitionResult\": [ { \"celebrity\": { \"name\": \"builtin/ celebrity-mid \", \"displayName\": \" celebrity-name \" }, \"confidence\": 0.82625544 } ] } ] } ] } Request Celebrity Recognition for a remote image You can use the Vision API to perform feature detection on a remote image file that is located in Cloud Storage or on the Web.",
+          "HTTP method and URL: POST https://vision.googleapis.com/v1p4beta1/images:annotate Request JSON body: { \"requests\": [ { \"image\": { \"source\": { \"imageUri\": \" CLOUD STORAGE FILE URI \" } }, \"features\": [ { \"type\": \"FACE DETECTION\" } ], \"imageContext\": { \"faceRecognitionParams\": { \"celebritySet\": [\"builtin/default\"] } } } ] } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Detect handwriting in images \\_|\\_ Cloud Vision API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vision/docs/handwriting",
+        "source_id": "site-docs-root",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "Handwriting detection with Optical Character Recognition (OCR) The Vision API can detect and extract text from images: DOCUMENT TEXT DETECTION extracts text from an image (or file ); the response is optimized for dense text and documents .",
+          "After completing all of your requests, call // the \"close\" method on the client to safely clean up any remaining background resources. try ( ImageAnnotatorClient client = ImageAnnotatorClient . create ()) { BatchAnnotateImagesResponse response = client . batchAnnotateImages ( requests ); List<AnnotateImageResponse> responses = response . getResponsesList (); client . close (); for ( AnnotateImageResponse res : responses ) { if ( res . hasError ()) { System . out . format ( \"Error: %s%n\" , res . getError (). getMessage ()); return ; } // For full list of available annotations, see http://g.co/cloud/vision/docs TextAnnotation annotation = res . getFullTextAnnotation (); for ( Page page : annotation . getPagesList ()) { String pageText = \"\" ; for ( Block block : page . getBlocksList ()) { String blockText = \"\" ; for ( Paragraph para : block . getParagraphsList ()) { String paraText = \"\" ; for ( Word word : para . getWordsList ()) { String wordText = \"\" ; for ( Symbol symbol : word . getSymbolsList ()) { wordText = wordText + symbol . getText (); System . out . format ( \"Symbol text: %s (confidence: %f)%n\" , symbol . getText (), symbol . getConfidence ()); } System . out . format ( \"Word text: %s (confidence: %f)%n%n\" , wordText , word . getConfidence ()); paraText = String . format ( \"%s %s\" , paraText , wordText ); } // Output Example using Paragraph: System . out . println ( \"%nParagraph: %n\" + paraText ); System . out . format ( \"Paragraph Confidence: %f%n\" , para . getConfidence ()); blockText = blockText + paraText ; } pageText = pageText + blockText ; } } System . out . println ( \"%nComplete annotation:\" ); System . out . println ( annotation . getText ()); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the Vision quickstart using client libraries .",
+          "After completing all of your requests, call // the \"close\" method on the client to safely clean up any remaining background resources. try ( ImageAnnotatorClient client = ImageAnnotatorClient . create ()) { BatchAnnotateImagesResponse response = client . batchAnnotateImages ( requests ); List<AnnotateImageResponse> responses = response . getResponsesList (); client . close (); for ( AnnotateImageResponse res : responses ) { if ( res . hasError ()) { System . out . format ( \"Error: %s%n\" , res . getError (). getMessage ()); return ; } // For full list of available annotations, see http://g.co/cloud/vision/docs TextAnnotation annotation = res . getFullTextAnnotation (); for ( Page page : annotation . getPagesList ()) { String pageText = \"\" ; for ( Block block : page . getBlocksList ()) { String blockText = \"\" ; for ( Paragraph para : block . getParagraphsList ()) { String paraText = \"\" ; for ( Word word : para . getWordsList ()) { String wordText = \"\" ; for ( Symbol symbol : word . getSymbolsList ()) { wordText = wordText + symbol . getText (); System . out . format ( \"Symbol text: %s (confidence: %f)%n\" , symbol . getText (), symbol . getConfidence ()); } System . out . format ( \"Word text: %s (confidence: %f)%n%n\" , wordText , word . getConfidence ()); paraText = String . format ( \"%s %s\" , paraText , wordText ); } // Output Example using Paragraph: System . out . println ( \"%nParagraph: %n\" + paraText ); System . out . format ( \"Paragraph Confidence: %f%n\" , para . getConfidence ()); blockText = blockText + paraText ; } pageText = pageText + blockText ; } } System . out . println ( \"%nComplete annotation:\" ); System . out . println ( annotation . getText ()); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the Vision quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Detect labels in an image by using the command line \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/vision/docs/detect-labels-image-command-line",
+        "source_id": "site-iam-reference",
+        "final_score": 110,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enter the following on your command line: curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"x-goog-user-project: PROJECT ID \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ https://vision.googleapis.com/v1/images:annotate -d @request.json The sample curl command uses the gcloud auth print-access-token command to get an authentication token.",
+          "Create the request JSON The following request.json file demonstrates how to request three images:annotate features and limit the results in the response.",
+          "Vision API enables easy integration of Google vision recognition technologies into developer applications."
+        ]
+      },
+      {
+        "title": "Features list \\_|\\_ Cloud Vision API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vision/docs/features-list",
+        "source_id": "site-api-reference",
+        "final_score": 109,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Vision API currently allows you to use the following features: All feature types Text detection Optical character recognition (OCR) for an image; text recognition and conversion to machine-coded text.",
+          "Document text detection (dense text / handwriting) Optical character recognition (OCR) for a file (PDF/TIFF) or dense text image; dense text recognition and conversion to machine-coded text.",
+          "Face detection 1 --> Locates faces with bounding polygons, and identifies specific facial \"landmarks\" such as eyes, ears, nose, mouth, etc. along with their corresponding confidence values."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "g.co",
+      "request.json",
+      "vision.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/celebrity-recognition",
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/vision/docs/detect-labels-image-command-line",
+        "https://docs.cloud.google.com/vision/docs/features-list"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/celebrity-recognition",
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/vision/docs/detect-labels-image-command-line",
+        "https://docs.cloud.google.com/vision/docs/features-list"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/celebrity-recognition",
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/vision/docs/detect-labels-image-command-line",
+        "https://docs.cloud.google.com/vision/docs/features-list"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/celebrity-recognition",
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/vision/docs/detect-labels-image-command-line",
+        "https://docs.cloud.google.com/vision/docs/features-list"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/celebrity-recognition",
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/vision/docs/detect-labels-image-command-line",
+        "https://docs.cloud.google.com/vision/docs/features-list"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/celebrity-recognition",
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/vision/docs/detect-labels-image-command-line",
+        "https://docs.cloud.google.com/vision/docs/features-list"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/celebrity-recognition",
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/vision/docs/detect-labels-image-command-line",
+        "https://docs.cloud.google.com/vision/docs/features-list"
+      ]
+    }
+  ]
+}

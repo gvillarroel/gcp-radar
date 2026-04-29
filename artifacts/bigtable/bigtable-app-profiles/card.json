@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:45.183Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Bigtable app profiles",
+  "feature_slug": "bigtable-app-profiles",
+  "summary": "Bigtable app profiles now support configuring request priorities to prioritize workloads.",
+  "extended_definition": "Bigtable app profiles now support configuring request priorities to prioritize workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/app-profiles",
+      "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "App profiles overview \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/app-profiles",
+        "source_id": "site-docs-reference-2",
+        "final_score": 132,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "App profiles overview An application profile, or app profile , stores settings that tell your Bigtable instance how to handle incoming requests from an application.",
+          "To review the priority levels that are available, see Configure request priorities .",
+          "App profiles are especially important for instances that have two or more clusters, but even if your instance has only one cluster, you should use a unique app profile for each application that you run, or for different components within a single application."
+        ]
+      },
+      {
+        "title": "Create and configure app profiles \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+        "source_id": "site-docs-reference-2",
+        "final_score": 132,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The command accepts the following optional flags: --description= DESCRIPTION : A detailed description of the app profile. --force : Ignore warnings about potential issues and conflicts with other app profiles. --route-any : Enable multi-cluster routing to route requests to any available cluster.",
+          "The command accepts the following optional flags: --description= DESCRIPTION : A detailed description of the app profile. --force : Ignore warnings about potential issues and conflicts with other app profiles. --route-any : Enable multi-cluster routing to route requests to any available cluster.",
+          "Click Save . gcloud If you don't know the instance ID, use the bigtable instances list command to view a list of your project's instances: gcloud bigtable instances list If you don't know the app profile's ID, use the bigtable app-profiles list command to view a list of the instance's app profiles: gcloud bigtable app-profiles list --instance= INSTANCE ID Replace INSTANCE ID with the permanent identifier for the instance. (Optional) Use the bigtable app-profiles describe command to view the app profile's settings: gcloud bigtable app-profiles describe APP PROFILE ID \\ --instance= INSTANCE ID Use the gcloud beta bigtable app-profiles update command to convert the app profile: gcloud bigtable app-profiles update APP PROFILE ID \\ --instance= INSTANCE ID \\ --standard \\ [--route-any] \\ [--restrict-to= CLUSTER ID 1 , CLUSTER ID 2 ...] [--route-to= CLUSTER ID ] \\ [--transactional-writes] Provide the following: APP PROFILE ID : The permanent identifier for the app profile."
+        ]
+      },
+      {
+        "title": "\"Class BigtableInstanceAdminClient (2.74.0) \\_|\\_ Java client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient",
+        "source_id": "site-java-reference",
+        "final_score": 80,
+        "relevance": "",
+        "evidence_snippets": [
+          "2.74.0 (latest) 2.73.0 2.72.0 2.71.0 2.70.0 2.68.0 2.67.1 2.66.0 2.65.1 2.63.0 2.62.0 2.61.0 2.60.0 2.59.0 2.58.2 2.56.0 2.54.0 2.52.0 2.51.2 2.49.0 2.46.0 2.45.1 2.44.1 2.43.0 2.42.0 2.40.0 2.39.5 2.37.0 2.35.1 2.34.0 2.33.0 2.32.0 2.31.0 2.30.0 2.29.1 2.28.0 GitHub Repository Product Reference Client for creating, configuring and deleting Cloud Bigtable instances, app profiles, and clusters.",
+          "Sample code: ApiFuture<MaterializedView> existingMaterializedViewFuture = client . getMaterializedViewAsync ( \"my-instance\" , \"my-materialized-view\" ); ApiFuture<MaterializedView> updatedMaterializedViewFuture = ApiFutures . transformAsync ( existingMaterializedViewFuture , new ApiAsyncFunction<MaterializedView , MaterializedView > () { public ApiFuture<MaterializedView> apply ( MaterializedView existingMaterializedView ) { return client . updateMaterializedViewAsync ( UpdateMaterializedViewRequest . of ( existingMaterializedView ) . setDeletionProtection ( false ) ); } }, MoreExecutors . directExecutor () ); ApiFuture<MaterializedView> materializedView = updatedMaterializedViewFuture . get (); See Also: UpdateMaterializedViewRequest Parameter Name Description request UpdateMaterializedViewRequest Returns Type Description ApiFuture < MaterializedView > Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Sample code: ApiFuture<AppProfile> existingAppProfileFuture = client . getAppProfileAsync ( \"my-instance\" , \"my-app-profile\" ); ApiFuture<AppProfile> updatedAppProfileFuture = ApiFutures . transformAsync ( existingAppProfileFuture , new ApiAsyncFunction<AppProfile , AppProfile > () { public ApiFuture<AppProfile> apply ( AppProfile existingAppProfile ) { return client . updateAppProfileAsync ( UpdateAppProfileRequest . of ( existingAppProfile ) . setRoutingPolicy ( SingleClusterRoutingPolicy . of ( \"my-other-cluster\" )) ); } }, MoreExecutors . directExecutor () ); ApiFuture<AppProfile> appProfile = updatedAppProfileFuture . get (); See Also: UpdateAppProfileRequest Parameter Name Description request UpdateAppProfileRequest Returns Type Description ApiFuture < AppProfile > updateClusterAutoscalingConfig(ClusterAutoscalingConfig clusterAutoscalingConfig) public Cluster updateClusterAutoscalingConfig ( ClusterAutoscalingConfig clusterAutoscalingConfig ) Modifies the cluster's autoscaling config."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigtable.tables.mutateRows",
+      "bigtable.tables.readRows",
+      "com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/app-profiles",
+        "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/app-profiles",
+        "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/app-profiles",
+        "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/app-profiles",
+        "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient"
+      ]
+    }
+  ]
+}

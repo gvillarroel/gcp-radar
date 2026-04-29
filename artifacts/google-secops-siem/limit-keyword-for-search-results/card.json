@@ -1,0 +1,113 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.987Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "limit keyword for search results",
+  "feature_slug": "limit-keyword-for-search-results",
+  "summary": "Adds the limit keyword to restrict the number of search results returned.",
+  "extended_definition": "Adds the limit keyword to restrict the number of search results returned.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+      "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 181,
+        "relevance": "",
+        "evidence_snippets": [
+          "Factors that limit search results When conducting searches, the following factors can limit the number of results returned: Maximum search results : 1M events.",
+          "Limit results You can limit search results by adding the limit keyword with the maximum number of search results you want to display.",
+          "For example, if you add the following to your search, it limits the results to a maximum of 25: limit: 25 Note: You can also add the limit keyword to custom dashboards."
+        ]
+      },
+      {
+        "title": "Detection Engine \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "source_id": "site-api-reference",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "The max results parameter only limits the number of detections returned, not the number of errors.",
+          "Request POST https://backstory.googleapis.com/v2/detect/rules:streamTestRule Request body { \"rule\": { \"ruleText\": \"<ruleText here>\" }, \"startTime\": \"<startTime here>\", \"endTime\": \"<endTime here>\", \"maxResults\": \"<maxResults here>\", } Body parameters Parameter Name Value Required Description rule.ruleText string Required Text of the new rule in YARA-L 2.0 format. startTime string Required Start time for the time range of logs being processed, in RFC 3339 format. endTime string Required End time for the time range of logs being processed, in RFC 3339 format. maxResults integer Optional Maximum number of results to return.",
+          "Sample request https://backstory.googleapis.com/v2/detect/rules:streamTestRule { \"rule\": { \"ruleText\": \"<ruleText here>\" }, \"startTime\": \"2021-01-01T00:00:00Z\", \"endTime\": \"2021-01-14T00:00:00Z\", \"maxResults\": 2 } Response When using the StreamTestRule method, be aware of the following limitations: Results either contain a detection { \"detection\": <detection> } or an error { \"error\": <error> } ."
+        ]
+      },
+      {
+        "title": "Functions \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "Param data types ARRAY STRINGS , STRING Return type STRING Code samples Here are some examples of how to use the function: Example 1 This example joins an array with non-null elements and a delimiter. arrays.join string([\"foo\", \"bar\"], \",\") = \"foo,bar\" Example 2 This example joins an array with a null element and a delimiter. arrays.join string([\"foo\", NULL, \"bar\"], \",\") = \"foo,bar\" Example 3 This example joins an array with non-null elements and no delimiter. arrays.join string([\"foo\", \"bar\"]) = \"foobar\" arrays.length Supported in: Rules Search arrays.length(repeatedField) Description Returns the number of repeated field elements.",
+          "Param data types STRING Return type STRING Code samples Example 1 \"test\" = strings.base64 decode($e.principal.domain.name) strings.coalesce Supported in: Rules Search strings.coalesce(a, b, c, ...) Description This function takes an unlimited number of arguments and returns the value of the first expression that does not evaluate to an empty string (for example, \"non-zero value\").",
+          "It will return a compiler error because the arguments are different event variables. // returns a compiler error \"test\" = strings.coalesce($e1.principal.hostname, $e2.principal.hostname) strings.concat Supported in: Rules Search strings.concat(a, b, c, ...) Description Returns the concatenation of an unlimited number of items, each of which can be a string, integer, or float."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "arrays.join",
+      "arrays.length",
+      "backstory.googleapis.com",
+      "e.metadata.collected",
+      "e.metadata.event",
+      "e.principal.domain.name",
+      "e1.principal.hostname",
+      "e2.principal.hostname",
+      "rule.ruleText",
+      "strings.base64",
+      "strings.coalesce",
+      "strings.concat",
+      "timestamp.get",
+      "timestamp.seconds"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    }
+  ]
+}

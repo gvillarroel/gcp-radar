@@ -1,0 +1,128 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.295Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-python/card.json",
+  "product_name": "App Engine standard environment Python",
+  "product_slug": "app-engine-standard-environment-python",
+  "feature_name": "BSD network sockets",
+  "feature_slug": "bsd-network-sockets",
+  "summary": "BSD network sockets provide the default socket implementation for App Engine applications.",
+  "extended_definition": "BSD network sockets provide the default socket implementation for App Engine applications.",
+  "lifecycle": {
+    "latest_feature_date": "2018-12-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/appengine/docs/standard/connecting-vpc",
+      "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+      "https://docs.cloud.google.com/appengine/docs/standard/python3/connecting-vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connecting to a VPC network \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "source_id": "site-docs-reference",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "Test the custom constraint To test the example that restricts ingress settings, deploy a connector in the project with network set to default : gcloud compute networks vpc-access connectors create org-policy-test \\ --project = PROJECT ID \\ --region = REGION ID \\ --network = default The output is the following: Operation denied by custom org policies: [\"customConstraints/custom.defaultNetworkConstraint\": \"Require network to not be set to default.\"] Example custom organization policies for common use cases The following table provides examples of custom constraints that you might find useful with Serverless VPC Access connectors: Description Constraint syntax Require that Serverless VPC Access connectors can only use a specific network. name : organizations/ ORGANIZATION ID /customConstraints/custom.allowlistNetworks resourceTypes : - vpcaccess.googleapis.com/Connector methodTypes : - CREATE condition : \"resource.network == 'allowlisted-network'\" actionType : ALLOW displayName : allowlistNetworks description : Require connectors to use a specific network.",
+          "This overrides the implicit firewall rule that Serverless VPC Access creates on your VPC network by default. gcloud compute firewall-rules create RULE NAME \\ --action = DENY \\ --rules = PROTOCOL \\ --source-ranges = VPC CONNECTOR CIDR RANGE \\ --direction = INGRESS \\ --network = VPC NETWORK \\ --priority = PRIORITY Replace the following: RULE NAME : the name of your new firewall rule.",
+          "This overrides the implicit firewall rule that Serverless VPC Access creates on your VPC network by default. gcloud compute firewall-rules create RULE NAME \\ --action = DENY \\ --rules = PROTOCOL \\ --source-tags = VPC CONNECTOR NETWORK TAG \\ --direction = INGRESS \\ --network = VPC NETWORK \\ --priority = PRIORITY Replace the following: RULE NAME : the name of your new firewall rule."
+        ]
+      },
+      {
+        "title": "\"Connecting to a VPC network \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "source_id": "site-docs-reference-3",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "Test the custom constraint To test the example that restricts ingress settings, deploy a connector in the project with network set to default : gcloud compute networks vpc-access connectors create org-policy-test \\ --project = PROJECT ID \\ --region = REGION ID \\ --network = default The output is the following: Operation denied by custom org policies: [\"customConstraints/custom.defaultNetworkConstraint\": \"Require network to not be set to default.\"] Example custom organization policies for common use cases The following table provides examples of custom constraints that you might find useful with Serverless VPC Access connectors: Description Constraint syntax Require that Serverless VPC Access connectors can only use a specific network. name : organizations/ ORGANIZATION ID /customConstraints/custom.allowlistNetworks resourceTypes : - vpcaccess.googleapis.com/Connector methodTypes : - CREATE condition : \"resource.network == 'allowlisted-network'\" actionType : ALLOW displayName : allowlistNetworks description : Require connectors to use a specific network.",
+          "This overrides the implicit firewall rule that Serverless VPC Access creates on your VPC network by default. gcloud compute firewall-rules create RULE NAME \\ --action = DENY \\ --rules = PROTOCOL \\ --source-ranges = VPC CONNECTOR CIDR RANGE \\ --direction = INGRESS \\ --network = VPC NETWORK \\ --priority = PRIORITY Replace the following: RULE NAME : the name of your new firewall rule.",
+          "This overrides the implicit firewall rule that Serverless VPC Access creates on your VPC network by default. gcloud compute firewall-rules create RULE NAME \\ --action = DENY \\ --rules = PROTOCOL \\ --source-tags = VPC CONNECTOR NETWORK TAG \\ --direction = INGRESS \\ --network = VPC NETWORK \\ --priority = PRIORITY Replace the following: RULE NAME : the name of your new firewall rule."
+        ]
+      },
+      {
+        "title": "\"Connecting to a VPC network \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/python3/connecting-vpc",
+        "source_id": "site-docs-reference-4",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "Test the custom constraint To test the example that restricts ingress settings, deploy a connector in the project with network set to default : gcloud compute networks vpc-access connectors create org-policy-test \\ --project = PROJECT ID \\ --region = REGION ID \\ --network = default The output is the following: Operation denied by custom org policies: [\"customConstraints/custom.defaultNetworkConstraint\": \"Require network to not be set to default.\"] Example custom organization policies for common use cases The following table provides examples of custom constraints that you might find useful with Serverless VPC Access connectors: Description Constraint syntax Require that Serverless VPC Access connectors can only use a specific network. name : organizations/ ORGANIZATION ID /customConstraints/custom.allowlistNetworks resourceTypes : - vpcaccess.googleapis.com/Connector methodTypes : - CREATE condition : \"resource.network == 'allowlisted-network'\" actionType : ALLOW displayName : allowlistNetworks description : Require connectors to use a specific network.",
+          "This overrides the implicit firewall rule that Serverless VPC Access creates on your VPC network by default. gcloud compute firewall-rules create RULE NAME \\ --action = DENY \\ --rules = PROTOCOL \\ --source-ranges = VPC CONNECTOR CIDR RANGE \\ --direction = INGRESS \\ --network = VPC NETWORK \\ --priority = PRIORITY Replace the following: RULE NAME : the name of your new firewall rule.",
+          "This overrides the implicit firewall rule that Serverless VPC Access creates on your VPC network by default. gcloud compute firewall-rules create RULE NAME \\ --action = DENY \\ --rules = PROTOCOL \\ --source-tags = VPC CONNECTOR NETWORK TAG \\ --direction = INGRESS \\ --network = VPC NETWORK \\ --priority = PRIORITY Replace the following: RULE NAME : the name of your new firewall rule."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "custom.allowlistNetworks",
+      "custom.defaultNetworkConstraint",
+      "resource.network",
+      "vpcaccess.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/python3/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/python3/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/python3/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/python3/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/python3/connecting-vpc"
+      ]
+    }
+  ]
+}

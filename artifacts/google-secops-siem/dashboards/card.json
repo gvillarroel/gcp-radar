@@ -1,0 +1,155 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.987Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "Dashboards",
+  "feature_slug": "dashboards",
+  "summary": "Provides default and custom dashboards for monitoring Chronicle ingestion, health, detection context, IOC matches, alerts, and user sign-ins.",
+  "extended_definition": "Provides default and custom dashboards for monitoring Chronicle ingestion, health, detection context, IOC matches, alerts, and user sign-ins.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
+      "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 161,
+        "relevance": "",
+        "evidence_snippets": [
+          "To share column sets, you must have the following permissions: chronicle.googleapis.com/savedColumnSets.create chronicle.googleapis.com/savedColumnSets.delete chronicle.googleapis.com/savedColumnSets.update chronicle.googleapis.com/savedColumnSets.list chronicle.googleapis.com/savedColumnSets.get In the Column Manager, add or remove the columns to create your customized view.",
+          "Select the maximum result limit from the following options: 1k 30k (default) 100k 1M Custom Selecting Custom displays a text field that lets you specify the number of results you want to display.",
+          "For example, if you add the following to your search, it limits the results to a maximum of 25: limit: 25 Note: You can also add the limit keyword to custom dashboards."
+        ]
+      },
+      {
+        "title": "Data RBAC overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following permissions apply to Dashboards: chronicle.dashboards.list : Lets users see the list of available dashboards. chronicle.dashboards.get : Lets users open and view a dashboard content. chronicle.dashboards.create : Lets users create new dashboards. chronicle.dashboards.update : Lets users edit and save changes to existing dashboards. chronicle.dashboards.delete : Lets users delete custom dashboards.",
+          "Editor roles/chroniclesiem.editor Grants access to all data and all permissions, including the ability to create, edit, and delete custom dashboards.",
+          "For example, you can create a Dashboard Creator custom role with only chronicle.dashboards.create and chronicle.dashboards.list permissions ."
+        ]
+      },
+      {
+        "title": "\"Cloud Threats category overview \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "source_id": "site-api-reference",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following export filter exports Google Cloud Cloud Run ( GCP RUN ) logs, in addition to the default logs both through the direct ingestion mechanism as well as through Cloud Storage and Sinks : log id(\"run.googleapis.com/stdout\") OR log id(\"run.googleapis.com/stderr\") OR log id(\"run.googleapis.com/requests\") OR log id(\"run.googleapis.com/varlog/system) Curated detections for AWS rule sets AWS rule sets in this category help identify threats in AWS environments using event and context data, and includes the following rule sets: AWS - Compute : Detects anomalous activity surrounding AWS compute resources, including EC2 and Lambda.",
+          "Verify the ingestion of Azure data The Google SecOps Data Ingestion and Health dashboard lets you see information about the type, volume, and health of all data being ingested into Google SecOps using SIEM ingestion features.",
+          "Google SecOps provides default parsers that parse and normalize raw logs from Google Cloud services to create UDM records with data required by these rule sets."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chronicle.dashboards.create",
+      "chronicle.dashboards.delete",
+      "chronicle.dashboards.get",
+      "chronicle.dashboards.list",
+      "chronicle.dashboards.update",
+      "chronicle.globalDataAccessScopes.permit",
+      "chronicle.googleapis.com",
+      "chronicle.restrictedDataAccess",
+      "chronicle.restrictedDataAccessViewer",
+      "chroniclesiem.editor",
+      "cmd.exe",
+      "metadata.event",
+      "network.sent",
+      "powershell.exe",
+      "principal.process.file.full",
+      "run.googleapis.com",
+      "target.hostname",
+      "target.process.file.full",
+      "winword.exe"
+    ],
+    "missing_inventory_roles": [
+      "roles/chronicle.restrictedDataAccess",
+      "roles/chronicle.restrictedDataAccessViewer",
+      "roles/chroniclesiem.editor",
+      "roles/globalDataAccess"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category"
+      ]
+    }
+  ]
+}

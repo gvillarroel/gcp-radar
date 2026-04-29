@@ -1,0 +1,170 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:11.292Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini",
+  "feature_name": "Prompt Library",
+  "feature_slug": "prompt-library",
+  "summary": "The Prompt Library lets users access saved prompts in Gemini chat; The Prompt Library lets users access saved prompts in Gemini chat.",
+  "extended_definition": "The Prompt Library lets users access saved prompts in Gemini chat; The Prompt Library lets users access saved prompts in Gemini chat.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+      "https://docs.cloud.google.com/gemini/docs/configure-logging"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Chat with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 184,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Gemini Code Assist chat pane, you can type @ to retrieve and use a saved prompt in your Prompt Library.",
+          "Stop in-progress chat VS Code You can stop an in-progress chat response by pressing stop Stop : IntelliJ You can stop an in-progress chat response by pressing stop Stop : Select the model If you use Gemini Code Assist Standard or Enterprise , or if you have a Google AI Pro or Ultra subscription, you can select the model that Gemini Code Assist uses when processing your prompts.",
+          "Manage files and folders in the Context Drawer After you specify a file or folder to be used as context for your Gemini Code Assist prompts , these files and folders are placed in the Context Drawer , where you can view and remove them from the prompt context."
+        ]
+      },
+      {
+        "title": "\"Use the Gemini Code Assist agent mode \\_|\\_ Gemini for Google Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "source_id": "site-docs-root-2",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "Help me understand the architecture.\" \"What does this [class/function] do?\" \"Add a feature to this codebase - \"[link-or-path-to-codebase]\".\" \"Refactor function [A] and [B] to use the common method [C].\" \"Fix the GitHub issue [link-to-github-issue].\" \"Build an application to do [goal] with a UI that lets the user do [task] in the [environment].\" \"Migrate library versions in this repository from [X] to [Y].\" \"Optimize performance of this Go code so that it runs faster.\" \"Use [name-of-API] to build out this feature.\" \"Implement an algorithm to do [x], [Y], and [Z].\" Optional: Use an API Key Gemini Code Assist includes different daily quotas for agentic features, depending on the tier you're in.",
+          "The following example shows how to specify a personal access token for the GitHub local and remote MCP servers: { \"mcpServers\" : { \"github-remote\" : { \"httpUrl\" : \"https://api.githubcopilot.com/mcp/\" , \"headers\" : { \"Authorization\" : \"Bearer ACCESS TOKEN \" } }, \"github-local\" : { \"command\" : \"/Users/username/code/github-mcp-server/cmd/github-mcp-server/github-mcp-server\" , \"args\" : [ \"stdio\" ], \"env\" : { \"GITHUB PERSONAL ACCESS TOKEN\" : \" ACCESS TOKEN \" } } } } Where ACCESS TOKEN is the user's access token.",
+          "The following example adds a personal access token for the GitHub local server: { \"mcpServers\" : { \"github-local\" : { \"command\" : \"/Users/username/code/github-mcp-server/cmd/github-mcp-server/github-mcp-server\" , \"args\" : [ \"stdio\" ], \"env\" : { \"GITHUB PERSONAL ACCESS TOKEN\" : \" ACCESS TOKEN \" } } } } Where ACCESS TOKEN is the user's access token."
+        ]
+      },
+      {
+        "title": "\"Configure Gemini Code Assist Standard and Enterprise logging \\_|\\_ Gemini\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "source_id": "site-docs-root-2",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create the setting and a setting-specific value: Obtain the token: TOKEN=$(gcloud auth print-access-token) Run the following command to disable the Gemini Code Assist Standard and Enterprise logs settings: curl -X POST \\ -H \"Authorization: Bearer $TOKEN\" \\ -H 'Content-Type: application/json' \\ -d '{ \"log prompts and responses\": false, \"log metadata\": false, } ' \\ \"https://cloudaicompanion.googleapis.com/v1/projects/ CONTAINER PROJECT NAME /locations/global/loggingSettings?logging metadata id= LOGS SETTING ID \" Replace the following: CONTAINER PROJECT NAME : Enter the parent project ID.",
+          "The Settings page loads. (Optional) Click Logging for Code Assist metadata to record the metadata generated by users of Gemini Code Assist Standard and Enterprise in the project. (Optional) Click Logging for Code Assist prompts and responses to record the prompts and responses generated by users of Gemini Code Assist Standard and Enterprise in the project.",
+          "Users logs and metadata logs are enabled with the log prompts and responses and log metadata fields, respectively."
+        ]
+      },
+      {
+        "title": "\"Set up Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "Learn more about the supported features: Code features overview Chat features overview Get started with the following guides: Code with Gemini Code Assist Chat with Gemini Code Assist List of directories where Gemini Code Assist caches information The following table provides a list of directories where Gemini Code Assist stores extension information such as auth tokens: Windows %LOCALAPPDATA%/cloud-code %LOCALAPPDATA%/google-vscode-extension macOS /Library/Application Support/cloud-code /Library/Application Support/google-vscode-extension Linux /.cache/cloud-code /.cache/google-vscode-extension Sign into Google and select a Google Cloud project Once users have installed Gemini Code Assist in their IDEs, they need to sign in to their Google Accounts, and if it's their first time using Gemini Code Assist Standard or Enterprise in their IDE, they select a Google Cloud project.",
+          "When all available licenses in the subscription are assigned, users who try to access Gemini Code Assist without a license will receive an error message indicating one is required.",
+          "For this reason, you need to enable the Gemini for Google Cloud API in a Google Cloud project of your choice before users can access Gemini Code Assist."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "api.githubcopilot.com",
+      "cloudaicompanion.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:09.131Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-code-editor/card.json",
+  "product_name": "Earth Engine Code Editor",
+  "product_slug": "earth-engine-code-editor",
+  "feature_name": "Visualization dialog in the Layer Manager",
+  "feature_slug": "visualization-dialog-in-the-layer-manager",
+  "summary": "The Layer Manager includes a Visualization dialog for configuring layer display settings.",
+  "extended_definition": "The Layer Manager includes a Visualization dialog for configuring layer display settings.",
+  "lifecycle": {
+    "latest_feature_date": "2015-08-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/app_engine_examples",
+      "https://developers.google.com/earth-engine/guides/getstarted",
+      "https://developers.google.com/earth-engine/guides/playground"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Earth Engine Code Editor \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/playground",
+        "source_id": "site-docs-root",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The geometry layer settings tool will be displayed in a dialog box which should look something like Figure 9.",
+          "The Code Editor includes essential elements such as a JavaScript editor, map display, API reference, Script Manager, Console output, Task Manager, interactive map query, search tool, and geometry drawing tools.",
+          "The geometry import settings also allow you to change the color with which the layer is displayed, add properties to the layer (if it is imported as a Feature or FeatureCollection ) or rename the layer."
+        ]
+      },
+      {
+        "title": "\"Get Started with Earth Engine \\_|\\_ Google Earth Engine \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/earth-engine/guides/getstarted",
+        "source_id": "site-docs-root",
+        "final_score": 96,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Map . centerObject ( image , 9 ); Map . addLayer ( image , vizParams , 'Landsat 8 false color' ); Observe that the visualization parameters are defined by an object literal, which includes a list of bands to display, a minimum and maximum reflectance value, and a gamma value. (Learn more about Landsat bands here .",
+          "Image ( 'CGIAR/SRTM90 V4' ) . mask (); // Update the NDVI difference mask with the land mask . var maskedDifference = ndviDifference . updateMask ( landMask ); // Display the masked result . var vizParams = { min : - 0.5 , max : 0.5 , palette : [ 'FF0000' , 'FFFFFF' , '0000FF' ]}; Map . setCenter ( - 122.2531 , 37.6295 , 9 ); Map . addLayer ( maskedDifference , vizParams , 'NDVI difference' ); In this example, note that the mask of the NDVI difference is updated by the land mask with updateMask() .",
+          "Image ( 'LANDSAT/LC08/C02/T1 TOA/LC08 044034 20140318' ); // Define visualization parameters in an object literal. var vizParams = { bands : [ 'B5' , 'B4' , 'B3' ], min : 0.02 , max : 0.4 , gamma : 1.3 }; // Center the map on the image and display."
+        ]
+      },
+      {
+        "title": "App Engine Example Apps \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/app_engine_examples",
+        "source_id": "site-docs-root-2",
+        "final_score": 79,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Server authentication examples showcase basic map display, more complex data visualization, and integration with Cloud Functions.",
+          "The webpage is static (hosted in Cloud Storage ), and displays the hexbin visualization on a map.",
+          "It demonstrates using ee.MapLayerOverlay to add Earth Engine data to the map with a callback function to keep track how many tiles have been loaded. (All of the mapping functionality in this demo can be done with mapids generated on the server, as is done in the server-auth demo). polygon-drawing This example also uses the client authorization flow."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "ee.MapLayerOverlay"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/getstarted",
+        "https://developers.google.com/earth-engine/guides/app_engine_examples"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/getstarted",
+        "https://developers.google.com/earth-engine/guides/app_engine_examples"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/getstarted",
+        "https://developers.google.com/earth-engine/guides/app_engine_examples"
+      ]
+    }
+  ]
+}

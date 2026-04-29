@@ -1,0 +1,160 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:33.557Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "VPC firewall rule logging metadata controls",
+  "feature_slug": "vpc-firewall-rule-logging-metadata-controls",
+  "summary": "Firewall Rule Logging in VPC now includes controls for logging metadata.",
+  "extended_definition": "Firewall Rule Logging in VPC now includes controls for logging metadata.",
+  "lifecycle": {
+    "latest_feature_date": "2020-09-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/state-tables",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+      "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+      "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Firewall Insights overview \\_|\\_ Network Intelligence Center - Firewall\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "source_id": "site-iam-reference",
+        "final_score": 224,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Where you can view metrics and insights You can view Firewall Insights metrics and insights in the following Google Cloud console locations: On the Firewall Insights page On the details page for a VPC firewall rule On the details page for a VPC network interface In the Active Assist The Firewall Insights landing page in the Google Cloud console provides cards for all the insights.",
+          "Note: For firewall rules in hierarchical firewall policies and global network firewall policies, insights are generated based on firewall logging data gathered only after February 27, 2023.",
+          "Note: For firewall rules containing IPv6 address ranges, insights are generated based on firewall logging data gathered only after June 17, 2022."
+        ]
+      },
+      {
+        "title": "\"About accessing published services through endpoints \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "source_id": "site-docs-root-2",
+        "final_score": 221,
+        "relevance": "",
+        "evidence_snippets": [
+          "Target producer Consumer configuration (endpoint) Consumer global access Hybrid access Automatic DNS configuration (IPv4-only) VPC Network Peering access NCC connection propagation (IPv4 only) Supported target services for IPv4 endpoints Supported target services for IPv6 endpoints Cross-region internal Application Load Balancer IPv4 services IPv4 services Internal passthrough Network Load Balancer Only if global access is enabled on the load balancer ( known issue ) IPv4 services IPv4 services IPv6 services Internal protocol forwarding (target instance) Only if global access is enabled on the producer forwarding rule ( known issue ) IPv4 services IPv4 services IPv6 services Port mapping services Only if global access is enabled on the producer forwarding rule IPv4 services IPv4 services IPv6 services Regional internal Application Load Balancer Only if global access is enabled on the load balancer before the service attachment is created IPv4 services IPv4 services Regional internal proxy Network Load Balancer Only if global access is enabled on the load balancer before the service attachment is created IPv4 services IPv4 services Secure Web Proxy IPv4 services IPv4 services Producer configuration This table summarizes the supported configuration options and capabilities of published services that are accessed by endpoints .",
+          "Static routes that use --next-hop-ilb to specify the name of an internal passthrough Network Load Balancer forwarding rule can be used to send and receive traffic to a Private Service Connect endpoint when the route and the endpoint are in the same VPC network and region.",
+          "Establishing a Private Service Connect connection between consumer and producer projects that are not in the same VPC Service Controls perimeter does not require explicit authorization with egress policies."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create and manage VPC networks \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "source_id": "site-docs-root",
+        "final_score": 206,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before setting the MTU to a value higher than 1460 , review Maximum transmission unit . module \"test-vpc-module\" { source = \"terraform-google-modules/network/google\" version = \" > 16.0\" project id = var.project id # Replace this with your project ID in quotes network name = \"my-custom-mode-network\" mtu = 1460 subnets = [ { subnet name = \"subnet-01\" subnet ip = \"10.10.10.0/24\" subnet region = \"us-west1\" }, { subnet name = \"subnet-02\" subnet ip = \"10.10.20.0/24\" subnet region = \"us-west1\" subnet private access = \"true\" subnet flow logs = \"true\" }, { subnet name = \"subnet-03\" subnet ip = \"10.10.30.0/24\" subnet region = \"us-west1\" subnet flow logs = \"true\" subnet flow logs interval = \"INTERVAL 10 MIN\" subnet flow logs sampling = 0.7 subnet flow logs metadata = \"INCLUDE ALL METADATA\" subnet flow logs filter = \"false\" } ] } Next, create firewall rules .",
+          "Resources that reference the network include VPC Network Peering connections , Cloud VPN gateways , Cloud Routers , Serverless VPC Access connectors and their connected services, firewall rules , and custom static routes .",
+          "If you have VPC firewall rules or firewall policy rules that use the original IPv4 address range as a source or destination, add additional firewall rules to apply the same rules to the extended range."
+        ]
+      },
+      {
+        "title": "\"Configuration analysis states \\_|\\_ Network Intelligence Center - Connectivity\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/state-tables",
+        "source_id": "site-iam-reference",
+        "final_score": 197,
+        "relevance": "",
+        "evidence_snippets": [
+          "Message Target INSTANCE A Compute Engine VM instance INTERNET The internet GOOGLE API A Google API GKE MASTER A GKE control plane CLOUD SQL INSTANCE A Cloud SQL instance PSC GOOGLE API All Google APIs and services that use Private Service Connect PSC VPC SC VPC Service Controls that use Private Service Connect PSC PUBLISHED SERVICE A published service that uses Private Service Connect Metadata The configuration analysis shows the following metadata for the final state.",
+          "The analysis cannot proceed because, in a Shared VPC network, the user running the test does not have access to the host project's network configurations, including firewall rules and routes.",
+          "ForwardingRuleInfo Metadata associated with a VPC forwarding rule."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "var.project"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/state-tables"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/state-tables"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/state-tables"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/state-tables"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/state-tables"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/state-tables"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/state-tables"
+      ]
+    }
+  ]
+}

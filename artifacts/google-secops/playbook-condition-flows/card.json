@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.119Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "Playbook condition flows",
+  "feature_slug": "playbook-condition-flows",
+  "summary": "Playbook conditions support up to 20 branches in a single step.",
+  "extended_definition": "Playbook conditions support up to 20 branches in a single step.",
+  "lifecycle": {
+    "latest_feature_date": "2026-04-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+      "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+      "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Explore the Playbooks page \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "source_id": "site-docs-reference-2",
+        "final_score": 135,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Flow (purple box): The final component involves determining the flow of the playbook, typically using if-then-else conditions.",
+          "It defines the conditions or events that cause the playbook to run.",
+          "Duplicate : Create a duplicate playbook with these options: Keep or change priority Keep in same folder or move to a different folder Single , multiple , or all environments, where all indicates all defined environments, present or future."
+        ]
+      },
+      {
+        "title": "\"Composite detections \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 88,
+        "relevance": "",
+        "evidence_snippets": [
+          "Define the join conditions : Determine the common piece of information that links the detections from your input rules, such as rule labels, variables, or detection fields.",
+          "How composite detections work When rules meet predefined conditions, they generate detections.",
+          "Detection : output generated when a rule's conditions are met."
+        ]
+      },
+      {
+        "title": "\"Google Unified Security \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "source_id": "site-docs-reference-2",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "See activate enterprise tier Validate Security Command Center Detection Services are enabled: See How to configure Security Command Center Connect Security Command Center to AWS to get configuration and resource data that flows through to the Entity Graph: See Connect Security Command Center to AWS Preview - Connect Security Command Center to Azure to get configuration and resource data that flows through to the Entity Graph. (Optional) Integrate Security Command Center with ticketing systems.",
+          "Google SecOps provides Cloud Detection Investigation and Response (CDIR), Case Management, SIEM log searching and investigation, Cloud Asset Inventory collection for Entity Graph Enrichment, and the ability to automate common SOC workflows using the SOAR component of Google SecOps.",
+          "With the unified capabilities between Google SecOps and Security Command Center, SOC analysts and Cloud Security engineers have a single converged platform within which to view and respond to incidents and cases related to threats in their Google Cloud, Azure, and AWS platforms."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cymbal.com",
+      "d.detection.collection",
+      "d.detection.detection.rule",
+      "e.metadata.log",
+      "e.metadata.product",
+      "e.principal.hostname",
+      "e.principal.process.command",
+      "elements.references.event.network.dns.questions.name",
+      "elements.references.event.principal.asset.hostname",
+      "prevalence.graph.entity.domain.prevalence.day",
+      "prevalence.graph.entity.domain.prevalence.rolling",
+      "prevalence.graph.entity.hostname",
+      "prevalence.graph.metadata.entity",
+      "prevalence.graph.metadata.source",
+      "re.capture"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    }
+  ]
+}

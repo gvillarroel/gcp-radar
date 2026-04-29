@@ -1,0 +1,153 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner instance tags",
+  "feature_slug": "spanner-instance-tags",
+  "summary": "Spanner now supports using Google Cloud tags to organize instances and scope IAM policies by instance tags.",
+  "extended_definition": "Spanner now supports using Google Cloud tags to organize instances and scope IAM policies by instance tags.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+      "https://docs.cloud.google.com/spanner/docs/configure-virtual-machine-instance",
+      "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Using Spanner in a virtual machine instance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/configure-virtual-machine-instance",
+        "source_id": "site-docs-root",
+        "final_score": 101,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Learn more about service accounts on Compute Engine and how you can use them to grant Identity and Access Management (IAM) roles and API access scopes to the applications that run on your instances.",
+          "Configure an instance with access to all Cloud APIs To quickly allow your instance to access the Cloud Spanner API, create a new instance to use the default service account and a scope with full access to all Cloud APIs.",
+          "Home Documentation Databases Spanner Guides Send feedback Using Spanner in a virtual machine instance Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Create a Spanner free trial instance and sample application \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, to create a free trial instance named trial-instance with the display name Trial Instance using the regional instance configuration regional-us-east5 , run the following: gcloud spanner instances create trial - instance -- config = regional - us - east5 \\ -- instance - type = free - instance -- description = \"Trial Instance\" Note: Use the instance ID, not the display name, when referring to an instance in gcloud CLI commands.",
+          "Click Save to upgrade your free trial instance. gcloud To upgrade your free trial instance to a paid Enterprise edition instance with the same instance configuration, run the following gcloud spanner instances update command: gcloud spanner instances update INSTANCE ID -- instance - type = provisioned Delete the instance Warning: Deleting an instance permanently removes the instance and all its databases.",
+          "For more information, see Free trial instances overview . gcloud To create a free trial instance, use the gcloud spanner instances create command. gcloud spanner instances create INSTANCE ID \\ -- instance - type = free - instance -- config = INSTANCE CONFIG \\ -- description = INSTANCE DESCRIPTION Replace the following: INSTANCE ID : a permanent identifier that is unique within your Google Cloud project."
+        ]
+      },
+      {
+        "title": "Configure fine-grained access control \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "source_id": "site-docs-root",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "To run these commands, you must have the Cloud Asset API enabled on your project, and you must have the cloudasset.assets.searchAllIamPolicies IAM permission. gcloud asset search-all-iam-policies \\ --scope = projects/ PROJECT NAME \\ --query = 'roles=roles/spanner.databaseRoleUser AND policy:\"resource.name\" AND policy:/ ROLE NAME AND resource=//spanner.googleapis.com/projects/ PROJECT NAME /instances/ INSTANCE NAME /databases/ DATABASE NAME ' \\ --flatten = policy.bindings [] .members [] \\ --format = 'table(policy.bindings.members)' Output is similar to the following: MEMBERS 222larabrown@gmail.com View the IAM conditions for a principal To view a list of IAM conditions that were specified when granting the role Cloud Spanner Database Role User to a principal, run the following command: gcloud asset search-all-iam-policies \\ --scope = projects/ PROJECT NAME \\ --query = 'roles=roles/spanner.databaseRoleUser AND policy:resource.name AND policy:\" PRINCIPAL IDENTIFIER \" AND resource=//spanner.googleapis.com/projects/ PROJECT NAME /instances/ INSTANCE NAME /databases/ DATABASE NAME ' \\ --flatten = policy.bindings [] \\ --format = 'table(policy.bindings.condition.expression)' where PRINCIPAL IDENTIFIER is: { user: user-account-name serviceAccount: service-account-name } PRINCIPAL IDENTIFIER examples: user:222larabrown@gmail.com serviceAccount:cs-fgac-sa-1@cloud-spanner-demo.google.com.iam.gserviceaccount.com The following sample output shows two condition expressions.",
+          "To run the command, you must have the Cloud Asset API enabled on your project, and you must have the cloudasset.assets.searchAllIamPolicies IAM permission. gcloud asset search-all-iam-policies \\ --scope = projects/ PROJECT NAME \\ --query = 'roles=roles/spanner.fineGrainedAccessUser AND resource=//spanner.googleapis.com/projects/ PROJECT NAME /instances/ INSTANCE NAME /databases/ DATABASE NAME ' \\ --flatten = policy.bindings [] .members [] \\ --format = 'table(policy.bindings.members)' Output is similar to the following: MEMBERS user:222larabrown@gmail.com user:baklavainthebalkans@gmail.com serviceAccount:cs-fgac-sa-1@cloud-spanner-demo.google.com.iam.gserviceaccount.com serviceAccount:cs-fgac-sa-2@cloud-spanner-demo.google.com.iam.gserviceaccount.com For more information, see Enabling an API in your Google Cloud project .",
+          "To perform this check, run the following command: gcloud asset search-all-iam-policies \\ --scope = projects/ PROJECT NAME \\ --query = 'roles:roles/spanner.databaseRoleUser AND resource=//spanner.googleapis.com/projects/ PROJECT NAME /instances/ INSTANCE NAME /databases/ DATABASE NAME ' --flatten = policy.bindings [] .members [] The output is similar to the following: ROLE MEMBERS EXPRESSION roles/spanner.databaseRoleUser serviceAccount:cs-fgac-sa-1@... roles/spanner.databaseRoleUser serviceAccount:cs-fgac-sa-2@... resource.type == \"spanner…\" Note that the first result is missing a condition and therefore the principals in this binding have access to all database roles."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudasset.assets.searchAllIamPolicies",
+      "demo.google.com.iam.gserviceaccount.com",
+      "gmail.com",
+      "policy.bindings",
+      "policy.bindings.condition.expression",
+      "policy.bindings.members",
+      "resource.name",
+      "resource.type",
+      "spanner.databaseRoleUser",
+      "spanner.fineGrainedAccessUser",
+      "spanner.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/spanner.databaseRoleUser",
+      "roles/spanner.fineGrainedAccessUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-virtual-machine-instance",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-virtual-machine-instance",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-virtual-machine-instance",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-virtual-machine-instance",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-virtual-machine-instance",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-virtual-machine-instance",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-virtual-machine-instance",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+      ]
+    }
+  ]
+}

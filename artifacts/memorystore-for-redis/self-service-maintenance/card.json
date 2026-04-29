@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:22.371Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis/card.json",
+  "product_name": "Memorystore for Redis",
+  "product_slug": "memorystore-for-redis",
+  "feature_name": "Self-service maintenance",
+  "feature_slug": "self-service-maintenance",
+  "summary": "Memorystore for Redis offers self-service maintenance.",
+  "extended_definition": "Memorystore for Redis offers self-service maintenance.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/redis/about-maintenance",
+      "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+      "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview",
+      "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/reschedule_maintenance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About maintenance \\_|\\_ Memorystore for Redis \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/about-maintenance",
+        "source_id": "site-docs-root-2",
+        "final_score": 265,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback About maintenance Stay organized with collections Save and categorize content based on your preferences.",
+          "Caution: When Memorystore for Redis applies maintenance to an instance that has read replicas, Memorystore for Redis first applies the new maintenance version to the read replicas.",
+          "FAQ The following are some frequently asked questions about the maintenance policy for Memorystore for Redis: What is the impact of maintenance on Standard Tier instances?"
+        ]
+      },
+      {
+        "title": "Memorystore for Redis overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview",
+        "source_id": "site-docs-root",
+        "final_score": 213,
+        "relevance": "",
+        "evidence_snippets": [
+          "Memorystore for Redis offers several advantages over self-managed Redis: Deploy what fits your needs.",
+          "Tier capabilities The following table describes the differences between the available Memorystore for Redis service tiers: Specifications Basic Tier Standard Tier (read replicas disabled) Standard Tier (read replicas enabled) Description Provides a cache with no replication Provides redundancy and availability using replication Provides redundancy and availability using replication to backup data, and multiple Read replicas to increase read throughput Max Redis primary size 300 GB 300 GB 300 GB Max network bandwidth 16 Gbps 16 Gbps 16 Gbps total for writes.",
+          "Connect to a Memorystore for Redis instance You can use any standard Redis client on the following environments to connect to your Memorystore for Redis instance : App Engine flexible environment App Engine standard environment Compute Engine VM instances Cloud Run functions Cloud Run Google Kubernetes Engine clusters Some serverless environments require a Serverless VPC Access connector as a prerequisite for connectivity with Memorystore for Redis."
+        ]
+      },
+      {
+        "title": "High availability for Memorystore for Redis \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+        "source_id": "site-docs-root",
+        "final_score": 211,
+        "relevance": "",
+        "evidence_snippets": [
+          "A failover occurs when you perform the following tasks: Scale your instance Upgrade the Redis version of an instance Initiate a manual failover Perform a maintenance update If you implement retry logic in your application to handle connection drops because of failovers, then your instance probably won't see a significant performance impact.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback High availability for Memorystore for Redis Stay organized with collections Save and categorize content based on your preferences.",
+          "How a failover affects your application When the primary instance fails over to the replica, Memorystore for Redis drops existing connections to the primary endpoint of the instance."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: redis.googleapis.com \\_|\\_ Memorystore for Redis \\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/reschedule_maintenance",
+        "source_id": "site-api-reference",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Tool: reschedule maintenance Reschedule maintenance for a Memorystore for Redis instance.",
+          "Curl Request curl --location 'https://redis.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"reschedule maintenance\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Request for RescheduleMaintenance .",
+          "Home Documentation Databases Memorystore Memorystore for Redis Reference Send feedback MCP Tools Reference: redis.googleapis.com Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "redis.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview",
+        "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/reschedule_maintenance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview",
+        "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/reschedule_maintenance"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:46.338Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing",
+  "feature_name": "Cloud Billing detailed export Cloud Storage granular usage",
+  "feature_slug": "cloud-billing-detailed-export-cloud-storage-granular-usage",
+  "summary": "Cloud Billing detailed export now includes granular Cloud Storage bucket usage data and supports filtering by resource.global_name.",
+  "extended_definition": "Cloud Billing detailed export now includes granular Cloud Storage bucket usage data and supports filtering by resource.global_name.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 2,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "missing_exact_identifier_page",
+        "message": "No supporting page directly names the exact identifier(s): resource.global_name.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+      "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+      "https://docs.cloud.google.com/iam/docs/resources-with-built-in-identities"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Structure of Detailed data export \\_|\\_ Cloud Billing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "source_id": "site-docs-root-2",
+        "final_score": 51,
+        "relevance": "",
+        "evidence_snippets": [
+          "The detailed export includes granular cost information about the following services: AlloyDB for PostgreSQL App Engine BigQuery Bigtable Cloud Data Fusion Cloud Deploy Cloud Run functions Cloud Logging Cloud Run Cloud SQL Cloud Storage Compute Engine Dataflow Managed Service for Apache Spark Metastore Firestore and Datastore Google Kubernetes Engine (GKE) To view a breakdown of GKE cluster costs in a detailed data export, you must also enable cost allocation for GKE .",
+          "Return the resource-level costs on an invoice Sum costs for each resource, per invoice Return details by cost type for each resource, per invoice month Get breakdown of Google Kubernetes Engine (GKE) cluster costs Filter GKE cost breakdown Because the detailed usage cost schema includes all of the fields from the standard usage cost schema, the query examples provided for the standard data exported to BigQuery also work with the detailed data that's exported.",
+          "When you enable the detailed usage cost data export for the first time in Cloud Billing, if you select a dataset configured to use a multi-region location (EU or US), Cloud Billing data will be available retroactively from the start of the previous month."
+        ]
+      },
+      {
+        "title": "\"Structure of Standard data export \\_|\\_ Cloud Billing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "source_id": "site-docs-root-2",
+        "final_score": 49,
+        "relevance": "",
+        "evidence_snippets": [
+          "Row name project labels total cost total credits 1 CTG - Dev [{\"key\":\"ctg p env\",\"value\":\"dev\"}] 79.140979 -4.763796 2 CTG - Prod [{\"key\":\"ctg p env\",\"value\":\"prod\"},{\"key\":\"ctg team\",\"value\":\"eng\"}] 32.466272 -3.073356 3 CTG - Sandbox [{\"key\":\"ctg p env\",\"value\":\"dev\"}] 0 0 4 CTG - Storage [{\"key\":\"ctg p env\",\"value\":\"prod\"},{\"key\":\"ctg team\",\"value\":\"data\"}] 7.645793 -0.003761 Related topics Topics related to exported Cloud Billing data Set up Cloud Billing data export to BigQuery Example queries for Cloud Billing data export to BigQuery Visualize spend over time with Looker Studio Cost and pricing reports available in the Google Cloud console View your Cloud Billing reports and cost trends View and download the cost details of your invoice or statement View and download prices for Google's cloud services Understand your savings with cost breakdown reports Analyze the effectiveness of your committed use discounts View your cost and payment history Previous arrow back Understand the billing data tables in BigQuery Next Structure of Detailed data export arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "SELECT invoice . month AS invoice month , ROUND (( SUM ( CAST ( cost AS NUMERIC )) + SUM ( IFNULL (( SELECT SUM ( CAST ( c . amount AS NUMERIC )) FROM UNNEST ( credits ) AS c ), 0 ))), 2 ) AS net cost FROM project - ID . dataset . gcp billing export v1 XXXXXX - XXXXXX - XXXXXX WHERE \"color\" NOT IN ( SELECT key FROM UNNEST ( tags )) GROUP BY invoice month ORDER BY invoice month ; For example, the result of the preceding query might be: Row invoice month net cost 1 202202 0 2 202203 16.81 3 202204 54.09 4 202205 55.82 5 202206 54.09 6 202207 55.83 7 202208 31.49 Additional query examples Query costs and credits by project for a specified invoice month Note: See Google Cloud usage cost data in BigQuery for a detailed schema.",
+          "Common values used in the example standard cost queries The query examples in this section use the following value for Table name : project.dataset.gcp billing export v1 XXXXXX XXXXXX XXXXXX These query examples also work with the detailed usage cost data exported to BigQuery, although they aren't written to retrieve any of the resource-level information that's provided with the detailed usage cost export option."
+        ]
+      },
+      {
+        "title": "\"Resource types with built-in identities \\_|\\_ Identity and Access Management\\",
+        "url": "https://docs.cloud.google.com/iam/docs/resources-with-built-in-identities",
+        "source_id": "site-iam-reference",
+        "final_score": 48,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "project.dataset.gcp",
+      "resource.global_name"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/iam/docs/resources-with-built-in-identities"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/iam/docs/resources-with-built-in-identities"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/iam/docs/resources-with-built-in-identities"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/iam/docs/resources-with-built-in-identities"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/iam/docs/resources-with-built-in-identities"
+      ]
+    }
+  ]
+}

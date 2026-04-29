@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:27.397Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection",
+  "feature_name": "ExcludeByHotword exclusion rule",
+  "feature_slug": "excludebyhotword-exclusion-rule",
+  "summary": "ExcludeByHotword lets you exclude columns or findings when a column name or nearby text matches a regular expression.",
+  "extended_definition": "ExcludeByHotword lets you exclude columns or findings when a column name or nearby text matches a regular expression.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-rules",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customizing match likelihood \\_|\\_ Sensitive Data Protection \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: The recommended approach for excluding an entire column of data from results is to use an ExcludeByHotword exclusion rule.",
+          "This approach is helpful, for example, if you want to exclude a column of data from inspection results. @param string $projectId The Google Cloud project id to use as a parent resource. / function inspect column values w custom hotwords(string $projectId): void { // Instantiate a client. $dlp = new DlpServiceClient(); $parent = \"projects/$projectId/locations/global\"; // Specify the table to be inspected. $tableToDeIdentify = (new Table()) ->setHeaders([ (new FieldId()) ->setName('Fake Social Security Number'), (new FieldId()) ->setName('Real Social Security Number'), ]) ->setRows([ (new Row())->setValues([ (new Value()) ->setStringValue('111-11-1111'), (new Value()) ->setStringValue('222-22-2222') ]) ]); $item = (new ContentItem()) ->setTable($tableToDeIdentify); // Specify the regex pattern the inspection will look for. $hotwordRegexPattern = 'Fake Social Security Number'; // Specify hotword likelihood adjustment. $likelihoodAdjustment = (new LikelihoodAdjustment()) ->setFixedLikelihood(Likelihood::VERY UNLIKELY); // Specify a window around a finding to apply a detection rule. $proximity = (new Proximity()) ->setWindowBefore(1); // Construct the hotword rule. $hotwordRule = (new HotwordRule()) ->setHotwordRegex((new Regex()) ->setPattern($hotwordRegexPattern)) ->setLikelihoodAdjustment($likelihoodAdjustment) ->setProximity($proximity); // Construct rule set for the inspect config. $infotype = (new InfoType()) ->setName('US SOCIAL SECURITY NUMBER'); $inspectionRuleSet = (new InspectionRuleSet()) ->setInfoTypes([$infotype]) ->setRules([ (new InspectionRule()) ->setHotwordRule($hotwordRule) ]); // Construct the configuration for the Inspect request. $inspectConfig = (new InspectConfig()) ->setInfoTypes([$infotype]) ->setIncludeQuote(true) ->setRuleSet([$inspectionRuleSet]) ->setMinLikelihood(Likelihood::POSSIBLE); // Run request. $inspectContentRequest = (new InspectContentRequest()) ->setParent($parent) ->setInspectConfig($inspectConfig) ->setItem($item); $response = $dlp->inspectContent($inspectContentRequest); // Print the results. $findings = $response->getResult()->getFindings(); if (count($findings) == 0) { printf('No findings.' .",
+          "For more information, see Set up authentication for a local development environment . use Google\\Cloud\\Dlp\\V2\\Client\\DlpServiceClient; use Google\\Cloud\\Dlp\\V2\\ContentItem; use Google\\Cloud\\Dlp\\V2\\CustomInfoType; use Google\\Cloud\\Dlp\\V2\\CustomInfoType\\DetectionRule\\HotwordRule; use Google\\Cloud\\Dlp\\V2\\CustomInfoType\\DetectionRule\\LikelihoodAdjustment; use Google\\Cloud\\Dlp\\V2\\CustomInfoType\\DetectionRule\\Proximity; use Google\\Cloud\\Dlp\\V2\\CustomInfoType\\Regex; use Google\\Cloud\\Dlp\\V2\\InfoType; use Google\\Cloud\\Dlp\\V2\\InspectConfig; use Google\\Cloud\\Dlp\\V2\\InspectContentRequest; use Google\\Cloud\\Dlp\\V2\\InspectionRule; use Google\\Cloud\\Dlp\\V2\\InspectionRuleSet; use Google\\Cloud\\Dlp\\V2\\Likelihood; / Inspect data with a hotword rule This sample uses a custom regex with a hotword rule to increase the likelihood of match. @param string $projectId The Google Cloud project id to use as a parent resource. @param string $textToInspect The string to inspect. / function inspect hotword rule( // TODO(developer): Replace sample parameters before running the code. string $projectId, string $textToInspect = \"Patient's MRN 444-5-22222 and just a number 333-2-33333\" ): void { // Instantiate a client. $dlp = new DlpServiceClient(); $parent = \"projects/$projectId/locations/global\"; // Specify what content you want the service to Inspect. $item = (new ContentItem()) ->setValue($textToInspect); // Specify the regex pattern the inspection will look for. $customRegexPattern = '[1-9]{3}-[1-9]{1}-[1-9]{5}'; $hotwordRegexPattern = '(?i)(mrn medical)(?-i)'; // Construct the custom regex detector. $cMrnDetector = (new InfoType()) ->setName('C MRN'); $customInfoType = (new CustomInfoType()) ->setInfoType($cMrnDetector) ->setLikelihood(Likelihood::POSSIBLE) ->setRegex((new Regex()) ->setPattern($customRegexPattern)); // Specify hotword likelihood adjustment. $likelihoodAdjustment = (new LikelihoodAdjustment()) ->setFixedLikelihood(Likelihood::VERY LIKELY); // Specify a window around a finding to apply a detection rule. $proximity = (new Proximity()) ->setWindowBefore(10); $hotwordRule = (new HotwordRule()) ->setHotwordRegex((new Regex()) ->setPattern($hotwordRegexPattern)) ->setLikelihoodAdjustment($likelihoodAdjustment) ->setProximity($proximity); // Construct rule set for the inspect config. $inspectionRuleSet = (new InspectionRuleSet()) ->setInfoTypes([$cMrnDetector]) ->setRules([ (new InspectionRule()) ->setHotwordRule($hotwordRule) ]); // Construct the configuration for the Inspect request. $inspectConfig = (new InspectConfig()) ->setCustomInfoTypes([$customInfoType]) ->setIncludeQuote(true) ->setRuleSet([$inspectionRuleSet]); // Run request $inspectContentRequest = (new InspectContentRequest()) ->setParent($parent) ->setInspectConfig($inspectConfig) ->setItem($item); $response = $dlp->inspectContent($inspectContentRequest); // Print the results $findings = $response->getResult()->getFindings(); if (count($findings) == 0) { printf('No findings.' ."
+        ]
+      },
+      {
+        "title": "\"Modifying infoType detectors to refine scan results \\_|\\_ Sensitive Data\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-rules",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "This example returns only 222-22-2222 , because 111-11-1111 is in the Fake Social Security Number column. { \"item\" : { \"table\" : { \"headers\" : [ { \"name\" : \"Fake Social Security Number\" }, { \"name\" : \"Real Social Security Number\" } ], \"rows\" : [ { \"values\" : [ { \"stringValue\" : \"111-11-1111\" }, { \"stringValue\" : \"222-22-2222\" } ] } ] } }, \"inspectConfig\" : { \"infoTypes\" : [ { \"name\" : \"US SOCIAL SECURITY NUMBER\" } ], \"includeQuote\" : true , \"ruleSet\" : [ { \"infoTypes\" : [ { \"name\" : \"US SOCIAL SECURITY NUMBER\" } ], \"rules\" : [ { \"exclusionRule\" : { \"excludeByHotword\" : { \"hotwordRegex\" : { \"pattern\" : \"(Fake Social Security Number)\" }, \"proximity\" : { \"windowBefore\" : 1 } }, \"matchingType\" : \"MATCHING TYPE FULL MATCH\" } } ] } ], \"minLikelihood\" : \"POSSIBLE\" } } Omit findings in images based on spatial relationships The following JSON snippets illustrate how to configure Sensitive Data Protection to exclude findings in images based on their spatial relationship with other detected objects.",
+          "Because of the exclusion rule, this example doesn't classify 222-22-2222 as a possible US Social Security number. { \"item\" : { \"value\" : \"The customer sent the product SKU 222-22-2222\" }, \"inspectConfig\" : { \"infoTypes\" : [ { \"name\" : \"US SOCIAL SECURITY NUMBER\" } ], \"ruleSet\" : [ { \"infoTypes\" : [ { \"name\" : \"US SOCIAL SECURITY NUMBER\" } ], \"rules\" : [ { \"exclusionRule\" : { \"excludeByHotword\" : { \"hotwordRegex\" : { \"pattern\" : \"(SKU)\" }, \"proximity\" : { \"windowBefore\" : 10 , \"windowAfter\" : 10 } }, \"matchingType\" : \"MATCHING TYPE FULL MATCH\" } } ] } ], \"includeQuote\" : true } } Omit findings in an entire column of data The following example illustrates how to exclude findings in an entire column of tabular data if the name of that column matches a regular expression.",
+          "For more information, see Set up authentication for a local development environment . use Google\\Cloud\\Dlp\\V2\\Client\\DlpServiceClient; use Google\\Cloud\\Dlp\\V2\\ContentItem; use Google\\Cloud\\Dlp\\V2\\CustomInfoType; use Google\\Cloud\\Dlp\\V2\\CustomInfoType\\ExclusionType; use Google\\Cloud\\Dlp\\V2\\ExcludeInfoTypes; use Google\\Cloud\\Dlp\\V2\\ExclusionRule; use Google\\Cloud\\Dlp\\V2\\InfoType; use Google\\Cloud\\Dlp\\V2\\InspectConfig; use Google\\Cloud\\Dlp\\V2\\InspectContentRequest; use Google\\Cloud\\Dlp\\V2\\InspectionRule; use Google\\Cloud\\Dlp\\V2\\InspectionRuleSet; use Google\\Cloud\\Dlp\\V2\\Likelihood; use Google\\Cloud\\Dlp\\V2\\MatchingType; / Inspect a string for sensitive data, omitting overlapping matches on domain and email Omit matches on domain names that are part of email addresses in a DOMAIN NAME detector scan. @param string $projectId The Google Cloud project id to use as a parent resource. @param string $textToInspect The string to inspect. / function inspect string without overlap( // TODO(developer): Replace sample parameters before running the code. string $projectId, string $textToInspect = 'example.com is a domain, james@example.org is an email.' ): void { // Instantiate a client. $dlp = new DlpServiceClient(); $parent = \"projects/$projectId/locations/global\"; // Specify what content you want the service to Inspect. $item = (new ContentItem()) ->setValue($textToInspect); // Specify the type of info the inspection will look for. $domainName = (new InfoType()) ->setName('DOMAIN NAME'); $emailAddress = (new InfoType()) ->setName('EMAIL ADDRESS'); $infoTypes = [$domainName, $emailAddress]; // Define a custom info type to exclude email addresses $customInfoType = (new CustomInfoType()) ->setInfoType($emailAddress) ->setExclusionType(ExclusionType::EXCLUSION TYPE EXCLUDE); // Exclude EMAIL ADDRESS matches $matchingType = MatchingType::MATCHING TYPE PARTIAL MATCH; $exclusionRule = (new ExclusionRule()) ->setMatchingType($matchingType) ->setExcludeInfoTypes((new ExcludeInfoTypes()) ->setInfoTypes([$customInfoType->getInfoType()]) ); // Construct a ruleset that applies the exclusion rule to the DOMAIN NAME infotype. // If a DOMAIN NAME match is part of an EMAIL ADDRESS match, the DOMAIN NAME match will // be excluded. $inspectionRuleSet = (new InspectionRuleSet()) ->setInfoTypes([$domainName]) ->setRules([ (new InspectionRule()) ->setExclusionRule($exclusionRule), ]); // Construct the configuration for the Inspect request, including the ruleset. $inspectConfig = (new InspectConfig()) ->setInfoTypes($infoTypes) ->setCustomInfoTypes([$customInfoType]) ->setIncludeQuote(true) ->setRuleSet([$inspectionRuleSet]); // Run request $inspectContentRequest = (new InspectContentRequest()) ->setParent($parent) ->setInspectConfig($inspectConfig) ->setItem($item); $response = $dlp->inspectContent($inspectContentRequest); // Print the results $findings = $response->getResult()->getFindings(); if (count($findings) == 0) { printf('No findings.' ."
+        ]
+      },
+      {
+        "title": "InspectConfig \\_|\\_ Sensitive Data Protection \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig",
+        "source_id": "site-api-reference",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation Likelihood InfoTypeLikelihood JSON representation FindingLimits JSON representation InfoTypeLimit JSON representation CustomInfoType JSON representation SurrogateType StoredType JSON representation MetadataKeyValueExpression JSON representation DetectionRule JSON representation HotwordRule JSON representation Proximity JSON representation LikelihoodAdjustment JSON representation ExclusionType ContentOption InspectionRuleSet JSON representation InspectionRule JSON representation ExclusionRule JSON representation ExcludeInfoTypes JSON representation ExcludeByHotword JSON representation ExcludeByImageFindings JSON representation ImageContainmentType JSON representation Encloses FullyInside Overlap MatchingType AdjustmentRule JSON representation AdjustByMatchingInfoTypes JSON representation AdjustByImageFindings JSON representation Configuration description of the scanning process.",
+          "Exclusion rule types. type can be only one of the following: dictionary object ( Dictionary ) Dictionary which defines the rule. regex object ( Regex ) Regular expression which defines the rule. excludeInfoTypes object ( ExcludeInfoTypes ) Set of infoTypes for which findings would affect this rule. excludeByHotword object ( ExcludeByHotword ) Drop if the hotword rule is contained in the proximate context.",
+          "JSON representation { \"matchingType\" : enum ( MatchingType ) , // Union field type can be only one of the following: \"dictionary\" : { object ( Dictionary ) } , \"regex\" : { object ( Regex ) } , \"excludeInfoTypes\" : { object ( ExcludeInfoTypes ) } , \"excludeByHotword\" : { object ( ExcludeByHotword ) } , \"excludeByImageFindings\" : { object ( ExcludeByImageFindings ) } // End of list of possible types for union field type . } Fields matchingType enum ( MatchingType ) How the rule is applied, see MatchingType documentation for details."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "example.org"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-rules",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-rules",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-rules",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig"
+      ]
+    }
+  ]
+}

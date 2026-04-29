@@ -1,0 +1,148 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:24.033Z",
+  "source_step08_card": "data/step-08/current/products/navigation-sdk-for-android/card.json",
+  "product_name": "Navigation SDK for Android",
+  "product_slug": "navigation-sdk-for-android",
+  "feature_name": "Turn and ETA navigation card header layout",
+  "feature_slug": "turn-and-eta-navigation-card-header-layout",
+  "summary": "The turn and ETA navigation card headers now use half the screen width in landscape orientation.",
+  "extended_definition": "The turn and ETA navigation card headers now use half the screen width in landscape orientation.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/android-auto",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/intro-google-nav",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/tbt-feed"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Modify the navigation UI \\_|\\_ Navigation SDK for Android \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "source_id": "site-docs-root",
+        "final_score": 275,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Modify the navigation header Use SupportNavigationFragment.setStylingOptions() or NavigationView.setStylingOptions() to change the theme of the navigation header and the next-turn indicator that appears below the header when available.",
+          "View the code Show/Hide the Java code for the navigation activity. package com . example . navsdkcustomization ; import android.content.pm.PackageManager ; import android.graphics.Bitmap ; import android.graphics.BitmapFactory ; import android.os.Bundle ; import android.util.Log ; import android.widget.Toast ; import androidx.annotation.NonNull ; import androidx.appcompat.app.AppCompatActivity ; import androidx.core.app.ActivityCompat ; import androidx.core.content.ContextCompat ; import com.google.android.gms.maps.GoogleMap ; import com.google.android.gms.maps.GoogleMap.CameraPerspective ; import com.google.android.gms.maps.OnMapReadyCallback ; import com.google.android.gms.maps.model.BitmapDescriptorFactory ; import com.google.android.gms.maps.model.LatLng ; import com.google.android.gms.maps.model.Marker ; import com.google.android.gms.maps.model.MarkerOptions ; import com.google.android.libraries.navigation.ListenableResultFuture ; import com.google.android.libraries.navigation.NavigationApi ; import com.google.android.libraries.navigation.Navigator ; import com.google.android.libraries.navigation.SimulationOptions ; import com.google.android.libraries.navigation.StylingOptions ; import com.google.android.libraries.navigation.SupportNavigationFragment ; import com.google.android.libraries.navigation.Waypoint ; / An activity that displays a map and a customized navigation UI . / public class NavigationActivityCustomization extends AppCompatActivity { private static final String TAG = NavigationActivityCustomization . class . getSimpleName (); private Navigator mNavigator ; private SupportNavigationFragment mNavFragment ; private GoogleMap mMap ; // Define the Sydney Opera House by specifying its place ID . private static final String SYDNEY OPERA HOUSE = \"ChIJ3S-JXmauEmsRUcIaWtf4MzE\" ; // Set fields for requesting location permission . private static final int PERMISSIONS REQUEST ACCESS FINE LOCATION = 1 ; private boolean mLocationPermissionGranted ; @Override protected void onCreate ( Bundle savedInstanceState ) { super . onCreate ( savedInstanceState ); setContentView ( R . layout . activity main ); // Initialize the Navigation SDK . initializeNavigationSdk (); } / Starts the Navigation SDK and sets the camera to follow the device 's location.",
+          "You can set the following attributes: Attribute Type Attributes Background color Primary day mode - the daytime color of the navigation header Secondary day mode - the daytime color of the next-turn indicator Primary night mode - the nighttime color of the navigation header Secondary night mode - the nighttime color of the next-turn indicator Text elements for instructions Text color Font Text size of the first row Text size of the second row Text elements for next steps Font Text color of the distance value Text size of the distance value Text color of the distance units Text size of the distance units Maneuver icons Color of the large maneuver icon Color of the small maneuver icon Lane guidance Color of the recommended lane or lanes The following example shows how to set styling options: private SupportNavigationFragment mNavFragment ; mNavFragment = ( SupportNavigationFragment ) getFragmentManager () . findFragmentById ( R . id . navigation fragment ); // Set the styling options on the fragment. mNavFragment . setStylingOptions ( new StylingOptions () . primaryDayModeThemeColor ( 0xff1A237E ) . secondaryDayModeThemeColor ( 0xff3F51B5 ) . primaryNightModeThemeColor ( 0xff212121 ) . secondaryNightModeThemeColor ( 0xff424242 ) . headerLargeManeuverIconColor ( 0xffffff00 ) . headerSmallManeuverIconColor ( 0xffffa500 ) . headerNextStepTypefacePath ( \"/system/fonts/NotoSerif-BoldItalic.ttf\" ) . headerNextStepTextColor ( 0xff00ff00 ) . headerNextStepTextSize ( 20 f ) . headerDistanceTypefacePath ( \"/system/fonts/NotoSerif-Italic.ttf\" ) . headerDistanceValueTextColor ( 0xff00ff00 ) . headerDistanceUnitsTextColor ( 0xff0000ff ) . headerDistanceValueTextSize ( 20 f ) . headerDistanceUnitsTextSize ( 18 f ) . headerInstructionsTypefacePath ( \"/system/fonts/NotoSerif-BoldItalic.ttf\" ) . headerInstructionsTextColor ( 0xffffff00 ) . headerInstructionsFirstRowTextSize ( 24 f ) . headerInstructionsSecondRowTextSize ( 20 f ) . headerGuidanceRecommendedLaneColor ( 0xffffa500 )); Turn off the traffic layer Use GoogleMap.setTrafficEnabled() to enable or disable the traffic layer on the map."
+        ]
+      },
+      {
+        "title": "\"Enable turn-by-turn data feed \\_|\\_ Navigation SDK for Android \\_|\\_ Google\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/tbt-feed",
+        "source_id": "site-docs-reference",
+        "final_score": 231,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The service in the following example receives navigation information and uses the TurnByTurnManager to convert the data into a NavInfo object that contains the navigation details. / Receives turn - by - turn navigation information forwarded from NavSDK . / public class NavInfoReceivingService extends Service { / The messenger used by the service to receive nav step updates . / private Messenger incomingMessenger ; private TurnByTurnManager turnByTurnManager ; private final class IncomingNavStepHandler extends Handler { public IncomingNavStepHandler ( Looper looper ) { super ( looper ); } @ Override public void handleMessage ( Message msg ) { // Identify the message through the msg . what field . if ( TurnByTurnManager .",
+          "Fields for each navigation step Fields for the overall trip Found in StepInfo Found in NavInfo Full road name Remaining time The maneuver icon Distance to destination Distance to the next step Lane guidance fields Lane guidance The Navigation SDK represents lanes in the navigation turn card as Lane and LaneDirection data objects.",
+          "The turn-by-turn feed includes navigation card information fields (road names, maneuver icons, distances, remaining time, and lane guidance) for displaying guidance instructions."
+        ]
+      },
+      {
+        "title": "\"Enable navigation for Android Auto \\_|\\_ Navigation SDK for Android \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/android-auto",
+        "source_id": "site-docs-root",
+        "final_score": 225,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "PAN ). build ()) . build (); } Zoom with pinch @ Override public void onScale ( float focusX , float focusY , float scaleFactor ) { CameraUpdate update = CameraUpdateFactory . zoomBy (( scaleFactor - 1 ), new Point (( int ) focusX , ( int ) focusY )); googleMap . animateCamera ( update ); // map is set in onSurfaceAvailable. } Panning @ Override public void onScroll ( float distanceX , float distanceY ) { googleMap . moveCamera ( CameraUpdateFactory . scrollBy ( distanceX , distanceY )); } Display navigation directions This section covers how to set up an observer for navigation posts and to populate navigation directions in the turn card template.",
+          "Builder () . setActionStrip ( ... ) . setMapActionStrip ( ... ) if ( currentRoutingInfo != null ) { navigationTemplateBuilder . setNavigationInfo ( currentRoutingInfo ); } return navigationTemplateBuilder . build (); } private void processNextStep ( NavInfo navInfo ) { if ( navInfo == null navinfo . getCurrentStep () == null ) { return ; } / Converts data received from the Navigation data feed into Android-Auto compatible data structures.",
+          "The Android Auto Navigation Template provides a turn card that displays navigation information related to the current trip."
+        ]
+      },
+      {
+        "title": "\"The Google navigation experience \\_|\\_ Navigation SDK for Android \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/intro-google-nav",
+        "source_id": "site-docs-root",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Modification Details Modified navigation guidance: show/hide headers, colors and fonts, directions, alternate routes, and trip progress Map UI controls Modify the navigation header Display directions list Hide alternate routes Display trip progress Adjust traffic information and speed limit information Turn off traffic layer Enable traffic lights and stop signs Display the speedometer Change the map experience UI and adjust the camera.",
+          "For example, the navigation experience shows a standard Google maps layer, with visuals like turn guidance cards, traffic layers, alternate routes, and speed limits.",
+          "The Google navigation experience refers to using the Navigation SDK to embed a turn-by-turn navigation experience that uses Google-provided UI elements and visuals, which are similar to the navigation experience within the Google Maps apps."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "android.content.pm.PackageManager",
+      "android.graphics.Bitmap",
+      "android.graphics.BitmapFactory",
+      "android.os.Bundle",
+      "android.util.Log",
+      "android.widget.Toast",
+      "androidx.annotation.NonNull",
+      "androidx.appcompat.app.AppCompatActivity",
+      "androidx.core.app.ActivityCompat",
+      "androidx.core.content.ContextCompat",
+      "com.google.android.gms.maps.GoogleMap",
+      "com.google.android.gms.maps.GoogleMap.CameraPerspective",
+      "com.google.android.gms.maps.model.BitmapDescriptorFactory",
+      "com.google.android.gms.maps.model.LatLng",
+      "com.google.android.gms.maps.model.Marker",
+      "com.google.android.gms.maps.model.MarkerOptions",
+      "com.google.android.gms.maps.OnMapReadyCallback",
+      "com.google.android.libraries.navigation.ListenableResultFuture",
+      "com.google.android.libraries.navigation.NavigationApi",
+      "com.google.android.libraries.navigation.Navigator",
+      "com.google.android.libraries.navigation.SimulationOptions",
+      "com.google.android.libraries.navigation.StylingOptions",
+      "com.google.android.libraries.navigation.SupportNavigationFragment",
+      "com.google.android.libraries.navigation.Waypoint",
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/tbt-feed",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/android-auto",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/intro-google-nav"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/tbt-feed",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/android-auto",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/intro-google-nav"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/tbt-feed",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/android-auto",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/intro-google-nav"
+      ]
+    }
+  ]
+}

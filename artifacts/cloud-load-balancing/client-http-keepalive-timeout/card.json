@@ -1,0 +1,156 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:49.160Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "Client HTTP keepalive timeout",
+  "feature_slug": "client-http-keepalive-timeout",
+  "summary": "Supported regional and cross-region Application Load Balancers let you configure the maximum idle time for downstream client HTTP connections; Global external Application Load Balancers support a configurable client HTTP keepalive timeout for downstream client connections.",
+  "extended_definition": "Supported regional and cross-region Application Load Balancers let you configure the maximum idle time for downstream client HTTP connections; Global external Application Load Balancers support a configurable client HTTP keepalive timeout for downstream client connections.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/https",
+      "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+      "https://docs.cloud.google.com/load-balancing/docs/target-proxies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Internal Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "source_id": "site-docs-root",
+        "final_score": 294,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Table: Supported session affinity settings Product Session affinity options Cross-region internal Application Load Balancer Regional internal Application Load Balancer None ( NONE ) Client IP ( CLIENT IP ) Generated cookie ( GENERATED COOKIE ) Header field ( HEADER FIELD ) HTTP cookie ( HTTP COOKIE ) Stateful cookie-based affinity ( STRONG COOKIE AFFINITY ) Also note: The effective default value of the load balancing locality policy ( localityLbPolicy ) changes according to your session affinity settings.",
+          "Backend service scope The following table indicates which backend service resource and scope is used by internal Application Load Balancers: Load balancer mode Backend service resource Cross-region internal Application Load Balancer backendServices Regional internal Application Load Balancer regionBackendServices Protocol to the backends Backend services for Application Load Balancers must use one of the following protocols to send requests to backends: HTTP, which uses HTTP/1.1 and no TLS HTTPS, which uses HTTP/1.1 and TLS HTTP/2, which uses HTTP/2 and TLS (HTTP/2 without encryption isn't supported.) H2C, which uses HTTP/2 over TCP.",
+          "The following table shows the target proxy APIs required by internal Application Load Balancers: Load balancer mode Target proxy Cross-region internal Application Load Balancer targetHttpProxies targetHttpsProxies Regional internal Application Load Balancer regionTargetHttpProxies regionTargetHttpsProxies SSL certificates Internal Application Load Balancers using target HTTPS proxies require private keys and SSL certificates as part of the load balancer configuration."
+        ]
+      },
+      {
+        "title": "\"External Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 215,
+        "relevance": "",
+        "evidence_snippets": [
+          "Configured on the backend service or backend bucket Regional external Application Load Balancer Regional HTTP , Regional HTTPS X-Forwarded-Proto : [http https] (requests only) Via: 1.1 google (requests and responses) X-Forwarded-For : [<supplied-value>,]<client-ip>,<load-balancer-ip> (see X-Forwarded-For header ) (requests only) Configured in the URL map Note: In accordance with RFC 2616 , the following hop-by-hop headers aren't propagated by the target proxy: Connection , Keep-Alive , Proxy-Authenticate , Proxy-Authorization , TE , Trailers , Transfer-Encoding , and Upgrade .",
+          "Load balancer mode HTTP/3 support Global external Application Load Balancer (always Premium Tier) Classic Application Load Balancer in Premium Tier Classic Application Load Balancer in Standard Tier Regional external Application Load Balancer (Premium or Standard Tier) How HTTP/3 is negotiated When HTTP/3 is enabled, the load balancer advertises this support to clients, allowing clients that support HTTP/3 to attempt to establish HTTP/3 connections with the HTTPS load balancer.",
+          "Backend service scope The following table indicates which backend service resource and scope is used by external Application Load Balancers: Load balancer mode Backend service resource Global external Application Load Balancer backendServices (global) Classic Application Load Balancer backendServices (global) Regional external Application Load Balancer regionBackendServices (regional) Protocol to the backends Backend services for Application Load Balancers must use one of the following protocols to send requests to backends: HTTP, which uses HTTP/1.1 and no TLS HTTPS, which uses HTTP/1.1 and TLS HTTP/2, which uses HTTP/2 and TLS (HTTP/2 without encryption isn't supported.) H2C, which uses HTTP/2 over TCP."
+        ]
+      },
+      {
+        "title": "Target proxies overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/target-proxies",
+        "source_id": "site-docs-root",
+        "final_score": 210,
+        "relevance": "",
+        "evidence_snippets": [
+          "SSL policies HTTP/3 support Client HTTP keepalive timeout Use target proxies If you're using the Google Cloud console to set up a load balancer, the target proxy is set up implicitly as part of your frontend configuration.",
+          "Cross-region internal Application Load Balancer Target HTTP proxy Target HTTPS proxy Global Target proxy references a URL map.",
+          "Regional external Application Load Balancer Target HTTP proxy Target HTTPS proxy Regional Target proxy references a URL map."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "addresses.insert"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/target-proxies",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/target-proxies",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/target-proxies",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/target-proxies",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/target-proxies",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/target-proxies",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/target-proxies",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/target-proxies",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/target-proxies",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    }
+  ]
+}

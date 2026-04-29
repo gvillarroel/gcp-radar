@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:33.557Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Auto mode IP ranges",
+  "feature_slug": "auto-mode-ip-ranges",
+  "summary": "Expanded Auto mode VPC network IP ranges by adding a new 10.206.0.0/20 subnet in the us-south1 (Dallas) region; Expanded Auto mode VPC network IP ranges by adding a new 10.202.0.0/20 subnet in the us-east5 (Columbus) region.",
+  "extended_definition": "Expanded Auto mode VPC network IP ranges by adding a new 10.206.0.0/20 subnet in the us-south1 (Dallas) region; Expanded Auto mode VPC network IP ranges by adding a new 10.202.0.0/20 subnet in the us-east5 (Columbus) region.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/alias-ip",
+      "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+      "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+      "https://docs.cloud.google.com/vpc/docs/vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create and manage VPC networks \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "source_id": "site-docs-root",
+        "final_score": 266,
+        "relevance": "",
+        "evidence_snippets": [
+          "By default it specifies the source range 10.128.0.0/9 , which contains current and future IPv4 ranges for subnets in an auto mode network.",
+          "Subnets with IPv6 address ranges are not supported on auto mode VPC networks.",
+          "All auto mode VPC networks use the same set of IPv4 ranges."
+        ]
+      },
+      {
+        "title": "\"Configure alias IP ranges \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "source_id": "site-docs-root-2",
+        "final_score": 262,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The first network interface listed, the one in my-subnet1 , is the primary interface: gcloud compute instances create multi-nic-alias-vm \\ --machine-type f1-micro \\ --network-interface \"subnet=my-subnet1,aliases=/32;range1:/24\" \\ --network-interface \"subnet=my-subnet2,aliases=/32;range2:/24\" Use the display command to see the interfaces and their addresses: gcloud compute instances describe multi-nic-alias-vm ... networkInterfaces: - ... aliasIpRanges: - ipCidrRange: 172.16.1.2/32 - ipCidrRange: 10.1.0.0/24 subnetworkRangeName: range1 name: nic0 network: .../networks/my-network1 networkIP: 172.16.1.3 subnetwork: .../subnetworks/my-subnet1 ... - ... aliasIpRanges: - ipCidrRange: 172.16.2.2/32 - ipCidrRange: 10.2.0.0/24 subnetworkRangeName: range2 name: nic1 network: .../networks/my-network2 networkIP: 172.16.2.3 subnetwork: .../subnetworks/my-subnet2 API Create two custom mode VPC networks named my-network1 and my-network2 .",
+          "Auto mode Virtual Private Cloud (VPC) networks can't be deleted if secondary subnet ranges are present.",
+          "The Terraform arguments have example values that you can change. resource \"google compute subnetwork\" \"network-with-private-secondary-ip-ranges\" { project = var.project id # Replace this with your project ID in quotes name = \"test-subnetwork\" ip cidr range = \"10.2.0.0/16\" region = \"us-central1\" network = \"test-vpc-network\" secondary ip range { range name = \"tf-test-secondary-range-update1\" ip cidr range = \"192.168.10.0/24\" } } To learn how to apply or remove a Terraform configuration, see Basic Terraform commands ."
+        ]
+      },
+      {
+        "title": "Alias IP ranges \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "source_id": "site-docs-root-2",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To use alias IP with an auto mode VPC network, you can allocate alias IP ranges from the automatically created subnet's primary CIDR range or add a secondary range to the automatically created subnet and allocate alias IP ranges from the new secondary range.",
+          "In order to configure this example, use the following gcloud commands: gcloud compute networks create vpc1 --subnet-mode custom gcloud compute networks subnets create subnet1 --region us-central1 --network vpc1 --range 10.128.0.0/16 --secondary-range secondaryrange1=172.16.0.0/20 gcloud compute instances create vm1 --zone us-central1-a --network-interface \"subnet=subnet1,aliases=secondaryrange1:172.16.0.0/27;secondaryrange1:172.16.1.0/32\" gcloud compute instances create vm2 --zone us-central1-a --network-interface \"subnet=subnet1,aliases=secondaryrange1:172.16.0.32/27;secondaryrange1:172.16.1.1/32\" Alias IP addresses in auto mode VPC networks and subnets The automatically-created subnets in auto mode VPC networks each have a primary CIDR range, but no secondary range.",
+          "Key benefits of alias IP ranges When alias IP ranges are configured, Google Cloud automatically installs Virtual Private Cloud (VPC) network routes for primary and alias IP ranges for the subnet of the primary network interface."
+        ]
+      },
+      {
+        "title": "VPC networks \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc",
+        "source_id": "site-docs-root",
+        "final_score": 240,
+        "relevance": "",
+        "evidence_snippets": [
+          "In addition to the automatically created subnets, you can add more subnets manually to auto mode VPC networks in regions that you choose by using IP ranges outside of 10.128.0.0/9 .",
+          "Subnets with IPv6 address ranges aren't supported in the following: Auto mode VPC networks, including the default network Legacy networks If you have an auto mode VPC network that you would like to add subnets with IPv6 address ranges to, you can do the following: Convert the auto mode network to custom mode .",
+          "You plan to connect your VPC network to another network: Because the subnets of every auto mode VPC network use the same predefined range of IP addresses, you can't connect auto mode VPC networks to one another by using VPC Network Peering or Cloud VPN."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "var.project"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/vpc"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/vpc"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/vpc"
+      ]
+    }
+  ]
+}

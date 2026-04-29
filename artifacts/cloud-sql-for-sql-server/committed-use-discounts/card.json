@@ -1,0 +1,150 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:55.363Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server",
+  "feature_name": "committed use discounts",
+  "feature_slug": "committed-use-discounts",
+  "summary": "Cloud SQL offers committed use discounts for regional database instance usage over 1- or 3-year terms.",
+  "extended_definition": "Cloud SQL offers committed use discounts for regional database instance usage over 1- or 3-year terms.",
+  "lifecycle": {
+    "latest_feature_date": "2020-06-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/pricing"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud SQL pricing | Google Cloud",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "source_id": "site-docs-root",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud SQL also offers committed use discounts (CUDs) that provide deeply discounted prices in exchange for your commitment to continuously use database instances in a particular region for a one- or three-year term.",
+          "Cloud SQL also offers committed use discounts (CUDs) that provide deeply discounted prices in exchange for your commitment to continuously use database instances in a particular region for a one- or three-year term.",
+          "Note: Committed use discounts do not apply to instance prices."
+        ]
+      },
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \" DATABASE VERSION \", \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \" MACHINE TYPE \", \"kind\": \"sql#settings\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"authorizedNetworks\": [], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \" ZONE \", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"backupConfiguration\": { \"startTime\": \"19:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true }, \"settingsVersion\": \"1\", \"dataDiskSizeGb\": \"10\" }, \"etag\": \"--redacted--\", \"ipAddresses\": [ { \"type\": \"PRIMARY\", \" ipAddress \": \" 10.0.0.1 \" } ], \"serverCaCert\": { ... }, \"instanceType\": \"CLOUD SQL INSTANCE\", \"project\": \" PROJECT ID \", \"serviceAccountEmailAddress\": \"redacted@gcp-sa-cloud-sql.iam.gserviceaccount.com\", \"backendType\": \" BACKEND TYPE \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID \", \"connectionName\": \" PROJECT ID:REGION:INSTANCE ID \", \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"gceZone\": \" ZONE \" } To see how the underlying REST API request is constructed for this task, see the APIs Explorer on the instances:insert page .",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \" DATABASE VERSION \", \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \" MACHINE TYPE \", \"kind\": \"sql#settings\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"authorizedNetworks\": [], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \" ZONE \", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"backupConfiguration\": { \"startTime\": \"19:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true }, \"settingsVersion\": \"1\", \"dataDiskSizeGb\": \"10\" }, \"etag\": \"--redacted--\", \"ipAddresses\": [ { \"type\": \"PRIMARY\", \" ipAddress \": \" 10.0.0.1 \" } ], \"serverCaCert\": { ... }, \"instanceType\": \"CLOUD SQL INSTANCE\", \"project\": \" PROJECT ID \", \"serviceAccountEmailAddress\": \"redacted@gcp-sa-cloud-sql.iam.gserviceaccount.com\", \"backendType\": \" BACKEND TYPE \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID \", \"connectionName\": \" PROJECT ID:REGION:INSTANCE ID \", \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"gceZone\": \" ZONE \" } REST v1beta4 1.",
+          "HTTP method and URL: POST https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances Request JSON body: { \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"databaseVersion\": \" DATABASE VERSION \", \"rootPassword\": \" PASSWORD \", \"settings\": { \"tier\": \" MACHINE TYPE \", \"edition\": \" EDITION TYPE \", \"backupConfiguration\": { \"enabled\": true }, \"dataCacheConfig\": { \"dataCacheEnabled\": DATA CACHE ENABLED }, \"ipConfiguration\": { \"privateNetwork\": \" PRIVATE NETWORK \", \"authorizedNetworks\": [ AUTHORIZED NETWORKS ], \"ipv4Enabled\": false, \"serverCaMode\": \" CA MODE \", \"serverCertificateRotationMode\": \" SERVER CERTIFICATE ROTATION MODE \", \"customSubjectAlternativeNames\": \" DNS NAMES \" } }, \"sqlNetworkArchitecture\": \"NEW NETWORK ARCHITECTURE\" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Clone instances \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "Terraform To clone the instance, use a Terraform resource resource \"google sql database instance\" \"clone\" { name = \"sqlserver-instance-clone-name\" region = \"us-central1\" database version = \"SQLSERVER 2017 STANDARD\" root password = \"INSERT-PASSWORD-HERE\" clone { source instance name = google sql database instance.source.id } set deletion protection to true, will ensure that one cannot accidentally delete this instance by use of Terraform whereas deletion protection enabled flag protects this instance at the GCP level. deletion protection = false } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.",
+          "Home Documentation Databases Cloud SQL SQL Server Guides Send feedback Clone instances Stay organized with collections Save and categorize content based on your preferences.",
+          "The new instance has the same settings such as database flags, connectivity options, machine type, and storage and memory settings."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "instance.source.id",
+      "sql.iam.gserviceaccount.com",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/clone-instance"
+      ]
+    }
+  ]
+}

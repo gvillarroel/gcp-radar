@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:53.295Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Custom organization policies for BackupRun",
+  "feature_slug": "custom-organization-policies-for-backuprun",
+  "summary": "Cloud SQL supports custom organization policies for BackupRun resources and additional Instances resource fields.",
+  "extended_definition": "Cloud SQL supports custom organization policies for BackupRun resources and additional Instances resource fields.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+      "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+      "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "source_id": "site-docs-reference-3",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances Request JSON body: { \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"databaseVersion\": \" DATABASE VERSION \", \"settings\": { \"tier\": \" MACHINE TYPE \", \"edition\": \" EDITION TYPE \", \"dataCacheConfig\" { \"dataCacheEnabled\": DATA CACHE ENABLED }, \"backupConfiguration\": { \"binaryLogEnabled\": true, \"enabled\": true }, \"passwordValidationPolicy\": { \"enablePasswordPolicy\": true \"minLength\": \" MIN LENGTH \", \"complexity\": COMPLEXITY DEFAULT, \"reuseInterval\": \" REUSE INTERVAL \", \"disallowUsernameSubstring\": \" DISALLOW USERNAME SUBSTRING \", }, \"ipConfiguration\": { \"privateNetwork\": \" PRIVATE NETWORK \", \"authorizedNetworks\": [ AUTHORIZED NETWORKS ], \"ipv4Enabled\": false, \"enablePrivatePathForGoogleCloudServices\": true, \"serverCaMode\": \" CA MODE \", \"serverCertificateRotationMode\": \" SERVER CERTIFICATE ROTATION MODE \", \"customSubjectAlternativeNames\": \" DNS NAMES \" }, \"dataApiAccess\": \"ALLOW DATA API\" }, \"sqlNetworkArchitecture\": \"NEW NETWORK ARCHITECTURE\" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances Request JSON body: { \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"databaseVersion\": \" DATABASE VERSION \", \"settings\": { \"tier\": \" MACHINE TYPE \", \"edition\": \" EDITION TYPE \", \"dataCacheConfig\": { \"dataCacheEnabled\": DATA CACHE ENABLED }, \"backupConfiguration\": { \"binaryLogEnabled\": true, \"enabled\": true }, \"passwordValidationPolicy\": { \"enablePasswordPolicy\": true \"minLength\": \" MIN LENGTH \", \"complexity\": COMPLEXITY DEFAULT, \"reuseInterval\": \" REUSE INTERVAL \", \"disallowUsernameSubstring\": \" DISALLOW USERNAME SUBSTRING \" }, \"ipConfiguration\": { \"privateNetwork\": \" PRIVATE NETWORK \", \"authorizedNetworks\": [ AUTHORIZED NETWORKS ], \"ipv4Enabled\": false, \"enablePrivatePathForGoogleCloudServices\": true, \"serverCaMode\": \" CA MODE \", \"serverCertificateRotationMode\": \" SERVER CERTIFICATE ROTATION MODE \", \"customSubjectAlternativeNames\": \" DNS NAMES \" }, \"dataApiAccess\": \"ALLOW DATA API\" }, \"sqlNetworkArchitecture\": \"NEW NETWORK ARCHITECTURE\" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Delete the changes To delete your changes, do the following: To disable deletion protection, in your Terraform configuration file set the deletion protection argument to false . deletion protection = \"false\" Apply the updated Terraform configuration by running the following command and entering yes at the prompt: terraform apply Remove resources previously applied with your Terraform configuration by running the following command and entering yes at the prompt: terraform destroy REST v1 Create the instance This example creates an instance."
+        ]
+      },
+      {
+        "title": "\"Cloud SQL organization policies \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "source_id": "site-docs-root",
+        "final_score": 139,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Customer-managed encryption keys (CMEK) organization policies Cloud SQL supports two organization policy constraints that help ensure CMEK protection across an organization: constraints/gcp.restrictNonCmekServices and constraints/gcp.restrictCmekCryptoKeyProjects .",
+          "The types of organization policies specific to Cloud SQL are as follows: Predefined organization policies Connection organization policies Customer-managed encryption keys (CMEK) organization policies Custom organization policies Predefined organization policies You can use the predefined constraints to control the public IP settings and Customer Managed Encryption Key (CMEK) settings of Cloud SQL instances.",
+          "Custom organization policies For granular, customizable control over the settings, you can create custom constraints and use those custom constraints in a custom organization policy."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 131,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SqlBackupRunsService.Get SqlDatabasesService.Get SqlInstancesService.Get SqlOperationsService.Get SqlSslCertsService.Get SqlUsersService.Get 500 List sqladmin.googleapis.com/list The number of requests that are made per minute per user per region to use the APIs in this category.",
+          "SqlFlagsService.List SqlTiersService.List 180 Limits There are restrictions on some Cloud SQL resources that are not replenished periodically and not shown on the Quotas page in the Google Cloud console.",
+          "SqlBackupRunsService.Delete SqlBackupRunsService.Insert SqlDatabasesService.Delete SqlDatabasesService.Insert SqlDatabasesService.Patch SqlDatabasesService.Update SqlInstancesService."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcp.restrictCmekCryptoKeyProjects",
+      "gcp.restrictNonCmekServices",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+      ]
+    }
+  ]
+}

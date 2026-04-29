@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Cloud Spanner SQL WITH clause support",
+  "feature_slug": "cloud-spanner-sql-with-clause-support",
+  "summary": "Cloud Spanner SQL query language now supports the WITH clause, allowing subquery results to be bound to temporary tables for cleaner and faster complex queries.",
+  "extended_definition": "Cloud Spanner SQL query language now supports the WITH clause, allowing subquery results to be bound to temporary tables for cleaner and faster complex queries.",
+  "lifecycle": {
+    "latest_feature_date": "2019-11-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+      "https://docs.cloud.google.com/spanner/docs/graph/iso-standards",
+      "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and query a database in the Google Cloud console \\_|\\_ Spanner \\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "source_id": "site-docs-reference",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Google Cloud console displays the Singers table's Spanner Studio page with a new query tab that contains the INSERT statement that you edit to insert a row in the Singers table and view the result of that insertion: GoogleSQL -- Add new values in the VALUES clause in order of the column list. -- Each value must be type compatible with its associated column.",
+          "Create a schema for your database Note: Spanner Studio (formerly labeled Query in the Google Cloud console) supports SQL, DML, and DDL operations in a single editor.",
+          "INSERT INTO Singers ( SingerId , FirstName , LastName , SingerInfo , BirthDate ) VALUES ( < SingerId > , -- type: INT64 < FirstName > , -- type: STRING(1024) < LastName > , -- type: STRING(1024) < SingerInfo > , -- type: BYTES(MAX) < BirthDate > -- type: DATE ) THEN RETURN SingerId , FirstName , LastName , SingerInfo , BirthDate ; PostgreSQL -- Add new values in the VALUES clause in order of the column list. -- Each value must be type compatible with its associated column."
+        ]
+      },
+      {
+        "title": "Spanner Graph and ISO standards \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/graph/iso-standards",
+        "source_id": "site-docs-reference",
+        "final_score": 109,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The page describes how Spanner Graph supports the ISO international standard query language for graph databases.",
+          "Spanner Graph is based on two ISO standards: ISO/IEC 9075-16:2023 - Information technology — Database languages SQL Property Graph Queries (SQL/PGQ) , Edition 1, 2023 ISO/IEC 39075:2024 - Information technology — Database languages — GQL , Edition 1, 2024 The following tables describe the high-level relationship between SQL/PGQ, GQL, and how Spanner Graph supports these standards.",
+          "Standard SQL/PGQ GQL Spanner Graph Query Graph pattern matching capabilities Shares the core Graph Pattern Matching Language (GPML) functionalities with GQL."
+        ]
+      },
+      {
+        "title": "\"Information schema for PostgreSQL-dialect databases \\_|\\_ Spanner \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "source_id": "site-docs-reference",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "The default value is public . table name character varying The name of the view. view definition character varying The SQL text of the query that defines the view. check option character varying Not used. is updatable character varying Not used. is insertable into character varying Not used. is trigger updatable character varying Not used. is trigger deletable character varying Not used. is trigger insertable into character varying Not used. security type character varying The security type of the view.",
+          "For example, the following query fetches the names of all user-defined tables in a database: SELECT table schema , table name FROM information schema . tables WHERE table schema NOT IN ( 'pg catalog' , 'information schema' , 'SPANNER SYS' ) AND table type = 'BASE TABLE' Usage information schema tables are available only through SQL interfaces, for example: The executeQuery API The gcloud spanner databases execute-sql command The Query page of a database in the Google Cloud console.",
+          "The value of this column is parsable as part of a query. option type character varying A data type name that is the type of this option value. column privileges This row-filtered view lists all fine-grained access control privileges granted on all columns to any database role, including public ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/graph/iso-standards",
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/graph/iso-standards",
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/graph/iso-standards",
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/graph/iso-standards",
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/graph/iso-standards",
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    }
+  ]
+}

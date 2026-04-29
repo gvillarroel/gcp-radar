@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:45.183Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "EXPORT DATA reverse ETL from BigQuery to Bigtable",
+  "feature_slug": "export-data-reverse-etl-from-bigquery-to-bigtable",
+  "summary": "Bigtable now supports EXPORT DATA statements for directly exporting BigQuery data to Bigtable.",
+  "extended_definition": "Bigtable now supports EXPORT DATA statements for directly exporting BigQuery data to Bigtable.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+      "https://docs.cloud.google.com/bigtable/docs/dynamodb-users"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Migrate from DynamoDB to Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+        "source_id": "site-docs-reference-2",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "GetItem BatchGetItem , Query , Scan ReadRow ReadRows ( range , prefix , reverse scan ) Bigtable supports efficient scanning by row key prefix, regular expression pattern, or row key range forward or backward.",
+          "While you can design the lexicographical row key in Bigtable to handle many scan patterns efficiently, Bigtable also supports asynchronous secondary indexes that you implement as continuous materialized views to provide efficient, eventually consistent lookups for alternative query patterns.",
+          "You don't have to use an UploadDate column or calculate a reverse timestamp and make that your sort key, either, because Bigtable timestamps give you the reverse chronologically ordered comments automatically."
+        ]
+      },
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "It also supports modern workloads, such as machine learning and AI, that require frequent iteration on feature stores and real-time serving at global scale.",
+          "Compared to Bigtable backups, exports take longer to execute and incur extra compute costs because the exports use Dataflow.",
+          "Transaction support Although neither database supports complex multi-row transactions, each has some transaction support."
+        ]
+      },
+      {
+        "title": "Bigtable for Aerospike users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "source_id": "site-docs-root-2",
+        "final_score": 55,
+        "relevance": "",
+        "evidence_snippets": [
+          "Bigtable provides fully consistent single-row writes within a cluster and supports single-row transactions through mutate-row requests.",
+          "Data types Aerospike supports advanced data types, including scalars, GeoJSON, HyperLogLogs, lists, and nested objects.",
+          "Bigtable provides two methods to cover common backup needs: Bigtable backups and managed data exports."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Access management DCL statements",
+  "feature_slug": "access-management-dcl-statements",
+  "summary": "BigQuery supports data control language statements for access management, including GRANT and REVOKE.",
+  "extended_definition": "BigQuery supports data control language statements for access management, including GRANT and REVOKE.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 2,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "generic_supporting_pages",
+        "message": "Supporting pages do not mention any informative feature tokens.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/display-video-transformation",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-remote-function"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deploy and apply a remote function using BigQuery DataFrames \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-remote-function",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 56,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The BigQuery remote function created to support the BigQuery DataFrames remote function can be located via a property bigframes remote function set in the remote function object. print ( f \"Created BQ remote function: { get bucket . bigframes remote function } \" ) The cloud function can be located via another property bigframes cloud function set in the remote function object. print ( f \"Created cloud function: { get bucket . bigframes cloud function } \" ) Warning: The deployed cloud function may be visible to other users with sufficient privilege in the project, so the user should be careful about having any sensitive data in the code that will be deployed as a remote function.",
+          "One can find more details about the usage and the requirements via help command. help ( bpd . remote function ) Read a table and inspect the column of interest. df = bpd . read gbq ( \"bigquery-public-data.ml datasets.penguins\" ) df [ \"body mass g\" ] . head ( 10 ) Define a custom function, and specify the intent to turn it into a remote function.",
+          "For more information, see Set up authentication for client libraries . import bigframes.pandas as bpd Set BigQuery DataFrames options bpd . options . bigquery . project = your gcp project id bpd . options . bigquery . location = \"US\" BigQuery DataFrames gives you the ability to turn your custom scalar functions into a BigQuery remote function."
+        ]
+      },
+      {
+        "title": "\"Display & Video 360 data transformation \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/display-video-transformation",
+        "source_id": "site-api-reference",
+        "final_score": 56,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Display & Video 360 resource BigQuery table BigQuery view Data Transfer files Impression p Impression displayvideo id Impression displayvideo id Click p Click displayvideo id Click displayvideo id Activity p Activity displayvideo id Activity displayvideo id DV360 API Resource (v3) Partner p Partner displayvideo id Partner displayvideo id Advertiser p Advertiser displayvideo id Advertiser displayvideo id LineItem p LineItem displayvideo id LineItem displayvideo id LineItemTargeting p LineItemTargeting displayvideo id LineItemTargeting displayvideo id Campaign p Campaign displayvideo id Campaign displayvideo id CampaignTargeting p CampaignTargeting displayvideo id CampaignTargeting displayvideo id InsertionOrder p InsertionOrder displayvideo id InsertionOrder displayvideo id InsertionOrderTargeting p InsertionOrderTargeting displayvideo id InsertionOrderTargeting displayvideo id AdGroup p AdGroup displayvideo id AdGroup displayvideo id AdGroupTargeting p AdGroupTargeting displayvideo id AdGroupTargeting displayvideo id AdGroupAd p AdGroupAd displayvideo id AdGroupAd displayvideo id Creative p Creative displayvideo id Creative displayvideo id Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Display & Video 360 data transformation When your Display & Video 360 data are transferred to BigQuery, they are transformed into the following BigQuery tables and views.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Run queries using the BigQuery DataFrames bigframes.pandas APIs \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 56,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . import bigframes.pandas as bpd Load data from BigQuery query or table = \"bigquery-public-data.ml datasets.penguins\" bq df = bpd . read gbq ( query or table ) Inspect one of the columns (or series) of the DataFrame: bq df [ \"body mass g\" ] Compute the mean of this series: average body mass = bq df [ \"body mass g\" ] . mean () print ( f \"average body mass: { average body mass } \" ) Find the heaviest species using the groupby operation to calculate the mean body mass g: ( bq df [ \"body mass g\" ] . groupby ( by = bq df [ \"species\" ]) . mean () . sort values ( ascending = False ) . head ( 10 ) ) What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "Explore further For detailed documentation that includes this code sample, see the following: Use BigQuery DataFrames Code sample Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "Home Documentation Data analytics BigQuery Samples Run queries using the BigQuery DataFrames bigframes.pandas APIs Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigframes.pandas",
+      "data.ml",
+      "datasets.penguins"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/display-video-transformation",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-remote-function"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/display-video-transformation",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-remote-function"
+      ]
+    }
+  ]
+}

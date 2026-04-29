@@ -1,0 +1,107 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Alternate VECTOR_SEARCH syntax for single vectors",
+  "feature_slug": "alternate-vector-search-syntax-for-single-vectors",
+  "summary": "BigQuery supports an alternate VECTOR_SEARCH syntax optimized for single-vector searches.",
+  "extended_definition": "BigQuery supports an alternate VECTOR_SEARCH syntax optimized for single-vector searches.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/vector-search-intro"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Google Ad Manager report transformation \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/doubleclick-publisher-transformation",
+        "source_id": "site-api-reference",
+        "final_score": 38,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google Ad Manager file BigQuery table(s) BigQuery view(s) Data Transfer files NetworkRequests NetworkBackfillRequests p NetworkRequests network code p NetworkBackfillRequests network code NetworkRequests network code NetworkBackfillRequests network code NetworkCodeServes NetworkBackfillCodeServes p NetworkCodeServes p NetworkBackfillCodeServes network code NetworkCodeServes NetworkBackfillCodeServes network code NetworkImpressions NetworkBackfillImpressions p NetworkImpressions network code p NetworkBackfillImpressions network code NetworkImpressions network code NetworkBackfillImpressions network code NetworkClicks NetworkBackfillClicks p NetworkClicks network code p NetworkBackfillClicks network code NetworkClicks network code NetworkBackfillClicks network code NetworkActiveViews NetworkBackfillActiveViews p NetworkActiveViews network code p NetworkBackfillActiveViews network code NetworkActiveViews network code NetworkBackfillActiveViews network code NetworkBackfillBids p NetworkBackfillBids network code NetworkBackfillBids network code NetworkVideoConversions NetworkBackfillVideoConversions p NetworkVideoConversions network code p NetworkBackfillVideoConversions network code NetworkVideoConversions network code NetworkBackfillVideoConversions network code NetworkRichMediaConversions NetworkBackfillRichMediaConversions p NetworkRichMediaConversions network code p NetworkBackfillRichMediaConversions network code NetworkRichMediaConversions network code NetworkBackfillRichMediaConversions network code NetworkActivities p NetworkActivities network code NetworkActivities network code Match Tables AdCategory p MatchTableAdCategory network code MatchTableAdCategory network code AdUnit p MatchTableAdUnit network code MatchTableAdUnit network code AudienceSegment p MatchTableAudienceSegment network code MatchTableAudienceSegment network code AudienceSegmentCategory p MatchTableAudienceSegmentCategory network code MatchTableAudienceSegmentCategory network code BandwidthGroup p MatchTableBandwidthGroup network code MatchTableBandwidthGroup network code Browser p MatchTableBrowser network code MatchTableBrowser network code BrowserLanguage p MatchTableBrowserLanguage network code MatchTableBrowserLanguage network code Company p MatchTableCompany network code MatchTableCompany network code DeviceCapability p MatchTableDeviceCapability network code MatchTableDeviceCapability network code DeviceCategory p MatchTableDeviceCategory network code MatchTableDeviceCategory network code DeviceManufacturer p MatchTableDeviceManufacturer network code MatchTableDeviceManufacturer network code ExchangeRate (deprecated) - - GeoTarget p MatchTableGeoTarget network code MatchTableGeoTarget network code LineItem p MatchTableLineItem network code MatchTableLineItem network code MobileCarrier p MatchTableMobileCarrier network code MatchTableMobileCarrier network code MobileDevice p MatchTableMobileDevice network code MatchTableMobileDevice network code MobileDeviceSubmodel p MatchTableMobileDeviceSubmodel network code MatchTableMobileDeviceSubmodel network code OperatingSystem p MatchTableOperatingSystem network code MatchTableOperatingSystem network code OperatingSystemVersion p MatchTableOperatingSystemVersion network code MatchTableOperatingSystemVersion network code Order p MatchTableOrder network code MatchTableOrder network code Placement p MatchTablePlacement network code MatchTablePlacement network code ProgrammaticBuyer p MatchTableProgrammaticBuyer network code MatchTableProgrammaticBuyer network code ProposalRetractionReason p MatchTableProposalRetractionReason network code MatchTableProposalRetractionReason network code ThirdPartyCompany p MatchTableThirdPartyCompany network code MatchTableThirdPartyCompany network code TimeZone p MatchTableTimeZone network code MatchTableTimeZone network code User p MatchTableUser network code MatchTableUser network code Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Google Ad Manager report transformation When your Google Ad Manager (formerly known as DoubleClick for Publishers) data transfer files are transferred to BigQuery, the files are transformed into the following BigQuery tables and views.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Introduction to embeddings and vector search \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "source_id": "site-docs-root",
+        "final_score": 37,
+        "relevance": "",
+        "evidence_snippets": [
+          "Some possible use cases are as follows: Retrieval-augmented generation (RAG) : Parse documents, perform vector search on content, and generate summarized answers to natural language questions using Gemini models, all within BigQuery.",
+          "For a notebook that illustrates this scenario, see Log Anomaly Detection & Investigation with Text Embeddings + BigQuery Vector Search .",
+          "Introduction to embeddings and vector search This document provides an overview of embeddings and vector search in BigQuery."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": [
+          "CREATE TABLE dataset . complex table ( a STRING , my struct STRUCT < string field STRING , int field INT64 > , b ARRAY < STRING > ); CREATE SEARCH INDEX my index ON dataset . complex table ( a OPTIONS ( index granularity = 'GLOBAL' ), my struct , b ) OPTIONS ( analyzer = 'NO OP ANALYZER' , default index column granularity = 'COLUMN' ); CREATE VECTOR INDEX statement Creates a new vector index on a column of a table.",
+          "Column options for a view have the same syntax and requirements as for a table, but with a different list of NAME and VALUE fields: NAME VALUE Details description STRING Example: description=\"a unique id\" Required permissions This statement requires the following IAM permissions : Permission Resource bigquery.tables.get The table to alter. bigquery.tables.update The table to alter.",
+          "Syntax CREATE SEARCH INDEX [ IF NOT EXISTS ] index name ON table name ( { ALL COLUMNS [ WITH COLUMN OPTIONS ( column [ , ... ] ) ] column [ , ... ]} ) [ OPTIONS ( index option list ) ] column := column name [ OPTIONS ( index column option list ) ] Arguments IF NOT EXISTS : If there is already a search index by that name on the table, do nothing."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.tables.get",
+      "bigquery.tables.update"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    }
+  ]
+}

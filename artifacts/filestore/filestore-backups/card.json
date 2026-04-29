@@ -1,0 +1,189 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:10.592Z",
+  "source_step08_card": "data/step-08/current/products/filestore/card.json",
+  "product_name": "Filestore",
+  "product_slug": "filestore",
+  "feature_name": "Filestore backups",
+  "feature_slug": "filestore-backups",
+  "summary": "Filestore backups let you back up Filestore instances.",
+  "extended_definition": "Filestore backups let you back up Filestore instances.",
+  "lifecycle": {
+    "latest_feature_date": "2020-09-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/filestore/docs/backup-data",
+      "https://docs.cloud.google.com/filestore/docs/backups",
+      "https://docs.cloud.google.com/filestore/docs/backups-before-you-start",
+      "https://docs.cloud.google.com/filestore/docs/backups-limitations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About backups \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/backups",
+        "source_id": "site-docs-root-2",
+        "final_score": 304,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported tiers The following table shows the Filestore service tiers that support backups, encryption, and related restore operations: Tier Backups support restore to new instance restore to existing instance restore to source instance CMEK support Basic HDD Yes Yes Yes Yes No Basic SSD Yes Yes Yes Yes No Zonal Yes Yes No No Yes Regional Yes Yes No No Yes Enterprise Yes Yes No No Yes Backup options Filestore offers the following backup options: Standard backups: Filestore creates, manages, and stores standard backups in the same project as your Filestore instances..",
+          "The following table shows the differences between standard and enhanced backups: Feature Standard backups Enhanced backups Backup management Filestore Backup and DR Service Tier availability Basic , Zonal, Regional, Enterprise Zonal, Regional, Enterprise Backup scheduling No Yes Backup secured against unauthorized deletion or changes - Immutable and indelible backups through backup vault Automated backup frequency - Hourly, daily, weekly, monthly, yearly On-demand backup retention Retained indefinitely until manually deleted Retained until expired (by a backup rule) or manually deleted Backups protected against source project deletion - ✔ Centralized backup management across resources and projects - ✔ Long-term (>1 year) backup retention - ✔ Backups protected against source instance deletion ✔ ✔ Customer-managed encryption (CMEK) ✔ Planned Multi-regional backups ✔ Planned Cross-region backups ✔ Planned Back up a file share Backed up data include all the file system data and metadata.",
+          "Home Documentation Storage Filestore Guides Send feedback About backups Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Backup limitations \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/backups-limitations",
+        "source_id": "site-docs-root-2",
+        "final_score": 296,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Filestore supports concurrent backup delete operations when backups reference separate source instances.",
+          "Home Documentation Storage Filestore Guides Send feedback Backup limitations Stay organized with collections Save and categorize content based on your preferences.",
+          "To migrate your data to another region, you can create a backup of it and use the backup to create a new Filestore instance or restore it to an existing instance."
+        ]
+      },
+      {
+        "title": "Before you start creating backups \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/backups-before-you-start",
+        "source_id": "site-docs-root-2",
+        "final_score": 296,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable the APIs Required roles To get the permissions that you need to create an enhanced backup, ask your administrator to grant you the following IAM roles on your project: Create and manage backups with Backup and DR Service: Backup and DR Backup User ( roles/backupdr.backupUser ) Create and manage Filestore instances: Cloud Filestore Editor ( roles/file.editor ) Use Cloud Key Management Service resources for encrypt and decrypt operations only: Cloud Key Management Service CryptoKey Encrypter/Decrypter ( roles/cloudkms.cryptoKeyEncrypterDecrypter ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create an enhanced backup: backupdr.backupPlans.list backupdr.backupPlanAssociations.createForFilestoreInstance backupdr.backupPlanAssociations.list backupdr.backupPlanAssociations.get backupdr.backupPlanAssociations.triggerBackupForFilestoreInstance backupdr.backupPlanAssociations.deleteForFilestoreInstance backupdr.backupPlans.useForFilestoreInstance backupdr.locations.list backupdr.operations.get cloudasset.assets.searchAllResources You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Home Documentation Storage Filestore Guides Send feedback Before you start creating backups Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Back up data \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/backup-data",
+        "source_id": "site-docs-root-2",
+        "final_score": 270,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click the backup name to view the details of the specific backup. gcloud List all backups in your current project To view a list of backups for your current project, run the backups list command: View information about a backup To view information about a backup, run the backups describe command: ` shell gcloud filestore backups describe BACKUP NAME \\ -- region = BACKUP LOCATION ``` Where: BACKUP NAME is the name of the backup whose information you want to view.",
+          "The --kms-key flag is optional: gcloud filestore backups create BACKUP NAME \\ --instance= INSTANCE NAME \\ --file-share= FILE SHARE NAME \\ --instance-location= INSTANCE LOCATION \\ --region= BACKUP LOCATION \\ --kms-key=projects/ KMS PROJECT /locations/ KMS LOCATION /keyRings/ KEYRING /cryptoKeys/ CRYPTO KEY Where: BACKUP NAME is the name you want to give the backup.",
+          "Update gcloud components : gcloud components update Run the following gcloud filestore backups create command in a terminal window on your local machine."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backupdr.backupPlanAssociations.createForFilestoreInstance",
+      "backupdr.backupPlanAssociations.deleteForFilestoreInstance",
+      "backupdr.backupPlanAssociations.get",
+      "backupdr.backupPlanAssociations.list",
+      "backupdr.backupPlanAssociations.triggerBackupForFilestoreInstance",
+      "backupdr.backupPlans.list",
+      "backupdr.backupPlans.useForFilestoreInstance",
+      "backupdr.backupUser",
+      "backupdr.locations.list",
+      "backupdr.operations.get",
+      "cloudasset.assets.searchAllResources",
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListBackupsFixedSizeCollection",
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListBackupsPage",
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListBackupsPagedResponse",
+      "file.editor",
+      "projects.locations.backups"
+    ],
+    "missing_inventory_roles": [
+      "roles/backupdr.backupUser",
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter",
+      "roles/file.editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/backups",
+        "https://docs.cloud.google.com/filestore/docs/backups-limitations",
+        "https://docs.cloud.google.com/filestore/docs/backups-before-you-start",
+        "https://docs.cloud.google.com/filestore/docs/backup-data"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/backups",
+        "https://docs.cloud.google.com/filestore/docs/backups-limitations",
+        "https://docs.cloud.google.com/filestore/docs/backups-before-you-start",
+        "https://docs.cloud.google.com/filestore/docs/backup-data"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/backups",
+        "https://docs.cloud.google.com/filestore/docs/backups-limitations",
+        "https://docs.cloud.google.com/filestore/docs/backups-before-you-start",
+        "https://docs.cloud.google.com/filestore/docs/backup-data"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/backups",
+        "https://docs.cloud.google.com/filestore/docs/backups-limitations",
+        "https://docs.cloud.google.com/filestore/docs/backups-before-you-start",
+        "https://docs.cloud.google.com/filestore/docs/backup-data"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/backups",
+        "https://docs.cloud.google.com/filestore/docs/backups-limitations",
+        "https://docs.cloud.google.com/filestore/docs/backups-before-you-start",
+        "https://docs.cloud.google.com/filestore/docs/backup-data"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/backups",
+        "https://docs.cloud.google.com/filestore/docs/backups-limitations",
+        "https://docs.cloud.google.com/filestore/docs/backups-before-you-start",
+        "https://docs.cloud.google.com/filestore/docs/backup-data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/backups",
+        "https://docs.cloud.google.com/filestore/docs/backups-limitations",
+        "https://docs.cloud.google.com/filestore/docs/backups-before-you-start",
+        "https://docs.cloud.google.com/filestore/docs/backup-data"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/backups",
+        "https://docs.cloud.google.com/filestore/docs/backups-limitations",
+        "https://docs.cloud.google.com/filestore/docs/backups-before-you-start",
+        "https://docs.cloud.google.com/filestore/docs/backup-data"
+      ]
+    }
+  ]
+}

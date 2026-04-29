@@ -1,0 +1,169 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:46.245Z",
+  "source_step08_card": "data/step-08/current/products/chrome-enterprise-premium/card.json",
+  "product_name": "Chrome Enterprise Premium",
+  "product_slug": "chrome-enterprise-premium",
+  "feature_name": "BeyondCorp Enterprise cross-organization authorization",
+  "feature_slug": "beyondcorp-enterprise-cross-organization-authorization",
+  "summary": "Cross-organization authorization allows BeyondCorp Enterprise policies to trust and use attributes from other organizations for access control.",
+  "extended_definition": "Cross-organization authorization allows BeyondCorp Enterprise policies to trust and use attributes from other organizations for access control.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/cross-org-authorization",
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure authorization across organizations \\_|\\_ Chrome Enterprise Premium\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/cross-org-authorization",
+        "source_id": "site-iam-reference",
+        "final_score": 211,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Expected post-configuration policies Following are the policies for the resource and partner organizations after cross-org authorization is configured: Resource organization (organizations/RESOURCE ORG ID): access policy : access level : SP1 -- \"requireScreenlock\" : true AuthorizedorgsDesc : AOD1 -- authorizationtype : trust -- asset type : device -- authorization direction : from -- orgs : [ organizations / PARTNER ORG ID ] Partner organization (organizations/PARTNER ORG ID): access policy : AuthorizedOrgsDesc : AOD2 -- authorizationtype : trust -- asset type : device -- authorization direction : to -- orgs : [ organizations / RESOURCE ORG ID ] The following image shows the visibility of the device attributes of the partner organization after cross-org authorization is configured.",
+          "Following are the policies for the resource and partner organizations before cross-org authorization is configured: Resource organization (organizations/RESOURCE ORG ID): access policy: access level: SP1 --\"requireScreenlock\": true Partner organization (organizations/PARTNER ORG ID): no access policy In the following image, the device attributes of the device in the partner organization are not visible to the resource organization because cross-org authorization is not configured.",
+          "Cross-org authorization lets you configure an access policy to trust and use data, such as device attributes, owned by other organizations."
+        ]
+      },
+      {
+        "title": "\"Secure access to private web applications \\_|\\_ Chrome Enterprise Premium\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "source_id": "site-docs-root",
+        "final_score": 123,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This command uses the etag from your file to ensure that you update the correct version. jq '{policy: .}' policy.json curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -d @- \\ \"https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID /applications/ APPLICATION ID :setIamPolicy\" Replace the following: PROJECT ID : the ID of the project where the secure gateway is configured SECURITY GATEWAY ID : the ID of the secure gateway APPLICATION ID : the ID of the application resource Add a conditional access policy You can also set access policies with conditions.",
+          "You can track the progress in the Notifications section of the Google Cloud console. gcloud To create a secure gateway using gcloud, run the following command: gcloud beyondcorp security-gateways create SECURITY GATEWAY ID \\ --project = PROJECT ID \\ --location = global \\ --display-name = \" SECURITY GATEWAY DISPLAY NAME \" REST To create a secure gateway using the REST API, run the following command: curl \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -X POST \\ -d '{ \"display name\": \" SECURITY GATEWAY DISPLAY NAME \" }' \\ \"https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways?security gateway id= SECURITY GATEWAY ID \" Configure a private web application Before you can define specific application resources in the secure gateway, you must configure the necessary permissions and network settings to enable connectivity and proper routing.",
+          "The following command retrieves the policy and saves it to a file named policy.json . curl \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID /applications/ APPLICATION ID :getIamPolicy\" > policy.json Replace the following: PROJECT ID : the ID of the project where the secure gateway is configured SECURITY GATEWAY ID : the ID of the secure gateway APPLICATION ID : the ID of the application resource The command creates a policy.json file that contains the current policy."
+        ]
+      },
+      {
+        "title": "\"Secure access to SaaS applications \\_|\\_ Chrome Enterprise Premium \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "source_id": "site-docs-root",
+        "final_score": 119,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This command uses the etag from your file to ensure that you update the correct version. jq '{policy: .}' policy.json curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -d @- \\ \"https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID /applications/ APPLICATION ID :setIamPolicy\" Replace the following: PROJECT ID : the ID of the project where the secure gateway is configured SECURITY GATEWAY ID : the ID of the secure gateway APPLICATION ID : the ID of the application resource Add a conditional access policy You can also set access policies with conditions.",
+          "To create, save your settings and create the application, click Create . gcloud To create a SaaS application using gcloud, run the following command: gcloud beyondcorp security-gateways applications create APPLICATION ID \\ --project = PROJECT ID \\ --security-gateway = SECURITY GATEWAY ID \\ --location = global \\ --display-name = \" APPLICATION DISPLAY NAME \" \\ --endpoint-matchers = \"hostname= HOST NAME ,ports= 443 \" REST To create a SaaS application using the REST API, run the following command: curl \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -X POST \\ -d \"{ \\\"display name\\\": \\\" APPLICATION DISPLAY NAME \\\", \\\"endpoint matchers\\\": [{hostname: \\\" HOST NAME \\\", ports: 443 }] }\" \\ \"https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID /applications?application id= APPLICATION ID \" Configure Google Chrome proxy mode You can route application traffic through the secure gateway by applying a PAC file in the Chrome settings in the Google Admin console.",
+          "The following command retrieves the policy and saves it to a file named policy.json . curl \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID /applications/ APPLICATION ID :getIamPolicy\" > policy.json Replace the following: PROJECT ID : the ID of the project where the secure gateway is configured SECURITY GATEWAY ID : the ID of the secure gateway APPLICATION ID : the ID of the application resource The command creates a policy.json file that contains the current policy."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "beyondcorp.googleapis.com",
+      "organizations.locations.operations",
+      "organizations.locations.operations.cancel",
+      "organizations.locations.operations.delete",
+      "organizations.locations.operations.list",
+      "policy.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/cross-org-authorization",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/cross-org-authorization",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/cross-org-authorization",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/cross-org-authorization",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/cross-org-authorization",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/cross-org-authorization",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/cross-org-authorization",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/cross-org-authorization",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/cross-org-authorization",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/cross-org-authorization",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps"
+      ]
+    }
+  ]
+}

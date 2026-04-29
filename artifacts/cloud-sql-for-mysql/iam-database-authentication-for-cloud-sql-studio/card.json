@@ -1,0 +1,150 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:53.295Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "IAM database authentication for Cloud SQL Studio",
+  "feature_slug": "iam-database-authentication-for-cloud-sql-studio",
+  "summary": "Cloud SQL Studio supports authentication using IAM database authentication.",
+  "extended_definition": "Cloud SQL Studio supports authentication using IAM database authentication.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+      "https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication",
+      "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud SQL built-in database authentication \\_|\\_ Cloud SQL for MySQL \\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication",
+        "source_id": "site-docs-reference-3",
+        "final_score": 117,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback Cloud SQL built-in database authentication Stay organized with collections Save and categorize content based on your preferences.",
+          "MySQL PostgreSQL SQL Server This page describes how built-in authentication works on Cloud SQL instances and how database administrators can set password policies for local database users.",
+          "Although IAM database authentication is more secure and reliable, you might prefer to use built-in authentication or a hybrid authentication model that includes both authentication types."
+        ]
+      },
+      {
+        "title": "\"Manage users with built-in authentication \\_|\\_ Cloud SQL for MySQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users",
+        "source_id": "site-docs-reference-3",
+        "final_score": 103,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID /users\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID \", \"status\": \"DONE\", \"user\": \"user@example.com\", \"insertTime\": \"2025-10-20T22:44:16.656Z\", \"startTime\": \"2025-10-20T22:44:16.686Z\", \"endTime\": \"2025-10-20T22:44:20.437Z\", \"operationType\": \"CREATE USER\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } If you create a user that uses built-in authentication for a MySQL 8.0 or later instance and don't specify any database roles, then the user is granted the cloudsqlsuperuser role automatically.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID /users\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID \", \"status\": \"DONE\", \"user\": \"user@example.com\", \"insertTime\": \"2025-10-20T22:44:16.656Z\", \"startTime\": \"2025-10-20T22:44:16.686Z\", \"endTime\": \"2025-10-20T22:44:20.437Z\", \"operationType\": \"CREATE USER\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } If you create a user that uses built-in authentication for a MySQL 8.0 or later instance and don't specify any database roles, then the user is granted the cloudsqlsuperuser role automatically.",
+          "The database role or roles to assign to the user. gcloud sql users create USER NAME \\ --host = HOST \\ --instance = INSTANCE NAME \\ --password = PASSWORD \\ --database-roles = ROLE 1 , ROLE 2 , ..., ROLE N If you create a user that uses built-in authentication for a MySQL 8.0 or later instance and don't specify any database roles, then the user is granted the cloudsqlsuperuser role automatically."
+        ]
+      },
+      {
+        "title": "IAM authentication \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "source_id": "site-docs-reference-3",
+        "final_score": 103,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Feature Built-in database authentication IAM database authentication (individual) IAM group authentication Authentication method Password Temporary authentication token Temporary authentication token Network traffic encryption SSL not required SSL required SSL required User management Manual Centralized through IAM Centralized through IAM and Cloud Identity groups IAM group authentication IAM group authentication lets you manage Cloud SQL users at a group level.",
+          "Context-aware access and IAM database authentication If you're using context-aware access in your IAM configuration, then you can't use a Cloud SQL connector such as the Cloud SQL Auth Proxy or one of the Cloud SQL Language Connectors with IAM database authentication.",
+          "Automatic IAM database authentication Automatic IAM database authentication lets you hand off requesting and managing access tokens to an intermediary Cloud SQL connector , such as the Cloud SQL Auth Proxy or one of the Cloud SQL Language Connectors."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "request.json",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users"
+      ]
+    }
+  ]
+}

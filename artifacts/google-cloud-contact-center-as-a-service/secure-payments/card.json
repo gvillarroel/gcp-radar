@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:13.819Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Secure Payments",
+  "feature_slug": "secure-payments",
+  "summary": "This feature adds Braintree as a payment provider and improves secure payment configuration and agent payment handling.",
+  "extended_definition": "This feature adds Braintree as a payment provider and improves secure payment configuration and agent payment handling.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Secure_Payments"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Secure Payments \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Secure_Payments",
+        "source_id": "site-docs-reference",
+        "final_score": 288,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure Secure Payments for multi-currency When you set up secure credit card payment options through Stripe or Braintree, you have the option to select from the following international currencies: United States Dollar - USD (default option) British Pounds - EUR Euros - EUR Canadian Dollars - CAD Set a new default currency Go to Settings > Developer Settings > Credit Card Payment Providers .",
+          "The Secure Payments feature provides secure credit card processing.",
+          "Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Secure Payments Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Customizing languages, recordings, & messages \\_|\\_ Google Cloud Contact\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages",
+        "source_id": "site-docs-reference-2",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "Variables for dynamic consumer messages Variables are dynamic content tags that allow you to personalize messaging configuration in order to manage secure payments, configure greeting and after-hours messaging, and inform customers of their wait time and place in queue.",
+          "Sample input We're assigning a representative to help you with @{QUEUE} Secure Payments The following variables can be used for secure payments messaging.",
+          "Dynamic content variables are available specifically for Secure Payments."
+        ]
+      },
+      {
+        "title": "\"Queue and menu setup \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup",
+        "source_id": "site-docs-reference",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "With Secure Payments, callers are taken through a payment flow and call recording is automatically paused Call recordings are saved as .mp3 files unless otherwise requested.",
+          "Text 1 for Payments Text 2 for Billing Text 3 for All other enquiries When naming your queues, keep in mind that you cannot use protected SMS command words in queue names, including: STOP, STOPALL, UNSUBSCRIBE, CANCEL, END, QUIT START, YES, UNSTOP HELP, INFO Command words for EXIT (configurable on Chat settings page) Command words for BACK (configurable on Chat settings page) If you try to name the queue using a protected word, an error message is displayed.",
+          "In this example, the keyword \"pay\" has been assigned to the Payments queue."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Secure_Payments",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Secure_Payments",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup"
+      ]
+    }
+  ]
+}

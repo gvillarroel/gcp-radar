@@ -1,0 +1,145 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.221Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-php/card.json",
+  "product_name": "App Engine standard environment PHP",
+  "product_slug": "app-engine-standard-environment-php",
+  "feature_name": "Cloud SDK delivery of App Engine SDK functionality",
+  "feature_slug": "cloud-sdk-delivery-of-app-engine-sdk-functionality",
+  "summary": "App Engine SDK functionality is now delivered exclusively through the Cloud SDK.",
+  "extended_definition": "App Engine SDK functionality is now delivered exclusively through the Cloud SDK.",
+  "lifecycle": {
+    "latest_feature_date": "2019-07-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users",
+      "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access",
+      "https://docs.cloud.google.com/appengine/docs/standard/php7/php-differences"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Authenticating users \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users",
+        "source_id": "site-docs-reference",
+        "final_score": 34,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Authenticating users Stay organized with collections Save and categorize content based on your preferences.",
+          "Identity-Aware Proxy (IAP) Provides authentication by adding an Identity and Access Management (IAM) verification layer above your App Engine app.",
+          "The Users API allows an App Engine app to perform the following tasks: Detect whether the current user is signed in using a Google Account."
+        ]
+      },
+      {
+        "title": "\"Migrate from PHP 5.5 to the latest PHP runtime \\_|\\_ App Engine migration\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/php7/php-differences",
+        "source_id": "site-docs-reference-4",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": [
+          "Compatibility issues between PHP 5.5 and the second-generation PHP runtimes The official PHP documentation provides information on migrating from different PHP versions: Migrating from PHP 5.5.x to PHP 5.6.x Migrating from PHP 5.6.x to PHP 7.0.x Migrating from PHP 7.0.x to PHP 7.1.x Migrating from PHP 7.1.x to PHP 7.2.x Migrating from PHP 7.2.x to PHP 7.3.x Migrating from PHP 7.3.x to PHP 7.4.x Migrating from PHP 7.4.x to PHP 8.0.x Migrating from PHP 8.0.x to PHP 8.1.x Key differences between PHP 5.5 and the second-generation PHP runtimes The following is a summary of the differences between the PHP 5.5 and the second-generation PHP runtimes in the App Engine standard environment: Memory usage differences Second-generation runtimes see a higher baseline of memory usage compared to first-generation runtimes.",
+          "Migrate from the App Engine PHP SDK To reduce runtime migration effort and complexity, the App Engine standard environment lets you access many of legacy bundled services and APIs in the second-generation PHP runtime , such as Memcache.",
+          "Home Documentation Application hosting App Engine Migration center Guides Send feedback Migrate from PHP 5.5 to the latest PHP runtime Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Access legacy bundled services for PHP \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access",
+        "source_id": "site-docs-reference-3",
+        "final_score": 24,
+        "relevance": "",
+        "evidence_snippets": [
+          "PHP 5.5 Memcache for PHP 5.5 example: $memcache = new Memcache(); return $memcache->get($key); Memcached for PHP 5.5 example: $memcache = new Memcached(); $memcache->set('who', $request->get('who')); return $twig->render('memcache.html.twig', [ 'who' => $request->get('who'), 'count' => $memcache->increment('count', 1, 0), 'host' => $request->getHost(), ]); PHP 7/8 Memcache API for PHP example: use Google\\AppEngine\\Api\\Memcache\\Memcache; $memcache = new Memcache(); return $memcache->get($key); Memcached API for PHP example: use Google\\AppEngine\\Api\\Memcache\\Memcached; $memcache = new Memcached(); $memcache->set('who', $request->get('who')); return $twig->render('memcache.html.twig', [ 'who' => $request->get('who'), 'count' => $memcache->increment('count', 1, 0), 'host' => $request->getHost(), ]); If you prefer using the original behavior of Memcache for PHP 5 in PHP, you can continue to call Memcache implicitly by including a few more lines in your composer.json file.",
+          "PHP 5.5 ... $context = [ 'http' => [ 'method' => 'POST', 'header' => $headers, 'content' => http build query($data), ] ]; $context = stream context create($context); // Using file get contents and the Url Fetch service. $result = file get contents('http://example.com', false, $context); // Print Http Response Headers print r($http response header); PHP 7/8 use google\\appengine\\api\\urlfetch\\UrlFetchStream; ... $context = [ 'http' => [ 'method' => 'POST', 'header' => $headers, 'content' => http build query($data), ] ]; $context = stream context create($context); stream wrapper unregister(\"http\"); stream wrapper register(\"http\", \"UrlFetchStream\"); // Now using fopen and the Url Fetch service. $result = fopen('http://example.com', 'r', false, $context); // Print Http Response Headers $meta data = stream get meta data($result); $headers = $meta data['wrapper data']; print r($headers); stream wrapper unregister(\"http\"); stream wrapper restore(\"http\"); Option 2.",
+          "No option to use the native php stream wrapper. $result = file get contents('http://example.com', false, $context); echo $result; PHP 7/8 use google\\appengine\\api\\urlfetch\\UrlFetchStream; ... $context = [ 'http' => [ 'method' => 'POST', 'header' => $headers, 'content' => http build query($data), ] ]; $context = stream context create($context); // Using the native php stream wrapper. $result = file get contents('http://example.com', false, $context); echo $result; stream wrapper unregister(\"http\"); stream wrapper register(\"http\", \"UrlFetchStream\"); // Now using the Url Fetch service. $result = file get contents('http://example.com', false, $context); echo $result; stream wrapper unregister(\"http\"); stream wrapper restore(\"http\"); // Now using the native php stream wrapper again."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "composer.json",
+      "example.com",
+      "memcache.html.twig"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/php-differences"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/php-differences"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/php-differences"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/php-differences"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/php-differences"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/php-differences"
+      ]
+    }
+  ]
+}

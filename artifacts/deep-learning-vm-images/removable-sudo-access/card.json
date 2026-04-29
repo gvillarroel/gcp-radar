@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:05.889Z",
+  "source_step08_card": "data/step-08/current/products/deep-learning-vm-images/card.json",
+  "product_name": "Deep Learning VM Images",
+  "product_slug": "deep-learning-vm-images",
+  "feature_name": "Removable sudo access",
+  "feature_slug": "removable-sudo-access",
+  "summary": "Deep Learning VM Images support removing sudo access from Deep Learning Containers.",
+  "extended_definition": "Deep Learning VM Images support removing sudo access from Deep Learning Containers.",
+  "lifecycle": {
+    "latest_feature_date": "2020-07-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deep-learning-vm/docs/cloud-marketplace",
+      "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-console",
+      "https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create a Deep Learning VM instance by using the Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-console",
+        "source_id": "site-docs-reference",
+        "final_score": 55,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a Deep Learning VM instance by using the Google Cloud console This page shows you how to create a Deep Learning VM Images instance by using Google Cloud Marketplace in the Google Cloud console.",
+          "Home Documentation Compute Compute Engine Deep Learning VM Images Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Access your new instance Once you've created your Deep Learning VM instance, it starts automatically."
+        ]
+      },
+      {
+        "title": "\"Create a Deep Learning VM instance from Cloud Marketplace \\_|\\_ Deep Learning\\",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/cloud-marketplace",
+        "source_id": "site-docs-reference",
+        "final_score": 51,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Compute Compute Engine Deep Learning VM Images Guides Send feedback Create a Deep Learning VM instance from Cloud Marketplace Stay organized with collections Save and categorize content based on your preferences.",
+          "This page shows you how to create a Deep Learning VM Images instance from Cloud Marketplace within the Google Cloud console without using the command line.",
+          "What's next For instructions on connecting to your new Deep Learning VM instance through the Google Cloud console or command line, read Connecting to Instances ."
+        ]
+      },
+      {
+        "title": "\"Create a PyTorch Deep Learning VM instance \\_|\\_ Deep Learning VM Images\\",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance",
+        "source_id": "site-docs-reference",
+        "final_score": 47,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Compute Compute Engine Deep Learning VM Images Guides Send feedback Create a PyTorch Deep Learning VM instance Stay organized with collections Save and categorize content based on your preferences.",
+          "This page shows you how to create a PyTorch Deep Learning VM Images instance with PyTorch and other tools pre-installed.",
+          "To create a Deep Learning VM instance with the latest PyTorch image family and one or more attached GPUs, enter the following at the command line: export IMAGE FAMILY = \"pytorch-latest-gpu\" export ZONE = \"us-west1-b\" export INSTANCE NAME = \"my-instance\" gcloud compute instances create $ INSTANCE NAME \\ -- zone =$ ZONE \\ -- image - family =$ IMAGE FAMILY \\ -- image - project = deeplearning - platform - release \\ -- maintenance - policy = TERMINATE \\ -- accelerator = \"type=nvidia-tesla-v100,count=1\" \\ -- metadata = \"install-nvidia-driver=True\" Options: --image-family must be either pytorch-latest-gpu or pytorch- VERSION - CUDA-VERSION (for example, pytorch-1-10-cu110 ). --image-project must be deeplearning-platform-release . --maintenance-policy must be TERMINATE ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-console",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/cloud-marketplace",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-console",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/cloud-marketplace",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance"
+      ]
+    }
+  ]
+}

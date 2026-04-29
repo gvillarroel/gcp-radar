@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:53.295Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Enterprise Plus edition upgrade with IP allowlists and VPC Peering",
+  "feature_slug": "enterprise-plus-edition-upgrade-with-ip-allowlists-and-vpc-peering",
+  "summary": "Cloud SQL for MySQL instances can be upgraded to Enterprise Plus edition while using IP allowlists and VPC Peering.",
+  "extended_definition": "Cloud SQL for MySQL instances can be upgraded to Enterprise Plus edition while using IP allowlists and VPC Peering.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/editions-intro",
+      "https://docs.cloud.google.com/sql/docs/mysql/connect-to-instance-using-write-endpoint",
+      "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud SQL editions overview \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/editions-intro",
+        "source_id": "site-docs-reference-3",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "By using in-place upgrade , you can upgrade your instances to Cloud SQL Enterprise Plus edition with near-zero downtime or switch to Cloud SQL Enterprise edition.",
+          "You can upgrade your Cloud SQL instances to the Cloud SQL Enterprise Plus edition using in-place upgrade with sub-second downtime.",
+          "How can I upgrade to the Cloud SQL Enterprise Plus edition?"
+        ]
+      },
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "source_id": "site-docs-reference-3",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Memory must be: 0.9 to 6.5 GB per vCPU A multiple of 256 MB At least 3.75 GB (3840 MB) For example, the following command creates a Cloud SQL Enterprise edition instance with two vCPUs and 7,680 MB of memory: gcloud sql instances create myinstance \\ --database-version = MYSQL 8 0 \\ --cpu = 2 \\ --memory = 7680MB \\ --region = us-central1 The following command creates a Cloud SQL Enterprise Plus edition instance with four cores: gcloud sql instances create myinstance \\ --database-version = MYSQL 8 0 31 \\ --tier = db-perf-optimized-N-4 \\ --edition = ENTERPRISE PLUS \\ --region = us-central1 The default value for REGION is us-central1 .",
+          "For Cloud SQL Enterprise Plus edition instances: gcloud sql instances create INSTANCE NAME \\ --region = REGION \\ --tier = TIER \\ --database-version = DATABASE VERSION \\ --edition = ENTERPRISE PLUS Note : If you specify a database version earlier than MySQL 8.4 (or don't specify a database version) and you don't specify an edition, then the default Cloud SQL edition of the instance is Enterprise.",
+          "If you specify MYSQL 8 4 for the database version (or don't specify a database version), but the region you selected doesn't support Cloud SQL Enterprise Plus edition, then you must specify a region that supports Cloud SQL Enterprise Plus edition , or create an Cloud SQL Enterprise edition instance instead. ."
+        ]
+      },
+      {
+        "title": "\"Connect to an instance using a write endpoint \\_|\\_ Cloud SQL for MySQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/connect-to-instance-using-write-endpoint",
+        "source_id": "site-docs-reference-3",
+        "final_score": 136,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you upgrade an existing Cloud SQL Enterprise edition instance to an Cloud SQL Enterprise Plus edition instance, Cloud SQL automatically generates the write endpoint if the previously listed prerequisites are met.",
+          "If you already have a Cloud SQL Enterprise Plus edition instance without the write endpoint and you want Cloud SQL to generate a write endpoint automatically, then create a replica that's enabled for advanced disaster recovery .",
+          "The Cloud SQL instance must be Cloud SQL Enterprise Plus edition ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/editions-intro",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-to-instance-using-write-endpoint"
+      ]
+    }
+  ]
+}

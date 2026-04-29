@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:33.557Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Private Service Connect port mapping",
+  "feature_slug": "private-service-connect-port-mapping",
+  "summary": "Private Service Connect port mapping enables VM consumers to access specific service ports on specific producer VMs through a single Private Service Connect endpoint; Private Service Connect port mapping allows a consumer VM to privately reach specific service ports on specific producer VMs through a single Private Service Connect endpoint.",
+  "extended_definition": "Private Service Connect port mapping enables VM consumers to access specific service ports on specific producer VMs through a single Private Service Connect endpoint; Private Service Connect port mapping allows a consumer VM to privately reach specific service ports on specific producer VMs through a single Private Service Connect endpoint.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+      "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping",
+      "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About Private Service Connect port mapping \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping",
+        "source_id": "site-docs-root-2",
+        "final_score": 367,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Private Service Connect port mapping lets consumer VMs communicate with specific producer VMs through the following process: The consumer VM sends packets to the endpoint's IP address, using a designated client destination port.",
+          "Service producers use the network endpoints of the port mapping NEG to define unique mappings from client destination ports of the Private Service Connect endpoint to a combination of service port and producer VM.",
+          "Private Service Connect port mapping forwards traffic from client destination ports of an endpoint to service ports of producer VMs based on mapping that is configured for a port mapping NEG (click to enlarge)."
+        ]
+      },
+      {
+        "title": "\"About service connectivity automation \\_|\\_ Virtual Private Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+        "source_id": "site-docs-root-2",
+        "final_score": 236,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Consider a database administrator who deploys a database instance and wants to let service consumers to reach that database through a Private Service Connect endpoint.",
+          "If a managed service supports service connectivity automation, the service instance configuration and the networking configuration can be delegated to the appropriate administrators: Service instance administrators can control which networks can access their services.",
+          "Services with custom service instance scope support By default, service connectivity automation requires that the service instance and the endpoints that connect to the service instance must be in the same project (or in the case of Shared VPC, in connected projects)."
+        ]
+      },
+      {
+        "title": "\"Publish services by using Private Service Connect \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "source_id": "site-docs-root-2",
+        "final_score": 229,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you configure ingress firewall rules for backend services, the source of traffic depends on the type of load balancer that your service uses: Category Source of traffic to backends Passthrough load balancers: Internal passthrough Network Load Balancer Internal protocol forwarding Port mapping service The IP address ranges of the Private Service Connect (NAT) subnets associated with the service Proxy load balancers: Cross-region internal Application Load Balancer Regional internal Application Load Balancer Regional internal proxy Network Load Balancer Secure Web Proxy The IP address ranges of the associated proxy-only subnets Services with health checks The probe IP address ranges of your load balancer type Publish a service To publish a service, you create a service attachment.",
+          "Dropped packets to consumers The private service connect/producer/dropped sent packets count metric tracks packets sent from a published service to an endpoint or backend that are dropped because Private Service Connect can't find a matching connection for response packets.",
+          "Dropped packets from consumers The private service connect/producer/dropped received packets count metric tracks packets from an endpoint or backend to a published service that are dropped because the endpoint or backend exceeded its maximum connections to the service."
+        ]
+      },
+      {
+        "title": "\"About Private Service Connect interfaces \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+        "source_id": "site-docs-root-2",
+        "final_score": 228,
+        "relevance": "",
+        "evidence_snippets": [
+          "The main differences between virtual and dynamic Private Service Connect interfaces are described in the following table: Type Max Private Service Connect interfaces per VM Interface management Supported guest OS Virtual Private Service Connect interface Up to 9 ( depends on number of vCPUs ) Added at VM creation time; removed with VM deletion Linux, Windows Dynamic Private Service Connect interface Up to 15 ( depends on number of vCPUs ) Added at any time; can be removed independently of VM Linux only Consider using virtual Private Service Connect interfaces when you expect your interface configuration to remain unchanged throughout the VM's lifecycle.",
+          "In a multi-tenant architecture, if one consumer terminates their Private Service Connect interface connection, other consumers that are connected to the same VM also lose connectivity.",
+          "Support for dynamic Private Service Connect interfaces on Container-Optimized OS VMs is limited to milestone 129 or later."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping",
+        "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping",
+        "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping",
+        "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping",
+        "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping",
+        "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces"
+      ]
+    }
+  ]
+}

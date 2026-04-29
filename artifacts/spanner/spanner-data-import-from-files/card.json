@@ -1,0 +1,112 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner data import from files",
+  "feature_slug": "spanner-data-import-from-files",
+  "summary": "Spanner now supports importing data into a database from CSV files, MySQL dump files, or PostgreSQL dump files.",
+  "extended_definition": "Spanner now supports importing data into a database from CSV files, MySQL dump files, or PostgreSQL dump files.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminClient",
+      "https://docs.cloud.google.com/spanner/docs/psql-commands"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class DatabaseAdminAsyncClient (3.63.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 135,
+        "relevance": "",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import spanner admin database v1 from google.iam.v1 import iam policy pb2 # type: ignore async def sample test iam permissions(): Create a client client = spanner admin database v1.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import spanner admin database v1 from google.iam.v1 import iam policy pb2 # type: ignore async def sample get iam policy(): Create a client client = spanner admin database v1.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import spanner admin database v1 from google.iam.v1 import iam policy pb2 # type: ignore async def sample set iam policy(): Create a client client = spanner admin database v1."
+        ]
+      },
+      {
+        "title": "\"Class DatabaseAdminClient (3.63.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminClient",
+        "source_id": "site-python-reference",
+        "final_score": 135,
+        "relevance": "",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import spanner admin database v1 from google.iam.v1 import iam policy pb2 # type: ignore def sample test iam permissions(): Create a client client = spanner admin database v1.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import spanner admin database v1 from google.iam.v1 import iam policy pb2 # type: ignore def sample get iam policy(): Create a client client = spanner admin database v1.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import spanner admin database v1 from google.iam.v1 import iam policy pb2 # type: ignore def sample set iam policy(): Create a client client = spanner admin database v1."
+        ]
+      },
+      {
+        "title": "psql command-line tool \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/psql-commands",
+        "source_id": "site-docs-reference",
+        "final_score": 120,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Examples DML The following example shows how to submit a batch of INSERT statements. psql - h localhost - p 5432 - c \"INSERT INTO users (id, age, firstname) VALUES (1, 25, 'Alex'); \\ INSERT INTO users (id, age, firstname) VALUES (2, 31, 'Dana'); \\ INSERT INTO users (id, age, firstname) VALUES (3, 54, 'Izumi');\" The next example shows how to execute the SQL statements in the file insert contacts.sql . psql - h localhost - c \"$(cat contacts insert.sql)\" DDL This example submits a batch of ALTER TABLE statements. psql - h localhost - p 5432 test - db - c \"ALTER TABLE users ADD col1 integer; \\ ALTER TABLE users ADD col2 text; ALTER TABLE users ADD col3 float8;\" COPY command for importing data Use the COPY FROM STDIN command to import data from a text or CSV file into a PostgreSQL-dialect database.",
+          "Although only STDIN is supported, you can import using COPY by piping files into psql .",
+          "The transactions are executed in parallel, so data after the row in the import file that caused the error might be imported to the database before the COPY operation is halted."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "contacts.sql",
+      "googleapis.dev",
+      "insert.sql",
+      "mydata.txt",
+      "options.html"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminClient",
+        "https://docs.cloud.google.com/spanner/docs/psql-commands"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminClient",
+        "https://docs.cloud.google.com/spanner/docs/psql-commands"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminClient",
+        "https://docs.cloud.google.com/spanner/docs/psql-commands"
+      ]
+    }
+  ]
+}

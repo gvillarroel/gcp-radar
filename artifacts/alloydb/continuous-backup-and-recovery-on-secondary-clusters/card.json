@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:40.969Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Continuous backup and recovery on secondary clusters",
+  "feature_slug": "continuous-backup-and-recovery-on-secondary-clusters",
+  "summary": "AlloyDB secondary clusters support continuous backup and recovery.",
+  "extended_definition": "AlloyDB secondary clusters support continuous backup and recovery.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/backup/configure",
+      "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_clusters",
+      "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.clusters \\_|\\_ AlloyDB for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "source_id": "site-iam-reference",
+        "final_score": 166,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Methods create Creates a new Cluster in a given project and location. createsecondary Creates a cluster of type SECONDARY in the given location using the primary cluster as the source. delete Deletes a single Cluster. export Exports data from the cluster. get Gets details of a single Cluster. import Imports data to the cluster. list Lists Clusters in a given project and location. patch Updates the parameters of a single Cluster. promote Promotes a SECONDARY cluster. restore Creates a new Cluster in a given project and location, with a volume restored from the provided source, either a backup ID or a point-in-time and a source cluster. restoreFromCloudSQL Restores an AlloyDB cluster from a CloudSQL resource. switchover Switches the roles of PRIMARY and SECONDARY clusters without any data loss. upgrade Upgrades a single Cluster.",
+          "JSON representation { \"name\" : string , \"displayName\" : string , \"uid\" : string , \"createTime\" : string , \"updateTime\" : string , \"deleteTime\" : string , \"labels\" : { string : string , ... } , \"state\" : enum ( State ) , \"clusterType\" : enum ( ClusterType ) , \"databaseVersion\" : enum ( DatabaseVersion ) , \"networkConfig\" : { object ( NetworkConfig ) } , \"network\" : string , \"etag\" : string , \"annotations\" : { string : string , ... } , \"reconciling\" : boolean , \"initialUser\" : { object ( UserPassword ) } , \"automatedBackupPolicy\" : { object ( AutomatedBackupPolicy ) } , \"sslConfig\" : { object ( SslConfig ) } , \"encryptionConfig\" : { object ( EncryptionConfig ) } , \"encryptionInfo\" : { object ( EncryptionInfo ) } , \"continuousBackupConfig\" : { object ( ContinuousBackupConfig ) } , \"continuousBackupInfo\" : { object ( ContinuousBackupInfo ) } , \"secondaryConfig\" : { object ( SecondaryConfig ) } , \"primaryConfig\" : { object ( PrimaryConfig ) } , \"satisfiesPzs\" : boolean , \"pscConfig\" : { object ( PscConfig ) } , \"maintenanceUpdatePolicy\" : { object ( MaintenanceUpdatePolicy ) } , \"maintenanceSchedule\" : { object ( MaintenanceSchedule ) } , \"subscriptionType\" : enum ( SubscriptionType ) , \"trialMetadata\" : { object ( TrialMetadata ) } , \"tags\" : { string : string , ... } , \"backupdrInfo\" : { object ( BackupDrInfo ) } , \"dataplexConfig\" : { object ( DataplexConfig ) } , // Union field source can be only one of the following: \"backupSource\" : { object ( BackupSource ) } , \"migrationSource\" : { object ( MigrationSource ) } , \"cloudsqlBackupRunSource\" : { object ( CloudSQLBackupRunSource ) } , \"backupdrBackupSource\" : { object ( BackupDrBackupSource ) } // End of list of possible types for union field source . // Union field maintenance version can be only one of the following: \"maintenanceVersionSelectionPolicy\" : enum ( MaintenanceVersionSelectionPolicy ) // End of list of possible types for union field maintenance version . } Fields name string Output only.",
+          "Examples: \"2014-10-02T15:01:23Z\" , \"2014-10-02T15:01:23.045123456Z\" or \"2014-10-02T15:01:23+05:30\" . continuousBackupPreviousRecoveryWindowDays integer The retention set for the continuous backup that was previously enabled prior to enabling BackupDR protection for this cluster. automatedBackupPreviouslyEnabled boolean Whether automated backup was previously enabled prior to enabling BackupDR protection for this cluster. logRetentionPeriod string ( Duration format) The retention period for logs generated by BackupDR for this cluster."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: alloydb \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_clusters",
+        "source_id": "site-api-reference",
+        "final_score": 148,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Cluster JSON representation { \"name\" : string , \"displayName\" : string , \"uid\" : string , \"createTime\" : string , \"updateTime\" : string , \"deleteTime\" : string , \"labels\" : { string : string , ... } , \"state\" : enum ( State ) , \"clusterType\" : enum ( ClusterType ) , \"databaseVersion\" : enum ( DatabaseVersion ) , \"networkConfig\" : { object ( NetworkConfig ) } , \"network\" : string , \"etag\" : string , \"annotations\" : { string : string , ... } , \"reconciling\" : boolean , \"initialUser\" : { object ( UserPassword ) } , \"automatedBackupPolicy\" : { object ( AutomatedBackupPolicy ) } , \"sslConfig\" : { object ( SslConfig ) } , \"encryptionConfig\" : { object ( EncryptionConfig ) } , \"encryptionInfo\" : { object ( EncryptionInfo ) } , \"continuousBackupConfig\" : { object ( ContinuousBackupConfig ) } , \"continuousBackupInfo\" : { object ( ContinuousBackupInfo ) } , \"secondaryConfig\" : { object ( SecondaryConfig ) } , \"primaryConfig\" : { object ( PrimaryConfig ) } , \"satisfiesPzs\" : boolean , \"pscConfig\" : { object ( PscConfig ) } , \"maintenanceUpdatePolicy\" : { object ( MaintenanceUpdatePolicy ) } , \"maintenanceSchedule\" : { object ( MaintenanceSchedule ) } , \"subscriptionType\" : enum ( SubscriptionType ) , \"trialMetadata\" : { object ( TrialMetadata ) } , \"tags\" : { string : string , ... } , \"backupdrInfo\" : { object ( BackupDrInfo ) } , \"dataplexConfig\" : { object ( DataplexConfig ) } , // Union field source can be only one of the following: \"backupSource\" : { object ( BackupSource ) } , \"migrationSource\" : { object ( MigrationSource ) } , \"cloudsqlBackupRunSource\" : { object ( CloudSQLBackupRunSource ) } , \"backupdrBackupSource\" : { object ( BackupDrBackupSource ) } // End of list of possible types for union field source . // Union field maintenance version can be only one of the following: \"maintenanceVersionSelectionPolicy\" : enum ( MaintenanceVersionSelectionPolicy ) // End of list of possible types for union field maintenance version . } Fields name string Output only.",
+          "BackupDrEnabledWindow JSON representation { \"enabledTime\" : string , \"backupPlanAssociation\" : string , \"dataSource\" : string , \"continuousBackupPreviouslyEnabled\" : boolean , \"continuousBackupPreviouslyEnabledTime\" : string , \"continuousBackupPreviousRecoveryWindowDays\" : integer , \"automatedBackupPreviouslyEnabled\" : boolean , \"logRetentionPeriod\" : string , // Union field disabled time can be only one of the following: \"disabledTime\" : string // End of list of possible types for union field disabled time . } Fields enabledTime string ( Timestamp format) Time when the BackupDR protection for this cluster was enabled.",
+          "Examples: \"2014-10-02T15:01:23Z\" , \"2014-10-02T15:01:23.045123456Z\" or \"2014-10-02T15:01:23+05:30\" . continuousBackupPreviousRecoveryWindowDays integer The retention set for the continuous backup that was previously enabled prior to enabling BackupDR protection for this cluster. automatedBackupPreviouslyEnabled boolean Whether automated backup was previously enabled prior to enabling BackupDR protection for this cluster. logRetentionPeriod string ( Duration format) The retention period for logs generated by BackupDR for this cluster."
+        ]
+      },
+      {
+        "title": "Configure backup plans \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/backup/configure",
+        "source_id": "site-docs-root",
+        "final_score": 141,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Click Update . gcloud To re-enable your cluster's continuous backup configuration after disabling it, follow the same procedure as reconfiguring continuous backup , adding an --enable-continuous-backup argument to the gcloud CLI command: gcloud alloydb clusters update CLUSTER ID \\ --enable-continuous-backup \\ --continuous-backup-recovery-window-days = WINDOW LENGTH \\ --region = REGION ID \\ --project = PROJECT ID Replace the following: CLUSTER ID : The ID of the cluster.",
+          "To configure continuous backup and recovery on a cluster, use the gcloud alloydb clusters update command. gcloud alloydb clusters update CLUSTER ID \\ --continuous-backup-recovery-window-days = WINDOW LENGTH \\ --region = REGION ID \\ --project = PROJECT ID Replace the following: CLUSTER ID : The ID of the cluster.",
+          "Click Update . gcloud To disable continuous backup and recovery on a cluster, use the gcloud alloydb clusters update command. gcloud alloydb clusters update CLUSTER ID \\ --no-enable-continuous-backup --region = REGION ID \\ --project = PROJECT ID Replace the following: CLUSTER ID : the ID of the cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.clusters"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/alloydb/docs/backup/configure"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/alloydb/docs/backup/configure"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/alloydb/docs/backup/configure"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:23.409Z",
+  "source_step08_card": "data/step-08/current/products/migration-center/card.json",
+  "product_name": "Migration Center",
+  "product_slug": "migration-center",
+  "feature_name": "Software asset grouping in TCO reports",
+  "feature_slug": "software-asset-grouping-in-tco-reports",
+  "summary": "Migration Center can group software assets and show a count of each software instance in the TCO report.",
+  "extended_definition": "Migration Center can group software assets and show a count of each software instance in the TCO report.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migration-center/docs/generate-tco-report",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Generate TCO reports \\_|\\_ Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/generate-tco-report",
+        "source_id": "site-docs-root",
+        "final_score": 279,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you make changes to your software assets, for example by installing new software, you might see a discrepancy between the list of software aggregated on the Summary page and what is shown in the TCO report.",
+          "Limitations If you generate a TCO report for a group that contains a database deployment and its underlying server, Migration Center generates separate cost estimates for the server and the database.",
+          "Home Documentation Migration Migration Center Guides Send feedback Generate TCO reports Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Class MigrationCenterAsyncClient (0.4.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 270,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.migrationcenter v1.types.ReportConfig The groups and associated preference sets on which we can generate reports. get settings get settings ( request : typing .",
+          "Returns Type Description google.cloud.migrationcenter v1.types.ReportAssetFramesResponse A response to a call to ReportAssetFrame. report config path report config path ( project : str , location : str , report config : str ) - > str Returns a fully-qualified report config string. report path report path ( project : str , location : str , report config : str , report : str ) - > str Returns a fully-qualified report string. run import job run import job ( request : typing .",
+          "CreateReportConfigRequest ( parent=\"parent value\", report config id=\"report config id value\", report config=report config, ) Make the request operation = client. create report config (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.migrationcenter v1.types.CreateReportConfigRequest , dict]] The request object."
+        ]
+      },
+      {
+        "title": "\"Class MigrationCenterClient (0.4.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "source_id": "site-python-reference",
+        "final_score": 270,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.migrationcenter v1.types.ReportConfig The groups and associated preference sets on which we can generate reports. get settings get settings ( request : typing .",
+          "Returns Type Description google.cloud.migrationcenter v1.types.Source Source represents an object from which asset information is streamed to Migration Center. group path group path ( project : str , location : str , group : str ) - > str Returns a fully-qualified group string. import data file path import data file path ( project : str , location : str , import job : str , import data file : str ) - > str Returns a fully-qualified import data file string. import job path import job path ( project : str , location : str , import job : str ) - > str Returns a fully-qualified import job string. list assets list assets ( request : typing .",
+          "Returns Type Description google.cloud.migrationcenter v1.types.ReportAssetFramesResponse A response to a call to ReportAssetFrame. report config path report config path ( project : str , location : str , report config : str ) - > str Returns a fully-qualified report config string. report path report path ( project : str , location : str , report config : str , report : str ) - > str Returns a fully-qualified report string. run import job run import job ( request : typing ."
+        ]
+      },
+      {
+        "title": "Module pagers (0.4.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers",
+        "source_id": "site-python-reference",
+        "final_score": 226,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ListReportConfigsResponse ], ], request : google . cloud . migrationcenter v1 . types . migrationcenter .",
+          "ListReportConfigsResponse , ], request : google . cloud . migrationcenter v1 . types . migrationcenter .",
+          "ListReportConfigsRequest , response : google . cloud . migrationcenter v1 . types . migrationcenter ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "operation.result",
+      "projects.locations.assets",
+      "projects.locations.assets.reportAssetFrames",
+      "v1.types.CreateReportConfigRequest",
+      "v1.types.RemoveAssetsFromGroupRequest",
+      "v1.types.ReportAssetFramesResponse",
+      "v1.types.ReportConfig",
+      "v1.types.Source"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/generate-tco-report",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/generate-tco-report",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/generate-tco-report",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/generate-tco-report",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/generate-tco-report",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.pagers"
+      ]
+    }
+  ]
+}

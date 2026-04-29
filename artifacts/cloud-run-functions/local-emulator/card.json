@@ -1,0 +1,181 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:51.951Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run-functions/card.json",
+  "product_name": "Cloud Run functions",
+  "product_slug": "cloud-run-functions",
+  "feature_name": "Local emulator",
+  "feature_slug": "local-emulator",
+  "summary": "Cloud Run functions provides a local emulator for developing and testing functions locally.",
+  "extended_definition": "Cloud Run functions provides a local emulator for developing and testing functions locally.",
+  "lifecycle": {
+    "latest_feature_date": "2017-03-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/functions/docs/apis/libraries",
+      "https://docs.cloud.google.com/functions/docs/troubleshooting",
+      "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "source_id": "site-iam-reference",
+        "final_score": 46,
+        "relevance": "",
+        "evidence_snippets": [
+          "Longer timeout limits in Cloud Run functions provides more breathing room for initialization and it offers more scalable resource allocation in a Cloud Run environment, potentially mitigating this issue if caused by resource exhaustion.",
+          "To obtain this permission, you can grant a role that includes it like the Service Account User role, on the project. gcloud Default service account: ERROR: (gcloud.functions.deploy) ResponseError: status=[403], code=[Ok], message=[Caller is missing permission 'iam.serviceaccounts.actAs' on service account projects/-/serviceAccounts/ PROJECT NUMBER -compute@developer.gserviceaccount.com.Grant the role 'roles/iam.serviceAccountUser' to the caller on the service account projects/-/serviceAccounts/ PROJECT NUMBER -compute@developer.gserviceaccount.com.You can do that by running 'gcloud iam service-accounts add-iam-policy-binding projects/-/serviceAccounts/ PROJECT NUMBER -compute@developer.gserviceaccount.com --member MEMBER --role roles/iam.serviceAccountUser'where MEMBER has a prefix like 'user:' or 'serviceAccount:' Non-default service account: ERROR: (gcloud.functions.deploy) ResponseError: status=[403], code=[Ok], message=[Caller is missing permission 'iam.serviceaccounts.actAs' on service account projects/-/serviceAccounts/ SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com.Grant the role 'roles/iam.serviceAccountUser' to the caller on the service account projects/-/serviceAccounts/ SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com.You can do that by running 'gcloud iam service-accounts add-iam-policy-binding projects/-/serviceAccounts/ SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com --member MEMBER --role roles/iam.serviceAccountUser'where MEMBER has a prefix like 'user:' or 'serviceAccount:' Note: PROJECT NUMBER -compute@developer.gserviceaccount.com is the default service account for Cloud Functions.",
+          "The error message Console ERROR: (gcloud.functions.deploy) ResponseError: status=[403], code=[Ok], message=[Validation failed for trigger projects/ PROJECT ID /locations/ LOCATION /triggers/ FUNCTION NAME - EVENTARC ID : Permission \"iam.serviceAccounts.ActAs\" denied on \"EndUserCredentials to PROJECT NUMBER -compute@developer.gserviceaccount.com\"] gcloud ERROR: (gcloud.functions.deploy) ResponseError: status=[403], code=[Ok], message=[Validation failed for trigger projects/<project-id>/locations/ LOCATION /triggers/ FUNCTION NAME - EVENTARC ID : Permission \"iam.serviceAccounts.ActAs\" denied on \"EndUserCredentials to PROJECT NUMBER -compute@developer.gserviceaccount.com\"] The solution To resolve this issue, reset this service account to the default role."
+        ]
+      },
+      {
+        "title": "\"Cloud Functions client libraries \\_|\\_ Cloud Run functions \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/functions/docs/apis/libraries",
+        "source_id": "site-docs-reference-2",
+        "final_score": 43,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Additional resources C# The following list contains links to more resources related to the client library for C#: API reference Client libraries best practices Issue tracker google-cloud-functions on Stack Overflow Source code Go The following list contains links to more resources related to the client library for Go: API reference Client libraries best practices Issue tracker google-cloud-functions on Stack Overflow Source code Java The following list contains links to more resources related to the client library for Java: API reference Client libraries best practices Issue tracker google-cloud-functions on Stack Overflow Source code Node.js The following list contains links to more resources related to the client library for Node.js: API reference Client libraries best practices Issue tracker google-cloud-functions on Stack Overflow Source code PHP The following list contains links to more resources related to the client library for PHP: API reference Client libraries best practices Issue tracker google-cloud-functions on Stack Overflow Source code Python The following list contains links to more resources related to the client library for Python: API reference Client libraries best practices Issue tracker google-cloud-functions on Stack Overflow Source code Ruby The following list contains links to more resources related to the client library for Ruby: API reference Client libraries best practices Issue tracker google-cloud-functions on Stack Overflow Source code Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For more information about BOMs, see The Google Cloud Platform Libraries BOM . < dependencyManagement > < dependencies > < dependency > < groupId>com . google . cloud < / groupId > < artifactId>libraries - bom < / artifactId > < version>26 .79.0 < / version > < type>pom < / type > < scope>import < / scope > < / dependency > < / dependencies > < / dependencyManagement > < dependencies > < dependency > < groupId>com . google . cloud < / groupId > < artifactId>google - cloud - functions < / artifactId > < / dependency > < / dependencies > If you are using Gradle , add the following to your dependencies: implementation ' com . google . cloud : google - cloud - functions : 2.90.0 ' If you are using sbt , add the following to your dependencies: libraryDependencies += \"com.google.cloud\" % \"google-cloud-functions\" % \"2.90.0\" Note: Cloud Java client libraries do not currently support Android.",
+          "Home Documentation Application hosting Cloud Run Cloud Run functions Reference Send feedback Cloud Functions client libraries Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Terraform Pub/Sub Tutorial \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub",
+        "source_id": "site-docs-reference-2",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "Here is the main.tf file: terraform { required providers { google = { source = \"hashicorp/google\" version = \">= 4.34.0\" } } } resource \"random id\" \"bucket prefix\" { byte length = 8 } resource \"google service account\" \"default\" { account id = \"test-gcf-sa\" display name = \"Test Service Account\" } resource \"google pubsub topic\" \"default\" { name = \"functions2-topic\" } resource \"google storage bucket\" \"default\" { name = \"${random id.bucket prefix.hex}-gcf-source\" # Every bucket name must be globally unique location = \"US\" uniform bucket level access = true } data \"archive file\" \"default\" { type = \"zip\" output path = \"/tmp/function-source.zip\" source dir = \"function-source/\" } resource \"google storage bucket object\" \"default\" { name = \"function-source.zip\" bucket = google storage bucket.default.name source = data.archive file.default.output path # Path to the zipped function source code } resource \"google cloudfunctions2 function\" \"default\" { name = \"function\" location = \"us-central1\" description = \"a new function\" build config { runtime = \"nodejs22\" entry point = \"helloPubSub\" # Set the entry point environment variables = { BUILD CONFIG TEST = \"build test\" } source { storage source { bucket = google storage bucket.default.name object = google storage bucket object.default.name } } } service config { max instance count = 3 min instance count = 1 available memory = \"256M\" timeout seconds = 60 environment variables = { SERVICE CONFIG TEST = \"config test\" } ingress settings = \"ALLOW INTERNAL ONLY\" all traffic on latest revision = true service account email = google service account.default.email } event trigger { trigger region = \"us-central1\" event type = \"google.cloud.pubsub.topic.v1.messagePublished\" pubsub topic = google pubsub topic.default.id retry policy = \"RETRY POLICY RETRY\" } } Initialize Terraform In the terraform-docs-samples/functions/pubsub directory containing the main.tf file, run this command to add the necessary plugins and build the .terraform directory: terraform init Validate the Terraform configuration Preview the Terraform configuration.",
+          "When prompted, enter yes : terraform apply Triggering the function To test the Pub/Sub function: Publish a message to the topic (in this example, the topic name is functions2-topic ): gcloud pubsub topics publish TOPIC NAME --message=\"Friend\" Read the function logs to see the result, where FUNCTION NAME is the name of your function (in this example, the function name is function ): gcloud functions logs read FUNCTION NAME You should see logging output that includes your new \"Friend\" message.",
+          "Cloud Shell can take several minutes to initialize: Open Cloud Shell Preparing the application In Cloud Shell, perform the following steps: Clone the sample app repository to your Cloud Shell instance: git clone https://github.com/terraform-google-modules/terraform-docs-samples.git Change to the directory that contains the Cloud Run functions sample code: cd terraform-docs-samples/functions/pubsub The Node.js sample used in this tutorial is a basic \"Hello World\" Pub/Sub function."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.default.email",
+      "bucket.default.name",
+      "cloudfunctions.serviceAgent",
+      "com.google.cloud",
+      "data.archive",
+      "developer.gserviceaccount.com",
+      "developer.gserviceaccount.com.Grant",
+      "developer.gserviceaccount.com.You",
+      "file.default.output",
+      "gcloud.functions.deploy",
+      "github.com",
+      "iam.gserviceaccount.com",
+      "iam.gserviceaccount.com.Grant",
+      "iam.gserviceaccount.com.You",
+      "iam.serviceaccounts.actAs",
+      "iam.serviceAccounts.ActAs",
+      "iam.serviceAccountUser",
+      "id.bucket",
+      "main.tf",
+      "object.default.name",
+      "prefix.hex",
+      "samples.git",
+      "source.zip",
+      "topic.default.id"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.serviceAccountUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/apis/libraries",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/apis/libraries",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/apis/libraries",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/apis/libraries",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/apis/libraries",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/apis/libraries",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/apis/libraries",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/apis/libraries",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/apis/libraries",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+      ]
+    }
+  ]
+}

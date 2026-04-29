@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:40.969Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Simplified installation method for AlloyDB Omni",
+  "feature_slug": "simplified-installation-method-for-alloydb-omni",
+  "summary": "AlloyDB Omni can be installed and managed with common container-management tools such as Docker; AlloyDB Omni can be installed and run with portable open-source tools such as the Docker CLI.",
+  "extended_definition": "AlloyDB Omni can be installed and managed with common container-management tools such as Docker; AlloyDB Omni can be installed and run with portable open-source tools such as the Docker CLI.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+      "https://docs.cloud.google.com/alloydb/docs/overview",
+      "https://docs.cloud.google.com/alloydb/docs/reference/extensions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "AlloyDB overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "Key features AlloyDB distinguishes itself from a stock PostgreSQL installation in a number of ways beyond the vertical and horizontal scaling advantages inherent in the multi-node architecture described earlier.",
+          "A self-hosted alternative: AlloyDB Omni As an alternative to running AlloyDB within Google Cloud, Google offers AlloyDB Omni.",
+          "Encryption AlloyDB protects all data at rest using Google's encryption methods by default."
+        ]
+      },
+      {
+        "title": "\"Supported database extensions \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/extensions",
+        "source_id": "site-api-reference",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": [
+          "However, you can manually install PostGIS to an existing AlloyDB Omni installation. postgres fdw Provides a foreign-data wrapper that you can use to access data stored in external PostgreSQL servers. postgresql-hll Introduces a new data type, hll , which is a HyperLogLog data structure. prefix Provides prefix-matching, plus index support. rdkit Provides functions for comparing, manipulating, and identifying molecular structures. refint Includes functions to check foreign key restraints, the referencing table, and the referenced table. rum Implements support to create RUM indexes for high-performance full-text search.",
+          "However, you can manually install Orafce to an existing AlloyDB Omni installation. pageinspect Inspects the contents of database pages at a low level. pg background Lets you run arbitrary commands in a background worker. pg bigm Provides full text search capability in PostgreSQL using 2-gram (bigram) indexes for faster full text searches.",
+          "This extension is used along with the vector extension to enhance vector search capabilities and provides support for storing and querying vector embeddings. bloom Provides an index access method based on Bloom filters. btree gin Provides sample GIN operator classes that implement B-tree equivalent behavior. btree gist Provides GiST index operator classes that implement B-tree equivalent behavior. citext Provides a case-insensitive character string type citext . cube Implements a data type cube for representing multidimensional cubes. dblink Provides functions to connect to PostgreSQL databases from within a database session. dict int An add-on dictionary template for full-text search that controls the indexing of integers. earthdistance Provides two approaches to calculating great circle distances on the surface of the Earth. fuzzystrmatch Provides several functions to determine similarities and distance between strings. google columnar engine Provides the columnar engine feature of AlloyDB, which handles HTAP (hybrid transactional analytical processing) and OLAP (online analytical processing) workloads very efficiently."
+        ]
+      },
+      {
+        "title": "\"Use AlloyDB for PostgreSQL with MCP, Gemini CLI, and other agents \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "source_id": "site-docs-reference-2",
+        "final_score": 77,
+        "relevance": "",
+        "evidence_snippets": [
+          "Resource management clusters, instances, users create cluster Create an AlloyDB cluster named sales-quarterly-db in the us-east1 region. get cluster Get the details for the cluster sales-quarterly-db . list clusters List all of my AlloyDB clusters. create instance Create a new read instance in the sales-quarterly-db cluster. get instance Show me the information for the instance sales-quarterly-db-rp . list instances List all instances in the sales-quarterly-db cluster. create user Note: The create user tool can create two types of database users: Database users with built-in authentication : these users are managed within the database and authenticate with a password.",
+          "Connect with Antigravity You can connect AlloyDB to Antigravity in the following ways: Using the MCP Store Using a custom configuration Note: You don't need to download the MCP Toolbox binary to use these methods.",
+          "The following sections describe the alloydb and alloydb-observability extensions, which offer an installation process and a set of tools."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions"
+      ]
+    }
+  ]
+}

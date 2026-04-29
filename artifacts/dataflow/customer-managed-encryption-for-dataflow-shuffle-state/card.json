@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:03.460Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Customer-managed encryption for Dataflow Shuffle state",
+  "feature_slug": "customer-managed-encryption-for-dataflow-shuffle-state",
+  "summary": "Dataflow Shuffle state can be protected with a customer-managed encryption key.",
+  "extended_definition": "Dataflow Shuffle state can be protected with a customer-managed encryption key.",
+  "lifecycle": {
+    "latest_feature_date": "2019-10-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+      "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced",
+      "https://docs.cloud.google.com/dataflow/docs/guides/sql/dataflow-sql-intro"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use customer-managed encryption keys \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+        "source_id": "site-docs-reference-2",
+        "final_score": 244,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Job metadata includes the following: User-supplied data, such as Job Names, Job Parameter values, and Pipeline Graph System-generated data, such as Job IDs and IP addresses of workers Encryption of pipeline state locations The following storage locations are protected with Cloud KMS keys: Persistent Disks attached to Dataflow workers and used for Persistent Disk-based shuffle and streaming state storage.",
+          "For Encryption type: \"Google-Managed key\" For Encryption type: \"Customer-Managed key\" CLI Run the describe command using the gcloud CLI: gcloud dataflow jobs describe JOB ID Search for the line that contains serviceKmsKeyName .",
+          "Home Documentation Data analytics Cloud Dataflow Guides Send feedback Use customer-managed encryption keys Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Use Apache Beam notebook advanced features \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced",
+        "source_id": "site-docs-reference-2",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "All repository content is encrypted using either Google-owned and Google-managed encryption keys or customer-managed encryption keys.",
+          "When instantiating a new pipeline that uses a project, region, and provisioning configuration that map to an existing Managed Service for Apache Spark cluster, Dataflow also reuses the cluster, though it might not use the most recently used cluster.",
+          "When a Flink master url is specified, if it belongs to a cluster that is managed by the notebook session, Dataflow reuses the managed cluster."
+        ]
+      },
+      {
+        "title": "\"Use Apache Beam notebook advanced features \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/sql/dataflow-sql-intro",
+        "source_id": "site-docs-reference-2",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "All repository content is encrypted using either Google-owned and Google-managed encryption keys or customer-managed encryption keys.",
+          "When instantiating a new pipeline that uses a project, region, and provisioning configuration that map to an existing Managed Service for Apache Spark cluster, Dataflow also reuses the cluster, though it might not use the most recently used cluster.",
+          "When a Flink master url is specified, if it belongs to a cluster that is managed by the notebook session, Dataflow reuses the managed cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+        "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced",
+        "https://docs.cloud.google.com/dataflow/docs/guides/sql/dataflow-sql-intro"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+        "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced",
+        "https://docs.cloud.google.com/dataflow/docs/guides/sql/dataflow-sql-intro"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+        "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced",
+        "https://docs.cloud.google.com/dataflow/docs/guides/sql/dataflow-sql-intro"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+        "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced",
+        "https://docs.cloud.google.com/dataflow/docs/guides/sql/dataflow-sql-intro"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+        "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced",
+        "https://docs.cloud.google.com/dataflow/docs/guides/sql/dataflow-sql-intro"
+      ]
+    }
+  ]
+}

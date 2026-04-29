@@ -1,0 +1,169 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.589Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Outbound OAuth requests",
+  "feature_slug": "outbound-oauth-requests",
+  "summary": "Apps Script supports outbound OAuth requests through UrlFetchApp OAuth services.",
+  "extended_definition": "Apps Script supports outbound OAuth requests through UrlFetchApp OAuth services.",
+  "lifecycle": {
+    "latest_feature_date": "2010-08-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/client-verification",
+      "https://developers.google.com/apps-script/guides/services/cloud-run",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "OAuth Client Verification \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/client-verification",
+        "source_id": "site-docs-root",
+        "final_score": 38,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see the following articles: Unverified Apps OAuth Application Verification FAQ Google API Services: User Data Policy Figure 1 : Unverified app screen Figure 2 : Unverified app authorization flow This change applies to Google OAuth web clients, including those used by all Apps Script projects.",
+          "Page Summary outlined flag Google requires verification for Google OAuth clients requesting certain sensitive OAuth scopes, though Apps Script projects within the same Google Workspace domain or customer are exempt.",
+          "Home Google Workspace Apps Script Guides Send feedback OAuth Client Verification Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Connect to Google Cloud services \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/services/cloud-run",
+        "source_id": "site-docs-root-2",
+        "final_score": 36,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Make an authenticated request Once configured, you can include the identity token in the Authorization header of your requests: function callCloudRunService () { const idToken = ScriptApp . getIdentityToken (); const url = 'https://your-service-url.a.run.app' ; const response = UrlFetchApp . fetch ( url , { headers : { 'Authorization' : 'Bearer ' + idToken } }); Logger . log ( response . getContentText ()); } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "In your script project's manifest file ( appsscript.json ), add the openid scope and any other required scopes to the oauthScopes array: { \"timeZone\" : \"America/New York\" , \"dependencies\" : { }, \"exceptionLogging\" : \"STACKDRIVER\" , \"runtimeVersion\" : \"V8\" , \"oauthScopes\" : [ \"openid\" , \"https://www.googleapis.com/auth/script.external request\" , \"https://www.googleapis.com/auth/userinfo.email\" ] } Configure the Google Cloud service You must configure the Google Cloud service to accept the identity token issued to your script.",
+          "Home Google Workspace Apps Script Guides Send feedback Connect to Google Cloud services Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 31,
+        "relevance": "",
+        "evidence_snippets": [
+          "May 20, 2015 Deprecated Deprecated the following OAuth class and methods in favor of OAuth libraries : + OAuthConfig + UrlFetchApp.addOAuthService(serviceName) + UrlFetchApp.removeOAuthService(serviceName) Feature Added the following enum and methods to the Script service to allow scripts to identify their installation source and project keys: InstallationSource ScriptApp.getInstallationSource() ScriptApp.getProjectKey() Added several new web-safe base-64 encoding and decoding methods: Utilities.base64DecodeWebSafe(String) Utilities.base64DecodeWebSafe(String, Charset) Utilities.base64EncodeWebSafe(Byte) Utilities.base64EncodeWebSafe(String) Utilities.base64EncodeWebSafe(String, Charset) April 23, 2015 Announcement Add-ons are now out of developer preview.",
+          "April 23, 2025 Fixed Between approximately September 2024 and March 2025, for Google Sheets modifications made by time-based Apps Script triggers, a bug caused incorrect OAuth App IDs and App Names to be logged in the Google Admin console.",
+          "UrlFetch requests made by scripts that run on a time-based trigger now include an If-Modified-Since HTTP header so that Apps Script can use a cached copy of the page if one is available and the page has not changed."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appsscript.json",
+      "developers.google.com",
+      "script.external",
+      "url.a.run.app",
+      "userinfo.email"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/services/cloud-run",
+        "https://developers.google.com/apps-script/guides/client-verification"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/services/cloud-run",
+        "https://developers.google.com/apps-script/guides/client-verification"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/services/cloud-run",
+        "https://developers.google.com/apps-script/guides/client-verification"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/services/cloud-run",
+        "https://developers.google.com/apps-script/guides/client-verification"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/services/cloud-run",
+        "https://developers.google.com/apps-script/guides/client-verification"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/services/cloud-run",
+        "https://developers.google.com/apps-script/guides/client-verification"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/services/cloud-run",
+        "https://developers.google.com/apps-script/guides/client-verification"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/services/cloud-run",
+        "https://developers.google.com/apps-script/guides/client-verification"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/services/cloud-run",
+        "https://developers.google.com/apps-script/guides/client-verification"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:32.041Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search",
+  "feature_name": "Enterprise Search image search",
+  "feature_slug": "enterprise-search-image-search",
+  "summary": "Image search allows searching a website with a Base64-encoded image query via API to return similar images.",
+  "extended_definition": "Image search allows searching a website with a Base64-encoded image query via API to return similar images.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: discoveryengine.googleapis.com \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "ImageQuery JSON representation { // Union field image can be only one of the following: \"imageBytes\" : string // End of list of possible types for union field image . } Fields Union field image . image can be only one of the following: imageBytes string Base64 encoded image bytes.",
+          "The only valid non-default value is 1, which enables image searching.",
+          "SearchRequest JSON representation { \"servingConfig\" : string , \"branch\" : string , \"query\" : string , \"pageCategories\" : [ string ] , \"imageQuery\" : { object ( ImageQuery ) } , \"pageSize\" : integer , \"pageToken\" : string , \"offset\" : integer , \"oneBoxPageSize\" : integer , \"dataStoreSpecs\" : [ { object ( DataStoreSpec ) } ] , \"filter\" : string , \"canonicalFilter\" : string , \"orderBy\" : string , \"userInfo\" : { object ( UserInfo ) } , \"languageCode\" : string , \"regionCode\" : string , \"facetSpecs\" : [ { object ( FacetSpec ) } ] , \"boostSpec\" : { object ( BoostSpec ) } , \"params\" : { string : value , ... } , \"queryExpansionSpec\" : { object ( QueryExpansionSpec ) } , \"spellCorrectionSpec\" : { object ( SpellCorrectionSpec ) } , \"userPseudoId\" : string , \"useLatestData\" : boolean , \"contentSearchSpec\" : { object ( ContentSearchSpec ) } , \"embeddingSpec\" : { object ( EmbeddingSpec ) } , \"rankingExpression\" : string , \"rankingExpressionBackend\" : enum ( RankingExpressionBackend ) , \"safeSearch\" : boolean , \"userLabels\" : { string : string , ... } , \"naturalLanguageQueryUnderstandingSpec\" : { object ( NaturalLanguageQueryUnderstandingSpec ) } , \"searchAsYouTypeSpec\" : { object ( SearchAsYouTypeSpec ) } , \"customFineTuningSpec\" : { object ( CustomFineTuningSpec ) } , \"displaySpec\" : { object ( DisplaySpec ) } , \"crowdingSpecs\" : [ { object ( CrowdingSpec ) } ] , \"session\" : string , \"sessionSpec\" : { object ( SessionSpec ) } , \"relevanceThreshold\" : enum ( RelevanceThreshold ) , \"relevanceFilterSpec\" : { object ( RelevanceFilterSpec ) } , \"personalizationSpec\" : { object ( PersonalizationSpec ) } , \"relevanceScoreSpec\" : { object ( RelevanceScoreSpec ) } , \"searchAddonSpec\" : { object ( SearchAddonSpec ) } } Fields servingConfig string Required."
+        ]
+      },
+      {
+        "title": "Get answers and follow-ups \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "source_id": "site-docs-reference",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "They can replicate data from Spanner into BigQuery and perform analytics against local data, or they can use federated queries to retrieve data from Spanner on-demand.\\n\", \"steps\": [ { \"state\": \"SUCCEEDED\", \"description\": \"Rephrase the query and search.\", \"actions\": [ { \"searchAction\": { \"query\": \"Compare bigquery with spanner database?\" }, \"observation\": { \"searchResults\": [ { \"document\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/ecc0e7547253f4ca3ff3328ce89995af\", \"uri\": \"https://cloud.google.com/blog/topics/developers-practitioners/how-spanner-and-bigquery-work-together-handle-transactional-and-analytical-workloads\", \"title\": \"How Spanner and BigQuery work together to handle transactional and analytical workloads Google Cloud Blog\", \"snippetInfo\": [ { \"snippet\": \"Using Cloud \\u003cb\\u003eSpanner\\u003c/b\\u003e and \\u003cb\\u003eBigQuery\\u003c/b\\u003e also allows customers to build their \\u003cb\\u003edata\\u003c/b\\u003e clouds using Google Cloud, a unified, open approach to \\u003cb\\u003edata\\u003c/b\\u003e-driven transformation ...\", \"snippetStatus\": \"SUCCESS\" } ] }, { \"document\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/d7e238f73608a860e00b752ef80e2941\", \"uri\": \"https://cloud.google.com/blog/products/databases/cloud-spanner-gets-stronger-with-bigquery-federated-queries\", \"title\": \"Cloud Spanner gets stronger with BigQuery-federated queries Google Cloud Blog\", \"snippetInfo\": [ { \"snippet\": \"As enterprises compete for market share, their need for real-time insights has given rise to increased demand for transactional \\u003cb\\u003edatabases\\u003c/b\\u003e to support \\u003cb\\u003edata\\u003c/b\\u003e ...\", \"snippetStatus\": \"SUCCESS\" } ] }, { \"document\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/e10a5a3c267dc61579e7c00fefe656eb\", \"uri\": \"https://cloud.google.com/blog/topics/developers-practitioners/replicating-cloud-spanner-bigquery-scale\", \"title\": \"Replicating from Cloud Spanner to BigQuery at scale Google Cloud Blog\", \"snippetInfo\": [ { \"snippet\": \"... \\u003cb\\u003eSpanner data\\u003c/b\\u003e into \\u003cb\\u003eBigQuery\\u003c/b\\u003e for analytics.",
+          "Users can leverage federated queries to read data from Spanner and write to a native BigQuery table. \\n\" , \"steps\" : [ { \"state\" : \"SUCCEEDED\" , \"description\" : \"Rephrase the query and search.\" , \"actions\" : [ { \"searchAction\" : { \"query\" : \"Compare bigquery with spanner database?\" } , \"observation\" : { \"searchResults\" : [ { \"document\" : \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/ecc0e7547253f4ca3ff3328ce89995af\" , \"uri\" : \"https://cloud.google.com/blog/topics/developers-practitioners/how-spanner-and-bigquery-work-together-handle-transactional-and-analytical-workloads\" , \"title\" : \"How Spanner and BigQuery work together to handle transactional and analytical workloads Google Cloud Blog\" , \"snippetInfo\" : [ { \"snippet\" : \"Using Cloud \\u003cb\\u003eSpanner\\u003c/b\\u003e and \\u003cb\\u003eBigQuery\\u003c/b\\u003e also allows customers to build their \\u003cb\\u003edata\\u003c/b\\u003e clouds using Google Cloud, a unified, open approach to \\u003cb\\u003edata\\u003c/b\\u003e-driven transformation ...\" , \"snippetStatus\" : \"SUCCESS\" } ] } , { \"document\" : \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/d7e238f73608a860e00b752ef80e2941\" , \"uri\" : \"https://cloud.google.com/blog/products/databases/cloud-spanner-gets-stronger-with-bigquery-federated-queries\" , \"title\" : \"Cloud Spanner gets stronger with BigQuery-federated queries Google Cloud Blog\" , \"snippetInfo\" : [ { \"snippet\" : \"As enterprises compete for market share, their need for real-time insights has given rise to increased demand for transactional \\u003cb\\u003edatabases\\u003c/b\\u003e to support \\u003cb\\u003edata\\u003c/b\\u003e ...\" , \"snippetStatus\" : \"SUCCESS\" } ] } , { \"document\" : \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/e10a5a3c267dc61579e7c00fefe656eb\" , \"uri\" : \"https://cloud.google.com/blog/topics/developers-practitioners/replicating-cloud-spanner-bigquery-scale\" , \"title\" : \"Replicating from Cloud Spanner to BigQuery at scale Google Cloud Blog\" , \"snippetInfo\" : [ { \"snippet\" : \"... \\u003cb\\u003eSpanner data\\u003c/b\\u003e into \\u003cb\\u003eBigQuery\\u003c/b\\u003e for analytics.",
+          "Before you begin Depending on the type of app you have, complete the following requirements: If you have a structured, unstructured, or website search app, turn on the following options: Enterprise edition features : This gives you access to core generative answer features."
+        ]
+      },
+      {
+        "title": "Get search results \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+        "source_id": "site-iam-reference",
+        "final_score": 103,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can iterate over elements, and API calls will be issued to fetch pages as needed. result . each do item Each element is of type ::Google::Cloud::DiscoveryEngine::V1beta::SearchResponse::SearchResult. p item end end Get search results for an app with website data (API key) If you want to authenticate the search method call with an API key instead of using OAuth 2.0 through a service account or a user account, then follow this procedure, which uses the searchLite method.",
+          "Procedure REST To use the API to get search results for an app with public website data authenticated with an API key, use the engines.servingConfigs.searchLite method: Note: You can search over an app using the engines.servingConfigs.searchLite method and you can search over a data store using the dataStores.servingConfigs.searchLite method.",
+          "REST To use the API to get search results for an app with website data, use the engines.servingConfigs.search method: Note: You can search over an app using the engines.servingConfigs.search method and you can search over a data store using the dataStores.servingConfigs.search method."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "columns.Hereby",
+      "columns.To",
+      "connected.If",
+      "criteria.The",
+      "data.After",
+      "database.When",
+      "database.With",
+      "database.You",
+      "databases.Each",
+      "databases.Is",
+      "developed.It",
+      "discoveryengine.googleapis.com",
+      "distros.SQL",
+      "engines.servingConfigs.search",
+      "engines.servingConfigs.searchLite",
+      "firstname.Next",
+      "firstname.When",
+      "hash.Login",
+      "information.The",
+      "job.There",
+      "language.SQL",
+      "language.SQLite",
+      "manner.This",
+      "method.For",
+      "no.Yes",
+      "others.For",
+      "people.Then",
+      "predicates.WHERE",
+      "premium.SQL",
+      "products.They",
+      "products.This",
+      "program.SQLite3",
+      "queries.When",
+      "recordset.A",
+      "server.This",
+      "servers.Structured",
+      "sheet.Description",
+      "shown.A",
+      "tables.Although",
+      "tool.It",
+      "unfamiliar.Bypass",
+      "vendor.Every"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results"
+      ]
+    }
+  ]
+}

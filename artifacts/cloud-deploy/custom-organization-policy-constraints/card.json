@@ -1,0 +1,251 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:47.389Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deploy/card.json",
+  "product_name": "Cloud Deploy",
+  "product_slug": "cloud-deploy",
+  "feature_name": "Custom organization policy constraints",
+  "feature_slug": "custom-organization-policy-constraints",
+  "summary": "Custom organization policy constraints provide granular control over specific fields for selected Cloud Deploy resources.",
+  "extended_definition": "Custom organization policy constraints provide granular control over specific fields for selected Cloud Deploy resources.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deploy/docs/custom-org-policy",
+      "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use custom organization policies \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/custom-org-policy",
+        "source_id": "site-docs-reference-2",
+        "final_score": 244,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "However, if you want more granular, customizable control over the specific fields that are restricted in your organization policies, you can also create custom constraints and use those custom constraints in an organization policy.",
+          "Resource Field clouddeploy.googleapis.com/Automation resource.annotations resource.description resource.rules.advanceRolloutRule.id resource.rules.advanceRolloutRule.sourcePhases resource.rules.advanceRolloutRule.wait resource.rules.promoteReleaseRule.destinationPhase resource.rules.promoteReleaseRule.destinationTargetId resource.rules.promoteReleaseRule.id resource.rules.promoteReleaseRule.wait resource.rules.repairRolloutRule.id resource.rules.repairRolloutRule.jobs resource.rules.repairRolloutRule.phases resource.rules.repairRolloutRule.repairPhases.retry.attempts resource.rules.repairRolloutRule.repairPhases.retry.backoffMode resource.rules.repairRolloutRule.repairPhases.retry.wait resource.rules.repairRolloutRule.repairPhases.rollback.destinationPhase resource.rules.repairRolloutRule.repairPhases.rollback.disableRollbackIfRolloutPending resource.rules.timedPromoteReleaseRule.destinationPhase resource.rules.timedPromoteReleaseRule.destinationTargetId resource.rules.timedPromoteReleaseRule.id resource.rules.timedPromoteReleaseRule.schedule resource.rules.timedPromoteReleaseRule.timeZone resource.selector.targets.id resource.serviceAccount resource.suspended clouddeploy.googleapis.com/CustomTargetType resource.annotations resource.customActions.deployAction resource.customActions.includeSkaffoldModules.configs resource.customActions.includeSkaffoldModules.git.path resource.customActions.includeSkaffoldModules.git.ref resource.customActions.includeSkaffoldModules.git.repo resource.customActions.includeSkaffoldModules.googleCloudBuildRepo.path resource.customActions.includeSkaffoldModules.googleCloudBuildRepo.ref resource.customActions.includeSkaffoldModules.googleCloudBuildRepo.repository resource.customActions.includeSkaffoldModules.googleCloudStorage.path resource.customActions.includeSkaffoldModules.googleCloudStorage.source resource.customActions.renderAction resource.description resource.name clouddeploy.googleapis.com/DeliveryPipeline resource.annotations resource.description resource.name resource.serialPipeline.stages.deployParameters.matchTargetLabels resource.serialPipeline.stages.deployParameters.values resource.serialPipeline.stages.profiles resource.serialPipeline.stages.strategy.canary.canaryDeployment.percentages resource.serialPipeline.stages.strategy.canary.canaryDeployment.postdeploy.actions resource.serialPipeline.stages.strategy.canary.canaryDeployment.predeploy.actions resource.serialPipeline.stages.strategy.canary.canaryDeployment.verify resource.serialPipeline.stages.strategy.canary.customCanaryDeployment.phaseConfigs.percentage resource.serialPipeline.stages.strategy.canary.customCanaryDeployment.phaseConfigs.phaseId resource.serialPipeline.stages.strategy.canary.customCanaryDeployment.phaseConfigs.postdeploy.actions resource.serialPipeline.stages.strategy.canary.customCanaryDeployment.phaseConfigs.predeploy.actions resource.serialPipeline.stages.strategy.canary.customCanaryDeployment.phaseConfigs.profiles resource.serialPipeline.stages.strategy.canary.customCanaryDeployment.phaseConfigs.verify resource.serialPipeline.stages.strategy.canary.runtimeConfig.cloudRun.automaticTrafficControl resource.serialPipeline.stages.strategy.canary.runtimeConfig.cloudRun.canaryRevisionTags resource.serialPipeline.stages.strategy.canary.runtimeConfig.cloudRun.priorRevisionTags resource.serialPipeline.stages.strategy.canary.runtimeConfig.cloudRun.stableRevisionTags resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.gatewayServiceMesh.deployment resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.gatewayServiceMesh.httpRoute resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.gatewayServiceMesh.podSelectorLabel resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.gatewayServiceMesh.routeDestinations.destinationIds resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.gatewayServiceMesh.routeDestinations.propagateService resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.gatewayServiceMesh.routeUpdateWaitTime resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.gatewayServiceMesh.service resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.gatewayServiceMesh.stableCutbackDuration resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.serviceNetworking.deployment resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.serviceNetworking.disablePodOverprovisioning resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.serviceNetworking.podSelectorLabel resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.serviceNetworking.service resource.serialPipeline.stages.strategy.standard.postdeploy.actions resource.serialPipeline.stages.strategy.standard.predeploy.actions resource.serialPipeline.stages.strategy.standard.verify resource.serialPipeline.stages.targetId resource.suspended clouddeploy.googleapis.com/DeployPolicy resource.annotations resource.description resource.rules.rolloutRestriction.actions resource.rules.rolloutRestriction.id resource.rules.rolloutRestriction.invokers resource.rules.rolloutRestriction.timeWindows.oneTimeWindows.endDate resource.rules.rolloutRestriction.timeWindows.oneTimeWindows.endTime resource.rules.rolloutRestriction.timeWindows.oneTimeWindows.startDate resource.rules.rolloutRestriction.timeWindows.oneTimeWindows.startTime resource.rules.rolloutRestriction.timeWindows.timeZone resource.rules.rolloutRestriction.timeWindows.weeklyWindows.daysOfWeek resource.rules.rolloutRestriction.timeWindows.weeklyWindows.endTime resource.rules.rolloutRestriction.timeWindows.weeklyWindows.startTime resource.selectors.deliveryPipeline.id resource.selectors.target.id resource.suspended clouddeploy.googleapis.com/Release resource.annotations resource.buildArtifacts.image resource.buildArtifacts.tag resource.deployParameters resource.description resource.name resource.skaffoldConfigPath resource.skaffoldConfigUri resource.skaffoldVersion clouddeploy.googleapis.com/Rollout resource.annotations resource.description resource.name resource.targetId clouddeploy.googleapis.com/Target resource.annotations resource.anthosCluster.membership resource.associatedEntities[ ].anthosClusters.membership resource.associatedEntities[ ].gkeClusters.cluster resource.associatedEntities[ ].gkeClusters.dnsEndpoint resource.associatedEntities[ ].gkeClusters.internalIp resource.associatedEntities[ ].gkeClusters.proxyUrl resource.customTarget.customTargetType resource.deployParameters resource.description resource.executionConfigs.artifactStorage resource.executionConfigs.defaultPool.artifactStorage resource.executionConfigs.defaultPool.serviceAccount resource.executionConfigs.executionTimeout resource.executionConfigs.privatePool.artifactStorage resource.executionConfigs.privatePool.serviceAccount resource.executionConfigs.privatePool.workerPool resource.executionConfigs.serviceAccount resource.executionConfigs.usages resource.executionConfigs.verbose resource.executionConfigs.workerPool resource.gke.cluster resource.gke.dnsEndpoint resource.gke.internalIp resource.gke.proxyUrl resource.multiTarget.targetIds resource.name resource.requireApproval resource.run.location What's next Learn more about Organization Policy Service .",
+          "About organization policies and constraints The Google Cloud Organization Policy Service gives you centralized, programmatic control over your organization's resources."
+        ]
+      },
+      {
+        "title": "\"Class CloudDeployAsyncClient (2.10.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } delivery pipeline path delivery pipeline path ( project : str , location : str , delivery pipeline : str ) - > str Returns a fully-qualified delivery pipeline string. deploy policy path deploy policy path ( project : str , location : str , deploy policy : str ) - > str Returns a fully-qualified deploy policy string. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.",
+          "This corresponds to the custom target type id field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "This corresponds to the deploy policy id field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata."
+        ]
+      },
+      {
+        "title": "\"Class CloudDeployClient (2.10.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployClient",
+        "source_id": "site-python-reference",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } delivery pipeline path delivery pipeline path ( project : str , location : str , delivery pipeline : str ) - > str Returns a fully-qualified delivery pipeline string. deploy policy path deploy policy path ( project : str , location : str , deploy policy : str ) - > str Returns a fully-qualified deploy policy string. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.",
+          "This corresponds to the custom target type id field on the request instance; if request is provided, this should not be set. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "This corresponds to the deploy policy id field on the request instance; if request is provided, this should not be set. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "async.AsyncRetry",
+      "clouddeploy.googleapis.com",
+      "core.retry",
+      "core.retry.Retry",
+      "pb2.FieldMask",
+      "projects.locations.customTargetTypes",
+      "projects.locations.customTargetTypes.getIamPolicy",
+      "projects.locations.customTargetTypes.setIamPolicy",
+      "resource.annotations",
+      "resource.anthosCluster.membership",
+      "resource.associatedEntities",
+      "resource.buildArtifacts.image",
+      "resource.buildArtifacts.tag",
+      "resource.customActions.deployAction",
+      "resource.customActions.includeSkaffoldModules.configs",
+      "resource.customActions.includeSkaffoldModules.git.path",
+      "resource.customActions.includeSkaffoldModules.git.ref",
+      "resource.customActions.includeSkaffoldModules.git.repo",
+      "resource.customActions.includeSkaffoldModules.googleCloudBuildRepo.path",
+      "resource.customActions.includeSkaffoldModules.googleCloudBuildRepo.ref",
+      "resource.customActions.includeSkaffoldModules.googleCloudBuildRepo.repository",
+      "resource.customActions.includeSkaffoldModules.googleCloudStorage.path",
+      "resource.customActions.includeSkaffoldModules.googleCloudStorage.source",
+      "resource.customActions.renderAction",
+      "resource.customTarget.customTargetType",
+      "resource.deployParameters",
+      "resource.description",
+      "resource.executionConfigs.artifactStorage",
+      "resource.executionConfigs.defaultPool.artifactStorage",
+      "resource.executionConfigs.defaultPool.serviceAccount",
+      "resource.executionConfigs.executionTimeout",
+      "resource.executionConfigs.privatePool.artifactStorage",
+      "resource.executionConfigs.privatePool.serviceAccount",
+      "resource.executionConfigs.privatePool.workerPool",
+      "resource.executionConfigs.serviceAccount",
+      "resource.executionConfigs.usages",
+      "resource.executionConfigs.verbose",
+      "resource.executionConfigs.workerPool",
+      "resource.gke.cluster",
+      "resource.gke.dnsEndpoint",
+      "resource.gke.internalIp",
+      "resource.gke.proxyUrl",
+      "resource.multiTarget.targetIds",
+      "resource.name",
+      "resource.requireApproval",
+      "resource.rules.advanceRolloutRule.id",
+      "resource.rules.advanceRolloutRule.sourcePhases",
+      "resource.rules.advanceRolloutRule.wait",
+      "resource.rules.promoteReleaseRule.destinationPhase",
+      "resource.rules.promoteReleaseRule.destinationTargetId",
+      "resource.rules.promoteReleaseRule.id",
+      "resource.rules.promoteReleaseRule.wait",
+      "resource.rules.repairRolloutRule.id",
+      "resource.rules.repairRolloutRule.jobs",
+      "resource.rules.repairRolloutRule.phases",
+      "resource.rules.repairRolloutRule.repairPhases.retry.attempts",
+      "resource.rules.repairRolloutRule.repairPhases.retry.backoffMode",
+      "resource.rules.repairRolloutRule.repairPhases.retry.wait",
+      "resource.rules.repairRolloutRule.repairPhases.rollback.destinationPhase",
+      "resource.rules.repairRolloutRule.repairPhases.rollback.disableRollbackIfRolloutPending",
+      "resource.rules.rolloutRestriction.actions",
+      "resource.rules.rolloutRestriction.id",
+      "resource.rules.rolloutRestriction.invokers",
+      "resource.rules.rolloutRestriction.timeWindows.oneTimeWindows.endDate",
+      "resource.rules.rolloutRestriction.timeWindows.oneTimeWindows.endTime",
+      "resource.rules.rolloutRestriction.timeWindows.oneTimeWindows.startDate",
+      "resource.rules.rolloutRestriction.timeWindows.oneTimeWindows.startTime",
+      "resource.rules.rolloutRestriction.timeWindows.timeZone",
+      "resource.rules.rolloutRestriction.timeWindows.weeklyWindows.daysOfWeek",
+      "resource.rules.rolloutRestriction.timeWindows.weeklyWindows.endTime",
+      "resource.rules.rolloutRestriction.timeWindows.weeklyWindows.startTime",
+      "resource.rules.timedPromoteReleaseRule.destinationPhase",
+      "resource.rules.timedPromoteReleaseRule.destinationTargetId",
+      "resource.rules.timedPromoteReleaseRule.id",
+      "resource.rules.timedPromoteReleaseRule.schedule",
+      "resource.rules.timedPromoteReleaseRule.timeZone",
+      "resource.run.location",
+      "resource.selector.targets.id",
+      "resource.selectors.deliveryPipeline.id",
+      "resource.selectors.target.id",
+      "resource.serialPipeline.stages.deployParameters.matchTargetLabels",
+      "resource.serialPipeline.stages.deployParameters.values",
+      "resource.serialPipeline.stages.profiles",
+      "resource.serialPipeline.stages.strategy.canary.canaryDeployment.percentages",
+      "resource.serialPipeline.stages.strategy.canary.canaryDeployment.postdeploy.actions",
+      "resource.serialPipeline.stages.strategy.canary.canaryDeployment.predeploy.actions",
+      "resource.serialPipeline.stages.strategy.canary.canaryDeployment.verify",
+      "resource.serialPipeline.stages.strategy.canary.customCanaryDeployment.phaseConfigs.percentage",
+      "resource.serialPipeline.stages.strategy.canary.customCanaryDeployment.phaseConfigs.phaseId",
+      "resource.serialPipeline.stages.strategy.canary.customCanaryDeployment.phaseConfigs.postdeploy.actions",
+      "resource.serialPipeline.stages.strategy.canary.customCanaryDeployment.phaseConfigs.predeploy.actions",
+      "resource.serialPipeline.stages.strategy.canary.customCanaryDeployment.phaseConfigs.profiles",
+      "resource.serialPipeline.stages.strategy.canary.customCanaryDeployment.phaseConfigs.verify",
+      "resource.serialPipeline.stages.strategy.canary.runtimeConfig.cloudRun.automaticTrafficControl",
+      "resource.serialPipeline.stages.strategy.canary.runtimeConfig.cloudRun.canaryRevisionTags",
+      "resource.serialPipeline.stages.strategy.canary.runtimeConfig.cloudRun.priorRevisionTags",
+      "resource.serialPipeline.stages.strategy.canary.runtimeConfig.cloudRun.stableRevisionTags",
+      "resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.gatewayServiceMesh.deployment",
+      "resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.gatewayServiceMesh.httpRoute",
+      "resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.gatewayServiceMesh.podSelectorLabel",
+      "resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.gatewayServiceMesh.routeDestinations.destinationIds",
+      "resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.gatewayServiceMesh.routeDestinations.propagateService",
+      "resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.gatewayServiceMesh.routeUpdateWaitTime",
+      "resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.gatewayServiceMesh.service",
+      "resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.gatewayServiceMesh.stableCutbackDuration",
+      "resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.serviceNetworking.deployment",
+      "resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.serviceNetworking.disablePodOverprovisioning",
+      "resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.serviceNetworking.podSelectorLabel",
+      "resource.serialPipeline.stages.strategy.canary.runtimeConfig.kubernetes.serviceNetworking.service",
+      "resource.serialPipeline.stages.strategy.standard.postdeploy.actions",
+      "resource.serialPipeline.stages.strategy.standard.predeploy.actions",
+      "resource.serialPipeline.stages.strategy.standard.verify",
+      "resource.serialPipeline.stages.targetId",
+      "resource.serviceAccount",
+      "resource.skaffoldConfigPath",
+      "resource.skaffoldConfigUri",
+      "resource.skaffoldVersion",
+      "resource.suspended",
+      "resource.targetId",
+      "v1.types.CustomTargetType"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/custom-org-policy",
+        "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployClient"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/custom-org-policy",
+        "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/custom-org-policy",
+        "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/custom-org-policy",
+        "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/custom-org-policy",
+        "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployClient"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/custom-org-policy",
+        "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployClient"
+      ]
+    }
+  ]
+}

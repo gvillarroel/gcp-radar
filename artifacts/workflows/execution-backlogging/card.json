@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:34.788Z",
+  "source_step08_card": "data/step-08/current/products/workflows/card.json",
+  "product_name": "Workflows",
+  "product_slug": "workflows",
+  "feature_name": "Execution backlogging",
+  "feature_slug": "execution-backlogging",
+  "summary": "Execution backlogging automatically runs queued executions when concurrency quota becomes available.",
+  "extended_definition": "Execution backlogging automatically runs queued executions when concurrency quota becomes available.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/workflows/latest/google.cloud.workflows.executions_v1.services.executions.ExecutionsAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/workflows/latest/google.cloud.workflows.executions_v1.services.executions.ExecutionsClient",
+      "https://docs.cloud.google.com/workflows/docs/tutorials/buffer-workflows-executions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class ExecutionsAsyncClient (1.21.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/workflows/latest/google.cloud.workflows.executions_v1.services.executions.ExecutionsAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 191,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.workflows import executions v1 async def sample cancel execution(): Create a client client = executions v1.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.workflows import executions v1 async def sample create execution(): Create a client client = executions v1.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.workflows import executions v1 async def sample list executions(): Create a client client = executions v1."
+        ]
+      },
+      {
+        "title": "\"Class ExecutionsClient (1.21.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/workflows/latest/google.cloud.workflows.executions_v1.services.executions.ExecutionsClient",
+        "source_id": "site-python-reference",
+        "final_score": 191,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.workflows import executions v1 def sample cancel execution(): Create a client client = executions v1.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.workflows import executions v1 def sample create execution(): Create a client client = executions v1.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.workflows import executions v1 def sample list executions(): Create a client client = executions v1."
+        ]
+      },
+      {
+        "title": "\"Use a Cloud Tasks queue to buffer your workflow executions \\_|\\_ Workflows\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/tutorials/buffer-workflows-executions",
+        "source_id": "site-docs-root-2",
+        "final_score": 176,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You should see executions of the child workflow, running around the same time, similar to the following: gcloud Execute the workflow: gcloud workflows run workflow-parent \\ --location = us-central1 To verify that a workflow execution was triggered, list the last four executions: gcloud workflows executions list workflow-child --limit = 4 Since the number of executions (100 ) is below the Workflows concurrency limit, the results should be similar to the following.",
+          "Once this quota is exhausted, and if execution backlogging is disabled, or if the quota for backlogged executions is reached, any new executions fail with an HTTP 429 Too many requests status code.",
+          "You should see executions of the child workflow, running at one request per second, similar to the following: gcloud Update the Cloud Tasks queue to apply a rate limit of one dispatch per second: gcloud tasks queues update $QUEUE \\ --max-dispatches-per-second = 1 \\ --location = us-central1 Execute the workflow: gcloud workflows run workflow-parent \\ --location = us-central1 To verify that a workflow execution was triggered, list the last four executions: gcloud workflows executions list workflow-child --limit = 4 The results should be similar to the following, with one workflow executed per second: NAME: projects/620278351741/locations/us-central1/workflows/workflow-child/executions/becf4957-9fb2-40d9-835d-0ff2dd0c1249 STATE: ACTIVE START TIME: 2023 -07-27T01:07:24.446361457Z END TIME: NAME: projects/620278351741/locations/us-central1/workflows/workflow-child/executions/6c1e7c4b-7ac6-4121-b351-1e2d56d10903 STATE: ACTIVE START TIME: 2023 -07-27T01:07:23.448213989Z END TIME: NAME: projects/620278351741/locations/us-central1/workflows/workflow-child/executions/f2ba5027-af40-4cd3-8cd0-b8033bcc6211 STATE: ACTIVE START TIME: 2023 -07-27T01:07:22.431485914Z END TIME: NAME: projects/620278351741/locations/us-central1/workflows/workflow-child/executions/ecc61ee5-fe87-49eb-8803-89dba929f6c8 STATE: ACTIVE START TIME: 2023 -07-27T01:07:21.443466369Z END TIME: You have successfully deployed a workflow that invokes 100 iterations of the child workflow with a dispatch rate of one execution per second."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "base64.encode",
+      "developer.gserviceaccount.com",
+      "googleapis.cloudtasks.v2.projects.locations.queues.tasks.create",
+      "googleapis.dev",
+      "json.encode",
+      "options.html",
+      "sys.get",
+      "workflowexecutions.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/tutorials/buffer-workflows-executions",
+        "https://docs.cloud.google.com/python/docs/reference/workflows/latest/google.cloud.workflows.executions_v1.services.executions.ExecutionsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/workflows/latest/google.cloud.workflows.executions_v1.services.executions.ExecutionsClient"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/tutorials/buffer-workflows-executions",
+        "https://docs.cloud.google.com/python/docs/reference/workflows/latest/google.cloud.workflows.executions_v1.services.executions.ExecutionsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/workflows/latest/google.cloud.workflows.executions_v1.services.executions.ExecutionsClient"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/tutorials/buffer-workflows-executions",
+        "https://docs.cloud.google.com/python/docs/reference/workflows/latest/google.cloud.workflows.executions_v1.services.executions.ExecutionsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/workflows/latest/google.cloud.workflows.executions_v1.services.executions.ExecutionsClient"
+      ]
+    }
+  ]
+}

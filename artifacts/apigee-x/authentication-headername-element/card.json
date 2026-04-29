@@ -1,0 +1,139 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.658Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "Authentication HeaderName element",
+  "feature_slug": "authentication-headername-element",
+  "summary": "Apigee Authentication configurations can specify a custom header name for injected bearer tokens by using the HeaderName element.",
+  "extended_definition": "Apigee Authentication configurations can specify a custom header name for injected bearer tokens by using the HeaderName element.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/external-callout-policy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "ExternalCallout policy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/external-callout-policy",
+        "source_id": "site-api-reference",
+        "final_score": 151,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Apigee hybrid users: If you use Apigee hybrid, note that the useTargetUrl attribute is available in Apigee hybrid version 1.8 and later versions. < ExternalCallout continueOnError = \"false\" enabled = \"true\" name = \"External-Callout-1\" > < DisplayName>External - Callout - 1 < / DisplayName > < GrpcConnection > < Server name = \"cloud run server name\" / > < Authentication > < GoogleIDToken > < Audience useTargetUrl = \"true\" / > < / GoogleIDToken > < / Authentication > < / GrpcConnection > < TimeoutMs>5000 < / TimeoutMs > < Configurations > < Property name = \"with.request.content\" > true < / Property > < Property name = \"with.request.headers\" > true < / Property > < Property name = \"with.response.content\" > true < / Property > < Property name = \"with.response.headers\" > true < / Property > < FlowVariable>example . flow . variable < / FlowVariable > < FlowVariable>another . flow . variable < / FlowVariable > < / Configurations > < / ExternalCallout > < DataCapture name = \"capturepayment\" continueOnError = \"false\" enabled = \"true\" > < DisplayName>Data - Capture - Policy - 1 < / DisplayName > < IgnoreUnresolvedVariables>false < / IgnoreUnresolvedVariables > < ThrowExceptionOnLimit>false < / ThrowExceptionOnLimit > < !-- Existing Variable -- > < Capture > < Collect ref = \"existing-variable\" default = \"0\" >< / Collect > < DataCollector>dc 1 < / DataCollector > < / Capture > < !-- JSONPayload -- > < Capture > < DataCollector>dc 2 < / DataCollector > < Collect default = \"0\" > < Source>request < / Source > < JSONPayload > < JSONPath>result . var < / JSONPath > < / JSONPayload > < / Collect > < / Capture > < !-- URIPath -- > < Capture > < DataCollector>dc 3 < / DataCollector > < Collect default = \"0\" > < URIPath > < !-- All patterns must specify a single variable to extract named $ -- > < Pattern ignoreCase = \"false\" > / foo / { $ } < / Pattern > < Pattern ignoreCase = \"false\" > / foo / bar / { $ } < / Pattern > < / URIPath > < / Collect > < / Capture > < / DataCapture > --> Child element reference The following sections describe the child elements of ExternalCallout . <TimeoutMs> The request timeout in milliseconds for gRPC requests. <TimeoutMs> must be a positive number. <GrpcConnection> The <GrpcConnection> element sets the gRPC server to be an existing TargetServer , specified by the name attribute.",
+          "Type Complex type Parent Element <GrpcConnection> Child Elements <GoogleIDToken> The Authentication element uses the following syntax: Syntax < ExternalCallout > ... < GrpcConnection > < Server name = \"cloud run server name\" / > < Authentication > < HeaderName ref = \"FLOW VARIABLE\" > STRING < / HeaderName > < GoogleIDToken > < Audience ref = \"variable-1\" > STRING < / Audience > < IncludeEmail ref = \"variable-2\" > BOOLEAN < / IncludeEmail > < / GoogleIDToken > < / Authentication > < / GrpcConnection > < / ExternalCallout > Example The following example shows the GoogleIDToken element: < ExternalCallout continueOnError = \"false\" enabled = \"true\" name = \"External-Callout-1\" > < DisplayName>External - Callout - 1 < / DisplayName > < GrpcConnection > < Server name = \"cloud run server name\" / > < Authentication > < HeaderName ref = 'my-variable' > X - Serverless - Authorization < / HeaderName > < GoogleIDToken > < Audience>https : // cloudrun - hostname . a . run . app < / Audience > < / GoogleIDToken > < / Authentication > < / GrpcConnection > < TimeoutMs>5000 < / TimeoutMs > < Configurations > < Property name = \"with.request.content\" > true < / Property > < Property name = \"with.request.headers\" > true < / Property > < Property name = \"with.response.content\" > true < / Property > < Property name = \"with.response.headers\" > true < / Property > < FlowVariable>example . flow . variable < / FlowVariable > < FlowVariable>another . flow . variable < / FlowVariable > < / Configurations > < / ExternalCallout > Attributes None. <HeaderName> child element By default, when an Authentication configuration is present, Apigee generates a bearer token and injects it into the Authorization header in the message sent to the target system.",
+          "The Authorization header, if present, is left unmodified and also sent in the request. < Authentication > < HeaderName ref = 'my-variable' > X - Serverless - Authorization < / HeaderName > < GoogleIDToken > < Audience>https : // cloudrun - hostname . a . run . app < / Audience > < / GoogleIDToken > < / Authentication > <GoogleIDToken> child element Generates Google-issued OpenID Connect tokens to make authenticated calls to Google services, such as custom services hosted in Cloud Run ."
+        ]
+      },
+      {
+        "title": "API proxy configuration reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "source_id": "site-api-reference",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use the <Authentication> child element to make authenticated calls to Google services or custom services running on certain Google Cloud products, such as Cloud Functions and Cloud Run .",
+          "For details, see Authentication element in the ServiceCallout policy reference. <Authentication> element error reference If you are using the <Authentication> element, you can find possible error messages and troubleshooting tips for deployment and runtime errors in the Errors section of the ServiceCallout policy documentation. <Authentication> element examples The following example shows how to call a service deployed on Cloud Run as the target using the Authentication element to generate an OpenID Connect token needed to authenticate the call: <TargetEndpoint name=\"TargetEndpoint-1\"> <HTTPTargetConnection> <Properties/> <URL>https://cloudrun-hostname.a.run.app/test</URL> <Authentication> <GoogleIDToken> <Audience>https://cloudrun-hostname.a.run.app/test</Audience> </GoogleIDToken> </Authentication> </HTTPTargetConnection> </TargetEndpoint> The following example shows how to call a TargetService that points to Cloud Run using the Authentication element to generate an OpenID Connect token needed to authenticate the call.",
+          "The Authorization header, if present, is left unmodified and also sent in the request. < TargetEndpoint name = \"TargetEndpoint-1\" > < HTTPTargetConnection > < Authentication > < HeaderName>X - Serverless - Authorization < / HeaderName > < GoogleIDToken > < Audience ref = \"flow.variable.audience\" > https : // cloudrun - hostname . a . run . app < / Audience > < / GoogleIDToken > < / Authentication > < LoadBalancer > < Server name = \"cloud-run-target\" / > < / LoadBalancer > < / HTTPTargetConnection > < / TargetEndpoint > The following example shows how to call a TargetService that points to the Google Secret Manager service."
+        ]
+      },
+      {
+        "title": "AssignMessage policy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy",
+        "source_id": "site-api-reference",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "Required Type Complex object Parent Element N/A Child Elements <Add> <AssignTo> <AssignVariable> <Copy> <DisplayName> <IgnoreUnresolvedVariables> <Remove> <Set> The <AssignMessage> element uses the following syntax: Syntax The <AssignMessage> element uses the following syntax: < AssignMessage continueOnError = \"[false true]\" enabled = \"[true false]\" name = \" POLICY NAME \" > < !-- All AssignMessage child elements are optional -- > < Add > < FormParams > < FormParam name = \" FORMPARAM NAME \" > FORMPARAM VALUE < / FormParam > ... < / FormParams > < Headers > < Header name = \" HEADER NAME \" > HEADER VALUE < / Header > ... < / Headers > < QueryParams > < QueryParam name = \" QUERYPARAM NAME \" > QUERYPARAM VALUE < / QueryParam > ... < / QueryParams > < / Add > < AssignTo createNew = \"[true false]\" transport = \"http\" type = \"[request response]\" > DESTINATION VARIABLE NAME < / AssignTo > < AssignVariable > < Name> VARIABLE NAME < / Name > < PropertySetRef> SOURCE VARIABLE < / PropertySetRef > < Ref> SOURCE VARIABLE < / Ref > < ResourceURL> RESOURCE URL OR TEMPLATE < / ResourceURL > < Template> MESSAGE TEMPLATE < / Template > or < Template ref = ' TEMPLATE VARIABLE ' >< / Template > < Value> VARIABLE VALUE < / Value > < / AssignVariable > < Copy source = \" VARIABLE NAME \" > < !-- Can also be an empty array ( < FormParams / > ) --> < FormParams > < FormParam name = \" FORMPARAM NAME \" > FORMPARAM VALUE < / FormParam > ... < / FormParams > < !-- Copy all headers -- > < Headers / > < !-- or , copy specific headers by name -- > < Headers > < Header name = \" HEADER NAME \" / > < !-- or -- > < Header name = \" HEADER NAME \" > [ false true ] < / Header > ... < / Headers > < Path > [ false true ] < / Path > < Payload > [ false true ] < / Payload > < !-- Can also be an empty array ( < QueryParams / > ) --> < QueryParams > < QueryParam name = \" QUERYPARAM NAME \" > QUERYPARAM VALUE < / QueryParam > ... < / QueryParams > < StatusCode > [ false true ] < / StatusCode > < Verb > [ false true ] < / Verb > < Version > [ false true ] < / Version > < / Copy > < DisplayName> POLICY DISPLAY NAME < / DisplayName > < IgnoreUnresolvedVariables > [ true false ] < / IgnoreUnresolvedVariables > < !-- Can also be empty to remove everything from the message ( < Remove / > ) -- > < Remove > < !-- Remove all form parameters -- > < FormParams / > < !-- or , remove specific form parameters by name -- > < FormParams > < FormParam name = \" FORMPARAM NAME \" / > < !-- or -- > < FormParam name = \" FORMPARAM NAME \" > [ false true ] < / FormParam > ... < / FormParams > < !-- Remove all headers -- > < Headers / > < !-- or , remove specific headers by name -- > < Headers > < Header name = \" HEADER NAME \" / > < !-- or -- > < Header name = \" HEADER NAME \" > [ false true ] < / Header > ... < / Headers > < Payload > [ false true ] < / Payload > < !-- Remove all query parameters -- > < QueryParams / > < !-- or , remove specific query parameters by name -- > < QueryParams > < QueryParam name = \" QUERYPARAM NAME \" / > < !-- or -- > < QueryParam name = \" QUERYPARAM NAME \" > [ false true ] < / QueryParam > ... < / QueryParams > < / Remove > < Set > < Authentication > < HeaderName> HEADER NAME < / HeaderName > < !-- Use either GoogleAccessToken or GoogleIDToken -- > < GoogleAccessToken > < Scopes > < Scope> SCOPE < / Scope > ... < / Scopes > < / GoogleAccessToken > ----- or ----- < GoogleIDToken > < Audience ref = ' FLOW VARIABLE NAME > TARGET URL </Scope> < / GoogleAccessToken > < / Authentication > < FormParams > < FormParam name = \" FORMPARAM NAME \" > FORMPARAM VALUE < / FormParam > ... < / FormParams > < Headers > < Header name = \" HEADER NAME \" > HEADER VALUE < / Header > ... < / Headers > < Path> PATH < / Path > < Payload contentType = \" CONTENT TYPE \" variablePrefix = \" PREFIX \" variableSuffix = \" SUFFIX \" > NEW PAYLOAD < / Payload > < QueryParams > < QueryParam name = \" QUERYPARAM NAME \" > QUERYPARAM VALUE < / QueryParam > ... < / QueryParams > < StatusCode> HTTP STATUS CODE or { variable } < / StatusCode > < Verb > [ GET POST PUT PATCH DELETE { variable }] < / Verb > < Version > [ 1.0 1.1 { variable }] < / Verb > < / Set > < / AssignMessage > Default Policy The following example shows the default settings when you add an AssignMessage policy to your flow in the Apigee UI.",
+          "Optional Type Complex type Parent Element <Set> Child Elements <HeaderName> <GoogleAccessToken> <GoogleIdToken> The Authentication element uses the following syntax: Syntax <AssignMessage> ... <Set> <Authentication> <HeaderName> HEADER NAME </HeaderName> --EITHER-- <GoogleAccessToken> <Scopes> <Scope> SCOPE </Scope> ... </Scopes> <GoogleAccessToken> --OR-- <GoogleIDToken> <Audience ref=\" FLOW VARIABLE \"> TARGET URL </Audience> </GoogleIDToken> </Authentication> </Set> ... </AssignMessage> Using Access Token The following example shows the GoogleAccessToken element: <Authentication> <GoogleAccessToken> <Scopes> <Scope>https://www.googleapis.com/auth/cloud-platform</Scope> </Scopes> </GoogleAccessToken> </Authentication> Using ID Token The following example shows the GoogleIDToken element: <Authentication> <GoogleIDToken> <Audience>https://httpserver0-bar.run.app</Audience> </GoogleIDToken> </Authentication> Using HeaderName The following example shows the HeaderName element: <Authentication> <HeaderName>Authorization</HeaderName> <GoogleAccessToken> <Scopes> <Scope>https://www.googleapis.com/auth/cloud-platform</Scopes> </Scopes> </GoogleAccessToken> </Authentication> <HeaderName> (child of <Authentication> ) By default, when an Authentication configuration is present, Apigee generates a bearer token and injects it into the Authorization header in the message sent to the target system.",
+          "The <Set> element uses the following syntax: Syntax < AssignMessage continueOnError = \"[false true]\" enabled = \"[true false]\" name = \" POLICY NAME \" > < Set > < Authentication > < HeaderName> HEADER NAME < / HeaderName > < !-- Use either GoogleAccessToken or GoogleIDToken -- > < GoogleAccessToken > < Scopes > < Scope> SCOPE < / Scope > ... < / Scopes > < / GoogleAccessToken > ----- or ----- < GoogleIDToken > < Audience ref = ' FLOW VARIABLE NAME > TARGET URL </Scope> < / GoogleAccessToken > < / Authentication > < FormParams > < FormParam name = \" FORMPARAM NAME \" > FORMPARAM VALUE < / FormParam > ... < / FormParams > < Headers > < Header name = \" HEADER NAME \" > HEADER VALUE < / Header > ... < / Headers > < Path> PATH < / Path > < Payload contentType = \" CONTENT TYPE \" variablePrefix = \" PREFIX \" variableSuffix = \" SUFFIX \" > NEW PAYLOAD < / Payload > < QueryParams > < QueryParam name = \" QUERYPARAM NAME \" > QUERYPARAM VALUE < / QueryParam > ... < / QueryParams > < StatusCode> HTTP STATUS CODE or { variable } < / StatusCode > < Verb > [ GET POST PUT PATCH DELETE { variable }] < / Verb > < Version > [ 1.0 1.1 { variable }] < / Verb > < / Set > < / AssignMessage > Example 1 The following example sets a specific header."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bar.run.app",
+      "flow.variable.audience",
+      "hostname.a.run.app",
+      "mocktarget.apigee.net",
+      "with.request.content",
+      "with.request.headers",
+      "with.response.content",
+      "with.response.headers"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/external-callout-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/external-callout-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/external-callout-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/external-callout-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/external-callout-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/external-callout-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    }
+  ]
+}

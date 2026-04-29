@@ -1,0 +1,110 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:47.389Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deploy/card.json",
+  "product_name": "Cloud Deploy",
+  "product_slug": "cloud-deploy",
+  "feature_name": "GKE DNS-based endpoint connectivity",
+  "feature_slug": "gke-dns-based-endpoint-connectivity",
+  "summary": "Cloud Deploy can connect to a GKE cluster through its DNS-based endpoint to simplify private-cluster networking.",
+  "extended_definition": "Cloud Deploy can connect to a GKE cluster through its DNS-based endpoint to simplify private-cluster networking.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deploy/docs/config-files",
+      "https://docs.cloud.google.com/deploy/docs/gke-targets",
+      "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deploy to a Google Kubernetes Engine cluster \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/gke-targets",
+        "source_id": "site-docs-reference-2",
+        "final_score": 104,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Deploy to a private cluster You can deploy your application to a private GKE cluster, using one of three options: Using a DNS-based endpoint Using a Virtual Private Cloud network Using GKE attached clusters and connect gateway Use a DNS endpoint This is the simplest way to connect to a private cluster.",
+          "If your cluster doesn't have an IP-based endpoint configured, you can skip this step; Cloud Deploy will connect to the DNS endpoint by default since it is the control plane's only endpoint.",
+          "Use a Virtual Private Cloud network You can configure a target to deploy to a private GKE cluster connected to a Virtual Private Cloud network: Create your private cluster A private cluster is a VPC-native cluster whose nodes and Pods are isolated by default from the public internet."
+        ]
+      },
+      {
+        "title": "Configuration schema reference \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/config-files",
+        "source_id": "site-docs-reference",
+        "final_score": 88,
+        "relevance": "",
+        "evidence_snippets": [
+          "For GKE attached clusters targets Target configuration for deploying to GKE attached clusters is similar to configuring a target for a GKE target , except that the property is anthosCluster.membership , instead of gke.cluster , the resource path is different, and specific connection methods ( dnsEndpoint or internalIp ) are not applicable. anthosCluster : membership : projects/[project name]/locations/global/memberships/[membership name] project name The Google Cloud project in which the cluster lives. /location/global/ The location where the cluster is registered. global , in all cases. membership name The name of the cluster membership.",
+          "This option cannot be used at the same time as the internalIp option. internalIp When set to true , Cloud Deploy will connect to the GKE cluster using the private IP address instead of the default endpoint, which may be a public IP, private IP, or the DNS endpoint, depending on the cluster configuration.",
+          "Learn more . dnsEndpoint When set to true , Cloud Deploy will connect to the GKE cluster using the DNS endpoint instead of the default endpoint, which may be a public IP, private IP, or the DNS endpoint, depending on the cluster configuration."
+        ]
+      },
+      {
+        "title": "\"Class CloudDeployAsyncClient (2.10.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 64,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import deploy v1 async def sample create custom target type(): Create a client client = deploy v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import deploy v1 async def sample delete custom target type(): Create a client client = deploy v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import deploy v1 async def sample update custom target type(): Create a client client = deploy v1 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gke.cluster",
+      "googleapis.dev",
+      "options.html"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/gke-targets",
+        "https://docs.cloud.google.com/deploy/docs/config-files",
+        "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployAsyncClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/gke-targets",
+        "https://docs.cloud.google.com/deploy/docs/config-files",
+        "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployAsyncClient"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/gke-targets",
+        "https://docs.cloud.google.com/deploy/docs/config-files",
+        "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.services.cloud_deploy.CloudDeployAsyncClient"
+      ]
+    }
+  ]
+}

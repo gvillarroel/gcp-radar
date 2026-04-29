@@ -1,0 +1,132 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.119Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "Rule observability for detections and alerts",
+  "feature_slug": "rule-observability-for-detections-and-alerts",
+  "summary": "Detection and alert objects now include metadata showing whether they came from a primary rule run or a rule replay.",
+  "extended_definition": "Detection and alert objects now include metadata showing whether they came from a primary rule run or a rule replay.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+      "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections",
+      "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate CBN alerts to YARA-L detection rule alerts \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "source_id": "site-api-reference",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See the following example. metadata . vendor name = \"Microsoft\" metadata . product name = \"Windows Defender AV\" metadata . product event type = \"MALWAREPROTECTION STATE MALWARE DETECTED\" principal . asset . hostname = \"client02.example.local\" security result . action = \"BLOCK\" security result . severity = \"MEDIUM\" Create a new YARA-L detection engine rule. rule windows defender av monitored events { meta : author = \"Chronicle\" description = \"Migration of CBN alerts to Google SecOps YARA-L detection engine rule alert.\" // Severity is set at the Outcome level via security result.severity severity = \"INFORMATIONAL\" priority = \"INFORMATIONAL\" events : $ windows defender av . metadata . vendor name = \"Microsoft\" $ windows defender av . metadata . product name = \"Windows Defender AV\" $ windows defender av . metadata . product event type = \"MALWAREPROTECTION STATE MALWARE DETECTED\" $ windows defender av . principal . asset . hostname = $ host // optionally tune to only detection on ALLOW, i.e., failure to BLOCK //$windows defender av.security result.action = \"ALLOW\" // optionally tune on severity of detection //$windows defender av.security result.severity != \"LOW\" outcome : $ risk score = max ( if ( $ windows defender av . security result . severity = \"UNKNOWN SEVERITY\" , 0 ) + if ( $ windows defender av . security result . severity = \"LOW\" , 25 ) + if ( $ windows defender av . security result . severity = \"MEDIUM\" , 50 ) + if ( $ windows defender av . security result . severity = \"HIGH\" , 75 ) + if ( $ windows defender av . security result . severity = \"CRITICAL\" , 100 ) ) $ severity = array distinct ( $ windows defender av . security result . severity ) condition : $ windows defender av } CBN alert appears to use a field that was not parsed into UDM Using the parser extensions option you can quickly address this scenario.",
+          "For example, Corelight CBN alert uses the notice field and conditionally alerts only if true: if [ notice ] == \"true\" { mutate { replace = > { \"is significant\" = > \"true\" \"is alert\" = > \"true\" } } } Because this value isn't normalized into UDM by default you can use a parser extension Grok as follows to add that value as a UDM field of type Additional : filter { mutate { replace = > { \"notice\" = > \"\" } } grok { match = > { \"message\" = > [ \"(?P<message>\\{. \\})$\" ] } on error = > \" grok not syslog\" overwrite = > [ \"message\" ] } json { on error = > \"not json\" source = > \"message\" array function = > \"split columns\" } if ! [ not json ] { if [ notice ] != \"\" { mutate { convert = > { \"notice\" = > \"string\" } } mutate { replace = > { \"additional notice.key\" = > \"notice\" \"additional notice.value.string value\" = > \"%{notice}\" } } mutate { merge = > { \"event1.idm.read only udm.additional.fields\" = > \"additional notice\" } } mutate { merge = > { \"@output\" = > \"event1\" } } } } } You can then utilize this in a YARA-L detection engine rule as follows, and using the Maps function : events : // Corelight : Weird Log ( $ corelight . metadata . vendor name = \"Corelight\" and $ corelight . metadata . product name = \"Zeek\" and // this requires a custom parser extension to extract notice $ corelight . metadata . product event type = \"weird\" and $ corelight . additional . fields [ \"notice\" ] = \"true\" ) You must enable and turn on the authored rules for alerting.",
+          "Migrate CBN alerts to the YARA-L detection engine To migrate CBN alerts, you can ensure that your prior CBN alerts are available as detection rule alerts using the following options."
+        ]
+      },
+      {
+        "title": "\"Composite detections \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "By setting a rule to detect only and then plotting its detections in a dashboard widget, you can track trends, identify outliers, and gain a high-level audit view of the activity without being overwhelmed by individual alerts.",
+          "The following concepts define the building blocks of composite rules and clarify how they function within detection workflows: Composite rules : use detections or alerts (or both) as input.",
+          "Detection-only rules : composite rules that use only detections or alerts as inputs."
+        ]
+      },
+      {
+        "title": "\"Use the curated detections page \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections",
+        "source_id": "site-docs-root",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure rule exclusions To manage the volume of alerts from GCTI curated detections, you can configure rule exclusions.",
+          "Alerting : Enable alerting to receive detections created by corresponding precise or broad rules by setting the Alerting option to On .",
+          "Open the curated detections page and rule sets To open the curated detections page, complete the following steps: Select Rules from the main menu."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "av.security",
+      "client02.example.local",
+      "event1.idm.read",
+      "i.e",
+      "notice.key",
+      "notice.value.string",
+      "result.action",
+      "result.severity",
+      "udm.additional.fields"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections"
+      ]
+    }
+  ]
+}

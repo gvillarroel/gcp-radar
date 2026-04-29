@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:23.409Z",
+  "source_step08_card": "data/step-08/current/products/migration-center/card.json",
+  "product_name": "Migration Center",
+  "product_slug": "migration-center",
+  "feature_name": "Migration preferences",
+  "feature_slug": "migration-preferences",
+  "summary": "Migration Center lets users define multiple migration preferences to customize migration assessments.",
+  "extended_definition": "Migration Center lets users define multiple migration preferences to customize migration assessments.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migration-center/docs/get-started-with-migration-center",
+      "https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class MigrationCenterAsyncClient (0.4.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 298,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CreatePreferenceSetRequest ( parent=\"parent value\", preference set id=\"preference set id value\", ) Make the request operation = client. create preference set (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.migrationcenter v1.types.CreatePreferenceSetRequest , dict]] The request object.",
+          "DeletePreferenceSetRequest ( name=\"name value\", ) Make the request operation = client. delete preference set (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.migrationcenter v1.types.DeletePreferenceSetRequest , dict]] The request object.",
+          "UpdatePreferenceSetRequest ( ) Make the request operation = client. update preference set (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.migrationcenter v1.types.UpdatePreferenceSetRequest , dict]] The request object."
+        ]
+      },
+      {
+        "title": "\"Class MigrationCenterClient (0.4.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "source_id": "site-python-reference",
+        "final_score": 298,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CreatePreferenceSetRequest ( parent=\"parent value\", preference set id=\"preference set id value\", ) Make the request operation = client. create preference set (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.migrationcenter v1.types.CreatePreferenceSetRequest , dict] The request object.",
+          "DeletePreferenceSetRequest ( name=\"name value\", ) Make the request operation = client. delete preference set (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.migrationcenter v1.types.DeletePreferenceSetRequest , dict] The request object.",
+          "UpdatePreferenceSetRequest ( ) Make the request operation = client. update preference set (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.migrationcenter v1.types.UpdatePreferenceSetRequest , dict] The request object."
+        ]
+      },
+      {
+        "title": "Migration tools \\_|\\_ Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools",
+        "source_id": "site-docs-root",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "RackWare Management Module (RMM) is a fully-automated enterprise-grade migration solution that lets you migrate physical and virtual servers from any data center or public cloud into Google Cloud.",
+          "Home Documentation Migration Migration Center Guides Send feedback Migration tools Stay organized with collections Save and categorize content based on your preferences.",
+          "The following list includes additional migration tools: Storage Transfer Service lets you bring data to Cloud Storage from other cloud providers, online resources, or local data (for example: S3, Blob, Data Lake, on-premises file systems)."
+        ]
+      },
+      {
+        "title": "Get started with Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/get-started-with-migration-center",
+        "source_id": "site-docs-root",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Add users to your project To let other users access your Google Cloud project, for example if you want a Google customer engineer to help you with your assessment, grant them the permissions required to manage resources in Migration Center.",
+          "Grant access to Google customer engineers If you want to let Google Cloud customer engineers access your Migration Center project to help you with your migration, you must first give your consent by accepting the terms and conditions .",
+          "Home Documentation Migration Migration Center Guides Send feedback Get started with Migration Center Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "operation.result",
+      "v1.types.CreatePreferenceSetRequest",
+      "v1.types.DeletePreferenceSetRequest",
+      "v1.types.UpdatePreferenceSetRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools",
+        "https://docs.cloud.google.com/migration-center/docs/get-started-with-migration-center"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools",
+        "https://docs.cloud.google.com/migration-center/docs/get-started-with-migration-center"
+      ]
+    }
+  ]
+}

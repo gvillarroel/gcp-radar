@@ -1,0 +1,112 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Metadata cache usage statistics",
+  "feature_slug": "metadata-cache-usage-statistics",
+  "summary": "Metadata caching includes statistics on metadata cache usage.",
+  "extended_definition": "Metadata caching includes statistics on metadata cache usage.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+      "https://docs.cloud.google.com/bigquery/docs/controlling-costs",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Introduction to BigLake external tables \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "source_id": "site-docs-reference-5",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "To find information about metadata refresh jobs, query the INFORMATION SCHEMA.JOBS view , as shown in the following example: SELECT FROM region-us.INFORMATION SCHEMA.JOBS BY PROJECT WHERE job id LIKE '%metadata cache refresh%' AND creation time > TIMESTAMP SUB ( CURRENT TIMESTAMP (), INTERVAL 6 HOUR ) ORDER BY start time DESC LIMIT 10 ; For Cloud Storage BigLake tables that are based on Parquet files, table statistics are collected during the metadata cache refresh and used to improve query plans.",
+          "As a result, metadata caching-enabled queries read data corresponding to the specific cached object version, even if newer versions become live in Cloud Storage.",
+          "Metadata caching for performance You can use cached metadata to improve query performance on some types of BigLake tables."
+        ]
+      },
+      {
+        "title": "Estimate and control costs \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/controlling-costs",
+        "source_id": "site-docs-root",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . // Import the Google Cloud client library const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); async function queryDryRun () { // Runs a dry query of the U.S. given names dataset for the state of Texas. const query = SELECT name FROM \\bigquery-public-data.usa names.usa 1910 2013\\ WHERE state = 'TX' LIMIT 100 ; // For all options, see https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query const options = { query : query , // Location must match that of the dataset(s) referenced in the query. location : 'US' , dryRun : true , }; // Run the query as a job const [ job ] = await bigquery . createQueryJob ( options ); // Print the status and statistics console . log ( 'Status:' ); console . log ( job . metadata . status ); console . log ( '\\nJob Statistics:' ); console . log ( job . metadata . statistics ); } PHP Before trying this sample, follow the PHP setup instructions in the BigQuery quickstart using client libraries .",
+          "The following are examples of actions that might result in this move: Insert, update, truncate, merge, or delete statements that change table data Loading, streaming, or appending data to the table ALTER statements that change the table schema Adding or modifying table properties like description, labels, or expiration Modifying table metadata Configure the storage billing model Best practice: Optimize the storage billing model based on your usage patterns.",
+          "BigQuery bigquery = BigQueryOptions . getDefaultInstance (). getService (); QueryJobConfiguration queryConfig = QueryJobConfiguration . newBuilder ( query ). setDryRun ( true ). setUseQueryCache ( false ). build (); Job job = bigquery . create ( JobInfo . of ( queryConfig )); JobStatistics ."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "DDL functionality extends the information returned by a Jobs resource . statistics.query.statementType includes the following additional values: CREATE TABLE CREATE TABLE AS SELECT DROP TABLE CREATE VIEW DROP VIEW statistics.query has 2 additional fields: ddlOperationPerformed : The DDL operation performed, possibly dependent on the existence of the DDL target.",
+          "CREATE OR REPLACE EXTERNAL TABLE mydataset . newtable ( x INT64 , y STRING , z BOOL ) WITH CONNECTION myconnection OPTIONS ( format = \"PARQUET\" , max staleness = STALENESS INTERVAL , metadata cache mode = 'AUTOMATIC' ); The following example creates an external table from multiple URIs.",
+          "If the cached metadata is older than that, the operation falls back to retrieving metadata from Cloud Storage instead. null marker STRING The string that represents NULL values in a CSV file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.usa",
+      "names.usa",
+      "statistics.query",
+      "statistics.query.statementType",
+      "us.INFORMATION"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/controlling-costs",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/controlling-costs",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/controlling-costs",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Multi-cluster Services",
+  "feature_slug": "multi-cluster-services",
+  "summary": "GKE adds a finalizer to Multi-Cluster Services to improve disablement cleanup and reduce the risk of resource leaks; Provides a Kubernetes-native interface for making services discoverable and accessible across multiple clusters.",
+  "extended_definition": "GKE adds a finalizer to Multi-Cluster Services to improve disablement cleanup and reduce the risk of resource leaks; Provides a Kubernetes-native interface for making services discoverable and accessible across multiple clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/explore-gke-networking-docs-use-cases",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Explore GKE networking documentation and use cases \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-overview",
+        "source_id": "site-docs-root",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use case: Achieve high availability across multiple clusters In this use case, you're an SRE running workloads for an ecommerce company in multiple GKE clusters across different regions to improve reliability.",
+          "For example, you might be running large-scale microservices that are sensitive to network latency, or you might need to enforce strict security boundaries between applications in a multi-tenant cluster to meet regulatory compliance requirements.",
+          "Use case: Build a secure and efficient multi-tenant GKE environment As part of a platform engineering team, you provide GKE clusters to multiple application teams."
+        ]
+      },
+      {
+        "title": "Explore GKE networking documentation and use cases \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/explore-gke-networking-docs-use-cases",
+        "source_id": "site-iam-reference",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use case: Achieve high availability across multiple clusters In this use case, you're an SRE running workloads for an ecommerce company in multiple GKE clusters across different regions to improve reliability.",
+          "For example, you might be running large-scale microservices that are sensitive to network latency, or you might need to enforce strict security boundaries between applications in a multi-tenant cluster to meet regulatory compliance requirements.",
+          "Use case: Build a secure and efficient multi-tenant GKE environment As part of a platform engineering team, you provide GKE clusters to multiple application teams."
+        ]
+      },
+      {
+        "title": "\"About GKE cluster autoscaling \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+        "source_id": "site-docs-reference-2",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "Total nodes example The following command, available in GKE version 1.24 or later, creates an autoscaling multi-zonal cluster with six nodes across three zones initially, with a minimum of three nodes and a maximum of twelve nodes in the node pool across all zones: gcloud container clusters create example-cluster \\ --num-nodes=2 \\ --location=us-central1-a \\ --node-locations=us-central1-a,us-central1-b,us-central1-f \\ --enable-autoscaling --total-min-nodes=3 --total-max-nodes=12 In this example, the total size of the cluster can be between three and twelve nodes, regardless of spreading between zones.",
+          "Min and max nodes example The following command creates an autoscaling multi-zonal cluster with six nodes across three zones initially, with a minimum of one node per zone and a maximum of four nodes per zone: gcloud container clusters create example-cluster \\ --num-nodes=2 \\ --location=us-central1-a \\ --node-locations=us-central1-a,us-central1-b,us-central1-f \\ --enable-autoscaling --min-nodes=1 --max-nodes=4 In this example, the total size of the cluster can be between three and twelve nodes, spread across the three zones.",
+          "Spot VMs and cluster autoscaler Because cluster autoscaler prefers expanding the least expensive node pools, when your workloads and resource availability allow it, cluster autoscaler adds Spot VMs when scaling up."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/explore-gke-networking-docs-use-cases",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/explore-gke-networking-docs-use-cases",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/explore-gke-networking-docs-use-cases",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler"
+      ]
+    }
+  ]
+}

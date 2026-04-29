@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:06.489Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Dialogflow CX system entity extension",
+  "feature_slug": "dialogflow-cx-system-entity-extension",
+  "summary": "Dialogflow CX allows system entities to be extended with custom values.",
+  "extended_definition": "Dialogflow CX allows system entities to be extended with custom values.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/entity-options",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/entity-system",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "System entities \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/entity-system",
+        "source_id": "site-docs-root",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "API Creating system entity extensions is similar to how you create custom entities .",
+          "The System entity reference lists the system entities that can be extended.",
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Send feedback System entities Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.dialogflow.v2 (4.94.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "source_id": "site-java-reference",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "Automated expansion allows an agent to recognize values that have not been explicitly listed in the entity (for example, new kinds of shopping list items). com. google. cloud. dialogflow. v2.",
+          "The part can be an entity or purely a part of the message between two entities or message start/end. com. google. cloud. dialogflow. v2.",
+          "The part can be an entity or purely a part of the message between two entities or message start/end. com. google. cloud. dialogflow. v2."
+        ]
+      },
+      {
+        "title": "Entity options \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/entity-options",
+        "source_id": "site-docs-root",
+        "final_score": 122,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Go to the EntityType API reference Select a protocol and version for the EntityType reference: Protocol V3 V3beta1 REST EntityType resource EntityType resource RPC EntityType interface EntityType interface C++ EntityTypesClient Not available C# EntityTypesClient Not available Go EntityTypesClient Not available Java EntityTypesClient EntityTypesClient Node.js EntityTypesClient EntityTypesClient PHP Not available Not available Python EntityTypesClient EntityTypesClient Ruby Not available Not available Close Map entity Map entities provide a map from reference values to synonyms for each reference value.",
+          "Consider the following move custom entity type that contains aliases to a direction entity type and the @sys.number system entity type: Direction custom map entity type: Reference value Synonyms forward forward, forwards back back, backward, backwards Move custom list entity type: Value @sys.number:steps steps @direction:direction If the move entity is matched to an end-user input that contains \"five steps backward\", the move entity will be matched.",
+          "You can create different kinds of entities, depending on the options selected: Map entity List entity Composite entity (a special kind of list entity) Regexp entity There are other options that do not determine the kind of entity, but do affect the behavior of entity matching: Automated expansion Fuzzy matching Redact in log Entity exclusions This document describes each of these options."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2",
+      "sys.number"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/entity-system",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/entity-options"
+      ]
+    }
+  ]
+}

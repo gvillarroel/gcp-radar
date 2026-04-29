@@ -1,0 +1,175 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.828Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry",
+  "feature_name": "Artifact Registry gcr.io repositories (Preview)",
+  "feature_slug": "artifact-registry-gcr-io-repositories-preview",
+  "summary": "Artifact Registry adds Preview support for repositories using the gcr.io domain.",
+  "extended_definition": "Artifact Registry adds Preview support for repositories using the gcr.io domain.",
+  "lifecycle": {
+    "latest_feature_date": "2021-11-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/pull-cached-dockerhub-images",
+      "https://docs.cloud.google.com/artifact-registry/docs/transition/gcr-repositories",
+      "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "gcr.io repositories | Artifact Registry | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/transition/gcr-repositories",
+        "source_id": "feature-recovery-http",
+        "final_score": 262,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Effective March 18, 2025, Container Registry is shut down and writing images to Container Registry is unavailable. gcr.io URLs hosted on Artifact Registry, including Google-owned images with gcr.io URLs, are not affected by the Container Registry shutdown. gcr.io domain support Artifact Registry supports requests to the gcr.io domain in gcr.io repositories in multi-regional locations corresponding with Container Registry host locations.",
+          "For example, if you programmatically grant Cloud Storage permissions on storage buckets for Container Registry, you must update that automation to grant Artifact Registry permissions on the Artifact Registry repositories that host images for the gcr.io domain.",
+          "Since pkg.dev repositories don't have any support for the gcr.io domain, this transition approach requires more changes to your existing automation and workflows."
+        ]
+      },
+      {
+        "title": "\"Transition from Container Registry \\_|\\_ Artifact Registry \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "source_id": "site-docs-root",
+        "final_score": 192,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Domain name gcr.io pkg.dev Artifact Registry can also store images for the gcr.io domain if you set up gcr.io repositories .",
+          "The initial setup includes automatic creation of Artifact Registry repositories for each Container Registry host in your project and redirection of gcr.io to the corresponding Artifact Registry repositories.",
+          "Existing Container Registry images maintained by Google Most Google-owned images previously hosted on Container Registry are now hosted on Artifact Registry in gcr.io repositories."
+        ]
+      },
+      {
+        "title": "Pull cached Docker Hub images | Artifact Registry | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/pull-cached-dockerhub-images",
+        "source_id": "feature-recovery-http",
+        "final_score": 184,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Artifact Registry Start free Overview Guides Reference Resources Technology areas More Overview Guides Reference Resources Cross-product tools More Console Discover Product overview Software supply chain security Get started Enable and disable Artifact Registry Supported formats Set defaults for gcloud commands Repository overview Remote repository overview Virtual repository overview Quickstarts Create a Docker Hub remote repository Store Docker container images Store Go modules Store Helm charts Store Java packages Store Node.js packages Store Python packages Store Ruby gems Store Apt packages Store RPM packages Store other formats Create Create standard repositories Create remote repositories Create virtual repositories Store artifact metadata in attachments Configure Configure authentication to remote repository upstreams Cleanup policies Cleanup policy overview Configure cleanup policies Provision Artifact Registry resources with Terraform Manage View and list repositories Update repository settings Label repositories Tag repositories Manage artifact metadata Download files Delete repositories Manage container images Container concepts Container images Overview Configure Docker authentication to Artifact Registry Configure remote repository authentication to Docker Hub Push and pull container images Pull cached container images from mirror.gcr.io Reduce latency with image prewarming Manage container images Learn about your container images with Gemini assistance Copy container images between repositories Migrate container images from a third-party registry Repository and container image names Helm charts Overview Set up authentication Manage charts Manage language packages Go Overview Configure authentication to Artifact Registry Manage modules Java Overview Configure authentication to Artifact Registry Configure authentication to remote repository upstreams Manage packages Node.js Overview Configure authentication to Artifact Registry Configure authentication to remote repository upstreams Manage packages Python Overview Configure authentication to Artifact Registry Configure authentication to remote repository upstreams Manage packages Ruby Overview Configure authentication to Artifact Registry Manage packages Troubleshoot Ruby repository errors Manage OS packages Overview Debian packages Overview Configure VMs to install packages Manage packages RPM Overview Configure VMs to install packages Manage packages Manage other artifacts Work with Kubeflow Pipeline templates Work with other artifact formats Transition from Container Registry Overview gcr.io repositories in Artifact Registry Control access and protect artifacts Overview Access control with IAM Use custom organization policies Restrict artifact downloads Protect repositories in a service perimeter Configure restricted access for GKE private clusters Use customer-managed encryption keys Artifact Registry Service Agent Use fingerprints to verify package version identities Connect Artifact analysis and vulnerability scanning Connect GitLab to Artifact Registry Connect to build services Overview Connect to Cloud Build Connect to Jenkins Connect to deploy services Overview Connect to Cloud Run functions Connect to Cloud Run Connect to App Engine Connect to Google Kubernetes Engine Connect to Compute Engine Control deployments Monitor and notify Observability in Artifact Registry Audit logging Chart request counts per repository in the Metrics Explorer Configure monitoring notifications for repository growth Configure Pub/Sub notifications Troubleshoot General troubleshooting Remote repositories Docker repositories Container images Helm charts Language package repositories Java Node.js Python OS package repositories AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Application development Artifact Registry Guides Send feedback Pull cached Docker Hub images Stay organized with collections Save and categorize content based on your preferences.",
+          "Registry Mirrors: https://mirror.gcr.io Pulling cached images Artifact Registry adds frequently requested images to the cache so they are available for future requests.",
+          "To authenticate to Docker Hub for images that aren't cached on mirror.gcr.io , use Artifact Registry remote repositories ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "daemon.json",
+      "gcr.io",
+      "mirror.gcr.io",
+      "pkg.dev"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/gcr-repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/pull-cached-dockerhub-images"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/gcr-repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/pull-cached-dockerhub-images"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/gcr-repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/pull-cached-dockerhub-images"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/gcr-repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/pull-cached-dockerhub-images"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/gcr-repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/pull-cached-dockerhub-images"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/gcr-repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/pull-cached-dockerhub-images"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/gcr-repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/pull-cached-dockerhub-images"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/gcr-repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/pull-cached-dockerhub-images"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/gcr-repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/pull-cached-dockerhub-images"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/gcr-repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/pull-cached-dockerhub-images"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/gcr-repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/pull-cached-dockerhub-images"
+      ]
+    }
+  ]
+}

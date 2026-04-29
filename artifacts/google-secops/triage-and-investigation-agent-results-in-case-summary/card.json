@@ -1,0 +1,159 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.119Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "Triage and Investigation Agent results in Case Summary",
+  "feature_slug": "triage-and-investigation-agent-results-in-case-summary",
+  "summary": "Case Summary now shows TIN results and verdict summaries directly in the case view.",
+  "extended_definition": "Case Summary now shows TIN results and verdict summaries directly in the case view.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use Triage and Investigation Agent to investigate alerts \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "source_id": "site-docs-reference-2",
+        "final_score": 245,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If TIN is enabled for your tenant, results are integrated into the Case Summary content once an investigation completes.",
+          "Use Triage and Investigation Agent to investigate alerts Supported in: Google secops The Triage and Investigation Agent (TIN) is an AI-powered investigation assistant embedded in Google Security Operations.",
+          "For a list of IAM permissions required for using the agent, see Triage and Investigation Agent (TIN) ."
+        ]
+      },
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "When searching Values , UDM Lookup displays Possible value match when a match is found in the following cases: Matches in the following UDM fields: metadata.description security result.description security result.detection fields.value security result.summary network.http.user agent Matches in fields with a full path that ends in one of the following values: .command line For example principal.process.command line . .file.full path For example principal.process.file.full path . .labels.value For example src.labels.value . .registry.registry key For example principal.registry.registry key . .url For example principal.url .",
+          "The following example shows how to enter a query to match the common UDM fields that might contain the specified IP address: ip = \"1.2.3.4\" You can match a grouped field using a regular expression and using the nocase operator.",
+          "Select how the results should be returned If a search exceeds the configured limit: Sampled events (default): Shows a subset of the complete results."
+        ]
+      },
+      {
+        "title": "\"Integrate ANY.RUN with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "source_id": "site-api-reference",
+        "final_score": 105,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action results Entity enrichment Mark entity as suspicious if the number of negative engines is equal or above the given threshold. is suspicious: if data.get(\"score\") > threshold Enrichment field name Logic - When to apply domain Returns if it exists in JSON result should block Returns if it exists in JSON result score Returns if it exists in JSON result disposable Returns if it exists in JSON result has mx records Returns if it exists in JSON result has spf records Returns if it exists in JSON result Script result Script result name Value options Example is success True or False is success:False JSON result Option 1: If wait for report checkbox is not set, we return the info about the created analysis task (response to request 1) { \"error\" : false , \"data\" : { \"taskid\" : \" TASK ID \" } } Option 2: If wait for report checkbox is not set, we return the info about the created analysis task (response to request 1) { \"error\" : false , \"data\" : { \"analysis\" : { \"uuid\" : \" UUID \" , \"permanentUrl\" : \"https://app.any.run/tasks/ UUID \" , \"reports\" : { \"IOC\" : \"https://api.any.run/report/ UUID /ioc/json\" , \"MISP\" : \"https://api.any.run/report/ UUID /summary/misp\" , \"HTML\" : \"https://api.any.run/report/ UUID /summary/html\" , \"graph\" : \"https://content.any.run/tasks/ UUID /graph\" }, \"sandbox\" : { \"name\" : \"ANY.RUN - Interactive Sandbox\" , \"plan\" : { \"name\" : \"Tester\" } }, \"duration\" : 60 , \"creation\" : 1602483368256 , \"creationText\" : \"2020-10-12T06:16:08.256Z\" , \"tags\" : [], \"options\" : { } } } } Case wall Result type Description Type Output message Action should not fail and not stop playbook execution: If successfully created analysis task for the provided file: \"Successfully created analysis task for file: {0}\".format(file path).",
+          "Action results Script result Script result name Value options Example is success True or False is success:False JSON result Option 1: If wait for report checkbox is not set, we return the info about the created analysis task (response to request 1) { \"error\" : false , \"data\" : { \"taskid\" : \" TASK ID \" } } Option 2: If wait for report checkbox is not set, we return the info about the created analysis task (response to request 1) { \"error\" : false , \"data\" : { \"analysis\" : { \"uuid\" : \" UUID \" , \"permanentUrl\" : \"https://app.any.run/tasks/ UUID \" , \"reports\" : { \"IOC\" : \"https://api.any.run/report/ UUID /ioc/json\" , \"MISP\" : \"https://api.any.run/report/ UUID /summary/misp\" , \"HTML\" : \"https://api.any.run/report/ UUID /summary/html\" , \"graph\" : \"https://content.any.run/tasks/ UUID /graph\" }, \"sandbox\" : { \"name\" : \"ANY.RUN - Interactive Sandbox\" , \"plan\" : { \"name\" : \"Tester\" } }, \"duration\" : 60 , \"creation\" : 1602483368256 , \"creationText\" : \"2020-10-12T06:16:08.256Z\" , \"tags\" : [], \"options\" : { } } } } Case wall Result type Description Type Output message Action should not fail and not stop playbook execution: If successfully created analysis task for at least one of the provided entities: \"Created analysis tasks for the following entities: {0}\".format([entity.Identifier]).",
+          "Action results Script result Script result name Value options Example is success True or False is success:False JSON result { \"error\" : false , \"data\" :{ \"tasks\" :[ { \"verdict\" : \"No threats detected\" , \"name\" : \"http://users.tpg.com.au/locthuy/employment/qs/unix/Hardening%20your%20AIX%20Security.pdf\" , \"related\" : \"https://app.any.run/tasks/ ID \" , \"pcap\" : \"https://content.any.run/tasks/ ID /download/pcap\" , \"file\" : \"https://content.any.run/tasks/ ID /download/files/ FILE NAME \" , \"json\" : \"https://api.any.run/report/ ID /summary/json\" , \"misp\" : \"https://api.any.run/report/ ID /summary/misp\" , \"tags\" :[ ], \"date\" : \"2020-10-12T08:05:57.587Z\" , \"hashes\" :{ \"ssdeep\" : \"768:iSDksqjqvXbB/6rtilCec397sUiZc9Yky:TDegY539gUiCXy\" , \"head hash\" : \"3c90557306fa01f30693541b28db5785\" , \"sha256\" : \"8ebc1257f9155134bb00315bdd2380990cdc413ba298d0cf473579ccfe03d6e5\" , \"sha1\" : \"c125ba414416668b84ac737ec6db1b7f94bf32af\" , \"md5\" : \"5e19377a19ef7657707872377bea14b7\" } } ] } } Case wall Result type Description Type Output message Action should not fail and not stop playbook execution: If successful and found reports: \"Found ANY.RUN reports for the provided search parameters\"."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "api.any.run",
+      "app.any.run",
+      "content.any.run",
+      "data.get",
+      "entity.Identifier",
+      "fields.value",
+      "file.full",
+      "labels.value",
+      "metadata.description",
+      "network.http.user",
+      "principal.process.command",
+      "principal.process.file.full",
+      "principal.registry.registry",
+      "principal.url",
+      "registry.registry",
+      "result.description",
+      "result.detection",
+      "result.summary",
+      "src.labels.value",
+      "users.tpg.com.au"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run"
+      ]
+    }
+  ]
+}

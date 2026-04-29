@@ -1,0 +1,336 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:30.277Z",
+  "source_step08_card": "data/step-08/current/products/storage-transfer-service/card.json",
+  "product_name": "Storage Transfer Service",
+  "product_slug": "storage-transfer-service",
+  "feature_name": "Storage Transfer Service overwriteWhen option",
+  "feature_slug": "storage-transfer-service-overwritewhen-option",
+  "summary": "Storage Transfer Service now supports an overwriteWhen field that defines how existing destination files are handled during transfers, including NEVER, DIFFERENT, and ALWAYS overwrite modes.",
+  "extended_definition": "Storage Transfer Service now supports an overwriteWhen field that defines how existing destination files are handled during transfers, including NEVER, DIFFERENT, and ALWAYS overwrite modes.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+      "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints",
+      "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferOptions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "TransferOptions \\_|\\_ Storage Transfer Service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferOptions",
+        "source_id": "site-api-reference",
+        "final_score": 114,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"overwriteObjectsAlreadyExistingInSink\" : boolean , \"deleteObjectsUniqueInSink\" : boolean , \"deleteObjectsFromSourceAfterTransfer\" : boolean , \"overwriteWhen\" : enum ( OverwriteWhen ) , \"metadataOptions\" : { object ( MetadataOptions ) } } Fields overwriteObjectsAlreadyExistingInSink boolean When to overwrite objects that already exist in the sink.",
+          "JSON representation { \"symlink\" : enum ( Symlink ) , \"mode\" : enum ( Mode ) , \"gid\" : enum ( GID ) , \"uid\" : enum ( UID ) , \"acl\" : enum ( Acl ) , \"storageClass\" : enum ( StorageClass ) , \"temporaryHold\" : enum ( TemporaryHold ) , \"kmsKey\" : enum ( KmsKey ) , \"timeCreated\" : enum ( TimeCreated ) } Fields symlink enum ( Symlink ) Specifies how symlinks should be handled by the transfer.",
+          "Home Documentation Storage Storage Transfer Service Reference Send feedback TransferOptions Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Use cross-bucket replication \\_|\\_ Storage Transfer Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+        "source_id": "site-docs-root",
+        "final_score": 76,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a JSON file that contains a TransferJob object with an initialized ReplicationSpec resource : Tra nsfer Job { Replica t io n Spec : { \"gcsDataSource\" : { \"bucketName\" : \" SOURCE BUCKET NAME \" }, \"gcsDataSink\" { \"bucketName\" : \" DESTINATION BUCKET NAME \" }, \"objectConditions\" : { }, \"transferOptions\" : { \"overwriteWhen\" : \" OVERWRITE OPTION \" } } ... } Replace: SOURCE BUCKET NAME with the name of the source bucket that contains the objects you want to replicate.",
+          "The Storage Transfer Service service agent or user service account needs the following permissions to replicate your objects and set up Pub/Sub notifications for your source bucket: Required permissions The following permissions must be granted on the source project: pubsub.topics.create pubsub.subscriptions.create pubsub.subscriptions.consume The following permissions must be granted on the source bucket: storage.buckets.get storage.buckets.update storage.objects.get The following permissions must be granted on the destination bucket: storage.buckets.get storage.objects.create storage.objects.get These permissions can be granted through custom roles or by granting all of the following predefined roles : Pub/Sub Editor ( roles/pubsub.editor ) role on the source project Storage Legacy Bucket Owner ( roles/storage.legacyBucketOwner ) and Storage Object Viewer ( roles/storage.objectViewer ) roles on the source bucket Storage Legacy Bucket Writer ( roles/storage.legacyBucketWriter ) and Storage Object Viewer ( roles/storage.objectViewer ) roles on the destination bucket Grant required roles for Pub/Sub Cloud Storage uses a Google-managed service agent to manage Pub/Sub notifications.",
+          "Use cURL to call the Storage Transfer Service REST API with a transferJobs.list request: curl -X GET \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://storagetransfer.googleapis.com/v1/transferJobs\" View a replication job Console For Google Cloud console instructions on how to view a replication job, refer to View a replication job using the Google Cloud console ."
+        ]
+      },
+      {
+        "title": "\"Custom organization policy constraints \\_|\\_ Storage Transfer Service \\_\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints",
+        "source_id": "site-docs-root",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "Resource Field storagetransfer.googleapis.com/TransferJob resource.description resource.eventStream.eventStreamExpirationTime resource.eventStream.eventStreamStartTime resource.eventStream.name resource.latestOperationName resource.loggingConfig.enableOnpremGcsTransferLogs resource.loggingConfig.logActions resource.loggingConfig.logActionStates resource.name resource.notificationConfig.eventTypes resource.notificationConfig.payloadFormat resource.notificationConfig.pubsubTopic resource.projectId resource.replicationSpec.gcsDataSink.bucketName resource.replicationSpec.gcsDataSink.managedFolderTransferEnabled resource.replicationSpec.gcsDataSink.path resource.replicationSpec.gcsDataSource.bucketName resource.replicationSpec.gcsDataSource.managedFolderTransferEnabled resource.replicationSpec.gcsDataSource.path resource.replicationSpec.objectConditions.excludePrefixes resource.replicationSpec.objectConditions.includePrefixes resource.replicationSpec.objectConditions.lastModifiedBefore resource.replicationSpec.objectConditions.lastModifiedSince resource.replicationSpec.objectConditions.matchGlob resource.replicationSpec.objectConditions.maxTimeElapsedSinceLastModification resource.replicationSpec.objectConditions.minTimeElapsedSinceLastModification resource.replicationSpec.transferOptions.deleteObjectsFromSourceAfterTransfer resource.replicationSpec.transferOptions.deleteObjectsUniqueInSink resource.replicationSpec.transferOptions.metadataOptions.acl resource.replicationSpec.transferOptions.metadataOptions.gid resource.replicationSpec.transferOptions.metadataOptions.kmsKey resource.replicationSpec.transferOptions.metadataOptions.mode resource.replicationSpec.transferOptions.metadataOptions.storageClass resource.replicationSpec.transferOptions.metadataOptions.symlink resource.replicationSpec.transferOptions.metadataOptions.temporaryHold resource.replicationSpec.transferOptions.metadataOptions.timeCreated resource.replicationSpec.transferOptions.metadataOptions.uid resource.replicationSpec.transferOptions.overwriteObjectsAlreadyExistingInSink resource.replicationSpec.transferOptions.overwriteWhen resource.schedule.endTimeOfDay resource.schedule.repeatInterval resource.schedule.scheduleEndDate resource.schedule.scheduleStartDate resource.schedule.startTimeOfDay resource.serviceAccount resource.status resource.transferSpec.awsS3CompatibleDataSource.bucketName resource.transferSpec.awsS3CompatibleDataSource.endpoint resource.transferSpec.awsS3CompatibleDataSource.path resource.transferSpec.awsS3CompatibleDataSource.region resource.transferSpec.awsS3CompatibleDataSource.s3Metadata.authMethod resource.transferSpec.awsS3CompatibleDataSource.s3Metadata.listApi resource.transferSpec.awsS3CompatibleDataSource.s3Metadata.protocol resource.transferSpec.awsS3CompatibleDataSource.s3Metadata.requestModel resource.transferSpec.awsS3DataSource.bucketName resource.transferSpec.awsS3DataSource.cloudfrontDomain resource.transferSpec.awsS3DataSource.managedPrivateNetwork resource.transferSpec.awsS3DataSource.path resource.transferSpec.awsS3DataSource.privateNetworkService resource.transferSpec.awsS3DataSource.roleArn resource.transferSpec.azureBlobStorageDataSource.container resource.transferSpec.azureBlobStorageDataSource.federatedIdentityConfig.clientId resource.transferSpec.azureBlobStorageDataSource.federatedIdentityConfig.tenantId resource.transferSpec.azureBlobStorageDataSource.path resource.transferSpec.azureBlobStorageDataSource.privateNetworkService resource.transferSpec.azureBlobStorageDataSource.storageAccount resource.transferSpec.gcsDataSink.bucketName resource.transferSpec.gcsDataSink.managedFolderTransferEnabled resource.transferSpec.gcsDataSink.path resource.transferSpec.gcsDataSource.bucketName resource.transferSpec.gcsDataSource.managedFolderTransferEnabled resource.transferSpec.gcsDataSource.path resource.transferSpec.gcsIntermediateDataLocation.bucketName resource.transferSpec.gcsIntermediateDataLocation.managedFolderTransferEnabled resource.transferSpec.gcsIntermediateDataLocation.path resource.transferSpec.hdfsDataSource.path resource.transferSpec.httpDataSource.listUrl resource.transferSpec.objectConditions.excludePrefixes resource.transferSpec.objectConditions.includePrefixes resource.transferSpec.objectConditions.lastModifiedBefore resource.transferSpec.objectConditions.lastModifiedSince resource.transferSpec.objectConditions.matchGlob resource.transferSpec.objectConditions.maxTimeElapsedSinceLastModification resource.transferSpec.objectConditions.minTimeElapsedSinceLastModification resource.transferSpec.posixDataSink.rootDirectory resource.transferSpec.posixDataSource.rootDirectory resource.transferSpec.sinkAgentPoolName resource.transferSpec.sourceAgentPoolName resource.transferSpec.transferManifest.location resource.transferSpec.transferOptions.deleteObjectsFromSourceAfterTransfer resource.transferSpec.transferOptions.deleteObjectsUniqueInSink resource.transferSpec.transferOptions.metadataOptions.acl resource.transferSpec.transferOptions.metadataOptions.gid resource.transferSpec.transferOptions.metadataOptions.kmsKey resource.transferSpec.transferOptions.metadataOptions.mode resource.transferSpec.transferOptions.metadataOptions.storageClass resource.transferSpec.transferOptions.metadataOptions.symlink resource.transferSpec.transferOptions.metadataOptions.temporaryHold resource.transferSpec.transferOptions.metadataOptions.timeCreated resource.transferSpec.transferOptions.metadataOptions.uid resource.transferSpec.transferOptions.overwriteObjectsAlreadyExistingInSink resource.transferSpec.transferOptions.overwriteWhen What's next Learn more about Organization Policy Service .",
+          "Description Constraint syntax Restrict transfers to only allow Cloud Storage to Cloud Storage name : organizations/ ORGANIZATION ID /customConstraints/custom.enforceCloudStorageToCloudStorageOnly resourceTypes : - storagetransfer.googleapis.com/TransferJob methodTypes : - CREATE - UPDATE condition : \"has(resource.transferSpec.gcsDataSource) && has(resource.transferSpec.gcsDataSink)\" actionType : ALLOW displayName : Enforce Cloud Storage to Cloud Storage transfers only description : Only allow transfer jobs that move data from Cloud Storage to Cloud Storage.",
+          "Restrict transfers to a specific list of approved source buckets name : organizations/ ORGANIZATION ID /customConstraints/custom.restrictSourceBuckets resourceTypes : - storagetransfer.googleapis.com/TransferJob methodTypes : - CREATE - UPDATE condition : \"!(resource.transferSpec.gcsDataSource.bucketName in ['approved-bucket-1', 'approved-bucket-2'])\" actionType : DENY displayName : Restrict source buckets description : Deny transfer jobs that do not use an approved source bucket."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "custom.enforceCloudStorageToCloudStorageOnly",
+      "custom.restrictLogging",
+      "custom.restrictSourceBuckets",
+      "job.yaml",
+      "pubsub.editor",
+      "pubsub.subscriptions.consume",
+      "pubsub.subscriptions.create",
+      "pubsub.topics.create",
+      "resource.description",
+      "resource.eventStream.eventStreamExpirationTime",
+      "resource.eventStream.eventStreamStartTime",
+      "resource.eventStream.name",
+      "resource.latestOperationName",
+      "resource.loggingConfig.enableOnpremGcsTransferLogs",
+      "resource.loggingConfig.logActions",
+      "resource.loggingConfig.logActions.size",
+      "resource.loggingConfig.logActionStates",
+      "resource.loggingConfig.logActionStates.size",
+      "resource.name",
+      "resource.notificationConfig.eventTypes",
+      "resource.notificationConfig.payloadFormat",
+      "resource.notificationConfig.pubsubTopic",
+      "resource.projectId",
+      "resource.replicationSpec.gcsDataSink.bucketName",
+      "resource.replicationSpec.gcsDataSink.managedFolderTransferEnabled",
+      "resource.replicationSpec.gcsDataSink.path",
+      "resource.replicationSpec.gcsDataSource.bucketName",
+      "resource.replicationSpec.gcsDataSource.managedFolderTransferEnabled",
+      "resource.replicationSpec.gcsDataSource.path",
+      "resource.replicationSpec.objectConditions.excludePrefixes",
+      "resource.replicationSpec.objectConditions.includePrefixes",
+      "resource.replicationSpec.objectConditions.lastModifiedBefore",
+      "resource.replicationSpec.objectConditions.lastModifiedSince",
+      "resource.replicationSpec.objectConditions.matchGlob",
+      "resource.replicationSpec.objectConditions.maxTimeElapsedSinceLastModification",
+      "resource.replicationSpec.objectConditions.minTimeElapsedSinceLastModification",
+      "resource.replicationSpec.transferOptions.deleteObjectsFromSourceAfterTransfer",
+      "resource.replicationSpec.transferOptions.deleteObjectsUniqueInSink",
+      "resource.replicationSpec.transferOptions.metadataOptions.acl",
+      "resource.replicationSpec.transferOptions.metadataOptions.gid",
+      "resource.replicationSpec.transferOptions.metadataOptions.kmsKey",
+      "resource.replicationSpec.transferOptions.metadataOptions.mode",
+      "resource.replicationSpec.transferOptions.metadataOptions.storageClass",
+      "resource.replicationSpec.transferOptions.metadataOptions.symlink",
+      "resource.replicationSpec.transferOptions.metadataOptions.temporaryHold",
+      "resource.replicationSpec.transferOptions.metadataOptions.timeCreated",
+      "resource.replicationSpec.transferOptions.metadataOptions.uid",
+      "resource.replicationSpec.transferOptions.overwriteObjectsAlreadyExistingInSink",
+      "resource.replicationSpec.transferOptions.overwriteWhen",
+      "resource.schedule.endTimeOfDay",
+      "resource.schedule.repeatInterval",
+      "resource.schedule.scheduleEndDate",
+      "resource.schedule.scheduleStartDate",
+      "resource.schedule.startTimeOfDay",
+      "resource.serviceAccount",
+      "resource.status",
+      "resource.transferSpec.awsS3CompatibleDataSource.bucketName",
+      "resource.transferSpec.awsS3CompatibleDataSource.endpoint",
+      "resource.transferSpec.awsS3CompatibleDataSource.path",
+      "resource.transferSpec.awsS3CompatibleDataSource.region",
+      "resource.transferSpec.awsS3CompatibleDataSource.s3Metadata.authMethod",
+      "resource.transferSpec.awsS3CompatibleDataSource.s3Metadata.listApi",
+      "resource.transferSpec.awsS3CompatibleDataSource.s3Metadata.protocol",
+      "resource.transferSpec.awsS3CompatibleDataSource.s3Metadata.requestModel",
+      "resource.transferSpec.awsS3DataSource.bucketName",
+      "resource.transferSpec.awsS3DataSource.cloudfrontDomain",
+      "resource.transferSpec.awsS3DataSource.managedPrivateNetwork",
+      "resource.transferSpec.awsS3DataSource.path",
+      "resource.transferSpec.awsS3DataSource.privateNetworkService",
+      "resource.transferSpec.awsS3DataSource.roleArn",
+      "resource.transferSpec.azureBlobStorageDataSource.container",
+      "resource.transferSpec.azureBlobStorageDataSource.federatedIdentityConfig.clientId",
+      "resource.transferSpec.azureBlobStorageDataSource.federatedIdentityConfig.tenantId",
+      "resource.transferSpec.azureBlobStorageDataSource.path",
+      "resource.transferSpec.azureBlobStorageDataSource.privateNetworkService",
+      "resource.transferSpec.azureBlobStorageDataSource.storageAccount",
+      "resource.transferSpec.gcsDataSink",
+      "resource.transferSpec.gcsDataSink.bucketName",
+      "resource.transferSpec.gcsDataSink.managedFolderTransferEnabled",
+      "resource.transferSpec.gcsDataSink.path",
+      "resource.transferSpec.gcsDataSource",
+      "resource.transferSpec.gcsDataSource.bucketName",
+      "resource.transferSpec.gcsDataSource.managedFolderTransferEnabled",
+      "resource.transferSpec.gcsDataSource.path",
+      "resource.transferSpec.gcsIntermediateDataLocation.bucketName",
+      "resource.transferSpec.gcsIntermediateDataLocation.managedFolderTransferEnabled",
+      "resource.transferSpec.gcsIntermediateDataLocation.path",
+      "resource.transferSpec.hdfsDataSource.path",
+      "resource.transferSpec.httpDataSource.listUrl",
+      "resource.transferSpec.objectConditions.excludePrefixes",
+      "resource.transferSpec.objectConditions.includePrefixes",
+      "resource.transferSpec.objectConditions.lastModifiedBefore",
+      "resource.transferSpec.objectConditions.lastModifiedSince",
+      "resource.transferSpec.objectConditions.matchGlob",
+      "resource.transferSpec.objectConditions.maxTimeElapsedSinceLastModification",
+      "resource.transferSpec.objectConditions.minTimeElapsedSinceLastModification",
+      "resource.transferSpec.posixDataSink.rootDirectory",
+      "resource.transferSpec.posixDataSource.rootDirectory",
+      "resource.transferSpec.sinkAgentPoolName",
+      "resource.transferSpec.sourceAgentPoolName",
+      "resource.transferSpec.transferManifest.location",
+      "resource.transferSpec.transferOptions.deleteObjectsFromSourceAfterTransfer",
+      "resource.transferSpec.transferOptions.deleteObjectsUniqueInSink",
+      "resource.transferSpec.transferOptions.metadataOptions.acl",
+      "resource.transferSpec.transferOptions.metadataOptions.gid",
+      "resource.transferSpec.transferOptions.metadataOptions.kmsKey",
+      "resource.transferSpec.transferOptions.metadataOptions.mode",
+      "resource.transferSpec.transferOptions.metadataOptions.storageClass",
+      "resource.transferSpec.transferOptions.metadataOptions.symlink",
+      "resource.transferSpec.transferOptions.metadataOptions.temporaryHold",
+      "resource.transferSpec.transferOptions.metadataOptions.timeCreated",
+      "resource.transferSpec.transferOptions.metadataOptions.uid",
+      "resource.transferSpec.transferOptions.overwriteObjectsAlreadyExistingInSink",
+      "resource.transferSpec.transferOptions.overwriteWhen",
+      "storage.buckets.get",
+      "storage.buckets.update",
+      "storage.legacyBucketOwner",
+      "storage.legacyBucketWriter",
+      "storage.objects.create",
+      "storage.objects.get",
+      "storage.objectViewer",
+      "storagetransfer.googleapis.com",
+      "storagetransfer.jobs.create",
+      "storagetransfer.jobs.delete",
+      "storagetransfer.jobs.get",
+      "storagetransfer.jobs.list",
+      "storagetransfer.jobs.run",
+      "storagetransfer.jobs.update"
+    ],
+    "missing_inventory_roles": [
+      "roles/pubsub.editor",
+      "roles/storage.legacyBucketOwner",
+      "roles/storage.legacyBucketWriter",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferOptions",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferOptions",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferOptions",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferOptions",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferOptions",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferOptions",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferOptions",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferOptions",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferOptions",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferOptions",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferOptions",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferOptions",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferOptions",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferOptions",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferOptions",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints"
+      ]
+    }
+  ]
+}

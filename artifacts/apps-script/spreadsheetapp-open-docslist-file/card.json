@@ -1,0 +1,120 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.589Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "SpreadsheetApp.open(DocsList File)",
+  "feature_slug": "spreadsheetapp-open-docslist-file",
+  "summary": "SpreadsheetApp.open(file) accepted a File object from the deprecated DocsList service; deprecated on 2015-02-10.",
+  "extended_definition": "SpreadsheetApp.open(file) accepted a File object from the deprecated DocsList service; deprecated on 2015-02-10.",
+  "lifecycle": {
+    "latest_feature_date": "2015-02-10",
+    "deprecation_date": "2015-02-10",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/v8-runtime",
+      "https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 158,
+        "relevance": "",
+        "evidence_snippets": [
+          "PageProtection Spreadsheet.getSheetProtection() Spreadsheet.setSheetProtection(permissions) Sheet.getSheetProtection() Sheet.setSheetProtection(permissions) Replaced the method SpreadsheetApp.open(file) , which takes a File object from the deprecated DocsList service as a parameter, with a version that takes a File object from the Drive service instead.",
+          "Feature The Spreadsheet service has been extended with the following new classes and methods to support text styles and Rich Text cell formatting: RichTextValue RichTextValueBuilder TextStyle TextStyleBuilder Range.getRichTextValue() Range.getRichTextValues() Range.getTextStyle() Range.getTextStyles() Range.setRichTextValue(value) Range.setRichTextValues(values) Range.setTextStyle(style) Range.setTextStyles(styles) SpreadsheetApp.newRichTextValue() SpreadsheetApp.newTextStyle() The Data Studio service has been extended with the following new classes and methods that define and support authentication types for community connectors: GetAuthTypeResponse AuthType CommunityConnector,newAuthTypeResponse() January 04, 2019 Feature The Slides service has been extended with the following new classes and methods that support slide linking and text box insertion: SlideLinkingMode [ Layout.insertTextBox(text) }(https://developers.google.com/apps-script/reference/slides/layout#inserttextboxtext) Layout.insertTextBox(text, left, top, width, height) Master.insertTextBox(text) Master.insertTextBox(text, left, top, width, height) Page.insertTextBox(text) Page.insertTextBox(text, left, top, width, height) Presentation.appendSlide(slide, linkingMode) Presentation.insertSlide(insertionIndex, slide, linkingMode) Slide.getSlideLinkingMode() Slide.getSourcePresentationId() Slide.getSourceSlideObjectId() Slide.insertTextBox(text) Slide.insertTextBox(text, left, top, width, height) Slide.refreshSlide() Slide.unlink() The Data Studio service has been extended with the following new classes and methods that error displays: DebugError UserError CommunityConnector.newDebugError() CommunityConnector.newUserError() December 13, 2018 Deprecated The Fusion Tables advanced service has been deprecated and will shutdown fully on December 3rd, 2019.",
+          "Deprecated Deprecated the DocsList methods find(query, start, max) , getAllFiles(start, max) , getAllFolders(start, max) , getFiles(start, max) , getFilesByType(fileType, start, max) , and getFolders(start, max) ."
+        ]
+      },
+      {
+        "title": "V8 runtime overview \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/v8-runtime",
+        "source_id": "site-docs-root-3",
+        "final_score": 123,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following V8 example shows the use of object methods when constructing menu items in Google Sheets: function onOpen () { const ui = SpreadsheetApp . getUi (); // Or DocumentApp , SlidesApp , or FormApp . ui . createMenu ( 'Custom Menu' ) . addItem ( 'First item' , 'menu.item1' ) . addSeparator () . addSubMenu ( ui . createMenu ( 'Sub-menu' ) . addItem ( 'Second item' , 'menu.item2' )) . addToUi (); } const menu = { item1 : function () { SpreadsheetApp . getUi () . alert ( 'You clicked: First item' ); }, item2 : function () { SpreadsheetApp . getUi () . alert ( 'You clicked: Second item' ); } } View logs Apps Script provides two logging services: the Logger service and the console class.",
+          "Unavailable APIs The following standard JavaScript APIs are NOT available in the Apps Script V8 runtime: Timers : setTimeout , setInterval , clearTimeout , clearInterval Streams : ReadableStream , WritableStream , TextEncoder , TextDecoder Web APIs : fetch , FormData , File , Blob , URL , URLSearchParams , DOMException , atob , btoa Crypto : crypto , SubtleCrypto Global Objects : window , navigator , performance , process (Node.js) Use the following Apps Script APIs as alternatives: Timers : Use Utilities.sleep for synchronous pauses.",
+          "Alternatively specify the script runtime directly by editing the script manifest file: Open the Apps Script project."
+        ]
+      },
+      {
+        "title": "Class SpreadsheetApp | Apps Script | Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app",
+        "source_id": "feature-recovery-http",
+        "final_score": 111,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "GOOGLE_SHEETS } \"` , ); while ( files . hasNext ()) { const spreadsheet = SpreadsheetApp . open ( files . next ()); const sheet = spreadsheet . getSheets ()[ 0 ]; Logger . log ( sheet . getName ()); } Параметры Имя Тип Описание file File Файл для открытия. Возвращаться Spreadsheet — Электронная таблица. Авторизация Для скриптов, использующих этот метод, требуется авторизация в одной или нескольких из следующих областей действия : https://www.googleapis.com/auth/spreadsheets openById(id) Открывает электронную таблицу с заданным идентификатором. Идентификатор электронной таблицы можно извлечь из ее URL-адреса. Например, идентификатор электронной таблицы в URL-адресе https://docs.google.com/spreadsheets/d/abc1234567/edit#gid=0 — это \"abc1234567\". // The code below opens a spreadsheet using its ID and logs the name for it. // Note that the spreadsheet is NOT physically opened on the client side. // It is opened on the server only (for modification by the script). const ss = SpreadsheetApp . openById ( 'abc1234567' ); Logger . log ( ss . getName ()); Параметры Имя Тип Описание id String Уникальный идентификатор электронной таблицы. Возвращаться Spreadsheet — объект «Электронная таблица» с заданным идентификатором. Авторизация Для скриптов, использующих этот метод, требуется авторизация в одной или нескольких из следующих областей действия : https://www.googleapis.com/auth/spreadsheets openByUrl(url) Открывает электронную таблицу по указанному URL-адресу. Генерирует исключение скрипта, если URL-адрес не существует или у пользователя нет разрешения на доступ к нему. // Opens a spreadsheet by its URL and logs its name. // Note that the spreadsheet doesn't physically open on the client side. // It opens on the server only (for modification by the script). const ss = SpreadsheetApp . openByUrl ( 'https://docs.google.com/spreadsheets/d/abc1234567/edit' , ); console . log ( ss . getName ()); Параметры Имя Тип Описание url String URL-адрес электронной таблицы. Возвращаться Spreadsheet — объект электронной таблицы с заданным URL-адресом. Авторизация Для скриптов, использующих этот метод, требуется авторизация в одной или нескольких из следующих областей действия : https://www.googleapis.com/auth/spreadsheets setActiveRange(range) Устанавливает указанный диапазон в качестве active range , при этом верхняя левая ячейка в диапазоне является current cell . В интерфейсе электронной таблицы отображается лист, содержащий выбранный диапазон, и выбираются ячейки, определенные в этом диапазоне. // The code below sets range C1:D4 in the first sheet as the active range. const range = SpreadsheetApp . getActiveSpreadsheet (). getSheets ()[ 0 ]. getRange ( 'C1:D4' ); SpreadsheetApp . setActiveRange ( range ); const selection = SpreadsheetApp . getSelection (); // Current cell: C1 const currentCell = selection . getCurrentCell (); // Active Range: C1:D4 const activeRange = selection . getActiveRange (); Параметры Имя Тип Описание range Range Данная зона должна стать активной зоной. Возвращаться Range — Новый активный Range. setActiveRangeList(rangeList) Устанавливает указанный список диапазонов в качестве active ranges . В качестве active range устанавливается последний диапазон в списке. // The code below sets ranges [D4, B2:C4] in the active sheet as the active // ranges. const rangeList = SpreadsheetApp . getActiveSheet (). getRanges ([ 'D4' , 'B2:C4' ]); SpreadsheetApp . setActiveRangeList ( rangeList ); const selection = SpreadsheetApp . getSelection (); // Current cell: B2 const currentCell = selection . getCurrentCell (); // Active range: B2:C4 const activeRange = selection . getActiveRange (); // Active range list: [D4, B2:C4] const activeRangeList = selection . getActiveRangeList (); Параметры Имя Тип Описание range List Range List Список диапазонов для выбора. Возвращаться RangeList — Новый список выбранных диапазонов. Авторизация Для скриптов, использующих этот метод, требуется авторизация в одной или нескольких из следующих областей действия : https://www.googleapis.com/auth/spreadsheets.currentonly https://www.googleapis.com/auth/spreadsheets setActiveSheet(sheet) Устанавливает активный лист в электронной таблице. В пользовательском интерфейсе Google Sheets отображается выбранный лист, если он не принадлежит другой электронной таблице. // The code below makes the 2nd sheet active in the active spreadsheet. const spreadsheet = SpreadsheetApp . getActiveSpreadsheet (); SpreadsheetApp . setActiveSheet ( spreadsheet . getSheets ()[ 1 ]); Параметры Имя Тип Описание sheet Sheet Новый активный лист. Возвращаться Sheet — Лист, который стал новым активным листом. setActiveSheet(sheet, restoreSelection) Устанавливает активный лист в электронной таблице с возможностью восстановления последнего выбранного значения на этом листе. Пользовательский интерфейс Google Sheets отображает выбранный лист, если только он не принадлежит другой электронной таблице. const spreadsheet = SpreadsheetApp . getActiveSpreadsheet (); const firstSheet = spreadsheet . getSheets ()[ 0 ]; const secondSheet = spreadsheet . getSheets ()[ 1 ]; // Set the first sheet as the active sheet and select the range D4:F4. spreadsheet . setActiveSheet ( firstSheet ). getRange ( 'D4:F4' ). activate (); // Switch to the second sheet to do some work. spreadsheet . setActiveSheet ( secondSheet ); // Switch back to first sheet, and restore its selection. spreadsheet . setActiveSheet ( firstSheet , true ); // The selection of first sheet is restored, and it logs D4:F4 const range = spreadsheet . getActiveSheet (). getSelection (). getActiveRange (); Logger . log ( range . getA1Notation ()); Параметры Имя Тип Описание sheet Sheet Новый активный лист. restore Selection Boolean Если true , то последний выделенный фрагмент нового активного листа будет выделен снова при активации нового листа; если false , то новый лист станет активным без изменения текущего выделения. Возвращаться Sheet — Новый активный лист. Авторизация Для скриптов, использующих этот метод, требуется авторизация в одной или нескольких из следующих областей действия : https://www.googleapis.com/auth/spreadsheets.currentonly https://www.googleapis.com/auth/spreadsheets setActiveSpreadsheet(newActiveSpreadsheet) Устанавливает активную электронную таблицу. // The code below makes the spreadsheet with key \"1234567890\" the active // spreadsheet const ss = SpreadsheetApp . openById ( '1234567890' ); SpreadsheetApp . setActiveSpreadsheet ( ss ); Параметры Имя Тип Описание new Active Spreadsheet Spreadsheet Таблица, которая будет сделана активной. setCurrentCell(cell) Устанавливает указанную ячейку в качестве current cell . Если указанная ячейка присутствует в уже выбранном диапазоне, то этот диапазон становится активным, а указанная ячейка — текущей. Если указанная ячейка отсутствует в каком-либо выбранном диапазоне, то существующее выделение удаляется, и ячейка становится текущей ячейкой и активным диапазоном. Примечание: указанный Range должен состоять из одной ячейки, в противном случае этот метод вызовет исключение. // The code below sets the cell B5 in the first sheet as the current cell. const cell = SpreadsheetApp . getActiveSpreadsheet (). getSheets ()[ 0 ]. getRange ( 'B5' ); SpreadsheetApp . setCurrentCell ( cell ); const selection = SpreadsheetApp . getSelection (); // Current cell: B5 const currentCell = selection . getCurrentCell (); Параметры Имя Тип Описание cell Range Ячейка, которую следует установить в качестве текущей ячейки. Возвращаться Range — новая установленная текущая ячейка. Авторизация Для скриптов, использующих этот метод, требуется авторизация в одной или нескольких из следующих областей действия : https://www.googleapis.com/auth/spreadsheets.currentonly https://www.googleapis.com/auth/spreadsheets Отправить отзыв Если не указано иное, контент на этой странице предоставляется по лицензии Creative Commons \"С указанием авторства 4.0\" , а примеры кода – по лицензии Apache 2.0 . Подробнее об этом написано в правилах сайта .",
+          "Wrap Strategy Wrap Strategy Перечень стратегий, используемых для обертывания клеток. Методы Метод Тип возвращаемого значения Краткое описание create(name) Spreadsheet Создает новую электронную таблицу с заданным именем. create(name, rows, columns) Spreadsheet Создает новую электронную таблицу с заданным именем и указанным количеством строк и столбцов. enable All Data Sources Execution() void Включает выполнение обработки данных для всех типов источников данных. enable Big Query Execution() void Включает выполнение обработки данных для источников данных BigQuery. enable Looker Execution() void Включает выполнение обработки данных для источников данных Looker. flush() void Применяет все ожидающие изменения в электронной таблице. get Active() Spreadsheet Возвращает текущую активную электронную таблицу или null , если таковой нет. get Active Range() Range Возвращает выбранный диапазон на активном листе или null , если активного диапазона нет. get Active Range List() Range List |null Возвращает список активных диапазонов на активном листе или null , если диапазоны не выбраны. get Active Sheet() Sheet Получает активный лист в электронной таблице. get Active Spreadsheet() Spreadsheet Возвращает текущую активную электронную таблицу или null , если таковой нет. get Current Cell() Range |null Возвращает текущую (выделенную) ячейку, выбранную в одном из активных диапазонов на активном листе, или null если текущей ячейки нет. get Selection() Selection Возвращает текущий Selection в электронной таблице. get Ui() Ui Возвращает экземпляр пользовательского интерфейса электронной таблицы, который позволяет скрипту добавлять такие элементы, как меню, диалоговые окна и боковые панели. new Cell Image() Cell Image Builder Создает конструктор для Cell Image . new Color() Color Builder Создает конструктор для Color . new Conditional Format Rule() Conditional Format Rule Builder Создает конструктор для правила условного форматирования. new Data Source Spec() Data Source Spec Builder Создает конструктор для Data Source Spec . new Data Validation() Data Validation Builder Создает конструктор для правила проверки данных. new Filter Criteria() Filter Criteria Builder Создает конструктор для Filter Criteria . new Rich Text Value() Rich Text Value Builder Создает конструктор для значения форматированного текста. new Text Style() Text Style Builder Создает конструктор для стиля текста. open(file) Spreadsheet Открывает электронную таблицу, соответствующую указанному объекту File. open By Id(id) Spreadsheet Открывает электронную таблицу с заданным идентификатором. open By Url(url) Spreadsheet Открывает электронную таблицу по указанному URL-адресу. set Active Range(range) Range Устанавливает указанный диапазон в качестве active range , при этом верхняя левая ячейка в диапазоне является current cell . set Active Range List(rangeList) Range List Устанавливает указанный список диапазонов в качестве active ranges . set Active Sheet(sheet) Sheet Устанавливает активный лист в электронной таблице. set Active Sheet(sheet, restoreSelection) Sheet Устанавливает активный лист в электронной таблице с возможностью восстановления последнего выбранного элемента на этом листе. set Active Spreadsheet(newActiveSpreadsheet) void Устанавливает активную электронную таблицу. set Current Cell(cell) Range Устанавливает указанную ячейку в качестве current cell . Подробная документация create(name) Создает новую электронную таблицу с заданным именем. // The code below creates a new spreadsheet \"Finances\" and logs the URL for it const ssNew = SpreadsheetApp . create ( 'Finances' ); Logger . log ( ssNew . getUrl ()); Параметры Имя Тип Описание name String Название электронной таблицы. Возвращаться Spreadsheet — новая электронная таблица. Авторизация Для скриптов, использующих этот метод, требуется авторизация в одной или нескольких из следующих областей действия : https://www.googleapis.com/auth/spreadsheets create(name, rows, columns) Создает новую электронную таблицу с заданным именем и указанным количеством строк и столбцов. // The code below creates a new spreadsheet \"Finances\" with 50 rows and 5 // columns and logs the URL for it const ssNew = SpreadsheetApp . create ( 'Finances' , 50 , 5 ); Logger . log ( ssNew . getUrl ()); Параметры Имя Тип Описание name String Название электронной таблицы. rows Integer Количество строк в электронной таблице. columns Integer Количество столбцов в электронной таблице. Возвращаться Spreadsheet — новая электронная таблица. Авторизация Для скриптов, использующих этот метод, требуется авторизация в одной или нескольких из следующих областей действия : https://www.googleapis.com/auth/spreadsheets enableAllDataSourcesExecution() Включает выполнение обработки данных для всех типов источников данных. Если для типа источника данных не включена функция выполнения данных, она вызовет исключение. Используйте этот метод, чтобы включить выполнение данных для всех типов источников данных. // Turns data execution on for all types of data sources.",
+          "Logger . log ( SpreadsheetApp . getActiveSpreadsheet (). getUrl ()); Возвращаться Spreadsheet — активный объект электронной таблицы. Авторизация Для скриптов, использующих этот метод, требуется авторизация в одной или нескольких из следующих областей действия : https://www.googleapis.com/auth/spreadsheets.currentonly https://www.googleapis.com/auth/spreadsheets getCurrentCell() Возвращает текущую (выделенную) ячейку, выбранную в одном из активных диапазонов на активном листе, или null если текущей ячейки нет. // Returns the current highlighted cell in the one of the active ranges. const currentCell = SpreadsheetApp . getCurrentCell (); Возвращаться Range |null — Текущая ячейка. Авторизация Для скриптов, использующих этот метод, требуется авторизация в одной или нескольких из следующих областей действия : https://www.googleapis.com/auth/spreadsheets.currentonly https://www.googleapis.com/auth/spreadsheets getSelection() Возвращает текущий Selection в электронной таблице. const selection = SpreadsheetApp . getSelection (); const currentCell = selection . getCurrentCell (); Возвращаться Selection — Текущий состав команды. Авторизация Для скриптов, использующих этот метод, требуется авторизация в одной или нескольких из следующих областей действия : https://www.googleapis.com/auth/spreadsheets.currentonly https://www.googleapis.com/auth/spreadsheets getUi() Возвращает экземпляр пользовательского интерфейса электронной таблицы, позволяющий скрипту добавлять такие элементы, как меню, диалоговые окна и боковые панели. Скрипт может взаимодействовать с пользовательским интерфейсом только для текущего экземпляра открытой электронной таблицы и только в том случае, если скрипт привязан к этой электронной таблице. Для получения дополнительной информации см. руководства по меню , диалоговым окнам и боковым панелям . // Add a custom menu to the active spreadsheet, including a separator and a // sub-menu. function onOpen ( e ) { SpreadsheetApp . getUi () . createMenu ( 'My Menu' ) . addItem ( 'My menu item' , 'myFunction' ) . addSeparator () . addSubMenu ( SpreadsheetApp . getUi () . createMenu ( 'My sub-menu' ) . addItem ( 'One sub-menu item' , 'mySecondFunction' ) . addItem ( 'Another sub-menu item' , 'myThirdFunction' ), ) . addToUi (); } Возвращаться Ui — Пример пользовательского интерфейса этой электронной таблицы. newCellImage() Создает конструктор для объекта CellImage . // Opens the spreadsheet file by its URL."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appsscript.json",
+      "developers.google.com",
+      "menu.item1",
+      "menu.item2",
+      "spreadsheets.currentonly"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/v8-runtime",
+        "https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/v8-runtime",
+        "https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/v8-runtime",
+        "https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/v8-runtime",
+        "https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app"
+      ]
+    }
+  ]
+}

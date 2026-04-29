@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:32.041Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search",
+  "feature_name": "Vertex AI Search autocomplete PII risk settings",
+  "feature_slug": "vertex-ai-search-autocomplete-pii-risk-settings",
+  "summary": "Vertex AI Search provides adjustable autocomplete controls to lower the risk of returning suggestions that contain personally identifiable information when using search history or user event data.",
+  "extended_definition": "Vertex AI Search provides adjustable autocomplete controls to lower the risk of returning suggestions that contain personally identifiable information when using search history or user event data.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-advanced-autocomplete",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-field-settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure autocomplete \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "source_id": "site-docs-reference",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "Vertex AI Search provides an advanced data model for autocomplete.",
+          "Autocomplete features Vertex AI Search supports the following autocomplete features to show the most helpful predictions during search: Feature Description Example or more information Correct typos Correct word spellings that are typos.",
+          "If there is an email address jeffersonloveshiking@gmail.com in the data store, Vertex AI Search won't return the email address as an autocomplete suggestion if the user types jef in the search bar."
+        ]
+      },
+      {
+        "title": "Configure field settings \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-field-settings",
+        "source_id": "site-docs-reference",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Search Send feedback Configure field settings Stay organized with collections Save and categorize content based on your preferences.",
+          "Field settings help determine how Vertex AI Search uses fields in its results.",
+          "If the completable field is set for product name , brand , and category , when the user types Tech, the autocomplete suggestions can show: TechCo (from the brand field) TechCo UltraBook X1 (from the product name field) Technology GameMaster Pro (another product from the category field) Filterable Allows recommendations to use a field to filter recommended results, determining which search results your users see."
+        ]
+      },
+      {
+        "title": "Configure advanced autocomplete \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-advanced-autocomplete",
+        "source_id": "site-docs-reference",
+        "final_score": 87,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before reading this page, become familiar with Vertex AI Search's basic autocomplete.",
+          "This page describes Vertex AI Search's advanced autocomplete feature.",
+          "Key features of advanced autocomplete The key features of advanced autocomplete that distinguish it from the basic autocomplete are as follows: Blended search: Advanced autocomplete can be used with blended search apps , those are custom search apps that are connected to more than one data store."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gmail.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-field-settings",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-advanced-autocomplete"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-field-settings",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-advanced-autocomplete"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-field-settings",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-advanced-autocomplete"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:34.788Z",
+  "source_step08_card": "data/step-08/current/products/workflows/card.json",
+  "product_name": "Workflows",
+  "product_slug": "workflows",
+  "feature_name": "Invocation of internal-ingress Cloud Functions and Cloud Run",
+  "feature_slug": "invocation-of-internal-ingress-cloud-functions-and-cloud-run",
+  "summary": "Workflows can invoke Cloud Functions and Cloud Run services that restrict ingress to internal traffic.",
+  "extended_definition": "Workflows can invoke Cloud Functions and Cloud Run services that restrict ingress to internal traffic.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workflows/docs/authenticate-from-workflow",
+      "https://docs.cloud.google.com/workflows/docs/calling-run-functions",
+      "https://docs.cloud.google.com/workflows/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Invoke Cloud Run functions or Cloud Run \\_|\\_ Workflows \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/calling-run-functions",
+        "source_id": "site-docs-root-2",
+        "final_score": 152,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Invoke services that are restricted to internal ingress Workflows can invoke Cloud Run functions or Cloud Run services in the same Google Cloud project that have ingress restricted to internal traffic.",
+          "Invoke Cloud Run functions In Cloud Run functions, invocation permissions are available by managing the underlying Cloud Run service.",
+          "In this example, a request is sent to invoke a Cloud Run function: YAML - step A : call : http.get args : url : https://us-central1-project.cloudfunctions.net/functionA query : firstNumber : 4 secondNumber : 6 operation : sum auth : type : OIDC audience : OIDC AUDIENCE JSON [ { \"step A\" : { \"call\" : \"http.get\" , \"args\" : { \"url\" : \"https://us-central1-project.cloudfunctions.net/functionA\" , \"query\" : { \"firstNumber\" : 4 , \"secondNumber\" : 6 , \"operation\" : \"sum\" }, \"auth\" : { \"type\" : \"OIDC\" , \"audience\" : \" OIDC AUDIENCE \" } } } } ] The audience parameter can be used to specify the OIDC audience for the token."
+        ]
+      },
+      {
+        "title": "\"Make authenticated requests from a workflow \\_|\\_ Workflows \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/authenticate-from-workflow",
+        "source_id": "site-docs-root-2",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note that it's possible for Workflows to invoke Cloud Run functions or Cloud Run services that have ingress restricted to internal traffic.",
+          "In this example, a request is sent to invoke a Cloud Run function: YAML - step A : call : http.get args : url : https://us-central1-project.cloudfunctions.net/functionA query : firstNumber : 4 secondNumber : 6 operation : sum auth : type : OIDC audience : OIDC AUDIENCE JSON [ { \"step A\" : { \"call\" : \"http.get\" , \"args\" : { \"url\" : \"https://us-central1-project.cloudfunctions.net/functionA\" , \"query\" : { \"firstNumber\" : 4 , \"secondNumber\" : 6 , \"operation\" : \"sum\" }, \"auth\" : { \"type\" : \"OIDC\" , \"audience\" : \" OIDC AUDIENCE \" } } } } ] The audience key is optional, but can be used to specify the OIDC audience for the token.",
+          "For more information, see Invoke Cloud Run functions or Cloud Run ."
+        ]
+      },
+      {
+        "title": "Workflows overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, you can invoke a Google Cloud service such as Cloud Run functions or Cloud Run through an HTTP request.",
+          "For details, see Make an HTTP request and Invoke Cloud Run functions or Cloud Run .",
+          "You can execute a workflow using the client libraries, in the Google Cloud console, using the Google Cloud CLI, or by sending an HTTP POST request to the workflow's invocation URL using the Workflows REST API."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudfunctions.invoker",
+      "http.get",
+      "project.cloudfunctions.net"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudfunctions.invoker"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/calling-run-functions",
+        "https://docs.cloud.google.com/workflows/docs/authenticate-from-workflow",
+        "https://docs.cloud.google.com/workflows/docs/overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/calling-run-functions",
+        "https://docs.cloud.google.com/workflows/docs/authenticate-from-workflow",
+        "https://docs.cloud.google.com/workflows/docs/overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/calling-run-functions",
+        "https://docs.cloud.google.com/workflows/docs/authenticate-from-workflow",
+        "https://docs.cloud.google.com/workflows/docs/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/calling-run-functions",
+        "https://docs.cloud.google.com/workflows/docs/authenticate-from-workflow",
+        "https://docs.cloud.google.com/workflows/docs/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/calling-run-functions",
+        "https://docs.cloud.google.com/workflows/docs/authenticate-from-workflow",
+        "https://docs.cloud.google.com/workflows/docs/overview"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/calling-run-functions",
+        "https://docs.cloud.google.com/workflows/docs/authenticate-from-workflow",
+        "https://docs.cloud.google.com/workflows/docs/overview"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Prefix-Aware Routing",
+  "feature_slug": "prefix-aware-routing",
+  "summary": "Prefix-Aware Routing sends requests with shared prefixes to the same model replica to improve cache hits and latency.",
+  "extended_definition": "Prefix-Aware Routing sends requests with shared prefixes to the same model replica to improve cache hits and latency.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About GKE Inference Gateway \\_|\\_ GKE networking \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "source_id": "site-docs-reference-2",
+        "final_score": 157,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This enables Prefix-Cache Aware Routing , a key feature that sends requests with shared context, identified by analyzing the request body, to the same model replica by maximizing cache hits.",
+          "It monitors server load and availability, then makes optimal routing decisions by calculating a score for each server combining a number of optimization heuristics: Prefix cache aware routing : GKE Inference Gateway tracks available prefix cache indexes on each model server, and gives a higher score to a server with a longer prefix cache match.",
+          "Model-aware routing : routes inference requests based on the model names defined in the OpenAI API specifications within your GKE cluster."
+        ]
+      },
+      {
+        "title": "\"About custom ComputeClasses \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "source_id": "site-docs-reference-2",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "These system labels have one of the following prefixes in the label key: k8s.io cloud.google.com gke.io node.kubernetes.io/instance-type In GKE version 1.32.3-gke.1499000 and later, you can deploy workloads that use a node selector to select system labels and a ComputeClass at the same time.",
+          "When you use this feature, be aware of these considerations: These features apply only to specific reservations in either a single or a shared project.",
+          "If the prioritized instance types aren't available, GKE then falls back to any matching reservations in the specification: apiVersion : cloud.google.com/v1 kind : ComputeClass metadata : name : accelerator-reservations spec : nodePoolAutoCreation : enabled : true priorities : - machineType : a3-highgpu-1g storage : localSSDCount : 2 gpu : type : nvidia-h100-80gb count : 1 reservations : specific : - name : a3-shared-reservation project : reservation-project affinity : Specific - machineType : a3-highgpu-1g storage : localSSDCount : 2 gpu : type : nvidia-h100-80gb count : 1 reservations : affinity : AnyBestEffort whenUnsatisfiable : DoNotScaleUp If you deploy a Pod that uses the accelerator-reservations ComputeClass, GKE first attempts to use the a3-shared-reservation reservation when creating new a3-highgpu-1g instances to run the Pod."
+        ]
+      },
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "Applications protected by the following mechanisms would've reduced or eliminated their exposure: Equal or higher priority DENY firewall rules (MCG sets firewall rules priority to 1000 by default) Service mesh using identity-based authorization Application-level authorization Affected resources 2025-01-23 Update: GKE fleets (or hubs) using MCG in shared VPC service projects are not affected by the issue as firewall rules are not managed from shared VPC service projects.",
+          "Upgrade your Container-Optimized OS node pools to one of the following versions or later: 1.27.5-gke.200 1.28.2-gke.1157000 Upgrade your Ubuntu node pools to one of the following versions or later: 1.25.14-gke.1421000 1.26.9-gke.1437000 1.27.6-gke.1248000 1.28.2-gke.1157000 You can apply patch versions from newer release channels if your cluster runs the same minor version in its own release channel.",
+          "For security purposes, even if you have node auto-upgrade enabled, we recommend that you manually upgrade your cluster and node pools to one of the following GKE versions or later: 1.27.16-gke.1008000 1.28.12-gke.1052000 1.29.7-gke.1008000 1.30.3-gke.1225000 You can apply patch versions from newer release channels if your cluster runs the same minor version in its own release channel."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "gke.1008000",
+      "gke.1052000",
+      "gke.1157000",
+      "gke.1225000",
+      "gke.1248000",
+      "gke.1421000",
+      "gke.1437000",
+      "gke.1499000",
+      "gke.1600",
+      "gke.200",
+      "gke.2000",
+      "gke.6100",
+      "gke.io",
+      "k8s.io",
+      "node.kubernetes.io",
+      "reservations.affinity",
+      "reservations.specific.name"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    }
+  ]
+}

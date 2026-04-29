@@ -1,0 +1,37 @@
+# BigQuery object architecture
+
+Product: BigQuery
+Feature slug: `bigquery-object-architecture`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+The BigQuery object architecture defines resource objects for tables, groups of tables, and queries.
+
+## Lifecycle
+
+- Latest feature date: 2011-10-01
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- audit
+- auth
+- iam
+- permission
+- policy
+- role
+- security
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam](https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam)
+- [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language)
+- [https://docs.cloud.google.com/bigquery/docs/tables](https://docs.cloud.google.com/bigquery/docs/tables)

@@ -1,0 +1,193 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:10.592Z",
+  "source_step08_card": "data/step-08/current/products/filestore/card.json",
+  "product_name": "Filestore",
+  "product_slug": "filestore",
+  "feature_name": "Filestore availability in europe-central2 region",
+  "feature_slug": "filestore-availability-in-europe-central2-region",
+  "summary": "Filestore is available in the europe-central2 region.",
+  "extended_definition": "Filestore is available in the europe-central2 region.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/filestore/docs/creating-instances",
+      "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+      "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Get instance information \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "source_id": "site-docs-root",
+        "final_score": 208,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to the Filestore instances page Click the instance ID to open the instance details page. gcloud Get information about a Filestore instance by running the instances describe command: gcloud filestore instances describe instance-id --project= project-id --location= location The response to the instances describe command is similar to the following: createTime: '2021-10-11T17:28:23.340943077Z' customPerformanceSupported: true fileShares: - capacityGb: '1024' name: vol1 kmsKeyName: projects/example-project/locations/us-central1/keyRings/example-ring/cryptoKeys/example-key labels: key:val name: projects/yourproject/locations/us-central1/instances/nfs-server networks: - ipAddresses: - 10.0.0.2 network: default reservedIpRange: 10.0.0.0/26 performanceConfig: iopsPerTb: maxIopsPerTb: '17000' performanceLimits: maxIops: '17000' maxReadIops: '17000' maxReadThroughputBps: '417792000' maxWriteIops: '5100' maxWriteThroughputBps: '139264000' state: READY tier: REGIONAL These fields represent the following values: createTime : The time the instance was created, in RFC 3339 format. fileShares : capacityGb : The size of the Filestore file share in binary gigabytes ( GB ), where 1 GB = 1024 3 bytes. name : The name of the Filestore file share.",
+          "INSTANCE NAME ZONE TIER CAPACITY GB FILE SHARE NAME IP ADDRESS STATE CREATE TIME nfs-loc europe-west1-b BASIC HDD 1024 nfs1 10.0.5.2 READY 2017-10-09T22:11:28 nfs3 us-central1-c BASIC HDD 1024 acme 10.0.6.2 READY 2017-11-06T09:37:18 Example The following command lists the Filestore instances in project myproject : gcloud filestore instances list --project=myproject REST API Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header.",
+          "List the mount points for an instance You can list all mount points where a Filestore instance is mounted by running: sudo showmount -a INSTANCE IP Example The following command lists all mount points for a Filestore instance with the IP address 10.77.67.226 : sudo showmount -a 10.77.67.226 The response looks similar to the following: All mount points on 10 .77.67.226: 10 .128.0.1:/fileshare 10 .128.0.2:/fileshare 10 .128.0.3:/fileshare Get the number of mount points for an instance You can get the total number of mount points for a Filestore instance by running: sudo showmount -a INSTANCE IP --no-headers wc -l Example The following command displays the number of mount points for an instance with the IP address 10.77.67.226 : sudo showmount -a 10.77.67.226 --no-headers wc -l What's next Create another instance ."
+        ]
+      },
+      {
+        "title": "Monitoring instances and quota \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "source_id": "site-docs-root",
+        "final_score": 199,
+        "relevance": "",
+        "evidence_snippets": [
+          "Select an available metric to view: Metric Description Basic tiers Regional, zonal, and enterprise tiers Average read latency The average time a read operation takes (in milliseconds). ✓ Average write latency The average time a write operation takes (in milliseconds). ✓ Bytes written Number of bytes written. ✓ ✓ Bytes read Number of bytes read from persistent storage.",
+          "If the Filestore instance caches the data, some write operations are not reflected as disk writes. ✓ ✓ Metadata operations count Number of disk metadata operations. ✓ Free bytes Number of free disk bytes. ✓ ✓ Free disk space percent Percentage of free disk bytes. ✓ ✓ Free raw capacity percent Free raw capacity as a percentage of total space. ✓ Procedure call count Returns the same information as the nfsstat -s command. ✓ Snapshots used bytes The amount of space used for storing snapshots, measured in bytes. ✓ Time (in milliseconds) spent on read operations Time spent on disk reads. ✓ Time (in milliseconds) spent on write operations Time spent on disk writes. ✓ Used bytes Number of used disk bytes. ✓ ✓ Used space percent Percentage of used disk bytes. ✓ ✓ Memory-cached operations only occur in basic tier instances.",
+          "Add a Filestore metric chart to a Cloud Monitoring dashboard To see Filestore performance metrics in a Cloud Monitoring dashboard, follow these steps: In the Google Cloud console, go to the leaderboard Metrics explorer page: Go to Metrics explorer If you use the search bar to find this page, then select the result whose subheading is Monitoring ."
+        ]
+      },
+      {
+        "title": "\"Class CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub (1.89.0)\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+        "source_id": "site-java-reference",
+        "final_score": 195,
+        "relevance": "",
+        "evidence_snippets": [
+          "The file.googleapis.com service implements the Filestore API and defines the following resource model for managing instances: The service works with a collection of cloud projects, named: /projects/ Each project has a collection of available locations, named: /locations/ Each location has a collection of instances and backups, named: /instances/ and /backups/ respectively.",
+          "As such, Filestore instances are resources of the form: /projects/{project number}/locations/{location id}/instances/{instance id} and backups are resources of the form: /projects/{project number}/locations/{location id}/backup/{backup id} Note that location id must be a Google Cloud zone for instances, but a Google Cloud region for backups; for example: projects/12345/locations/us-central1-c/instances/my-filestore projects/12345/locations/us-central1/backups/my-backup Inheritance java.lang.Object > io.grpc.stub.AbstractStub > io.grpc.stub.AbstractBlockingStub > CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub Inherited Members io.grpc.stub.AbstractBlockingStub.<T>newStub(io.grpc.stub.AbstractStub.StubFactory<T>,io.grpc.Channel) io.grpc.stub.AbstractBlockingStub.<T>newStub(io.grpc.stub.AbstractStub.StubFactory<T>,io.grpc.Channel,io.grpc.CallOptions) io.grpc.stub.AbstractStub.<T>withOption(io.grpc.CallOptions.Key<T>,T) io.grpc.stub.AbstractStub.build(io.grpc.Channel,io.grpc.CallOptions) io.grpc.stub.AbstractStub.getCallOptions() io.grpc.stub.AbstractStub.getChannel() io.grpc.stub.AbstractStub.withCallCredentials(io.grpc.CallCredentials) io.grpc.stub.AbstractStub.withChannel(io.grpc.Channel) io.grpc.stub.AbstractStub.withCompression(java.lang.String) io.grpc.stub.AbstractStub.withDeadline(io.grpc.Deadline) io.grpc.stub.AbstractStub.withDeadlineAfter(java.time.Duration) io.grpc.stub.AbstractStub.withDeadlineAfter(long,java.util.concurrent.TimeUnit) io.grpc.stub.AbstractStub.withExecutor(java.util.concurrent.Executor) io.grpc.stub.AbstractStub.withInterceptors(io.grpc.ClientInterceptor...) io.grpc.stub.AbstractStub.withMaxInboundMessageSize(int) io.grpc.stub.AbstractStub.withMaxOutboundMessageSize(int) io.grpc.stub.AbstractStub.withOnReadyThreshold(int) io.grpc.stub.AbstractStub.withWaitForReady() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods build(Channel channel, CallOptions callOptions) protected CloudFilestoreManagerGrpc .",
+          "1.89.0 (latest) 1.88.0 1.86.0 1.84.0 1.83.0 1.82.0 1.81.0 1.79.0 1.77.0 1.76.0 1.75.0 1.74.0 1.73.0 1.71.0 1.69.0 1.68.0 1.65.0 1.64.0 1.63.0 1.61.0 1.60.0 1.59.0 1.58.0 1.57.0 1.56.0 1.55.0 1.54.0 1.53.0 1.52.0 1.50.0 1.49.0 1.48.0 1.47.0 1.46.0 1.45.0 1.44.0 1.43.0 1.42.0 1.41.0 1.40.0 1.38.0 1.37.0 1.36.0 1.35.0 1.34.0 1.33.0 1.32.0 1.31.0 1.30.0 1.29.0 1.28.0 1.25.0 1.24.0 1.23.0 1.22.0 1.21.0 1.20.0 1.19.0 1.18.0 1.17.0 1.16.0 1.15.0 1.14.0 1.13.0 1.12.0 1.10.0 1.9.0 1.8.0 1.7.0 1.6.0 1.5.0 1.2.0 public static final class CloudFilestoreManagerGrpc ."
+        ]
+      },
+      {
+        "title": "Create an instance \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "source_id": "site-docs-root",
+        "final_score": 193,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table summarizes capabilities available by service tier: Capabilities of Filestore service tiers Capability Basic HDD and Basic SSD Zonal Regional Enterprise Capacity 1 TiB to 63.9 TiB 1 TiB to 100 TiB 100 GiB or 1 TiB to 100 TiB 1 TiB to 10 TiB Scalability Basic HDD (1 TiB to 63.9 TiB) : Scales up in increments of 1 GiB Basic SSD (2.5 TiB to 63.9 TiB) : Scales up only in increments of 1 GiB Zonal (1 TiB to 9.75 TiB) : Scales up or down in increments of 256 GiB Zonal (10 TiB to 100 TiB) : Scales up or down in increments of 2.5 TiB Regional Depending on the access to the small instances feature , you can use one of the following options: Users with access to small instances feature: 100 GiB to 10,239 GiB .",
+          "The following table shows the instance sizes available for each tier: Tier Minimum size Maximum size Incremental step size Zonal 1 TiB 9.75 TiB 256 GiB Zonal 10 TiB 100 TiB 2.5 TiB Regional 100 GiB or 1 TiB 10,239 GiB or 9.75 TiB 1 GiB or 256 GiB Regional 10 TiB 100 TiB 2.5 TiB Basic HDD 1 TiB 63.9 TiB 1 GiB Basic SSD 2.5 TiB 63.9 TiB 1 GiB Enterprise 1 TiB 10 TiB 256 GiB Depending on the access to the small capacity instances feature, the lower capacity range for Filestore regional instances can be either 100 GiB to 10,239 GiB or 1 TiB to 9.75 TiB.",
+          "A justification for the deletion protection setting is provided. gcloud filestore instances create render1 \\ --project=myproject \\ --region=us-central1 \\ --tier=REGIONAL \\ --performance=max-iops-per-tb=17000 \\ --network=name=\"default\",reserved-ip-range=\"10.0.7.0/29\" \\ --flags-file=nfs-export-options.json \\ --deletion-protection \\ --deletion-protection-reason=\"All genomics data must adhere to current organization policies.\" nfs-export-options.json file contents: { \"--file-share\": { \"capacity\": \"2048\", \"name\": \"my vol\", \"nfs-export-options\": [ { \"access-mode\": \"READ WRITE\", \"ip-ranges\": [ \"10.0.0.0/29\", \"10.2.0.0/29\" ], \"squash-mode\": \"ROOT SQUASH\", \"anon uid\": 1003, \"anon gid\": 1003 }, { \"access-mode\": \"READ ONLY\", \"ip-ranges\": [ \"192.168.0.0/26\" ], \"squash-mode\": \"NO ROOT SQUASH\" } ] } } REST API Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListInstancesFixedSizeCollection",
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListInstancesPage",
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListInstancesPagedResponse",
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+      "file.googleapis.com",
+      "io.grpc.CallCredentials",
+      "io.grpc.CallOptions",
+      "io.grpc.CallOptions.Key",
+      "io.grpc.Channel",
+      "io.grpc.ClientInterceptor",
+      "io.grpc.Deadline",
+      "io.grpc.stub.AbstractBlockingStub",
+      "io.grpc.stub.AbstractStub",
+      "io.grpc.stub.AbstractStub.build",
+      "io.grpc.stub.AbstractStub.getCallOptions",
+      "io.grpc.stub.AbstractStub.getChannel",
+      "io.grpc.stub.AbstractStub.StubFactory",
+      "io.grpc.stub.AbstractStub.withCallCredentials",
+      "io.grpc.stub.AbstractStub.withChannel",
+      "io.grpc.stub.AbstractStub.withCompression",
+      "io.grpc.stub.AbstractStub.withDeadline",
+      "io.grpc.stub.AbstractStub.withDeadlineAfter",
+      "io.grpc.stub.AbstractStub.withExecutor",
+      "io.grpc.stub.AbstractStub.withInterceptors",
+      "io.grpc.stub.AbstractStub.withMaxInboundMessageSize",
+      "io.grpc.stub.AbstractStub.withMaxOutboundMessageSize",
+      "io.grpc.stub.AbstractStub.withOnReadyThreshold",
+      "io.grpc.stub.AbstractStub.withWaitForReady",
+      "java.lang.Object",
+      "java.lang.String",
+      "java.time.Duration",
+      "java.util.concurrent.Executor",
+      "java.util.concurrent.TimeUnit",
+      "options.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    }
+  ]
+}

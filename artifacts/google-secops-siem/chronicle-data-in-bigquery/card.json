@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.987Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "Chronicle Data in BigQuery",
+  "feature_slug": "chronicle-data-in-bigquery",
+  "summary": "Chronicle Data in BigQuery now stores the events table as Parquet files in Google Cloud Storage to improve export flexibility.",
+  "extended_definition": "Chronicle Data in BigQuery now stores the events table as Parquet files in Google Cloud Storage to improve export flexibility.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+      "https://docs.cloud.google.com/chronicle/docs/deprecations",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, if you have a database called suspicious with a column of IP addresses you know are problematic, you can reference that database in Search instead of manually entering individual IP addresses in Search: events: $e.principal.ip in %susupicious.ip You can narrow your results by searching for specific metadata in addition to IP addresses, for example you might be specifically concerned with changes to user resources: events: $e.metadata.event type = \"USER RESOURCE UPDATE CONTENT\" $e.principal.ip in %susupicious.ip You can narrow a search against interrelated UDM fields and match against multiple data table columns.",
+          "It then matches those events against the hostnames column and the ip column in the badApps data table. events: $e.metadata.event type = \"NETWORK CONNECTION\" $e.security result.action = \"ALLOW\" $e.target.asset.asset id = $assetid // Event hostname matches at least one value in table column hostname. $e.target.hostname in %badApps.hostname // Event IP matches at least one value in table column ip. $e.target.ip in %badApps.ip For more information, see Use data tables .",
+          "Click an entity to display the Entity context dialog, which can include the following items: Asset name First time seen Last time seen IP addresses MAC addresses Number of alerts Highest alert count by rule Alerts-over-time bar graph Open Alerts & IOCs link View in Alerts Tab link Use the Pivot Table to analyze events The Pivot Table lets you analyze events using expressions and functions against the results from the search."
+        ]
+      },
+      {
+        "title": "\"Use the Feed Management UI \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table outlines the different file sizes that Google SecOps feeds transformation supports: Operation Input type Recommended size Expected duration Max size Data Modeling CSV 10 GB Data Modeling CSV 30 min 10 GB Data Modeling CSV TBD TBD 2 GB Data Modeling XML / JSON 2 GB Data Modeling XLS / XLSX 1 min 50 MB Merge Files Any Varies on number of files 100 GB Decompress Files Non-ZIP Varies on number of files 10 GB (uncompressed) Decompress Files ZIP - Varies on number of files 4 GB (uncompressed) Log line limits and delimiters When ingesting text-based logs (JSON, CSV, or Syslog), ensure your data adheres to these specific ingestion limits: Maximum Line Size : A single log line cannot exceed 4MB .",
+          "Sample egress rule \"egressPolicies\" : [ { \"egressFrom\": { \"identities\": [ \"serviceAccount:service-{replace with project id}@gs-project-accounts.iam.gserviceaccount.com\" ] } , \"egressTo\" : { \"operations\" : [ { \"methodSelectors\": [ { \"method\": \" \" } ] , \"serviceName\" : \"pubsub.googleapis.com\" } ] , \"resources\" : [ \" \" ] } , \"title\" : \"GCS pubsub access\" } , { \"egressFrom\" : { \"identities\" : [ \"serviceAccount:project-{replace with project id}@storage-transfer-service.iam.gserviceaccount.com\" ] } , \"egressTo\" : { \"operations\" : [ { \"methodSelectors\": [ { \"method\": \" \" } ] , \"serviceName\" : \"pubsub.googleapis.com\" } ] , \"resources\" : [ \" \" ] } , \"title\" : \"STS pubsub\" } ] Enable STS access for Amazon S3 and Azure Storage The STS is used by the following Google Cloud Storage feeds to transfer data from Amazon S3 and Azure Storage blobstores to Google SecOps: Amazon S3 (V2) Amazon SQS (V2) Azure Blob Storage (V2) STS sends data transfer requests to the Amazon S3 and Azure storage services from a set of defined STS IP address ranges.",
+          "Send multiple events in a single webhook request The following code sample shows how to format a single request body with multiple, newline-separated JSON objects after the curl --location item: --header 'Content-Type: application/json' \\ --header 'X-goog-api-key: API KEY' \\ --header 'X-Webhook-Access-Key: SECRET' \\ --data '{\"principal\": {\"asset id\": \"asset 123\"}, \"metadata\": {\"event type\": \"GENERIC EVENT\", \"product name\": \"Product Acme\"}} {\"principal\": {\"asset id\": \"asset 123\"}, \"metadata\": {\"event type\": \"GENERIC EVENT\", \"product name\": \"Product Acme\"}}' Create an HTTPS webhook feed In the Google SecOps menu, select Settings , and then click Feeds ."
+        ]
+      },
+      {
+        "title": "\"Feature deprecations \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "source_id": "site-api-reference",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "Chronicle BigQuery udm events table July 01, 2023 August 01, 2023 On or after July 1, 2023, the existing udm events table in Chronicle-managed BigQuery projects will be fully replaced with a new table named events .",
+          "BigQuery data lake December 31, 2024 April 30, 2025 The shutdown of managed BigQuery resources and API keys associated with the chronicle-tla Google Cloud project has been extended to April 30, 2025.",
+          "Customers issuing queries against the udm events table through Cloud Console, API, or directly connecting to BQ should fully migrate queries to the new table by July 1 to avoid interruption."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accounts.iam.gserviceaccount.com",
+      "e.metadata.event",
+      "e.principal.ip",
+      "e.security",
+      "e.target.asset.asset",
+      "e.target.hostname",
+      "e.target.ip",
+      "pubsub.googleapis.com",
+      "result.action",
+      "service.iam.gserviceaccount.com",
+      "susupicious.ip"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    }
+  ]
+}

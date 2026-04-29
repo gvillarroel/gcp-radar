@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:04.393Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "SparkR job support in Dataproc Workflows",
+  "feature_slug": "sparkr-job-support-in-dataproc-workflows",
+  "summary": "Dataproc Workflows support SparkR jobs as a workflow job type.",
+  "extended_definition": "Dataproc Workflows support SparkR jobs as a workflow job type.",
+  "lifecycle": {
+    "latest_feature_date": "2020-04-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview",
+      "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/workflow-schedule-solutions",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Overview of Managed Service for Apache Spark Workflow Templates \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview",
+        "source_id": "site-docs-root",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Inline Workflows can be instantiated inline using the gcloud command with workflow template YAML files or by calling the Managed Service for Apache Spark InstantiateInline API (see Using inline Dataproc workflows ).",
+          "Workflows encapsulate frequently used cluster configurations and jobs.",
+          "Workflow Templates replace the steps involved in a typical flow, which include: creating the cluster submitting jobs polling deleting the cluster Workflow Templates use a single token to track progress from cluster creation to deletion, and automate error handling and recovery."
+        ]
+      },
+      {
+        "title": "\"Workflow scheduling solutions \\_|\\_ Managed Service for Apache Spark \\_\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/workflow-schedule-solutions",
+        "source_id": "site-docs-root",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dataproc Workflow Templates Managed Service for Apache Spark Workflow templates provide a flexible and easy-to-use mechanism for managing and executing workflows.",
+          "Advantages: Supports time- and event-based scheduling Simplified calls to Managed Service for Apache Spark using Operators Dynamically generate workflows and workflow parameters Build data flows that span multiple Google Cloud products Tutorial: Workflow using Cloud Composer Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Minimal coding required using Managed Service for Apache Spark Go , Node.js , or Python client libraries Dynamically generate workflows and workflow parameters Tutorial: Workflow using Cloud Run functions Cloud Composer Cloud Composer is a managed Apache Airflow service you can use to create, schedule, monitor, and manage workflows."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.dataproc.v1 (4.85.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "source_id": "site-java-reference",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "Currently started workflows will remain running. com. google. cloud. dataproc. v1.",
+          "Currently started workflows will remain running. com. google. cloud. dataproc. v1.",
+          "Project Location Workflow Template Builder Builder for projects/{project}/locations/{location}/workflowTemplates/{workflow template}. com. google. cloud. dataproc. v1."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dataproc.v1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/workflow-schedule-solutions",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+      ]
+    }
+  ]
+}

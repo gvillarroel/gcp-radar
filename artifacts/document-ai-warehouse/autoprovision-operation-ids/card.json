@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:08.783Z",
+  "source_step08_card": "data/step-08/current/products/document-ai-warehouse/card.json",
+  "product_name": "Document AI Warehouse",
+  "product_slug": "document-ai-warehouse",
+  "feature_name": "AutoProvision operation IDs",
+  "feature_slug": "autoprovision-operation-ids",
+  "summary": "Returns an operation ID for AutoProvision operations that complete immediately.",
+  "extended_definition": "Returns an operation ID for AutoProvision operations that complete immediately.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/error-messages",
+      "https://docs.cloud.google.com/document-ai/docs/reference/rest",
+      "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Document AI API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/reference/rest",
+        "source_id": "site-docs-root",
+        "final_score": 73,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1beta3.projects.locations.operations Methods cancel POST /v1beta3/{name}:cancel Starts asynchronous cancellation on a long-running operation. get GET /v1beta3/{name} Gets the latest state of a long-running operation. list GET /v1beta3/{name} Lists service operations that match the specified filter in the request.",
+          "REST Resource: v1.projects.locations.operations Methods cancel POST /v1/{name}:cancel Starts asynchronous cancellation on a long-running operation. get GET /v1/{name} Gets the latest state of a long-running operation. list GET /v1/{name} Lists service operations that match the specified filter in the request.",
+          "REST Resource: v1.projects.operations Methods get GET /v1/{name} Gets the latest state of a long-running operation."
+        ]
+      },
+      {
+        "title": "Error messages \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/error-messages",
+        "source_id": "site-docs-root",
+        "final_score": 73,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To diagnose this error, try opening the service account key file from the folder from which you're attempting to call the Document AI API. cat $GOOGLE APPLICATION CREDENTIALS Error writing final output If you receive a message like the following when receiving the results of a batch process request: { \"name\": \"projects/ project-name /operations/ operation-id \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.document.v1beta1.OperationMetadata\", \"state\": \"SUCCEEDED\", \"createTime\": \"2019-09-19T02:02:15.885267760Z\", \"updateTime\": \"2019-09-19T02:02:31.896425001Z\" }, \"done\": true, \"error\": { \"code\": 5, \"message\": \"Error writing final output to: gs:// bucket-name /filename.json\" } } Your service account may not have the correct permissions to create objects in your Cloud Storage bucket.",
+          "Please select an empty folder.\" details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : \"DATASET LOCATION NOT EMPTY\" domain : \"documentai.googleapis.com\" } } Has Blocking Operation Error When there are other operations running that are blocking the required operation. message : \"The operation cannot be performed due to an ongoing 'EXAMPLE OPERATION TYPE' blocking operation.",
+          "OperationNotComplete ... google.api core.exceptions.RetryError : Deadline of 0.0 s exceeded while calling target function , last exception : ... concurrent.futures. base.TimeoutError : Operation did not complete within the designated timeout."
+        ]
+      },
+      {
+        "title": "Document AI Warehouse \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document",
+        "source_id": "site-api-reference",
+        "final_score": 60,
+        "relevance": "",
+        "evidence_snippets": [
+          "This can affect formatting in certain countries, but is not critical to the correctness of the data and will never affect any validation or other non-formatting related operations.",
+          "Used for referencing/aligning, removal and replacement operations.",
+          "Creating an address only containing a regionCode and addressLines, and then geocoding is the recommended way to handle completely unstructured addresses (as opposed to guessing which parts of the address should be localities or administrative areas). recipients[] string Optional."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "base.TimeoutError",
+      "concurrent.futures",
+      "core.exceptions.RetryError",
+      "documentai.googleapis.com",
+      "filename.json",
+      "type.googleapis.com",
+      "v1.projects.locations.operations",
+      "v1.projects.operations",
+      "v1beta3.projects.locations.operations",
+      "v1beta3.projects.locations.processors.dataset"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/error-messages",
+        "https://docs.cloud.google.com/document-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/error-messages",
+        "https://docs.cloud.google.com/document-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/error-messages",
+        "https://docs.cloud.google.com/document-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:21.989Z",
+  "source_step08_card": "data/step-08/current/products/managed-cloud-service-mesh/card.json",
+  "product_name": "Managed Cloud Service Mesh",
+  "product_slug": "managed-cloud-service-mesh",
+  "feature_name": "Cluster-local traffic enforcement",
+  "feature_slug": "cluster-local-traffic-enforcement",
+  "summary": "Lets you enforce cluster-local traffic for an individual service, a namespace, or the entire mesh; Lets you enforce cluster-local traffic for an individual service, a namespace, or the entire mesh.",
+  "extended_definition": "Lets you enforce cluster-local traffic for an individual service, a namespace, or the entire mesh; Lets you enforce cluster-local traffic for an individual service, a namespace, or the entire mesh.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+      "https://docs.cloud.google.com/service-mesh/v1.20/docs/by-example/mtls",
+      "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters",
+      "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Running distributed services on GKE private clusters using Cloud Service\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters",
+        "source_id": "site-docs-root",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This creates a Gateway in the asm-ingress namespace and VirtualService in the bank-of-anthos namespaces for the frontend service, which lets you ingress traffic to the frontend service.",
+          "Running distributed services makes cluster lifecycle management easier because you can bring clusters down for maintenance or upgrades while other clusters service traffic.",
+          "Doing this lets you see that the sidecar proxies see two Pods for every service, with one Pod running in each cluster."
+        ]
+      },
+      {
+        "title": "\"Using Cloud Service Mesh egress gateways on GKE clusters: Tutorial \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a Sidecar resource for the team-y namespace: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : Sidecar metadata : name : default namespace : team-y spec : outboundTrafficPolicy : mode : REGISTRY ONLY egress : - hosts : - 'istio-egress/ ' - 'team-y/ ' EOF Deploy the test application to the team-y namespace: kubectl -n team-y create -f ./test.yaml Register a second external host and export it to the team-x and the team-y namespace: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : ServiceEntry metadata : name : httpbin-org-ext namespace : istio-egress labels : Show this service and its telemetry in the Cloud Service Mesh page of the Google Cloud console service.istio.io/canonical-name : httpbin.org spec : hosts : - httpbin.org ports : - number : 80 name : http protocol : HTTP - number : 443 name : tls protocol : TLS resolution : DNS location : MESH EXTERNAL exportTo : - 'istio-egress' - 'team-x' - 'team-y' EOF Create a virtual service to route traffic to httpbin.org through the egress gateway: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : VirtualService metadata : name : httpbin-org-through-egress-gateway namespace : istio-egress spec : hosts : - httpbin.org gateways : - istio-egress/egress-gateway - mesh http : - match : - gateways : - mesh port : 80 route : - destination : host : istio-egressgateway.istio-egress.svc.cluster.local subset : target-egress-gateway-mTLS port : number : 80 weight : 100 - match : - gateways : - istio-egress/egress-gateway port : 80 route : - destination : host : httpbin.org port : number : 80 weight : 100 exportTo : - 'istio-egress' - 'team-x' - 'team-y' EOF Run istioctl analyze to check for configuration errors: ${ ISTIOCTL } analyze -n istio-egress --revision REVISION You see: ✔ No validation issues found when analyzing namespace: istio-egress.",
+          "Connections on port 80 still use mTLS: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1alpha3 kind : DestinationRule metadata : name : target-egress-gateway namespace : istio-egress spec : host : istio-egressgateway.istio-egress.svc.cluster.local subsets : - name : target-egress-gateway-mTLS trafficPolicy : portLevelSettings : - port : number : 80 tls : mode : ISTIO MUTUAL - name : target-egress-gateway-TLS-passthrough EOF Update the virtual service for example.com so that TLS traffic on port 443 is passed through the gateway: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1alpha3 kind : VirtualService metadata : name : example-com-through-egress-gateway namespace : istio-egress spec : hosts : - example.com gateways : - mesh - istio-egress/egress-gateway http : - match : - gateways : - mesh port : 80 route : - destination : host : istio-egressgateway.istio-egress.svc.cluster.local subset : target-egress-gateway-mTLS port : number : 80 - match : - gateways : - istio-egress/egress-gateway port : 80 route : - destination : host : example.com port : number : 443 subset : example-com-originate-TLS weight : 100 tls : - match : - gateways : - mesh port : 443 sniHosts : - example.com route : - destination : host : istio-egressgateway.istio-egress.svc.cluster.local subset : target-egress-gateway-TLS-passthrough port : number : 443 - match : - gateways : - istio-egress/egress-gateway port : 443 sniHosts : - example.com route : - destination : host : example.com port : number : 443 weight : 100 exportTo : - 'istio-egress' - 'team-x' EOF Update the virtual service for httpbin.org so that TLS traffic on port 443 is passed through the gateway: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : VirtualService metadata : name : httpbin-org-through-egress-gateway namespace : istio-egress spec : hosts : - httpbin.org gateways : - istio-egress/egress-gateway - mesh http : - match : - gateways : - mesh port : 80 route : - destination : host : istio-egressgateway.istio-egress.svc.cluster.local subset : target-egress-gateway-mTLS port : number : 80 weight : 100 - match : - gateways : - istio-egress/egress-gateway port : 80 route : - destination : host : httpbin.org port : number : 80 weight : 100 tls : - match : - gateways : - mesh port : 443 sniHosts : - httpbin.org route : - destination : host : istio-egressgateway.istio-egress.svc.cluster.local subset : target-egress-gateway-TLS-passthrough port : number : 443 - match : - gateways : - istio-egress/egress-gateway port : 443 sniHosts : - httpbin.org route : - destination : host : httpbin.org port : number : 443 weight : 100 exportTo : - 'istio-egress' - 'team-x' - 'team-y' EOF Add an authorization policy that accepts any kind of traffic sent to port 443 of the egress gateway service.",
+          "The DestinationRule specifies that the gateway originate a TLS connection to example.com. cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : DestinationRule metadata : name : example-com-originate-tls namespace : istio-egress spec : host : example.com subsets : - name : example-com-originate-TLS trafficPolicy : portLevelSettings : - port : number : 443 tls : mode : SIMPLE sni : example.com EOF Update the virtual service for example.com so that requests to port 80 on the gateway are upgraded to TLS on port 443 when they are sent to the destination host: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1alpha3 kind : VirtualService metadata : name : example-com-through-egress-gateway namespace : istio-egress spec : hosts : - example.com gateways : - mesh - istio-egress/egress-gateway http : - match : - gateways : - mesh port : 80 route : - destination : host : istio-egressgateway.istio-egress.svc.cluster.local subset : target-egress-gateway-mTLS port : number : 80 - match : - gateways : - istio-egress/egress-gateway port : 80 route : - destination : host : example.com port : number : 443 subset : example-com-originate-TLS weight : 100 EOF Make several requests to example.com from the test app in the team-x namespace: for i in { 1 ..4 } do kubectl -n team-x exec -it $( kubectl -n team-x get pod -l app = test \\ -o jsonpath ={ .items..metadata.name } ) -c test -- curl -I http://example.com done As before, the requests succeed with 200 OK responses."
+        ]
+      },
+      {
+        "title": "Cloud Service Mesh by example: mTLS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.20/docs/by-example/mtls",
+        "source_id": "site-docs-root",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Because the services are in different namespaces, you need to curl the DNS name of the frontend service. kubectl exec \\ $(kubectl get pod -l app=productcatalogservice -n product-catalog -o jsonpath={.items..metadata.name}) \\ -c istio-proxy -n product-catalog -- \\ curl http://frontend.frontend.svc.cluster.local:80/ -o /dev/null -s -w '%{http code}\\n' Your request succeeds with status 200 , because by default, both TLS and plaintext traffic are accepted.",
+          "Run the following command to curl the frontend service with plain HTTP from another Pod. kubectl exec \\ $(kubectl get pod -l app=productcatalogservice -n product-catalog -o jsonpath={.items..metadata.name}) \\ -c istio-proxy -n product-catalog -- \\ curl http://frontend.frontend.svc.cluster.local:80/ -o /dev/null -s -w '%{http code}\\n' Your request succeeds with status 200 , because by default, both TLS and plaintext traffic are accepted.",
+          "If you want to prevent additional charges, delete the cluster: gcloud container clusters delete CLUSTER NAME \\ --project= PROJECT ID \\ --zone= CLUSTER LOCATION If you want to keep your cluster and remove the Online Boutique sample: Delete the application namespaces: kubectl delete -f online-boutique/kubernetes-manifests/namespaces Expected output: namespace \"ad\" deleted namespace \"cart\" deleted namespace \"checkout\" deleted namespace \"currency\" deleted namespace \"email\" deleted namespace \"frontend\" deleted namespace \"loadgenerator\" deleted namespace \"payment\" deleted namespace \"product-catalog\" deleted namespace \"recommendation\" deleted namespace \"shipping\" deleted Delete the service entries: kubectl delete -f online-boutique/istio-manifests/allow-egress-googleapis.yaml Expected output: serviceentry.networking.istio.io \"allow-egress-googleapis\" deleted serviceentry.networking.istio.io \"allow-egress-google-metadata\" deleted What's next For a general guide on configuring PeerAuthentication policies, see Configuring transport security ."
+        ]
+      },
+      {
+        "title": "\"Automate TLS certificate management for Cloud Service Mesh ingress gateway\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "source_id": "site-docs-root",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In Cloud Shell, delete the project: gcloud projects delete PROJECT ID Delete the resources If you want to keep the Google Cloud project you used in this tutorial, delete the individual resources: In Cloud Shell, unregister the GKE cluster from GKE Hub: gcloud container hub memberships unregister CLUSTER NAME \\ -- gke - cluster ZONE / CLUSTER NAME Delete the GKE cluster: gcloud container clusters delete CLUSTER NAME \\ --zone ZONE --async --quiet Delete the IAM policy bindings on the subordinate CA pool: gcloud privateca pools remove - iam - policy - binding SUBORDINATE CA POOL GATEWAYS \\ --location CA LOCATION \\ --member \"serviceAccount: CAS ISSUER GSA @ PROJECT ID .iam.gserviceaccount.com\" \\ --role roles/privateca.certificateRequester gcloud privateca pools remove - iam - policy - binding SUBORDINATE CA POOL GATEWAYS \\ --location CA LOCATION \\ --member \"serviceAccount: CLIENT VM GSA @ PROJECT ID .iam.gserviceaccount.com\" \\ --role roles/privateca.certificateRequester Disable and schedule deletion of the subordinate CAs and the root CA: gcloud privateca subordinates disable SUBORDINATE CA GATEWAYS \\ --location CA LOCATION \\ --pool SUBORDINATE CA POOL GATEWAYS \\ --quiet gcloud privateca subordinates delete SUBORDINATE CA GATEWAYS \\ --location CA LOCATION \\ --pool SUBORDINATE CA POOL GATEWAYS \\ --ignore-active-certificates \\ --quiet gcloud privateca subordinates disable SUBORDINATE CA SIDECARS \\ --location CA LOCATION \\ --pool SUBORDINATE CA POOL SIDECARS \\ --quiet gcloud privateca subordinates delete SUBORDINATE CA SIDECARS \\ --location CA LOCATION \\ --pool SUBORDINATE CA POOL SIDECARS \\ --ignore-active-certificates \\ --quiet gcloud privateca roots disable ROOT CA \\ --location CA LOCATION \\ --pool ROOT CA POOL \\ --quiet gcloud privateca roots delete ROOT CA \\ --location CA LOCATION \\ --pool ROOT CA POOL \\ --ignore-active-certificates \\ --quiet Delete the IAM policy binding for the CA Service issuer controller Google service account: gcloud iam service - accounts remove - iam - policy - binding \\ CAS ISSUER GSA @ PROJECT ID . iam.gserviceaccount.com \\ -- member \"serviceAccount: PROJECT ID .svc.id.goog[cert-manager/ksa-google-cas-issuer]\" \\ -- role roles / iam . workloadIdentityUser Delete the Google service accounts: gcloud iam service - accounts delete --quiet \\ CAS ISSUER GSA @ PROJECT ID . iam.gserviceaccount.com gcloud iam service - accounts delete --quiet \\ CLIENT VM GSA @ PROJECT ID . iam.gserviceaccount.com Delete the reserved load balancer IP address: gcloud compute addresses delete asm - ingress - gateway - ilb \\ -- region REGION -- quiet Delete the Compute Engine VM instance: gcloud compute instances delete cas-tutorial-client \\ --zone ZONE --quiet What's next Explore other Certificate Authority Service how-to guides .",
+          "Install the CA Service issuer controller in your GKE cluster: kubectl apply --filename ca-service-issuer.yaml Add the Workload Identity Federation for GKE annotation iam.gke.io/gcp-service-account to the Kubernetes service account used by the CA Service issuer controller pods: kubectl annotate serviceaccount ksa - google - cas - issuer --namespace cert-manager \\ \"iam.gke.io/gcp-service-account= CAS ISSUER GSA @ PROJECT ID .iam.gserviceaccount.com\" This annotation informs GKE that the Kubernetes service account can impersonate the Google service account to access Google APIs.",
+          "If you run into other problems with this tutorial, we recommend that you review these documents: CA Service frequently asked questions Troubleshooting Cloud Service Mesh step-by-step Resolving managed Cloud Service Mesh issues Istio operations common problems GKE troubleshooting Troubleshooting Kubernetes clusters Clean up To avoid incurring continuing charges to your Google Cloud account for the resources used in this tutorial, you can either delete the project or delete the individual resources."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backendconfig.yaml",
+      "beta.cloud.google.com",
+      "destinationrule.networking.istio.io",
+      "egress.svc.cluster.local",
+      "egressgateway.istio",
+      "example.com",
+      "frontend.demo.svc.cluster.local",
+      "frontend.frontend.svc.cluster.local",
+      "googleapis.yaml",
+      "httpbin.org",
+      "iam.gke.io",
+      "iam.gserviceaccount.com",
+      "issuer.yaml",
+      "items..metadata.name",
+      "mci.yaml",
+      "mcs.yaml",
+      "metadata.name",
+      "multiclusteringresses.networking.gke.io",
+      "multiclusterservices.networking.gke.io",
+      "networking.gke.io",
+      "networking.istio.io",
+      "peerauthentication.security.istio.io",
+      "privateca.certificateRequester",
+      "security.istio.io",
+      "service.istio.io",
+      "serviceentry.networking.istio.io",
+      "svc.id.goog",
+      "test.yaml",
+      "v1.20",
+      "v1.21",
+      "v1.26"
+    ],
+    "missing_inventory_roles": [
+      "roles/privateca.certificateRequester"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/by-example/mtls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/by-example/mtls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/by-example/mtls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/by-example/mtls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/by-example/mtls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/by-example/mtls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/by-example/mtls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/by-example/mtls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/by-example/mtls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/by-example/mtls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/by-example/mtls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/by-example/mtls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:56.603Z",
+  "source_step08_card": "data/step-08/current/products/cloud-tpu/card.json",
+  "product_name": "Cloud TPU",
+  "product_slug": "cloud-tpu",
+  "feature_name": "Small host VM memory environment utility",
+  "feature_slug": "small-host-vm-memory-environment-utility",
+  "summary": "PyTorch/XLA 1.6 adds a utility for small host VM memory environments on Kaggle and Colab.",
+  "extended_definition": "PyTorch/XLA 1.6 adds a utility for small host VM memory environments on Kaggle and Colab.",
+  "lifecycle": {
+    "latest_feature_date": "2020-08-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/tpu/docs/intro-to-tpu",
+      "https://docs.cloud.google.com/tpu/docs/supported-tpu-versions",
+      "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Introduction to Cloud TPU \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tpu/docs/intro-to-tpu",
+        "source_id": "site-docs-reference",
+        "final_score": 93,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CPUs Quick prototyping that requires maximum flexibility Simple models that don't take long to train Small models with small, effective batch sizes Models that contain many custom TensorFlow operations written in C++ Models that are limited by available I/O or the networking bandwidth of the host system GPUs Models with a significant number of custom PyTorch/JAX operations that must run at least partially on CPUs Models with TensorFlow ops that are not available on Cloud TPU (see the list of available TensorFlow ops ) Medium-to-large models with larger effective batch sizes TPUs Models dominated by matrix computations Models with no custom PyTorch/JAX operations inside the main training loop Models that train for weeks or months Large models with large effective batch sizes Models with ultra-large embeddings common in advanced ranking and recommendation workloads Cloud TPUs are not suited to the following workloads: Linear algebra programs that require frequent branching or contain many element-wise algebra operations Workloads that require high-precision arithmetic Neural network workloads that contain custom operations in the main training loop TPUs in Google Cloud You can use TPUs through Cloud TPU VMs, Google Kubernetes Engine, and Vertex AI.",
+          "The structure of the MXU hardware, a 128x128 systolic array , and the design of TPUs memory subsystem, which prefers dimensions that are multiples of 8, are used by the XLA compiler for tiling efficiency.",
+          "Layout The XLA compiler performs code transformations, including tiling a matrix multiply into smaller blocks, to efficiently execute computations on the matrix unit (MXU)."
+        ]
+      },
+      {
+        "title": "TPU architecture \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "source_id": "site-docs-root",
+        "final_score": 87,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The TPU host then reads the results from the outfeed queue and stores them in the host's memory.",
+          "That means a CPU works with software and memory like this: Note: This animation is designed for conceptual presentation purpose only, and does not reflect the actual behavior of real processors.",
+          "For every calculation in the thousands of ALUs, a GPU must access registers or shared memory to read operands and store the intermediate calculation results."
+        ]
+      },
+      {
+        "title": "TPU software versions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tpu/docs/supported-tpu-versions",
+        "source_id": "site-docs-reference",
+        "final_score": 83,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "TPU software versions for TensorFlow follow a specific naming convention: tpu-vm-tf-x.y.z[-{pod}][-{device api}] x.y.z : Represents the major, minor, and patch versions of TensorFlow. -pod (optional): Indicates that you're using a multi-host TPU slice. -{device api} (optional): Specifies the device API, for example, -pjrt (if you're using the PJRT API ).",
+          "TPU version TPU software version Trillium (v6e) v2-alpha-tpuv6e v5p v2-alpha-tpuv5 v5e v2-alpha-tpuv5-lite v4 and older tpu-ubuntu2204-base For more information about installation and getting started with PyTorch or JAX, see Run a calculation on a Cloud TPU VM using PyTorch and Run a calculation on a Cloud TPU VM using JAX .",
+          "When you create TPU resources, you specify the software version, also called runtime version, which refers to the software environment that is pre-installed on your TPU VM."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "x.y.z"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/intro-to-tpu",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "https://docs.cloud.google.com/tpu/docs/supported-tpu-versions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/intro-to-tpu",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "https://docs.cloud.google.com/tpu/docs/supported-tpu-versions"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/intro-to-tpu",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "https://docs.cloud.google.com/tpu/docs/supported-tpu-versions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/intro-to-tpu",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "https://docs.cloud.google.com/tpu/docs/supported-tpu-versions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/intro-to-tpu",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "https://docs.cloud.google.com/tpu/docs/supported-tpu-versions"
+      ]
+    }
+  ]
+}

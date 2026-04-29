@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.867Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-java/card.json",
+  "product_name": "App Engine flexible environment Java",
+  "product_slug": "app-engine-flexible-environment-java",
+  "feature_name": "App Engine firewall",
+  "feature_slug": "app-engine-firewall",
+  "summary": "App Engine provides firewall controls for managing inbound traffic to applications; App Engine provides firewall controls for managing inbound traffic to applications.",
+  "extended_definition": "App Engine provides firewall controls for managing inbound traffic to applications; App Engine provides firewall controls for managing inbound traffic to applications.",
+  "lifecycle": {
+    "latest_feature_date": "2017-10-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/flexible/application-security",
+      "https://docs.cloud.google.com/appengine/docs/flexible/java/application-security",
+      "https://docs.cloud.google.com/appengine/docs/flexible/java/understanding-firewalls"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Understanding the App Engine firewall \\_|\\_ App Engine flexible environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/java/understanding-firewalls",
+        "source_id": "site-docs-reference-2",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If your ingress controls are set to receive internal-and-cloud-load-balancing traffic, leave the default App Engine firewall rule as is ( allow ), and use Google Cloud Armor web application firewall (WAF) rules .",
+          "Direction of traffic : Ingress Action on match : Allow Source IP ranges : 35.191.0.0/16 and 130.211.0.0/22 Protocols and ports : tcp : 8443 (for legacy health checks) or 10402 (for split health checks) Priority : 1000 Preventing access to cached content The App Engine firewall sits behind mechanisms that cache content, for example web proxies and browsers.",
+          "App Engine flexible example Your app running in the flexible environment has two services: frontend service and backend service , and has a firewall configured to deny traffic by default. frontend service uses Cloud Tasks with App Engine HTTP to send messages to backend service ."
+        ]
+      },
+      {
+        "title": "\"Overview of app security \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/application-security",
+        "source_id": "site-docs-reference",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Ingress controls You can use Ingress controls to restrict inbound traffic to your App Engine app.",
+          "Block abusive IP addresses While Google Cloud has many mechanisms in place to prevent attacks, you can use the App Engine firewall to block traffic to your app from IP addresses that present malicious intent or shield your app from denial of service attacks and similar forms of abuse.",
+          "App Engine firewall The App Engine firewall enables you to control access to your App Engine app through a set of rules that can either allow or deny requests from the specified ranges of IP addresses."
+        ]
+      },
+      {
+        "title": "\"Overview of app security \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/java/application-security",
+        "source_id": "site-docs-reference-2",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Ingress controls You can use Ingress controls to restrict inbound traffic to your App Engine app.",
+          "Block abusive IP addresses While Google Cloud has many mechanisms in place to prevent attacks, you can use the App Engine firewall to block traffic to your app from IP addresses that present malicious intent or shield your app from denial of service attacks and similar forms of abuse.",
+          "App Engine firewall The App Engine firewall enables you to control access to your App Engine app through a set of rules that can either allow or deny requests from the specified ranges of IP addresses."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/java/understanding-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/application-security",
+        "https://docs.cloud.google.com/appengine/docs/flexible/java/application-security"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/java/understanding-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/application-security",
+        "https://docs.cloud.google.com/appengine/docs/flexible/java/application-security"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/java/understanding-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/application-security",
+        "https://docs.cloud.google.com/appengine/docs/flexible/java/application-security"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/java/understanding-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/application-security",
+        "https://docs.cloud.google.com/appengine/docs/flexible/java/application-security"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/java/understanding-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/application-security",
+        "https://docs.cloud.google.com/appengine/docs/flexible/java/application-security"
+      ]
+    }
+  ]
+}

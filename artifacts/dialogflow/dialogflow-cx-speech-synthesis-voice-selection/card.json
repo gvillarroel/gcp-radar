@@ -1,0 +1,119 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:06.489Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Dialogflow CX speech synthesis voice selection",
+  "feature_slug": "dialogflow-cx-speech-synthesis-voice-selection",
+  "summary": "Dialogflow CX provides a setting for choosing the speech synthesis voice.",
+  "extended_definition": "Dialogflow CX provides a setting for choosing the speech synthesis voice.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+      "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "source_id": "site-docs-root",
+        "final_score": 188,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Speech and IVR settings The following speech and IVR settings are available: Text-to-Speech Voice selection Note: SSML Tags are not supported for Chirp3-HD voices.",
+          "Speech and IVR Speech options Text-to-Speech link Languages and voices link You can select the language and voice used for speech synthesis.",
+          "You can select the language and voice used for speech synthesis."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.dialogflow.v2 (4.94.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "source_id": "site-java-reference",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Voice Selection Params Description of which voice to use for speech synthesis. com. google. cloud. dialogflow. v2.",
+          "Builder Description of which voice to use for speech synthesis. com. google. cloud. dialogflow. v2.",
+          "If this audio config is supplied in a request, it overrides all existing text-to-speech settings applied to the agent. com. google. cloud. dialogflow. v2."
+        ]
+      },
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings",
+        "source_id": "site-iam-reference",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "These are the settings for speech recognition and speech synthesis.",
+          "The following are included in the export of an agent: Intents Entities Most agent settings (see list below for excluded settings) The following are not included in the export of an agent and are not overwritten when importing or restoring: Agent name Inline editor files package.json and index.json Integration settings Edition Knowledge bases and knowledge documents Speech settings Interaction logs Maximum agent size (unzipped content) for agent import/restore should not exceed 50 MB.",
+          "To access these settings: Go to the Dialogflow ES console Select your agent near the top of the left sidebar menu Click the settings settings button next to the agent name Note: If you're working on a small screen, and the sidebar menu is hidden, click the menu menu button in the upper left corner."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2",
+      "dialogflow.agents.create",
+      "index.json",
+      "package.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings"
+      ]
+    }
+  ]
+}

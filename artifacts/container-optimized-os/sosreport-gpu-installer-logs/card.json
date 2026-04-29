@@ -1,0 +1,91 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:02.340Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os",
+  "feature_name": "sosreport GPU Installer logs",
+  "feature_slug": "sosreport-gpu-installer-logs",
+  "summary": "Sosreport can include GPU Installer logs for diagnostics; Sosreport now includes GPU Installer logs in its collected diagnostics.",
+  "extended_definition": "Sosreport can include GPU Installer logs for diagnostics; Sosreport now includes GPU Installer logs in its collected diagnostics.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Collecting debugging information using sosreport \\_|\\_ Container-Optimized\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport",
+        "source_id": "site-docs-reference",
+        "final_score": 102,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Collecting the sosreport data To generate a sosreport: Connect to the instance using the gcloud compute ssh command. gcloud compute ssh [INSTANCE NAME] --zone [ZONE] --project [PROJECT ID] Check the OS version: sudo cat /etc/os-release egrep -w 'NAME VERSION' The output is similar to the following: NAME=\"Container-Optimized OS\" VERSION=105 Run the sos command that corresponds to your OS version: COS 85 and earlier Run the following sosreport command to collect the logs: sudo sosreport --all-logs --batch --tmp-dir = /var If the previous command fails with sosreport: command not found , install the sosreport package and then run the previous sosreport command: sudo toolbox sudo apt install sosreport -y COS 105 and later Run the following sos command to collect the logs: sudo sos report --all-logs --batch --tmp-dir = /var If the previous command fails with sos: command not found , install the sosreport package and then run the previous sos report command: sudo toolbox sudo apt install sosreport -y Ubuntu-18 and earlier Run the following sosreport command to collect the logs: sudo sosreport --all-logs --batch --tmp-dir = /var If the previous command fails with sosreport: command not found , install the sosreport package and then run the previous sosreport command: sudo apt install sosreport Ubuntu-20 and later Run the following sos command to collect the logs: sudo sos report --all-logs --batch --tmp-dir = /var If the previous command fails with sos: command not found , install the sosreport package and then run the previous sos report command: sudo apt install sosreport You can change the directory where the report is stored by passing a different directory to the --tmp-dir option.",
+          "Container-Optimized OS includes the sosreport utility, which collects information on demand to help you debug problems in a Container-Optimized OS virtual machine instance.",
+          "Your sosreport has been generated and saved in: /var/sosreport-cos-20181106231224.tar.xz The checksum is: 5a8b97c6020346a688254c8b04ef86ec Viewing the collected data The report is owned by root and is not readable by other users."
+        ]
+      },
+      {
+        "title": "Using Cloud Logging with Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "source_id": "site-docs-reference",
+        "final_score": 55,
+        "relevance": "",
+        "evidence_snippets": [
+          "Known Limitations Compatibility with gcplogs driver Starting with milestone 89 , if the logging agent included with Container-Optimized OS is enabled and Docker gcplogs logging driver is enabled for one or more containers, excessive warning logs may be output by the included logging agent.",
+          "Note that the logging agent included with Container-Optimized OS will export container logs to Cloud Logging, so using both solutions simultaneously is not necessary.",
+          "Container-Optimized OS includes a logging agent which exports some system and container logs to Cloud Logging."
+        ]
+      },
+      {
+        "title": "How-to guides \\_|\\_ Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to",
+        "source_id": "site-docs-reference",
+        "final_score": 43,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Using Cloud Logging with Container-Optimized OS Learn how to export system and container logs from Container-Optimized OS to Cloud Logging.",
+          "Collect debugging information using sosreport Learn how to collect debugging information on Container-Optimized OS using sosreport ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "tar.xz"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to"
+      ]
+    }
+  ]
+}

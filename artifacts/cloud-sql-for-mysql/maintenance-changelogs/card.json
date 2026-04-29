@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:53.295Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Maintenance changelogs",
+  "feature_slug": "maintenance-changelogs",
+  "summary": "Cloud SQL provides maintenance changelogs that describe updates in new maintenance versions, including minor upgrades and security patches.",
+  "extended_definition": "Cloud SQL provides maintenance changelogs that describe updates in new maintenance versions, including minor upgrades and security patches.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/introduction",
+      "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+      "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "source_id": "site-docs-reference-3",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "AUTOMATIC ROTATION DURING MAINTENANCE : With this option, automatic server certificate rotation is enabled during Cloud SQL scheduled maintenance or self-service maintenance updates.",
+          "Maintenance timing --maintenance-release-channel Your preferred timing for instance updates, relative to other instances in the same project.",
+          "This flag isn't available for MySQL 8.0.34 and earlier versions. gcloud sql instances create INSTANCE NAME \\ --database-version = DATABASE VERSION \\ --enable-auto-upgrade-minor-version For detailed information, see the documentation on creating an instance by using gcloud ."
+        ]
+      },
+      {
+        "title": "REST Resource: instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "source_id": "site-docs-reference-3",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"kind\" : string , \"state\" : enum ( SqlInstanceState ) , \"databaseVersion\" : enum ( SqlDatabaseVersion ) , \"settings\" : { object ( Settings ) } , \"etag\" : string , \"failoverReplica\" : { \"name\" : string , \"available\" : boolean } , \"masterInstanceName\" : string , \"replicaNames\" : [ string ] , \"maxDiskSize\" : string , \"currentDiskSize\" : string , \"ipAddresses\" : [ { object ( IpMapping ) } ] , \"serverCaCert\" : { object ( SslCert ) } , \"instanceType\" : enum ( SqlInstanceType ) , \"project\" : string , \"ipv6Address\" : string , \"serviceAccountEmailAddress\" : string , \"onPremisesConfiguration\" : { object ( OnPremisesConfiguration ) } , \"replicaConfiguration\" : { object ( ReplicaConfiguration ) } , \"backendType\" : enum ( SqlBackendType ) , \"selfLink\" : string , \"suspensionReason\" : [ enum ( SqlSuspensionReason ) ] , \"connectionName\" : string , \"name\" : string , \"region\" : string , \"gceZone\" : string , \"secondaryGceZone\" : string , \"diskEncryptionConfiguration\" : { object ( DiskEncryptionConfiguration ) } , \"diskEncryptionStatus\" : { object ( DiskEncryptionStatus ) } , \"rootPassword\" : string , \"scheduledMaintenance\" : { object ( SqlScheduledMaintenance ) } , \"satisfiesPzs\" : boolean , \"databaseInstalledVersion\" : string , \"createTime\" : string , \"availableMaintenanceVersions\" : [ string ] , \"maintenanceVersion\" : string , \"upgradableDatabaseVersions\" : [ { object ( AvailableDatabaseVersion ) } ] , \"replicationCluster\" : { object ( ReplicationCluster ) } , \"satisfiesPzi\" : boolean , \"tags\" : { string : string , ... } , \"nodes\" : [ { object ( PoolNodeConfig ) } ] , \"dnsNames\" : [ { object ( DnsNameMapping ) } ] , \"outOfDiskReport\" : { object ( SqlOutOfDiskReport ) } , \"sqlNetworkArchitecture\" : enum ( SqlNetworkArchitecture ) , \"pscServiceAttachmentLink\" : string , \"dnsName\" : string , \"primaryDnsName\" : string , \"writeEndpoint\" : string , \"geminiConfig\" : { object ( GeminiInstanceConfig ) } , \"switchTransactionLogsToCloudStorageEnabled\" : boolean , \"includeReplicasForMajorVersionUpgrade\" : boolean , \"nodeCount\" : integer } Fields kind string This is always sql#instance . state enum ( SqlInstanceState ) The current serving state of the Cloud SQL instance. databaseVersion enum ( SqlDatabaseVersion ) The database engine type and version.",
+          "Examples: \"2014-10-02T15:01:23Z\" , \"2014-10-02T15:01:23.045123456Z\" or \"2014-10-02T15:01:23+05:30\" . availableMaintenanceVersions[] string Output only. instances.list all maintenance versions applicable on the instance maintenanceVersion string The current software version on the instance. upgradableDatabaseVersions[] object ( AvailableDatabaseVersion ) Output only.",
+          "When enabled, the server certificate will be automatically rotated during Cloud SQL scheduled maintenance or self-service maintenance updates up to six months before it expires."
+        ]
+      },
+      {
+        "title": "Cloud SQL overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/introduction",
+        "source_id": "site-docs-root",
+        "final_score": 93,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can focus on your data and let Cloud SQL handle the following operations: Backups High availability and failover Network connectivity Export and import Maintenance and updates Monitoring Logging What is a Cloud SQL instance?",
+          "In general, Cloud SQL system updates are divided into three categories: hardware updates, online updates, and maintenance.",
+          "Maintenance updates apply upgrades to the operating system and the database program."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "instances.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/introduction"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/introduction"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/introduction"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/introduction"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/introduction"
+      ]
+    }
+  ]
+}

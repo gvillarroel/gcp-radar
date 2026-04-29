@@ -1,0 +1,168 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:21.495Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-assessment-tool/card.json",
+  "product_name": "Mainframe Assessment Tool",
+  "product_slug": "mainframe-assessment-tool",
+  "feature_name": "Dashboard page",
+  "feature_slug": "dashboard-page",
+  "summary": "Adds a Dashboard page for quick access to helpful resources.",
+  "extended_definition": "Adds a Dashboard page for quick access to helpful resources.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project",
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance",
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Set up and access Mainframe Assessment Tool \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance",
+        "source_id": "site-docs-reference",
+        "final_score": 67,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This page describes how to set up and access Mainframe Assessment Tool.",
+          "To create encrypted port forwarding, follow these steps: To configure access to the cluster, run the following command: gcloud container clusters get-credentials CLUSTER NAME \\ --zone ZONE --project PROJECT ID To configure port forwarding, run the following command: kubectl port-forward service/assessor-frontend LOCAL PORT :4000 -n VERSION Replace the following: LOCAL PORT : a port number on your local machine used for the tunneled connection to Mainframe Assessment Tool.",
+          "Access Mainframe Assessment Tool VM from your computer You can access Mainframe Assessment Tool from your Linux, macOS, or Windows-based computer by using Google Cloud CLI through an Identity-Aware Proxy tunnel."
+        ]
+      },
+      {
+        "title": "Set up and access Mainframe Assessment Tool \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm",
+        "source_id": "site-docs-reference",
+        "final_score": 67,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This page describes how to set up and access Mainframe Assessment Tool.",
+          "To create encrypted port forwarding, follow these steps: To configure access to the cluster, run the following command: gcloud container clusters get-credentials CLUSTER NAME \\ --zone ZONE --project PROJECT ID To configure port forwarding, run the following command: kubectl port-forward service/assessor-frontend LOCAL PORT :4000 -n VERSION Replace the following: LOCAL PORT : a port number on your local machine used for the tunneled connection to Mainframe Assessment Tool.",
+          "Access Mainframe Assessment Tool VM from your computer You can access Mainframe Assessment Tool from your Linux, macOS, or Windows-based computer by using Google Cloud CLI through an Identity-Aware Proxy tunnel."
+        ]
+      },
+      {
+        "title": "\"Configure your Google Cloud project for Mainframe Assessment Tool \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project",
+        "source_id": "site-docs-reference",
+        "final_score": 65,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable Vertex AI API Configure firewall rules To enable secure access to the Mainframe Assessment Tool instance through IAP, create the following firewall rules: Create a firewall rule to allow ingress traffic on TCP port 4000 by using IAP for TCP forwarding : gcloud compute firewall-rules create allow-ingress-from-iap \\ --direction=INGRESS \\ --action=allow \\ --rules=tcp:4000\\ --source-ranges=35.235.240.0/20 Create a firewall rule to deny all other ingress traffic to your Mainframe Assessment Tool instance: gcloud compute firewall-rules create deny-all-other-ingress \\ --direction=ingress \\ --action=deny \\ --rules=all \\ --source-ranges=0.0.0.0/0 \\ --network=your-network-name \\ --priority=65535 Assign IAM roles and permissions To ensure that the dedicated service account that you created has the necessary permissions to give the Mainframe Assessment Tool components the required access to the Vertex AI API and other services, ask your administrator to grant the following IAM roles to the dedicated service account that you created: Important: You must grant these roles to the dedicated service account that you created, not to your user account.",
+          "Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Vertex AI User ( roles/aiplatform.user ) Cloud Logging: Cloud Logging Writer ( roles/logging.logWriter ) What's next Learn how to Set up and access Mainframe Assessment Tool ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.user",
+      "logging.logWriter"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.user",
+      "roles/logging.logWriter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm"
+      ]
+    }
+  ]
+}

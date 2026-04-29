@@ -1,0 +1,99 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:51.589Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": "Go 1.25 runtime",
+  "feature_slug": "go-1-25-runtime",
+  "summary": "Cloud Run supports the Go 1.25 runtime for services; Cloud Run supports the Go 1.25 runtime for deployed workloads.",
+  "extended_definition": "Cloud Run supports the Go 1.25 runtime for services; Cloud Run supports the Go 1.25 runtime for deployed workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/run/latest",
+      "https://docs.cloud.google.com/run/docs/container-contract",
+      "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Authenticate to Cloud Run Admin API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api",
+        "source_id": "site-docs-reference",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Python Client for Cloud Run \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/run/latest",
+        "source_id": "site-python-reference",
+        "final_score": 34,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "Container runtime contract \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/container-contract",
+        "source_id": "site-docs-root",
+        "final_score": 23,
+        "relevance": "",
+        "evidence_snippets": [
+          "For functions deployed with Cloud Run, you can use one of the Cloud Run runtime base images that are published by Google Cloud's buildpacks to receive automatic security and maintenance updates.",
+          "Container requirements When deploying containers to Cloud Run, the following requirements must be met: Container deployed to services must listen for requests on the correct port A Cloud Run service starts Cloud Run instances to handle incoming requests.",
+          "Home Documentation Application hosting Cloud Run Guides Send feedback Container runtime contract Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest"
+      ]
+    }
+  ]
+}

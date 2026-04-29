@@ -1,0 +1,132 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:32.041Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search",
+  "feature_name": "Structured data store field value types",
+  "feature_slug": "structured-data-store-field-value-types",
+  "summary": "Structured data stores in Vertex AI Search now support geolocation and datetime field value types.",
+  "extended_definition": "Structured data stores in Vertex AI Search now support geolocation and datetime field value types.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-field-settings",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a custom recommendations data store \\_|\\_ Vertex AI Search \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations",
+        "source_id": "site-docs-root",
+        "final_score": 206,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "FieldMask ; public class SyncImportDocuments { public static void main ( String [] args ) throws Exception { syncImportDocuments (); } public static void syncImportDocuments () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentServiceClient documentServiceClient = DocumentServiceClient . create ()) { ImportDocumentsRequest request = ImportDocumentsRequest . newBuilder () . setParent ( BranchName . ofProjectLocationDataStoreBranchName ( \"[PROJECT]\" , \"[LOCATION]\" , \"[DATA STORE]\" , \"[BRANCH]\" ) . toString ()) . setErrorConfig ( ImportErrorConfig . newBuilder (). build ()) . setUpdateMask ( FieldMask . newBuilder (). build ()) . setAutoGenerateIds ( true ) . setIdField ( \"idField1629396127\" ) . setForceRefreshContent ( true ) . build (); ImportDocumentsResponse response = documentServiceClient . importDocumentsAsync ( request ). get (); } } } Node.js For more information, see the Vertex AI Search Node.js API reference documentation .",
+          "FieldMask ; public class SyncImportDocuments { public static void main ( String [] args ) throws Exception { syncImportDocuments (); } public static void syncImportDocuments () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentServiceClient documentServiceClient = DocumentServiceClient . create ()) { ImportDocumentsRequest request = ImportDocumentsRequest . newBuilder () . setParent ( BranchName . ofProjectLocationDataStoreBranchName ( \"[PROJECT]\" , \"[LOCATION]\" , \"[DATA STORE]\" , \"[BRANCH]\" ) . toString ()) . setErrorConfig ( ImportErrorConfig . newBuilder (). build ()) . setUpdateMask ( FieldMask . newBuilder (). build ()) . setAutoGenerateIds ( true ) . setIdField ( \"idField1629396127\" ) . setForceRefreshContent ( true ) . build (); ImportDocumentsResponse response = documentServiceClient . importDocumentsAsync ( request ). get (); } } } Node.js For more information, see the Vertex AI Search Node.js API reference documentation .",
+          "REST To use the command line to create a data store and import structured JSON data, follow these steps: Create a data store. curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-User-Project: PROJECT ID \" \\ \"https://discoveryengine.googleapis.com/v1alpha/projects/ PROJECT ID /locations/global/collections/default collection/dataStores?dataStoreId= DATA STORE ID \" \\ -d '{ \"displayName\": \" DATA STORE DISPLAY NAME \", \"industryVertical\": \"GENERIC\", \"solutionTypes\": [\"SOLUTION TYPE RECOMMENDATION\"] }' Replace the following: PROJECT ID : the ID of your Google Cloud project."
+        ]
+      },
+      {
+        "title": "Create a search data store \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "source_id": "site-docs-root",
+        "final_score": 206,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Import data from Bigtable. curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /branches/0/documents:import\" \\ -d '{ \"bigtableSource \": { \"projectId\": \" BIGTABLE PROJECT ID \", \"instanceId\": \" INSTANCE ID \", \"tableId\": \" TABLE ID \", \"bigtableOptions\": { \"keyFieldName\": \" KEY FIELD NAME \", \"families\": { \"key\": \" KEY \", \"value\": { \"fieldName\": \" FIELD NAME \", \"encoding\": \" ENCODING \", \"type\": \" TYPE \", \"columns\": [ { \"qualifier\": \" QUALIFIER \", \"fieldName\": \" FIELD NAME \", \"encoding\": \" COLUMN ENCODING \", \"type\": \" COLUMN VALUES TYPE \" } ] } } ... } }, \"reconciliationMode\": \" RECONCILIATION MODE \", \"autoGenerateIds\": \" AUTO GENERATE IDS \", \"idField\": \" ID FIELD \", }' Replace the following: PROJECT ID : the ID of your Vertex AI Search project.",
+          "FieldMask ; public class SyncImportDocuments { public static void main ( String [] args ) throws Exception { syncImportDocuments (); } public static void syncImportDocuments () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentServiceClient documentServiceClient = DocumentServiceClient . create ()) { ImportDocumentsRequest request = ImportDocumentsRequest . newBuilder () . setParent ( BranchName . ofProjectLocationDataStoreBranchName ( \"[PROJECT]\" , \"[LOCATION]\" , \"[DATA STORE]\" , \"[BRANCH]\" ) . toString ()) . setErrorConfig ( ImportErrorConfig . newBuilder (). build ()) . setUpdateMask ( FieldMask . newBuilder (). build ()) . setAutoGenerateIds ( true ) . setIdField ( \"idField1629396127\" ) . setForceRefreshContent ( true ) . build (); ImportDocumentsResponse response = documentServiceClient . importDocumentsAsync ( request ). get (); } } } Node.js For more information, see the Vertex AI Search Node.js API reference documentation .",
+          "FieldMask ; public class SyncImportDocuments { public static void main ( String [] args ) throws Exception { syncImportDocuments (); } public static void syncImportDocuments () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentServiceClient documentServiceClient = DocumentServiceClient . create ()) { ImportDocumentsRequest request = ImportDocumentsRequest . newBuilder () . setParent ( BranchName . ofProjectLocationDataStoreBranchName ( \"[PROJECT]\" , \"[LOCATION]\" , \"[DATA STORE]\" , \"[BRANCH]\" ) . toString ()) . setErrorConfig ( ImportErrorConfig . newBuilder (). build ()) . setUpdateMask ( FieldMask . newBuilder (). build ()) . setAutoGenerateIds ( true ) . setIdField ( \"idField1629396127\" ) . setForceRefreshContent ( true ) . build (); ImportDocumentsResponse response = documentServiceClient . importDocumentsAsync ( request ). get (); } } } Node.js For more information, see the Vertex AI Search Node.js API reference documentation ."
+        ]
+      },
+      {
+        "title": "Configure field settings \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-field-settings",
+        "source_id": "site-docs-reference",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configuring field settings is available only for apps with data stores containing either structured data or unstructured data with metadata.",
+          "If you are configuring fields for a media search app and want detailed information about the fields in the schema, see About media documents and data stores .",
+          "An internet service provider's support ticket system stores each ticket as a structured document."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-field-settings"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-field-settings"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-field-settings"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-field-settings"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-field-settings"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-field-settings"
+      ]
+    }
+  ]
+}

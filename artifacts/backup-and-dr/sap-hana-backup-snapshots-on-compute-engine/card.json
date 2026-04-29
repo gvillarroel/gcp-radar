@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.896Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr",
+  "feature_name": "SAP HANA backup snapshots on Compute Engine",
+  "feature_slug": "sap-hana-backup-snapshots-on-compute-engine",
+  "summary": "Backup and DR added support for backing up SAP HANA databases on Compute Engine instances as Compute Engine Persistent Disk snapshots, introduced in private preview.",
+  "extended_definition": "Backup and DR added support for backing up SAP HANA databases on Compute Engine instances as Compute Engine Persistent Disk snapshots, introduced in private preview.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-sap-hana",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Protect and recover SAP HANA databases in Compute Engine instances \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "source_id": "site-docs-reference",
+        "final_score": 189,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Install the Backup and DR agent on the Compute Engine Create a backup plan for the SAP HANA database Discover and protect SAP HANA databases Mount an SAP HANA backup image as a standard mount Restore SAP HANA databases Install the Backup and DR agent on the host The Backup and DR agent connects the Compute Engine instance to the backup/recovery appliance.",
+          "All SAP HANA servers (Compute Engine) that have HANA data to be protected by Backup and DR Service must have been onboarded to Backup and DR Service All SAP HANA servers (Compute Engine) that have HANA data to be protected by Backup and DR Service must have the Backup and DR agent installed.",
+          "About this quickstart exercise This exercise guides you through the steps of discovering and protecting an SAP HANA database running in a Compute Engine instance, and finally mounting a fully-functional new HANA database from the backup image to a new location."
+        ]
+      },
+      {
+        "title": "\"Backup and DR Service for Compute Engine for self-managed storage \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine",
+        "source_id": "site-api-reference",
+        "final_score": 147,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Note: If you create application consistent snapshots of Windows Compute Engine instances then on mount to existing VM or mount as new VM, you need to mark your disk as available for read and write to make them usable.",
+          "Backup and DR requests Compute Engine to create new disks from the snapshots When these disks are created they are attached to the new or existing instance.",
+          "The Backup and DR Compute Engine guide Check for the cloud credentials Discover and protect Compute Engine instances Mount backup images of Compute Engine instances Restore a Compute Engine instance Import Persistent Disk snapshot images Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Prepare SAP HANA for Backup and DR \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-sap-hana",
+        "source_id": "site-api-reference",
+        "final_score": 141,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Clean up SAP HANA Backint Backup If SAP HANA Backint is protected already with Compute Engine or any other third party, perform the following cleanup steps on the SAP HANA host before assigning a backup plan: Delete old Backint symbolic files from /usr/sap/(HANA SID)/SYS/global/hdb/opt .",
+          "Advanced Policy Settings specific to HANA databases on Compute Engine Persistent Disks The policy template needs these specific advanced settings.",
+          "Now you must create a backup plan for the HANA database that is running inside the Compute Engine instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-sap-hana"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-sap-hana"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-sap-hana"
+      ]
+    }
+  ]
+}

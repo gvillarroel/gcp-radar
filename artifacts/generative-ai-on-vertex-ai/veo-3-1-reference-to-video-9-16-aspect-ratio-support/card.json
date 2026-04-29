@@ -1,0 +1,155 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:12.462Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "Veo 3.1 reference-to-video 9:16 aspect ratio support",
+  "feature_slug": "veo-3-1-reference-to-video-9-16-aspect-ratio-support",
+  "summary": "Veo 3.1 Preview reference-to-video generation now supports a 9:16 aspect ratio.",
+  "extended_definition": "Veo 3.1 Preview reference-to-video generation now supports a 9:16 aspect ratio.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/ListOperationsResponse",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Veo on Vertex AI video generation prompt guide \\_|\\_ Generative AI on Vertex\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "source_id": "site-docs-root",
+        "final_score": 194,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Generative AI on Vertex AI Guides Send feedback Veo on Vertex AI video generation prompt guide Stay organized with collections Save and categorize content based on your preferences.",
+          "Anatomy of a Veo prompt When you use Veo to generate videos, using the correct keywords and prompt structure helps the model to generate the content that you want.",
+          "Safety filters Veo applies safety filters across Vertex AI to help ensure that generated videos and uploaded photos don't contain offensive content."
+        ]
+      },
+      {
+        "title": "\"Responsible AI for Veo on Vertex AI video generation \\_|\\_ Generative AI\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines",
+        "source_id": "site-docs-root",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Generative AI on Vertex AI Guides Send feedback Responsible AI for Veo on Vertex AI video generation Stay organized with collections Save and categorize content based on your preferences.",
+          "Safety filter code categories Depending on the safety filters that you configure, your output may contain a safety code similar to: \"Veo could not generate videos because the input image violates Vertex AI's usage guidelines.",
+          "Safety filters Veo on Vertex AI offers several ways to input prompts to generate videos, including text, video, and images."
+        ]
+      },
+      {
+        "title": "\"Get multimodal embeddings \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see the Python API reference documentation . import vertexai from vertexai.vision models import Image , MultiModalEmbeddingModel , Video from vertexai.vision models import VideoSegmentConfig TODO(developer): Update & uncomment line below PROJECT ID = \"your-project-id\" vertexai . init ( project = PROJECT ID , location = \"us-central1\" ) model = MultiModalEmbeddingModel . from pretrained ( \"multimodalembedding@001\" ) image = Image . load from file ( \"gs://cloud-samples-data/vertex-ai/llm/prompts/landmark1.png\" ) video = Video . load from file ( \"gs://cloud-samples-data/vertex-ai-vision/highway vehicles.mp4\" ) embeddings = model . get embeddings ( image = image , video = video , video segment config = VideoSegmentConfig ( end offset sec = 1 ), contextual text = \"Cars on Highway\" , ) print ( f \"Image Embedding: { embeddings . image embedding } \" ) Video Embeddings are segmented based on the video segment config. print ( \"Video Embeddings:\" ) for video embedding in embeddings . video embeddings : print ( f \"Video Segment: { video embedding . start offset sec } - { video embedding . end offset sec } \" ) print ( f \"Embedding: { video embedding . embedding } \" ) print ( f \"Text Embedding: { embeddings . text embedding } \" ) Example response: Image Embedding: [-0.0123144267, 0.0727186054, 0.000201397663, ...] Video Embeddings: Video Segment: 0.0 - 1.0 Embedding: [-0.0206376351, 0.0345234685, ...] Text Embedding: [-0.0207006838, -0.00251058186, ...] Go Before trying this sample, follow the Go setup instructions in the Vertex AI quickstart using client libraries .",
+          "Response (7 second video, no videoSegmentConfig specified): { \"predictions\": [ { \"videoEmbeddings\": [ { \"endOffsetSec\": 7, \"embedding\": [ -0.0045467657, 0.0258095954, 0.0146885719, 0.00945400633, [...] -0.0023291884, -0.00493789, 0.00975185353, 0.0168156829 ], \"startOffsetSec\": 0 } ] } ], \"deployedModelId\": \" DEPLOYED MODEL ID \" } Response (59 second video, with the following video segment config: \"videoSegmentConfig\": { \"startOffsetSec\": 0, \"endOffsetSec\": 60, \"intervalSec\": 10 } ): { \"predictions\": [ { \"videoEmbeddings\": [ { \"endOffsetSec\": 10, \"startOffsetSec\": 0, \"embedding\": [ -0.00683252793, 0.0390476175, [...] 0.00657121744, 0.013023301 ] }, { \"startOffsetSec\": 10, \"endOffsetSec\": 20, \"embedding\": [ -0.0104404651, 0.0357737206, [...] 0.00509833824, 0.0131902946 ] }, { \"startOffsetSec\": 20, \"embedding\": [ -0.0113538112, 0.0305239167, [...] -0.00195809244, 0.00941874553 ], \"endOffsetSec\": 30 }, { \"embedding\": [ -0.00299320649, 0.0322436653, [...] -0.00993082579, 0.00968887936 ], \"startOffsetSec\": 30, \"endOffsetSec\": 40 }, { \"endOffsetSec\": 50, \"startOffsetSec\": 40, \"embedding\": [ -0.00591270532, 0.0368893594, [...] -0.00219071587, 0.0042470959 ] }, { \"embedding\": [ -0.00458270218, 0.0368121453, [...] -0.00317760976, 0.00595594104 ], \"endOffsetSec\": 59, \"startOffsetSec\": 50 } ] } ], \"deployedModelId\": \" DEPLOYED MODEL ID \" } Python To learn how to install or update the Vertex AI SDK for Python, see Install the Vertex AI SDK for Python .",
+          "For more information, see the Python API reference documentation . import vertexai from vertexai.vision models import MultiModalEmbeddingModel , Video from vertexai.vision models import VideoSegmentConfig TODO(developer): Update & uncomment line below PROJECT ID = \"your-project-id\" vertexai . init ( project = PROJECT ID , location = \"us-central1\" ) model = MultiModalEmbeddingModel . from pretrained ( \"multimodalembedding@001\" ) embeddings = model . get embeddings ( video = Video . load from file ( \"gs://cloud-samples-data/vertex-ai-vision/highway vehicles.mp4\" ), video segment config = VideoSegmentConfig ( end offset sec = 1 ), ) Video Embeddings are segmented based on the video segment config. print ( \"Video Embeddings:\" ) for video embedding in embeddings . video embeddings : print ( f \"Video Segment: { video embedding . start offset sec } - { video embedding . end offset sec } \" ) print ( f \"Embedding: { video embedding . embedding } \" ) Example response: Video Embeddings: Video Segment: 0.0 - 1.0 Embedding: [-0.0206376351, 0.0123456789, ...] Go Before trying this sample, follow the Go setup instructions in the Vertex AI quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "\"ListOperationsResponse \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/ListOperationsResponse",
+        "source_id": "site-api-reference",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Generative AI on Vertex AI API reference Send feedback ListOperationsResponse Stay organized with collections Save and categorize content based on your preferences.",
+          "JSON representation { \"operations\" : [ { object ( Operation ) } ] , \"nextPageToken\" : string , \"unreachable\" : [ string ] } Operation This resource represents a long-running operation that is the result of a network API call.",
+          "Fields operations[] object ( Operation ) A list of operations that matches the specified filter in the request. nextPageToken string The standard List next-page token. unreachable[] string Unordered list."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "landmark1.png",
+      "pixel8.mp4",
+      "vehicles.mp4",
+      "vertexai.vision"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/ListOperationsResponse"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/ListOperationsResponse"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/ListOperationsResponse"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/ListOperationsResponse"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/ListOperationsResponse"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/ListOperationsResponse"
+      ]
+    }
+  ]
+}

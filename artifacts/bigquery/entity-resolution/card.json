@@ -1,0 +1,191 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Entity resolution",
+  "feature_slug": "entity-resolution",
+  "summary": "BigQuery entity resolution matches records across datasets when a common identifier is missing by using supported identity providers.",
+  "extended_definition": "BigQuery entity resolution matches records across datasets when a common identifier is missing by using supported identity providers.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 145,
+        "relevance": "",
+        "evidence_snippets": [
+          "When both the column list and the AS query statement clause are present, BigQuery ignores the names in the AS query statement clause and matches the columns with the column list by position.",
+          "NAME and VALUE must be one of the following combinations: NAME VALUE Details enable refresh BOOLEAN Example: enable refresh=false Default: true refresh interval minutes FLOAT64 Example: refresh interval minutes=20 Default: refresh interval minutes=30 expiration timestamp TIMESTAMP Example: expiration timestamp=TIMESTAMP \"2025-01-01 00:00:00 UTC\" This property is equivalent to the expirationTime table resource property. expiration timestamp is optional and not used by default. max staleness INTERVAL Example: max staleness=INTERVAL \"4:0:0\" HOUR TO SECOND The max staleness property provides consistently high performance with controlled costs when processing large, frequently changing datasets. max staleness is disabled by default. allow non incremental definition BOOLEAN Example: allow non incremental definition=true The allow non incremental definition property supports an expanded range of SQL queries to create materialized views. allow non incremental definition=true is disabled by default.",
+          "NAME and VALUE must be one of the following combinations: NAME VALUE Details enable refresh BOOLEAN Example: enable refresh=false Default: true refresh interval minutes FLOAT64 Example: refresh interval minutes=20 Default: refresh interval minutes=30 expiration timestamp TIMESTAMP Example: expiration timestamp=TIMESTAMP \"2025-01-01 00:00:00 UTC\" This property is equivalent to the expirationTime table resource property. expiration timestamp is optional and not used by default. max staleness INTERVAL Example: max staleness=INTERVAL \"4:0:0\" HOUR TO SECOND The max staleness property provides consistently high performance with controlled costs when processing large, frequently changing datasets. max staleness is disabled by default. allow non incremental definition BOOLEAN Example: allow non incremental definition=true The allow non incremental definition property supports an expanded range of SQL queries to create materialized views. allow non incremental definition=true is disabled by default."
+        ]
+      },
+      {
+        "title": "Troubleshoot quota and limit errors \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "source_id": "site-docs-root",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "As a best practice, group related views into authorized datasets when you design new BigQuery architectures, especially multi-tenant architectures.",
+          "Identify API calls Go to the Google Cloud navigation menu menu, and then select Logging > Logs Explorer : Go to the Logs Explorer Filter logs to view table operations by running the following query: resource.type=\"bigquery dataset\" protoPayload.resourceName=\"projects/my-project-id/datasets/my dataset/tables/my table\" (protoPayload.methodName=\"google.cloud.bigquery.v2.TableService.PatchTable\" OR protoPayload.methodName=\"google.cloud.bigquery.v2.TableService.UpdateTable\" OR protoPayload.methodName=\"google.cloud.bigquery.v2.TableService.InsertTable\") Identify jobs The following query returns a list of jobs that modify the affected table in the project within the past day.",
+          "To see all copy jobs in all regions, you can use the following filter in Cloud Logging: resource.type=\"bigquery resource\" protoPayload.methodName=\"jobservice.insert\" protoPayload.serviceData.jobInsertRequest.resource.jobConfiguration.tableCopy: Resolution If the goal of the frequent copy operations is to create a snapshot of data, consider using table snapshots instead."
+        ]
+      },
+      {
+        "title": "Loading CSV data from Cloud Storage \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "source_id": "site-docs-root",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "Number of bad records allowed Number of errors allowed --max bad records maxBadRecords ( Java , Python ) (Optional) The maximum number of bad records that BigQuery can ignore when running the job.",
+          "At most, five errors of any type are returned regardless of the --max bad records value. --ignore unknown values : When specified, allows and ignores extra, unrecognized values in CSV or JSON data. --time zone : An optional default time zone that will apply when parsing timestamp values that have no specific time zone in CSV or JSON data. --date format : An optional custom string that defines how the DATE values are formatted in CSV or JSON data. --datetime format : An optional custom string that defines how the DATETIME values are formatted in CSV or JSON data. --time format : An optional custom string that defines how the TIME values are formatted in CSV or JSON data. --timestamp format : An optional custom string that defines how the TIMESTAMP values are formatted in CSV or JSON data. --autodetect : When specified, enable schema auto-detection for CSV and JSON data. --destination kms key : The Cloud KMS key for encryption of the table data. bq --location = location load \\ -- [ no ] replace \\ --source format = format \\ dataset.table \\ path to source \\ schema where: location is your location .",
+          "At most, five errors of any type are returned regardless of the --max bad records value. --ignore unknown values : When specified, allows and ignores extra, unrecognized values in CSV or JSON data. --time zone : An optional default time zone that will apply when parsing timestamp values that have no specific time zone in CSV or JSON data. --date format : An optional custom string that defines how the DATE values are formatted in CSV or JSON data. --datetime format : An optional custom string that defines how the DATETIME values are formatted in CSV or JSON data. --time format : An optional custom string that defines how the TIME values are formatted in CSV or JSON data. --timestamp format : An optional custom string that defines how the TIMESTAMP values are formatted in CSV or JSON data. --autodetect : When specified, enable schema auto-detection for CSV and JSON data. --time partitioning type : Enables time-based partitioning on a table and sets the partition type."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.admin",
+      "bigquery.dataEditor",
+      "bigquery.dataOwner",
+      "bigquery.datasets.create",
+      "bigquery.jobs.create",
+      "bigquery.jobUser",
+      "bigquery.tables.create",
+      "bigquery.tables.update",
+      "bigquery.tables.updateData",
+      "bigquery.user",
+      "dataset.table",
+      "jobs.insert",
+      "jobservice.insert",
+      "resource.jobConfiguration.tableCopy",
+      "resource.type",
+      "tables.get"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.admin",
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.dataOwner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    }
+  ]
+}

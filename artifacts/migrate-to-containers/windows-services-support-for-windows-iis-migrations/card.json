@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:22.796Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers",
+  "feature_name": "Windows services support for Windows IIS migrations",
+  "feature_slug": "windows-services-support-for-windows-iis-migrations",
+  "summary": "Windows IIS migrations can include specified Windows services as part of the migrated application.",
+  "extended_definition": "Windows IIS migrations can include specified Windows services as part of the migrated application.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli-reference-windows",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+      "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customize migration plan for Windows IIS services \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 166,
+        "relevance": "",
+        "evidence_snippets": [
+          "The next sections discuss this structure, explain what each part is, and how to modify it. globalSettings : globalIis : enablegmsa : string apppools : - enable32bitapponwin64 : bool identitytype : string managedruntimeversion : string name : string connectionStrings : add : - connectionstring : string name : string providername : string security : authentication : windowsAuthentication : enabled : bool providers : - value : string authorization : add : - access type : string roles : string users : string verbs : string remove : - roles : string users : string verbs : string image : extraFeatures : - string target : baseVersion : string requirements : - string warnings : - string msvcRuntimes : - string pathEnvVarAdditionalEntries : - string images : - name : string probes : enabled : bool livenessProbe : probehandler : exec : command : - string - string initialdelayseconds : int timeoutseconds : int periodseconds : int successthreshold : int failurethreshold : int terminationgraceperiodseconds : optional [ int ] readinessProbe : probehandler : exec : command : - string - string initialdelayseconds : int timeoutseconds : int periodseconds : int successthreshold : int failurethreshold : int terminationgraceperiodseconds : optional [ int ] useractions : files : - source : string target : string registry : currentcontrolset : - path : string software : - path : string workloads : sites : site : - applications : - applicationpool : string path : string virtualdirectories : - path : string physicalpath : string bindings : - port : int protocol : string sslflags : int connectionstrings : - connectionstring : string name : string providername : string name : string security : authentication : windowsAuthentication : enabled : bool providers : - value : string authorization : add : - access type : string roles : string users : string verbs : string remove : - roles : string users : string verbs : string serverautostart : bool version : string The globalSettings section The globalSettings section describes basic requirements for pods running IIS sites from this VM.",
+          "To run additional services in the migrated container, add entries to the windowsServices section, and copy the necessary binaries in the useractions section . version: v1 globalSettings: target: … globalIIS: … images: - name: migrated-image-zgwb2 workloads: sites: site: - applications: ... bindings: - port: 80 protocol: http name: Default Web Site … windowsServices: - MyService useractions: files: - source: C:\\Program Files\\MyService target: C:\\Program Files\\MyService registry: currentcontrolset: - key: services\\MyService The useractions section The useractions section specifies additional files and registry keys that you might want to migrate.",
+          "You can modify the list of runtimes in the migration plan by adding or removing members of msvcRuntimes : The complete list of possible values are: (The 2015 runtime also includes support for 2017, 2019, and 2022) msvcRuntimes : - MSVC2012 x64 - MSVC2013 x64 - MSVC2015 x64 - MSVC2012 x86 - MSVC2013 x86 - MSVC2015 x86 The pathEnvVarAdditionalEntries section Windows IIS applications might have non-default PATH environment variable entries, which are automatically detected on the source VM and included in the migration plan."
+        ]
+      },
+      {
+        "title": "Planning best practices \\_|\\_ Migrate to Containers \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices",
+        "source_id": "site-docs-root-2",
+        "final_score": 119,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Not a good fit Linux For Linux, applications and servers that are not a good fit for migration with Migrate to Containers include: High performance and large in-memory databases VMs with special kernel drivers (for example, kernel-mode NFS) Dependencies on specific hardware Software with licenses tied to certain hardware ID registration Windows For Windows, workloads without IIS 7 or higher installed are not a fit for migration.",
+          "Other types of applications not fit for migration include: Applications with dependencies on GPUs or TPUs Low level networking applications Desktop, RDP, and VDI applications Applications with BYOL DNS and network access rules Before migrating to GKE, be sure you understand the network resources, and services used by your migrated workloads, and ensure that they are accessible and addressable from your Virtual Private Cloud.",
+          "Windows Windows applications that are a good fit for migration using Migrate to Containers include workloads that meet all following characteristics: IIS 7 or later, ASP.NET with .NET Framework 3.5 or later Web and logic tiers WS2008 R2 or higher Operating system support Migrate to Containers is compatible with these VM operating systems ."
+        ]
+      },
+      {
+        "title": "Migrate to Containers CLI reference for Windows \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli-reference-windows",
+        "source_id": "site-docs-root",
+        "final_score": 93,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Migrate to Containers CLI reference for Windows m2c is a command-line tool that lets you set up and execute migrations on your local machine. m2c A command-line interface to Migrate to Containers.",
+          "Synopsis m2c COMMAND [options] Flags -q,--quiet Don't output anything -v,--verbose Show verbose output Commands Command Description m2c analyze Analyze the workload's configuration in the given file system. m2c completion Generate the autocompletion script for the specified shell m2c config View and edit configuration properties m2c generate Generate migration artifacts from the given file system. m2c help Help about any command m2c version Print the CLI version. m2c analyze Analyze the workload's configuration in the given file system with a given plugin.",
+          "Can be specified multiple times -p,--plugin name Plugin name -s,--source path The path to a VHD image files --volume localPath:remotePath Bind mounts a file or directory into the container in the format of \"localPath:remotePath\"."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "powershell.exe",
+      "probe.ps1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli-reference-windows"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli-reference-windows"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli-reference-windows"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli-reference-windows"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli-reference-windows"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli-reference-windows"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli-reference-windows"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli-reference-windows"
+      ]
+    }
+  ]
+}

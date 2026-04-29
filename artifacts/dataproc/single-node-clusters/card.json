@@ -1,0 +1,156 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:04.393Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Single node clusters",
+  "feature_slug": "single-node-clusters",
+  "summary": "Single node clusters provide Dataproc clusters with one node that serves as both master and worker.",
+  "extended_definition": "Single node clusters provide Dataproc clusters with one node that serves as both master and worker.",
+  "lifecycle": {
+    "latest_feature_date": "2017-03-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+      "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class NodeGroupControllerAsyncClient (5.26.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 151,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Format: projects/{project}/regions/{region}/clusters/{cluster}/nodeGroups/{nodeGroup} This corresponds to the name field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "Format: projects/{project}/regions/{region}/clusters/{cluster}/nodeGroups/{nodeGroup} This corresponds to the name field on the request instance; if request is provided, this should not be set. size int Required.",
+          "Format: projects/{project}/regions/{region}/clusters/{cluster} This corresponds to the parent field on the request instance; if request is provided, this should not be set. node group NodeGroup Required."
+        ]
+      },
+      {
+        "title": "\"Class NodeGroupControllerClient (5.26.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient",
+        "source_id": "site-python-reference",
+        "final_score": 151,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Format: projects/{project}/regions/{region}/clusters/{cluster} This corresponds to the parent field on the request instance; if request is provided, this should not be set. node group google.cloud.dataproc v1.types.NodeGroup Required.",
+          "Format: projects/{project}/regions/{region}/clusters/{cluster}/nodeGroups/{nodeGroup} This corresponds to the name field on the request instance; if request is provided, this should not be set. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "Format: projects/{project}/regions/{region}/clusters/{cluster}/nodeGroups/{nodeGroup} This corresponds to the name field on the request instance; if request is provided, this should not be set. size int Required."
+        ]
+      },
+      {
+        "title": "Managed Service for Apache Spark driver node groups \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "source_id": "site-iam-reference",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://dataproc.googleapis.com/v1/projects/ PROJECT ID /regions/ REGION /clusters\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"projectId\": \" PROJECT ID \", \"clusterName\": \" CLUSTER NAME \", \"config\": { ... \"auxiliaryNodeGroups\": [ { \"nodeGroup\": { \"name\": \"projects/ PROJECT ID /regions/ REGION /clusters/ CLUSTER NAME /nodeGroups/ NODE GROUP ID \", \"roles\": [ \"DRIVER\" ], \"nodeGroupConfig\": { \"numInstances\": SIZE , \"instanceNames\": [ \" CLUSTER NAME -np-q1gp\", \" CLUSTER NAME -np-xfc0\" ], \"imageUri\": \"https://www.googleapis.com/compute/v1/projects/cloud-dataproc-ci/global/images/dataproc-2-0-deb10-...-rc01\", \"machineTypeUri\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /zones/ REGION -a/machineTypes/n1-standard-4\", \"diskConfig\": { \"bootDiskSizeGb\": 1000, \"bootDiskType\": \"pd-standard\" }, \"managedGroupConfig\": { \"instanceTemplateName\": \"dataproc-2a8224d2-...\", \"instanceGroupManagerName\": \"dataproc-2a8224d2-...\" }, \"minCpuPlatform\": \"AUTOMATIC\", \"preemptibility\": \"NON PREEMPTIBLE\" } }, \"nodeGroupId\": \" NODE GROUP ID \" } ] }, } Get driver node group cluster metadata You can use the gcloud dataproc node-groups describe command or the Managed Service for Apache Spark API to get driver node group metadata. gcloud gcloud dataproc node-groups describe NODE GROUP ID \\ --cluster= CLUSTER NAME \\ --region= REGION Required flags: NODE GROUP ID : You can run gcloud dataproc clusters describe CLUSTER NAME to list the node group ID.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://dataproc.googleapis.com/v1/projects/ PROJECT ID /regions/ REGION /clusters/ CLUSTER NAME nodeGroups/ Node GROUP ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /regions/ REGION /clusters/ CLUSTER NAME /nodeGroups/ NODE GROUP ID \", \"roles\": [ \"DRIVER\" ], \"nodeGroupConfig\": { \"numInstances\": 5, \"imageUri\": \"https://www.googleapis.com/compute/v1/projects/cloud-dataproc-ci/global/images/dataproc-2-0-deb10-...-rc01\", \"machineTypeUri\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /zones/ REGION -a/machineTypes/n1-standard-4\", \"diskConfig\": { \"bootDiskSizeGb\": 1000, \"bootDiskType\": \"pd-standard\" }, \"managedGroupConfig\": { \"instanceTemplateName\": \"dataproc-driver-pool-mcia3j656h2fy\", \"instanceGroupManagerName\": \"dataproc-driver-pool-mcia3j656h2fy\" }, \"minCpuPlatform\": \"AUTOMATIC\", \"preemptibility\": \"NON PREEMPTIBLE\" } } Resize a driver node group You can use the gcloud dataproc node-groups resize command or the Managed Service for Apache Spark API to add or remove driver nodes from a cluster driver node group. gcloud gcloud dataproc node-groups resize NODE GROUP ID \\ --cluster= CLUSTER NAME \\ --region= REGION \\ --size= SIZE Required flags: NODE GROUP ID : You can run gcloud dataproc clusters describe CLUSTER NAME to list the node group ID.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://dataproc.googleapis.com/v1/projects/ PROJECT ID /regions/ REGION /clusters/ CLUSTER NAME /nodeGroups/ Node GROUP ID :resize\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /regions/ REGION /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.dataproc.v1.NodeGroupOperationMetadata\", \"nodeGroupId\": \" NODE GROUP ID \", \"clusterUuid\": \" CLUSTER UUID \", \"status\": { \"state\": \"PENDING\", \"innerState\": \"PENDING\", \"stateStartTime\": \"2022-12-01T23:34:53.064308Z\" }, \"operationType\": \"RESIZE\", \"description\": \"Scale \"up or \"down\" a GCE node pool to SIZE nodes.\" } } Delete a driver node group cluster When you delete a Managed Service for Apache Spark cluster , node groups associated with the cluster are deleted."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "async.AsyncRetry",
+      "core.retry",
+      "core.retry.Retry",
+      "dataproc.googleapis.com",
+      "operation.result",
+      "request.json",
+      "type.googleapis.com",
+      "v1.types.CreateNodeGroupRequest",
+      "v1.types.NodeGroup"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups"
+      ]
+    }
+  ]
+}

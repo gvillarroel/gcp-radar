@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:47.389Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deploy/card.json",
+  "product_name": "Cloud Deploy",
+  "product_slug": "cloud-deploy",
+  "feature_name": "Release render failure alerts",
+  "feature_slug": "release-render-failure-alerts",
+  "summary": "Release render failure alerts notify you when Cloud Deploy release rendering fails.",
+  "extended_definition": "Release render failure alerts notify you when Cloud Deploy release rendering fails.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deploy/docs/alerts",
+      "https://docs.cloud.google.com/deploy/docs/analysis/cloud-monitoring-analysis",
+      "https://docs.cloud.google.com/deploy/docs/custom-targets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create Cloud Deploy alerts \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/alerts",
+        "source_id": "site-docs-reference-2",
+        "final_score": 131,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Available alerts You can set up alerting policies for the following circumstances, specific to Cloud Deploy: The render operation, for a given release, has failed.",
+          "For every release, all manifests, service definitions, and any other configs that must be rendered, are rendered for all targets before anything is deployed.",
+          "When using a canary deployment strategy, each canary increment is a phase in the rollout for that release and target."
+        ]
+      },
+      {
+        "title": "\"Define analysis jobs that use Google Cloud Observability \\_|\\_ Cloud Deploy\\",
+        "url": "https://docs.cloud.google.com/deploy/docs/analysis/cloud-monitoring-analysis",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 116,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following is the syntax for configuring an analysis job when using a standard deployment strategy: strategy : standard : analysis : duration : DURATION googleCloud : alertPolicyChecks : - id : CHECK ID alertPolicies : - [ ALERT POLICY ID ] labels : [ KEY : VALUE ] Where: DURATION Is how long, in seconds, to run the analysis job.",
+          "As another example, you can create a similar alerting policy on your application deployed to your staging environment, and if no alert fires during the duration of the analysis job, that job can trigger a promoteReleaseRule automation to promote the release to production.",
+          "IAM Service Account User ( roles/iam.serviceAccountUser ) Cloud Deploy Releaser ( roles/clouddeploy.releaser ) Cloud Deploy Operator ( roles/clouddeploy.operator ) For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      },
+      {
+        "title": "About custom targets \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/custom-targets",
+        "source_id": "site-docs-reference-2",
+        "final_score": 107,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example deploy results file The following is a sample results.json file output from a custom deploy: { \"resultStatus\" : \"SUCCEEDED\" , \"artifactFiles\" : [ \"gs://bucket/my-pipeline/release-001/rollout-a/01234/custom-output/file1.yaml\" , \"gs://bucket/my-pipeline/release-001/rollout-a/01234/custom-output/file2.yaml\" ], \"failureMessage\" : \"\" , \"skipMessage\" : \"\" , \"metadata\" : { \"key1\" : \"val\" , \"key2\" : \"val\" } } Further information about custom targets Here are some things to keep in mind when setting up and using custom target types.",
+          "Example render results file The following is a sample results.json file output from a custom render: { \"resultStatus\" : \"SUCCEEDED\" , \"manifestFile\" : \"gs://bucket/my-pipeline/release-001/rollout-a/01234/custom-output/manifest.yaml\" , \"failureMessage\" : \"\" , \"metadata\" : { \"key1\" : \"val\" , \"key2\" : \"val\" } } Inputs to custom deploys For custom deploys, Cloud Deploy provides the following inputs, as environment variables: CLOUD DEPLOY PROJECT The Google Cloud project number for the project in which the custom target is created.",
+          "CLOUD DEPLOY INPUT GCS PATH The Cloud Storage path for the render-file archive written when the release was created."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "clouddeploy.operator",
+      "clouddeploy.releaser",
+      "file1.yaml",
+      "file2.yaml",
+      "iam.serviceAccountUser",
+      "manifest.yaml",
+      "results.json"
+    ],
+    "missing_inventory_roles": [
+      "roles/clouddeploy.operator",
+      "roles/clouddeploy.releaser",
+      "roles/iam.serviceAccountUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/alerts",
+        "https://docs.cloud.google.com/deploy/docs/analysis/cloud-monitoring-analysis",
+        "https://docs.cloud.google.com/deploy/docs/custom-targets"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/alerts",
+        "https://docs.cloud.google.com/deploy/docs/analysis/cloud-monitoring-analysis",
+        "https://docs.cloud.google.com/deploy/docs/custom-targets"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/alerts",
+        "https://docs.cloud.google.com/deploy/docs/analysis/cloud-monitoring-analysis",
+        "https://docs.cloud.google.com/deploy/docs/custom-targets"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/alerts",
+        "https://docs.cloud.google.com/deploy/docs/analysis/cloud-monitoring-analysis",
+        "https://docs.cloud.google.com/deploy/docs/custom-targets"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/alerts",
+        "https://docs.cloud.google.com/deploy/docs/analysis/cloud-monitoring-analysis",
+        "https://docs.cloud.google.com/deploy/docs/custom-targets"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:19.077Z",
+  "source_step08_card": "data/step-08/current/products/google-workspace-admin-sdk/card.json",
+  "product_name": "Google Workspace Admin SDK",
+  "product_slug": "google-workspace-admin-sdk",
+  "feature_name": "Reseller API readonly scope",
+  "feature_slug": "reseller-api-readonly-scope",
+  "summary": "A read-only OAuth scope for the Reseller API; deprecated on 2014-08-04.",
+  "extended_definition": "A read-only OAuth scope for the Reseller API; deprecated on 2014-08-04.",
+  "lifecycle": {
+    "latest_feature_date": "2014-08-04",
+    "deprecation_date": "2014-08-04",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices",
+      "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/get",
+      "https://developers.google.com/workspace/admin/reports/v1/guides/authorizing.html"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure the OAuth consent screen and choose scopes \\_|\\_ Google Workspace\\",
+        "url": "https://developers.google.com/workspace/admin/reports/v1/guides/authorizing.html",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "All apps require an OAuth consent screen, but explicitly listing scopes is necessary only for apps used outside your organization, and certain scope categories necessitate additional reviews by Google.",
+          "All apps using OAuth 2.0 require a consent screen configuration, but you only need to list scopes for apps used by people outside your Google Workspace organization.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-01 UTC.\"],[],[\"OAuth 2.0 requires configuring a consent screen, defining the app's project details, policies, and authorization scopes."
+        ]
+      },
+      {
+        "title": "REST Resource: chromeosdevices \\_|\\_ Admin console \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices",
+        "source_id": "site-api-reference",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example: \"3.5s\" . deviceFiles[] object A list of device files to download (Read-only) deviceFiles[].name string File name deviceFiles[].type string File type deviceFiles[].downloadUrl string File download URL deviceFiles[].createTime string Date and time the file was created systemRamFreeReports[] object Reports of amounts of available RAM memory (Read-only) systemRamFreeReports[].reportTime string Date and time the report was received. systemRamFreeReports[].systemRamFreeInfo[] string ( int64 format) lastKnownNetwork[] object Contains last known network (Read-only) lastKnownNetwork[].ipAddress string The IP address. lastKnownNetwork[].wanIpAddress string The WAN IP address. autoUpdateExpiration (deprecated) string ( int64 format) This item is deprecated! (Read-only) The timestamp after which the device will stop receiving Chrome updates or support.",
+          "This is only present if the user type is USER TYPE MANAGED . activeTimeRanges[] object A list of active time ranges (Read-only). activeTimeRanges[].activeTime integer Duration of usage in milliseconds. activeTimeRanges[].date string Date of usage. ethernetMacAddress string The device's MAC address on the ethernet network interface. annotatedAssetId string The asset identifier as noted by an administrator or specified during enrollment. etag string ETag of the resource. diskVolumeReports[] object Reports of disk space and other info about mounted/connected volumes. diskVolumeReports[].volumeInfo[] object Disk volumes diskVolumeReports[].volumeInfo[].volumeId string Volume id diskVolumeReports[].volumeInfo[].storageTotal string ( int64 format) Total disk space [in bytes] diskVolumeReports[].volumeInfo[].storageFree string ( int64 format) Free disk space [in bytes] systemRamTotal string ( int64 format) Total RAM on the device in bytes cpuStatusReports[] object Reports of CPU utilization and temperature (Read-only) cpuStatusReports[].reportTime string Date and time the report was received. cpuStatusReports[].cpuUtilizationPercentageInfo[] integer cpuStatusReports[].cpuTemperatureInfo[] object A list of CPU temperature samples. cpuStatusReports[].cpuTemperatureInfo[].temperature integer Temperature in Celsius degrees. cpuStatusReports[].cpuTemperatureInfo[].label string CPU label cpuInfo[] object Information regarding CPU specs in the device. cpuInfo[].model string The CPU model name. cpuInfo[].architecture string The CPU architecture. cpuInfo[].maxClockSpeedKhz integer The max CPU clock speed in kHz. cpuInfo[].logicalCpus[] object Information for the Logical CPUs cpuInfo[].logicalCpus[].maxScalingFrequencyKhz integer Maximum frequency the CPU is allowed to run at, by policy. cpuInfo[].logicalCpus[].currentScalingFrequencyKhz integer Current frequency the CPU is running at. cpuInfo[].logicalCpus[].idleDuration string ( Duration format) Idle time since last boot.",
+          "For more information about how to create an organizational structure for your device, see the administration help center . osUpdateStatus object ( OsUpdateStatus ) The status of the OS updates for the device. firstEnrollmentTime string Date and time for the first time the device was enrolled. lastDeprovisionTimestamp string (Read-only) Date and time for the last deprovision of the device. deprovisionReason enum ( DeprovisionReason ) (Read-only) Deprovision reason. deviceLicenseType enum ( DeviceLicenseType ) Output only."
+        ]
+      },
+      {
+        "title": "Method: chromeosdevices.get \\_|\\_ Admin console \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/get",
+        "source_id": "site-api-reference",
+        "final_score": 57,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Authorization scopes Requires one of the following OAuth scopes: https://www.googleapis.com/auth/admin.directory.device.chromeos https://www.googleapis.com/auth/admin.directory.device.chromeos.readonly For more information, see the Authorization guide .",
+          "Enums BASIC Includes only the basic metadata fields (e.g., deviceId, serialNumber, status, and user) FULL Includes all metadata fields Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Query parameters Parameters projection enum ( Projection ) Determines whether the response contains the full list of properties or only a subset."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "admin.directory.device.chromeos",
+      "admin.directory.device.chromeos.readonly",
+      "authorizing.html",
+      "chromeosdevices.get",
+      "chromeosdevices.list",
+      "developers.google.com",
+      "e.g"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/reports/v1/guides/authorizing.html",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/get"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/reports/v1/guides/authorizing.html",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/get"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/reports/v1/guides/authorizing.html",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/get"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/reports/v1/guides/authorizing.html",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/get"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/reports/v1/guides/authorizing.html",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/get"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/reports/v1/guides/authorizing.html",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/get"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/reports/v1/guides/authorizing.html",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/get"
+      ]
+    }
+  ]
+}

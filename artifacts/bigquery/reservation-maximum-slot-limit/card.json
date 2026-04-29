@@ -1,0 +1,95 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Reservation maximum slot limit",
+  "feature_slug": "reservation-maximum-slot-limit",
+  "summary": "Reservations can now be configured with a maximum slot limit when they are created or updated; BigQuery reservations can now be configured with a maximum slot limit when created or updated.",
+  "extended_definition": "Reservations can now be configured with a maximum slot limit when they are created or updated; BigQuery reservations can now be configured with a maximum slot limit when created or updated.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/controlling-costs",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "If this reservation was created with an edition , this is equivalent to the amount of baseline slots . target job concurrency INTEGER A soft upper bound on the number of jobs that can run concurrently in this reservation. autoscale max slots INTEGER The maximum number of slots that can be added to the reservation by autoscaling. secondary location STRING The secondary location to use in the case of disaster recovery. is primary BOOLEAN If the value is true , the reservation is set to be the primary reservation. labels <ARRAY<STRUCT<STRING, STRING>>> An array of labels for the reservation, expressed as key-value pairs.",
+          "For more information about editions, see Introduction to BigQuery editions . autoscale max slots INTEGER The maximum number of slots that could be added to the reservation by autoscaling. secondary location STRING The secondary location to use in the case of disaster recovery. max slots INTEGER The maximum number of slots the reservation can consume.",
+          "If true , idle slots are shared equally across all reservations first, and then across projects within the reservation."
+        ]
+      },
+      {
+        "title": "Troubleshoot quota and limit errors \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "source_id": "site-docs-root",
+        "final_score": 160,
+        "relevance": "",
+        "evidence_snippets": [
+          "This method can bypass the limit check since it uses your dedicated reservations rather than a free shared slot pool.",
+          "If you run high-volume interactive queries, especially in scenarios that involve automated triggers like Cloud Run functions, first monitor the behavior of, and stop, the Cloud Run function causing the error, and then use one of the following recommended strategies for avoiding this limit: Increase slots in your reservation .",
+          "Increase slots or, if you have a high-demand workload, switch to reservations (capacity-based model) from on-demand (pay-per query model)."
+        ]
+      },
+      {
+        "title": "Estimate and control costs \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/controlling-costs",
+        "source_id": "site-docs-root",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you use the capacity pricing model using slot reservations, you specify the maximum number of slots that are available to a reservation.",
+          "Reservations have the following features: They are allocated in pools of slots, and they let you manage capacity and isolate workloads in ways that make sense for your organization.",
+          "A similar scenario will be observed for non-autoscaling reservations—billing is calculated according to the number of slots provisioned, not the number of slots used."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataset.table",
+      "id.dataset.table",
+      "jobs.insert",
+      "tables.get"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "https://docs.cloud.google.com/bigquery/docs/controlling-costs"
+      ]
+    }
+  ]
+}

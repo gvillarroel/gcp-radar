@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:27.397Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection",
+  "feature_name": "infoType detector exclusion rules",
+  "feature_slug": "infotype-detector-exclusion-rules",
+  "summary": "Adds exclusion rules for refining existing infoType detectors.",
+  "extended_definition": "Adds exclusion rules for refining existing infoType detectors.",
+  "lifecycle": {
+    "latest_feature_date": "2018-09-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-rules"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"InfoTypes and infoType detectors \\_|\\_ Sensitive Data Protection \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, if you scan a database for email addresses, you can add an exclusion rule in the form of a custom regex that instructs Sensitive Data Protection to exclude any findings ending in \"@example.com.\" For more information about exclusion rules, see Modifying infoType detectors to refine scan results .",
+          "For more information about exclusion rules and other features of custom infoType detectors, see Creating custom infoType detectors .",
+          "Inspection rules You use inspection rules to refine the results returned by existing infoType detectors—either built-in or custom."
+        ]
+      },
+      {
+        "title": "\"Modifying infoType detectors to refine scan results \\_|\\_ Sensitive Data\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-rules",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 224,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Exclusion rules Exclusion rules are useful in situations like the following: You want to exclude duplicate scan matches in results that are caused by overlapping infoType detectors.",
+          "For more information, see Set up authentication for a local development environment . use Google\\Cloud\\Dlp\\V2\\Client\\DlpServiceClient; use Google\\Cloud\\Dlp\\V2\\ContentItem; use Google\\Cloud\\Dlp\\V2\\CustomInfoType; use Google\\Cloud\\Dlp\\V2\\CustomInfoType\\ExclusionType; use Google\\Cloud\\Dlp\\V2\\ExcludeInfoTypes; use Google\\Cloud\\Dlp\\V2\\ExclusionRule; use Google\\Cloud\\Dlp\\V2\\InfoType; use Google\\Cloud\\Dlp\\V2\\InspectConfig; use Google\\Cloud\\Dlp\\V2\\InspectContentRequest; use Google\\Cloud\\Dlp\\V2\\InspectionRule; use Google\\Cloud\\Dlp\\V2\\InspectionRuleSet; use Google\\Cloud\\Dlp\\V2\\Likelihood; use Google\\Cloud\\Dlp\\V2\\MatchingType; / Inspect a string for sensitive data, omitting overlapping matches on domain and email Omit matches on domain names that are part of email addresses in a DOMAIN NAME detector scan. @param string $projectId The Google Cloud project id to use as a parent resource. @param string $textToInspect The string to inspect. / function inspect string without overlap( // TODO(developer): Replace sample parameters before running the code. string $projectId, string $textToInspect = 'example.com is a domain, james@example.org is an email.' ): void { // Instantiate a client. $dlp = new DlpServiceClient(); $parent = \"projects/$projectId/locations/global\"; // Specify what content you want the service to Inspect. $item = (new ContentItem()) ->setValue($textToInspect); // Specify the type of info the inspection will look for. $domainName = (new InfoType()) ->setName('DOMAIN NAME'); $emailAddress = (new InfoType()) ->setName('EMAIL ADDRESS'); $infoTypes = [$domainName, $emailAddress]; // Define a custom info type to exclude email addresses $customInfoType = (new CustomInfoType()) ->setInfoType($emailAddress) ->setExclusionType(ExclusionType::EXCLUSION TYPE EXCLUDE); // Exclude EMAIL ADDRESS matches $matchingType = MatchingType::MATCHING TYPE PARTIAL MATCH; $exclusionRule = (new ExclusionRule()) ->setMatchingType($matchingType) ->setExcludeInfoTypes((new ExcludeInfoTypes()) ->setInfoTypes([$customInfoType->getInfoType()]) ); // Construct a ruleset that applies the exclusion rule to the DOMAIN NAME infotype. // If a DOMAIN NAME match is part of an EMAIL ADDRESS match, the DOMAIN NAME match will // be excluded. $inspectionRuleSet = (new InspectionRuleSet()) ->setInfoTypes([$domainName]) ->setRules([ (new InspectionRule()) ->setExclusionRule($exclusionRule), ]); // Construct the configuration for the Inspect request, including the ruleset. $inspectConfig = (new InspectConfig()) ->setInfoTypes($infoTypes) ->setCustomInfoTypes([$customInfoType]) ->setIncludeQuote(true) ->setRuleSet([$inspectionRuleSet]); // Run request $inspectContentRequest = (new InspectContentRequest()) ->setParent($parent) ->setInspectConfig($inspectConfig) ->setItem($item); $response = $dlp->inspectContent($inspectContentRequest); // Print the results $findings = $response->getResult()->getFindings(); if (count($findings) == 0) { printf('No findings.' .",
+          "For more information, see Set up authentication for a local development environment . use Google\\Cloud\\Dlp\\V2\\Client\\DlpServiceClient; use Google\\Cloud\\Dlp\\V2\\ContentItem; use Google\\Cloud\\Dlp\\V2\\CustomInfoType\\Dictionary; use Google\\Cloud\\Dlp\\V2\\CustomInfoType\\Dictionary\\WordList; use Google\\Cloud\\Dlp\\V2\\ExclusionRule; use Google\\Cloud\\Dlp\\V2\\InfoType; use Google\\Cloud\\Dlp\\V2\\InspectConfig; use Google\\Cloud\\Dlp\\V2\\InspectContentRequest; use Google\\Cloud\\Dlp\\V2\\InspectionRule; use Google\\Cloud\\Dlp\\V2\\InspectionRuleSet; use Google\\Cloud\\Dlp\\V2\\Likelihood; use Google\\Cloud\\Dlp\\V2\\MatchingType; / Inspect a string for sensitive data, using exclusion dictionary Omit a specific email address from an EMAIL ADDRESS detector scan with an exclusion dictionary. @param string $projectId The Google Cloud project id to use as a parent resource. @param string $textToInspect The string to inspect. / function inspect string with exclusion dict( // TODO(developer): Replace sample parameters before running the code. string $projectId, string $textToInspect = 'Some email addresses: gary@example.com, example@example.com' ): void { // Instantiate a client. $dlp = new DlpServiceClient(); $parent = \"projects/$projectId/locations/global\"; // Specify what content you want the service to Inspect. $item = (new ContentItem()) ->setValue($textToInspect); // Specify the type of info the inspection will look for. $infotypes = [ (new InfoType())->setName('PHONE NUMBER'), (new InfoType())->setName('EMAIL ADDRESS'), (new InfoType())->setName('CREDIT CARD NUMBER'), ]; // Exclude matches from the specified excludedMatchList. $excludedMatchList = (new Dictionary()) ->setWordList((new WordList()) ->setWords(['example@example.com'])); $matchingType = MatchingType::MATCHING TYPE FULL MATCH; $exclusionRule = (new ExclusionRule()) ->setMatchingType($matchingType) ->setDictionary($excludedMatchList); // Construct a ruleset that applies the exclusion rule to the EMAIL ADDRESSES infotype. $emailAddress = (new InfoType()) ->setName('EMAIL ADDRESS'); $inspectionRuleSet = (new InspectionRuleSet()) ->setInfoTypes([$emailAddress]) ->setRules([ (new InspectionRule()) ->setExclusionRule($exclusionRule), ]); // Construct the configuration for the Inspect request, including the ruleset. $inspectConfig = (new InspectConfig()) ->setInfoTypes($infotypes) ->setIncludeQuote(true) ->setRuleSet([$inspectionRuleSet]); // Run request $inspectContentRequest = (new InspectContentRequest()) ->setParent($parent) ->setInspectConfig($inspectConfig) ->setItem($item); $response = $dlp->inspectContent($inspectContentRequest); // Print the results $findings = $response->getResult()->getFindings(); if (count($findings) == 0) { printf('No findings.' ."
+        ]
+      },
+      {
+        "title": "\"Custom infoType detectors \\_|\\_ Sensitive Data Protection \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about how to use surrogate custom infoType detectors, see Pseudonymization . \"storedType\" : A reference to an existing StoredInfoType object.",
+          "You can customize detection behavior by defining your own custom infoType detectors , so that Sensitive Data Protection will inspect or de-identify sensitive data that matches patterns that you specify.",
+          "For more information about likelihood, see the Likelihood concept page. \"detectionRules\" : A set of DetectionRule objects to additionally apply to all findings of this custom infoType detector."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "example.org"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-rules",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-rules",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes"
+      ]
+    }
+  ]
+}

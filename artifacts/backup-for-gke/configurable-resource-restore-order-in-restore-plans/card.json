@@ -1,0 +1,131 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.948Z",
+  "source_step08_card": "data/step-08/current/products/backup-for-gke/card.json",
+  "product_name": "Backup for GKE",
+  "product_slug": "backup-for-gke",
+  "feature_name": "Configurable resource restore order in restore plans",
+  "feature_slug": "configurable-resource-restore-order-in-restore-plans",
+  "summary": "Backup for GKE now supports specifying restore order when creating or updating a restore plan.",
+  "extended_definition": "Backup for GKE now supports specifying restore order when creating or updating a restore plan.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Plan a set of restores \\_|\\_ Backup for GKE \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "source_id": "site-docs-root",
+        "final_score": 113,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create a restore plan for all namespaces The following command creates a restore plan to restore all namespaces and cluster resources: gcloud beta container backup-restore restore-plans create RESTORE PLAN \\ --location = LOCATION \\ --backup-plan = projects/ PROJECT ID /locations/ BACKUP LOCATION /backupPlans/ BACKUP PLAN NAME \\ --cluster = CLUSTER \\ --namespaced-resource-restore-mode = fail-on-conflict \\ --all-namespaces \\ --cluster-resource-conflict-policy = use-existing-version \\ --cluster-resource-scope-all-group-kinds \\ --volume-data-restore-policy = restore-volume-data-from-backup Create a restore plan to roll back a namespace The following command creates a restore plan to roll back the namespace my-ns from backup: gcloud beta container backup-restore restore-plans create RESTORE PLAN \\ --location = LOCATION \\ --backup-plan = projects/ PROJECT ID /locations/ BACKUP LOCATION /backupPlans/ BACKUP PLAN NAME \\ --cluster = CLUSTER \\ --namespaced-resource-restore-mode = delete-and-restore \\ --selected-namespaces = my-ns \\ --cluster-resource-conflict-policy = use-existing-version \\ --cluster-resource-scope-selected-group-kinds = apiextension.k8s.io/CustomResourceDefinition,storage.k8s.io/StorageClass \\ --volume-data-restore-policy = restore-volume-data-from-backup Create a restore plan to roll back a ProtectedApplication to reconnect original volumes The following command creates a restore plan to roll back the protected application my-ns/my-app to reconnect original volumes: gcloud beta container backup-restore restore-plans create RESTORE PLAN \\ --location = LOCATION \\ --backup-plan = projects/ PROJECT ID /locations/ BACKUP LOCATION /backupPlans/ BACKUP PLAN NAME \\ --cluster = CLUSTER \\ --namespaced-resource-restore-mode = delete-and-restore \\ --selected-applications = my-ns/my-app \\ --cluster-resource-conflict-policy = use-existing-version \\ --cluster-resource-scope-no-group-kinds \\ --volume-data-restore-policy = reuse-volume-handle-from-backup Create a restore plan to restore cluster resources only The following command creates a restore plan to restore all cluster resources: gcloud beta container backup-restore restore-plans create RESTORE PLAN \\ --location = LOCATION \\ --backup-plan = projects/ PROJECT ID /locations/ BACKUP LOCATION /backupPlans/ BACKUP PLAN NAME \\ --cluster = CLUSTER \\ --namespaced-resource-restore-mode = fail-on-conflict \\ --no-namespaces \\ --cluster-resource-conflict-policy = use-existing-version \\ --cluster-resource-scope-all-group-kinds Console Use the following instructions to create a restore plan in the Google Cloud console: Go to the Google Kubernetes Engine page in the Google Cloud console.",
+          "Note: This will automatically install the Backup for GKE agent in the specified cluster. gcloud To create a restore plan, run the following command: gcloud beta container backup-restore restore-plans create RESTORE PLAN \\ --project = PROJECT ID \\ --location = RESTORE LOCATION \\ --backup-plan = projects/ PROJECT ID /locations/ BACKUP LOCATION /backupPlans/ BACKUP PLAN NAME \\ --cluster = CLUSTER \\ --namespaced-resource-restore-mode = NAMESPACED RESOURCE RESTORE MODE \\ --all-namespaces \\ --cluster-resource-conflict-policy = CLUSTER RESOURCE CONFLICT POLICY \\ --cluster-resource-scope-selected-group-kinds = CLUSTER RESOURCE SCOPE \\ --volume-data-restore-policy = VOLUME DATA RESTORE POLICY Replace the following: RESTORE PLAN : the name of the restore plan that you want to create.",
+          "Use one of these options: merge-skip-on-conflict : skip the individual conflicting resources. merge-replace-volume-on-conflict : skip the individual conflicting resources but replace the underlying persistent volume data. merge-replace-on-conflict : replace the individual conflicting resources and underlying persistent volume data. delete-and-restore : When the target cluster contains the same group of resources that are targeted for restore to the cluster, the existing group of resources is deleted before the new resources are restored. fail-on-conflict : If any groups of resources targeted for restore from a backup already exist in the target cluster, the restore will fail. --all-namespaces : restores all namespaced resources in the backup."
+        ]
+      },
+      {
+        "title": "RestoreConfig \\_|\\_ Backup for GKE \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig",
+        "source_id": "site-api-reference",
+        "final_score": 113,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "JSON representation { \"volumeDataRestorePolicy\" : enum ( VolumeDataRestorePolicy ) , \"clusterResourceConflictPolicy\" : enum ( ClusterResourceConflictPolicy ) , \"namespacedResourceRestoreMode\" : enum ( NamespacedResourceRestoreMode ) , \"clusterResourceRestoreScope\" : { object ( ClusterResourceRestoreScope ) } , \"substitutionRules\" : [ { object ( SubstitutionRule ) } ] , \"transformationRules\" : [ { object ( TransformationRule ) } ] , \"volumeDataRestorePolicyBindings\" : [ { object ( VolumeDataRestorePolicyBinding ) } ] , \"restoreOrder\" : { object ( RestoreOrder ) } , // Union field namespaced resource restore scope can be only one of the // following: \"allNamespaces\" : boolean , \"selectedNamespaces\" : { object ( Namespaces ) } , \"selectedApplications\" : { object ( NamespacedNames ) } , \"noNamespaces\" : boolean , \"excludedNamespaces\" : { object ( Namespaces ) } // End of list of possible types for union field // namespaced resource restore scope . } Fields volumeDataRestorePolicy enum ( VolumeDataRestorePolicy ) Optional.",
+          "JSON representation ClusterResourceConflictPolicy NamespacedResourceRestoreMode ClusterResourceRestoreScope JSON representation SubstitutionRule JSON representation TransformationRule JSON representation TransformationRuleAction JSON representation Op ResourceFilter JSON representation VolumeDataRestorePolicyBinding JSON representation VolumeType RestoreOrder JSON representation GroupKindDependency JSON representation Configuration of a restore.",
+          "Enums VOLUME TYPE UNSPECIFIED Default GCE PERSISTENT DISK Compute Engine Persistent Disk volume RestoreOrder Allows customers to specify dependencies between resources that Backup for GKE can use to compute a resasonable restore order."
+        ]
+      },
+      {
+        "title": "\"Modify resources during restoration \\_|\\_ Backup for GKE \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+        "source_id": "site-docs-root",
+        "final_score": 112,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following action copies environment variables from the nginx container to the install init container. op : copy fromPath : \"/spec/containers/0/env\" path : \"/spec/initContainers/0/env\" Original apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx spec : containers : - name : nginx image : nginx:latest ports : - containerPort : 80 env : - name : PROTOCOL value : \"https\" resources : limits : cpu : \"250m\" memory : \"64Mi\" initContainers : - name : install image : busybox:stable command : - wget - \"-O\" - \"/tmp/index.html\" - http://info.cern.ch Transformed apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx spec : containers : - name : nginx image : nginx:latest ports : - containerPort : 80 env : - name : PROTOCOL value : \"https\" resources : limits : cpu : \"250m\" memory : \"64Mi\" initContainers : - name : install image : busybox:stable command : - wget - \"-O\" - \"/tmp/index.html\" - http://info.cern.ch env : # copy from \"nginx\" container - name : PROTOCOL value : https To learn more about defining transformation rules in the Google Cloud console, see Plan a set of restores .",
+          "Change StorageClass of PVCs This example changes the StorageClass in all restored PersistentVolumeClaim resources from standard to premium-rwo : YAML transformationRules : - description : Change StorageClass in PVC from standard to premium-rwo resourceFilter : namespaces : [] jsonPath : \".spec[?(@.storageClassName == 'standard')]\" groupKinds : - resourceGroup : \"\" resourceKind : PersistentVolumeClaim fieldActions : - op : REPLACE path : \"/spec/storageClassName\" value : \"premium-rwo\" Terraform transformation rules { description = \"Change StorageClass in PVC from standard to premium-rwo\" resource filter { json path = \".spec[?(@.storageClassName == 'standard')]\" group kinds { resource kind = \"PersistentVolumeClaim\" } } field actions { op = \"REPLACE\" path = \"/spec/storageClassName\" value = \"premium-rwo\" } } Note: To change the StorageClass of PVC templates defined in the StatefulSet, a separate transformation rule has to be configured.",
+          "To define transformation rules through gcloud CLI, create a file containing a YAML array of transformationRules and include the --transformation-rules-file= parameter in the gcloud beta container backup-restore restore-plans create command."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apiextension.k8s.io",
+      "gkebackup.gke.io",
+      "index.html",
+      "info.cern.ch",
+      "metrics.k8s.io",
+      "migration.k8s.io",
+      "snapshot.storage.k8s.io",
+      "storage.k8s.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig"
+      ]
+    }
+  ]
+}

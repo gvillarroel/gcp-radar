@@ -1,0 +1,210 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.627Z",
+  "source_step08_card": "data/step-08/current/products/apigee-ui/card.json",
+  "product_name": "Apigee UI",
+  "product_slug": "apigee-ui",
+  "feature_name": "Dedicated instance creation page",
+  "feature_slug": "dedicated-instance-creation-page",
+  "summary": "The instance management UI provides a dedicated Create new instance page with configuration fields including disk encryption key options.",
+  "extended_definition": "The instance management UI provides a dedicated Create new instance page with configuration fields including disk encryption key options.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+      "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Get started with the Apigee Extension Processor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "source_id": "site-docs-reference",
+        "final_score": 110,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Go to the VPC Networks page in the Google Cloud console: Go to VPC Networks Required roles To get the permissions that you need to install the Apigee Extension Processor, ask your administrator to grant you the following IAM roles: Create and manage service accounts: Service Account Admin ( roles/iam.serviceAccountAdmin ) on organization Create and manage service extensions: Service Extensions Admin ( roles/networkservices.serviceExtensionsAdmin ) on organization Create and manage network endpoint groups (NEGs): Compute Instance Admin ( roles/compute.instanceAdmin ) on organization Create and manage networking resources: Compute Network Admin ( roles/compute.networkAdmin ) on organization Create and manage backend services: Compute Load Balancer Admin ( roles/compute.loadBalancerAdmin ) on organization Create and manage Apigee resources: Apigee Org Admin ( roles/apigee.admin ) on organization Create and manage traffic extensions: Apigee APIM Service Extension Admin ( roles/apigee.apimServiceExtensionAdmin ) on organization View traffic extensions: Apigee APIM Service Extension Viewer ( roles/apigee.apimServiceExtensionViewer ) on organization Manage long-running operations: Apigee APIM Service Extension Service Agent ( roles/apigee.apimServiceExtensionServiceAgent ) on the service agent in the Google Cloud project For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Create a developer App and App credentials To create a developer App and App credentials for the newly created API product: Go to the Apigee API management page in the Google Cloud console: Apigee API management Create a developer: Select Distribution > Developers .",
+          "To confirm that the environment variables are set correctly, run the following command and review the output: echo $PROJECT ID $ORG NAME $REGION $INSTANCE $VPC NETWORK NAME $SUBNET Configure an authentication token To configure an authentication token, run the following command: export TOKEN = $( gcloud auth print-access-token ) echo $TOKEN Configure a load balancer for a backend service The following sections describe the steps to set up a global external Application Load Balancer for a backend service, using httpbin.org as an example: Create a global external Application Load Balancer ."
+        ]
+      },
+      {
+        "title": "UI overview \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+        "source_id": "site-docs-reference-required-14",
+        "final_score": 110,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following table maps each Apigee UI feature page to its current location in the Apigee UI: Feature Apigee UI Proxies Proxy development > API proxies Go to API proxies Sharedflows Proxy development > Sharedflows Go to Sharedflows Offline debug Proxy development > Offline debug Go to Offline debug API products Distribution > API products Go to API products Portals Distribution > Portals Go to Portals Monetization Distribution > Monetization Go to Monetization Developers Distribution > Developers Go to Developers Apps Distribution > Apps Go to Apps API monitoring Proxy development > API monitoring Go to API monitoring API metrics Analytics > API metrics Go to API metrics Developer Engagement Analytics > Developer analysis Go to Developer analysis Traffic Composition Analytics > Developer analysis Go to Developer analysis Devices Analytics > End user analysis Go to End user analysis Geomap Analytics > End user analysis Go to End user analysis Custom reports Analytics > Custom reports Go to Custom reports Instances Management > Instances Go to Instances Data collectors Management > Data collectors Go to Data collectors Environments Management > Environments Go to Environments Endpoint attachments Management > Endpoint attachments Go to Endpoint attachments Roles Identity and Access Management (IAM) > Roles Go to Roles Users IAM Go to IAM Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Apigee API management From the Overview page, you can: Get started as a new Apigee user Test your Apigee runtime View key resource usage metrics Explore Apigee API management features Get started as a new Apigee user If you just are new to Apigee, you can begin your API management journey with quickstart learning options launched from the Overview page: Begin by deploying your first proxy : Watch a video tutorial that walks you through the steps required to create and deploy an API proxy.",
+          "Using the Apigee UI, you can: Build an API proxy Deploy and undeploy API proxies to your cluster Create, edit, and delete environments and environment groups Assign environment-level access control to users Work with target servers , KVMs , and shared flows Use the Apigee UI To open the Apigee UI, go to the Apigee API management page."
+        ]
+      },
+      {
+        "title": "\"Enrich API data with custom curation in API hub \\_|\\_ Apigee \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "source_id": "site-docs-root",
+        "final_score": 107,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This API allows for the creation, retrieval, update, and deletion of product records.\", \"deploymentType\": { \"enumValues\": { \"values\": [ { \"id\": \"apigee\" } ] }, \"attribute\": \"projects/api-hub-demo-5/locations/us-central1/attributes/system-deployment-type\" }, \"resourceUri\": \"organizations/api-hub-demo-5/apis/Products-API/revisions/1/environments/test-env\", \"endpoints\": [ \"https://googleapis.com/products-api\" ], \"attributes\": { \"projects/api-hub-demo-5/locations/us-central1/attributes/plugin-system-apigee-x-and-hybrid-environment\": { \"stringValues\": { \"values\": [ \"test-env\" ] }, \"attribute\": \"projects/api-hub-demo-5/locations/us-central1/attributes/plugin-system-apigee-x-and-hybrid-environment\" }, \"projects/api-hub-demo-5/locations/us-central1/attributes/plugin-system-apigee-x-and-hybrid-organization\": { \"stringValues\": { \"values\": [ \"api-hub-demo-5\" ] }, \"attribute\": \"projects/api-hub-demo-5/locations/us-central1/attributes/plugin-system-apigee-x-and-hybrid-organization\" } } }, \"originalId\": \"apis/Products-API/revisions/1/environments/test-env\", \"originalCreateTime\": \"2025-07-07T05:23:51.617Z\", \"originalUpdateTime\": \"2025-07-07T05:23:51.617Z\" } ], \"originalId\": \"apis/Products-API/revisions/1\", \"originalCreateTime\": \"2025-07-07T05:23:47.982Z\", \"originalUpdateTime\": \"2025-07-07T05:23:47.982Z\", \"specs\": [ { \"originalModifiedTime\": \"2025-07-07T05:23:47.982Z\", \"spec\": { \"displayName\": \"open-api-spec\", \"specType\": { \"enumValues\": { \"values\": [ { \"id\": \"openapi\" } ] } }, \"contents\": { \"mimeType\": \"application/yaml\", \"contents\": \"b3BlbmFwaTogMy4wLjAKaW5mbzoKICB0aXRsZTogUHJvZHVjdHMgQVBJCiAgdmVyc2lvbjogMS4wLjAKICBkZXNjcmlwdGlvbjogQVBJIGZvciBtYW5hZ2luZyBwcm9kdWN0IGludmVudG9yeS4gVGhpcyBBUEkgYWxsb3dzIGZvciB0aGUgY3JlYXRpb24sIHJldHJpZXZhbCwgdXBkYXRlLCBhbmQgZGVsZXRpb24gb2YgcHJvZHVjdCByZWNvcmRzLgpzZXJ2ZXJzOgogIC0gdXJsOiBodHRwczovL2FwaS5leGFtcGxlLmNvbS9wcm9kdWN0cy92MQogICAgZGVzY3JpcHRpb246IFByb2R1Y3Rpb24gc2VydmVyIGZvciB0aGUgUHJvZHVjdHMgQVBJLgpwYXRoczoKICAvcHJvZHVjdHM6CiAgICBnZXQ6CiAgICAgIHN1bW1hcnk6IEdldCBhbGwgcHJvZHVjdHMKICAgICAgb3BlcmF0aW9uSWQ6IGdldEFsbFByb2R1Y3RzCiAgICAgIHJlc3BvbnNlczoKICAgICAgICAnMjAwJzoKICAgICAgICAgIGRlc2NyaXB0aW9uOiBBIGxpc3Qgb2YgcHJvZHVjdHMgc3VjY2Vzc2Z1bGx5IHJldHJpZXZlZC4KICAgICAgICAgIGNvbnRlbnQ6CiAgICAgICAgICAgIGFwcGxpY2F0aW9uL2pzb246CiAgICAgICAgICAgICAgc2NoZW1hOgogICAgICAgICAgICAgICAgdHlwZTogYXJyYXkKICAgICAgICAgICAgICAgIGl0ZW1zOgogICAgICAgICAgICAgICAgICAkcmVmOiAnIy9jb21wb25lbnRzL3NjaGVtYXMvUHJvZHVjdCcKICAgIHBvc3Q6CiAgICAgIHN1bW1hcnk6IEFkZCBhIG5ldyBwcm9kdWN0CiAgICAgIG9wZXJhdGlvbklkOiBhZGRQcm9kdWN0CiAgICAgIHJlcXVlc3RCb2R5OgogICAgICAgIHJlcXVpcmVkOiB0cnVlCiAgICAgICAgZGVzY3JpcHRpb246IFByb2R1Y3QgZGF0YSB0byBiZSBhZGRlZC4KICAgICAgICBjb250ZW50OgogICAgICAgICAgYXBwbGljYXRpb24vanNvbjoKICAgICAgICAgICAgc2NoZW1hOgogICAgICAgICAgICAgICRyZWY6ICcjL2NvbXBvbmVudHMvc2NoZW1hcy9Qcm9kdWN0SW5wdXQnCiAgICAgIHJlc3BvbnNlczoKICAgICAgICAnMjAxJzoKICAgICAgICAgIGRlc2NyaXB0aW9uOiBQcm9kdWN0IHN1Y2Nlc3NmdWxseSBjcmVhdGVkLgogICAgICAgICAgY29udGVudDoKICAgICAgICAgICAgYXBwbGljYXRpb24vanNvbjoKICAgICAgICAgICAgICBzY2hlbWE6CiAgICAgICAgICAgICAgICAkcmVmOiAnIy9jb21wb25lbnRzL3NjaGVtYXMvUHJvZHVjdCcKICAgICAgICAnNDAwJzoKICAgICAgICAgIGRlc2NyaXB0aW9uOiBJbnZhbGlkIGlucHV0IHByb3ZpZGVkIGZvciBwcm9kdWN0IGNyZWF0aW9uLgogIC9wcm9kdWN0cy97cHJvZHVjdElkfToKICAgIGdldDoKICAgICAgc3VtbWFyeTogR2V0IGEgcHJvZHVjdCBieSBJRAogICAgICBvcGVyYXRpb25JZDogZ2V0UHJvZHVjdEJ5SWQKICAgICAgcGFyYW1ldGVyczoKICAgICAgICAtIG5hbWU6IHByb2R1Y3RJZAogICAgICAgICAgaW46IHBhdGgKICAgICAgICAgIHJlcXVpcmVkOiB0cnVlCiAgICAgICAgICBkZXNjcmlwdGlvbjogVW5pcXVlIGlkZW50aWZpZXIgb2YgdGhlIHByb2R1Y3QgdG8gcmV0cmlldmUuCiAgICAgICAgICBzY2hlbWE6CiAgICAgICAgICAgIHR5cGU6IHN0cmluZwogICAgICAgICAgICBmb3JtYXQ6IHV1aWQKICAgICAgcmVzcG9uc2VzOgogICAgICAgICcyMDAnOgogICAgICAgICAgZGVzY3JpcHRpb246IFByb2R1Y3QgZGV0YWlscyBzdWNjZXNzZnVsbHkgcmV0cmlldmVkLgogICAgICAgICAgY29udGVudDoKICAgICAgICAgICAgYXBwbGljYXRpb24vanNvbjoKICAgICAgICAgICAgICBzY2hlbWE6CiAgICAgICAgICAgICAgICAkcmVmOiAnIy9jb21wb25lbnRzL3NjaGVtYXMvUHJvZHVjdCcKICAgICAgICAnNDA0JzoKICAgICAgICAgIGRlc2NyaXB0aW9uOiBQcm9kdWN0IG5vdCBmb3VuZCB3aXRoIHRoZSBnaXZlbiBJRC4KICAgIHB1dDoKICAgICAgc3VtbWFyeTogVXBkYXRlIGFuIGV4aXN0aW5nIHByb2R1Y3QKICAgICAgb3BlcmF0aW9uSWQ6IHVwZGF0ZVByb2R1Y3QKICAgICAgcGFyYW1ldGVyczoKICAgICAgICAtIG5hbWU6IHByb2R1Y3RJZAogICAgICAgICAgaW46IHBhdGgKICAgICAgICAgIHJlcXVpcmVkOiB0cnVlCiAgICAgICAgICBkZXNjcmlwdGlvbjogVW5pcXVlIGlkZW50aWZpZXIgb2YgdGhlIHByb2R1Y3QgdG8gdXBkYXRlLgogICAgICAgICAgc2NoZW1hOgogICAgICAgICAgICB0eXBlOiBzdHJpbmcKICAgICAgICAgICAgZm9ybWF0OiB1dWlkCiAgICAgIHJlcXVlc3RCb2R5OgogICAgICAgIHJlcXVpcmVkOiB0cnVlCiAgICAgICAgZGVzY3JpcHRpb246IFVwZGF0ZWQgcHJvZHVjdCBkYXRhLgogICAgICAgIGNvbnRlbnQ6CiAgICAgICAgICBhcHBsaWNhdGlvbi9qc29uOgogICAgICAgICAgICBzY2hlbWE6CiAgICAgICAgICAgICAgJHJlZjogJyMvY29tcG9uZW50cy9zY2hlbWFzL1Byb2R1Y3RJbnB1dCcKICAgICAgcmVzcG9uc2VzOgogICAgICAgICcyMDAnOgogICAgICAgICAgZGVzY3JpcHRpb246IFByb2R1Y3Qgc3VjY2Vzc2Z1bGx5IHVwZGF0ZWQuCiAgICAgICAgJzQwMCc6CiAgICAgICAgICBkZXNjcmlwdGlvbjogSW52YWxpZCBpbnB1dCBwcm92aWRlZCBmb3IgcHJvZHVjdCB1cGRhdGUuCiAgICAgICAgJzQwNCc6CiAgICAgICAgICBkZXNjcmlwdGlvbjogUHJvZHVjdCBub3QgZm91bmQgd2l0aCB0aGUgZ2l2ZW4gSUQuCiAgICBkZWxldGU6CiAgICAgIHN1bW1hcnk6IERlbGV0ZSBhIHByb2R1Y3QKICAgICAgb3BlcmF0aW9uSWQ6IGRlbGV0ZVByb2R1Y3QKICAgICAgcGFyYW1ldGVyczoKICAgICAgICAtIG5hbWU6IHByb2R1Y3RJZAogICAgICAgICAgaW46IHBhdGgKICAgICAgICAgIHJlcXVpcmVkOiB0cnVlCiAgICAgICAgICBkZXNjcmlwdGlvbjogVW5pcXVlIGlkZW50aWZpZXIgb2YgdGhlIHByb2R1Y3QgdG8gZGVsZXRlLgogICAgICAgICAgc2NoZW1hOgogICAgICAgICAgICB0eXBlOiBzdHJpbmcKICAgICAgICAgICAgZm9ybWF0OiB1dWlkCiAgICAgIHJlc3BvbnNlczoKICAgICAgICAnMjA0JzoKICAgICAgICAgIGRlc2NyaXB0aW9uOiBQcm9kdWN0IHN1Y2Nlc3NmdWxseSBkZWxldGVkLiBObyBjb250ZW50LgogICAgICAgICc0MDQnOgogICAgICAgICAgZGVzY3JpcHRpb246IFByb2R1Y3Qgbm90IGZvdW5kIHdpdGggdGhlIGdpdmVuIElELgpjb21wb25lbnRzOgogIHNjaGVtYXM6CiAgICBQcm9kdWN0OgogICAgICB0eXBlOiBvYmplY3QKICAgICAgcmVxdWlyZWQ6CiAgICAgICAgLSBpZAogICAgICAgIC0gbmFtZQogICAgICAgIC0gcHJpY2UKICAgICAgcHJvcGVydGllczoKICAgICAgICBpZDoKICAgICAgICAgIHR5cGU6IHN0cmluZwogICAgICAgICAgZm9ybWF0OiB1dWlkCiAgICAgICAgICBkZXNjcmlwdGlvbjogVW5pcXVlIHByb2R1Y3QgaWRlbnRpZmllci4KICAgICAgICBuYW1lOgogICAgICAgICAgdHlwZTogc3RyaW5nCiAgICAgICAgICBkZXNjcmlwdGlvbjogTmFtZSBvZiB0aGUgcHJvZHVjdC4KICAgICAgICBkZXNjcmlwdGlvbjoKICAgICAgICAgIHR5cGU6IHN0cmluZwogICAgICAgICAgbnVsbGFibGU6IHRydWUKICAgICAgICAgIGRlc2NyaXB0aW9uOiBEZXRhaWxlZCBkZXNjcmlwdGlvbiBvZiB0aGUgcHJvZHVjdC4KICAgICAgICBwcmljZToKICAgICAgICAgIHR5cGU6IG51bWJlcgogICAgICAgICAgZm9ybWF0OiBmbG9hdAogICAgICAgICAgZGVzY3JpcHRpb246IFByaWNlIG9mIHRoZSBwcm9kdWN0LgogICAgICAgIHN0b2NrOgogICAgICAgICAgdHlwZTogaW50ZWdlcgogICAgICAgICAgZm9ybWF0OiBpbnQzMgogICAgICAgICAgZGVzY3JpcHRpb246IEN1cnJlbnQgc3RvY2sgcXVhbnRpdHkuCiAgICAgICAgICBkZWZhdWx0OiAwCiAgICBQcm9kdWN0SW5wdXQ6CiAgICAgIHR5cGU6IG9iamVjdAogICAgICByZXF1aXJlZDoKICAgICAgICAtIG5hbWUKICAgICAgICAtIHByaWNlCiAgICAgIHByb3BlcnRpZXM6CiAgICAgICAgbmFtZToKICAgICAgICAgIHR5cGU6IHN0cmluZwogICAgICAgICAgZGVzY3JpcHRpb246IE5hbWUgb2YgdGhlIHByb2R1Y3QuCiAgICAgICAgZGVzY3JpcHRpb246CiAgICAgICAgICB0eXBlOiBzdHJpbmcKICAgICAgICAgIG51bGxhYmxlOiB0cnVlCiAgICAgICAgICBkZXNjcmlwdGlvbjogRGV0YWlsZWQgZGVzY3JpcHRpb24gb2YgdGhlIHByb2R1Y3QuCiAgICAgICAgcHJpY2U6CiAgICAgICAgICB0eXBlOiBudW1iZXIKICAgICAgICAgIGZvcm1hdDogZmxvYXQKICAgICAgICAgIGRlc2NyaXB0aW9uOiBQcmljZSBvZiB0aGUgcHJvZHVjdC4KICAgICAgICBzdG9jazoKICAgICAgICAgIHR5cGU6IGludGVnZXIKICAgICAgICAgIGZvcm1hdDogaW50MzIKICAgICAgICAgIGRlc2NyaXB0aW9uOiBJbml0aWFsIHN0b2NrIHF1YW50aXR5LgogICAgICAgICAgZGVmYXVsdDogMA==\" } } } ] } ], \"originalId\": \"apis/Products-API\", \"originalUpdateTime\": \"2025-07-07T05:23:47.982Z\" } ] } } Now that you have successfully tested the integration, lets publish it to make it active and available for use in API hub.",
+          "This API allows for the creation, retrieval, update, and deletion of product records.\", \"deploymentType\": { \"enumValues\": { \"values\": [ { \"id\": \"apigee\" } ] }, \"attribute\": \"projects/api-hub-demo-5/locations/us-central1/attributes/system-deployment-type\" }, \"resourceUri\": \"organizations/api-hub-demo-5/apis/Products-API/revisions/1/environments/test-env\", \"endpoints\": [ \"https://googleapis.com/products-api\" ], \"attributes\": { \"projects/api-hub-demo-5/locations/us-central1/attributes/plugin-system-apigee-x-and-hybrid-environment\": { \"stringValues\": { \"values\": [ \"test-env\" ] }, \"attribute\": \"projects/api-hub-demo-5/locations/us-central1/attributes/plugin-system-apigee-x-and-hybrid-environment\" }, \"projects/api-hub-demo-5/locations/us-central1/attributes/plugin-system-apigee-x-and-hybrid-organization\": { \"stringValues\": { \"values\": [ \"api-hub-demo-5\" ] }, \"attribute\": \"projects/api-hub-demo-5/locations/us-central1/attributes/plugin-system-apigee-x-and-hybrid-organization\" } } }, \"originalId\": \"apis/Products-API/revisions/1/environments/test-env\", \"originalCreateTime\": \"2025-07-07T05:23:51.617Z\", \"originalUpdateTime\": \"2025-07-07T05:23:51.617Z\" } ], \"originalId\": \"apis/Products-API/revisions/1\", \"originalCreateTime\": \"2025-07-07T05:23:47.982Z\", \"originalUpdateTime\": \"2025-07-07T05:23:47.982Z\" } ], \"originalId\": \"apis/Products-API\", \"originalUpdateTime\": \"2025-07-07T05:23:47.982Z\" } ] } } Sample Output You should see the following test output: { \"apiMetadataList\": { \"apiMetadata\": [ { \"api\": { \"name\": \"projects/api-hub-demo-5/locations/us-central1/apis/api-hub-demo-5-Products-API\", \"displayName\": \"Products-API\", \"fingerprint\": \"products-api\" }, \"versions\": [ { \"version\": { \"name\": \"projects/api-hub-demo-5/locations/us-central1/apis/api-hub-demo-5-Products-API/versions/version-1\", \"displayName\": \"version-1\" }, \"deployments\": [ { \"deployment\": { \"displayName\": \"Products-API\", \"description\": \"API for managing product inventory.",
+          "Objectives In this tutorial, you will complete the following steps: Step 1: Create an integration for custom curation Step 2: Set up custom curation in API hub Step 3: Edit existing plugin instance Step 4: Verify enriched API data Costs In this document, you use the following billable components of Google Cloud: Application Integration Integration Connectors Cloud Storage Secret Manager To generate a cost estimate based on your projected usage, use the pricing calculator ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.admin",
+      "apigee.apimServiceExtensionAdmin",
+      "apigee.apimServiceExtensionServiceAgent",
+      "apigee.apimServiceExtensionViewer",
+      "apigee.googleapis.com",
+      "compute.instanceAdmin",
+      "compute.loadBalancerAdmin",
+      "compute.networkAdmin",
+      "googleapis.com",
+      "httpbin.org",
+      "iam.serviceAccountAdmin",
+      "networkservices.serviceExtensionsAdmin",
+      "yaml.json"
+    ],
+    "missing_inventory_roles": [
+      "roles/apigee.admin",
+      "roles/apigee.apimServiceExtensionAdmin",
+      "roles/apigee.apimServiceExtensionServiceAgent",
+      "roles/apigee.apimServiceExtensionViewer",
+      "roles/compute.instanceAdmin",
+      "roles/compute.loadBalancerAdmin",
+      "roles/compute.networkAdmin",
+      "roles/iam.serviceAccountAdmin",
+      "roles/networkservices.serviceExtensionsAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data"
+      ]
+    }
+  ]
+}

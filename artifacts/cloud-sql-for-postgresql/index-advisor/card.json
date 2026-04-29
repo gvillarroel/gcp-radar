@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:54.168Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "Index advisor",
+  "feature_slug": "index-advisor",
+  "summary": "Index advisor is a managed recommendation feature that analyzes recurring queries and suggests indexes.",
+  "extended_definition": "Index advisor is a managed recommendation feature that analyzes recurring queries and suggests indexes.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+      "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+      "https://docs.cloud.google.com/sql/docs/postgres/build-llm-powered-applications-using-llamaindex"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "source_id": "site-api-reference",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"entitled\" : boolean , \"googleVacuumMgmtEnabled\" : boolean , \"oomSessionCancelEnabled\" : boolean , \"activeQueryEnabled\" : boolean , \"indexAdvisorEnabled\" : boolean , \"flagRecommenderEnabled\" : boolean } Fields entitled boolean Output only.",
+          "Whether the index advisor is enabled. flagRecommenderEnabled boolean Output only.",
+          "Whether the active query is enabled. indexAdvisorEnabled boolean Output only."
+        ]
+      },
+      {
+        "title": "REST Resource: instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "source_id": "site-iam-reference",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"entitled\" : boolean , \"googleVacuumMgmtEnabled\" : boolean , \"oomSessionCancelEnabled\" : boolean , \"activeQueryEnabled\" : boolean , \"indexAdvisorEnabled\" : boolean , \"flagRecommenderEnabled\" : boolean } Fields entitled boolean Output only.",
+          "Whether the index advisor is enabled. flagRecommenderEnabled boolean Output only.",
+          "Whether the active query is enabled. indexAdvisorEnabled boolean Output only."
+        ]
+      },
+      {
+        "title": "\"Build LLM-powered applications using LlamaIndex \\_|\\_ Cloud SQL for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/build-llm-powered-applications-using-llamaindex",
+        "source_id": "site-iam-reference",
+        "final_score": 93,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can use LlamaIndex to build applications that access and query information from private or domain-specific data using natural language queries.",
+          "Store vector embeddings with the PostgresVectorStore class The Cloud SQL for PostgreSQL for vector store shows you how to do the following: Initialize a table to store vector embeddings Create an embedding class instance using any Llama Index embeddings model .",
+          "LlamaIndex components Cloud SQL for PostgreSQL offers the following LlamaIndex interfaces: Vector Store Document Store Index Stores Chat Stores Document Reader Learn how to use LlamaIndex with the Quickstart for Cloud SQL for PostgreSQL ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-llm-powered-applications-using-llamaindex"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-llm-powered-applications-using-llamaindex"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-llm-powered-applications-using-llamaindex"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-llm-powered-applications-using-llamaindex"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-llm-powered-applications-using-llamaindex"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-llm-powered-applications-using-llamaindex"
+      ]
+    }
+  ]
+}

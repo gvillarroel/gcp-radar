@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner latency charts in Cloud and Cloud Monitoring consoles",
+  "feature_slug": "spanner-latency-charts-in-cloud-and-cloud-monitoring-consoles",
+  "summary": "Google Cloud Console and Cloud Monitoring provide latency charts for Spanner to help troubleshoot performance issues.",
+  "extended_definition": "Google Cloud Console and Cloud Monitoring provide latency charts for Spanner to help troubleshoot performance issues.",
+  "lifecycle": {
+    "latest_feature_date": "2019-05-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+      "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+      "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Best practices for using Spanner as a gaming database \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "source_id": "site-docs-root",
+        "final_score": 101,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can review these plans in the Google Cloud console, and contact support if you need help understanding your query performance.",
+          "If you change the order of the previous index, you can solve this hotspot problem: CREATE INDEX idx score ranking ON Ranking ( Score DESC , GameMode ) This index won't create a significant hotspot from players competing in the same game mode, provided their scores are distributed across the possible range.",
+          "For the same reason, schema updates should use the provided Cloud Spanner API, and should avoid a manual strategy, such as creating a new table and copying the data from another table or a backup file."
+        ]
+      },
+      {
+        "title": "\"Capture custom client-side metrics using OpenTelemetry \\_|\\_ Spanner \\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+        "source_id": "site-docs-root",
+        "final_score": 101,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Columns ( & singerID , & albumID , & albumTitle ); err != nil { return err } } } The code sample appends the string spanner/gfe latency to the metric name when it's exported to Cloud Monitoring.",
+          "Custom client-side metrics can help you find the source of latency in your system.",
+          "This latency metric is available as part of Monitoring metrics ."
+        ]
+      },
+      {
+        "title": "\"Build change streams connections using Dataflow \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "source_id": "site-docs-root",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "Custom change stream metrics These metrics are exposed in Cloud Monitoring and include: Bucketed (histogram) latency between a record being committed in Spanner to it being emitted into a PCollection by the connector.",
+          "Dataflow templates Dataflow templates provide a method to create Dataflow jobs based on prebuilt Docker images for common use-cases using the Google Cloud console, the Google Cloud CLI, or Rest API calls.",
+          "This is a good fit for analytics and point-in-time archival, which is independent from Spanner's retention period. pipeline . apply ( SpannerIO . readChangeStream () . withSpannerConfig ( SpannerConfig . create () . withProjectId ( \"my-project-id\" ) . withInstanceId ( \"my-instance-id\" ) . withDatabaseId ( \"my-database-id\" ) . withDatabaseRole ( \"my-database-role\" )) // Needed for fine-grained access control only . withChangeStreamName ( \"my-change-stream\" ) . withMetadataInstance ( \"my-metadata-instance-id\" ) . withMetadataDatabase ( \"my-metadata-database-id\" ) . withInclusiveStartAt ( Timestamp . now ())) . apply ( MapElements . into ( TypeDescriptors . strings ()). via ( Object :: toString )) . apply ( Window . into ( FixedWindows . of ( Duration . standardMinutes ( 1 )))) . apply ( TextIO . write () . to ( \"gs://my-bucket/change-stream-results-\" ) . withSuffix ( \".txt\" ) . withWindowedWrites () . withNumShards ( 1 )); Note that the Cloud Storage sink provides at-least-once semantics by default."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud",
+      "io.opentelemetry"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow"
+      ]
+    }
+  ]
+}

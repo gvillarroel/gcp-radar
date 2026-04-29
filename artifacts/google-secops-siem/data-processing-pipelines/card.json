@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.987Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "Data processing pipelines",
+  "feature_slug": "data-processing-pipelines",
+  "summary": "Data processing pipelines filter, transform, and redact Google SecOps data before ingestion.",
+  "extended_definition": "Data processing pipelines filter, transform, and redact Google SecOps data before ingestion.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays",
+      "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "Definition of events and alerts An event is generated from a raw log source that is ingested into Google SecOps and processed by Google SecOps's ingestion and normalization process.",
+          "This feature is designed for teams that require external analysis processing or audit trails where you must preserve the relationship between normalized data and original ingestion.",
+          "You can also filter your searches by clicking filter alt Filter next to the search bar and sort searches by Show all , Google SecOps defined , Authored by Me , or Shared ."
+        ]
+      },
+      {
+        "title": "\"Ingest Google Cloud data \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "source_id": "site-api-reference",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "Available log types include: Cloud Audit Logs Cloud NAT Cloud DNS Cloud Next Generation Firewall Cloud Intrusion Detection System Cloud Load Balancing Cloud SQL Windows Event logs Linux syslog Linux Sysmon Zeek Google Kubernetes Engine Audit Daemon ( auditd ) Apigee reCAPTCHA Enterprise Cloud Run logs ( GCP RUN ) Google Cloud Abuse Events Google Cloud DNS Advanced Threat Detection ( GCP DNS ATD ) Model Armor logs For details about the specific log filters and more ingestion details, see Export Google Cloud logs to Google SecOps.",
+          "When you migrate an existing Google SecOps instance so that it binds to a project that you own, and if direct ingestion was configured before the migration, the direct ingestion configuration is migrated as well.",
+          "Option 1: Direct ingestion A special Cloud Logging filter can be configured in Google Cloud to send specific log types to Google SecOps in real-time."
+        ]
+      },
+      {
+        "title": "\"Understand rule detection delays \\_|\\_ Google Security Operations \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays",
+        "source_id": "site-docs-root",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "Unpredicted delays : These are rule-specific or event-specific delays caused by many factors, including delays in event data arriving at Google SecOps, transient slowness in processing pipelines within Google SecOps services, re-enrichment , and other data processing delays .",
+          "Follow this suggested approach to investigate and troubleshoot rule detection delays: Check for obvious delays: Determine if any ingestion delay exists: In the Google SecOps console, go to Detection > Rules and detections .",
+          "Factors contributing to rule detection delays The rule type , run frequency , and the speed of Google SecOps's ingestion are key factors in rule detection delays."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "additional.fields",
+      "additional.fields.value.string",
+      "metadata.ingestion",
+      "value.bool",
+      "value.number"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays"
+      ]
+    }
+  ]
+}

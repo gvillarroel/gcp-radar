@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:03.460Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "BigQuery export to Parquet (via Storage API) template",
+  "feature_slug": "bigquery-export-to-parquet-via-storage-api-template",
+  "summary": "This Google-provided template exports BigQuery data to Parquet by using the Storage API.",
+  "extended_definition": "This Google-provided template exports BigQuery data to Parquet by using the Storage API.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-parquet",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigtable-to-parquet",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-cloud-storage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"BigQuery export to Parquet (via Storage API) template \\_|\\_ Cloud Dataflow\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-parquet",
+        "source_id": "site-api-reference",
+        "final_score": 322,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BATCH , displayName = \"BigQuery export to Parquet (via Storage API)\" , description = \"The BigQuery export to Parquet template is a batch pipeline that reads data from a BigQuery table and writes it to a Cloud Storage bucket in Parquet format. \" + \"This template utilizes the <a href=\\\"https://cloud.google.com/bigquery/docs/reference/storage\\\">BigQuery Storage API</a> to export the data.\" , optionsClass = BigQueryToParquetOptions . class , flexContainerName = \"bigquery-to-parquet\" , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-parquet\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"The input BigQuery table must exist before running the pipeline.\" , \"The output Cloud Storage bucket must exist before running the pipeline.\" }) public class BigQueryToParquet { / Logger for class. / private static final Logger LOG = LoggerFactory . getLogger ( BigQueryToParquet . class ); / File suffix for file to be written. / private static final String FILE SUFFIX = \".parquet\" ; / Factory to create BigQueryStorageClients. / static class BigQueryStorageClientFactory { / Creates BigQueryStorage client for use in extracting table schema. @return BigQueryStorageClient / static BigQueryStorageClient create () { try { return BigQueryStorageClient . create (); } catch ( IOException e ) { LOG . error ( \"Error connecting to BigQueryStorage API: \" + e . getMessage ()); throw new RuntimeException ( e ); } } } / Factory to create ReadSessions. / static class ReadSessionFactory { / Creates ReadSession for schema extraction. @param client BigQueryStorage client used to create ReadSession. @param options BigQueryToParquetOptions options. @param tableReadOptions TableReadOptions that specify any fields in the table to filter on. @return session ReadSession object that contains the schema for the export. / static ReadSession create ( BigQueryStorageClient client , BigQueryToParquetOptions options , TableReadOptions tableReadOptions ) { String tableString = options . getTableRef (); TableReference tableReference = BigQueryHelpers . parseTableSpec ( tableString ); BigQueryOptions bigQueryOptions = options . as ( BigQueryOptions . class ); String parentProjectId = bigQueryOptions . getBigQueryProject () == null ? bigQueryOptions . getProject () : bigQueryOptions . getBigQueryProject (); String parentProjectIdResource = \"projects/\" + parentProjectId ; TableReferenceProto .",
+          "InvalidArgumentException ; import com.google.api.services.bigquery.model.TableReference ; import com.google.cloud.bigquery.storage.v1beta1.BigQueryStorageClient ; import com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions ; import com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest ; import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession ; import com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto ; import com.google.cloud.teleport.metadata.Template ; import com.google.cloud.teleport.metadata.TemplateCategory ; import com.google.cloud.teleport.metadata.TemplateParameter ; import com.google.cloud.teleport.v2.common.UncaughtExceptionLogger ; import com.google.cloud.teleport.v2.templates.BigQueryToParquet.BigQueryToParquetOptions ; import com.google.common.base.Splitter ; import com.google.common.base.Strings ; import java.io.IOException ; import java.util.Arrays ; import java.util.List ; import org.apache.avro.Schema ; import org.apache.avro.generic.GenericRecord ; import org.apache.beam.sdk.Pipeline ; import org.apache.beam.sdk.PipelineResult ; import org.apache.beam.sdk.extensions.avro.coders.AvroCoder ; import org.apache.beam.sdk.io.FileIO ; import org.apache.beam.sdk.io.gcp.bigquery.BigQueryHelpers ; import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO ; import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.TypedRead ; import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.TypedRead.Method ; import org.apache.beam.sdk.io.gcp.bigquery.BigQueryOptions ; import org.apache.beam.sdk.io.gcp.bigquery.SchemaAndRecord ; import org.apache.beam.sdk.io.parquet.ParquetIO ; import org.apache.beam.sdk.options.Default ; import org.apache.beam.sdk.options.PipelineOptions ; import org.apache.beam.sdk.options.PipelineOptionsFactory ; import org.apache.beam.sdk.options.Validation.Required ; import org.slf4j.Logger ; import org.slf4j.LoggerFactory ; / The {@link BigQueryToParquet} pipeline exports data from a BigQuery table to Parquet file(s) in a Google Cloud Storage bucket. <p>Check out <a href=\"https://github.com/GoogleCloudPlatform/DataflowTemplates/blob/main/v2/bigquery-to-parquet/README BigQuery to Parquet.md\">README</a> for instructions on how to use or modify this template. / @Template ( name = \"BigQuery to Parquet\" , category = TemplateCategory .",
+          "Builder builder = CreateReadSessionRequest . newBuilder () . setParent ( parentProjectIdResource ) . setReadOptions ( tableReadOptions ) . setTableReference ( storageTableRef ); try { return client . createReadSession ( builder . build ()); } catch ( InvalidArgumentException iae ) { LOG . error ( \"Error creating ReadSession: \" + iae . getMessage ()); throw new RuntimeException ( iae ); } } } / The {@link BigQueryToParquetOptions} class provides the custom execution options passed by the executor at the command-line. / public interface BigQueryToParquetOptions extends PipelineOptions { @TemplateParameter.BigQueryTable ( order = 1 , description = \"BigQuery table to export\" , groupName = \"Source\" , helpText = \"The BigQuery input table location.\" , example = \"your-project:your-dataset.your-table-name\" ) @Required String getTableRef (); void setTableRef ( String tableRef ); @TemplateParameter.GcsWriteFile ( order = 2 , description = \"Output Cloud Storage file(s)\" , groupName = \"Target\" , helpText = \"The Cloud Storage folder to write the Parquet files to.\" , example = \"gs://your-bucket/export/\" ) @Required String getBucket (); void setBucket ( String bucket ); @TemplateParameter.Integer ( order = 3 , optional = true , description = \"Maximum output shards\" , helpText = \"The number of output file shards."
+        ]
+      },
+      {
+        "title": "\"Bigtable to Cloud Storage Parquet template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigtable-to-parquet",
+        "source_id": "site-api-reference",
+        "final_score": 224,
+        "relevance": "",
+        "evidence_snippets": [
+          "BATCH , displayName = \"Cloud Bigtable to Parquet Files on Cloud Storage\" , description = \"The Bigtable to Cloud Storage Parquet template is a pipeline that reads data from a Bigtable table and writes it to a Cloud Storage bucket in Parquet format. \" + \"You can use the template to move data from Bigtable to Cloud Storage.\" , optionsClass = Options . class , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/bigtable-to-parquet\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"The Bigtable table must exist.\" , \"The output Cloud Storage bucket must exist before running the pipeline.\" }) public class BigtableToParquet { / Options for the export pipeline. / public interface Options extends PipelineOptions { @TemplateParameter.ProjectId ( order = 1 , groupName = \"Source\" , description = \"Project ID\" , helpText = \"The ID of the Google Cloud project that contains the Cloud Bigtable instance that you want to read data from.\" ) ValueProvider<String> getBigtableProjectId (); @SuppressWarnings ( \"unused\" ) void setBigtableProjectId ( ValueProvider<String> projectId ); @TemplateParameter.Text ( order = 2 , groupName = \"Source\" , regexes = { \"[a-z][a-z0-9\\\\-]+[a-z0-9]\" }, description = \"Instance ID\" , helpText = \"The ID of the Cloud Bigtable instance that contains the table.\" ) ValueProvider<String> getBigtableInstanceId (); @SuppressWarnings ( \"unused\" ) void setBigtableInstanceId ( ValueProvider<String> instanceId ); @TemplateParameter.Text ( order = 3 , groupName = \"Source\" , regexes = { \"[ a-zA-Z0-9][- .a-zA-Z0-9] \" }, description = \"Table ID\" , helpText = \"The ID of the Cloud Bigtable table to export.\" ) ValueProvider<String> getBigtableTableId (); @SuppressWarnings ( \"unused\" ) void setBigtableTableId ( ValueProvider<String> tableId ); @TemplateParameter.GcsWriteFolder ( order = 4 , groupName = \"Target\" , description = \"Output file directory in Cloud Storage\" , helpText = \"The path and filename prefix for writing output files.",
+          "See the License for the specific language governing permissions and limitations under the License. / package com.google.cloud.teleport.bigtable ; import static com.google.cloud.teleport.bigtable.BigtableToAvro.toByteArray ; import com.google.bigtable.v2.Cell ; import com.google.bigtable.v2.Column ; import com.google.bigtable.v2.Family ; import com.google.bigtable.v2.Row ; import com.google.cloud.teleport.bigtable.BigtableToParquet.Options ; import com.google.cloud.teleport.metadata.Template ; import com.google.cloud.teleport.metadata.TemplateCategory ; import com.google.cloud.teleport.metadata.TemplateParameter ; import java.nio.ByteBuffer ; import java.util.ArrayList ; import java.util.List ; import org.apache.avro.generic.GenericRecord ; import org.apache.avro.generic.GenericRecordBuilder ; import org.apache.beam.runners.dataflow.options.DataflowPipelineOptions ; import org.apache.beam.sdk.Pipeline ; import org.apache.beam.sdk.PipelineResult ; import org.apache.beam.sdk.extensions.avro.coders.AvroCoder ; import org.apache.beam.sdk.io.FileIO ; import org.apache.beam.sdk.io.gcp.bigtable.BigtableIO ; import org.apache.beam.sdk.io.parquet.ParquetIO ; import org.apache.beam.sdk.options.Default ; import org.apache.beam.sdk.options.PipelineOptions ; import org.apache.beam.sdk.options.PipelineOptionsFactory ; import org.apache.beam.sdk.options.ValueProvider ; import org.apache.beam.sdk.transforms.MapElements ; import org.apache.beam.sdk.transforms.SimpleFunction ; import org.apache.beam.sdk.values.PCollection ; / Dataflow pipeline that exports data from a Cloud Bigtable table to Parquet files in GCS.",
+          "LOCATION : the region where you want to deploy your Dataflow job—for example, us-central1 BIGTABLE PROJECT ID : the ID of the Google Cloud project of the Bigtable instance that you want to read data from INSTANCE ID : the ID of the Bigtable instance that contains the table TABLE ID : the ID of the Bigtable table to export OUTPUT DIRECTORY : the Cloud Storage path where data is written, for example, gs://mybucket/somefolder FILENAME PREFIX : the prefix of the Parquet filename, for example, output- NUM SHARDS : the number of Parquet files to output, for example, 1 Template source code Java / Copyright (C) 2019 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License."
+        ]
+      },
+      {
+        "title": "\"Spanner to Cloud Storage Text template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-cloud-storage",
+        "source_id": "site-api-reference",
+        "final_score": 195,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BATCH , displayName = \"Cloud Spanner to Text Files on Cloud Storage\" , description = \"The Cloud Spanner to Cloud Storage Text template is a batch pipeline that reads in data from a Cloud Spanner \" + \"table, and writes it to Cloud Storage as CSV text files.\" , optionsClass = SpannerToTextOptions . class , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-cloud-storage\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"The input Spanner table must exist before running the pipeline.\" }) public class SpannerToText { private static final Logger LOG = LoggerFactory . getLogger ( SpannerToText . class ); / Custom PipelineOptions. / public interface SpannerToTextOptions extends PipelineOptions , SpannerReadOptions , FilesystemWriteOptions { @TemplateParameter.GcsWriteFolder ( order = 1 , groupName = \"Target\" , optional = true , description = \"Cloud Storage temp directory for storing CSV files\" , helpText = \"The Cloud Storage path where temporary CSV files are written.\" , example = \"gs://your-bucket/your-path\" ) ValueProvider<String> getCsvTempDirectory (); @SuppressWarnings ( \"unused\" ) void setCsvTempDirectory ( ValueProvider<String> value ); @TemplateParameter.Enum ( order = 2 , groupName = \"Source\" , enumOptions = { @TemplateEnumOption ( \"LOW\" ), @TemplateEnumOption ( \"MEDIUM\" ), @TemplateEnumOption ( \"HIGH\" ) }, optional = true , description = \"Priority for Spanner RPC invocations\" , helpText = \"The request priority (https://cloud.google.com/spanner/docs/reference/rest/v1/RequestOptions)\" + \" for Spanner calls.",
+          "ExportTransformFactory . create ( options . getSpannerTable (), spannerConfig , options . getTextWritePrefix (), options . getSpannerSnapshotTime ()); / CreateTransaction and CreateTransactionFn classes in SpannerIO only take a timestamp object for exact staleness which works when parameters are provided during template compile time.",
+          "LOCATION : the region where you want to deploy your Dataflow job—for example, us-central1 SPANNER PROJECT ID : the Google Cloud project ID of the Spanner database from which you want to read data DATABASE ID : the Spanner database ID BUCKET NAME : the name of your Cloud Storage bucket INSTANCE ID : the Spanner instance ID TABLE ID : the Spanner table ID Template source code Java / Copyright (C) 2018 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.api.services.bigquery.model.TableReference",
+      "com.google.bigtable.v2.Cell",
+      "com.google.bigtable.v2.Column",
+      "com.google.bigtable.v2.Family",
+      "com.google.bigtable.v2.Row",
+      "com.google.cloud.bigquery.storage.v1beta1.BigQueryStorageClient",
+      "com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions",
+      "com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest",
+      "com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession",
+      "com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto",
+      "com.google.cloud.teleport.bigtable",
+      "com.google.cloud.teleport.bigtable.BigtableToAvro.toByteArray",
+      "com.google.cloud.teleport.bigtable.BigtableToParquet.Options",
+      "com.google.cloud.teleport.metadata.Template",
+      "com.google.cloud.teleport.metadata.TemplateCategory",
+      "com.google.cloud.teleport.metadata.TemplateParameter",
+      "com.google.cloud.teleport.v2.common.UncaughtExceptionLogger",
+      "com.google.cloud.teleport.v2.templates.BigQueryToParquet.BigQueryToParquetOptions",
+      "com.google.common.base.Splitter",
+      "com.google.common.base.Strings",
+      "dataset.your",
+      "github.com",
+      "java.io.IOException",
+      "java.nio.ByteBuffer",
+      "java.util.ArrayList",
+      "java.util.Arrays",
+      "java.util.List",
+      "org.apache.avro.generic.GenericRecord",
+      "org.apache.avro.generic.GenericRecordBuilder",
+      "org.apache.avro.Schema",
+      "org.apache.beam.runners.dataflow.options.DataflowPipelineOptions",
+      "org.apache.beam.sdk.extensions.avro.coders.AvroCoder",
+      "org.apache.beam.sdk.io.FileIO",
+      "org.apache.beam.sdk.io.gcp.bigquery.BigQueryHelpers",
+      "org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO",
+      "org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.TypedRead",
+      "org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.TypedRead.Method",
+      "org.apache.beam.sdk.io.gcp.bigquery.BigQueryOptions",
+      "org.apache.beam.sdk.io.gcp.bigquery.SchemaAndRecord",
+      "org.apache.beam.sdk.io.gcp.bigtable.BigtableIO",
+      "org.apache.beam.sdk.io.parquet.ParquetIO",
+      "org.apache.beam.sdk.options.Default",
+      "org.apache.beam.sdk.options.PipelineOptions",
+      "org.apache.beam.sdk.options.PipelineOptionsFactory",
+      "org.apache.beam.sdk.options.Validation.Required",
+      "org.apache.beam.sdk.options.ValueProvider",
+      "org.apache.beam.sdk.Pipeline",
+      "org.apache.beam.sdk.PipelineResult",
+      "org.apache.beam.sdk.transforms.MapElements",
+      "org.apache.beam.sdk.transforms.SimpleFunction",
+      "org.apache.beam.sdk.values.PCollection",
+      "org.slf4j.Logger",
+      "org.slf4j.LoggerFactory"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-parquet",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigtable-to-parquet",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-cloud-storage"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-parquet",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigtable-to-parquet",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-cloud-storage"
+      ]
+    }
+  ]
+}

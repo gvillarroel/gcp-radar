@@ -1,0 +1,178 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:04.393Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Dataproc Presto job type",
+  "feature_slug": "dataproc-presto-job-type",
+  "summary": "Dataproc supports submitting Presto jobs to clusters with the Presto optional component enabled.",
+  "extended_definition": "Dataproc supports submitting Presto jobs to clusters with the Presto optional component enabled.",
+  "lifecycle": {
+    "latest_feature_date": "2020-04-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob",
+      "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "PrestoJob \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob",
+        "source_id": "site-docs-reference",
+        "final_score": 45,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "IMPORTANT : The Dataproc Presto Optional Component must be enabled when the cluster is created to submit a Presto job to the cluster.",
+          "JSON representation A Dataproc job for running Presto queries.",
+          "JSON representation { \"continueOnFailure\" : boolean , \"outputFormat\" : string , \"clientTags\" : [ string ] , \"properties\" : { string : string , ... } , \"loggingConfig\" : { object ( LoggingConfig ) } , // Union field queries can be only one of the following: \"queryFileUri\" : string , \"queryList\" : { object ( QueryList ) } // End of list of possible types for union field queries . } Fields continueOnFailure boolean Optional."
+        ]
+      },
+      {
+        "title": "\"Encrypt data with customer-managed encryption keys \\_|\\_ Dataproc Metastore\\",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "source_id": "site-docs-root-2",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Grant Cloud KMS key permissions Use the following commands to grant Cloud KMS key permissions for Dataproc Metastore: Grant permissions to the Dataproc Metastore Service Agent service account: gcloud kms keys add-iam-policy-binding KEY NAME \\ --location LOCATION \\ --keyring KEY RING \\ --member=serviceAccount:$(gcloud beta services identity create \\ --service=metastore.googleapis.com 2>&1 awk '{print $4}') \\ --role=roles/cloudkms.cryptoKeyEncrypterDecrypter Grant permissions to the Cloud Storage service account: gcloud storage service-agent --authorize-cmek projects/ KEY PROJECT /locations/ LOCATION /keyRings/ KEY RING /cryptoKeys/ KEY NAME Create a single-region service with a CMEK key Use the following steps to configure CMEK encryption for a single-region Dataproc Metastore service.",
+          "Note: You must create your CMEK key in the same region where your Dataproc Metastore service is located. gcloud kms keyrings create KEY RING \\ --project= PROJECT ID \\ --location= LOCATION Replace the following: KEY RING : a name for your key ring.",
+          "Verify the service's encryption configuration: In the Google Cloud console, go to the Dataproc Metastore page: Go to Google Cloud console On the Dataproc Metastore page, click the name of the service you'd like to view."
+        ]
+      },
+      {
+        "title": "\"Write a MapReduce job with the BigQuery connector \\_|\\_ Managed Service\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example",
+        "source_id": "site-docs-root",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": [
+          "List<TableFieldSchema> outputTableFieldSchema = new ArrayList<TableFieldSchema> (); outputTableFieldSchema . add ( new TableFieldSchema () . setName ( \"Word\" ) . setType ( \"STRING\" )); outputTableFieldSchema . add ( new TableFieldSchema () . setName ( \"Count\" ) . setType ( \"INTEGER\" )); TableSchema outputSchema = new TableSchema () . setFields ( outputTableFieldSchema ); // Create the job and get its configuration .",
+          "List<TableFieldSchema> outputTableFieldSchema = new ArrayList<TableFieldSchema> (); outputTableFieldSchema . add ( new TableFieldSchema (). setName ( \"Word\" ). setType ( \"STRING\" )); outputTableFieldSchema . add ( new TableFieldSchema (). setName ( \"Count\" ). setType ( \"INTEGER\" )); TableSchema outputSchema = new TableSchema (). setFields ( outputTableFieldSchema ); // Create the job and get its configuration.",
+          "Its use is recommended for large jobs // since it only requires one BigQuery \"load\" job per Hadoop / Spark job , as // compared to BigQueryOutputFormat , which performs one BigQuery job for each // Hadoop / Spark task . job . setOutputFormatClass ( IndirectBigQueryOutputFormat . class ); job . waitForCompletion ( true ); // After the job completes , clean up the Cloud Storage export paths ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "com.google.cloud.dataproc.v1",
+      "latest.jar",
+      "metastore.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example"
+      ]
+    }
+  ]
+}

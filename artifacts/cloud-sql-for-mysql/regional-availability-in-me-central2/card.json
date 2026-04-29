@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:53.295Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Regional availability in me-central2",
+  "feature_slug": "regional-availability-in-me-central2",
+  "summary": "Cloud SQL for MySQL is available in the me-central2 region.",
+  "extended_definition": "Cloud SQL for MySQL is available in the me-central2 region.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/configure-ha",
+      "https://docs.cloud.google.com/sql/docs/mysql/high-availability",
+      "https://docs.cloud.google.com/sql/docs/mysql/pricing"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About high availability \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/high-availability",
+        "source_id": "site-docs-root",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "Starting on May 1, 2025, Cloud SQL will begin updating any instances that use the legacy high availability configuration to use the current regional persistent disk-based high availability configuration automatically.",
+          "This implies that that if your workload is not a streaming workload and is latency sensitive, it can't reach the IOPS limit as regional persistent disk with SSD has higher latency than a zonal persistent disk with SSD.",
+          "This is because of the synchronous replication of the data across multiple zones involved in a regional persistent disk to provide multiple copies of data across the zones in a region."
+        ]
+      },
+      {
+        "title": "\"Enable and disable high availability \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/configure-ha",
+        "source_id": "site-docs-reference-3",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "Configure the root user: gcloud sql users set-password root --host = % \\ --instance = PRIMARY INSTANCE NAME \\ --password = PASSWORD Terraform To create an instance with high availability, use a Terraform resource . resource \"google sql database instance\" \"mysql instance ha\" { name = \"mysql-instance-ha\" region = \"asia-northeast1\" database version = \"MYSQL 8 0\" settings { tier = \"db-f1-micro\" availability type = \"REGIONAL\" backup configuration { enabled = true binary log enabled = true start time = \"20:55\" } } set deletion protection to true, will ensure that one cannot accidentally delete this instance by use of Terraform whereas deletion protection enabled flag protects this instance at the GCP level. deletion protection = false } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \"MYSQL 8 0\" } The output indicates availabilityType is REGIONAL .",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \"MYSQL 8 0\" } The output indicates availabilityType is REGIONAL ."
+        ]
+      },
+      {
+        "title": "Cloud SQL pricing | Google Cloud",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/pricing",
+        "source_id": "site-docs-root",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "High availability, or regional instances, will only incur the cost for a single license for the active resource.",
+          "HA prices are applied for instances configured for high availability, also called regional instances.",
+          "HA prices are applied for instances configured for high availability, also called regional instances."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/high-availability",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/mysql/pricing"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/high-availability",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/mysql/pricing"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/high-availability",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/mysql/pricing"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/high-availability",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/mysql/pricing"
+      ]
+    }
+  ]
+}

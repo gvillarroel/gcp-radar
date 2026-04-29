@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:45.909Z",
+  "source_step08_card": "data/step-08/current/products/carbon-footprint/card.json",
+  "product_name": "Carbon Footprint",
+  "product_slug": "carbon-footprint",
+  "feature_name": "Scope 2 market-based emissions data",
+  "feature_slug": "scope-2-market-based-emissions-data",
+  "summary": "Carbon Footprint provides Scope 2 market-based emissions data in the console and BigQuery export using Google's renewable energy purchasing methodology.",
+  "extended_definition": "Carbon Footprint provides Scope 2 market-based emissions data in the console and BigQuery export using Google's renewable energy purchasing methodology.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/carbon-footprint/docs/export",
+      "https://docs.cloud.google.com/carbon-footprint/docs/methodology",
+      "https://docs.cloud.google.com/carbon-footprint/docs/view-carbon-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View Carbon Footprint data \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/carbon-footprint/docs/view-carbon-data",
+        "source_id": "site-docs-reference",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Charts To dig deeper into the specifics of your carbon emissions, the dashboard includes four charts: Monthly carbon emissions (in both market-based emissions tab and location-based emissions tab) : Displays the total estimated greenhouse gas emissions associated with the usage of covered Google Cloud services for the selected billing account over all available months, broken down by month.",
+          "Carbon emissions by region (in both market-based emissions tab and location-based emissions tab) : Displays the estimated greenhouse gas emissions associated with the usage of covered Google Cloud services for the selected billing account for the past complete month broken down by Google Cloud region.",
+          "Recommendations Carbon Footprint has integrated with Google Cloud Active Assist Unattended Project Recommender, which analyzes usage activity across all projects, provides you with the recommendations to reclaim or shut down unattended projects, and helps you reduce both cost and carbon emissions."
+        ]
+      },
+      {
+        "title": "Carbon Footprint reporting methodology \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/carbon-footprint/docs/methodology",
+        "source_id": "site-docs-reference",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In addition to the different ways that location-based and market-based emissions data account for Google's carbon-free electricity purchases, Carbon Footprint also uses different granularity levels of the emission factors when estimating location-based and market-based emissions: Hourly greenhouse gas emission factors are used to calculate location-based emissions.",
+          "Then, Carbon Footprint calculates location-based and market-based carbon emissions from electricity use, and allocates those emissions across customers and further across each customer's purchased products.",
+          "Market-based scope 2 emissions data includes the impact of Google's carbon-free electricity purchases to the appropriate data centers according to the GHGP's market-based method and standards."
+        ]
+      },
+      {
+        "title": "Export your carbon footprint \\_|\\_ Carbon Footprint \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/carbon-footprint/docs/export",
+        "source_id": "site-docs-reference",
+        "final_score": 108,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following query lets you save the entire contents of the exported table: SELECT usage month , billing account id , project . number AS project number , project . id AS project id , service . id AS service id , service . description AS service description , location . location AS location , location . region AS region , carbon model version , carbon footprint kgCO2e . scope1 AS carbon footprint scope1 , carbon footprint kgCO2e . scope2 . location based AS carbon footprint scope2 location based , carbon footprint kgCO2e . scope3 AS carbon footprint scope3 , carbon footprint total kgCO2e . location based AS carbon footprint total location based FROM PROJECT .",
+          "The Carbon Footprint export captures estimated greenhouse gas emissions associated with the usage of covered Google Cloud services for the selected billing account.",
+          "Home Documentation Costs and usage management Carbon Footprint Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/carbon-footprint/docs/view-carbon-data",
+        "https://docs.cloud.google.com/carbon-footprint/docs/methodology",
+        "https://docs.cloud.google.com/carbon-footprint/docs/export"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/carbon-footprint/docs/view-carbon-data",
+        "https://docs.cloud.google.com/carbon-footprint/docs/methodology",
+        "https://docs.cloud.google.com/carbon-footprint/docs/export"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/carbon-footprint/docs/view-carbon-data",
+        "https://docs.cloud.google.com/carbon-footprint/docs/methodology",
+        "https://docs.cloud.google.com/carbon-footprint/docs/export"
+      ]
+    }
+  ]
+}

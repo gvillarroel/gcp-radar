@@ -1,0 +1,120 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.828Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry",
+  "feature_name": "Regionalized Artifact Analysis metadata storage",
+  "feature_slug": "regionalized-artifact-analysis-metadata-storage",
+  "summary": "Artifact Analysis is rolling out regional and multi-region metadata storage endpoints to align Container Analysis metadata with repository location.",
+  "extended_definition": "Artifact Analysis is rolling out regional and multi-region metadata storage endpoints to align Container Analysis metadata with repository location.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+      "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+      "https://docs.cloud.google.com/artifact-registry/docs/docker/learn-about-your-container-images-with-gemini-assistance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Artifact analysis and vulnerability scanning \\_|\\_ Artifact Registry \\_\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "source_id": "site-docs-root-2",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Diagram that shows Artifact Analysis creating and interacting with metadata across source, build, storage, deployment and runtime environments.",
+          "Artifact Analysis is a family of services that provide software composition analysis, metadata storage and retrieval.",
+          "To learn about using Artifact Analysis for metadata management, and costs for the optional vulnerability scanning service, see the Artifact Analysis documentation ."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Artifact Registry \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 99,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To access Docker repositories, use one of the following scopes: storage-ro - Grants read-only permission for pulling images. storage-rw - Grants read and write permission for pushing or pulling images. cloud-platform - View and manage data, including metadata, across Google Cloud service.",
+          "For Docker, the following options are supported: storage-ro - Grants read permission only for pulling images. storage-rw - Grants read and write permission for pushing or pulling images. cloud-platform - View and manage data, including metadata, across Google Cloud service.",
+          "If you use Artifact Analysis to work with container metadata, such as vulnerabilities found in images, see the Artifact Analysis documentation for information about granting access to view or manage metadata."
+        ]
+      },
+      {
+        "title": "\"Learn about your container images with Gemini assistance \\_|\\_ Artifact\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/docker/learn-about-your-container-images-with-gemini-assistance",
+        "source_id": "site-docs-root-2",
+        "final_score": 86,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.devtools.artifactregistry.v1.ArtifactRegistryClient"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/learn-about-your-container-images-with-gemini-assistance"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/learn-about-your-container-images-with-gemini-assistance"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/learn-about-your-container-images-with-gemini-assistance"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/learn-about-your-container-images-with-gemini-assistance"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/learn-about-your-container-images-with-gemini-assistance"
+      ]
+    }
+  ]
+}

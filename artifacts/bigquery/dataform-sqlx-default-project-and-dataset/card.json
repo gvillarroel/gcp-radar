@@ -1,0 +1,141 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Dataform SQLX default project and dataset",
+  "feature_slug": "dataform-sqlx-default-project-and-dataset",
+  "summary": "Dataform SQLX options can define a default project and dataset for pipelines so all tasks inherit those defaults.",
+  "extended_definition": "Dataform SQLX options can define a default project and dataset for pipelines so all tasks inherit those defaults.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+      "https://docs.cloud.google.com/bigquery/docs/exporting-data",
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-effective-project-options"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Build ELT pipeline for marketing analytics data \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+        "source_id": "site-docs-reference",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the file, enter the following code snippet: config { type : \"declaration\" , database : \" PROJECT ID \" , schema : \" DATASET \" , name : \"ads Campaign CUSTOMER ID \" , } Define your transformation Define your data transformations by create a SQLX file in the definitions/ directory.",
+          "Declare your Google Ads table as table source Connect your newly-transferred Google Ads table to Dataform by declaring it as a data source by following these following steps: Create a SQLX file for data source declaration In Dataform, you declare a data source destination by creating a SQLX file in the definitions/ directory: In the Google Cloud console, go to the Dataform page.",
+          "Required roles To get the permissions that you need to complete this tutorial, ask your administrator to grant you the following IAM roles on the project: BigQuery Admin ( roles/bigquery.admin ) Dataform Admin ( roles/dataform.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      },
+      {
+        "title": "EFFECTIVE_PROJECT_OPTIONS view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-effective-project-options",
+        "source_id": "site-docs-reference-3",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The INFORMATION SCHEMA.EFFECTIVE PROJECT OPTIONS view has the following schema: Column name Data type Value project id STRING The ID of the project. project number INTEGER Number of the project. option name STRING Option ID for the specified configuration setting. option description STRING The option description. option type STRING The data type of the OPTION VALUE . option set level STRING The level in the hierarchy at which the setting is defined, with possible values of DEFAULT , ORGANIZATION , or PROJECTS . option set on id STRING Set value based on value of option set level : If DEFAULT , set to null .",
+          "Options table option name option type option value default time zone STRING The effective default time zone for this project. default kms key name STRING The effective default key name for this project. default query job timeout ms INT64 The effective default query timeout in milliseconds for this project. default interactive query queue timeout ms STRING The effective default timeout in milliseconds for queued interactive queries for this project. default batch query queue timeout ms STRING The effective default timeout in milliseconds for queued batch queries for this project. enable reservation based fairness BOOL Use reservation-based fairness as opposed to project-based fairness.",
+          "The following predefined IAM role includes the permissions that you need in order to get effective project options metadata: roles/bigquery.jobUser For more information about granular BigQuery permissions, see roles and permissions ."
+        ]
+      },
+      {
+        "title": "Export table data to Cloud Storage \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/exporting-data",
+        "source_id": "site-docs-root",
+        "final_score": 163,
+        "relevance": "",
+        "evidence_snippets": [
+          "BigQuery bigquery = BigQueryOptions . getDefaultInstance (). getService (); TableId tableId = TableId . of ( projectName , datasetName , tableName ); ExtractJobConfiguration extractConfig = ExtractJobConfiguration . newBuilder ( tableId , destinationUri ) . setCompression ( compressed ) . setFormat ( dataFormat ) . build (); Job job = bigquery . create ( JobInfo . of ( extractConfig )); // Blocks until this job completes its execution, either failing or succeeding.",
+          "BigQuery bigquery = BigQueryOptions . getDefaultInstance (). getService (); TableId tableId = TableId . of ( projectId , datasetName , tableName ); Table table = bigquery . getTable ( tableId ); Job job = table . extract ( dataFormat , destinationUri ); // Blocks until this job completes its execution, either failing or succeeding.",
+          "String projectName = \"MY PROJECT NAME\" ; String datasetName = \"MY DATASET NAME\" ; String tableName = \"MY TABLE NAME\" ; String bucketName = \"MY-BUCKET-NAME\" ; String destinationUri = \"gs://\" + bucketName + \"/path/to/file\" ; // For more information on export formats available see: // https://cloud.google.com/bigquery/docs/exporting-data#export formats and compression types String compressed = \"gzip\" ; // For more information on Job see: // https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/bigquery/package-summary.html String dataFormat = \"CSV\" ; extractTableCompressed ( projectName , datasetName , tableName , destinationUri , dataFormat , compressed ); } public static void extractTableCompressed ( String projectName , String datasetName , String tableName , String destinationUri , String dataFormat , String compressed ) { try { // Initialize client that will be used to send requests."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.admin",
+      "bigquery.jobUser",
+      "dataform.admin",
+      "googleapis.dev",
+      "index.html",
+      "summary.html"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.admin",
+      "roles/bigquery.jobUser",
+      "roles/dataform.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-effective-project-options",
+        "https://docs.cloud.google.com/bigquery/docs/exporting-data"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-effective-project-options",
+        "https://docs.cloud.google.com/bigquery/docs/exporting-data"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-effective-project-options",
+        "https://docs.cloud.google.com/bigquery/docs/exporting-data"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-effective-project-options",
+        "https://docs.cloud.google.com/bigquery/docs/exporting-data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-effective-project-options",
+        "https://docs.cloud.google.com/bigquery/docs/exporting-data"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-effective-project-options",
+        "https://docs.cloud.google.com/bigquery/docs/exporting-data"
+      ]
+    }
+  ]
+}

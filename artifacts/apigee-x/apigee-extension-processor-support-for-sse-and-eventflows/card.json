@@ -1,0 +1,161 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.658Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "Apigee Extension Processor support for SSE and EventFlows",
+  "feature_slug": "apigee-extension-processor-support-for-sse-and-eventflows",
+  "summary": "The Apigee Extension Processor now supports use with Server-Sent Events and EventFlows.",
+  "extended_definition": "The Apigee Extension Processor now supports use with Server-Sent Events and EventFlows.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/what-you-need-know-about-policy-errors",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Get started with the Apigee Extension Processor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "source_id": "site-docs-reference",
+        "final_score": 131,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Go to the VPC Networks page in the Google Cloud console: Go to VPC Networks Required roles To get the permissions that you need to install the Apigee Extension Processor, ask your administrator to grant you the following IAM roles: Create and manage service accounts: Service Account Admin ( roles/iam.serviceAccountAdmin ) on organization Create and manage service extensions: Service Extensions Admin ( roles/networkservices.serviceExtensionsAdmin ) on organization Create and manage network endpoint groups (NEGs): Compute Instance Admin ( roles/compute.instanceAdmin ) on organization Create and manage networking resources: Compute Network Admin ( roles/compute.networkAdmin ) on organization Create and manage backend services: Compute Load Balancer Admin ( roles/compute.loadBalancerAdmin ) on organization Create and manage Apigee resources: Apigee Org Admin ( roles/apigee.admin ) on organization Create and manage traffic extensions: Apigee APIM Service Extension Admin ( roles/apigee.apimServiceExtensionAdmin ) on organization View traffic extensions: Apigee APIM Service Extension Viewer ( roles/apigee.apimServiceExtensionViewer ) on organization Manage long-running operations: Apigee APIM Service Extension Service Agent ( roles/apigee.apimServiceExtensionServiceAgent ) on the service agent in the Google Cloud project For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Create the traffic extension using the following command to call the Extension Processor provisioning API: curl -X POST -H \"Authorization: Bearer $TOKEN \" \\ https://apigee.googleapis.com/v1/organizations/ $ORG NAME /apimServiceExtensions?apimServiceExtensionId = TRAFFIC EXT NAME \\ -H \"Content-Type:application/json\" -d \\ '{ \"extensionProcessor\": \" TARGET PROXY NAME \" \"lbForwardingRule\": \" LB FORWARDING RULE \", \"network\" : \" NETWORK \", \"networkConfigs\": [ { \"region\": \"$REGION\", \"subnet\": \"project/my-project/regions/$REGION/subnetworks/$SUBNET\" } ], \"extensions\": [ { \"name\": \" TARGET PROXY NAME \", \"matchCondition\": \" CEL EXPRESSION \", \"failOpen\": FAIL OPEN , \"hostname\": \" ENV GROUP HOSTNAME \", \"supportedEvents\": [ \"REQUEST HEADERS\", \"RESPONSE HEADERS\" ] } ] }' Where: TRAFFIC EXT NAME is is the name of the traffic extension you are creating.",
+          "The response appears similar to the following: { \"name\" : \"my-traffic-extension\" , \"extensionProcessor\" : \"my-extension-processor\" , \"lbForwardingRule\" : \"https://www.googleapis.com/compute/v1/projects/my-project/global/forwardingRules/my-forwarding-rule\" , \"network\" : \"projects/my-project/global/networks/my-network\" , \"networkConfigs\" : [ { \"region\" : \"us-west1\" , \"subnet\" : \"projects/my-project/regions/us-west1/subnetworks/my-subnet\" } ] , \"extensions\" : [ { \"name\" : \"organizations/my-org/apis/my-api-proxy\" , \"matchCondition\" : \"request.url.contains('1234567890')\" , \"failOpen\" : true, \"hostname\" : \"my-hostname.apigee.net\" , \"supportedEvents\" : [ \"REQUEST HEADERS\" , \"RESPONSE HEADERS\" ] } ] } Update a traffic extension You can update the traffic extension using the updateMask parameter."
+        ]
+      },
+      {
+        "title": "View message data with the Debug view \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "source_id": "site-docs-reference",
+        "final_score": 68,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"What you need to know about policy errors \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/what-you-need-know-about-policy-errors",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 62,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.admin",
+      "apigee.apimServiceExtensionAdmin",
+      "apigee.apimServiceExtensionServiceAgent",
+      "apigee.apimServiceExtensionViewer",
+      "apigee.googleapis.com",
+      "compute.instanceAdmin",
+      "compute.loadBalancerAdmin",
+      "compute.networkAdmin",
+      "hostname.apigee.net",
+      "iam.serviceAccountAdmin",
+      "networkservices.serviceExtensionsAdmin",
+      "request.url.contains"
+    ],
+    "missing_inventory_roles": [
+      "roles/apigee.admin",
+      "roles/apigee.apimServiceExtensionAdmin",
+      "roles/apigee.apimServiceExtensionServiceAgent",
+      "roles/apigee.apimServiceExtensionViewer",
+      "roles/compute.instanceAdmin",
+      "roles/compute.loadBalancerAdmin",
+      "roles/compute.networkAdmin",
+      "roles/iam.serviceAccountAdmin",
+      "roles/networkservices.serviceExtensionsAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/what-you-need-know-about-policy-errors"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/what-you-need-know-about-policy-errors"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/what-you-need-know-about-policy-errors"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/what-you-need-know-about-policy-errors"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/what-you-need-know-about-policy-errors"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/what-you-need-know-about-policy-errors"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/what-you-need-know-about-policy-errors"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/what-you-need-know-about-policy-errors"
+      ]
+    }
+  ]
+}

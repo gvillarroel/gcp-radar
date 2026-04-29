@@ -1,0 +1,195 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.627Z",
+  "source_step08_card": "data/step-08/current/products/apigee-ui/card.json",
+  "product_name": "Apigee UI",
+  "product_slug": "apigee-ui",
+  "feature_name": "Private Service Connect endpoint attachments management",
+  "feature_slug": "private-service-connect-endpoint-attachments-management",
+  "summary": "The Apigee UI supports creating and managing Private Service Connect endpoint attachments.",
+  "extended_definition": "The Apigee UI supports creating and managing Private Service Connect endpoint attachments.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Best practices for API proxy design and development with Apigee \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+        "source_id": "site-docs-reference-required-14",
+        "final_score": 33,
+        "relevance": "",
+        "evidence_snippets": [
+          "When the REST/SOAP/GraphQL endpoint already exists or can be easily implemented When using Apigee or Apigee hybrid on Google Cloud, consider using Cloud Functions or Cloud Run to host such logic.",
+          "Consider the following recommended strategies for handling large message sizes in Apigee: We highly recommend isolating API proxies that frequently handle large payloads in a dedicated environment to avoid a potential \"noisy neighbor\" scenario.",
+          "Home Documentation Application development Apigee Guides Send feedback Best practices for API proxy design and development with Apigee Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Get started with the Apigee Extension Processor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "source_id": "site-docs-reference",
+        "final_score": 33,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to the VPC Networks page in the Google Cloud console: Go to VPC Networks Required roles To get the permissions that you need to install the Apigee Extension Processor, ask your administrator to grant you the following IAM roles: Create and manage service accounts: Service Account Admin ( roles/iam.serviceAccountAdmin ) on organization Create and manage service extensions: Service Extensions Admin ( roles/networkservices.serviceExtensionsAdmin ) on organization Create and manage network endpoint groups (NEGs): Compute Instance Admin ( roles/compute.instanceAdmin ) on organization Create and manage networking resources: Compute Network Admin ( roles/compute.networkAdmin ) on organization Create and manage backend services: Compute Load Balancer Admin ( roles/compute.loadBalancerAdmin ) on organization Create and manage Apigee resources: Apigee Org Admin ( roles/apigee.admin ) on organization Create and manage traffic extensions: Apigee APIM Service Extension Admin ( roles/apigee.apimServiceExtensionAdmin ) on organization View traffic extensions: Apigee APIM Service Extension Viewer ( roles/apigee.apimServiceExtensionViewer ) on organization Manage long-running operations: Apigee APIM Service Extension Service Agent ( roles/apigee.apimServiceExtensionServiceAgent ) on the service agent in the Google Cloud project For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "The XML specification for the proxy should appear similar to the following: <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?> <APIProxy revision=\"1\" name=\"extproc-sample\"> <DisplayName/> <Description/> <CreatedAt>1739581781912</CreatedAt> <LastModifiedAt>1739582447868</LastModifiedAt> <BasePaths>/</BasePaths> <ProxyEndpoints> <ProxyEndpoint>default</ProxyEndpoint> </ProxyEndpoints> </APIProxy> Configure the EventFlow in the proxy: <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?> <APIProxy revision=\"1\" name=\"extproc-sample\"> <DisplayName/> <Description/> <CreatedAt>1739581781912</CreatedAt> <LastModifiedAt>1739582447868</LastModifiedAt> <BasePaths>/</BasePaths> <ProxyEndpoints> <ProxyEndpoint>default</ProxyEndpoint> <EventFlow name=\"EventFlow\" content-type=\"text/event-stream\"> <Response/> </EventFlow> <HTTPProxyConnection> <Properties/> <URL>https://httpbin.org/sse</URL> </HTTPProxyConnection> </ProxyEndpoints> </APIProxy> Follow the steps in Deploy an API proxy to deploy the proxy to the environment you created earlier.",
+          "Attach the new environment to the new environment group: curl -H \"Authorization: Bearer $TOKEN \" -X POST \\ \"https://apigee.googleapis.com/v1/organizations/ $ORG NAME /envgroups/ ENV GROUP NAME /attachments\" -H \"content-type:application/json\" -d \\ '{ \"name\": \" ENV GROUP NAME \", \"environment\": \" ENV NAME \" }' Where: ENV GROUP NAME is the name of the environment group you are creating."
+        ]
+      },
+      {
+        "title": "API proxy configuration reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "source_id": "site-docs-reference-required-14",
+        "final_score": 31,
+        "relevance": "",
+        "evidence_snippets": [
+          "TargetEndpoint Settings for the outbound HTTP connection (from Apigee to the backend service), request and response flows, and policy attachments.",
+          "ProxyEndpoint Settings for the inbound HTTP connection (from requesting apps to Apigee), request and response flows, and policy attachments.",
+          "VALUE=true curl -Ss -v -X PUT \\ \"https://apigee.googleapis.com/v1/organizations/ MYORG /environments/ MYENV \" \\ -H \"Content-Type: application/json\" \\ -H \"Authorization: Bearer TOKEN \" \\ -d '{ \"name\": \" MYENV \", \"properties\": { \"property\": [{ \"name\": \"features.SSLInfo.Enforce\", \"value\": \"'\"$VALUE\"'\" }] } }' Output: { ... \"properties\": { \"property\": [ { \"name\": \"features.SSLInfo.Enforce\", \"value\": \"true\" } ] }, ... } Sample target endpoint with outbound client authentication enabled <TargetEndpoint name=\"default\"> <HttpTargetConnection> <URL>https://myservice.com</URL> <SSLInfo> <Enabled>true</Enabled> <Enforce>true</Enforce> <ClientAuthEnabled>true</ClientAuthEnabled> <KeyStore>myKeystore</KeyStore> <KeyAlias>myKey</KeyAlias> <TrustStore>myTruststore</TrustStore> </SSLInfo> </HttpTargetConnection> </TargetEndpoint> For detailed instructions, see Options for configuring TLS ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.admin",
+      "apigee.apimServiceExtensionAdmin",
+      "apigee.apimServiceExtensionServiceAgent",
+      "apigee.apimServiceExtensionViewer",
+      "apigee.googleapis.com",
+      "compute.instanceAdmin",
+      "compute.loadBalancerAdmin",
+      "compute.networkAdmin",
+      "features.SSLInfo.Enforce",
+      "httpbin.org",
+      "iam.serviceAccountAdmin",
+      "myservice.com",
+      "networkservices.serviceExtensionsAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/apigee.admin",
+      "roles/apigee.apimServiceExtensionAdmin",
+      "roles/apigee.apimServiceExtensionServiceAgent",
+      "roles/apigee.apimServiceExtensionViewer",
+      "roles/compute.instanceAdmin",
+      "roles/compute.loadBalancerAdmin",
+      "roles/compute.networkAdmin",
+      "roles/iam.serviceAccountAdmin",
+      "roles/networkservices.serviceExtensionsAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Custom compute classes",
+  "feature_slug": "custom-compute-classes",
+  "summary": "This feature provides an API for fine-grained control over fallback compute priorities, autoscaling, obtainability, and node consolidation.",
+  "extended_definition": "This feature provides an API for fine-grained control over fallback compute priorities, autoscaling, obtainability, and node consolidation.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/computeclass"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About custom ComputeClasses \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "source_id": "site-docs-reference-2",
+        "final_score": 245,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following example defines a ComputeClass for a multi-host TPU collection optimized for high-availability inference workloads. apiVersion : cloud.google.com/v1 kind : ComputeClass metadata : name : multi-host-inference spec : nodePoolGroup : name : my-inference-collection nodePoolConfig : workloadType : HIGH AVAILABILITY nodePoolAutoCreation : enabled : true priorities : - tpu : type : tpu-v6e-slice topology : 2x4 For more information, see the following pages: About TPUs in GKE Plan TPUs in GKE Request ComputeClasses in workloads To use a custom ComputeClass, your Pod must explicitly request that ComputeClass by using a nodeSelector in the Pod specification.",
+          "You can also view the CRD in your cluster by running the following command: kubectl describe crd computeclasses.cloud.google.com Plan a custom ComputeClass To effectively plan, deploy, and use a custom ComputeClass in your cluster, you do the following steps: Choose your fallback compute priorities : Define a series of rules that govern the properties of the nodes that GKE creates for the ComputeClass.",
+          "Benefits of custom ComputeClasses Custom ComputeClasses offer the following benefits: Fallback compute priorities : Define a hierarchy of node configurations in each ComputeClass for GKE to prioritize."
+        ]
+      },
+      {
+        "title": "ComputeClass \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/computeclass",
+        "source_id": "site-api-reference",
+        "final_score": 185,
+        "relevance": "",
+        "evidence_snippets": [
+          "Only one of bootDiskProfile, ephemeralLocalSsdProfile, and dedicatedLocalSsdProfile can be set. ephemeralLocalSsdProfile optional object ( ephemeralLocalSsdProfile ) Not supported by custom ComputeClasses. dedicatedLocalSsdProfile optional object ( dedicatedLocalSsdProfile ) Enable memory swap on the dedicated local SSDs for the nodes.",
+          "ComputeClass is a Kubernetes Custom Resource Definition (CRD) that lets you define configurations and fallback priorities for Google Kubernetes Engine (GKE) node scaling decisions.",
+          "To learn more, see About custom ComputeClasses ."
+        ]
+      },
+      {
+        "title": "\"GKE Autopilot overview \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "For an interactive guide in the Google Cloud console for deploying and exposing an app in an Autopilot cluster, click Guide me : Guide me The following table shows some common requirements and provides recommendations for what you should do: Use case Resources Control individual node properties when scaling a cluster Create a custom ComputeClass and request it in your workload manifest.",
+          "Managed flexibility : if your workloads have specific hardware or resource requirements, such as GPUs, you can define those requirements in ComputeClasses .",
+          "Standard clusters : Built-in Autopilot ComputeClasses . podFamily priority rules in custom Autopilot ComputeClasses ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "computeclasses.cloud.google.com",
+      "iam.gserviceaccount.com",
+      "metadata.name",
+      "net.core.somaxconn",
+      "spec.activeMigration",
+      "spec.autoscalingPolicy",
+      "spec.nodePoolAutoCreation"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/computeclass",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/computeclass",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/computeclass",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/computeclass",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/computeclass",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/computeclass",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview"
+      ]
+    }
+  ]
+}

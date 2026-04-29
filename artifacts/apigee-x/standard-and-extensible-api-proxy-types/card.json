@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.658Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "Standard and extensible API proxy types",
+  "feature_slug": "standard-and-extensible-api-proxy-types",
+  "summary": "Apigee organizations with Subscription 2021 contracts were upgraded to support standard and extensible API proxy types.",
+  "extended_definition": "Apigee organizations with Subscription 2021 contracts were upgraded to support standard and extensible API proxy types.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Understanding organizations \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure",
+        "source_id": "site-docs-reference",
+        "final_score": 122,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Go to Apigee Entitlements and billing Whether the paid organization uses a Subscription or Pay-as-you-go pricing model, the items that are metered for billing purposes are: environments, API calls, and proxy deployments.",
+          "Your total proxy deployment entitlement is the sum of the entitlement supplied in your Subscription tier plus additional entitlement obtained via Proxy Deployment Packs.",
+          "Organization types There are two types of organizations: Paid: A permanent organization with full scalability."
+        ]
+      },
+      {
+        "title": "API proxy configuration reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "source_id": "site-api-reference",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "By defining conditional flows, you gain the ability to apply processing steps in an API proxy based on: Request URI HTTP verb ( GET / PUT / POST / DELETE ) Value of a query param, header, and form param Many other types of conditions For example, the following conditional flow specifies that it is executed only when the request resource path is /accesstoken .",
+          "VALUE=true curl -Ss -v -X PUT \\ \"https://apigee.googleapis.com/v1/organizations/ MYORG /environments/ MYENV \" \\ -H \"Content-Type: application/json\" \\ -H \"Authorization: Bearer TOKEN \" \\ -d '{ \"name\": \" MYENV \", \"properties\": { \"property\": [{ \"name\": \"features.SSLInfo.Enforce\", \"value\": \"'\"$VALUE\"'\" }] } }' Output: { ... \"properties\": { \"property\": [ { \"name\": \"features.SSLInfo.Enforce\", \"value\": \"true\" } ] }, ... } Sample target endpoint with outbound client authentication enabled <TargetEndpoint name=\"default\"> <HttpTargetConnection> <URL>https://myservice.com</URL> <SSLInfo> <Enabled>true</Enabled> <Enforce>true</Enforce> <ClientAuthEnabled>true</ClientAuthEnabled> <KeyStore>myKeystore</KeyStore> <KeyAlias>myKey</KeyAlias> <TrustStore>myTruststore</TrustStore> </SSLInfo> </HttpTargetConnection> </TargetEndpoint> For detailed instructions, see Options for configuring TLS .",
+          "For example, in the following Flow configuration, any inbound request that does not include the path suffix /first or /second will cause the ThirdFlow to execute, enforcing the policy called Return404 . <Flows> <Flow name=\"FirstFlow\"> <Condition>proxy.pathsuffix MatchesPath \"/first\"</Condition> <Request> <Step><Name>FirstPolicy</Name></Step> </Request> </Flow> <Flow name=\"SecondFlow\"> <Condition>proxy.pathsuffix MatchesPath \"/second\"</Condition> <Request> <Step><Name>FirstPolicy</Name></Step> <Step><Name>SecondPolicy</Name></Step> </Request> </Flow> <Flow name=\"ThirdFlow\"> <Request> <Step><Name>Return404</Name></Step> </Request> </Flow> </Flows> Resources \"Resources\" (resource files for use in API proxies) are scripts, code, and XSL transformations that can be attached to Flows using policies."
+        ]
+      },
+      {
+        "title": "Understanding APIs and API proxies \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 110,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can visualize API proxies as shown by the graphic below: API proxy types Apigee supports two proxy types: Standard proxies include only standard policies .",
+          "You usually attach policies to the ProxyEndpoint to enforce security, quota checks, and other types of access control and rate-limiting.",
+          "In an API proxy configuration, there are two types of endpoints: ProxyEndpoint: Defines the way client apps consume your APIs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "features.SSLInfo.Enforce",
+      "myservice.com",
+      "proxy.pathsuffix"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies"
+      ]
+    }
+  ]
+}

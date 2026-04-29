@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:30.676Z",
+  "source_step08_card": "data/step-08/current/products/text-to-speech/card.json",
+  "product_name": "Text-to-Speech",
+  "product_slug": "text-to-speech",
+  "feature_name": "Chirp 3 HD SSML synthesis support",
+  "feature_slug": "chirp-3-hd-ssml-synthesis-support",
+  "summary": "Chirp 3 HD now supports speech synthesis using SSML input.",
+  "extended_definition": "Chirp 3 HD now supports speech synthesis using SSML input.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd",
+      "https://docs.cloud.google.com/text-to-speech/docs/ssml",
+      "https://docs.cloud.google.com/text-to-speech/docs/ssml-beta"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Speech Synthesis Markup Language (SSML) \\_|\\_ Cloud Text-to-Speech \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/text-to-speech/docs/ssml",
+        "source_id": "site-api-reference",
+        "final_score": 160,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can send Speech Synthesis Markup Language (SSML) in your Cloud Text-to-Speech request to allow for more customization in your audio response by providing details on pauses, and audio formatting for acronyms, dates, times, abbreviations, or text that should be censored.",
+          "For the root <par> element, the begin attribute is ignored and the beginning time is when SSML speech synthesis process starts generating output for the root <par> element (i.e. effectively time \"zero\").",
+          "Home Documentation AI and ML Cloud Text-to-Speech Reference Send feedback Speech Synthesis Markup Language (SSML) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Speech Synthesis Markup Language (SSML) \\_|\\_ Cloud Text-to-Speech \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/text-to-speech/docs/ssml-beta",
+        "source_id": "site-docs-reference-2",
+        "final_score": 160,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can send Speech Synthesis Markup Language (SSML) in your Cloud Text-to-Speech request to allow for more customization in your audio response by providing details on pauses, and audio formatting for acronyms, dates, times, abbreviations, or text that should be censored.",
+          "For the root <par> element, the begin attribute is ignored and the beginning time is when SSML speech synthesis process starts generating output for the root <par> element (i.e. effectively time \"zero\").",
+          "Home Documentation AI and ML Cloud Text-to-Speech Reference Send feedback Speech Synthesis Markup Language (SSML) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Chirp 3: HD voices \\_|\\_ Cloud Text-to-Speech \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd",
+        "source_id": "site-docs-reference-2",
+        "final_score": 153,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Sample SynthesizeSpeechRequest using pause control: { \"audio config\" : { \"audio encoding\" : \"LINEAR16\" , }, \"input\" : { \"markup\" : \"Let me take a look, [pause long] yes, I see it.\" , }, \"voice\" : { \"language code\" : \"en-US\" , \"name\" : \"en-us-Chirp3-HD-Leda\" , } } Sample StreamingSynthesisInput using pause control: { \"markup\" : \"Let me take a look, [pause long] yes, I see it.\" , } Pause control audio samples: Markup input Output \"Let me take a look, yes, I see it.\" Your browser doesn't support the audio element. \"Let me take a look, [pause long] yes, I see it.\" Your browser doesn't support the audio element.",
+          "Sample SynthesizeSpeechRequest using custom pronunciations: { \"audio config\" : { \"audio encoding\" : \"LINEAR16\" , }, \"input\" : { \"text\" : \"There is a dog in the boat\" , \"custom pronunciations\" : { \"phrase\" : \"dog\" , \"phonetic encoding\" : \"PHONETIC ENCODING X SAMPA\" , \"pronunciation\" : \"\\\"k{t\" , } }, \"voice\" : { \"language code\" : \"en-US\" , \"name\" : \"en-us-Chirp3-HD-Leda\" , } } Sample StreamingSynthesizeConfig using custom pronunciations: { \"streaming audio config\" : { \"audio encoding\" : \"LINEAR16\" , }, \"voice\" : { \"language code\" : \"en-US\" , \"name\" : \"en-us-Chirp3-HD-Leda\" , } \"custom pronunciations\" : { \"phrase\" : \"dog\" , \"phonetic encoding\" : \"PHONETIC ENCODING X SAMPA\" , \"pronunciation\" : \"\\\"k{t\" , } } Custom pronunciations audio samples: Custom pronunciations applied Output None Your browser doesn't support the audio element. \"dog\" pronounced as \"\"k{t\" Your browser doesn't support the audio element.",
+          "StreamingSynthesisInput ( text = text ) ) streaming responses = client . streaming synthesize ( request generator ()) for response in streaming responses : print ( f \"Audio content size in bytes is: { len ( response . audio content ) } \" ) Perform online speech synthesis request Python To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "i.e"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/ssml",
+        "https://docs.cloud.google.com/text-to-speech/docs/ssml-beta",
+        "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd"
+      ]
+    }
+  ]
+}

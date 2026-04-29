@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:13.819Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Rich messaging",
+  "feature_slug": "rich-messaging",
+  "summary": "Rich messaging lets users format chat messages with styles, lists, links, and emojis in the chat adapter, shortcuts, and SDK initial messages.",
+  "extended_definition": "Rich messaging lets users format chat messages with styles, lists, links, and emojis in the chat adapter, shortcuts, and SDK initial messages.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Chat Settings and Features \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+        "source_id": "site-docs-reference",
+        "final_score": 236,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Global Chat Settings pane, for Rich Messaging , select the required options from the following: Allow agents to attach files Allow agents to format messages (e.g. bold, italicize, create lists) Allow agents to use emojis .",
+          "Rich formatting and emojis are available in chat shortcuts and in web SDK and mobile SDKs messages without any special configuration.",
+          "Reply back to this message to begin a new chat.\" OR \"ujet message chat dismissed\": \"Welcome Back!<br>Do you have the same issue or a new issue?\" \"ujet chat new\": \"New\" \"ujet chat same\": \"Same\" Mobile SDKs The string file names for customizing this UI are broken down below: ujet chat footer view message dismissed: \"Welcome back!\\nWe have not heard from you in a while.\\nDo you have the same issue or a new issue?\" OR ujet chat footer view message timeout: \"Your previous chat has ended, please click to start a new chat.\" ujet common same: \"Same\" ujet common new: \"New\" Configure rich messaging and file attachments You can configure CCAI Platform so that agents can use rich messaging, emojis, and file attachments in the chat adapter."
+        ]
+      },
+      {
+        "title": "\"Android SDK guide \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "0 = Show everywhere, 1 = Hide from the options menu, 2 = Hide from the post chat screen, 3 = Hide from both the options menu and the post chat screen. .setPushNotificationsAllowed ( true ) .build () ; //The following customizes various attributes in chat UI ChatStyles chatStyles = new ChatStyles () ; chatStyles.setBackButton ( new BackButtonStyle ( false, \"ujet agent sample\" )) ; //customizes back button styles chatStyles.setHeader ( ... ) ; //customizes chat header styles chatStyles.setAgentMessageBubbles ( ... ) ; //customizes agent messages styles chatStyles.setConsumerMessageBubbles ( ... ) ; //customizes consumer messages styles chatStyles.setSystemMessages ( ... ) ; //customizes system messages styles chatStyles.setEndChatButton ( ... ) ; //customizes end chat button styles chatStyles.setTimeStamps ( ... ) ; //customizes timestamp styles chatStyles.setUserInputBar ( ... ) ; //customizes user input bar styles UjetOption ujetOption = new UjetOption.Builder () .setUjetStylesOptions ( new UjetStylesOptions.Builder () .setChatStyles ( chatStyles ) .build () ) //The following customizes various attributes in chat UI using json file.",
+          "The Contact Center AI Platform (CCAI Platform) Android SDK uses foreground services to initiate chat and call, so we used FOREGROUND SERVICE REMOTE MESSAGING service type for chat as we are dealing with text messages and FOREGROUND SERVICE MICROPHONE service type for call.",
+          "Use UjetCustomData.putObject(\"external chat transfer\", hashMapObject) to set the transcript data in JSON format as follows: HashMap<String, Object> jsonData = new HashMap<> () ; // Convert json string into hashmap object and store it in jsonData UjetCustomData customData = new UjetCustomData () ; customData.putObject ( \"external chat transfer\" , jsonData ) ; // Use external chat transfer key to send chat transcript data UjetStartOptions ujetStartOptions = new UjetStartOptions.Builder () .setUnsignedCustomData ( customData ) .build () ; Ujet.start ( ujetStartOptions ) ; JSON format: greeting override : string agent : dictionary name : string avatar : string [url of agent avatar, optional] transcript : array sender : string [\"end user\" or \"agent\"] timestamp : string [ie \"2021-03-15 12:00:00Z\"] content : array type : string [one of text, media] text : string [required for text type] media : dictionary [required for media type] type : string [one of image, video] url : string [public URL pointing at media file] JSON example: { \"greeting override\" : \"Please hold while we connect you with a human agent.\" , \"agent\" : { \"name\" : \"Name\" , \"avatar\" : \"avatar url\" }, \"transcript\" : [ { \"sender\" : \"agent\" , \"timestamp\" : \"2021-03-15 12:00:15Z\" , \"content\" : [ { \"type\" : \"text\" , \"text\" : \" Suggestions shown: \\n\\n Help with batch or delivery\\n Help with metrics or order feedback\\n Help with Instant Cashout\" } ] }, { \"sender\" : \"end user\" , \"timestamp\" : \"2021-03-15 12:00:16Z\" , \"content\" : [ { \"type\" : \"text\" , \"text\" : \"Help with batch or delivery\" } ] } ] } You can use Markdown on the text type."
+        ]
+      },
+      {
+        "title": "\"Queue and menu setup \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup",
+        "source_id": "site-docs-reference",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "Key features End-user entry fields: name, email address, and message box Apply text formatting to the message Attach media files Display message content instructions for users Admin Configuration Options Customizable destination email address per queue Customizable instruction message per queue Security option to include a hidden reCAPTCHA for the Web SDK Configuration considerations When email enhancement is enabled, the email will go out from no-reply@company.com email.",
+          "SMS messaging and queue settings Overview Once SMS Messaging is enabled and you have configured chat settings, you can begin setting up SMS messaging queues.",
+          "SMS system messages Two types of system messages can be configured for SMS chats, Greeting and After Hour ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "company.com",
+      "drawable.RESOURCE",
+      "e.g"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup"
+      ]
+    }
+  ]
+}

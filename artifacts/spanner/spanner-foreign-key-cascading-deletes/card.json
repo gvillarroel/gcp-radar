@@ -1,0 +1,113 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner foreign key cascading deletes",
+  "feature_slug": "spanner-foreign-key-cascading-deletes",
+  "summary": "Spanner supports cascading delete actions for foreign keys, automatically deleting related rows when a referenced row is removed.",
+  "extended_definition": "Spanner supports cascading delete actions for foreign keys, automatically deleting related rows when a referenced row is removed.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 2,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+      "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus",
+      "https://docs.cloud.google.com/spanner/docs/use-oss-jdbc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access a database with fine-grained access control \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+        "source_id": "site-docs-root",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Capture custom client-side metrics using OpenCensus \\_|\\_ Spanner \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus",
+        "source_id": "site-docs-root",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Connect JDBC to a GoogleSQL-dialect database \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/use-oss-jdbc",
+        "source_id": "site-docs-reference",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus",
+        "https://docs.cloud.google.com/spanner/docs/use-oss-jdbc"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus",
+        "https://docs.cloud.google.com/spanner/docs/use-oss-jdbc"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus",
+        "https://docs.cloud.google.com/spanner/docs/use-oss-jdbc"
+      ]
+    }
+  ]
+}

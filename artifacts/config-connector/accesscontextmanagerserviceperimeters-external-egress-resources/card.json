@@ -1,0 +1,266 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:59.197Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "AccessContextManagerServicePerimeters external egress resources",
+  "feature_slug": "accesscontextmanagerserviceperimeters-external-egress-resources",
+  "summary": "Config Connector supports the egressPolicies.egressTo.externalResources field for AccessContextManagerServicePerimeters resources.",
+  "extended_definition": "Config Connector supports the egressPolicies.egressTo.externalResources field for AccessContextManagerServicePerimeters resources.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"AccessContextManagerServicePerimeter \\_|\\_ Config Connector \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "source_id": "site-docs-root",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": [
+          "AccessContextManagerServicePerimeter Property Value Google Cloud Service Name AccessContextManager Google Cloud Service Documentation /vpc-service-controls/docs/ Google Cloud REST Resource Name accesscontextmanager.v1.accessPolicies.servicePerimeters Google Cloud REST Resource Documentation /access-context-manager/docs/reference/rest/v1/accessPolicies.servicePerimeters Config Connector Resource Short Names gcpaccesscontextmanagerserviceperimeter gcpaccesscontextmanagerserviceperimeters accesscontextmanagerserviceperimeter Config Connector Service Name accesscontextmanager.googleapis.com Config Connector Resource Fully Qualified Name accesscontextmanagerserviceperimeters.accesscontextmanager.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema accessPolicyRef : external : string name : string namespace : string description : string perimeterType : string resourceID : string spec : accessLevels : - external : string name : string namespace : string egressPolicies : - egressFrom : identities : - serviceAccountRef : external : string name : string namespace : string user : string identityType : string egressTo : externalResources : - string operations : - methodSelectors : - method : string permission : string serviceName : string resources : - projectRef : external : string name : string namespace : string ingressPolicies : - ingressFrom : identities : - serviceAccountRef : external : string name : string namespace : string user : string identityType : string sources : - accessLevelRef : external : string name : string namespace : string projectRef : external : string name : string namespace : string ingressTo : operations : - methodSelectors : - method : string permission : string serviceName : string resources : - projectRef : external : string name : string namespace : string resources : - projectRef : external : string name : string namespace : string restrictedServices : - string vpcAccessibleServices : allowedServices : - string enableRestriction : boolean status : accessLevels : - external : string name : string namespace : string egressPolicies : - egressFrom : identities : - serviceAccountRef : external : string name : string namespace : string user : string identityType : string egressTo : externalResources : - string operations : - methodSelectors : - method : string permission : string serviceName : string resources : - projectRef : external : string name : string namespace : string ingressPolicies : - ingressFrom : identities : - serviceAccountRef : external : string name : string namespace : string user : string identityType : string sources : - accessLevelRef : external : string name : string namespace : string projectRef : external : string name : string namespace : string ingressTo : operations : - methodSelectors : - method : string permission : string serviceName : string resources : - projectRef : external : string name : string namespace : string resources : - projectRef : external : string name : string namespace : string restrictedServices : - string vpcAccessibleServices : allowedServices : - string enableRestriction : boolean title : string useExplicitDryRunSpec : boolean Fields accessPolicyRef Required object The AccessContextManagerAccessPolicy this AccessContextManagerServicePerimeter lives in. accessPolicyRef.external Optional string Allowed value: string of the format accessPolicies/{{value}}, where {{value}} is the name field of an AccessContextManagerAccessPolicy resource. accessPolicyRef.name Optional string Name of the referent.",
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : accesscontextmanager.cnrm.cloud.google.com/v1beta1 kind : AccessContextManagerServicePerimeter metadata : name : serviceperimetersample spec : Config for DRY-RUN To use this 'useExplicitDryRunSpec' must be set to 'true' Replace \"${ACCESS POLICY NUMBER}\" with the numeric ID for your Access Policy Replace \"${PROJECT NUMBER}\" with the appropriate project number for the project to be protected by the perimeter spec : List of Access Levels to be applied for this perimeter accessLevels : - name : serviceperimeterdep2 List of projects to be included in this perimeter resources : - projectRef : external : \"projects/${PROJECT NUMBER1}\" - projectRef : external : \"projects/${PROJECT NUMBER2}\" List of restricted services restrictedServices : - \"storage.googleapis.com\" List of services that could be accessed from within the perimeter vpcAccessibleServices : allowedServices : - \"storage.googleapis.com\" - \"pubsub.googleapis.com\" enableRestriction : true egressPolicies : - egressFrom : identities : - name : serviceperimeterengressdep - egressTo : resources : - projectRef : external : \"projects/${PROJECT NUMBER1}\" ingressPolicies : - ingressFrom : identities : - name : serviceperimeteringressdep sources : - accessLevelRef : name : serviceperimeterdep2 ingressTo : resources : - projectRef : external : \"projects/${PROJECT NUMBER2}\" Config to ENFORCE Config items are repeated as above for DRY-RUN Replace \"${ACCESS POLICY NUMBER}\" with the numeric ID for your Access Policy Replace \"${PROJECT NUMBERx}\" with the appropriate project number for the project to be protected by the perimeter status : accessLevels : - name : serviceperimeterdep2 resources : - projectRef : external : \"projects/${PROJECT NUMBER3}\" - projectRef : external : \"projects/${PROJECT NUMBER4}\" restrictedServices : - \"bigquery.googleapis.com\" vpcAccessibleServices : allowedServices : - \"bigquery.googleapis.com\" - \"logging.googleapis.com\" enableRestriction : true title : Service Perimeter created by Config Connector useExplicitDryRunSpec : true accessPolicyRef : Using an already existing Access Policy.",
+          "A request matches if it contains a resource in this list. spec.egressPolicies[].egressTo.resources[].projectRef Optional object spec.egressPolicies[].egressTo.resources[].projectRef.external Optional string Allowed value: string of the format projects/{{value}}, where {{value}} is the number field of a Project resource. spec.egressPolicies[].egressTo.resources[].projectRef.name Optional string Name of the referent."
+        ]
+      },
+      {
+        "title": "\"Configure the controller manager rate limit \\_|\\_ Config Connector \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "source_id": "site-docs-reference",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "ContainerCluster \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "source_id": "site-docs-reference",
+        "final_score": 27,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more details on how to debug and fix an issue which could lead to a permanent diff, please refer to the Config Connector Troubleshooting page Property Value Google Cloud Service Name Kubernetes Engine Google Cloud Service Documentation /kubernetes-engine/docs/ Google Cloud REST Resource Name v1.projects.locations.clusters Google Cloud REST Resource Documentation /kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters Config Connector Resource Short Names gcpcontainercluster gcpcontainerclusters containercluster Config Connector Service Name container.googleapis.com Config Connector Resource Fully Qualified Name containerclusters.container.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/project-id cnrm.cloud.google.com/remove-default-node-pool Spec Schema addonsConfig : cloudrunConfig : disabled : boolean loadBalancerType : string configConnectorConfig : enabled : boolean dnsCacheConfig : enabled : boolean gcePersistentDiskCsiDriverConfig : enabled : boolean gcpFilestoreCsiDriverConfig : enabled : boolean gcsFuseCsiDriverConfig : enabled : boolean gkeBackupAgentConfig : enabled : boolean horizontalPodAutoscaling : disabled : boolean httpLoadBalancing : disabled : boolean istioConfig : auth : string disabled : boolean kalmConfig : enabled : boolean networkPolicyConfig : disabled : boolean allowNetAdmin : boolean authenticatorGroupsConfig : securityGroup : string binaryAuthorization : enabled : boolean evaluationMode : string clusterAutoscaling : autoProvisioningDefaults : bootDiskKMSKeyRef : external : string name : string namespace : string diskSize : integer imageType : string management : autoRepair : boolean autoUpgrade : boolean upgradeOptions : - autoUpgradeStartTime : string description : string minCpuPlatform : string oauthScopes : - string serviceAccountRef : external : string name : string namespace : string shieldedInstanceConfig : enableIntegrityMonitoring : boolean enableSecureBoot : boolean upgradeSettings : blueGreenSettings : nodePoolSoakDuration : string standardRolloutPolicy : batchNodeCount : integer batchPercentage : float batchSoakDuration : string maxSurge : integer maxUnavailable : integer strategy : string autoscalingProfile : string defaultComputeClassConfig : enabled : boolean enabled : boolean resourceLimits : - maximum : integer minimum : integer resourceType : string clusterIpv4Cidr : string clusterTelemetry : type : string confidentialNodes : enabled : boolean controlPlaneEndpointsConfig : dnsEndpointConfig : allowExternalTraffic : boolean enableK8sTokensViaDns : boolean ipEndpointsConfig : enabled : boolean costManagementConfig : enabled : boolean databaseEncryption : keyName : string state : string datapathProvider : string defaultMaxPodsPerNode : integer defaultSnatStatus : disabled : boolean description : string dnsConfig : clusterDns : string clusterDnsDomain : string clusterDnsScope : string enableAutopilot : boolean enableBinaryAuthorization : boolean enableCiliumClusterwideNetworkPolicy : boolean enableFqdnNetworkPolicy : boolean enableIntranodeVisibility : boolean enableK8sBetaApis : enabledApis : - string enableKubernetesAlpha : boolean enableL4IlbSubsetting : boolean enableLegacyAbac : boolean enableMultiNetworking : boolean enableShieldedNodes : boolean enableTpu : boolean gatewayApiConfig : channel : string identityServiceConfig : enabled : boolean initialNodeCount : integer ipAllocationPolicy : additionalPodRangesConfig : podRangeNames : - string clusterIpv4CidrBlock : string clusterSecondaryRangeName : string podCidrOverprovisionConfig : disabled : boolean servicesIpv4CidrBlock : string servicesSecondaryRangeName : string stackType : string location : string loggingConfig : enableComponents : - string loggingService : string maintenancePolicy : dailyMaintenanceWindow : duration : string startTime : string maintenanceExclusion : - endTime : string exclusionName : string exclusionOptions : scope : string startTime : string recurringWindow : endTime : string recurrence : string startTime : string masterAuth : clientCertificate : string clientCertificateConfig : issueClientCertificate : boolean clientKey : string clusterCaCertificate : string password : value : string valueFrom : secretKeyRef : key : string name : string username : string masterAuthorizedNetworksConfig : cidrBlocks : - cidrBlock : string displayName : string gcpPublicCidrsAccessEnabled : boolean meshCertificates : enableCertificates : boolean minMasterVersion : string monitoringConfig : advancedDatapathObservabilityConfig : - enableMetrics : boolean relayMode : string enableComponents : - string managedPrometheus : enabled : boolean monitoringService : string networkPolicy : enabled : boolean provider : string networkRef : external : string name : string namespace : string networkingMode : string nodeConfig : advancedMachineFeatures : enableNestedVirtualization : boolean threadsPerCore : integer bootDiskKMSCryptoKeyRef : external : string name : string namespace : string confidentialNodes : enabled : boolean diskSizeGb : integer diskType : string ephemeralStorageConfig : localSsdCount : integer ephemeralStorageLocalSsdConfig : localSsdCount : integer fastSocket : enabled : boolean gcfsConfig : enabled : boolean guestAccelerator : - count : integer gpuDriverInstallationConfig : gpuDriverVersion : string gpuPartitionSize : string gpuSharingConfig : gpuSharingStrategy : string maxSharedClientsPerGpu : integer type : string gvnic : enabled : boolean hostMaintenancePolicy : maintenanceInterval : string imageType : string kubeletConfig : cpuCfsQuota : boolean cpuCfsQuotaPeriod : string cpuManagerPolicy : string podPidsLimit : integer labels : string : string linuxNodeConfig : cgroupMode : string sysctls : string : string localNvmeSsdBlockConfig : localSsdCount : integer localSsdCount : integer loggingVariant : string machineType : string metadata : string : string minCpuPlatform : string nodeGroupRef : external : string name : string namespace : string oauthScopes : - string preemptible : boolean reservationAffinity : consumeReservationType : string key : string values : - string resourceLabels : string : string sandboxConfig : sandboxType : string serviceAccountRef : external : string name : string namespace : string shieldedInstanceConfig : enableIntegrityMonitoring : boolean enableSecureBoot : boolean soleTenantConfig : nodeAffinity : - key : string operator : string values : - string spot : boolean tags : - string taint : - effect : string key : string value : string workloadMetadataConfig : mode : string nodeMetadata : string nodeLocations : - string nodePoolAutoConfig : networkTags : tags : - string nodePoolDefaults : nodeConfigDefaults : gcfsConfig : enabled : boolean loggingVariant : string nodeVersion : string notificationConfig : pubsub : enabled : boolean filter : eventType : - string topicRef : external : string name : string namespace : string podSecurityPolicyConfig : enabled : boolean privateClusterConfig : enablePrivateEndpoint : boolean enablePrivateNodes : boolean masterGlobalAccessConfig : enabled : boolean masterIpv4CidrBlock : string peeringName : string privateEndpoint : string privateEndpointSubnetworkRef : external : string name : string namespace : string publicEndpoint : string privateIpv6GoogleAccess : string protectConfig : workloadConfig : auditMode : string workloadVulnerabilityMode : string releaseChannel : channel : string resourceID : string resourceUsageExportConfig : bigqueryDestination : datasetId : string enableNetworkEgressMetering : boolean enableResourceConsumptionMetering : boolean securityPostureConfig : mode : string vulnerabilityMode : string serviceExternalIpsConfig : enabled : boolean subnetworkRef : external : string name : string namespace : string verticalPodAutoscaling : enabled : boolean workloadIdentityConfig : identityNamespace : string workloadPool : string Fields addonsConfig Optional object The configuration for addons supported by GKE. addonsConfig.cloudrunConfig Optional object The status of the CloudRun addon.",
+          "Whether to enable Cloud TPU resources in this cluster. gatewayApiConfig Optional object Configuration for GKE Gateway API controller. gatewayApiConfig.channel Required string The Gateway API release channel to use for Gateway API. identityServiceConfig Optional object Configuration for Identity Service which allows customers to use external identity providers with the K8S API. identityServiceConfig.enabled Optional boolean Whether to enable the Identity Service component. initialNodeCount Optional integer Immutable.",
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : container.cnrm.cloud.google.com/v1beta1 kind : ContainerCluster metadata : labels : availability : dev target-audience : development name : containercluster-sample-routesbased spec : description : A routes-based cluster confined to one zone configured for development. location : us-central1-a initialNodeCount : 1 networkingMode : ROUTES clusterIpv4Cidr : 10.96.0.0/14 masterAuthorizedNetworksConfig : cidrBlocks : - displayName : Trusted external network cidrBlock : 10.2.0.0/16 addonsConfig : gcePersistentDiskCsiDriverConfig : enabled : true kalmConfig : enabled : true horizontalPodAutoscaling : disabled : true httpLoadBalancing : disabled : false loggingConfig : enableComponents : - \"SYSTEM COMPONENTS\" - \"WORKLOADS\" monitoringConfig : enableComponents : - \"SYSTEM COMPONENTS\" workloadIdentityConfig : Replace ${PROJECT ID?} with your project ID. workloadPool : \"${PROJECT ID?}.svc.id.goog\" Vpc Native Container Cluster Copyright 2020 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accesscontextmanager.cnrm.cloud.google.com",
+      "accesscontextmanager.googleapis.com",
+      "accesscontextmanager.v1.accessPolicies.servicePerimeters",
+      "accesscontextmanagerserviceperimeters.accesscontextmanager.cnrm.cloud.google.com",
+      "bigquery.googleapis.com",
+      "cnrm.cloud.google.com",
+      "container.clusters.getCredentials",
+      "container.cnrm.cloud.google.com",
+      "container.googleapis.com",
+      "containerclusters.container.cnrm.cloud.google.com",
+      "e.g",
+      "logging.googleapis.com",
+      "projects.locations.clusters",
+      "pubsub.googleapis.com",
+      "spec.egressPolicies",
+      "storage.googleapis.com",
+      "svc.id.goog",
+      "v1.projects.locations.clusters"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.896Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr",
+  "feature_name": "Deployment of backup/recovery appliances across management console VPCs",
+  "feature_slug": "deployment-of-backup-recovery-appliances-across-management-console-vpcs",
+  "summary": "Administrators can now deploy backup/recovery appliances in any VPC available within the management console project.",
+  "extended_definition": "Administrators can now deploy backup/recovery appliances in any VPC available within the management console project.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-guide",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Set up and plan a backup/recovery appliance deployment \\_|\\_ Backup and\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 199,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Each Backup and DR deployment includes a single appliance management console managing any number of backup/recovery appliances.",
+          "Supported regions The following section lists the appliance management console and backup/recovery appliances supported regions.",
+          "Appliance management console : The management console serves as the management plane for your backup/recovery appliances."
+        ]
+      },
+      {
+        "title": "\"Set up and plan a backup/recovery appliance deployment \\_|\\_ Backup and\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan",
+        "source_id": "site-docs-root",
+        "final_score": 189,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Each Backup and DR deployment includes a single appliance management console managing any number of backup/recovery appliances.",
+          "Supported regions The following section lists the appliance management console and backup/recovery appliances supported regions.",
+          "Appliance management console : The management console serves as the management plane for your backup/recovery appliances."
+        ]
+      },
+      {
+        "title": "\"Deploy a backup/recovery appliance \\_|\\_ Backup and DR \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 179,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "It is in this format: projects/test-project/locations/us-central1/operations/operationID The output is displayed as: Terraform You can use the following Terraform resource links to deploy an appliance management console and a backup/recovery appliance: Deploy a appliance management console using Terraform resource Deploy a backup/recovery appliance using Terraform resource Caution: When deploying multiple backup/recovery appliances using Terraform, each appliance must be associated with a unique Service Account.",
+          "Resizing the appliance or changing its machine configuration—changing the series, CPU, memory—can make the backup/recovery appliance unusable. gcloud You can use gcloud CLI to create an appliance management console.",
+          "If you need to add more than 30 appliances, create a new project, deploy a new appliance management console, and then deploy the appliances."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

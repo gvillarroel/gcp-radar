@@ -1,0 +1,112 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:10.308Z",
+  "source_step08_card": "data/step-08/current/products/error-reporting/card.json",
+  "product_name": "Error Reporting",
+  "product_slug": "error-reporting",
+  "feature_name": "Ruby support",
+  "feature_slug": "ruby-support",
+  "summary": "Error Reporting now supports Ruby applications.",
+  "extended_definition": "Error Reporting now supports Ruby applications.",
+  "lifecycle": {
+    "latest_feature_date": "2016-09-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/error-reporting/docs/setup/compute-engine",
+      "https://docs.cloud.google.com/error-reporting/docs/setup/ec2",
+      "https://docs.cloud.google.com/error-reporting/docs/setup/ruby"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Instrument Ruby apps for Error Reporting \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/error-reporting/docs/setup/ruby",
+        "source_id": "site-docs-root",
+        "final_score": 101,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To enable Error Reporting in development mode, add the following: Add this to config/environments/development.rb Rails . application . configure do config config . google cloud . use error reporting = true end Using instrumentation configuration interface To use the Error Reporting library for Ruby in other Rack-based applications, provide the parameters through the configuration interface: require \"google/cloud/error reporting\" Google :: Cloud . configure do config Stackdriver Error Reporting specific parameters config . error reporting . project id = \"YOUR-PROJECT-ID\" config . error reporting . keyfile = \"/path/to/service-account.json\" end You can also set shared configuration for all Google Cloud Observability gems using the following: require \"stackdriver\" Google :: Cloud . configure do config Stackdriver Shared parameters config . project id = \"YOUR-PROJECT-ID\" config . keyfile = \"/path/to/service-account.json\" end App Engine flexible environment App Engine grants the Error Reporting Writer role ( roles/errorreporting.writer ) to your default service account automatically.",
+          "To enable Error Reporting in development mode, add the following: Add this to config/environments/development.rb Rails . application . configure do config config . google cloud . use error reporting = true end Using instrumentation configuration interface To use the Error Reporting library for Ruby in other Rack-based applications, provide the parameters through the configuration interface: require \"google/cloud/error reporting\" Google :: Cloud . configure do config Stackdriver Error Reporting specific parameters config . error reporting . project id = \"YOUR-PROJECT-ID\" config . error reporting . keyfile = \"/path/to/service-account.json\" end You can also set shared configuration for all Google Cloud Observability gems using the following: require \"stackdriver\" Google :: Cloud . configure do config Stackdriver Shared parameters config . project id = \"YOUR-PROJECT-ID\" config . keyfile = \"/path/to/service-account.json\" end View error groups In the Google Cloud console, go to the Error Reporting page: Go to Error Reporting You can also find this page by using the search bar.",
+          "Other Rack-based applications can use the Rack Middleware provided by the library: require \"google/cloud/error reporting\" use Google :: Cloud :: ErrorReporting :: Middleware For more information on installation, read the documentation for the Error Reporting library for Ruby."
+        ]
+      },
+      {
+        "title": "Setting up Error Reporting on Amazon EC2 \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/error-reporting/docs/setup/ec2",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 49,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Using client libraries Libraries exist in a limited number of languages to help you call the Error Reporting API from your application: ASP.NET Go Java Node.js Ruby Python PHP Samples ASP.NET The ASP.NET NuGet package reports uncaught exceptions from ASP.NET web applications to Error Reporting.",
+          "Using Logging to report errors To connect your EC2 applications to Error Reporting, send your exceptions or other errors to Logging.",
+          "You can send errors from your EC2 applications to Error Reporting in one of two ways: By logging to Cloud Logging ."
+        ]
+      },
+      {
+        "title": "Setting up on Compute Engine \\_|\\_ Error Reporting \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/error-reporting/docs/setup/compute-engine",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 49,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Using client libraries Libraries exist in a limited number of languages to help you call the Error Reporting API from your application: ASP.NET Go Java Node.js Ruby Python PHP Samples ASP.NET The ASP.NET NuGet package reports uncaught exceptions from ASP.NET web applications to Error Reporting.",
+          "Using Logging to report errors To connect your Compute Engine applications to Error Reporting, send your exceptions or other errors to Logging.",
+          "You can send errors from your Compute Engine applications to Error Reporting in one of two ways: By logging to Cloud Logging ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.json",
+      "development.rb",
+      "errorreporting.writer"
+    ],
+    "missing_inventory_roles": [
+      "roles/errorreporting.writer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/error-reporting/docs/setup/ruby",
+        "https://docs.cloud.google.com/error-reporting/docs/setup/compute-engine",
+        "https://docs.cloud.google.com/error-reporting/docs/setup/ec2"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/error-reporting/docs/setup/ruby",
+        "https://docs.cloud.google.com/error-reporting/docs/setup/compute-engine",
+        "https://docs.cloud.google.com/error-reporting/docs/setup/ec2"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/error-reporting/docs/setup/ruby",
+        "https://docs.cloud.google.com/error-reporting/docs/setup/compute-engine",
+        "https://docs.cloud.google.com/error-reporting/docs/setup/ec2"
+      ]
+    }
+  ]
+}

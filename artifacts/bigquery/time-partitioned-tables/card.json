@@ -1,0 +1,132 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Time-partitioned tables",
+  "feature_slug": "time-partitioned-tables",
+  "summary": "BigQuery supports time-partitioned tables for organizing data by time partitions.",
+  "extended_definition": "BigQuery supports time-partitioned tables for organizing data by time partitions.",
+  "lifecycle": {
+    "latest_feature_date": "2016-06-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata",
+      "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-authorized-dataset"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Extracting metadata from Apache Hive for migration \\_|\\_ BigQuery \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata",
+        "source_id": "site-api-reference",
+        "final_score": 44,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Note: To get support or provide feedback for this feature, contact bigquery-permission-migration-support@google.com ."
+        ]
+      },
+      {
+        "title": "Authorize a BigQuery Dataset \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-authorized-dataset",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: Only views target types are supported for now. @param source project id [String] The ID of the source Google Cloud project. @param source database id [String] The ID of the source database. @param user project id [String] The ID of the user Google Cloud project. @param user database id [String] The ID of the user database. @param target types [Array<String>] List of target types for authorization. def authorized dataset source project id :, source database id :, user project id :, user database id :, target types : Initialize client and get source dataset's references source bigquery = Google :: Cloud :: Bigquery . new project id : source project id source dataset = source bigquery . dataset source database id Initialize client and get user dataset's references user bigquery = Google :: Cloud :: Bigquery . new project id : user project id user dataset = user bigquery . dataset user database id Add the user dataset's DatasetAccessEntry object to the existing source dataset rules source dataset . access do access access . add reader dataset user dataset . build access entry ( target types : target types ) end puts \"Dataset #{ user dataset . dataset id } added as authorized dataset in dataset #{ source dataset . dataset id } \" end What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "DatasetAclEntity ( userDatasetId , targetTypes ); sourceDatasetAcl . add ( Acl . of ( userDatasetAclEntity )); // update the source dataset with user dataset's ACL Dataset updatedSourceDataset = sourceDataset . toBuilder (). setAcl ( sourceDatasetAcl ). build (). update (); System . out . printf ( \"Dataset %s updated with the added authorization\\n\" , updatedSourceDataset . getDatasetId ()); } catch ( BigQueryException e ) { System . out . println ( \"Dataset Authorization failed due to error: \\n\" + e ); } } } Ruby Before trying this sample, follow the Ruby setup instructions in the BigQuery quickstart using client libraries .",
+          "BigQuery bigquery = BigQueryOptions . getDefaultInstance (). getService (); // Get both source and user dataset's references Dataset sourceDataset = bigquery . getDataset ( sourceDatasetId ); Dataset userDataset = bigquery . getDataset ( userDatasetId ); // Get the source dataset's ACL List<Acl> sourceDatasetAcl = new ArrayList <> ( sourceDataset . getAcl ()); // Add the user dataset's DatasetAccessEntry object to the existing sourceDatasetAcl List<String> targetTypes = ImmutableList . of ( \"VIEWS\" ); Acl ."
+        ]
+      },
+      {
+        "title": "Introduction to partitioned tables \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "source_id": "site-docs-root",
+        "final_score": 37,
+        "relevance": "",
+        "evidence_snippets": [
+          "Table pricing When you create and use partitioned tables in BigQuery, your charges are based on how much data is stored in the partitions and on the queries you run against the data: For information on storage pricing, see Storage pricing .",
+          "Ingestion time partitioning When you create a table partitioned by ingestion time, BigQuery automatically assigns rows to partitions based on the time when BigQuery ingests the data.",
+          "Quotas and limits for jobs against partitioned tables Quotas and limits also apply to the different types of jobs you can run against partitioned tables, including: Loading data (load jobs) Exporting data (extract jobs) Querying data (query jobs) Copying tables (copy jobs) Number of partition modifications for column-partitioned tables quota errors BigQuery returns this error when your column-partitioned table reaches the quota of the number of partition modifications permitted per day."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigframes.pandas"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-authorized-dataset"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-authorized-dataset"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-authorized-dataset"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-authorized-dataset"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-authorized-dataset"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:33.557Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Private Service Connect NAT subnet IP address consumption",
+  "feature_slug": "private-service-connect-nat-subnet-ip-address-consumption",
+  "summary": "Private Service Connect improves IP address consumption in NAT subnets for service attachments created on or after March 1, 2023.",
+  "extended_definition": "Private Service Connect improves IP address consumption in NAT subnets for service attachments created on or after March 1, 2023.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+      "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+      "https://docs.cloud.google.com/vpc/docs/private-service-connect"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About Private Service Connect interfaces \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+        "source_id": "site-docs-root-2",
+        "final_score": 239,
+        "relevance": "",
+        "evidence_snippets": [
+          "Google Cloud validates that IP addresses that are allocated to a Private Service Connect interface don't overlap with the address ranges of subnets that are connected to the VM's other network interfaces.",
+          "When a consumer project accepts a connection from a Private Service Connect interface, Google Cloud configures the interface with internal IP addresses from the network attachment's subnet.",
+          "If a connection is accepted, Google Cloud assigns the Private Service Connect interface an internal IP address from the consumer subnet that is specified by the network attachment."
+        ]
+      },
+      {
+        "title": "\"Publish services by using Private Service Connect \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "source_id": "site-docs-root-2",
+        "final_score": 239,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you configure ingress firewall rules for backend services, the source of traffic depends on the type of load balancer that your service uses: Category Source of traffic to backends Passthrough load balancers: Internal passthrough Network Load Balancer Internal protocol forwarding Port mapping service The IP address ranges of the Private Service Connect (NAT) subnets associated with the service Proxy load balancers: Cross-region internal Application Load Balancer Regional internal Application Load Balancer Regional internal proxy Network Load Balancer Secure Web Proxy The IP address ranges of the associated proxy-only subnets Services with health checks The probe IP address ranges of your load balancer type Publish a service To publish a service, you create a service attachment.",
+          "To create an IPv4-only Private Service Connect subnet, do the following: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks { \"ipCidrRange\": \" SUBNET RANGE \", \"name\": \" SUBNET NAME \", \"network\": \"projects/ PROJECT ID /global/networks/ NETWORK NAME \", \"purpose\": \"PRIVATE SERVICE CONNECT\" } To create a dual-stack Private Service Connect subnet, do the following: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks { \"ipCidrRange\": \" SUBNET RANGE \", \"name\": \" SUBNET NAME \", \"network\": \"projects/ PROJECT ID /global/networks/ NETWORK NAME \", \"purpose\": \"PRIVATE SERVICE CONNECT\", \"stackType\": \"IPV4 IPV6\", \"ipv6AccessType\": \"INTERNAL\" } To create an IPv6-only Private Service Connect subnet, do the following: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks { \"name\": \" SUBNET NAME \", \"network\": \"projects/ PROJECT ID /global/networks/ NETWORK NAME \", \"purpose\": \"PRIVATE SERVICE CONNECT\", \"stackType\": \"IPV6 ONLY\", \"ipv6AccessType\": \"INTERNAL\" } Replace the following: PROJECT ID : the project for the subnet.",
+          "To create an IPv4-only Private Service Connect subnet, do the following: gcloud compute networks subnets create SUBNET NAME \\ --network= NETWORK NAME \\ --region= REGION \\ --range= SUBNET RANGE \\ --purpose=PRIVATE SERVICE CONNECT To create a dual-stack Private Service Connect subnet, do the following: gcloud compute networks subnets create SUBNET NAME \\ --network= NETWORK NAME \\ --region= REGION \\ --stack-type=IPV4 IPV6 \\ --ipv6-access-type=INTERNAL \\ --range= SUBNET RANGE \\ --purpose=PRIVATE SERVICE CONNECT To create an IPv6-only Private Service Connect subnet, do the following: gcloud compute networks subnets create SUBNET NAME \\ --network= NETWORK NAME \\ --region= REGION \\ --stack-type=IPV6 ONLY \\ --ipv6-access-type=INTERNAL \\ --purpose=PRIVATE SERVICE CONNECT Replace the following: SUBNET NAME : the name to assign to the subnet."
+        ]
+      },
+      {
+        "title": "Private Service Connect \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/private-service-connect",
+        "source_id": "site-docs-root",
+        "final_score": 227,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the service consumer accepts the connection, Google Cloud allocates the interface an IP address from a subnet in the consumer VPC network that's specified by the network attachment.",
+          "Endpoints Private Service Connect endpoints are internal IP addresses in a consumer VPC network that can be directly accessed by clients in that network.",
+          "Private Service Connect endpoints and published services let two independent companies communicate with each other by using internal IP addresses."
+        ]
+      },
+      {
+        "title": "\"Create and run Connectivity Tests \\_|\\_ Network Intelligence Center - Connectivity\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "source_id": "site-iam-reference",
+        "final_score": 221,
+        "relevance": "",
+        "evidence_snippets": [
+          "These parameters are automatically selected based on your source and destination IP addresses. resource \"google network management connectivity test\" \"default\" { name = \"conn-test-addr\" source { ip address = google compute address.source addr.address project id = google compute address.source addr.project network = google compute network.default.id network type = \"GCP NETWORK\" } destination { ip address = google compute address.dest addr.address project id = google compute address.dest addr.project network = google compute network.default.id port = \"80\" } protocol = \"UDP\" } resource \"google compute network\" \"default\" { name = \"connectivity-vpc\" auto create subnetworks = false } resource \"google compute subnetwork\" \"default\" { name = \"connectivity-vpc-subnet\" ip cidr range = \"10.0.0.0/8\" region = \"us-central1\" network = google compute network.default.id } resource \"google compute firewall\" \"default\" { name = \"allow-incoming-all\" network = google compute network.default.name allow { protocol = \"all\" } source ranges = [\"0.0.0.0/0\"] } resource \"google compute address\" \"source addr\" { name = \"src-addr\" subnetwork = google compute subnetwork.default.id address type = \"INTERNAL\" address = \"10.0.0.42\" region = \"us-central1\" } resource \"google compute address\" \"dest addr\" { name = \"dest-addr\" subnetwork = google compute subnetwork.default.id address type = \"INTERNAL\" address = \"10.0.0.43\" region = \"us-central1\" } resource \"google compute instance\" \"source\" { name = \"source-vm1\" machine type = \"e2-medium\" zone = \"us-central1-a\" boot disk { initialize params { image = data.google compute image.default.id } } network interface { network = google compute network.default.id subnetwork = google compute subnetwork.default.id network ip = \"10.0.0.42\" access config { } } } resource \"google compute instance\" \"destination\" { name = \"dest-vm1\" machine type = \"e2-medium\" zone = \"us-central1-a\" boot disk { initialize params { image = data.google compute image.default.id } } network interface { network = google compute network.default.id subnetwork = google compute subnetwork.default.id network ip = \"10.0.0.43\" access config { } } } data \"google compute image\" \"default\" { family = \"debian-11\" project = \"debian-cloud\" } API This example tests the ability to ping from the source IP address to the destination IP address.",
+          "For more information, see create in the Google API Client Library for Python. test input = { \"source\": { \"instance\": \" SOURCE INSTANCE \", \"ipAddress\": \" SOURCE IP ADDRESS \", \"projectId\": \" SOURCE INSTANCE PROJECT ID \" }, \"destination\": { \"instance\": \" DESTINATION INSTANCE \", \"ipAddress\": \" DESTINATION IP ADDRESS \", \"projectId\": \" DESTINATION INSTANCE PROJECT ID \" }, \"protocol\": \" PROTOCOL \", } request = api.projects().locations().global ().connectivityTests().create( parent=\"projects/ PROJECT ID /locations/global\", testId=\" TEST ID \", body=test input) print(json.dumps(request.execute(), indent=4)) Replace the following: SOURCE INSTANCE : the URI for the source VM—for example, projects/myproject/zones/us-east1-b/instances/instance-1 .",
+          "When you specify a source IP address that is an external IP address outside of Google Cloud, you must set the networkType parameter to INTERNET . test input = { \"source\": { \"ipAddress\": \" SOURCE IP ADDRESS \", \"networkType\": \"INTERNET\" }, \"destination\": { \"forwardingRule\": \" DESTINATION FORWARDING RULE \", \"port\": \" DESTINATION PORT \", \"projectId\": \" DESTINATION IP PROJECT ID \" }, \"protocol\": \" PROTOCOL \", } request = api.projects().locations().global ().connectivityTests().create( parent=\"projects/ PROJECT ID /locations/global\", testId=\" TEST ID \", body=test input) print(json.dumps(request.execute(), indent=4)) Replace the following: SOURCE IP ADDRESS : the source IP address that you are testing from."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "addr.address",
+      "addr.project",
+      "address.dest",
+      "address.source",
+      "api.projects",
+      "compute.googleapis.com",
+      "data.google",
+      "image.default.id",
+      "json.dumps",
+      "network.default.id",
+      "network.default.name",
+      "request.execute",
+      "subnetwork.default.id"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/private-service-connect",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/private-service-connect",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/private-service-connect",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/private-service-connect",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests"
+      ]
+    }
+  ]
+}

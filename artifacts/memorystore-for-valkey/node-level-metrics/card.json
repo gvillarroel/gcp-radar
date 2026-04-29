@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:22.638Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-valkey/card.json",
+  "product_name": "Memorystore for Valkey",
+  "product_slug": "memorystore-for-valkey",
+  "feature_name": "Node-level metrics",
+  "feature_slug": "node-level-metrics",
+  "summary": "Provides monitoring metrics at the node level for Memorystore for Valkey.",
+  "extended_definition": "Provides monitoring metrics at the node level for Memorystore for Valkey.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/cluster",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/about-rdb-persistence",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/instance-node-specification"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Best practices for Memorystore for Valkey \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "source_id": "site-docs-root",
+        "final_score": 205,
+        "relevance": "",
+        "evidence_snippets": [
+          "Using these commands might result in the following performance issues: High latency and client timeouts Memory pressure caused by commands that increase memory usage Data loss during node replication and synchronization because the Valkey main thread is blocked Starved health checks, observability, and replication The following table lists examples of Valkey commands that are resource-intensive and provides you with alternatives that are resource-efficient.",
+          "Depending on the number of replicas you provision per node, we recommend the following /instance/cpu/maximum utilization CPU usage targets: For instances with one replica per node, target a /instance/cpu/maximum utilization value of 0.5 seconds for the primary and 0.5 seconds for the replica.",
+          "RDB persistence and adding replicas For best results of backing up your instance with RDB snapshots or adding replicas to your instance, use the following best practices: Memory management RDB snapshots use a process fork and 'copy-on-write' mechanism to take a snapshot of node data."
+        ]
+      },
+      {
+        "title": "\"Instance and node specification \\_|\\_ Memorystore for Valkey \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/instance-node-specification",
+        "source_id": "site-docs-root",
+        "final_score": 191,
+        "relevance": "",
+        "evidence_snippets": [
+          "Node type and size Maximum capacity shared-core-nano - 1.4 GB 1.12 GB standard-small - 6.5 GB 5.2 GB highmem-medium - 13 GB 10.4 GB highmem-xlarge - 58 GB 46.4 GB Performance Using the OSS memtier benchmarking tool in the us-central1 region yielded 120,000 - 130,000 operations per second per 2 vCPU node ( standard-small and highmem-medium ) with microseconds latency and 1KiB data size.",
+          "Although the highmem-xlarge node type is four times greater than the highmem-medium type in size, the performance is not four times greater, as Valkey 7.2 performance does not scale linearly when vCPUs are added to increasingly larger nodes (scaling up).",
+          "If a primary node becomes the replica, then connections to this replica node end and Memorystore for Valkey redirects new connections to the new primary node through an automatic failover."
+        ]
+      },
+      {
+        "title": "Memorystore for Redis Cluster documentation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster",
+        "source_id": "site-docs-root",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Documentation resources Find quickstarts and guides, review key references, and get help with common issues. format list numbered Guides Memorystore for Redis Cluster overview High availability and replicas Single-zone instances Cluster and node specification Client library connection code samples Best practices Operational guidelines Client library code samples Supported and blocked commands Create instances Connect to an instance Configure an instance Supported instance configurations About cross-region replication Networking About IAM authentication Manage IAM authentication Access control with IAM About in-transit encryption Persistence overview About RDB persistence About AOF persistence About maintenance find in page Reference Python reference REST API reference gcloud reference Terraform reference info Resources Locations Pricing Quotas and limits Release notes Service Level Agreement Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The horizontally scalable cluster architecture provides better performance over vertically scalable architecture because Redis performance is better on many smaller nodes instead of fewer larger nodes.",
+          "Last updated 2026-04-08 UTC. [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "About RDB persistence \\_|\\_ Memorystore for Valkey \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/about-rdb-persistence",
+        "source_id": "site-iam-reference",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Manage a snapshot's performance impact You can monitor the performance impact that a snapshot has on your Memorystore instance by viewing the metrics available through Cloud Monitoring such as CPU usage and memory usage.",
+          "Recovery behavior Memorystore for Valkey nodes failover to replicas as the primary recovery mechanism, rather than loading from a snapshot.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/instance-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/cluster",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-rdb-persistence"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/instance-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/cluster",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-rdb-persistence"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/instance-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/cluster",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-rdb-persistence"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/instance-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/cluster",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-rdb-persistence"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/instance-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/cluster",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-rdb-persistence"
+      ]
+    }
+  ]
+}

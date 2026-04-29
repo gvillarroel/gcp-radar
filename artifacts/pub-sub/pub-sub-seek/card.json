@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:25.774Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub",
+  "feature_name": "Pub/Sub seek",
+  "feature_slug": "pub-sub-seek",
+  "summary": "Allows subscribers to alter the acknowledgement state of messages in bulk for replay or discard workflows; Allows subscribers to alter the acknowledgement state of messages in bulk for replay or discard workflows.",
+  "extended_definition": "Allows subscribers to alter the acknowledgement state of messages in bulk for replay or discard workflows; Allows subscribers to alter the acknowledgement state of messages in bulk for replay or discard workflows.",
+  "lifecycle": {
+    "latest_feature_date": "2019-02-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_topic",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_topic",
+        "source_id": "site-api-reference",
+        "final_score": 287,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If this field is set, messages published to the topic in the last message retention duration are always available to subscribers.",
+          "If this field is set, messages published to the topic in the last message retention duration are always available to subscribers.",
+          "For instance, it allows any attached subscription to seek to a timestamp that is up to message retention duration in the past."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic",
+        "source_id": "site-api-reference",
+        "final_score": 287,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If this field is set, messages published to the topic in the last message retention duration are always available to subscribers.",
+          "If this field is set, messages published to the topic in the last message retention duration are always available to subscribers.",
+          "For instance, it allows any attached subscription to seek to a timestamp that is up to message retention duration in the past."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 275,
+        "relevance": "",
+        "evidence_snippets": [
+          "If true, messages published with the same ordering key in PubsubMessage will be delivered to the subscribers in the order in which they are received by the Pub/Sub system.",
+          "If true, messages published with the same ordering key in PubsubMessage will be delivered to the subscribers in the order in which they are received by the Pub/Sub system.",
+          "If this field is set, messages published to the subscription's topic in the last topic message retention duration are always available to subscribers."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 275,
+        "relevance": "",
+        "evidence_snippets": [
+          "If true, messages published with the same ordering key in PubsubMessage will be delivered to the subscribers in the order in which they are received by the Pub/Sub system.",
+          "If true, messages published with the same ordering key in PubsubMessage will be delivered to the subscribers in the order in which they are received by the Pub/Sub system.",
+          "If this field is set, messages published to the subscription's topic in the last topic message retention duration are always available to subscribers."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "pubsub.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_topic",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_topic",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    }
+  ]
+}

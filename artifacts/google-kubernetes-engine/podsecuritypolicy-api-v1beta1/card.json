@@ -1,0 +1,144 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "PodSecurityPolicy API v1beta1",
+  "feature_slug": "podsecuritypolicy-api-v1beta1",
+  "summary": "PodSecurityPolicy API v1beta1 is a Kubernetes beta API for controlling pod security settings; PodSecurityPolicy API v1beta1 is a Kubernetes beta API for controlling pod security settings; deprecated on 2022-05-26.",
+  "extended_definition": "PodSecurityPolicy API v1beta1 is a Kubernetes beta API for controlling pod security settings; PodSecurityPolicy API v1beta1 is a Kubernetes beta API for controlling pod security settings; deprecated on 2022-05-26.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-26",
+    "deprecation_date": "2022-05-26",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging-container-security",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 155,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following upcoming GKE on AWS versions or newer will include the fix for this vulnerability, and this bulletin will be updated when they are available: 1.5.0-gke.6 1.4.3-gke.7 Drop the CAP NET RAW capability from containers with one of the following methods: Enforce blocking these capabilities with PodSecurityPolicy , for example: Require dropping CAP NET RAW with a PSP apiversion: extensions/v1beta1 kind: PodSecurityPolicy metadata: name: no-cap-net-raw spec: requiredDropCapabilities: -NET RAW ...",
+          "This and other powerful capabilities should be blocked by default through Anthos Policy Controller or by updating your Pod specs: Drop the CAP NET RAW capability from containers with one of the following methods: Enforce blocking these capabilities with PodSecurityPolicy , for example: Require dropping CAP NET RAW with a PSP apiversion: extensions/v1beta1 kind: PodSecurityPolicy metadata: name: no-cap-net-raw spec: requiredDropCapabilities: -NET RAW ...",
+          "This and other powerful capabilities should be blocked by default through Anthos Policy Controller or by updating your Pod specs: Drop the CAP NET RAW capability from containers with one of the following methods: Enforce blocking these capabilities with PodSecurityPolicy , for example: Require dropping CAP NET RAW with a PSP apiversion: extensions/v1beta1 kind: PodSecurityPolicy metadata: name: no-cap-net-raw spec: requiredDropCapabilities: -NET RAW ..."
+        ]
+      },
+      {
+        "title": "\"Container Security API audit logging \\_|\\_ GKE security \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging-container-security",
+        "source_id": "site-iam-reference",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "Permission type Methods DATA READ google.cloud.containersecurity.v1beta.ContainerSecurity.ListFindings google.cloud.containersecurity.v1beta.ContainerSecurity.SearchClusterFindingSummaries API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Container Security API. google.cloud.containersecurity.v1beta.ContainerSecurity The following audit logs are associated with methods belonging to google.cloud.containersecurity.v1beta.ContainerSecurity .",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.containersecurity.v1beta.ContainerSecurity.ListFindings\" SearchClusterFindingSummaries Method : google.cloud.containersecurity.v1beta.ContainerSecurity.SearchClusterFindingSummaries Audit log type : Data access Permissions : containersecurity.clusterSummaries.list - DATA READ Method is a long-running or streaming operation : No.",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.containersecurity.v1beta.ContainerSecurity.SearchClusterFindingSummaries\" Methods that don't produce audit logs A method might not produce audit logs for one or more of the following reasons: It is a high volume method involving significant log generation and storage costs."
+        ]
+      },
+      {
+        "title": "\"About the security posture dashboard \\_|\\_ GKE security \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "source_id": "site-iam-reference",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cluster-specific feature enablement The GKE-specific capabilities in the security posture dashboard are categorized as follows: Kubernetes security posture : The security posture of Kubernetes objects and resources in the cluster, such as Pod specifications.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE security Send feedback About the security posture dashboard Stay organized with collections Save and categorize content based on your preferences.",
+          "The following table describes the cluster-specific features: Feature name Availability Included capabilities Kubernetes security posture - standard tier Requires GKE version 1.27 or later."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "containersecurity.clusterSummaries.list",
+      "containersecurity.findings.list",
+      "gke.6",
+      "gke.7"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging-container-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging-container-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging-container-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging-container-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging-container-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging-container-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging-container-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard"
+      ]
+    }
+  ]
+}

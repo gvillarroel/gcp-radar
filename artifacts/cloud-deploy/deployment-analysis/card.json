@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:47.389Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deploy/card.json",
+  "product_name": "Cloud Deploy",
+  "product_slug": "cloud-deploy",
+  "feature_name": "Deployment analysis",
+  "feature_slug": "deployment-analysis",
+  "summary": "Deployment analysis monitors deployed application performance and can automatically trigger actions such as rollbacks.",
+  "extended_definition": "Deployment analysis monitors deployed application performance and can automatically trigger actions such as rollbacks.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deploy/docs/analysis",
+      "https://docs.cloud.google.com/deploy/docs/deploy-app-analysis",
+      "https://docs.cloud.google.com/deploy/docs/deployment-strategies/canary"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Run analysis jobs in Cloud Deploy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/analysis",
+        "source_id": "site-docs-reference-2",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Although Cloud Deploy offers deployment verification , which you can use to run arbitrary containers to validate a deployment, analysis lets you use telemetry data from Google Cloud Observability or the monitoring service of your choice to evaluate the performance of your applications over time.",
+          "For example, if you want to run an analysis on your application after it's deployed to staging , then automatically promote the release to prod if the analysis completes with no alerts, you can use a promoteReleaseRule automation .",
+          "The analysis job consists of one or more analysis checks, each of which evaluates the behavior of your deployed application based on logs or metrics from Google Cloud Observability or from your metrics provider."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Run analysis on your application after deploying it \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/deploy/docs/deploy-app-analysis",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A failed analysis The analysis job we specified in our delivery pipeline config runs as part of this rollout, after the application is deployed.",
+          "The application is automatically deployed into the one target configured for this delivery pipeline.",
+          "After the application is deployed, the analysis runs as a job in the rollout."
+        ]
+      },
+      {
+        "title": "Use a canary deployment strategy \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/deployment-strategies/canary",
+        "source_id": "site-docs-reference-2",
+        "final_score": 132,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A canary deployment is a progressive rollout of an application that splits traffic between an already-deployed version and a new version, rolling it out to a subset of users before rolling out fully.",
+          "Use deploy analysis with a canary deployment strategy In a canary deployment strategy, you can use deploy analysis with some or all phases (except stable ) to help determine when to advance a rollout to the next phase.",
+          "Home Documentation Application development Cloud Deploy Guides Send feedback Use a canary deployment strategy Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "clouddeploy.yaml",
+      "deploy.cloud.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/analysis",
+        "https://docs.cloud.google.com/deploy/docs/deploy-app-analysis",
+        "https://docs.cloud.google.com/deploy/docs/deployment-strategies/canary"
+      ]
+    }
+  ]
+}

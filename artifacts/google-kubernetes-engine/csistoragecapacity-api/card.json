@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "CSIStorageCapacity API",
+  "feature_slug": "csistoragecapacity-api",
+  "summary": "The v1beta1 CSIStorageCapacity API is in deprecation and scheduled for removal in GKE 1.27; The v1beta1 CSIStorageCapacity API is in deprecation and scheduled for removal in GKE 1.27; deprecated on 2023-01-05.",
+  "extended_definition": "The v1beta1 CSIStorageCapacity API is in deprecation and scheduled for removal in GKE 1.27; The v1beta1 CSIStorageCapacity API is in deprecation and scheduled for removal in GKE 1.27; deprecated on 2023-01-05.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-05",
+    "deprecation_date": "2023-01-05",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Feature and API deprecations \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+        "source_id": "site-iam-reference-required-2",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Container Registry May 15, 2023 March 18, 2025 Transition from Container Registry to Artifact Registry in GKE No GKE Compliance dashboard (Preview) January 28, 2025 June 30, 2025 Posture management feature deprecations No Workload vulnerability scanning GKE security posture dashboard Standard tier: July 23, 2024 Advanced Vulnerability Insights: June 16, 2025 Standard tier: July 31, 2025 Advanced Vulnerability Insights: June 16, 2026 Vulnerability scanning removal from GKE Standard edition Yes Supply chain concerns - Binary Authorization (Preview) GKE security posture dashboard January 28, 2025 March 31, 2025 Posture management feature deprecations No Kubernetes security posture - advanced tier (Preview) GKE security posture dashboard January 28, 2025 March 31, 2025 Posture management feature deprecations Yes containerd 1.7 features GKE version 1.32 GKE version 1.33 Migrate nodes to containerd 2 Yes Linux cgroupv1 mode GKE version 1.31 TBD Migrate nodes to Linux cgroupv2 No Vulnerability scanning removal from GKE standard edition July 23, 2024 July 31, 2025 Vulnerability scanning removal from GKE Standard edition No TLS certificates signed with SHA-1 algorithm GKE version 1.24 GKE version 1.29 SHA-1 TLS certificates support removal Yes Built-in authentication plugin for Kubernetes clients GKE version 1.22 GKE version 1.25 Deprecated authentication plugin for Kubernetes clients No PodSecurityPolicy GKE version 1.21 GKE version 1.25 PodSecurityPolicy deprecation Yes Docker-based node images GKE version 1.20 GKE version 1.24 Docker node image deprecation Yes X.509 Common Name field in webhook certificates GKE version 1.19 GKE version 1.23 Webhook certificates CN field deprecation Yes Kubernetes API deprecations The following table provides an overview of Kubernetes APIs that are deprecated and no longer served, sorted by Kubernetes version: Kubernetes version More information Does GKE detect and report usage?",
+          "1.32 Kubernetes 1.32 deprecated APIs Yes 1.29 Kubernetes 1.29 deprecated APIs Yes 1.27 Kubernetes 1.27 deprecated APIs Yes 1.26 Kubernetes 1.26 deprecated APIs Yes 1.25 Kubernetes 1.25 deprecated APIs Yes 1.22 Kubernetes 1.22 deprecated APIs , Kubernetes Ingress Beta APIs removed in GKE 1.23 Yes Other feature deprecations The following table provides information on deprecations and removals that are caused by other upstream providers that are not part of the Kubernetes open source project.",
+          "Kubernetes feature deprecations The following table outlines ongoing GKE feature deprecations, as well as the version in which those features are no longer supported: Name Deprecated Removed More information Does GKE detect and report usage?"
+        ]
+      },
+      {
+        "title": "\"About the security posture dashboard \\_|\\_ GKE security \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "source_id": "site-iam-reference",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "Caution: Starting on July 23, 2024, container OS vulnerability scanning is deprecated and is scheduled for shutdown on July 31, 2025.",
+          "Caution: Starting on July 23, 2024, container OS vulnerability scanning is deprecated and is scheduled for shutdown on July 31, 2025.",
+          "Caution: Starting on July 23, 2024, container OS vulnerability scanning is deprecated and is scheduled for shutdown on July 31, 2025."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "This field is deprecated due to the deprecation of 2VM TPU.",
+          "This field is deprecated due to the deprecation of 2VM TPU.",
+          "This field is deprecated due to the deprecation of 2VM TPU."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    }
+  ]
+}

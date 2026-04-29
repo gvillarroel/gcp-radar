@@ -1,0 +1,147 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:53.295Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Flexible instance configurations",
+  "feature_slug": "flexible-instance-configurations",
+  "summary": "Cloud SQL for MySQL supports flexible instance configurations with custom vCPU and RAM sizing.",
+  "extended_definition": "Cloud SQL for MySQL supports flexible instance configurations with custom vCPU and RAM sizing.",
+  "lifecycle": {
+    "latest_feature_date": "2021-03-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore",
+      "https://docs.cloud.google.com/sql/docs/mysql/connect-overview",
+      "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Choose how to connect to Cloud SQL \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/connect-overview",
+        "source_id": "site-docs-root",
+        "final_score": 33,
+        "relevance": "",
+        "evidence_snippets": [
+          "Remove networking options from an instance Cloud SQL supports the removal of the following networking options from an instance: Public IP from an instance with both private services access and public IP Public IP from an instance with public IP, private services access, and Private Service Connect Private Service Connect from an instance with both Private Service Connect and private services access Private Service Connect from an instance with Private Service Connect, private services access, and public IP Enable networking options for an instance You can enable Cloud SQL supports enabling the following connection options for instances: Private services access on an instance with public IP only Private Service Connect on an instance with private services access only Private Service Connect on an instance with both private services access and public IP Public IP on an instance with private services access only Limitations You can't create an instance with both a public IP address and Private Service Connect.",
+          "Configuration options Cloud SQL Auth Proxy , or Cloud SQL Language Connectors, including Cloud SQL Java connector Cloud SQL Python connector Cloud SQL Go connector Cloud SQL Node.js connector The following Google Cloud services use an embedded Cloud SQL Auth Proxy when you connect to a Cloud SQL instance over public IP address: Cloud Run App Engine flexible environment App Engine standard environment To configure SSL/TLS certificates on the Cloud SQL instance and for your client, do the following: Choose a server CA mode for your instance .",
+          "Configuration options The following types of private networking configurations are supported: Private services access : connect to Cloud SQL instances from a single VPC network based on networking peering."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 33,
+        "relevance": "",
+        "evidence_snippets": [
+          "For Cloud SQL, quotas are part of a system that do the following: Monitor your use or consumption of Cloud SQL instances Restrict your consumption of these instances for reasons including ensuring fairness and reducing spikes in usage Maintain configurations that enforce prescribed restrictions automatically Provide a means to make or request changes to the quota When a quota is exceeded, in most cases, the system blocks access to the relevant instance immediately, and the task that you're trying to perform fails.",
+          "If the number of active tables is significantly larger than both the Cloud SQL table defaults and the open tables recommendation by MySQL, then Cloud SQL recommends configuring the table open cache and table definition cache database flags with your instance's active table count.",
+          "Table limit Cloud SQL for MySQL has a limit of 50,000 tables by default, or 500,000 tables for an instance if you meet the minimum hardware requirements of at least 32 cores and a minimum of 200G of memory."
+        ]
+      },
+      {
+        "title": "\"Restore an instance overview \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore",
+        "source_id": "site-docs-reference-3",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": [
+          "If your source instance had custom backup configurations or was using enhanced backups, then you'll need to update the backup configurations after restore is complete.",
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback Restore an instance overview Stay organized with collections Save and categorize content based on your preferences.",
+          "MySQL PostgreSQL SQL Server Cloud SQL lets you restore your instances from a backup, or by performing point-in-time recovery (PITR)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore"
+      ]
+    }
+  ]
+}

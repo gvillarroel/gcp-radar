@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:13.819Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Callback fulfillment hours",
+  "feature_slug": "callback-fulfillment-hours",
+  "summary": "Lets administrators define the hours during which the contact center fulfills callbacks, with optional rollover to the next day.",
+  "extended_definition": "Lets administrators define the hours during which the contact center fulfills callbacks, with optional rollover to the next day.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Call settings \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 247,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Callback fulfillment hours You can define callback fulfillment hours at the global and queue level.",
+          "In the Define Callback Fulfillment Hours field, select the hours of operation.",
+          "In the Define Callback Fulfillment Hours field, select the hours of operation."
+        ]
+      },
+      {
+        "title": "\"Queue and menu setup \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup",
+        "source_id": "site-docs-reference",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Emails will have the end-user's entered email address in the Reply-to Header field All emails will use this subject format: {Queue Name} [from: {email} ] Your CRM team should set up a rule that identifies the email address in the subject or body of the email and use the email address to identify the contact for the best experience Once enabled, the email form with the custom email per-queue shows at all times for the email channel, including: during operation hours, after operation hours, and for email deflection options CCAI Platform portal sends to the email address specified and then inbound emails are handled by your email provider.",
+          "EWT for calls For calls, EWT is calculated based on the following formula: EWT = ((average duration in channel / active agents in channel) (agents in common / active agents in current queue) (queued calls - available agents)) + {EWT for callbacks, campaign calls, and scheduled calls} EWT for chats For chats, EWT is calculated based on the following formula: EWT = (average duration in channel / active agents in channel) (agents in common / active agents in current queue) (queued chats - available agents) Note: In chat channels, the value for active agents includes a multiplier based on the chat concurrency if the chat concurrency is >1.",
+          "Feature details Only agents assigned to calls from or to queues that have been specifically enabled will see the option to redact calls Calls initiated from an enabled queue that are transferred to a queue without call redaction enabled will not have the call redaction feature available Agents need to manually initiate and end the redaction Agents will still be able to hear during the redacted section of the call while on the live call Admin portal configuration Enable call redaction for inbound calls Go to Settings > Queue ."
+        ]
+      },
+      {
+        "title": "\"Real-time dashboards and monitoring pages \\_|\\_ Google Cloud Contact Center\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages",
+        "source_id": "site-docs-reference",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "There are three pre-configured thresholds displayed by default: SLA >= 80 60 > SLA < 80 SLA <= 60 The metrics displayed are defined as follows: Queues See Data Dictionary Total SLA See Data Dictionary Volume Total interactions which qualify for SLA calculation.",
+          "The metrics displayed are defined as follows: Queues See Data Dictionary Total SLA See Data Dictionary Volume Interactions which qualify for SLA calculation.",
+          "Volume per Hour: Calculates the average Connected, Finished, and Failed calls per hour during operation hours."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.232Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management",
+  "feature_name": "Config Sync private registry image reference auto-detection",
+  "feature_slug": "config-sync-private-registry-image-reference-auto-detection",
+  "summary": "Config Sync automatically detects and updates reconciler image references to use a configured private registry.",
+  "extended_definition": "Config Sync automatically detects and updates reconciler image references to use a configured private registry.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure syncing from more than one source of truth \\_|\\_ Config Sync \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "source_id": "site-docs-root",
+        "final_score": 213,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Although Config Sync automatically detects changes from the source of truth, you can add an extra layer of drift detection by adding an admission webhook to a namespace-scoped source of truth.",
+          "For example, the following ClusterRole or Role grants permissions to manage Deployment and ServiceAccount objects: ROOT REPO/namespaces/ NAMESPACE /sync-role.yaml apiVersion : rbac.authorization.k8s.io/v1 kind : ROLE KIND metadata : namespace : NAMESPACE # only set this field for a 'Role' name : RECONCILER ROLE rules : Update 'apiGroups' and 'resources' to reference actual resources managed by 'RepoSync'. - apiGroups : [ \"apps\" ] resources : [ \"deployments\" ] verbs : [ \" \" ] - apiGroups : [ \"\" ] resources : [ \"serviceaccounts\" ] verbs : [ \" \" ] Save the RoleBinding manifest that references the ClusterRole or Role as FILENAME : ROOT REPO/namespaces/ NAMESPACE / FILENAME .yaml kind : RoleBinding apiVersion : rbac.authorization.k8s.io/v1 metadata : name : syncs-repo namespace : NAMESPACE subjects : - kind : ServiceAccount name : SERVICE ACCOUNT NAME namespace : config-management-system roleRef : kind : ROLE KIND name : RECONCILER ROLE apiGroup : rbac.authorization.k8s.io Replace the following: FILENAME : the name for the RoleBinding manifest.",
+          "Default ClusterRoles Save the RoleBinding manifest that references a default ClusterRole , for example admin or edit , as FILENAME : kind : RoleBinding apiVersion : rbac.authorization.k8s.io/v1 metadata : name : syncs-repo namespace : NAMESPACE subjects : - kind : ServiceAccount name : SERVICE ACCOUNT NAME namespace : config-management-system roleRef : kind : ClusterRole name : CLUSTERROLE NAME apiGroup : rbac.authorization.k8s.io Replace the following: FILENAME : the name for the RoleBinding manifest."
+        ]
+      },
+      {
+        "title": "Error reference \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors",
+        "source_id": "site-docs-reference",
+        "final_score": 172,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Error message: \"MESSAGE\": \"Unable to retrieve pull secret, the image pull may not succeed.\" Unable to retrieve pull secret, the image pull may not succeed If you're using a private registry with Google Distributed Cloud, the Config Sync installation or upgrade can get stuck.",
+          "To resolve this issue, follow the steps in Update Config Sync using a private registry before installing or upgrading Config Sync.",
+          "You can restart the reconciler Pods by running the following commands: restart a root reconciler kubectl delete pod -n config-management-system -l configsync.gke.io/reconciler = root-reconciler restart a namespace reconciler kubectl delete pod -n config-management-system -l configsync.gke.io/reconciler = ns-reconciler-NAMESPACE KNV2016: Transient Error This error represents a transient issue that should automatically resolve at a later time."
+        ]
+      },
+      {
+        "title": "Customize your Config Sync installation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync",
+        "source_id": "site-docs-root",
+        "final_score": 166,
+        "relevance": "",
+        "evidence_snippets": [
+          "SECRET : the secret auth type. oci data \"google project\" \"default\" {} resource \"google container cluster\" \"default\" { name = \"gke-autopilot-basic\" location = \"us-central1\" fleet { project = data.google project.default.project id } enable autopilot = true } resource \"google gke hub feature\" \"configmanagement feature\" { name = \"configmanagement\" location = \"global\" } resource \"google gke hub feature membership\" \"configmanagement feature member\" { location = \"global\" feature = google gke hub feature.configmanagement feature.name membership = google container cluster.default.fleet[0].membership id membership location = google container cluster.default.fleet[0].membership location configmanagement { config sync { The field enabled was introduced in Terraform version 5.41.0, and needs to be set to true explicitly to install Config Sync. enabled = true oci { sync repo = \" REPO \" policy dir = \" DIRECTORY \" secret type = \" SECRET \" } } } } Replace the following: REPO : the URL to the OCI image repository that contains your configuration files.",
+          "For more information on these authentication types, see Grant Config Sync access to Git . oci none : Use no authentication gcenode : Use the Compute Engine default service account to access an image in Artifact Registry.",
+          "Terraform For each cluster that you want to configure Config Sync, apply a google gkehub feature membership resource block that contains a configmanagement and config sync block, such as in the following example: git data \"google project\" \"default\" {} resource \"google container cluster\" \"default\" { name = \"gke-autopilot-basic\" location = \"us-central1\" fleet { project = data.google project.default.project id } enable autopilot = true } resource \"google gke hub feature\" \"configmanagement feature\" { name = \"configmanagement\" location = \"global\" } resource \"google gke hub feature membership\" \"configmanagement feature member\" { location = \"global\" feature = google gke hub feature.configmanagement feature.name membership = google container cluster.default.fleet[0].membership id membership location = google container cluster.default.fleet[0].membership location configmanagement { config sync { The field enabled was introduced in Terraform version 5.41.0, and needs to be set to true explicitly to install Config Sync. enabled = true git { sync repo = \" REPO \" sync branch = \" BRANCH \" policy dir = \" DIRECTORY \" secret type = \" SECRET \" } } } } Replace the following: REPO : the URL to the Git repository that contains your configuration files."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cluster.default.fleet",
+      "configsync.gke.io",
+      "data.google",
+      "feature.configmanagement",
+      "feature.name",
+      "project.default.project",
+      "rbac.authorization.k8s.io",
+      "role.yaml",
+      "spec.yaml",
+      "sync.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:21.812Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-connector/card.json",
+  "product_name": "Mainframe Connector",
+  "product_slug": "mainframe-connector",
+  "feature_name": "Native copybook parser",
+  "feature_slug": "native-copybook-parser",
+  "summary": "The bq export command supports the Native copybook parser.",
+  "extended_definition": "The bq export command supports the Native copybook parser.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/define-parser"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Copybook parser reference \\_|\\_ Mainframe Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 289,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Support for DBCS fields Ensure the following when using DBCS fields: When you use PIC G or Pic N DBCS fields, you must provide one of the following valid multi-byte character set (MBCS) encodings in the encoding option or in the ENCODING environment variable when using the gsutil cp or bq export commands: x-IBM930 x-IBM933 x-IBM935 x-IBM937 x-IBM939 x-IBM942 x-IBM942C x-IBM943 x-IBM943C x-IBM949 x-IBM949C x-IBM950 x-IBM964 x-IBM970 x-IBM1364 When a copybook field only contains DBCS bytes, but these bytes are not surrounded by shift-out (0x0E) and shift-in (0x0F), you must add the suffix DBCS to the field name to ensure that these bytes are decoded as DBCS bytes.",
+          "Support for variable-length character strings The Native copybook parser supports the following struct fields: 10 var 15 var-LEN PIC 9(4) USAGE COMP 15 var-TEXT PIC X(n) The first field in the struct field is the length of the second field, the string field.",
+          "Mainframe Connector supports two versions of the copybook parser: Native copybook parser : The Native copybook parser implements an ANTLR4-based parser, supports COBOL copybooks, and is the recommended version of the parser."
+        ]
+      },
+      {
+        "title": "\"Define the copybook parser \\_|\\_ Mainframe Connector \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/define-parser",
+        "source_id": "site-docs-root-2",
+        "final_score": 249,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Mainframe Connector supports two versions of the copybook parser: Native copybook parser: The Native copybook parser is the latest version of the parser.",
+          "The Native copybook parser implements an ANTLR4 based parser and supports COBOL copybooks.",
+          "After using the Legacy parser for parsing, Mainframe Connector compares the result of the Legacy parser with that of the Native parser by executing two parsing attempts in the following order: Parses the copybook using the Native parser expecting an explicit comment area in columns 1-6."
+        ]
+      },
+      {
+        "title": "Mainframe Connector API commands \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Performance tuning configuration for the bq export command Mainframe Connector supports the following performance tuning configuration for the bq export command: exporter thread count : (Optional) Set the number of worker threads.",
+          "The bq export command supports some performance tuning capabilities.",
+          "Query file SELECT FROM bigquery-public-data.samples.wikipedia WHERE title = @mytitle AND num characters > @min chars; Execution example bq query \\ --project id=mainframe-connector-dev \\ --location=\"US\" \\ --parameters=mytitle::Hippocrates,min chars:INT64:42600 Perform a dry run of the gsutil cp command The gsutil cp command decodes a QSAM file using a COBOL copybook, and generates an ORC file on Cloud Storage."
+        ]
+      },
+      {
+        "title": "Mainframe Connector command-line reference \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 195,
+        "relevance": "",
+        "evidence_snippets": [
+          "The bq export command uses the following flags and arguments: --project id = ID Specify the project to use to execute this command. --allow large results (Optional) Use large destination table sizes for legacy SQL queries. --batch (Optional) Run the query in batch mode. --bucket = BUCKET (Optional) Specify a location within Cloud Storage to write the command's output.",
+          "Synopsis bq export [options] Flags and arguments To run this command you must provide an SQL query (see flags --sql and query dsn ) and a copybook (see flag cobDsn ).",
+          "You can also use the bq mk command to generate a BigQuery table directly from parsing COBOL copybooks using the --schema from copybook flag."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.samples.wikipedia"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/define-parser",
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference"
+      ]
+    }
+  ]
+}

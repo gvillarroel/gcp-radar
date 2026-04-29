@@ -1,0 +1,163 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:53.295Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "HA-enabled external server replicas",
+  "feature_slug": "ha-enabled-external-server-replicas",
+  "summary": "Cloud SQL for MySQL supports creating external server replicas with high availability enabled.",
+  "extended_definition": "Cloud SQL for MySQL supports creating external server replicas with high availability enabled.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect",
+      "https://docs.cloud.google.com/sql/docs/mysql/admin-api-error-messages",
+      "https://docs.cloud.google.com/sql/docs/mysql/cmek"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About customer-managed encryption keys (CMEK) \\_|\\_ Cloud SQL for MySQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+        "source_id": "site-docs-reference-3",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can't use customer-managed encryption keys to encrypt: External servers (external primary instances and external replicas) Instance metadata, such as the instance ID, database version, machine type, flags, backup schedule, etc.",
+          "MySQL PostgreSQL SQL Server By default, Cloud SQL for MySQL encrypts customer content at rest.",
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback About customer-managed encryption keys (CMEK) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Cloud SQL Admin API error messages \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/admin-api-error-messages",
+        "source_id": "site-api-reference",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ERROR DISALLOWED UPDATING EXTERNAL SERVER REPLICA REPLICATION STATE Updating the replication state setting of an external server replica instance isn't allowed.",
+          "ERROR DISALLOWED UPDATING EXTERNAL SERVER REPLICA REPLICATION STATE Updating the replication state setting of an external server replica instance isn't allowed.",
+          "ERROR READ REPLICA UNDER EXTERNAL SERVER REPLICA NOT SYNCED To have a read replica, there must be an initial sync completed on the external server replica."
+        ]
+      },
+      {
+        "title": "\"Private Service Connect overview \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect",
+        "source_id": "site-docs-reference-3",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "The supported serving ports for MySQL are as follows: TCP port 3306 for direct connections to MySQL database server (including when using Managed Connection Pooling ).",
+          "You can use outbound connectivity to migrate data from an external server within your network, or do a homogeneous migration using Database Migration Service.",
+          "MySQL PostgreSQL SQL Server This page describes concepts associated with Private Service Connect."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api-error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api-error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api-error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api-error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api-error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api-error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api-error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api-error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api-error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    }
+  ]
+}

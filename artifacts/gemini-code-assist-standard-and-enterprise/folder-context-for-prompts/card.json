@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:11.742Z",
+  "source_step08_card": "data/step-08/current/products/gemini-code-assist-standard-and-enterprise/card.json",
+  "product_name": "Gemini Code Assist Standard and Enterprise",
+  "product_slug": "gemini-code-assist-standard-and-enterprise",
+  "feature_name": "Folder context for prompts",
+  "feature_slug": "folder-context-for-prompts",
+  "summary": "IntelliJ Gemini Code Assist can use folders from a local IDE project as prompt context.",
+  "extended_definition": "IntelliJ Gemini Code Assist can use folders from a local IDE project as prompt context.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Chat with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "source_id": "site-docs-reference",
+        "final_score": 328,
+        "relevance": "",
+        "evidence_snippets": [
+          "Manage files and folders in the Context Drawer After you specify a file or folder to be used as context for your Gemini Code Assist prompts , these files and folders are placed in the Context Drawer , where you can view and remove them from the prompt context.",
+          "To manage the files and folders in your Context Drawer, perform the following tasks: VS Code Note: Chats created with Gemini Code Assist for VS Code, prior to version 2.34.0 , won't retain and display the saved context in the Context Drawer.",
+          "Note: If you clear your chat history, Gemini Code Assist no longer uses your files for context and you must re-specify the files or folders in the chat pane using the @ symbol if you want to make more enquiries about the files."
+        ]
+      },
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 323,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use a remote repository as context To direct Gemini Code Assist to use one or more repositories as the primary context for your prompts: In your IDE's chat, start your prompt with the @ symbol.",
+          "A successful check results in the following output: $ grpc-health-probe -addr cloudaicompanion.googleapis.com:443 -tls error: this server does not implement the grpc health protocol (grpc.health.v1.Health): GRPC target method can't be resolved An unsuccessful check results in the following output: timeout: failed to connect service \"cloudaicompanion.googleapis.com:443\" within 1s To obtain more details, run the following before grpc-health-probe : export GRPC GO LOG SEVERITY LEVEL=info IntelliJ There are no known issues for Gemini Code Assist for IntelliJ and other supported JetBrains IDEs.",
+          "Prompt Gemini Code Assist with code transformation Code transformation allows you to use commands or natural language prompts in the Quick Pick menu to request modifications to your code, and provides you with a diff view to show pending changes to your code."
+        ]
+      },
+      {
+        "title": "\"Use the Gemini Code Assist agent mode \\_|\\_ Gemini for Google Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "source_id": "site-docs-root",
+        "final_score": 310,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example mcp.json file configures two remote Cloudflare MCP servers, a remote GitLab MCP server, and a local GitHub MCP server for use with Gemini Code Assist in IntelliJ. { \"mcpServers\" : { \"github\" : { \"command\" : \"npx\" , \"args\" : [ \"-y\" , \"@modelcontextprotocol/server-github\" ], \"env\" : { \"GITHUB PERSONAL ACCESS TOKEN\" : \"ghp example personal access token12345\" } }, \"gitlab\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://your-gitlab-instance.com/api/v4/mcp\" ] }, \"cloudflare-observability\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://observability.mcp.cloudflare.com/sse\" ] }, \"cloudflare-bindings\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://bindings.mcp.cloudflare.com/sse\" ] } } } Your configured MCP servers are available for the agent to use in agent mode.",
+          "The following example Gemini settings JSON file configures two remote Cloudflare MCP servers, a remote GitLab MCP server, and a local GitHub MCP server for use with Gemini Code Assist in VS Code. { \"mcpServers\" : { \"github\" : { \"command\" : \"npx\" , \"args\" : [ \"-y\" , \"@modelcontextprotocol/server-github\" ], \"env\" : { \"GITHUB PERSONAL ACCESS TOKEN\" : \"ghp example personal access token12345\" } }, \"gitlab\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://your-gitlab-instance.com/api/v4/mcp\" ] }, \"cloudflare-observability\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://observability.mcp.cloudflare.com/sse\" ] }, \"cloudflare-bindings\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://bindings.mcp.cloudflare.com/sse\" ] } } } Open the command palette and select Developer: Reload Window .",
+          "IntelliJ This feature isn't supported in Gemini Code Assist for IntelliJ or other JetBrains IDEs."
+        ]
+      },
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+        "source_id": "site-docs-root",
+        "final_score": 303,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use a remote repository as context To direct Gemini Code Assist to use one or more repositories as the primary context for your prompts: In your IDE's chat, start your prompt with the @ symbol.",
+          "A successful check results in the following output: $ grpc-health-probe -addr cloudaicompanion.googleapis.com:443 -tls error: this server does not implement the grpc health protocol (grpc.health.v1.Health): GRPC target method can't be resolved An unsuccessful check results in the following output: timeout: failed to connect service \"cloudaicompanion.googleapis.com:443\" within 1s To obtain more details, run the following before grpc-health-probe : export GRPC GO LOG SEVERITY LEVEL=info IntelliJ There are no known issues for Gemini Code Assist for IntelliJ and other supported JetBrains IDEs.",
+          "Prompt Gemini Code Assist with code transformation Code transformation allows you to use commands or natural language prompts in the Quick Pick menu to request modifications to your code, and provides you with a diff view to show pending changes to your code."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bindings.mcp.cloudflare.com",
+      "cloudaicompanion.googleapis.com",
+      "grpc.health.v1.Health",
+      "instance.com",
+      "mcp.json",
+      "observability.mcp.cloudflare.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide"
+      ]
+    }
+  ]
+}

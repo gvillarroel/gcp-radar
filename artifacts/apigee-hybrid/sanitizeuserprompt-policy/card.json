@@ -1,0 +1,97 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.517Z",
+  "source_step08_card": "data/step-08/current/products/apigee-hybrid/card.json",
+  "product_name": "Apigee hybrid",
+  "product_slug": "apigee-hybrid",
+  "feature_name": "SanitizeUserPrompt policy",
+  "feature_slug": "sanitizeuserprompt-policy",
+  "summary": "Apigee Hybrid supports the SanitizeUserPrompt policy for LLM/GenAI workloads to sanitize incoming prompts and reduce prompt-injection and jailbreak risks.",
+  "extended_definition": "Apigee Hybrid supports the SanitizeUserPrompt policy for LLM/GenAI workloads to sanitize incoming prompts and reduce prompt-injection and jailbreak risks.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 2,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "generic_supporting_pages",
+        "message": "Supporting pages do not mention any informative feature tokens.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-create-proxy",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-deploy",
+      "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/forward-proxy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Step 3: Configure and deploy an environment \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-deploy",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 42,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "Step 2: Create an API proxy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-create-proxy",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 36,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Configure forward proxying for API proxies \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/forward-proxy",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 34,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "v1.14"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/forward-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-deploy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-create-proxy"
+      ]
+    }
+  ]
+}

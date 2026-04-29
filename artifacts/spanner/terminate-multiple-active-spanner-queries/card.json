@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Terminate multiple active Spanner queries",
+  "feature_slug": "terminate-multiple-active-spanner-queries",
+  "summary": "Spanner now supports terminating multiple active long-running queries in an instance to help reduce resource load and instance latency.",
+  "extended_definition": "Spanner now supports terminating multiple active long-running queries in an instance to help reduce resource load and instance latency.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/change-streams/details",
+      "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+      "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"JDBC session management commands (GoogleSQL) \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "source_id": "site-docs-reference",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Spanner JDBC driver supports three alternatives for executing partitioned queries: SET AUTO PARTITION MODE = true RUN PARTITIONED QUERY sql PARTITION sql followed by multiple RUN PARTITION 'partition-token' Each of these methods are described in the following sections.",
+          "Data Boost only supports partitioned queries .",
+          "SHOW VARIABLE READ ONLY STALENESS SET READ ONLY STALENESS = staleness type staleness type : { 'STRONG' 'MIN READ TIMESTAMP timestamp ' 'READ TIMESTAMP timestamp ' 'MAX STALENESS <INT64>{ s ms us ns }' 'EXACT STALENESS <INT64>{ s ms us ns }' } The read-only staleness value applies to all subsequent read-only transactions and for all queries in AUTOCOMMIT mode."
+        ]
+      },
+      {
+        "title": "\"JDBC session management commands (PostgreSQL) \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat",
+        "source_id": "site-docs-reference",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "The JDBC driver supports three alternatives for executing partitioned queries: SET SPANNER.AUTO PARTITION MODE = true RUN PARTITIONED QUERY sql PARTITION sql followed by multiple RUN PARTITION 'partition-token' Each of these methods are described in the following sections.",
+          "Data Boost only supports partitioned queries .",
+          "SHOW [VARIABLE] SPANNER.READ ONLY STALENESS SET SPANNER.READ ONLY STALENESS {TO =} staleness type staleness type : { 'STRONG' 'MIN READ TIMESTAMP timestamp ' 'READ TIMESTAMP timestamp ' 'MAX STALENESS <int8>{ s ms us ns }' 'EXACT STALENESS <int8>{ s ms us ns }' } The read-only staleness value applies to all subsequent read-only transactions and for all queries in AUTOCOMMIT mode."
+        ]
+      },
+      {
+        "title": "\"Change stream partitions, records, and queries \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/details",
+        "source_id": "site-docs-root",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "Child partition records from a specific query always shares the same start timestamp . child par t i t io ns record : { \"record type\" : \"child partitions\" , \"start timestamp\" : \"2022-05-01T09:00:01Z\" , \"record sequence\" : \"1000012389\" , \"child partitions\" : [ { \"token\" : \"child token 1\" , // Note parent tokens are null for child partitions returned // from the initial change stream queries. \"parent partition tokens\" : [ NULL ] } { \"token\" : \"child token 2\" , \"parent partition tokens\" : [ NULL ] } ], } child par t i t io ns record : { \"record type\" : \"child partitions\" , \"start timestamp\" : \"2022-05-01T09:00:01Z\" , \"record sequence\" : \"1000012390\" , \"child partitions\" : [ { \"token\" : \"child token 3\" , \"parent partition tokens\" : [ NULL ] } ], } To process changes after 2022-05-01T09:00:01Z , create three new queries and run them in parallel.",
+          "Example child partition record The following is an example of a child partition record: child par t i t io ns record : { \"start timestamp\" : \"2022-09-27T12:40:00.562986Z\" , \"record sequence\" : \"00000001\" , \"child partitions\" : [ { \"token\" : \"child token 1\" , // To make sure changes for a key is processed in timestamp // order, wait until the records returned from all parents // have been processed. \"parent partition tokens\" : [ \"parent token 1\" , \"parent token 2\" ] } ], } Change streams query workflow Run change stream queries using the ExecuteStreamingSql API, with a single-use read-only transaction and a strong timestamp bound .",
+          "All child partitions records returned by a partition have the same start timestamp and the timestamp always falls between the query's specified start timestamp and end timestamp . record sequence STRING Indicates a monotonically increasing sequence number that can be used to define the ordering of the child partition records when there are multiple child partition records returned with the same start timestamp in a particular partition."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/details"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/details"
+      ]
+    }
+  ]
+}

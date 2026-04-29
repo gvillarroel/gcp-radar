@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:25.522Z",
+  "source_step08_card": "data/step-08/current/products/places-sdk-for-ios/card.json",
+  "product_name": "Places SDK for iOS",
+  "product_slug": "places-sdk-for-ios",
+  "feature_name": "Place Details compact component lightbox support",
+  "feature_slug": "place-details-compact-component-lightbox-support",
+  "summary": "The compact Place Details component in Places UI Kit now supports lightbox behavior.",
+  "extended_definition": "The compact Place Details component in Places UI Kit now supports lightbox behavior.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/places/ios-sdk/details-place",
+      "https://developers.google.com/maps/documentation/places/ios-sdk/place-details-ui-kit",
+      "https://developers.google.com/maps/documentation/places/ios-sdk/place-types",
+      "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlace"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Places SDK for iOS \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/ios-sdk/place-details-ui-kit",
+        "source_id": "site-docs-root",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Creaete a full view with vertical layout Swift var selectedType : Set<PlaceDetailsCompactContent> = PlaceDetailsCompactView . standardContent // Query for loading the place details widget. @ State var query : PlaceDetailsQuery = PlaceDetailsQuery ( identifier : . placeID ( \"ChIJT7FdmYiAhYAROFOvrIxRJDU\" )) var theme : PlacesMaterialTheme () var configuration : PlaceDetailsConfiguration { PlaceDetailsConfiguration ( content : selectedType , theme : theme ) } // Callback for the place details widget. let placeDetailsCallback : ( PlaceDetailsResult ) - > Void = { result in if let place = result . place { print ( \"Place: \\( place . description ) \" ) } else { print ( \"Error: \\( String ( describing : result . error )) \" ) } } PlaceDetailsCompactView ( orientation : . vertical , query : $ query , configuration : configuration , placeDetailsCallback : placeDetailsCallback ) Create a compact view with horizontal layout Swift var selectedType : Set<PlaceDetailsCompactContent> = PlaceDetailsCompactView . standardContent // Query for loading the place details widget. @ State var query : PlaceDetailsQuery = PlaceDetailsQuery ( identifier : . placeID ( \"ChIJT7FdmYiAhYAROFOvrIxRJDU\" )) var theme : PlacesMaterialTheme () var configuration : PlaceDetailsConfiguration { PlaceDetailsConfiguration ( content : selectedType , theme : theme ) } // Callback for the place details widget. let placeDetailsCallback : ( PlaceDetailsResult ) - > Void = { result in if let place = result . place { print ( \"Place: \\( place . description ) \" ) } else { print ( \"Error: \\( String ( describing : result . error )) \" ) } } PlaceDetailsCompactView ( orientation : . horizontal , query : $ query , configuration : configuration , placeDetailsCallback : placeDetailsCallback ) Create a full view with vertical layout Swift @ State var query : PlaceDetailsQuery = PlaceDetailsQuery ( identifier : . placeID ( \"ChIJT7FdmYiAhYAROFOvrIxRJDU\" )) var theme : PlacesMaterialTheme () var selectedType : Set<PlaceDetailsContent> = PlaceDetailsCompactView . standardContent var configuration : PlaceDetailsConfiguration { PlaceDetailsConfiguration ( content : selectedType , theme : theme ) } let placeDetailsCallback : ( PlaceDetailsResult ) - > Void = { result in placeIDPickerFocused = true if let place = result . place { print ( \"Place: \\( place . description ) \" ) } else { print ( \"Error: \\( String ( describing : result . error )) \" ) } } GooglePlacesSwift .",
+          "Compact view Full view Place photo Lightbox enabled for full-screen photo enlargement Place address Rating and rating count Place type Price Accessible entrance information Open now status Place photo collage Place address Rating and rating count Place type Price Accessibility info Open now status Open hours Editorial summary Website Phone number Reviews rendered in dedicated tab Plus code Feature list, rendered in a dedicated tab Type-specific highlights, such as gas prices for gas stations Billing When using the Place Details UI Kit, you are billed for each time the PlaceDetailsQuery method is called.",
+          "Select platform: Android iOS JavaScript Place Details component The Place Details component of the Places UI Kit lets you add an individual UI component that displays place details in your app."
+        ]
+      },
+      {
+        "title": "Places Types (New) \\_|\\_ Places SDK for iOS \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/ios-sdk/place-types",
+        "source_id": "site-docs-root",
+        "final_score": 234,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Automotive Business Culture Education Entertainment and Recreation Facilities Finance Food and Drink Geographical Areas Government Health and Wellness Housing Lodging Natural Features Places of Worship Services Shopping Sports Transportation Automotive car dealer car rental car repair car wash ebike charging station electric vehicle charging station gas station parking parking garage parking lot rest stop tire shop truck dealer Business business center corporate office coworking space farm manufacturer ranch supplier television studio Culture art gallery art museum art studio auditorium castle cultural landmark fountain historical place history museum monument museum performing arts theater sculpture Education academic department educational institution library preschool primary school research institute school secondary school university Entertainment and Recreation adventure sports center amphitheatre amusement center amusement park aquarium banquet hall barbecue area botanical garden bowling alley casino childrens camp city park comedy club community center concert hall convention center cultural center cycling park dance hall dog park event venue ferris wheel garden go karting venue hiking area historical landmark indoor playground internet cafe karaoke live music venue marina miniature golf course movie rental movie theater national park night club observation deck off roading area opera house paintball center park philharmonic hall picnic ground planetarium plaza roller coaster skateboard park state park tourist attraction video arcade vineyard visitor center water park wedding venue wildlife park wildlife refuge zoo Facilities public bath public bathroom stable Finance accounting atm bank Food and Drink acai shop afghani restaurant african restaurant american restaurant argentinian restaurant asian fusion restaurant asian restaurant australian restaurant austrian restaurant bagel shop bakery bangladeshi restaurant bar bar and grill barbecue restaurant basque restaurant bavarian restaurant beer garden belgian restaurant bistro brazilian restaurant breakfast restaurant brewery brewpub british restaurant brunch restaurant buffet restaurant burmese restaurant burrito restaurant cafe cafeteria cajun restaurant cake shop californian restaurant cambodian restaurant candy store cantonese restaurant caribbean restaurant cat cafe chicken restaurant chicken wings restaurant chilean restaurant chinese noodle restaurant chinese restaurant chocolate factory chocolate shop cocktail bar coffee roastery coffee shop coffee stand colombian restaurant confectionery croatian restaurant cuban restaurant czech restaurant danish restaurant deli dessert restaurant dessert shop dim sum restaurant diner dog cafe donut shop dumpling restaurant dutch restaurant eastern european restaurant ethiopian restaurant european restaurant falafel restaurant family restaurant fast food restaurant filipino restaurant fine dining restaurant fish and chips restaurant fondue restaurant food court french restaurant fusion restaurant gastropub german restaurant greek restaurant gyro restaurant halal restaurant hamburger restaurant hawaiian restaurant hookah bar hot dog restaurant hot dog stand hot pot restaurant hungarian restaurant ice cream shop indian restaurant indonesian restaurant irish pub irish restaurant israeli restaurant italian restaurant japanese curry restaurant japanese izakaya restaurant japanese restaurant juice shop kebab shop korean barbecue restaurant korean restaurant latin american restaurant lebanese restaurant lounge bar malaysian restaurant meal delivery meal takeaway mediterranean restaurant mexican restaurant middle eastern restaurant mongolian barbecue restaurant moroccan restaurant noodle shop north indian restaurant oyster bar restaurant pakistani restaurant pastry shop persian restaurant peruvian restaurant pizza delivery pizza restaurant polish restaurant portuguese restaurant pub ramen restaurant restaurant romanian restaurant russian restaurant salad shop sandwich shop scandinavian restaurant seafood restaurant shawarma restaurant snack bar soul food restaurant soup restaurant south american restaurant south indian restaurant southwestern us restaurant spanish restaurant sports bar sri lankan restaurant steak house sushi restaurant swiss restaurant taco restaurant taiwanese restaurant tapas restaurant tea house tex mex restaurant thai restaurant tibetan restaurant tonkatsu restaurant turkish restaurant ukrainian restaurant vegan restaurant vegetarian restaurant vietnamese restaurant western restaurant wine bar winery yakiniku restaurant yakitori restaurant Geographical Areas administrative area level 1 administrative area level 2 country locality postal code school district Government city hall courthouse embassy fire station government office local government office neighborhood police station (Japan only) police post office Health and Wellness chiropractor dental clinic dentist doctor drugstore general hospital hospital massage massage spa medical center medical clinic medical lab pharmacy physiotherapist sauna skin care clinic spa tanning studio wellness center yoga studio Housing apartment building apartment complex condominium complex housing complex Lodging bed and breakfast budget japanese inn campground camping cabin cottage extended stay hotel farmstay guest house hostel hotel inn japanese inn lodging mobile home park motel private guest room resort hotel rv park Natural Features beach island lake mountain peak nature preserve river scenic spot woods Places of Worship buddhist temple church hindu temple mosque shinto shrine synagogue Services aircraft rental service association or organization astrologer barber shop beautician beauty salon body art service catering service cemetery chauffeur service child care agency consultant courier service electrician employment agency florist food delivery foot care funeral home hair care hair salon insurance agency laundry lawyer locksmith makeup artist marketing consultant moving company nail salon non profit organization painter pet boarding service pet care plumber psychic real estate agency roofing contractor service shipping service storage summer camp organizer tailor telecommunications service provider tour agency tourist information center travel agency veterinary care Shopping asian grocery store auto parts store bicycle store book store building materials store butcher shop cell phone store clothing store convenience store cosmetics store department store discount store discount supermarket electronics store farmers market flea market food store furniture store garden center general store gift shop grocery store hardware store health food store home goods store home improvement store hypermarket jewelry store liquor store market pet store shoe store shopping mall sporting goods store sportswear store store supermarket tea store thrift store toy store warehouse store wholesaler womens clothing store Sports arena athletic field fishing charter fishing pier fishing pond fitness center golf course gym ice skating rink indoor golf course playground race course ski resort sports activity location sports club sports coaching sports complex sports school stadium swimming pool tennis court Transportation airport airstrip bike sharing station bridge bus station bus stop ferry service ferry terminal heliport international airport light rail station park and ride subway station taxi service taxi stand toll station train station train ticket office tram stop transit depot transit station transit stop transportation service truck stop Table B The Place type values in Table B may be returned as part of a Place Details (New), Nearby Search (New), Text Search (New), or Autocomplete (New) response.",
+          "Additional Place type values administrative area level 3 administrative area level 4 administrative area level 5 administrative area level 6 administrative area level 7 archipelago colloquial area continent establishment finance food general contractor geocode health intersection landmark natural feature neighborhood place of worship plus code point of interest political postal code prefix postal code suffix postal town premise route street address sublocality sublocality level 1 sublocality level 2 sublocality level 3 sublocality level 4 sublocality level 5 subpremise town square Address types and address component types The types enum in the GMSPlace class in the response indicates the address type .",
+          "Address Component Type Description floor The floor of a building address. establishment Typically a place that has not yet been categorized. landmark A nearby place that is used as a reference, to aid navigation. point of interest A named point of interest. parking A parking lot or parking structure. post box A specific postal box. postal town A grouping of geographic areas, such as locality and sublocality , used for mailing addresses in some countries. room The room of a building address. street number The precise street number. bus station , train station and transit station The location of a bus, train or public transit stop."
+        ]
+      },
+      {
+        "title": "Place Details (New) \\_|\\_ Places SDK for iOS \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/ios-sdk/details-place",
+        "source_id": "site-docs-root",
+        "final_score": 225,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Specify one or more of the following fields: The following fields trigger the Place Details Essentials ID Only SKU : GMSPlacePropertyPlaceID GMSPlacePropertyPhotos The following fields trigger the Place Details Essentials SKU : GMSPlacePropertyAddressComponents GMSPlacePropertyFormattedAddress GMSPlacePropertyCoordinate GMSPlacePropertyPlusCode GMSPlacePropertyTypes GMSPlacePropertyViewport The following fields trigger the Place Details Pro SKU : GMSPlacePropertyBusinessStatus GMSPlacePropertyIconBackgroundColor GMSPlacePropertyIconImageURL GMSPlacePropertyName GMSPlacePropertyUTCOffsetMinutes GMSPlacePropertyWheelchairAccessibleEntrance The following fields trigger the Place Details Pro SKU : GMSPlacePropertyCurrentOpeningHours GMSPlacePropertySecondaryOpeningHours GMSPlacePropertyPhoneNumber GMSPlacePropertyPriceLevel GMSPlacePropertyRating GMSPlacePropertyOpeningHours GMSPlacePropertyUserRatingsTotal GMSPlacePropertyWebsite The following fields trigger the Place Details Enterprise SKU : GMSPlacePropertyCurbsidePickup GMSPlacePropertyDelivery GMSPlacePropertyDineIn GMSPlacePropertyEditorialSummary GMSPlacePropertyReservable GMSPlacePropertyReviews GMSPlacePropertyServesBeer GMSPlacePropertyServesBreakfast GMSPlacePropertyServesBrunch GMSPlacePropertyServesDinner GMSPlacePropertyServesLunch GMSPlacePropertyServesVegetarianFood GMSPlacePropertyServesWine GMSPlacePropertyTakeout The following example passes a list of two field values to specify that the GMSPlace object returned by a request contains the name and placeID fields: Places Swift SDK // Specify the place data types to return. let fields : [ PlaceProperty ] = [. placeID , . displayName ] Swift // Specify the place data types to return. let fields : [ GMSPlaceProperty ] = [. placeID , . name ] Objective-C // Specify the place data types to return.",
+          "GMSFetchPlaceRequest fetchPlaceRequest = [[ GMSFetchPlaceRequest alloc ] initWithPlaceID : placeID placeProperties : myProperties sessionToken : nil ]; [ placesClient fetchPlaceWithRequest : fetchPlaceRequest callback : ^ ( GMSPlace Nullable place , NSError Nullable error ) { if ( error != nil ) { NSLog ( @\"An error occurred %@\" , [ error localizedDescription ]); return ; } else { NSLog ( @\"Place Found: %@\" , place . name ); NSLog ( @\"The place URL: %@\" , place . website ); } }]; Place Details response Place Details returns a GMSPlace object containing details about the place.",
+          "Places Swift SDK let isOpenRequest = IsPlaceOpenRequest ( place : place ) switch await placesClient . isPlaceOpen ( with : isOpenRequest ) { case . success ( let isOpenResponse ): switch isOpenResponse . status { case true : // Handle open case false : // Handle closed case nil : // Handle unknown case . failure ( let placesError ): // Handle error } Swift let isOpenRequest = GMSPlaceIsOpenRequest ( place : place , date : nil ) GMSPlacesClient . shared (). isOpen ( with : isOpenRequest ) { response , error in if let error = error { // Handle Error } switch response . status { case . open : // Handle open case . closed : // Handle closed case . unknown : // Handle unknown } } Objective-C GMSPlaceIsOpenRequest isOpenRequest = [[ GMSPlaceIsOpenRequest alloc ] initWithPlace : place date : nil ]; [[ GMSPlacesClient sharedClient ] isOpenWithRequest : isOpenRequest callback :^ ( GMSPlaceIsOpenResponse response , NSError Nullable error ) { if ( error ) { // Handle error } switch ( response . status ) { case GMSPlaceOpenStatusOpen : // Handle open case GMSPlaceOpenStatusClosed : // Handle closed case GMSPlaceOpenStatusUnknown : // Handle unknown } }]; Required parameters Use the GMSFetchPlaceRequest object to specify the required parameters."
+        ]
+      },
+      {
+        "title": "\"GooglePlaces Framework Reference \\_|\\_ Places SDK for iOS \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlace",
+        "source_id": "site-docs-reference",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Return Value GMSPlaceOpenStatusOpen if the place is open, GMSPlaceOpenStatusClosed if the place is closed, and GMSPlaceOpenStatusUnknown if the open status is unknown. -isOpen Deprecated (This method is deprecated in favor of GMSPlacesClient#isOpen:place:callback and will be removed in a future release.",
+          "Declaration Swift var viewportInfo : GMSPlaceViewportInfo ? { get } Objective-C @property ( nonatomic , strong , readonly , nullable ) GMSPlaceViewportInfo viewportInfo ; addressComponents An array of GMSAddressComponent objects representing the components in the place’s address.",
+          "Declaration Swift var googleMapsLinks : GMSPlaceGoogleMapsLinks ? { get } Objective-C @property ( nonatomic , readonly , nullable ) GMSPlaceGoogleMapsLinks googleMapsLinks ; containingPlaces List of parent places in which the current place is located."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/ios-sdk/place-details-ui-kit",
+        "https://developers.google.com/maps/documentation/places/ios-sdk/place-types",
+        "https://developers.google.com/maps/documentation/places/ios-sdk/details-place",
+        "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlace"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/ios-sdk/place-details-ui-kit",
+        "https://developers.google.com/maps/documentation/places/ios-sdk/place-types",
+        "https://developers.google.com/maps/documentation/places/ios-sdk/details-place",
+        "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlace"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/ios-sdk/place-details-ui-kit",
+        "https://developers.google.com/maps/documentation/places/ios-sdk/place-types",
+        "https://developers.google.com/maps/documentation/places/ios-sdk/details-place",
+        "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlace"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/ios-sdk/place-details-ui-kit",
+        "https://developers.google.com/maps/documentation/places/ios-sdk/place-types",
+        "https://developers.google.com/maps/documentation/places/ios-sdk/details-place",
+        "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlace"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/ios-sdk/place-details-ui-kit",
+        "https://developers.google.com/maps/documentation/places/ios-sdk/place-types",
+        "https://developers.google.com/maps/documentation/places/ios-sdk/details-place",
+        "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlace"
+      ]
+    }
+  ]
+}

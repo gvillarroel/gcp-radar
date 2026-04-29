@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:45.183Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Bigtable Data Boost",
+  "feature_slug": "bigtable-data-boost",
+  "summary": "Data Boost enables analyzing Bigtable data in BigQuery without impacting application-serving cluster performance; Data Boost is available for analyzing Bigtable data using BigQuery.",
+  "extended_definition": "Data Boost enables analyzing Bigtable data in BigQuery without impacting application-serving cluster performance; Data Boost is available for analyzing Bigtable data using BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/app-profiles",
+      "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+      "https://docs.cloud.google.com/bigtable/docs/data-boost-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Bigtable Data Boost overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/data-boost-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 180,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Bigtable Data Boost overview Data Boost is a serverless compute service designed to run high-throughput read jobs on your Bigtable data without impacting the performance of the clusters that handle your application traffic.",
+          "The following are ideal use cases for Data Boost: Scheduled or triggered export or ETL pipeline jobs from Bigtable to Cloud Storage for data enrichment, analysis, archiving, offline ML model training, or ingestion by your customers' third-party partners ETL using a tool such as Dataflow for short scan or batch read processes that support in-place aggregations, rule-based transformations for MDM, or ML jobs Spark applications that use the Bigtable Spark connector to read Bigtable data Ad hoc queries and scheduled analytics jobs that use BigQuery external tables to read Bigtable data.",
+          "You can run your high-throughput analytics jobs on a single cluster with Data Boost while your ongoing application traffic is routed through cluster nodes."
+        ]
+      },
+      {
+        "title": "Create and configure app profiles \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+        "source_id": "site-docs-reference-2",
+        "final_score": 110,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Update your application's code for connecting to Bigtable so that it uses the new app profile. gcloud If you don't know the instance ID, use the bigtable instances list command to view a list of your project's instances: gcloud bigtable instances list Use the gcloud beta bigtable app-profiles create command to create an app profile: gcloud bigtable app-profiles create APP PROFILE ID \\ --instance= INSTANCE ID \\ --data-boost \\ --data-boost-compute-billing-owner=HOST PAYS \\ --route-to= CLUSTER ID Provide the following: APP PROFILE ID : The permanent identifier for the app profile.",
+          "Update the settings as needed, then click Save , or click Cancel to exit without saving. gcloud If you don't know the instance ID, use the bigtable instances list command to view a list of your project's instances: gcloud bigtable instances list If you don't know the app profile's ID, use the bigtable app-profiles list command to view a list of the instance's app profiles: gcloud bigtable app-profiles list --instance= INSTANCE ID Replace INSTANCE ID with the permanent identifier for the instance. (Optional) Use the bigtable app-profiles describe command to view the app profile's settings: gcloud bigtable app-profiles describe APP PROFILE ID \\ --instance= INSTANCE ID Provide the following: APP PROFILE ID : The permanent identifier for the app profile.",
+          "Update your application's code for connecting to Bigtable so that it uses the new app profile. gcloud If you don't know the instance ID, use the bigtable instances list command to view a list of your project's instances: gcloud bigtable instances list Use the bigtable app-profiles create command to create an app profile: gcloud bigtable app-profiles create APP PROFILE ID \\ --instance= INSTANCE ID \\ [--description= DESCRIPTION ] \\ [--force] \\ [--route-any] \\ [--restrict-to= CLUSTER ID 1 , CLUSTER ID 2 ...] \\ [--route-to= CLUSTER ID ] \\ [--transactional-writes] \\ [--priority=PRIORITY] \\ [--row-affinity] Provide the following: APP PROFILE ID : The permanent identifier for the app profile."
+        ]
+      },
+      {
+        "title": "App profiles overview \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/app-profiles",
+        "source_id": "site-docs-reference-2",
+        "final_score": 104,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This increase in observability can be helpful in the following ways: You're able to look at latency at the app profile level to help you determine which application might be impacting overall performance.",
+          "You can change the settings for one application or function without affecting other applications that connect to the same data.",
+          "Data Boost uses serverless compute, while the application traffic uses cluster nodes for compute."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.bigtable.admin.v2.models",
+      "com.google.cloud.bigtable.admin.v2.models.AppProfile.DataBoostIsolationReadOnlyPolicy"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/data-boost-overview",
+        "https://docs.cloud.google.com/bigtable/docs/app-profiles",
+        "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles"
+      ]
+    }
+  ]
+}

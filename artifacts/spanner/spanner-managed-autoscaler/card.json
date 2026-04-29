@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner managed autoscaler",
+  "feature_slug": "spanner-managed-autoscaler",
+  "summary": "Spanner managed autoscaler is now generally available and supports independent autoscaling configuration for read-only replicas separate from read-write replicas using capacity and CPU utilization targets; Spanner managed autoscaler automatically increases or decreases instance compute capacity based on workload, storage needs, and user-defined goals.",
+  "extended_definition": "Spanner managed autoscaler is now generally available and supports independent autoscaling configuration for read-only replicas separate from read-write replicas using capacity and CPU utilization targets; Spanner managed autoscaler automatically increases or decreases instance compute capacity based on workload, storage needs, and user-defined goals.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+      "https://docs.cloud.google.com/spanner/docs/autoscaling-overview",
+      "https://docs.cloud.google.com/spanner/docs/cmek"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Autoscaler tool overview \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+        "source_id": "site-docs-root",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "Advanced configuration The Autoscaler tool has advanced configuration options that let you more finely control when and how your Spanner instances are managed.",
+          "Note: This analysis doesn't include incurred charges for the Spanner instances that are managed by the Autoscaler.",
+          "Custom thresholds The Autoscaler tool determines the number of nodes or processing units to be added or subtracted to an instance using the recommended Spanner thresholds for the following load metrics: High priority CPU 24-hour rolling average CPU Storage utilization We recommend that you use the default thresholds as described in Creating alerts for Spanner metrics ."
+        ]
+      },
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) overview \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/cmek",
+        "source_id": "site-docs-root",
+        "final_score": 77,
+        "relevance": "",
+        "evidence_snippets": [
+          "If an externally-managed key is unavailable, Spanner continues to support full database operations on a best-effort basis for up to one hour.",
+          "Spanner is able to access the key on your behalf after you grant the Cloud KMS CryptoKey Encrypter/Decrypter ( roles/cloudkms.cryptoKeyEncrypterDecrypter ) role to a Google-managed Spanner service account .",
+          "If you're using multiple regional keys to protect a Spanner database, only those replicas that are protected by a key residing in the unavailable regional Cloud KMS are affected by the unavailability."
+        ]
+      },
+      {
+        "title": "Autoscaling overview \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/autoscaling-overview",
+        "source_id": "site-docs-root",
+        "final_score": 70,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "What's next Learn more about Managed autoscaler for Spanner Learn how to create an instance with the managed autoscaler enabled Learn how to modify an instance to add autoscaling or change autoscaling settings Learn how to change an instance from using autoscaling to manual scaling Learn more about the Autoscaler tool for Spanner Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Requirements on this page apply to both the managed autoscaling feature and the open source Autoscaler tool.",
+          "With managed autoscaling, you don't write an application to do these tasks, because the Spanner service handles them for you."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.cryptoKeyEncrypterDecrypter"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/autoscaling-overview"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/autoscaling-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/autoscaling-overview"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/autoscaling-overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/autoscaling-overview"
+      ]
+    }
+  ]
+}

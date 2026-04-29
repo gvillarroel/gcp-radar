@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:32.041Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search",
+  "feature_name": "Vertex AI Search tuning",
+  "feature_slug": "vertex-ai-search-tuning",
+  "summary": "Introduces Search tuning in Public Preview, allowing users to upload additional training data to tune search models and improve search results; Adds Search tuning for Enterprise Search, allowing users to provide query and segment pair data to train and improve model relevance.",
+  "extended_definition": "Introduces Search tuning in Public Preview, allowing users to upload additional training data to tune search models and improve search results; Adds Search tuning for Enterprise Search, allowing users to provide query and segment pair data to train and improve model relevance.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-governance",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Get search results \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+        "source_id": "site-iam-reference",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "AUTO ), Optional: Use fine-tuned model for this request custom fine tuning spec=discoveryengine.CustomFineTuningSpec( enable search adaptor=True ), ) page result = client . search ( request ) Handle the response for response in page result : print ( response ) return page result Ruby For more information, see the Vertex AI Search Ruby API reference documentation .",
+          "AUTO ), Optional: Use fine-tuned model for this request custom fine tuning spec=discoveryengine.CustomFineTuningSpec( enable search adaptor=True ), ) page result = client . search ( request ) Handle the response for response in page result : print ( response ) return page result Ruby For more information, see the Vertex AI Search Ruby API reference documentation .",
+          "Key Term: In Vertex AI Search, the term app can be used interchangeably with the term engine in the context of APIs. curl -X POST -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search:search\" \\ -d '{ \"servingConfig\": \"projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search\", \"query\": \" QUERY \", \"pageSize\": \" PAGE SIZE \", \"offset\": \" OFFSET \", \"orderBy\": \" ORDER BY \", \"params\": {\"user country code\": \" USER COUNTRY CODE \", \"searchType\": \" SEARCH TYPE \"}, \"filter\": \" FILTER \", \"boostSpec\": \" BOOST SPEC \", \"contentSearchSpec\": { \"searchResultMode\": \" RESULT MODE \" }, \"userPseudoId\": \" USER PSEUDO ID \", \"dataStoreSpecs\": [{\" DATA STORE SPEC \"}] }' Replace the following: PROJECT ID : the ID of your Google Cloud project."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: discoveryengine.googleapis.com \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "SearchRequest JSON representation { \"servingConfig\" : string , \"branch\" : string , \"query\" : string , \"pageCategories\" : [ string ] , \"imageQuery\" : { object ( ImageQuery ) } , \"pageSize\" : integer , \"pageToken\" : string , \"offset\" : integer , \"oneBoxPageSize\" : integer , \"dataStoreSpecs\" : [ { object ( DataStoreSpec ) } ] , \"filter\" : string , \"canonicalFilter\" : string , \"orderBy\" : string , \"userInfo\" : { object ( UserInfo ) } , \"languageCode\" : string , \"regionCode\" : string , \"facetSpecs\" : [ { object ( FacetSpec ) } ] , \"boostSpec\" : { object ( BoostSpec ) } , \"params\" : { string : value , ... } , \"queryExpansionSpec\" : { object ( QueryExpansionSpec ) } , \"spellCorrectionSpec\" : { object ( SpellCorrectionSpec ) } , \"userPseudoId\" : string , \"useLatestData\" : boolean , \"contentSearchSpec\" : { object ( ContentSearchSpec ) } , \"embeddingSpec\" : { object ( EmbeddingSpec ) } , \"rankingExpression\" : string , \"rankingExpressionBackend\" : enum ( RankingExpressionBackend ) , \"safeSearch\" : boolean , \"userLabels\" : { string : string , ... } , \"naturalLanguageQueryUnderstandingSpec\" : { object ( NaturalLanguageQueryUnderstandingSpec ) } , \"searchAsYouTypeSpec\" : { object ( SearchAsYouTypeSpec ) } , \"customFineTuningSpec\" : { object ( CustomFineTuningSpec ) } , \"displaySpec\" : { object ( DisplaySpec ) } , \"crowdingSpecs\" : [ { object ( CrowdingSpec ) } ] , \"session\" : string , \"sessionSpec\" : { object ( SessionSpec ) } , \"relevanceThreshold\" : enum ( RelevanceThreshold ) , \"relevanceFilterSpec\" : { object ( RelevanceFilterSpec ) } , \"personalizationSpec\" : { object ( PersonalizationSpec ) } , \"relevanceScoreSpec\" : { object ( RelevanceScoreSpec ) } , \"searchAddonSpec\" : { object ( SearchAddonSpec ) } } Fields servingConfig string Required.",
+          "Home Documentation AI and ML Vertex AI Search Reference Send feedback MCP Tools Reference: discoveryengine.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "CustomFineTuningSpec JSON representation { \"enableSearchAdaptor\" : boolean } Fields enableSearchAdaptor boolean Whether or not to enable and include custom fine tuned search adaptor model."
+        ]
+      },
+      {
+        "title": "\"Data governance and generative AI \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-governance",
+        "source_id": "site-docs-root",
+        "final_score": 72,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Customer-specific models When applicable, customer-specific models are built automatically and used only in the context of the project that is specific to the customer for the Vertex AI Search service.",
+          "Home Documentation AI and ML Vertex AI Search Send feedback Data governance and generative AI Stay organized with collections Save and categorize content based on your preferences.",
+          "Usage of generative AI Vertex AI Search uses generative AI services for building search, personalized, and conversational experiences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.CustomFineTuningSpec",
+      "discoveryengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-governance"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-governance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-governance"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-governance"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-governance"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-governance"
+      ]
+    }
+  ]
+}

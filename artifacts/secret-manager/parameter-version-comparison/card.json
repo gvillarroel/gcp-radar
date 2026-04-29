@@ -1,0 +1,173 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:27.049Z",
+  "source_step08_card": "data/step-08/current/products/secret-manager/card.json",
+  "product_name": "Secret Manager",
+  "product_slug": "secret-manager",
+  "feature_name": "Parameter version comparison",
+  "feature_slug": "parameter-version-comparison",
+  "summary": "You can compare two parameter versions to inspect payload changes over time.",
+  "extended_definition": "You can compare two parameter versions to inspect payload changes over time.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionRequest",
+      "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.pagers.ListSecretVersionsAsyncPager",
+      "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.pagers.ListSecretVersionsPager",
+      "https://docs.cloud.google.com/secret-manager/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class ListSecretVersionsAsyncPager (2.27.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.pagers.ListSecretVersionsAsyncPager",
+        "source_id": "site-python-reference",
+        "final_score": 136,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.secretmanager v1.types.ListSecretVersionsRequest The initial request object. response google.cloud.secretmanager v1.types.ListSecretVersionsResponse The initial response object. retry google.api core.retry.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "Home Documentation Developer tools Python Client libraries Send feedback Class ListSecretVersionsAsyncPager (2.27.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "2.27.0 (latest) 2.26.0 2.25.0 2.23.3 2.22.1 2.21.1 2.20.2 2.19.0 2.18.3 2.17.0 2.16.3 2.15.1 2.14.0 2.13.0 2.12.6 2.11.1 2.10.0 2.9.2 2.8.0 2.7.3 2.6.0 2.5.0 2.4.0 2.3.0 2.2.0 2.1.0 2.0.0 1.0.2 0.2.0 0.1.1 ListSecretVersionsAsyncPager ( method : typing ."
+        ]
+      },
+      {
+        "title": "\"Class ListSecretVersionsPager (2.27.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.pagers.ListSecretVersionsPager",
+        "source_id": "site-python-reference",
+        "final_score": 136,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.secretmanager v1.types.ListSecretVersionsRequest The initial request object. response google.cloud.secretmanager v1.types.ListSecretVersionsResponse The initial response object. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "Home Documentation Developer tools Python Client libraries Send feedback Class ListSecretVersionsPager (2.27.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "2.27.0 (latest) 2.26.0 2.25.0 2.23.3 2.22.1 2.21.1 2.20.2 2.19.0 2.18.3 2.17.0 2.16.3 2.15.1 2.14.0 2.13.0 2.12.6 2.11.1 2.10.0 2.9.2 2.8.0 2.7.3 2.6.0 2.5.0 2.4.0 2.3.0 2.2.0 2.1.0 2.0.0 1.0.2 0.2.0 0.1.1 ListSecretVersionsPager ( method : typing ."
+        ]
+      },
+      {
+        "title": "Secret Manager overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "Using Secret Manager, you can do the following: Manage rollback, recovery, and auditing using versions : Versions help you manage gradual rollouts and emergency rollback, If a secret is accidentally changed or compromised, you can revert to a previous, known-good version.",
+          "You can pin secret versions to specific workloads and add aliases for easier access to secret data.",
+          "You can also disable or destroy secret versions that you don't require."
+        ]
+      },
+      {
+        "title": "\"Class AccessSecretVersionRequest (2.88.0) \\_|\\_ Java client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionRequest",
+        "source_id": "site-java-reference",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Protobuf type google.cloud.secretmanager.v1.AccessSecretVersionRequest Inheritance Object > AbstractMessageLite<MessageType,BuilderType> > AbstractMessage > GeneratedMessage > AccessSecretVersionRequest Implements AccessSecretVersionRequestOrBuilder Inherited Members AbstractMessage.equals(Object) AbstractMessage.findInitializationErrors() AbstractMessage.getInitializationErrorString() AbstractMessage.hashCode() AbstractMessage.hashFields(int,Map<Descriptors.FieldDescriptor,Object>) AbstractMessage.newBuilderForType(AbstractMessage.BuilderParent) AbstractMessage.toString() AbstractMessageLite.<T>addAll(Iterable<T>,List<? super T>) AbstractMessageLite.checkByteStringIsUtf8(ByteString) AbstractMessageLite.toByteArray() AbstractMessageLite.toByteString() AbstractMessageLite.writeDelimitedTo(OutputStream) AbstractMessageLite.writeTo(OutputStream) com.google.protobuf.GeneratedMessage.<ContainingT,T>newFileScopedGeneratedExtension(java.lang.Class<?>,com.google.protobuf.Message) com.google.protobuf.GeneratedMessage.<ContainingT,T>newMessageScopedGeneratedExtension(com.google.protobuf.Message,int,java.lang.Class<?>,com.google.protobuf.Message) com.google.protobuf.GeneratedMessage.<ListT>makeMutableCopy(ListT) com.google.protobuf.GeneratedMessage.<ListT>makeMutableCopy(ListT,int) GeneratedMessage.<M>parseDelimitedWithIOException(Parser<M>,InputStream) GeneratedMessage.<M>parseDelimitedWithIOException(Parser<M>,InputStream,ExtensionRegistryLite) GeneratedMessage.<M>parseWithIOException(Parser<M>,CodedInputStream) GeneratedMessage.<M>parseWithIOException(Parser<M>,CodedInputStream,ExtensionRegistryLite) GeneratedMessage.<M>parseWithIOException(Parser<M>,InputStream) GeneratedMessage.<M>parseWithIOException(Parser<M>,InputStream,ExtensionRegistryLite) com.google.protobuf.GeneratedMessage.<T>emptyList(java.lang.Class<T>) com.google.protobuf.GeneratedMessage.<V>serializeBooleanMapTo(com.google.protobuf.CodedOutputStream,com.google.protobuf.MapField<java.lang.Boolean,V>,com.google.protobuf.MapEntry<java.lang.Boolean,V>,int) com.google.protobuf.GeneratedMessage.<V>serializeIntegerMapTo(com.google.protobuf.CodedOutputStream,com.google.protobuf.MapField<java.lang.Integer,V>,com.google.protobuf.MapEntry<java.lang.Integer,V>,int) com.google.protobuf.GeneratedMessage.<V>serializeLongMapTo(com.google.protobuf.CodedOutputStream,com.google.protobuf.MapField<java.lang.Long,V>,com.google.protobuf.MapEntry<java.lang.Long,V>,int) com.google.protobuf.GeneratedMessage.<V>serializeStringMapTo(com.google.protobuf.CodedOutputStream,com.google.protobuf.MapField<java.lang.String,V>,com.google.protobuf.MapEntry<java.lang.String,V>,int) com.google.protobuf.GeneratedMessage.canUseUnsafe() GeneratedMessage.computeStringSize(int,Object) GeneratedMessage.computeStringSizeNoTag(Object) com.google.protobuf.GeneratedMessage.emptyBooleanList() com.google.protobuf.GeneratedMessage.emptyDoubleList() com.google.protobuf.GeneratedMessage.emptyFloatList() com.google.protobuf.GeneratedMessage.emptyIntList() com.google.protobuf.GeneratedMessage.emptyLongList() GeneratedMessage.getAllFields() GeneratedMessage.getDescriptorForType() GeneratedMessage.getField(Descriptors.FieldDescriptor) GeneratedMessage.getOneofFieldDescriptor(Descriptors.OneofDescriptor) GeneratedMessage.getParserForType() GeneratedMessage.getRepeatedField(Descriptors.FieldDescriptor,int) GeneratedMessage.getRepeatedFieldCount(Descriptors.FieldDescriptor) GeneratedMessage.getSerializedSize() GeneratedMessage.getUnknownFields() GeneratedMessage.hasField(Descriptors.FieldDescriptor) GeneratedMessage.hasOneof(Descriptors.OneofDescriptor) GeneratedMessage.internalGetFieldAccessorTable() GeneratedMessage.internalGetMapField(int) com.google.protobuf.GeneratedMessage.internalGetMapFieldReflection(int) GeneratedMessage.isInitialized() com.google.protobuf.GeneratedMessage.isStringEmpty(java.lang.Object) GeneratedMessage.makeExtensionsImmutable() com.google.protobuf.GeneratedMessage.mergeFromAndMakeImmutableInternal(com.google.protobuf.CodedInputStream,com.google.protobuf.ExtensionRegistryLite) com.google.protobuf.GeneratedMessage.newInstance(com.google.protobuf.GeneratedMessage.UnusedPrivateParameter) GeneratedMessage.parseUnknownField(CodedInputStream,UnknownFieldSet.Builder,ExtensionRegistryLite,int) com.google.protobuf.GeneratedMessage.parseUnknownFieldProto3(com.google.protobuf.CodedInputStream,com.google.protobuf.UnknownFieldSet.Builder,com.google.protobuf.ExtensionRegistryLite,int) GeneratedMessage.writeReplace() GeneratedMessage.writeString(CodedOutputStream,int,Object) GeneratedMessage.writeStringNoTag(CodedOutputStream,Object) GeneratedMessage.writeTo(CodedOutputStream) Object.clone() Object.finalize() Object.getClass() Object.notify() Object.notifyAll() Object.wait() Object.wait(long) Object.wait(long,int) Static Fields NAME FIELD NUMBER public static final int NAME FIELD NUMBER Field Value Type Description int Static Methods getDefaultInstance() public static AccessSecretVersionRequest getDefaultInstance () Returns Type Description AccessSecretVersionRequest getDescriptor() public static final Descriptors .",
+          "Builder newBuilder ( AccessSecretVersionRequest prototype ) Parameter Name Description prototype AccessSecretVersionRequest Returns Type Description AccessSecretVersionRequest.Builder parseDelimitedFrom(InputStream input) public static AccessSecretVersionRequest parseDelimitedFrom ( InputStream input ) Parameter Name Description input InputStream Returns Type Description AccessSecretVersionRequest Exceptions Type Description IOException parseDelimitedFrom(InputStream input, ExtensionRegistryLite extensionRegistry) public static AccessSecretVersionRequest parseDelimitedFrom ( InputStream input , ExtensionRegistryLite extensionRegistry ) Parameters Name Description input InputStream extensionRegistry ExtensionRegistryLite Returns Type Description AccessSecretVersionRequest Exceptions Type Description IOException parseFrom(byte[] data) public static AccessSecretVersionRequest parseFrom ( byte [] data ) Parameter Name Description data byte [] Returns Type Description AccessSecretVersionRequest Exceptions Type Description InvalidProtocolBufferException parseFrom(byte[] data, ExtensionRegistryLite extensionRegistry) public static AccessSecretVersionRequest parseFrom ( byte [] data , ExtensionRegistryLite extensionRegistry ) Parameters Name Description data byte [] extensionRegistry ExtensionRegistryLite Returns Type Description AccessSecretVersionRequest Exceptions Type Description InvalidProtocolBufferException parseFrom(ByteString data) public static AccessSecretVersionRequest parseFrom ( ByteString data ) Parameter Name Description data ByteString Returns Type Description AccessSecretVersionRequest Exceptions Type Description InvalidProtocolBufferException parseFrom(ByteString data, ExtensionRegistryLite extensionRegistry) public static AccessSecretVersionRequest parseFrom ( ByteString data , ExtensionRegistryLite extensionRegistry ) Parameters Name Description data ByteString extensionRegistry ExtensionRegistryLite Returns Type Description AccessSecretVersionRequest Exceptions Type Description InvalidProtocolBufferException parseFrom(CodedInputStream input) public static AccessSecretVersionRequest parseFrom ( CodedInputStream input ) Parameter Name Description input CodedInputStream Returns Type Description AccessSecretVersionRequest Exceptions Type Description IOException parseFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) public static AccessSecretVersionRequest parseFrom ( CodedInputStream input , ExtensionRegistryLite extensionRegistry ) Parameters Name Description input CodedInputStream extensionRegistry ExtensionRegistryLite Returns Type Description AccessSecretVersionRequest Exceptions Type Description IOException parseFrom(InputStream input) public static AccessSecretVersionRequest parseFrom ( InputStream input ) Parameter Name Description input InputStream Returns Type Description AccessSecretVersionRequest Exceptions Type Description IOException parseFrom(InputStream input, ExtensionRegistryLite extensionRegistry) public static AccessSecretVersionRequest parseFrom ( InputStream input , ExtensionRegistryLite extensionRegistry ) Parameters Name Description input InputStream extensionRegistry ExtensionRegistryLite Returns Type Description AccessSecretVersionRequest Exceptions Type Description IOException parseFrom(ByteBuffer data) public static AccessSecretVersionRequest parseFrom ( ByteBuffer data ) Parameter Name Description data ByteBuffer Returns Type Description AccessSecretVersionRequest Exceptions Type Description InvalidProtocolBufferException parseFrom(ByteBuffer data, ExtensionRegistryLite extensionRegistry) public static AccessSecretVersionRequest parseFrom ( ByteBuffer data , ExtensionRegistryLite extensionRegistry ) Parameters Name Description data ByteBuffer extensionRegistry ExtensionRegistryLite Returns Type Description AccessSecretVersionRequest Exceptions Type Description InvalidProtocolBufferException parser() public static Parser<AccessSecretVersionRequest> parser () Returns Type Description Parser < AccessSecretVersionRequest > Methods equals(Object obj) public boolean equals ( Object obj ) Parameter Name Description obj Object Returns Type Description boolean Overrides AbstractMessage.equals(Object other) getDefaultInstanceForType() public AccessSecretVersionRequest getDefaultInstanceForType () Returns Type Description AccessSecretVersionRequest getName() public String getName () Required.",
+          "The resource name of the SecretVersion in the format projects/ /secrets/ /versions/ or projects/ /locations/ /secrets/ /versions/ . projects/ /secrets/ /versions/latest or projects/ /locations/ /secrets/ /versions/latest is an alias to the most recently created SecretVersion . string name = 1 [(.google.api.field behavior) = REQUIRED, (.google.api.resource reference) = { ... } Returns Type Description ByteString The bytes for name. getParserForType() public Parser<AccessSecretVersionRequest> getParserForType () Returns Type Description Parser < AccessSecretVersionRequest > Overrides GeneratedMessage.getParserForType() getSerializedSize() public int getSerializedSize () Returns Type Description int Overrides GeneratedMessage.getSerializedSize() hashCode() public int hashCode () Returns Type Description int Overrides AbstractMessage.hashCode() internalGetFieldAccessorTable() protected GeneratedMessage ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.secretmanager.v1.AccessSecretVersionRequest",
+      "com.google.cloud.secretmanager.v1.AccessSecretVersionResponse",
+      "com.google.protobuf.CodedInputStream",
+      "com.google.protobuf.CodedOutputStream",
+      "com.google.protobuf.ExtensionRegistryLite",
+      "com.google.protobuf.GeneratedMessage",
+      "com.google.protobuf.GeneratedMessage.canUseUnsafe",
+      "com.google.protobuf.GeneratedMessage.emptyBooleanList",
+      "com.google.protobuf.GeneratedMessage.emptyDoubleList",
+      "com.google.protobuf.GeneratedMessage.emptyFloatList",
+      "com.google.protobuf.GeneratedMessage.emptyIntList",
+      "com.google.protobuf.GeneratedMessage.emptyLongList",
+      "com.google.protobuf.GeneratedMessage.internalGetMapFieldReflection",
+      "com.google.protobuf.GeneratedMessage.isStringEmpty",
+      "com.google.protobuf.GeneratedMessage.mergeFromAndMakeImmutableInternal",
+      "com.google.protobuf.GeneratedMessage.newInstance",
+      "com.google.protobuf.GeneratedMessage.parseUnknownFieldProto3",
+      "com.google.protobuf.GeneratedMessage.UnusedPrivateParameter",
+      "com.google.protobuf.MapEntry",
+      "com.google.protobuf.MapField",
+      "com.google.protobuf.Message",
+      "com.google.protobuf.UnknownFieldSet.Builder",
+      "core.retry.AsyncRetry",
+      "core.retry.Retry",
+      "java.lang.Boolean",
+      "java.lang.Class",
+      "java.lang.Integer",
+      "java.lang.Long",
+      "java.lang.Object",
+      "java.lang.String",
+      "v1.types.ListSecretVersionsRequest",
+      "v1.types.ListSecretVersionsResponse"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.pagers.ListSecretVersionsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.pagers.ListSecretVersionsPager",
+        "https://docs.cloud.google.com/secret-manager/docs/overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionRequest"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.pagers.ListSecretVersionsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.pagers.ListSecretVersionsPager",
+        "https://docs.cloud.google.com/secret-manager/docs/overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionRequest"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.pagers.ListSecretVersionsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.pagers.ListSecretVersionsPager",
+        "https://docs.cloud.google.com/secret-manager/docs/overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionRequest"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.pagers.ListSecretVersionsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.pagers.ListSecretVersionsPager",
+        "https://docs.cloud.google.com/secret-manager/docs/overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionRequest"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.pagers.ListSecretVersionsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.pagers.ListSecretVersionsPager",
+        "https://docs.cloud.google.com/secret-manager/docs/overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionRequest"
+      ]
+    }
+  ]
+}

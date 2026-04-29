@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.987Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "Google Cloud Threat Intelligence curated threat feeds",
+  "feature_slug": "google-cloud-threat-intelligence-curated-threat-feeds",
+  "summary": "Chronicle now uses curated Google Cloud Threat Intelligence threat feeds to add investigative context.",
+  "extended_definition": "Chronicle now uses curated Google Cloud Threat Intelligence threat feeds to add investigative context.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+      "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview",
+      "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Applied Threat Intelligence curated detections overview \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "source_id": "site-api-reference",
+        "final_score": 181,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Curated detection rule sets The Curated Prioritization category includes the following rule sets that support the Applied Threat Intelligence feature in Google SecOps: Active Breach Priority Network Indicators : Detects network-related Indicators of Compromise (IoCs) in event data using Mandiant Threat Intelligence and prioritizes IoCs with the 'Active breach' label.",
+          "Applied Threat Intelligence curated detections overview Supported in: Google secops SIEM This document provides an overview of the Curated Detection rule sets within the Applied Threat Intelligence Curated Prioritization category, available in Google Security Operations Enterprise Plus.",
+          "Google SecOps evaluates your UDM event data against IoCs curated by Mandiant Threat Intelligence and identifies matches for domains, IP addresses, file hashes, and URLs."
+        ]
+      },
+      {
+        "title": "\"Applied Threat Intelligence overview \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 149,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google SecOps curated detections evaluate your event data against Mandiant threat intelligence data, and generates an alert when one or more rules identify a match to an IoC with an active breach or high priority.",
+          "When ATI is enabled, Google SecOps ingests IoCs curated by Mandiant threat intelligence that are classified as malicious by the Google Threat Indicator (GTI) verdict.",
+          "It continually analyzes and evaluates your security telemetry against Indicators of Compromise (IoCs) curated by Mandiant threat intelligence."
+        ]
+      },
+      {
+        "title": "\"Answer Threat Intelligence questions with Gemini \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Answer Threat Intelligence questions with Gemini Supported in: Google secops SIEM Gemini can answer questions related to threat intelligence about topics such as threat actors, their associations, and their behavior patterns, including questions about MITRE TTPs .",
+          "Specifically, threat intelligence data is more limited in product editions other than Enterprise Plus because they don't include full access to Mandiant and VirusTotal.",
+          "Investigate further by asking Gemini to create queries to look for specific indicators of compromise (IOCs) referenced in the threat intelligence reports."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "network.direction"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview",
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview",
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview",
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini"
+      ]
+    }
+  ]
+}

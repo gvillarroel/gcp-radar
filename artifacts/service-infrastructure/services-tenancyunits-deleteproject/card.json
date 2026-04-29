@@ -1,0 +1,162 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.562Z",
+  "source_step08_card": "data/step-08/current/products/service-infrastructure/card.json",
+  "product_name": "Service Infrastructure",
+  "product_slug": "service-infrastructure",
+  "feature_name": "services.tenancyUnits.deleteProject",
+  "feature_slug": "services-tenancyunits-deleteproject",
+  "summary": "The deleteProject method removes the specified project resource identified by a tenant resource tag.",
+  "extended_definition": "The deleteProject method removes the specified project resource identified by a tenant resource tag.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-infrastructure/docs/manage-tenant-projects",
+      "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest",
+      "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest/v1/services.tenancyUnits",
+      "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest/v1/services.tenancyUnits/addProject"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Managing Tenant Projects \\_|\\_ Service Infrastructure \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-infrastructure/docs/manage-tenant-projects",
+        "source_id": "site-docs-root",
+        "final_score": 235,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Removing a tenant project To remove a tenant project with the tag abc , call the services.tenancyUnits.removeProject method as illustrated by the following example: POST https://serviceconsumermanagement.googleapis.com/v1/services/your-service.example.com/projects/12345678901/tenancyUnits/absdef:removeProject The call includes the following data: { \"tag\" : \"abc\" } This operation removes the project lien, deletes the project and all resources in it, and deletes any associated metadata from the tenancy unit.",
+          "If you wish to delete the project, but keep a record of it, call the services.tenancyUnits.deleteProject method instead.",
+          "To undelete a deleted project, call the services.tenancyUnits.undeleteProject method."
+        ]
+      },
+      {
+        "title": "\"Method: services.tenancyUnits.addProject \\_|\\_ Service Infrastructure \\_\\",
+        "url": "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest/v1/services.tenancyUnits/addProject",
+        "source_id": "site-docs-reference",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Application development Service Infrastructure Reference Send feedback Method: services.tenancyUnits.addProject Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request POST https://serviceconsumermanagement.googleapis.com/v1/{parent=services/ / / /tenancyUnits/ }:addProject The URL uses gRPC Transcoding syntax.",
+          "Authorization requires the following Google IAM permission on the specified resource parent : serviceconsumermanagement.tenancyu.addResource Request body The request body contains data with the following structure: JSON representation { \"tag\" : string , \"projectConfig\" : { object ( TenantProjectConfig ) } } Fields tag string Tag of the added project."
+        ]
+      },
+      {
+        "title": "\"REST Resource: services.tenancyUnits \\_|\\_ Service Infrastructure \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest/v1/services.tenancyUnits",
+        "source_id": "site-api-reference",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Methods addProject Add a new tenant project to the tenancy unit. applyProjectConfig Apply a configuration to an existing tenant project. attachProject Attach an existing project to the tenancy unit as a new tenant resource. create Creates a tenancy unit with no tenant resources. delete Delete a tenancy unit. deleteProject Deletes the specified project resource identified by a tenant resource tag. list Find the tenancy unit for a managed service and service consumer. removeProject Removes the specified project resource identified by a tenant resource tag. undeleteProject Attempts to undelete a previously deleted tenant project.",
+          "JSON representation { \"name\" : string , \"service\" : string , \"consumer\" : string , \"createTime\" : string , \"tenantResources\" : [ { object ( TenantResource ) } ] } Fields name string Globally unique identifier of this tenancy unit \"services/{service}/{collection id}/{resource id}/tenancyUnits/{unit}\" service string Output only.",
+          "Home Documentation Application development Service Infrastructure Reference Send feedback REST Resource: services.tenancyUnits Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Service Consumer Management API \\_|\\_ Service Infrastructure \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1.services.tenancyUnits Methods addProject POST /v1/{parent=services/ / / /tenancyUnits/ }:addProject Add a new tenant project to the tenancy unit. applyProjectConfig POST /v1/{name=services/ / / /tenancyUnits/ }:applyProjectConfig Apply a configuration to an existing tenant project. attachProject POST /v1/{name=services/ / / /tenancyUnits/ }:attachProject Attach an existing project to the tenancy unit as a new tenant resource. create POST /v1/{parent=services/ / / }/tenancyUnits Creates a tenancy unit with no tenant resources. delete DELETE /v1/{name=services/ / / /tenancyUnits/ } Delete a tenancy unit. deleteProject POST /v1/{name=services/ / / /tenancyUnits/ }:deleteProject Deletes the specified project resource identified by a tenant resource tag. list GET /v1/{parent=services/ / / }/tenancyUnits Find the tenancy unit for a managed service and service consumer. removeProject POST /v1/{name=services/ / / /tenancyUnits/ }:removeProject Removes the specified project resource identified by a tenant resource tag. undeleteProject POST /v1/{name=services/ / / /tenancyUnits/ }:undeleteProject Attempts to undelete a previously deleted tenant project.",
+          "REST Resource: v1beta1.services.consumerQuotaMetrics Methods get GET /v1beta1/{name=services/ / / /consumerQuotaMetrics/ } Retrieves a summary of quota information for a specific quota metric. importProducerOverrides POST /v1beta1/{parent=services/ / / }/consumerQuotaMetrics:importProducerOverrides Create or update multiple producer overrides atomically, all on the same consumer, but on many different metrics or limits. list GET /v1beta1/{parent=services/ / / }/consumerQuotaMetrics Retrieves a summary of all quota information about this consumer that is visible to the service producer, for each quota metric defined by the service.",
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://serviceconsumermanagement.googleapis.com REST Resource: v1.operations Methods cancel POST /v1/{name=operations/ }:cancel Starts asynchronous cancellation on a long-running operation. delete DELETE /v1/{name=operations/ } Deletes a long-running operation. get GET /v1/{name=operations/ } Gets the latest state of a long-running operation. list GET /v1/{name} Lists operations that match the specified filter in the request."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "service.example.com",
+      "serviceconsumermanagement.googleapis.com",
+      "serviceconsumermanagement.tenancyu.addResource",
+      "services.tenancyUnits",
+      "services.tenancyUnits.addProject",
+      "services.tenancyUnits.deleteProject",
+      "services.tenancyUnits.removeProject",
+      "services.tenancyUnits.undeleteProject",
+      "v1.operations",
+      "v1.services.tenancyUnits",
+      "v1beta1.services.consumerQuotaMetrics",
+      "v1beta1.services.consumerQuotaMetrics.limits.producerOverrides"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/manage-tenant-projects",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest/v1/services.tenancyUnits/addProject",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest/v1/services.tenancyUnits",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/manage-tenant-projects",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest/v1/services.tenancyUnits/addProject",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest/v1/services.tenancyUnits",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/manage-tenant-projects",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest/v1/services.tenancyUnits/addProject",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest/v1/services.tenancyUnits",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/manage-tenant-projects",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest/v1/services.tenancyUnits/addProject",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest/v1/services.tenancyUnits",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/manage-tenant-projects",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest/v1/services.tenancyUnits/addProject",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest/v1/services.tenancyUnits",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/manage-tenant-projects",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest/v1/services.tenancyUnits/addProject",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest/v1/services.tenancyUnits",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:34.271Z",
+  "source_step08_card": "data/step-08/current/products/vpc-service-controls/card.json",
+  "product_name": "VPC Service Controls",
+  "product_slug": "vpc-service-controls",
+  "feature_name": "VPC Service Controls integration with Firestore in Datastore mode",
+  "feature_slug": "vpc-service-controls-integration-with-firestore-in-datastore-mode",
+  "summary": "This integration lets VPC Service Controls protect Firestore in Datastore mode.",
+  "extended_definition": "This integration lets VPC Service Controls protect Firestore in Datastore mode.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/dry-run-mode",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported products and limitations \\_|\\_ VPC Service Controls \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "source_id": "site-docs-reference-2",
+        "final_score": 274,
+        "relevance": "",
+        "evidence_snippets": [
+          "Service name contactcenterinsights.googleapis.com Details To use CX Insights with VPC Service Controls you must have the following additional APIs inside your perimeter, depending on your integration.",
+          "Limitations Blockchain Node Engine integrations with VPC Service Controls have the following limitations: VPC Service Controls only protects the Blockchain Node Engine API.",
+          "The integration of this product with VPC Service Controls is in Preview and is ready for broader testing and use, but is not fully supported for production environments."
+        ]
+      },
+      {
+        "title": "\"Dry run mode for service perimeters \\_|\\_ VPC Service Controls \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/dry-run-mode",
+        "source_id": "site-docs-reference",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Dry run mode for service perimeters Stay organized with collections Save and categorize content based on your preferences.",
+          "With dry run mode, you can better understand the effect of enabling VPC Service Controls and changes to perimeters in existing environments.",
+          "Because the private VIP allows services that aren't supported by VPC Service Controls, it is possible for compromised code, malware, or a malicious user within your network to exfiltrate data using those unsecured services."
+        ]
+      },
+      {
+        "title": "\"Protect Compute Engine using a VPC Service Controls perimeter \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "source_id": "site-docs-reference",
+        "final_score": 224,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Protect Compute Engine using a VPC Service Controls perimeter Stay organized with collections Save and categorize content based on your preferences.",
+          "Create a new perimeter with the following details: Title: MyFirstPerimeter Perimeter type: Regular Enforcement mode: Enforced Resources to protect: My-Project-2 project Restricted services: Compute Engine API Verify the perimeter In this section, you can make access requests to the resources in the projects to confirm whether the perimeter protects the intended resources.",
+          "View audit logs Find the unique ID of the VPC Service Controls violation in the My-Project-2 project's audit logs: In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging ."
+        ]
+      },
+      {
+        "title": "Create custom constraints for VPC Service Controls \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints",
+        "source_id": "site-docs-reference",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Create custom constraints for VPC Service Controls Stay organized with collections Save and categorize content based on your preferences.",
+          "After you verify that the organization policy in dry-run mode works as intended, set the live policy by clicking Set policy . gcloud To create an organization policy with boolean rules, create a policy YAML file that references the constraint: name : projects/ PROJECT ID /policies/ CONSTRAINT NAME spec : rules : - enforce : true dryRunSpec : rules : - enforce : true Replace the following: PROJECT ID : the project that you want to enforce your constraint on.",
+          "After you verify that the organization policy in dry-run mode works as intended, set the live policy with the org-policies set-policy command and the spec flag: gcloud org-policies set-policy POLICY PATH --update-mask = spec Replace POLICY PATH with the full path to your organization policy YAML file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "contactcenterinsights.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/dry-run-mode",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/dry-run-mode",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/dry-run-mode",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/dry-run-mode",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/dry-run-mode",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/dry-run-mode",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/dry-run-mode",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints"
+      ]
+    }
+  ]
+}

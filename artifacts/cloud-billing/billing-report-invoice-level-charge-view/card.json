@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:46.338Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing",
+  "feature_name": "Billing Report Invoice-Level Charge View",
+  "feature_slug": "billing-report-invoice-level-charge-view",
+  "summary": "Adds a report view for charges by invoice, including invoice-level taxes, credits, surcharges, and rounding errors.",
+  "extended_definition": "Adds a report view for charges by invoice, including invoice-level taxes, credits, surcharges, and rounding errors.",
+  "lifecycle": {
+    "latest_feature_date": "2019-06-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown",
+      "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+      "https://docs.cloud.google.com/billing/docs/how-to/reports"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"View and download the cost details of your invoice or statement \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+        "source_id": "site-docs-root",
+        "final_score": 197,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Invoice level charges : You can select all invoice-level charges (default) to be included in the Cost table report, or you can clear some or all of the invoice-level options.",
+          "Related topics Get an invoice, statement, or receipt Understand your monthly invoice View your Cloud Billing reports and cost trends Export Cloud Billing data to BigQuery View your cost and payment history Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "When viewing the report for an invoice month prior to January 2022 , if you delete a project or move the project to a different Cloud Billing account , the Project name and Project ID are removed from the Cost table report views, but the Project number persists in your reports."
+        ]
+      },
+      {
+        "title": "\"Analyze billing data and cost trends with Reports \\_|\\_ Cloud Billing \\_\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "source_id": "site-docs-root",
+        "final_score": 193,
+        "relevance": "",
+        "evidence_snippets": [
+          "If your permissions limit your billing report access to viewing costs for a single project, you won't see invoice-level charges.",
+          "If your permissions limit your billing report access to viewing costs for a single project, you won't see invoice-level charges.",
+          "If your permissions limit your billing report access to viewing costs for a single project, you won't see invoice-level charges."
+        ]
+      },
+      {
+        "title": "\"Understand your savings with cost breakdown reports \\_|\\_ Cloud Billing\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown",
+        "source_id": "site-docs-root",
+        "final_score": 179,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For a Cloud Billing account associated with a custom pricing contract , when viewing the report using a time range that starts May 1, 2021 , or later, the cost breakdown report displays a Usage cost column, and a Negotiated savings column, as well as any other applicable credits and invoice-level charges: Figure 2 : Example of the cost breakdown report for a Cloud Billing account associated with a custom pricing contract.",
+          "Examples For a Cloud Billing account associated with standard list prices (and for any billing account viewing costs incurred prior to May 1, 2021), the cost breakdown report displays a Usage cost column, along with any applicable credits and invoice-level charges: Figure 1 : Example of a cost breakdown report, showing the base usage cost and how that cost was affected by any credits, adjustments, and taxes.",
+          "See Cloud Billing Reports for an at-a-glance report view of charges by invoice month, including invoice-level charges."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown"
+      ]
+    }
+  ]
+}

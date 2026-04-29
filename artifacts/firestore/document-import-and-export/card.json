@@ -1,0 +1,119 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:10.745Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "Document import and export",
+  "feature_slug": "document-import-and-export",
+  "summary": "Cloud Firestore supports importing and exporting documents.",
+  "extended_definition": "Cloud Firestore supports importing and exporting documents.",
+  "lifecycle": {
+    "latest_feature_date": "2018-08-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+      "https://docs.cloud.google.com/firestore/docs/query-data/indexing",
+      "https://docs.cloud.google.com/firestore/native/docs/manage-data/delete-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage Standard edition indexes \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/query-data/indexing",
+        "source_id": "site-docs-reference",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information on importing Firestore index resources, see the google firestore index reference documentation .",
+          "For example, here is the progress status of an index build: { \"operations\": [ { \"name\": \"projects/ project-id /operations/AyAyMDBiM2U5NTgwZDAtZGIyYi0zYjc0LTIzYWEtZjg1ZGdWFmZWQHEjF0c2Flc3UtcmV4ZWRuaS1uaW1kYRUKSBI\", \"metadata\": { \"@type\": \"type.googleapis.com/google.firestore.admin.v1.IndexOperationMetadata\", \"common\": { \"operationType\": \"CREATE INDEX\", \"startTime\": \"2020-06-23T16:52:25.697539Z\", \"state\": \"PROCESSING\" }, \"progressDocuments\": { \"workCompleted\": \"219327\", \"workEstimated\": \"2198182\" } }, }, ...",
+          "Determine the Firestore resource path of your index: export INDEX RESOURCE PATH = $( echo '\"projects/${google datastore index. datastore-index-resource-name .project}/databases/(default)/collectionGroups/${google datastore index. datastore-index-resource-name .kind}/indexes/${google datastore index. datastore-index-resource-name .index id}\"' terraform console tr -d '\"' ) Replace datastore-index-resource-name with the Terraform name of your existing resource."
+        ]
+      },
+      {
+        "title": "Exporting and Importing Entities \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "source_id": "site-docs-root",
+        "final_score": 42,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Databases Datastore Guides Send feedback Exporting and Importing Entities Stay organized with collections Save and categorize content based on your preferences.",
+          "The PITR export operation supports all filters, including exporting all documents and exporting specific collections.",
+          "Assign an IAM role to your user account that grants the datastore.databases.export permission, if you are exporting data, or the datastore.databases.import permission, if you are importing data."
+        ]
+      },
+      {
+        "title": "\"Delete documents and fields \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/manage-data/delete-data",
+        "source_id": "site-docs-root-2",
+        "final_score": 41,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Delete documents To delete a document, use the following language-specific delete() methods: Web version 9 Use the deleteDoc() method: import { doc , deleteDoc } from \"firebase/firestore\" ; await deleteDoc ( doc ( db , \"cities\" , \"DC\" )); delete document . js Web version 8 Use the delete() method: db . collection ( \"cities\" ). doc ( \"DC\" ). delete (). then (() = > { console . log ( \"Document successfully deleted!\" ); }). catch (( error ) = > { console . error ( \"Error removing document: \" , error ); }); test . firestore . js Swift Use the delete() method: Note: This product is not available on watchOS and App Clip targets. do { try await db . collection ( \"cities\" ). document ( \"DC\" ). delete () print ( \"Document successfully removed!\" ) } catch { print ( \"Error removing document: \\( error ) \" ) } ViewController . swift Objective-C Use the deleteDocumentWithCompletion: method: Note: This product is not available on watchOS and App Clip targets. [[[ self . db collectionWithPath : @\"cities\" ] documentWithPath : @\"DC\" ] deleteDocumentWithCompletion : ^ ( NSError Nullable error ) { if ( error != nil ) { NSLog ( @\"Error removing document: %@\" , error ); } else { NSLog ( @\"Document successfully removed!\" ); } }]; ViewController . m Kotlin Android Use the delete() method: db . collection ( \"cities\" ). document ( \"DC\" ) . delete () . addOnSuccessListener { Log . d ( TAG , \"DocumentSnapshot successfully deleted!\" ) } . addOnFailureListener { e - > Log . w ( TAG , \"Error deleting document\" , e ) } DocSnippets . kt Java Android Use the delete() method: db . collection ( \"cities\" ). document ( \"DC\" ) . delete () . addOnSuccessListener ( new OnSuccessListener<Void> () { @Override public void onSuccess ( Void aVoid ) { Log . d ( TAG , \"DocumentSnapshot successfully deleted!\" ); } }) . addOnFailureListener ( new OnFailureListener () { @Override public void onFailure ( @NonNull Exception e ) { Log . w ( TAG , \"Error deleting document\" , e ); } }); DocSnippets . java Dart Use the delete() method: db . collection ( \"cities\" ). doc ( \"DC\" ). delete (). then ( ( doc ) = > print ( \"Document deleted\" ), onError: ( e ) = > print ( \"Error updating document $ e \" ), ); firestore . dart Java Use the delete() method: // asynchronously delete a document ApiFuture<WriteResult> writeResult = db . collection ( \"cities\" ). document ( \"DC\" ). delete (); // ...",
+          "OnCompletion ( []( const Future<void> & future ) { if ( future . error () == Error :: kErrorOk ) { std :: cout << \"DocumentSnapshot successfully deleted!\" << std :: endl ; } else { std :: cout << \"Error deleting document: \" << future . error message () << std :: endl ; } }); snippets . cpp Node.js Use the delete() method: const res = await db . collection ( 'cities' ). doc ( 'DC' ). delete (); index . js Go Use the Delete() method: import ( \"context\" \"log\" \"cloud.google.com/go/firestore\" ) func deleteDoc ( ctx context .",
+          "For large deletion jobs (millions of documents), use one of the following: Managed bulk delete Firestore supports bulk deleting one or more collection groups."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datastore.databases.export",
+      "datastore.databases.import",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/firestore/docs/query-data/indexing",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/delete-data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/firestore/docs/query-data/indexing",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/delete-data"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/firestore/docs/query-data/indexing",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/delete-data"
+      ]
+    }
+  ]
+}

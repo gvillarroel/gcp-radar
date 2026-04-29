@@ -1,0 +1,169 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Performance HorizontalPodAutoscaler profile",
+  "feature_slug": "performance-horizontalpodautoscaler-profile",
+  "summary": "The Performance HorizontalPodAutoscaler profile is enabled by default for qualifying GKE Standard clusters and improves HPA responsiveness and scalability; The Performance HorizontalPodAutoscaler profile is enabled by default for qualifying GKE Standard clusters and improves HPA responsiveness and scalability.",
+  "extended_definition": "The Performance HorizontalPodAutoscaler profile is enabled by default for qualifying GKE Standard clusters and improves HPA responsiveness and scalability; The Performance HorizontalPodAutoscaler profile is enabled by default for qualifying GKE Standard clusters and improves HPA responsiveness and scalability.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Analyze model serving performance and costs with GKE Inference Quickstart\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "source_id": "site-docs-reference-2",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "It looks similar to the following: Instance Type Accelerator Cost/M Input Tokens Cost/M Output Tokens Output Tokens/s NTPOT(ms) TTFT(ms) Model Server Model Server Version Model a3-highgpu-1g nvidia-h100-80gb 0.009 0.035 13335 67 297 vllm gptoss openai/gpt-oss-20b The values represent the performance observed at the point where throughput stops increasing and latency starts dramatically increasing (that is, the inflection or saturation point) for a given profile with this accelerator type.",
+          "For example: gcloud container ai profiles list \\ --model = openai/gpt-oss-20b \\ --pricing-model = on-demand \\ --target-ttft-milliseconds = 300 The output shows supported profiles with performance metrics like throughput, latency, and cost per million tokens at the inflection point.",
+          "Use this command to get the most up-to-date list of supported models, as we routinely update them. gcloud container ai profiles models list Profiles Use the list command to explore generated profiles and filter them based on your performance and cost requirements."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "Amount of 1G hugepages SwapConfig JSON representation { // Union field enabled can be only one of the following: \"enabled\" : boolean // End of list of possible types for union field enabled . // Union field encryption config can be only one of the following: \"encryptionConfig\" : { object ( EncryptionConfig ) } // End of list of possible types for union field encryption config . // Union field performance profile can be only one of the following: \"bootDiskProfile\" : { object ( BootDiskProfile ) } , \"ephemeralLocalSsdProfile\" : { object ( EphemeralLocalSsdProfile ) } , \"dedicatedLocalSsdProfile\" : { object ( DedicatedLocalSsdProfile ) } // End of list of possible types for union field performance profile . } Fields Union field enabled . enabled can be only one of the following: enabled boolean Optional.",
+          "By default, no private IPv6 access to or from Google Services (all access will be via IPv4) dnsConfig object ( DNSConfig ) DNSConfig contains clusterDNS config for this cluster. serviceExternalIpsConfig object ( ServiceExternalIPsConfig ) ServiceExternalIPsConfig specifies if services with externalIPs field are blocked or not. gatewayApiConfig object ( GatewayAPIConfig ) GatewayAPIConfig contains the desired config of Gateway API on this cluster. enableMultiNetworking boolean Whether multi-networking is enabled for this cluster. networkPerformanceConfig object ( ClusterNetworkPerformanceConfig ) Network bandwidth tier configuration.",
+          "If omitted, defaults to the 'boot disk profile'. performance profile can be only one of the following: bootDiskProfile object ( BootDiskProfile ) Swap on the node's boot disk. ephemeralLocalSsdProfile object ( EphemeralLocalSsdProfile ) Swap on the local SSD shared with pod ephemeral storage. dedicatedLocalSsdProfile object ( DedicatedLocalSsdProfile ) Provisions a new, separate local NVMe SSD exclusively for swap."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+        "source_id": "site-api-reference",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "Amount of 1G hugepages SwapConfig JSON representation { // Union field enabled can be only one of the following: \"enabled\" : boolean // End of list of possible types for union field enabled . // Union field encryption config can be only one of the following: \"encryptionConfig\" : { object ( EncryptionConfig ) } // End of list of possible types for union field encryption config . // Union field performance profile can be only one of the following: \"bootDiskProfile\" : { object ( BootDiskProfile ) } , \"ephemeralLocalSsdProfile\" : { object ( EphemeralLocalSsdProfile ) } , \"dedicatedLocalSsdProfile\" : { object ( DedicatedLocalSsdProfile ) } // End of list of possible types for union field performance profile . } Fields Union field enabled . enabled can be only one of the following: enabled boolean Optional.",
+          "If omitted, defaults to the 'boot disk profile'. performance profile can be only one of the following: bootDiskProfile object ( BootDiskProfile ) Swap on the node's boot disk. ephemeralLocalSsdProfile object ( EphemeralLocalSsdProfile ) Swap on the local SSD shared with pod ephemeral storage. dedicatedLocalSsdProfile object ( DedicatedLocalSsdProfile ) Provisions a new, separate local NVMe SSD exclusively for swap.",
+          "The following parameters are supported. net.core.busy poll net.core.busy read net.core.netdev max backlog net.core.rmem max net.core.rmem default net.core.wmem default net.core.wmem max net.core.optmem max net.core.somaxconn net.ipv4.tcp rmem net.ipv4.tcp wmem net.ipv4.tcp tw reuse net.ipv4.tcp mtu probing net.ipv4.tcp max orphans net.ipv4.tcp max tw buckets net.ipv4.tcp syn retries net.ipv4.tcp ecn net.ipv4.tcp congestion control net.netfilter.nf conntrack max net.netfilter.nf conntrack buckets net.netfilter.nf conntrack tcp timeout close wait net.netfilter.nf conntrack tcp timeout time wait net.netfilter.nf conntrack tcp timeout established net.netfilter.nf conntrack acct kernel.shmmni kernel.shmmax kernel.shmall kernel.perf event paranoid kernel.sched rt runtime us kernel.softlockup panic kernel.yama.ptrace scope kernel.kptr restrict kernel.dmesg restrict kernel.sysrq fs.aio-max-nr fs.file-max fs.inotify.max user instances fs.inotify.max user watches fs.nr open vm.dirty background ratio vm.dirty background bytes vm.dirty expire centisecs vm.dirty ratio vm.dirty bytes vm.dirty writeback centisecs vm.max map count vm.overcommit memory vm.overcommit ratio vm.vfs cache pressure vm.swappiness vm.watermark scale factor vm.min free kbytes cgroupMode enum ( CgroupMode ) cgroup mode specifies the cgroup mode to be used on the node. transparentHugepageEnabled enum ( TransparentHugepageEnabled ) Optional."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "fs.aio",
+      "fs.file",
+      "fs.inotify.max",
+      "fs.nr",
+      "kernel.dmesg",
+      "kernel.kptr",
+      "kernel.perf",
+      "kernel.sched",
+      "kernel.shmall",
+      "kernel.shmmax",
+      "kernel.shmmni",
+      "kernel.softlockup",
+      "kernel.sysrq",
+      "kernel.yama.ptrace",
+      "net.core.busy",
+      "net.core.netdev",
+      "net.core.optmem",
+      "net.core.rmem",
+      "net.core.somaxconn",
+      "net.core.wmem",
+      "net.ipv4.tcp",
+      "net.netfilter.nf",
+      "vm.dirty",
+      "vm.max",
+      "vm.min",
+      "vm.overcommit",
+      "vm.swappiness",
+      "vm.vfs",
+      "vm.watermark"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    }
+  ]
+}

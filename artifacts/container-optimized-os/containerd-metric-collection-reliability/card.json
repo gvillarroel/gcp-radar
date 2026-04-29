@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:02.340Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os",
+  "feature_name": "containerd metric collection reliability",
+  "feature_slug": "containerd-metric-collection-reliability",
+  "summary": "Fixes a containerd issue that could break metric collection.",
+  "extended_definition": "Fixes a containerd issue that could break metric collection.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring",
+      "https://docs.cloud.google.com/container-optimized-os/docs/resources/support-policy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Support policy \\_|\\_ Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/resources/support-policy",
+        "source_id": "site-docs-reference",
+        "final_score": 73,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It is actively patched with security updates (CVEs) and bug-fixes to address issues that impact Google Cloud users.",
+          "Home Documentation Compute Compute Engine Container-Optimized OS Resources Send feedback Support policy Stay organized with collections Save and categorize content based on your preferences.",
+          "Warning: Any Image Family API references to the deprecated image family will return errors and break any workflows depending on it."
+        ]
+      },
+      {
+        "title": "Versioning scheme \\_|\\_ Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning",
+        "source_id": "site-docs-reference",
+        "final_score": 69,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Once promoted to the LTS family, the LTS milestone provides the following benefits: A support duration of 2 years Security fixes for the entire support duration Fixes for any production issues A dedicated release notes page listing every change going into the image.",
+          "Production 2 years Active maintenance of milestone by addressing production issues and security fixes with priority.",
+          "Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Versioning scheme Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Monitoring system health with Node Problem Detector \\_|\\_ Container-Optimized\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring",
+        "source_id": "site-docs-reference",
+        "final_score": 60,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google will use aggregated metrics to understand node problems and improve the reliability of Container-Optimized OS.",
+          "The following guest policy enables the Node problem detector agent on all the instances. recipes: - name: recipe-enable-npd desiredState: INSTALLED installSteps: - scriptRun: interpreter: SHELL script: - #!/bin/bash systemctl start node-problem-detector Viewing the collected metrics Node Problem Detector reports a list of metrics against a Compute Engine instance monitored resource.",
+          "Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Monitoring system health with Node Problem Detector Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/resources/support-policy",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/resources/support-policy",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring"
+      ]
+    }
+  ]
+}

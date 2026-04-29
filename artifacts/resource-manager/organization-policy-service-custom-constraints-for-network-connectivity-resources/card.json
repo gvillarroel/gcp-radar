@@ -1,0 +1,216 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:26.331Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager",
+  "feature_name": "Organization Policy Service custom constraints for Network Connectivity resources",
+  "feature_slug": "organization-policy-service-custom-constraints-for-network-connectivity-resources",
+  "summary": "Custom organization policy constraints are available for some Network Connectivity resources.",
+  "extended_definition": "Custom organization policy constraints are available for some Network Connectivity resources.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+      "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+      "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage resources with custom constraints \\_|\\_ Resource Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "source_id": "site-docs-reference-2",
+        "final_score": 231,
+        "relevance": "",
+        "evidence_snippets": [
+          "This page shows you how to use Organization Policy Service custom constraints to restrict specific operations on the following Google Cloud resources: cloudresourcemanager.googleapis.com/Project cloudresourcemanager.googleapis.com/Folder To learn more about Organization Policy, see Custom organization policies .",
+          "Test the policy Create a project with project ID sampleDemoProject in the organization: gcloud projects create sampleDemoProject \\ --organization = ORGANIZATION ID The output is the following: PERMISSION DENIED: The caller does not have permission Example custom organization policies for common use cases This table provides syntax examples for some common custom constraints.",
+          "As the organization policy administrator , you can define an organization policy, which is a set of restrictions called constraints that apply to Google Cloud resources and descendants of those resources in the Google Cloud resource hierarchy ."
+        ]
+      },
+      {
+        "title": "\"Create custom constraints for Essential Contacts \\_|\\_ Resource Manager\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "source_id": "site-docs-reference-2",
+        "final_score": 203,
+        "relevance": "",
+        "evidence_snippets": [
+          "This page shows you how to use Organization Policy Service custom constraints to restrict specific operations on the following Google Cloud resources: essentialcontacts.googleapis.com/Contact To learn more about Organization Policy, see Custom organization policies .",
+          "Test the policy Try creating a contact for a different category: gcloud essential-contacts create --email = randomemail@example.com --language = en --notification-categories = security The output is similar to the following: (gcloud.essential-contacts.create) FAILED PRECONDITION: Precondition check failed. - '@type': type.googleapis.com/google.rpc.ErrorInfo domain: iam.googleapis.com metadata: customConstraints: customConstraints/custom.onlyTechnicalNotificationsAllowed reason: CUSTOM ORG POLICY VIOLATION - '@type': type.googleapis.com/google.rpc.DebugInfo detail: '[ORIGINAL ERROR] generic::failed precondition: com.google.apps.framework.auth.IamFailedPreconditionException: Operation denied by custom org policy: [\"customConstraints/custom.onlyTechnicalNotificationsAllowed\": \"The contact can only be subscribed to technical notifications.\"]. [google.rpc.error details ext] { details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: \"CUSTOM ORG POLICY VIOLATION\" domain: \"iam.googleapis.com\" metadata { key: \"customConstraints\" value: \"customConstraints/custom.onlyTechnicalNotificationsAllowed\" } } } }' Essential Contacts supported resources The following table lists the Essential Contacts resources that you can reference in custom constraints.",
+          "As the organization policy administrator , you can define an organization policy, which is a set of restrictions called constraints that apply to Google Cloud resources and descendants of those resources in the Google Cloud resource hierarchy ."
+        ]
+      },
+      {
+        "title": "\"Access control for organization resources with IAM \\_|\\_ Resource Manager\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "source_id": "site-iam-reference",
+        "final_score": 189,
+        "relevance": "",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Organization cloudasset. assets. analyzeOrgPolicy cloudasset. assets. exportResource cloudasset.assets.listResource cloudasset. assets. searchAllResources orgpolicy. orgpolicy.constraints.list orgpolicy. customConstraints. create orgpolicy. customConstraints. delete orgpolicy. customConstraints. get orgpolicy. customConstraints. list orgpolicy. customConstraints. update orgpolicy.policies.create orgpolicy.policies.delete orgpolicy.policies.list orgpolicy.policies.update orgpolicy.policy.get orgpolicy.policy.set policysimulator. orgPolicyViolations. list policysimulator. orgPolicyViolationsPreviews. policysimulator. orgPolicyViolationsPreviews. create policysimulator. orgPolicyViolationsPreviews. get policysimulator. orgPolicyViolationsPreviews. list recommender. orgPolicyInsights. recommender. orgPolicyInsights. get recommender. orgPolicyInsights. list recommender. orgPolicyInsights. update recommender. orgPolicyRecommendations. recommender. orgPolicyRecommendations. get recommender. orgPolicyRecommendations. list recommender. orgPolicyRecommendations. update Browser ( roles/ browser ) Read access to browse the hierarchy for a project, including the folder, organization, and allow policy.",
+          "Lowest-level resources where you can grant this role: Project essentialcontacts. essentialcontacts. contacts. create essentialcontacts. contacts. delete essentialcontacts.contacts.get essentialcontacts. contacts. list essentialcontacts. contacts. send essentialcontacts. contacts. update iam.policybindings. iam.policybindings.get iam.policybindings.list orgpolicy.constraints.list orgpolicy.policies.list orgpolicy.policy.get resourcemanager.capabilities. resourcemanager. capabilities. get resourcemanager. capabilities. update resourcemanager. folders. createPolicyBinding resourcemanager. folders. deletePolicyBinding resourcemanager.folders.get resourcemanager. folders. getIamPolicy resourcemanager.folders.list resourcemanager. folders. searchPolicyBindings resourcemanager. folders. setIamPolicy resourcemanager. folders. updatePolicyBinding resourcemanager. organizations. resourcemanager. organizations. createPolicyBinding resourcemanager. organizations. deletePolicyBinding resourcemanager. organizations. get resourcemanager. organizations. getIamPolicy resourcemanager. organizations. searchPolicyBindings resourcemanager. organizations. setIamPolicy resourcemanager. organizations. updatePolicyBinding resourcemanager. projects. createPolicyBinding resourcemanager. projects. deletePolicyBinding resourcemanager.projects.get resourcemanager. projects. getIamPolicy resourcemanager.projects.list resourcemanager. projects. searchPolicyBindings resourcemanager. projects. setIamPolicy resourcemanager. projects. updatePolicyBinding Organization Viewer ( roles/ resourcemanager.organizationViewer ) Provides access to view an organization.",
+          "Lowest-level resources where you can grant this role: Project resourcemanager.folders.get resourcemanager.folders.list resourcemanager. organizations. get resourcemanager.projects.get resourcemanager. projects. getIamPolicy resourcemanager.projects.list Creating custom roles In addition to the predefined roles described in this topic, you can also create custom roles that are collections of permissions that you tailor to your needs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudasset.assets.listResource",
+      "cloudresourcemanager.googleapis.com",
+      "com.google.apps.framework.auth.IamFailedPreconditionException",
+      "contacts.create",
+      "custom.onlyTechnicalNotificationsAllowed",
+      "essentialcontacts.contacts.get",
+      "essentialcontacts.googleapis.com",
+      "example.com",
+      "gcloud.essential",
+      "iam.googleapis.com",
+      "iam.policybindings",
+      "iam.policybindings.get",
+      "iam.policybindings.list",
+      "orgpolicy.constraints.list",
+      "orgpolicy.policies.create",
+      "orgpolicy.policies.delete",
+      "orgpolicy.policies.list",
+      "orgpolicy.policies.update",
+      "orgpolicy.policy.get",
+      "orgpolicy.policy.set",
+      "orgpolicy.policyAdmin",
+      "resource.matchTag",
+      "resourcemanager.capabilities",
+      "resourcemanager.folders.get",
+      "resourcemanager.folders.list",
+      "resourcemanager.organizationViewer",
+      "type.googleapis.com",
+      "variables.examples.principal"
+    ],
+    "missing_inventory_roles": [
+      "roles/orgpolicy.policyAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org"
+      ]
+    }
+  ]
+}

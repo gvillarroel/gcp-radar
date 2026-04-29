@@ -1,0 +1,141 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:50.221Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring",
+  "feature_name": "Dashboard JSON editor",
+  "feature_slug": "dashboard-json-editor",
+  "summary": "The dashboard page includes a JSON editor for editing, downloading, and uploading dashboard definitions.",
+  "extended_definition": "The dashboard page includes a JSON editor for editing, downloading, and uploading dashboard definitions.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+      "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+      "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and manage metric usage \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "source_id": "site-docs-reference",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, to list active metrics that appear in no alerting policies and in no custom dashboards, add the following filters to the filter bar: Status: Active Alert Policies: (Empty) Custom Dashboards: (Empty) By default, when you add multiple filters, the table includes a row when the row meets all filters.",
+          "Authorization To get the permissions that you need to view dashboards and create alerting policies by using the Google Cloud console or to create, edit, and delete metric-exclusion rules, ask your administrator to grant you the Monitoring Editor ( roles/monitoring.editor ) IAM role on your project.",
+          "Note: The Metrics Management page lists only alerting policies and custom dashboards defined in the current project; metrics listed with no alerting policies or custom dashboards might have alerting policies or custom dashboards in another project in your metrics scope."
+        ]
+      },
+      {
+        "title": "Collect Prometheus metrics \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "source_id": "site-iam-reference",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "Add the staticLabel label with the value \"A static value\" to all ingested metrics. metrics: receivers: prometheus: type: prometheus config: scrape configs: - job name: 'json exporter' scrape interval: 10s metrics path: /probe params: module: [default] target: [http://localhost:8000/examples/data.json] static configs: - targets: ['localhost:7979'] relabel configs: - source labels: [ meta gce zone] regex: '(.+)' replacement: '${1}' target label: zone metric relabel configs: - source labels: [ name ] regex: 'example global value' action: drop - source labels: [ address ] action: replace replacement: 'A static value' target label: staticLabel Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Enter the following query into the editor, and then click Run query : up If your data is being ingested, then you see a chart like the following: If you are running the JSON Exporter example , then you can also issue queries like the following: Query all data for a specific exported metric by name, for example: example value count The following shows a chart for the example value count , including labels defined by the JSON Exporter application and labels added by the Ops Agent: Query data for an exported metric that originated in a specific namespace.",
+          "This section also includes a modified version of the receiver for the JSON Exporter example that uses the relabeling options."
+        ]
+      },
+      {
+        "title": "Cloud Monitoring overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Data visualization As you instantiate Google Cloud resources or register applications with App Hub , the dashboard service automatically creates Google Cloud-managed dashboards .",
+          "Proactive monitoring and validation To test the availability, consistency, and performance of your services, applications, web pages, and APIs, create synthetic monitors ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.file",
+      "config.yml",
+      "data.json",
+      "exporter.git",
+      "github.com",
+      "http.server",
+      "monitoring.editor",
+      "v0.5.0"
+    ],
+    "missing_inventory_roles": [
+      "roles/monitoring.editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+      ]
+    }
+  ]
+}

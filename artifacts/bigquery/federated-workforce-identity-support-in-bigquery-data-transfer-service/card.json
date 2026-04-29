@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Federated workforce identity support in BigQuery Data Transfer Service",
+  "feature_slug": "federated-workforce-identity-support-in-bigquery-data-transfer-service",
+  "summary": "BigQuery Data Transfer Service supports federated workforce identities for creating transfers from most data sources.",
+  "extended_definition": "BigQuery Data Transfer Service supports federated workforce identities for creating transfers from most data sources.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer",
+      "https://docs.cloud.google.com/bigquery/docs/google-analytics-4-transfer",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "The table schema contains 2 columns: transaction id: An integer transaction date: A date The table option list specifies the: Partition expiration: Three days Description: A table partitioned by transaction date Creating a partitioned table from the result of a query The following example creates a partitioned table named days with rain in mydataset using a DATE column: CREATE TABLE mydataset . days with rain PARTITION BY date OPTIONS ( partition expiration days = 365 , description = \"weather stations with precipitation, partitioned by day\" ) AS SELECT DATE ( CAST ( year AS INT64 ), CAST ( mo AS INT64 ), CAST ( da AS INT64 )) AS date , ( SELECT ANY VALUE ( name ) FROM bigquery-public-data.noaa gsod.stations AS stations WHERE stations . usaf = stn ) AS station name , -- Stations can have multiple names prcp FROM bigquery-public-data.noaa gsod.gsod2017 AS weather WHERE prcp != 99.9 -- Filter unknown values AND prcp > 0 -- Filter stations/days with no precipitation If you haven't configured a default project, prepend a project ID to the dataset name in the example SQL, and enclose the name in backticks if project id contains special characters: project id.dataset.table .",
+          "The table option list specifies the: Table expiration time: January 1, 2025 at 00:00:00 UTC Partition expiration time: 1 day Description: A table that expires in 2025 Label: org unit = development Creating a new table from an existing table The following example creates a table named top words in mydataset from a query: CREATE TABLE mydataset . top words OPTIONS ( description = \"Top ten words per Shakespeare corpus\" ) AS SELECT corpus , ARRAY AGG ( STRUCT ( word , word count ) ORDER BY word count DESC LIMIT 10 ) AS top words FROM bigquery - public - data . samples . shakespeare GROUP BY corpus ; If you haven't configured a default project, prepend a project ID to the dataset name in the example SQL, and enclose the name in backticks if project id contains special characters: project id.dataset.table .",
+          "You can add Spark properties using the following format: [(\"key1\",\"value1\"),(\"key2\", \"value2\")] For example: bq query --nouse legacy sql --dry run 'CREATE PROCEDURE my bq project.my dataset.spark proc() WITH CONNECTION my-project-id.us.my-connection OPTIONS( engine=\"SPARK\", main file uri=\"gs://my-bucket/my-pyspark-main.py\", properties=[ (\"spark.executor.instances\", \"3\"), (\"spark.yarn.am.memory\", \"3g\") ]) LANGUAGE PYTHON' Error in query string: Invalid value: \\ Invalid properties: \\ Attempted to set unsupported properties: \\ [ spark:spark.yarn.am.memory ] at [ 1 :1 ] Note: You can use the BigQuery dry run feature to validate your stored procedure without creating it. main file uri STRING The Cloud Storage URI of the main Python, Scala, or Java JAR file of the Spark application."
+        ]
+      },
+      {
+        "title": "Load Google Ads data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you trigger a manual transfer, Match Table snapshots for the following tables are not updated: Ad AdGroup AdGroupAudience AdGroupBidModifier AdGroupAdLabel AdGroupCriterion AdGroupCriterionLabel AdGroupLabel AgeRange Asset AssetGroup AssetGroupAsset AssetGroupListingGroupFilter AssetGroupSignal Audience BidGoal Budget Campaign CampaignAudience CampaignCriterion CampaignLabel Customer Gender Keyword LocationBasedCampaignCriterion ParentalStatus Placement Video Custom reports The BigQuery Data Transfer Service for Google Ads connector also supports the use of custom reports using Google Ads Query Language (GAQL) queries in the Google Ads transfer configuration.",
+          "Number of Customer IDs per manager account 8,000 The BigQuery Data Transfer Service supports a maximum of 8000 Customer IDs for each Google Ads manager account (MCC).",
+          "Connector overview The BigQuery Data Transfer Service for the Google Ads connector supports the following options for your data transfer."
+        ]
+      },
+      {
+        "title": "Load Google Analytics 4 data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/google-analytics-4-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "Custom reports The BigQuery Data Transfer Service for Google Analytics connector supports the use of custom reports by specifying dimensions and metrics in the Google Analytics transfer configuration.",
+          "Connector overview The BigQuery Data Transfer Service for the Google Analytics connector supports the following options for your data transfer.",
+          "If you signed in with a federated identity , then a service account is required to create a data transfer."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.datasets.get",
+      "bigquery.datasets.getIamPolicy",
+      "bigquery.datasets.setIamPolicy",
+      "bigquery.datasets.update",
+      "bigquery.jobs.create",
+      "bigquery.tables.create",
+      "bigquery.tables.get",
+      "bigquery.tables.getData",
+      "bigquery.tables.replicateData",
+      "bigquery.transfers.get",
+      "bigquery.transfers.update",
+      "data.noaa",
+      "dataset.my",
+      "dataset.spark",
+      "gsod.gsod2017",
+      "gsod.stations",
+      "id.dataset.table",
+      "id.us.my",
+      "main.py",
+      "myproject.s3",
+      "project.my",
+      "spark.executor.instances",
+      "spark.yarn.am.memory"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/google-analytics-4-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/google-analytics-4-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/google-analytics-4-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/google-analytics-4-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/google-analytics-4-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/google-analytics-4-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer"
+      ]
+    }
+  ]
+}

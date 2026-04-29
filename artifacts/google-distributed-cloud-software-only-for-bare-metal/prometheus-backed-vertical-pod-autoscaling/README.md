@@ -1,0 +1,39 @@
+# Prometheus-backed vertical Pod autoscaling
+
+Product: Google Distributed Cloud (software only) for bare metal
+Feature slug: `prometheus-backed-vertical-pod-autoscaling`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Vertical Pod autoscaling can use a Prometheus instance as a persistent history provider for long-term CPU and memory usage data.
+
+## Lifecycle
+
+- Latest feature date: 2025-12-11
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- auth
+- credential
+- key
+- logging
+- permission
+- role
+- secret
+- security
+- token
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring)
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/openstack](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/openstack)
+- [https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref](https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref)

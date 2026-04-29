@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:04.393Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Workflow Template Parameterization",
+  "feature_slug": "workflow-template-parameterization",
+  "summary": "Workflow Template Parameterization lets Dataproc workflow templates be reused with different parameters; Workflow Template Parameterization lets Dataproc workflow templates be reused with different parameters.",
+  "extended_definition": "Workflow Template Parameterization lets Dataproc workflow templates be reused with different parameters; Workflow Template Parameterization lets Dataproc workflow templates be reused with different parameters.",
+  "lifecycle": {
+    "latest_feature_date": "2018-09-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListWorkflowTemplatesResponse",
+      "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.workflow_template_service"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Overview of Managed Service for Apache Spark Workflow Templates \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview",
+        "source_id": "site-docs-root",
+        "final_score": 181,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See Parameterization of Workflow Templates for more information.",
+          "Workflow Templates replace the steps involved in a typical flow, which include: creating the cluster submitting jobs polling deleting the cluster Workflow Templates use a single token to track progress from cluster creation to deletion, and automate error handling and recovery.",
+          "Parameterized If you will run a workflow template multiple times with different values, use parameters to avoid editing the workflow template for each run: define parameters in the template, then pass different values for the parameters for each run."
+        ]
+      },
+      {
+        "title": "\"ListWorkflowTemplatesResponse \\_|\\_ Managed Service for Apache Spark \\_\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListWorkflowTemplatesResponse",
+        "source_id": "site-docs-reference",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Managed Service for Apache Spark Reference Send feedback ListWorkflowTemplatesResponse Stay organized with collections Save and categorize content based on your preferences.",
+          "JSON representation { \"templates\" : [ { object ( WorkflowTemplate ) } ] , \"nextPageToken\" : string , \"unreachable\" : [ string ] } Fields templates[] object ( WorkflowTemplate ) Output only.",
+          "To fetch additional results, provide this value as the pageToken in a subsequent ListWorkflowTemplatesRequest . unreachable[] string Output only."
+        ]
+      },
+      {
+        "title": "\"Package workflow_template_service (5.26.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.workflow_template_service",
+        "source_id": "site-python-reference",
+        "final_score": 146,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Classes WorkflowTemplateServiceAsyncClient The API interface for managing Workflow Templates in the Dataproc API.",
+          "WorkflowTemplateServiceClient The API interface for managing Workflow Templates in the Dataproc API.",
+          "5.26.0 (latest) 5.25.0 5.24.0 5.23.0 5.22.0 5.21.0 5.20.0 5.18.1 5.17.1 5.16.0 5.15.1 5.14.0 5.13.0 5.12.0 5.10.2 5.9.3 5.8.0 5.7.0 5.6.0 5.5.1 5.4.3 5.3.0 5.2.0 5.1.0 5.0.3 4.0.3 3.3.2 3.2.0 3.1.1 3.0.0 2.6.2 2.5.0 2.4.0 2.3.1 2.2.0 2.0.2 1.1.3 1.0.1 0.8.2 0.7.0 0.6.1 0.5.0 API documentation for dataproc v1.services.workflow template service package."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "service.pagers",
+      "v1.services.workflow"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListWorkflowTemplatesResponse",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.workflow_template_service"
+      ]
+    }
+  ]
+}

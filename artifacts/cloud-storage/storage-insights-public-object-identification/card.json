@@ -1,0 +1,214 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:55.943Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "Storage Insights public object identification",
+  "feature_slug": "storage-insights-public-object-identification",
+  "summary": "Storage Insights datasets can identify publicly accessible objects to support data security and compliance management; Storage Insights datasets can identify publicly accessible objects using object metadata schema fields that expose public access status.",
+  "extended_definition": "Storage Insights datasets can identify publicly accessible objects to support data security and compliance management; Storage Insights datasets can identify publicly accessible objects using object metadata schema fields that expose public access status.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+      "https://docs.cloud.google.com/storage/docs/access-public-data",
+      "https://docs.cloud.google.com/storage/docs/discover-object-storage-console",
+      "https://docs.cloud.google.com/storage/docs/uploading-objects"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Discover object storage with the Google Cloud console \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/storage/docs/discover-object-storage-console",
+        "source_id": "site-docs-reference",
+        "final_score": 189,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Copy URL button provides a shareable URL similar to the following: https://storage.googleapis.com/ YOUR BUCKET NAME /kitten.png To remove public access from the bucket and stop sharing the image publicly: Click the Permissions tab.",
+          "Share the object To allow public access to the bucket and create a publicly accessible URL for the image: Click the Permissions tab.",
+          "Discover object storage with the Google Cloud console Learn how to get started with Cloud Storage using the Google Cloud console."
+        ]
+      },
+      {
+        "title": "Access public data \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/access-public-data",
+        "source_id": "site-iam-reference",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "StorageOptions ; import java.nio.file.Path ; public class DownloadPublicObject { public static void downloadPublicObject ( String bucketName , String publicObjectName , Path destFilePath ) { // The name of the bucket to access // String bucketName = \"my-bucket\"; // The name of the remote public file to download // String publicObjectName = \"publicfile.txt\"; // The path to which the file should be downloaded // Path destFilePath = Paths.get(\"/local/path/to/file.txt\"); // Instantiate an anonymous Google Cloud Storage client, which can only access public files Storage storage = StorageOptions . getUnauthenticatedInstance (). getService (); storage . downloadTo ( BlobId . of ( bucketName , publicObjectName ), destFilePath ); System . out . println ( \"Downloaded public object \" + publicObjectName + \" from bucket name \" + bucketName + \" to \" + destFilePath ); } } Node.js For more information, see the Cloud Storage Node.js API reference documentation .",
+          "For more information, see Set up authentication for client libraries . def download public file bucket name :, file name :, local file path : The name of the bucket to access bucket name = \"my-bucket\" The name of the remote public file to download file name = \"publicfile.txt\" The path to which the file should be downloaded local file path = \"/local/path/to/file.txt\" require \"google/cloud/storage\" storage = Google :: Cloud :: Storage . anonymous bucket = storage . bucket bucket name , skip lookup : true file = bucket . file file name file . download local file path puts \"Downloaded public object #{ file . name } from bucket #{ bucket } to #{ local file path } \" end What's next Explore some of the public datasets provided by Cloud Storage .",
+          "Using a web browser, access the object with the following URI (you are asked to sign in if you are not already signed in): https://console.cloud.google.com/storage/browser/ details/ BUCKET NAME / OBJECT NAME If the public has permission to list the bucket's contents, you can list all the objects in the bucket with the following URI: https://console.cloud.google.com/storage/browser/ BUCKET NAME For example, the Google public bucket gcp-public-data-landsat contains the Landsat public dataset ."
+        ]
+      },
+      {
+        "title": "\"Upload objects from a file system \\_|\\_ Cloud Storage \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "source_id": "site-docs-root",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Threads can be used instead of processes by passing worker type=transfer manager.THREAD. workers=8 from google.cloud.storage import Client , transfer manager storage client = Client () bucket = storage client . bucket ( bucket name ) results = transfer manager . upload many from filenames ( bucket , filenames , source directory = source directory , max workers = workers ) for name , result in zip ( filenames , results ): The results list is either None or an exception for each filename in the input list, in order. if isinstance ( result , Exception ): print ( \"Failed to upload {} due to exception: {} \" . format ( name , result )) else : print ( \"Uploaded {} to {} .\" . format ( name , bucket . name )) The following sample uploads all objects with a common prefix concurrently: def upload directory with transfer manager ( bucket name , source directory , workers = 8 ): \"\"\"Upload every file in a directory, including all files in subdirectories.",
+          "StorageOptions ; import java.io.IOException ; import java.nio.file.Paths ; public class UploadObject { public static void uploadObject ( String projectId , String bucketName , String objectName , String filePath ) throws IOException { // The ID of your GCP project // String projectId = \"your-project-id\"; // The ID of your GCS bucket // String bucketName = \"your-unique-bucket-name\"; // The ID of your GCS object // String objectName = \"your-object-name\"; // The path to your file to upload // String filePath = \"path/to/your/file\" Storage storage = StorageOptions . newBuilder (). setProjectId ( projectId ). build (). getService (); BlobId blobId = BlobId . of ( bucketName , objectName ); BlobInfo blobInfo = BlobInfo . newBuilder ( blobId ). build (); // Optional: set a generation-match precondition to avoid potential race // conditions and data corruptions.",
+          "UploadResult ; import java.io.IOException ; import java.nio.file.Path ; import java.util.List ; class UploadMany { public static void uploadManyFiles ( String bucketName , List<Path> files ) throws IOException { TransferManager transferManager = TransferManagerConfig . newBuilder (). build (). getService (); ParallelUploadConfig parallelUploadConfig = ParallelUploadConfig . newBuilder (). setBucketName ( bucketName ). build (); List<UploadResult> results = transferManager . uploadFiles ( files , parallelUploadConfig ). getUploadResults (); for ( UploadResult result : results ) { System . out . println ( \"Upload for \" + result . getInput (). getName () + \" completed with status \" + result . getStatus ()); } } } The following sample uploads all objects with a common prefix concurrently: import com.google.cloud.storage.transfermanager."
+        ]
+      },
+      {
+        "title": "Make data public \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+        "source_id": "site-iam-reference",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "StorageRoles ; public class MakeBucketPublic { public static void makeBucketPublic ( String projectId , String bucketName ) { // The ID of your GCP project // String projectId = \"your-project-id\"; // The ID of your GCS bucket // String bucketName = \"your-unique-bucket-name\"; Storage storage = StorageOptions . newBuilder (). setProjectId ( projectId ). build (). getService (); Policy originalPolicy = storage . getIamPolicy ( bucketName ); storage . setIamPolicy ( bucketName , originalPolicy . toBuilder () . addIdentity ( StorageRoles . objectViewer (), Identity . allUsers ()) // All users can view . build ()); System . out . println ( \"Bucket \" + bucketName + \" is now publicly readable\" ); } } Node.js For more information, see the Cloud Storage Node.js API reference documentation .",
+          "For more information, see Set up authentication for client libraries . def set bucket public iam bucket name : The ID of your GCS bucket bucket name = \"your-unique-bucket-name\" require \"google/cloud/storage\" storage = Google :: Cloud :: Storage . new bucket = storage . bucket bucket name bucket . policy do p p . add \"roles/storage.objectViewer\" , \"allUsers\" end puts \"Bucket #{ bucket name } is now publicly readable\" end Terraform You can use a Terraform resource to make all objects in a bucket public.",
+          "For more information, see Set up authentication for client libraries . use Google\\Cloud\\Storage\\StorageClient; / Update the specified bucket's IAM configuration to make it publicly accessible. @param string $bucketName The name of your Cloud Storage bucket. (e.g. 'my-bucket') / function set bucket public iam(string $bucketName): void { $storage = new StorageClient(); $bucket = $storage->bucket($bucketName); $policy = $bucket->iam()->policy(['requestedPolicyVersion' => 3]); $policy['version'] = 3; $role = 'roles/storage.objectViewer'; $members = ['allUsers']; $policy['bindings'][] = [ 'role' => $role, 'members' => $members ]; $bucket->iam()->setPolicy($policy); printf('Bucket %s is now public', $bucketName); } Python For more information, see the Cloud Storage Python API reference documentation ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.storage.transfermanager",
+      "console.cloud.google.com",
+      "e.g",
+      "file.txt",
+      "java.io.IOException",
+      "java.nio.file.Path",
+      "java.nio.file.Paths",
+      "java.util.List",
+      "kitten.png",
+      "manager.THREAD",
+      "publicfile.txt",
+      "storage.admin",
+      "storage.googleapis.com",
+      "storage.objectAdmin",
+      "storage.objectViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/storage.admin",
+      "roles/storage.objectAdmin",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-console",
+        "https://docs.cloud.google.com/storage/docs/access-public-data",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-console",
+        "https://docs.cloud.google.com/storage/docs/access-public-data",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-console",
+        "https://docs.cloud.google.com/storage/docs/access-public-data",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-console",
+        "https://docs.cloud.google.com/storage/docs/access-public-data",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-console",
+        "https://docs.cloud.google.com/storage/docs/access-public-data",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-console",
+        "https://docs.cloud.google.com/storage/docs/access-public-data",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-console",
+        "https://docs.cloud.google.com/storage/docs/access-public-data",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-console",
+        "https://docs.cloud.google.com/storage/docs/access-public-data",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-console",
+        "https://docs.cloud.google.com/storage/docs/access-public-data",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-console",
+        "https://docs.cloud.google.com/storage/docs/access-public-data",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-console",
+        "https://docs.cloud.google.com/storage/docs/access-public-data",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public"
+      ]
+    }
+  ]
+}

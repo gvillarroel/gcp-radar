@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:49.160Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "Private IPv6 for internal passthrough Network Load Balancer",
+  "feature_slug": "private-ipv6-for-internal-passthrough-network-load-balancer",
+  "summary": "Internal passthrough Network Load Balancers can be configured to handle private IPv6 traffic within dual-stack VPC subnets.",
+  "extended_definition": "Internal passthrough Network Load Balancers can be configured to handle private IPv6 traffic within dual-stack VPC subnets.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/internal",
+      "https://docs.cloud.google.com/load-balancing/docs/network",
+      "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Internal passthrough Network Load Balancer overview \\_|\\_ Cloud Load Balancing\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "An internal passthrough Network Load Balancer doesn't support the following: Backend VMs in multiple regions Balancing traffic that originates from the internet, unless you're using it with an external load balancer IPv6 packets with fragmented headers Internal IP address Internal passthrough Network Load Balancers support IPv4-only, dual-stack, and IPv6-only subnets.",
+          "Firewall configuration Internal passthrough Network Load Balancers require the following configuration for hierarchical firewall policies and VPC firewall rules: Allow ingress from IPv4 or IPv6 health check source ranges .",
+          "Internal passthrough Network Load Balancers distribute traffic among internal virtual machine (VM) instances in the same region in a Virtual Private Cloud (VPC) network."
+        ]
+      },
+      {
+        "title": "\"Backend service-based regional external passthrough Network Load Balancer\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/network",
+        "source_id": "site-docs-root",
+        "final_score": 236,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Backend service-based regional external passthrough Network Load Balancers can handle both IPv4 and IPv6 traffic.",
+          "Location of load balancing resources 1 Required location of IP address resource Host project Host project Service project Service project or host project 1 Includes the forwarding rule, backend service, health check, and backends (NEGs and managed or unmanaged instance groups) Traffic distribution Regional external passthrough Network Load Balancers support a variety of traffic distribution customization options, including session affinity, connection tracking, weighted load balancing, and failover.",
+          "Regional external passthrough Network Load Balancers can receive traffic from: Any client on the internet Google Cloud VMs with external IPs Google Cloud VMs that have internet access through Cloud NAT or instance-based NAT Regional external passthrough Network Load Balancers are not proxies ."
+        ]
+      },
+      {
+        "title": "\"Internal proxy Network Load Balancer overview \\_|\\_ Cloud Load Balancing\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "source_id": "site-docs-root",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table specifies the backend service APIs for internal proxy Network Load Balancers: Load balancer mode Backend service type Regional internal proxy Network Load Balancer Regional regionBackendServices Cross-region internal proxy Network Load Balancer Global backendServices Supported backends The internal proxy Network Load Balancer supports the following types of backends: Load balancer mode Supported backends on a backend service Instance groups Zonal NEGs Internet NEGs Serverless NEGs Hybrid NEGs Private Service Connect NEGs GKE Regional internal proxy Network Load Balancer GCE VM IP PORT type endpoints Regional NEGs only Add a Private Service Connect NEG Cross-region internal proxy Network Load Balancer GCE VM IP PORT type endpoints Add a Private Service Connect NEG All of the backends must be of the same type (instance groups or NEGs).",
+          "The following table specifies the scope of health checks supported by internal proxy Network Load Balancers in each mode: Load balancer mode Health check type Regional internal proxy Network Load Balancer Regional regionHealthChecks Cross-region internal proxy Network Load Balancer Global healthChecks For more information about health checks, see the following: Health checks overview Use health checks Firewall rules Internal proxy Network Load Balancers require the following firewall rules: An ingress allow rule that permits traffic from the Google health check probes.",
+          "The following table shows the forwarding rule requirements for internal proxy Network Load Balancers: Load balancer mode Forwarding rule, IP address, and proxy-only subnet --purpose Routing from the client to the load balancer's frontend Regional internal proxy Network Load Balancer Regional forwardingRules Regional IP address Load balancing scheme: INTERNAL MANAGED Proxy-only subnet --purpose : REGIONAL MANAGED PROXY IP address --purpose : SHARED LOADBALANCER VIP You can enable global access to allow clients from any region to access your load balancer."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+      ]
+    }
+  ]
+}

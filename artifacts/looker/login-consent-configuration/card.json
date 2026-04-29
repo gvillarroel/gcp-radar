@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:20.598Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "Login Consent Configuration",
+  "feature_slug": "login-consent-configuration",
+  "summary": "Login Consent Configuration displays a configurable consent screen to users signing in to the Looker instance.",
+  "extended_definition": "Login Consent Configuration displays a configurable consent screen to users signing in to the Looker instance.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Admin settings - General settings \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "source_id": "site-docs-reference",
+        "final_score": 195,
+        "relevance": "",
+        "evidence_snippets": [
+          "When enabled, Login Consent Configuration causes a consent screen to be displayed to all users who attempt to sign in to the Looker instance.",
+          "The consent screen will display the message that was entered in the Message Configuration field, and will require users to click the I Agree button on the consent screen before they can sign in to the instance.",
+          "If the Login Consent Configuration option is enabled, in the Message Configuration field, enter the message that will be displayed to all users who attempt to sign in to the Looker instance."
+        ]
+      },
+      {
+        "title": "Admin settings - Google authentication \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google",
+        "source_id": "site-docs-reference",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Google Cloud console requires that you configure an OAuth consent screen , which lets your users choose how to grant access to their private data and provides a link to your organization's terms of service and privacy policy.",
+          "Click Configure consent screen . (If you have configured OAuth consent for a previous project, you won't see this option, and you can skip to step 13.) The Google Cloud console displays the OAuth consent screen page.",
+          "Clicking on the Looker permissions that you granted in order to log on shows the details that users see in the consent screen that you customized previously."
+        ]
+      },
+      {
+        "title": "\"Admin settings - OpenID Connect authentication \\_|\\_ Looker \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "source_id": "site-docs-reference",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "Your Looker groups will still mirror your OpenID Connect configuration, but you will be able to do additional group and user management within Looker, such as adding OpenID Connect users to Looker-specific groups or assigning Looker roles directly to OpenID Connect users.",
+          "In the New User Groups and New User Roles fields, enter the names of any Looker groups or roles to which you want to assign new Looker users when they first sign in to Looker: These groups and roles are applied to new users on their initial login.",
+          "The Advanced Role Management section contains these options: Prevent Individual OpenID Connect Users from Receiving Direct Roles : Turning this option on prevents Looker admins from assigning Looker roles directly to OpenID Connect users."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    }
+  ]
+}

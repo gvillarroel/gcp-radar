@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.059Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-java/card.json",
+  "product_name": "App Engine standard environment Java",
+  "product_slug": "app-engine-standard-environment-java",
+  "feature_name": "BlobInfo Cloud Storage property",
+  "feature_slug": "blobinfo-cloud-storage-property",
+  "summary": "BlobInfo includes a property that identifies when a Blobstore blob is stored in a Cloud Storage bucket.",
+  "extended_definition": "BlobInfo includes a property that identifies when a Blobstore blob is stored in a Cloud Storage bucket.",
+  "lifecycle": {
+    "latest_feature_date": "2016-10-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/quotas",
+      "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search",
+      "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/quotas",
+        "source_id": "site-docs-reference-4",
+        "final_score": 150,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Resource Default limit Default Cloud Storage Bucket Stored Data First 5 GB free; no maximum Default Cloud Storage Bucket Class A Operations First 20,000 ops/day free; no maximum Default Cloud Storage Bucket Class B Operations First 50,000 ops/day free; no maximum Default Cloud Storage Bucket Network Egress First 1 GB free; no maximum Blobstore The following quotas apply specifically to use of the blobstore.",
+          "US/Europe Resource Cost Code & Static Data Storage - First 1 GB Free Code & Static Data Storage - Exceeding 1 GB 0.026/GB/month Asia (Japan) Resource Cost Code & Static Data Storage - First 1 GB Free Code & Static Data Storage - Exceeding 1 GB 0.023/GB/month\"> Firestore in Datastore mode (Datastore) The Stored Data (billable) quota refers to all data stored for the application in Datastore and Blobstore.",
+          "This includes: data received by the application in secure requests and non-secure requests uploads to the Blobstore data received in response to HTTP requests by the URL fetch service Secure outgoing bandwidth The amount of data sent by the application over a secure connection in response to requests."
+        ]
+      },
+      {
+        "title": "\"appengine-apis overview (5.0.0) \\_|\\_ App Engine standard environment \\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager",
+        "source_id": "site-docs-reference-4",
+        "final_score": 110,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "See Also: com.google.appengine.api.blobstore.BlobstoreService , The Blobstore Java API in the Google App Engine Developer's Guide . com.google.appengine.api.blobstore.jakarta Provides management and persistent storage of large, immutable byte arrays.",
+          "See Also: com.google.appengine.api.backends.BackendService , Backends (Java) in the Google App Engine Developer's Guide . com.google.appengine.api.blobstore Provides management and persistent storage of large, immutable byte arrays.",
+          "See Also: com.google.appengine.api.blobstore.BlobstoreService , The Blobstore Java API in the Google App Engine Developer's Guide . com.google.appengine.api.capabilities Provides status information about the services available via the GAE APIs."
+        ]
+      },
+      {
+        "title": "\"appengine-apis overview (5.0.0) \\_|\\_ App Engine standard environment \\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search",
+        "source_id": "site-docs-reference-4",
+        "final_score": 110,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "See Also: com.google.appengine.api.blobstore.BlobstoreService , The Blobstore Java API in the Google App Engine Developer's Guide . com.google.appengine.api.blobstore.jakarta Provides management and persistent storage of large, immutable byte arrays.",
+          "See Also: com.google.appengine.api.backends.BackendService , Backends (Java) in the Google App Engine Developer's Guide . com.google.appengine.api.blobstore Provides management and persistent storage of large, immutable byte arrays.",
+          "See Also: com.google.appengine.api.blobstore.BlobstoreService , The Blobstore Java API in the Google App Engine Developer's Guide . com.google.appengine.api.capabilities Provides status information about the services available via the GAE APIs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.appengine.api.backends.BackendService",
+      "com.google.appengine.api.blobstore",
+      "com.google.appengine.api.blobstore.BlobstoreService",
+      "com.google.appengine.api.blobstore.jakarta",
+      "com.google.appengine.api.capabilities",
+      "com.google.appengine.api.datastore.DatastoreService",
+      "com.google.appengine.api.datastore.DatastoreServiceFactory",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager"
+      ]
+    }
+  ]
+}

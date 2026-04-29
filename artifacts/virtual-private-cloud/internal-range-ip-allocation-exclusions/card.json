@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:33.557Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Internal range IP allocation exclusions",
+  "feature_slug": "internal-range-ip-allocation-exclusions",
+  "summary": "Allows users to exclude specific IP address ranges from being automatically used during internal range allocation.",
+  "extended_definition": "Allows users to exclude specific IP address ranges from being automatically used during internal range allocation.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+      "https://docs.cloud.google.com/vpc/docs/alias-ip",
+      "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+      "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure alias IP ranges \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "source_id": "site-docs-root-2",
+        "final_score": 184,
+        "relevance": "",
+        "evidence_snippets": [
+          "Using a secondary range for alias IP allocation lets you separate the IP space for services hosted in the VM, which helps you create firewall rules that allow access only to the services running on the VM and block access to the VM's primary IP address.",
+          "NAME ZONE MACHINE TYPE PREEMPTIBLE INTERNAL IP EXTERNAL IP STATUS instance-1 us-central1-a n1-standard-1 10.128.0.2 47.82.96.9 RUNNING Try to assign an alias IP range from the subnet created in step 1.",
+          "We recommend using a secondary range for alias IP allocation to create firewall rules that allow access to the services running on a VM, but not to the VM's primary IP address."
+        ]
+      },
+      {
+        "title": "Alias IP ranges \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "source_id": "site-docs-root-2",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see: Next hop instance internal IP address ( next-hop-address ) Behavior when instances are stopped or deleted VPC Network Peering VPC Network Peering allows you to peer two VPC networks so that the VMs in the two networks can communicate via internal, private IP addresses.",
+          "Alias IP ranges defined in a VM network interface Using IP aliasing, you can configure multiple internal IP addresses, representing containers or applications hosted in a VM, without having to define a separate network interface.",
+          "Although you can create a route whose next hop address is an internal IPv4 address that fits within an alias IP range, Google Cloud does not program that route—Google Cloud considers the next hop to be down."
+        ]
+      },
+      {
+        "title": "\"Bring your own IP addresses \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "source_id": "site-docs-root-2",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "For information about using addresses in an internal IPv6 range, see Internal IPv6 specifications When you create IP addresses from a public delegated prefix or sub-prefix, the IP addresses can be used only within the project and scope that they are allocated to.",
+          "Must be smaller than the associated sub-prefix—the difference between the allocatable prefix length and the sub-prefix length must be at least 8, and can't be greater than 32 Valid lengths: /48 , /56 , /64 , /72 , /80 , /88 , /96 Default lengths: If the parent sub-prefix's length is /64 or /72 , the default allocatable prefix length is /96 Otherwise, the default allocatable prefix length is /64 Sub-prefix for external subnet ranges (--mode=EXTERNAL IPV6 SUBNETWORK CREATION) Can be the same size or smaller (have a longer prefix length) than the parent public delegated prefix The difference between the prefix length of a sub-prefix and its parent public delegated prefix can't be greater than 24 Valid lengths: /32 , /40 , /48 , /56 External Sub-prefix for internal subnet ranges (--mode=INTERNAL IPV6 SUBNETWORK CREATION) Can be the same size or smaller (have a longer prefix length) than the parent public delegated prefix The difference between the prefix length of a sub-prefix and its parent public delegated prefix can't be greater than 24 Valid lengths: /32 , /40 , /48 , /56 Internal Limitations Provisioning time takes multiple weeks and cannot be accelerated.",
+          "Configuration Regional (v2) Regional (v1) Global (v1) Public advertised prefix /16 to /24 /16 to /24 /16 to /24 Public delegated prefix (top-level, not sub-prefix) /16 to /28 Can be the same size or smaller (have a longer prefix length) than the public advertised prefix /17 to /28 Must be smaller (have a longer prefix length) than the public advertised prefix /17 to /28 Must be smaller (have a longer prefix length) than the public advertised prefix Sub-prefix Can be the same size or smaller (have a longer prefix length) than the parent public delegated prefix Minimum size (maximum prefix length) is /28 Can be the same size or smaller (have a longer prefix length) than the parent public delegated prefix Minimum size (maximum prefix length) is /28 Can be the same size or smaller (have a longer prefix length) than the parent public delegated prefix Minimum size (maximum prefix length) is /28 IPv6 prefixes The following table summarizes the CIDR range requirements for IPv6 prefixes."
+        ]
+      },
+      {
+        "title": "\"Network Topology overview \\_|\\_ Network Intelligence Center - Network Topology\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "source_id": "site-iam-reference",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "Base entity Icon Description Aggregation hierarchy (top to bottom) VM instance A Compute Engine VM instance region > network > subnet > zone > instance group > instance VM instance group The collection of VM instances that you can manage as a single entity. region > network > subnet > zone > instance group > Classic Application Load Balancer External passthrough Network Load Balancer External proxy Network Load Balancer The base entity for external load balancer components, such as the forwarding rule and backend service. external load balancing > load balancer Internal load balancer The base entity for internal load balancer components, such as the forwarding rule and backend service. internal load balancing > load balancer Cloud NAT gateway A NAT gateway region > network > NATs > NAT gateway VPC Network Peering A VPC peering endpoint that is shown when you don't have permissions to view the peer network.",
+          "For VMs that use internal IP addresses to communicate, Network Topology only displays a connection if both VMs are communicating by using their first network interface ( nic0 -to- nic0 ).",
+          "In the Infrastructure view, the insights for metrics for the selected hour on the timeline include the following: High egress instances: aggregated hourly values for various types of egress High egress instance groups: aggregated hourly values for various types of egress In the GKE Enterprise view available for GKE Enterprise projects, the insights for metrics for the selected hour on the timeline include the following: High egress GKE workloads: aggregated hourly values for various types of egress for GKE workloads, in the GKE Enterprise view Filter the traffic based on the traffic types You can further filter the traffic based on the following traffic types: All egress traffic for an entity Cross-zonal egress traffic: useful for analyzing billable traffic Egress to internet: used for analyzing billable traffic and for analyzing the traffic that reaches external endpoints Hybrid egress: used to analyze the volume of traffic to on-premises, including Cloud Interconnect, Cloud VPN, and Router appliance connections In the GKE Enterprise view, you can further filter the traffic based on the following traffic types: All measured egress traffic from the selected entity Cross-zonal egress traffic: useful for analyzing billable traffic between Google Cloud zones Multiple projects Network Topology visualizes resources in your project, or you can use Cloud Monitoring, which can visualize metrics for multiple Google Cloud projects."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview"
+      ]
+    }
+  ]
+}

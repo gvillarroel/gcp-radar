@@ -1,0 +1,132 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "GKE Sandbox",
+  "feature_slug": "gke-sandbox",
+  "summary": "GKE Sandbox protects the host kernel on nodes when containers run untrusted code.",
+  "extended_definition": "GKE Sandbox protects the host kernel on nodes when containers run untrusted code.",
+  "lifecycle": {
+    "latest_feature_date": "2020-01-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/sandbox-pods",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "GKE Sandbox \\_|\\_ GKE security \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/sandbox-pods",
+        "source_id": "site-iam-reference",
+        "final_score": 258,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Autopilot Standard This document describes how GKE Sandbox protects the host kernel on your nodes when containers in the Pod execute unknown or untrusted code.",
+          "Direct access to hardware or virtualization Applies to Autopilot and Standard clusters If your workload needs any of the following, GKE Sandbox might not be a good fit because it prevents direct access to the host kernel on the node: Direct access to the node's hardware Kernel-level virtualization features Privileged containers What's next Configure GKE Sandbox .",
+          "Overview GKE Sandbox provides an extra layer of security to prevent untrusted code from affecting the host kernel on your cluster nodes."
+        ]
+      },
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 194,
+        "relevance": "",
+        "evidence_snippets": [
+          "The patch mitigates the following vulnerability: The vulnerability CVE-2020-14386 , which allows containers with CAP NET RAW to write 1 to 10 bytes of kernel memory, and possibly escape the container and obtain root privileges on the host node.",
+          "The patch mitigates the following vulnerability: The vulnerability CVE-2020-14386 , which allows containers with CAP NET RAW to write 1 to 10 bytes of kernel memory, and possibly escape the container and obtain root privileges on the host node.",
+          "The patch mitigates the following vulnerability: The vulnerability CVE-2020-14386 , which allows containers with CAP NET RAW to write 1 to 10 bytes of kernel memory, and possibly escape the container and obtain root privileges on the host node."
+        ]
+      },
+      {
+        "title": "GKE Autopilot security measures \\_|\\_ GKE security \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "source_id": "site-iam-reference",
+        "final_score": 180,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Since the shared kernel represents a single security boundary, we recommend that if you require strong isolation, such as high-risk or untrusted workloads, run your workloads on GKE Sandbox Pods to provide multi-layer security protection.",
+          "The following table describes some of the security configurations that Autopilot applies for you: Configuration Description Host options No hostNetwork , because GKE manages your nodes.",
+          "HostPath volumes Partially complies Partially complies Autopilot allows containers to request read-only access to /var/log for debugging, but denies all other read or write access."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gke.1119000",
+      "gke.1208000",
+      "gke.1386000",
+      "gke.1533000",
+      "node.spec.providerID",
+      "object.metadata.name",
+      "object.spec.providerID",
+      "object.spec.providerID.endsWith",
+      "restriction.kubernetes.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/sandbox-pods",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/sandbox-pods",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/sandbox-pods",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/sandbox-pods",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/sandbox-pods",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    }
+  ]
+}

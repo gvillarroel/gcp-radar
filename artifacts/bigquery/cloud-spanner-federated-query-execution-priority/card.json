@@ -1,0 +1,153 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Cloud Spanner federated query execution priority",
+  "feature_slug": "cloud-spanner-federated-query-execution-priority",
+  "summary": "This feature lets you manage query execution priority for Cloud Spanner federated queries.",
+  "extended_definition": "This feature lets you manage query execution priority for Cloud Spanner federated queries.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+      "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 190,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples Setting the expiration timestamp and description on a table The following example sets the expiration timestamp on a table to seven days from the execution time of the ALTER TABLE statement, and sets the description as well: ALTER TABLE mydataset . mytable SET OPTIONS ( expiration timestamp = TIMESTAMP ADD ( CURRENT TIMESTAMP (), INTERVAL 7 DAY ), description = \"Table that expires seven days from now\" ) Setting the require partition filter attribute on a partitioned table The following example sets the timePartitioning.requirePartitionFilter attribute on a partitioned table : ALTER TABLE mydataset . mypartitionedtable SET OPTIONS ( require partition filter = true ) Queries that reference this table must use a filter on the partitioning column, or else BigQuery returns an error.",
+          "You can add Spark properties using the following format: [(\"key1\",\"value1\"),(\"key2\", \"value2\")] For example: bq query --nouse legacy sql --dry run 'CREATE PROCEDURE my bq project.my dataset.spark proc() WITH CONNECTION my-project-id.us.my-connection OPTIONS( engine=\"SPARK\", main file uri=\"gs://my-bucket/my-pyspark-main.py\", properties=[ (\"spark.executor.instances\", \"3\"), (\"spark.yarn.am.memory\", \"3g\") ]) LANGUAGE PYTHON' Error in query string: Invalid value: \\ Invalid properties: \\ Attempted to set unsupported properties: \\ [ spark:spark.yarn.am.memory ] at [ 1 :1 ] Note: You can use the BigQuery dry run feature to validate your stored procedure without creating it. main file uri STRING The Cloud Storage URI of the main Python, Scala, or Java JAR file of the Spark application.",
+          "Example: replication interval seconds=900 Required permissions This statement requires the following IAM permissions : bigquery.tables.create bigquery.tables.get bigquery.tables.getData bigquery.tables.replicateData bigquery.jobs.create Example The following example creates a materialized view replica named mv replica in bq dataset : CREATE MATERIALIZED VIEW myproject . bq dataset . mv replica OPTIONS ( replication interval seconds = 600 ) AS REPLICA OF myproject.s3 dataset.my s3 mv CREATE EXTERNAL SCHEMA statement Creates a new federated dataset."
+        ]
+      },
+      {
+        "title": "\"Transform data with data manipulation language (DML) \\_|\\_ BigQuery \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language",
+        "source_id": "site-docs-reference",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Additional statements past the maximum queue length for each table fail with the error message: Resources exceeded during query execution: Too many DML statements outstanding against table PROJECT ID:DATASET.TABLE, limit is 20.",
+          "Transform data with data manipulation language (DML) The BigQuery data manipulation language (DML) lets you update, insert, and delete data from your BigQuery tables.",
+          "During the execution of a mutating DML statement, BigQuery attempts to perform a portion of relevant garbage collection from prior DML statements inline."
+        ]
+      },
+      {
+        "title": "Introduction to data masking \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+        "source_id": "site-docs-reference-5",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following results are returned: SSN Priority Lifetime value Creation date Email NULL \"\" Zmy9vydG5q= March 8, 1983 NULL NULL \"\" GhwTwq6Ynm= December 29, 2009 NULL NULL \"\" B6y7dsgaT9= July 14, 2021 NULL NULL \"\" Uh02hnR1sg= May 5, 1997 NULL All other users : Any user who does not belong to one of the listed groups gets an access denied error, because they haven't been granted the Data Catalog Fine-Grained Reader or BigQuery Masked Reader roles.",
+          "The following results are returned: SSN Priority Lifetime value Creation date Email NULL High 90,000 March 8, 1983 NULL NULL High 84,875 December 29, 2009 NULL NULL Medium 38,000 July 14, 2021 NULL NULL Low 245 May 5, 1997 NULL fin-dev@example.com : This group has been granted the BigQuery Masked Reader role on the Financial policy tag.",
+          "Data masking with incompatible features When you use BigQuery features that aren't compatible with data masking , the service treats the masked column as a secured column, and only grants access to users who have the Data Catalog Fine-Grained Reader role."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.jobs.create",
+      "bigquery.tables.create",
+      "bigquery.tables.get",
+      "bigquery.tables.getData",
+      "bigquery.tables.replicateData",
+      "dataset.my",
+      "dataset.spark",
+      "example.com",
+      "id.us.my",
+      "main.py",
+      "myproject.s3",
+      "project.my",
+      "spark.executor.instances",
+      "spark.yarn.am.memory"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro"
+      ]
+    }
+  ]
+}

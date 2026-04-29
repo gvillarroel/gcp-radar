@@ -1,0 +1,204 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Inference Gateway v1 API",
+  "feature_slug": "inference-gateway-v1-api",
+  "summary": "The Inference Gateway API has graduated to v1 and now uses the InferenceObjective resource.",
+  "extended_definition": "The Inference Gateway API has graduated to v1 and now uses the InferenceObjective resource.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About GKE Inference Gateway \\_|\\_ GKE networking \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "source_id": "site-docs-reference-2",
+        "final_score": 165,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Figure: GKE Inference Gateway resource model with inference-focused personas How GKE Inference Gateway works GKE Inference Gateway uses Gateway API extensions and model-specific routing logic to handle client requests to an AI model.",
+          "GKE Inference Gateway uses the following two mechanisms to manage traffic distribution: Endpoint picking : dynamically selects the most suitable model server to handle an inference request.",
+          "Figure: GKE Inference Gateway resource model The following diagram illustrates the resource model that focuses on two new inference-focused personas and the resources they manage."
+        ]
+      },
+      {
+        "title": "\"Analyze model serving performance and costs with GKE Inference Quickstart\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "source_id": "site-docs-reference-2",
+        "final_score": 96,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, the llm-d serving stack uses vLLM as its underlying model server, adding a layer of orchestration and routing on top of the core inference engine.",
+          "Cost estimation To estimate per-token costs of your accelerator VMs, Inference Quickstart uses a configurable output-to-input cost ratio.",
+          "The following is an example of a command to enable observability features: gcloud container clusters update $CLUSTER NAME \\ --project = $PROJECT ID \\ --location = $LOCATION \\ --enable-managed-prometheus \\ --logging = SYSTEM,WORKLOAD \\ --monitoring = SYSTEM,DEPLOYMENT,HPA,POD,DCGM \\ --auto-monitoring-scope = ALL For more information, see Monitor your inference workloads . (HPA only) Deploy a metrics adapter : A metrics adapter, such as the Custom Metrics Stackdriver Adapter , is necessary if HPA resources were generated in the deployment manifests."
+        ]
+      },
+      {
+        "title": "\"Optimize GKE resource utilization for mixed AI/ML training and inference\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 82,
+        "relevance": "",
+        "evidence_snippets": [
+          "It uses tensor parallelism , by setting the NUM SHARD environment variable, to fit the model into GPU memory. apiVersion : apps/v1 kind : Deployment metadata : name : tgi-gemma-deployment labels : app : gemma-server spec : replicas : 1 selector : matchLabels : app : gemma-server template : metadata : labels : app : gemma-server ai.gke.io/model : gemma-2-9b-it ai.gke.io/inference-server : text-generation-inference examples.ai.gke.io/source : user-guide kueue.x-k8s.io/queue-name : lq spec : priorityClassName : high-priority-preempting containers : - name : inference-server image : us-docker.pkg.dev/deeplearning-platform-release/gcr.io/huggingface-text-generation-inference-cu121.2-1.ubuntu2204.py310 resources : requests : cpu : \"4\" memory : \"30Gi\" ephemeral-storage : \"30Gi\" nvidia.com/gpu : \"2\" limits : cpu : \"4\" memory : \"30Gi\" ephemeral-storage : \"30Gi\" nvidia.com/gpu : \"2\" env : - name : AIP HTTP PORT value : '8000' - name : NUM SHARD value : '2' - name : MODEL ID value : google/gemma-2-9b-it - name : HUGGING FACE HUB TOKEN valueFrom : secretKeyRef : name : hf-secret key : hf api token volumeMounts : - mountPath : /dev/shm name : dshm volumes : - name : dshm emptyDir : medium : Memory nodeSelector : cloud.google.com/gke-accelerator : \"nvidia-l4\" --- apiVersion : v1 kind : Service metadata : name : llm-service spec : selector : app : gemma-server type : ClusterIP ports : - protocol : TCP port : 8000 targetPort : 8000 Apply the manifest by running the following command: kubectl apply --filename = tgi-gemma-2-9b-it-hp.yaml --namespace = llm The deployment operation will take a few minutes to complete.",
+          "This tutorial uses the Workload resource type to group the inference and fine-tuning workloads, respectively.",
+          "The Deployment prioritizes inference tasks and uses two GPUs for the model."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ai.gke.io",
+      "container.googleapis.com",
+      "cu121.2",
+      "docker.pkg.dev",
+      "examples.ai.gke.io",
+      "gcr.io",
+      "gkerecommender.googleapis.com",
+      "hp.yaml",
+      "iam.googleapis.com",
+      "k8s.io",
+      "kueue.x",
+      "nvidia.com",
+      "storage.objectAdmin",
+      "svc.id.goog",
+      "ubuntu2204.py310"
+    ],
+    "missing_inventory_roles": [
+      "roles/storage.objectAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads"
+      ]
+    }
+  ]
+}

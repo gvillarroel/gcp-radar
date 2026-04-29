@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:22.796Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers",
+  "feature_name": "Windows IIS ASP.NET migration to Windows 2019 containers on GKE",
+  "feature_slug": "windows-iis-asp-net-migration-to-windows-2019-containers-on-gke",
+  "summary": "Preview support adds migration of Windows VMs running IIS ASP.NET web applications to Windows 2019 containers on GKE.",
+  "extended_definition": "Preview support adds migration of Windows VMs running IIS ASP.NET web applications to Windows 2019 containers on GKE.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/compatible-components",
+      "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Review compatible OS, workloads, and Kubernetes versions \\_|\\_ Migrate to\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/compatible-components",
+        "source_id": "site-docs-reference",
+        "final_score": 110,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Windows IIS application Migrate to Containers CLI supports the Windows operating systems listed in the following table: OS Compute Engine Windows Microsoft Windows Server 2008R2 or later ASP.NET and .NET Framework version 3.5 or later Warning: Dynamic disks have been deprecated by Microsoft, and have severe limitations with snapshots.",
+          "Windows local machine Migrate to Containers CLI supports migrations using local machines with 64-bit Windows Server 2019 LTSC operating systems.",
+          "Supported workloads Migrate to Containers CLI supports modernization of workloads listed in the following table: Workload Type (if applicable) Supported versions Linux VM container VMs running 64-bit Linux-based operating systems Linux-based workloads Tomcat Apache Tomcat version 8.5 - 10.0 Apache Apache HTTP Server version 2.4 JBoss WildFly (formerly known as JBoss Application Server) version 8.1.0 - 26.1.1 JBoss Enterprise Application Platform version 7.0 - 7.4 WebSphere WebSphere Application Server traditional version 8.55 and 9.05 All versions of WebSphere Application Server Liberty WordPress sites WordPress version 4.0 or later running on Apache HTTP Server version 2.4 Windows IIS application Microsoft Internet Information Services version 7 or later Note: For workloads that use a Java-based plugin, Migrate to Containers CLI only supports Java SE version 8 or later."
+        ]
+      },
+      {
+        "title": "Planning best practices \\_|\\_ Migrate to Containers \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices",
+        "source_id": "site-docs-root-2",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "Windows Windows applications that are a good fit for migration using Migrate to Containers include workloads that meet all following characteristics: IIS 7 or later, ASP.NET with .NET Framework 3.5 or later Web and logic tiers WS2008 R2 or higher Operating system support Migrate to Containers is compatible with these VM operating systems .",
+          "Not a good fit Linux For Linux, applications and servers that are not a good fit for migration with Migrate to Containers include: High performance and large in-memory databases VMs with special kernel drivers (for example, kernel-mode NFS) Dependencies on specific hardware Software with licenses tied to certain hardware ID registration Windows For Windows, workloads without IIS 7 or higher installed are not a fit for migration.",
+          "Good fit Linux Linux applications that are a good fit for migration using Migrate to Containers include the following application architectures: Web/Application Servers Business logic Middleware (for example, Tomcat) Multi-VM, multi-tier stacks (for example, LAMP) Small/Medium sized Databases (for example, MySQL and PostgreSQL) In addition, applications best suited for migration with Migrate to Containers have the following operational characteristics: Low duty-cycle & bursty workloads Development, testing and training lab environments Always-on, low load services In general, most Linux workloads are compatible with migration, except for those workloads explicitly listed below under Not a good fit ."
+        ]
+      },
+      {
+        "title": "\"Customize migration plan for Windows IIS services \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "The probes are disabled by default, to enable the probes, set the enabled flag to true . images : name : IMAGE NAME probes : enabled : false livenessProbe : probehandler : exec : command : - powershell.exe - C:\\m4a\\probe.ps1 initialdelayseconds : 0 timeoutseconds : 1 periodseconds : 10 successthreshold : 1 failurethreshold : 3 terminationgraceperiodseconds : null readinessProbe : probehandler : exec : command : - powershell.exe - C:\\m4a\\probe.ps1 initialdelayseconds : 0 timeoutseconds : 1 periodseconds : 10 successthreshold : 1 failurethreshold : 3 terminationgraceperiodseconds : null The windowsServices section Windows containers created during a migration run and monitor a single Windows IIS service.",
+          "You can modify the list of runtimes in the migration plan by adding or removing members of msvcRuntimes : The complete list of possible values are: (The 2015 runtime also includes support for 2017, 2019, and 2022) msvcRuntimes : - MSVC2012 x64 - MSVC2013 x64 - MSVC2015 x64 - MSVC2012 x86 - MSVC2013 x86 - MSVC2015 x86 The pathEnvVarAdditionalEntries section Windows IIS applications might have non-default PATH environment variable entries, which are automatically detected on the source VM and included in the migration plan.",
+          "The following is an example migration plan containing identitytype : migrationPlan : applications : iis : applicationhost : apppools : - name : DefaultAppPool Allowed values include: ApplicationPoolIdentity (default), NetworkService, LocalSystem, LocalService identitytype=\"NetworkService\" - managedruntimeversion : v4.0 name : .NET v4.5 Classic - managedruntimeversion : v4.0 name : .NET v4.5 When you execute the migration plan to generate the container artifacts, Migrate to Containers automatically adds the necessary Dockerfile directives according to the identitytype field setting."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appcmd.exe",
+      "powershell.exe",
+      "probe.ps1",
+      "v4.0",
+      "v4.5"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/compatible-components",
+        "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/compatible-components",
+        "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/compatible-components",
+        "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices"
+      ]
+    }
+  ]
+}

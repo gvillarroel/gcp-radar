@@ -1,0 +1,180 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:27.049Z",
+  "source_step08_card": "data/step-08/current/products/secret-manager/card.json",
+  "product_name": "Secret Manager",
+  "product_slug": "secret-manager",
+  "feature_name": "Secret Manager Cloud Asset Inventory integration",
+  "feature_slug": "secret-manager-cloud-asset-inventory-integration",
+  "summary": "Secret Manager metadata can be queried in Cloud Asset Inventory.",
+  "extended_definition": "Secret Manager metadata can be queried in Cloud Asset Inventory.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+      "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+      "https://docs.cloud.google.com/secret-manager/docs/best-practices"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Analyze secrets with Cloud Asset Inventory \\_|\\_ Secret Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "source_id": "site-iam-reference",
+        "final_score": 284,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The integration between Secret Manager and Cloud Asset Inventory helps you do the following: Run queries : Search for specific secrets or identify patterns across your secrets.",
+          "Before reading this page, we recommend that you read the following: Secret Manager overview to understand the key concepts and features of Secret Manager Cloud Asset Inventory overview to understand Cloud Asset Inventory and to see its comprehensive asset management features Querying Secret Manager To analyze your secrets with SQL-like queries, we recommend that you export your secret and secret versions to BigQuery.",
+          "BigQuery SELECT FROM BIGQUERY TABLE WHERE asset type = 'secretmanager.googleapis.com/SecretVersion' AND ( JSON VALUE ( resource . data , \"$.replicationStatus.automatic.customerManagedEncryption.kmsKeyVersionName\" ) IS NULL AND JSON VALUE ( resource . data , \"$.replicationStatus.userManaged.replicas[0].customerManagedEncryption.kmsKeyVersionName\" ) IS NULL ) AND JSON VALUE ( resource . data , \"$.state\" ) = \"ENABLED\" ; Replace BIGQUERY TABLE with the full path to the BigQuery table that you have exported all the assets to in the Export assets to BigQuery section of this document. gcloud NOW = $ ( TZ = GMT date + \"%Y-%m-%dT%H:%M:%SZ\" ) gcloud asset list -- project = PROJECT ID \\ -- asset - types = ' secretmanager . googleapis . com / SecretVersion ' \\ -- snapshot - time = $ NOW \\ -- content - type = ' resource ' \\ -- filter = \"(resource.data.replicationStatus.userManaged.replicas.customerManagedEncryption = NULL OR resource.data.replicationStatus.automatic.customerManagedEncryption=NULL) AND resource.data.state=ENABLED\" Replace PROJECT ID with the ID of the project containing the secrets to be analyzed."
+        ]
+      },
+      {
+        "title": "Secret Manager best practices \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/best-practices",
+        "source_id": "site-iam-reference",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following are some reasons for using other methods for handling secrets: When a secret is accessible on the file system, application vulnerabilities like directory traversal attacks can become higher severity as the attacker may gain the ability to read the secret material.",
+          "All of these methods are preferred to exporting a service account credential because they don't require securely storing and accessing an additional secret outside of the Secret Manager API.",
+          "Home Documentation Security Secret Manager Guides Send feedback Secret Manager best practices Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Class SecretManagerServiceAsyncClient (2.27.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 243,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.secretmanager v1.types.Secret A Secret is a logical secret whose value and versions can be accessed.",
+          "Returns Type Description google.cloud.secretmanager v1.types.Secret A Secret is a logical secret whose value and versions can be accessed.",
+          "Returns Type Description google.cloud.secretmanager v1.types.Secret A Secret is a logical secret whose value and versions can be accessed."
+        ]
+      },
+      {
+        "title": "\"Class SecretManagerServiceClient (2.27.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 243,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.secretmanager v1.types.Secret A Secret is a logical secret whose value and versions can be accessed.",
+          "Returns Type Description google.cloud.secretmanager v1.types.Secret A Secret is a logical secret whose value and versions can be accessed.",
+          "Returns Type Description google.cloud.secretmanager v1.types.Secret A Secret is a logical secret whose value and versions can be accessed."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "async.AsyncRetry",
+      "automatic.customerManagedEncryption.kmsKeyVersionName",
+      "core.retry",
+      "core.retry.Retry",
+      "replication.automatic.customerManagedEncryption.kmsKeyName",
+      "replication.userManaged.replicas",
+      "resource.data.createTime",
+      "resource.data.replicationStatus.automatic.customerManagedEncryption",
+      "resource.data.replicationStatus.userManaged.replicas.customerManagedEncryption",
+      "resource.data.state",
+      "secretmanager.googleapis.com",
+      "v1.types.Secret"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/secret-manager/docs/best-practices",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/secret-manager/docs/best-practices",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/secret-manager/docs/best-practices",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/secret-manager/docs/best-practices",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/secret-manager/docs/best-practices",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/secret-manager/docs/best-practices",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/secret-manager/docs/best-practices",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/secret-manager/docs/best-practices",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    }
+  ]
+}

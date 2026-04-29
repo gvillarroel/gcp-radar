@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:45.846Z",
+  "source_step08_card": "data/step-08/current/products/capacity-planner/card.json",
+  "product_name": "Capacity Planner",
+  "product_slug": "capacity-planner",
+  "feature_name": "Capacity Planner reservation utilization history view and export",
+  "feature_slug": "capacity-planner-reservation-utilization-history-view-and-export",
+  "summary": "Capacity Planner preview provides viewing and export of historical utilization for on-demand and future reservations for VMs and GPUs.",
+  "extended_definition": "Capacity Planner reservation utilization history view and export is a preview capability announced on November 15, 2024 that lets users view and export historical utilization for on-demand and future reservation requests (VM and GPU-related) within a project, folder, or organization. In Capacity Planner usage/forecast guidance, reservation visibility includes current on-demand reservations as well as past and current future reservation requests, which supports planning against historical and forecast context.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "HIGH",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View usage and forecast data \\_|\\_ Capacity Planner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/capacity-planner/docs/view-data",
+        "source_id": "site-docs-root",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "QueryReservationsResponse \\_|\\_ Capacity Planner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/capacity-planner/docs/reference/rest/v1beta/QueryReservationsResponse",
+        "source_id": "site-api-reference",
+        "final_score": 76,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Support levels for permissions in custom roles \\_|\\_ Identity and Access\\",
+        "url": "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "source_id": "site-iam-reference",
+        "final_score": 60,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "The release notes provide the dated feature announcement and view/export statement, while the usage-and-forecast documentation details reservation data coverage and reservation types shown for planning."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+      ]
+    }
+  ]
+}

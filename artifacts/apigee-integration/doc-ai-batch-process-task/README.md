@@ -1,0 +1,40 @@
+# Doc AI - Batch Process task
+
+Product: Apigee Integration
+Feature slug: `doc-ai-batch-process-task`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Adds a Doc AI batch document processing integration task in preview.
+
+## Lifecycle
+
+- Latest feature date: 2023-05-23
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- armor
+- auth
+- encrypt
+- iam
+- kms
+- logging
+- permission
+- role
+- secret
+- token
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart](https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart)
+- [https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks](https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks)
+- [https://docs.cloud.google.com/application-integration/docs/configure-connectors-task](https://docs.cloud.google.com/application-integration/docs/configure-connectors-task)

@@ -1,0 +1,193 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.653Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-marketplace/card.json",
+  "product_name": "Google SecOps Marketplace",
+  "product_slug": "google-secops-marketplace",
+  "feature_name": "Siemplify Create Gemini Case Summary",
+  "feature_slug": "siemplify-create-gemini-case-summary",
+  "summary": "Adds an action to create a Gemini case summary in Siemplify.",
+  "extended_definition": "Adds an action to create a Gemini case summary in Siemplify.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Integrate Anomali ThreatStream with Google SecOps \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "source_id": "site-docs-root",
+        "final_score": 161,
+        "relevance": "",
+        "evidence_snippets": [
+          "Run on This action runs on the following entities: Hash IP Address URL Email Action results Script result Script result name Value options Example is success True or False is success:False JSON result { \"campaign\" : [ { \"name\" : \"Example 1\" , \"id\" : 1 }, { \"name\" : \"Example 2\" , \"id\" : 2 } ], \"actor\" : [ { \"name\" : \"Actor 1\" , \"id\" : 1 }, { \"name\" : \"Actor 2\" , \"id\" : 2 } ], \"attackpattern\" : [ { \"name\" : \"Pattern 1\" , \"id\" : 1 }, { \"name\" : \"Pattern 2\" , \"id\" : 2 } ], \"courseofaction\" : [ { \"name\" : \"Course of Action 1\" , \"id\" : 1 }, { \"name\" : \"Course Of Action 2\" , \"id\" : 2 } ], \"identity\" : [ { \"name\" : \"Identity 1\" , \"id\" : 1 }, { \"name\" : \"Identity 2\" , \"id\" : 2 } ], \"incident\" : [ { \"name\" : \"Incident 1\" , \"id\" : 1 }, { \"name\" : \"Incident 2\" , \"id\" : 2 } ], \"infrastructure\" : [ { \"name\" : \"Infrustructure 1\" , \"id\" : 1 }, { \"name\" : \"Infrustructure 2\" , \"id\" : 2 } ], \"intrusionset\" : [ { \"name\" : \"Intrusion set 1\" , \"id\" : 1 }, { \"name\" : \"Intrusion set 2\" , \"id\" : 2 } ], \"malware\" : [ { \"name\" : \"Malware 1\" , \"id\" : 1 }, { \"name\" : \"Malware 2\" , \"id\" : 2 } ], \"signature\" : [ { \"name\" : \"Signature 1\" , \"id\" : 1 }, { \"name\" : \"Signature 2\" , \"id\" : 2 } ], \"tool\" : [ { \"name\" : \"Tool 1\" , \"id\" : 1 }, { \"name\" : \"Tool 2\" , \"id\" : 2 } ], \"ttp\" : [ { \"name\" : \"TTP 1\" , \"id\" : 1 }, { \"name\" : \"TTP 2\" , \"id\" : 2 } ], \"vulnerability\" : [ { \"name\" : \"Vulnerability 1\" , \"id\" : 1 }, { \"name\" : \"Vulnerability 2\" , \"id\" : 2 } ], } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one association across entities is found (is success=true): \"Successfully retrieved related associations from Anomali ThreatStream\" If no associations are found (is success=false) : \"No related associations were found.\" Async Message: \"Waiting for all of the association details to be retrieved\" The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: \"Error executing action \"Get Related Association\".",
+          "Run on This action runs on the following entities: Hash IP Address URL Email Action results Script result Script result name Value options Example is success True or False is success:False Entity enrichment Enrichment field name Logic - When to apply id When available in JSON status When available in JSON itype When available in JSON expiration time When available in JSON ip When available in JSON feed id When available in JSON confidence When available in JSON uuid When available in JSON retina confidence When available in JSON trusted circle ids When available in JSON source When available in JSON latitude When available in JSON type When available in JSON description When available in JSON tags When available in JSON threat score When available in JSON source confidence When available in JSON modification time When available in JSON org name When available in JSON asn When available in JSON creation time When available in JSON tlp When available in JSON country When available in JSON longitude When available in JSON severity When available in JSON subtype When available in JSON report When available in JSON Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one of the provided entities is enriched (is success=true): \"Successfully enriched the following entities using Anomali ThreatStream: \\n {0}\".format(entity.identifier list) If failed to enrich specific entities (is success=true): \"Action was not able to enrich the following entities using Anomali ThreatStream\\n: {0}\".format([entity.identifier]) If failed to enrich all entities (is success=false): \"No entities were enriched.\" The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: \"Error executing action \"Enrich Entities\".",
+          "Run on This action runs on the following entities: Hash IP Address URL Email Action results Script result Script result name Value options Example is success True or False is success:False Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one tag is removed from one entity (is success=true): \"Successfully removed the following tags from the \"{entity.identifier}\" entity in Anomali ThreatStream:\\n{0}\".format(tags) If one tag is not found for one entity (is success=true): \"The following tags were already not a part of \"{entity.identifier}\" entity in Anomali ThreatStream:\\n{0}\".format(tags) If all tags are not found for one entity (is success=true): \"None of the provided tags were part of \"{entity.identifier}\" entity in Anomali ThreatStream.\" If one entity is not found (is success=true): \"The following entities were not found in Anomali ThreatStream\\n: {0}\".format([entity.identifier]) If all entities are not found (is success=false): \"None of the provided entities were found.\" The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: \"Error executing action \"Remove Tags From Entities\"."
+        ]
+      },
+      {
+        "title": "\"Integrate ANY.RUN with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "source_id": "site-docs-root",
+        "final_score": 161,
+        "relevance": "",
+        "evidence_snippets": [
+          "Entity Any/Run Report Entity identifier for which insight is created Value from api response Value from api response Value from api response Script result Script result name Value options Example is success True or False is success:False JSON result { \"error\" : false , \"data\" :{ \"analysis\" :{ \"uuid\" : \" UUID \" , \"permanentUrl\" : \"https://app.any.run/tasks/ UUID \" , \"reports\" :{ \"IOC\" : \"https://api.any.run/report/ UUID /ioc/json\" , \"MISP\" : \"https://api.any.run/report/ UUID /summary/misp\" , \"HTML\" : \"https://api.any.run/report/ UUID /summary/html\" , \"graph\" : \"https://content.any.run/tasks/ UUID /graph\" }, \"sandbox\" :{ \"name\" : \"ANY.RUN - Interactive Sandbox\" , \"plan\" :{ \"name\" : \"Tester\" } }, \"duration\" : 60 , \"creation\" : 1602483368256 , \"creationText\" : \"2020-10-12T06:16:08.256Z\" , \"tags\" :[ ], \"options\" :{ \"timeout\" : 60 , \"additionalTime\" : 0 , \"fakeNet\" : false , \"heavyEvasion\" : false , \"mitm\" : false , \"tor\" :{ \"used\" : false , \"geo\" : \"fastest\" }, \"presentation\" : false , \"video\" : true , \"hideSource\" : false , \"network\" : true , \"privacy\" : \"bylink\" , \"privateSample\" : false , \"automatization\" :{ \"uac\" : false } }, \"scores\" :{ \"verdict\" :{ \"score\" : 100 , \"threatLevel\" : 2 , \"threatLevelText\" : \"Malicious activity\" }, \"specs\" :{ \"injects\" : false , \"autostart\" : false , \"cpuOverrun\" : false , \"crashedApps\" : false , \"crashedTask\" : false , \"debugOutput\" : false , \"executableDropped\" : false , \"exploitable\" : false , \"lowAccess\" : false , \"memOverrun\" : false , \"multiprocessing\" : true , } } } } } Case wall Result type Description Type Output message Action should not fail and not stop playbook execution: if successful and got a report for at least one of the provided entities: \"Found ANY.RUN reports for the following entities: {0}\".format([entity.Identifier]).",
+          "Action results Entity enrichment Mark entity as suspicious if the number of negative engines is equal or above the given threshold. is suspicious: if data.get(\"score\") > threshold Enrichment field name Logic - When to apply domain Returns if it exists in JSON result should block Returns if it exists in JSON result score Returns if it exists in JSON result disposable Returns if it exists in JSON result has mx records Returns if it exists in JSON result has spf records Returns if it exists in JSON result Script result Script result name Value options Example is success True or False is success:False JSON result Option 1: If wait for report checkbox is not set, we return the info about the created analysis task (response to request 1) { \"error\" : false , \"data\" : { \"taskid\" : \" TASK ID \" } } Option 2: If wait for report checkbox is not set, we return the info about the created analysis task (response to request 1) { \"error\" : false , \"data\" : { \"analysis\" : { \"uuid\" : \" UUID \" , \"permanentUrl\" : \"https://app.any.run/tasks/ UUID \" , \"reports\" : { \"IOC\" : \"https://api.any.run/report/ UUID /ioc/json\" , \"MISP\" : \"https://api.any.run/report/ UUID /summary/misp\" , \"HTML\" : \"https://api.any.run/report/ UUID /summary/html\" , \"graph\" : \"https://content.any.run/tasks/ UUID /graph\" }, \"sandbox\" : { \"name\" : \"ANY.RUN - Interactive Sandbox\" , \"plan\" : { \"name\" : \"Tester\" } }, \"duration\" : 60 , \"creation\" : 1602483368256 , \"creationText\" : \"2020-10-12T06:16:08.256Z\" , \"tags\" : [], \"options\" : { } } } } Case wall Result type Description Type Output message Action should not fail and not stop playbook execution: If successfully created analysis task for the provided file: \"Successfully created analysis task for file: {0}\".format(file path).",
+          "Action results Script result Script result name Value options Example is success True or False is success:False JSON result Option 1: If wait for report checkbox is not set, we return the info about the created analysis task (response to request 1) { \"error\" : false , \"data\" : { \"taskid\" : \" TASK ID \" } } Option 2: If wait for report checkbox is not set, we return the info about the created analysis task (response to request 1) { \"error\" : false , \"data\" : { \"analysis\" : { \"uuid\" : \" UUID \" , \"permanentUrl\" : \"https://app.any.run/tasks/ UUID \" , \"reports\" : { \"IOC\" : \"https://api.any.run/report/ UUID /ioc/json\" , \"MISP\" : \"https://api.any.run/report/ UUID /summary/misp\" , \"HTML\" : \"https://api.any.run/report/ UUID /summary/html\" , \"graph\" : \"https://content.any.run/tasks/ UUID /graph\" }, \"sandbox\" : { \"name\" : \"ANY.RUN - Interactive Sandbox\" , \"plan\" : { \"name\" : \"Tester\" } }, \"duration\" : 60 , \"creation\" : 1602483368256 , \"creationText\" : \"2020-10-12T06:16:08.256Z\" , \"tags\" : [], \"options\" : { } } } } Case wall Result type Description Type Output message Action should not fail and not stop playbook execution: If successfully created analysis task for at least one of the provided entities: \"Created analysis tasks for the following entities: {0}\".format([entity.Identifier])."
+        ]
+      },
+      {
+        "title": "\"Integrate ArcSight with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "source_id": "site-docs-root",
+        "final_score": 148,
+        "relevance": "",
+        "evidence_snippets": [
+          "Copy the following content into that file. #!/bin/bash #Declare the variables: siemplify ip= SIEMPLIFY IP #Install nfs-utils yum install nfs-utils -y #Start the services and enable them to be started at boot time systemctl enable rpcbind systemctl enable nfs-server systemctl enable nfs-lock systemctl enable nfs-idmap systemctl start rpcbind systemctl start nfs-server systemctl start nfs-lock systemctl start nfs-idmap #If FirewallD is running add the next rules: firewall-cmd --permanent --zone=public --add-service=nfs firewall-cmd --permanent --zone=public --add-service=mountd firewall-cmd --permanent --zone=public --add-service=rpc-bind firewall-cmd --reload #Create the NFS directory mount point mkdir -p /mnt/nfs/var/SiemShare #Add the values: echo \"$siemplify ip:/opt/Correlations /mnt/nfs/var/SiemShare nfs defaults 0 0\">>/etc/fstab mount -a Declare the siemplify ip variable according to your environment.",
+          "If you are using the old path and are applying the upgrade, then you need to change the permission back to the scripting user with the following steps: Before starting the upgrade, stop the NFS server service: systemctl stop nfs-server After the upgrade is complete, change the folder permissions: chmod -R 755 /opt/siemplify/Correlations/ chown -R scripting:scripting/opt/siemplify/Correlations/ systemctl start nfs-server exportfs -a To confirm that the NFS server is working correctly after the changes, check its status: systemctl status nfs-server Create and configure a user for API access Sign in to the ArcSight console.",
+          "Action results Script result Script result name Value options Example is succeed True or False is succeed:False Change Case Stage Description Change a case's stage."
+        ]
+      },
+      {
+        "title": "\"AWS Identity and Access Management (IAM) \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "source_id": "site-docs-root",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result { \"PolicyName\" : \"S3-read-only-bucket\" , \"PolicyId\" : \"ANPAYPE7MW7AFKUDK3HD7\" , \"Arn\" : \"arn:aws:iam::582302349248:policy/S3-read-only-bucket\" , \"Path\" : \"/\" , \"DefaultVersionId\" : \"v1\" , \"AttachmentCount\" : 0 , \"PermissionsBoundaryUsageCount\" : 0 , \"IsAttachable\" : true , \"CreateDate\" : \"2020-12-6T17:16:45\" , \"UpdateDate\" : \"2020-12-6T17:16:45\" } Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print \"<Policy name> policy was successfully created\" The action should fail and stop a playbook execution: If error - Policy already exists: Print \"Could not create <policy name> policy.",
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result [{ \"Arn\" : \"arn:aws:iam::582302349248:group/ZivGroup\" , \"CreateDate\" : \"2020-12-05 16:18:36+00:00\" , \"Path\" : \"/\" , \"GroupId\" : \"AGPAYPE7MW7AMKCWMJPMX\" , \"GroupName\" : \"ZivGroup\" }] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print \"Successfully listed available groups in AWS IAM\" If no data available: Print \"No Groups found in AWS IAM\" The action should fail and stop a playbook execution: if not successful (wrong credentials, no connection to server, other server error, If 'Max Groups'> 1000): print \"Error executing action 'List Groups'.",
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result [{ \"Arn\" : \"arn:aws:iam::582302349248:user/ziv\" , \"CreateDate\" : \"2020-12-03T12:12:20\" , \"Path\" : \"/\" , \"UserId\" : \"AIDAYPE7MW7AFMHK4WCHS\" , \"UserName\" : \"ziv\" }] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print \"Successfully listed available users in AWS IAM\" If no data available: Print \"No users found in AWS IAM\" The action should fail and stop a playbook execution: if not successful (wrong credentials, no connection to server, other server error, if max>10000): print \"Error executing action 'List Users'."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "api.any.run",
+      "app.any.run",
+      "content.any.run",
+      "data.get",
+      "entity.identifier",
+      "entity.Identifier",
+      "y.ide"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+      ]
+    }
+  ]
+}

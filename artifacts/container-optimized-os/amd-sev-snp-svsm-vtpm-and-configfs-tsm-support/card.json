@@ -1,0 +1,111 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:02.340Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os",
+  "feature_name": "AMD SEV-SNP SVSM vTPM and configfs-tsm support",
+  "feature_slug": "amd-sev-snp-svsm-vtpm-and-configfs-tsm-support",
+  "summary": "Container-Optimized OS includes backported support for the AMD SEV-SNP SVSM vTPM driver and configfs-tsm for extended attestation.",
+  "extended_definition": "Container-Optimized OS includes backported support for the AMD SEV-SNP SVSM vTPM driver and configfs-tsm for extended attestation.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Disks and file system overview \\_|\\_ Container-Optimized OS \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem",
+        "source_id": "site-docs-reference",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": [
+          "Working with the Container-Optimized OS file system The following is a list of paths in the Container-Optimized OS node image file system, along with their properties and recommended usage: Path Properties Purpose / read-only executable The root filesystem is mounted as read-only to maintain integrity.",
+          "Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Disks and file system overview Stay organized with collections Save and categorize content based on your preferences.",
+          "When using Container-Optimized OS, be aware of the partitioning if you run your own services that have certain expectations about the file system layout outside of containers."
+        ]
+      },
+      {
+        "title": "\"Collecting debugging information using sosreport \\_|\\_ Container-Optimized\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport",
+        "source_id": "site-docs-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "Collecting the sosreport data To generate a sosreport: Connect to the instance using the gcloud compute ssh command. gcloud compute ssh [INSTANCE NAME] --zone [ZONE] --project [PROJECT ID] Check the OS version: sudo cat /etc/os-release egrep -w 'NAME VERSION' The output is similar to the following: NAME=\"Container-Optimized OS\" VERSION=105 Run the sos command that corresponds to your OS version: COS 85 and earlier Run the following sosreport command to collect the logs: sudo sosreport --all-logs --batch --tmp-dir = /var If the previous command fails with sosreport: command not found , install the sosreport package and then run the previous sosreport command: sudo toolbox sudo apt install sosreport -y COS 105 and later Run the following sos command to collect the logs: sudo sos report --all-logs --batch --tmp-dir = /var If the previous command fails with sos: command not found , install the sosreport package and then run the previous sos report command: sudo toolbox sudo apt install sosreport -y Ubuntu-18 and earlier Run the following sosreport command to collect the logs: sudo sosreport --all-logs --batch --tmp-dir = /var If the previous command fails with sosreport: command not found , install the sosreport package and then run the previous sosreport command: sudo apt install sosreport Ubuntu-20 and later Run the following sos command to collect the logs: sudo sos report --all-logs --batch --tmp-dir = /var If the previous command fails with sos: command not found , install the sosreport package and then run the previous sos report command: sudo apt install sosreport You can change the directory where the report is stored by passing a different directory to the --tmp-dir option.",
+          "Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Collecting debugging information using sosreport Stay organized with collections Save and categorize content based on your preferences.",
+          "Container-Optimized OS includes the sosreport utility, which collects information on demand to help you debug problems in a Container-Optimized OS virtual machine instance."
+        ]
+      },
+      {
+        "title": "\"Configuring and Checking CIS Compliance \\_|\\_ Container-Optimized OS \\_\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "source_id": "site-docs-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "This level includes recommendations such as the following: Firewall rules exist for all open ports ICMP redirects and router advertisements are not accepted Default user shell timeout is 900 seconds or less How Container-Optimized OS complies with the CIS Benchmarks Starting with Milestone 97 , Container-Optimized OS images comply with to CIS Level 1 by default and provide an option to comply with CIS Level 2.",
+          "Periodic checking of CIS compliance status Container-Optimized OS images include the following services to periodically check CIS compliance: cis-compliance-scanner.service : checks the compliance status based on environment variables defined at /etc/cis-scanner/env vars .",
+          "Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Configuring and Checking CIS Compliance Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "scanner.service"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport"
+      ]
+    }
+  ]
+}

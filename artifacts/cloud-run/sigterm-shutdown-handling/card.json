@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:51.589Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": "SIGTERM shutdown handling",
+  "feature_slug": "sigterm-shutdown-handling",
+  "summary": "Cloud Run sends SIGTERM before shutting down a container instance and can continue CPU allocation for up to 10 seconds if the signal is handled.",
+  "extended_definition": "Cloud Run sends SIGTERM before shutting down a container instance and can continue CPU allocation for up to 10 seconds if the signal is handled.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/container-contract",
+      "https://docs.cloud.google.com/run/docs/reference/container-contract",
+      "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Container runtime contract \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/container-contract",
+        "source_id": "site-docs-root",
+        "final_score": 160,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If a task exceeds the task timeout , Cloud Run sends a 'SIGTERM' signal indicating the start of a 10 second period before the actual shutdown occurs, at which point Cloud Run sends a SIGKILL signal, shutting down the container instance.",
+          "Before shutting down an instance, Cloud Run sends a SIGTERM signal to all the containers in an instance, indicating the start of a 10 second period before the actual shutdown occurs, at which point Cloud Run sends a SIGKILL signal.",
+          "Before shutting down an instance, Cloud Run sends a SIGTERM signal to all the containers in an instance."
+        ]
+      },
+      {
+        "title": "Container runtime contract \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "source_id": "site-docs-root",
+        "final_score": 160,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If a task exceeds the task timeout , Cloud Run sends a 'SIGTERM' signal indicating the start of a 10 second period before the actual shutdown occurs, at which point Cloud Run sends a SIGKILL signal, shutting down the container instance.",
+          "Before shutting down an instance, Cloud Run sends a SIGTERM signal to all the containers in an instance, indicating the start of a 10 second period before the actual shutdown occurs, at which point Cloud Run sends a SIGKILL signal.",
+          "Before shutting down an instance, Cloud Run sends a SIGTERM signal to all the containers in an instance."
+        ]
+      },
+      {
+        "title": "End user authentication for Cloud Run tutorial \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "source_id": "site-docs-root",
+        "final_score": 79,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Node.js const firebase = require ( 'firebase-admin' ); // Initialize Firebase Admin SDK firebase . initializeApp (); // Extract and verify Id Token from header const authenticateJWT = ( req , res , next ) = > { const authHeader = req . headers . authorization ; if ( authHeader ) { const token = authHeader . split ( ' ' )[ 1 ]; // If the provided ID token has the correct format, is not expired, and is // properly signed, the method returns the decoded ID token firebase . auth () . verifyIdToken ( token ) . then ( decodedToken = > { const uid = decodedToken . uid ; req . uid = uid ; next (); }) . catch ( err = > { req . logger . error ( Error with authentication: ${ err } ); return res . sendStatus ( 403 ); }); } else { return res . sendStatus ( 401 ); } }; Python def jwt authenticated ( func : Callable [ ... , int ]) - > Callable [ ... , int ]: \"\"\"Use the Firebase Admin SDK to parse Authorization header to verify the user ID token.",
+          "Uncomment and add env vars for local development spring . datasource . username = $ { DB USER } spring . datasource . password = $ { DB PASSWORD } spring . cloud . gcp . sql . database - name = $ { DB NAME } spring . cloud . gcp . sql . instance - connection - name = $ { CLOUD SQL CONNECTION NAME } private final JdbcTemplate jdbcTemplate ; public VoteController ( JdbcTemplate jdbcTemplate ) { this . jdbcTemplate = jdbcTemplate ; } Handling sensitive configuration with Secret Manager Secret Manager provides centralized and secure storage of sensitive data such as Cloud SQL configuration.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.run.v2.BuildsClient",
+      "github.com",
+      "samples.git"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
+      ]
+    }
+  ]
+}

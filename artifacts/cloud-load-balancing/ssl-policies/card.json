@@ -1,0 +1,148 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:49.160Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "SSL policies",
+  "feature_slug": "ssl-policies",
+  "summary": "HTTPS and SSL Proxy Load Balancing support configurable SSL policies to control TLS versions and cipher suites; HTTPS and SSL Proxy Load Balancing support configurable SSL policies to control TLS versions and cipher suites.",
+  "extended_definition": "HTTPS and SSL Proxy Load Balancing support configurable SSL policies to control TLS versions and cipher suites; HTTPS and SSL Proxy Load Balancing support configurable SSL policies to control TLS versions and cipher suites.",
+  "lifecycle": {
+    "latest_feature_date": "2018-04-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/features",
+      "https://docs.cloud.google.com/load-balancing/docs/https",
+      "https://docs.cloud.google.com/load-balancing/docs/ssl-policies-concepts"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "SSL policies overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/ssl-policies-concepts",
+        "source_id": "site-docs-root",
+        "final_score": 206,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following load balancers support global SSL policies: Global external Application Load Balancer Classic Application Load Balancer Cross-region internal Application Load Balancer Global external proxy Network Load Balancer Classic proxy Network Load Balancer The following load balancers support regional SSL policies: Regional external Application Load Balancer Regional internal Application Load Balancer Associating an SSL policy with a target HTTPS proxy or target SSL proxy is optional.",
+          "Behavior when no SSL policy is specified If you don't associate an SSL policy with a target HTTPS proxy or target SSL proxy, the load balancer operates as if you had associated an SSL policy with the following settings: the COMPATIBLE profile selected, and the minimum TLS version set to 1.0 TLS version support Note that a profile can indirectly restrict the versions of TLS that the load balancer can negotiate.",
+          "Only the following load balancer certificate digital signatures are allowed: PKCS#1/PSS with SHA-256 , SHA-384 or SHA-512 ECDSA with P-256 or P-384 and SHA-256 or SHA-384 Limitations Disabling particular SSL versions or ciphers can result in some earlier clients being unable to connect to your proxy by using HTTPS or SSL."
+        ]
+      },
+      {
+        "title": "\"External Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "For HTTPS load balancing, the target HTTPS proxy uses SSL certificates to prove its identity to clients.",
+          "To update the load balancer, click Update . gcloud Configure the TLS early data mode on the target HTTPS proxy of an Application Load Balancer. gcloud compute target-https-proxies update TARGET HTTPS PROXY \\ --tls-early-data= TLS EARLY DATA MODE Replace the following: TARGET HTTPS PROXY : the target HTTPS proxy of your load balancer TLS EARLY DATA MODE : STRICT , PERMISSIVE , DISABLED , or UNRESTRICTED API PATCH https://compute.googleapis.com/compute/v1/projects/{project}/global/targetHttpsProxies/ TARGET HTTPS PROXY { \"tlsEarlyData\":\" TLS EARLY DATA MODE \", \"fingerprint\": \" FINGERPRINT \" } Replace the following: TARGET HTTPS PROXY : the target HTTPS proxy of your load balancer TLS EARLY DATA MODE : STRICT , PERMISSIVE , DISABLED , or UNRESTRICTED FINGERPRINT : a Base64 encoded string.",
+          "Configured on the backend service or backend bucket Regional external Application Load Balancer Regional HTTP , Regional HTTPS X-Forwarded-Proto : [http https] (requests only) Via: 1.1 google (requests and responses) X-Forwarded-For : [<supplied-value>,]<client-ip>,<load-balancer-ip> (see X-Forwarded-For header ) (requests only) Configured in the URL map Note: In accordance with RFC 2616 , the following hop-by-hop headers aren't propagated by the target proxy: Connection , Keep-Alive , Proxy-Authenticate , Proxy-Authorization , TE , Trailers , Transfer-Encoding , and Upgrade ."
+        ]
+      },
+      {
+        "title": "\"Load balancer feature comparison \\_|\\_ Cloud Load Balancing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/features",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "Routing and traffic management Filter this table: Feature Application Load Balancer Proxy Network Load Balancer Passthrough Network Load Balancer Internal External Internal External Internal External HTTP or Layer 7 request routing info info Fault injection info (Only global and regional modes) Configurable timeouts info info info info Retries info info Redirects info global classic regional URL rewrites info global classic regional Request and response header transformations (configured on the URL map) info (Only global and regional modes) Traffic splitting info (Only global and regional modes) Traffic mirroring info 1 (Only global and regional modes) (Only regional mode) Outlier detection info (Only global and regional modes) Retry failed requests info (Only global and regional modes) Custom request and response headers (configured on the backend service) (Only global and regional modes) Custom error responses (Only global mode) Service load balancing policy (Only cross-region mode) (Only global mode) (Only cross-region mode) (Only global mode) Connection tracking policy info info 1 Source IP-based traffic steering info 2 1 This feature is not supported with load balancers that use serverless NEG backends.",
+          "Filter this table: Feature Application Load Balancer Proxy Network Load Balancer Passthrough Network Load Balancer Internal External Internal External Internal External Balancing mode: connection Balancing mode: custom metrics 1 1 Balancing mode: in-flight ( Preview ) 1 1 (Only global and regional modes) Balancing mode: rate (requests per second) 1 1 Balancing mode: backend utilization (instance group backends only) 1 1 Load balancing locality policy info info (Only global and regional modes) info info (Only global and regional modes) info Configurable maximum capacity per backend instance group or NEG 1 1 Circuit breaking 1 (Only regional mode) (Only regional mode) Prefers region closest to client on the internet 2 (Only global and classic 3 modes) (Only global and classic 3 modes) Prefers region closest to the load balancer 2 (Only global and classic 3 modes) (Only classic 3 modes) Weight-based load balancing (Only global and regional modes) 4 info Within zone/region load balancing policy info info info info info info 1 This feature is not supported with load balancers that use serverless NEG backends.",
+          "Filter this table: Feature Application Load Balancer Proxy Network Load Balancer Passthrough Network Load Balancer Internal External Internal External Internal External gRPC health checks (without TLS) 2 2 2 2 1 gRPC health checks (with TLS) 2 2 2 2 1 HTTP health checks 3 (Only classic and regional mode) 1 HTTPS health checks 3 (Only classic and regional mode) 1 HTTP/2 health checks (Only classic and regional mode) 1 SSL health checks 1 TCP health checks 1 Configurable health checks Configurable request path (HTTP, HTTPS, HTTP/2) Configurable request string or path (TCP or SSL) Configurable expected response string 1 Distributed Envoy health checks (Only regional mode) (Only regional mode) 1 This table documents health checks used by backend service-based regional external passthrough Network Load Balancers."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/ssl-policies-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/features"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/ssl-policies-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/features"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/ssl-policies-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/features"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/ssl-policies-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/features"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/ssl-policies-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/features"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/ssl-policies-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/features"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/ssl-policies-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/features"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/ssl-policies-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/features"
+      ]
+    }
+  ]
+}

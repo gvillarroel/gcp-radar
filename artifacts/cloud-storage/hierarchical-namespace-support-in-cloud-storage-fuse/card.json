@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:55.943Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "Hierarchical namespace support in Cloud Storage FUSE",
+  "feature_slug": "hierarchical-namespace-support-in-cloud-storage-fuse",
+  "summary": "Cloud Storage FUSE supports mounting buckets with hierarchical namespace enabled.",
+  "extended_definition": "Cloud Storage FUSE supports mounting buckets with hierarchical namespace enabled.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+      "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+      "https://docs.cloud.google.com/storage/docs/gcsfuse-cli",
+      "https://docs.cloud.google.com/storage/docs/introduction"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Storage overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/introduction",
+        "source_id": "site-docs-root",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "While buckets are suitable for most data storage use cases, you can set up optional configurations and features on a bucket to make it more suitable for high-performance workloads specifically: Hierarchical namespace : Buckets can have hierarchical namespace enabled, which lets you store your data in a logical file system structure by using folders.",
+          "When you locate buckets in zones, you get the ability to colocate your objects with your compute resources, automatic enablement of hierarchical namespace, and new APIs for streaming reads and appendable writes.",
+          "Buckets with hierarchical namespace enabled offer up to 8 times higher initial queries per second (QPS) limits for reading and writing objects compared to buckets without hierarchical namespace enabled."
+        ]
+      },
+      {
+        "title": "Cloud Storage FUSE CLI reference \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+        "source_id": "site-docs-reference",
+        "final_score": 191,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you're using the Cloud Storage FUSE CSI driver to mount your buckets to your local file system in Google Kubernetes Engine, see Mount options for the Cloud Storage FUSE CSI driver .",
+          "The Cloud Storage FUSE command line interface (CLI), or gcsfuse CLI, is used to mount Cloud Storage buckets as file systems on a local machine.",
+          "This option should also be set if you're using Cloud Storage FUSE with public buckets."
+        ]
+      },
+      {
+        "title": "\"Mount a Cloud Storage bucket using Cloud Storage FUSE \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "source_id": "site-iam-reference",
+        "final_score": 190,
+        "relevance": "",
+        "evidence_snippets": [
+          "Learn how Vertex AI uses Cloud Storage FUSE to mount Cloud Storage buckets for custom training jobs.",
+          "Clean up To avoid incurring charges to your Google Cloud account for the resources used on this page, delete the resources by completing the following steps: Unmount the storage bucket from your Linux machine by using the fusermount tool: fusermount -u \"$HOME/mount-folder\" To delete the bucket and everything inside of it, use the gcloud storage rm command with the --recursive flag: gcloud storage rm gs:// BUCKET NAME --recursive Replace BUCKET NAME with the name of your bucket.",
+          "In this quickstart, you'll complete the following tasks: Install Cloud Storage FUSE on Debian or Ubuntu Mount the bucket as a folder on the machine Upload an object to the bucket You'll use the Google Cloud CLI to create and manage the object in your storage bucket, and you'll use the Cloud Storage FUSE CLI to mount your bucket to your machine."
+        ]
+      },
+      {
+        "title": "Cloud Storage FUSE CLI reference \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/gcsfuse-cli",
+        "source_id": "site-docs-reference",
+        "final_score": 181,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you're using the Cloud Storage FUSE CSI driver to mount your buckets to your local file system in Google Kubernetes Engine, see Mount options for the Cloud Storage FUSE CSI driver .",
+          "The Cloud Storage FUSE command line interface (CLI), or gcsfuse CLI, is used to mount Cloud Storage buckets as file systems on a local machine.",
+          "This option should also be set if you're using Cloud Storage FUSE with public buckets."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/introduction",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-cli"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/introduction",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-cli"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/introduction",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-cli"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/introduction",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-cli"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/introduction",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-cli"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/introduction",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-cli"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.896Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr",
+  "feature_name": "Compute Engine VM policy assignment during creation",
+  "feature_slug": "compute-engine-vm-policy-assignment-during-creation",
+  "summary": "Backup and DR policies can now be applied when creating Compute Engine VMs during the VM creation workflow.",
+  "extended_definition": "Backup and DR policies can now be applied when creating Compute Engine VMs during the VM creation workflow.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+      "https://docs.cloud.google.com/compute/docs/containers/migrate-containers",
+      "https://docs.cloud.google.com/compute/docs/containers/prevent-konlet-vms"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate containers that were deployed on VMs during VM creation \\_|\\_ Compute\\",
+        "url": "https://docs.cloud.google.com/compute/docs/containers/migrate-containers",
+        "source_id": "site-docs-reference-2",
+        "final_score": 199,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Deprecated options for configuring containers on VMs When you configure a container during VM creation, Compute Engine uses the container startup agent to read the gce-container-declaration metadata that stores the container information, and to deploy the container on the VM.",
+          "Home Documentation Compute Compute Engine Guides Send feedback Migrate containers that were deployed on VMs during VM creation Stay organized with collections Save and categorize content based on your preferences.",
+          "Example: Create the instance template that uses a startup script gcloud compute instance-templates create startup-template \\ --machine-type=e2-medium \\ --image-family=cos-stable \\ --image-project=cos-cloud \\ --metadata-from-file=startup-script=./startup script.sh Create the managed instance group gcloud compute instance-groups managed create startup-mig \\ --template=startup-template \\ --size=2 \\ --zone=us-central1-a Terraform Use the google compute instance template and google compute instance group manager resources to create an instance template and a MIG, as shown in the following example: Example : resource \"google compute instance template\" \"startup template\" { name prefix = \"startup-template-\" machine type = \"e2-medium\" disk { source image = \"cos-cloud/cos-stable\" auto delete = true boot = true } network interface { network = \"default\" } metadata = { startup-script = file(\"./startup script.sh\") } } resource \"google compute instance group manager\" \"startup mig\" { name = \"startup-mig\" base instance name = \"startup-vm\" zone = \"us-central1-a\" version { instance template = google compute instance template.startup template.id } target size = 2 } Test and clean up After successful creation of a VM or a MIG, validate that your application is running on the container and working as expected."
+        ]
+      },
+      {
+        "title": "\"Prevent creation of VMs that use the container metadata \\_|\\_ Compute Engine\\",
+        "url": "https://docs.cloud.google.com/compute/docs/containers/prevent-konlet-vms",
+        "source_id": "site-docs-reference-2",
+        "final_score": 179,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This document describes how to do the following: Enforce an organization policy to disable the creation of Compute Engine instances that use the container startup agent.",
+          "Home Documentation Compute Compute Engine Guides Send feedback Prevent creation of VMs that use the container metadata Stay organized with collections Save and categorize content based on your preferences.",
+          "Select the Disable creation of Compute Engine instances that use the deprecated container startup agent (konlet) constraint from the list of constraints."
+        ]
+      },
+      {
+        "title": "\"Protect and recover SAP HANA databases in Compute Engine instances \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "source_id": "site-docs-reference",
+        "final_score": 173,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Advanced Policy Settings specific to HANA databases on Compute Engine Persistent Disks The policy template needs these specific advanced settings.",
+          "Deploy Backup and DR Service first Before you begin, you must read and complete the following procedures: Plan a Backup and DR deployment Prepare to deploy Backup and DR Deploy Backup and DR See how Backup and DR Service works Then see how Backup and DR Service works by going through Get started with Backup and DR: protect and recover a Compute Engine instance .",
+          "Install the Backup and DR agent on the Compute Engine Create a backup plan for the SAP HANA database Discover and protect SAP HANA databases Mount an SAP HANA backup image as a standard mount Restore SAP HANA databases Install the Backup and DR agent on the host The Backup and DR agent connects the Compute Engine instance to the backup/recovery appliance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "containers.image",
+      "docker.io",
+      "metadata.items",
+      "script.sh",
+      "template.id",
+      "template.startup"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers",
+        "https://docs.cloud.google.com/compute/docs/containers/prevent-konlet-vms",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers",
+        "https://docs.cloud.google.com/compute/docs/containers/prevent-konlet-vms",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers",
+        "https://docs.cloud.google.com/compute/docs/containers/prevent-konlet-vms",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers",
+        "https://docs.cloud.google.com/compute/docs/containers/prevent-konlet-vms",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers",
+        "https://docs.cloud.google.com/compute/docs/containers/prevent-konlet-vms",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers",
+        "https://docs.cloud.google.com/compute/docs/containers/prevent-konlet-vms",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
+      ]
+    }
+  ]
+}

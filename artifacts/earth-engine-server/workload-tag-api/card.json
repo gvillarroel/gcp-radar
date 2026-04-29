@@ -1,0 +1,112 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:09.652Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server",
+  "feature_name": "Workload tag API",
+  "feature_slug": "workload-tag-api",
+  "summary": "This API labels computations and exports with a workload tag that is visible in Google Cloud Console.",
+  "extended_definition": "This API labels computations and exports with a workload tag that is visible in Google Cloud Console.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/best_practices",
+      "https://developers.google.com/earth-engine/guides/cost_controls",
+      "https://developers.google.com/earth-engine/guides/playground"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cost controls \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/cost_controls",
+        "source_id": "site-docs-root",
+        "final_score": 63,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returned error messages After you set a daily limit, Earth Engine returns the following error message when you exceed it: Your usage exceeded the custom quota for 'earthengine.googleapis.com/daily eecu usage time', which is adjustable by your administrator in the Google Cloud console: https://console.cloud.google.com/quotas/?project= .",
+          "Fine-grained monitoring and alerting If you need to control and monitor costs at a finer-grain than the daily limit , the following recipes require more set-up but enable alerting and cancelation at the workload tag and batch task level.",
+          "Recipe: Chat notification for workload tag usage This example shows how to wire up a chat notification (e.g., a Google Chat message or a Slack message) if the Earth Engine compute usage for a given workload tag exceeds a threshold."
+        ]
+      },
+      {
+        "title": "Earth Engine Code Editor \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/playground",
+        "source_id": "site-docs-root",
+        "final_score": 58,
+        "relevance": "",
+        "evidence_snippets": [
+          "Notice the end of the following two URLs, the first sets the debug variable as false and the second sets it as true ; visit both links and notice that the debug checkbox in the console is not checked in the first, and is checked in the second, changing the behavior of each script. https :// code . earthengine . google . com / 5695887aad76979388a723a85339fbf2 # debug = false ; https :// code . earthengine . google . com / 5695887aad76979388a723a85339fbf2 # debug = true ; This feature can be used to set map zoom and center, as well as other behaviors you might want to customize when sending links to particular people or groups.",
+          "The Code Editor has the following elements (illustrated in Figure 1): JavaScript code editor Map display for visualizing geospatial datasets API reference documentation (Docs tab) Git -based Script Manager (Scripts tab) Console output (Console tab) Task Manager (Tasks tab) to handle long-running queries Interactive map query (Inspector tab) Search of the data archive or saved scripts Geometry drawing tools Figure 1.",
+          "JavaScript editor The JavaScript editor will: Format and highlight code as you type Underline code with problems, offer fixes and other hints for correct syntax Autocomplete pairs of quotes, brackets and parentheses Offer code completion hints for Earth Engine functions Above the code editor are buttons for running the script, saving the script, resetting the output map and console, and getting a link to the script."
+        ]
+      },
+      {
+        "title": "Coding Best Practices \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/best_practices",
+        "source_id": "site-docs-root",
+        "final_score": 55,
+        "relevance": "",
+        "evidence_snippets": [
+          "Image ( 'projects/google/Logistic regression stack 0b8023b0af6c1b0ac7b5be649b54db06' ); // Take a very small sample first, to debug. var testSample = exportedStack . addBands ( loss16 ). stratifiedSample ({ numPoints : 1 , classBand : 'loss16' , region : testRegion , scale : 30 , geometries : true }); print ( testSample ); // Check this in the console. // Take a large sample. var sample = exportedStack . addBands ( loss16 ). stratifiedSample ({ numPoints : 10000 , classBand : 'loss16' , region : geometry , scale : 30 , }); // Export the large sample...",
+          "FeatureCollection ( 'projects/google/demo landcover labels' ); // Increase the data a little bit, possibly introducing noise. labels = labels . map ( function ( f ) { return f . buffer ( 100 , 10 ); }); var bands = [ 'B2' , 'B3' , 'B4' , 'B5' , 'B6' , 'B7' ]; var data = composite . select ( bands ). sampleRegions ({ collection : labels , properties : [ 'landcover' ], scale : 30 }); // Add a column of uniform random numbers called 'random'. data = data . randomColumn (); // Partition into training and testing. var training = data . filter ( ee .",
+          "Don't do this: labels = labels . map ( function ( f ) { return f . buffer ( 100000 , 1000 ); }); var bands = [ 'B2' , 'B3' , 'B4' , 'B5' , 'B6' , 'B7' ]; var training = composite . select ( bands ). sampleRegions ({ collection : labels , properties : [ 'landcover' ], scale : 30 }); var classifier = ee ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "console.cloud.google.com",
+      "developers.google.com",
+      "e.g",
+      "earthengine.googleapis.com",
+      "ee.String"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/cost_controls",
+        "https://developers.google.com/earth-engine/guides/best_practices",
+        "https://developers.google.com/earth-engine/guides/playground"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/cost_controls",
+        "https://developers.google.com/earth-engine/guides/best_practices",
+        "https://developers.google.com/earth-engine/guides/playground"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/cost_controls",
+        "https://developers.google.com/earth-engine/guides/best_practices",
+        "https://developers.google.com/earth-engine/guides/playground"
+      ]
+    }
+  ]
+}

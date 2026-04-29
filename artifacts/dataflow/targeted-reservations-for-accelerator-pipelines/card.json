@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:03.460Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Targeted reservations for accelerator pipelines",
+  "feature_slug": "targeted-reservations-for-accelerator-pipelines",
+  "summary": "Dataflow supports specifically targeted Compute Engine reservations for pipelines that use GPUs or TPUs.",
+  "extended_definition": "Dataflow supports specifically targeted Compute Engine reservations for pipelines that use GPUs or TPUs.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/cuds",
+      "https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"BigQuery to Clickhouse template \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse",
+        "source_id": "site-api-reference",
+        "final_score": 46,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BATCH , displayName = \"BigQuery to ClickHouse\" , description = \"The BigQuery to ClickHouse template is a batch pipeline that ingests data from a BigQuery table into ClickHouse table. \" + \"The template can either read the entire table or read specific records using a supplied query.\" , optionsClass = BigQueryToClickHouseOptions . class , skipOptions = { \"javascriptTextTransformReloadIntervalMinutes\" , \"pythonExternalTextTransformGcsPath\" , \"pythonExternalTextTransformFunctionName\" }, flexContainerName = \"bigquery-to-clickhouse\" , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse\" , contactInformation = \"https://cloud.google.com/support\" , preview = true , requirements = { \"The source BigQuery table must exist.\" , \"The ClickHouse target table must exist prior running.\" , \"This ClickHouse target table must have the exact same column names as the the source table/query.\" }) public class BigQueryToClickHouse { private static final Logger log = LoggerFactory . getLogger ( BigQueryToClickHouse . class ); / Main entry point for pipeline execution. @param args Command line arguments to the pipeline. / public static void main ( String [] args ) { UncaughtExceptionLogger . register (); BigQueryToClickHouseOptions options = PipelineOptionsFactory . fromArgs ( args ) . withValidation () . as ( BigQueryToClickHouseOptions . class ); run ( options ); } / Runs the pipeline with the supplied options. @param options The execution parameters to the pipeline. @return The result of the pipeline execution. / private static PipelineResult run ( BigQueryToClickHouseOptions options ) { try { checkArgument ( ! options . getJdbcUrl (). isEmpty (), \"The ClickHouse JDBC url must have the following template: jdbc:clickhouse://host:port/schema\" ); checkArgument ( ! options . getClickHouseTable (). isEmpty (), \"ClickHouse target table name is empty.",
+          "POST h tt ps : //dataflow.googleapis.com/v1b3/projects/ PROJECT ID /locations/ LOCATION /flexTemplates:launch { \"launch parameter\" : { \"jobName\" : \" JOB NAME \" , \"parameters\" : { \"jdbcUrl\" : \" JDBC URL \" , \"clickHouseUsername\" : \" CLICKHOUSE USERNAME \" , \"clickHouseTable\" : \" CLICKHOUSE TABLE \" }, \"containerSpecGcsPath\" : \"gs://dataflow-templates- LOCATION / VERSION /flex/BigQuery to Clickhouse\" , } } Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice LOCATION : the region where you want to deploy your Dataflow job—for example, us-central1 VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.",
+          "In your shell or terminal, run the template: gcloud dataflow flex-template run JOB NAME \\ --project = PROJECT ID \\ --region = REGION NAME \\ --template-file-gcs-location = gs://dataflow-templates- REGION NAME / VERSION /flex/BigQuery to Clickhouse \\ --parameters \\ jdbcUrl = JDBC URL , \\ clickHouseUsername = CLICKHOUSE USERNAME , \\ clickHouseTable = CLICKHOUSE TABLE Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice REGION NAME : the region where you want to deploy your Dataflow job—for example, us-central1 VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes."
+        ]
+      },
+      {
+        "title": "Use Eventarc to manage Dataflow jobs \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc",
+        "source_id": "site-docs-reference-2",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following shows an example payload: { \"id\" : \"2023-04-13 16 28 37-12345678\" , \"projectId\" : \"my-project\" , \"name\" : \"job1\" , \"currentState\" : \"JOB STATE QUEUED\" , \"currentStateTime\" : \"2023-04-13T23:28:37.437622Z\" , \"createTime\" : \"2023-04-13T23:28:37.437622Z\" , \"location\" : \"us-central1\" , \"startTime\" : \"2023-04-13T23:28:37.437622Z\" } For more information about job states, see the following topics: JobState Life of a Dataflow job What's next Design Dataflow pipeline workflows .",
+          "Create a trigger To create an Eventarc trigger for Dataflow job state changes, refer to one of the following documents: Route Dataflow events to Cloud Run Route Dataflow events to Google Kubernetes Engine Route Dataflow events to Workflows Create a trigger for Cloud Run functions Optionally, you can filter events by Dataflow job ID.",
+          "Home Documentation Data analytics Cloud Dataflow Guides Send feedback Use Eventarc to manage Dataflow jobs Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Committed use discounts \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/cuds",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 40,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resources eligible for Dataflow CUDs Note: While Dataflow Committed Use Discounts (CUDs) don't apply to GPUs and TPUs, you can apply resource-based CUDs for these accelerators by purchasing Compute Engine resource-based commitments with specifically targeted reservations, and using these reservations with Dataflow.",
+          "For more information, see Use Compute Engine reservations with Dataflow .",
+          "Dataflow CUDs apply to your spending on the following resources: Worker CPU and memory for streaming jobs Streaming Engine data processed Streaming Engine compute units Data Compute Units (DCUs) for Dataflow Prime streaming jobs Dataflow CUDs don't apply to your spending on the following resources: Worker CPU and memory for batch and FlexRS jobs Dataflow Shuffle data processed Data Compute Units (DCUs) for Dataflow Prime batch jobs Persistent Disk storage GPUs and TPUs Snapshots Confidential VMs For a list of applicable SKUs, see Dataflow CUD Eligible SKUs ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataflow.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/cuds",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse",
+        "https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/cuds",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse",
+        "https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc"
+      ]
+    }
+  ]
+}

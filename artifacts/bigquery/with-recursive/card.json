@@ -1,0 +1,113 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "WITH RECURSIVE",
+  "feature_slug": "with-recursive",
+  "summary": "The WITH RECURSIVE clause lets queries include recursive common table expressions; WITH RECURSIVE enables recursive common table expressions in Google Standard SQL for BigQuery.",
+  "extended_definition": "The WITH RECURSIVE clause lets queries include recursive common table expressions; WITH RECURSIVE enables recursive common table expressions in Google Standard SQL for BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+      "https://docs.cloud.google.com/bigquery/docs/wildcard-table-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Query syntax \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "source_id": "site-docs-reference",
+        "final_score": 234,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "WITH RECURSIVE T1 AS (( SELECT 1 AS n ) UNION ALL ( SELECT n + 1 FROM T1 ORDER BY n )) SELECT FROM T1 ; -- Error The following recursive CTE is disallowed because table T1 can't be recursively referenced from inside an inner WITH clause WITH RECURSIVE T1 AS (( SELECT 1 AS n ) UNION ALL ( WITH t AS ( SELECT n FROM T1 ) SELECT FROM t )) SELECT FROM T1 -- Error CTE rules and constraints Common table expressions (CTEs) can be referenced inside the query expression that contains the WITH clause.",
+          "Examples SELECT FROM UNNEST ( ARRAY<STRING> [ 'a' , 'b' , 'c' , 'd' , 'e' ] ) AS letter ORDER BY letter ASC LIMIT 2 ; / ---------+ letter +---------+ a b +--------- / SELECT FROM UNNEST ( ARRAY<STRING> [ 'a' , 'b' , 'c' , 'd' , 'e' ] ) AS letter ORDER BY letter ASC LIMIT 3 OFFSET 1 ; / ---------+ letter +---------+ b c d +--------- / WITH clause WITH [ RECURSIVE ] { non recursive cte recursive cte }[, ...] A WITH clause contains one or more common table expressions (CTEs).",
+          "Examples In this example, a WITH clause defines two non-recursive CTEs that are referenced in the related set operation, where one CTE is referenced by each of the set operation's input query expressions: WITH subQ1 AS ( SELECT SchoolID FROM Roster ), subQ2 AS ( SELECT OpponentID FROM PlayerStats ) SELECT FROM subQ1 UNION ALL SELECT FROM subQ2 You can break up more complex queries into a WITH clause and WITH SELECT statement instead of writing nested table subqueries."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 170,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples The following table function takes an INT64 parameter that is used to filter the results of a query: CREATE OR REPLACE TABLE FUNCTION mydataset . names by year ( y INT64 ) AS SELECT year , name , SUM ( number ) AS total FROM bigquery-public-data.usa names.usa 1910 current WHERE year = y GROUP BY year , name The following example specifies the return TABLE type in the RETURNS clause: CREATE OR REPLACE TABLE FUNCTION mydataset . names by year ( y INT64 ) RETURNS TABLE<name STRING , year INT64 , total INT64 > AS SELECT year , name , SUM ( number ) AS total FROM bigquery-public-data.usa names.usa 1910 current WHERE year = y GROUP BY year , name The following example computes total sales for items with the name item name from the orders table: CREATE TABLE FUNCTION mydataset . compute sales ( orders TABLE<item STRING , sales INT64 > , item name STRING ) AS ( SELECT SUM ( sales ) AS total sales , item FROM orders WHERE item = item name GROUP BY item ); CREATE PROCEDURE statement Creates a new procedure , which is a block of statements that can be called from other queries.",
+          "The source table must be one of the following: A table A table clone A table snapshot The FOR SYSTEM TIME AS OF clause can only be used when creating a snapshot of a table or table clone; it can't be used when making a copy of a table snapshot. snapshot option list The option list lets you set table snapshot options such as a label and an expiration time.",
+          "This property can only be set if the table is partitioned. require partition filter BOOL Example: require partition filter=true Specifies whether queries on this table must include a predicate filter that filters on the partitioning column."
+        ]
+      },
+      {
+        "title": "\"Query multiple tables using a wildcard table \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/wildcard-table-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "However, filters on TABLE SUFFIX that include conditions without constant expressions don't limit the number of tables scanned in a wildcard table.",
+          "Queries with wildcard tables support the TABLE SUFFIX pseudocolumn in the WHERE clause.",
+          "However, the following query does not limit the scan based on the second filter condition, TABLE SUFFIX = (SELECT SUBSTR(MAX(table name), LENGTH('gsod19') + 1) FROM bigquery-public-data.noaa gsod.INFORMATION SCHEMA.TABLES WHERE table name LIKE 'gsod194%') , because it is a dynamic expression: #standardSQL Scans all tables with names that fall between gsod1940 and gsod1960 SELECT ROUND (( max - 32 ) 5 / 9 , 1 ) celsius FROM bigquery-public-data.noaa gsod.gsod19 WHERE TABLE SUFFIX BETWEEN '40' AND '60' AND TABLE SUFFIX = ( SELECT SUBSTR ( MAX ( table name ), LENGTH ( 'gsod19' ) + 1 ) FROM bigquery-public-data.noaa gsod.INFORMATION SCHEMA.TABLES WHERE table name LIKE 'gsod194%' ) As a workaround, you can perform two separate queries instead; for example: First query: standardSQL Get the list of tables that match the required table name prefixes SELECT SUBSTR(MAX(table name), LENGTH('gsod19') + 1) FROM bigquery-public-data.noaa gsod.INFORMATION SCHEMA.TABLES WHERE table name LIKE 'gsod194%' Second query: standardSQL Construct the second query based on the values from the first query SELECT ROUND((max-32) 5/9,1) celsius FROM bigquery-public-data.noaa gsod.gsod19 WHERE TABLE SUFFIX = '49' These example queries use the INFORMATION SCHEMA.TABLES view."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.noaa",
+      "data.usa",
+      "gsod.gsod19",
+      "gsod.gsod194",
+      "gsod.INFORMATION",
+      "names.usa"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/wildcard-table-reference"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/wildcard-table-reference"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/wildcard-table-reference"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:06.489Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Dialogflow CX LINE integration",
+  "feature_slug": "dialogflow-cx-line-integration",
+  "summary": "Dialogflow CX includes an integration with LINE messaging.",
+  "extended_definition": "Dialogflow CX includes an integration with LINE messaging.",
+  "lifecycle": {
+    "latest_feature_date": "2021-04-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+      "https://docs.cloud.google.com/dialogflow/es/docs/analytics",
+      "https://docs.cloud.google.com/dialogflow/es/docs/tutorials/sequences/create-fulfillment-using-webhook"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Analytics \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/analytics",
+        "source_id": "site-iam-reference",
+        "final_score": 74,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: OK PERMISSION DENIED INTERNAL DEADLINE EXCEEDED Integrations view This view charts session and interaction counts for all requests (except Google Assistant) by integration type .",
+          "Common metrics The following common metrics are displayed on multiple chart types: Interactions : For most views, interactions include detect intent request counts via direct API calls and indirect calls via integrations (except for Google Assistant).",
+          "For example, consider that you have three intents: A , B , and C : If A is always the first intent matched in a session, the chart will show a 100% intent path line from session start to A ."
+        ]
+      },
+      {
+        "title": "\"General agent design best practices \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+        "source_id": "site-docs-root",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "Dialogflow CX API If none of the ready-to-use integrations are suitable, or you would like to customize the interface for your system, you can use the Dialogflow CX API directly .",
+          "These integrations can provide a text agent that you can embed on your website, connect with other messaging platforms, or provide a telephony interface.",
+          "If you use an integration, you do not need to directly call the Dialogflow CX API, as integrations handle this for you."
+        ]
+      },
+      {
+        "title": "\"Create fulfillment using webhook \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/tutorials/sequences/create-fulfillment-using-webhook",
+        "source_id": "site-iam-reference",
+        "final_score": 64,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See https://cloud.google.com/dialogflow/es/docs/reference/common-types#webhookrequest @param response: Express JS response object @param ssml: SSML string. @example: sendSSML(request, response, 'hello') Will call response.json() with SSML payload '<speak>hello</speak>' / function sendSSML ( request , response , ssml ) { ssml = <speak> ${ ssml } < /speak> ; if ( request . originalDetectIntentRequest . source == 'GOOGLE TELEPHONY' ) { // Dialogflow Phone Gateway Response // see https://cloud.google.com/dialogflow/es/docs/reference/rpc/google.cloud.dialogflow.v2beta1#google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech response . json ({ fulfillmentMessages : [{ platform : 'TELEPHONY' , telephonySynthesizeSpeech : { ssml : ssml } }] }); } else { // Some CCAI telephony partners accept SSML in a plain text response. // Check your specific integration and customize the payload here. response . json ({ fulfillmentText : ssml }); } } / Extract an output context from the incoming WebhookRequest. @param request: Dialogflow WebhookRequest JSON with camelCase keys.",
+          "Copy and paste the JSON content below to the package.json tab of the inline editor: { \"name\": \"DialogflowFirebaseWebhook\", \"description\": \"Firebase Webhook dependencies for a Dialogflow agent.\", \"version\": \"0.0.1\", \"private\": true, \"license\": \"Apache Version 2.0\", \"author\": \"Google Inc.\", \"engines\": { \"node\": \"10\" }, \"scripts\": { \"lint\": \"semistandard --fix \\\" / .js\\\"\", \"start\": \"firebase deploy --only functions\", \"deploy\": \"firebase deploy --only functions\" }, \"dependencies\": { \"firebase-functions\": \"^2.0.2\", \"firebase-admin\": \"^5.13.1\" } } Delete the existing code in the index.js tab of the inline editor.",
+          "Create a webhook with the inline editor Dialogflow has an inline editor in the console that allows you to directly write NodeJS code, which then can be deployed to run as a webhook on Cloud Functions ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2",
+      "index.js",
+      "package.json",
+      "response.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/analytics",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+        "https://docs.cloud.google.com/dialogflow/es/docs/tutorials/sequences/create-fulfillment-using-webhook"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/analytics",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+        "https://docs.cloud.google.com/dialogflow/es/docs/tutorials/sequences/create-fulfillment-using-webhook"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/analytics",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+        "https://docs.cloud.google.com/dialogflow/es/docs/tutorials/sequences/create-fulfillment-using-webhook"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/analytics",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+        "https://docs.cloud.google.com/dialogflow/es/docs/tutorials/sequences/create-fulfillment-using-webhook"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/analytics",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+        "https://docs.cloud.google.com/dialogflow/es/docs/tutorials/sequences/create-fulfillment-using-webhook"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/analytics",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+        "https://docs.cloud.google.com/dialogflow/es/docs/tutorials/sequences/create-fulfillment-using-webhook"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/analytics",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+        "https://docs.cloud.google.com/dialogflow/es/docs/tutorials/sequences/create-fulfillment-using-webhook"
+      ]
+    }
+  ]
+}

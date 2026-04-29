@@ -1,0 +1,97 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:46.721Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build",
+  "feature_name": "Cloud Build repositories 2nd gen repository connection management interfaces",
+  "feature_slug": "cloud-build-repositories-2nd-gen-repository-connection-management-interfaces",
+  "summary": "Cloud Build repositories (2nd gen) now support creating and managing repository connections via Cloud Console, gcloud, and the Cloud Build API.",
+  "extended_definition": "Cloud Build repositories (2nd gen) now support creating and managing repository connections via Cloud Console, gcloud, and the Cloud Build API.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center",
+      "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-server",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient.FetchLinkableRepositoriesFixedSizeCollection"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connect to a Bitbucket Data Center repository \\_|\\_ Cloud Build \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center",
+        "source_id": "site-docs-root-2",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enter the following command to retrieve the webhook ID: gcloud alpha builds enterprise-config bitbucketserver describe CONFIG NAME --region = REGION Where: CONFIG NAME is the name of the Bitbucket Data Center config REGION is the region of the Bitbucket Data Center host connection What's next Learn how to build repositories from Bitbucket Data Center .",
+          "Connect to a Bitbucket Data Center repository Console To connect a Bitbucket Data Center repository to Cloud Build using the Google Cloud console: Open the Repositories page in the Google Cloud console.",
+          "If the Bitbucket Data Center repository is connected successfully, you can see the connected repository in the response.bitbucketServerConnectedRepositories field."
+        ]
+      },
+      {
+        "title": "\"Connect to a Bitbucket Server repository \\_|\\_ Cloud Build \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-server",
+        "source_id": "site-docs-root-2",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "Connecting to a Bitbucket Server repository Console To connect a Bitbucket Server repository to Cloud Build using the Google Cloud console: Open the Repositories page in the Google Cloud console.",
+          "If the Bitbucket Server repository is connected successfully, you can see the connected repository in the response.bitbucketServerConnectedRepositories field.",
+          "Complete the following steps to connect your Bitbucket Server repository: Region : Select a region your connection is in."
+        ]
+      },
+      {
+        "title": "\"Class RepositoryManagerClient.FetchLinkableRepositoriesFixedSizeCollection\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient.FetchLinkableRepositoriesFixedSizeCollection",
+        "source_id": "site-java-reference",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "FetchLinkableRepositoriesFixedSizeCollection > Inheritance java.lang.Object > AbstractFixedSizeCollection > RepositoryManagerClient.FetchLinkableRepositoriesFixedSizeCollection Inherited Members AbstractFixedSizeCollection.createCollection(List<PageT>,int) AbstractFixedSizeCollection.getCollectionSize() AbstractFixedSizeCollection.getNextCollection() AbstractFixedSizeCollection.getNextPageToken() AbstractFixedSizeCollection.getValues() AbstractFixedSizeCollection.hasNextCollection() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createCollection(List<RepositoryManagerClient.FetchLinkableRepositoriesPage> pages, int collectionSize) protected RepositoryManagerClient .",
+          "FetchLinkableRepositoriesPage > pages , int collectionSize ) Parameters Name Description pages List < FetchLinkableRepositoriesPage > collectionSize int Returns Type Description RepositoryManagerClient.FetchLinkableRepositoriesFixedSizeCollection Overrides AbstractFixedSizeCollection<RequestT,ResponseT,ResourceT,PageT,CollectionT>.createCollection(List<PageT> pages, int collectionSize) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Developer tools Java Client libraries Send feedback Class RepositoryManagerClient.FetchLinkableRepositoriesFixedSizeCollection (3.90.0) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient.FetchLinkableRepositoriesFixedSizeCollection",
+      "com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient.FetchLinkableRepositoriesPage",
+      "com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient.FetchLinkableRepositoriesPagedResponse",
+      "com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient.ListConnectionsFixedSizeCollection",
+      "java.lang.Object",
+      "response.bitbucketServerConnectedRepositories"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-server",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient.FetchLinkableRepositoriesFixedSizeCollection"
+      ]
+    }
+  ]
+}

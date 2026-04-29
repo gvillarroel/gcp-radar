@@ -1,0 +1,110 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:13.819Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Holidays messaging menu",
+  "feature_slug": "holidays-messaging-menu",
+  "summary": "Administrators can customize voice and text greetings for each holiday.",
+  "extended_definition": "Administrators can customize voice and text greetings for each holiday.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Queue and menu setup \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup",
+        "source_id": "site-docs-reference",
+        "final_score": 148,
+        "relevance": "",
+        "evidence_snippets": [
+          "Queue keywords When an end-user texts a Top-level queue, the system automatically prompts the end-user to enter a number associated with a sub queue(based on the order in which you have listed your queues on the Queue Menu Setting page.) You can also add keywords to queues.",
+          "Queue menus can be set to route to a specific group of agents, deflect to messages, other queues, phone numbers, or voicemail, and many features can be applied at the queue level for specific customization.",
+          "Add and edit queue menus You can build and edit the structure of your menu just like using a text editor by using your keyboard."
+        ]
+      },
+      {
+        "title": "\"Customizing languages, recordings, & messages \\_|\\_ Google Cloud Contact\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages",
+        "source_id": "site-docs-reference-2",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the text field, enter the IVR queue menu readout message—for example, Press one for product issues, press two for order status, press three for billing information. .",
+          "In the Settings pane, for IVR Queue Menu Readout , do one of the following: To configure a text-to-speech message, do the following: Select Text-to-speech .",
+          "To upload an audio recording for the IVR queue menu readout, do the following: Select Customized record file ."
+        ]
+      },
+      {
+        "title": "\"Android SDK guide \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can customize the chat header title text by using the following options: <item name = \"ujet chatCustomHeaderTextColor\" >@color/chatHeaderTextLightMode</item> <item name = \"ujet chatCustomHeaderTextColowDark\" >@color/chatHeaderTextDarkMode</item> <item name = \"ujet chatCustomHeaderTextSize\" >16sp</item> <item name = \"ujet chatCustomHeaderTextStyle\" >bold</item> You can customize Virtual Agent quick replies in the chat UI by using the following options: <item name = \"ujet colorChatQuickReplyButtonBackground\" >@color/chatQuickReplyButtonBackgroundLightMode</item> <item name = \"ujet colorChatQuickReplyButtonBackgroundDark\" >@color/chatQuickReplyButtonBackgroundDarkMode</item> <item name = \"ujet colorChatQuickReplyButtonPressedBackground\" >@color/chatQuickReplyButtonPressedBackgroundLightMode</item> <item name = \"ujet colorChatQuickReplyButtonPressedBackgroundDark\" >@color/chatQuickReplyButtonPressedBackgroundDarkMode</item> <item name = \"ujet colorChatQuickReplyButtonText\" >@color/chatQuickReplyButtonTextLightMode</item> <item name = \"ujet colorChatQuickReplyButtonTextDark\" >@color/chatQuickReplyButtonTextDarkMode</item> <item name = \"ujet colorChatQuickReplyButtonPressedText\" >@color/chatQuickReplyButtonPressedTextLightMode</item> <item name = \"ujet colorChatQuickReplyButtonPressedTextDark\" >@color/chatQuickReplyButtonPressedTextDarkMode</item> <item name = \"ujet colorChatQuickReplyButtonStroke\" >@color/chatQuickReplyButtonStrokeLightMode</item> <item name = \"ujet colorChatQuickReplyButtonStrokeDark\" >@color/chatQuickReplyButtonStrokeDarkMode</item> <item name = \"ujet chatQuickReplyButtonTypeFace\" >Kreon-Regular.ttf</item> <item name = \"ujet chatQuickReplyButtonStrokeWidth\" >3dp</item> <item name = \"ujet chatQuickReplyButtonCornerRadius\" >3dp</item> <item name = \"ujet chatQuickReplyButtonVerticalMargin\" >0dp</item> <item name = \"ujet chatQuickReplyButtonHorizontalPadding\" >10dp</item> <item name = \"ujet chatQuickReplyButtonVerticalPadding\" >1dp</item> <item name = \"ujet chatQuickReplyButtonAlignment\" >right</item> Content cards You can add customization for content cards along with chat customization.",
+          "The following is an example of a push notification message: { \"call id\" : 12345 , \"ujet noti type\" : \"connect call\" , \"noti type\" : \"connect call\" , \"call type\" : \"ScheduledCall\" , \"fail reason\" : \"none\" , \"fail details\" : \"none\" } Handle FCM message public class YourFirebaseMessagingService extends FirebaseMessagingService { private UjetPushHandler ujetPushHandler ; @Override public void onCreate () { super.onCreate () ; this.ujetPushHandler = new UjetPushHandler ( this ) ; } @Override public void onMessageReceived ( RemoteMessage remoteMessage ) { if ( ujetPushHandler.handle ( remoteMessage )) { // Handled by CCAI Platform } else { // Handle your push notification message in here } } } Handle GCM message public class YourGcmListenerService extends GcmListenerService { private UjetPushHandler ujetPushHandler ; @Override public void onCreate () { super.onCreate () ; this.ujetPushHandler = new UjetPushHandler ( this ) ; } @Override public void onMessageReceived ( String s, Bundle bundle ) { if ( ujetPushHandler.handle ( bundle )) { // Handled by CCAI Platform } else { // Handle your message } } } Handle GCM message in GcmReceiver (Old way) public class YourGcmReceiver extends WakefulBroadcastReceiver { private UjetPushHandler ujetPushHandler ; @Override public void onReceive ( Context context, Intent intent ) { ujetPushHandler = new UjetPushHandler ( context ) ; if ( ujetPushHandler.handle ( intent.getExtras ())) { // Handled by CCAI Platform } else { // Handle your message } } } Start the application Note: All previous start methods are deprecated and replaced with Ujet.start(@NonNull UjetStartOptions) .",
+          "0 = Show everywhere, 1 = Hide from the options menu, 2 = Hide from the post chat screen, 3 = Hide from both the options menu and the post chat screen. .setPushNotificationsAllowed ( true ) .build () ; //The following customizes various attributes in chat UI ChatStyles chatStyles = new ChatStyles () ; chatStyles.setBackButton ( new BackButtonStyle ( false, \"ujet agent sample\" )) ; //customizes back button styles chatStyles.setHeader ( ... ) ; //customizes chat header styles chatStyles.setAgentMessageBubbles ( ... ) ; //customizes agent messages styles chatStyles.setConsumerMessageBubbles ( ... ) ; //customizes consumer messages styles chatStyles.setSystemMessages ( ... ) ; //customizes system messages styles chatStyles.setEndChatButton ( ... ) ; //customizes end chat button styles chatStyles.setTimeStamps ( ... ) ; //customizes timestamp styles chatStyles.setUserInputBar ( ... ) ; //customizes user input bar styles UjetOption ujetOption = new UjetOption.Builder () .setUjetStylesOptions ( new UjetStylesOptions.Builder () .setChatStyles ( chatStyles ) .build () ) //The following customizes various attributes in chat UI using json file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "intent.getExtras",
+      "super.onCreate",
+      "this.ujetPushHandler"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.517Z",
+  "source_step08_card": "data/step-08/current/products/apigee-hybrid/card.json",
+  "product_name": "Apigee hybrid",
+  "product_slug": "apigee-hybrid",
+  "feature_name": "Artifact Registry-hosted Java callout JAR dependencies",
+  "feature_slug": "artifact-registry-hosted-java-callout-jar-dependencies",
+  "summary": "The JAR dependencies required for creating Java callouts are now securely hosted in Artifact Registry.",
+  "extended_definition": "The JAR dependencies required for creating Java callouts are now securely hosted in Artifact Registry.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/develop/how-create-java-callout",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+      "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "How to create Java Callout \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/develop/how-create-java-callout",
+        "source_id": "site-docs-reference",
+        "final_score": 206,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Be sure that you have Maven installed: mvn - version Install the required JAR dependencies in your local Maven repo using one of the following methods: Add the following snippet to the pom.xml file to downoad the required JAR dependencies from Artifact Registry : <repositories> <repository> <id>artifact-registry</id> <url>https://us-maven.pkg.dev/apigee-release/apigee-java-callout-dependencies</url> </repository> </repositories> <dependencies> <dependency> <groupId>com.apigee.gateway.libraries</groupId> <artifactId>message-flow</artifactId> <version>1.0.0</version> <scope>compile</scope> <type>jar</type> </dependency> <dependency> <groupId>com.apigee.infra.libraries</groupId> <artifactId>expressions</artifactId> <version>1.0.0</version> <scope>compile</scope> <type>jar</type> </dependency> </dependencies> Use the following curl calls to download the required JAR dependencies from Artifact Registry : curl \"https://us-maven.pkg.dev/apigee-release/apigee-java-callout-dependencies/com/apigee/gateway/libraries/message-flow/1.0.0/message-flow-1.0.0.jar\" - v - L - o message - flow - 1.0 - 0. jar curl \"https://us-maven.pkg.dev/apigee-release/apigee-java-callout-dependencies/com/apigee/infra/libraries/expressions/1.0.0/expressions-1.0.0.jar\" - v - L - o expressions - 1.0.0 . jar Execute the script java-hello/buildsetup.sh .",
+          "This script downloads the required JAR dependencies from the Apigee GitHub repository . cd to the java-hello/callout directory.",
+          "The imported packages are required for Apigee JavaCallout code."
+        ]
+      },
+      {
+        "title": "\"Best practices for API proxy design and development with Apigee \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+        "source_id": "site-docs-reference",
+        "final_score": 82,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Java Warning: For JavaCallout policies, reliance on Java libraries that are included with Apigee is not supported.",
+          "Java Warning: For JavaCallout policies, reliance on Java libraries that are included with Apigee is not supported.",
+          "If inline logic requires better performance than JavaScript or PythonScript, use JavaCallout."
+        ]
+      },
+      {
+        "title": "\"New Apigee hybrid installation and administration Preview \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 73,
+        "relevance": "",
+        "evidence_snippets": [
+          "REQUIRED Apply the changes: kubectl apply -k overlays/instances/{INSTANCE NAME} Concepts Image Hub Docker container images are generally specified in the format: ${ REGISTRY HOST PATH } / ${ IMAGE NAME } : ${ IMAGE TAG } or ones that use a digest look like: ${ REGISTRY HOST PATH } / ${ IMAGE NAME } @ ${ DIGEST } Apigee uses the concept of \"Image Hub\", which in the above formats refers to the ${REGISTRY HOST PATH} .",
+          "Download setup files Download the repository and replace the bases and tools folder in the existing apigee hybrid setup with a newer one: Clone the GitHub repository preview-1 tag at https://github.com/apigee/apigee-hybrid-install/releases/tag/preview-1 The cloned repository will have a structure resembling the one described in Apigee Hybrid Setup Folder Structure : replace initialization, tools and controller folder in the existing apigee hybrid setup. export HYBRID INSTALL HOME = PATH TO PREVIOUS HYBRID INSTALL DIRECTORY mv - f bases $ HYBRID INSTALL HOME / bases mv - f tools $ HYBRID INSTALL HOME / tools Update service account permissions if needed This step is also not required every time but you will need to create a new service account or update permissions of existing service accounts if needed.",
+          "Modifications to be made: components/http-proxy/patch.yaml Following parameters can be configured under the spec.httpForwardProxy scheme : REQUIRED One of HTTP or HTTPS host : REQUIRED The Host address of your proxy port : REQUIRED The port number username : OPTIONAL The username associated with your proxy password : OPTIONAL The password for accessing the proxy Usage: If you have not yet installed Apigee Hybrid, you can continue with the installation steps and these changes will get applied in the process If you already have Apigee Hybrid installed, you will need to apply these new changes using: kubectl apply -k overlays/instances/{INSTANCE NAME} logger and metrics You can individually enable or disable logger or metrics within overlays/instances/{INSTANCE NAME}/telemetry."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "buildsetup.sh",
+      "com.apigee.gateway.libraries",
+      "com.apigee.infra.libraries",
+      "github.com",
+      "maven.pkg.dev",
+      "patch.yaml",
+      "pom.xml",
+      "spec.httpForwardProxy",
+      "v1.12"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/how-create-java-callout",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/how-create-java-callout",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/how-create-java-callout",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/how-create-java-callout",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    }
+  ]
+}

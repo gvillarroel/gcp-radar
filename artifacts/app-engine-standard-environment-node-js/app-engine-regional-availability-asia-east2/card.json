@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.164Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-node-js/card.json",
+  "product_name": "App Engine standard environment Node.js",
+  "product_slug": "app-engine-standard-environment-node-js",
+  "feature_name": "App Engine regional availability: asia-east2",
+  "feature_slug": "app-engine-regional-availability-asia-east2",
+  "summary": "App Engine applications can be deployed in the asia-east2 (Hong Kong) region.",
+  "extended_definition": "App Engine applications can be deployed in the asia-east2 (Hong Kong) region.",
+  "lifecycle": {
+    "latest_feature_date": "2018-10-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+      "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users",
+      "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"How requests are handled \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "source_id": "site-docs-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "However, this is bound by the following restrictions: App Engine reserves automatic scaling capacity for applications with low latency, where the application responds to requests in less than one second.",
+          "Handling request timeouts App Engine is optimized for applications with short-lived requests, typically those that take a few hundred milliseconds.",
+          "See the License for the specific language governing permissions and limitations under the License. from flask import Flask If entrypoint is not defined in app.yaml, App Engine will look for an app called app in main.py. app = Flask ( name ) @app . route ( \"/\" ) def hello (): \"\"\"Return a friendly HTTP greeting."
+        ]
+      },
+      {
+        "title": "\"An Overview of the Admin API \\_|\\_ App Engine Admin API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "source_id": "site-docs-reference",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": [
+          "The App Engine Admin API is a RESTful API for managing your App Engine applications regardless of programming language.",
+          "With the Admin API, you can manage your App Engine applications in manners that best suit your environment or process.",
+          "Home Technology areas App Engine Admin API Overview Send feedback An Overview of the Admin API Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Authenticating users \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users",
+        "source_id": "site-docs-reference",
+        "final_score": 26,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go Java Node.js PHP Python Ruby To authenticate users in Google Cloud applications, Google offers the following user authentication methods: Authentication Service Summary Identity Platform (recommended) Authenticate users using passwords, phone numbers, popular federated identity providers like Google, Facebook, Twitter, and any provider that supports SAML or OpenID Connect protocol.",
+          "Identity Platform Identity Platform is a customer identity and access management (CIAM) platform that lets organizations customize identity and authentication for user sign-up and sign-in in their applications.",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Authenticating users Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "main.py"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+      ]
+    }
+  ]
+}

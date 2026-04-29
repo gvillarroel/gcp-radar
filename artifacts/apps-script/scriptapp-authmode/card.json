@@ -1,0 +1,161 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.589Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "ScriptApp.AuthMode",
+  "feature_slug": "scriptapp-authmode",
+  "summary": "ScriptApp.AuthMode identifies categories of authorized services available to a triggered function.",
+  "extended_definition": "ScriptApp.AuthMode identifies categories of authorized services available to a triggered function.",
+  "lifecycle": {
+    "latest_feature_date": "2014-03-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/triggers/events",
+      "https://developers.google.com/apps-script/reference/script/auth-mode",
+      "https://developers.google.com/apps-script/reference/script/script-app"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Event Objects \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/triggers/events",
+        "source_id": "site-docs-reference",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "4034124084959907503 user A User object, representing the active user, if available ( depending on a complex set of security restrictions ). amin@example.com Edit ( simple and installable ) authMode A value from the ScriptApp.AuthMode enum.",
+          "4034124084959907503 user A User object, representing the active user, if available ( depending on a complex set of security restrictions ). amin@example.com Change ( installable ) authMode A value from the ScriptApp.AuthMode enum.",
+          "10 Form submit ( installable ) Caution: Make sure you use this form submit trigger with SpreadsheetTriggerBuilder . authMode A value from the ScriptApp.AuthMode enum."
+        ]
+      },
+      {
+        "title": "Class ScriptApp | Apps Script | Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/script/script-app",
+        "source_id": "feature-recovery-http",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Autorisation Les scripts qui utilisent cette méthode nécessitent une autorisation avec un ou plusieurs des scopes suivants : https://www.googleapis.com/auth/script.scriptapp getAuthorizationInfo(authMode) Obtient un objet qui vérifie si l'utilisateur a accordé l'autorisation pour toutes les exigences du script.",
+          "Autorisation Les scripts qui utilisent cette méthode nécessitent une autorisation avec un ou plusieurs des scopes suivants : https://www.googleapis.com/auth/script.scriptapp requireAllScopes(authMode) Valide si l'utilisateur a donné son consentement pour tous les niveaux d'accès demandés par le script.",
+          "Dans la quasi-totalité des cas, la valeur de auth Mode doit être Script App.getAuthorizationInfo(ScriptApp.AuthMode.FULL) , car aucun autre mode d'autorisation n'exige que les utilisateurs accordent une autorisation."
+        ]
+      },
+      {
+        "title": "Enum AuthMode | Apps Script | Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/script/auth-mode",
+        "source_id": "feature-recovery-http",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "Page Summary outlined_flag AuthMode is an enumeration in Apps Script that identifies the categories of authorized services triggered functions can execute.",
+          "AuthMode An enumeration that identifies which categories of authorized services Apps Script is able to execute through a triggered function.",
+          "Google Ads & Merchant Center AdSense Advanced services AdSense Management API Display & Video 360 Advanced services DV360 API DoubleClick Bid Manager Advanced services DBM Reporting API DoubleClick Campaigns Advanced services DCM/DFA Reporting and Trafficking API Shopping Content Advanced services Merchant API Google Content API for Shopping Google Data Studio Overview DataStudioApp Classes BigQueryConfig Checkbox CommunityConnector Config DebugError Field Fields GetAuthTypeResponse GetDataResponse GetSchemaResponse Info OptionBuilder SelectMultiple SelectSingle SetCredentialsResponse TextArea TextInput UserError Enums AggregationType AuthType BigQueryParameterType FieldType Google Tables Advanced services Tables API Google Tag Manager Advanced services Tag Manager API Utility services API & database connections BigQuery Advanced services BigQuery API JDBC Overview Jdbc Classes JdbcArray JdbcBlob JdbcCallableStatement JdbcClob JdbcConnection JdbcDatabaseMetaData JdbcDate JdbcParameterMetaData JdbcPreparedStatement JdbcRef JdbcResultSet JdbcResultSetMetaData JdbcRowId JdbcSQLXML JdbcSavepoint JdbcStatement JdbcStruct JdbcTime JdbcTimestamp URL Fetch Overview UrlFetchApp Classes HTTPResponse Data usability & optimization Optimization Overview LinearOptimizationService Classes LinearOptimizationConstraint LinearOptimizationEngine LinearOptimizationSolution Enums Status VariableType Utilities Overview Utilities Enums Charset DigestAlgorithm MacAlgorithm RsaAlgorithm XML Overview XmlService Classes Attribute Cdata Comment DocType Document Element EntityRef Format Namespace ProcessingInstruction Text Interfaces Content Enums ContentType HTML & content Charts Overview Charts Classes AreaChartBuilder BarChartBuilder Chart ChartOptions ColumnChartBuilder DataTable DataTableBuilder DataViewDefinition DataViewDefinitionBuilder LineChartBuilder NumberRangeFilterBuilder PieChartBuilder ScatterChartBuilder StringFilterBuilder TableChartBuilder TextStyle TextStyleBuilder Interfaces DataTableSource Enums ChartHiddenDimensionStrategy ChartMergeStrategy ChartType ColumnType CurveStyle MatchType Orientation PickerValuesLayout PointStyle Position Content Overview ContentService Classes TextOutput Enums MimeType HTML Overview google.script.history (client-side) google.script.host (client-side) google.script.run (client-side) google.script.url (client-side) HtmlService Classes HtmlOutput HtmlOutputMetaTag HtmlTemplate Enums SandboxMode XFrameOptionsMode Mail Overview MailApp Script execution & information Base Overview Browser Logger MimeType Session console Classes Blob Menu PromptResponse RgbColor Ui User Interfaces BlobSource Enums Button ButtonSet ColorType Month Weekday Cache Overview CacheService Classes Cache Lock Overview LockService Classes Lock Properties Overview PropertiesService ScriptProperties UserProperties Classes Properties Script Overview ScriptApp Classes AuthorizationInfo CalendarTriggerBuilder ClockTriggerBuilder DocumentTriggerBuilder FormTriggerBuilder Service SpreadsheetTriggerBuilder StateTokenBuilder Trigger TriggerBuilder Enums AuthMode AuthorizationStatus EventType InstallationSource TriggerSource Script project resources Automation triggers and events Simple triggers Installable triggers Event objects Manifest Overview Libraries & advanced services Web apps and API executables Sheets macros Allowlist URLs Quotas & limits Google Workspace add-ons Services Add-ons response Overview AddOnsResponseService Classes AccessoryWidget Action ActionResponse ActionResponseBuilder AddonComposeUiActionResponse AddonComposeUiActionResponseBuilder Attachment CalendarEventActionResponse CalendarEventActionResponseBuilder ChatDataActionsResponseBuilder ChatMessage Color ComposeActionResponse ComposeActionResponseBuilder CreateMessageAction DataActionsResponse DataType DriveItemsSelectedActionResponse DriveItemsSelectedActionResponseBuilder DynamicResourceDefinition EditorFileScopeActionResponse EditorFileScopeActionResponseBuilder HostAppAction Hyperlink InsertSection InsertWidget Link LinkPreview ListContainer ListItem ModifyCard Navigation Notification OpenLink RemoveSection RemoveWidget RenderAction RenderActionBuilder ResourceData ResourceField ResourceFieldsDefinitionRetrievedAction ResourceRetrievedAction ResourceType ReturnElementErrorAction ReturnOutputVariablesAction SaveWorkflowAction StyledText TextFormatChip TextFormatElement TextFormatIcon TimeStamp UniversalActionResponse UniversalActionResponseBuilder UpdateDraftActionResponse UpdateDraftActionResponseBuilder UpdateDraftBccRecipientsAction UpdateDraftBodyAction UpdateDraftCcRecipientsAction UpdateDraftSubjectAction UpdateDraftToRecipientsAction UpdateInlinePreviewAction UpdateMessageAction UpdateWidget ValueMetadata VariableData WorkflowAction WorkflowTextFormat WorkflowValidationErrorAction Enums AddonComposeUiActionType BasicDataType ComposedEmailType ContentType EndNavigation ErrorActionability ErrorRetryability FontWeight ListType OnClose OpenAs SendStatus TextStyle UpdateDraftBodyType ValidationErrorSeverity Card Overview CardService Classes Action ActionResponse ActionResponseBuilder ActionStatus Attachment AuthorizationAction AuthorizationException BorderStyle Button ButtonSet CalendarEventActionResponse CalendarEventActionResponseBuilder Card CardAction CardBuilder CardHeader CardSection CardWithId Carousel CarouselCard ChatActionResponse ChatClientDataSource ChatResponse ChatResponseBuilder ChatSpaceDataSource Chip ChipList CollapseControl Column Columns CommonWidgetAction ComposeActionResponse ComposeActionResponseBuilder Condition DataSourceConfig DatePicker DateTimePicker DecoratedText Dialog DialogAction Divider DriveDataSourceSpec DriveItemsSelectedActionResponse DriveItemsSelectedActionResponseBuilder EditorFileScopeActionResponse EditorFileScopeActionResponseBuilder EventAction ExpressionData ExpressionDataAction ExpressionDataCondition FixedFooter Grid GridItem HostAppDataSource IconImage Image ImageButton ImageComponent ImageCropStyle KeyValue LinkPreview MaterialIcon Navigation Notification OpenLink OverflowMenu OverflowMenuItem PlatformDataSource SelectionInput Suggestions SuggestionsResponse SuggestionsResponseBuilder Switch TextButton TextInput TextParagraph TimePicker Trigger UniversalActionResponse UniversalActionResponseBuilder UpdateDraftActionResponse UpdateDraftActionResponseBuilder UpdateDraftBccRecipientsAction UpdateDraftBodyAction UpdateDraftCcRecipientsAction UpdateDraftSubjectAction UpdateDraftToRecipientsAction UpdateVisibilityAction UpdatedWidget Validation Widget WorkflowDataSource Enums BorderType ChipListLayout CommonDataSource ComposedEmailType ContentType DisplayStyle DriveItemType ExpressionDataActionType ExpressionDataConditionType GridItemLayout HorizontalAlignment HorizontalSizeStyle Icon ImageButtonStyle ImageCropType ImageStyle InputType Interaction LoadIndicator OnClose OpenAs ResponseType SelectionInputType Status SwitchControlType TextButtonStyle TextInputMode UpdateDraftBodyType VariableButtonSize VerticalAlignment Visibility WorkflowDataSourceType WrapStyle Conferencing Data Overview ConferenceDataService Classes ConferenceData ConferenceDataBuilder ConferenceError ConferenceParameter EntryPoint Enums ConferenceErrorType EntryPointFeature EntryPointType Manifest AddOns resource Calendar resource Drive resource Gmail resource Editors resource Meet resource HomepageTrigger resource Add-ons API Apps Script API v1 Overview REST Resources processes Overview list listScriptProcesses projects Overview create get getContent getMetrics updateContent projects.deployments Overview create delete get list update projects.versions Overview create get list scripts Overview run Types ExecuteStreamResponse ExecutionError ExecutionResponse File LocalizedMessage NullValue Client libraries Browser Go Java Core library API library .NET Core library API library Node.js PHP Python Core library API library Ruby Google Workspace apps Admin console Cloud Search Gmail Google Calendar Google Chat Google Classroom Google Docs Google Drive Google Forms Google Keep Google Meet Google Sheets Google Sites Google Slides Google Tasks Google Vault Extend, automate & share Add-ons Apps Script Chat apps Drive apps Marketplace Tools Admin console Apps Script dashboard Google Cloud console APIs Explorer Card Builder Training & support How to get started Codelabs Developer support Updates Release notes Developer Previews YouTube Newsletter X (Twitter) Blog Home Google Workspace Apps Script Reference Send feedback Enum AuthMode Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "example.com",
+      "projects.deployments",
+      "projects.versions",
+      "projets.deployments",
+      "script.scriptapp"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/triggers/events",
+        "https://developers.google.com/apps-script/reference/script/script-app",
+        "https://developers.google.com/apps-script/reference/script/auth-mode"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/triggers/events",
+        "https://developers.google.com/apps-script/reference/script/script-app",
+        "https://developers.google.com/apps-script/reference/script/auth-mode"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/triggers/events",
+        "https://developers.google.com/apps-script/reference/script/script-app",
+        "https://developers.google.com/apps-script/reference/script/auth-mode"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/triggers/events",
+        "https://developers.google.com/apps-script/reference/script/script-app",
+        "https://developers.google.com/apps-script/reference/script/auth-mode"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/triggers/events",
+        "https://developers.google.com/apps-script/reference/script/script-app",
+        "https://developers.google.com/apps-script/reference/script/auth-mode"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/triggers/events",
+        "https://developers.google.com/apps-script/reference/script/script-app",
+        "https://developers.google.com/apps-script/reference/script/auth-mode"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/triggers/events",
+        "https://developers.google.com/apps-script/reference/script/script-app",
+        "https://developers.google.com/apps-script/reference/script/auth-mode"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/triggers/events",
+        "https://developers.google.com/apps-script/reference/script/script-app",
+        "https://developers.google.com/apps-script/reference/script/auth-mode"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/triggers/events",
+        "https://developers.google.com/apps-script/reference/script/script-app",
+        "https://developers.google.com/apps-script/reference/script/auth-mode"
+      ]
+    }
+  ]
+}

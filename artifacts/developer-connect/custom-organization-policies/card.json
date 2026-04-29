@@ -1,0 +1,220 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:06.426Z",
+  "source_step08_card": "data/step-08/current/products/developer-connect/card.json",
+  "product_name": "Developer Connect",
+  "product_slug": "developer-connect",
+  "feature_name": "Custom organization policies",
+  "feature_slug": "custom-organization-policies",
+  "summary": "Custom organization policies let you manage Developer Connect resources with organization policy controls.",
+  "extended_definition": "Custom organization policies let you manage Developer Connect resources with organization policy controls.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise",
+      "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager",
+      "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class DeveloperConnectClient (0.5.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "source_id": "site-python-reference",
+        "final_score": 285,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CreateAccountConnectorRequest ( parent=\"parent value\", account connector id=\"account connector id value\", account connector=account connector, ) Make the request operation = client. create account connector (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.developerconnect v1.types.CreateAccountConnectorRequest , dict] The request object. parent str Required.",
+          "CreateGitRepositoryLinkRequest ( parent=\"parent value\", git repository link=git repository link, git repository link id=\"git repository link id value\", ) Make the request operation = client. create git repository link (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.developerconnect v1.types.CreateGitRepositoryLinkRequest , dict] The request object.",
+          "CreateConnectionRequest ( parent=\"parent value\", connection id=\"connection id value\", connection=connection, ) Make the request operation = client. create connection (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.developerconnect v1.types.CreateConnectionRequest , dict] The request object."
+        ]
+      },
+      {
+        "title": "\"Class DeveloperConnectAsyncClient (0.5.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 277,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CreateAccountConnectorRequest ( parent=\"parent value\", account connector id=\"account connector id value\", account connector=account connector, ) Make the request operation = client. create account connector (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.developerconnect v1.types.CreateAccountConnectorRequest , dict]] The request object. parent str Required.",
+          "CreateGitRepositoryLinkRequest ( parent=\"parent value\", git repository link=git repository link, git repository link id=\"git repository link id value\", ) Make the request operation = client. create git repository link (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.developerconnect v1.types.CreateGitRepositoryLinkRequest , dict]] The request object.",
+          "CreateConnectionRequest ( parent=\"parent value\", connection id=\"connection id value\", connection=connection, ) Make the request operation = client. create connection (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.developerconnect v1.types.CreateConnectionRequest , dict]] The request object."
+        ]
+      },
+      {
+        "title": "\"Connect to GitHub Enterprise \\_|\\_ Developer Connect \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise",
+        "source_id": "site-iam-reference",
+        "final_score": 273,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you plan to use the gcloud CLI to complete the steps in this guide: Secret Manager Admin role ( roles/secretmanager.admin ) on the Developer Connect Service Account.",
+          "Initiate a connection by completing the following steps: Run the gcloud developer-connect connections create command to create a connection to GitHub Enterprise: gcloud developer-connect connections create CONNECTION NAME \\ --location = REGION \\ --github-enterprise-config-host-uri = HOST URI --git-proxy-config-enabled Replace the following: CONNECTION NAME : the name for your connection.",
+          "If your administrator won't allow you to have the Project IAM Admin role, then ask your administrator to grant Secret Manager Admin ( roles/secretmanager.admin ) on the Developer Connect Service Account ( service-{projectNumber}@gcp-sa-devconnect.iam.gserviceaccount.com )."
+        ]
+      },
+      {
+        "title": "\"Connect to Secure Source Manager \\_|\\_ Developer Connect \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager",
+        "source_id": "site-iam-reference",
+        "final_score": 271,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This integration lets you use Developer Connect features such as dashboard views of your Secure Source Manager repositories, and use of the Developer Connect proxy to perform git operations, such as secure read operations.",
+          "INSTANCE ID is the ID of your Secure Source Manager instance. curl To create a Developer Connect connection with curl , make the following API call: curl -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ https://developerconnect.googleapis.com/v1/projects/ CONNECTION PROJECT ID /locations/ REGION /connections?connection id = CONNECTION ID \\ -X POST -H \"Content-Type: application/json\" \\ -d '{\"secure source manager instance config\":{\"instance\":\"projects/ INSTANCE PROJECT ID /locations/ REGION /instances/ INSTANCE ID \"}}' Where: CONNECTION ID is the ID of the Developer Connect connection you want to create.",
+          "For example: triggers : - name : test-trigger project : my-project configFilePath : cloudbuild.yaml eventType : push serviceAccount : projects/my-project/serviceAccounts/my-sa@my-project. iam.gserviceaccount.com devConnectGitRepositoryLink : projects/my-project/locations/us-central1/connections/my-ssm-connection/gitRepositoryLinks/my-repo-link Operational scope and limitations After you configure the connection, you can perform secure git read operations, such as a clone , on Secure Source Manager instances by using the Developer Connect proxy URI."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudbuild.yaml",
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "devconnect.iam.gserviceaccount.com",
+      "developerconnect.googleapis.com",
+      "googleapis.dev",
+      "iam.gserviceaccount.com",
+      "operation.result",
+      "options.html",
+      "secretmanager.admin",
+      "v1.types.CreateAccountConnectorRequest",
+      "v1.types.CreateConnectionRequest",
+      "v1.types.CreateGitRepositoryLinkRequest",
+      "v1.types.UpdateAccountConnectorRequest"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter",
+      "roles/secretmanager.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager"
+      ]
+    }
+  ]
+}

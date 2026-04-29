@@ -1,0 +1,97 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:21.812Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-connector/card.json",
+  "product_name": "Mainframe Connector",
+  "product_slug": "mainframe-connector",
+  "feature_name": "Cloud Run remote service deployment with Terraform",
+  "feature_slug": "cloud-run-remote-service-deployment-with-terraform",
+  "summary": "Cloud Run remote service deployment can be managed with Terraform.",
+  "extended_definition": "Cloud Run remote service deployment can be managed with Terraform.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector",
+      "https://docs.cloud.google.com/mainframe-connector/docs/remote-transcoding",
+      "https://docs.cloud.google.com/mainframe-connector/docs/run-jobs",
+      "https://docs.cloud.google.com/mainframe-connector/docs/vtl-transcoding"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deploy Mainframe Connector on Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector",
+        "source_id": "site-docs-root-2",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This page discusses how you can deploy Mainframe Connector on Cloud Run as a remote service using Terraform .",
+          "Deploy Mainframe Connector. terraform apply -var-file= VARIABLE FILE NAME Replace VARIABLE FILE NAME with the variables file you created in the previous step. (Optional) To check if Mainframe Connector is deployed and running, go to the Cloud Run page, and select the Services tab.",
+          "You can also reuse the same bucket and prefix when you upgrade Mainframe Connector. terraform init \\ -backend-config bucket= DEPLOYMENT STATE BUCKET \\ -backend-config prefix= BUCKET PREFIX Replace the following: DEPLOYMENT STATE BUCKET : The name of the Cloud Storage bucket."
+        ]
+      },
+      {
+        "title": "\"Transcode mainframe data remotely on Google Cloud \\_|\\_ Mainframe Connector\\",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/remote-transcoding",
+        "source_id": "site-docs-root",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following figure describes how you can move your mainframe data to Google Cloud and transcode it remotely to ORC format using Cloud Run, and then move the content to BigQuery.",
+          "For the complete list of environment variables supported by Mainframe Connector, see Environment variables . //STEP01 EXEC BQSH //INFILE DD DSN=<HLQ>.DATA.FILENAME,DISP=SHR //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.FILENAME //STDIN DD gsutil cp --replace gs://mybucket/tablename.orc --remote \\ --remoteHost <mainframe-connector-url>.a.run.app \\ --remotePort 443 / If you want to log the commands executed during this process, you can enable load statistics . (Optional) Create and submit a BigQuery query job that executes a SQL read from the QUERY DD file .",
+          "To avoid this, you can use Cloud Run to move and transcode mainframe data remotely on Google Cloud to optimized row columnar (ORC) format and then move the data to Cloud Storage."
+        ]
+      },
+      {
+        "title": "Use Cloud Run with Mainframe Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/run-jobs",
+        "source_id": "site-docs-root-2",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To view the logs for a specific Cloud Run job execution, use the cloud run job logs command from your Mainframe JCL file: //STEP01 EXEC BQSH //STDIN DD cloud run job logs EXECUTION ID / Replace EXECUTION ID with the execution ID of the Cloud Run job. (Optional) To cancel a Cloud Run job, use the cloud run job cancel command from your Mainframe JCL file: Example JCL //STEP01 EXEC BQSH //STDIN DD cloud run job cancel EXECUTION ID / Replace EXECUTION ID with the execution ID of the Cloud Run job that you want to cancel.",
+          "For example, you can use this feature, to integrate your existing extraction, transformation, and loading (ETL) tool with Mainframe Connector using Cloud Run jobs.",
+          "This page discusses how you can perform the following tasks using Mainframe Connector: Trigger a Cloud Run job: initiate a Cloud Run job from Mainframe Connector View Cloud Run job logs: view Cloud Run job logs locally on your Mainframe for monitoring Cancel a Cloud Run job: cancel an ongoing Cloud Run job For more information about creating and managing Cloud Run jobs, see Cloud Run documentation ."
+        ]
+      },
+      {
+        "title": "\"Transcode mainframe data moved to Google Cloud using virtual tape library\\",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/vtl-transcoding",
+        "source_id": "site-docs-root",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To avoid this, you can use Cloud Run to move and transcode mainframe data remotely on Google Cloud.",
+          "Example JCL //STEP04 EXEC BQSH //OUTFILE DD DSN=<HLQ>.DATA.FILENAME,DISP=SHR //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.FILENAME //QUERY DD DSN=<HLQ>.QUERY.FILENAME,DISP=SHR //STDIN DD PROJECT= PROJECT NAME DATASET ID= DATASET ID DESTINATION TABLE= DESTINATION TABLE BUCKET= BUCKET bq export --project id=$PROJECT \\ --dataset id=$DATASET ID \\ --destination table=$DESTINATION TABLE \\ --location=\"US\" \\ --bucket=$BUCKET \\ --remoteHost <mainframe-connector-url>.a.run.app \\ --remotePort 443 / Replace the following: PROJECT NAME : The name of the project in which you want to execute the query.",
+          "For the complete list of environment variables supported by Mainframe Connector, see Environment variables . //STEP01 EXEC BQSH //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.FILENAME //STDIN DD gsutil cp --replace gs://mybucket/tablename.orc \\ --inDsn INPUT FILENAME \\ --remoteHost <mainframe-connector-url>.a.run.app \\ --remotePort 443 \\ --project id PROJECT NAME / Replace the following: PROJECT NAME : The name of the project in which you want to execute the query."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a.run.app",
+      "tablename.orc"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

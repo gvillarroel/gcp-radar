@@ -1,0 +1,169 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:11.988Z",
+  "source_step08_card": "data/step-08/current/products/gemini-enterprise/card.json",
+  "product_name": "Gemini Enterprise",
+  "product_slug": "gemini-enterprise",
+  "feature_name": "Gemini Enterprise mobile app",
+  "feature_slug": "gemini-enterprise-mobile-app",
+  "summary": "The Gemini Enterprise mobile app is available for Standard and Plus editions with allowlist access.",
+  "extended_definition": "The Gemini Enterprise mobile app is available for Standard and Plus editions with allowlist access.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/configure-mobile-app",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-results",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/quickstart-gemini-enterprise"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure the mobile app \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/configure-mobile-app",
+        "source_id": "site-docs-root",
+        "final_score": 378,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, the following XML is used to configure an iOS application in GEM: <dict> <key>config id</key> <string>123</string> <key>location</key> <string>global</string> </dict> Microsoft Entra ID If your Gemini Enterprise uses Microsoft Entra ID as an identity provider, the mobile deeplink looks like this: https://vertexaisearch.cloud.google.com/mobile?cid=123 &cid location=global &idp=locations/global/workforcePools/PROJECT/providers/entra &tenant id=111 &client id=222 &project id=ge-project Extract the parameters from the deeplink URL, and use them to fill in the app configuration in your MDM administrator console: Deeplink parameter MDM configuration key MDM configuration name Example value cid config id Configuration ID 123 cid location location Location global idp identity provider Identity Provider locations/global/workforcePools/PROJECT/providers/entra tenant id tenant id Entra tenant ID 111 client id client id Entra client ID 222 project id project id Project ID ge-project Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Google Identity If your Gemini Enterprise uses Google as an identity provider, the mobile deeplink looks like this: https://vertexaisearch.cloud.google.com/mobile?cid=123&cid location=global Extract the parameters from the deeplink URL, and use them to fill in the app configuration in your MDM administrator console: Deeplink parameter MDM configuration key MDM configuration name Example value cid config id Configuration ID 123 cid location location Location global Leave all other fields empty.",
+          "This page explains how to configure the Gemini Enterprise mobile app on devices managed by a mobile device management (MDM) solution, such as Google Endpoint Management (GEM) or Microsoft Intune."
+        ]
+      },
+      {
+        "title": "Get started with Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/quickstart-gemini-enterprise",
+        "source_id": "site-docs-root",
+        "final_score": 302,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Get started with Gemini Enterprise To see an example of how to get started with Gemini Enterprise, run the \"Intro to Gemini Enterprise\" notebook in one of the following environments: Open in Colab View on GitHub Gemini Enterprise brings together the power of deep information retrieval, state-of-the-art natural language processing, and the latest in large language processing to understand user intent and return the most relevant results for the user.",
+          "Preview your app Note: Because it takes a few minutes for the data stores to index and sync with the app, the preview isn't available immediately.",
+          "View the search web app To view your Gemini Enterprise web app, do the following: In the navigation menu, click Integration ."
+        ]
+      },
+      {
+        "title": "About apps and data stores \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "source_id": "site-docs-root",
+        "final_score": 289,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For information about the Business edition, see the Gemini Enterprise - Business edition Help Center .",
+          "Note: This documentation applies to the Standard, Plus, and Frontline editions of Gemini Enterprise.",
+          "Data stores and apps In Gemini Enterprise, there are various kinds of data stores."
+        ]
+      },
+      {
+        "title": "\"Configure results for the UI \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-results",
+        "source_id": "site-docs-root",
+        "final_score": 288,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure search results for unstructured or website data The UI for unstructured and website data offers the following search customizations: Search (single-turn) Search with an answer (single-turn search with summarization) Search with follow-ups (multi-turn search) To configure how the UI displays search results for unstructured data: In the Google Cloud console, go to the Gemini Enterprise page.",
+          "Home Documentation AI and ML Gemini Enterprise Send feedback Configure results for the UI Stay organized with collections Save and categorize content based on your preferences.",
+          "To configure how the UI displays search results for structured data: In the Google Cloud console, go to the Gemini Enterprise page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "vertexaisearch.cloud.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-mobile-app",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/quickstart-gemini-enterprise",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-results"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-mobile-app",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/quickstart-gemini-enterprise",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-results"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-mobile-app",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/quickstart-gemini-enterprise",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-results"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-mobile-app",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/quickstart-gemini-enterprise",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-results"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-mobile-app",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/quickstart-gemini-enterprise",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-results"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-mobile-app",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/quickstart-gemini-enterprise",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-results"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-mobile-app",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/quickstart-gemini-enterprise",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-results"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-mobile-app",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/quickstart-gemini-enterprise",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-results"
+      ]
+    }
+  ]
+}

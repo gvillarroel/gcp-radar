@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:49.160Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "Zonal affinity for internal passthrough Network Load Balancers",
+  "feature_slug": "zonal-affinity-for-internal-passthrough-network-load-balancers",
+  "summary": "Internal passthrough Network Load Balancers support zonal affinity to prefer eligible backends in the same zone as the client.",
+  "extended_definition": "Internal passthrough Network Load Balancers support zonal affinity to prefer eligible backends in the same zone as the client.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/internal",
+      "https://docs.cloud.google.com/load-balancing/docs/network",
+      "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Internal passthrough Network Load Balancer overview \\_|\\_ Cloud Load Balancing\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 235,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Traffic distribution Internal passthrough Network Load Balancers support a variety of traffic distribution customization options, including session affinity, connection tracking, and failover.",
+          "An internal passthrough Network Load Balancer doesn't support the following: Backend VMs in multiple regions Balancing traffic that originates from the internet, unless you're using it with an external load balancer IPv6 packets with fragmented headers Internal IP address Internal passthrough Network Load Balancers support IPv4-only, dual-stack, and IPv6-only subnets.",
+          "You can use either instance groups or zonal NEGs, but not a combination of both, as backends for an internal passthrough Network Load Balancer: If you choose instance groups, you can use unmanaged instance groups, zonal managed instance groups, regional managed instance groups, or a combination of instance group types."
+        ]
+      },
+      {
+        "title": "\"Backend service-based regional external passthrough Network Load Balancer\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/network",
+        "source_id": "site-docs-root",
+        "final_score": 229,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Location of load balancing resources 1 Required location of IP address resource Host project Host project Service project Service project or host project 1 Includes the forwarding rule, backend service, health check, and backends (NEGs and managed or unmanaged instance groups) Traffic distribution Regional external passthrough Network Load Balancers support a variety of traffic distribution customization options, including session affinity, connection tracking, weighted load balancing, and failover.",
+          "Backend service-based regional external passthrough Network Load Balancers support using zonal NEGs with GCE VM IP endpoints.",
+          "To configure a regional external passthrough Network Load Balancer with a zonal NEG backend, see Set up a regional external passthrough Network Load Balancer with zonal NEGs To configure a regional external passthrough Network Load Balancer with a target pool , see Set up a regional external passthrough Network Load Balancer with a target pool ."
+        ]
+      },
+      {
+        "title": "\"Internal proxy Network Load Balancer overview \\_|\\_ Cloud Load Balancing\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "source_id": "site-docs-root",
+        "final_score": 219,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table specifies the backend service APIs for internal proxy Network Load Balancers: Load balancer mode Backend service type Regional internal proxy Network Load Balancer Regional regionBackendServices Cross-region internal proxy Network Load Balancer Global backendServices Supported backends The internal proxy Network Load Balancer supports the following types of backends: Load balancer mode Supported backends on a backend service Instance groups Zonal NEGs Internet NEGs Serverless NEGs Hybrid NEGs Private Service Connect NEGs GKE Regional internal proxy Network Load Balancer GCE VM IP PORT type endpoints Regional NEGs only Add a Private Service Connect NEG Cross-region internal proxy Network Load Balancer GCE VM IP PORT type endpoints Add a Private Service Connect NEG All of the backends must be of the same type (instance groups or NEGs).",
+          "Internal proxy Network Load Balancers offer the following types of session affinity: None A session affinity setting of NONE does not mean that there is no session affinity.",
+          "What's next Set up a cross-region internal Application Load Balancer with VM instance group backends Set up a cross-region internal Application Load Balancer with hybrid connectivity Set up a regional internal proxy Network Load Balancer with an instance group backend Set up a regional internal proxy Network Load Balancer with a zonal NEG backend Set up a regional internal proxy Network Load Balancer with a hybrid NEG backend Set up a regional internal proxy Network Load Balancer with an internet NEG backend View metrics with Cloud Monitoring Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:51.227Z",
+  "source_step08_card": "data/step-08/current/products/cloud-ngfw/card.json",
+  "product_name": "Cloud NGFW",
+  "product_slug": "cloud-ngfw",
+  "feature_name": "Secure tags for peered VPC networks",
+  "feature_slug": "secure-tags-for-peered-vpc-networks",
+  "summary": "Secure tags with a purpose-data attribute for a VPC network or organization can be used with VPC networks connected through VPC Network Peering.",
+  "extended_definition": "Secure tags with a purpose-data attribute for a VPC network or organization can be used with VPC networks connected through VPC Network Peering.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+      "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+      "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-ips-tutorial",
+      "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and manage firewall rules for RoCE VPC networks \\_|\\_ Cloud Next\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "source_id": "site-docs-root",
+        "final_score": 235,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before you begin, review the following information: RDMA RoCE network profile Cloud NGFW for RoCE VPC networks Because the rules in a regional network firewall policy used by an RoCE VPC network rely heavily on target secure tags and source secure tags, ensure that you're familiar with how to create and manage secure tags and bind secure tags to the VM instances.",
+          "This section describes how to perform the following tasks: Create an RoCE VPC network Create a regional network firewall policy that works with the RoCE VPC network Create rules in the regional network firewall policy Associate the regional network firewall policy with the RoCE VPC network Before you begin Make sure that you review the supported and unsupported features in VPC networks with an RDMA network profile.",
+          "Home Documentation Networking Cloud NGFW Guides Send feedback Create and manage firewall rules for RoCE VPC networks Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Set up intrusion detection and prevention service in your network \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-ips-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 144,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To create a subnet, run the following command: gcloud compute networks subnets create subnet-ips-server \\ --network vpc-ips \\ --region asia-southeast1 \\ --range 10.0.0.0/24 To create another subnet, run the following command: gcloud compute networks subnets create subnet-ips-client \\ --network vpc-ips \\ --region us-central1 \\ --range 192.168.10.0/24 Create a Cloud Router and a Cloud NAT gateway Before you create client and server Linux VM instances without public IPv4 addresses in the next section, you must create a Cloud Router and a Cloud NAT gateway, which enables these VMs to access the public internet.",
+          "To delete the vpc-ips VPC network, run the following command: gcloud compute networks delete vpc-ips What's next For conceptual information about intrusion detection and prevention service, see Intrusion detection and prevention service overview .",
+          "To add the firewall rule to enable IAP access, run the following command: gcloud compute network-firewall-policies rules create 100 \\ --firewall-policy fw-policy-ips \\ --direction INGRESS \\ --action ALLOW \\ --src-ip-ranges 35.235.240.0/20 \\ --layer4-configs tcp:22, tcp:3389 \\ --global-firewall-policy \\ --enable-logging To add the firewall rule to enable Layer 7 inspection for threat prevention and detection, run the following command: gcloud compute network-firewall-policies rules create 200 \\ --direction INGRESS \\ --firewall-policy fw-policy-ips \\ --action apply security profile group \\ --dest-ip-ranges SERVER VM IP \\ --layer4-configs tcp:0-65535 \\ --global-firewall-policy \\ --security-profile-group \\ //networksecurity.googleapis.com/organizations/ ORGANIZATION ID \\ /locations/global/securityProfileGroups/sec-profile-group-ips \\ --enable-logging Replace the following: SERVER VM IP : the external IP address of the server VM that you created in the Create the server VM instances section."
+        ]
+      },
+      {
+        "title": "\"Set up URL filtering service in your network \\_|\\_ Cloud Next Generation\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 144,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To create a subnet, run the following command: gcloud compute networks subnets create subnet-server-urlf \\ --network vpc-urlf \\ --region asia-southeast1 \\ --range 10.0.0.0/24 To create another subnet, run the following command: gcloud compute networks subnets create subnet-client-urlf \\ --network vpc-urlf \\ --region us-central1 \\ --range 192.168.10.0/24 Create a Cloud Router and a Cloud NAT gateway Before you create client and server Linux VM instances without public IPv4 addresses in the next section, you must create a Cloud Router and a Cloud NAT gateway, which enables these VMs to access the public internet.",
+          "To add the firewall rule to enable IAP access, run the following command: gcloud compute network-firewall-policies rules create 100 \\ --firewall-policy fw-policy-urlf \\ --direction INGRESS \\ --action ALLOW \\ --src-ip-ranges 35.235.240.0/20 \\ --layer4-configs tcp:22 \\ --global-firewall-policy \\ --enable-logging To add the firewall rule to enable Layer 7 inspection for URL filtering, run the following command: gcloud compute network-firewall-policies rules create 200 \\ --direction EGRESS \\ --firewall-policy fw-policy-urlf \\ --action apply security profile group \\ --dest-ip-ranges 0.0.0.0/0 \\ --layer4-configs tcp:80, tcp:443 \\ --global-firewall-policy \\ --security-profile-group \\ //networksecurity.googleapis.com/organizations/ ORGANIZATION ID \\ /locations/global/securityProfileGroups/sec-profile-group-urlf \\ --enable-logging Replace the following: ORGANIZATION ID : the organization where the secure profile group is created.",
+          "Replace PROJECT ID with the ID of your project. resource.type=\"networksecurity.googleapis.com/FirewallEndpoint\" logName=\"projects/ PROJECT ID /logs/networksecurity.googleapis.com%2Ffirewall url filter\" Clean up To avoid incurring charges to your Google Cloud account for the resources used in this tutorial, either delete the project that contains the resources, or keep the project and delete the individual resources."
+        ]
+      },
+      {
+        "title": "\"Cloud NGFW overview \\_|\\_ Cloud Next Generation Firewall \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+        "source_id": "site-docs-reference",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud NGFW provides stateful inspection and Layer 7 application control for both north-south traffic (entering or leaving a Virtual Private Cloud (VPC) network) and east-west traffic (communication among resources within VPC networks).",
+          "Cloud NGFW lets you group firewall rules into policy objects that you can apply consistently across multiple Virtual Private Cloud (VPC) networks, either globally or within a specific region.",
+          "Supported VPC networks Cloud NGFW supports the following VPC networks, each designed for specific workload requirements and performance profiles."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "networksecurity.googleapis.com",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-ips-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-ips-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-ips-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-ips-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-ips-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-ips-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-ips-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-ips-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-ips-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "GKE Gateway controller Gateway API v1.3 CRD support",
+  "feature_slug": "gke-gateway-controller-gateway-api-v1-3-crd-support",
+  "summary": "The GKE Gateway controller supports Gateway API v1.3 custom resource definitions; The GKE Gateway controller supports Gateway API v1.3 custom resource definitions.",
+  "extended_definition": "The GKE Gateway controller supports Gateway API v1.3 custom resource definitions; The GKE Gateway controller supports Gateway API v1.3 custom resource definitions.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "If set, the GKE Workload Identity Certificates controller and node agent will be deployed in the cluster, which can then be configured by creating a WorkloadCertificateConfig Custom Resource.",
+          "AddonsConfig JSON representation { \"httpLoadBalancing\" : { object ( HttpLoadBalancing ) } , \"horizontalPodAutoscaling\" : { object ( HorizontalPodAutoscaling ) } , \"kubernetesDashboard\" : { object ( KubernetesDashboard ) } , \"networkPolicyConfig\" : { object ( NetworkPolicyConfig ) } , \"cloudRunConfig\" : { object ( CloudRunConfig ) } , \"dnsCacheConfig\" : { object ( DnsCacheConfig ) } , \"configConnectorConfig\" : { object ( ConfigConnectorConfig ) } , \"gcePersistentDiskCsiDriverConfig\" : { object ( GcePersistentDiskCsiDriverConfig ) } , \"gcpFilestoreCsiDriverConfig\" : { object ( GcpFilestoreCsiDriverConfig ) } , \"gkeBackupAgentConfig\" : { object ( GkeBackupAgentConfig ) } , \"gcsFuseCsiDriverConfig\" : { object ( GcsFuseCsiDriverConfig ) } , \"statefulHaConfig\" : { object ( StatefulHAConfig ) } , \"parallelstoreCsiDriverConfig\" : { object ( ParallelstoreCsiDriverConfig ) } , \"rayOperatorConfig\" : { object ( RayOperatorConfig ) } , \"highScaleCheckpointingConfig\" : { object ( HighScaleCheckpointingConfig ) } , \"lustreCsiDriverConfig\" : { object ( LustreCsiDriverConfig ) } , \"sliceControllerConfig\" : { object ( SliceControllerConfig ) } } Fields httpLoadBalancing object ( HttpLoadBalancing ) Configuration for the HTTP (L7) load balancing controller addon, which makes it easy to set up HTTP load balancers for services in a cluster. horizontalPodAutoscaling object ( HorizontalPodAutoscaling ) Configuration for the horizontal pod autoscaling feature, which increases or decreases the number of replica pods a replication controller has based on the resource usage of the existing pods. kubernetesDashboard (deprecated) object ( KubernetesDashboard ) This item is deprecated!",
+          "For more information about protecting resources with Cloud KMS Keys please see: https://cloud.google.com/compute/docs/disks/customer-managed-encryption gcfsConfig object ( GcfsConfig ) Google Container File System (image streaming) configs. advancedMachineFeatures object ( AdvancedMachineFeatures ) Advanced features for the Compute Engine VM. gvnic object ( VirtualNIC ) Enable or disable gvnic in the node pool. spot boolean Spot flag for enabling Spot VM, which is a rebrand of the existing preemptible flag. confidentialNodes object ( ConfidentialNodes ) Confidential nodes config."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "source_id": "site-api-reference",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "If set, the GKE Workload Identity Certificates controller and node agent will be deployed in the cluster, which can then be configured by creating a WorkloadCertificateConfig Custom Resource.",
+          "AddonsConfig JSON representation { \"httpLoadBalancing\" : { object ( HttpLoadBalancing ) } , \"horizontalPodAutoscaling\" : { object ( HorizontalPodAutoscaling ) } , \"kubernetesDashboard\" : { object ( KubernetesDashboard ) } , \"networkPolicyConfig\" : { object ( NetworkPolicyConfig ) } , \"cloudRunConfig\" : { object ( CloudRunConfig ) } , \"dnsCacheConfig\" : { object ( DnsCacheConfig ) } , \"configConnectorConfig\" : { object ( ConfigConnectorConfig ) } , \"gcePersistentDiskCsiDriverConfig\" : { object ( GcePersistentDiskCsiDriverConfig ) } , \"gcpFilestoreCsiDriverConfig\" : { object ( GcpFilestoreCsiDriverConfig ) } , \"gkeBackupAgentConfig\" : { object ( GkeBackupAgentConfig ) } , \"gcsFuseCsiDriverConfig\" : { object ( GcsFuseCsiDriverConfig ) } , \"statefulHaConfig\" : { object ( StatefulHAConfig ) } , \"parallelstoreCsiDriverConfig\" : { object ( ParallelstoreCsiDriverConfig ) } , \"rayOperatorConfig\" : { object ( RayOperatorConfig ) } , \"highScaleCheckpointingConfig\" : { object ( HighScaleCheckpointingConfig ) } , \"lustreCsiDriverConfig\" : { object ( LustreCsiDriverConfig ) } , \"sliceControllerConfig\" : { object ( SliceControllerConfig ) } } Fields httpLoadBalancing object ( HttpLoadBalancing ) Configuration for the HTTP (L7) load balancing controller addon, which makes it easy to set up HTTP load balancers for services in a cluster. horizontalPodAutoscaling object ( HorizontalPodAutoscaling ) Configuration for the horizontal pod autoscaling feature, which increases or decreases the number of replica pods a replication controller has based on the resource usage of the existing pods. kubernetesDashboard (deprecated) object ( KubernetesDashboard ) This item is deprecated!",
+          "For more information about protecting resources with Cloud KMS Keys please see: https://cloud.google.com/compute/docs/disks/customer-managed-encryption gcfsConfig object ( GcfsConfig ) Google Container File System (image streaming) configs. advancedMachineFeatures object ( AdvancedMachineFeatures ) Advanced features for the Compute Engine VM. gvnic object ( VirtualNIC ) Enable or disable gvnic in the node pool. spot boolean Spot flag for enabling Spot VM, which is a rebrand of the existing preemptible flag. confidentialNodes object ( ConfidentialNodes ) Confidential nodes config."
+        ]
+      },
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use the following tools to check inbound traffic to your resources running in Google Cloud: VPC Flow Logs for visibility into network throughput and performance Cloud Logging to search and analyze logging data and events from Google Cloud services and applications configured to send logs Firewall Rules Logging to audit, verify, and analyze the effects of your firewall rules Security Command Center for visibility into security findings indicating suspicious network activity Your application logs High GDC (VMware) Description Severity A security issue was discovered that impacts Multi-Cluster Gateway (MCG), a GKE feature that allows customers to load balance traffic across multiple clusters.",
+          "To review your Azure configuration to check whether there are any public IP addresses configured on your GKE on Azure cluster, run the following command: az network public-ip list -g CLUSTER RESOURCE GROUP NAME -o tsv Disallow SSH to the cluster nodes Even though GKE on Azure doesn't allow traffic on port 22 on any node by default, customers can update NetworkSecurityGroup rules to node pools, enabling inbound SSH traffic from the public internet.",
+          "None GKE on AWS Description Severity Note: This section applies to both the current and previous generation of GKE on AWS A security issue was discovered that impacts Multi-Cluster Gateway (MCG), a GKE feature that allows customers to load balance traffic across multiple clusters."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "v1.3"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    }
+  ]
+}

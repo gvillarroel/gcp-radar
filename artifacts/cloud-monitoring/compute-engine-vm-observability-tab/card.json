@@ -1,0 +1,112 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:50.221Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring",
+  "feature_name": "Compute Engine VM Observability tab",
+  "feature_slug": "compute-engine-vm-observability-tab",
+  "summary": "Compute Engine VM instance details include an Observability tab with logs and expanded visibility into CPU, disk, and network metrics.",
+  "extended_definition": "Compute Engine VM instance details include an Observability tab with logs and expanded visibility into CPU, disk, and network metrics.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies",
+      "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Monitoring overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples of monitored resources include Compute Engine instances and App Engine applications.",
+          "The following is an example of a resource field: \"resource\": { \"type\": \"gce instance\", \"labels\": { \"instance id\": \"2708613220420473591\", \"zone\": \"us-east1-b\", \"project id\": \"sampleproject\" } } The type field lists the monitored resource as a gce instance , which indicates that these measurements are taken on a Compute Engine VM instance.",
+          "For example, when a Google Cloud project contains multiple Compute Engine VM instances, the CPU utilization for each VM instance is a unique time series."
+        ]
+      },
+      {
+        "title": "\"Install and manage the Ops Agent by using VM Extension Manager policies\\",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies",
+        "source_id": "site-iam-reference",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "Verify the installation of the Ops Agent This section describes how to do the following: Verify the status or version of an Ops Agent installation Verify that the Ops Agent is collecting telemetry Verify the status or version of an Ops Agent installation To determine the status or version of the Ops Agent, use one of the following Google Cloud console pages: Compute Engine In the Google Cloud console, go to the VM instances page: Go to VM instances If you use the search bar to find this page, then select the result whose subheading is Compute Engine .",
+          "Enter the following query and click Run query : severity>=DEBUG log id(\"GCEGuestAgentManager\") \"The agent config file is not valid\" Linux Run the following command on the Linux Compute Engine VM: journalctl -u google-guest-agent-manager grep \"The agent config file is not valid\" Windows Run the following command on the Windows Compute Engine VM: Get-Eventlog -Source google guest agent manager -LogName Application Where-Object {$ .Message -like \" The agent config file is not valid \"} If you see logs containing the string The agent config file is not valid , then the custom configuration for the Ops Agent you provided when creating or updating the extension policy is invalid.",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create, view, modify, and delete VM extension policies: To create extension policies: compute.vmExtensionPolicies.create To view extension policies: compute.vmExtensionPolicies.list To view details of an extension policy: compute.vmExtensionPolicies.get To modify extension policies: compute.vmExtensionPolicies.update To delete extension policies: compute.vmExtensionPolicies.delete You might also be able to get these permissions with custom roles or other predefined roles ."
+        ]
+      },
+      {
+        "title": "Ops Agent overview \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+        "source_id": "site-iam-reference",
+        "final_score": 135,
+        "relevance": "",
+        "evidence_snippets": [
+          "Rocky Linux 8 Rocky Linux 9 Rocky Linux 10 RHEL 8: rhel-8, rhel-8-6-sap-ha, rhel-8-8-sap-ha, rhel-8-10-sap-ha RHEL 9: rhel-9 RHEL 10: rhel-10 CentOS Stream 10 Debian 11 (Bullseye) Debian 12 (Bookworm) Debian 13 (Trixie) Deep Learning VM Images based on Debian 11 (Bullseye) Ubuntu 22.04 LTS (Jammy Jellyfish): ubuntu-2204-lts, ubuntu-minimal-2204-lts Ubuntu 24.04 LTS (Noble Numbat): ubuntu-2404-lts-amd64, ubuntu-minimal-2404-lts-amd64 Ubuntu 25.10 (Questing Quokka): ubuntu-2510-amd64, ubuntu-minimal-2510-amd64 SLES 12: sles-12, sles-12-sp5-sap SLES 15: sles-15, sles-15-sp3-sap, sles-15-sp4-sap, sles-15-sp5-sap, sles-15-sp6-sap Support for Compute Engine Arm VMs The Ops Agent supports Compute Engine C4A and Tau T2A Arm VM instances.",
+          "For information about installing the Ops Agent, see the following: For Compute Engine instances, see Installing the Ops Agent .",
+          "For more information about Compute Engine Arm VMs, see Creating and starting an Arm VM instance ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.vmExtensionPolicies.create",
+      "compute.vmExtensionPolicies.delete",
+      "compute.vmExtensionPolicies.get",
+      "compute.vmExtensionPolicies.list",
+      "compute.vmExtensionPolicies.update"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent"
+      ]
+    }
+  ]
+}

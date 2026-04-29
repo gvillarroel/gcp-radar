@@ -1,0 +1,167 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:05.164Z",
+  "source_step08_card": "data/step-08/current/products/datastore/card.json",
+  "product_name": "Datastore",
+  "product_slug": "datastore",
+  "feature_name": "Non-default database management in Google Cloud console",
+  "feature_slug": "non-default-database-management-in-google-cloud-console",
+  "summary": "The Google Cloud console can create and delete non-default databases.",
+  "extended_definition": "The Google Cloud console can create and delete non-default databases.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+      "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console",
+      "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+      "https://docs.cloud.google.com/datastore/docs/export-import-entities"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Datastore Admin \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console",
+        "source_id": "site-docs-root",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Database access permissions By default, Datastore Admin can access a Datastore database in the same project and does not require Identity and Access Management permissions for Datastore.",
+          "If you use a non-default queue for backup/restore, you can only specify the target ah-builtin-python-bundle in queue.yaml .",
+          "If you use a non-default queue for backup/restore, you can only specify the target ah-builtin-python-bundle in queue.yaml ."
+        ]
+      },
+      {
+        "title": "\"Managing Firestore in Datastore mode from the Console \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "source_id": "site-docs-root",
+        "final_score": 215,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Datastore Guides Send feedback Managing Firestore in Datastore mode from the Console Stay organized with collections Save and categorize content based on your preferences.",
+          "Viewing Datastore statistics In the Google Cloud console, go to the Databases page.",
+          "Viewing entities In the Google Cloud console, go to the Databases page."
+        ]
+      },
+      {
+        "title": "Indexes \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "source_id": "site-iam-reference",
+        "final_score": 215,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Index configuration Firestore in Datastore mode provides built-in , or automatic, indexes for queries of the following forms: Kindless queries using only ancestor and key filters Queries using only ancestor and equality filters Queries using only inequality filters (which are limited to a single property ) Queries using only ancestor filters, equality filters on properties, and inequality filters on keys Queries with no filters and only one sort order on a property, either ascending or descending As an example, by default, Datastore mode databases automatically predefine two single property indexes for each property of each entity kind, one in ascending order and one in descending order.",
+          "Multiple databases You can use gcloud firestore to manage a single index for Datastore mode or use gcloud datastore with an index.yaml file to manage all the indexes under a database. gcloud firestore gcloud firestore indexes composite create --api-scope=datastore-mode-api --query-scope= QUERY SCOPE --database= DATABASE ID gcloud datastore gcloud alpha datastore indexes create index.yaml --database= DATABASE ID Replace the following: DATABASE ID : a database ID.",
+          "There are two types of indexes: Built-in indexes By default, a Datastore mode database automatically predefines an index for each property of each entity kind."
+        ]
+      },
+      {
+        "title": "Exporting and Importing Entities \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "source_id": "site-docs-root",
+        "final_score": 213,
+        "relevance": "",
+        "evidence_snippets": [
+          "Export operations For export operations involving a bucket in another project, modify the permissions of the bucket to assign one of the following Identity and Access Management roles to the Datastore mode service agent of the project that contains your Datastore mode database: Storage Admin Owner (basic role) You can also create an IAM custom role with slightly different permissions than the ones contained in the roles listed earlier: storage.buckets.get storage.objects.create storage.objects.delete storage.objects.list Import operations For import operations involving a Cloud Storage bucket in another project, modify the permissions of the bucket to assign one of the following Cloud Storage roles to the Datastore mode service agent of the project that contains your Datastore mode database: Storage Admin Both Storage Object Viewer and Storage Legacy Bucket Reader You can also create an IAM custom role with the following permissions: storage.buckets.get storage.objects.get Starting managed export and import operations This section describes how to start a managed export or import operation.",
+          "Operation names are prefixed with projects/[PROJECT ID]/databases/(default)/operations/ , for example: projects/ project-id /databases/(default)/operations/ASA1MTAwNDQxNAgadGx1YWZlZAcSeWx0aGdpbi1zYm9qLW5pbWRhEgopEg You can leave out the prefix when specifying an operation name for gcloud commands.",
+          "For example, you can decode a metadata file to determine the namespace and kinds the export files contain: protoc --decode raw < export0.export metadata Importing all entities Console In the Google Cloud console, go to the Databases page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "export0.export",
+      "index.yaml",
+      "queue.yaml",
+      "storage.buckets.get",
+      "storage.objects.create",
+      "storage.objects.delete",
+      "storage.objects.get",
+      "storage.objects.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.221Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-php/card.json",
+  "product_name": "App Engine standard environment PHP",
+  "product_slug": "app-engine-standard-environment-php",
+  "feature_name": "App Engine dashboard per-URL error reporting",
+  "feature_slug": "app-engine-dashboard-per-url-error-reporting",
+  "summary": "Server Error and Client Error metrics in the App Engine dashboard now more accurately reflect status errors on a per-URL basis.",
+  "extended_definition": "Server Error and Client Error metrics in the App Engine dashboard now more accurately reflect status errors on a per-URL basis.",
+  "lifecycle": {
+    "latest_feature_date": "2016-07-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/runtime",
+      "https://docs.cloud.google.com/appengine/docs/standard/php/runtime",
+      "https://docs.cloud.google.com/appengine/docs/standard/php7"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"PHP runtime environment \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/runtime",
+        "source_id": "site-docs-reference-4",
+        "final_score": 80,
+        "relevance": "",
+        "evidence_snippets": [
+          "Directive Default Value in App Engine expose php Off memory limit -1 max execution time 0 error reporting E ALL & E DEPRECATED & E STRICT display errors Off display startup errors Off log errors On log errors max len 0 ignore repeated errors Off ignore repeated source Off html errors Off opcache.enable On opcache.validate timestamps Off opcache.memory consumption 32 Override these default directives by including them in a php.ini file for your app. tempnam() and sys get temp dir() support App Engine apps run in a security sandbox in which only the /tmp directory is writable and stored in the instance's RAM.",
+          "However, if you are migrating a legacy app, see the following sample index.php file to import the PHP files you need and implement the front controller manually: switch (@parse url($ SERVER['REQUEST URI'])['path']) { case '/': require 'homepage.php'; break; case '/contact.php': require 'contact.php'; break; default: http response code(404); exit('Not Found'); } If you specify the optional entrypoint element in your app.yaml file, App Engine uses the command in the entrypoint element to serve your app instead of using public/index.php or index.php : entrypoint: serve path/to/my/front/controller.php The entrypoint field uses the built-in serve command, which is a program within the PHP runtimes that starts up the php-fpm implementation and a webserver in the background.",
+          "Metadata server Each instance of your application can use the App Engine metadata server to query information about the instance and your project."
+        ]
+      },
+      {
+        "title": "\"PHP runtime environment \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/php7",
+        "source_id": "site-docs-reference-4",
+        "final_score": 80,
+        "relevance": "",
+        "evidence_snippets": [
+          "Directive Default Value in App Engine expose php Off memory limit -1 max execution time 0 error reporting E ALL & E DEPRECATED & E STRICT display errors Off display startup errors Off log errors On log errors max len 0 ignore repeated errors Off ignore repeated source Off html errors Off opcache.enable On opcache.validate timestamps Off opcache.memory consumption 32 Override these default directives by including them in a php.ini file for your app. tempnam() and sys get temp dir() support App Engine apps run in a security sandbox in which only the /tmp directory is writable and stored in the instance's RAM.",
+          "However, if you are migrating a legacy app, see the following sample index.php file to import the PHP files you need and implement the front controller manually: switch (@parse url($ SERVER['REQUEST URI'])['path']) { case '/': require 'homepage.php'; break; case '/contact.php': require 'contact.php'; break; default: http response code(404); exit('Not Found'); } If you specify the optional entrypoint element in your app.yaml file, App Engine uses the command in the entrypoint element to serve your app instead of using public/index.php or index.php : entrypoint: serve path/to/my/front/controller.php The entrypoint field uses the built-in serve command, which is a program within the PHP runtimes that starts up the php-fpm implementation and a webserver in the background.",
+          "Metadata server Each instance of your application can use the App Engine metadata server to query information about the instance and your project."
+        ]
+      },
+      {
+        "title": "\"PHP runtime environment \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/php/runtime",
+        "source_id": "site-docs-root-required-3",
+        "final_score": 80,
+        "relevance": "",
+        "evidence_snippets": [
+          "Directive Default Value in App Engine expose php Off memory limit -1 max execution time 0 error reporting E ALL & E DEPRECATED & E STRICT display errors Off display startup errors Off log errors On log errors max len 0 ignore repeated errors Off ignore repeated source Off html errors Off opcache.enable On opcache.validate timestamps Off opcache.memory consumption 32 Override these default directives by including them in a php.ini file for your app. tempnam() and sys get temp dir() support App Engine apps run in a security sandbox in which only the /tmp directory is writable and stored in the instance's RAM.",
+          "However, if you are migrating a legacy app, see the following sample index.php file to import the PHP files you need and implement the front controller manually: switch (@parse url($ SERVER['REQUEST URI'])['path']) { case '/': require 'homepage.php'; break; case '/contact.php': require 'contact.php'; break; default: http response code(404); exit('Not Found'); } If you specify the optional entrypoint element in your app.yaml file, App Engine uses the command in the entrypoint element to serve your app instead of using public/index.php or index.php : entrypoint: serve path/to/my/front/controller.php The entrypoint field uses the built-in serve command, which is a program within the PHP runtimes that starts up the php-fpm implementation and a webserver in the background.",
+          "Metadata server Each instance of your application can use the App Engine metadata server to query information about the instance and your project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "contact.php",
+      "controller.php",
+      "homepage.php",
+      "index.php",
+      "opcache.enable",
+      "opcache.memory",
+      "opcache.validate",
+      "php.ini"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/php/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7"
+      ]
+    }
+  ]
+}

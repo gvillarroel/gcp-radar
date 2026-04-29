@@ -1,0 +1,176 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:53.295Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "gcloud CLI support for Second Generation instances",
+  "feature_slug": "gcloud-cli-support-for-second-generation-instances",
+  "summary": "The gcloud command-line tool provides general availability support for Cloud SQL Second Generation instances without requiring beta commands.",
+  "extended_definition": "The gcloud command-line tool provides general availability support for Cloud SQL Second Generation instances without requiring beta commands.",
+  "lifecycle": {
+    "latest_feature_date": "2017-05-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+      "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+      "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "source_id": "site-docs-reference-3",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \"MYSQL 8 0 18\", \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \"db-f1-micro\", \"kind\": \"sql#settings\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"authorizedNetworks\": [], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \"us-west1-a\", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"backupConfiguration\": { \"startTime\": \"18:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true, \"binaryLogEnabled\": true }, \"settingsVersion\": \"1\", \"storageAutoResizeLimit\": \"0\", \"storageAutoResize\": true, \"dataDiskSizeGb\": \"10\" }, \"etag\": \"--redacted--\", \"ipAddresses\": [ { \"type\": \"PRIMARY\", \"ipAddress\": \" 10.0.0.1 \" } ], \"serverCaCert\": { ... }, \"instanceType\": \"CLOUD SQL INSTANCE\", \"project\": \" project-id \", \"serviceAccountEmailAddress\": \"redacted@gcp-sa-cloud-sql.iam.gserviceaccount.com\", \"backendType\": \"SECOND GEN\", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \", \"connectionName\": \" project-id:region:instance-id \", \"name\": \" instance-id \", \"region\": \"us-west1\", \"gceZone\": \"us-west1-a\" } Look for the ipAddress field in the response.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \"MYSQL 8 0 18\", \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \"db-f1-micro\", \"kind\": \"sql#settings\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"authorizedNetworks\": [], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \"us-west1-a\", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"backupConfiguration\": { \"startTime\": \"18:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true, \"binaryLogEnabled\": true }, \"settingsVersion\": \"1\", \"storageAutoResizeLimit\": \"0\", \"storageAutoResize\": true, \"dataDiskSizeGb\": \"10\" }, \"etag\": \"--redacted--\", \"ipAddresses\": [ { \"type\": \"PRIMARY\", \"ipAddress\": \" 10.0.0.1 \" } ], \"serverCaCert\": { ... }, \"instanceType\": \"CLOUD SQL INSTANCE\", \"project\": \" project-id \", \"serviceAccountEmailAddress\": \"redacted@gcp-sa-cloud-sql.iam.gserviceaccount.com\", \"backendType\": \"SECOND GEN\", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \", \"connectionName\": \" project-id:region:instance-id \", \"name\": \" instance-id \", \"region\": \"us-west1\", \"gceZone\": \"us-west1-a\" } Look for the ipAddress field in the response.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PUT -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id /users?host=%25&name=root\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \", \"status\": \"DONE\", \"user\": \"user@example.com\", \"insertTime\": \"2019-09-26T14:32:30.592Z\", \"startTime\": \"2019-09-26T14:32:30.594Z\", \"endTime\": \"2019-09-26T14:32:33.518Z\", \"operationType\": \"UPDATE USER\", \"name\": \" operation-id \", \"targetId\": \" instance-id \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /operations/ operation-id \", \"targetProject\": \" project-id \" } Retrieve the IPv4 address Retrieve the automatically assigned IPv4 address for the new instance: Before using any of the request data, make the following replacements: project-id : your project ID instance-id : instance ID created in prior step HTTP method and URL: GET https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "REST Resource: instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "source_id": "site-docs-reference-3",
+        "final_score": 155,
+        "relevance": "",
+        "evidence_snippets": [
+          "The IPv4 address cannot be disabled for Second Generation instances. storageAutoResize boolean Configuration to increase storage size automatically.",
+          "Only PER USE is supported for Second Generation instances. replicationType (deprecated) enum ( SqlReplicationType ) This item is deprecated!",
+          "JSON representation { \"kind\" : string , \"state\" : enum ( SqlInstanceState ) , \"databaseVersion\" : enum ( SqlDatabaseVersion ) , \"settings\" : { object ( Settings ) } , \"etag\" : string , \"failoverReplica\" : { \"name\" : string , \"available\" : boolean } , \"masterInstanceName\" : string , \"replicaNames\" : [ string ] , \"maxDiskSize\" : string , \"currentDiskSize\" : string , \"ipAddresses\" : [ { object ( IpMapping ) } ] , \"serverCaCert\" : { object ( SslCert ) } , \"instanceType\" : enum ( SqlInstanceType ) , \"project\" : string , \"ipv6Address\" : string , \"serviceAccountEmailAddress\" : string , \"onPremisesConfiguration\" : { object ( OnPremisesConfiguration ) } , \"replicaConfiguration\" : { object ( ReplicaConfiguration ) } , \"backendType\" : enum ( SqlBackendType ) , \"selfLink\" : string , \"suspensionReason\" : [ enum ( SqlSuspensionReason ) ] , \"connectionName\" : string , \"name\" : string , \"region\" : string , \"gceZone\" : string , \"secondaryGceZone\" : string , \"diskEncryptionConfiguration\" : { object ( DiskEncryptionConfiguration ) } , \"diskEncryptionStatus\" : { object ( DiskEncryptionStatus ) } , \"rootPassword\" : string , \"scheduledMaintenance\" : { object ( SqlScheduledMaintenance ) } , \"satisfiesPzs\" : boolean , \"databaseInstalledVersion\" : string , \"createTime\" : string , \"availableMaintenanceVersions\" : [ string ] , \"maintenanceVersion\" : string , \"upgradableDatabaseVersions\" : [ { object ( AvailableDatabaseVersion ) } ] , \"replicationCluster\" : { object ( ReplicationCluster ) } , \"satisfiesPzi\" : boolean , \"tags\" : { string : string , ... } , \"nodes\" : [ { object ( PoolNodeConfig ) } ] , \"dnsNames\" : [ { object ( DnsNameMapping ) } ] , \"outOfDiskReport\" : { object ( SqlOutOfDiskReport ) } , \"sqlNetworkArchitecture\" : enum ( SqlNetworkArchitecture ) , \"pscServiceAttachmentLink\" : string , \"dnsName\" : string , \"primaryDnsName\" : string , \"writeEndpoint\" : string , \"geminiConfig\" : { object ( GeminiInstanceConfig ) } , \"switchTransactionLogsToCloudStorageEnabled\" : boolean , \"includeReplicasForMajorVersionUpgrade\" : boolean , \"nodeCount\" : integer } Fields kind string This is always sql#instance . state enum ( SqlInstanceState ) The current serving state of the Cloud SQL instance. databaseVersion enum ( SqlDatabaseVersion ) The database engine type and version."
+        ]
+      },
+      {
+        "title": "\"Build context sets using Gemini CLI \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following commands in your terminal to authenticate: gcloud auth application-default login Configure the tools.yaml file The extension requires a database connection for context generation, which is supported by the MCP Toolbox and defined within the tools.yaml configuration file.",
+          "Grant executesql permission to Cloud SQL instance To grant the executesql permission to Cloud SQL instance and enable the Cloud SQL Data API, run the following command: gcloud config set project PROJECT ID gcloud components update gcloud beta sql instances patch INSTANCE ID --data-api-access=ALLOW DATA API Replace the following: PROJECT ID : The ID of your Google Cloud project.",
+          "Enable cloudsql vector flag. gcloud sql instances patch INSTANCE NAME --database-flags=cloudsql vector=on Enable enable-google-ml-integration flag to allow the Cloud SQL for MySQL instance to integrate with Vertex AI. gcloud sql instances patch INSTANCE NAME --enable-google-ml-integration Create a vector column to store city embeddings ALTER TABLE airports ADD COLUMN city embedding VECTOR ( 768 ); Generate and store vector embeddings for city names UPDATE airports SET city embedding = mysql . ml embedding ( 'text-embedding-005' , city ) WHERE city IS NOT NULL ; To enable the Cloud SQL for MySQL instance to perform trigram value searches, perform the following steps."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "request.json",
+      "sql.iam.gserviceaccount.com",
+      "sqladmin.googleapis.com",
+      "tools.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:05.419Z",
+  "source_step08_card": "data/step-08/current/products/datastream/card.json",
+  "product_name": "Datastream",
+  "product_slug": "datastream",
+  "feature_name": "Secret Manager integration",
+  "feature_slug": "secret-manager-integration",
+  "summary": "Datastream can use Secret Manager to securely store authentication resources.",
+  "extended_definition": "Datastream can use Secret Manager to securely store authentication resources.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+      "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+      "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles",
+      "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "MCP Tools Reference: datastream \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles",
+        "source_id": "site-api-reference",
+        "final_score": 222,
+        "relevance": "",
+        "evidence_snippets": [
+          "MongodbProfile JSON representation { \"hostAddresses\" : [ { object ( HostAddress ) } ] , \"replicaSet\" : string , \"username\" : string , \"password\" : string , \"secretManagerStoredPassword\" : string , \"sslConfig\" : { object ( MongodbSslConfig ) } , \"additionalOptions\" : { string : string , ... } , // Union field mongodb connection format can be only one of the following: \"srvConnectionFormat\" : { object ( SrvConnectionFormat ) } , \"standardConnectionFormat\" : { object ( StandardConnectionFormat ) } // End of list of possible types for union field mongodb connection format . } Fields hostAddresses[] object ( HostAddress ) Required.",
+          "LabelsEntry JSON representation { \"key\" : string , \"value\" : string } Fields key string value string OracleProfile JSON representation { \"hostname\" : string , \"port\" : integer , \"username\" : string , \"password\" : string , \"databaseService\" : string , \"connectionAttributes\" : { string : string , ... } , \"oracleSslConfig\" : { object ( OracleSslConfig ) } , \"oracleAsmConfig\" : { object ( OracleAsmConfig ) } , \"secretManagerStoredPassword\" : string } Fields hostname string Required.",
+          "OracleAsmConfig JSON representation { \"hostname\" : string , \"port\" : integer , \"username\" : string , \"password\" : string , \"asmService\" : string , \"connectionAttributes\" : { string : string , ... } , \"oracleSslConfig\" : { object ( OracleSslConfig ) } , \"secretManagerStoredPassword\" : string } Fields hostname string Required."
+        ]
+      },
+      {
+        "title": "Create connection profiles \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+        "source_id": "site-docs-root",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Hostname or IP Enter a hostname or IP address that Datastream can use to connect to the source PostgreSQL database.",
+          "Hostname or IP Enter a hostname or IP address that Datastream can use to connect to the source SQL Server database.",
+          "Hostname or IP Enter a hostname or IP address that Datastream can use to connect to the source Oracle database."
+        ]
+      },
+      {
+        "title": "Implement Datastream and Dataflow for analytics \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "source_id": "site-docs-root",
+        "final_score": 188,
+        "relevance": "",
+        "evidence_snippets": [
+          "Datastream uses the information defined in the connection profiles to connect to both the source and the destination so that it can stream data from the source database into your destination bucket in Cloud Storage.",
+          "In the Name or template for the dataset to contain staging tables. field, enter My integration dataset log because Dataflow uses this dataset to stage the data changes that it receives from Datastream.",
+          "Use the Objects to include menu to specify the tables and schemas in your source database that Datastream can transfer into a folder in the destination bucket in Cloud Storage."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.connectionProfiles \\_|\\_ Datastream \\_\\",
+        "url": "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles",
+        "source_id": "site-api-reference",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"hostAddresses\" : [ { object ( HostAddress ) } ] , \"replicaSet\" : string , \"username\" : string , \"password\" : string , \"secretManagerStoredPassword\" : string , \"sslConfig\" : { object ( MongodbSslConfig ) } , \"additionalOptions\" : { string : string , ... } , // Union field mongodb connection format can be only one of the following: \"srvConnectionFormat\" : { object ( SrvConnectionFormat ) } , \"standardConnectionFormat\" : { object ( StandardConnectionFormat ) } // End of list of possible types for union field mongodb connection format . } Fields hostAddresses[] object ( HostAddress ) Required.",
+          "JSON representation { \"hostname\" : string , \"port\" : integer , \"username\" : string , \"password\" : string , \"databaseService\" : string , \"connectionAttributes\" : { string : string , ... } , \"oracleSslConfig\" : { object ( OracleSslConfig ) } , \"oracleAsmConfig\" : { object ( OracleAsmConfig ) } , \"secretManagerStoredPassword\" : string } Fields hostname string Required.",
+          "JSON representation { \"hostname\" : string , \"port\" : integer , \"username\" : string , \"password\" : string , \"asmService\" : string , \"connectionAttributes\" : { string : string , ... } , \"oracleSslConfig\" : { object ( OracleSslConfig ) } , \"secretManagerStoredPassword\" : string } Fields hostname string Required."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.connectionProfiles"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles",
+        "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles",
+        "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles",
+        "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles",
+        "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles",
+        "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles"
+      ]
+    }
+  ]
+}

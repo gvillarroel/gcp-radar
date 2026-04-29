@@ -1,0 +1,167 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.589Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Granular OAuth scope management APIs",
+  "feature_slug": "granular-oauth-scope-management-apis",
+  "summary": "Granular OAuth scope management APIs let developers inspect required and authorized scopes programmatically through ScriptApp and AuthorizationInfo.",
+  "extended_definition": "Granular OAuth scope management APIs let developers inspect required and authorized scopes programmatically through ScriptApp and AuthorizationInfo.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/api/quickstart/python",
+      "https://developers.google.com/apps-script/api/reference/rest/v1/projects/getMetrics",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 161,
+        "relevance": "",
+        "evidence_snippets": [
+          "Feature Generally Available : To complement the release of the granular consent flow in Apps Script IDE executions, the following methods have been added to the ScriptApp and AuthorizationInfo classes to let Apps Script developers programmatically interact with the scopes granted for a script.",
+          "ScriptApp class : requireScopes(authMode, oAuthScopes) requireAllScopes(authMode) getAuthorizationInfo(authMode, oAuthScopes) AuthorizationInfo class : getAuthorizedScopes() For more information, refer to Handle granular OAuth permissions .",
+          "The granular OAuth consent screen lets users specify which individual OAuth scopes they would like to authorize."
+        ]
+      },
+      {
+        "title": "Method: projects.getMetrics \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/api/reference/rest/v1/projects/getMetrics",
+        "source_id": "site-api-reference",
+        "final_score": 120,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Authorization Scopes Requires the following OAuth scope: https://www.googleapis.com/auth/script.metrics For more information, see the OAuth 2.0 Overview .",
+          "Authorization requires the https://www.googleapis.com/auth/script.metrics OAuth scope.",
+          "HTTP request Path parameters Query parameters Request body Response body JSON representation Authorization Scopes MetricsGranularity MetricsFilter JSON representation MetricsValue JSON representation Try it!"
+        ]
+      },
+      {
+        "title": "Python quickstart \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/api/quickstart/python",
+        "source_id": "site-docs-root",
+        "final_score": 120,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SCOPES = [ \"https://www.googleapis.com/auth/script.projects\" ] SAMPLE CODE = \"\"\" function helloWorld() { console.log(\"Hello, world!\"); } \"\"\" . strip () SAMPLE MANIFEST = \"\"\" { \"timeZone\": \"America/New York\", \"exceptionLogging\": \"CLOUD\" } \"\"\" . strip () def main (): \"\"\"Calls the Apps Script API.\"\"\" creds = None The file token.json stores the user's access and refresh tokens, and is created automatically when the authorization flow completes for the first time. if os . path . exists ( \"token.json\" ): creds = Credentials . from authorized user file ( \"token.json\" , SCOPES ) If there are no (valid) credentials available, let the user log in. if not creds or not creds . valid : if creds and creds . expired and creds . refresh token : creds . refresh ( Request ()) else : flow = InstalledAppFlow . from client secrets file ( \"credentials.json\" , SCOPES ) creds = flow . run local server ( port = 0 ) Save the credentials for the next run with open ( \"token.json\" , \"w\" ) as token : token . write ( creds . to json ()) try : service = build ( \"script\" , \"v1\" , credentials = creds ) Call the Apps Script API Create a new project request = { \"title\" : \"My Script\" } response = service . projects () . create ( body = request ) . execute () Upload two files to the project request = { \"files\" : [ { \"name\" : \"hello\" , \"type\" : \"SERVER JS\" , \"source\" : SAMPLE CODE }, { \"name\" : \"appsscript\" , \"type\" : \"JSON\" , \"source\" : SAMPLE MANIFEST , }, ] } response = ( service . projects () . updateContent ( body = request , scriptId = response [ \"scriptId\" ]) . execute () ) print ( \"https://script.google.com/d/\" + response [ \"scriptId\" ] + \"/edit\" ) except errors .",
+          "Call the Apps Script API to create a new script project, upload a file to the project, and log the script's URL to the user. \"\"\" import os.path from google.auth.transport.requests import Request from google.oauth2.credentials import Credentials from google auth oauthlib.flow import InstalledAppFlow from googleapiclient import errors from googleapiclient.discovery import build If modifying these scopes, delete the file token.json.",
+          "Next steps Try the Google Workspace APIs in the APIs explorer Apps Script API reference documentation Google APIs Client for Python documentation Google Apps Script API PyDoc documentation Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "console.log",
+      "credentials.json",
+      "developers.google.com",
+      "googleapiclient.discovery",
+      "oauthlib.flow",
+      "os.path",
+      "projects.getMetrics",
+      "quickstart.py",
+      "script.google.com",
+      "script.metrics",
+      "script.projects",
+      "token.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/quickstart/python",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects/getMetrics"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/quickstart/python",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects/getMetrics"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/quickstart/python",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects/getMetrics"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/quickstart/python",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects/getMetrics"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/quickstart/python",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects/getMetrics"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/quickstart/python",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects/getMetrics"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/quickstart/python",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects/getMetrics"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/quickstart/python",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects/getMetrics"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/quickstart/python",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects/getMetrics"
+      ]
+    }
+  ]
+}

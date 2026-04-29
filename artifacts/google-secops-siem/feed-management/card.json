@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.987Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "Feed Management",
+  "feature_slug": "feed-management",
+  "summary": "Lets Chronicle users configure and manage data feeds without assistance from support personnel.",
+  "extended_definition": "Lets Chronicle users configure and manage data feeds without assistance from support personnel.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+      "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview",
+      "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the Feed Management UI \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 300,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Manage feeds After you configure your data feeds, use the management tools to monitor ingestion health, modify existing parameters, and manage the feed lifecycle.",
+          "Use the Feed Management UI Supported in: Google secops SIEM This document explains how to create, troubleshoot, and manage feeds within the Feed Management UI, including instructions for modifying, enabling, and deleting them.",
+          "When finished, go to the Feed Management page to view a detailed summary of all configured log types."
+        ]
+      },
+      {
+        "title": "\"Feed management overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can create and manage feeds using the feed management UI or the feed management API.",
+          "What's next Learn how to create and manage feeds using the feed management UI .",
+          "Learn how to create and manage feeds using the Feed management API ."
+        ]
+      },
+      {
+        "title": "\"Ingest Google Cloud data \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "source_id": "site-api-reference",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For details about how to configure Cloud Storage for Google SecOps, see Feed Management: Cloud Storage .",
+          "Before you begin Before you can ingest Google Cloud data into a Google SecOps instance, you must complete the following steps: Grant the following Identity and Access Management (IAM) roles at an organizational level to access the Google SecOps section: Chronicle Service Admin ( roles/chroniclesm.admin ): IAM role for performing all activities.",
+          "Control the rate of ingestion When the data ingestion rate for a tenant reaches a certain threshold, Google Security Operations restricts the rate of ingestion for new data feeds to prevent a source with a high ingestion rate from affecting the ingestion rate of another data source."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chroniclesm.admin"
+    ],
+    "missing_inventory_roles": [
+      "roles/chroniclesm.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    }
+  ]
+}

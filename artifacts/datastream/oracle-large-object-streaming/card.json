@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:05.419Z",
+  "source_step08_card": "data/step-08/current/products/datastream/card.json",
+  "product_name": "Datastream",
+  "product_slug": "datastream",
+  "feature_name": "Oracle large object streaming",
+  "feature_slug": "oracle-large-object-streaming",
+  "summary": "Datastream can stream Oracle large object data types including BLOB, CLOB, and NCLOB.",
+  "extended_definition": "Datastream can stream Oracle large object data types including BLOB, CLOB, and NCLOB.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+      "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream",
+      "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class DatastreamAsyncClient (1.18.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 299,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.datastream v1.types.Stream A resource representing streaming data from a source to a destination. get stream object get stream object ( request : typing .",
+          "Returns Type Description google.cloud.datastream v1.types.StopBackfillJobResponse Response for manually stop a backfill job for a specific stream object. stream object path stream object path ( project : str , location : str , stream : str , object : str ) - > str Returns a fully-qualified stream object string. stream path stream path ( project : str , location : str , stream : str ) - > str Returns a fully-qualified stream string. update connection profile update connection profile ( request : typing .",
+          "Returns Type Description google.cloud.datastream v1.types.StreamObject A specific stream object (e.g a specific DB table). network attachment path network attachment path ( project : str , region : str , network attachment : str ) - > str Returns a fully-qualified network attachment string. networks path networks path ( project : str , network : str ) - > str Returns a fully-qualified networks string. parse common billing account path parse common billing account path ( path : str ) - > typing ."
+        ]
+      },
+      {
+        "title": "\"Class DatastreamClient (1.18.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "source_id": "site-python-reference",
+        "final_score": 299,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.datastream v1.types.Stream A resource representing streaming data from a source to a destination. get stream object get stream object ( request : typing .",
+          "Returns Type Description google.cloud.datastream v1.types.StopBackfillJobResponse Response for manually stop a backfill job for a specific stream object. stream object path stream object path ( project : str , location : str , stream : str , object : str ) - > str Returns a fully-qualified stream object string. stream path stream path ( project : str , location : str , stream : str ) - > str Returns a fully-qualified stream string. update connection profile update connection profile ( request : typing .",
+          "Returns Type Description google.cloud.datastream v1.types.StreamObject A specific stream object (e.g a specific DB table). network attachment path network attachment path ( project : str , region : str , network attachment : str ) - > str Returns a fully-qualified network attachment string. networks path networks path ( project : str , network : str ) - > str Returns a fully-qualified networks string. parse common billing account path parse common billing account path ( path : str ) - > typing ."
+        ]
+      },
+      {
+        "title": "MCP Tools Reference: datastream \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream",
+        "source_id": "site-api-reference",
+        "final_score": 286,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "OracleSourceConfig JSON representation { \"includeObjects\" : { object ( OracleRdbms ) } , \"excludeObjects\" : { object ( OracleRdbms ) } , \"maxConcurrentCdcTasks\" : integer , \"maxConcurrentBackfillTasks\" : integer , // Union field large objects handling can be only one of the following: \"dropLargeObjects\" : { object ( DropLargeObjects ) } , \"streamLargeObjects\" : { object ( StreamLargeObjects ) } // End of list of possible types for union field large objects handling . // Union field cdc method can be only one of the following: \"logMiner\" : { object ( LogMiner ) } , \"binaryLogParser\" : { object ( BinaryLogParser ) } // End of list of possible types for union field cdc method . } Fields includeObjects object ( OracleRdbms ) The Oracle objects to include in the stream. excludeObjects object ( OracleRdbms ) The Oracle objects to exclude from the stream. maxConcurrentCdcTasks integer Maximum number of concurrent CDC tasks.",
+          "LabelsEntry JSON representation { \"key\" : string , \"value\" : string } Fields key string value string SourceConfig JSON representation { \"sourceConnectionProfile\" : string , // Union field source stream config can be only one of the following: \"oracleSourceConfig\" : { object ( OracleSourceConfig ) } , \"mysqlSourceConfig\" : { object ( MysqlSourceConfig ) } , \"postgresqlSourceConfig\" : { object ( PostgresqlSourceConfig ) } , \"sqlServerSourceConfig\" : { object ( SqlServerSourceConfig ) } , \"salesforceSourceConfig\" : { object ( SalesforceSourceConfig ) } , \"mongodbSourceConfig\" : { object ( MongodbSourceConfig ) } , \"spannerSourceConfig\" : { object ( SpannerSourceConfig ) } // End of list of possible types for union field source stream config . } Fields sourceConnectionProfile string Required.",
+          "The configuration for handle Oracle large objects. large objects handling can be only one of the following: dropLargeObjects object ( DropLargeObjects ) Drop large object values. streamLargeObjects object ( StreamLargeObjects ) Stream large object values."
+        ]
+      },
+      {
+        "title": "Create a stream \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+        "source_id": "site-docs-root",
+        "final_score": 284,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure an Oracle source database In the Select objects to include section, use the Objects to include drop-down menu to specify the tables and schemas in the source database that Datastream can transfer into the destination.",
+          "Oracle user permissions Datastream verifies that the user which it uses to connect to the source database has all of the necessary permissions to retrieve schemas, tables, and data from the database so that Datastream can stream this information into the destination.",
+          "Configure a SQL Server source database In the Select objects to include section, use the Objects to include drop-down menu to specify the tables and schemas in the source database that Datastream can transfer into the destination."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.datastream.v1",
+      "e.g",
+      "operation.result",
+      "v1.types.CreateConnectionProfileRequest",
+      "v1.types.StopBackfillJobResponse",
+      "v1.types.Stream",
+      "v1.types.StreamObject"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream"
+      ]
+    }
+  ]
+}

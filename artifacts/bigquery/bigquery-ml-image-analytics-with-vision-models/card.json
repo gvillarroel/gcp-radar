@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery ML image analytics with vision models",
+  "feature_slug": "bigquery-ml-image-analytics-with-vision-models",
+  "summary": "BigQuery ML can import vision models and run inference on image data accessed through object tables.",
+  "extended_definition": "BigQuery ML can import vision models and run inference on image data accessed through object tables.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/ai-application-overview",
+      "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Tutorial: Run inference on an object table by using a classification model\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet",
+        "source_id": "site-docs-reference-2",
+        "final_score": 121,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Go to BigQuery In the Editor pane, run the following SQL statement: CREATE EXTERNAL TABLE resnet inference test . vision images WITH CONNECTION us.lake-connection OPTIONS ( object metadata = 'SIMPLE' , uris = [ 'gs://cloud-samples-data/vision/ .jpg' ] ); bq In Cloud Shell, run the bq mk command to create the connection: bq mk --table \\ --external table definition='gs://cloud-samples-data/vision/ .jpg@us.lake-connection' \\ --object metadata=SIMPLE \\ resnet inference test . vision images Upload the model to Cloud Storage Get the model files and make them available in Cloud Storage: Download the ResNet 50 model to your local machine.",
+          "Create an object table Create an object table named vision images based on the image files in the public gs://cloud-samples-data/vision bucket: SQL Go to the BigQuery page.",
+          "Run inference Run inference on the vision images object table using the resnet model: Go to the BigQuery page."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . // Import the Google Cloud client library and create a client const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); async function ddlCreateView () { // Creates a view via a DDL query / TODO(developer): Uncomment the following lines before running the sample. / // const projectId = \"my project\" // const datasetId = \"my dataset\" // const tableId = \"my new view\" const query = CREATE VIEW \\ ${ projectId } . ${ datasetId } . ${ tableId } \\ OPTIONS( expiration timestamp=TIMESTAMP ADD( CURRENT TIMESTAMP(), INTERVAL 48 HOUR), friendly name=\"new view\", description=\"a view that expires in 2 days\", labels=[(\"org unit\", \"development\")] ) AS SELECT name, state, year, number FROM \\bigquery-public-data.usa names.usa 1910 current\\ WHERE state LIKE 'W%' ; // For all options, see https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query const options = { query : query , }; // Run the query as a job const [ job ] = await bigquery . createQueryJob ( options ); job . on ( 'complete' , metadata = > { console . log ( Created new view ${ tableId } via job ${ metadata . id } ); }); } Python Call the Client.query() method to start a query job.",
+          "For more information, see Set up authentication for client libraries . from google.cloud import bigquery project = 'my-project' dataset id = 'my dataset' table id = 'new view' client = bigquery.Client(project=project) sql = \"\"\" CREATE VIEW {} . {} . {} OPTIONS( expiration timestamp=TIMESTAMP ADD( CURRENT TIMESTAMP(), INTERVAL 48 HOUR), friendly name=\"new view\", description=\"a view that expires in 2 days\", labels=[(\"org unit\", \"development\")] ) AS SELECT name, state, year, number FROM bigquery-public-data.usa names.usa 1910 current WHERE state LIKE 'W%' \"\"\" . format ( project , dataset id , table id ) job = client . query ( sql ) # API request. job . result () # Waits for the query to finish. print ( 'Created new view \" {} . {} . {} \".' . format ( job . destination . project , job . destination . dataset id , job . destination . table id , ) ) On-demand query size calculation If you use on-demand billing, BigQuery charges for data definition language (DDL) queries based on the number of bytes processed by the query.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Task-specific solutions overview \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/ai-application-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 111,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported tasks include the following: Natural language processing Machine translation Audio transcription Document processing Computer vision You access a Cloud AI API to perform one of these functions by creating a remote model in BigQuery ML that represents the API endpoint.",
+          "Workflow You can use remote models over Vertex AI models and remote models over Cloud AI services together with BigQuery ML functions in order to accomplish complex data analysis and generative AI tasks.",
+          "Home Documentation Data analytics BigQuery Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.Client",
+      "bigquery.jobs.create",
+      "bigquery.models.create",
+      "bigquery.models.getData",
+      "bigquery.models.updateData",
+      "bigquery.tables.getData",
+      "com.google.cloud.bigquery",
+      "data.usa",
+      "names.usa",
+      "us.lake"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet",
+        "https://docs.cloud.google.com/bigquery/docs/ai-application-overview",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet",
+        "https://docs.cloud.google.com/bigquery/docs/ai-application-overview",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet",
+        "https://docs.cloud.google.com/bigquery/docs/ai-application-overview",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet",
+        "https://docs.cloud.google.com/bigquery/docs/ai-application-overview",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet",
+        "https://docs.cloud.google.com/bigquery/docs/ai-application-overview",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    }
+  ]
+}

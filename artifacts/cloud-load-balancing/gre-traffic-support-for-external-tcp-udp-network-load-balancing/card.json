@@ -1,0 +1,212 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:49.160Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "GRE traffic support for external TCP/UDP Network Load Balancing",
+  "feature_slug": "gre-traffic-support-for-external-tcp-udp-network-load-balancing",
+  "summary": "External TCP/UDP Network Load Balancing supports load balancing GRE traffic using L3_DEFAULT forwarding rules and UNSPECIFIED backend protocol.",
+  "extended_definition": "External TCP/UDP Network Load Balancing supports load balancing GRE traffic using L3_DEFAULT forwarding rules and UNSPECIFIED backend protocol.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/internal",
+      "https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview",
+      "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Set up an internal passthrough Network Load Balancer with VM instance group backends for multiple protocols | Cloud Load Balancing | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols",
+        "source_id": "feature-recovery-http",
+        "final_score": 251,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "POST https://compute.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/us-west1/backendServices { \"name\": \"be-ilb-udp\", \"backends\": [ { \"group\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /zones/us-west1-a/instanceGroups/ig-a\", \"balancingMode\": \"CONNECTION\" } ], \"healthChecks\": [ \"https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/us-west1/healthChecks/hc-http-80\" ], \"loadBalancingScheme\": \"INTERNAL\", \"protocol\": \"UDP\", \"connectionDraining\": { \"drainingTimeoutSec\": 0 } } Create the forwarding rule by making a POST request to the forwardingRules.insert method : POST https://compute.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/us-west1/forwardingRules { \"name\": \"fr-ilb-udp\", \"IPAddress\": \"internal-lb-ipv4\", \"IPProtocol\": \"UDP\", \"ports\": [ \"53\" ], \"loadBalancingScheme\": \"INTERNAL\", \"subnetwork\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/us-west1/subnetworks/lb-subnet\", \"network\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /global/networks/lb-network\", \"backendService\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/us-west1/backendServices/be-ilb-udp\", \"networkTier\": \"PREMIUM\" } Create the third load balancer Create the forwarding rule of the third load balancer to use the static reserved internal IP address. gcloud Create the forwarding rule with the protocol set to L3_DEFAULT to handle all other supported IPv4 protocol traffic.",
+          "POST https://compute.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/us-west1/forwardingRules { \"name\": \"fr-ilb-ipv6\", \"IPProtocol\": \"L3_DEFAULT\", \"allPorts\": true, \"loadBalancingScheme\": \"INTERNAL\", \"subnetwork\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/us-west1/subnetworks/lb-subnet\", \"backendService\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/us-west1/backendServices/be-ilb-l3-default\", \"ipVersion\": \"IPV6\", \"networkTier\": \"PREMIUM\" } For IPv4 traffic : Create the forwarding rule by making a POST request to the forwardingRules.insert method : POST https://compute.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/us-west1/forwardingRules { \"name\": \"fr-ilb-l3-default\", \"IPAddress\": \"10.1.2.99\", \"IPProtocol\": \"L3_DEFAULT\", \"allPorts\": true, \"loadBalancingScheme\": \"INTERNAL\", \"subnetwork\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/us-west1/subnetworks/lb-subnet\", \"network\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /global/networks/lb-network\", \"backendService\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/us-west1/backendServices/be-ilb-l3-default\", \"networkTier\": \"PREMIUM\" } Test your load balancer The following tests show how to validate your load balancer configuration and learn about its expected behavior.",
+          "This health check is used to verify the health of backends in the ig-a instance group. gcloud compute health-checks create http hc-http-80 \\ --region=us-west1 \\ --port=80 Create the backend service with the protocol set to UNSPECIFIED : gcloud compute backend-services create be-ilb-l3-default \\ --load-balancing-scheme=internal \\ --protocol=UNSPECIFIED \\ --region=us-west1 \\ --health-checks=hc-http-80 \\ --health-checks-region=us-west1 Add the instance group to the backend service: gcloud compute backend-services add-backend be-ilb-l3-default \\ --region=us-west1 \\ --instance-group=ig-a \\ --instance-group-zone=us-west1-a For IPv6 traffic : Create a forwarding rule with the protocol set to L3_DEFAULT to handle all supported IPv6 protocol traffic."
+        ]
+      },
+      {
+        "title": "Internal passthrough Network Load Balancer overview | Cloud Load Balancing | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "source_id": "feature-recovery-http",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table summarizes how to use these settings for different protocols: Traffic to be load-balanced Forwarding rule protocol Backend service protocol TCP (IPv4 or IPv6) TCP TCP or UNSPECIFIED UDP (IPv4 or IPv6) UDP UDP or UNSPECIFIED TCP, UDP, ICMP, ICMPv6, SCTP, ESP, AH, and GRE L3_DEFAULT UNSPECIFIED Forwarding rules and global access An internal passthrough Network Load Balancer's forwarding rules are regional, even when global access is enabled.",
+          "Forwarding rule protocols Internal passthrough Network Load Balancers support the following IPv4 protocol options for each forwarding rule: TCP , UDP , or L3_DEFAULT .",
+          "In addition to supporting protocols other than TCP and UDP, the L3_DEFAULT option makes it possible for a single forwarding rule to simultaneously forward traffic for multiple protocols."
+        ]
+      },
+      {
+        "title": "Internal passthrough Network Load Balancers as next hops | Cloud Load Balancing | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview",
+        "source_id": "feature-recovery-http",
+        "final_score": 140,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: A load balancer whose forwarding rule uses the L3_DEFAULT protocol cannot be the next hop for a static route.",
+          "Internal passthrough Network Load Balancers as next hops | Cloud Load Balancing | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Load Balancing Start free Overview Guides Reference Resources Technology areas More Overview Guides Reference Resources Cross-product tools More Console Discover Cloud Load Balancing overview Choose a load balancer Cloud Load Balancing resource model Load balancer feature comparison Get started Roles and permissions IAM Conditions for forwarding rules Organization policy constraints Overview Use custom constraints Application Load Balancer (HTTP/HTTPS) Overview External load balancer Architecture overview Request distribution overview Set up global load balancer Managed VM instance group backend Cloud Storage (backend buckets) External backend (internet NEG) Cloud Run, App Engine, or Cloud Run functions backends (serverless NEG) On-premises or other cloud backends (zonal and hybrid NEG) Add capabilities Traffic management overview Set up traffic management Set up HTTP-to-HTTPS redirect Set up a load balancer with Shared VPC Set up load balancer with cross-project backend service and backend bucket Create custom headers in backend services Custom error response Overview Configure custom error responses Set up global load balancer (classic) Terraform examples Managed VM instance group backend Cloud Storage (backend buckets) External backend (internet NEG) Cloud Run, App Engine, or Cloud Functions backends (serverless NEG) On-premises or other cloud backends (zonal and hybrid NEG) Migrate resources Overview Migrate to global external Application Load Balancer Roll back to classic Application Load Balancer Add capabilities Traffic management overview Create custom headers in backend services Set up custom header and query parameter-based routing Set up URL redirect Set up HTTP-to-HTTPS redirect Set up URL rewrite Set up regional load balancer Managed VM instance group backend Cloud Storage (backend buckets) Cloud Run backends (serverless NEG) On-premises or other cloud backends (zonal and hybrid NEG) External backend (internet NEG) Add capabilities Traffic management overview Set up traffic management Set up high availability Set up HTTP-to-HTTPS redirect Set up a load balancer with backend service using Shared VPC Set up a load balancer with backend buckets using Shared VPC Create custom headers in URL maps Fail over to regional load balancers Monitor and troubleshoot Overview Global load balancers Regional load balancers Troubleshooting Best practices Explore tutorials Request routing to a multi-region external HTTPS load balancer Faster web performance and improved web protection for load balancing Deliver HTTP and HTTPS content over the same published domain Optimize application latency with load balancing Application capacity optimizations with global load balancing Capacity management with load balancing Internal load balancer Architecture overview Set up cross-region load balancer Managed VM instance group backend Cloud Storage (backend buckets) On-premises or other cloud backends (zonal and hybrid NEG) Cloud Run backends (serverless NEG) Set up regional load balancer Terraform examples VM instance group backends Cloud Run backends (serverless NEG) Cloud Storage (backend buckets) On-premises or other cloud backends (zonal and hybrid NEG) External backend (internet NEG) Add capabilities Traffic management Overview Set up traffic management Set up HTTP-to-HTTPS redirect Create custom headers in URL maps Set up regional internal load balancer with backend service using Shared VPC Set up cross-region load balancer with backend buckets using Shared VPC Set up a regional internal Application Load Balancer with backend buckets using Shared VPC Service Directory registration Load balancing and connected networks Monitor and troubleshoot View logs and metrics Troubleshooting Convert load balancer to IPv6 Use custom metrics Load testing backends Proxy Network Load Balancer (TCP/SSL proxy) Overview External load balancer Architecture overview Set up global load balancer Global SSL proxy with VM instance group backends Global TCP proxy with VM instance group backends Set up global load balancer (classic) Terraform examples Global SSL proxy with VM instance group backends Global TCP proxy with VM instance group backends Set up regional load balancer VM instance group backends Zonal NEG backends Hybrid connectivity (hybrid NEGs) External backend (internet NEG) Internal load balancer Architecture overview Set up cross-region load balancer Managed VM instance group backends On-premises or other cloud backends (zonal and hybrid NEG) Set up regional load balancer Managed VM instance group backends Zonal NEG backends Hybrid connectivity (hybrid NEGs) External backend (internet NEG) Add capabilities Load balancing and connected networks Monitor and troubleshoot View logs and metrics Convert load balancer to IPv6 Passthrough Network Load Balancer (TCP/UDP) Overview External load balancer Backend service-based architecture Traffic distribution concepts Target pool-based architecture Set up load balancer VM instance group backends (TCP/UDP only) VM instance group backends (multiple protocols) Zonal NEG backends Target pool-based load balancer Add capabilities Configure failover Configure weighted load balancing Migrate from target pools to backend services Service Directory registration Explore tutorials Use UDP with network load balancers Monitor and troubleshoot View logs and metrics Troubleshooting Internal load balancer Architecture overview Traffic distribution concepts Set up load balancer Terraform examples VM instance group backends VM instance group backend for multiple protocols Zonal NEG backends Add capabilities Configure failover Zonal affinity Load balancers as next hops Overview Set up load balancing for third-party appliances Forwarding rules that use a common IP address Service Directory registration Load balancing and connected networks Explore tutorials Set up load balancer as next hop (with tags) Deploy a hub-and-spoke network Set up a load balancer with internal IPv6-only backends Monitor and troubleshoot View logs and metrics Troubleshooting Protocol forwarding Overview Set up protocol forwarding Switch between a target instance and a backend service Secure SSL certificates Overview Use self-managed SSL certificates Use Google-managed SSL certificates Encryption to the backends Troubleshooting SSL policies Overview Use SSL policies Mutual TLS Frontend mTLS Overview Set up frontend mTLS with user-provided certificates Set up frontend mTLS with a private CA Backend mTLS Overview Set up backend authenticated TLS Set up backend mTLS Backend mTLS with managed workload identity Overview Set up backend mTLS using managed workload identity Authorization policies Overview Set up policies for Application Load Balancers Customize load balancer Advanced load balancing optimizations Backend buckets Backend services Connection draining Firewall rules Forwarding rules Health checks Overview Use health checks Internal DNS names IPv6 Network endpoint groups Overview Hybrid connectivity NEGs Internet NEGs Serverless NEGs Zonal NEGs Overview Set up zonal NEGs Proxy-only subnets Tags Target pools Target proxies URL maps Overview Use URL maps Operate and maintain Audit logging information Health check logging information Clean up a load balancer setup AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Networking Load Balancing Guides Send feedback Internal passthrough Network Load Balancers as next hops Stay organized with collections Save and categorize content based on your preferences.",
+          "When an internal passthrough Network Load Balancer is deployed as a next hop, Google Cloud forwards all traffic on all ports to the backend VMs, regardless of the following: The forwarding rule's protocol and port configuration The backend service's protocol configuration The internal passthrough Network Load Balancer, which is the next hop of the route, seamlessly supports forwarding all the traffic for the protocols supported by Google Cloud VPC networks (such as TCP, UDP, and ICMP)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview"
+      ]
+    }
+  ]
+}

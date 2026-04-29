@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Standard SQL",
+  "feature_slug": "standard-sql",
+  "summary": "BigQuery supports Standard SQL based on the SQL 2011 standard with extensions for nested and repeated data; Standard SQL provides SQL 2011-based query support with extensions for nested and repeated data.",
+  "extended_definition": "BigQuery supports Standard SQL based on the SQL 2011 standard with extensions for nested and repeated data; Standard SQL provides SQL 2011-based query support with extensions for nested and repeated data.",
+  "lifecycle": {
+    "latest_feature_date": "2016-09-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/introduction-sql",
+      "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Introduction to SQL in BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/introduction-sql",
+        "source_id": "site-docs-reference",
+        "final_score": 34,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics BigQuery Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "BigQuery SQL dialects BigQuery supports the GoogleSQL dialect, which is the recommended dialect for all new projects.",
+          "Switch to the legacy SQL dialect To use legacy SQL syntax in a query job, set the useLegacySql parameter to true . // Import the Google Cloud client library const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); async function queryLegacy () { // Queries the U.S. given names dataset for the state of Texas using legacy SQL. const query = 'SELECT word FROM [bigquery-public-data:samples.shakespeare] LIMIT 10;' ; // For all options, see https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query const options = { query : query , // Location must match that of the dataset(s) referenced in the query. location : 'US' , useLegacySql : true , }; // Run the query as a job const [ job ] = await bigquery . createQueryJob ( options ); console . log ( Job ${ job . id } started. ); // Wait for the query to finish const [ rows ] = await job . getQueryResults (); // Print the results console . log ( 'Rows:' ); rows . forEach ( row = > console . log ( row )); } PHP Before trying this sample, follow the PHP setup instructions in the BigQuery quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "Introduction to SQL in BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 34,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics BigQuery Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "BigQuery SQL dialects BigQuery supports the GoogleSQL dialect, which is the recommended dialect for all new projects.",
+          "Switch to the legacy SQL dialect To use legacy SQL syntax in a query job, set the useLegacySql parameter to true . // Import the Google Cloud client library const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); async function queryLegacy () { // Queries the U.S. given names dataset for the state of Texas using legacy SQL. const query = 'SELECT word FROM [bigquery-public-data:samples.shakespeare] LIMIT 10;' ; // For all options, see https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query const options = { query : query , // Location must match that of the dataset(s) referenced in the query. location : 'US' , useLegacySql : true , }; // Run the query as a job const [ job ] = await bigquery . createQueryJob ( options ); console . log ( Job ${ job . id } started. ); // Wait for the query to finish const [ rows ] = await job . getQueryResults (); // Print the results console . log ( 'Rows:' ); rows . forEach ( row = > console . log ( row )); } PHP Before trying this sample, follow the PHP setup instructions in the BigQuery quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "\"Analyze multimodal data with SQL and BigQuery DataFrames \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 24,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up ADC for a local development environment . df manuals agg The results look similar to the following: +-------------------------------------+--------------------------------+-----------------------------------+------------------------------------------------------+-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ manual.uri manual.version manual.authorizer manual.details chunks.uri chunks.version chunks.authorizer chunks.details +-------------------------------------+--------------------------------+-----------------------------------+------------------------------------------------------+-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ gs://cloud-samples-data/bigquery/ 1742492785900455 myproject.region.myconnection {\"gcs metadata\":{\"content type\":\"application/pef\", gs://cloud-samples-data/bigquery/ 1745875761227129 myproject.region.myconnection {\"gcs metadata\":{\"content type\":\"application/pdf\", tutorials/cymbal-pets/documents/ \"md5 hash\":\"c9032b037693d15a33210d638c763d0e\", tutorials/cymbal-pets/documents/ \"md5 hash\":\"5a1116cce4978ec1b094d8e8b49a1d7c\", crittercuisine 5000 user manual.pdf \"size\":566105,\"updated\":1742492785941000}} crittercuisine 5000 user manual page1.pdf \"size\":504583,\"updated\":1745875761266000}} +-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ crittercuisine 5000 user manual page1.pdf 1745875760613874 myproject.region.myconnection {\"gcs metadata\":{\"content type\":\"application/pdf\", tutorials/cymbal-pets/documents/ \"md5 hash\":\"94d03ec65d28b173bc87eac7e587b325\", crittercuisine 5000 user manual page2.pdf \"size\":94622,\"updated\":1745875760649000}} +-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ ... ... ... ... +-------------------------------------+--------------------------------+-----------------------------------+------------------------------------------------------+-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ Run the following to generate a single response from a Gemini model based on the analysis of an array of ObjectRef values: SQL WITH manuals AS ( SELECT OBJ .",
+          "Create the products table Create a standard table that contains the Cymbal pets product information: In the Google Cloud console, go to the BigQuery page.",
+          "Home Documentation Data analytics BigQuery Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chunks.authorizer",
+      "chunks.details",
+      "chunks.uri",
+      "chunks.version",
+      "manual.authorizer",
+      "manual.details",
+      "manual.pdf",
+      "manual.uri",
+      "manual.version",
+      "myproject.region.myconnection",
+      "names.usa",
+      "page1.pdf",
+      "page2.pdf",
+      "samples.shakespeare"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql",
+        "https://docs.cloud.google.com/bigquery/docs/introduction-sql",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial"
+      ]
+    }
+  ]
+}

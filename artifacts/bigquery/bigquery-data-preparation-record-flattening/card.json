@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery data preparation record flattening",
+  "feature_slug": "bigquery-data-preparation-record-flattening",
+  "summary": "BigQuery data preparation can flatten records in a single operation.",
+  "extended_definition": "BigQuery data preparation can flatten records in a single operation.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+      "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Query syntax \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "source_id": "site-docs-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "SELECT FROM ( SELECT product , sales , quarter FROM Produce ) PIVOT ( SUM ( sales ) AS total sales , COUNT ( ) AS num records FOR quarter IN ( 'Q1' , 'Q2' )) / --------+----------------+----------------+----------------+----------------+ product total sales Q1 num records Q1 total sales Q2 num records Q2 +--------+----------------+----------------+----------------+----------------+ Kale 121 2 108 2 Apple 78 2 0 1 +--------+----------------+----------------+----------------+---------------- / UNPIVOT operator FROM from item [, ...] unpivot operator unpivot operator : UNPIVOT [ { INCLUDE NULLS EXCLUDE NULLS } ] ( { single column unpivot multi column unpivot } ) [ unpivot alias ] single column unpivot : values column FOR name column IN ( columns to unpivot ) multi column unpivot : values column set FOR name column IN ( column sets to unpivot ) values column set : ( values column [, ...]) columns to unpivot : unpivot column [ row value alias ][, ...] column sets to unpivot : ( unpivot column [ row value alias ][, ...]) unpivot alias and row value alias : [AS] alias The UNPIVOT operator rotates columns into rows.",
+          "Sampling returns a variety of records while avoiding the costs associated with scanning and processing an entire table.",
+          "For several ways to use UNNEST , including construction, flattening, and filtering, see Work with arrays ."
+        ]
+      },
+      {
+        "title": "\"Legacy SQL Syntax, Functions and Operators \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "source_id": "site-docs-reference",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example This example performs a scoped COUNT aggregation and then filters and sorts the records by the aggregated value. legacySQL SELECT repository . url , COUNT ( payload . pages . page name ) WITHIN RECORD AS page count FROM [ bigquery - public - data : samples . github nested ] HAVING page count > 80 ORDER BY page count DESC ; FROM clause FROM [project name:]datasetId.tableId [ [ AS ] alias ] ( subquery ) [ [ AS ] alias ] JOIN clause FLATTEN clause table wildcard function The FROM clause specifies the source data to be queried.",
+          "If you use OMIT...IF to exclude a portion of a record in a repeating field, and the query also selects other independently repeating fields, BigQuery omits a portion of the other repeated records in the query.",
+          "Given a record with one or more values for a repeated field, FLATTEN will create multiple records, one for each value in the repeated field."
+        ]
+      },
+      {
+        "title": "bq command-line tool reference \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: --external table definition=myTable::/tmp/tabledef --external table definition=myTable::Region:STRING,Quarter:STRING,Total sales:INTEGER@CSV=gs://mybucket/sales.csv Repeat this flag to query multiple tables. --flatten results={true false} To disallow flattening nested and repeated fields in the results for legacy SQL queries, set to false .",
+          "For more information, see Loading newline-delimited GeoJSON files . --max bad records= MAX An integer that specifies the maximum number of bad records allowed before the entire job fails.",
+          "At most, five errors of any type are returned regardless of the --max bad records value."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "sales.csv"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    }
+  ]
+}

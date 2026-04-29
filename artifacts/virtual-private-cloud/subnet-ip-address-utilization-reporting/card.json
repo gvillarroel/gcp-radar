@@ -1,0 +1,146 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:33.557Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Subnet IP address utilization reporting",
+  "feature_slug": "subnet-ip-address-utilization-reporting",
+  "summary": "You can now view free and allocated IP address counts when listing or describing a subnet.",
+  "extended_definition": "You can now view free and allocated IP address counts when listing or describing a subnet.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip",
+      "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+      "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+      "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Bring your own IP addresses \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "source_id": "site-docs-root-2",
+        "final_score": 205,
+        "relevance": "",
+        "evidence_snippets": [
+          "Configuration Regional (v2) Regional internal (v2) Regional (v1) Global (v1) Availability Recommended regional configuration Used for internal IPv6 addresses Not recommended for new regional configurations Must request adding your project to an allowlist Public advertised prefix provisioning time Approximately 2 weeks Immediate Approximately 4 weeks Approximately 4 weeks Public delegated prefix provisioning time A few minutes Immediate 4 weeks Can overlap with public advertised prefix provisioning time 4 weeks Can overlap with public advertised prefix provisioning time Sub-prefix provisioning time A few minutes Immediate A few minutes A few minutes BGP announcement The public advertised prefix is not automatically announced when it is provisioned.",
+          "Anyone who has the appropriate IAM permissions in the project can use the IP addresses: compute.addresses. for regional IP addresses compute.globalAddresses. for global IP addresses Bring your own IP configurations The following tables summarize the available bring your own IP configurations.",
+          "You can use IPv6 BYOIP addresses in the following ways, depending on the sub-prefix: For external access sub-prefixes, you must choose one of the following mutually exclusive modes: Forwarding rules for external passthrough Network Load Balancers or external protocol forwarding."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create and manage VPC networks \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "source_id": "site-docs-root",
+        "final_score": 166,
+        "relevance": "",
+        "evidence_snippets": [
+          "To list all subnets in a region and include their IP address utilization, make the following GET request: GET https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks?views=WITH UTILIZATION Describe a subnet You can view the details of an existing subnet—such as its primary IPv4 ranges, secondary IP ranges, IPv6 ranges, IP address utilization, and region—by following the steps in this section.",
+          "List subnets You can see all the subnets that exist for a project or VPC network, including details about IP address utilization.",
+          "Edit secondary IPv4 ranges You can add secondary IPv4 ranges to subnets, or you can remove any secondary IPv4 range as long as no resources are using IP addresses in it. gcloud To add a new secondary IPv4 range to a subnet, use the subnets update command . gcloud compute networks subnets update SUBNET \\ --region= REGION \\ --add-secondary-ranges= SECONDARY RANGE NAME = SECONDARY RANGE Replace the following: SUBNET : the name of the subnet."
+        ]
+      },
+      {
+        "title": "\"Planning for bring your own IP addresses \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "source_id": "site-docs-root-2",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "BYOIP address administration without an organization If you use a project that does not belong to an organization, you can't create a separate project for BYOIP address administration.",
+          "If you anticipate needing BYOIP addresses in a region, complete the public delegated prefix provisioning process in advance, so you can later fulfill addressing needs on-demand.",
+          "You can manage prefixes centrally in a project distinct from the ultimate destinations of the IP addresses."
+        ]
+      },
+      {
+        "title": "\"Access APIs from VMs with external IP addresses \\_|\\_ Virtual Private Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip",
+        "source_id": "site-docs-root-2",
+        "final_score": 163,
+        "relevance": "",
+        "evidence_snippets": [
+          "IPv6 support for private.googleapis.com and restricted.googleapis.com The following IPv6 address ranges can be used to direct traffic from IPv6 clients to Google APIs and services: private.googleapis.com : 2600:2d00:0002:2000::/56 restricted.googleapis.com : 2600:2d00:0002:1000::/56 Consider configuring the IPv6 addresses if you want to use the private.googleapis.com or restricted.googleapis.com domain, and you have clients that use IPv6 addresses.",
+          "DNS configuration For connectivity to Google APIs and services, you can choose to send packets to the IP addresses associated with the private.googleapis.com or restricted.googleapis.com VIP.",
+          "Various IP address ranges—you can determine a set of IP ranges that contains the possible addresses used by the default domains by referencing IP addresses for default domains ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.addresses",
+      "compute.globalAddresses",
+      "compute.googleapis.com",
+      "private.googleapis.com",
+      "restricted.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip"
+      ]
+    }
+  ]
+}

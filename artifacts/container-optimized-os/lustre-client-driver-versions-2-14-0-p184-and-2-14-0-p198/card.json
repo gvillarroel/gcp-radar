@@ -1,0 +1,103 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:02.340Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os",
+  "feature_name": "Lustre client driver versions 2.14.0_p184 and 2.14.0_p198",
+  "feature_slug": "lustre-client-driver-versions-2-14-0-p184-and-2-14-0-p198",
+  "summary": "Container-Optimized OS support for Lustre client driver versions 2.14.0_p184 and 2.14.0_p198 is being removed; deprecated on 2025-07-24.",
+  "extended_definition": "Container-Optimized OS support for Lustre client driver versions 2.14.0_p184 and 2.14.0_p198 is being removed; deprecated on 2025-07-24.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-24",
+    "deprecation_date": "2025-07-24",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Running instances with GPU accelerators \\_|\\_ Container-Optimized OS \\_\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "source_id": "site-docs-reference",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "You may also check all the GPU driver versions supported by the GPU on your Container-Optimized OS VM instance by running the following command: sudo cos-extensions list Identify the required CUDA toolkit version If your applications use CUDA , install NVIDIA's CUDA toolkit in your containers.",
+          "Identify GPU driver versions Each version of Container-Optimized OS image has a list of supported NVIDIA GPU driver versions for each GPU type, along with a default driver for each type.",
+          "Some GPU driver versions won't qualify for Container-Optimized OS, and the qualification timeline is not guaranteed."
+        ]
+      },
+      {
+        "title": "Using Cloud Logging with Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "source_id": "site-docs-reference",
+        "final_score": 49,
+        "relevance": "",
+        "evidence_snippets": [
+          "Known Limitations Compatibility with gcplogs driver Starting with milestone 89 , if the logging agent included with Container-Optimized OS is enabled and Docker gcplogs logging driver is enabled for one or more containers, excessive warning logs may be output by the included logging agent.",
+          "For Arm images of all versions and x86 images for Container-Optimized OS 109 and later, the logging agent is a built-in OS package called fluent-bit .",
+          "A workaround is to not use gcplogs as a Docker logging driver, and to instead use the default driver as configured by Container-Optimized OS."
+        ]
+      },
+      {
+        "title": "\"Disks and file system overview \\_|\\_ Container-Optimized OS \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem",
+        "source_id": "site-docs-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "Working with the Container-Optimized OS file system The following is a list of paths in the Container-Optimized OS node image file system, along with their properties and recommended usage: Path Properties Purpose / read-only executable The root filesystem is mounted as read-only to maintain integrity.",
+          "Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Disks and file system overview Stay organized with collections Save and categorize content based on your preferences.",
+          "When using Container-Optimized OS, be aware of the partitioning if you run your own services that have certain expectations about the file system layout outside of containers."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "docker.socket",
+      "gpu.service",
+      "myapp.service",
+      "online.target"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem"
+      ]
+    }
+  ]
+}

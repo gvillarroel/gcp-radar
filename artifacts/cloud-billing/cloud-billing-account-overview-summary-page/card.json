@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:46.338Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing",
+  "feature_name": "Cloud Billing account overview summary page",
+  "feature_slug": "cloud-billing-account-overview-summary-page",
+  "summary": "The Cloud Billing account Overview page now shows 12-month top spending projects and products at a glance.",
+  "extended_definition": "The Cloud Billing account Overview page now shows 12-month top spending projects and products at a glance.",
+  "lifecycle": {
+    "latest_feature_date": "2020-05-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown",
+      "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+      "https://docs.cloud.google.com/billing/docs/how-to/reports"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Analyze billing data and cost trends with Reports \\_|\\_ Cloud Billing \\_\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "source_id": "site-docs-root",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "A notification in the Billing Overview page shows the date when we will begin the automatic migration from the legacy spend-based CUD model using credits, to the new spend-based CUD model using discounts.",
+          "The Billing Overview page opens for the selected billing account.",
+          "The Billing Overview page opens for the selected billing account."
+        ]
+      },
+      {
+        "title": "\"Understand your savings with cost breakdown reports \\_|\\_ Cloud Billing\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown",
+        "source_id": "site-docs-root",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "Understand the values in the chart and report summary The cost breakdown chart shows the following, if applicable to your Cloud Billing account.",
+          "On the billing account Overview page, the Savings calculation includes all eligible discounts and credits.",
+          "The Billing Overview page opens for the selected billing account."
+        ]
+      },
+      {
+        "title": "\"View and download the cost details of your invoice or statement \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+        "source_id": "site-docs-root",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Billing Overview page opens for the selected billing account.",
+          "To gain this permission, ask your administrator to grant you one of the following Cloud Billing IAM roles on your Cloud Billing account: Billing Account Viewer Billing Account Costs Manager Billing Account Administrator For more information about billing permissions, see: Overview of Cloud Billing access control Create custom roles for Cloud Billing Understanding predefined IAM roles for Cloud Billing Access the report To view the Cost table report for your Cloud Billing account: In the Google Cloud console, go to your Cloud Billing account.",
+          "The migration date is indicated by a notification in the Google Cloud console Billing Overview page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.accounts.get",
+      "billing.accounts.getSpendingInformation"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table"
+      ]
+    }
+  ]
+}

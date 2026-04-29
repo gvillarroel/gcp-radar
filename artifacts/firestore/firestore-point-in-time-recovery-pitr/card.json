@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:10.745Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "Firestore point-in-time recovery (PITR)",
+  "feature_slug": "firestore-point-in-time-recovery-pitr",
+  "summary": "Firestore point-in-time recovery protects against accidental deletion or writes and is generally available; Firestore point-in-time recovery protects against accidental deletion or writes and is available in Preview.",
+  "extended_definition": "Firestore point-in-time recovery protects against accidental deletion or writes and is generally available; Firestore point-in-time recovery protects against accidental deletion or writes and is available in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/docs/pitr",
+      "https://docs.cloud.google.com/firestore/native/docs/disaster-recovery",
+      "https://docs.cloud.google.com/firestore/native/docs/secure-agent-interactions-mcp"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Point-in-time recovery (PITR) overview \\_|\\_ Firestore in Native mode \\_\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/pitr",
+        "source_id": "site-docs-reference",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Point-in-time recovery (PITR) overview Point-in-time recovery (PITR) protects against accidental deletion or writes.",
+          "For example, in the case of a developer pushing any incorrect data, accidental deletes or writes, PITR can recover the data to a point in time in the past (up to a maximum of 7 days).",
+          "You can read data for a timestamp based on when PITR was enabled: PITR enablement status Earliest PITR data available Disabled 1 hour before the time of read request enabled within 7 days 1 hour before PITR was enabled enabled more than 7 days ago 7 days before the time of read request Note: You can't start reading from 7 days in the past immediately after you enable PITR."
+        ]
+      },
+      {
+        "title": "\"Plan disaster recovery \\_|\\_ Firestore in Native mode \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/disaster-recovery",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Disaster recovery planning for data To protect against data disasters like accidental deletion or modification of data, use scheduled backups and point-in-time recovery (PITR).",
+          "Point-in-time recovery (PITR) Enable PITR to read documents from a point in time up to seven days in the past.",
+          "PITR reads also provide a lower recovery time objective and lower recovery point objective than backups."
+        ]
+      },
+      {
+        "title": "\"Best practices for securing agent interactions with Model Context Protocol\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/secure-agent-interactions-mcp",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 170,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Nearly all Data Cloud products provide features for data recovery, either through traditional backups, point-in-time recovery (PITR), or data snapshots.",
+          "It also supports Point-in-Time Recovery (PITR).",
+          "BigQuery Data recovery is achieved using \"Time Travel,\" which lets you access and restore data from any point in the last 7 days."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/pitr",
+        "https://docs.cloud.google.com/firestore/native/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/native/docs/secure-agent-interactions-mcp"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/pitr",
+        "https://docs.cloud.google.com/firestore/native/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/native/docs/secure-agent-interactions-mcp"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/pitr",
+        "https://docs.cloud.google.com/firestore/native/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/native/docs/secure-agent-interactions-mcp"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/pitr",
+        "https://docs.cloud.google.com/firestore/native/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/native/docs/secure-agent-interactions-mcp"
+      ]
+    }
+  ]
+}

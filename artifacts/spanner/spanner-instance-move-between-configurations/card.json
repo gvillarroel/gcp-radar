@@ -1,0 +1,107 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner instance move between configurations",
+  "feature_slug": "spanner-instance-move-between-configurations",
+  "summary": "Cloud Spanner supports moving an instance to any other instance configuration, including between regional and multi-region configurations.",
+  "extended_definition": "Cloud Spanner supports moving an instance to any other instance configuration, including between regional and multi-region configurations.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+      "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+      "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Autoscaler tool overview \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+        "source_id": "site-docs-root",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "To help you to balance cost control with performance needs, the Autoscaler tool monitors your instances and automatically adds or removes nodes or processing units to help ensure that they stay within the following parameters: The recommended maximums for CPU utilization .",
+          "So, when the Autoscaler tool adds or removes nodes or processing units, it needs to allow the Spanner backend sufficient time to reassign and reorganize the splits as new capacity is added or removed from instances.",
+          "The Autoscaler tool uses cooldown periods on both scale-up and scale-down events to control how quickly it can add or remove nodes or processing units from an instance."
+        ]
+      },
+      {
+        "title": "\"Best practices for using Spanner as a gaming database \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "source_id": "site-docs-root",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": [
+          "Split Spanner divides your data into chunks called splits , where individual splits can move independently from each other and get assigned to different servers.",
+          "To help mitigate this complexity, one common strategy is to run completely separate game regions with no way to move data between them.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "\"Create a Spanner free trial instance and sample application \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 31,
+        "relevance": "",
+        "evidence_snippets": [
+          "Click Save to upgrade your free trial instance. gcloud To upgrade your free trial instance to a paid Enterprise edition instance with the same instance configuration, run the following gcloud spanner instances update command: gcloud spanner instances update INSTANCE ID -- instance - type = provisioned Delete the instance Warning: Deleting an instance permanently removes the instance and all its databases.",
+          "Run the gcloud spanner samples run command to download the sample application and start the backend gRPC service and workload generator for the given sample application: gcloud spanner samples run APPNAME --instance-id INSTANCE ID For more information and a list of other available commands for the sample application, see the gcloud CLI documentation .",
+          "Note: A Spanner free trial instance supports Standard edition features, and Enterprise edition features, such as KNN vector distance functions , full-text search , and Spanner Graph ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    }
+  ]
+}

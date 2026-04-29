@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:06.489Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Auto speech adaptation",
+  "feature_slug": "auto-speech-adaptation",
+  "summary": "Dialogflow provides auto speech adaptation for speech recognition tuning; Auto Speech Adaptation improves agent speech recognition accuracy.",
+  "extended_definition": "Dialogflow provides auto speech adaptation for speech recognition tuning; Auto Speech Adaptation improves agent speech recognition accuracy.",
+  "lifecycle": {
+    "latest_feature_date": "2020-05-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+      "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings",
+      "https://docs.cloud.google.com/dialogflow/es/docs/tutorials/sequences/create-customize-agent"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "source_id": "site-docs-root",
+        "final_score": 167,
+        "relevance": "",
+        "evidence_snippets": [
+          "Warnings and best practices: Spell correction can't correct ASR (automatic speech recognition) errors, so we don't recommend enabling it for agents using ASR inputs.",
+          "Warnings and best practices: Spell correction can't correct ASR (automatic speech recognition) errors, so we don't recommend enabling it for agents using ASR inputs.",
+          "Speech-to-Text link Enable auto speech adaptation link See Auto speech adaptation ."
+        ]
+      },
+      {
+        "title": "Before you begin \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/tutorials/sequences/create-customize-agent",
+        "source_id": "site-iam-reference",
+        "final_score": 143,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "These entities must conform to the auto speech adaptation regexp enitity guidelines to ensure the speech recognition is tuned to recognize spelled-out sequences.",
+          "Create the regexp sequence entities We need to use a regexp entity to capture sequences so that auto speech adaptation will know to listen for \"ABC\" instead of \"a bee sea\".",
+          "This is important for two reasons: This regexp follows the auto speech adaptation requirements for enabling the \"spelled-out sequence\" recognizer mode."
+        ]
+      },
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings",
+        "source_id": "site-iam-reference",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "Warnings and best practices: Spell correction can't correct ASR (automatic speech recognition) errors, so we don't recommend enabling it for agents using ASR inputs.",
+          "Enable Auto Speech Adaptation : See Auto speech adaptation .",
+          "The following settings are available: Improve Speech Recognition Quality Enable Enhanced Speech Models and Data Logging : See Data logging and enhanced speech models ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/dialogflow/es/docs/tutorials/sequences/create-customize-agent",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings"
+      ]
+    }
+  ]
+}

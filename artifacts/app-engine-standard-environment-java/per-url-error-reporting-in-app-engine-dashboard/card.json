@@ -1,0 +1,105 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.059Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-java/card.json",
+  "product_name": "App Engine standard environment Java",
+  "product_slug": "app-engine-standard-environment-java",
+  "feature_name": "Per-URL error reporting in App Engine dashboard",
+  "feature_slug": "per-url-error-reporting-in-app-engine-dashboard",
+  "summary": "The App Engine dashboard reports server and client errors more accurately at the per-URL level.",
+  "extended_definition": "The App Engine dashboard reports server and client errors more accurately at the per-URL level.",
+  "lifecycle": {
+    "latest_feature_date": "2016-07-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/quotas",
+      "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users",
+      "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/quotas",
+        "source_id": "site-docs-reference-4",
+        "final_score": 73,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Go API, the appengine.IsOverQuota function reports whether an error represents an API call failure due to insufficient available quota.",
+          "The following example illustrates how to catch the OverQuotaError , which may be raised by the SendMessage() method if an email-related quota has been exceeded: try: mail.SendMessage ( to = 'test@example.com' , from = 'admin@example.com' , subject = 'Test Email' , body = 'Testing' ) except apiproxy errors.OverQuotaError, message: Log the error. logging.error(message) Display an informative message to the user. self.response.out.write ( 'The email could not be sent. ' 'Please try again later.' ) Is your app exceeding the default limits?",
+          "For resources that are required to initiate a request, when the resource is depleted, App Engine by default returns an HTTP 403 or 503 error code for the request instead of calling a request handler."
+        ]
+      },
+      {
+        "title": "\"Authenticating users \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users",
+        "source_id": "site-docs-reference",
+        "final_score": 60,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Ingress settings \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings",
+        "source_id": "site-docs-reference",
+        "final_score": 54,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.IsOverQuota",
+      "errors.OverQuotaError",
+      "example.com",
+      "logging.error",
+      "mail.SendMessage",
+      "self.response.out.write"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users",
+        "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users",
+        "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users",
+        "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Partitioned TreeAH vector indexes",
+  "feature_slug": "partitioned-treeah-vector-indexes",
+  "summary": "The PARTITION BY clause in CREATE VECTOR INDEX can partition TreeAH vector indexes for partition pruning and lower I/O costs.",
+  "extended_definition": "The PARTITION BY clause in CREATE VECTOR INDEX can partition TreeAH vector indexes for partition pruning and lower I/O costs.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-external-hivepartitioned",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-range-partitioned"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 208,
+        "relevance": "",
+        "evidence_snippets": [
+          "If table T contains a column declared as x INT64 NOT NULL , for example, CREATE TABLE dataset.newtable AS SELECT x FROM T creates a table named dataset.newtable in which x is NULLABLE . partition expression PARTITION BY is an optional clause that controls table and vector index partitioning. partition expression is an expression that determines how to partition the table or vector index.",
+          "You can only partition TreeAH indexes. ( Preview ) index option list : The list of options to set on the vector index.",
+          "Syntax CREATE [ OR REPLACE ] VECTOR INDEX [ IF NOT EXISTS ] index name ON table name ( column name ) [ STORING ( stored column name [ , ... ] ) ] [ PARTITION BY partition expression ] OPTIONS ( index option list ); Arguments OR REPLACE : Replaces any vector index with the same name if it exists."
+        ]
+      },
+      {
+        "title": "\"Create an integer-range partitioned table \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-range-partitioned",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . require \"google/cloud/bigquery\" Creates a table with range partitioning. @param dataset id [String] The ID of the dataset to create the table in. @param table id [String] The ID of the table to create. def create range partitioned table dataset id , table id bigquery = Google :: Cloud :: Bigquery . new dataset = bigquery . dataset dataset id table = dataset . create table table id do t t . schema do s s . integer \"integerField\" , mode : :required s . string \"stringField\" , mode : :nullable s . boolean \"booleanField\" , mode : :nullable s . date \"dateField\" , mode : :nullable end t . range partitioning field = \"integerField\" t . range partitioning start = 1 t . range partitioning interval = 2 t . range partitioning end = 10 end puts \"Created range-partitioned table: #{ table . table id } \" end Terraform To learn how to apply or remove a Terraform configuration, see Basic Terraform commands .",
+          "For more information, see Set up authentication for client libraries . // Import the Google Cloud client library const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); async function createTableRangePartitioned () { // Creates a new integer range partitioned table named \"my table\" // in \"my dataset\". / TODO(developer): Uncomment the following lines before running the sample. / // const datasetId = \"my dataset\"; // const tableId = \"my table\"; const schema = [ { name : 'fullName' , type : 'STRING' }, { name : 'city' , type : 'STRING' }, { name : 'zipcode' , type : ' INTEGER ' }, ]; // To use integer range partitioning, select a top-level REQUIRED or // NULLABLE column with INTEGER / INT64 data type.",
+          "Range . newBuilder () . setStart ( 1L ) . setInterval ( 2L ) . setEnd ( 10L ) . build ()) . build (); StandardTableDefinition tableDefinition = StandardTableDefinition . newBuilder () . setSchema ( schema ) . setRangePartitioning ( partitioning ) . build (); TableInfo tableInfo = TableInfo . newBuilder ( tableId , tableDefinition ). build (); bigquery . create ( tableInfo ); System . out . println ( \"Range partitioned table created successfully\" ); } catch ( BigQueryException e ) { System . out . println ( \"Range partitioned table was not created. \\n\" + e . toString ()); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the BigQuery quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "\"Create external table with hive partitioning \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-external-hivepartitioned",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "String datasetName = \"MY DATASET NAME\" ; String tableName = \"MY TABLE NAME\" ; String sourceUri = \"gs://cloud-samples-data/bigquery/hive-partitioning-samples/customlayout/ \" ; String sourceUriPrefix = \"gs://cloud-samples-data/bigquery/hive-partitioning-samples/customlayout/{pkey:STRING}/\" ; createTableExternalHivePartitioned ( datasetName , tableName , sourceUriPrefix , sourceUri ); } public static void createTableExternalHivePartitioned ( String datasetName , String tableName , String sourceUriPrefix , String sourceUri ) { try { // Initialize client that will be used to send requests.",
+          "For more information, see Set up authentication for client libraries . import ( \"context\" \"fmt\" \"cloud.google.com/go/bigquery\" ) // createTableExternalHivePartitioned demonstrates creating an external table with hive partitioning. func createTableExternalHivePartitioned ( projectID , datasetID , tableID string ) error { // projectID := \"my-project-id\" // datasetID := \"mydatasetid\" // tableID := \"mytableid\" ctx := context .",
+          "TableInfo ; // Sample to create external table using hive partitioning public class CreateTableExternalHivePartitioned { public static void main ( String [] args ) { // TODO(developer): Replace these variables before running the sample."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataset.newtable"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-range-partitioned",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-external-hivepartitioned"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-range-partitioned",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-external-hivepartitioned"
+      ]
+    }
+  ]
+}

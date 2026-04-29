@@ -1,0 +1,141 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:40.906Z",
+  "source_step08_card": "data/step-08/current/products/agent-assist/card.json",
+  "product_name": "Agent Assist",
+  "product_slug": "agent-assist",
+  "feature_name": "Agent Assist console",
+  "feature_slug": "agent-assist-console",
+  "summary": "The Agent Assist console has reached GA and now includes built-in workflow tutorials, sample datasets, and demo models.",
+  "extended_definition": "The Agent Assist console has reached GA and now includes built-in workflow tutorials, sample datasets, and demo models.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/agent-assist/docs/faq",
+      "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist",
+      "https://docs.cloud.google.com/agent-assist/docs/summarization-autoeval-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"User guide: Summarization automatic evaluation \\_|\\_ Agent Assist \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/agent-assist/docs/summarization-autoeval-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 83,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Click any row in the list to view Evaluation details , which includes the following information: Display name for the generator Number of conversations If any Customer Experience Insights datasets, name of the associated Customer Experience Insights dataset Run time Cloud Storage output Overall performance results for an entire dataset Conversation-level results for each conversation in a dataset Conversation-level results Agent Assist displays the conversation-level evaluation results in a table.",
+          "Then, follow these steps to create a second generator that uses summarization version 5.0: Navigate to the Agent Assist console > Summarization page.",
+          "Results comparison Follow these steps to compare results across different evaluations: Within the Agent Assist console, navigate to Evaluations ."
+        ]
+      },
+      {
+        "title": "FAQ assist \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/agent-assist/docs/faq",
+        "source_id": "site-docs-root",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT ID \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://dialogflow.googleapis.com/v2/projects/ PROJECT ID /conversations/ CONVERSATION ID /participants/ PARTICIPANT ID :analyzeContent\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"message\": { \"name\": \"projects/ PROJECT ID /conversations/fiiJBeHnQIa6Zx DUKNlEg/messages/Rjv8ErKYS yIqVR9SW4CpA\", \"content\": \"How may I help you?\", \"languageCode\": \"en-US\", \"participant\": \"PaZQyeiTQgCOyliHkZjs0Q\", \"participantRole\": \"HUMAN AGENT\", \"createTime\": \"1970-01-01T00:00:00Z\" }, \"humanAgentSuggestionResults\": [ { \"suggestFaqAnswersResponse\": { \"faqAnswers\": [ { \"answer\": \"Sign up for Cloud Storage by turning on the Cloud Storage service in the Google Cloud Platform Console.\", \"confidence\": 0.07266401, \"question\": \"How do I sign up?\", \"source\": \"projects/ PROJECT ID /knowledgeBases/NjQ2MzI1MDQwNTQ2MjYzODU5Mg/documents/NTMxOTA4MTAxMzQxMjg4ODU3Ng\", \"metadata\": { \"document display name\": \"my-document-display-name\" }, \"answerRecord\": \"projects/ PROJECT ID /answerRecords/MTU0MzE0NDQwOTAwNzEyODU3NjA\" }, { \"answer\": \"Consider storing your data in a multi-regional or dual-regional bucket location if high availability is a top requirement.",
+          "To find which project contains a specific bucket: If you are searching over a moderate number of projects and buckets, use the Google Cloud Platform Console, select each project, and view the buckets it contains.",
+          "You have the option of using the Agent Assist console to test your Article Suggestion results during design-time, but you must call the API directly during runtime."
+        ]
+      },
+      {
+        "title": "Generative knowledge assist \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 73,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Before using any of the request data, make the following replacements: PROJECT ID : your project ID LOCATION ID : the ID for your location AGENT ID : your flow-based or playbook-based data store agent ID from the previous step The following is a JSON example: { \"displayName\" : \"my-conversation-profile-display-name\" , \"humanAgentAssistantConfig\" : { \"humanAgentSuggestionConfig\" : { \"featureConfigs\" : [ { \"suggestionFeature\" : { \"type\" : \"KNOWLEDGE SEARCH\" }, \"queryConfig\" : { \"dialogflowQuerySource\" : { \"humanAgentSideConfig\" : { \"agent\" : \"projects/ PROJECT ID /locations/ LOCATION ID /agents/ AGENT ID \" } } }, \"disableAgentQueryLogging\" : false , \"enableConversationAugmentedQuery\" : false , } ] } } } When you create a conversation profile in the Agent Assist console, Agent Assist automatically enables both generative knowledge assist and proactive generative knowledge assist.",
+          "Before you begin Unless you're the project owner, you need these roles to create a data store agent: - Dialogflow API Admin - Discovery Engine Admin Create a flow-based data store agent Activate the AI Applications API in the Vertex AI console.",
+          "Create from console Enable the Generative knowledge assist suggestion type and link it to the flow-based data store agent or playbook-based data store agent from the previous step."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dialogflow.googleapis.com",
+      "request.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/summarization-autoeval-guide",
+        "https://docs.cloud.google.com/agent-assist/docs/faq",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/summarization-autoeval-guide",
+        "https://docs.cloud.google.com/agent-assist/docs/faq",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/summarization-autoeval-guide",
+        "https://docs.cloud.google.com/agent-assist/docs/faq",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/summarization-autoeval-guide",
+        "https://docs.cloud.google.com/agent-assist/docs/faq",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/summarization-autoeval-guide",
+        "https://docs.cloud.google.com/agent-assist/docs/faq",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/summarization-autoeval-guide",
+        "https://docs.cloud.google.com/agent-assist/docs/faq",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/summarization-autoeval-guide",
+        "https://docs.cloud.google.com/agent-assist/docs/faq",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ]
+    }
+  ]
+}

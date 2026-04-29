@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:45.183Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Data Boost app profile and metrics in console",
+  "feature_slug": "data-boost-app-profile-and-metrics-in-console",
+  "summary": "Bigtable now supports creating a Data Boost app profile and viewing Data Boost metrics in the Google Cloud console.",
+  "extended_definition": "Bigtable now supports creating a Data Boost app profile and viewing Data Boost metrics in the Google Cloud console.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/app-profiles",
+      "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+      "https://docs.cloud.google.com/bigtable/docs/data-boost-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Bigtable Data Boost overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/data-boost-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 133,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Monitoring To monitor your Data Boost traffic, you can check the metrics for your Data Boost app profile on the Bigtable system insights page in the Google Cloud console.",
+          "Before you convert a standard app profile to use Data Boost or create a Data Boost app profile for an existing workload, view Data Boost eligibility metrics to make sure your configuration and usage meet the required criteria.",
+          "You can also continue to monitor the eligibility metrics for the app profile after you've started using Data Boost."
+        ]
+      },
+      {
+        "title": "Create and configure app profiles \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+        "source_id": "site-docs-reference-2",
+        "final_score": 133,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Convert from Data Boost to standard To change an app profile from using Data Boost (serverless compute) to standard (provisioned nodes for compute) follow these steps: Console Note: You can't configure the request priority for an app profile in the Google Cloud console.",
+          "Convert from standard to Data Boost Before you update an app profile from standard (provisioned nodes for compute) to Data Boost serverless compute, check the Data Boost eligibility metrics .",
+          "Update a Data Boost app profile To update the cluster that a Data Boost app profile reads from, follow these steps: Console Open the list of Bigtable instances in the Google Cloud console."
+        ]
+      },
+      {
+        "title": "App profiles overview \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/app-profiles",
+        "source_id": "site-docs-reference-2",
+        "final_score": 129,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can use the Bigtable Google Cloud console to view separate graphs of your Bigtable metrics for each app profile.",
+          "Use a standard app profile, which uses cluster nodes for compute, configured to route to any cluster for workload B, and create a Data Boost app profile for use against a single cluster with workload A.",
+          "Observability Using separate app profiles for different workloads gives you better insight into your applications' usage of Bigtable, because metrics are available per app profile."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.bigtable.admin.v2.models.AppProfile.DataBoostIsolationReadOnlyPolicy"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+        "https://docs.cloud.google.com/bigtable/docs/data-boost-overview",
+        "https://docs.cloud.google.com/bigtable/docs/app-profiles"
+      ]
+    }
+  ]
+}

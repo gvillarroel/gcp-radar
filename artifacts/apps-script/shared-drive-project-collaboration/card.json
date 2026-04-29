@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.589Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Shared drive project collaboration",
+  "feature_slug": "shared-drive-project-collaboration",
+  "summary": "Apps Script supports project collaboration in Shared drives so scripts can be group-owned and maintained collaboratively.",
+  "extended_definition": "Apps Script supports project collaboration in Shared drives so scripts can be group-owned and maintained collaboratively.",
+  "lifecycle": {
+    "latest_feature_date": "2017-03-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/cloud-platform-projects",
+      "https://developers.google.com/apps-script/guides/collaborating",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Collaborate with other developers \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/collaborating",
+        "source_id": "site-docs-root",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you use shared drives to collaborate on Apps Script projects: Collaborators with editor access to a shared drive can create or move new files into the shared drive.",
+          "Similarly, script projects that are deployed as an Apps Script API executable cease to function when called by the API if moved via shared drive from one domain to another.",
+          "Collaborators with full access to a shared drive can also delete files and Apps Script projects, and move files out of the shared drive."
+        ]
+      },
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": [
+          "March 09, 2017 Feature Introduced project collaboration using Shared drives .",
+          "Fixed Issue 2916 : HTML files inserted into a new Apps Script project using the Google Drive SDK are no longer created with the server js filetype.",
+          "July 25, 2011 Feature Added supports for projects in Apps Script."
+        ]
+      },
+      {
+        "title": "Google Cloud projects \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/cloud-platform-projects",
+        "source_id": "site-docs-root",
+        "final_score": 31,
+        "relevance": "",
+        "evidence_snippets": [
+          "Shared drives are valuable when developing scripts, add-ons, and web apps with a team, but they place some restrictions on what you can do with older default Cloud projects.",
+          "Shared drives (formerly Team Drives) provide shared spaces where groups of Drive users can collaborate on Apps Script projects and Drive documents.",
+          "If your script project uses a default project that was created before April 8, 2019, the following restrictions apply while the script project resides on a shared drive: You can't access the default project using the Apps Script UI or the Google Cloud console ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/cloud-platform-projects",
+        "https://developers.google.com/apps-script/guides/collaborating",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/cloud-platform-projects",
+        "https://developers.google.com/apps-script/guides/collaborating",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    }
+  ]
+}

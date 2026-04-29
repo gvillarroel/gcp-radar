@@ -1,0 +1,128 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.517Z",
+  "source_step08_card": "data/step-08/current/products/apigee-hybrid/card.json",
+  "product_name": "Apigee hybrid",
+  "product_slug": "apigee-hybrid",
+  "feature_name": "Hybrid proxy and target endpoint monitoring metrics suite",
+  "feature_slug": "hybrid-proxy-and-target-endpoint-monitoring-metrics-suite",
+  "summary": "Apigee hybrid 1.12 adds a new set of metrics for monitoring both proxies and target endpoints.",
+  "extended_definition": "Apigee hybrid 1.12 adds a new set of metrics for monitoring both proxies and target endpoints.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+      "https://docs.cloud.google.com/apigee/docs/deprecations/proxyv2-targetv2-metrics",
+      "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/cluster-monitoring-guidelines"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"ProxyV2 and TargetV2 metrics deprecation \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/deprecations/proxyv2-targetv2-metrics",
+        "source_id": "site-docs-reference",
+        "final_score": 193,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Shutdown schedule The following table lists the shutdown schedule for the ProxyV2 and TargetV2 metrics suite: Date Event April 17, 2024 ProxyV2 and TargetV2 metrics suite deprecated for Apigee hybrid v1.12.",
+          "April 17, 2024 Support for the ProxyV2 and TargetV2 metrics suite in Apigee hybrid in v1.10 and v1.11 extended for one year.",
+          "Support for the ProxyV2 and TargetV2 metrics suite in Apigee hybrid v1.10 and v1.11 will end in April of 2025."
+        ]
+      },
+      {
+        "title": "\"Best practices for API proxy design and development with Apigee \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+        "source_id": "site-docs-reference",
+        "final_score": 154,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Users who require large payload processing can configure a higher limit using the <Properties> element in the ProxyEndpoint or TargetEndpoint configurations of their API proxies.",
+          "Development standards Comments and Documentation Provide inline comments in the ProxyEndpoint and TargetEndpoint configurations.",
+          "For example, looking up a location (endpoint) from a routing table based on a key found in a request and dynamically applying a target endpoint or a custom/proprietary authentication method, etc."
+        ]
+      },
+      {
+        "title": "Cluster monitoring guidelines \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/cluster-monitoring-guidelines",
+        "source_id": "site-docs-root",
+        "final_score": 154,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Resource types TargetV2 Metric targetv2/request count Group By method and all TargetV2 resource type labels Aggregator sum Alert consideration Events like abnormal request count spike/drop alerts Alert threshold None Cloud Monitoring dashboard MQL query : fetch apigee.googleapis.com/TargetV2 metric 'apigee.googleapis.com/targetv2/request count' align rate(1m) every 1m group by [metric.method, metric.type, metric.endpoint], [value request count aggregate: aggregate(value.request count)] Error Rate Proxy error response count Use case : Use the proxyv2/response count to monitor the proxy error response rate.",
+          "Cloud Monitoring dashboard MQL query : fetch apigee.googleapis.com/TargetV2 metric 'apigee.googleapis.com/targetv2/response count' filter (metric.response code != '200') align rate(1m) every 1m group by [metric.method, metric.type, metric.endpoint, metric.response code], [value response count aggregate: aggregate(value.response count)] Latencies Proxy latencies percentile Use case : Use the proxyv2/latencies percentile to monitor the latency percentile (p50, p90, p95, and p99) of all API proxy responses to a request.",
+          "Apigee-X users have access to API traffic SLI metrics such as Proxy, Target, and Policy in the Org's Google Cloud project and can use these SLI metrics for monitoring and alerts."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "metric.apigee",
+      "metric.endpoint",
+      "metric.fault",
+      "metric.method",
+      "metric.response",
+      "metric.type",
+      "v1.10",
+      "v1.11",
+      "v1.12",
+      "v1.13",
+      "value.request",
+      "value.response"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/deprecations/proxyv2-targetv2-metrics",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/cluster-monitoring-guidelines",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/deprecations/proxyv2-targetv2-metrics",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/cluster-monitoring-guidelines",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/deprecations/proxyv2-targetv2-metrics",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/cluster-monitoring-guidelines",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/deprecations/proxyv2-targetv2-metrics",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/cluster-monitoring-guidelines",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development"
+      ]
+    }
+  ]
+}

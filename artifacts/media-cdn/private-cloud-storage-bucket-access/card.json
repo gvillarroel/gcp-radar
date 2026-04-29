@@ -1,0 +1,186 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:22.242Z",
+  "source_step08_card": "data/step-08/current/products/media-cdn/card.json",
+  "product_name": "Media CDN",
+  "product_slug": "media-cdn",
+  "feature_name": "Private Cloud Storage bucket access",
+  "feature_slug": "private-cloud-storage-bucket-access",
+  "summary": "Media CDN can connect to private Cloud Storage buckets so content is served only through Media CDN instead of direct public access.",
+  "extended_definition": "Media CDN can connect to private Cloud Storage buckets so content is served only through Media CDN instead of direct public access.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/media-cdn/docs/origins",
+      "https://docs.cloud.google.com/media-cdn/docs/overview",
+      "https://docs.cloud.google.com/media-cdn/docs/quickstart",
+      "https://docs.cloud.google.com/media-cdn/docs/routing"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Origins overview \\_|\\_ Media CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/origins",
+        "source_id": "site-docs-root",
+        "final_score": 277,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported origins and protocols Media CDN directly supports any publicly reachable HTTP endpoint as an origin, including the following: Cloud Storage buckets, including private buckets through Identity and Access Management service accounts External Application Load Balancers Amazon S3-compatible buckets, including private buckets that use AWS Signature Version 4 Other publicly available object storage, such as Azure Blob Storage Publicly available web servers, such as public VMs or on-premises hosts Connectivity to origins is over secure tunnels and Google's global backbone network.",
+          "Use the following URL to access the JSON file that contains the updated Google-assigned IP address ranges. https://www.gstatic.com/ipranges/mediacdn.json Failover and timeouts The following sections describe these configuration options: Timeouts: Determine how long Media CDN waits to connect to your origin or for it to respond to a request.",
+          "The following table describes the timeout fields: Field Default Description connectTimeout 5 seconds The maximum amount of time Media CDN can take from starting the request to the origin until Media CDN determines whether the response is usable."
+        ]
+      },
+      {
+        "title": "Configure service routes \\_|\\_ Media CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/routing",
+        "source_id": "site-docs-root",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use third-party storage backends Media CDN supports connecting to publicly reachable HTTP endpoints outside of Google Cloud, including AWS S3 storage buckets, Azure Blob Storage, and other storage providers.",
+          "To configure support for a set of methods for a route rule, specify a routeMethods section that has an allowed methods value for each method. routeRules : - priority : 5 description : \"Video uploads\" routeMethods : allowedMethods : [ \"PUT\" , \"POST\" , \"OPTIONS\" ] matchRules : - pathTemplateMatch : \"/uploads/ .ts\" origin : prod-video-storage - priority : 10 description : \"Video serving\" routeMethods : allowedMethods : [ \"GET\" , \"HEAD\" ] matchRules : - pathTemplateMatch : \"/videos/ .ts\" origin : prod-video-storage Path normalization Path normalization describes how Media CDN combines multiple representations of a URL into a single, canonical representation under specific scenarios.",
+          "To rewrite a hostname (for example, rewriting cdn.example.com to my-bucket.s3.us-west-2.amazonaws.com ), you can configure the following: name : prod-service routing : hostRules : - hosts : - cdn.example.com pathMatcher : example routes pathMatchers : - name : example routes routeRules : - priority : 1 origin : my-origin matchRules : - prefixMatch : \"/videos/\" routeAction : urlRewrite : hostRewrite : \"my-bucket.s3.us-west-2.amazonaws.com\" In this case, the origin request URL would change from cdn.example.com/videos/ to my-bucket.s3.us-west-2.amazonaws.com/videos/ ."
+        ]
+      },
+      {
+        "title": "Media CDN overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 245,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can grant Media CDN access to your private Cloud Storage buckets and authenticate requests to ensure that only valid Media CDN requests are granted.",
+          "Origin authentication Media CDN supports private Cloud Storage buckets as an origin through origin authentication .",
+          "You can use Media CDN with your existing origin infrastructure, whether the content is hosted within Cloud Storage, in another cloud, or within your on-premises infrastructure."
+        ]
+      },
+      {
+        "title": "Set up a Media CDN service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 243,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: Media CDN can take up to 10 minutes to create the origin Terraform resource \"google network services edge cache origin\" \"default\" { name = \"cloud-storage-origin\" origin address = \"gs://my-bucket-${random id.unique suffix.hex}\" } Create an EdgeCacheService resource Your EdgeCacheService resource configures routing, certificate, and caching settings, and can point to EdgeCacheOrigin resources.",
+          "Create a Cloud Storage bucket Media CDN content can originate from locations such as a Cloud Storage bucket, a third-party storage location, or a load balancer.",
+          "If you prefer not to make your Cloud Storage bucket publicly accessible, you must give Media CDN permissions to access the bucket."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "amazonaws.com",
+      "bucket.s3.us",
+      "cdn.example.com",
+      "file.mp4",
+      "id.unique",
+      "mediacdn.json",
+      "s3.REGION.amazonaws.com",
+      "suffix.hex",
+      "web.example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/origins",
+        "https://docs.cloud.google.com/media-cdn/docs/routing",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/origins",
+        "https://docs.cloud.google.com/media-cdn/docs/routing",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/origins",
+        "https://docs.cloud.google.com/media-cdn/docs/routing",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/origins",
+        "https://docs.cloud.google.com/media-cdn/docs/routing",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/origins",
+        "https://docs.cloud.google.com/media-cdn/docs/routing",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/origins",
+        "https://docs.cloud.google.com/media-cdn/docs/routing",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/origins",
+        "https://docs.cloud.google.com/media-cdn/docs/routing",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/origins",
+        "https://docs.cloud.google.com/media-cdn/docs/routing",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/origins",
+        "https://docs.cloud.google.com/media-cdn/docs/routing",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/quickstart"
+      ]
+    }
+  ]
+}

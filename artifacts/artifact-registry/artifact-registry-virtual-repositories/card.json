@@ -1,0 +1,164 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.828Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry",
+  "feature_name": "Artifact Registry virtual repositories",
+  "feature_slug": "artifact-registry-virtual-repositories",
+  "summary": "Artifact Registry virtual repositories provide a single access point to retrieve artifacts from one or more upstream repositories; Artifact Registry added virtual repositories in preview to provide a unified access point across multiple remote and standard repositories.",
+  "extended_definition": "Artifact Registry virtual repositories provide a single access point to retrieve artifacts from one or more upstream repositories; Artifact Registry added virtual repositories in preview to provide a unified access point across multiple remote and standard repositories.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+      "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+      "https://docs.cloud.google.com/artifact-registry/docs/repositories"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Repository overview \\_|\\_ Artifact Registry \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "source_id": "site-docs-root",
+        "final_score": 168,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Virtual repository A read-only repository that acts as a single access point to download, install, or deploy artifacts of the same format from one or more upstream repositories .",
+          "Centralize repositories Create all repositories in a single project and then grant access to principals from other projects at the repository level.",
+          "It can also simplify setup of virtual repositories since you only need to enable and manage a single instance of Artifact Registry."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.repositories \\_|\\_ Artifact Registry \\_\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "source_id": "site-api-reference",
+        "final_score": 138,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"format\" : enum ( Format ) , \"description\" : string , \"labels\" : { string : string , ... } , \"createTime\" : string , \"updateTime\" : string , \"kmsKeyName\" : string , \"mode\" : enum ( Mode ) , \"cleanupPolicies\" : { string : { object ( CleanupPolicy ) } , ... } , \"sizeBytes\" : string , \"satisfiesPzs\" : boolean , \"cleanupPolicyDryRun\" : boolean , \"vulnerabilityScanningConfig\" : { object ( VulnerabilityScanningConfig ) } , \"disallowUnspecifiedMode\" : boolean , \"satisfiesPzi\" : boolean , \"registryUri\" : string , // Union field format config can be only one of the following: \"mavenConfig\" : { object ( MavenRepositoryConfig ) } , \"dockerConfig\" : { object ( DockerRepositoryConfig ) } // End of list of possible types for union field format config . // Union field mode config can be only one of the following: \"virtualRepositoryConfig\" : { object ( VirtualRepositoryConfig ) } , \"remoteRepositoryConfig\" : { object ( RemoteRepositoryConfig ) } // End of list of possible types for union field mode config . } Fields name string The name of the repository, for example: projects/p1/locations/us-central1/repositories/repo1 .",
+          "JSON representation { \"id\" : string , \"repository\" : string , \"priority\" : integer } Fields id string The user-provided ID of the upstream policy. repository string A reference to the repository resource, for example: projects/p1/locations/us-central1/repositories/repo1 . priority integer Entries with a greater priority value take precedence in the pull order.",
+          "Provides additional configuration details for repositories of the docker format type."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Artifact Registry \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 136,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, to remove a policy binding for the role roles/artifactregistry.writer for the user write@gmail.com with the repository my-repo in the location --us-west1 , run: gcloud artifacts repositories remove-iam-policy-binding my-repo \\ --location = us-west1 \\ --member = user:write@gmail.com \\ --role = roles/artifactregistry.writer To revoke public access to my-repo in the location --us-west1 , run: gcloud artifacts repositories remove-iam-policy-binding my-repo \\ --location = us-west1 \\ --member = allUsers \\ --role = roles/artifactregistry.reader Granting conditional access with tags Project administrators can create tags for resources across Google Cloud and manage them in Resource Manager .",
+          "To access Docker repositories, use one of the following scopes: storage-ro - Grants read-only permission for pulling images. storage-rw - Grants read and write permission for pushing or pulling images. cloud-platform - View and manage data, including metadata, across Google Cloud service.",
+          "Note: When managing access for users in external identity providers , replace instances of Google Account principal identifiers—like user:kiran@example.com , group:support@example.com , and domain:example.com —with appropriate Workforce Identity Federation principal identifiers ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "artifactregistry.reader",
+      "artifactregistry.writer",
+      "com.google.devtools.artifactregistry.v1",
+      "example.com",
+      "gmail.com",
+      "projects.locations.repositories"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.reader",
+      "roles/artifactregistry.writer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery Data Transfer Service Google Analytics 4 connector",
+  "feature_slug": "bigquery-data-transfer-service-google-analytics-4-connector",
+  "summary": "BigQuery Data Transfer Service can transfer reporting and configuration data from Google Analytics 4 into BigQuery.",
+  "extended_definition": "BigQuery Data Transfer Service can transfer reporting and configuration data from Google Analytics 4 into BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/display-video-transfer",
+      "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer",
+      "https://docs.cloud.google.com/bigquery/docs/google-analytics-4-transfer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Load Google Analytics 4 data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/google-analytics-4-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 213,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Custom reports The BigQuery Data Transfer Service for Google Analytics connector supports the use of custom reports by specifying dimensions and metrics in the Google Analytics transfer configuration.",
+          "Load Google Analytics 4 data into BigQuery You can load data from Google Analytics 4 to BigQuery using the BigQuery Data Transfer Service for Google Analytics 4 connector.",
+          "Data ingestion from Google Analytics 4 transfers When you transfer data from Google Analytics 4 into BigQuery, the data is loaded into BigQuery tables that are partitioned by date."
+        ]
+      },
+      {
+        "title": "Load Google Ads data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you trigger a manual transfer, Match Table snapshots for the following tables are not updated: Ad AdGroup AdGroupAudience AdGroupBidModifier AdGroupAdLabel AdGroupCriterion AdGroupCriterionLabel AdGroupLabel AgeRange Asset AssetGroup AssetGroupAsset AssetGroupListingGroupFilter AssetGroupSignal Audience BidGoal Budget Campaign CampaignAudience CampaignCriterion CampaignLabel Customer Gender Keyword LocationBasedCampaignCriterion ParentalStatus Placement Video Custom reports The BigQuery Data Transfer Service for Google Ads connector also supports the use of custom reports using Google Ads Query Language (GAQL) queries in the Google Ads transfer configuration.",
+          "Load Google Ads data into BigQuery You can load data from Google Ads (formerly known as Google AdWords) to BigQuery using the BigQuery Data Transfer Service for Google Ads connector.",
+          "Transfer configuration for Customer ID 1234567890 A transfer configuration for the root manager account (Customer ID 1234567890) would generate data transfer runs that include the following Customer IDs: 1111 (via sub-manager account 1234) 2222 (via sub-manager account 1234) 3333 (via sub-manager account 1234) 4444 (via sub-manager account 1234) 5555 (via sub-manager account 567 and sub-manager account 1234) 6666 (via sub-manager account 567 and sub-manager account 1234) 7777 (via sub-manager account 567 and sub-manager account 1234) 8888 (via sub-manager account 89) 9999 (via sub-manager account 89) 0000 (individual Customer ID) Transfer configuration for Customer ID 1234 A transfer configuration for sub-manager account 123 (Customer ID 1234) would generate data transfer runs that include the following Customer IDs: 1111 2222 3333 4444 5555 (via sub-manager account 567) 6666 (via sub-manager account 567) 7777 (via sub-manager account 567) Transfer configuration for Customer ID 567 A transfer configuration for sub-manager account 567 (Customer ID 567) would generate data transfer runs that include the following Customer IDs: 5555 6666 7777 Transfer configuration for Customer ID 89 A transfer configuration for sub-manager account 89 (Customer ID 89) would generate data transfer runs that include the following Customer IDs: 8888 9999 Transfer configuration for Customer ID 0000 A transfer configuration for Customer ID 0000 would generate data transfer runs that include only the individual Customer ID: 0000 Migrate Google Ads data to MCCs To migrate your existing Google Ads data in BigQuery Data Transfer Service to the MCC structure, you can set up a backfill to add your existing data to the tables created by the transfer configuration linked to the manager account."
+        ]
+      },
+      {
+        "title": "Load Display & Video 360 data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/display-video-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 171,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Partner Advertiser LineItem LineItemTargeting Campaign CampaignTargeting InsertionOrder InsertionOrderTargeting AdGroup AdGroupTargeting AdGroupAd Creative For more information about each type of configuration data, see the following links: About Partners Create an advertiser Create a line item Create a campaign Create an insertion order About YouTube & partners line items Manage creatives Data ingestion from Display & Video 360 transfers When you transfer data from Display & Video 360 into BigQuery, the data is loaded into BigQuery tables that are partitioned by date.",
+          "Load Display & Video 360 data into BigQuery You can load data from Display & Video 360 to BigQuery using the BigQuery Data Transfer Service for Display & Video 360 connector.",
+          "Supported configuration data In addition to the reporting data, BigQuery Data Transfer Service also transfers the following configuration data from Display & Video 360."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/google-analytics-4-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/display-video-transfer"
+      ]
+    }
+  ]
+}

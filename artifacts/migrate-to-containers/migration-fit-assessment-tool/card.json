@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:22.796Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers",
+  "feature_name": "Migration fit assessment tool",
+  "feature_slug": "migration-fit-assessment-tool",
+  "summary": "Migrate to Containers includes a fit assessment tool that evaluates whether a VM workload is suitable for container migration.",
+  "extended_definition": "Migrate to Containers includes a fit assessment tool that evaluates whether a VM workload is suitable for container migration.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/fit-assessment",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/websphere-traditional/websphere-traditional-customizing-a-migration",
+      "https://docs.cloud.google.com/migrate/containers/docs/offline-assessment-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Migration Center discovery client CLI overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/fit-assessment",
+        "source_id": "site-docs-root",
+        "final_score": 113,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Migration Center provides advanced migration recommendations and planning capabilities, however, if you're working with sensitive data and don't want to upload it to Google Cloud, you can choose to run an offline assessment instead.",
+          "These asset discoveries scan the physical servers, virtual machine (VM) instances, and databases in your infrastructure to collect the necessary information for a successful migration assessment to Google Cloud.",
+          "The Migration Center discovery client CLI ( mcdc CLI) is an offline tool that lets you run different types of asset discoveries on your infrastructure."
+        ]
+      },
+      {
+        "title": "\"Offline assessment overview \\_|\\_ Migrate to Containers \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/offline-assessment-overview",
+        "source_id": "site-docs-root-2",
+        "final_score": 103,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Migration Migrate to Containers Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Offline assessment overview The Migration Center discovery client CLI or mcdc CLI lets you run an offline assessment with the information that you collected in the discovery phase.",
+          "The offline assessment creates reports that provide you with a high-level fit assessment result for migration and potential blockers for different migration journeys."
+        ]
+      },
+      {
+        "title": "\"Customize migration plan for WebSphere traditional workloads \\_|\\_ Migrate\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/websphere-traditional/websphere-traditional-customizing-a-migration",
+        "source_id": "site-docs-reference",
+        "final_score": 98,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you do not want to migrate all applications, you can remove them. applications: - appName: hello-world-servlet-ear httpEndpoints: - httpPort: 9080 httpsPort: 9443 id: defaulthttpendpoint image: name: hello-world-servlet-ear path: /opt/IBM/WebSphere/AppServer/profiles/AppSrv01/config/cells/m4a-twas-ndNode01Cell/applications/Hello-World-Servlet.ear … - appName: commons-ejb-ear-provided-ear httpEndpoints: - httpPort: 9080 httpsPort: 9443 id: defaulthttpendpoint image: name: commons-ejb-ear-provided-ear path: /opt/IBM/WebSphere/AppServer/profiles/AppSrv01/config/cells/m4a-twas-ndNode01Cell/applications/commons-ejb-ear-provided.ear sharedLibraries: - /opt/IBM/WebSphere/AppServer/sharedJars/commons-io-2.8.0.jar Set the scanner options In the migration plan, the scannerOptions field represents the argument to pass to the IBM WebSphere Application Server Migration Toolkit for Application Binaries .",
+          "Home Documentation Migration Migrate to Containers Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "You can edit the arguments. scannerOptions : Setting 'includeSensitiveData: true' will upload sensitive data, if exists, such as private keys, to the artifacts repository includeSensitiveData : false sourceAppServer : was90 Note: In order to collect sensitive data, in the migration plan, under scannerOptions , modify the value of includeSensitiveData: to be true ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "provided.ear"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/fit-assessment",
+        "https://docs.cloud.google.com/migrate/containers/docs/offline-assessment-overview",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/websphere-traditional/websphere-traditional-customizing-a-migration"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/fit-assessment",
+        "https://docs.cloud.google.com/migrate/containers/docs/offline-assessment-overview",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/websphere-traditional/websphere-traditional-customizing-a-migration"
+      ]
+    }
+  ]
+}

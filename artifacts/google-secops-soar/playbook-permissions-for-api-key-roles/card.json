@@ -1,0 +1,194 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:18.628Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-soar/card.json",
+  "product_name": "Google SecOps SOAR",
+  "product_slug": "google-secops-soar",
+  "feature_name": "Playbook permissions for API key roles",
+  "feature_slug": "playbook-permissions-for-api-key-roles",
+  "summary": "Playbook permissions now extend to SOC roles associated with API keys as well as user SOC roles.",
+  "extended_definition": "Playbook permissions now extend to SOC roles associated with API keys as well as user SOC roles.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+      "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+      "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+      "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the Feed Management UI \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "source_id": "site-docs-root-2",
+        "final_score": 159,
+        "relevance": "",
+        "evidence_snippets": [
+          "Send multiple events in a single webhook request The following code sample shows how to format a single request body with multiple, newline-separated JSON objects after the curl --location item: --header 'Content-Type: application/json' \\ --header 'X-goog-api-key: API KEY' \\ --header 'X-Webhook-Access-Key: SECRET' \\ --data '{\"principal\": {\"asset id\": \"asset 123\"}, \"metadata\": {\"event type\": \"GENERIC EVENT\", \"product name\": \"Product Acme\"}} {\"principal\": {\"asset id\": \"asset 123\"}, \"metadata\": {\"event type\": \"GENERIC EVENT\", \"product name\": \"Product Acme\"}}' Create an HTTPS webhook feed In the Google SecOps menu, select Settings , and then click Feeds .",
+          "Specify the endpoint URL In Amazon Data Firehose, specify the HTTPS endpoint and access key, as follows: Append the API key to the feed endpoint URL and specify this URL as the HTTP endpoint URL in the following format: ENDPOINT URL ?key= API KEY Replace the following: ENDPOINT URL : the feed endpoint URL.",
+          "Enable authentication by specifying the API key and secret key as part of the custom header in the following format: X-goog-api-key = API KEY X-Webhook-Access-Key = SECRET We recommend that you specify the API key as a header instead of specifying it in the URL."
+        ]
+      },
+      {
+        "title": "\"Migrate from CrowdStrike Detects API to Alerts API \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "source_id": "site-api-reference",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Option 1: Update permissions for your existing CrowdStrike API client (Recommended) Option 2: Create and use a new CrowdStrike API client Option 1: Update permissions for your existing CrowdStrike API client (Recommended) This approach requires configuration changes only in your CrowdStrike Falcon console and has the lowest impact on existing detection rules that reference the CS DETECTS log type.",
+          "To set up and use the dashboard, perform the following steps: Navigate to the CrowdStrike support article and download the YAML file, titled, PlannedDecommissionofthedetectsAPI(September30,2025) , attached at the bottom of the page.",
+          "By creating a new client with the correct permissions, you can ensure that the connector uses the modern Alerts API."
+        ]
+      },
+      {
+        "title": "\"Map users in the Google SecOps platform \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "source_id": "site-iam-reference",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "Your company has three different personas: Security analysts (containing group members Sasha and Tal) SOC engineers (containing group members Quinn and Noam) NOC engineers (containing group members Kim and Kai) Security analysts and SOC Engineers have the same Google SecOps Permission Groups (Analyst) and SOC Roles (Tier 1), but while the Security Analysts have permissions for the London environment, the SOC Engineers have permissions for the Manchester environment.",
+          "This is a mandatory step to provide the identity with the necessary access to SOC Roles , and Environments required to perform automated tasks or API operations.",
+          "The following example is the workforce pool creation command for the app configuration described in Configure Workforce Identity Federation : gcloud iam workforce-pools providers create-saml WORKFORCE PROVIDER ID \\ --workforce-pool = WORKFORCE POOL ID \\ --location = \"global\" \\ --display-name = WORKFORCE PROVIDER DISPLAY NAME \\ --description = WORKFORCE PROVIDER DESCRIPTION \\ --idp-metadata-path = PATH TO METADATA XML \\ --attribute-mapping = \"google.subject=assertion.subject,attribute.first name=assertion.attributes.first name[0],attribute.last name=assertion.attributes.last name[0],attribute.user email=assertion.attributes.user email[0],google.groups=assertion.attributes.groups\" Control user access There are multiple ways to manage user access to different aspects of the platform: Permissions groups : Set user access levels by assigning them to specific permission groups."
+        ]
+      },
+      {
+        "title": "\"SOAR migration overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "source_id": "site-api-reference",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, refer to Migrate endpoints to Chronicle API Migrate Remote Agents You can migrate the Remote Agents to Google Cloud by doing the following: Create a Service Account instead of an API key for the remote agent.",
+          "After the migration of the permissions, the following happens SOAR Settings > Organization > Permissions page is still available until September 30, 2026 (for backwards compatibility with Appkeys).",
+          "For SOAR standalone customers, see Collect SOAR logs Further changes post migration: License type The license type is now determined by the user's assigned permissions in IAM."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "assertion.attributes.first",
+      "assertion.attributes.groups",
+      "assertion.attributes.last",
+      "assertion.attributes.user",
+      "assertion.subject",
+      "attribute.first",
+      "attribute.last",
+      "attribute.user"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    }
+  ]
+}

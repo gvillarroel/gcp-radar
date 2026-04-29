@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.295Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-python/card.json",
+  "product_name": "App Engine standard environment Python",
+  "product_slug": "app-engine-standard-environment-python",
+  "feature_name": "Build environment variables",
+  "feature_slug": "build-environment-variables",
+  "summary": "App Engine supports build environment variables for configuring application build-time settings; App Engine supports build environment variables for configuring application build-time settings.",
+  "extended_definition": "App Engine supports build environment variables for configuring application build-time settings; App Engine supports build environment variables for configuring application build-time settings.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/appengine/docs/standard/configuring-warmup-requests",
+      "https://docs.cloud.google.com/appengine/docs/standard/configuring-warmup-requests",
+      "https://docs.cloud.google.com/appengine/docs/standard/python3/config/appref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/python3/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 126,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If you are using a runtime that supports buildpacks , you can define build environment variables in your app.yaml file.",
+          "If you want to use the App Engine legacy bundled services for second-generation runtimes , set this field to true . build env variables Optional.",
+          "To learn more, see Using build environment variables . default expiration Optional."
+        ]
+      },
+      {
+        "title": "\"Configuring warmup requests to improve performance \\_|\\_ App Engine standard\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/configuring-warmup-requests",
+        "source_id": "site-docs-reference",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Configuring warmup requests to improve performance Stay organized with collections Save and categorize content based on your preferences.",
+          "In most cases where warmup requests are enabled, you won't notice an increase in instance hours because your application is simply initializing in a warmup request instead of a loading request.",
+          "If warmup requests are enabled for your application, App Engine attempts to detect when your application needs a new instance and initiates a warmup request to initialize a new instance."
+        ]
+      },
+      {
+        "title": "\"Configuring warmup requests to improve performance \\_|\\_ App Engine standard\\",
+        "url": "https://cloud.google.com/appengine/docs/standard/configuring-warmup-requests",
+        "source_id": "site-docs-reference-3",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Configuring warmup requests to improve performance Stay organized with collections Save and categorize content based on your preferences.",
+          "In most cases where warmup requests are enabled, you won't notice an increase in instance hours because your application is simply initializing in a warmup request instead of a loading request.",
+          "If warmup requests are enabled for your application, App Engine attempts to detect when your application needs a new instance and initiates a warmup request to initialize a new instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/python3/config/appref",
+        "https://cloud.google.com/appengine/docs/standard/configuring-warmup-requests",
+        "https://docs.cloud.google.com/appengine/docs/standard/configuring-warmup-requests"
+      ]
+    }
+  ]
+}

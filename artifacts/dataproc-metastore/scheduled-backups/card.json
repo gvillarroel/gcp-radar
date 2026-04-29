@@ -1,0 +1,121 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:05.041Z",
+  "source_step08_card": "data/step-08/current/products/dataproc-metastore/card.json",
+  "product_name": "Dataproc Metastore",
+  "product_slug": "dataproc-metastore",
+  "feature_name": "Scheduled backups",
+  "feature_slug": "scheduled-backups",
+  "summary": "Scheduled backups let users run backups at specified cron-based daily, weekly, or monthly intervals.",
+  "extended_definition": "Scheduled backups let users run backups at specified cron-based daily, weekly, or monthly intervals.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/backup-metadata",
+      "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient",
+      "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Back up a Dataproc Metastore service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/backup-metadata",
+        "source_id": "site-iam-reference",
+        "final_score": 266,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Schedule a backup Backups can be scheduled to run at user-specified cron job intervals , including running daily, weekly, or monthly.",
+          "For Timezone , select the appropriate time zone, such as UTC-8 . gcloud CLI To schedule a backup of a Dataproc Metastore service, run the following gcloud metastore services backups update command: gcloud metastore services update SERVICE \\ --location= LOCATION \\ --enable-scheduled-backup \\ --scheduled-backup-cron= SCHEDULED BACKUP CRON \\ --scheduled-backup-location= SCHEDULED BACKUP LOCATION \\ Replace the following: SERVICE : the ID or fully qualified identifier for the scheduled backup.",
+          "Click Submit . gcloud CLI To schedule a backup of a Dataproc Metastore service, run the following gcloud metastore services backups create command: gcloud metastore services create SERVICE \\ --location= LOCATION \\ --enable-scheduled-backup \\ --scheduled-backup-cron= SCHEDULED BACKUP CRON \\ --scheduled-backup-location= SCHEDULED BACKUP LOCATION Replace the following: SERVICE : the ID or fully qualified identifier for the backup."
+        ]
+      },
+      {
+        "title": "\"Class DataprocMetastoreFederationAsyncClient (1.22.0) \\_|\\_ Python client\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 194,
+        "relevance": "",
+        "evidence_snippets": [
+          "Union [ str , bytes ]]] = () ) - > None Deletes a long-running operation.",
+          "CreateFederationRequest ( parent=\"parent value\", federation id=\"federation id value\", ) Make the request operation = client. create federation (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.metastore v1.types.CreateFederationRequest , dict]] The request object.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import metastore v1 async def sample delete federation(): Create a client client = metastore v1."
+        ]
+      },
+      {
+        "title": "\"Class DataprocMetastoreFederationClient (1.22.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient",
+        "source_id": "site-python-reference",
+        "final_score": 194,
+        "relevance": "",
+        "evidence_snippets": [
+          "Union [ str , bytes ]]] = () ) - > None Deletes a long-running operation.",
+          "CreateFederationRequest ( parent=\"parent value\", federation id=\"federation id value\", ) Make the request operation = client. create federation (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.metastore v1.types.CreateFederationRequest , dict] The request object.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import metastore v1 def sample delete federation(): Create a client client = metastore v1."
+        ]
+      },
+      {
+        "title": "\"Class DataprocMetastoreAsyncClient (1.22.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 185,
+        "relevance": "",
+        "evidence_snippets": [
+          "The relative resource name of the backup to delete, in the following form: projects/{project number}/locations/{location id}/services/{service id}/backups/{backup id} .",
+          "Union [ str , bytes ]]] = () ) - > None Deletes a long-running operation.",
+          "MoveTableToDatabaseRequest ( service=\"service value\", table name=\"table name value\", db name=\"db name value\", destination db name=\"destination db name value\", ) Make the request operation = client. move table to database (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.metastore v1.types.MoveTableToDatabaseRequest , dict]] The request object."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.dev",
+      "operation.result",
+      "options.html",
+      "v1.types.AlterMetadataResourceLocationRequest",
+      "v1.types.CreateFederationRequest",
+      "v1.types.DeleteFederationRequest",
+      "v1.types.MoveTableToDatabaseRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/backup-metadata",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/backup-metadata",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient"
+      ]
+    }
+  ]
+}

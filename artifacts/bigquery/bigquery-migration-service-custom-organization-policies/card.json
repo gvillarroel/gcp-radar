@@ -1,0 +1,190 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery Migration Service custom organization policies",
+  "feature_slug": "bigquery-migration-service-custom-organization-policies",
+  "summary": "BigQuery Migration Service supports custom organization policies to allow or deny specific migration operations, including disabling AI suggestions.",
+  "extended_definition": "BigQuery Migration Service supports custom organization policies to allow or deny specific migration operations, including disabling AI suggestions.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage Sharing data exchanges and listings using custom constraints \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "source_id": "site-docs-reference-2",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Listing resource must have the restrictedExportPolicy object enabled. name : organizations/ ORGANIZATION ID /customConstraints/custom.listingWithRestrictedExportPolicy resource types : analyticshub.googleapis.com/Listing method types : - CREATE - UPDATE condition : has(resource.bigqueryDataset) && has(resource.bigqueryDataset.restrictedExportPolicy) && resource.bigqueryDataset.restrictedExportPolicy.enabled == true action type : DENY display name : The Listing must have restricted export policy. description : The Listing resource must have restrictedExportPolicy enabled to allow egress controls.",
+          "The Listing resource must refer to a BigQuery dataset. name : organizations/ ORGANIZATION ID /customConstraints/custom.listingWithBQDataset resource types : analyticshub.googleapis.com/Listing method types : - CREATE - UPDATE condition : has(resource.bigqueryDataset) && resource.bigqueryDataset.dataset.contains('test') action type : ALLOW display name : Listing must have a BigQuery dataset. description : Listing must have a BigQuery dataset whose name contains the string \"test\".",
+          "Apply the constraint: gcloud org-policies set-custom-constraint /constraint-enforce-dataExchangeDiscovery.yaml Verify that the constraint exists: gcloud org-policies list-custom-constraints --organization = ORGANIZATION ID The output is similar to the following: CUSTOM CONSTRAINT ACTION TYPE METHOD TYPES RESOURCE TYPES DISPLAY NAME custom.enforceDataExchangeDiscovery DENY CREATE,UPDATE analyticshub.googleapis.com/DataExchange Reject public DataExchanges. ..."
+        ]
+      },
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 159,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references Data Intelligence Platform Cloud migration with Collibra & BigQuery Enterprise-wide data privacy: Collibra + BigQuery Enterprise-scale data quality: Collibra + BigQuery Data quality without the complexity: BigQuery & Collibra Partner Advantage page Direct link Datahub Solution DataHub Cloud Category Data Governance, Security, & MDM Description Datahub is an open source metadata platform that helps organizations discover, understand, and govern their data assets.",
+          "Partner references Automic BigQuery Agent Automic Automation Cloud Integrations: BigQuery Agent Integration Partner Advantage page Direct link CaliberMind Solution CaliberMind Category ETL & Data Integration Description CaliberMind is a centralized database and workflow engine for your enterprise business, allowing savvy marketers to unlock revenue and better customer experiences.",
+          "Partner references Using SQDR with BigQuery Partner Advantage page Direct link StreamNative Solution StreamNative Cloud Category ETL & Data Integration Description StreamNative offers a data streaming platform that allows users to continuously stream data across their organization."
+        ]
+      },
+      {
+        "title": "bq command-line tool reference \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 149,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you create a Spanner connection and want to use Data Boost , include the \"useParallelism\":true and \"useDataBoost\":true pairs. --connection credential= CONNECTION CREDENTIAL The credentials of the connection in JSON format. username and password must be specified. --project id= PROJECT ID Specifies the ID of the project that the connection belongs to. --location= LOCATION Specifies the location that the connection will be stored. --display name= DISPLAY NAME Specifies an optional friendly name for the connection. --description= DESCRIPTION Specifies an optional description of the connection. --iam role id= ROLE ID For BigQuery Omni on AWS, specifies an IAM role that allows access to the resource.",
+          "This flag is required to run a GoogleSQL query from the command line unless you set a default value in .bigqueryrc or set the configuration setting default sql dialect option to 'default legacy sql' at the project or organization level.",
+          "For example: --filter \"labels.department:marketing labels.team:sales\" For transfer configurations, use dataSourceIds as the key, and one of the following data sources as the value: amazon s3 - Amazon S3 data transfer azure blob storage - Azure Blob Storage data transfer dcm dt - Campaign Manager data transfer google cloud storage - Cloud Storage data transfer cross region copy - Dataset Copy dfp dt - Google Ad Manager data transfer displayvideo - Display & Video 360 data transfer google ads - Google Ads data transfer merchant center - Google Merchant Center data transfer mysql - MySQL data transfer play - Google Play data transfer scheduled query - Scheduled queries data transfer search ads - Search Ads 360 data transfer youtube channel - YouTube Channel data transfer youtube content owner - YouTube Content Owner data transfer redshift - Amazon Redshift migration on premises - Teradata migration For example: --filter labels.dataSourceIds:dcm dt For transfer runs, use states as the key and one or more of the following transfer states as the value: SUCCEEDED FAILED PENDING RUNNING CANCELLED For example: --filter=\"states:FAILED\" For jobs, use states as the key and one or more of the following job states as the value: RUNNING PENDING DONE For example: bq ls --jobs --filter=\"states:RUNNING\" bq ls --jobs --filter=\"states:RUNNING,PENDING\" --jobs={true false} or -j={true false} To list jobs, set to true ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "analyticshub.googleapis.com",
+      "custom.enforceDataExchangeDiscovery",
+      "custom.listingWithBQDataset",
+      "custom.listingWithRestrictedExportPolicy",
+      "labels.dataSourceIds",
+      "labels.department",
+      "labels.team",
+      "resource.allowOnlyMetadataSharing",
+      "resource.bigqueryDataset",
+      "resource.bigqueryDataset.dataset",
+      "resource.bigqueryDataset.dataset.contains",
+      "resource.bigqueryDataset.replicaLocations",
+      "resource.bigqueryDataset.restrictedExportPolicy",
+      "resource.bigqueryDataset.restrictedExportPolicy.enabled",
+      "resource.bigqueryDataset.restrictedExportPolicy.restrictDirectTableAccess",
+      "resource.bigqueryDataset.restrictedExportPolicy.restrictQueryResult",
+      "resource.bigqueryDataset.selectedResources.routine",
+      "resource.bigqueryDataset.selectedResources.table",
+      "resource.categories",
+      "resource.dataProvider.name",
+      "resource.dataProvider.primaryContact",
+      "resource.description",
+      "resource.discoveryType",
+      "resource.displayName",
+      "resource.documentation",
+      "resource.icon",
+      "resource.logLinkedDatasetQueryUserEmail",
+      "resource.primaryContact",
+      "resource.publisher.name",
+      "resource.publisher.primaryContact",
+      "resource.pubsubTopic.dataAffinityRegions",
+      "resource.pubsubTopic.topic",
+      "resource.requestAccess",
+      "resource.restrictedExportConfig.enabled",
+      "resource.restrictedExportConfig.restrictQueryResult"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:04.221Z",
+  "source_step08_card": "data/step-08/current/products/dataplex/card.json",
+  "product_name": "Dataplex",
+  "product_slug": "dataplex",
+  "feature_name": "Data lineage for Dataflow",
+  "feature_slug": "data-lineage-for-dataflow",
+  "summary": "Dataplex provides data lineage capture for Dataflow pipelines.",
+  "extended_definition": "Dataplex provides data lineage capture for Dataflow pipelines.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataplex/docs/lineage-considerations",
+      "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+      "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Data lineage considerations \\_|\\_ Knowledge Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataplex/docs/lineage-considerations",
+        "source_id": "site-docs-root-2",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Managed Service for Apache Spark Managed Service for Apache Spark Spark jobs can capture lineage events and publish them to the Data Lineage API.",
+          "See Data lineage with Knowledge Catalog (formerly Dataplex Universal Catalog) for more information.",
+          "Dataflow Dataflow jobs can capture lineage events and publish them to the Data Lineage API."
+        ]
+      },
+      {
+        "title": "\"Use data lineage with Google Cloud systems \\_|\\_ Knowledge Catalog \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "source_id": "site-docs-root",
+        "final_score": 167,
+        "relevance": "",
+        "evidence_snippets": [
+          "To get the permissions that you need to view data lineage, ask your administrator to grant you the following IAM roles: Data Lineage Viewer ( roles/datalineage.viewer ) on the project where lineage is recorded, and the project where lineage is viewed View BigQuery table details: BigQuery Data Viewer ( roles/bigquery.dataViewer ) on the table's storage project View BigQuery job details: BigQuery Resource Viewer ( roles/bigquery.resourceViewer ) on the job's compute project View details for other cataloged assets: Dataplex Catalog Viewer ( roles/dataplex.catalogViewer ) on the project where catalog entries are stored For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "To capture lineage information, complete the following steps: In the Google Cloud console, on the Project selector page, select the project where you want to record lineage.",
+          "This guide describes how to access lineage graphs in Knowledge Catalog (formerly Dataplex Universal Catalog), BigQuery, and Vertex AI."
+        ]
+      },
+      {
+        "title": "\"Track data lineage for a BigQuery table \\_|\\_ Knowledge Catalog \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 153,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to view lineage visualization graphs, ask your administrator to grant you the following IAM roles: Dataplex Catalog Viewer ( roles/dataplex.catalogViewer ) on the Knowledge Catalog (formerly Dataplex Universal Catalog) resource project Data Lineage Viewer ( roles/datalineage.viewer ) on the project where you use BigQuery BigQuery Data Viewer ( roles/bigquery.dataViewer ) on the project where you use BigQuery For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "After you enable the Data Lineage API, lineage information is automatically reported for multiple Google Cloud services in the project, depending on their product-level lineage control.",
+          "Data lineage with process details Clean up To avoid incurring charges to your Google Cloud account for the resources used on this page, follow these steps."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.dataplex.v1 (1.86.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "source_id": "site-java-reference",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "Data Product Service Grpc DataProductService provides APIs for managing data products and the underlying data assets. com. google. cloud. dataplex. v1.",
+          "Async Service DataProductService provides APIs for managing data products and the underlying data assets. com. google. cloud. dataplex. v1.",
+          "Data Scan Represents a user-visible job which provides the insights for the related data source. com. google. cloud. dataplex. v1."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.dataViewer",
+      "bigquery.resourceViewer",
+      "com.google.cloud.dataplex.v1",
+      "datalineage.viewer",
+      "dataplex.catalogViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataViewer",
+      "roles/bigquery.resourceViewer",
+      "roles/datalineage.viewer",
+      "roles/dataplex.catalogViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/lineage-considerations",
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/lineage-considerations",
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/lineage-considerations",
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/lineage-considerations",
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/lineage-considerations",
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    }
+  ]
+}

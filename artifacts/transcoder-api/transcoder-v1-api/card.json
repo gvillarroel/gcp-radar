@@ -1,0 +1,209 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:30.839Z",
+  "source_step08_card": "data/step-08/current/products/transcoder-api/card.json",
+  "product_name": "Transcoder API",
+  "product_slug": "transcoder-api",
+  "feature_name": "Transcoder v1 API",
+  "feature_slug": "transcoder-v1-api",
+  "summary": "The Transcoder v1 API is the new stable API version introduced for Google Cloud Transcoder.",
+  "extended_definition": "The Transcoder v1 API is the new stable API version introduced for Google Cloud Transcoder.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceClient",
+      "https://docs.cloud.google.com/transcoder/docs/reference/rest/v1/JobConfig",
+      "https://docs.cloud.google.com/transcoder/docs/transcode-video"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Transcode a video with the Transcoder API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "source_id": "site-api-reference",
+        "final_score": 255,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample. / // projectId = 'my-project-id'; // location = 'us-central1'; // inputUri = 'gs://my-bucket/my-video-file'; // outputUri = 'gs://my-bucket/my-output-folder/'; // preset = 'preset/web-hd'; // Imports the Transcoder library const { TranscoderServiceClient } = require ( ' @google-cloud/video-transcoder ' ). v1 ; // Instantiates a client const transcoderServiceClient = new TranscoderServiceClient (); async function createJobFromPreset () { // Construct request const request = { parent : transcoderServiceClient . locationPath ( projectId , location ), job : { inputUri : inputUri , outputUri : outputUri , templateId : preset , }, }; // Run request const [ response ] = await transcoderServiceClient . createJob ( request ); console . log ( Job: ${ response . name } ); } createJobFromPreset (); PHP Before trying this sample, follow the PHP setup instructions in the Transcoder API quickstart using client libraries .",
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample. / // projectId = 'my-project-id'; // location = 'us-central1'; // jobId = 'my-job-id'; // Imports the Transcoder library const { TranscoderServiceClient } = require ( ' @google-cloud/video-transcoder ' ). v1 ; // Instantiates a client const transcoderServiceClient = new TranscoderServiceClient (); async function getJob () { // Construct request const request = { name : transcoderServiceClient . jobPath ( projectId , location , jobId ), }; const [ response ] = await transcoderServiceClient . getJob ( request ); console . log ( Job state: ${ response . state } ); } getJob (); PHP Before trying this sample, follow the PHP setup instructions in the Transcoder API quickstart using client libraries .",
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample. / // projectId = 'my-project-id'; // location = 'us-central1'; // jobId = 'my-job-id'; // Imports the Transcoder library const { TranscoderServiceClient } = require ( ' @google-cloud/video-transcoder ' ). v1 ; // Instantiates a client const transcoderServiceClient = new TranscoderServiceClient (); async function deleteJob () { // Construct request const request = { name : transcoderServiceClient . jobPath ( projectId , location , jobId ), }; await transcoderServiceClient . deleteJob ( request ); console . log ( 'Deleted job' ); } deleteJob (); PHP Before trying this sample, follow the PHP setup instructions in the Transcoder API quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "\"Class TranscoderServiceAsyncClient (1.20.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.video import transcoder v1 async def sample create job template(): Create a client client = transcoder v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.video import transcoder v1 async def sample delete job template(): Create a client client = transcoder v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.video import transcoder v1 async def sample list job templates(): Create a client client = transcoder v1 ."
+        ]
+      },
+      {
+        "title": "\"Class TranscoderServiceClient (1.20.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.video import transcoder v1 def sample create job template(): Create a client client = transcoder v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.video import transcoder v1 def sample delete job template(): Create a client client = transcoder v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.video import transcoder v1 def sample list job templates(): Create a client client = transcoder v1 ."
+        ]
+      },
+      {
+        "title": "JobConfig \\_|\\_ Transcoder API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transcoder/docs/reference/rest/v1/JobConfig",
+        "source_id": "site-api-reference",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"widthPixels\" : integer , \"heightPixels\" : integer , \"frameRate\" : number , \"frameRateConversionStrategy\" : enum ( FrameRateConversionStrategy ) , \"bitrateBps\" : integer , \"pixelFormat\" : string , \"rateControlMode\" : string , \"crfLevel\" : integer , \"allowOpenGop\" : boolean , \"enableTwoPass\" : boolean , \"vbvSizeBits\" : integer , \"vbvFullnessBits\" : integer , \"bPyramid\" : boolean , \"bFrameCount\" : integer , \"aqStrength\" : number , \"profile\" : string , \"tune\" : string , \"preset\" : string , // Union field gop mode can be only one of the following: \"gopFrameCount\" : integer , \"gopDuration\" : string // End of list of possible types for union field gop mode . // Union field color format can be only one of the following: \"sdr\" : { object ( H265ColorFormatSDR ) } , \"hlg\" : { object ( H265ColorFormatHLG ) } , \"hdr10\" : { object ( H265ColorFormatHDR10 ) } // End of list of possible types for union field color format . } Fields widthPixels integer The width of the video in pixels.",
+          "JSON representation { \"widthPixels\" : integer , \"heightPixels\" : integer , \"frameRate\" : number , \"frameRateConversionStrategy\" : enum ( FrameRateConversionStrategy ) , \"bitrateBps\" : integer , \"pixelFormat\" : string , \"rateControlMode\" : string , \"crfLevel\" : integer , \"allowOpenGop\" : boolean , \"enableTwoPass\" : boolean , \"vbvSizeBits\" : integer , \"vbvFullnessBits\" : integer , \"entropyCoder\" : string , \"bPyramid\" : boolean , \"bFrameCount\" : integer , \"aqStrength\" : number , \"profile\" : string , \"tune\" : string , \"preset\" : string , // Union field gop mode can be only one of the following: \"gopFrameCount\" : integer , \"gopDuration\" : string // End of list of possible types for union field gop mode . // Union field color format can be only one of the following: \"sdr\" : { object ( H264ColorFormatSDR ) } , \"hlg\" : { object ( H264ColorFormatHLG ) } // End of list of possible types for union field color format . } Fields widthPixels integer The width of the video in pixels.",
+          "JSON representation { \"widthPixels\" : integer , \"heightPixels\" : integer , \"frameRate\" : number , \"frameRateConversionStrategy\" : enum ( FrameRateConversionStrategy ) , \"bitrateBps\" : integer , \"pixelFormat\" : string , \"rateControlMode\" : string , \"crfLevel\" : integer , \"profile\" : string , // Union field gop mode can be only one of the following: \"gopFrameCount\" : integer , \"gopDuration\" : string // End of list of possible types for union field gop mode . // Union field color format can be only one of the following: \"sdr\" : { object ( Vp9ColorFormatSDR ) } , \"hlg\" : { object ( Vp9ColorFormatHLG ) } // End of list of possible types for union field color format . } Fields widthPixels integer The width of the video in pixels."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.dev",
+      "hd.m4s",
+      "hd.mp4",
+      "hd.ts",
+      "manifest.m3u8",
+      "manifest.mpd",
+      "only.m4s",
+      "options.html",
+      "sd.m4s",
+      "sd.mp4",
+      "sd.ts",
+      "transcoder.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceClient",
+        "https://docs.cloud.google.com/transcoder/docs/reference/rest/v1/JobConfig"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceClient",
+        "https://docs.cloud.google.com/transcoder/docs/reference/rest/v1/JobConfig"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceClient",
+        "https://docs.cloud.google.com/transcoder/docs/reference/rest/v1/JobConfig"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceClient",
+        "https://docs.cloud.google.com/transcoder/docs/reference/rest/v1/JobConfig"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceClient",
+        "https://docs.cloud.google.com/transcoder/docs/reference/rest/v1/JobConfig"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceClient",
+        "https://docs.cloud.google.com/transcoder/docs/reference/rest/v1/JobConfig"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceClient",
+        "https://docs.cloud.google.com/transcoder/docs/reference/rest/v1/JobConfig"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceClient",
+        "https://docs.cloud.google.com/transcoder/docs/reference/rest/v1/JobConfig"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceClient",
+        "https://docs.cloud.google.com/transcoder/docs/reference/rest/v1/JobConfig"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceClient",
+        "https://docs.cloud.google.com/transcoder/docs/reference/rest/v1/JobConfig"
+      ]
+    }
+  ]
+}

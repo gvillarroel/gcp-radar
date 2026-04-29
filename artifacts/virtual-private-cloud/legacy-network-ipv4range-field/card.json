@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:33.557Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Legacy network IPv4Range field",
+  "feature_slug": "legacy-network-ipv4range-field",
+  "summary": "The IPv4Range field used when creating legacy Google Cloud VPC networks is deprecated; deprecated on 2021-06-01.",
+  "extended_definition": "The IPv4Range field used when creating legacy Google Cloud VPC networks is deprecated; deprecated on 2021-06-01.",
+  "lifecycle": {
+    "latest_feature_date": "2019-01-24",
+    "deprecation_date": "2021-06-01",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+      "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+      "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+      "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create and manage VPC networks \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "source_id": "site-docs-root",
+        "final_score": 211,
+        "relevance": "",
+        "evidence_snippets": [
+          "Troubleshooting Can't delete a VPC network that was used with Serverless VPC Access You might receive an error when attempting to delete a VPC network for which Serverless VPC Access was configured even if you have deleted the associated Serverless VPC Access connector.",
+          "To specify the dynamic routing mode of the VPC network, include the routingConfig field: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/networks { \"routingConfig\": { \"routingMode\": \" DYNAMIC ROUTING MODE \" }, \"autoCreateSubnetworks\": true, \"name\": \" NETWORK \", \"mtu\": MTU } Replace the following: PROJECT ID : the ID of the project where the VPC network is created.",
+          "To describe the subnet and view its IP address utilization, send the following request: GET https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks/ SUBNET ?views=WITH UTILIZATION Add an IPv4-only subnet When you create a subnet, you set a name, a region, and at least a primary IPv4 address range according to the name and IPv4 subnet range limitations."
+        ]
+      },
+      {
+        "title": "\"Access the service from another VPC network \\_|\\_ Virtual Private Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "source_id": "site-docs-root-2",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "Configure networking The following sections explain how to create a network and a subnet to host the endpoint, and how to create a firewall rule to allow SSH access to the client VM used for testing the endpoint.",
+          "If you used an existing project for the tasks in this document, when you delete it, you also delete any other work you've done in the project.",
+          "Click Networking and configure the following fields: For Network tags , enter allow-ssh ."
+        ]
+      },
+      {
+        "title": "\"Configure alias IP ranges \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "source_id": "site-docs-root-2",
+        "final_score": 163,
+        "relevance": "",
+        "evidence_snippets": [
+          "The command fails because the secondary range is in a different subnet from the instance. gcloud compute instances network-interfaces update instance-1 \\ --zone us-central1-a \\ --aliases secondaryrange1:172.16.0.10/32 The output is similar to the following: ERROR: (gcloud.compute.instances.network-interfaces.update) HTTPError 400: Invalid value for field 'resource.aliasIpRanges[0].subnetworkRangeName': 'secondaryrange'.",
+          "The specified subnet secondary range doesn't exist When creating a VM, if you get an error saying that the secondary range doesn't exist, ensure the following: The subnet has a secondary range with the specified name.",
+          "Alias IPs aren't supported on legacy networks. gcloud compute networks list --filter=\"name= NETWORK NAME \" The network MODE must be auto or custom ."
+        ]
+      },
+      {
+        "title": "\"Create and run Connectivity Tests \\_|\\_ Network Intelligence Center - Connectivity\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "source_id": "site-iam-reference",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you specify a source IP address that is an external IP address outside of Google Cloud, you must set the networkType parameter to INTERNET . test input = { \"source\": { \"ipAddress\": \" SOURCE IP ADDRESS \", \"networkType\": \"INTERNET\" }, \"destination\": { \"forwardingRule\": \" DESTINATION FORWARDING RULE \", \"port\": \" DESTINATION PORT \", \"projectId\": \" DESTINATION IP PROJECT ID \" }, \"protocol\": \" PROTOCOL \", } request = api.projects().locations().global ().connectivityTests().create( parent=\"projects/ PROJECT ID /locations/global\", testId=\" TEST ID \", body=test input) print(json.dumps(request.execute(), indent=4)) Replace the following: SOURCE IP ADDRESS : the source IP address that you are testing from.",
+          "POST https: //networkmanagement.googleapis.com/v1/projects/ PROJECT ID /locations/global/connectivityTests?testId= TEST ID ' { \"source\": { \"appEngineVersion\": { \"uri\": \" APP ENGINE VERSION \", }, }, \"destination\": { \" DESTINATION RESOURCE FIELD \": \" DESTINATION ENDPOINT \", \"ipAddress\": \" DESTINATION IP ADDRESS \", \"port\": DESTINATION PORT , }, \"protocol\": \" PROTOCOL \", }' Replace the following: PROJECT ID : the project ID of the source Cloud Run function.",
+          "POST https: //networkmanagement.googleapis.com/v1/projects/ PROJECT ID /locations/global/connectivityTests?testId= TEST ID ' { \"source\": { \"cloudRunRevision\": { \"uri\": \" CLOUD RUN REVISION \", }, }, \"destination\": { \" DESTINATION RESOURCE FIELD \": \" DESTINATION ENDPOINT \", \"port\": DESTINATION PORT , }, \"protocol\": \" PROTOCOL \", }' Replace the following: PROJECT ID : the project ID of the source Cloud Run function."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "api.projects",
+      "compute.googleapis.com",
+      "gcloud.compute.instances.network",
+      "interfaces.update",
+      "json.dumps",
+      "networkmanagement.googleapis.com",
+      "request.execute",
+      "resource.aliasIpRanges"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:13.819Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Dialogflow CX Chat and Voice legacy onboarding flow",
+  "feature_slug": "dialogflow-cx-chat-and-voice-legacy-onboarding-flow",
+  "summary": "The legacy Dialogflow CX Chat and Voice onboarding flow is deprecated in favor of the new onboarding flow; deprecated on 2024-01-09.",
+  "extended_definition": "The legacy Dialogflow CX Chat and Voice onboarding flow is deprecated in favor of the new onboarding flow; deprecated on 2024-01-09.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-09",
+    "deprecation_date": "2024-01-09",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/conversational-insights"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Call and Chat Settings \\_|\\_ Google Cloud Contact Center as a Service \\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings",
+        "source_id": "site-docs-reference",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "Using SmartActions for Web SDK Chats While the same flow of prompting the consumer to take an action like send a photo or video is not available for Web SDK chat, consumers can still add image attachments.",
+          "In the Destination Field , enter a field name that your CRM will recognize, and that Dialogflow CX will use as a parameter.",
+          "In the Destination Field , enter a field name that your CRM will recognize, and that Dialogflow CX will use as a parameter."
+        ]
+      },
+      {
+        "title": "\"Customer Experience Insights and Quality AI \\_|\\_ Google Cloud Contact Center\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/conversational-insights",
+        "source_id": "site-docs-reference",
+        "final_score": 107,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The provided labels are imported: Metadata key Calls Chats Description hold duration ✔ Duration that the end-user was put on hold for in seconds. customer phone number ✔ The phone number of the end-user. outbound number ✔ The phone number that the outbound call was placed from (outbound calls only). transfers ✔ ✔ The number of times the call was transferred. has feedback ✔ ✔ Whether the conversation had a feedback response. fail reason ✔ ✔ The reason for the failure of the conversation. out ticket id ✔ ✔ The ticket ID of the conversation. agent assist conversation id X ✔ ✔ The Agent Assist conversation ID of the conversation. dialogflow conversation id X ✔ ✔ The Dialogflow CX conversation ID of the conversation. queue priority level ✔ ✔ The priority level of the conversation. answer type ✔ ✔ The type of the answer. session type v2 ✔ ✔ The type of the session. menu ✔ ✔ The menu of the conversation.",
+          "CX Insights seamlessly integrates with other products, allowing you to import conversations from Dialogflow CX and Agent Assist.",
+          "Note: X is a number based on the leg of the conversation where multiple Agent Assist or Dialogflow CX sessions existed."
+        ]
+      },
+      {
+        "title": "\"Call settings \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "Voicemail: Once the agent has listened to the voicemail, they will be given the option to call the consumer back, and the entered custom callback number will be used What happens when a consumer hangs up before completing the flow?",
+          "Prerequisites In order to enable the Pre-session Deflection, you must have the following: A valid CCAI Platform account with Admin role assigned A valid Legacy, Pro, Enterprise, or Digital License Package A valid subscription for CCAI Platform IVR Support with IVR enabled A valid subscription for CCAI Platform SMS Support enabled with a valid queue structure The SMS must be functional (agent assigned) Basic configuration Do the following procedures, in order: Enable pre-session SMS deflection Enable and save the pre-session SMS deflection offer and opted-in messages Enable and save the pre-session SMS deflection greeting message Configure pre-session SMS deflection for a specific queue Enable pre-session SMS deflection Go Settings > Call.",
+          "Session types for reporting For reporting, calls to or from direct phone numbers generate the following session types: Voice Inbound (Direct) : an inbound call to a direct phone number Voice Outbound (Direct) : an outbound call from a direct phone number Voice Internal : an internal call to or from a direct phone number Estimated wait time announcement for calls Estimated Wait Time (EWT) Announcements use a calculation to predict the wait time until a caller is connected with an agent."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/conversational-insights",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/conversational-insights",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/conversational-insights",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings"
+      ]
+    }
+  ]
+}

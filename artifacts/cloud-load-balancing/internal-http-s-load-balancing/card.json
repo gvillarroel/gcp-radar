@@ -1,0 +1,146 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:49.160Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "Internal HTTP(S) Load Balancing",
+  "feature_slug": "internal-http-s-load-balancing",
+  "summary": "Internal HTTP(S) Load Balancing provides Layer 7 load balancing for private services inside a Google Cloud network; Internal HTTP(S) Load Balancing provides Layer 7 load balancing for private services inside a Google Cloud network.",
+  "extended_definition": "Internal HTTP(S) Load Balancing provides Layer 7 load balancing for private services inside a Google Cloud network; Internal HTTP(S) Load Balancing provides Layer 7 load balancing for private services inside a Google Cloud network.",
+  "lifecycle": {
+    "latest_feature_date": "2019-12-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/https",
+      "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+      "https://docs.cloud.google.com/load-balancing/docs/load-balancing-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Internal Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "source_id": "site-docs-root",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "Table: Supported session affinity settings Product Session affinity options Cross-region internal Application Load Balancer Regional internal Application Load Balancer None ( NONE ) Client IP ( CLIENT IP ) Generated cookie ( GENERATED COOKIE ) Header field ( HEADER FIELD ) HTTP cookie ( HTTP COOKIE ) Stateful cookie-based affinity ( STRONG COOKIE AFFINITY ) Also note: The effective default value of the load balancing locality policy ( localityLbPolicy ) changes according to your session affinity settings.",
+          "The following table shows the target proxy APIs required by internal Application Load Balancers: Load balancer mode Target proxy Cross-region internal Application Load Balancer targetHttpProxies targetHttpsProxies Regional internal Application Load Balancer regionTargetHttpProxies regionTargetHttpsProxies SSL certificates Internal Application Load Balancers using target HTTPS proxies require private keys and SSL certificates as part of the load balancer configuration.",
+          "Backend service scope The following table indicates which backend service resource and scope is used by internal Application Load Balancers: Load balancer mode Backend service resource Cross-region internal Application Load Balancer backendServices Regional internal Application Load Balancer regionBackendServices Protocol to the backends Backend services for Application Load Balancers must use one of the following protocols to send requests to backends: HTTP, which uses HTTP/1.1 and no TLS HTTPS, which uses HTTP/1.1 and TLS HTTP/2, which uses HTTP/2 and TLS (HTTP/2 without encryption isn't supported.) H2C, which uses HTTP/2 over TCP."
+        ]
+      },
+      {
+        "title": "\"External Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "By default, HTTPS Load Balancing uses a set of SSL features that provides good security and wide compatibility.",
+          "Load balancer mode URL map type Global external Application Load Balancer Global Classic Application Load Balancer Global (with only a subset of the features supported ) Regional external Application Load Balancer Regional SSL certificates External Application Load Balancers using target HTTPS proxies require private keys and SSL certificates as part of the load balancer configuration.",
+          "If you previously created a proxy-only subnet with --purpose=INTERNAL HTTPS LOAD BALANCER , migrate the subnet's purpose to REGIONAL MANAGED PROXY before you can create other Envoy-based load balancers in the same region of the VPC network."
+        ]
+      },
+      {
+        "title": "Cloud Load Balancing overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/load-balancing-overview",
+        "source_id": "site-docs-root",
+        "final_score": 144,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table provides a high-level overview of the different types of Google Cloud load balancers categorized by the OSI layer on which they operate and whether they are used for external or internal access. lan Cloud Load Balancing External (Accepts internet traffic) Internal (Accepts internal Google Cloud traffic) Application Load Balancers HTTPS Layer 7 load balancing global external regional external classic cross-region internal regional internal Network Load Balancers TCP/SSL/Other Layer 4 load balancing Proxy Network Load Balancers global external regional external classic cross-region internal regional internal Passthrough Network Load Balancers regional external regional internal Application Load Balancers Application Load Balancers are proxy-based Layer 7 load balancers that enable you to run and scale your services behind an anycast IP address.",
+          "This load balancer provides internal proxy-based load balancing of Layer 7 application data.",
+          "Load balancer Deployment mode Traffic type Network service tier Load-balancing scheme 1 Application Load Balancers Global external HTTP or HTTPS Premium Tier EXTERNAL MANAGED Regional external HTTP or HTTPS Premium or Standard Tier EXTERNAL MANAGED Classic HTTP or HTTPS Global in Premium Tier Regional in Standard Tier EXTERNAL 2 Regional internal 3 HTTP or HTTPS Premium Tier INTERNAL MANAGED Cross-region internal HTTP or HTTPS Premium Tier INTERNAL MANAGED Proxy Network Load Balancers Global external TCP with optional SSL offload Premium Tier EXTERNAL MANAGED Regional external TCP Premium or Standard Tier EXTERNAL MANAGED Classic TCP with optional SSL offload Global in Premium Tier Regional in Standard Tier EXTERNAL Regional internal 3 TCP without SSL offload Premium Tier INTERNAL MANAGED Cross-region internal TCP without SSL offload Premium Tier INTERNAL MANAGED Passthrough Network Load Balancers External Always regional TCP, UDP, ESP, GRE, ICMP, and ICMPv6 Premium or Standard Tier EXTERNAL Internal 3 Always regional TCP, UDP, ICMP, ICMPv6, SCTP, ESP, AH, and GRE Premium Tier INTERNAL 1 The load-balancing scheme is an attribute on the forwarding rule and the backend service of a load balancer and indicates whether the load balancer can be used for internal or external traffic."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/load-balancing-overview"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/load-balancing-overview"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/load-balancing-overview"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/load-balancing-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/load-balancing-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/load-balancing-overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/load-balancing-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/load-balancing-overview"
+      ]
+    }
+  ]
+}

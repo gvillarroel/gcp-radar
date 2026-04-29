@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Conversational analytics for Spanner",
+  "feature_slug": "conversational-analytics-for-spanner",
+  "summary": "Spanner added conversational analytics, allowing users to query operational data with natural language via the Conversational Analytics API.",
+  "extended_definition": "Spanner added conversational analytics, allowing users to query operational data with natural language via the Conversational Analytics API.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+      "https://docs.cloud.google.com/spanner/docs/columnar-engine",
+      "https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Build change streams connections using Dataflow \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "source_id": "site-docs-root",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "This is a good fit for analytics and point-in-time archival, which is independent from Spanner's retention period. pipeline . apply ( SpannerIO . readChangeStream () . withSpannerConfig ( SpannerConfig . create () . withProjectId ( \"my-project-id\" ) . withInstanceId ( \"my-instance-id\" ) . withDatabaseId ( \"my-database-id\" ) . withDatabaseRole ( \"my-database-role\" )) // Needed for fine-grained access control only . withChangeStreamName ( \"my-change-stream\" ) . withMetadataInstance ( \"my-metadata-instance-id\" ) . withMetadataDatabase ( \"my-metadata-database-id\" ) . withInclusiveStartAt ( Timestamp . now ())) . apply ( MapElements . into ( TypeDescriptors . strings ()). via ( Object :: toString )) . apply ( Window . into ( FixedWindows . of ( Duration . standardMinutes ( 1 )))) . apply ( TextIO . write () . to ( \"gs://my-bucket/change-stream-results-\" ) . withSuffix ( \".txt\" ) . withWindowedWrites () . withNumShards ( 1 )); Note that the Cloud Storage sink provides at-least-once semantics by default.",
+          "WRITE APPEND ) . withSchema ( new TableSchema (). setFields ( Arrays . asList ( new TableFieldSchema () . setName ( \"SingerId\" ) . setType ( \"INT64\" ) . setMode ( \"REQUIRED\" ), new TableFieldSchema () . setName ( \"FirstName\" ) . setType ( \"STRING\" ) . setMode ( \"REQUIRED\" ), new TableFieldSchema () . setName ( \"LastName\" ) . setType ( \"STRING\" ) . setMode ( \"REQUIRED\" ) ))) . withAutoSharding () . optimizedWrites () . withFormatFunction (( String element ) - > { ObjectMapper objectMapper = new ObjectMapper (); JsonNode jsonNode = null ; try { jsonNode = objectMapper . readTree ( element ); } catch ( IOException e ) { e . printStackTrace (); } return new TableRow () . set ( \"SingerId\" , jsonNode . get ( \"SingerId\" ). asInt ()) . set ( \"FirstName\" , jsonNode . get ( \"FirstName\" ). asText ()) . set ( \"LastName\" , jsonNode . get ( \"LastName\" ). asText ()); } ) ); Note that the BigQuery sink provides at-least-once semantics by default.",
+          "SpannerConfig spannerConfig = SpannerConfig . create () . withProjectId ( \"my-project-id\" ) . withInstanceId ( \"my-instance-id\" ) . withDatabaseId ( \"my-database-id\" ) . withDatabaseRole ( \"my-database-role\" ); // Needed for fine-grained access control only pipeline . apply ( SpannerIO . readChangeStream () . withSpannerConfig ( spannerConfig ) . withChangeStreamName ( \"my-change-stream\" ) . withMetadataInstance ( \"my-metadata-instance-id\" ) . withMetadataDatabase ( \"my-metadata-database-id\" ) . withInclusiveStartAt ( Timestamp . now ())) . apply ( ParDo . of ( new ToFullRowJsonFn ( spannerConfig ))) . apply ( BigQueryIO . < String>write () . to ( \"my-bigquery-table\" ) . withCreateDisposition ( CreateDisposition ."
+        ]
+      },
+      {
+        "title": "Spanner columnar engine overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/columnar-engine",
+        "source_id": "site-docs-root",
+        "final_score": 80,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Spanner columnar engine lets you run analytics with significantly improved performance on the latest operational data.",
+          "Operational databases commonly extract, transform, and load (ETL) data into an OLAP system for analytics.",
+          "Federated analytics seamlessly combine data from Spanner and other sources in BigQuery."
+        ]
+      },
+      {
+        "title": "\"Commit timestamps in PostgreSQL-dialect databases \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql",
+        "source_id": "site-docs-root",
+        "final_score": 73,
+        "relevance": "",
+        "evidence_snippets": [
+          "ResultSet getters can only be used to retrieve // non null values. resultSet . isNull ( \"MarketingBudget\" ) ? \"NULL\" : resultSet . getLong ( \"MarketingBudget\" ), resultSet . isNull ( \"LastUpdateTime\" ) ? \"NULL\" : resultSet . getTimestamp ( \"LastUpdateTime\" )); } } } Node.js // ... // Imports the Google Cloud client library const { Spanner } = require ( ' @google-cloud/spanner ' ); / TODO(developer): Uncomment the following lines before running the sample. / // const projectId = 'my-project-id'; // const instanceId = 'my-instance'; // const databaseId = 'my-database'; // Creates a client const spanner = new Spanner ({ projectId : projectId , }); // Gets a reference to a Cloud Spanner instance and database const instance = spanner . instance ( instanceId ); const database = instance . database ( databaseId ); const query = { sql : SELECT SingerId, AlbumId, MarketingBudget, LastUpdateTime FROM Albums ORDER BY LastUpdateTime DESC , }; // Queries rows from the Albums table try { const [ rows ] = await database . run ( query ); rows . forEach ( row = > { const json = row . toJSON (); console . log ( SingerId: ${ json .",
+          "You can add the column by running the add timestamp column sample or by running this DDL statement against your database: ALTER TABLE Albums ADD COLUMN LastUpdateTime TIMESTAMP OPTIONS (allow commit timestamp=true) Example: @param string $instanceId The Spanner instance ID. @param string $databaseId The Spanner database ID. / function query data with timestamp column(string $instanceId, string $databaseId): void { $spanner = new SpannerClient(); $instance = $spanner->instance($instanceId); $database = $instance->database($databaseId); $results = $database->execute( 'SELECT SingerId, AlbumId, MarketingBudget, LastUpdateTime ' . ' FROM Albums ORDER BY LastUpdateTime DESC' ); foreach ($results as $row) { if ($row['MarketingBudget'] == null) { $row['MarketingBudget'] = 'NULL'; } if ($row['LastUpdateTime'] == null) { $row['LastUpdateTime'] = 'NULL'; } printf('SingerId: %s, AlbumId: %s, MarketingBudget: %s, LastUpdateTime: %s' .",
+          "In addition this update expects the LastUpdateTime column added by applying the DDL statement \"ALTER TABLE Albums ADD COLUMN LastUpdateTime TIMESTAMP OPTIONS (allow commit timestamp=true)\" Example: @param string $instanceId The Spanner instance ID. @param string $databaseId The Spanner database ID. / function update data with timestamp column(string $instanceId, string $databaseId): void { $spanner = new SpannerClient(); $instance = $spanner->instance($instanceId); $database = $instance->database($databaseId); $operation = $database->transaction(['singleUse' => true]) ->updateBatch('Albums', [ ['SingerId' => 1, 'AlbumId' => 1, 'MarketingBudget' => 1000000, 'LastUpdateTime' => $spanner->commitTimestamp()], ['SingerId' => 2, 'AlbumId' => 2, 'MarketingBudget' => 750000, 'LastUpdateTime' => $spanner->commitTimestamp()], ]) ->commit(); print('Updated data.' ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "org.apache.beam",
+      "pom.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/columnar-engine",
+        "https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/columnar-engine",
+        "https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/columnar-engine",
+        "https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql"
+      ]
+    }
+  ]
+}

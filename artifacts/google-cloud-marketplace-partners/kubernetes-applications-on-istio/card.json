@@ -1,0 +1,157 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:14.779Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-marketplace-partners/card.json",
+  "product_name": "Google Cloud Marketplace Partners",
+  "product_slug": "google-cloud-marketplace-partners",
+  "feature_name": "Kubernetes applications on Istio",
+  "feature_slug": "kubernetes-applications-on-istio",
+  "summary": "Google Cloud Marketplace supports distributing Kubernetes applications that run on Istio-enabled clusters.",
+  "extended_definition": "Google Cloud Marketplace supports distributing Kubernetes applications that run on Istio-enabled clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+      "https://docs.cloud.google.com/marketplace/docs/partners/container-setup",
+      "https://docs.cloud.google.com/marketplace/docs/partners/data/choose-pricing",
+      "https://docs.cloud.google.com/marketplace/docs/partners/kubernetes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Offering Kubernetes apps \\_|\\_ Google Cloud Marketplace Partners \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/kubernetes",
+        "source_id": "site-docs-root",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: Starting January 20, 2025, Google Cloud Marketplace is requiring that all new or updated deployments of Google Kubernetes Engine app product listings contain an annotation in their image manifest that identifies the service name of the product.",
+          "The Kubernetes app that you submit to Cloud Marketplace is a bundle of container images, configuration files, and display metadata.",
+          "Home Documentation Access and resource management Google Cloud Marketplace Partners Develop Send feedback Offering Kubernetes apps Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Configure access control for Producer Portal users \\_|\\_ Google Cloud Marketplace\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 162,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you used the VM guided configuration to create your VM product's deployment package, grant your users the following roles for the Cloud Storage bucket where you store your product's deployment package: Storage Object Viewer Storage Object Creator Access control for previewing your products in Cloud Marketplace If you want users to be able to preview your product's listing as your customers see it in Cloud Marketplace, you must grant them the following role: Service Management Consumer Access control for creating and managing private offers in Producer Portal For users to create and manage private offers in the Private offers tab of Producer Portal, grant them the following roles: Commerce Price Management Private Offers Admin Commerce Producer Viewer Access control for viewing key events for private offers For users to view the history of an offer that your organization has published, grant them the Commerce Price Management Events Viewer role.",
+          "Access control for viewing which resellers are allowed to resell your products For users to view which resellers are allowed to resell your Cloud Marketplace products, or which resellers have been disallowed from reselling your products, grant them one of the following roles: Commerce Business Enablement Configuration Viewer ( roles/commercebusinessenablement.viewer ) Commerce Business Enablement Configuration Admin ( roles/commercebusinessenablement.admin ) Access control for managing which resellers are allowed to resell your products For users to manage which resellers are allowed to resell your Cloud Marketplace products, grant them the Commerce Business Enablement Configuration Admin ( roles/commercebusinessenablement.admin ) role.",
+          "Access control for managing your Partner Advantage account and your organization For users to manage your Partner Advantage account and your organization-level settings, grant them one of the following two roles: Commerce Business Enablement Configuration Admin ( roles/commercebusinessenablement.admin ) Commerce Business Enablement Configuration Viewer ( roles/commercebusinessenablement.viewer ) Access control for viewing product listings For users to view in-progress product listings that you create in Producer Portal, grant them the Commerce Producer Viewer role."
+        ]
+      },
+      {
+        "title": "\"Setting up the technical components \\_|\\_ Google Cloud Marketplace Partners\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/container-setup",
+        "source_id": "site-iam-reference",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To create your product's Cloud Marketplace entry: Open Producer Portal in the Google Cloud console: https://console.cloud.google.com/producer-portal?project= YOUR PUBLIC PROJECT ID Replace YOUR PUBLIC PROJECT ID with the ID for the public project that you created for Cloud Marketplace—for example, my-organization-public .",
+          "This page outlines how to create the key technical components required for distributing your container image product with Google Cloud Marketplace.",
+          "Tag the image via Docker with latest . docker tag image name staging repo path :tag For example, docker tag test-image us-docker.pkg.dev/testpartner/testsolution:latest Note that the image tagged latest is pulled if a user does not specify a tag."
+        ]
+      },
+      {
+        "title": "\"Add pricing information to a config \\_|\\_ Google Cloud Marketplace Partners\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/data/choose-pricing",
+        "source_id": "site-iam-reference",
+        "final_score": 151,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Add features to your pricing plans For each of your pricing plans that supports private offers, under Add features , add at least one feature.",
+          "Home Documentation Access and resource management Google Cloud Marketplace Partners Develop Send feedback Add pricing information to a config Stay organized with collections Save and categorize content based on your preferences.",
+          "The direct link to Producer Portal is: https://console.cloud.google.com/producer-portal?project= YOUR PROJECT ID Note: If you don't see the link, or can't access the URL, verify that you've selected the correct project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "commercebusinessenablement.admin",
+      "commercebusinessenablement.viewer",
+      "console.cloud.google.com",
+      "docker.pkg.dev"
+    ],
+    "missing_inventory_roles": [
+      "roles/commercebusinessenablement.admin",
+      "roles/commercebusinessenablement.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/kubernetes",
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/partners/container-setup",
+        "https://docs.cloud.google.com/marketplace/docs/partners/data/choose-pricing"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/kubernetes",
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/partners/container-setup",
+        "https://docs.cloud.google.com/marketplace/docs/partners/data/choose-pricing"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/kubernetes",
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/partners/container-setup",
+        "https://docs.cloud.google.com/marketplace/docs/partners/data/choose-pricing"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/kubernetes",
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/partners/container-setup",
+        "https://docs.cloud.google.com/marketplace/docs/partners/data/choose-pricing"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/kubernetes",
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/partners/container-setup",
+        "https://docs.cloud.google.com/marketplace/docs/partners/data/choose-pricing"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/kubernetes",
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/partners/container-setup",
+        "https://docs.cloud.google.com/marketplace/docs/partners/data/choose-pricing"
+      ]
+    }
+  ]
+}

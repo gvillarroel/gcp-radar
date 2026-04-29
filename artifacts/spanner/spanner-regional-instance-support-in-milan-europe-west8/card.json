@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner regional instance support in Milan (europe-west8)",
+  "feature_slug": "spanner-regional-instance-support-in-milan-europe-west8",
+  "summary": "Spanner now supports creating regional instances in the Milan (europe-west8) region.",
+  "extended_definition": "Spanner now supports creating regional instances in the Milan (europe-west8) region.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview",
+      "https://docs.cloud.google.com/spanner/docs/cmek",
+      "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) overview \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/cmek",
+        "source_id": "site-docs-root",
+        "final_score": 85,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, if your Spanner database is in the multi-region instance configuration nam3 , with instance partitions located in europe-west1 and europe-west2 , then you must create Cloud KMS keys in the following regions: us-east4 (part of nam3 ) us-east1 (part of nam3 ) us-central1 (part of nam3 ) europe-west1 (location of instance partition) europe-west2 (location of instance partition) For more information, see Secure a database with CMEK .",
+          "Multiple regional keys support: you can create multiple regional (single-region) Cloud KMS keys to protect a database in a Spanner custom, dual-region, or multi-region instance configuration .",
+          "When using geo-partitioning, you must use a regional Cloud KMS key for each instance replica locatoin, including those in the instance partition configuration."
+        ]
+      },
+      {
+        "title": "\"Create a Spanner free trial instance and sample application \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 82,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, to create a free trial instance named trial-instance with the display name Trial Instance using the regional instance configuration regional-us-east5 , run the following: gcloud spanner instances create trial - instance -- config = regional - us - east5 \\ -- instance - type = free - instance -- description = \"Trial Instance\" Note: Use the instance ID, not the display name, when referring to an instance in gcloud CLI commands.",
+          "Note: A Spanner free trial instance supports Standard edition features, and Enterprise edition features, such as KNN vector distance functions , full-text search , and Spanner Graph .",
+          "You can create a free trial instance in any of the Spanner regional instance configurations : INSTANCE DESCRIPTION : the name to display for the instance in the Google Cloud console."
+        ]
+      },
+      {
+        "title": "Disaster recovery overview \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview",
+        "source_id": "site-docs-root",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "Disaster recovery techniques Spanner offers disaster recovery techniques to protect your data against the following disasters: Zonal failure : Spanner regional configuration provides automatic protection against zonal failures, ensuring that if one zone within a region fails, your application remains operational.",
+          "Spanner offers the following features to help ensure high data availability: Multi-regional configurations : Spanner can maintain replicas of your data in separate zones within a single region or multiple regions to ensure data availability even if a zone or region fails.",
+          "Large data exports : Consider using Spanner Data Boost for Spanner for large data exports to offload compute resources from your instance and avoid negative impact on your transaction performance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview"
+      ]
+    }
+  ]
+}

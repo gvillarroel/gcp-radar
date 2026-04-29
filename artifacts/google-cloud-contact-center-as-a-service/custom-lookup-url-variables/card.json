@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:13.819Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Custom lookup URL variables",
+  "feature_slug": "custom-lookup-url-variables",
+  "summary": "Custom lookup URLs now support five additional variables for caller, agent, session, and outbound phone number data.",
+  "extended_definition": "Custom lookup URLs now support five additional variables for caller, agent, session, and outbound phone number data.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-configure-widgets",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure custom panels \\_|\\_ Google Cloud Contact Center as a Service \\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-configure-widgets",
+        "source_id": "site-docs-reference",
+        "final_score": 107,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "End-user variables {UJET ID} : the end-user ID {ANI} : the end-user's phone number {DEVICE TYPE} : the device type of the end-user Session variables {SESSION TYPE} : the session type {PHONE NUMBER} : the end-user's phone number {SESSION ID} : the call ID or chat ID {MENU PATH} : the URL path to the menu {QUEUE NAME} : the name of the queue {QUEUE ID} : the internal queue ID {LANGUAGE} : the queue language {OUTBOUND PHONE NUMBER} : the outbound phone number {SUPPORT PHONE NUMBER} : the support phone number the end-user is calling Functions You can include functions from the following table in URLs and HTTP header field values.",
+          "Agent variables {AGENT ID} : the agent ID {AGENT CUSTOM ID} : the agent's custom ID {AGENT EMAIL} : the agent's email {AGENT ALIAS} : the agent's alias {AGENT LOCATION LANGUAGE} : the language code for the language of the agent's assigned location—for example, en-US .",
+          "Variables You can include the following variables in URLs and HTTP header field values."
+        ]
+      },
+      {
+        "title": "\"Call settings \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "Emergency queues don't support the following: Virtual agents Overcapacity deflections Automatic redirections Target metrics Blended SMS Presession SMS deflections Call redaction Surveys CSAT ratings IVR payments Custom URLs Before you begin To configure an emergency service callback queue, you'll need a phone number that is dedicated to emergency or special services calls .",
+          "When enabled, configure the TSS or upload a custom greeting in Settings Languages & Messages Deflection to Voicemail option - Request Already Placed Message. - Limit consumer to 1 voicemail per queue: a consumer could leave a separate voicemail request on a separate queue. - Limit consumer to 1 voicemail request across all queues: voicemail option not available if an unattended voicemail is already left form the phone number.",
+          "Customize announcement By default the estimated wait announcement will be announced using a TTS voice: \"Thank you for calling, your estimated wait time is @{ESTIMATED WAIT TIME IN MINUTES}.\" To customize the message follow these steps: Record a custom audio file that leaves room at the end for the system to fill in the variable for what the estimated wait time will be announced as."
+        ]
+      },
+      {
+        "title": "\"Salesforce integration guide \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "No Case: ability to connect the CCAI Platform Custom Session object directly to any Salesforce account object, bypassing the need to create a case This builds on two related features: Option to look-up end users in Person Account object (instead of Contact ( default )) Option to leverage our CCAI Platform Session Object which stores all assets and data related to a single session in optimized CCAI Platform Session object Configuration availability requirements The configuration options for Account Lookup and Session Data are only available if the following conditions are met: Account Lookup configuration To configure custom account lookup settings, the following is required: Logged in Agent - at least one agent needs to be logged into a CCAI Platform adapter in Salesforce.",
+          "To configure a custom lookup field for sessions originating from the web SDK or the mobile SDKs, do the following: Select the Mobile / Web SDKs: lookup users by custom field for SDK sessions checkbox.",
+          "When an incoming call arrives, the system attempts to find a match between the incoming phone number and the lookup field to identify the customer."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

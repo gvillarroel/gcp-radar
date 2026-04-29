@@ -1,0 +1,176 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:10.390Z",
+  "source_step08_card": "data/step-08/current/products/eventarc/card.json",
+  "product_name": "Eventarc",
+  "product_slug": "eventarc",
+  "feature_name": "Eventarc console UI",
+  "feature_slug": "eventarc-console-ui",
+  "summary": "A dedicated Eventarc user interface is available in preview.",
+  "extended_definition": "A dedicated Eventarc user interface is available in preview.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+      "https://docs.cloud.google.com/eventarc/standard/docs/gke/roles-permissions",
+      "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-registry",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Disable Eventarc Advanced resources \\_|\\_ Eventarc Standard \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+        "source_id": "site-iam-reference",
+        "final_score": 219,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can create a custom constraint using the following Eventarc Advanced resource types: Enrollment GoogleApiSource MessageBus Pipeline Set up a custom constraint Console To create a custom constraint, do the following: In the Google Cloud console, go to the Organization policies page.",
+          "Home Documentation Application development Eventarc Standard Guides Send feedback Disable Eventarc Advanced resources Stay organized with collections Save and categorize content based on your preferences.",
+          "Before you begin Before you disable Eventarc Advanced resources, make sure that the following prerequisites are met: You know your Google Cloud organization ID ."
+        ]
+      },
+      {
+        "title": "\"Roles and permissions for Google Kubernetes Engine (GKE) targets \\_|\\_ Eventarc\\",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/gke/roles-permissions",
+        "source_id": "site-iam-reference",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DESCRIPTION : an optional description of the service account DISPLAY NAME : a service account name to display in the Google Cloud console Grant the Eventarc Event Receiver role ( roles/eventarc.eventReceiver ) on the project to the service account associated with your Eventarc trigger so that it can receive events from event providers.",
+          "Home Documentation Application development Eventarc Standard Guides Send feedback Roles and permissions for Google Kubernetes Engine (GKE) targets Stay organized with collections Save and categorize content based on your preferences.",
+          "When creating an Eventarc trigger, you need this role so that you can associate a user-managed service account with the trigger and which represents its identity."
+        ]
+      },
+      {
+        "title": "\"Route Apigee Registry events to GKE \\_|\\_ Eventarc Standard \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-registry",
+        "source_id": "site-iam-reference",
+        "final_score": 195,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application development Eventarc Standard Guides Send feedback Route Apigee Registry events to GKE Stay organized with collections Save and categorize content based on your preferences.",
+          "If you don't already have one, create a user-managed service account, then grant it the roles and permissions necessary so that Eventarc can manage events for your target GKE destination.",
+          "If you don't already have one, create a user-managed service account, then grant it the roles and permissions necessary so that Eventarc can manage events for your target service."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.eventarc.publishing.v1 (0.88.0) \\_|\\_ Java client\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1",
+        "source_id": "site-java-reference",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Builder The following abstract data types are available for use in attributes. com. google. cloud. eventarc. publishing. v1.",
+          "Builder CloudEvent represents a vendor-neutral specification for defining the format of event data. com. google. cloud. eventarc. publishing. v1.",
+          "Cloud Event Attribute Value The following abstract data types are available for use in attributes. com. google. cloud. eventarc. publishing. v1."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.eventarc.publishing.v1",
+      "com.google.cloud.eventarc.publishing.v1.CloudEventOrBuilder",
+      "eventarc.eventReceiver",
+      "iam.gserviceaccount.com",
+      "monitoring.metricWriter"
+    ],
+    "missing_inventory_roles": [
+      "roles/eventarc.eventReceiver",
+      "roles/monitoring.metricWriter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/roles-permissions",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-registry",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/roles-permissions",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-registry",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/roles-permissions",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-registry",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/roles-permissions",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-registry",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/roles-permissions",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-registry",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/roles-permissions",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-registry",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/roles-permissions",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-registry",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/roles-permissions",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-apigee-registry",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1"
+      ]
+    }
+  ]
+}

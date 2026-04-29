@@ -1,0 +1,150 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.020Z",
+  "source_step08_card": "data/step-08/current/products/batch/card.json",
+  "product_name": "Batch",
+  "product_slug": "batch",
+  "feature_name": "Automatic Ops Agent installation for Batch jobs",
+  "feature_slug": "automatic-ops-agent-installation-for-batch-jobs",
+  "summary": "Batch jobs can be configured to automatically install the Ops Agent to provide additional Cloud Monitoring resource metrics.",
+  "extended_definition": "Batch jobs can be configured to automatically install the Ops Agent to provide additional Cloud Monitoring resource metrics.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/batch/docs/get-started",
+      "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs",
+      "https://docs.cloud.google.com/batch/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "REST Resource: projects.locations.jobs \\_|\\_ Batch \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs",
+        "source_id": "site-api-reference",
+        "final_score": 140,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Logs include information that is automatically written by the Batch service agent and any information that you configured the job's runnables to write to the stdout or stderr streams.",
+          "For non Container-Optimized Image cases, following https://github.com/GoogleCloudPlatform/compute-gpu-installation/blob/main/linux/install gpu driver.py . installOpsAgent boolean Optional.",
+          "Resource: Job JSON representation TaskGroup JSON representation TaskSpec JSON representation Runnable JSON representation Container JSON representation Script JSON representation Barrier JSON representation Environment JSON representation KMSEnvMap JSON representation ComputeResource JSON representation LifecyclePolicy JSON representation Action ActionCondition JSON representation Volume JSON representation NFS JSON representation GCS JSON representation SchedulingPolicy AllocationPolicy JSON representation LocationPolicy JSON representation InstancePolicyOrTemplate JSON representation InstancePolicy JSON representation ProvisioningModel Accelerator JSON representation Disk JSON representation AttachedDisk JSON representation ServiceAccount JSON representation NetworkPolicy JSON representation NetworkInterface JSON representation PlacementPolicy JSON representation JobStatus JSON representation State TaskGroupStatus JSON representation InstanceStatus JSON representation LogsPolicy JSON representation Destination CloudLoggingOption JSON representation JobNotification JSON representation Message JSON representation Type Methods Resource: Job The Cloud Batch Job description."
+        ]
+      },
+      {
+        "title": "Troubleshooting \\_|\\_ Batch \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/batch/docs/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 101,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Although it's possible to install the Ops Agent manually in a runnable, the recommended method is to automatically install the Ops Agent by setting the installOpsAgent field to true .",
+          "Logs from Batch jobs can't appear if you have configured exclusion filters for Cloud Logging that cause logs from Batch jobs to be excluded.",
+          "Cloud Logging was configured to automatically exclude the job's logs."
+        ]
+      },
+      {
+        "title": "Get started with Batch \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/batch/docs/get-started",
+        "source_id": "site-api-reference",
+        "final_score": 97,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Make sure you are familiar with your project's Batch service agent: After you create a Batch job, the Batch service agent is automatically created for your project with the following name: service- PROJECT NUMBER @gcp-sa-cloudbatch.iam.gserviceaccount.com Replace PROJECT NUMBER with the project number of your project.",
+          "Batch Agent Reporter ( roles/batch.agentReporter ) on the project To let jobs generate logs in Cloud Logging: Logs Writer ( roles/logging.logWriter ) on the project The service account that you use for a job might also require additional roles based on the configuration options that you want to use for your jobs.",
+          "Consequently, any permissions that are granted to your Batch service agent can be used by any principal (user or service account) in the project that has permissions to create Batch jobs whenever the principal is creating a Batch job."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "batch.agentReporter",
+      "cloudbatch.iam.gserviceaccount.com",
+      "com.google.cloud.batch.v1",
+      "driver.py",
+      "github.com",
+      "logging.logWriter",
+      "policy.accelerators",
+      "projects.locations.jobs"
+    ],
+    "missing_inventory_roles": [
+      "roles/batch.agentReporter",
+      "roles/logging.logWriter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs",
+        "https://docs.cloud.google.com/batch/docs/troubleshooting",
+        "https://docs.cloud.google.com/batch/docs/get-started"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs",
+        "https://docs.cloud.google.com/batch/docs/troubleshooting",
+        "https://docs.cloud.google.com/batch/docs/get-started"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs",
+        "https://docs.cloud.google.com/batch/docs/troubleshooting",
+        "https://docs.cloud.google.com/batch/docs/get-started"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs",
+        "https://docs.cloud.google.com/batch/docs/troubleshooting",
+        "https://docs.cloud.google.com/batch/docs/get-started"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs",
+        "https://docs.cloud.google.com/batch/docs/troubleshooting",
+        "https://docs.cloud.google.com/batch/docs/get-started"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs",
+        "https://docs.cloud.google.com/batch/docs/troubleshooting",
+        "https://docs.cloud.google.com/batch/docs/get-started"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs",
+        "https://docs.cloud.google.com/batch/docs/troubleshooting",
+        "https://docs.cloud.google.com/batch/docs/get-started"
+      ]
+    }
+  ]
+}

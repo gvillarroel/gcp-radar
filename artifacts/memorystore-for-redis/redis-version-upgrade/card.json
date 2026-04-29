@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:22.371Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis/card.json",
+  "product_name": "Memorystore for Redis",
+  "product_slug": "memorystore-for-redis",
+  "feature_name": "Redis version upgrade",
+  "feature_slug": "redis-version-upgrade",
+  "summary": "You can upgrade a Memorystore for Redis instance to any higher supported Redis version; Lets you upgrade the Redis version used by an instance.",
+  "extended_definition": "You can upgrade a Memorystore for Redis instance to any higher supported Redis version; Lets you upgrade the Redis version used by an instance.",
+  "lifecycle": {
+    "latest_feature_date": "2022-02-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/redis/about-upgrading-version",
+      "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+      "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances",
+      "https://docs.cloud.google.com/memorystore/docs/redis/supported-versions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About upgrading the Redis version of an instance \\_|\\_ Memorystore for Redis\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/about-upgrading-version",
+        "source_id": "site-docs-root-2",
+        "final_score": 333,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback About upgrading the Redis version of an instance Stay organized with collections Save and categorize content based on your preferences.",
+          "This page describes how your Memorystore instance behaves during a version upgrade operation, how an upgrade operation can affect your application, and when you should run an upgrade operation.",
+          "Best practices for upgrading an instance's Redis version We recommend that you upgrade to version 7.0 and later because Certificate Authority rotation no longer drops connections."
+        ]
+      },
+      {
+        "title": "\"Create and manage Redis instances \\_|\\_ Memorystore for Redis \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances",
+        "source_id": "site-docs-root",
+        "final_score": 309,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To choose one of the available OSS Redis versions for Memorystore for Redis, use the --redis-version flag with one of the following values: redis 7 2 redis 7 0 (Default) redis 6 X redis 5 0 redis 4 0 redis 3 2 For example: gcloud redis instances create myinstance --size=5 --region=us-central1 \\ --zone=us-central1-a --redis-version=redis 6 X Networking You can create Redis instances using one of two connection modes : --connect-mode=PRIVATE SERVICE ACCESS or --connect-mode=DIRECT PEERING .",
+          "You can view summary information about a Memorystore for Redis instance by using either the Google Cloud console or the gcloud CLI .",
+          "After a manual or automatic failover , you can confirm that Memorystore for Redis switches the instance to the alternate zone."
+        ]
+      },
+      {
+        "title": "Supported versions \\_|\\_ Memorystore for Redis \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/supported-versions",
+        "source_id": "site-docs-root",
+        "final_score": 301,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "No Redis version 6.x The following table outlines Memorystore for Redis support of some major features introduced by OSS Redis version 6.x: Feature Description Supported in Memorystore for Redis Threaded I/O With Redis 6.x, if multiple vCPUs are available, then some I/O operations can run in parallel.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback Supported versions Stay organized with collections Save and categorize content based on your preferences.",
+          "Memorystore for Redis monitors for any critical patches that it needs to apply to your instance."
+        ]
+      },
+      {
+        "title": "\"Connect to a Redis instance \\_|\\_ Memorystore for Redis \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "source_id": "site-docs-root",
+        "final_score": 298,
+        "relevance": "",
+        "evidence_snippets": [
+          "Make a new file in which to put Stunnel configuration information by running the following command: sudo vim /etc/stunnel/redis-client.conf Paste the following text in the file, replacing redis-instance-ip with the Redis instance's IP address: output=/tmp/stunnel.log CAfile=/tmp/server ca.pem client=yes pid=/var/run/stunnel.pid verifyChain=yes sslVersion=TLSv1.2 [redis] accept=127.0.0.1:6378 connect= redis-instance-ip :6378 Start stunnel by running the following command: sudo stunnel /etc/stunnel/redis-client.conf Verify that stunnel is running: ps aux grep stunnel Restart Stunnel by running the following commands: sudo systemctl restart stunnel4 Note: You can use the ps aux grep stunnel command before and after restarting stunnel to confirm that the restart was successful.",
+          "If your cluster is version 1.7 or lower, or your version 1.8 or higher cluster doesn't have IP aliases enabled, follow these workaround steps before trying to connect to your instance: Workaround Run the following commands, replacing RESERVED IP RANGE with the reserved IP range of your instance: git clone https://github.com/bowei/k8s-custom-iptables.git cd k8s-custom-iptables/ TARGETS=\" RESERVED IP RANGE \" ./install.sh If you don't know the reserved IP range of your instance, you can find out by entering this command: gcloud redis instances describe INSTANCE ID --region [REGION] For more information about IP aliases, including how to create a cluster with this setting enabled, see Creating a VPC-native cluster .",
+          "If your cluster is version 1.7 or lower, or your version 1.8 or higher cluster doesn't have IP aliases enabled, follow these workaround steps before trying to connect to your instance: Workaround Run the following commands, replacing RESERVED IP RANGE with the reserved IP range of your instance: git clone https://github.com/bowei/k8s-custom-iptables.git cd k8s-custom-iptables/ TARGETS=\" RESERVED IP RANGE \" ./install.sh If you don't know the reserved IP range of your instance, you can find out by entering this command: gcloud redis instances describe INSTANCE ID --region= REGION For more information about IP aliases, including how to create a cluster with this setting enabled, see Creating a VPC-native cluster ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ca.pem",
+      "client.conf",
+      "github.com",
+      "install.sh",
+      "iptables.git",
+      "redis.googleapis.com",
+      "stunnel.log",
+      "stunnel.pid"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-upgrading-version",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances",
+        "https://docs.cloud.google.com/memorystore/docs/redis/supported-versions",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-upgrading-version",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances",
+        "https://docs.cloud.google.com/memorystore/docs/redis/supported-versions",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-upgrading-version",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances",
+        "https://docs.cloud.google.com/memorystore/docs/redis/supported-versions",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-upgrading-version",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances",
+        "https://docs.cloud.google.com/memorystore/docs/redis/supported-versions",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance"
+      ]
+    }
+  ]
+}

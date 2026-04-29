@@ -1,0 +1,174 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:22.242Z",
+  "source_step08_card": "data/step-08/current/products/media-cdn/card.json",
+  "product_name": "Media CDN",
+  "product_slug": "media-cdn",
+  "feature_name": "Service Extensions plugins",
+  "feature_slug": "service-extensions-plugins",
+  "summary": "Media CDN can run Service Extensions plugins in the request-response path for lightweight customization.",
+  "extended_definition": "Media CDN can run Service Extensions plugins in the request-response path for lightweight customization.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-extensions/docs/attach-plugins-to-routes",
+      "https://docs.cloud.google.com/service-extensions/docs/create-plugin",
+      "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+      "https://docs.cloud.google.com/service-extensions/docs/media-cdn-extensions-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Attach a plugin to a Media CDN route \\_|\\_ Service Extensions \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/service-extensions/docs/attach-plugins-to-routes",
+        "source_id": "site-iam-reference",
+        "final_score": 331,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before you begin Create a Media CDN origin Create a Media CDN service Create a plugin by using Service Extensions Note: Service Extensions plugins run after all other configurable features of Media CDN have run.",
+          "Update the routes in the file to add the wasmAction header as shown in the following example: name : SERVICE NAME routing : hostRules : - hosts : - DOMAIN NAME pathMatcher : routes pathMatchers : - name : routes routeRules : - priority : '1' description : Route 1 matchRules : - prefixMatch : /plugins origin : projects/ PROJECT NUMBER /locations/global/edgeCacheOrigins/ ORIGIN NAME routeAction : wasmAction : projects/ PROJECT NUMBER /locations/global/wasmActions/ WASM ACTION Replace the following: SERVICE NAME : the name of the Media CDN service DOMAIN NAME : the domain of the Media CDN service PROJECT NUMBER : the project number ORIGIN NAME : the origin for the content WASM ACTION : the Service Extensions Wasm action Save the YAML file.",
+          "You can use Media CDN with Service Extensions to add custom code to the request-response processing path."
+        ]
+      },
+      {
+        "title": "\"Media CDN extensions overview \\_|\\_ Service Extensions \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-extensions/docs/media-cdn-extensions-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 305,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "As Figure 1 shows, with Service Extensions, you can use plugins to place custom code that implements specific actions at the edge, in front of the cache in the Media CDN processing path.",
+          "How Media CDN plugins work On the Media CDN request path, plugins run after route matching and Google Cloud Armor edge security policies but before cache key calculation and the addition of custom headers to the origin.",
+          "What's next Create a plugin Attach a plugin to a Media CDN route See the Service Extensions overview ."
+        ]
+      },
+      {
+        "title": "\"Cloud Load Balancing and Cloud CDN extensions overview \\_|\\_ Service Extensions\\",
+        "url": "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 281,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before a load balancer calls a traffic extension on the request path for a request, it does the following: Performs fault injection Selects a backend service for the request Applies Cloud Armor policies for the selected backend service Applies IAP policies for the selected backend service Applies Cloud CDN caching policies for the selected backend service in the case of global external Application Load Balancers After a load balancer calls a traffic extension on the request path for a request, it does the following: Performs URL rewrites Performs header manipulation according to the URL map and adds custom request header variables Performs redirects or routing to the selected backend service while applying timeouts and retry policies in the URL map and the load balancing settings for the backend service Performs request mirroring After a load balancer calls a traffic extension on the response path for a request, it does the following: Performs response header transformations and resolves custom response header variables Performs logging by using Cloud Logging Performs Cloud CDN caching in the case of global external Application Load Balancers Custom headers In the traffic path, edge and route extensions run at extensibility points before the stage at which the load balancer adds custom headers .",
+          "You can configure Application Load Balancers to use the following types of extensions: Edge extensions help you manipulate request headers to influence backend service selection and the content that Cloud CDN serves from cache.",
+          "How edge extensions work Edge extensions run first on the request processing path and let you use request headers to influence backend service selection and the content that Cloud CDN serves from cache."
+        ]
+      },
+      {
+        "title": "Create a plugin \\_|\\_ Service Extensions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-extensions/docs/create-plugin",
+        "source_id": "site-iam-reference",
+        "final_score": 281,
+        "relevance": "",
+        "evidence_snippets": [
+          "Specify a new image and version name: gcloud service-extensions wasm-plugins update my-plugin \\ --image=...-docker.pkg.dev/my-project/repository/container:tag \\ --main-version=v2 To run these plugins, you can configure Cloud Load Balancing extensions and Media CDN extensions .",
+          "Click Create . gcloud Create a plugin by running the gcloud service-extensions wasm-plugins create command : gcloud service-extensions wasm-plugins create WASM PLUGIN \\ --description= PLUGIN DESCRIPTION \\ --location= LOCATION \\ --labels= [LABELS,...] \\ --log-config= [LOG CONFIG,...] \\ --image= IMAGE \\ --main-version= MAIN VERSION \\ --plugin-config= PLUGIN CONFIG --plugin-config-file= PLUGIN CONFIG FILE --plugin-config-uri= PLUGIN CONFIG URI \\ --kms-key-name= KEY NAME Replace the following: WASM PLUGIN : the ID or the fully qualified name of the plugin PLUGIN DESCRIPTION : a description of the plugin LOCATION : the location of the plugin as either global or a region LABELS : labels in the form of key-value pairs separated by commas LOG CONFIG : logging options for the plugin.",
+          "Enable the Network Services API, if it's not already enabled. gcloud services enable networkservices.googleapis.com For Media CDN plugins, if you intend to enable logging, enable the Network Actions API. gcloud services enable networkactions.googleapis.com Create a plugin resource Creating a plugin resource entails specifying an image that contains the plugin code and specifying labels and logging options for the plugin."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "artifactregistry.files.download",
+      "artifactregistry.repositories.downloadArtifacts",
+      "docker.pkg.dev",
+      "networkactions.googleapis.com",
+      "networkactions.iam.gserviceaccount.com",
+      "networkservices.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/attach-plugins-to-routes",
+        "https://docs.cloud.google.com/service-extensions/docs/media-cdn-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/create-plugin"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/attach-plugins-to-routes",
+        "https://docs.cloud.google.com/service-extensions/docs/media-cdn-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/create-plugin"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/attach-plugins-to-routes",
+        "https://docs.cloud.google.com/service-extensions/docs/media-cdn-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/create-plugin"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/attach-plugins-to-routes",
+        "https://docs.cloud.google.com/service-extensions/docs/media-cdn-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/create-plugin"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/attach-plugins-to-routes",
+        "https://docs.cloud.google.com/service-extensions/docs/media-cdn-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/create-plugin"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/attach-plugins-to-routes",
+        "https://docs.cloud.google.com/service-extensions/docs/media-cdn-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/create-plugin"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/attach-plugins-to-routes",
+        "https://docs.cloud.google.com/service-extensions/docs/media-cdn-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/create-plugin"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/attach-plugins-to-routes",
+        "https://docs.cloud.google.com/service-extensions/docs/media-cdn-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/create-plugin"
+      ]
+    }
+  ]
+}

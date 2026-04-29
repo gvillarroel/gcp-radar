@@ -1,0 +1,120 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:26.739Z",
+  "source_step08_card": "data/step-08/current/products/retail-api/card.json",
+  "product_name": "Retail API",
+  "product_slug": "retail-api",
+  "feature_name": "Conversational search",
+  "feature_slug": "conversational-search",
+  "summary": "Conversational search uses LLM-generated questions for enabled catalog attributes to help users refine search results.",
+  "extended_definition": "Conversational search uses LLM-generated questions for enabled catalog attributes to help users refine search results.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+      "https://docs.cloud.google.com/retail/docs/conversational-filtering",
+      "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide",
+      "https://docs.cloud.google.com/retail/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Conversational filtering developer's guide \\_|\\_ Vertex AI Search for commerce\\",
+        "url": "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 308,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Service enabled by conversational product filtering The generative questions service ( service GenerativeQuestionService{...} ) is used for managing LLM-generated questions.",
+          "These are: 1,000 queries per day : After you reach this first threshold, a conversation plan is generated that evaluates your inputs and outputs: Inputs : filter count in events Outputs : conversational coverage 25% conversational coverage : Calculated by Vertex AI Search for commerce models, conversational coverage means the percentage of queries that have one question.",
+          "Administrator experience Manage the generative questions and conversational product filtering directly in the API, or in the Search for commerce console , and set it up in the Data quality and Evaluate sections of the Search for commerce console."
+        ]
+      },
+      {
+        "title": "\"Conversational Commerce agent developer's guide \\_|\\_ Vertex AI Search for\\",
+        "url": "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 284,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Conversational Commerce agent uses search query categories to determine whether an LLM-based answer is generated and how end-user queries are handled by the Conversational and Search APIs for these scenarios: Categories Query classifications #1.",
+          "Send user query Example user input : Help me plan a party To enable both conversational commerce agent and conversational product filtering, ensure that your ConversationalSearchRequest includes this configuration: Conversational Commerce API request—Initial query { \"query\" : \"Help me plan a party\" , \"branch\" : \"projects/{project id}/locations/{location id}/catalogs/{catalog id}/branches/default branch\" , \"placement\" : \"projects/YOUR PROJECT ID/locations/global/catalogs/default catalog/placements/default search\" , \"visitorId\" : \"your visitor id\" , \"conversationId\" : \"\" , // Leave empty for the first query, or populate for ongoing conversation \"searchParams\" : { // IMPORTANT: These search parameters should mirror the configuration // of your Commerce Search API calls to ensure consistency. \"filter\" : \"categories:(\\\"Party Supplies\\\" OR \\\"Decorations\\\" OR \\\"Food & Drink\\\")\" }, \"userInfo\" : { // Optional: User information for enhanced personalization }, \"conversationalFilteringSpec\" : { \"conversationalFilteringMode\" : \"ENABLED\" // Crucial for enabling product filtering } } The key configurations are: conversationalFilteringMode: ENABLED : Setting this field to ENABLED in your conversationalFilteringSpec informs the API that your system can handle conversational product filtering, allowing the API to provide relevant filtering-specific responses.",
+          "HTTP method and endpoint POST h tt ps : //retail.googleapis.com/v2/{placement=projects/ /locations/ /catalogs/ /placements/ }:conversationalSearch Conversational API request: Initial query { \"query\" : \"Help me plan a party\" , \"branch\" : \"projects/{project id}/locations/{location id}/catalogs/default catalog/branches/default branch\" , \"placement\" : \"projects/{project id}/locations/global/catalogs/default catalog/placements/default search\" , \"visitorId\" : \"your visitor id\" , \"conversationId\" : \"\" , // Leave empty for the first query \"searchParams\" : { // IMPORTANT: These search parameters should mirror the configuration // of your core Search API calls to ensure consistency between LLM answers and search results. \"filter\" : \"categories:(\\\"Party Supplies\\\" OR \\\"Decorations\\\" OR \\\"Food & Drink\\\")\" }, \"userInfo\" : { // Optional: User information for enhanced personalization // Example: \"userId\": \"user123\", \"userAgent\": \"Chrome/120.0\" }, \"conversationalFilteringSpec\" : { // Optional: Controls conversational filtering behavior."
+        ]
+      },
+      {
+        "title": "\"Conversational product filtering overview \\_|\\_ Vertex AI Search for commerce\\",
+        "url": "https://docs.cloud.google.com/retail/docs/conversational-filtering",
+        "source_id": "site-docs-root",
+        "final_score": 234,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When a site user performs a broad search (like coffee table or red dress) that returns thousands of results, conversational product filtering intelligently prompts them with follow-up questions to quickly narrow down their options.",
+          "Edit generative questions Conversational product filtering encourages a human-in-the-loop interaction with the generative AI questions by allowing retailers to preliminarily edit, overwrite, or deselect AI-generated questions according to their preferences, based on the uploaded catalog.",
+          "If conversational product filtering is enabled, follow-up questions on the site drive a conversation that ensues until one of the three following scenarios occur: A preconfigured minimum product count is reached (a conversation is not useful when only two products show up)."
+        ]
+      },
+      {
+        "title": "Vertex AI Search for commerce API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/retail/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 226,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v2alpha.projects.locations.catalogs Methods completeQuery GET /v2alpha/{catalog=projects/ /locations/ /catalogs/ }:completeQuery Completes the specified prefix with keyword suggestions. exportAnalyticsMetrics POST /v2alpha/{catalog=projects/ /locations/ /catalogs/ }:exportAnalyticsMetrics Exports analytics metrics. getAttributesConfig GET /v2alpha/{name=projects/ /locations/ /catalogs/ /attributesConfig} Gets an AttributesConfig . getCompletionConfig GET /v2alpha/{name=projects/ /locations/ /catalogs/ /completionConfig} Gets a CompletionConfig . getConversationalSearchCustomizationConfig GET /v2alpha/{name=projects/ /locations/ /catalogs/ }/conversationalSearchCustomizationConfig Returns the conversational search customization config for a given catalog. getDefaultBranch GET /v2alpha/{catalog=projects/ /locations/ /catalogs/ }:getDefaultBranch Get which branch is currently default branch set by CatalogService.SetDefaultBranch method under a specified parent catalog. getGenerativeQuestionFeature GET /v2alpha/{catalog=projects/ /locations/ /catalogs/ }/generativeQuestionFeature Manages overal generative question feature state -- enables toggling feature on and off. list GET /v2alpha/{parent=projects/ /locations/ }/catalogs Lists all the Catalog s associated with the project. patch PATCH /v2alpha/{catalog.name=projects/ /locations/ /catalogs/ } Updates the Catalog s. setDefaultBranch POST /v2alpha/{catalog=projects/ /locations/ /catalogs/ }:setDefaultBranch Set a specified branch id as default branch. updateAttributesConfig PATCH /v2alpha/{attributesConfig.name=projects/ /locations/ /catalogs/ /attributesConfig} Updates the AttributesConfig . updateCompletionConfig PATCH /v2alpha/{completionConfig.name=projects/ /locations/ /catalogs/ /completionConfig} Updates the CompletionConfig s. updateConversationalSearchCustomizationConfig PATCH /v2alpha/{conversationalSearchCustomizationConfig.catalog=projects/ /locations/ /catalogs/ }/conversationalSearchCustomizationConfig Updates the conversational search customization config for a given catalog. updateGenerativeQuestion PATCH /v2alpha/{generativeQuestionConfig.catalog=projects/ /locations/ /catalogs/ }/generativeQuestion Allows management of individual questions. updateGenerativeQuestionFeature PATCH /v2alpha/{generativeQuestionsFeatureConfig.catalog=projects/ /locations/ /catalogs/ }/generativeQuestionFeature Manages overal generative question feature state -- enables toggling feature on and off.",
+          "REST Resource: v2beta.projects.locations.catalogs Methods completeQuery GET /v2beta/{catalog=projects/ /locations/ /catalogs/ }:completeQuery Completes the specified prefix with keyword suggestions. exportAnalyticsMetrics POST /v2beta/{catalog=projects/ /locations/ /catalogs/ }:exportAnalyticsMetrics Exports analytics metrics. getAttributesConfig GET /v2beta/{name=projects/ /locations/ /catalogs/ /attributesConfig} Gets an AttributesConfig . getCompletionConfig GET /v2beta/{name=projects/ /locations/ /catalogs/ /completionConfig} Gets a CompletionConfig . getConversationalSearchCustomizationConfig GET /v2beta/{name=projects/ /locations/ /catalogs/ }/conversationalSearchCustomizationConfig Returns the conversational search customization config for a given catalog. getDefaultBranch GET /v2beta/{catalog=projects/ /locations/ /catalogs/ }:getDefaultBranch Get which branch is currently default branch set by CatalogService.SetDefaultBranch method under a specified parent catalog. getGenerativeQuestionFeature GET /v2beta/{catalog=projects/ /locations/ /catalogs/ }/generativeQuestionFeature Manages overal generative question feature state -- enables toggling feature on and off. list GET /v2beta/{parent=projects/ /locations/ }/catalogs Lists all the Catalog s associated with the project. patch PATCH /v2beta/{catalog.name=projects/ /locations/ /catalogs/ } Updates the Catalog s. setDefaultBranch POST /v2beta/{catalog=projects/ /locations/ /catalogs/ }:setDefaultBranch Set a specified branch id as default branch. updateAttributesConfig PATCH /v2beta/{attributesConfig.name=projects/ /locations/ /catalogs/ /attributesConfig} Updates the AttributesConfig . updateCompletionConfig PATCH /v2beta/{completionConfig.name=projects/ /locations/ /catalogs/ /completionConfig} Updates the CompletionConfig s. updateConversationalSearchCustomizationConfig PATCH /v2beta/{conversationalSearchCustomizationConfig.catalog=projects/ /locations/ /catalogs/ }/conversationalSearchCustomizationConfig Updates the conversational search customization config for a given catalog. updateGenerativeQuestion PATCH /v2beta/{generativeQuestionConfig.catalog=projects/ /locations/ /catalogs/ }/generativeQuestion Allows management of individual questions. updateGenerativeQuestionFeature PATCH /v2beta/{generativeQuestionsFeatureConfig.catalog=projects/ /locations/ /catalogs/ }/generativeQuestionFeature Manages overal generative question feature state -- enables toggling feature on and off.",
+          "REST Resource: v2.projects.locations.catalogs Methods completeQuery GET /v2/{catalog=projects/ /locations/ /catalogs/ }:completeQuery Completes the specified prefix with keyword suggestions. exportAnalyticsMetrics POST /v2/{catalog=projects/ /locations/ /catalogs/ }:exportAnalyticsMetrics Exports analytics metrics. getAttributesConfig GET /v2/{name=projects/ /locations/ /catalogs/ /attributesConfig} Gets an AttributesConfig . getCompletionConfig GET /v2/{name=projects/ /locations/ /catalogs/ /completionConfig} Gets a CompletionConfig . getConversationalSearchCustomizationConfig GET /v2/{name=projects/ /locations/ /catalogs/ }/conversationalSearchCustomizationConfig Returns the conversational search customization config for a given catalog. getDefaultBranch GET /v2/{catalog=projects/ /locations/ /catalogs/ }:getDefaultBranch Get which branch is currently default branch set by CatalogService.SetDefaultBranch method under a specified parent catalog. getGenerativeQuestionFeature GET /v2/{catalog=projects/ /locations/ /catalogs/ }/generativeQuestionFeature Manages overal generative question feature state -- enables toggling feature on and off. list GET /v2/{parent=projects/ /locations/ }/catalogs Lists all the Catalog s associated with the project. patch PATCH /v2/{catalog.name=projects/ /locations/ /catalogs/ } Updates the Catalog s. setDefaultBranch POST /v2/{catalog=projects/ /locations/ /catalogs/ }:setDefaultBranch Set a specified branch id as default branch. updateAttributesConfig PATCH /v2/{attributesConfig.name=projects/ /locations/ /catalogs/ /attributesConfig} Updates the AttributesConfig . updateCompletionConfig PATCH /v2/{completionConfig.name=projects/ /locations/ /catalogs/ /completionConfig} Updates the CompletionConfig s. updateConversationalSearchCustomizationConfig PATCH /v2/{conversationalSearchCustomizationConfig.catalog=projects/ /locations/ /catalogs/ }/conversationalSearchCustomizationConfig Updates the conversational search customization config for a given catalog. updateGenerativeQuestion PATCH /v2/{generativeQuestionConfig.catalog=projects/ /locations/ /catalogs/ }/generativeQuestion Allows management of individual questions. updateGenerativeQuestionFeature PATCH /v2/{generativeQuestionsFeatureConfig.catalog=projects/ /locations/ /catalogs/ }/generativeQuestionFeature Manages overal generative question feature state -- enables toggling feature on and off."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "catalog.name",
+      "retail.googleapis.com",
+      "v2.projects.locations.catalogs",
+      "v2alpha.projects.locations.catalogs",
+      "v2alpha.projects.locations.catalogs.servingConfigs",
+      "v2beta.projects.locations.catalogs"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering",
+        "https://docs.cloud.google.com/retail/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering",
+        "https://docs.cloud.google.com/retail/docs/reference/rest"
+      ]
+    }
+  ]
+}

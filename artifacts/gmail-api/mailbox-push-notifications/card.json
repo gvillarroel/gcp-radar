@@ -1,0 +1,107 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:13.415Z",
+  "source_step08_card": "data/step-08/current/products/gmail-api/card.json",
+  "product_name": "Gmail API",
+  "product_slug": "gmail-api",
+  "feature_name": "Mailbox push notifications",
+  "feature_slug": "mailbox-push-notifications",
+  "summary": "Mailbox updates can be delivered in real time through Cloud Pub/Sub notifications filtered by Gmail labels.",
+  "extended_definition": "Mailbox updates can be delivered in real time through Cloud Pub/Sub notifications filtered by Gmail labels.",
+  "lifecycle": {
+    "latest_feature_date": "2015-05-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/gmail/api/guides",
+      "https://developers.google.com/workspace/gmail/api/guides/push",
+      "https://developers.google.com/workspace/gmail/api/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure push notifications in Gmail API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/guides/push",
+        "source_id": "site-docs-root",
+        "final_score": 165,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Get Gmail mailbox updates After the initial Cloud Pub/Sub setup is finished, configure Gmail accounts to send notifications for mailbox updates.",
+          "The Gmail API provides server push notifications that let you watch for changes to Gmail mailboxes.",
+          "If you configured a push subscription, a webhook notification to your server conforms to a PubsubMessage : POST h tt ps : //yourserver.example.com/yourUrl Co ntent - t ype : applica t io n /jso n { message : { // This is the actual notification data, as Base64URL-encoded JSON. da ta : \"eyJlbWFpbEFkZHJlc3MiOiAidXNlckBleGFtcGxlLmNvbSIsICJoaXN0b3J5SWQiOiAiMTIzNDU2Nzg5MCJ9\" , // This is a Cloud Pub/Sub message id, unrelated to Gmail messages. \"messageId\" : \"2070443601311540\" , // This is the publish time of the message. \"publishTime\" : \"2021-02-26T19:13:55.749Z\" , } subscrip t io n : \"projects/myproject/subscriptions/mysubscription\" } The HTTP POST body is JSON and the actual Gmail notification payload is in the message.data field."
+        ]
+      },
+      {
+        "title": "Gmail API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/reference/rest",
+        "source_id": "site-docs-reference",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://gmail.googleapis.com REST Resource: v1.users Methods getProfile GET /gmail/v1/users/{userId}/profile Gets the current user's Gmail profile. stop POST /gmail/v1/users/{userId}/stop Stop receiving push notifications for the given user mailbox. watch POST /gmail/v1/users/{userId}/watch Set up or update a push notification watch on the given user mailbox.",
+          "REST Resource: v1.users.labels Methods create POST /gmail/v1/users/{userId}/labels Creates a new label. delete DELETE /gmail/v1/users/{userId}/labels/{id} Immediately and permanently deletes the specified label and removes it from any messages and threads that it is applied to. get GET /gmail/v1/users/{userId}/labels/{id} Gets the specified label. list GET /gmail/v1/users/{userId}/labels Lists all labels in the user's mailbox. patch PATCH /gmail/v1/users/{userId}/labels/{id} Patch the specified label. update PUT /gmail/v1/users/{userId}/labels/{id} Updates the specified label.",
+          "REST Resource: v1.users.messages Methods batchDelete POST /gmail/v1/users/{userId}/messages/batchDelete Deletes many messages by message ID. batchModify POST /gmail/v1/users/{userId}/messages/batchModify Modifies the labels on the specified messages. delete DELETE /gmail/v1/users/{userId}/messages/{id} Immediately and permanently deletes the specified message. get GET /gmail/v1/users/{userId}/messages/{id} Gets the specified message. import POST /gmail/v1/users/{userId}/messages/import POST /upload/gmail/v1/users/{userId}/messages/import Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. insert POST /gmail/v1/users/{userId}/messages POST /upload/gmail/v1/users/{userId}/messages Directly inserts a message into only this user's mailbox similar to IMAP APPEND , bypassing most scanning and classification. list GET /gmail/v1/users/{userId}/messages Lists the messages in the user's mailbox. modify POST /gmail/v1/users/{userId}/messages/{id}/modify Modifies the labels on the specified message. send POST /gmail/v1/users/{userId}/messages/send POST /upload/gmail/v1/users/{userId}/messages/send Sends the specified message to the recipients in the To , Cc , and Bcc headers. trash POST /gmail/v1/users/{userId}/messages/{id}/trash Moves the specified message to the trash. untrash POST /gmail/v1/users/{userId}/messages/{id}/untrash Removes the specified message from the trash."
+        ]
+      },
+      {
+        "title": "Gmail API overview \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/guides",
+        "source_id": "site-docs-root",
+        "final_score": 65,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Applications can \"watch\" a mailbox, and the Gmail API will send automatic webhooks or alerts whenever a change occurs (like a new email arriving), eliminating the need for the app to continuously poll the server for updates.",
+          "Push notifications A server-side notification system integrating with Google Cloud Pub/Sub.",
+          "For more information, see Push notifications ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "gmail.googleapis.com",
+      "message.data",
+      "v1.users",
+      "v1.users.labels",
+      "v1.users.messages",
+      "v1.users.settings",
+      "yourserver.example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/guides/push",
+        "https://developers.google.com/workspace/gmail/api/reference/rest",
+        "https://developers.google.com/workspace/gmail/api/guides"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/guides/push",
+        "https://developers.google.com/workspace/gmail/api/reference/rest",
+        "https://developers.google.com/workspace/gmail/api/guides"
+      ]
+    }
+  ]
+}

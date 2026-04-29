@@ -1,0 +1,128 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.987Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "Detection Engine UI",
+  "feature_slug": "detection-engine-ui",
+  "summary": "The Detection Engine UI provides a rules dashboard and rules editor for monitoring, creating, testing, and activating rules.",
+  "extended_definition": "The Detection Engine UI provides a rules dashboard and rules editor for monitoring, creating, testing, and activating rules.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections",
+      "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays",
+      "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Detection Engine \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "source_id": "site-api-reference",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "Detection Engine This document explains how to use the Detection Engine API Methods to create, run, and manage security rules that search data stored in your Google Security Operations account.",
+          "Set the Alert status to enabled from the Rules Dashboard for user-created rules For Google SecOps Rules, enable alerting status of the Rule Set to get detections created by corresponding rules.",
+          "Sample Response { \"curatedRuleDetections\": [ { \"type\": \"GCTI FINDING\", \"detection\": [ { \"ruleName\": \"Cobalt Strike Default Entrypoint\", \"summary\": \"Rule Detection\", \"description\": \"Identifies CobaltStrike rundll32 execution using the default entrypoint.\", \"severity\": \"LOW\", \"urlBackToProduct\": \"https://customername.backstory.chronicle.security/ruleDetections?ruleId=ur mal CobaltStrike StartW&selectedList=RuleDetectionsViewTimeline&ruleSource=ruleSet&selectedParentDetectionId=de 227a290c-17e9-6314-7f16-35f7923b554f&selectedTimestamp=2022-12-05T11:07:12.585Z\", \"ruleId\": \"ur mal CobaltStrike StartW\", \"alertState\": \"ALERTING\", \"ruleType\": \"SINGLE EVENT\", \"ruleLabels\": [ { \"key\": \"rule name\", \"value\": \"Cobalt Strike Default Entrypoint\" } ], \"ruleSet\": \"6e6eda02-51b9-e57e-9597-622f1c7f3ee9\", \"ruleSetDisplayName\": \"RAT\" } ], \"createdTime\": \"2022-12-05T12:13:23.154544Z\", \"lastUpdatedTime\": \"2022-12-05T12:13:23.154544Z\", \"id\": \"de 227a290c-17e9-6314-7f16-35f7923b554f\", \"timeWindow\": { \"startTime\": \"2022-12-05T11:07:12.585Z\", \"endTime\": \"2022-12-05T11:07:12.585Z\" }, \"collectionElements\": [ { \"references\": [ { \"event\": { \"metadata\": { \"eventTimestamp\": \"2022-12-05T11:07:12.585Z\", \"eventType\": \"PROCESS LAUNCH\", \"ingestedTimestamp\": \"2022-12-05T11:06:27.737408Z\", \"id\": \"AAAAA\" }, \"principal\": { \"hostname\": \"admin-1\", \"process\": { \"pid\": \"12345\", \"command line\": \"\\\"powershell.exe\\\" {wmic /node:127.0.0.1 process call create \\\\\\\"\\\"rundll32.exe $env:TEMP\\\\calc.dll StartW\\\\\\\"\\\"}\" } } \"src\": { \"file\": { full path: \"C:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\Temp\\\\\" } } \"target\": { \"process\": { \"pid\": \"12345\", \"file\": { \"sha256\": \"abcde\", \"full path\": \"C:\\\\Windows\\\\System32\\\\wbem\\\\WMIC.exe\" } command line: \"\\\"C:\\\\Windows\\\\System32\\\\Wbem\\\\WMIC.exe\\\" /node:127.0.0.1 process call create \\\"rundll32.exe C:\\\\Users\\\\ADMIN-1\\\\AppData\\\\Local\\\\Temp\\\\calc.dll StartW\\\"\" } } } } ], \"label\": \"e\" } ], \"detectionTime\": \"2022-12-05T11:07:12.585Z\", \"tags\": [ \"TA0004\", \"T1548\" ] }, { \"type\": \"GCTI FINDING\", \"detection\": [ { \"ruleName\": \"Cobalt Strike Default Entrypoint\", \"summary\": \"Rule Detection\", \"description\": \"Identifies CobaltStrike rundll32 execution using the default entrypoint.\", \"severity\": \"LOW\", \"urlBackToProduct\": \"https://customername.backstory.chronicle.security/ruleDetections?ruleId=ur mal CobaltStrike StartW&selectedList=RuleDetectionsViewTimeline&ruleSource=ruleSet&selectedParentDetectionId=de c34ee707-ad5e-4e5e-4955-a3a8e13053ae&selectedTimestamp=2022-12-05T10:04:28.097Z\", \"ruleId\": \"ur mal CobaltStrike StartW\", \"alertState\": \"ALERTING\", \"ruleType\": \"SINGLE EVENT\", \"ruleLabels\": [ { \"key\": \"rule name\", \"value\": \"Cobalt Strike Default Entrypoint\" } ], \"ruleSet\": \"6e6eda02-51b9-e57e-9597-622f1c7f3ee9\", \"ruleSetDisplayName\": \"RAT\" } ], \"createdTime\": \"2022-12-05T11:12:24.406199Z\", \"lastUpdatedTime\": \"2022-12-05T11:12:24.406199Z\", \"id\": \"de c34ee707-ad5e-4e5e-4955-a3a8e13053ae\", \"timeWindow\": { \"startTime\": \"2022-12-05T10:04:28.097Z\", \"endTime\": \"2022-12-05T10:04:28.097Z\" }, \"collectionElements\": [ { \"references\": [ { \"event\": { \"metadata\": { \"eventTimestamp\": \"2022-12-05T10:04:28.097Z\", \"eventType\": \"PROCESS LAUNCH\", \"ingestedTimestamp\": \"2022-12-05T10:04:01Z\", \"id\": \"BBBBB\" }, \"principal\": { \"hostname\": \"admin-2\", \"process\": { \"pid\": \"67890\", \"command line\": \"\\\"powershell.exe\\\" {wmic /node:127.0.0.1 process call create \\\\\\\"\\\"rundll32.exe $env:TEMP\\\\calc.dll StartW\\\\\\\"\\\"}\" } } \"src\": { \"file\": { full path: \"C:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\Temp\\\\\" } } \"target\": { \"process\": { \"pid\": \"67890\", \"file\": { \"sha256\": \"abcde\", \"full path\": \"C:\\\\Windows\\\\System32\\\\wbem\\\\WMIC.exe\" } command line: \"\\\"C:\\\\Windows\\\\System32\\\\Wbem\\\\WMIC.exe\\\" /node:127.0.0.1 process call create \\\"rundll32.exe C:\\\\Users\\\\ADMIN-2\\\\AppData\\\\Local\\\\Temp\\\\calc.dll StartW\\\"\" } } } } ], \"label\": \"e\" } ], \"detectionTime\": \"2022-12-05T10:04:28.097Z\", \"tags\": [ \"TA0004\", \"T1548\" ] } ], \"nextPageToken\": \"CgwIrdncnQYQ6OqRkwISCwiosvKXBhDQ-74JGidkZV8wNDZjZmY0YS1jM2ZkLTM5YWEtYmUyYS0wZTU2Zjk4OWE1YTE=\" } ListDetections Return the detections for the specified version of a rule, the latest version of a rule, all versions of a rule, or all versions of all rules."
+        ]
+      },
+      {
+        "title": "\"Understand rule detection delays \\_|\\_ Google Security Operations \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays",
+        "source_id": "site-docs-root",
+        "final_score": 148,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Rules dashboard , click a rule name to view the detection history and other details for a specific rule.",
+          "Tips to shorten delays To update detection rule configurations, see Manage rules using the Rules editor .",
+          "Complex single-event rules These rules are more susceptible to detection delays because they include match windows or reference lists: Windowed single-event rules These are single-event rules that include a match window and typically have a slightly longer delay than other single-event rules."
+        ]
+      },
+      {
+        "title": "\"Use the curated detections page \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections",
+        "source_id": "site-docs-root",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "As part of these curated detections, GCTI provides and manages a set of YARA-L rules to help customers identify threats to their enterprise.",
+          "To open the curated detection dashboard, complete the following steps: Select Rules from the main menu.",
+          "Before you begin For information about predefined threat detection policies, see the following: Overview of Cloud Threats category Overview of Chrome Enterprise Threats category Overview of Windows Threats category Overview of Linux Threats category Overview of macOS Threats category Overview of Risk Analytics for UEBA category Overview of Applied Threat Intelligence category To verify that data required for each policy is in the correct format, see Verify log data ingestion using test rules ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "altostrat.com",
+      "calc.dll",
+      "customername.backstory.chronicle.security",
+      "powershell.exe",
+      "rundll32.exe"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays",
+        "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays",
+        "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays",
+        "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays",
+        "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays",
+        "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections"
+      ]
+    }
+  ]
+}

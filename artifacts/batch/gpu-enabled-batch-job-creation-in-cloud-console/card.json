@@ -1,0 +1,135 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.020Z",
+  "source_step08_card": "data/step-08/current/products/batch/card.json",
+  "product_name": "Batch",
+  "product_slug": "batch",
+  "feature_name": "GPU-enabled Batch job creation in Cloud Console",
+  "feature_slug": "gpu-enabled-batch-job-creation-in-cloud-console",
+  "summary": "You can create Batch jobs that use GPUs from the Google Cloud console.",
+  "extended_definition": "You can create Batch jobs that use GPUs from the Google Cloud console.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/batch/docs/create-run-job",
+      "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs.taskGroups.tasks/list",
+      "https://docs.cloud.google.com/batch/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Job creation and execution overview \\_|\\_ Batch \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "source_id": "site-docs-root",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "After you understand the fundamentals for job creation, consider creating a job that uses one or more of the following additional configuration options: Important: Some options for job creation are not available in the Google Cloud console.",
+          "Job creation options Create and run a basic job explains the fundamentals, including how to define a runnable using either a script or container image and how to configure predefined and custom environment variables.",
+          "If you leave these fields undefined (which isn't possible when creating a job using the Google Cloud console), Batch automatically tries to select compatible VMs and doesn't add any additional resources."
+        ]
+      },
+      {
+        "title": "Troubleshooting \\_|\\_ Batch \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/batch/docs/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 72,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Otherwise, resolve the issue by doing the following: Ensure that the Monitoring API is enabled for your project: Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission.",
+          "Constraint violated for VM external IP addresses Issue The following issue appears in the statusEvents field for a failed job: Instance VM NAME creation failed: Constraint constraints/compute.vmExternalIpAccess violated for project PROJECT NUMBER .",
+          "For more information about troubleshooting a job, also see the following documents: Known issues Analyze a job using logs View audit logs Job creation errors If you can't create a job, it might be due to one of the errors in this section."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.jobs.taskGroups.tasks.list \\_|\\_ Batch \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs.taskGroups.tasks/list",
+        "source_id": "site-api-reference",
+        "final_score": 68,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.trustedImageProjects",
+      "compute.vmExternalIpAccess",
+      "projects.locations.jobs.taskGroups.tasks",
+      "projects.locations.jobs.taskGroups.tasks.list",
+      "serviceusage.services.enable",
+      "serviceusage.serviceUsageAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/serviceusage.serviceUsageAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/batch/docs/troubleshooting",
+        "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs.taskGroups.tasks/list"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/batch/docs/troubleshooting",
+        "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs.taskGroups.tasks/list"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/batch/docs/troubleshooting",
+        "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs.taskGroups.tasks/list"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/batch/docs/troubleshooting",
+        "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs.taskGroups.tasks/list"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/batch/docs/troubleshooting",
+        "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs.taskGroups.tasks/list"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/batch/docs/troubleshooting",
+        "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs.taskGroups.tasks/list"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:48.689Z",
+  "source_step08_card": "data/step-08/current/products/cloud-key-management-service/card.json",
+  "product_name": "Cloud Key Management Service",
+  "product_slug": "cloud-key-management-service",
+  "feature_name": "Cloud KMS regional availability in northamerica-northeast1",
+  "feature_slug": "cloud-kms-regional-availability-in-northamerica-northeast1",
+  "summary": "Cloud KMS resources can be created in the northamerica-northeast1 region.",
+  "extended_definition": "Cloud KMS resources can be created in the northamerica-northeast1 region.",
+  "lifecycle": {
+    "latest_feature_date": "2018-04-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+      "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+      "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+      "https://docs.cloud.google.com/kms/docs/importing-a-key"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud KMS Inventory Service audit logging \\_|\\_ Cloud Key Management Service\\",
+        "url": "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "source_id": "site-iam-reference",
+        "final_score": 179,
+        "relevance": "",
+        "evidence_snippets": [
+          "Permission type Methods OTHER google.cloud.kms.inventory.v1.KeyDashboardService.ListCryptoKeys : To enable this log, enable ADMIN READ under the service cloudkms.googleapis.com . google.cloud.kms.inventory.v1.KeyTrackingService.GetProtectedResourcesSummary : To enable this log, enable ADMIN READ under the service cloudkms.googleapis.com . google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources : To enable this log, enable ADMIN READ under the service cloudkms.googleapis.com .",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.kms.inventory.v1.KeyTrackingService.GetProtectedResourcesSummary\" SearchProtectedResources Method : google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources Audit log type : Data access Permissions : cloudkms.cryptoKeys.get - ADMIN READ cloudkms.protectedResources.search - ADMIN READ Method is a long-running or streaming operation : No.",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources\" Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Best practices for using CMEKs \\_|\\_ Cloud Key Management Service \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "source_id": "site-iam-reference",
+        "final_score": 175,
+        "relevance": "",
+        "evidence_snippets": [
+          "Operational overhead: Using highly granular keys might require administrative effort or additional tooling for automation to provision a large number of Cloud KMS resources and to manage access controls for service agents so they can only use the appropriate keys.",
+          "Monitor key usage You can view key usage with the Cloud KMS inventory API to help you identify Google Cloud resources in your organization that are dependent on and protected by Cloud KMS keys.",
+          "This dashboard can be used to monitor the state, usage, and availability of your key versions and corresponding resources they protect."
+        ]
+      },
+      {
+        "title": "\"Create protected resources using Cloud KMS Autokey \\_|\\_ Cloud Key Management\\",
+        "url": "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "source_id": "site-iam-reference",
+        "final_score": 167,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before you begin Before you can create protected resources using Autokey, you must complete the following steps to prepare: If you don't already have a project where Autokey is enabled for either centralized or delegated key management, then you must first complete the setup steps in Enable Cloud KMS Autokey , and then return to this document.",
+          "Home Documentation Security Cloud KMS Guides Send feedback Create protected resources using Cloud KMS Autokey Stay organized with collections Save and categorize content based on your preferences.",
+          "Make sure the edition of BigQuery that you are using is compatible with Cloud KMS before you try to use Autokey to protect BigQuery resources."
+        ]
+      },
+      {
+        "title": "\"Import a key version into Cloud KMS \\_|\\_ Cloud Key Management Service \\_\\",
+        "url": "https://docs.cloud.google.com/kms/docs/importing-a-key",
+        "source_id": "site-docs-root",
+        "final_score": 161,
+        "relevance": "",
+        "evidence_snippets": [
+          "KeyManagementServiceClient () Retrieve the fully-qualified key ring string. key ring name = client . key ring path ( project id , location id , key ring id ) Set paramaters for the import job, allowed values for ImportMethod and ProtectionLevel found here: https://googleapis.dev/python/cloudkms/latest/ modules/google/cloud/kms v1/types/resources.html import method = kms .",
+          "To check the state of an import job, use the ImportJobs.get method: curl \"https://cloudkms.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /keyRings/ KEY RING /importJobs/ IMPORT JOB ID \" \\ --request \"GET\" \\ --header \"authorization: Bearer TOKEN \" As soon as the import job is active, you can make a request to import a key .",
+          "If the user is not the project owner, you can assign both of the following two predefined roles to the user: roles/editor roles/cloudkms.importer For more information about available IAM roles and permissions for Cloud KMS, refer to Permissions and roles ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.cryptoKeys.get",
+      "cloudkms.googleapis.com",
+      "cloudkms.importer",
+      "cloudkms.protectedResources.search",
+      "googleapis.dev",
+      "kmsinventory.googleapis.com",
+      "projects.locations.keyRings.cryptoKeys",
+      "projects.locations.keyRings.cryptoKeys.getProtectedResourcesSummary",
+      "resources.html"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.importer",
+      "roles/editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    }
+  ]
+}

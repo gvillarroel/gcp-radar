@@ -1,0 +1,132 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:31.179Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Vertex AI Model Monitoring v2",
+  "feature_slug": "vertex-ai-model-monitoring-v2",
+  "summary": "Model Monitoring v2 provides centralized model monitoring configuration and visualization at the model version level and supports monitoring models served outside Vertex AI.",
+  "extended_definition": "Model Monitoring v2 provides centralized model monitoring configuration and visualization at the model version level and supports monitoring models served outside Vertex AI.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/monitoring",
+      "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Monitoring \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/monitoring",
+        "source_id": "site-docs-reference-3",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample.\\ (Not necessary if passing values as arguments) / // const project = 'YOUR PROJECT ID'; // const featurestoreId = 'YOUR FEATURESTORE ID'; // const entityTypeId = 'YOUR ENTITY TYPE ID'; // const duration = <MONITORING INTERVAL IN SECONDS>; // const location = 'YOUR PROJECT LOCATION'; // const apiEndpoint = 'YOUR API ENDPOINT'; // const timeout = <TIMEOUT IN MILLI SECONDS>; // Imports the Google Cloud Featurestore Service Client library const { FeaturestoreServiceClient } = require ( ' @google-cloud/aiplatform ' ). v1beta1 ; // Specifies the location of the api endpoint const clientOptions = { apiEndpoint : apiEndpoint , }; // Instantiates a client const featurestoreServiceClient = new FeaturestoreServiceClient ( clientOptions ); async function updateEntityTypeMonitoring () { // Configure the name resource const name = projects/ ${ project } /locations/ ${ location } /featurestores/ ${ featurestoreId } /entityTypes/ ${ entityTypeId } ; // Constructing the monitoring configuration const monitoringConfig = { snapshotAnalysis : { monitoringInterval : { seconds : Number ( duration ), }, }, }; // Constructing the entityType const entityType = { name : name , monitoringConfig : monitoringConfig , }; const request = { entityType : entityType , }; // Update EntityType request const [ response ] = await featurestoreServiceClient . updateEntityType ( request , { timeout : Number ( timeout )} ); console . log ( 'Update entity type monitoring response' ); console . log ( Name : ${ response . name } ); console . log ( 'Raw response:' ); console . log ( JSON . stringify ( response , null , 2 )); } updateEntityTypeMonitoring (); Opt out of monitoring for a feature The following example turns off monitoring for an existing feature: REST To update a feature, send a PATCH request by using the features.patch method.",
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample.\\ (Not necessary if passing values as arguments) / // const project = 'YOUR PROJECT ID'; // const featurestoreId = 'YOUR FEATURESTORE ID'; // const entityTypeId = 'YOUR ENTITY TYPE ID'; // const description = 'YOUR ENTITY TYPE DESCRIPTION'; // const duration = <MONITORING INTERVAL IN SECONDS>; // const location = 'YOUR PROJECT LOCATION'; // const apiEndpoint = 'YOUR API ENDPOINT'; // const timeout = <TIMEOUT IN MILLI SECONDS>; // Imports the Google Cloud Featurestore Service Client library const { FeaturestoreServiceClient } = require ( ' @google-cloud/aiplatform ' ). v1beta1 ; // Specifies the location of the api endpoint const clientOptions = { apiEndpoint : apiEndpoint , }; // Instantiates a client const featurestoreServiceClient = new FeaturestoreServiceClient ( clientOptions ); async function createEntityTypeMonitoring () { // Configure the parent resource const parent = projects/ ${ project } /locations/ ${ location } /featurestores/ ${ featurestoreId } ; const entityType = { description : description , monitoringConfig : { snapshotAnalysis : { monitoringInterval : { seconds : Number ( duration ), }, }, }, }; const request = { parent : parent , entityTypeId : entityTypeId , entityType : entityType , }; // Create EntityType request const [ operation ] = await featurestoreServiceClient . createEntityType ( request , { timeout : Number ( timeout )} ); const [ response ] = await operation . promise (); console . log ( 'Create entity type monitoring response' ); console . log ( Name : ${ response . name } ); console . log ( 'Raw response:' ); console . log ( JSON . stringify ( response , null , 2 )); } createEntityTypeMonitoring (); Additional languages To learn how to install and use the Vertex AI SDK for Python, see Use the Vertex AI SDK for Python .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// LOCATION ID -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION ID /featurestores/ FEATURESTORE ID /entityTypes/ ENTITY TYPE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION ID /featurestores/ FEATURESTORE ID /entityTypes/ ENTITY TYPE ID \", \"createTime\": \"2021-07-22T23:18:31.339972Z\", \"updateTime\": \"2021-07-29T22:24:40.221821Z\", \"etag\": \"AMEw9yPGDpwUwHx39gIDIg5mTQz65GMhnYHRzRslVPonm1g8xTnsTC5YUibmWo2MIuI=\", \"monitoringConfig\": { \"snapshotAnalysis\": { \"monitoringIntervalDays\": \" DURATION IN DAYS \", \"stalenessDays\": \" STALENESS DAYS \" } }, \"numericalThresholdConfig\": { \"value\": \" NUMERICAL THRESHOLD VALUE \" }, \"categoricalThresholdConfig\": { \"value\": \" CATEGORICAL THRESHOLD VALUE \" }, \"importFeatureAnalysis\": { \"state\": \" IMPORT FEATURE ANALYSIS STATE \", \"anomalyDetectionBaseline\": \" IMPORT FEATURE ANALYSIS BASELINE \" } } Java Before trying this sample, follow the Java setup instructions in the Vertex AI quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "Vertex AI model evaluation notebook tutorials \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "source_id": "site-docs-reference-2",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "List of notebooks Select a service AutoML BigQuery BigQuery ML Custom training Image Ray on Vertex AI Tabular Text Vector Search Vertex AI Experiments Vertex AI Feature Store Vertex AI Inference Vertex AI model evaluation Vertex AI Model Monitoring Vertex AI Model Registry Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex AI Workbench Vertex Explainable AI Vertex ML Metadata Services Description Open in Classification for tabular data AutoML tabular training and prediction .",
+          "Configure the endpoint resource for model monitoring Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Model Monitoring Vertex AI Model Monitoring with Vertex Explainable AI Feature Attributions .",
+          "In this tutorial, you'll complete the following steps: Tutorial steps Colab Colab Enterprise GitHub Vertex AI Workbench model monitoring v2 Model Monitoring for Vertex AI Custom Model Online Prediction ."
+        ]
+      },
+      {
+        "title": "Model evaluation components \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component",
+        "source_id": "site-api-reference",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "Vertex AI provides the following model evaluation components: ModelEvaluationClassificationOp ModelEvaluationForecastingOp ModelEvaluationRegressionOp Model type support The following table shows supported model types for each model evaluation component: Model evaluation component Supported model types ModelEvaluationClassificationOp AutoML tabular or image Custom tabular ModelEvaluationRegressionOp AutoML tabular Custom tabular ModelEvaluationForecastingOp AutoML tabular Remove the target field For some model types, the BatchPredictionJob component requires you to exclude the target column (ground truth) from your dataset.",
+          "The following configuration creates a single slice containing data where the age is between 1 and 3 and the species is \"dog\" : { \"age\": { \"range\": { \"low\": 1, \"high\": 3 } }, \"species\": { \"value\": { \"string value\": \"dog\" } } } The following configuration creates multiple slices—one for each unique species in the dataset, where the age is 1 . { \"species\": { \"all values\": { \"value\": true } }, \"age\": { \"value\": { \"float value\": 1.0 } } } The resulting slices contain the following data from the example dataset: Slice 1: age:1 and species:\"dog\" Slice 2: age:1 and species:\"cat\" Slice 3: age:1 and species:\"rabbit\" Format slices To format slices for the ModelEvaluationClassificationOp component, do the following: Create a slicing spec .",
+          "For example: from google.cloud.aiplatform v1.types.ModelEvaluation import BiasConfig from google.cloud.aiplatform v1.types.ModelEvaluationSlice.Slice import SliceSpec from google.cloud.aiplatform v1.types.ModelEvaluationSlice.Slice.SliceSpec import SliceConfig bias config = BiasConfig(bias slices=SliceSpec(configs={ 'feature a': SliceConfig(SliceSpec.Value(string value='label a') ) })) Create a list to store the bias configurations."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "features.patch",
+      "request.json",
+      "resource.labels",
+      "resource.labels.resource",
+      "type.googleapis.com",
+      "v1.types.ModelEvaluation",
+      "v1.types.ModelEvaluationSlice.Slice",
+      "v1.types.ModelEvaluationSlice.Slice.SliceSpec"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/monitoring",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/monitoring",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/monitoring",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/monitoring",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/monitoring",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component"
+      ]
+    }
+  ]
+}

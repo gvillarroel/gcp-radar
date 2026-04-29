@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:13.819Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Call Session Events",
+  "feature_slug": "call-session-events",
+  "summary": "This feature deploys generator and sender applications to process call events and forward them to configured endpoints.",
+  "extended_definition": "This feature deploys generator and sender applications to process call events and forward them to configured endpoints.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"iOS SDK guide \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 145,
+        "relevance": "",
+        "evidence_snippets": [
+          "UJETEventEmailDidClick Queue Menu Data UJETEventEmailDidSubmit Queue Menu Data has attachment: (NSNumber) @YES, @NO UJETEventSessionViewDidAppear type: @\"call\", @\"chat\" timestamp: (NSString) ISO 8601 UJETEventSessionViewDidDisappear type: @\"call\", @\"chat\" timestamp: (NSString) ISO 8601 UJETEventSessionDidCreate Session Data UJETEventSessionDidEnd Session Data agent name: (NSString) null if agent didn't join duration: (NSNumber) only for call ended by: (NSString) type=call: @\"agent\", @\"end user\" type=chat: @\"agent\", @\"end user\", @\"timeout\", @\"dismissed\" UJETEventSdkDidTerminate UJETEventPostSessionOptInDidSelected opt in selected: (NSString) @\"Yes\", @\"No\" Event Data Metadata application: @\"iOS\" app id: (NSString) bundle identifier app version: (NSString) company: (NSString) subdomain device model: (NSString) device version: (NSString) sdk version: (NSString) timestamp: (NSString) ISO 8601 Queue Menu Data Metadata menu id: NSString menu key: NSString, nullable menu name: NSString menu path : NSString Session Data Queue Menu Data session id: NSString type: @\"call\", @\"chat\" end user identifier: NSString Setup Screen Share If you want to use Screen Share feature, then integrate UJETCobrowseKit.xcframework .",
+          "Invoke the dismissed closure on click of the deny button. class CobrowseAlertProvider: NSObject, UJETCobrowseAlertProvider { func cobrowseSessionInitializationAlert ( consentStatus: @escaping ( Bool ) -> Void ) -> UIViewController? { let customAlertViewController = CustomAlertViewController () customAlertViewController.consentStatus = consentStatus return customAlertViewController } func cobrowseSessionRequestAlert ( consentStatus: @escaping ( Bool ) -> Void ) -> UIViewController? { // Same as cobrowseSessionInitializationAlert } func cobrowseRemoteRequestAlert ( consentStatus: @escaping ( Bool ) -> Void ) -> UIViewController? { // Same as cobrowseSessionInitializationAlert } func cobrowseFullDeviceRequestAlert ( dismissed: @escaping () -> Void ) -> UIViewController? { let customAlertViewController = CustomFullDeviceAlertViewController () cobrowseSessionAlertViewController.dismissed = dismissed return customAlertViewController } func cobrowseSessionEndAlert ( consentStatus: @escaping ( Bool ) -> Void ) -> UIViewController? { // Same as cobrowseSessionInitializationAlert } } The custom view controller should have a closure to pass the consent status to the SDK. class CustomAlertViewController: UIViewController { var consentStatus: (( Bool ) -> Void ) ? @IBAction func allowButtonClicked ( sender: Any ) { dismiss ( animated: true ) {[ weak self ] in self?.consentStatus? ( true ) } } @IBAction func denyButtonClicked ( sender: Any ) { dismiss ( animated: true ) {[ weak self ] in self?.consentStatus? ( false ) } } } The custom view controller for full device request alert should have RPSystemBroadcastPickerView and a closure to pass the dismiss status to the SDK. class CustomFullDeviceAlertViewController: UIViewController { var broadcastPickerView: RPSystemBroadcastPickerView! var dismissed: (() -> Void ) ? override func viewDidLoad () { super.viewDidLoad () let frame = CGRect ( x: x, y: y, width: 50 , height: 50 ) // Set your own value broadcastPickerView = RPSystemBroadcastPickerView ( frame: frame ) broadcastPickerView.preferredExtension = Bundle.main.object ( forInfoDictionaryKey: \"CBIOBroadcastExtension\" ) as?",
+          "In the delegate method, make sure to only call [UJET start] when the URL paths and parameters in the universal link or custom URL are specific for CCAI Platform. - ( BOOL ) application :( UIApplication ) app continueUserActivity :( nonnull NSUserActivity ) userActivity restorationHandler :( nonnull void ( ^ )( NSArray Nullable )) restorationHandler { ... if ( [ NSUserActivityTypeBrowsingWeb isEqualToString : userActivity . activityType ] ) { NSURL url = userActivity . webpageURL ; NSArray availableSchema = @ [ @ \"your-company\" , // custom URL scheme @ \"https\" // universal link ] ; NSArray availableHostAndPath = @ [ @ \"ujet\" , // custom URL scheme @ \"your-comany.com/ujet\" // universal link ] ; if ( ![ availableSchema containsObject : url . scheme ] ) { return NO ; } NSString hostAndPath = [ NSString stringWithFormat : @ \"%@%@\" , url . host , url . path ] ; if ( ![ availableHostAndPath containsObject : hostAndPath ] ) { return NO ; } // your-company://ujet?call id={call id}&nonce={nonce} // https://your-company.com/ujet?call id={call id}&nonce={nonce} NSURLComponents urlComponents = [ NSURLComponents componentsWithURL : url resolvingAgainstBaseURL : NO ] ; NSArray queryItems = urlComponents . queryItems ; NSString callId = [ self valueForKey : @ \"call id\" fromQueryItems : queryItems ] ; // validate call id if ( ![ self isValidCallId : callId ] ) { return NO ; } NSString nonce = [ self valueForKey : @ \"nonce\" fromQueryItems : queryItems ] ; UJETStartOptions options = [[ UJETStartOptions alloc ] initWithCallId : callId nonce : nonce ] ; [ UJET startWithOptions : options ] ; } ... } If your app adopts UIWindowSceneDelegate , then add this code snippet: class SceneDelegate: UIResponder, UIWindowSceneDelegate { var window: UIWindow? func scene ( scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions ) { //if app is called with universal Link and started from cold if connectionOptions.urlContexts.first ! = nil { self.scene ( scene, openURLContexts: connectionOptions.urlContexts ) } guard let = ( scene as?"
+        ]
+      },
+      {
+        "title": "\"Chat Settings and Features \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+        "source_id": "site-docs-reference",
+        "final_score": 135,
+        "relevance": "",
+        "evidence_snippets": [
+          "Feature benefits For Managers and Admins Automatically remind agents to respond promptly to conversations For Agents Visually shows which chat needs their attention first For end-users Less waiting time and quicker resolution time Feature details The response timer starts when the agent is assigned and the consumer has sent a message and applies even if an agent has not yet sent a message If the agent responds, the counter will not begin again until the consumer replies.",
+          "To redact all sensitive data from agents' session notes, select the Automatically redact all session notes from agents checkbox.",
+          "To redact all sensitive data from agents' session notes, select the Automatically redact all session notes from agents checkbox."
+        ]
+      },
+      {
+        "title": "\"Call endpoints \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following are the call API endpoints: Outbound call - end user number Outbound call - ticket id Incoming call Scheduled call Update reserved data attributes during a call Get reserved data attributes during a call Pass data parameters to virtual agents mid-session Call object The following is an example of the call object: [ { \"id\" : 0 , \"parent id\" : 0 , \"lang\" : \"en\" , \"call type\" : \"Voice Scheduled (API)\" , \"status\" : \"scheduled\" , \"created at\" : \"2018-06-07T19:49:52.896Z\" , \"queued at\" : \"2018-06-07T19:49:52.896Z\" , \"assigned at\" : \"2018-06-07T19:49:52.896Z\" , \"connected at\" : \"2018-06-07T19:49:52.896Z\" , \"ends at\" : \"2018-06-07T19:49:52.896Z\" , \"scheduled at\" : \"2018-06-07T19:49:52.896Z\" , \"wait duration\" : 0 , \"call duration\" : 0 , \"hold duration\" : 0 , \"rating\" : 0 , \"has feedback\" : true , \"voip provider\" : \"voip provider twilio\" , \"out ticket id\" : \"string\" , \"out ticket url\" : \"string\" , \"verified\" : true , \"recording url\" : \"string\" , \"recording permission\" : \"not asked\" , \"voicemail reason\" : \"not voicemail\" , \"deflection\" : \"no deflection\" , \"disconnected by\" : \"disconnected by unknown\" , \"fail details\" : \"string\" , \"fail reason\" : \"nothing\" , \"support number\" : \"string\" , \"selected menu\" : { \"id\" : 0 , \"name\" : \"string\" , \"parent id\" : 0 , \"position\" : 0 , \"deleted\" : true , \"hidden\" : \"string\" , \"menu type\" : \"ivr menu\" , \"output msg\" : \"string\" }, \"menu path\" : { \"items count\" : 0 , \"name\" : \"string\" , \"materialized path\" : \"string\" }, \"agent info\" : { \"id\" : 0 , \"name\" : \"string\" , \"last name\" : \"string\" , \"first name\" : \"string\" , \"agent number\" : \"string\" , \"avatar url\" : \"string\" }, \"end user\" : { \"id\" : 0 , \"identifier\" : \"string\" , \"out contact id\" : \"string\" }, \"photos\" : [ { \"id\" : 0 , \"photo type\" : \"photo\" , \"url\" : \"string\" } ], \"videos\" : [ { \"id\" : 0 , \"url\" : \"string\" } ], \"transfers\" : [ { \"id\" : 0 , \"status\" : \"transferring\" , \"fail reason\" : \"nothing\" , \"created at\" : \"2018-06-07T19:49:52.896Z\" , \"from menu\" : { \"items count\" : 0 , \"name\" : \"string\" , \"materialized path\" : \"string\" }, \"to menu\" : { \"items count\" : 0 , \"name\" : \"string\" , \"materialized path\" : \"string\" }, \"from agent\" : { \"id\" : 0 , \"name\" : \"string\" , \"last name\" : \"string\" , \"first name\" : \"string\" , \"agent number\" : \"string\" , \"avatar url\" : \"string\" }, \"to agent\" : { \"id\" : 0 , \"name\" : \"string\" , \"last name\" : \"string\" , \"first name\" : \"string\" , \"agent number\" : \"string\" , \"avatar url\" : \"string\" } } ], \"participants\" : [ { \"id\" : 0 , \"type\" : \"end user\" , \"status\" : \"waiting\" , \"call id\" : 0 , \"user id\" : 0 , \"end user id\" : 0 , \"call duration\" : 0 , \"hold duration\" : 0 , \"connected at\" : \"2018-06-07T19:49:52.896Z\" , \"ended at\" : \"2018-06-07T19:49:52.896Z\" , \"fail reason\" : \"nothing\" } ] } ] Call status definitions The status field can be in any of the following states: Call Status Description Selecting State that occurs when an end user has called into the contact center, but is still navigating the menu options prior to being placed in a leaf menu.",
+          "Request Headers: Key Value Description Content-Type application/json Body: { \"call type\" : \"Voice Outbound (API)\" , \"agent email\" : \"admin@somedomain.com\" , \"ticket id\" : \"71450\" , \"outbound number\" : \"+1 339-219-5276\" , \"lang\" : \"en\" } Response: Create an outbound call with ticket id { \"id\" : 398 , \"lang\" : \"en\" , \"call type\" : \"Voice Outbound (API)\" , \"status\" : \"assigned\" , \"created at\" : \"2019-06-07T01:28:47.955Z\" , \"queued at\" : null , \"assigned at\" : \"2019-06-07T01:28:47.971Z\" , \"connected at\" : null , \"ends at\" : null , \"scheduled at\" : null , \"wait duration\" : 0 , \"call duration\" : 0 , \"hold duration\" : 0 , \"rating\" : null , \"has feedback\" : false , \"voip provider\" : \"voip provider twilio\" , \"out ticket id\" : \"71450\" , \"out ticket url\" : null , \"verified\" : false , \"recording url\" : null , \"recording permission\" : \"not asked\" , \"voicemail reason\" : \"not voicemail\" , \"deflection\" : \"no deflection\" , \"disconnected by\" : \"disconnected by unknown\" , \"fail reason\" : \"nothing\" , \"fail details\" : null , \"support number\" : null , \"selected menu\" : null , \"menu path\" : null , \"agent info\" : { \"id\" : 1 , \"agent number\" : null , \"name\" : \"Admin UJET\" , \"last name\" : \"UJET\" , \"first name\" : \"Admin\" , \"avatar url\" : \"https://somedomain.com/default-profile.png\" }, \"end user\" : { \"id\" : 67 , \"identifier\" : null , \"out contact id\" : \"381630957514\" }, \"photos\" : [], \"videos\" : [], \"transfers\" : [], \"deflection details\" : [], \"participants\" : [ { \"id\" : 612 , \"type\" : \"agent\" , \"status\" : \"waiting\" , \"call id\" : 398 , \"user id\" : 1 , \"end user id\" : null , \"call duration\" : null , \"hold duration\" : null , \"connected at\" : null , \"ended at\" : null , \"fail reason\" : \"nothing\" }, { \"id\" : 613 , \"type\" : \"end user\" , \"status\" : \"waiting\" , \"call id\" : 398 , \"user id\" : null , \"end user id\" : 67 , \"call duration\" : null , \"hold duration\" : null , \"connected at\" : null , \"ended at\" : null , \"fail reason\" : \"nothing\" } ], \"offer type\" : null , \"offer events\" : [], \"answer type\" : \"manual\" , \"outbound number\" : \"+1 339-219-5276\" } Status Code: 201 Accepted : Need to choose an outbound number In this example we show the scenario where an outbound call request is created with the need to choose an outbound number and then is accepted.",
+          "Request Headers: Key Value Description Content-Type application/json Body: { \"call type\" : \"Voice Scheduled (API)\" , \"lang\" : \"en\" , \"call id\" : 514 , \"end user number\" : \"+82-10-6861-2345\" , \"scheduled at\" : \"2019-09-15T00:19:14.421Z\" , \"recording permission\" : \"recording permission granted\" } Response: Create an scheduled call with call ID { \"id\" : 515 , \"lang\" : \"en\" , \"call type\" : \"Voice Inbound (API)\" , \"status\" : \"queued\" , \"created at\" : \"2019-09-10T00:19:14.000Z\" , \"queued at\" : null , \"assigned at\" : null , \"connected at\" : null , \"ends at\" : null , \"scheduled at\" : \"2019-09-15T00:19:14.421Z\" , \"wait duration\" : 0 , \"call duration\" : 0 , \"hold duration\" : 0 , \"rating\" : null , \"has feedback\" : false , \"out ticket id\" : null , \"out ticket url\" : null , \"verified\" : false , \"recording url\" : null , \"recording permission\" : \"not asked\" , \"voicemail reason\" : \"not voicemail\" , \"deflection\" : \"no deflection\" , \"disconnected by\" : \"disconnected by unknown\" , \"fail reason\" : \"nothing\" , \"fail details\" : null , \"support number\" : null , \"selected menu\" : { \"id\" : 9 , \"name\" : \"Lock Star\" , \"parent id\" : null , \"position\" : 0 , \"deleted\" : false , \"menu type\" : \"ivr menu\" , \"output msg\" : \"You selected Lock Star.\" , \"hidden\" : false }, \"menu path\" : { \"items count\" : 1 , \"name\" : \"Lock Star\" , \"materialized path\" : \"9\" }, \"agent info\" : null , \"end user\" : { \"id\" : 75 , \"identifier\" : null , \"out contact id\" : \"389391400633\" }, \"photos\" : [], \"videos\" : [], \"transfers\" : [], \"deflection details\" : [], \"participants\" : [ { \"id\" : 820 , \"type\" : \"end user\" , \"status\" : \"waiting\" , \"call id\" : 515 , \"user id\" : null , \"end user id\" : 75 , \"call duration\" : null , \"hold duration\" : null , \"connected at\" : null , \"ended at\" : null , \"fail reason\" : \"nothing\" } ], \"offer type\" : \"cascade\" , \"offer events\" : [ { \"casting time\" : \"2019-09-10T00:19:14.000Z\" , \"group\" : \"Group 1\" } ], \"answer type\" : \"manual\" , \"outbound number\" : \"+1 339-219-5276\" } Status Code: 201 Error : Menu is in 'after hours' state, can't accept incoming calls In this example we show the failure scenario where a scheduled call is created but that the provided menu is out of hours and as such cannot receive incoming calls."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "avatar.png",
+      "comany.com",
+      "company.com",
+      "main.object",
+      "profile.png",
+      "self.scene",
+      "somedomain.com",
+      "super.viewDidLoad"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call"
+      ]
+    }
+  ]
+}

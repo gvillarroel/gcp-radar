@@ -1,0 +1,139 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:40.969Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "1 vCPU instance configuration",
+  "feature_slug": "1-vcpu-instance-configuration",
+  "summary": "AlloyDB for PostgreSQL supports a 1 vCPU and 8 GB memory configuration for development and sandbox environments.",
+  "extended_definition": "AlloyDB for PostgreSQL supports a 1 vCPU and 8 GB memory configuration for development and sandbox environments.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+      "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create",
+      "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a cluster and its primary instance \\_|\\_ AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "source_id": "site-docs-reference-2",
+        "final_score": 181,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Create a cluster and its primary instance Stay organized with collections Save and categorize content based on your preferences.",
+          "C4A virtual machines (VM) are available as predefined configurations for 1, 2, 4, 8, 16, 32, 48, 64, and 72 vCPUs, with up to 576 GB of Double Data Rate 5 (DDR5) memory.",
+          "The following is a code snippet for creating a cluster and a primary instance based on the AlloyDB instance full example: resource \"google alloydb instance\" \"default\" { cluster = google alloydb cluster.default.name instance id = \"alloydb-instance\" instance type = \"PRIMARY\" machine config { cpu count = 2 } depends on = [google service networking connection.vpc connection] } resource \"google alloydb cluster\" \"cluster abc\" { cluster id = \"alloydb-cluster\" location = \"us-central1\" network config { network = google compute network.default.id } database version = \"POSTGRES 16\" initial user { password = \"alloydb-cluster\" } } data \"google project\" \"project\" {} resource \"google compute network\" \"default\" { name = \"alloydb-network\" } resource \"google compute global address\" \"private ip alloc\" { name = \"alloydb-cluster\" address type = \"INTERNAL\" purpose = \"VPC PEERING\" prefix length = 16 network = google compute network.default.id } resource \"google service networking connection\" \"vpc connection\" { network = google compute network.default.id service = \"servicenetworking.googleapis.com\" reserved peering ranges = [google compute global address.private ip alloc.name] } This example creates an N2 instance."
+        ]
+      },
+      {
+        "title": "Scale an instance \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale",
+        "source_id": "site-docs-root",
+        "final_score": 159,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Scale an instance Stay organized with collections Save and categorize content based on your preferences.",
+          "Create a read pool instance with a schedule-based policy To create a read pool instance with a schedule-based automatic scaling policy that defines a minimum number of nodes for a specific time window, run the following command: Note: If you have an existing autoscaling policy that has --autoscaler-max-node-count set , then this becomes an optional field. gcloud beta alloydb instances create INSTANCE ID \\ --instance-type = READ POOL \\ --read-pool-node-count = NODE COUNT \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --project = PROJECT ID \\ --enable-autoscaler \\ --autoscaler-max-node-count = MAX NODE COUNT \\ --autoscaler-set-schedule = SCHEDULE NAME \\ --autoscaler-schedule-cron-exp = CRON EXPRESSION \\ --autoscaler-schedule-duration-seconds = DURATION SECONDS \\ --autoscaler-schedule-time-zone = TIME ZONE \\ --autoscaler-schedule-min-node-count = MIN NODE COUNT \\ --autoscaler-schedule-description = \" DESCRIPTION \" { --cpu-count = CPU COUNT --machine-type = MACHINE TYPE } Replace the following: MAX NODE COUNT : the maximum number of nodes that the autoscaler can create in the read pool instance.",
+          "Create a read pool instance with CPU and schedule-based policies To create a read pool instance with both CPU-based and schedule-based automatic scaling policies, run the following command: gcloud beta alloydb instances create INSTANCE ID \\ --instance-type = READ POOL \\ --read-pool-node-count = NODE COUNT \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --project = PROJECT ID \\ --enable-autoscaler \\ --autoscaler-max-node-count = MAX NODE COUNT \\ --autoscaler-target-cpu-usage = TARGET CPU USAGE \\ --autoscaler-set-schedule = SCHEDULE NAME \\ --autoscaler-schedule-cron-exp = CRON EXPRESSION \\ --autoscaler-schedule-duration-seconds = DURATION SECONDS \\ --autoscaler-schedule-time-zone = TIME ZONE \\ --autoscaler-schedule-min-node-count = MIN NODE COUNT \\ --autoscaler-schedule-description = \" DESCRIPTION \" { --cpu-count = CPU COUNT --machine-type = MACHINE TYPE } Replace TARGET CPU USAGE with the target CPU utilization for your read pool instance, expressed as a decimal value between 0.0 and 1.0."
+        ]
+      },
+      {
+        "title": "\"Create a read pool instance in a cluster \\_|\\_ AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create",
+        "source_id": "site-docs-root",
+        "final_score": 151,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Create a read pool instance in a cluster Stay organized with collections Save and categorize content based on your preferences.",
+          "This page describes how to create a read pool instance in an AlloyDB for PostgreSQL cluster.",
+          "To enable managed connection pooling in your read pool instance, add the --enable-connection-pooling flag to the gcloud alloydb instances create command: gcloud alloydb instances create INSTANCE ID \\ --instance-type = READ POOL \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --cpu-count = CPU COUNT \\ --machine-type = MACHINE TYPE \\ --project = PROJECT ID \\ --enable-connection-pooling To create a read pool instance for a public IP-enabled cluster, add the --assign-inbound-public-ip= ASSIGN IPV4 parameter. gcloud alloydb instances create INSTANCE ID \\ --instance-type = READ POOL \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --cpu-count = CPU COUNT \\ --machine-type = MACHINE TYPE \\ --project = PROJECT ID \\ --assign-inbound-public-ip = ASSIGN IPV4 Optionally, you can pass the comma separated list of CIDR blocks, such as 64.233.160.0/16 to the --authorized-external-networks parameter to set authorized external networks on your instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "address.private",
+      "alloc.name",
+      "alloydb.googleapis.com",
+      "cluster.default.name",
+      "connection.vpc",
+      "network.default.id",
+      "request.json",
+      "servicenetworking.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create"
+      ]
+    }
+  ]
+}

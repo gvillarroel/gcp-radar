@@ -1,0 +1,151 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:53.295Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Point-in-time recovery by timestamp",
+  "feature_slug": "point-in-time-recovery-by-timestamp",
+  "summary": "Cloud SQL for MySQL supports point-in-time recovery using a timestamp.",
+  "extended_definition": "Cloud SQL for MySQL supports point-in-time recovery using a timestamp.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr",
+      "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups",
+      "https://docs.cloud.google.com/sql/docs/mysql/best-practices"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"View audit logs for automated backups \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups",
+        "source_id": "site-docs-reference-3",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See how to perform a point-in-time recovery .",
+          "Learn more about point-in-time recovery .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json ` -Uri \"https://logging.googleapis.com/v2/entries:list\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"entries\": [ { \"protoPayload\": { \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\", \"status\": { \"message\": \"OK\" }, \"authenticationInfo\": {}, \"requestMetadata\": { \"requestAttributes\": {}, \"destinationAttributes\": {} }, \"serviceName\": \"cloudsql.googleapis.com\", \"methodName\": \"cloudsql.instances.automatedBackup\", \"resourceName\": \"projects/ PROJECT ID /instances/ INSTANCE NAME \", \"metadata\": { \"windowStartTime\": \"2022-12-15T13:00:00Z\", \"message\": \"\", \"windowStatus\": \"STATUS SUCCEEDED\", \"@type\": \"type.googleapis.com/speckle.AutomatedBackupEventLog\", \"windowEndTime\": \"2022-12-15T17:00:00Z\", \"backupCompletionTime\": \"2022-12-15T14:11:57.347Z\", \"backupStartTime\": \"2022-12-15T14:11:16.631Z\" } }, \"insertId\": \" LOG ENTRY UNIQUE IDENTIFIER \", \"resource\": { \"type\": \"cloudsql database\", \"labels\": { \"region\": \" REGION NAME \", \"project id\": \" PROJECT ID \", \"database id\": \" DATABASE ID \" } }, \"timestamp\": \"2022-12-15T14:11:57.391565Z\", \"severity\": \"INFO\", \"logName\": \"projects/ PROJECT ID /logs/cloudaudit.googleapis.com%2Fsystem event\", \"receiveTimestamp\": \"2022-12-15T14:11:57.785814800Z\" }, ], } For more information about LOG ENTRY UNIQUE IDENTIFIER for the insertId field, see LogEntry ."
+        ]
+      },
+      {
+        "title": "General best practices \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/best-practices",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A point-in-time recovery always creates a new instance; you cannot perform a point-in-time recovery to an existing instance.",
+          "Backups, point-in-time recovery, and exports are ways to provide data redundancy and protection.",
+          "Point-in-time recovery helps you recover an instance to a specific point in time."
+        ]
+      },
+      {
+        "title": "\"Perform point-in-time recovery (PITR) \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr",
+        "source_id": "site-docs-reference-3",
+        "final_score": 40,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE NAME /getLatestRecoveryTime\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#getLatestRecoveryTime\", \"earliestRecoveryTime\": \"2023-06-10T17:23:59.648821586Z\", \"latestRecoveryTime\": \"2023-06-20T17:23:59.648821586Z\" } Troubleshoot Issue Troubleshooting argument --point-in-time: Failed to parse date/time: Unknown string format: 2021-0928T30:54:03.094; received: 2021-0928T30:54:03.094Z OR Invalid value at 'body.clone context.point in time' (type.googleapis.com/google.protobuf.Timestamp), Field 'pointInTime', Invalid time format: Failed to parse input, The timestamp you provided is invalid.",
+          "If you try to create a PITR clone at a time after the latest recoverable time, then the following error message is given: The timestamp for point-in-time recovery is after the latest recovery time of Timestamp of latest recovery time .",
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback Perform point-in-time recovery (PITR) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "body.clone",
+      "cloudaudit.googleapis.com",
+      "cloudsql.googleapis.com",
+      "cloudsql.instances.automatedBackup",
+      "context.point",
+      "logging.googleapis.com",
+      "request.json",
+      "resource.type",
+      "speckle.AutomatedBackupEventLog",
+      "sqladmin.googleapis.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/best-practices",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/best-practices",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/best-practices",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/best-practices",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/best-practices",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/best-practices",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+      ]
+    }
+  ]
+}

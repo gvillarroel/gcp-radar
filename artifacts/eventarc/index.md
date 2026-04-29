@@ -1,0 +1,80 @@
+# Eventarc
+
+Service card: [card.json](./card.json)
+
+Generated from Step 08 card: `data/step-06/current/products/eventarc/extended-features.json`
+
+## Summary
+
+- Promoted features: 64
+- Step 07 product status: PASS
+- Corpus health: healthy
+- Latest feature date: 2025-11-11
+- Official source links: 39
+
+## Features
+
+- [Access policies for Eventarc Advanced bus publishing](./access-policies-for-eventarc-advanced-bus-publishing/README.md)
+- [Multi-project publishing in Eventarc Advanced](./multi-project-publishing-in-eventarc-advanced/README.md)
+- [Custom organization policy constraints for Eventarc resources](./custom-organization-policy-constraints-for-eventarc-resources/README.md)
+- [CMEK organization policy constraints for Eventarc](./cmek-organization-policy-constraints-for-eventarc/README.md)
+- [Eventarc Advanced](./eventarc-advanced/README.md)
+- [Eventarc Standard](./eventarc-standard/README.md)
+- [Direct event triggers from Apigee API hub](./direct-event-triggers-from-apigee-api-hub/README.md)
+- [Direct event triggers from Cloud Speech-to-Text](./direct-event-triggers-from-cloud-speech-to-text/README.md)
+- [Direct event triggers from Cloud Deploy](./direct-event-triggers-from-cloud-deploy/README.md)
+- [Direct event triggers from Network Services](./direct-event-triggers-from-network-services/README.md)
+- [Direct event triggers from Batch](./direct-event-triggers-from-batch/README.md)
+- [Direct event triggers from Cloud Firestore](./direct-event-triggers-from-cloud-firestore/README.md)
+- [Direct event triggers from Cloud Firestore with authentication context](./direct-event-triggers-from-cloud-firestore-with-authentication-context/README.md)
+- [Internal HTTP endpoints as event destinations](./internal-http-endpoints-as-event-destinations/README.md)
+- [Direct event triggers from AlloyDB for PostgreSQL](./direct-event-triggers-from-alloydb-for-postgresql/README.md)
+- [Direct event triggers from API Gateway](./direct-event-triggers-from-api-gateway/README.md)
+- [Direct event triggers from Apigee Registry](./direct-event-triggers-from-apigee-registry/README.md)
+- [Direct event triggers from Backup for GKE](./direct-event-triggers-from-backup-for-gke/README.md)
+- [Direct event triggers from BeyondCorp](./direct-event-triggers-from-beyondcorp/README.md)
+- [Direct event triggers from Certificate Manager](./direct-event-triggers-from-certificate-manager/README.md)
+- [Direct event triggers from Cloud Data Fusion](./direct-event-triggers-from-cloud-data-fusion/README.md)
+- [Direct event triggers from Cloud Dataplex](./direct-event-triggers-from-cloud-dataplex/README.md)
+- [Direct event triggers from Cloud Functions](./direct-event-triggers-from-cloud-functions/README.md)
+- [Direct event triggers from Cloud Memorystore for Memcached](./direct-event-triggers-from-cloud-memorystore-for-memcached/README.md)
+- [Direct event triggers from Database Migration](./direct-event-triggers-from-database-migration/README.md)
+- [Direct event triggers from Dataflow](./direct-event-triggers-from-dataflow/README.md)
+- [Direct event triggers from Dataproc Metastore](./direct-event-triggers-from-dataproc-metastore/README.md)
+- [Direct event triggers from Datastream](./direct-event-triggers-from-datastream/README.md)
+- [Direct event triggers from Firebase Alerts](./direct-event-triggers-from-firebase-alerts/README.md)
+- [Direct event triggers from Firebase Remote Config](./direct-event-triggers-from-firebase-remote-config/README.md)
+- [Direct event triggers from Firebase Test Lab](./direct-event-triggers-from-firebase-test-lab/README.md)
+- [Direct event triggers from GKE Hub](./direct-event-triggers-from-gke-hub/README.md)
+- [Direct event triggers from Google Cloud Memorystore for Redis](./direct-event-triggers-from-google-cloud-memorystore-for-redis/README.md)
+- [Direct event triggers from Network Connectivity](./direct-event-triggers-from-network-connectivity/README.md)
+- [Direct event triggers from Network Management](./direct-event-triggers-from-network-management/README.md)
+- [Direct event triggers from Transcoder](./direct-event-triggers-from-transcoder/README.md)
+- [Direct event triggers from user-managed notebooks](./direct-event-triggers-from-user-managed-notebooks/README.md)
+- [Direct event triggers from Vision AI](./direct-event-triggers-from-vision-ai/README.md)
+- [Direct event triggers from VM Migration](./direct-event-triggers-from-vm-migration/README.md)
+- [Workflow triggers](./workflow-triggers/README.md)
+- [Direct event triggers from Transcoder API](./direct-event-triggers-from-transcoder-api/README.md)
+- [Event payload content type selection](./event-payload-content-type-selection/README.md)
+- [Direct event triggers from Cloud Dataflow](./direct-event-triggers-from-cloud-dataflow/README.md)
+- [Workflow triggers within service perimeter](./workflow-triggers-within-service-perimeter/README.md)
+- [Customer-managed encryption keys (CMEK)](./customer-managed-encryption-keys-cmek/README.md)
+- [Direct events from Cloud IoT](./direct-events-from-cloud-iot/README.md)
+- [Third-party SaaS event delivery](./third-party-saas-event-delivery/README.md)
+- [CMEK support in Cloud Console](./cmek-support-in-cloud-console/README.md)
+- [CMEK support in Google Cloud CLI](./cmek-support-in-google-cloud-cli/README.md)
+- [Firebase Realtime Database triggers](./firebase-realtime-database-triggers/README.md)
+- [Dedicated user interface](./dedicated-user-interface/README.md)
+- [Eventarc for Google Kubernetes Engine](./eventarc-for-google-kubernetes-engine/README.md)
+- [Workflows triggers](./workflows-triggers/README.md)
+- [Firebase Alerts triggers](./firebase-alerts-triggers/README.md)
+- [Firebase Remote Config triggers](./firebase-remote-config-triggers/README.md)
+- [Firebase Test Lab triggers](./firebase-test-lab-triggers/README.md)
+- [Path pattern filtering](./path-pattern-filtering/README.md)
+- [Cloud Storage triggers](./cloud-storage-triggers/README.md)
+- [Eventarc for Cloud Run for Anthos](./eventarc-for-cloud-run-for-anthos/README.md)
+- [Eventarc console UI](./eventarc-console-ui/README.md)
+- [VPC Service Controls support](./vpc-service-controls-support/README.md)
+- [Data location support](./data-location-support/README.md)
+- [Cloud Asset Inventory resource type support](./cloud-asset-inventory-resource-type-support/README.md)
+- [Default Pub/Sub service account IAM grant](./default-pub-sub-service-account-iam-grant/README.md)

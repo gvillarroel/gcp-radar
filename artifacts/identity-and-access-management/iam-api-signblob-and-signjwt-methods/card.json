@@ -1,0 +1,250 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:19.434Z",
+  "source_step08_card": "data/step-08/current/products/identity-and-access-management/card.json",
+  "product_name": "Identity and Access Management",
+  "product_slug": "identity-and-access-management",
+  "feature_name": "IAM API signBlob and signJwt methods",
+  "feature_slug": "iam-api-signblob-and-signjwt-methods",
+  "summary": "The IAM API signBlob and signJwt methods are deprecated in favor of the Service Account Credentials API; deprecated on 2021-07-01.",
+  "extended_definition": "The IAM API signBlob and signJwt methods are deprecated in favor of the Service Account Credentials API; deprecated on 2021-07-01.",
+  "lifecycle": {
+    "latest_feature_date": "2020-06-22",
+    "deprecation_date": "2021-07-01",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iam/docs/audit-logging",
+      "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-iamcreds",
+      "https://docs.cloud.google.com/iam/docs/authentication",
+      "https://docs.cloud.google.com/iam/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Identity and Access Management (IAM) API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iam/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 260,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1.projects.serviceAccounts Methods create POST /v1/{name=projects/ }/serviceAccounts Creates a ServiceAccount . delete DELETE /v1/{name=projects/ /serviceAccounts/ } Deletes a ServiceAccount . disable POST /v1/{name=projects/ /serviceAccounts/ }:disable Disables a ServiceAccount immediately. enable POST /v1/{name=projects/ /serviceAccounts/ }:enable Enables a ServiceAccount that was disabled by DisableServiceAccount . get GET /v1/{name=projects/ /serviceAccounts/ } Gets a ServiceAccount . getIamPolicy POST /v1/{resource=projects/ /serviceAccounts/ }:getIamPolicy Gets the IAM policy that is attached to a ServiceAccount . list GET /v1/{name=projects/ }/serviceAccounts Lists every ServiceAccount that belongs to a specific project. patch PATCH /v1/{serviceAccount.name=projects/ /serviceAccounts/ } Patches a ServiceAccount . setIamPolicy POST /v1/{resource=projects/ /serviceAccounts/ }:setIamPolicy Sets the IAM policy that is attached to a ServiceAccount . signBlob (deprecated) POST /v1/{name=projects/ /serviceAccounts/ }:signBlob Signs a blob using the system-managed private key for a ServiceAccount . signJwt (deprecated) POST /v1/{name=projects/ /serviceAccounts/ }:signJwt Signs a JSON Web Token (JWT) using the system-managed private key for a ServiceAccount . testIamPermissions POST /v1/{resource=projects/ /serviceAccounts/ }:testIamPermissions Tests whether the caller has the specified permissions on a ServiceAccount . undelete POST /v1/{name=projects/ /serviceAccounts/ }:undelete Restores a deleted ServiceAccount . update PUT /v1/{name=projects/ /serviceAccounts/ } Note: We are in the process of deprecating this method.",
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://iam.googleapis.com REST Resource: v3beta.folders.locations.accessPolicies Methods create POST /v3beta/{parent=folders/ /locations/ }/accessPolicies Creates an access policy, and returns a long running operation. delete DELETE /v3beta/{name=folders/ /locations/ /accessPolicies/ } Deletes an access policy. get GET /v3beta/{name=folders/ /locations/ /accessPolicies/ } Gets an access policy. list GET /v3beta/{parent=folders/ /locations/ }/accessPolicies Lists access policies. patch PATCH /v3beta/{accessPolicy.name=folders/ /locations/ /accessPolicies/ } Updates an access policy. searchPolicyBindings GET /v3beta/{name=folders/ /locations/ /accessPolicies/ }:searchPolicyBindings Returns all policy bindings that bind a specific policy if a user has searchPolicyBindings permission on that policy.",
+          "REST Resource: v1.projects.locations.workloadIdentityPools Methods create POST /v1/{parent=projects/ /locations/ }/workloadIdentityPools Creates a new WorkloadIdentityPool . delete DELETE /v1/{name=projects/ /locations/ /workloadIdentityPools/ } Deletes a WorkloadIdentityPool . get GET /v1/{name=projects/ /locations/ /workloadIdentityPools/ } Gets an individual WorkloadIdentityPool . getIamPolicy POST /v1/{resource=projects/ /locations/ /workloadIdentityPools/ }:getIamPolicy Gets the IAM policy of a WorkloadIdentityPool . list GET /v1/{parent=projects/ /locations/ }/workloadIdentityPools Lists all non-deleted WorkloadIdentityPool s in a project. patch PATCH /v1/{workloadIdentityPool.name=projects/ /locations/ /workloadIdentityPools/ } Updates an existing WorkloadIdentityPool . setIamPolicy POST /v1/{resource=projects/ /locations/ /workloadIdentityPools/ }:setIamPolicy Sets the IAM policies on a WorkloadIdentityPool testIamPermissions POST /v1/{resource=projects/ /locations/ /workloadIdentityPools/ }:testIamPermissions Returns the caller's permissions on a WorkloadIdentityPool undelete POST /v1/{name=projects/ /locations/ /workloadIdentityPools/ }:undelete Undeletes a WorkloadIdentityPool , as long as it was deleted fewer than 30 days ago."
+        ]
+      },
+      {
+        "title": "\"Service Account Credentials audit logging \\_|\\_ Identity and Access Management\\",
+        "url": "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-iamcreds",
+        "source_id": "site-docs-root-2",
+        "final_score": 258,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ GenerateAccessToken (LRO) GenerateIdToken (LRO) SignBlob (LRO) SignJwt (LRO) API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Service Account Credentials. google.iam.credentials.v1.IAMCredentials The following audit logs are associated with methods belonging to google.iam.credentials.v1.IAMCredentials .",
+          "For more information about Cloud Audit Logs, see the following: Types of audit logs Audit log entry structure Storing and routing audit logs Cloud Logging pricing summary Enable Data Access audit logs Service name Service Account Credentials audit logs use the service name iamcredentials.googleapis.com .",
+          "Filter for this method : protoPayload.methodName=\"SignJwt\" Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Authenticate to IAM \\_|\\_ Identity and Access Management (IAM) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/iam/docs/authentication",
+        "source_id": "site-api-reference",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Execute the following command: curl -X GET \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ \"https://iam.googleapis.com/v1/projects/ PROJECT ID /serviceAccounts\" PowerShell (Windows) Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers ` -Uri \"https://iam.googleapis.com/v1/projects/ PROJECT ID /serviceAccounts\" Select-Object -Expand Content For more information about authenticating using REST and gRPC, see Authenticate for using REST .",
+          "Grant the required role to the principal that will attach the service account to other resources. gcloud iam service-accounts add-iam-policy-binding SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com --member = \"user: USER EMAIL \" --role = roles/iam.serviceAccountUser Replace the following: SERVICE ACCOUNT NAME : the name of the service account PROJECT ID : the project ID where you created the service account USER EMAIL : the email address for a Google Account Create the resource that will run your code, and attach the service account to that resource.",
+          "To provide access to your project and your resources, grant a role to the service account: gcloud projects add-iam-policy-binding PROJECT ID --member = \"serviceAccount: SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com\" --role = ROLE Replace the following: SERVICE ACCOUNT NAME : the name of the service account PROJECT ID : the project ID where you created the service account ROLE : the role to grant Note : The --role flag affects which resources the service account can access in your project."
+        ]
+      },
+      {
+        "title": "\"Identity and Access Management audit logging \\_|\\_ Identity and Access Management\\",
+        "url": "https://docs.cloud.google.com/iam/docs/audit-logging",
+        "source_id": "site-docs-root-2",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Identity and Access Management. google.iam.admin.v1.IAM The following audit logs are associated with methods belonging to google.iam.admin.v1.IAM .",
+          "Query name Expression Service account created resource.type = \"service account\" protoPayload.serviceName = \"iam.googleapis.com\" protoPayload.methodName:\"CreateServiceAccount\" log id(\"cloudaudit.googleapis.com/activity\") (protoPayload.request.account id:\" SERVICE ACCOUNT SHORT ID \" OR protoPayload.response.email:\" SERVICE ACCOUNT EMAIL \") Service account deleted resource.type = \"service account\" protoPayload.serviceName = \"iam.googleapis.com\" protoPayload.methodName:\"DeleteServiceAccount\" log id(\"cloudaudit.googleapis.com/activity\") resource.labels.email id:\" SERVICE ACCOUNT EMAIL \" Service account key created resource.type = \"service account\" protoPayload.serviceName = \"iam.googleapis.com\" protoPayload.methodName:\"CreateServiceAccountKey\" log id(\"cloudaudit.googleapis.com/activity\") resource.labels.email id:\" SERVICE ACCOUNT EMAIL \" Service account key deleted resource.type = \"service account\" protoPayload.serviceName = \"iam.googleapis.com\" protoPayload.methodName:\"DeleteServiceAccountKey\" log id(\"cloudaudit.googleapis.com/activity\") resource.labels.email id:\" SERVICE ACCOUNT EMAIL \" Any resource created, modified, or deleted log id(\"cloudaudit.googleapis.com/activity\") AND protoPayload.methodName:(\"create\" OR \"delete\" OR \"update\") Custom role updated log id(\"cloudaudit.googleapis.com/activity\") resource.type = \"iam role\" protoPayload.serviceName = \"iam.googleapis.com\" protoPayload.methodName:\"UpdateRole\" resource.labels.role name:\" ROLE NAME \" Project-level allow policy updated resource.type = \"project\" AND log id(\"cloudaudit.googleapis.com/activity\") AND protoPayload.methodName:\"SetIamPolicy\" Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Filter for this method : protoPayload.methodName=\"google.iam.v3beta.PolicyBindings.SearchTargetPolicyBindings\" UpdatePolicyBinding Method : google.iam.v3beta.PolicyBindings.UpdatePolicyBinding Audit log type : Admin activity Permissions : cloudresourcemanager.googleapis.com/projects.updatePolicyBinding - ADMIN WRITE iam.googleapis.com/principalaccessboundarypolicies.bind - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.iam.v3beta.PolicyBindings.UpdatePolicyBinding\" google.iam.v3beta.PrincipalAccessBoundaryPolicies The following audit logs are associated with methods belonging to google.iam.v3beta.PrincipalAccessBoundaryPolicies ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "cloudresourcemanager.googleapis.com",
+      "iam.googleapis.com",
+      "iam.gserviceaccount.com",
+      "iam.serviceAccountUser",
+      "iamcredentials.googleapis.com",
+      "principalaccessboundarypolicies.bind",
+      "projects.updatePolicyBinding",
+      "request.account",
+      "resource.labels.email",
+      "resource.labels.role",
+      "resource.type",
+      "response.email",
+      "v1.locations.workforcePools",
+      "v1.projects.locations.workloadIdentityPools",
+      "v1.projects.serviceAccounts",
+      "v3beta.folders.locations.accessPolicies"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.serviceAccountUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/reference/rest",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-iamcreds",
+        "https://docs.cloud.google.com/iam/docs/authentication",
+        "https://docs.cloud.google.com/iam/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/reference/rest",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-iamcreds",
+        "https://docs.cloud.google.com/iam/docs/authentication",
+        "https://docs.cloud.google.com/iam/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/reference/rest",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-iamcreds",
+        "https://docs.cloud.google.com/iam/docs/authentication",
+        "https://docs.cloud.google.com/iam/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/reference/rest",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-iamcreds",
+        "https://docs.cloud.google.com/iam/docs/authentication",
+        "https://docs.cloud.google.com/iam/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/reference/rest",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-iamcreds",
+        "https://docs.cloud.google.com/iam/docs/authentication",
+        "https://docs.cloud.google.com/iam/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/reference/rest",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-iamcreds",
+        "https://docs.cloud.google.com/iam/docs/authentication",
+        "https://docs.cloud.google.com/iam/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/reference/rest",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-iamcreds",
+        "https://docs.cloud.google.com/iam/docs/authentication",
+        "https://docs.cloud.google.com/iam/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/reference/rest",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-iamcreds",
+        "https://docs.cloud.google.com/iam/docs/authentication",
+        "https://docs.cloud.google.com/iam/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/reference/rest",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-iamcreds",
+        "https://docs.cloud.google.com/iam/docs/authentication",
+        "https://docs.cloud.google.com/iam/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/reference/rest",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-iamcreds",
+        "https://docs.cloud.google.com/iam/docs/authentication",
+        "https://docs.cloud.google.com/iam/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/reference/rest",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-iamcreds",
+        "https://docs.cloud.google.com/iam/docs/authentication",
+        "https://docs.cloud.google.com/iam/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/reference/rest",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-iamcreds",
+        "https://docs.cloud.google.com/iam/docs/authentication",
+        "https://docs.cloud.google.com/iam/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/reference/rest",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-iamcreds",
+        "https://docs.cloud.google.com/iam/docs/authentication",
+        "https://docs.cloud.google.com/iam/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/reference/rest",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-iamcreds",
+        "https://docs.cloud.google.com/iam/docs/authentication",
+        "https://docs.cloud.google.com/iam/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/reference/rest",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/audit-logging-iamcreds",
+        "https://docs.cloud.google.com/iam/docs/authentication",
+        "https://docs.cloud.google.com/iam/docs/audit-logging"
+      ]
+    }
+  ]
+}

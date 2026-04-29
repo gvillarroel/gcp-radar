@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Config Sync",
+  "feature_slug": "config-sync",
+  "summary": "Synchronizes Kubernetes configuration to GKE clusters from source control or configuration files; GKE can manage Kubernetes deployments using configuration files stored in a Git repository.",
+  "extended_definition": "Synchronizes Kubernetes configuration to GKE clusters from source control or configuration files; GKE can manage Kubernetes deployments using configuration files stored in a Git repository.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-autopilot-privileged-workloads",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-developer-workflow",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Modern CI/CD with GKE: A software delivery framework \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 168,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Some common configuration items that you can manage centrally include the following: Kubernetes namespaces Quotas Role-based access controls (RBAC) Network policies You should consistently enforce these types of configurations throughout your clusters so that application teams don't misuse or abuse the infrastructure.",
+          "Policy Because developers can extend the base configurations that operators create, you need a way to constrain the resources created in the clusters that make up the platform.",
+          "You can use Config Sync to store and apply common configurations across your fleet of clusters."
+        ]
+      },
+      {
+        "title": "\"Modern CI/CD with GKE: Apply the developer workflow \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-developer-workflow",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 156,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This repository hosts the source code and steps to build containers in Dockerfile , kustomize configs that describe needed configurations of the application and skaffold.yaml that defines the deployment steps to be used by Cloud Deploy for CD.",
+          "Config Sync syncs the changes that arrive on prod branch of the repository acm-gke-infrastructure-repo with the production GKE clusters that results in landing zone creation for the application on production GKE clusters.",
+          "This document is part of a series: Modern CI/CD with GKE: A software delivery framework Modern CI/CD with GKE: Build a CI/CD system (reference architecture) Modern CI/CD with GKE: Apply the developer workflow (this document) In this tutorial, you use tools such as Skaffold , kustomize , Artifact Registry , Config Sync , Cloud Build and Cloud Deploy to develop, build and deploy your application."
+        ]
+      },
+      {
+        "title": "\"About privileged workload admission in Autopilot mode \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-autopilot-privileged-workloads",
+        "source_id": "site-docs-reference-2",
+        "final_score": 128,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following table describes the configuration that's needed in organization policies or clusters to support certain objectives: Objective Organization policy configuration Cluster configuration Allow all GKE-approved WorkloadAllowlists Do the following: Set the allowAnyGKEPath parameter to the default value of True .",
+          "This parameter supports the following values: True : cluster admins can configure clusters without modifying the allowlist configuration, with one or more allowlist paths that start with gke:// , or with an empty string to disable all allowlists for the cluster.",
+          "All Autopilot and Standard clusters in the organization, folder, or project are affected. allowPaths : a list of approved allowlist sources that cluster admins can specify values from when they configure a cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "skaffold.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-developer-workflow",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-autopilot-privileged-workloads"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-developer-workflow",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-autopilot-privileged-workloads"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-developer-workflow",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-autopilot-privileged-workloads"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-developer-workflow",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-autopilot-privileged-workloads"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.869Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-net/card.json",
+  "product_name": "App Engine flexible environment .NET",
+  "product_slug": "app-engine-flexible-environment-net",
+  "feature_name": "Specify a user-managed service account per App Engine version",
+  "feature_slug": "specify-a-user-managed-service-account-per-app-engine-version",
+  "summary": "You can now specify a user-managed service account for each App Engine version during deployment; Deployments can specify a user-managed service account for each App Engine version, enabling per-version privilege separation.",
+  "extended_definition": "You can now specify a user-managed service account for each App Engine version during deployment; Deployments can specify a user-managed service account for each App Engine version, enabling per-version privilege separation.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/mapping-custom-domains",
+      "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/user-managed-service-accounts",
+      "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/using-custom-domains-and-ssl"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Mapping custom domains \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/mapping-custom-domains",
+        "source_id": "site-docs-reference-2",
+        "final_score": 131,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If you use Cloud Load Balancing and serverless network endpoint group (NEGS) to route traffic to your App Engine app, we recommend that you map your custom domain to the load balancer instead of directly to your app, and use Google-managed SSL certificates that are created for the load balancer.",
+          "Deleting custom domains from your app In order to delete a custom domain mapping from your app, your account must have the App Engine Admin role ( roles/appengine.appAdmin ) or a custom role that contains the appengine.applications.update permission.",
+          "Delegating ownership to other Google Cloud users or service accounts If you need to delegate the ownership of your domain to other users or service accounts, you can add permission through the Search Console page."
+        ]
+      },
+      {
+        "title": "\"Mapping custom domains \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/using-custom-domains-and-ssl",
+        "source_id": "site-docs-reference-2",
+        "final_score": 131,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If you use Cloud Load Balancing and serverless network endpoint group (NEGS) to route traffic to your App Engine app, we recommend that you map your custom domain to the load balancer instead of directly to your app, and use Google-managed SSL certificates that are created for the load balancer.",
+          "Deleting custom domains from your app In order to delete a custom domain mapping from your app, your account must have the App Engine Admin role ( roles/appengine.appAdmin ) or a custom role that contains the appengine.applications.update permission.",
+          "Delegating ownership to other Google Cloud users or service accounts If you need to delegate the ownership of your domain to other users or service accounts, you can add permission through the Search Console page."
+        ]
+      },
+      {
+        "title": "\"Configure App Engine service accounts \\_|\\_ App Engine flexible environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/user-managed-service-accounts",
+        "source_id": "site-docs-reference-2",
+        "final_score": 129,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Your version-specific service account must be in the same project where you deploy your application. app.yaml In your app.yaml file, specify your service account by adding the service account element: service account: SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com Replace: SERVICE ACCOUNT NAME with the name of the service account that you created.",
+          "There are two types of service accounts in App Engine and any service account in your Cloud project can be assigned to act as either the app-level default or per-version service account: App-level default service account - This service account is used for all of your deployed services when you don't configure a \"per-version service account\".",
+          "Specify an app-level default service account during app creation During the initial App Engine application creation process, you can choose to assign a service account that you created or use the auto-created PROJECT ID @appspot.gserviceaccount.com service account to act as the default."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "appengine.appAdmin",
+      "appengine.applications.get",
+      "appengine.applications.update",
+      "appspot.gserviceaccount.com",
+      "iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/appengine.appAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/using-custom-domains-and-ssl",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/user-managed-service-accounts"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/using-custom-domains-and-ssl",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/user-managed-service-accounts"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/using-custom-domains-and-ssl",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/user-managed-service-accounts"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/using-custom-domains-and-ssl",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/user-managed-service-accounts"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/using-custom-domains-and-ssl",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/user-managed-service-accounts"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/using-custom-domains-and-ssl",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/user-managed-service-accounts"
+      ]
+    }
+  ]
+}

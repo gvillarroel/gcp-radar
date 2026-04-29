@@ -1,0 +1,146 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:10.745Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "Database clone",
+  "feature_slug": "database-clone",
+  "summary": "Firestore database cloning is available at the General Availability level; Firestore databases can be cloned into a new database from a selected timestamp.",
+  "extended_definition": "Firestore database cloning is available at the General Availability level; Firestore databases can be cloned into a new database from a selected timestamp.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/docs/cmek",
+      "https://docs.cloud.google.com/firestore/docs/manage-databases",
+      "https://docs.cloud.google.com/firestore/native/docs/cmek"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and manage databases \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/manage-databases",
+        "source_id": "site-docs-reference",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example shows how to configure CMEK encryption for the cloned database: gcloud firestore databases clone \\ --source-database = 'projects/example-project/databases/(default)' \\ --snapshot-time = '2025-06-01T10:20:00.00Z' \\ --destination-database = 'example-dest-db' \\ --encryption-type = 'customer-managed-encryption' \\ --kms-key-name = 'projects/example-project/locations/us-central1/keyRings/example-key-ring/cryptoKeys/example-key' Configure per-database access permissions You can use Identity and Access Management Conditions to configure access permissions on a per-database level.",
+          "Example: gcloud firestore databases clone \\ --source-database = 'projects/example-project/databases/(default)' \\ --snapshot-time = '2025-06-01T10:20:00.00Z' \\ --destination-database = 'example-dest-db' If you want to bind to some tags while cloning a database, use the previous command with the --tags flag, which is an optional list of tags KEY=VALUE pairs to bind.",
+          "If you want to specify a different encryption configuration for the cloned database, you can use Google Cloud CLI commands. gcloud Use the gcloud firestore databases clone command to clone a database: gcloud firestore databases clone \\ --source-database = ' SOURCE DATABASE ' \\ --snapshot-time = ' PITR TIMESTAMP ' \\ --destination-database = ' DESTINATION DATABASE ID ' Replace the following: SOURCE DATABASE : the database name of an existing database that you want to clone."
+        ]
+      },
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Firestore in Native mode \\_\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/cmek",
+        "source_id": "site-docs-reference",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CMEK and key availability When keys are unavailable or disabled, be aware of the following behaviors that can occur in CMEK-enabled databases: You can change Firestore point-in-time recovery (PITR) settings on a CMEK-enabled database even if the key is unavailable because PITR settings are database metadata, which isn't encrypted by CMEK.",
+          "For more information about cloning a CMEK-protected Firestore database, see Clone a CMEK-protected database .",
+          "For more information about cloning a Firestore database, see Clone a database ."
+        ]
+      },
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Firestore in Native mode \\_\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/cmek",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CMEK and key availability When keys are unavailable or disabled, be aware of the following behaviors that can occur in CMEK-enabled databases: You can change Firestore point-in-time recovery (PITR) settings on a CMEK-enabled database even if the key is unavailable because PITR settings are database metadata, which isn't encrypted by CMEK.",
+          "For more information about cloning a CMEK-protected Firestore database, see Clone a CMEK-protected database .",
+          "For more information about cloning a Firestore database, see Clone a database ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/manage-databases",
+        "https://docs.cloud.google.com/firestore/docs/cmek",
+        "https://docs.cloud.google.com/firestore/native/docs/cmek"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/manage-databases",
+        "https://docs.cloud.google.com/firestore/docs/cmek",
+        "https://docs.cloud.google.com/firestore/native/docs/cmek"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/manage-databases",
+        "https://docs.cloud.google.com/firestore/docs/cmek",
+        "https://docs.cloud.google.com/firestore/native/docs/cmek"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/manage-databases",
+        "https://docs.cloud.google.com/firestore/docs/cmek",
+        "https://docs.cloud.google.com/firestore/native/docs/cmek"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/manage-databases",
+        "https://docs.cloud.google.com/firestore/docs/cmek",
+        "https://docs.cloud.google.com/firestore/native/docs/cmek"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/manage-databases",
+        "https://docs.cloud.google.com/firestore/docs/cmek",
+        "https://docs.cloud.google.com/firestore/native/docs/cmek"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/manage-databases",
+        "https://docs.cloud.google.com/firestore/docs/cmek",
+        "https://docs.cloud.google.com/firestore/native/docs/cmek"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/manage-databases",
+        "https://docs.cloud.google.com/firestore/docs/cmek",
+        "https://docs.cloud.google.com/firestore/native/docs/cmek"
+      ]
+    }
+  ]
+}

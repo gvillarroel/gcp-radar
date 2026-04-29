@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:45.909Z",
+  "source_step08_card": "data/step-08/current/products/carbon-footprint/card.json",
+  "product_name": "Carbon Footprint",
+  "product_slug": "carbon-footprint",
+  "feature_name": "Cloud Carbon console data export management",
+  "feature_slug": "cloud-carbon-console-data-export-management",
+  "summary": "The Cloud Carbon console can display accessible Carbon Footprint exports for a billing account and help manage those exports in BigQuery; The Cloud Carbon console can display accessible Carbon Footprint exports for a billing account and help manage those exports in BigQuery.",
+  "extended_definition": "The Cloud Carbon console can display accessible Carbon Footprint exports for a billing account and help manage those exports in BigQuery; The Cloud Carbon console can display accessible Carbon Footprint exports for a billing account and help manage those exports in BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/carbon-footprint/docs/api",
+      "https://docs.cloud.google.com/carbon-footprint/docs/export",
+      "https://docs.cloud.google.com/carbon-footprint/docs/view-carbon-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Export your carbon footprint \\_|\\_ Carbon Footprint \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/carbon-footprint/docs/export",
+        "source_id": "site-docs-reference",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Console Take the following steps to initiate the export: Go to Carbon Footprint Select the Cloud Billing account you want to export from the Billing account menu.",
+          "The following query lets you save the entire contents of the exported table: SELECT usage month , billing account id , project . number AS project number , project . id AS project id , service . id AS service id , service . description AS service description , location . location AS location , location . region AS region , carbon model version , carbon footprint kgCO2e . scope1 AS carbon footprint scope1 , carbon footprint kgCO2e . scope2 . location based AS carbon footprint scope2 location based , carbon footprint kgCO2e . scope3 AS carbon footprint scope3 , carbon footprint total kgCO2e . location based AS carbon footprint total location based FROM PROJECT .",
+          "Exporting to Google Sheets or CSV After you've configured your carbon footprint export to BigQuery and the scheduled export has completed, you can export that data from BigQuery to Google Sheets or CSV."
+        ]
+      },
+      {
+        "title": "\"Export and read your carbon footprint using an API \\_|\\_ Carbon Footprint\\",
+        "url": "https://docs.cloud.google.com/carbon-footprint/docs/api",
+        "source_id": "site-docs-reference",
+        "final_score": 96,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Costs and usage management Carbon Footprint Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "However, you can export your carbon footprint via the BigQuery Data Transfer Service API and then query the data using the BigQuery API.",
+          "Export and read your carbon footprint using an API Carbon Footprint does not have a dedicated public API."
+        ]
+      },
+      {
+        "title": "View Carbon Footprint data \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/carbon-footprint/docs/view-carbon-data",
+        "source_id": "site-docs-reference",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "View Carbon Footprint data The Carbon Footprint dashboard displays estimated greenhouse gas emissions associated with the usage of covered Google Cloud services for the selected billing account.",
+          "Home Documentation Costs and usage management Carbon Footprint Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Carbon footprint data is given in metric tons of CO 2 equivalent (tCO 2 e) in the UI dashboard and in kilograms of CO 2 equivalent (kgCO 2 e) in the data export."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/carbon-footprint/docs/export",
+        "https://docs.cloud.google.com/carbon-footprint/docs/api",
+        "https://docs.cloud.google.com/carbon-footprint/docs/view-carbon-data"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/carbon-footprint/docs/export",
+        "https://docs.cloud.google.com/carbon-footprint/docs/api",
+        "https://docs.cloud.google.com/carbon-footprint/docs/view-carbon-data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/carbon-footprint/docs/export",
+        "https://docs.cloud.google.com/carbon-footprint/docs/api",
+        "https://docs.cloud.google.com/carbon-footprint/docs/view-carbon-data"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/carbon-footprint/docs/export",
+        "https://docs.cloud.google.com/carbon-footprint/docs/api",
+        "https://docs.cloud.google.com/carbon-footprint/docs/view-carbon-data"
+      ]
+    }
+  ]
+}

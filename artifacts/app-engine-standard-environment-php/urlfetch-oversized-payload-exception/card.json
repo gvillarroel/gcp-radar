@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.221Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-php/card.json",
+  "product_name": "App Engine standard environment PHP",
+  "product_slug": "app-engine-standard-environment-php",
+  "feature_name": "URLFetch oversized payload exception",
+  "feature_slug": "urlfetch-oversized-payload-exception",
+  "summary": "URLFetch now raises RequestPayloadTooLargeException when request payloads exceed supported size limits.",
+  "extended_definition": "URLFetch now raises RequestPayloadTooLargeException when request payloads exceed supported size limits.",
+  "lifecycle": {
+    "latest_feature_date": "2015-08-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/quotas",
+      "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access",
+      "https://docs.cloud.google.com/appengine/docs/standard/php/services/access"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/quotas",
+        "source_id": "site-docs-reference-4",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "For all other resources, when the resource is depleted, an attempt in the application to consume the resource results in an exception.",
+          "Resource Daily limit Maximum rate UrlFetch API calls 860,000,000 calls 660,000 calls/minute UrlFetch data sent 4.5 TB 3,600 MB/minute UrlFetch data received 4.5 TB 3,600 MB/minute Networking limits The following networking limits apply to App Engine: Outbound connections per second per instance: 500 (cannot be increased) Outbound DNS resolutions per second per instance: 100 (cannot be increased) Maximum packets per second per instance: 80,000 Maximum bits per second per instance: 100,000,000 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The Cloud Quotas system does the following: Monitors your consumption of Google Cloud products and services Restricts your consumption of those resources Provides a way to request changes to the quota value and automate quota adjustments In most cases, when you attempt to consume more of a resource than its quota allows, the system blocks access to the resource, and the task that you're trying to perform fails."
+        ]
+      },
+      {
+        "title": "\"Access legacy bundled services for PHP \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access",
+        "source_id": "site-docs-reference-3",
+        "final_score": 58,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Compared to the stream handler option, the UrlFetch class configuration is also simpler, in that it does not require use of various PHP APIs such as: stream context create() stream wrapper unregister() stream wrapper register() file get contents() The following UrlFetch Class example is equivalent to the stream handler example: PHP 7/8 use google\\appengine\\api\\urlfetch\\UrlFetch; ... $urlfetch = new UrlFetch(); $result = $urlfetch->fetch($url, 'POST', $headers, http build query($data)); echo $result->getContent(); Users You do not need to make changes to your app's configuration when upgrading to PHP.",
+          "PHP 5.5 ... $context = [ 'http' => [ 'method' => 'POST', 'header' => $headers, 'content' => http build query($data), ] ]; $context = stream context create($context); // Using file get contents and the Url Fetch service. $result = file get contents('http://example.com', false, $context); // Print Http Response Headers print r($http response header); PHP 7/8 use google\\appengine\\api\\urlfetch\\UrlFetchStream; ... $context = [ 'http' => [ 'method' => 'POST', 'header' => $headers, 'content' => http build query($data), ] ]; $context = stream context create($context); stream wrapper unregister(\"http\"); stream wrapper register(\"http\", \"UrlFetchStream\"); // Now using fopen and the Url Fetch service. $result = fopen('http://example.com', 'r', false, $context); // Print Http Response Headers $meta data = stream get meta data($result); $headers = $meta data['wrapper data']; print r($headers); stream wrapper unregister(\"http\"); stream wrapper restore(\"http\"); Option 2.",
+          "No option to use the native php stream wrapper. $result = file get contents('http://example.com', false, $context); echo $result; PHP 7/8 use google\\appengine\\api\\urlfetch\\UrlFetchStream; ... $context = [ 'http' => [ 'method' => 'POST', 'header' => $headers, 'content' => http build query($data), ] ]; $context = stream context create($context); // Using the native php stream wrapper. $result = file get contents('http://example.com', false, $context); echo $result; stream wrapper unregister(\"http\"); stream wrapper register(\"http\", \"UrlFetchStream\"); // Now using the Url Fetch service. $result = file get contents('http://example.com', false, $context); echo $result; stream wrapper unregister(\"http\"); stream wrapper restore(\"http\"); // Now using the native php stream wrapper again."
+        ]
+      },
+      {
+        "title": "\"Access legacy bundled services for PHP \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/php/services/access",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 58,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Compared to the stream handler option, the UrlFetch class configuration is also simpler, in that it does not require use of various PHP APIs such as: stream context create() stream wrapper unregister() stream wrapper register() file get contents() The following UrlFetch Class example is equivalent to the stream handler example: PHP 7/8 use google\\appengine\\api\\urlfetch\\UrlFetch; ... $urlfetch = new UrlFetch(); $result = $urlfetch->fetch($url, 'POST', $headers, http build query($data)); echo $result->getContent(); Users You do not need to make changes to your app's configuration when upgrading to PHP.",
+          "PHP 5.5 ... $context = [ 'http' => [ 'method' => 'POST', 'header' => $headers, 'content' => http build query($data), ] ]; $context = stream context create($context); // Using file get contents and the Url Fetch service. $result = file get contents('http://example.com', false, $context); // Print Http Response Headers print r($http response header); PHP 7/8 use google\\appengine\\api\\urlfetch\\UrlFetchStream; ... $context = [ 'http' => [ 'method' => 'POST', 'header' => $headers, 'content' => http build query($data), ] ]; $context = stream context create($context); stream wrapper unregister(\"http\"); stream wrapper register(\"http\", \"UrlFetchStream\"); // Now using fopen and the Url Fetch service. $result = fopen('http://example.com', 'r', false, $context); // Print Http Response Headers $meta data = stream get meta data($result); $headers = $meta data['wrapper data']; print r($headers); stream wrapper unregister(\"http\"); stream wrapper restore(\"http\"); Option 2.",
+          "No option to use the native php stream wrapper. $result = file get contents('http://example.com', false, $context); echo $result; PHP 7/8 use google\\appengine\\api\\urlfetch\\UrlFetchStream; ... $context = [ 'http' => [ 'method' => 'POST', 'header' => $headers, 'content' => http build query($data), ] ]; $context = stream context create($context); // Using the native php stream wrapper. $result = file get contents('http://example.com', false, $context); echo $result; stream wrapper unregister(\"http\"); stream wrapper register(\"http\", \"UrlFetchStream\"); // Now using the Url Fetch service. $result = file get contents('http://example.com', false, $context); echo $result; stream wrapper unregister(\"http\"); stream wrapper restore(\"http\"); // Now using the native php stream wrapper again."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access",
+        "https://docs.cloud.google.com/appengine/docs/standard/php/services/access"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access",
+        "https://docs.cloud.google.com/appengine/docs/standard/php/services/access"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access",
+        "https://docs.cloud.google.com/appengine/docs/standard/php/services/access"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access",
+        "https://docs.cloud.google.com/appengine/docs/standard/php/services/access"
+      ]
+    }
+  ]
+}

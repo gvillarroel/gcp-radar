@@ -1,0 +1,120 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:22.796Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers",
+  "feature_name": "KubeVirt UEFI migration support",
+  "feature_slug": "kubevirt-uefi-migration-support",
+  "summary": "VMs using UEFI firmware can be migrated without user interaction.",
+  "extended_definition": "VMs using UEFI firmware can be migrated without user interaction.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/linux/customizing-a-migration-plan",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customize migration plan for Linux VMs \\_|\\_ Migrate to Containers \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/linux/customizing-a-migration-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "Customize service endpoints The migration plan includes the endpoints array that defines the ports and protocols used to create the Kubernetes Services provided by the migrated workload.",
+          "You can optionally edit the migration plan to add your own list of services to disable in the migrated container.",
+          "Consider excluding the below detected files and any other sparse files by uncommenting and placing them in the global filters section, or export them to a persistent volume by specifying them in the data folder section. - '- /a/b' # (1.8GB, last access 2022-02-02 10:50:30, last modified 2020-02-02 10:50:30) - '- /a/d' # (1.8GB, last access 2022-02-02 10:50:30, last modified 2020-02-02 10:50:30) Set the name of the container image The name field value in the image section defines the name of the image created from a migrated VM that is used for the container."
+        ]
+      },
+      {
+        "title": "\"Customize migration plan for Tomcat servers \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "Memory allocation During the migration process, you can specify the memory limits of applications migrated to individual containers.",
+          "To turn off the probes, remove the probes section from the YAML file. tomcatServers : - name : latest images : - name : tomcat-latest ports : - 8080 probes : livenessProbe : tcpSocket : port : 8080 readinessProbe : tcpSocket : port : 8080 You can change this migration plan to use an existing Tomcat HTTP endpoint. tomcatServers : - name : latest images : - name : tomcat-latest ports : - 8080 probes : livenessProbe : httpGet : path : /healthz port : 8080 httpHeaders : - name : Custom-Header value : Awesome initialDelaySeconds : 3 periodSeconds : 3 readinessProbe : httpGet : tcpSocket : port : 8080 There are four predefined ways to check a container using a probe.",
+          "Modify env variables on the script and add definitions to the migrated tomcat server, if needed (less recommended than adding env variables directly to CATALINA OPTS) by uncomment the line below #ADD --chown=root:root setenv.sh /usr/local/tomcat/bin/setenv.sh Add JVM environment variables for the tomcat server ENV CATALINA OPTS = \"${CATALINA OPTS} -XX:MaxRAMPercentage=50.0 -XX:InitialRAMPercentage=50.0 -Xss10M\" You might also set Tomcat environment variables using the setenv.sh script, which is located in the /bin folder on your Tomcat server."
+        ]
+      },
+      {
+        "title": "\"Customize migration plan for Windows IIS services \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "Edit the connection strings sections Migrate to Containers automatically copies connection strings detected in the migrated VM to the migration plan.",
+          "The probes are disabled by default, to enable the probes, set the enabled flag to true . images : name : IMAGE NAME probes : enabled : false livenessProbe : probehandler : exec : command : - powershell.exe - C:\\m4a\\probe.ps1 initialdelayseconds : 0 timeoutseconds : 1 periodseconds : 10 successthreshold : 1 failurethreshold : 3 terminationgraceperiodseconds : null readinessProbe : probehandler : exec : command : - powershell.exe - C:\\m4a\\probe.ps1 initialdelayseconds : 0 timeoutseconds : 1 periodseconds : 10 successthreshold : 1 failurethreshold : 3 terminationgraceperiodseconds : null The windowsServices section Windows containers created during a migration run and monitor a single Windows IIS service.",
+          "To run additional services in the migrated container, add entries to the windowsServices section, and copy the necessary binaries in the useractions section . version: v1 globalSettings: target: … globalIIS: … images: - name: migrated-image-zgwb2 workloads: sites: site: - applications: ... bindings: - port: 80 protocol: http name: Default Web Site … windowsServices: - MyService useractions: files: - source: C:\\Program Files\\MyService target: C:\\Program Files\\MyService registry: currentcontrolset: - key: services\\MyService The useractions section The useractions section specifies additional files and registry keys that you might want to migrate."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "powershell.exe",
+      "probe.ps1",
+      "setenv.sh",
+      "v4.0",
+      "v4.5"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/linux/customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/linux/customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/linux/customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/linux/customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:30.960Z",
+  "source_step08_card": "data/step-08/current/products/transfer-appliance/card.json",
+  "product_name": "Transfer Appliance",
+  "product_slug": "transfer-appliance",
+  "feature_name": "Transfer Appliance Cloud console order and management",
+  "feature_slug": "transfer-appliance-cloud-console-order-and-management",
+  "summary": "Transfer Appliance can be ordered, viewed, tracked, and managed directly from the Google Cloud console, including order and appliance management.",
+  "extended_definition": "Transfer Appliance can be ordered, viewed, tracked, and managed directly from the Google Cloud console, including order and appliance management.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control",
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Security and encryption \\_|\\_ Transfer Appliance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "source_id": "site-docs-reference",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The KEK is generated as a Cloud Key Management Service (Cloud KMS) asymmetric key in Google Cloud, and we download the KEK public key to the appliance before we ship it to you.",
+          "This page describes how Transfer Appliance secures and encrypts your data.",
+          "The following are the settings used to create Google-owned and managed keys: Region : Global Protection level: Software Purpose : Asymmetric decrypt Algorithm: 4096-bit RSA - OAEP Padding - SHA256 Digest Destroying the KEK before the session is completed results in complete data loss on the appliance."
+        ]
+      },
+      {
+        "title": "High-level overview \\_|\\_ Transfer Appliance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "source_id": "site-docs-root",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before connecting the appliance to your network, validate that it hasn't been tampered with during shipping and submit the Transfer Appliance Attestation Passcode returned by the appliance in the appliance detail page of the Google Cloud console.",
+          "This page describes the high-level procedure for ordering, installing, and returning Transfer Appliance.",
+          "You can delete these directories once your data transfer is complete and the data is fully available in your Transfer Appliance bucket."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Transfer Appliance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 245,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Role details The following table describes in detail the predefined roles for Transfer Appliance: Role Description Included Permissions Transfer Appliance Admin ( roles/transferappliance. admin ) Provides all Transfer Appliance permissions, including the ability to order new appliances and update existing appliance metadata. transferappliance.appliances. list get create update delete transferappliance.orders. list get create update delete transferappliance.savedAddresses. list get create update delete transferappliance.operations. list get cancel delete transferappliance.locations. list get transferappliance.projects. list get transferappliance.credentials. get Transfer Appliance Viewer ( roles/transferappliance. viewer ) Grants the required permissions for read-only access to all Transfer Appliance resources. transferappliance.appliances. list get transferappliance.orders. list get transferappliance.savedAddresses. list get transferappliance.operations. list get transferappliance.locations. list get resourcemanager.projects. list get Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Permissions The following resources exist for Transfer Appliance: appliances orders savedAddresses operations locations credentials Appliance permissions The following table describes permissions for Transfer Appliance appliances resources: Permission Description transferappliance.appliances.list Permission to view a list of appliances and information related to them, including the ID, order status, appliance type and model, firmware version, activation status, and connection status. transferappliance.appliances.get Permission to view detailed information about any appliance.",
+          "In addition to the information allowed by transferappliance.appliances.list, this permission allows access to the appliance's region, transfer job IDs, Cloud Storage destination, encryption type, key resource name, online functionality setting, and detailed order-related information such as tracking number. transferappliance.appliances.create Permission to create an appliance resource."
+        ]
+      },
+      {
+        "title": "Transfer Appliance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 237,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Transfer Appliance is available in the following locations: Location TA40(Rackable) TA300(Rackable) TA40(Freestanding) TA300(Freestanding) United States European Union member states United Kingdom Singapore Japan Canada Australia India For a complete list of countries where Transfer Appliance is available, refer to the Order Appliance page on the Google Cloud console.",
+          "Data migration Offline data transfer is suited for moving large amounts of existing backup images and archives to Cloud Storage, which can be stored in ultra low-cost, highly-durable, and highly available storage classes such as Archive Storage .",
+          "To ensure Transfer Appliance is trusted and safe to connect to your devices, Transfer Appliance offers the following features: Tamper resistant : Bad actors cannot easily open Transfer Appliance's physical case."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "resourcemanager.projects",
+      "transferappliance.appliances",
+      "transferappliance.appliances.create",
+      "transferappliance.appliances.get",
+      "transferappliance.appliances.list",
+      "transferappliance.credentials",
+      "transferappliance.locations",
+      "transferappliance.operations",
+      "transferappliance.orders",
+      "transferappliance.projects",
+      "transferappliance.savedAddresses"
+    ],
+    "missing_inventory_roles": [
+      "roles/transferappliance"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview"
+      ]
+    }
+  ]
+}

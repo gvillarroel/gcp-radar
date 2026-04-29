@@ -1,0 +1,153 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:12.462Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "Llama 3.1 fine-tuning in Cloud console",
+  "feature_slug": "llama-3-1-fine-tuning-in-cloud-console",
+  "summary": "Llama 3.1 can be fine-tuned from the Cloud console.",
+  "extended_definition": "Llama 3.1 can be fine-tuned from the Cloud console.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Context Caching for Fine-tuned Gemini Models \\_|\\_ Generative AI on Vertex\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 240,
+        "relevance": "",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /cachedContents\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"name\": \"projects/ PROJECT NUMBER /locations/us-central1/cachedContents/ CACHE ID \", \"model\": \"projects/ PROJECT ID /locations/ LOCATION /models/ MODEL ID @ MODEL VERSION \", \"createTime\": \"2024-06-04T01:11:50.808236Z\", \"updateTime\": \"2024-06-04T01:11:50.808236Z\", \"expireTime\": \"2024-06-04T02:11:50.794542Z\" } Example curl command LOCATION = \"us-central1\" MODEL ID = \"model-id\" PROJECT ID = \"test-project\" MODEL VERSION = 1 MIME TYPE = \"video/mp4\" CACHED CONTENT URI = \"gs://path-to-bucket/video-file-name.mp4\" curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ https:// ${ LOCATION } -aiplatform.googleapis.com/v1/projects/ ${ PROJECT ID } /locations/ ${ LOCATION } /cachedContents -d \\ '{ \"model\":\"projects/${PROJECT ID}/locations/${LOCATION}/models/${MODEL ID}@${MODEL VERSION}\", \"contents\": [ { \"role\": \"user\", \"parts\": [ { \"fileData\": { \"mimeType\": \"${MIME TYPE}\", \"fileUri\": \"${CACHED CONTENT URI}\" } } ] } ] }' Use a context cache for a fine-tuned model The procedure for using a context cache for a fine-tuned model largely follows the steps outlined in Use a context cache .",
+          "You can use context caching for your fine-tuned Gemini models to improve performance and reduce costs for prompts that include large amounts of context.",
+          "Prerequisites Fine-tuning a Gemini Model: You need a deployed fine-tuned Gemini model based on a supported base model (see Context caching overview )."
+        ]
+      },
+      {
+        "title": "\"Deploy and inference Gemma using Model Garden and Vertex AI GPU-backed endpoints\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 209,
+        "relevance": "",
+        "evidence_snippets": [
+          "To check the deployment status, you can try one of the following methods: 1) Look for endpoint ENDPOINT DISPLAY NAME at the [Vertex AI] -> [Online prediction] tab in Cloud Console 2) Use gcloud ai operations describe OPERATION ID --region= LOCATION to find the status of the deployment long-running operation To see details about your deployment, run the gcloud ai endpoints list --list-model-garden-endpoints-only command: gcloud ai endpoints list --list-model-garden-endpoints-only \\ --region = LOCATION ID Replace LOCATION ID with the region where you deployed the model.",
+          "You can view the machine type, accelerator type, and container image URI that Model Garden has verified for a particular model. import vertexai from vertexai import model garden TODO(developer): Update and un-comment below lines PROJECT ID = \"your-project-id\" model = \"google/gemma3@gemma-3-1b-it\" vertexai . init ( project = PROJECT ID , location = \"us-central1\" ) For Hugging Face modelsm the format is the Hugging Face model name, as in \"meta-llama/Llama-3.3-70B-Instruct\".",
+          "For more information, see Set up authentication for a local development environment . async function gemma2PredictGpu ( predictionServiceClient ) { // Imports the Google Cloud Prediction Service Client library const { // TODO(developer): Uncomment PredictionServiceClient before running the sample. // PredictionServiceClient, helpers , } = require ( ' @google-cloud/aiplatform ' ); / TODO(developer): Update these variables before running the sample. / const projectId = 'your-project-id' ; const endpointRegion = 'your-vertex-endpoint-region' ; const endpointId = 'your-vertex-endpoint-id' ; // Default configuration const config = { maxOutputTokens : 1024 , temperature : 0.9 , topP : 1.0 , topK : 1 }; // Prompt used in the prediction const prompt = 'Why is the sky blue?' ; // Encapsulate the prompt in a correct format for GPUs // Example format: [{inputs: 'Why is the sky blue?', parameters: {temperature: 0.9}}] const input = { inputs : prompt , parameters : config , }; // Convert input message to a list of GAPIC instances for model input const instances = [ helpers . toValue ( input )]; // TODO(developer): Uncomment apiEndpoint and predictionServiceClient before running the sample. // const apiEndpoint = ${endpointRegion}-aiplatform.googleapis.com; // Create a client // predictionServiceClient = new PredictionServiceClient({apiEndpoint}); // Call the Gemma2 endpoint const gemma2Endpoint = projects/ ${ projectId } /locations/ ${ endpointRegion } /endpoints/ ${ endpointId } ; const [ response ] = await predictionServiceClient . predict ({ endpoint : gemma2Endpoint , instances , }); const predictions = response . predictions ; const text = predictions [ 0 ]. stringValue ; console . log ( 'Predictions:' , text ); return text ; } module . exports = gemma2PredictGpu ; // TODO(developer): Uncomment below lines before running the sample. // gemma2PredictGpu(...process.argv.slice(2)).catch(err => { // console.error(err.message); // process.exitCode = 1; // }); Java Before trying this sample, follow the Java setup instructions in the Vertex AI quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "\"Get batch text embeddings inferences \\_|\\_ Generative AI on Vertex AI \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 181,
+        "relevance": "",
+        "evidence_snippets": [
+          "Batches . html let job = await client . batches . create ({ model : 'text-embedding-005' , // Source link : https : // storage . cloud . google . com / cloud - samples - data / batch / prompt for batch gemini predict . jsonl src : 'gs://cloud-samples-data/generative-ai/embeddings/embeddings input.jsonl' , config : { dest : outputUri , }, }); console . log ( Job name : $ { job . name } ); console . log ( Job state : $ { job . state } ); // Example response : // Job name : projects /% PROJECT ID %/ locations / us - central1 / batchPredictionJobs / 9876453210000000000 // Job state : JOB STATE PENDING const completedStates = new Set ([ 'JOB STATE SUCCEEDED' , 'JOB STATE FAILED' , 'JOB STATE CANCELLED' , 'JOB STATE PAUSED' , ]); while ( ! completedStates . has ( job . state )) { await new Promise ( resolve = > setTimeout ( resolve , 30000 )); job = await client . batches . get ({ name : job . name }); console . log ( Job state : $ { job . state } ); } // Example response : // Job state : JOB STATE PENDING // Job state : JOB STATE RUNNING // Job state : JOB STATE RUNNING // ... // Job state : JOB STATE SUCCEEDED return job . state ; } Java Learn how to install or update the Java .",
+          "Once created , it can be reused for multiple requests . try ( Client client = Client . builder () . location ( \"us-central1\" ) . vertexAI ( true ) . httpOptions ( HttpOptions . builder () . apiVersion ( \"v1\" ) . build ()) . build ()) { // See the documentation : // https : // googleapis . github . io / java - genai / javadoc / com / google / genai / Batches . html BatchJobSource batchJobSource = BatchJobSource . builder () // Source link : // https : // storage . cloud . google . com / cloud - samples - data / generative - ai / embeddings / embeddings input . jsonl . gcsUri ( \"gs://cloud-samples-data/generative-ai/embeddings/embeddings input.jsonl\" ) . format ( \"jsonl\" ) . build (); CreateBatchJobConfig batchJobConfig = CreateBatchJobConfig . builder () . displayName ( \"your-display-name\" ) . dest ( BatchJobDestination . builder () . gcsUri ( outputGcsUri ) . format ( \"jsonl\" ) . build ()) . build (); BatchJob batchJob = client . batches . create ( modelId , batchJobSource , batchJobConfig ); String jobName = batchJob . name () . orElseThrow (() - > new IllegalStateException ( \"Missing job name\" )); JobState jobState = batchJob . state () . orElseThrow (() - > new IllegalStateException ( \"Missing job state\" )); System . out . println ( \"Job name: \" + jobName ); System . out . println ( \"Job state: \" + jobState ); // Job name : projects /.../ locations /.../ batchPredictionJobs / 6205497615459549184 // Job state : JOB STATE PENDING // See the documentation : // https : // googleapis . github . io / java - genai / javadoc / com / google / genai / types / BatchJob . html Set<JobState .",
+          "BigQuery input example This example shows a single column BigQuery table. content \"Give a short description of a machine learning model:\" \"Best recipe for banana bread:\" BigQuery output example content predictions status \"Give a short description of a machine learning model:\" ' [{ \"embeddings\" : { \"statistics\" :{ \"token count\" : 8 , \"truncated\" : false }, \"Values\" :[ 0.1 , .... ] } } ] ' \"Best recipe for banana bread:\" ' [{ \"embeddings\" : { \"statistics\" :{ \"token count\" : 3 , \"truncated\" : false }, \"Values\" :[ 0.2 , .... ] } } ] ' Request a batch response Depending on the number of input items that you've submitted, a batch generation task can take some time to complete."
+        ]
+      },
+      {
+        "title": "\"Get multimodal embeddings \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 175,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample.\\ (Not necessary if passing values as arguments) / // const project = 'YOUR PROJECT ID'; // const location = 'YOUR PROJECT LOCATION'; // const baseImagePath = 'YOUR BASE IMAGE PATH'; // const textPrompt = 'YOUR TEXT PROMPT'; const aiplatform = require ( ' @google-cloud/aiplatform ' ); // Imports the Google Cloud Prediction service client const { PredictionServiceClient } = aiplatform . v1 ; // Import the helper module for converting arbitrary protobuf.Value objects. const { helpers } = aiplatform ; // Specifies the location of the api endpoint const clientOptions = { apiEndpoint : 'us-central1-aiplatform.googleapis.com' , }; const publisher = 'google' ; const model = 'multimodalembedding@001' ; // Instantiates a client const predictionServiceClient = new PredictionServiceClient ( clientOptions ); async function predictImageFromImageAndText () { // Configure the parent resource const endpoint = projects/ ${ project } /locations/ ${ location } /publishers/ ${ publisher } /models/ ${ model } ; const fs = require ( 'fs' ); const imageFile = fs . readFileSync ( baseImagePath ); // Convert the image data to a Buffer and base64 encode it. const encodedImage = Buffer . from ( imageFile ). toString ( 'base64' ); const prompt = { text : textPrompt , image : { bytesBase64Encoded : encodedImage , }, }; const instanceValue = helpers . toValue ( prompt ); const instances = [ instanceValue ]; const parameter = { sampleCount : 1 , }; const parameters = helpers . toValue ( parameter ); const request = { endpoint , instances , parameters , }; // Predict request const [ response ] = await predictionServiceClient . predict ( request ); console . log ( 'Get image embedding response' ); const predictions = response . predictions ; console . log ( '\\tPredictions :' ); for ( const prediction of predictions ) { console . log ( \\t\\tPrediction : ${ JSON . stringify ( prediction ) } ); } } await predictImageFromImageAndText (); Java Before trying this sample, follow the Java setup instructions in the Vertex AI quickstart using client libraries .",
+          "The following table summarizes the three modes you can use for video embeddings: Mode Maximum number of embeddings per minute Video embedding interval (minimum value) Essential 4 15 This corresponds to: intervalSec >= 15 Standard 8 8 This corresponds to: 8 <= intervalSec < 15 Plus 15 4 This corresponds to: 4 <= intervalSec < 8 Video embeddings best practices Consider the following when you send video embedding requests: To generate a single embedding for the first two minutes of an input video of any length, use the following videoSegmentConfig setting: request.json : // other request body content \"videoSegmentConfig\" : { \"intervalSec\" : 120 } // other request body content To generate embedding for a video with a length greater than two minutes, you can send multiple requests that specify the start and end times in the videoSegmentConfig : request1.json : // other request body content \"videoSegmentConfig\" : { \"startOffsetSec\" : 0 , \"endOffsetSec\" : 120 } // other request body content request2.json : // other request body content \"videoSegmentConfig\" : { \"startOffsetSec\" : 120 , \"endOffsetSec\" : 240 } // other request body content Get video embeddings Use the following sample to get embeddings for video content alone.",
+          "This client only needs to be created // once, and can be reused for multiple requests. try ( PredictionServiceClient predictionServiceClient = PredictionServiceClient . create ( predictionServiceSettings )) { final EndpointName endpointName = EndpointName . ofProjectLocationPublisherModelName ( project , location , publisher , model ); // Convert the image to Base64 byte [] imageData = Base64 . getEncoder (). encode ( Files . readAllBytes ( Paths . get ( baseImagePath ))); String encodedImage = new String ( imageData , StandardCharsets ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "console.error",
+      "err.message",
+      "input.jsonl",
+      "name.mp4",
+      "process.argv.slice",
+      "process.exitCode",
+      "protobuf.Value",
+      "request.json",
+      "request1.json",
+      "request2.json",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings"
+      ]
+    }
+  ]
+}

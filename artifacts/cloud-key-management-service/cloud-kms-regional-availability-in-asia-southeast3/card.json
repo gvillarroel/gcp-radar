@@ -1,0 +1,192 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:48.689Z",
+  "source_step08_card": "data/step-08/current/products/cloud-key-management-service/card.json",
+  "product_name": "Cloud Key Management Service",
+  "product_slug": "cloud-key-management-service",
+  "feature_name": "Cloud KMS regional availability in asia-southeast3",
+  "feature_slug": "cloud-kms-regional-availability-in-asia-southeast3",
+  "summary": "Cloud KMS is available in the asia-southeast3 region.",
+  "extended_definition": "Cloud KMS is available in the asia-southeast3 region.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+      "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+      "https://docs.cloud.google.com/kms/docs/consistency",
+      "https://docs.cloud.google.com/kms/docs/ekm"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Best practices for using CMEKs \\_|\\_ Cloud Key Management Service \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "source_id": "site-iam-reference",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "For workloads that require high availability or disaster recovery capabilities across multiple locations, it's your responsibility to assess whether your workload is resilient in the event that Cloud KMS becomes unavailable in a certain region.",
+          "For example, a Compute Engine persistent disk encrypted with a Cloud KMS key from region A can't be recreated in region B in a disaster recovery scenario where region A is unavailable.",
+          "The following table lists which IAM roles are typically associated with which job function: IAM role Description NIST SP 800-152 designation roles/cloudkms.admin Provides access to Cloud KMS resources, except for access to restricted resource types and cryptographic operations."
+        ]
+      },
+      {
+        "title": "\"Cloud External Key Manager \\_|\\_ Cloud Key Management Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kms/docs/ekm",
+        "source_id": "site-docs-root",
+        "final_score": 172,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud EKM over the internet: available in most Google Cloud locations where Cloud KMS is available, including regional and multi-regional locations.",
+          "Cloud EKM over a VPC: available in most regional locations where Cloud KMS is available.",
+          "If an external key is unavailable, Cloud KMS returns a FAILED PRECONDITION error and provides details in the PreconditionFailure error detail."
+        ]
+      },
+      {
+        "title": "\"Cloud KMS Inventory Service audit logging \\_|\\_ Cloud Key Management Service\\",
+        "url": "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "source_id": "site-iam-reference",
+        "final_score": 171,
+        "relevance": "",
+        "evidence_snippets": [
+          "Permission type Methods OTHER google.cloud.kms.inventory.v1.KeyDashboardService.ListCryptoKeys : To enable this log, enable ADMIN READ under the service cloudkms.googleapis.com . google.cloud.kms.inventory.v1.KeyTrackingService.GetProtectedResourcesSummary : To enable this log, enable ADMIN READ under the service cloudkms.googleapis.com . google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources : To enable this log, enable ADMIN READ under the service cloudkms.googleapis.com .",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.kms.inventory.v1.KeyTrackingService.GetProtectedResourcesSummary\" SearchProtectedResources Method : google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources Audit log type : Data access Permissions : cloudkms.cryptoKeys.get - ADMIN READ cloudkms.protectedResources.search - ADMIN READ Method is a long-running or streaming operation : No.",
+          "API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Cloud KMS Inventory Service. google.cloud.kms.inventory.v1.KeyDashboardService The following audit logs are associated with methods belonging to google.cloud.kms.inventory.v1.KeyDashboardService ."
+        ]
+      },
+      {
+        "title": "\"Cloud KMS resource consistency \\_|\\_ Cloud Key Management Service \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kms/docs/consistency",
+        "source_id": "site-iam-reference",
+        "final_score": 159,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Impact of changing IAM access If you need to prevent a user from using a Cloud KMS resource during the time needed for propagation of an eventually consistent operation, remove the Identity and Access Management (IAM) permission for the resource.",
+          "This document provides information about the impact of consistency when Cloud KMS resources are created or modified.",
+          "The enabled key version is instantly available for encrypting and decrypting data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.admin",
+      "cloudkms.cryptoKeys.get",
+      "cloudkms.googleapis.com",
+      "cloudkms.protectedResources.search"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/consistency"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/consistency"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/consistency"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/consistency"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/consistency"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/consistency"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/consistency"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/consistency"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/consistency"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/consistency"
+      ]
+    }
+  ]
+}

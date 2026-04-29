@@ -1,0 +1,169 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:12.462Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "Gemma 2 fine-tuning in Cloud console",
+  "feature_slug": "gemma-2-fine-tuning-in-cloud-console",
+  "summary": "Gemma 2 can be fine-tuned from the Cloud console.",
+  "extended_definition": "Gemma 2 can be fine-tuned from the Cloud console.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Context Caching for Fine-tuned Gemini Models \\_|\\_ Generative AI on Vertex\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 240,
+        "relevance": "",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /cachedContents\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"name\": \"projects/ PROJECT NUMBER /locations/us-central1/cachedContents/ CACHE ID \", \"model\": \"projects/ PROJECT ID /locations/ LOCATION /models/ MODEL ID @ MODEL VERSION \", \"createTime\": \"2024-06-04T01:11:50.808236Z\", \"updateTime\": \"2024-06-04T01:11:50.808236Z\", \"expireTime\": \"2024-06-04T02:11:50.794542Z\" } Example curl command LOCATION = \"us-central1\" MODEL ID = \"model-id\" PROJECT ID = \"test-project\" MODEL VERSION = 1 MIME TYPE = \"video/mp4\" CACHED CONTENT URI = \"gs://path-to-bucket/video-file-name.mp4\" curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ https:// ${ LOCATION } -aiplatform.googleapis.com/v1/projects/ ${ PROJECT ID } /locations/ ${ LOCATION } /cachedContents -d \\ '{ \"model\":\"projects/${PROJECT ID}/locations/${LOCATION}/models/${MODEL ID}@${MODEL VERSION}\", \"contents\": [ { \"role\": \"user\", \"parts\": [ { \"fileData\": { \"mimeType\": \"${MIME TYPE}\", \"fileUri\": \"${CACHED CONTENT URI}\" } } ] } ] }' Use a context cache for a fine-tuned model The procedure for using a context cache for a fine-tuned model largely follows the steps outlined in Use a context cache .",
+          "You can use context caching for your fine-tuned Gemini models to improve performance and reduce costs for prompts that include large amounts of context.",
+          "Prerequisites Fine-tuning a Gemini Model: You need a deployed fine-tuned Gemini model based on a supported base model (see Context caching overview )."
+        ]
+      },
+      {
+        "title": "\"Deploy and inference Gemma using Model Garden and Vertex AI GPU-backed endpoints\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 239,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . async function gemma2PredictGpu ( predictionServiceClient ) { // Imports the Google Cloud Prediction Service Client library const { // TODO(developer): Uncomment PredictionServiceClient before running the sample. // PredictionServiceClient, helpers , } = require ( ' @google-cloud/aiplatform ' ); / TODO(developer): Update these variables before running the sample. / const projectId = 'your-project-id' ; const endpointRegion = 'your-vertex-endpoint-region' ; const endpointId = 'your-vertex-endpoint-id' ; // Default configuration const config = { maxOutputTokens : 1024 , temperature : 0.9 , topP : 1.0 , topK : 1 }; // Prompt used in the prediction const prompt = 'Why is the sky blue?' ; // Encapsulate the prompt in a correct format for GPUs // Example format: [{inputs: 'Why is the sky blue?', parameters: {temperature: 0.9}}] const input = { inputs : prompt , parameters : config , }; // Convert input message to a list of GAPIC instances for model input const instances = [ helpers . toValue ( input )]; // TODO(developer): Uncomment apiEndpoint and predictionServiceClient before running the sample. // const apiEndpoint = ${endpointRegion}-aiplatform.googleapis.com; // Create a client // predictionServiceClient = new PredictionServiceClient({apiEndpoint}); // Call the Gemma2 endpoint const gemma2Endpoint = projects/ ${ projectId } /locations/ ${ endpointRegion } /endpoints/ ${ endpointId } ; const [ response ] = await predictionServiceClient . predict ({ endpoint : gemma2Endpoint , instances , }); const predictions = response . predictions ; const text = predictions [ 0 ]. stringValue ; console . log ( 'Predictions:' , text ); return text ; } module . exports = gemma2PredictGpu ; // TODO(developer): Uncomment below lines before running the sample. // gemma2PredictGpu(...process.argv.slice(2)).catch(err => { // console.error(err.message); // process.exitCode = 1; // }); Java Before trying this sample, follow the Java setup instructions in the Vertex AI quickstart using client libraries .",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"publisher model name\": \" MODEL ID \", \"deploy config\": { \"dedicated resources\": { \"machine spec\": { \"machine type\": \" MACHINE TYPE \", \"accelerator type\": \" ACCELERATOR TYPE \", \"accelerator count\": ACCELERATOR COUNT , \"reservation affinity\": { \"reservation affinity type\": \"ANY RESERVATION\" } }, \"spot\": \"false\" } }, \"model config\": { \"accept eula\": \"true\", \"container spec\": { \"image uri\": \" IMAGE URI \", \"args\": [ CONTAINER ARGS ], \"ports\": [ { \"container port\": CONTAINER PORT } ] } }, \"deploy config\": { \"fast tryout enabled\": false }, } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION :deploy\" Select-Object -Expand Content You receive a JSON response similar to the following. { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.aiplatform.v1.DeployOperationMetadata\", \"genericMetadata\": { \"createTime\": \"2025-03-13T21:44:44.538780Z\", \"updateTime\": \"2025-03-13T21:44:44.538780Z\" }, \"publisherModel\": \"publishers/google/models/gemma3@gemma-3-1b-it\", \"destination\": \"projects/ PROJECT ID /locations/ LOCATION \", \"projectNumber\": \" PROJECT ID \" } } Console In the Google Cloud console, go to the Model Garden page.",
+          "MODEL ID CAN DEPLOY CAN PREDICT google/gemma2@gemma-2-27b Yes No google/gemma2@gemma-2-27b-it Yes No google/gemma2@gemma-2-2b Yes No google/gemma2@gemma-2-2b-it Yes No google/gemma2@gemma-2-9b Yes No google/gemma2@gemma-2-9b-it Yes No google/gemma3@gemma-3-12b-it Yes No google/gemma3@gemma-3-12b-pt Yes No google/gemma3@gemma-3-1b-it Yes No google/gemma3@gemma-3-1b-pt Yes No google/gemma3@gemma-3-27b-it Yes No google/gemma3@gemma-3-27b-pt Yes No google/gemma3@gemma-3-4b-it Yes No google/gemma3@gemma-3-4b-pt Yes No google/gemma3n@gemma-3n-e2b Yes No google/gemma3n@gemma-3n-e2b-it Yes No google/gemma3n@gemma-3n-e4b Yes No google/gemma3n@gemma-3n-e4b-it Yes No google/gemma@gemma-1.1-2b-it Yes No google/gemma@gemma-1.1-2b-it-gg-hf Yes No google/gemma@gemma-1.1-7b-it Yes No google/gemma@gemma-1.1-7b-it-gg-hf Yes No google/gemma@gemma-2b Yes No google/gemma@gemma-2b-gg-hf Yes No google/gemma@gemma-2b-it Yes No google/gemma@gemma-2b-it-gg-hf Yes No google/gemma@gemma-7b Yes No google/gemma@gemma-7b-gg-hf Yes No google/gemma@gemma-7b-it Yes No google/gemma@gemma-7b-it-gg-hf Yes No The output doesn't include any tuned models or Hugging Face models."
+        ]
+      },
+      {
+        "title": "\"Deploy and inference Gemma using Model Garden and Vertex AI TPU-backed endpoints\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "source_id": "site-docs-root",
+        "final_score": 222,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . // Imports the Google Cloud Prediction Service Client library const { // TODO(developer): Uncomment PredictionServiceClient before running the sample. // PredictionServiceClient, helpers , } = require ( ' @google-cloud/aiplatform ' ); / TODO(developer): Update these variables before running the sample. / const projectId = 'your-project-id' ; const endpointRegion = 'your-vertex-endpoint-region' ; const endpointId = 'your-vertex-endpoint-id' ; // Prompt used in the prediction const prompt = 'Why is the sky blue?' ; // Encapsulate the prompt in a correct format for TPUs // Example format: [{prompt: 'Why is the sky blue?', temperature: 0.9}] const input = { prompt , // Parameters for default configuration maxOutputTokens : 1024 , temperature : 0.9 , topP : 1.0 , topK : 1 , }; // Convert input message to a list of GAPIC instances for model input const instances = [ helpers . toValue ( input )]; // TODO(developer): Uncomment apiEndpoint and predictionServiceClient before running the sample. // const apiEndpoint = ${endpointRegion}-aiplatform.googleapis.com; // Create a client // predictionServiceClient = new PredictionServiceClient({apiEndpoint}); // Call the Gemma2 endpoint const gemma2Endpoint = projects/ ${ projectId } /locations/ ${ endpointRegion } /endpoints/ ${ endpointId } ; const [ response ] = await predictionServiceClient . predict ({ endpoint : gemma2Endpoint , instances , }); const predictions = response . predictions ; const text = predictions [ 0 ]. stringValue ; console . log ( 'Predictions:' , text ); Java Before trying this sample, follow the Java setup instructions in the Vertex AI quickstart using client libraries .",
+          "Background () // Note: client can be initialized in the following way: // apiEndpoint := fmt.Sprintf(\"%s-aiplatform.googleapis.com:443\", location) // client, err := aiplatform.NewPredictionClient(ctx, option.WithEndpoint(apiEndpoint)) // if err != nil { // return fmt.Errorf(\"unable to create prediction client: %v\", err) // } // defer client.Close() gemma2Endpoint := fmt .",
+          "For more information, see the Python API reference documentation . \"\"\" Sample to run inference on a Gemma2 model deployed to a Vertex AI endpoint with TPU accellerators. \"\"\" from google.cloud import aiplatform from google.protobuf import json format from google.protobuf.struct pb2 import Value TODO(developer): Update & uncomment lines below PROJECT ID = \"your-project-id\" ENDPOINT REGION = \"your-vertex-endpoint-region\" ENDPOINT ID = \"your-vertex-endpoint-id\" Default configuration config = { \"max tokens\" : 1024 , \"temperature\" : 0.9 , \"top p\" : 1.0 , \"top k\" : 1 } Prompt used in the prediction prompt = \"Why is the sky blue?\" Encapsulate the prompt in a correct format for TPUs Example format: [{'prompt': 'Why is the sky blue?', 'temperature': 0.9}] input = { \"prompt\" : prompt } input . update ( config ) Convert input message to a list of GAPIC instances for model input instances = [ json format ."
+        ]
+      },
+      {
+        "title": "\"Get batch text embeddings inferences \\_|\\_ Generative AI on Vertex AI \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 181,
+        "relevance": "",
+        "evidence_snippets": [
+          "Batches . html let job = await client . batches . create ({ model : 'text-embedding-005' , // Source link : https : // storage . cloud . google . com / cloud - samples - data / batch / prompt for batch gemini predict . jsonl src : 'gs://cloud-samples-data/generative-ai/embeddings/embeddings input.jsonl' , config : { dest : outputUri , }, }); console . log ( Job name : $ { job . name } ); console . log ( Job state : $ { job . state } ); // Example response : // Job name : projects /% PROJECT ID %/ locations / us - central1 / batchPredictionJobs / 9876453210000000000 // Job state : JOB STATE PENDING const completedStates = new Set ([ 'JOB STATE SUCCEEDED' , 'JOB STATE FAILED' , 'JOB STATE CANCELLED' , 'JOB STATE PAUSED' , ]); while ( ! completedStates . has ( job . state )) { await new Promise ( resolve = > setTimeout ( resolve , 30000 )); job = await client . batches . get ({ name : job . name }); console . log ( Job state : $ { job . state } ); } // Example response : // Job state : JOB STATE PENDING // Job state : JOB STATE RUNNING // Job state : JOB STATE RUNNING // ... // Job state : JOB STATE SUCCEEDED return job . state ; } Java Learn how to install or update the Java .",
+          "Once created , it can be reused for multiple requests . try ( Client client = Client . builder () . location ( \"us-central1\" ) . vertexAI ( true ) . httpOptions ( HttpOptions . builder () . apiVersion ( \"v1\" ) . build ()) . build ()) { // See the documentation : // https : // googleapis . github . io / java - genai / javadoc / com / google / genai / Batches . html BatchJobSource batchJobSource = BatchJobSource . builder () // Source link : // https : // storage . cloud . google . com / cloud - samples - data / generative - ai / embeddings / embeddings input . jsonl . gcsUri ( \"gs://cloud-samples-data/generative-ai/embeddings/embeddings input.jsonl\" ) . format ( \"jsonl\" ) . build (); CreateBatchJobConfig batchJobConfig = CreateBatchJobConfig . builder () . displayName ( \"your-display-name\" ) . dest ( BatchJobDestination . builder () . gcsUri ( outputGcsUri ) . format ( \"jsonl\" ) . build ()) . build (); BatchJob batchJob = client . batches . create ( modelId , batchJobSource , batchJobConfig ); String jobName = batchJob . name () . orElseThrow (() - > new IllegalStateException ( \"Missing job name\" )); JobState jobState = batchJob . state () . orElseThrow (() - > new IllegalStateException ( \"Missing job state\" )); System . out . println ( \"Job name: \" + jobName ); System . out . println ( \"Job state: \" + jobState ); // Job name : projects /.../ locations /.../ batchPredictionJobs / 6205497615459549184 // Job state : JOB STATE PENDING // See the documentation : // https : // googleapis . github . io / java - genai / javadoc / com / google / genai / types / BatchJob . html Set<JobState .",
+          "BigQuery input example This example shows a single column BigQuery table. content \"Give a short description of a machine learning model:\" \"Best recipe for banana bread:\" BigQuery output example content predictions status \"Give a short description of a machine learning model:\" ' [{ \"embeddings\" : { \"statistics\" :{ \"token count\" : 8 , \"truncated\" : false }, \"Values\" :[ 0.1 , .... ] } } ] ' \"Best recipe for banana bread:\" ' [{ \"embeddings\" : { \"statistics\" :{ \"token count\" : 3 , \"truncated\" : false }, \"Values\" :[ 0.2 , .... ] } } ] ' Request a batch response Depending on the number of input items that you've submitted, a batch generation task can take some time to complete."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "aiplatform.NewPredictionClient",
+      "client.Close",
+      "console.error",
+      "err.message",
+      "fmt.Errorf",
+      "fmt.Sprintf",
+      "input.jsonl",
+      "java.io.IOException",
+      "java.util.ArrayList",
+      "java.util.HashMap",
+      "java.util.List",
+      "java.util.Map",
+      "name.mp4",
+      "option.WithEndpoint",
+      "process.argv.slice",
+      "process.exitCode",
+      "request.json",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings"
+      ]
+    }
+  ]
+}

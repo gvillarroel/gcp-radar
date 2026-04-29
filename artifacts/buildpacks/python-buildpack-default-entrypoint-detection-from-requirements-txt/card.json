@@ -1,0 +1,95 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:45.759Z",
+  "source_step08_card": "data/step-08/current/products/buildpacks/card.json",
+  "product_name": "Buildpacks",
+  "product_slug": "buildpacks",
+  "feature_name": "Python buildpack default entrypoint detection from requirements.txt",
+  "feature_slug": "python-buildpack-default-entrypoint-detection-from-requirements-txt",
+  "summary": "The Python buildpack can set the default entrypoint for Cloud Run source deployments based on web server or framework configuration in requirements.txt.",
+  "extended_definition": "The Python buildpack can set the default entrypoint for Cloud Run source deployments based on web server or framework configuration in requirements.txt.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/docs/buildpacks/python",
+      "https://docs.cloud.google.com/docs/buildpacks/service-specific-configs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Build a Python application \\_|\\_ Buildpacks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/buildpacks/python",
+        "source_id": "site-docs-reference",
+        "final_score": 360,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Python buildpack sets the default entrypoint based on the following order of precedence, as defined in the requirements.txt file: gunicorn uvicorn fastapi[standard] gradio streamlit google-adk Configure the web server or framework For each common Python configurations in the requirements.txt file, the following table shows the default entrypoints when deploying to Cloud Run from source: Primary configuration Default entrypoint Environment variables gunicorn gunicorn -b :8080 main:app numpy gunicorn -b :8080 main:app fastapi uvicorn uvicorn main:app --host 0.0.0.0 --port 8080 fastapi[standard] uvicorn main:app --host 0.0.0.0 --port 8080 uvicorn gunicorn gunicorn -b :8080 main:app gradio python main.py GRADIO SERVER NAME=0.0.0.0 GRADIO SERVER PORT=8080 streamlit streamlit run main.py --server.address 0.0.0.0 --server.port 8080 google-adk adk api server --host 0.0.0.0 --port 8080 To avoid deployment failures, use a supported Python version in your source files, and specify a web server in your requirements.txt file.",
+          "Python version 3.13 and later For Python version 3.13 and later, the Python buildpack sets the default entrypoint for Cloud Run source deploys based on the web server or framework configuration in your requirements.txt file.",
+          "Package manager precedence The Python buildpacks determines the default package manager based on the configuration in the following order of precedence: The highest precedence is given to the requirements.txt file."
+        ]
+      },
+      {
+        "title": "\"Configure Cloud Run and Cloud Run functions services \\_|\\_ Buildpacks \\_\\",
+        "url": "https://docs.cloud.google.com/docs/buildpacks/service-specific-configs",
+        "source_id": "site-docs-reference",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you don't specify a web server or framework in the requirements.txt file, or use Python version 3.12 and earlier, the Python buildpack sets the default entrypoint to gunicorn -b :8080 main:app .",
+          "For Python version 3.13 and later, the Python buildpack sets the entrypoint based on the web service configuration in your requirements.txt file.",
+          "The Python buildpack sets the default entrypoint for Cloud Run source deployments ."
+        ]
+      },
+      {
+        "title": "Building a Node.js application \\_|\\_ Buildpacks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/buildpacks/nodejs",
+        "source_id": "site-docs-reference",
+        "final_score": 91,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can specify one or more commands, or instead specify an empty string to prevent any command from running, like \"gcp-build\":\"\" . \"scripts\" : { ... \"gcp-build\" : \"npm run lint && npm run build\" ... } Application entrypoint The Node.js buildpack executes the command you specify in the scripts.start field of your package.json file.",
+          "If you don't use a lockfile or set the environment variable, the buildpack defaults to using NPM.",
+          "If no version is specified, the buildpack defaults to the latest stable release."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bun.lock",
+      "bun.lockb",
+      "index.php",
+      "lock.json",
+      "lock.yaml",
+      "main.py",
+      "myjar.jar",
+      "package.json",
+      "pyproject.toml",
+      "requirements.txt",
+      "scripts.start",
+      "server.address",
+      "server.port",
+      "yarn.lock"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

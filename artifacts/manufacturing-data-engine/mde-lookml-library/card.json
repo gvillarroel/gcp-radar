@@ -1,0 +1,160 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:22.154Z",
+  "source_step08_card": "data/step-08/current/products/manufacturing-data-engine/card.json",
+  "product_name": "Manufacturing Data Engine",
+  "product_slug": "manufacturing-data-engine",
+  "feature_name": "MDE LookML library",
+  "feature_slug": "mde-lookml-library",
+  "summary": "Provides common MDE LookML components and configuration packages.",
+  "extended_definition": "Provides common MDE LookML components and configuration packages.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/concepts/manufacturing-connect",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-set-up-a-new-mde-looker-project",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the LookML Library \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+        "source_id": "site-docs-reference",
+        "final_score": 261,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example shows how you can extend the base view to define a dimension called device : include : \"//mde lookml lib/mde abstract core/views/dimension/ .view\" view : dim source { derived table : { sql : SELECT FROM mde dimension.metadata-store where bucket number = BUCKET NUMBER ;; } view label : \"DIM - Device\" extends : [ dim base ] dimension : device name { type : string sql : JSON VALUE(${TABLE}.instance,\"$.device name\") ;; } } And, similarly, the library provides base views per MDE archetype for modeling record tables in BigQuery as fact tables.",
+          "Use the LookML Library The LookML Library for MDE provides abstract core files, and packaged views, explores and dashboards to help you get started with building your own LookML models on top of the MDE data in BigQuery.",
+          "For example, in your project model file you can extend the dim tag by defining additional dimension fields on the deviceMetadata object, as the following script shows: view : +dim tag { dimension : device type { type : string sql : JSON VALUE(${TABLE}.instance,\"$.deviceMetadata.deviceType\") ;; } dimension : location { type : string sql : JSON VALUE(${TABLE}.instance,\"$.deviceMetadata.location\") ;; } } Dashboards access is defined in the default configuration package The LookML model defined in the MDE Project Template imports all the dashboards from the default package in MDE LookML Library ."
+        ]
+      },
+      {
+        "title": "\"Set up a Looker project \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-set-up-a-new-mde-looker-project",
+        "source_id": "site-docs-reference",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "We also provide a library that includes MDE-specific LookML base components and starter configuration packages to reduce the time it takes to model your MDE data in LookML.",
+          "The LookML model in MDE Looker Project Template imports the LookML explore file and dashboards from the default configuration package in the MDE LookML Library .",
+          "Configure authentication for the MDE LookML Library using the SSH method and obtain the public SSH key of your Looker project."
+        ]
+      },
+      {
+        "title": "Overview \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 151,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "MDE provides a zero code pre-configured set of Google Cloud infrastructure that is able to ingest, process, and store data from industrial devices in the cloud based on the user's configuration.",
+          "Components The following are components of MDE: Configuration Manager : Manages the user configurations and exposes them to other solution components.",
+          "Adaptability : As MDE deploys fully in your own Google Cloud tenant project, all MDE components (such as Pub/Sub, Dataflow, and BigQuery) are transparent and can be used as if you had built the platform yourself."
+        ]
+      },
+      {
+        "title": "\"Manufacturing Connect \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/concepts/manufacturing-connect",
+        "source_id": "site-docs-root",
+        "final_score": 124,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "With a library of 270+ supported automation protocols (and the option to add more), entire factories can be quickly connected to Manufacturing Data Engine (MDE).",
+          "Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Relationship with MDE For customers using both MC and MDE : The MC web interface includes the interface to MDE, enabling a seamless edge-to-cloud user experience."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dimension.metadata",
+      "iam.serviceAccountCreator",
+      "iam.serviceAccountKeyAdmin",
+      "resourcemanager.projectIamAdmin",
+      "source.admin"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.serviceAccountCreator",
+      "roles/iam.serviceAccountKeyAdmin",
+      "roles/resourcemanager.projectIamAdmin",
+      "roles/source.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-set-up-a-new-mde-looker-project",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/overview",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/concepts/manufacturing-connect"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-set-up-a-new-mde-looker-project",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/overview",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/concepts/manufacturing-connect"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-set-up-a-new-mde-looker-project",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/overview",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/concepts/manufacturing-connect"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-set-up-a-new-mde-looker-project",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/overview",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/concepts/manufacturing-connect"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-set-up-a-new-mde-looker-project",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/overview",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/concepts/manufacturing-connect"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-set-up-a-new-mde-looker-project",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/overview",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/concepts/manufacturing-connect"
+      ]
+    }
+  ]
+}

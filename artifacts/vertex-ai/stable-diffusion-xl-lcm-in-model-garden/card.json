@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:31.179Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Stable Diffusion XL LCM in Model Garden",
+  "feature_slug": "stable-diffusion-xl-lcm-in-model-garden",
+  "summary": "Stable Diffusion XL LCM (Latent Consistency Model) was added to Model Garden for faster, high-quality text-to-image generation with fewer inference steps.",
+  "extended_definition": "Stable Diffusion XL LCM (Latent Consistency Model) was added to Model Garden for faster, high-quality text-to-image generation with fewer inference steps.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl/error-analysis"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "source_id": "site-api-reference-2",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "Runtime status of the deployed model. systemLabels map (key: string, value: string) System labels to apply to Model Garden deployments.",
+          "Currently, only Model Garden models are supported.",
+          "DeployedModel JSON representation { \"id\" : string , \"model\" : string , \"gdcConnectedModel\" : string , \"modelVersionId\" : string , \"displayName\" : string , \"createTime\" : string , \"explanationSpec\" : { object ( ExplanationSpec ) } , \"disableExplanations\" : boolean , \"serviceAccount\" : string , \"enableContainerLogging\" : boolean , \"disableContainerLogging\" : boolean , \"enableAccessLogging\" : boolean , \"privateEndpoints\" : { object ( PrivateEndpoints ) } , \"fasterDeploymentConfig\" : { object ( FasterDeploymentConfig ) } , \"rolloutOptions\" : { object ( RolloutOptions ) } , \"status\" : { object ( Status ) } , \"systemLabels\" : { string : string , ... } , \"checkpointId\" : string , \"speculativeDecodingSpec\" : { object ( SpeculativeDecodingSpec ) } , // Union field prediction resources can be only one of the following: \"dedicatedResources\" : { object ( DedicatedResources ) } , \"automaticResources\" : { object ( AutomaticResources ) } , \"sharedResources\" : string , \"fullFineTunedResources\" : { object ( FullFineTunedResources ) } // End of list of possible types for union field prediction resources . } Fields id string Immutable."
+        ]
+      },
+      {
+        "title": "\"Hello image data: Evaluating and analyzing model performance \\_|\\_ Vertex\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl/error-analysis",
+        "source_id": "site-docs-reference-2",
+        "final_score": 67,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Previous arrow back Train an AutoML image classification model Next Deploy a model to an endpoint and make an inference arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "If a visually similar sample from the training set has different labels from the test sample, it's possible that one of them is incorrect, or that the subtle difference requires more data for the model to learn from, or that the current class labels are simply not accurate enough to describe the given sample.",
+          "Home Documentation AI and ML Vertex AI Send feedback Hello image data: Evaluating and analyzing model performance Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Vertex AI model evaluation notebook tutorials \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "source_id": "site-docs-reference-2",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "Tutorial steps Installation of required libraries Reading the dataset from a Cloud Storage bucket Performing exploratory analysis on the dataset Preprocessing the dataset Training a random forest model using scikitlearn Saving the model to a Cloud Storage bucket Creating a Vertex AI model resource and deploying to an endpoint Running the WhatIf Tool on test data Undeploying the model and cleaning up the model resources Colab GitHub Vertex AI Workbench Vertex AI Workbench BigQuery ML Churn prediction for game developers using Google Analytics 4 and BigQuery ML .",
+          "Tutorial steps Create utility functions to download data and prepare csv files for creating Vertex AI managed dataset Download Data Prepare CSV Files for creating managed dataset Create custom training Python package Create TensorFlow Serving container Run custom Python package training with managed text dataset Deploy a model and create an endpoint on Vertex AI Predict on the endpoint Create a Batch Prediction job on the model Colab Colab Enterprise GitHub Vertex AI Workbench Tabular Workflow for TabNet Vertex AI Explanations with TabNet models .",
+          "Tutorial steps Create a local BigQuery table in your project Train a BigQuery ML model Evaluate the BigQuery ML model Export the BigQuery ML model as a cloud model Upload the exported model as a Vertex AI model resource Hyperparameter tune a BigQuery ML model with Vertex AI Vizier Automatically register a BigQuery ML model to Vertex AI Model Registry Colab Colab Enterprise GitHub Vertex AI Workbench Custom training Vertex AI Inference Deploying Iris-detection model using FastAPI and Vertex AI custom container serving ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl/error-analysis",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl/error-analysis",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl/error-analysis",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl/error-analysis",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl/error-analysis",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials"
+      ]
+    }
+  ]
+}

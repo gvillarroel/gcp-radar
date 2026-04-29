@@ -1,0 +1,216 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:24.759Z",
+  "source_step08_card": "data/step-08/current/products/network-connectivity-center/card.json",
+  "product_name": "Network Connectivity Center",
+  "product_slug": "network-connectivity-center",
+  "feature_name": "Private Service Connect connection propagation",
+  "feature_slug": "private-service-connect-connection-propagation",
+  "summary": "Propagates Private Service Connect endpoints through a Network Connectivity Center hub so they are reachable from other VPC networks; Propagates Private Service Connect endpoints through a Network Connectivity Center hub so they are reachable from other VPC networks.",
+  "extended_definition": "Propagates Private Service Connect endpoints through a Network Connectivity Center hub so they are reachable from other VPC networks; Propagates Private Service Connect endpoints through a Network Connectivity Center hub so they are reachable from other VPC networks.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/producer-vpc-spokes-overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/psc-propagated-connection-overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/reference/networkconnectivity/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Private Service Connect connection propagation through NCC \\_|\\_ Network\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/psc-propagated-connection-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 431,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking Network Connectivity Network Connectivity Center Guides Send feedback Private Service Connect connection propagation through NCC Stay organized with collections Save and categorize content based on your preferences.",
+          "The NCC Private Service Connect connection propagation feature benefits the following use cases: You can use a common services VPC network to create multiple Private Service Connect consumer endpoints.",
+          "Error, producer propagated connection limit exceeded The propagated Private Service Connect connection propagation failed because the VPC network or the project of the target spoke has exceeded the propagation connection limit set by the producer."
+        ]
+      },
+      {
+        "title": "\"Producer VPC spokes \\_|\\_ Network Connectivity Center \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/producer-vpc-spokes-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 273,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Properties unique to producer VPC spokes Producer VPC spokes have the following unique properties and requirements: Property Description Dependencies Creating a producer VPC spoke requires that you have the following existing resources and connections: A VPC network that consumes a supported service from a producer network through VPC Network Peering.",
+          "All of the networks attached to the hub as VPC spokes can access the services in the producer network: The peered consumer network continues to access services by using the subnet routes exported from the service producer network through the existing VPC Network Peering connection.",
+          "Private Service Connect connection propagation Private Service Connect connection propagation isn't supported on producer VPC spokes."
+        ]
+      },
+      {
+        "title": "\"NCC Gateway overview \\_|\\_ Network Connectivity Center \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 224,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example: Branch users to private applications Suppose that a branch's on-premises network is connected to Google Cloud as shown in the Branch users to private applications use case, and that the branch and private applications need 1 Gbps full-duplex bandwidth: 1 Gbps for traffic from the branch to the applications and 1 Gbps for traffic from the applications to the branch.",
+          "Secure remote workforce: You can securely connect remote workforces—such as those in branches, data centers, and remote offices—to private applications in Google Cloud, on-premises, or other cloud providers and to public applications, like Palo Alto Networks Prisma Access and Symantec Cloud Secure Web Gateway (Cloud SWG).",
+          "Supported SSE products NCC Gateway supports connections to the following SSE products: Symantec Cloud SWG Palo Alto Networks Prisma Access Use cases NCC Gateway is ideal for organizations that want to secure hybrid workforce access to applications."
+        ]
+      },
+      {
+        "title": "Network Connectivity API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/reference/networkconnectivity/rest",
+        "source_id": "site-docs-reference",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1beta.projects.locations REST Resource: v1beta.projects.locations.global.hubs REST Resource: v1beta.projects.locations.global.hubs.groups REST Resource: v1beta.projects.locations.global.hubs.routeTables REST Resource: v1beta.projects.locations.global.hubs.routeTables.routes REST Resource: v1beta.projects.locations.global.policyBasedRoutes REST Resource: v1beta.projects.locations.multicloudDataTransferConfigs REST Resource: v1beta.projects.locations.multicloudDataTransferConfigs.destinations REST Resource: v1beta.projects.locations.multicloudDataTransferSupportedServices REST Resource: v1beta.projects.locations.operations REST Resource: v1beta.projects.locations.regionalEndpoints REST Resource: v1beta.projects.locations.remoteTransportProfiles REST Resource: v1beta.projects.locations.spokes REST Resource: v1beta.projects.locations.spokes.gatewayAdvertisedRoutes REST Resource: v1beta.projects.locations.transports REST Resource: v1alpha1.projects.locations REST Resource: v1alpha1.projects.locations.global.hubs REST Resource: v1alpha1.projects.locations.internalRanges REST Resource: v1alpha1.projects.locations.operations REST Resource: v1alpha1.projects.locations.spokes REST Resource: v1.projects.locations REST Resource: v1.projects.locations.global.hubs REST Resource: v1.projects.locations.global.hubs.groups REST Resource: v1.projects.locations.global.hubs.routeTables REST Resource: v1.projects.locations.global.hubs.routeTables.routes REST Resource: v1.projects.locations.global.policyBasedRoutes REST Resource: v1.projects.locations.internalRanges REST Resource: v1.projects.locations.multicloudDataTransferConfigs REST Resource: v1.projects.locations.multicloudDataTransferConfigs.destinations REST Resource: v1.projects.locations.multicloudDataTransferSupportedServices REST Resource: v1.projects.locations.operations REST Resource: v1.projects.locations.regionalEndpoints REST Resource: v1.projects.locations.serviceClasses REST Resource: v1.projects.locations.serviceConnectionMaps REST Resource: v1.projects.locations.serviceConnectionPolicies REST Resource: v1.projects.locations.serviceConnectionTokens REST Resource: v1.projects.locations.spokes Service: networkconnectivity.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "REST Resource: v1beta.projects.locations.global.hubs Methods acceptSpoke POST /v1beta/{name=projects/ /locations/global/hubs/ }:acceptSpoke Accepts a proposal to attach a Network Connectivity Center spoke to a hub. acceptSpokeUpdate POST /v1beta/{name=projects/ /locations/global/hubs/ }:acceptSpokeUpdate Accepts a proposal to update a Network Connectivity Center spoke in a hub. create POST /v1beta/{parent=projects/ /locations/global}/hubs Creates a new Network Connectivity Center hub in the specified project. delete DELETE /v1beta/{name=projects/ /locations/global/hubs/ } Deletes a Network Connectivity Center hub. get GET /v1beta/{name=projects/ /locations/global/hubs/ } Gets details about a Network Connectivity Center hub. getIamPolicy GET /v1beta/{resource=projects/ /locations/global/hubs/ }:getIamPolicy Gets the access control policy for a resource. list GET /v1beta/{parent=projects/ /locations/global}/hubs Lists the Network Connectivity Center hubs associated with a given project. listSpokes GET /v1beta/{name=projects/ /locations/global/hubs/ }:listSpokes Lists the Network Connectivity Center spokes associated with a specified hub and location. patch PATCH /v1beta/{hub.name=projects/ /locations/global/hubs/ } Updates the description and/or labels of a Network Connectivity Center hub. queryStatus GET /v1beta/{name=projects/ /locations/global/hubs/ }:queryStatus Query the Private Service Connect propagation status of a Network Connectivity Center hub. rejectSpoke POST /v1beta/{name=projects/ /locations/global/hubs/ }:rejectSpoke Rejects a Network Connectivity Center spoke from being attached to a hub. rejectSpokeUpdate POST /v1beta/{name=projects/ /locations/global/hubs/ }:rejectSpokeUpdate Rejects a proposal to update a Network Connectivity Center spoke in a hub. setIamPolicy POST /v1beta/{resource=projects/ /locations/global/hubs/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1beta/{resource=projects/ /locations/global/hubs/ }:testIamPermissions Returns permissions that a caller has on the specified resource.",
+          "REST Resource: v1.projects.locations.global.hubs Methods acceptSpoke POST /v1/{name=projects/ /locations/global/hubs/ }:acceptSpoke Accepts a proposal to attach a Network Connectivity Center spoke to a hub. acceptSpokeUpdate POST /v1/{name=projects/ /locations/global/hubs/ }:acceptSpokeUpdate Accepts a proposal to update a Network Connectivity Center spoke in a hub. create POST /v1/{parent=projects/ /locations/global}/hubs Creates a new Network Connectivity Center hub in the specified project. delete DELETE /v1/{name=projects/ /locations/global/hubs/ } Deletes a Network Connectivity Center hub. get GET /v1/{name=projects/ /locations/global/hubs/ } Gets details about a Network Connectivity Center hub. getIamPolicy GET /v1/{resource=projects/ /locations/global/hubs/ }:getIamPolicy Gets the access control policy for a resource. list GET /v1/{parent=projects/ /locations/global}/hubs Lists the Network Connectivity Center hubs associated with a given project. listSpokes GET /v1/{name=projects/ /locations/global/hubs/ }:listSpokes Lists the Network Connectivity Center spokes associated with a specified hub and location. patch PATCH /v1/{hub.name=projects/ /locations/global/hubs/ } Updates the description and/or labels of a Network Connectivity Center hub. queryStatus GET /v1/{name=projects/ /locations/global/hubs/ }:queryStatus Query the Private Service Connect propagation status of a Network Connectivity Center hub. rejectSpoke POST /v1/{name=projects/ /locations/global/hubs/ }:rejectSpoke Rejects a Network Connectivity Center spoke from being attached to a hub. rejectSpokeUpdate POST /v1/{name=projects/ /locations/global/hubs/ }:rejectSpokeUpdate Rejects a proposal to update a Network Connectivity Center spoke in a hub. setIamPolicy POST /v1/{resource=projects/ /locations/global/hubs/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1/{resource=projects/ /locations/global/hubs/ }:testIamPermissions Returns permissions that a caller has on the specified resource."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "hub.name",
+      "networkconnectivity.googleapis.com",
+      "v1.projects.locations",
+      "v1.projects.locations.global.hubs",
+      "v1.projects.locations.global.hubs.groups",
+      "v1.projects.locations.global.hubs.routeTables",
+      "v1.projects.locations.global.hubs.routeTables.routes",
+      "v1.projects.locations.global.policyBasedRoutes",
+      "v1.projects.locations.internalRanges",
+      "v1.projects.locations.multicloudDataTransferConfigs",
+      "v1.projects.locations.multicloudDataTransferConfigs.destinations",
+      "v1.projects.locations.multicloudDataTransferSupportedServices",
+      "v1.projects.locations.operations",
+      "v1.projects.locations.regionalEndpoints",
+      "v1.projects.locations.serviceClasses",
+      "v1.projects.locations.serviceConnectionMaps",
+      "v1.projects.locations.serviceConnectionPolicies",
+      "v1.projects.locations.serviceConnectionTokens",
+      "v1.projects.locations.spokes",
+      "v1alpha1.projects.locations",
+      "v1alpha1.projects.locations.global.hubs",
+      "v1alpha1.projects.locations.internalRanges",
+      "v1alpha1.projects.locations.operations",
+      "v1alpha1.projects.locations.spokes",
+      "v1beta.projects.locations",
+      "v1beta.projects.locations.global.hubs",
+      "v1beta.projects.locations.global.hubs.groups",
+      "v1beta.projects.locations.global.hubs.routeTables",
+      "v1beta.projects.locations.global.hubs.routeTables.routes",
+      "v1beta.projects.locations.global.policyBasedRoutes",
+      "v1beta.projects.locations.multicloudDataTransferConfigs",
+      "v1beta.projects.locations.multicloudDataTransferConfigs.destinations",
+      "v1beta.projects.locations.multicloudDataTransferSupportedServices",
+      "v1beta.projects.locations.operations",
+      "v1beta.projects.locations.regionalEndpoints",
+      "v1beta.projects.locations.remoteTransportProfiles",
+      "v1beta.projects.locations.spokes",
+      "v1beta.projects.locations.spokes.gatewayAdvertisedRoutes",
+      "v1beta.projects.locations.transports"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/psc-propagated-connection-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/producer-vpc-spokes-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/reference/networkconnectivity/rest"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/psc-propagated-connection-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/producer-vpc-spokes-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/reference/networkconnectivity/rest"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/psc-propagated-connection-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/producer-vpc-spokes-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/reference/networkconnectivity/rest"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/psc-propagated-connection-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/producer-vpc-spokes-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/reference/networkconnectivity/rest"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/psc-propagated-connection-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/producer-vpc-spokes-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/reference/networkconnectivity/rest"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/psc-propagated-connection-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/producer-vpc-spokes-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/reference/networkconnectivity/rest"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/psc-propagated-connection-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/producer-vpc-spokes-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/reference/networkconnectivity/rest"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/psc-propagated-connection-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/producer-vpc-spokes-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/reference/networkconnectivity/rest"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/psc-propagated-connection-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/producer-vpc-spokes-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/reference/networkconnectivity/rest"
+      ]
+    }
+  ]
+}

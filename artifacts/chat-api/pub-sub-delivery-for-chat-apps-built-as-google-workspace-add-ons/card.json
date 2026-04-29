@@ -1,0 +1,86 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:46.068Z",
+  "source_step08_card": "data/step-08/current/products/chat-api/card.json",
+  "product_name": "Chat API",
+  "product_slug": "chat-api",
+  "feature_name": "Pub/Sub delivery for Chat apps built as Google Workspace add-ons",
+  "feature_slug": "pub-sub-delivery-for-chat-apps-built-as-google-workspace-add-ons",
+  "summary": "Developers can build Google Chat apps as Google Workspace add-ons that receive messages through Cloud Pub/Sub.",
+  "extended_definition": "Developers can build Google Chat apps as Google Workspace add-ons that receive messages through Cloud Pub/Sub.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+      "https://developers.google.com/workspace/chat/build-dialogflow-chat-app-natural-language",
+      "https://developers.google.com/workspace/chat/debug-apps"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Package google.apps.card.v1 \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "source_id": "site-docs-reference",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, this is a JSON representation of a carousel that contains three text paragraph widgets. { \"carouselCards\": [ { \"widgets\": [ { \"textParagraph\": { \"text\": \"First text paragraph in carousel\", } } ] }, { \"widgets\": [ { \"textParagraph\": { \"text\": \"Second text paragraph in carousel\", } } ] }, { \"widgets\": [ { \"textParagraph\": { \"text\": \"Third text paragraph in carousel\", } } ] } ] } Available for Google Chat apps and unavailable for Google Workspace add-ons.",
+          "Google Workspace add-ons and Chat apps Fields Union field data . data can be only one of the following: text paragraph TextParagraph TextParagraph widget. image Image Image widget. decorated text DecoratedText DecoratedText widget. button list ButtonList ButtonList widget. text input TextInput TextInput widget. selection input SelectionInput SelectionInput widget. date time picker DateTimePicker DateTimePicker widget. chip list ChipList ChipList widget.",
+          "Google Workspace add-ons and Chat apps Fields horizontal size style HorizontalSizeStyle Specifies how a column fills the width of the card. horizontal alignment HorizontalAlignment Specifies whether widgets align to the left, right, or center of a column. vertical alignment VerticalAlignment Specifies whether widgets align to the top, bottom, or center of a column. widgets[] Widgets An array of widgets included in a column."
+        ]
+      },
+      {
+        "title": "Debug Google Chat apps \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/debug-apps",
+        "source_id": "site-docs-root",
+        "final_score": 113,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: If your Chat app is built with Google Apps Script, use the following instead: Test a deployment Use the debugger and breakpoints Debug from local development environment In this section, you interact with your Chat app that executes in your local environment.",
+          "Home Google Workspace Google Chat Guides Send feedback Debug Google Chat apps Stay organized with collections Save and categorize content based on your preferences.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-01 UTC.\"],[],[\"This guide details how to debug HTTP Google Chat apps using ngrok for local testing and SSH for remote debugging."
+        ]
+      },
+      {
+        "title": "\"Build a Dialogflow CX Google Chat app that understands and responds with\\",
+        "url": "https://developers.google.com/workspace/chat/build-dialogflow-chat-app-natural-language",
+        "source_id": "site-docs-root",
+        "final_score": 110,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following JSON shows how to send a card message as a custom payload in fulfillment: json { 'cardsV 2 ' : [{ 'cardId' : 'crea te CardMessage' , 'card' : { 'header' : { ' t i tle ' : 'A card message!' , 'sub t i tle ' : 'Se nt fr om Dialog fl ow' , 'imageUrl' : 'h tt ps : //developers.google.com/chat/images/chat-product-icon.png', 'imageType' : 'CIRCLE' }, 'sec t io ns ' : [ { 'widge ts ' : [ { 'bu tt o n Lis t ' : { 'bu tt o ns ' : [ { ' te x t ' : 'Read t he docs!' , 'o n Click' : { 'ope n Li n k' : { 'url' : 'h tt ps : //developers.google.com/workspace/chat' } } } ] } } ] } ] } }] } Limits and considerations Chat interaction events have limited support and some considerations: The following interaction events types are supported: MESSAGE ADDED TO SPACE CARD CLICKED For MESSAGE or ADDED TO SPACE events, the query input sent to the Dialogflow agent corresponds to the value of the argumentText field in the Chat message.",
+          "For a detailed walkthrough instructing you how to build and configure agents, see Create a Dialogflow CX agent . code Codelab: For an example of how to build a Dialogflow CX data store agent, see the knowledge Chat app from the codelab Build apps for Google Chat with Gemini . code Codelab: For an example of how to build a Dialogflow CX conversational agent, see the feedback Chat app from the codelab Build apps for Google Chat with Gemini .",
+          "Architecture The following diagram shows the architecture of a Chat app built with Dialogflow: In the preceding diagram, a user interacting with a Dialogflow Chat app has the following flow of information: A user sends a message in Chat to a Chat app, either in a direct message or in a Chat space."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "github.com",
+      "icon.png",
+      "samples.git"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

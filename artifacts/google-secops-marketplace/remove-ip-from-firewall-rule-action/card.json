@@ -1,0 +1,201 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.653Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-marketplace/card.json",
+  "product_name": "Google SecOps Marketplace",
+  "product_slug": "google-secops-marketplace",
+  "feature_name": "Remove IP From Firewall Rule action",
+  "feature_slug": "remove-ip-from-firewall-rule-action",
+  "summary": "Adds an action that removes an IP address from a firewall rule.",
+  "extended_definition": "Adds an action that removes an IP address from a firewall rule.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Integrate Amazon EC2 with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "source_id": "site-docs-root",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action Results Script Result Script result name Value options Example is success True/False is success:False JSON Result \"EC2 Security Groups\" : [ { \"Description\" : \"launch-wizard-2 created 2021-01-30T19:37:11.523+02:00\" , \"GroupName\" : \"launch-wizard-2\" , \"IpPermissions\" :[ { \"FromPort\" : 22 , \"IpProtocol\" : \"tcp\" , \"IpRanges\" :[ { \"CidrIp\" : \"192.0.2.0/0\" } ], \"Ipv6Ranges\" :[ ], \"PrefixListIds\" :[ ], \"ToPort\" : 22 , \"UserIdGroupPairs\" :[ ] } ], \"OwnerId\" : \"582302349248\" , \"GroupId\" : \"sg-001700ccddac4189a\" , \"IpPermissionsEgress\" :[ { \"IpProtocol\" : \"-1\" , \"IpRanges\" :[ { \"CidrIp\" : \"192.0.2.0/0\" } ], \"Ipv6Ranges\" :[ ], \"PrefixListIds\" :[ ], \"UserIdGroupPairs\" :[ ] } ], \"Tags\" :[ { \"Key\" : \"Team\" , \"Value\" : \"A-Team\" }, { \"Key\" : \"Owner\" , \"Value\" : \"Example\" } ], \"VpcId\" : \"vpc- ID \" } ] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If successfully listed groups(is success = true): \"Successfully described Amazon EC2 security groups.\" If no available values(is success = false): \"No security groups were found in Amazon EC2\" The action should fail and stop a playbook execution: if fatal error, invalid group ID/Name, SDK error, like wrong credentials, no connection to server, other: \"Error executing action \"List Security Groups\".",
+          "Action Results Script Result Script result name Value options Example is success True/False is success:False JSON Result \"StoppingInstances\" : [ { \"CurrentState\" : \"shutting-down\" , \"InstanceId\" : \"string\" , \"PreviousState\" : \"running\" } ] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If current state of all/few instances is different from: shutting-down, terminated: ( Is success = false): Cannot terminate the following instances from their current state: <failed instance ids> If current state is shutting-down: (is success=true) → action still in progress: Continuing….the requested instances are still shutting-down If current state is terminated:(is success=true): The following instances were terminated successfully : <stopped instance ids> If one of the instances is not valid (is success =false): The following instances are not valid: <not valid ids>.",
+          "Action Results Script Result Script result name Value options Example is success True/False is success:False JSON Result [ { \"CurrentState\" : \"pending\" , \"InstanceId\" : \"string\" , \"PreviousState\" : \"stopped\" } ] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If current state of all/few instances is different from: pending, running: ( Is success = false): Can not start the following instances from their current state: <failed instance ids> If current state is pending → action still in progress: Continuing….the requested instances are still pending If current state is running:(is success=true: Print: The following instances were started successfully : <running instance ids> If one of the instances is not valid (is success =false): The following instances are not valid: <not valid ids>."
+        ]
+      },
+      {
+        "title": "\"Integrate AWS WAF with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "source_id": "site-docs-root",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one rule was removed from one Rule Group: \"Successfully removed a rule from the following {0} Rule Groups '{1}' in AWS WAF.\".format(\"Regional\"/\"Cloudfront\", list of names) If unsuccessful for one Rule Group: \"Action wasn't able to remove a rule from the following {0} Rule Groups '{1}' in AWS WAF.\".format(\"Regional\"/\"Cloudfront\", list of names) If unsuccessful for one Rule Group, because rule wasn't found in one Rule Group: \"Action wasn't able to find the specified rule in the following {0} Rule Groups '{1}' in AWS WAF.\".format(\"Regional\"/\"Cloudfront\", list of rule group names) If fail to find one of the Rule Group: \"Action wasn't able to find the following '{0}' Rule Groups in the AWS WAF:\\n {1}\".format(\"Regional\"/Cloudfront\", list of Rule Group that were not found in that scope) If fail to find all of the provided sets in the desired scope or scopes: \"Action didn't find the provided Rule Groups.\" The action should fail and stop a playbook execution: If a fatal error, SDK error, like wrong credentials, no connection to the server, other is reported: \"Error executing action \"Remove Rule From Rule Group\".",
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful and at least one rule was removed from one Rule Group: print \"Successfully removed a rule from the following {0} Web ACLs '{1}' in AWS WAF.\".format(\"Regional\"/\"Cloudfront\", list of names) if unsuccessful for one Rule Group: print \"Action wasn't able to remove a rule from the following {0} Web ACLs '{1}' in AWS WAF.\".format(\"Regional\"/\"Cloudfront\", list of names) if unsuccessful for one Web ACL, because rule wasn't found in one ACL: print \"Action wasn't able to find the specified rule in the following {0} Web ACLs '{1}' in AWS WAF.\".format(\"Regional\"/\"Cloudfront\", list of names Web ACL) If fail to find one of the Rule Group: Print \"Action wasn't able to find the following '{0}' Web ACLs in the AWS WAF:\\n {1}\".format(\"Regional\"/Cloudfront\", list of Rule Group that were not found in that scope) If fail to find all of the provided sets in the desired scope or scopes: Print \"Action didn't find the provided Web ACLs.\" The action should fail and stop a playbook execution: if fatal error, SDK error, like wrong credentials, no connection to server, other: print \"Error executing action \"Remove Rule From Web ACL\".",
+          "Run On This action runs on the following entities: IP Address URL Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True Case Wall Result type Value/Description Type (Entity \\ General) Output message The action should not fail nor stop a playbook execution: If successful and at least one entity was removed from one IP set: \"Successfully removed the following entity patterns from the {0} Regex Pattern Set '{1}' in AWS WAF: \\n {2}\".format(\"Regional\"/\"Cloudfront\", full name, list of entity patterns) If entity never existed in that Regex Pattern Set: \"The following patterns were not found in the {0} Regex Pattern Set '{1}' in AWS WAF: \\n {2}\".format(\"Regional\"/\"Cloudfront\", full name, list of entity patterns) If fail to remove all entities on all IP sets: \"No patterns were removed from the provided Regex Pattern Sets.\" If fail to find one of the IP sets: \"Action wasn't able to find the following '{0}' Regex Pattern Sets in the AWS WAF:\\n {1}\".format(\"Regional\"/Cloudfront\",list of IP sets that were not found in that scope) If fail to find all of the provided Regex Pattern sets in the desired scope or scopes: \"Action didn't find the provided Regex Pattern sets.\" The action should fail and stop a playbook execution: If a fatal error, SDK error, like wrong credentials, no connection to the server, other is reported: \"Error executing action \"Remove Entity From Regex Pattern Set\"."
+        ]
+      },
+      {
+        "title": "\"Use the Feed Management UI \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "source_id": "site-docs-reference",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Sample egress rule \"egressPolicies\" : [ { \"egressFrom\": { \"identities\": [ \"serviceAccount:service-{replace with project id}@gs-project-accounts.iam.gserviceaccount.com\" ] } , \"egressTo\" : { \"operations\" : [ { \"methodSelectors\": [ { \"method\": \" \" } ] , \"serviceName\" : \"pubsub.googleapis.com\" } ] , \"resources\" : [ \" \" ] } , \"title\" : \"GCS pubsub access\" } , { \"egressFrom\" : { \"identities\" : [ \"serviceAccount:project-{replace with project id}@storage-transfer-service.iam.gserviceaccount.com\" ] } , \"egressTo\" : { \"operations\" : [ { \"methodSelectors\": [ { \"method\": \" \" } ] , \"serviceName\" : \"pubsub.googleapis.com\" } ] , \"resources\" : [ \" \" ] } , \"title\" : \"STS pubsub\" } ] Enable STS access for Amazon S3 and Azure Storage The STS is used by the following Google Cloud Storage feeds to transfer data from Amazon S3 and Azure Storage blobstores to Google SecOps: Amazon S3 (V2) Amazon SQS (V2) Azure Blob Storage (V2) STS sends data transfer requests to the Amazon S3 and Azure storage services from a set of defined STS IP address ranges.",
+          "Sample ingress rule - ingressFrom: identities: - serviceAccount:8911409095528497-0-account@partnercontent.gserviceaccount.com sources: - accessLevel: \" \" ingressTo: operations: - serviceName: storage.googleapis.com methodSelectors: - method: google.storage.objects.list - method: google.storage.objects.get - method: google.storage.objects.delete resources: - projects/PROJECT ID Egress rules The following egress rules must be allowed for feeds using GOOGLE CLOUD STORAGE V2 , GOOGLE CLOUD STORAGE EVENT DRIVEN , AMAZON S3 V2 , AMAZON SQS V2 , and AZURE BLOBSTORE V2 to operate when VPCSC is enabled.",
+          "These STS IP address ranges are published in the following JSON file: IP ranges To use these STS feed source types, you may need to adjust IP access restrictions to enable STS to access your Amazon S3 and Azure storage services: Pull the latest IP ranges from the JSON file."
+        ]
+      },
+      {
+        "title": "\"AWS Identity and Access Management (IAM) \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "source_id": "site-docs-root",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print \"<User name> has been removed from group: <Group name>\" If error - Group not exist or/and User not exist: group not exist: Print \"Could not remove <UserName> from <Group name>.",
+          "If error User limitation - IAM user can be a member of 10 groups Group limitation - 5000 users can be in a group Print \"Could not remove <UserName> from <Group name> because it attempted to create resources beyond the current AWS account limits.\" The action should fail and stop a playbook execution: If not successful (wrong creds, no connection, other sdk error): print \"Error executing action 'Remove a User from a Group.",
+          "Reason: {exception.stacktrace} General Remove a User from a Group Description Adds the specified user to the specified IAM group."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accounts.iam.gserviceaccount.com",
+      "exception.stacktrace",
+      "partnercontent.gserviceaccount.com",
+      "pubsub.googleapis.com",
+      "service.iam.gserviceaccount.com",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam"
+      ]
+    }
+  ]
+}

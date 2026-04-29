@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.987Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "Feed metadata export to CSV",
+  "feature_slug": "feed-metadata-export-to-csv",
+  "summary": "The Feeds page now supports exporting feed metadata to CSV.",
+  "extended_definition": "The Feeds page now supports exporting feed metadata to CSV.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+      "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview",
+      "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the Feed Management UI \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 160,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table outlines the different file sizes that Google SecOps feeds transformation supports: Operation Input type Recommended size Expected duration Max size Data Modeling CSV 10 GB Data Modeling CSV 30 min 10 GB Data Modeling CSV TBD TBD 2 GB Data Modeling XML / JSON 2 GB Data Modeling XLS / XLSX 1 min 50 MB Merge Files Any Varies on number of files 100 GB Decompress Files Non-ZIP Varies on number of files 10 GB (uncompressed) Decompress Files ZIP - Varies on number of files 4 GB (uncompressed) Log line limits and delimiters When ingesting text-based logs (JSON, CSV, or Syslog), ensure your data adheres to these specific ingestion limits: Maximum Line Size : A single log line cannot exceed 4MB .",
+          "Send multiple events in a single webhook request The following code sample shows how to format a single request body with multiple, newline-separated JSON objects after the curl --location item: --header 'Content-Type: application/json' \\ --header 'X-goog-api-key: API KEY' \\ --header 'X-Webhook-Access-Key: SECRET' \\ --data '{\"principal\": {\"asset id\": \"asset 123\"}, \"metadata\": {\"event type\": \"GENERIC EVENT\", \"product name\": \"Product Acme\"}} {\"principal\": {\"asset id\": \"asset 123\"}, \"metadata\": {\"event type\": \"GENERIC EVENT\", \"product name\": \"Product Acme\"}}' Create an HTTPS webhook feed In the Google SecOps menu, select Settings , and then click Feeds .",
+          "Cloud Storage Pub/Sub Access Identity : serviceAccount: service- {unique project id} @gs-project-accounts.iam.gserviceaccount.com Service : pubsub.googleapis.com Operations : All ( ) Resources : All ( ) STS Pub/Sub Identity : serviceAccount: project- {unique project id} @storage-transfer-service.iam.gserviceaccount.com Service : pubsub.googleapis.com Operations : All ( ) Resources : All ( ) To obtain the unique-project-id, do the following: On the Feeds page, click Create Feed ."
+        ]
+      },
+      {
+        "title": "\"Ingest Google Cloud data \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "source_id": "site-api-reference",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "Export filter example: Include additional log types The following export filter exports access transparency logs in addition to the default logs: log id(\"dns.googleapis.com/dns queries\") OR log id(\"cloudaudit.googleapis.com/activity\") OR log id(\"cloudaudit.googleapis.com/system event\") OR log id(\"cloudaudit.googleapis.com/access transparency\") Export filter example: Include additional logs from a specific project The following export filter exports access transparency logs from a specific project, in addition to the default logs: log id(\"dns.googleapis.com/dns queries\") OR log id(\"cloudaudit.googleapis.com/activity\") OR log id(\"cloudaudit.googleapis.com/system event\") OR logName = \"projects/my-project-id/logs/cloudaudit.googleapis.com%2Faccess transparency\" Export filter example: Include additional logs from a specific folder The following export filter exports access transparency logs from a specific folder, in addition to the default logs: log id(\"dns.googleapis.com/dns queries\") OR log id(\"cloudaudit.googleapis.com/activity\") OR log id(\"cloudaudit.googleapis.com/system event\") OR logName = \"folders/my-folder-id/logs/cloudaudit.googleapis.com%2Faccess transparency\" Export filter example: Exclude logs from a specific project The following export filter exports the default logs from the entire Google Cloud organization with the exception of a specific project: (log id(\"dns.googleapis.com/dns queries\") OR log id(\"cloudaudit.googleapis.com/activity\") OR log id(\"cloudaudit.googleapis.com/system event\")) AND (NOT logName = \"^projects/my-project-id/logs/. $\") Export Google Cloud asset metadata You can export your Google Cloud asset metadata from Cloud Asset Inventory to Google SecOps.",
+          "This asset metadata is drawn from your Cloud Asset Inventory and consists of information about your assets, resources, and identities including the following: Environment Location Zone Hardware models Access control relationships between resources and identities The following types of Google Cloud asset metadata will be exported to your Google SecOps instance: GCP BIGQUERY CONTEXT GCP COMPUTE CONTEXT GCP IAM CONTEXT GCP IAM ANALYSIS GCP STORAGE CONTEXT GCP CLOUD FUNCTIONS CONTEXT GCP SQL CONTEXT GCP NETWORK CONNECTIVITY CONTEXT GCP RESOURCE MANAGER CONTEXT The following are examples of Google Cloud asset metadata: Application name— Google-iamSample/0.1 Project name— projects/my-project Note: You need to have either Security Command Center Standard or Security Command Center Premium enabled to export Google Cloud asset metadata to Google SecOps.",
+          "Control the rate of ingestion When the data ingestion rate for a tenant reaches a certain threshold, Google Security Operations restricts the rate of ingestion for new data feeds to prevent a source with a high ingestion rate from affecting the ingestion rate of another data source."
+        ]
+      },
+      {
+        "title": "\"Feed management overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 123,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can use Google SecOps data feeds to ingest log data into your Google SecOps instance from the following sources: Cloud Storage services that are supported by Google SecOps, such as Google Cloud Storage and Amazon S3 Third-party data sources that are supported by Google SecOps and accessed through API, such as Microsoft 365 Files accessible directly using HTTP(S) requests Sources that support HTTPS push ingestion, such as webhooks, Pub/Sub, and Amazon Data Firehose.",
+          "Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Google SecOps supports the following source types: Feed source type Description Third-party API Ingest data from a third-party API."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accounts.iam.gserviceaccount.com",
+      "cloudaudit.googleapis.com",
+      "dns.googleapis.com",
+      "pubsub.googleapis.com",
+      "service.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview"
+      ]
+    }
+  ]
+}

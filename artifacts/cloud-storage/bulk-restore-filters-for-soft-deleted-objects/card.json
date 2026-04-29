@@ -1,0 +1,235 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:55.943Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "Bulk restore filters for soft-deleted objects",
+  "feature_slug": "bulk-restore-filters-for-soft-deleted-objects",
+  "summary": "Bulk restore of soft-deleted objects supports restoring objects based on a specific live point in time or object creation time.",
+  "extended_definition": "Bulk restore of soft-deleted objects supports restoring objects based on a specific live point in time or object creation time.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+      "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.SoftDeletePolicy",
+      "https://docs.cloud.google.com/storage/docs/access-control/iam-console",
+      "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class SoftDeletePolicy (3.10.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.SoftDeletePolicy",
+        "source_id": "site-python-reference",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See https://cloud.google.com/storage/docs/soft-delete Parameters Name Description bucket Bucket Bucket for which this instance is the policy. retention duration seconds int (Optional) The period of time in seconds that soft-deleted objects in the bucket will be retained and cannot be permanently deleted. effective time datetime.datetime (Optional) When the bucket's soft delete policy is effective.",
+          "Returns Type Description int or NoneType The period of time in seconds that soft-deleted objects in the bucket will be retained and cannot be permanently deleted; Or None if the property is not set.",
+          "Returns Type Description SoftDeletePolicy Instance created from resource. fromkeys fromkeys ( value = None , / ) Create a new dictionary with keys from iterable and values set to value. get get ( key , default = None , / ) Return the value for key if key is in the dictionary, else default. items items () API documentation for storage.bucket.SoftDeletePolicy.items method. keys keys () API documentation for storage.bucket.SoftDeletePolicy.keys method. pop pop ( k [, d ]) If the key is not found, return the default if given; otherwise, raise a KeyError. popitem popitem () Remove and return a (key, value) pair as a 2-tuple."
+        ]
+      },
+      {
+        "title": "\"IAM permissions for the Google Cloud console \\_|\\_ Cloud Storage \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/iam-console",
+        "source_id": "site-docs-reference",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "Permissions required for specific actions Action Required IAM Permissions (in addition to those listed above) Create a bucket storage.buckets.create storage.buckets.enableObjectRetention 1 Attach a tag to a bucket storage.buckets.createTagBinding List or filter buckets No additional permissions List tags directly attached to a bucket storage.buckets.listTagBindings List both inherited tags and tags directly attached to a bucket storage.buckets.listEffectiveTags View the following bucket information: Location, replication status, and default storage class Protection settings Bucket labels Object lifecycle policies Public access prevention status Uniform bucket-level access status Autoclass status Website configuration storage.buckets.get Change the following bucket settings: Protection settings Default storage class Bucket labels Object lifecycle policies Uniform bucket-level access status Autoclass status Website configuration Object retention configurations storage.buckets.get storage.buckets.update storage.buckets.enableObjectRetention 1 Enable the Requester Pays feature storage.buckets.get storage.buckets.update Disable the Requester Pays feature storage.buckets.get storage.buckets.update resourcemanager.projects.createBillingAssignment 3 Change the public access prevention setting storage.buckets.get storage.buckets.setIamPolicy storage.buckets.update Change bucket permissions storage.buckets.get storage.buckets.getIamPolicy storage.buckets.setIamPolicy storage.buckets.update Delete an empty bucket storage.buckets.delete storage.objects.list Delete a non-empty bucket storage.buckets.delete storage.objects.delete storage.objects.list Detach a tag from a bucket storage.buckets.deleteTagBinding Create a folder storage.folders.create Get the metadata of a folder storage.folders.get List folders storage.folders.list Rename folders storage.folders.rename (for the source bucket) storage.folders.create (for the destination bucket) Delete folders storage.folders.delete Upload an object or folder of objects storage.objects.create storage.objects.delete 2 storage.objects.setRetention 4 View the details for an object 5 storage.objects.get storage.objects.list View the version history of an object storage.objects.get storage.objects.list Download an object 5 or folder of objects storage.objects.get storage.objects.list List objects in a bucket, including noncurrent objects and soft-deleted objects storage.objects.list Determine if an object is publicly accessible 5 storage.buckets.getIamPolicy storage.objects.list storage.objects.getIamPolicy 7 Rename an object or restore a noncurrent version of an object storage.objects.create storage.objects.delete storage.objects.get storage.objects.list storage.objects.getIamPolicy 7 storage.objects.setIamPolicy 7 Copy an object storage.objects.create (for the destination bucket) storage.objects.delete 2 (for the destination bucket) storage.objects.get (for the source object) storage.objects.list (for the source bucket and destination bucket) storage.objects.getIamPolicy 7,8 (for the source object) storage.objects.setIamPolicy 7,8 (for the destination bucket) Move an object storage.objects.create (for the destination bucket) storage.objects.delete 2 (for the destination bucket) storage.objects.delete (for the source bucket) storage.objects.get (for the source object) storage.objects.list (for the source bucket and destination bucket) storage.objects.getIamPolicy 7,8 (for the source object) storage.objects.setIamPolicy 7,8 (for the destination bucket) View an object's access permissions 5,6 storage.objects.get storage.objects.list storage.objects.getIamPolicy Edit an object's access permissions 5,6 storage.objects.get storage.objects.list storage.objects.getIamPolicy storage.objects.setIamPolicy storage.objects.update Edit an object's metadata 5 storage.objects.get storage.objects.list storage.objects.update Add, change, or remove a retention configuration on an object 5 storage.objects.get storage.objects.list storage.objects.update storage.objects.setRetention storage.objects.overrideUnlockedRetention 9 Add or remove a hold on an object 5 storage.objects.get storage.objects.list storage.objects.update Delete an object 5 , a noncurrent version of an object, or a folder of objects storage.objects.delete storage.objects.list Restore a deleted object storage.objects.create storage.objects.delete 2 storage.objects.list storage.objects.restore Bulk restore deleted objects storage.objects.create storage.objects.delete 10 storage.objects.restore storage.buckets.restore storage.objects.setIamPolicy 7 ,11 View the name of a project's Cloud Storage service agent resourcemanager.projects.get View the service account HMAC keys for a project resourcemanager.projects.get storage.hmacKeys.list Create an HMAC key for a service account resourcemanager.projects.get storage.hmacKeys.list storage.hmacKeys.create Disable or re-enable an HMAC key for a service account resourcemanager.projects.get storage.hmacKeys.list storage.hmacKeys.update Delete an HMAC key for a service account resourcemanager.projects.get storage.hmacKeys.list storage.hmacKeys.delete Create, view, or delete an HMAC key for the user account you are logged in as resourcemanager.projects.get Configure, update or disable the Storage Intelligence configuration on a project, a folder or an organization storage.intelligenceConfigs.update View the Storage Intelligence configuration on a project, a folder or an organization storage.intelligenceConfigs.get Create a cache using Rapid Cache storage.anywhereCaches.create List a cache using Rapid Cache storage.anywhereCaches.list Update a cache using Rapid Cache storage.anywhereCaches.update Pause a cache using Rapid Cache storage.anywhereCaches.pause Resume a cache using Rapid Cache storage.anywhereCaches.resume Get the metadata of a cache using Rapid Cache storage.anywhereCaches.get Disable a cache using Rapid Cache storage.anywhereCaches.disable 1 This permission is only required when enabling a bucket to support object retention configurations .",
+          "5 This action does not require storage.objects.list if it's performed on the details page for the relevant object and you don't access the details page from the overall list of objects for the bucket.",
+          "The following page discusses the Identity and Access Management (IAM) permissions required to perform actions within the Cloud Storage portion of the Google Cloud console."
+        ]
+      },
+      {
+        "title": "IAM permissions for Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "source_id": "site-docs-reference",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "This permission alone does not allow you to list IAM policies or IP filtering rules. storage.buckets.listEffectiveTags List all tags associated with a bucket, including tags inherited from higher in the resource hierarchy, such as from the bucket's project. storage.buckets.listTagBindings List tags directly attached to a bucket. storage.buckets.relocate Relocate buckets between geographic locations. storage.buckets.restore Bulk restore objects that have been soft-deleted . storage.buckets.setIamPolicy Update bucket IAM policies. storage.buckets.setIpFilter Set IP filtering rules on a bucket. storage.buckets.update Update bucket metadata including adding or removing a Pub/Sub notification configuration on a bucket and reading bucket metadata when updating.",
+          "This also returns any contexts attached to the objects. storage.objects.move Move an object within a bucket with hierarchical namespace enabled. storage.objects.overrideUnlockedRetention Use the x-goog-bypass-governance-retention header or the overrideUnlockedRetention query parameter when working with object retention configurations . storage.objects.restore Restore objects that have been soft-deleted . storage.objects.setIamPolicy Update object ACLs. storage.objects.setRetention Add or update retentions for objects. storage.objects.update Update object metadata, excluding ACLs.",
+          "Object permission name Description storage.objects.create Add new objects to a bucket. storage.objects.createContext Attach contexts to an object. storage.objects.delete Delete objects. storage.objects.deleteContext Delete object contexts. storage.objects.dropContexts Drop specified groups of object contexts from a source object during a rewrite , copy , or compose operation using the dropContextGroups parameter. storage.objects.get Read object data and metadata, excluding ACLs."
+        ]
+      },
+      {
+        "title": "Class Bucket (3.10.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "source_id": "site-python-reference",
+        "final_score": 161,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note this property is only set for soft-deleted buckets. hierarchical namespace enabled Whether hierarchical namespace is enabled for this bucket. :setter: Update whether hierarchical namespace is enabled for this bucket. :getter: Query whether hierarchical namespace is enabled for this bucket.",
+          "See https://cloud.google.com/storage/docs/soft-delete Returns Type Description SoftDeletePolicy an instance for managing the bucket's soft delete policy. soft delete time If this bucket has been soft-deleted, returns the time at which it became soft-deleted.",
+          "See: https://cloud.google.com/storage/docs/json api/v1/objects/list#list-object-glob soft deleted bool (Optional) If true, only soft-deleted objects will be listed as distinct results in order of increasing generation number."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.storage",
+      "datetime.datetime",
+      "resourcemanager.projects.createBillingAssignment",
+      "storage.anywhereCaches.create",
+      "storage.anywhereCaches.disable",
+      "storage.anywhereCaches.get",
+      "storage.anywhereCaches.list",
+      "storage.anywhereCaches.pause",
+      "storage.anywhereCaches.resume",
+      "storage.anywhereCaches.update",
+      "storage.bucket.SoftDeletePolicy.items",
+      "storage.bucket.SoftDeletePolicy.keys",
+      "storage.bucket.SoftDeletePolicy.values",
+      "storage.buckets.create",
+      "storage.buckets.createTagBinding",
+      "storage.buckets.delete",
+      "storage.buckets.deleteTagBinding",
+      "storage.buckets.enableObjectRetention",
+      "storage.buckets.get",
+      "storage.buckets.getIamPolicy",
+      "storage.buckets.listEffectiveTags",
+      "storage.buckets.listTagBindings",
+      "storage.buckets.relocate",
+      "storage.buckets.restore",
+      "storage.buckets.setIamPolicy",
+      "storage.buckets.setIpFilter",
+      "storage.buckets.update",
+      "storage.folders.create",
+      "storage.folders.delete",
+      "storage.folders.get",
+      "storage.folders.list",
+      "storage.folders.rename",
+      "storage.hmacKeys.create",
+      "storage.hmacKeys.delete",
+      "storage.hmacKeys.get",
+      "storage.hmacKeys.list",
+      "storage.hmacKeys.update",
+      "storage.intelligenceConfigs.get",
+      "storage.intelligenceConfigs.update",
+      "storage.objects.create",
+      "storage.objects.createContext",
+      "storage.objects.delete",
+      "storage.objects.deleteContext",
+      "storage.objects.dropContexts",
+      "storage.objects.get",
+      "storage.objects.getIamPolicy",
+      "storage.objects.list",
+      "storage.objects.move",
+      "storage.objects.overrideUnlockedRetention",
+      "storage.objects.restore",
+      "storage.objects.setIamPolicy",
+      "storage.objects.setRetention",
+      "storage.objects.update"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.SoftDeletePolicy",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-console",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.SoftDeletePolicy",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-console",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.SoftDeletePolicy",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-console",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.SoftDeletePolicy",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-console",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.SoftDeletePolicy",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-console",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.SoftDeletePolicy",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-console",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.SoftDeletePolicy",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-console",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.SoftDeletePolicy",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-console",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:20.598Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "AND/OR Filters in Explores",
+  "feature_slug": "and-or-filters-in-explores",
+  "summary": "AND/OR Filters in Explores provides a new filter-editing experience with AND/OR filter logic without custom filter expressions.",
+  "extended_definition": "AND/OR Filters in Explores provides a new filter-editing experience with AND/OR filter logic without custom filter expressions.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+      "https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "AND/OR Filters in Explores \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores",
+        "source_id": "site-docs-reference",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Limitations The following are limitations for AND/OR filters in Explores: Multiple filters default to using AND filter logic.",
+          "For example, the following Explore filters contain two groups separated with OR logic: Orders Status is pending AND Users State is California OR Products Category is active AND Inventory Items Cost is <= 100 The resulting explore will show order data of pending orders in California OR orders that contain Active category goods costing less than or equal to 100 .",
+          "Important: When group A contains a required filter, AND filter logic will be applied between all filters within group A , and between all subsequent filter groups and group A ."
+        ]
+      },
+      {
+        "title": "Admin settings - General settings \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "source_id": "site-docs-reference",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "When User Specific Time Zones is enabled, each user is assigned a time zone, and Looker converts time-based data from the Database Time Zone to a user's time zone when the user views query results or interprets filters.",
+          "Reduce Filter Queries This feature reduces the number of queries that are sent by filters.",
+          "The locations in Looker where users might see other users include the following: The Users page in the Admin section of Looker Users' folders in the Folders section of the Looker main menu, if they have been granted at least View access to another user's personal folder The Manage Access pop-up , which is a part of folder management When the Closed System setting is enabled, a non-admin user without the see users permission can see only the other users with whom they share a group and only those groups of which they are a member."
+        ]
+      },
+      {
+        "title": "\"Access control and permission management \\_|\\_ Looker \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "Control the actions a user can perform Create a permission set with the appropriate permissions, then assign a group or user to a role with that permission set Control what fields a user can access Create a model with the appropriate fields, then assign a group or user to a role with that model Control what data a user can access Create a model with the appropriate data limitations, then assign a group or user to a role with that model - or - Use access filters to limit a user to the appropriate data - or - Use user attributes to provide differing database credentials to a group or user - or - Use user attributes with access grants to restrict access to specific Explores, joins, views, or fields Control what database connections a Looker developer can access Create a project with the appropriate connections, associate the project with a set of models, then assign a group or user to a role with those models Feature access can also affect content access .",
+          "Control developer access to database connections Unlike regular users, Looker developers are not fully constrained by models and access filters, because they can make additions or changes to LookML models.",
+          "Data access can be further restricted within a model using access filters to limit which rows of data they can see, as though there was an automatic filter on their queries."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+      ]
+    }
+  ]
+}

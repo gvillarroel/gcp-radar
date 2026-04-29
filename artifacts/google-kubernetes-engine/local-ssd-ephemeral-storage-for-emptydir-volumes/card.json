@@ -1,0 +1,159 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Local SSD ephemeral storage for emptyDir volumes",
+  "feature_slug": "local-ssd-ephemeral-storage-for-emptydir-volumes",
+  "summary": "Node pools running GKE 1.18 and later can use local SSD for emptyDir ephemeral storage in beta.",
+  "extended_definition": "Node pools running GKE 1.18 and later can use local SSD for emptyDir ephemeral storage in beta.",
+  "lifecycle": {
+    "latest_feature_date": "2020-11-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manually optimize Cloud Storage FUSE CSI driver for performance \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "source_id": "site-docs-reference-2",
+        "final_score": 195,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create a Pod manifest with the following specification to consume the PersistentVolumeClaim, depending on whether you are using Local SSD-backed file caching or RAM disk-backed file caching: Local SSD apiVersion : v1 kind : Pod metadata : name : gcs-fuse-csi-example-pod namespace : NAMESPACE annotations : gke-gcsfuse/volumes : \"true\" gke-gcsfuse/cpu-limit : \"0\" gke-gcsfuse/memory-limit : \"0\" gke-gcsfuse/ephemeral-storage-limit : \"0\" spec : containers : Your workload container spec ... volumeMounts : - name : serving-bucket-vol mountPath : /serving-data readOnly : true serviceAccountName : KSA NAME volumes : - name : serving-bucket-vol persistentVolumeClaim : claimName : serving-bucket-pvc RAM disk apiVersion : v1 kind : Pod metadata : name : gcs-fuse-csi-example-pod namespace : NAMESPACE annotations : gke-gcsfuse/volumes : \"true\" gke-gcsfuse/cpu-limit : \"0\" gke-gcsfuse/memory-limit : \"0\" gke-gcsfuse/ephemeral-storage-limit : \"0\" spec : containers : Your workload container spec ... volumeMounts : - name : serving-bucket-vol mountPath : /serving-data readOnly : true serviceAccountName : KSA NAME volumes : - name : gke-gcsfuse-cache # gcsfuse file cache backed by RAM Disk emptyDir : medium : Memory - name : serving-bucket-vol persistentVolumeClaim : claimName : serving-bucket-pvc Apply the manifest to the cluster: kubectl apply -f POD FILE PATH Replace POD FILE PATH with the path to your YAML file.",
+          "To check if your node has ephemeral storage on Local SSD enabled, run the following command: kubectl describe node <code><var>NODE NAME</var></code> grep \"cloud.google.com/gke-ephemeral-storage-local-ssd\" For TPU VM families, especially v6+, we recommend using RAM as a file cache for the best performance as these VM instances have larger RAM.",
+          "If your VM family supports Local SSD but doesn't have the ephemeral storage on Local SSD enabled by default, you can enable Local SSD in your node pool."
+        ]
+      },
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 188,
+        "relevance": "",
+        "evidence_snippets": [
+          "We recommend you to upgrade your node pools to one of the following versions or above to take advantage of the latest patches: 1.21.4-gke.301 1.20.10-gke.301 1.19.14-gke.301 1.18.20-gke.4501 The following versions also contain the fix: 1.21.3-gke.2001 1.20.8-gke.2101 1.20.9-gke.701 1.20.9-gke.1001 1.19.12-gke.2101 1.19.13-gke.701 1.18.20-gke.3001 High GKE clusters on Description Severity A security issue was discovered in Kubernetes , CVE-2021-25741, where a user may be able to create a container with subpath volume mounts to access files & directories outside of the volume, including on the host filesystem.",
+          "Upgrade your Container-Optimized OS node pools to one of the following versions or later: 1.24.14-gke.1027001 1.25.14-gke.1351000 1.26.9-gke.1345000 1.27.5-gke.1647000 Upgrade your Ubuntu node pools to one of the following versions or later: 1.24.17-gke.2186000 1.25.15-gke.1016000 1.26.9-gke.1548000 1.27.6-gke.1551000 1.28.2-gke.1256000 High GKE on VMware Updated: 2023-11-16 Description Severity The following vulnerabilities were discovered in the Linux kernel that can lead to a privilege escalation on Container-Optimized OS and Ubuntu nodes.",
+          "Upgrade your Container-Optimized OS node pools to one of the following versions or later: 1.24.14-gke.1027001 1.25.14-gke.1351000 1.26.9-gke.1345000 1.27.6-gke.1389000 Upgrade your Ubuntu node pools to one of the following versions or later: 1.24.17-gke.2186000 1.25.15-gke.1016000 1.26.9-gke.1548000 1.27.6-gke.1551000 1.28.2-gke.1256000 High GKE on VMware Description Severity The following vulnerabilities were discovered in the Linux kernel that can lead to a privilege escalation on Container-Optimized OS and Ubuntu nodes."
+        ]
+      },
+      {
+        "title": "\"Serve an LLM using TPUs on GKE with KubeRay \\_|\\_ GKE AI/ML \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 188,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Deploy the RayService resource based on the TPU version that you want to use: TPU v5e Inspect the ray-service.tpu-v5e-singlehost.yaml manifest: apiVersion : ray.io/v1 kind : RayService metadata : name : vllm-tpu spec : serveConfigV2 : applications: - name: llm route prefix: / import path: ai-ml.gke-ray.rayserve.llm.model-composition.serve tpu:multi model deployments: - name: MultiModelDeployment num replicas: 1 runtime env: working dir: \"https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/archive/main.zip\" env vars: ASSIST MODEL ID: \"$ASSIST MODEL ID\" SUMMARIZER MODEL ID: \"$SUMMARIZER MODEL ID\" TPU CHIPS: \"16\" TPU HEADS: \"2\" rayClusterConfig : headGroupSpec : rayStartParams : {} template : metadata : annotations : gke-gcsfuse/volumes : \"true\" gke-gcsfuse/cpu-limit : \"0\" gke-gcsfuse/memory-limit : \"0\" gke-gcsfuse/ephemeral-storage-limit : \"0\" spec : serviceAccountName : $KSA NAME containers : - name : ray-head image : $VLLM IMAGE resources : limits : cpu : \"2\" memory : 8G requests : cpu : \"2\" memory : 8G ports : - containerPort : 6379 name : gcs-server - containerPort : 8265 name : dashboard - containerPort : 10001 name : client - containerPort : 8000 name : serve env : - name : HUGGING FACE HUB TOKEN valueFrom : secretKeyRef : name : hf-secret key : hf api token - name : VLLM XLA CACHE PATH value : \"/data\" volumeMounts : - name : gcs-fuse-csi-ephemeral mountPath : /data - name : dshm mountPath : /dev/shm volumes : - name : gke-gcsfuse-cache emptyDir : medium : Memory - name : dshm emptyDir : medium : Memory - name : gcs-fuse-csi-ephemeral csi : driver : gcsfuse.csi.storage.gke.io volumeAttributes : bucketName : $GSBUCKET mountOptions : \"implicit-dirs,file-cache:enable-parallel-downloads:true,file-cache:parallel-downloads-per-file:100,file-cache:max-parallel-downloads:-1,file-cache:download-chunk-size-mb:10,file-cache:max-size-mb:-1\" workerGroupSpecs : - replicas : 2 minReplicas : 1 maxReplicas : 2 numOfHosts : 1 groupName : tpu-group rayStartParams : {} template : metadata : annotations : gke-gcsfuse/volumes : \"true\" gke-gcsfuse/cpu-limit : \"0\" gke-gcsfuse/memory-limit : \"0\" gke-gcsfuse/ephemeral-storage-limit : \"0\" spec : serviceAccountName : $KSA NAME containers : - name : llm image : $VLLM IMAGE env : - name : HUGGING FACE HUB TOKEN valueFrom : secretKeyRef : name : hf-secret key : hf api token - name : VLLM XLA CACHE PATH value : \"/data\" resources : limits : cpu : \"100\" google.com/tpu : \"8\" ephemeral-storage : 40G memory : 200G requests : cpu : \"100\" google.com/tpu : \"8\" ephemeral-storage : 40G memory : 200G volumeMounts : - name : gcs-fuse-csi-ephemeral mountPath : /data - name : dshm mountPath : /dev/shm volumes : - name : gke-gcsfuse-cache emptyDir : medium : Memory - name : dshm emptyDir : medium : Memory - name : gcs-fuse-csi-ephemeral csi : driver : gcsfuse.csi.storage.gke.io volumeAttributes : bucketName : $GSBUCKET mountOptions : \"implicit-dirs,file-cache:enable-parallel-downloads:true,file-cache:parallel-downloads-per-file:100,file-cache:max-parallel-downloads:-1,file-cache:download-chunk-size-mb:10,file-cache:max-size-mb:-1\" nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 Apply the manifest: envsubst < model-composition/ray-service.tpu-v5e-singlehost.yaml kubectl --namespace ${ NAMESPACE } apply -f - TPU v6e Inspect the ray-service.tpu-v6e-singlehost.yaml manifest: apiVersion : ray.io/v1 kind : RayService metadata : name : vllm-tpu spec : serveConfigV2 : applications: - name: llm route prefix: / import path: ai-ml.gke-ray.rayserve.llm.model-composition.serve tpu:multi model deployments: - name: MultiModelDeployment num replicas: 1 runtime env: working dir: \"https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/archive/main.zip\" env vars: ASSIST MODEL ID: \"$ASSIST MODEL ID\" SUMMARIZER MODEL ID: \"$SUMMARIZER MODEL ID\" TPU CHIPS: \"16\" TPU HEADS: \"2\" rayClusterConfig : headGroupSpec : rayStartParams : {} template : metadata : annotations : gke-gcsfuse/volumes : \"true\" gke-gcsfuse/cpu-limit : \"0\" gke-gcsfuse/memory-limit : \"0\" gke-gcsfuse/ephemeral-storage-limit : \"0\" spec : serviceAccountName : $KSA NAME containers : - name : ray-head image : $VLLM IMAGE resources : limits : cpu : \"2\" memory : 8G requests : cpu : \"2\" memory : 8G ports : - containerPort : 6379 name : gcs-server - containerPort : 8265 name : dashboard - containerPort : 10001 name : client - containerPort : 8000 name : serve env : - name : HUGGING FACE HUB TOKEN valueFrom : secretKeyRef : name : hf-secret key : hf api token - name : VLLM XLA CACHE PATH value : \"/data\" volumeMounts : - name : gcs-fuse-csi-ephemeral mountPath : /data - name : dshm mountPath : /dev/shm volumes : - name : gke-gcsfuse-cache emptyDir : medium : Memory - name : dshm emptyDir : medium : Memory - name : gcs-fuse-csi-ephemeral csi : driver : gcsfuse.csi.storage.gke.io volumeAttributes : bucketName : $GSBUCKET mountOptions : \"implicit-dirs,file-cache:enable-parallel-downloads:true,file-cache:parallel-downloads-per-file:100,file-cache:max-parallel-downloads:-1,file-cache:download-chunk-size-mb:10,file-cache:max-size-mb:-1\" workerGroupSpecs : - replicas : 2 minReplicas : 1 maxReplicas : 2 numOfHosts : 1 groupName : tpu-group rayStartParams : {} template : metadata : annotations : gke-gcsfuse/volumes : \"true\" gke-gcsfuse/cpu-limit : \"0\" gke-gcsfuse/memory-limit : \"0\" gke-gcsfuse/ephemeral-storage-limit : \"0\" spec : serviceAccountName : $KSA NAME containers : - name : llm image : $VLLM IMAGE env : - name : HUGGING FACE HUB TOKEN valueFrom : secretKeyRef : name : hf-secret key : hf api token - name : VLLM XLA CACHE PATH value : \"/data\" resources : limits : cpu : \"100\" google.com/tpu : \"8\" ephemeral-storage : 40G memory : 200G requests : cpu : \"100\" google.com/tpu : \"8\" ephemeral-storage : 40G memory : 200G volumeMounts : - name : gcs-fuse-csi-ephemeral mountPath : /data - name : dshm mountPath : /dev/shm volumes : - name : gke-gcsfuse-cache emptyDir : medium : Memory - name : dshm emptyDir : medium : Memory - name : gcs-fuse-csi-ephemeral csi : driver : gcsfuse.csi.storage.gke.io volumeAttributes : bucketName : $GSBUCKET mountOptions : \"implicit-dirs,file-cache:enable-parallel-downloads:true,file-cache:parallel-downloads-per-file:100,file-cache:max-parallel-downloads:-1,file-cache:download-chunk-size-mb:10,file-cache:max-size-mb:-1\" nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v6e-slice cloud.google.com/gke-tpu-topology : 2x4 Apply the manifest: envsubst < model-composition/ray-service.tpu-v6e-singlehost.yaml kubectl --namespace ${ NAMESPACE } apply -f - Wait for the status of the RayService resource to change to Running : kubectl --namespace ${ NAMESPACE } get rayservice/vllm-tpu The output is similar to the following: NAME SERVICE STATUS NUM SERVE ENDPOINTS vllm-tpu Running 2 In this output, the RUNNING status indicates the RayService resource is ready.",
+          "Delete the RayCluster custom resource that you created in this tutorial: kubectl --namespace ${ NAMESPACE } delete raycluster/vllm-tpu Create the RayService custom resource to deploy a model: Llama-3-8B-Instruct Inspect the ray-service.tpu-v5e-singlehost.yaml manifest: apiVersion : ray.io/v1 kind : RayService metadata : name : vllm-tpu spec : serveConfigV2 : applications: - name: llm import path: ai-ml.gke-ray.rayserve.llm.tpu.serve tpu:model deployments: - name: VLLMDeployment num replicas: 1 runtime env: working dir: \"https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/archive/main.zip\" env vars: MODEL ID: \"$MODEL ID\" MAX MODEL LEN: \"$MAX MODEL LEN\" DTYPE: \"$DTYPE\" TOKENIZER MODE: \"$TOKENIZER MODE\" TPU CHIPS: \"8\" rayClusterConfig : headGroupSpec : rayStartParams : {} template : metadata : annotations : gke-gcsfuse/volumes : \"true\" gke-gcsfuse/cpu-limit : \"0\" gke-gcsfuse/memory-limit : \"0\" gke-gcsfuse/ephemeral-storage-limit : \"0\" spec : serviceAccountName : $KSA NAME containers : - name : ray-head image : $VLLM IMAGE imagePullPolicy : IfNotPresent ports : - containerPort : 6379 name : gcs - containerPort : 8265 name : dashboard - containerPort : 10001 name : client - containerPort : 8000 name : serve env : - name : HUGGING FACE HUB TOKEN valueFrom : secretKeyRef : name : hf-secret key : hf api token - name : VLLM XLA CACHE PATH value : \"/data\" resources : limits : cpu : \"2\" memory : 8G requests : cpu : \"2\" memory : 8G volumeMounts : - name : gcs-fuse-csi-ephemeral mountPath : /data - name : dshm mountPath : /dev/shm volumes : - name : gke-gcsfuse-cache emptyDir : medium : Memory - name : dshm emptyDir : medium : Memory - name : gcs-fuse-csi-ephemeral csi : driver : gcsfuse.csi.storage.gke.io volumeAttributes : bucketName : $GSBUCKET mountOptions : \"implicit-dirs,file-cache:enable-parallel-downloads:true,file-cache:parallel-downloads-per-file:100,file-cache:max-parallel-downloads:-1,file-cache:download-chunk-size-mb:10,file-cache:max-size-mb:-1\" workerGroupSpecs : - groupName : tpu-group replicas : 1 minReplicas : 1 maxReplicas : 1 numOfHosts : 1 rayStartParams : {} template : metadata : annotations : gke-gcsfuse/volumes : \"true\" gke-gcsfuse/cpu-limit : \"0\" gke-gcsfuse/memory-limit : \"0\" gke-gcsfuse/ephemeral-storage-limit : \"0\" spec : serviceAccountName : $KSA NAME containers : - name : ray-worker image : $VLLM IMAGE imagePullPolicy : IfNotPresent resources : limits : cpu : \"100\" google.com/tpu : \"8\" ephemeral-storage : 40G memory : 200G requests : cpu : \"100\" google.com/tpu : \"8\" ephemeral-storage : 40G memory : 200G env : - name : JAX PLATFORMS value : \"tpu\" - name : HUGGING FACE HUB TOKEN valueFrom : secretKeyRef : name : hf-secret key : hf api token - name : VLLM XLA CACHE PATH value : \"/data\" volumeMounts : - name : gcs-fuse-csi-ephemeral mountPath : /data - name : dshm mountPath : /dev/shm volumes : - name : gke-gcsfuse-cache emptyDir : medium : Memory - name : dshm emptyDir : medium : Memory - name : gcs-fuse-csi-ephemeral csi : driver : gcsfuse.csi.storage.gke.io volumeAttributes : bucketName : $GSBUCKET mountOptions : \"implicit-dirs,file-cache:enable-parallel-downloads:true,file-cache:parallel-downloads-per-file:100,file-cache:max-parallel-downloads:-1,file-cache:download-chunk-size-mb:10,file-cache:max-size-mb:-1\" nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 Apply the manifest: envsubst < tpu/ray-service.tpu-v5e-singlehost.yaml kubectl --namespace ${ NAMESPACE } apply -f - The envsubst command replaces the environment variables in the manifest.",
+          "Mistral-7B Inspect the ray-service.tpu-v5e-singlehost.yaml manifest: apiVersion : ray.io/v1 kind : RayService metadata : name : vllm-tpu spec : serveConfigV2 : applications: - name: llm import path: ai-ml.gke-ray.rayserve.llm.tpu.serve tpu:model deployments: - name: VLLMDeployment num replicas: 1 runtime env: working dir: \"https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/archive/main.zip\" env vars: MODEL ID: \"$MODEL ID\" MAX MODEL LEN: \"$MAX MODEL LEN\" DTYPE: \"$DTYPE\" TOKENIZER MODE: \"$TOKENIZER MODE\" TPU CHIPS: \"8\" rayClusterConfig : headGroupSpec : rayStartParams : {} template : metadata : annotations : gke-gcsfuse/volumes : \"true\" gke-gcsfuse/cpu-limit : \"0\" gke-gcsfuse/memory-limit : \"0\" gke-gcsfuse/ephemeral-storage-limit : \"0\" spec : serviceAccountName : $KSA NAME containers : - name : ray-head image : $VLLM IMAGE imagePullPolicy : IfNotPresent ports : - containerPort : 6379 name : gcs - containerPort : 8265 name : dashboard - containerPort : 10001 name : client - containerPort : 8000 name : serve env : - name : HUGGING FACE HUB TOKEN valueFrom : secretKeyRef : name : hf-secret key : hf api token - name : VLLM XLA CACHE PATH value : \"/data\" resources : limits : cpu : \"2\" memory : 8G requests : cpu : \"2\" memory : 8G volumeMounts : - name : gcs-fuse-csi-ephemeral mountPath : /data - name : dshm mountPath : /dev/shm volumes : - name : gke-gcsfuse-cache emptyDir : medium : Memory - name : dshm emptyDir : medium : Memory - name : gcs-fuse-csi-ephemeral csi : driver : gcsfuse.csi.storage.gke.io volumeAttributes : bucketName : $GSBUCKET mountOptions : \"implicit-dirs,file-cache:enable-parallel-downloads:true,file-cache:parallel-downloads-per-file:100,file-cache:max-parallel-downloads:-1,file-cache:download-chunk-size-mb:10,file-cache:max-size-mb:-1\" workerGroupSpecs : - groupName : tpu-group replicas : 1 minReplicas : 1 maxReplicas : 1 numOfHosts : 1 rayStartParams : {} template : metadata : annotations : gke-gcsfuse/volumes : \"true\" gke-gcsfuse/cpu-limit : \"0\" gke-gcsfuse/memory-limit : \"0\" gke-gcsfuse/ephemeral-storage-limit : \"0\" spec : serviceAccountName : $KSA NAME containers : - name : ray-worker image : $VLLM IMAGE imagePullPolicy : IfNotPresent resources : limits : cpu : \"100\" google.com/tpu : \"8\" ephemeral-storage : 40G memory : 200G requests : cpu : \"100\" google.com/tpu : \"8\" ephemeral-storage : 40G memory : 200G env : - name : JAX PLATFORMS value : \"tpu\" - name : HUGGING FACE HUB TOKEN valueFrom : secretKeyRef : name : hf-secret key : hf api token - name : VLLM XLA CACHE PATH value : \"/data\" volumeMounts : - name : gcs-fuse-csi-ephemeral mountPath : /data - name : dshm mountPath : /dev/shm volumes : - name : gke-gcsfuse-cache emptyDir : medium : Memory - name : dshm emptyDir : medium : Memory - name : gcs-fuse-csi-ephemeral csi : driver : gcsfuse.csi.storage.gke.io volumeAttributes : bucketName : $GSBUCKET mountOptions : \"implicit-dirs,file-cache:enable-parallel-downloads:true,file-cache:parallel-downloads-per-file:100,file-cache:max-parallel-downloads:-1,file-cache:download-chunk-size-mb:10,file-cache:max-size-mb:-1\" nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 Apply the manifest: envsubst < tpu/ray-service.tpu-v5e-singlehost.yaml kubectl --namespace ${ NAMESPACE } apply -f - The envsubst command replaces the environment variables in the manifest."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "composition.serve",
+      "container.googleapis.com",
+      "gcsfuse.csi.storage.gke.io",
+      "github.com",
+      "gke.1001",
+      "gke.1016000",
+      "gke.1027001",
+      "gke.1256000",
+      "gke.1345000",
+      "gke.1351000",
+      "gke.1389000",
+      "gke.1548000",
+      "gke.1551000",
+      "gke.1647000",
+      "gke.2001",
+      "gke.2101",
+      "gke.2186000",
+      "gke.3001",
+      "gke.301",
+      "gke.4501",
+      "gke.701",
+      "main.zip",
+      "ml.gke",
+      "ray.io",
+      "ray.rayserve.llm.model",
+      "ray.rayserve.llm.tpu.serve",
+      "service.tpu",
+      "singlehost.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray"
+      ]
+    }
+  ]
+}

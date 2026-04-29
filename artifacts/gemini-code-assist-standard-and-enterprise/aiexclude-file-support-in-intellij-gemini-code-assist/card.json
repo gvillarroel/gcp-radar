@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:11.742Z",
+  "source_step08_card": "data/step-08/current/products/gemini-code-assist-standard-and-enterprise/card.json",
+  "product_name": "Gemini Code Assist Standard and Enterprise",
+  "product_slug": "gemini-code-assist-standard-and-enterprise",
+  "feature_name": ".aiexclude file support in IntelliJ Gemini Code Assist",
+  "feature_slug": "aiexclude-file-support-in-intellij-gemini-code-assist",
+  "summary": "The .aiexclude file lets you exclude specified files from AI completions and chat interactions in IntelliJ.",
+  "extended_definition": "The .aiexclude file lets you exclude specified files from AI completions and chat interactions in IntelliJ.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/create-aiexclude-file",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 386,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Exclude files from local context If files are specified in a .aiexclude or .gitignore file, Gemini Code Assist by default excludes them from local use in the context for code completion, code generation, code transformation, and chat.",
+          "IntelliJ In your code file, on a new line, press Alt+\\ (for Windows and Linux) or Cmd+\\ (for macOS) to open the Gemini Code Assist Quick Pick menu.",
+          "A successful check results in the following output: $ grpc-health-probe -addr cloudaicompanion.googleapis.com:443 -tls error: this server does not implement the grpc health protocol (grpc.health.v1.Health): GRPC target method can't be resolved An unsuccessful check results in the following output: timeout: failed to connect service \"cloudaicompanion.googleapis.com:443\" within 1s To obtain more details, run the following before grpc-health-probe : export GRPC GO LOG SEVERITY LEVEL=info IntelliJ There are no known issues for Gemini Code Assist for IntelliJ and other supported JetBrains IDEs."
+        ]
+      },
+      {
+        "title": "\"Exclude files from Gemini Code Assist use \\_|\\_ Gemini for Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/create-aiexclude-file",
+        "source_id": "site-docs-reference",
+        "final_score": 378,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The file must be located in the root working folder for Gemini Code Assist. .gitignore files located in subdirectories won't be considered or merged.",
+          "Unselect the checkbox. .gitignore files are now disabled for specifying file Gemini Code Assist to ignore.",
+          "The path should be relative to the directory that contains the .aiexclude file. my/sensitive/dir/ Blocks all the files in directory foo and its subdirectories except file named bar.txt in the foo directory. foo/ !foo/bar.txt Control access to index for code customization By default, code customization indexes all the supported code files in your specified repositories."
+        ]
+      },
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+        "source_id": "site-docs-root",
+        "final_score": 366,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Exclude files from local context If files are specified in a .aiexclude or .gitignore file, Gemini Code Assist by default excludes them from local use in the context for code completion, code generation, code transformation, and chat.",
+          "IntelliJ In your code file, on a new line, press Alt+\\ (for Windows and Linux) or Cmd+\\ (for macOS) to open the Gemini Code Assist Quick Pick menu.",
+          "A successful check results in the following output: $ grpc-health-probe -addr cloudaicompanion.googleapis.com:443 -tls error: this server does not implement the grpc health protocol (grpc.health.v1.Health): GRPC target method can't be resolved An unsuccessful check results in the following output: timeout: failed to connect service \"cloudaicompanion.googleapis.com:443\" within 1s To obtain more details, run the following before grpc-health-probe : export GRPC GO LOG SEVERITY LEVEL=info IntelliJ There are no known issues for Gemini Code Assist for IntelliJ and other supported JetBrains IDEs."
+        ]
+      },
+      {
+        "title": "\"Chat with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "source_id": "site-docs-reference",
+        "final_score": 364,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Exclude files from local context If files are specified in a .aiexclude or .gitignore file, Gemini Code Assist by default excludes them from local use in the context for code completion, code generation, code transformation, and chat.",
+          "Stop in-progress chat VS Code You can stop an in-progress chat response by pressing stop Stop : IntelliJ You can stop an in-progress chat response by pressing stop Stop : Select the model If you use Gemini Code Assist Standard or Enterprise , or if you have a Google AI Pro or Ultra subscription, you can select the model that Gemini Code Assist uses when processing your prompts.",
+          "Rules in Gemini let you define your preferences, such as: Coding style Output formats Tech stack Language For example, you can create a rule such as \"Always give me concise responses in Kotlin.\" VS Code In your code file, press Control+I (for Windows and Linux) or Command+I (for macOS) to open the Gemini Code Assist Quick Pick menu."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bar.txt",
+      "cloudaicompanion.googleapis.com",
+      "grpc.health.v1.Health"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/create-aiexclude-file",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini"
+      ]
+    }
+  ]
+}

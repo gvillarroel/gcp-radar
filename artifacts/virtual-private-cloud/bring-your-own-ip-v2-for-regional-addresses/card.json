@@ -1,0 +1,170 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:33.557Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Bring Your Own IP v2 for regional addresses",
+  "feature_slug": "bring-your-own-ip-v2-for-regional-addresses",
+  "summary": "Bring Your Own IP v2 for regional addresses reached general availability.",
+  "extended_definition": "Bring Your Own IP v2 for regional addresses reached general availability.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints",
+      "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+      "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+      "https://docs.cloud.google.com/vpc/docs/quota"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Bring your own IP addresses \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "source_id": "site-docs-root-2",
+        "final_score": 342,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Anyone who has the appropriate IAM permissions in the project can use the IP addresses: compute.addresses. for regional IP addresses compute.globalAddresses. for global IP addresses Bring your own IP configurations The following tables summarize the available bring your own IP configurations.",
+          "Configuration Regional (v2) Regional internal (v2) Regional (v1) Global (v1) Availability Recommended regional configuration Used for internal IPv6 addresses Not recommended for new regional configurations Must request adding your project to an allowlist Public advertised prefix provisioning time Approximately 2 weeks Immediate Approximately 4 weeks Approximately 4 weeks Public delegated prefix provisioning time A few minutes Immediate 4 weeks Can overlap with public advertised prefix provisioning time 4 weeks Can overlap with public advertised prefix provisioning time Sub-prefix provisioning time A few minutes Immediate A few minutes A few minutes BGP announcement The public advertised prefix is not automatically announced when it is provisioned.",
+          "Bring your own IP addresses Bring your own IP addresses (BYOIP) lets you provision and use your own public IP addresses for Google Cloud resources."
+        ]
+      },
+      {
+        "title": "\"Planning for bring your own IP addresses \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "source_id": "site-docs-root-2",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Planning for bring your own IP addresses Bring your own IP addresses (BYOIP) lets you provision and use your own public IPv4 addresses for Google Cloud resources.",
+          "Here are some decisions that should be considered when you plan your deployment: Who is responsible for administering BYOIP addresses?",
+          "Prefix type Prefix Scope Public advertised prefix 203.0.113.0/24 Public delegated prefix 203.0.113.0/28 us-central1 Public delegated prefix 203.0.113.16/28 us-east-4 Public advertised prefix for global load balancers 192.0.2.0/24 Public delegated prefix 192.0.2.0/28 global The remaining IP addresses are reserved for future use."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/quota",
+        "source_id": "site-docs-root",
+        "final_score": 206,
+        "relevance": "",
+        "evidence_snippets": [
+          "Limit name: STATIC-BYOIP-ADDRESSES-per-project-region Metric: compute.googleapis.com/regional static byoip addresses Static BYOIP IP addresses global The number of bring your own IP global external IP addresses that you can create in your project.",
+          "Bring your own IP (BYOIP) Static BYOIP IP addresses The number of bring your own IP regional external IP addresses that you can reserve in each region in your project.",
+          "Static global internal IPv4 addresses The number of static global internal IPv4 address ranges that you can reserve in your project, such as allocated IPv4 address ranges for private services access and IPv4 addresses reserved for Private Service Connect endpoints that are used to access global Google APIs."
+        ]
+      },
+      {
+        "title": "\"Access regional Google APIs through endpoints \\_|\\_ Virtual Private Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints",
+        "source_id": "site-docs-root-2",
+        "final_score": 193,
+        "relevance": "",
+        "evidence_snippets": [
+          "DESCRIPTION : a description for your zone REP DNS NAME : the DNS suffix for your zone; use the target regional endpoint hostname—for example, spanner.me-central2.rep.googleapis.com VPC NETWORK LIST : a comma-delimited list of VPC networks that are authorized to query the zone API Send a POST request using the managedZones.create method: HTTP method and URL: POST https://dns.googleapis.com/dns/v1/projects/ PROJECT ID /managedZones Request JSON body: { \"name\": \" ZONE NAME \", \"dnsName\": \" REP DNS NAME .\", \"description\": \" DESCRIPTION \", \"visibility\": \"private\", \"privateVisibilityConfig\": { \"kind\": \"dns#managedZonePrivateVisibilityConfig\", \"networks\": [ { \"kind\": \"dns#managedZonePrivateVisibilityConfigNetwork\", \"networkUrl\": \" NETWORK 1 URL \" }, { \"kind\": \"dns#managedZonePrivateVisibilityConfigNetwork\", \"networkUrl\": \" NETWORK 2 URL \" } ] } } Replace the following: PROJECT ID : the project ID of the DNS zone.",
+          "The following example request tests that an endpoint with IP address 192.168.1.100 can request the Cloud Spanner API discovery document from the regional endpoint in me-central2 . curl --connect-to spanner.me-central2.rep.googleapis.com:443:192.168.1.100:443 \\ 'https://spanner.me-central2.rep.googleapis.com/$discovery/rest?version=v1' Create a private DNS entry for the endpoint You must create private DNS entries so that clients can direct requests to your Private Service Connect endpoint.",
+          "To verify an IPv4 endpoint, do the following: curl --connect-to REP DNS NAME :443: ADDRESS :443 \\ 'https:// REP DNS NAME / PATH ' To verify an IPv6 endpoint, do the following: curl -6 --connect-to REP DNS NAME :443:[ ADDRESS ]:443 \\ 'https:// REP DNS NAME / PATH ' Replace the following: REP DNS NAME : the public DNS name of the target regional endpoint—for example, spanner.me-central2.rep.googleapis.com ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "central2.rep.googleapis.com",
+      "compute.addresses",
+      "compute.globalAddresses",
+      "compute.googleapis.com",
+      "compute.networkAdmin",
+      "dns.admin",
+      "dns.googleapis.com",
+      "spanner.me"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.networkAdmin",
+      "roles/dns.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints"
+      ]
+    }
+  ]
+}

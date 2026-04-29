@@ -1,0 +1,184 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:53.295Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Deny maintenance periods",
+  "feature_slug": "deny-maintenance-periods",
+  "summary": "Cloud SQL lets you define deny maintenance periods to block automatic maintenance during specified time windows.",
+  "extended_definition": "Cloud SQL lets you define deny maintenance periods to block automatic maintenance during specified time windows.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+      "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+      "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "REST Resource: instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "source_id": "site-docs-reference-3",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"settingsVersion\" : string , \"authorizedGaeApplications\" : [ string ] , \"tier\" : string , \"kind\" : string , \"userLabels\" : { string : string , ... } , \"availabilityType\" : enum ( SqlAvailabilityType ) , \"pricingPlan\" : enum ( SqlPricingPlan ) , \"replicationType\" : enum ( SqlReplicationType ) , \"storageAutoResizeLimit\" : string , \"activationPolicy\" : enum ( SqlActivationPolicy ) , \"ipConfiguration\" : { object ( IpConfiguration ) } , \"storageAutoResize\" : boolean , \"locationPreference\" : { object ( LocationPreference ) } , \"databaseFlags\" : [ { object ( DatabaseFlags ) } ] , \"dataDiskType\" : enum ( SqlDataDiskType ) , \"maintenanceWindow\" : { object ( MaintenanceWindow ) } , \"backupConfiguration\" : { object ( BackupConfiguration ) } , \"databaseReplicationEnabled\" : boolean , \"crashSafeReplicationEnabled\" : boolean , \"dataDiskSizeGb\" : string , \"activeDirectoryConfig\" : { object ( SqlActiveDirectoryConfig ) } , \"collation\" : string , \"denyMaintenancePeriods\" : [ { object ( DenyMaintenancePeriod ) } ] , \"insightsConfig\" : { object ( InsightsConfig ) } , \"passwordValidationPolicy\" : { object ( PasswordValidationPolicy ) } , \"sqlServerAuditConfig\" : { object ( SqlServerAuditConfig ) } , \"edition\" : enum ( Edition ) , \"connectorEnforcement\" : enum ( ConnectorEnforcement ) , \"deletionProtectionEnabled\" : boolean , \"timeZone\" : string , \"advancedMachineFeatures\" : { object ( AdvancedMachineFeatures ) } , \"dataCacheConfig\" : { object ( DataCacheConfig ) } , \"replicationLagMaxSeconds\" : integer , \"enableGoogleMlIntegration\" : boolean , \"enableDataplexIntegration\" : boolean , \"retainBackupsOnDelete\" : boolean , \"dataDiskProvisionedIops\" : string , \"dataDiskProvisionedThroughput\" : string , \"connectionPoolConfig\" : { object ( ConnectionPoolConfig ) } , \"finalBackupConfig\" : { object ( FinalBackupConfig ) } , \"readPoolAutoScaleConfig\" : { object ( ReadPoolAutoScaleConfig ) } , \"autoUpgradeEnabled\" : boolean , \"dataApiAccess\" : enum ( DataApiAccess ) } Fields settingsVersion string ( Int64Value format) The version of instance settings.",
+          "The data disk size minimum is 10GB. activeDirectoryConfig object ( SqlActiveDirectoryConfig ) Active Directory configuration, relevant only for Cloud SQL for SQL Server. collation string The name of server Instance collation. denyMaintenancePeriods[] object ( DenyMaintenancePeriod ) Deny maintenance periods insightsConfig object ( InsightsConfig ) Insights configuration, for now relevant only for Postgres. passwordValidationPolicy object ( PasswordValidationPolicy ) The local user password validation policy of the instance. sqlServerAuditConfig object ( SqlServerAuditConfig ) SQL Server specific audit configuration. edition enum ( Edition ) Optional.",
+          "DenyMaintenancePeriod Deny maintenance Periods."
+        ]
+      },
+      {
+        "title": "Troubleshoot \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "The CSV format lets you define which elements of the database to include in the export.",
+          "The following command lets you check the redo log size: SHOW VARIABLES LIKE 'innodb log file%'; You can check the size of general log , if it is enabled, with the help of this command: SELECT ROUND(SUM(LENGTH(argument)/POW(1024,2)),2) AS GB from mysql.general log; If needed, you can truncate your log tables by using the API.",
+          "Export offloading has several advantages, including increased performance on the source instance and the unblocking of administrative operations while the export is running."
+        ]
+      },
+      {
+        "title": "\"Use the Cloud SQL remote MCP server \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to use the Cloud SQL remote MCP server: Make MCP tool calls: mcp.tools.call Clone a Cloud SQL instance: cloudsql.instances.clone Create a Cloud SQL instance: cloudsql.instances.create Create a Cloud SQL user: cloudsql.users.create Execute SQL queries on a Cloud SQL instance: cloudsql.instances.executeSql cloudsql.instances.login Get a Cloud SQL instance: cloudsql.instances.get Get a Cloud SQL instance operation: cloudsql.instances.get Import data to a Cloud SQL instance: cloudsql.instances.import List Cloud SQL instances in a project: cloudsql.instances.list List Cloud SQL users: cloudsql.users.list Update a Cloud SQL instance: cloudsql.instances.update Update a Cloud SQL user: cloudsql.users.update You might also be able to get these permissions with custom roles or other predefined roles .",
+          "See the following example command: gcloud model-armor floorsettings update \\ --full-uri = 'projects/ PROJECT ID /locations/global/floorSetting' \\ --enable-floor-setting-enforcement = TRUE \\ --add-integrated-services = GOOGLE MCP SERVER \\ --google-mcp-server-enforcement-type = INSPECT AND BLOCK \\ --enable-google-mcp-server-cloud-logging \\ --malicious-uri-filter-settings-enforcement = ENABLED \\ --add-rai-settings-filters = '[{\"confidenceLevel\": \"MEDIUM AND ABOVE\", \"filterType\": \"DANGEROUS\"}]' Replace PROJECT ID with your Google Cloud project ID.",
+          "For example, you can deny or allow access based on: The principal Tool properties like read-only The application's OAuth client ID For more information, see Control MCP use with Identity and Access Management ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.instances.clone",
+      "cloudsql.instances.create",
+      "cloudsql.instances.executeSql",
+      "cloudsql.instances.get",
+      "cloudsql.instances.import",
+      "cloudsql.instances.list",
+      "cloudsql.instances.login",
+      "cloudsql.instances.update",
+      "cloudsql.users.create",
+      "cloudsql.users.list",
+      "cloudsql.users.update",
+      "mcp.tools.call",
+      "mysql.general"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.476Z",
+  "source_step08_card": "data/step-08/current/products/application-design-center/card.json",
+  "product_name": "Application Design Center",
+  "product_slug": "application-design-center",
+  "feature_name": "AlloyDB component support",
+  "feature_slug": "alloydb-component-support",
+  "summary": "Application Design Center supports AlloyDB as a component option.",
+  "extended_definition": "Application Design Center supports AlloyDB as a component option.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-design-center/docs/overview",
+      "https://docs.cloud.google.com/application-design-center/docs/quickstart-create-template",
+      "https://docs.cloud.google.com/application-design-center/docs/reference/rest/v1alpha/ConnectionParameters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Application Design Center overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-design-center/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 23,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can select from the following types of components: Google components : components designed by Google that incorporate Google Cloud best practices and default security configurations.",
+          "Components can include: Assets : supporting resources that help you control other resources, such as service accounts or secrets.",
+          "By using these components, you ensure that every part of your application follows security and performance standards."
+        ]
+      },
+      {
+        "title": "\"ConnectionParameters \\_|\\_ Application Design Center \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/application-design-center/docs/reference/rest/v1alpha/ConnectionParameters",
+        "source_id": "site-api-reference",
+        "final_score": 21,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation Connection level parameters associated with each component within an application.",
+          "The name of the connection parameter. parameters[] object ( Parameter ) Optional."
+        ]
+      },
+      {
+        "title": "\"Create and verify a template \\_|\\_ Application Design Center \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/application-design-center/docs/quickstart-create-template",
+        "source_id": "site-docs-root",
+        "final_score": 21,
+        "relevance": "",
+        "evidence_snippets": [
+          "Track the deployment status. gcloud design-center operations describe operation- OPERATION ID \\ --space = SPACE \\ --location = us-central1 \\ --project = MANAGEMENT PROJECT ID When the deployment completes, identify the application output parameters. gcloud design-center spaces applications describe quickstart-three-tier-test \\ --space = SPACE \\ --location = us-central1 \\ --project = MANAGEMENT PROJECT ID \\ --format = 'yaml(name,appParameters,componentParameters,deploymentMetadata,deploymentRevision,previewReference)' Optional: Monitor your deployment After you deploy an application, you can use Application Monitoring to view application telemetry and monitor health and performance: In the Google Cloud console, go to the Application monitoring page: Go to Application monitoring If you use the search bar to find this page, then select the result whose subheading is Monitoring .",
+          "Add a Cloud Run component to use as the frontend. gcloud design-center spaces application-templates components create cloud-run-1 \\ --application-template = quickstart-three-tier-web-app \\ --shared-template-revision-uri = google/1b5e09c8-780f-484e-b8ed-c7178f4e4342 \\ --space = SPACE \\ --location = us-central1 \\ --project = MANAGEMENT PROJECT ID Add a second Cloud Run component to use as the backend. gcloud design-center spaces application-templates components create cloud-run-2 \\ --application-template = quickstart-three-tier-web-app \\ --shared-template-revision-uri = google/1b5e09c8-780f-484e-b8ed-c7178f4e4342 \\ --space = SPACE \\ --location = us-central1 \\ --project = MANAGEMENT PROJECT ID Add a Cloud SQL component. gcloud design-center spaces application-templates components create sql-postgresql-1 \\ --application-template = quickstart-three-tier-web-app \\ --shared-template-revision-uri = google/45be1bc2-89bc-477b-9b5d-64c41ff3b146 \\ --space = SPACE \\ --location = us-central1 \\ --project = MANAGEMENT PROJECT ID Connect cloud-run-1 to cloud-run-2. gcloud design-center spaces application-templates components connections create frontend-to-backend \\ --application-template = quickstart-three-tier-web-app \\ --component = cloud-run-1 \\ --destination-component-uri = cloud-run-2 \\ --space = SPACE \\ --location = us-central1 \\ --project = MANAGEMENT PROJECT ID Connect cloud-run-2 to sql-postgresql-1. gcloud design-center spaces application-templates components connections create backend-to-database \\ --application-template = quickstart-three-tier-web-app \\ --component = cloud-run-2 \\ --destination-component-uri = sql-postgresql-1 \\ --space = SPACE \\ --location = us-central1 \\ --project = MANAGEMENT PROJECT ID Commit your changes to create an application template revision. gcloud design-center spaces application-templates commit quickstart-three-tier-web-app \\ --space = SPACE \\ --location = us-central1 \\ --project = MANAGEMENT PROJECT ID Create an application draft Design canvas From the design canvas, click Configure an app .",
+          "Create frontend-service.json . { \"component\" : \"projects/ MANAGEMENT PROJECT ID /locations/us-central1/spaces/ SPACE /applicationTemplates/quickstart-three-tier-web-app/components/cloud-run-1\" , \"parameters\" : [ { \"key\" : \"service name\" , \"value\" : \"frontend-service\" }, { \"key\" : \"project id\" , \"value\" : \" DEPLOYMENT PROJECT ID \" } ] } Create backend-service.json . { \"component\" : \"projects/ MANAGEMENT PROJECT ID /locations/us-central1/spaces/ SPACE /applicationTemplates/quickstart-three-tier-web-app/components/cloud-run-2\" , \"parameters\" : [ { \"key\" : \"service name\" , \"value\" : \"backend-service\" }, { \"key\" : \"project id\" , \"value\" : \" DEPLOYMENT PROJECT ID \" } ] } Create database-postgresql.json . { \"component\" : \"projects/ MANAGEMENT PROJECT ID /locations/us-central1/spaces/ SPACE /applicationTemplates/quickstart-three-tier-web-app/components/sql-postgresql-1\" , \"parameters\" : [ { \"key\" : \"name\" , \"value\" : \"database-postgresql\" }, { \"key\" : \"project id\" , \"value\" : \" DEPLOYMENT PROJECT ID \" }, { \"key\" : \"database version\" , \"value\" : \"POSTGRES 15\" }, { \"key\" : \"region\" , \"value\" : \"us-central1\" }, { \"key\" : \"zone\" , \"value\" : \"us-central1-a\" } ] } Update the application to configure the required parameters. gcloud design-center spaces applications update quickstart-three-tier-test \\ --space = SPACE \\ --location = us-central1 \\ --project = MANAGEMENT PROJECT ID \\ --component-parameters = ./frontend-service.json \\ --component-parameters = ./backend-service.json \\ --component-parameters = ./database-postgresql.json Deploy the application Design canvas Click Deploy ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "postgresql.json",
+      "service.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/quickstart-create-template",
+        "https://docs.cloud.google.com/application-design-center/docs/reference/rest/v1alpha/ConnectionParameters",
+        "https://docs.cloud.google.com/application-design-center/docs/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/quickstart-create-template",
+        "https://docs.cloud.google.com/application-design-center/docs/reference/rest/v1alpha/ConnectionParameters",
+        "https://docs.cloud.google.com/application-design-center/docs/overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/quickstart-create-template",
+        "https://docs.cloud.google.com/application-design-center/docs/reference/rest/v1alpha/ConnectionParameters",
+        "https://docs.cloud.google.com/application-design-center/docs/overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/quickstart-create-template",
+        "https://docs.cloud.google.com/application-design-center/docs/reference/rest/v1alpha/ConnectionParameters",
+        "https://docs.cloud.google.com/application-design-center/docs/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/quickstart-create-template",
+        "https://docs.cloud.google.com/application-design-center/docs/reference/rest/v1alpha/ConnectionParameters",
+        "https://docs.cloud.google.com/application-design-center/docs/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/quickstart-create-template",
+        "https://docs.cloud.google.com/application-design-center/docs/reference/rest/v1alpha/ConnectionParameters",
+        "https://docs.cloud.google.com/application-design-center/docs/overview"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/quickstart-create-template",
+        "https://docs.cloud.google.com/application-design-center/docs/reference/rest/v1alpha/ConnectionParameters",
+        "https://docs.cloud.google.com/application-design-center/docs/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/quickstart-create-template",
+        "https://docs.cloud.google.com/application-design-center/docs/reference/rest/v1alpha/ConnectionParameters",
+        "https://docs.cloud.google.com/application-design-center/docs/overview"
+      ]
+    }
+  ]
+}

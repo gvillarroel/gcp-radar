@@ -1,0 +1,259 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.987Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "Chronicle Detection Engine",
+  "feature_slug": "chronicle-detection-engine",
+  "summary": "The Chronicle Detection Engine lets customers search their data for security issues and automate threat detection with rules.",
+  "extended_definition": "The Chronicle Detection Engine lets customers search their data for security issues and automate threat detection with rules.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Detection Engine \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "source_id": "site-api-reference",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Detection Engine This document explains how to use the Detection Engine API Methods to create, run, and manage security rules that search data stored in your Google Security Operations account.",
+          "Sample Response { \"curatedRuleDetections\": [ { \"type\": \"GCTI FINDING\", \"detection\": [ { \"ruleName\": \"Cobalt Strike Default Entrypoint\", \"summary\": \"Rule Detection\", \"description\": \"Identifies CobaltStrike rundll32 execution using the default entrypoint.\", \"severity\": \"LOW\", \"urlBackToProduct\": \"https://customername.backstory.chronicle.security/ruleDetections?ruleId=ur mal CobaltStrike StartW&selectedList=RuleDetectionsViewTimeline&ruleSource=ruleSet&selectedParentDetectionId=de 227a290c-17e9-6314-7f16-35f7923b554f&selectedTimestamp=2022-12-05T11:07:12.585Z\", \"ruleId\": \"ur mal CobaltStrike StartW\", \"alertState\": \"ALERTING\", \"ruleType\": \"SINGLE EVENT\", \"ruleLabels\": [ { \"key\": \"rule name\", \"value\": \"Cobalt Strike Default Entrypoint\" } ], \"ruleSet\": \"6e6eda02-51b9-e57e-9597-622f1c7f3ee9\", \"ruleSetDisplayName\": \"RAT\" } ], \"createdTime\": \"2022-12-05T12:13:23.154544Z\", \"lastUpdatedTime\": \"2022-12-05T12:13:23.154544Z\", \"id\": \"de 227a290c-17e9-6314-7f16-35f7923b554f\", \"timeWindow\": { \"startTime\": \"2022-12-05T11:07:12.585Z\", \"endTime\": \"2022-12-05T11:07:12.585Z\" }, \"collectionElements\": [ { \"references\": [ { \"event\": { \"metadata\": { \"eventTimestamp\": \"2022-12-05T11:07:12.585Z\", \"eventType\": \"PROCESS LAUNCH\", \"ingestedTimestamp\": \"2022-12-05T11:06:27.737408Z\", \"id\": \"AAAAA\" }, \"principal\": { \"hostname\": \"admin-1\", \"process\": { \"pid\": \"12345\", \"command line\": \"\\\"powershell.exe\\\" {wmic /node:127.0.0.1 process call create \\\\\\\"\\\"rundll32.exe $env:TEMP\\\\calc.dll StartW\\\\\\\"\\\"}\" } } \"src\": { \"file\": { full path: \"C:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\Temp\\\\\" } } \"target\": { \"process\": { \"pid\": \"12345\", \"file\": { \"sha256\": \"abcde\", \"full path\": \"C:\\\\Windows\\\\System32\\\\wbem\\\\WMIC.exe\" } command line: \"\\\"C:\\\\Windows\\\\System32\\\\Wbem\\\\WMIC.exe\\\" /node:127.0.0.1 process call create \\\"rundll32.exe C:\\\\Users\\\\ADMIN-1\\\\AppData\\\\Local\\\\Temp\\\\calc.dll StartW\\\"\" } } } } ], \"label\": \"e\" } ], \"detectionTime\": \"2022-12-05T11:07:12.585Z\", \"tags\": [ \"TA0004\", \"T1548\" ] }, { \"type\": \"GCTI FINDING\", \"detection\": [ { \"ruleName\": \"Cobalt Strike Default Entrypoint\", \"summary\": \"Rule Detection\", \"description\": \"Identifies CobaltStrike rundll32 execution using the default entrypoint.\", \"severity\": \"LOW\", \"urlBackToProduct\": \"https://customername.backstory.chronicle.security/ruleDetections?ruleId=ur mal CobaltStrike StartW&selectedList=RuleDetectionsViewTimeline&ruleSource=ruleSet&selectedParentDetectionId=de c34ee707-ad5e-4e5e-4955-a3a8e13053ae&selectedTimestamp=2022-12-05T10:04:28.097Z\", \"ruleId\": \"ur mal CobaltStrike StartW\", \"alertState\": \"ALERTING\", \"ruleType\": \"SINGLE EVENT\", \"ruleLabels\": [ { \"key\": \"rule name\", \"value\": \"Cobalt Strike Default Entrypoint\" } ], \"ruleSet\": \"6e6eda02-51b9-e57e-9597-622f1c7f3ee9\", \"ruleSetDisplayName\": \"RAT\" } ], \"createdTime\": \"2022-12-05T11:12:24.406199Z\", \"lastUpdatedTime\": \"2022-12-05T11:12:24.406199Z\", \"id\": \"de c34ee707-ad5e-4e5e-4955-a3a8e13053ae\", \"timeWindow\": { \"startTime\": \"2022-12-05T10:04:28.097Z\", \"endTime\": \"2022-12-05T10:04:28.097Z\" }, \"collectionElements\": [ { \"references\": [ { \"event\": { \"metadata\": { \"eventTimestamp\": \"2022-12-05T10:04:28.097Z\", \"eventType\": \"PROCESS LAUNCH\", \"ingestedTimestamp\": \"2022-12-05T10:04:01Z\", \"id\": \"BBBBB\" }, \"principal\": { \"hostname\": \"admin-2\", \"process\": { \"pid\": \"67890\", \"command line\": \"\\\"powershell.exe\\\" {wmic /node:127.0.0.1 process call create \\\\\\\"\\\"rundll32.exe $env:TEMP\\\\calc.dll StartW\\\\\\\"\\\"}\" } } \"src\": { \"file\": { full path: \"C:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\Temp\\\\\" } } \"target\": { \"process\": { \"pid\": \"67890\", \"file\": { \"sha256\": \"abcde\", \"full path\": \"C:\\\\Windows\\\\System32\\\\wbem\\\\WMIC.exe\" } command line: \"\\\"C:\\\\Windows\\\\System32\\\\Wbem\\\\WMIC.exe\\\" /node:127.0.0.1 process call create \\\"rundll32.exe C:\\\\Users\\\\ADMIN-2\\\\AppData\\\\Local\\\\Temp\\\\calc.dll StartW\\\"\" } } } } ], \"label\": \"e\" } ], \"detectionTime\": \"2022-12-05T10:04:28.097Z\", \"tags\": [ \"TA0004\", \"T1548\" ] } ], \"nextPageToken\": \"CgwIrdncnQYQ6OqRkwISCwiosvKXBhDQ-74JGidkZV8wNDZjZmY0YS1jM2ZkLTM5YWEtYmUyYS0wZTU2Zjk4OWE1YTE=\" } ListDetections Return the detections for the specified version of a rule, the latest version of a rule, all versions of a rule, or all versions of all rules.",
+          "Response Sample Heartbeat Response (can be ignored by clients) { \"heartbeat\": true } Sample Response (without detections list) { \"continuationTime\": \"2019-04-15T21:59:17.081331Z\" } Sample Response (with detections list including detections from both user-created rules and Google SecOps Rules) { \"continuationTime\": \"2019-05-29T05:00:04.123073Z\", \"detections\": [ { \"type\": \"RULE DETECTION\", \"detection\": [ { \"ruleName\": \"singleEventRule2\", \"urlBackToProduct\": \"https://customername.backstory.chronicle.security/ruleDetections? ruleId=ru 1f54ab4b-e523-48f7-ae25-271b5ea8337d&selectedList=RuleDetectionsViewTimeline& selectedParentDetectionId=de ce594791-09ed-9681-27fa-3b7c8fa6054c& selectedTimestamp=2020-12-03T16:50:47.647245Z\", \"ruleId\": \"ru 1f54ab4b-e523-48f7-ae25-271b5ea8337d\", \"ruleVersion\": \"ru 1f54ab4b-e523-48f7-ae25-271b5ea8337d@v 1605892822 687503000\", \"alertState\": \"ALERTING\", \"ruleType\": \"SINGLE EVENT\" } ], \"createdTime\": \"2020-12-03T19:19:21.325134Z\", \"id\": \"de ce594791-09ed-9681-27fa-3b7c8fa6054c\", \"timeWindow\": { \"startTime\": \"2020-12-03T16:50:47.647245Z\", \"endTime\": \"2020-12-03T16:50:47.647245Z\" }, \"collectionElements\": [ { \"references\": [ { \"event\": { \"metadata\": { \"eventTimestamp\": \"2020-12-03T16:50:47.647245Z\", \"collectedTimestamp\": \"2020-12-03T16:50:47.666064010Z\", \"eventType\": \"NETWORK DNS\", \"productName\": \"ProductName\", \"ingestedTimestamp\": \"2020-12-03T16:50:49.494542Z\" }, \"principal\": { \"ip\": [ \"127.0.0.1\" ] }, \"target\": { \"ip\": [ \"127.0.0.1\" ] }, \"securityResult\": [ { \"action\": [ \"UNKNOWN ACTION\" ] } ], \"network\": { \"applicationProtocol\": \"DNS\", \"dns\": { \"questions\": [ { \"name\": \"altostrat.com\", \"type\": 1, \"class\": 1 } ], \"id\": 12345, \"recursionDesired\": true } } } } ], \"label\": \"e\" } ], \"detectionTime\": \"2020-12-03T16:50:47.647245Z\" }, { \"type\": \"GCTI FINDING\", \"detection\": [ { \"ruleName\": \"Google Cloud Global SSH Keys\", \"urlBackToProduct\": \"https://customername.backstory.chronicle.security/ruleDetections ?ruleId=ur ttp GCP GlobalSSHKeys Added&selectedList=RuleDetectionsViewTimeline &ruleSource=ruleSet&selectedParentDetectionId=de 8e47ff9c-9bc4-df7c-1782-53ddf14c9b6c &selectedTimestamp=2020-12-03T16:50:47.647245Z\", \"ruleId\": \"ur ttp GCP GlobalSSHKeys Added\", \"alertState\": \"ALERTING\", \"ruleType\": \"SINGLE EVENT\", \"summary\": \"Rule Detection\", \"ruleSet\": \"11c505d4-b424-65e3-d918-1a81232cc76b\", \"ruleSetDisplayName\": \"Admin Action\", \"description\": \"Identifies instances of project-wide SSH keys being added where there were previously none.\", \"severity\": \"LOW\" } ], \"createdTime\": \"2020-12-03T19:19:21.325134Z\", \"id\": \"de ce594791-09ed-9681-27fa-3b7c8fa6054c\", \"timeWindow\": { \"startTime\": \"2020-12-03T16:50:47.647245Z\", \"endTime\": \"2020-12-03T16:50:47.647245Z\" }, \"collectionElements\": [ { \"references\": [ { \"event\": { \"metadata\": { \"eventTimestamp\": \"2020-12-03T16:50:47.647245Z\", \"collectedTimestamp\": \"2020-12-03T16:50:47.666064010Z\", \"eventType\": \"NETWORK DNS\", \"productName\": \"ProductName\", \"ingestedTimestamp\": \"2020-12-03T16:50:49.494542Z\" }, \"principal\": { \"ip\": [ \"127.0.0.1\" ] }, \"target\": { \"ip\": [ \"127.0.0.1\" ] }, \"securityResult\": [ { \"action\": [ \"UNKNOWN ACTION\" ] } ], \"network\": { \"applicationProtocol\": \"DNS\", \"dns\": { \"questions\": [ { \"name\": \"altostrat.com\", \"type\": 1, \"class\": 1 } ], \"id\": 12345, \"recursionDesired\": true } } } } ], \"label\": \"e\" } ], \"detectionTime\": \"2020-12-03T16:50:47.647245Z\", \"lastUpdatedTime\": \"2020-12-03T19:19:21.325134Z\", \"tags\": [\"TA0003\", \"TA0004\"] }, ... ] } Detections are returned in the same format defined for GetDetection ."
+        ]
+      },
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 199,
+        "relevance": "",
+        "evidence_snippets": [
+          "When searching Values , UDM Lookup displays Possible value match when a match is found in the following cases: Matches in the following UDM fields: metadata.description security result.description security result.detection fields.value security result.summary network.http.user agent Matches in fields with a full path that ends in one of the following values: .command line For example principal.process.command line . .file.full path For example principal.process.file.full path . .labels.value For example src.labels.value . .registry.registry key For example principal.registry.registry key . .url For example principal.url .",
+          "Search for events and alerts Supported in: Google secops SIEM The search function lets you find Unified Data Model (UDM) events and alerts in your Google Security Operations instance using YARA-L 2.0 syntax .",
+          "These alerts don't surface within search unless they are processed by the Google SecOps Detection Engine as a YARA-L rule."
+        ]
+      },
+      {
+        "title": "\"Ingest Google Cloud data \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "source_id": "site-api-reference",
+        "final_score": 181,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This lets you store, search, and examine aggregated security information for your enterprise, going back for months or longer, in accordance with your data retention period.",
+          "To grant the Chronicle Service Viewer IAM role using gcloud , run the following command: gcloud organizations add-iam-policy-binding ORGANIZATION ID \\ --member \"user: USER EMAIL \" \\ --role roles/chroniclesm.viewer To grant the Security Center Admin Editor IAM role using gcloud , run the following command: gcloud organizations add-iam-policy-binding ORGANIZATION ID \\ --member \"user: USER EMAIL \" \\ --role roles/securitycenter.adminEditor ` To grant the Organization Role Viewer IAM role using gcloud , run the following command: gcloud organizations add-iam-policy-binding ORGANIZATION ID \\ --member \"user: USER EMAIL \" \\ --role roles/iam.organizationRoleViewer Enable direct ingestion from Google Cloud The steps to enable direct ingestion from Google Cloud are different depending on the ownership of the project that your Google SecOps instance is bound to.",
+          "Available log types include: Cloud Audit Logs Cloud NAT Cloud DNS Cloud Next Generation Firewall Cloud Intrusion Detection System Cloud Load Balancing Cloud SQL Windows Event logs Linux syslog Linux Sysmon Zeek Google Kubernetes Engine Audit Daemon ( auditd ) Apigee reCAPTCHA Enterprise Cloud Run logs ( GCP RUN ) Google Cloud Abuse Events Google Cloud DNS Advanced Threat Detection ( GCP DNS ATD ) Model Armor logs For details about the specific log filters and more ingestion details, see Export Google Cloud logs to Google SecOps."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "about.administrative",
+      "about.asset.network",
+      "about.file.md5",
+      "about.file.sha1",
+      "about.file.sha256",
+      "about.user.userid",
+      "altostrat.com",
+      "calc.dll",
+      "chroniclesm.viewer",
+      "customername.backstory.chronicle.security",
+      "fields.value",
+      "file.full",
+      "iam.organizationRoleViewer",
+      "intermediary.hostname",
+      "intermediary.ip",
+      "intermediary.user.email",
+      "labels.value",
+      "metadata.description",
+      "network.dns",
+      "network.dns.questions.name",
+      "network.email.from",
+      "network.email.to",
+      "network.http.user",
+      "observer.hostname",
+      "observer.ip",
+      "observer.user.userid",
+      "powershell.exe",
+      "principal.administrative",
+      "principal.artifact.ip",
+      "principal.asset.hostname",
+      "principal.asset.ip",
+      "principal.asset.network",
+      "principal.file.full",
+      "principal.hostname",
+      "principal.ip",
+      "principal.namespace",
+      "principal.process.command",
+      "principal.process.file.full",
+      "principal.process.file.md5",
+      "principal.process.file.sha1",
+      "principal.process.file.sha256",
+      "principal.process.parent",
+      "principal.process.pid",
+      "principal.process.product",
+      "principal.registry.registry",
+      "principal.url",
+      "principal.user.email",
+      "principal.user.user",
+      "principal.user.userid",
+      "principal.user.windows",
+      "process.file.full",
+      "process.pid",
+      "process.product",
+      "registry.registry",
+      "result.about.file.sha256",
+      "result.about.user.email",
+      "result.description",
+      "result.detection",
+      "result.summary",
+      "rundll32.exe",
+      "securitycenter.adminEditor",
+      "src.artifact.ip",
+      "src.asset.hostname",
+      "src.asset.ip",
+      "src.hostname",
+      "src.ip",
+      "src.labels.value",
+      "src.namespace",
+      "src.user.userid",
+      "target.administrative",
+      "target.artifact.ip",
+      "target.asset.hostname",
+      "target.asset.ip",
+      "target.asset.network",
+      "target.file.full",
+      "target.file.md5",
+      "target.file.sha1",
+      "target.file.sha256",
+      "target.hostname",
+      "target.ip",
+      "target.namespace",
+      "target.process.file.full",
+      "target.process.file.md5",
+      "target.process.file.sha1",
+      "target.process.file.sha256",
+      "target.process.parent",
+      "target.process.pid",
+      "target.process.product",
+      "target.user.email",
+      "target.user.user",
+      "target.user.userid",
+      "target.user.windows"
+    ],
+    "missing_inventory_roles": [
+      "roles/chroniclesm.viewer",
+      "roles/iam.organizationRoleViewer",
+      "roles/securitycenter.adminEditor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:26.956Z",
+  "source_step08_card": "data/step-08/current/products/sap-on-google-cloud/card.json",
+  "product_name": "SAP on Google Cloud",
+  "product_slug": "sap-on-google-cloud",
+  "feature_name": "Oracle Automatic Storage Management support for Oracle Database on SAP NetWeaver",
+  "feature_slug": "oracle-automatic-storage-management-support-for-oracle-database-on-sap-netweaver",
+  "summary": "SAP and Oracle have validated Oracle Automatic Storage Management for running Oracle Database with SAP NetWeaver-based applications on Google Cloud.",
+  "extended_definition": "SAP and Oracle have validated Oracle Automatic Storage Management for running Oracle Database with SAP NetWeaver-based applications on Google Cloud.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-ase-or-db2",
+      "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+      "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Reference architecture: SAP Business Suite on SAP ASE or IBM Db2 on Google\\",
+        "url": "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-ase-or-db2",
+        "source_id": "site-docs-root",
+        "final_score": 187,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "While Cloud Storage automatically encrypts data at rest, you can instead specify your own encryption keys if you have your own key-management system.",
+          "Drive Description Recommended storage option in Google Cloud C:\\ Boot Balanced Persistent Disk D:\\ Database binaries Balanced Persistent Disk E:\\ Database data files SSD-based Persistent Disk or Hyperdisk L:\\ Database log files SSD-based Persistent Disk or Hyperdisk P:\\ Page file Balanced Persistent Disk S:\\ /usr/sap and /sapmnt directories Balanced Persistent Disk T:\\ temp and saptemp directories Balanced Persistent Disk X:\\ Backup Balanced Persistent Disk For more information about the directory structures, see the SAP NetWeaver planning guide .",
+          "For information about planning your SAP ASE deployment, see: SAP NetWeaver planning guide IBM Db2 for SAP planning guide What's next Learn more about the Google Cloud services used in this guide: VPC networks Compute Engine Storage options : Persistent Disk, Hyperdisk, and Cloud Storage Google Cloud console Cloud Monitoring Identity and Access Management Filestore NetApp Cloud Volumes ONTAP Google Cloud NetApp Volumes Backup and DR Service For more reference architectures, design guides, and best practices, explore the Cloud Architecture Center ."
+        ]
+      },
+      {
+        "title": "\"Reference architecture: SAP Business Suite on SAP HANA on Google Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+        "source_id": "site-docs-root",
+        "final_score": 175,
+        "relevance": "",
+        "evidence_snippets": [
+          "While Cloud Storage automatically encrypts data at rest, you can instead specify your own encryption keys if you have your own key-management system.",
+          "Single points of failure An SAP Business Suite system on SAP HANA, has some common single points of failure that can impact the availability of the system: SAP Central Services such as Message Server and Enqueue Server SAP Application Server SAP HANA database SAP Web Dispatcher, if used as a frontend for HTTP/HTTPS access to the system Shared storage such as NFS There are multiple options for reducing the impact of such single points of failure, and these options involve deploying the system using high-availability solutions, replication services, or using other functionalities that protect the system from failures.",
+          "What's next Learn more about the Google Cloud services used in this guide: VPC networks Compute Engine Storage options : Persistent Disk, Hyperdisk, and Cloud Storage Google Cloud console Cloud Monitoring Identity and Access Management Filestore NetApp Cloud Volumes ONTAP Google Cloud NetApp Volumes Backup and DR Service For more reference architectures, design guides, and best practices, explore the Cloud Architecture Center ."
+        ]
+      },
+      {
+        "title": "\"Reference architecture: SAP S/4HANA on Google Cloud \\_|\\_ SAP on Google\\",
+        "url": "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp",
+        "source_id": "site-docs-reference",
+        "final_score": 175,
+        "relevance": "",
+        "evidence_snippets": [
+          "While Cloud Storage automatically encrypts data at rest, you can instead specify your own encryption keys if you have your own key-management system.",
+          "Single points of failure An SAP S/4HANA system has some common single points of failure that can impact the availability of the system: SAP Central Services such as Message Server and Enqueue Server SAP Application Server SAP HANA database SAP Web Dispatcher, if used as a frontend for HTTP/HTTPS access to the system Shared storage such as NFS There are multiple options for reducing the impact of such single points of failure, and these options involve deploying the system using high-availability solutions, replication services, or using other functionalities that protect the system from failures.",
+          "What's next Learn more about the Google Cloud services used in this guide: VPC networks Compute Engine Storage options : Persistent Disk, Hyperdisk, and Cloud Storage Google Cloud console Cloud Monitoring Identity and Access Management Filestore NetApp Cloud Volumes ONTAP Google Cloud NetApp Volumes Backup and DR Service For more reference architectures, design guides, and best practices, explore the Cloud Architecture Center ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-ase-or-db2",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-ase-or-db2",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-ase-or-db2",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-ase-or-db2",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:05.164Z",
+  "source_step08_card": "data/step-08/current/products/datastore/card.json",
+  "product_name": "Datastore",
+  "product_slug": "datastore",
+  "feature_name": "Location support: us-east5",
+  "feature_slug": "location-support-us-east5",
+  "summary": "Firestore in Datastore mode supports the us-east5 Columbus region.",
+  "extended_definition": "Firestore in Datastore mode supports the us-east5 Columbus region.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/app-engine-requirement",
+      "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+      "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+      "https://docs.cloud.google.com/datastore/docs/store-query-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Store and query data in Firestore in Datastore mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "source_id": "site-docs-root",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Store and query data in Firestore in Datastore mode This page shows you how to store and query data in Firestore in Datastore mode using the Google Cloud console.",
+          "When you create a new Firestore database, you have the option to use Firestore in either Native Mode or Datastore mode.",
+          "The location applies to both Datastore mode databases and App Engine apps for your Google Cloud project."
+        ]
+      },
+      {
+        "title": "\"Getting started with the Firestore in Datastore mode API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "source_id": "site-iam-reference",
+        "final_score": 237,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . / Adds a task entity to the Datastore. @param description The task description @return The {@link Key} of the entity @throws DatastoreException if the ID allocation or put fails / Key addTask ( String description ) { Key key = datastore . allocateId ( keyFactory . newKey ()); Entity task = Entity . newBuilder ( key ) . set ( \"description\" , StringValue . newBuilder ( description ). setExcludeFromIndexes ( true ). build ()) . set ( \"created\" , Timestamp . now ()) . set ( \"done\" , false ) . build (); datastore . put ( task ); return key ; } Node.js To learn how to install and use the client library for Cloud Datastore, see Cloud Datastore client libraries .",
+          "A typical query includes the following: An entity kind to which the query applies Zero or more filters, for example to select kinds whose properties match a value Zero or more sort orders, to sequence the results For this application, we'll query Datastore mode for Task entities sorted by creation time: C# To learn how to install and use the client library for Cloud Datastore, see Cloud Datastore client libraries .",
+          "For more information, see Set up authentication for a local development environment . import ( \"context\" \"log\" \"time\" \"cloud.google.com/go/datastore\" ) // Task is the model used to store tasks in the datastore. type Task struct { Desc string datastore:\"description\" Created time ."
+        ]
+      },
+      {
+        "title": "Exporting and Importing Entities \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "source_id": "site-docs-root",
+        "final_score": 217,
+        "relevance": "",
+        "evidence_snippets": [
+          "This page describes how to export and import Firestore in Datastore mode entities using the managed export and import service.",
+          "Create a Cloud Storage bucket in the same location as your Firestore in Datastore mode database .",
+          "Export operations For export operations involving a bucket in another project, modify the permissions of the bucket to assign one of the following Identity and Access Management roles to the Datastore mode service agent of the project that contains your Datastore mode database: Storage Admin Owner (basic role) You can also create an IAM custom role with slightly different permissions than the ones contained in the roles listed earlier: storage.buckets.get storage.objects.create storage.objects.delete storage.objects.list Import operations For import operations involving a Cloud Storage bucket in another project, modify the permissions of the bucket to assign one of the following Cloud Storage roles to the Datastore mode service agent of the project that contains your Datastore mode database: Storage Admin Both Storage Object Viewer and Storage Legacy Bucket Reader You can also create an IAM custom role with the following permissions: storage.buckets.get storage.objects.get Starting managed export and import operations This section describes how to start a managed export or import operation."
+        ]
+      },
+      {
+        "title": "App Engine Requirement \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/app-engine-requirement",
+        "source_id": "site-iam-reference",
+        "final_score": 209,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a google firestore database resource In your Terraform configuration file, create a new google firestore database resource: datastore.tf resource \"google firestore database\" \"database\" { project = \" project \" name = \"(default)\" location id = \" location \" type = \"DATASTORE MODE\" app engine integration mode = \"DISABLED\" // Optional, but recommended for safety delete protection state = \"DELETE PROTECTION ENABLED\" } See Datastore locations for the list of available locations.",
+          "Go to Datastore Admin Migrating Terraform App Engine Resources If you previously managed Datastore mode databases via the google app engine application Terraform resource, you can use the google firestore database Terraform resource instead.",
+          "Firestore API Requirement Previously, all Firestore in Datastore mode databases were linked to an App Engine app."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datastore.tf",
+      "storage.buckets.get",
+      "storage.objects.create",
+      "storage.objects.delete",
+      "storage.objects.get",
+      "storage.objects.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/app-engine-requirement"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/app-engine-requirement"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/app-engine-requirement"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/app-engine-requirement"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/app-engine-requirement"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/app-engine-requirement"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/app-engine-requirement"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:22.796Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers",
+  "feature_name": "Skaffold build and deploy support for Windows containers",
+  "feature_slug": "skaffold-build-and-deploy-support-for-windows-containers",
+  "summary": "Generated Skaffold YAML files help accelerate image build and deployment for Windows migration artifacts on GKE and Anthos clusters.",
+  "extended_definition": "Generated Skaffold YAML files help accelerate image build and deployment for Windows migration artifacts on GKE and Anthos clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/deploy-linux-application-container",
+      "https://docs.cloud.google.com/migrate/containers/docs/deploying-to-target-cluster",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deploy a Linux system container to a target cluster \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/deploying-to-target-cluster",
+        "source_id": "site-docs-reference",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To build and deploy your container, from the root folder of the generated artifacts, run the following command: skaffold run -d REPOSITORY PATH Replace REPOSITORY PATH with the path to your artifact repository.",
+          "Deploy your container with Skaffold The skaffold.yaml file is at the root folder of the generated artifacts.",
+          "Skaffold can handle the workflow for building, pushing, and deploying your application."
+        ]
+      },
+      {
+        "title": "\"Deploy a Linux application container \\_|\\_ Migrate to Containers \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/deploy-linux-application-container",
+        "source_id": "site-docs-reference",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To build and deploy your container, from the root folder of the generated artifacts, run the following command: skaffold run -d REPOSITORY PATH Replace REPOSITORY PATH with the path to your artifact repository.",
+          "Deploy a Linux application container This page describes how to prepare your cluster for deployment, and how to deploy your Linux application containers using Skaffold.",
+          "Use Skaffold with Linux-based workloads The skaffold.yaml file is at the root folder of the generated artifacts."
+        ]
+      },
+      {
+        "title": "\"Customize migration plan for Windows IIS services \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "The next sections discuss this structure, explain what each part is, and how to modify it. globalSettings : globalIis : enablegmsa : string apppools : - enable32bitapponwin64 : bool identitytype : string managedruntimeversion : string name : string connectionStrings : add : - connectionstring : string name : string providername : string security : authentication : windowsAuthentication : enabled : bool providers : - value : string authorization : add : - access type : string roles : string users : string verbs : string remove : - roles : string users : string verbs : string image : extraFeatures : - string target : baseVersion : string requirements : - string warnings : - string msvcRuntimes : - string pathEnvVarAdditionalEntries : - string images : - name : string probes : enabled : bool livenessProbe : probehandler : exec : command : - string - string initialdelayseconds : int timeoutseconds : int periodseconds : int successthreshold : int failurethreshold : int terminationgraceperiodseconds : optional [ int ] readinessProbe : probehandler : exec : command : - string - string initialdelayseconds : int timeoutseconds : int periodseconds : int successthreshold : int failurethreshold : int terminationgraceperiodseconds : optional [ int ] useractions : files : - source : string target : string registry : currentcontrolset : - path : string software : - path : string workloads : sites : site : - applications : - applicationpool : string path : string virtualdirectories : - path : string physicalpath : string bindings : - port : int protocol : string sslflags : int connectionstrings : - connectionstring : string name : string providername : string name : string security : authentication : windowsAuthentication : enabled : bool providers : - value : string authorization : add : - access type : string roles : string users : string verbs : string remove : - roles : string users : string verbs : string serverautostart : bool version : string The globalSettings section The globalSettings section describes basic requirements for pods running IIS sites from this VM.",
+          "The probes are disabled by default, to enable the probes, set the enabled flag to true . images : name : IMAGE NAME probes : enabled : false livenessProbe : probehandler : exec : command : - powershell.exe - C:\\m4a\\probe.ps1 initialdelayseconds : 0 timeoutseconds : 1 periodseconds : 10 successthreshold : 1 failurethreshold : 3 terminationgraceperiodseconds : null readinessProbe : probehandler : exec : command : - powershell.exe - C:\\m4a\\probe.ps1 initialdelayseconds : 0 timeoutseconds : 1 periodseconds : 10 successthreshold : 1 failurethreshold : 3 terminationgraceperiodseconds : null The windowsServices section Windows containers created during a migration run and monitor a single Windows IIS service.",
+          "To run additional services in the migrated container, add entries to the windowsServices section, and copy the necessary binaries in the useractions section . version: v1 globalSettings: target: … globalIIS: … images: - name: migrated-image-zgwb2 workloads: sites: site: - applications: ... bindings: - port: 80 protocol: http name: Default Web Site … windowsServices: - MyService useractions: files: - source: C:\\Program Files\\MyService target: C:\\Program Files\\MyService registry: currentcontrolset: - key: services\\MyService The useractions section The useractions section specifies additional files and registry keys that you might want to migrate."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appcmd.exe",
+      "powershell.exe",
+      "probe.ps1",
+      "skaffold.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/deploying-to-target-cluster",
+        "https://docs.cloud.google.com/migrate/containers/docs/deploy-linux-application-container",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/deploying-to-target-cluster",
+        "https://docs.cloud.google.com/migrate/containers/docs/deploy-linux-application-container",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/deploying-to-target-cluster",
+        "https://docs.cloud.google.com/migrate/containers/docs/deploy-linux-application-container",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/deploying-to-target-cluster",
+        "https://docs.cloud.google.com/migrate/containers/docs/deploy-linux-application-container",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/deploying-to-target-cluster",
+        "https://docs.cloud.google.com/migrate/containers/docs/deploy-linux-application-container",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/deploying-to-target-cluster",
+        "https://docs.cloud.google.com/migrate/containers/docs/deploy-linux-application-container",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/deploying-to-target-cluster",
+        "https://docs.cloud.google.com/migrate/containers/docs/deploy-linux-application-container",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan"
+      ]
+    }
+  ]
+}

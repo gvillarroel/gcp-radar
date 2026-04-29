@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:06.489Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Flow import conflict resolution",
+  "feature_slug": "flow-import-conflict-resolution",
+  "summary": "Dialogflow CX provides flow import options to resolve resource conflicts during import.",
+  "extended_definition": "Dialogflow CX provides flow import options to resolve resource conflicts during import.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/entity-options",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/flow",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Flows \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/flow",
+        "source_id": "site-docs-root",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If the target agent has any global resources with the same display names found in the source agent, Dialogflow CX provides a summary of these resources, along with three options to resolve the conflicts for these resources: Replace existing resources : Source agent resources will overwrite target agent resources.",
+          "To import a flow: Console Open the Dialogflow CX console .",
+          "Go to the Flow API reference Select a protocol and version for the Flow reference: Protocol V3 V3beta1 REST Flow resource Flow resource RPC Flow interface Flow interface C++ FlowsClient Not available C# FlowsClient Not available Go FlowsClient Not available Java FlowsClient FlowsClient Node.js FlowsClient FlowsClient PHP Not available Not available Python FlowsClient FlowsClient Ruby Not available Not available Close Import a flow When you import a flow from a source agent to a target agent, the global resources referenced by the flow (intents, entities, webhooks) are imported along with the flow-specific data."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.dialogflow.v2 (4.94.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "source_id": "site-java-reference",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "The data inside ConversationDataset can not be changed after ImportConversationData finishes (and calling ImportConversationData on a com. google. cloud. dialogflow. v2.",
+          "The data inside ConversationDataset can not be changed after ImportConversationData finishes (and calling ImportConversationData on a com. google. cloud. dialogflow. v2.",
+          "Import Conversation Data Operation Response Response used for ConversationDatasets.ImportConversationData long running operation. com. google. cloud. dialogflow. v2."
+        ]
+      },
+      {
+        "title": "Entity options \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/entity-options",
+        "source_id": "site-docs-root",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Send feedback Entity options Stay organized with collections Save and categorize content based on your preferences.",
+          "To access entity options data: Open the Dialogflow CX console .",
+          "Where to find this data When building an agent, it is most common to use the Dialogflow CX console ( visit documentation , open console )."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/flow",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/entity-options"
+      ]
+    }
+  ]
+}

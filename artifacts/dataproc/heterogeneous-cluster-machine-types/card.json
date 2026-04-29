@@ -1,0 +1,136 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:04.393Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Heterogeneous cluster machine types",
+  "feature_slug": "heterogeneous-cluster-machine-types",
+  "summary": "Dataproc supports clusters whose master and worker nodes use different machine types and memory sizes.",
+  "extended_definition": "Dataproc supports clusters whose master and worker nodes use different machine types and memory sizes.",
+  "lifecycle": {
+    "latest_feature_date": "2016-01-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/enable-service",
+      "https://docs.cloud.google.com/dataproc-metastore/docs/manage-tags",
+      "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage Java and Scala dependencies for Apache Spark \\_|\\_ Managed Service\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies",
+        "source_id": "site-docs-root",
+        "final_score": 35,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Here are recommended approaches to including these dependencies when you submit a Spark job to a Managed Service for Apache Spark cluster: When submitting a job from your local machine with the gcloud dataproc jobs submit command, use the --properties spark.jars.packages=[DEPENDENCIES] flag.",
+          "Example: gcloud dataproc jobs submit spark \\ --cluster=my-cluster \\ --region= region \\ --properties=spark.jars.packages='com.google.cloud:google-cloud-translate:1.35.0,org.apache.bahir:spark-streaming-pubsub 2.11:2.2.0' When submitting a job directly on your cluster use the spark-submit command with the --packages=[DEPENDENCIES] parameter.",
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment)."
+        ]
+      },
+      {
+        "title": "\"Attach and manage tags on Dataproc Metastore resources \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/manage-tags",
+        "source_id": "site-docs-root-2",
+        "final_score": 34,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Attach tags to Dataproc Metastore resources gcloud resource-manager tags bindings create \\ --parent= PARENT PATH \\ --tag-value= TAG VALUE \\ --location= LOCATION Detach tags from Dataproc Metastore resources gcloud resource-manager tags bindings delete \\ --parent= PARENT PATH \\ --tag-value= TAG VALUE \\ --location= LOCATION List tags on Dataproc Metastore resources gcloud resource-manager tags bindings list \\ --parent= PARENT PATH \\ --location= LOCATION What's next Learn more about attaching tags to resources .",
+          "Before you begin To get the permissions that you need to view and set tags on Dataproc Metastore resources, ask your administrator to grant you the following IAM roles on your project: Dataproc Metastore Editor ( roles/metastore.editor ): assign to set and view tags Dataproc Metastore Viewer ( roles/metastore.viewer ): assign to view tags For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Home Documentation Data analytics Dataproc Metastore Guides Send feedback Attach and manage tags on Dataproc Metastore resources Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Enable and disable Dataproc Metastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/enable-service",
+        "source_id": "site-docs-root-2",
+        "final_score": 34,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to enable and disable the Dataproc Metastore API: serviceusage.services.disable serviceusage.services.enable You might also be able to get these permissions with custom roles or other predefined roles .",
+          "What's next Quickstart for deploying Dataproc Metastore Create a service Service access Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Required Roles To get the permissions that you need to enable and disable the Dataproc Metastore API, ask your administrator to grant you the Service Usage Administrator ( roles/serviceusage.serviceUsageAdmin ) IAM role on your project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud",
+      "metastore.editor",
+      "metastore.viewer",
+      "org.apache.bahir",
+      "serviceusage.services.disable",
+      "serviceusage.services.enable",
+      "serviceusage.serviceUsageAdmin",
+      "spark.jars.packages"
+    ],
+    "missing_inventory_roles": [
+      "roles/metastore.editor",
+      "roles/metastore.viewer",
+      "roles/serviceusage.serviceUsageAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/enable-service",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/manage-tags"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/enable-service",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/manage-tags"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/enable-service",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/manage-tags"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/enable-service",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/manage-tags"
+      ]
+    }
+  ]
+}

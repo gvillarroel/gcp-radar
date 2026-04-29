@@ -1,0 +1,37 @@
+# Single sign-on with custom claims role mapping
+
+Product: Google SecOps
+Feature slug: `single-sign-on-with-custom-claims-role-mapping`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Bindplane access can be managed through an identity provider with custom claims role mapping.
+
+## Lifecycle
+
+- Latest feature date: 2026-03-18
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- audit
+- auth
+- iam
+- identity
+- permission
+- role
+- security
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/chronicle/docs/administration/rbac](https://docs.cloud.google.com/chronicle/docs/administration/rbac)
+- [https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide](https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide)
+- [https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp](https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp)

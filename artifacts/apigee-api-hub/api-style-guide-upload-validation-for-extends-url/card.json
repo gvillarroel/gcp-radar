@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.459Z",
+  "source_step08_card": "data/step-08/current/products/apigee-api-hub/card.json",
+  "product_name": "Apigee API hub",
+  "product_slug": "apigee-api-hub",
+  "feature_name": "API style guide upload validation for extends URL",
+  "feature_slug": "api-style-guide-upload-validation-for-extends-url",
+  "summary": "API hub now validates style guide uploads and rejects uploaded style guides whose extends property contains a URL.",
+  "extended_definition": "API hub now validates style guide uploads and rejects uploaded style guides whose extends property contains a URL.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+      "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/cluster-monitoring-guidelines",
+      "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Apigee known issues \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "source_id": "site-docs-reference",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "245664917 hybrid 1.8.x FIXED Apigee hybrid upgrade error can be ignored During upgrade to Apigee hybrid 1.8.x, after running apigeectl init and confirming that check-ready succeeded, you may notice, if you view the pods, that the Cassandra schema validation job is in an error state.",
+          "289583112 Apigee OPEN OASValidation policy does not work with global security requirements in OpenAPI specifications If the OASValidation policy specifies an <OASResource> with security requirements set at a global level, the security requirements are not enforced.",
+          "310384001 hybrid 1.11.0 OPEN Cert validation failures may return a 502 instead of a 503 error response when users add the tag <Enforce>true</Enforce> in the target <SSLInfo> block for default validation of TLS target endpoint certificates."
+        ]
+      },
+      {
+        "title": "Manage MCP tools \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "Caution: Selecting this checkbox may prevent the specification file from being uploaded due to current validation limitations.",
+          "Home Documentation Application development Apigee Guides Send feedback Manage MCP tools Stay organized with collections Save and categorize content based on your preferences.",
+          "These proxies are registered with the MCP API style, and their specification files are parsed to extract MCP tools."
+        ]
+      },
+      {
+        "title": "Cluster monitoring guidelines \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/cluster-monitoring-guidelines",
+        "source_id": "site-docs-root",
+        "final_score": 52,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Version 1.10 keyboard arrow down Supported versions: v1.16 (latest) v1.15 v1.14 List of supported versions Unsupported versions: v1.13 v1.12 v1.11 v1.10 v1.9 v1.8 v1.7 v1.6 v1.5 v1.4 v1.3 v1.2 v1.1 Overview This guide provides guidelines on what to monitor and how to monitor an Apigee Hybrid deployment.",
+          "Home Documentation Application development Apigee Guides Send feedback Cluster monitoring guidelines Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "v1.1",
+      "v1.10",
+      "v1.11",
+      "v1.12",
+      "v1.13",
+      "v1.14",
+      "v1.15",
+      "v1.16",
+      "v1.2",
+      "v1.3",
+      "v1.4",
+      "v1.5",
+      "v1.6",
+      "v1.7",
+      "v1.8",
+      "v1.9"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/cluster-monitoring-guidelines"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/cluster-monitoring-guidelines"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/cluster-monitoring-guidelines"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/cluster-monitoring-guidelines"
+      ]
+    }
+  ]
+}

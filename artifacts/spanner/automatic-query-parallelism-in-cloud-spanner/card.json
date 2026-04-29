@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Automatic query parallelism in Cloud Spanner",
+  "feature_slug": "automatic-query-parallelism-in-cloud-spanner",
+  "summary": "Cloud Spanner can automatically increase the degree of parallelism used to execute a query when the instance size permits it.",
+  "extended_definition": "Cloud Spanner can automatically increase the degree of parallelism used to execute a query when the instance size permits it.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+      "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+      "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"JDBC session management commands (GoogleSQL) \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "source_id": "site-docs-reference",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "This value is used for: AUTO PARTITION MODE = true RUN PARTITIONED QUERY sql SHOW VARIABLE MAX PARTITIONED PARALLELISM SET MAX PARTITIONED PARALLELISM = < INT64 > Sets the maximum number of worker threads that the Spanner JDBC driver can use to execute partitions.",
+          "BEGIN ; INSERT INTO T ( id , col a , col b ) VALUES ( 4 , 400 , 4 ); INSERT INTO T ( id , col a , col b ) VALUES ( 5 , 500 , 5 ); COMMIT ; RETRY ABORTS INTERNALLY A boolean indicating whether the connection automatically retries aborted transactions.",
+          "INSERT INTO T ( id , col a , col b ) VALUES ( 1 , 100 , 1 ); -- Turning off autocommit means that a new transaction is automatically started -- when the next statement is executed."
+        ]
+      },
+      {
+        "title": "\"JDBC session management commands (PostgreSQL) \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat",
+        "source_id": "site-docs-reference",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "BEGIN ; INSERT INTO T ( id , col a , col b ) VALUES ( 4 , 400 , 4 ); INSERT INTO T ( id , col a , col b ) VALUES ( 5 , 500 , 5 ); COMMIT ; SPANNER.RETRY ABORTS INTERNALLY A boolean indicating whether the connection automatically retries aborted transactions.",
+          "INSERT INTO T ( id , col a , col b ) VALUES ( 1 , 100 , 1 ); -- Turning off autocommit means that a new transaction is automatically started -- when the next statement is executed.",
+          "SPANNER.AUTO PARTITION MODE A property of type BOOL indicating whether the connection automatically uses partitioned queries for all queries that are executed."
+        ]
+      },
+      {
+        "title": "\"Create and query a database in the Google Cloud console \\_|\\_ Spanner \\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "source_id": "site-docs-reference",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "The instance ID is automatically entered based on the instance name, for example, as test-instance .",
+          "The Google Cloud console displays the Singers table's Spanner Studio page with a new query tab that contains the INSERT statement that you edit to insert a row in the Singers table and view the result of that insertion: GoogleSQL -- Add new values in the VALUES clause in order of the column list. -- Each value must be type compatible with its associated column.",
+          "Home Documentation Databases Spanner Guides Send feedback Create and query a database in the Google Cloud console Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

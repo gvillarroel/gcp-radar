@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:05.419Z",
+  "source_step08_card": "data/step-08/current/products/datastream/card.json",
+  "product_name": "Datastream",
+  "product_slug": "datastream",
+  "feature_name": "SQL Server change tables CDC method",
+  "feature_slug": "sql-server-change-tables-cdc-method",
+  "summary": "Datastream supports the change tables change data capture method for SQL Server sources.",
+  "extended_definition": "Datastream supports the change tables change data capture method for SQL Server sources.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastream/docs/configure-amazon-rds-sqlserver",
+      "https://docs.cloud.google.com/datastream/docs/configure-azure-sqlserver",
+      "https://docs.cloud.google.com/datastream/docs/configure-cloudsql-sqlserver",
+      "https://docs.cloud.google.com/datastream/docs/configure-self-managed-sqlserver"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure a Cloud SQL for SQL Server database for CDC \\_|\\_ Datastream \\_\\",
+        "url": "https://docs.cloud.google.com/datastream/docs/configure-cloudsql-sqlserver",
+        "source_id": "site-docs-root-2",
+        "final_score": 298,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Go to Cloud SQL Instances Create a user and assign the db owner and db denydatawriter roles to them: CREATE USER USER NAME FOR LOGIN YOUR LOGIN ; EXEC sp addrolemember 'db owner' , ' USER NAME ' ; EXEC sp addrolemember 'db denydatawriter' , ' USER NAME ' ; Additional steps required for the transaction logs CDC method The steps described in this section are only required when you configure your source SQL Server database for use with the transaction logs CDC method.",
+          "Home Documentation Data analytics Datastream Guides Send feedback Configure a Cloud SQL for SQL Server database for CDC Stay organized with collections Save and categorize content based on your preferences.",
+          "This page describes how to configure change data capture (CDC) to stream data from a Cloud SQL for SQL Server database to a supported destination , such as BigQuery or Cloud Storage."
+        ]
+      },
+      {
+        "title": "\"Configure a self-managed SQL Server database for CDC \\_|\\_ Datastream \\_\\",
+        "url": "https://docs.cloud.google.com/datastream/docs/configure-self-managed-sqlserver",
+        "source_id": "site-docs-root-2",
+        "final_score": 278,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CREATE LOGIN YOUR LOGIN WITH PASSWORD = ' PASSWORD ' ; Create a user: CREATE USER USER NAME FOR LOGIN YOUR LOGIN ; Assign the db datareader role to them: EXEC sp addrolemember 'db datareader' , ' USER NAME ' ; Grant the VIEW DATABASE STATE permission to them: GRANT VIEW DATABASE STATE TO USER NAME ; Add this user to the master database: USE master ; CREATE USER USER NAME FOR LOGIN YOUR LOGIN ; Additional steps required for the transaction logs CDC method The steps described in this section are only required when you configure your source SQL Server database for use with the transaction logs CDC method.",
+          "Replace the following: DATABASE NAME : the name of your source database SCHEMA NAME : the name of the schema to which the tables belong TABLE NAME : the name of the table for which you want to enable CDC Start the SQL Server Agent and make sure it's running at all times.",
+          "Home Documentation Data analytics Datastream Guides Send feedback Configure a self-managed SQL Server database for CDC Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Configure an Amazon RDS SQL Server database for CDC \\_|\\_ Datastream \\_\\",
+        "url": "https://docs.cloud.google.com/datastream/docs/configure-amazon-rds-sqlserver",
+        "source_id": "site-docs-root-2",
+        "final_score": 274,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable CDC on each table for which you need to capture changes: USE [ DATABASE NAME ] EXEC sys.sp cdc enable table @source schema = N ' SCHEMA NAME ' , @source name = N ' TABLE NAME ' , @role name = NULL GO Replace the following: DATABASE NAME : the name of your source database SCHEMA NAME : the name of the schema to which the tables belong TABLE NAME : the name of the table for which you want to enable CDC Start the SQL Server Agent and make sure it's running at all times.",
+          "CREATE LOGIN YOUR LOGIN WITH PASSWORD = ' PASSWORD ' ; Create a user and assign the db owner and db denydatawriter roles to them: CREATE USER USER NAME FOR LOGIN YOUR LOGIN ; EXEC sp addrolemember 'db owner' , ' USER NAME ' ; EXEC sp addrolemember 'db denydatawriter' , ' USER NAME ' ; Add this user to the master database: USE master ; CREATE USER USER NAME FOR LOGIN YOUR LOGIN ; Additional steps required for the transaction logs CDC method The steps described in this section are only required when you configure your source SQL Server database for use with the transaction logs CDC method.",
+          "Home Documentation Data analytics Datastream Guides Send feedback Configure an Amazon RDS SQL Server database for CDC Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Configure an Azure SQL database for CDC \\_|\\_ Datastream \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastream/docs/configure-azure-sqlserver",
+        "source_id": "site-docs-root-2",
+        "final_score": 262,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: Datastream supports Azure SQL Database only when you use the change tables CDC method.",
+          "To do it, connect to the database using Azure Data Studio or SQL Server Management Studio and run the following command: EXEC sys.sp cdc enable db ; GO Enable CDC on the tables for which you need to capture changes: EXEC sys.sp cdc enable table @source schema = N ' SCHEMA NAME ' , @source name = N ' TABLE NAME ' , @role name = NULL GO Note: You need to run the command for each table for which you want to enable CDC.",
+          "Create a Datastream user: Connect to the master database and create a login: USE master ; CREATE LOGIN YOUR LOGIN WITH PASSWORD = ' PASSWORD ' ; Connect to the source database and create a user for your login: USE DATABASE NAME CREATE USER USER NAME FOR LOGIN YOUR LOGIN ; Assign the db owner and db denydatawriter roles to your user: EXEC sp addrolemember 'db owner' , ' USER NAME ' ; EXEC sp addrolemember 'db denydatawriter' , ' USER NAME ' ; Grant the VIEW DATABASE STATE permission to your user: GRANT VIEW DATABASE STATE TO USER NAME ; What's next Learn more about how Datastream works with SQL Server sources ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.datastream.v1",
+      "sys.sp"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/configure-cloudsql-sqlserver",
+        "https://docs.cloud.google.com/datastream/docs/configure-self-managed-sqlserver",
+        "https://docs.cloud.google.com/datastream/docs/configure-amazon-rds-sqlserver",
+        "https://docs.cloud.google.com/datastream/docs/configure-azure-sqlserver"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/configure-cloudsql-sqlserver",
+        "https://docs.cloud.google.com/datastream/docs/configure-self-managed-sqlserver",
+        "https://docs.cloud.google.com/datastream/docs/configure-amazon-rds-sqlserver",
+        "https://docs.cloud.google.com/datastream/docs/configure-azure-sqlserver"
+      ]
+    }
+  ]
+}

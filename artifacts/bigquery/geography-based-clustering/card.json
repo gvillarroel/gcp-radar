@@ -1,0 +1,129 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "GEOGRAPHY-based clustering",
+  "feature_slug": "geography-based-clustering",
+  "summary": "BigQuery supports clustering tables by using a GEOGRAPHY column.",
+  "extended_definition": "BigQuery supports clustering tables by using a GEOGRAPHY column.",
+  "lifecycle": {
+    "latest_feature_date": "2019-05-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/kmeans-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Geography functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 31,
+        "relevance": "",
+        "evidence_snippets": [
+          "Return type Point GEOGRAPHY ST CLUSTERDBSCAN ST CLUSTERDBSCAN ( geography column , epsilon , minimum geographies ) OVER over clause over clause : { named window ( [ window specification ] ) } window specification : [ named window ] [ PARTITION BY partition expression [ , ... ] ] [ ORDER BY expression [ { ASC DESC } ] [ , ... ] ] Performs DBSCAN clustering on a column of geographies.",
+          "GoogleSQL for BigQuery supports the following functions that can be used to analyze geographical data, determine spatial relationships between geographical features, and construct or manipulate GEOGRAPHY s.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback Geography functions Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Create a k-means model to cluster London bicycle hires dataset \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/kmeans-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 27,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use the read gbq function to represent cycle hires data as a DataFrame. h = bpd . read gbq ( \"bigquery-public-data.london bicycles.cycle hire\" , col order = [ \"start station name\" , \"start station id\" , \"start date\" , \"duration\" ], ) . rename ( columns = { \"start station name\" : \"station name\" , \"start station id\" : \"station id\" , } ) Use GeoSeries.from xy and BigQuery.st distance to analyze geographical data.",
+          "In this tutorial, you cluster bike stations based on the following attributes: Duration of rentals Number of trips per day Distance from city center SQL This query extracts data on cycle hires, including the start station name and duration columns, and joins this data with station information.",
+          "Home Documentation Data analytics BigQuery Guides Send feedback Create a k-means model to cluster London bicycle hires dataset Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 27,
+        "relevance": "",
+        "evidence_snippets": [
+          "Column options for a view have the same syntax and requirements as for a table, but with a different list of NAME and VALUE fields: NAME VALUE Details description STRING Example: description=\"a unique id\" Required permissions This statement requires the following IAM permissions : Permission Resource bigquery.tables.get The table to alter. bigquery.tables.update The table to alter.",
+          "CREATE MATERIALIZED VIEW IF NOT EXISTS myproject . mydataset . new mv OPTIONS ( expiration timestamp = TIMESTAMP ADD ( CURRENT TIMESTAMP (), INTERVAL 48 HOUR ), friendly name = \"new mv\" , description = \"a view that expires in 2 days\" , labels =[ ( \"org unit\" , \"development\" ) ] , enable refresh = false ) AS SELECT column 1 , column 2 , column 3 FROM myproject.mydataset.mytable The materialized view is defined using the following GoogleSQL query: SELECT column 1, column 2, column 3 FROM myproject.mydataset.mytable The materialized view option list specifies the: Expiration time: 48 hours from the time the view is created Friendly name: new mv Description: A view that expires in 2 days Label: org unit = development Refresh enabled: false Creating a materialized view with partitioning and clustering The following example creates a materialized view named new mv in mydataset , partitioned by the col datetime column and clustered by the col int column: CREATE MATERIALIZED VIEW myproject . mydataset . new mv PARTITION BY DATE ( col datetime ) CLUSTER BY col int AS SELECT col int , col datetime , COUNT ( 1 ) as cnt FROM myproject . mydataset . mv base table GROUP BY col int , col datetime The base table, mv base table , must also be partitioned by the col datetime column.",
+          "The table schema contains 2 columns: transaction id: An integer transaction date: A date The table option list specifies the: Partition expiration: Three days Description: A table partitioned by transaction date Creating a partitioned table from the result of a query The following example creates a partitioned table named days with rain in mydataset using a DATE column: CREATE TABLE mydataset . days with rain PARTITION BY date OPTIONS ( partition expiration days = 365 , description = \"weather stations with precipitation, partitioned by day\" ) AS SELECT DATE ( CAST ( year AS INT64 ), CAST ( mo AS INT64 ), CAST ( da AS INT64 )) AS date , ( SELECT ANY VALUE ( name ) FROM bigquery-public-data.noaa gsod.stations AS stations WHERE stations . usaf = stn ) AS station name , -- Stations can have multiple names prcp FROM bigquery-public-data.noaa gsod.gsod2017 AS weather WHERE prcp != 99.9 -- Filter unknown values AND prcp > 0 -- Filter stations/days with no precipitation If you haven't configured a default project, prepend a project ID to the dataset name in the example SQL, and enclose the name in backticks if project id contains special characters: project id.dataset.table ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bicycles.cycle",
+      "bigquery.Client",
+      "bigquery.tables.get",
+      "bigquery.tables.update",
+      "data.london",
+      "data.noaa",
+      "data.usa",
+      "gsod.gsod2017",
+      "gsod.stations",
+      "id.dataset.table",
+      "myproject.mydataset.mytable",
+      "names.usa",
+      "tutorial.london"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/kmeans-tutorial"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/kmeans-tutorial"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/kmeans-tutorial"
+      ]
+    }
+  ]
+}

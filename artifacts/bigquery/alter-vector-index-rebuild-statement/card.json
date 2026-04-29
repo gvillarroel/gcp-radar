@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "ALTER VECTOR INDEX REBUILD statement",
+  "feature_slug": "alter-vector-index-rebuild-statement",
+  "summary": "The ALTER VECTOR INDEX REBUILD statement rebuilds a vector index when table data has changed enough to require it.",
+  "extended_definition": "The ALTER VECTOR INDEX REBUILD statement rebuilds a vector index when table data has changed enough to require it.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/autonomous-embedding-generation",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/vector-search-intro"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 275,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Examples The following example rebuilds the index1 vector index on the sales table: ALTER VECTOR INDEX IF EXISTS index1 ON mydataset . sales REBUILD ; ALTER DATA POLICY statement Preview This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "Syntax ALTER VECTOR INDEX [ IF EXISTS ] index name ON table name REBUILD ; Arguments IF EXISTS : If no vector index exists with that name, the statement has no effect. index name : The name of the vector index to rebuild. table name : The name of the table that the vector index is on.",
+          "Details Use the ALTER VECTOR INDEX REBUILD statement to rebuild an active vector index on a table without having to drop the vector index, and without any index downtime."
+        ]
+      },
+      {
+        "title": "\"Introduction to embeddings and vector search \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "source_id": "site-docs-root",
+        "final_score": 172,
+        "relevance": "",
+        "evidence_snippets": [
+          "CREATE VECTOR INDEX statement: There is no charge for the processing required to build and refresh your vector indexes as long as the total size of the indexed table data is below your per-organization limit .",
+          "When a vector index is used, the VECTOR SEARCH and AI.SEARCH functions use the Approximate Nearest Neighbor search technique to improve vector search performance, with the trade-off of reducing recall and so returning more approximate results.",
+          "When you use vector indexes with vector search, you can take advantage of foundational technologies like inverted file indexing (IVF) and the ScaNN algorithm ."
+        ]
+      },
+      {
+        "title": "Autonomous embedding generation \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/autonomous-embedding-generation",
+        "source_id": "site-docs-reference-5",
+        "final_score": 160,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "INSERT INTO mydataset . products ( name , description ) VALUES ( \"Lounger chair\" , \"A comfortable chair for relaxing in.\" ), ( \"Super slingers\" , \"An exciting board game for the whole family.\" ), ( \"Encyclopedia set\" , \"A collection of informational books.\" ); You can optionally create a vector index on the table to speed up searching.",
+          "Add an automatically generated embedding column to an existing table You can also add an automatically generated embedding column to an existing table by using an ALTER TABLE ADD COLUMN statement .",
+          "TABLE ; After you have the table with embeddings, you can create a vector index on the STRUCT column that contains the automatically generated embedding."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "https://docs.cloud.google.com/bigquery/docs/autonomous-embedding-generation"
+      ]
+    }
+  ]
+}

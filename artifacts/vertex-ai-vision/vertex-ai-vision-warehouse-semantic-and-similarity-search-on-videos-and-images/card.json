@@ -1,0 +1,166 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:32.591Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-vision/card.json",
+  "product_name": "Vertex AI Vision",
+  "product_slug": "vertex-ai-vision",
+  "feature_name": "Vertex AI Vision Warehouse semantic and similarity search on videos and images",
+  "feature_slug": "vertex-ai-vision-warehouse-semantic-and-similarity-search-on-videos-and-images",
+  "summary": "Vertex AI Vision Warehouse now supports semantic and similarity search capabilities over video and image content.",
+  "extended_definition": "Vertex AI Vision Warehouse now supports semantic and similarity search capabilities over video and image content.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-creation",
+      "https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-search",
+      "https://docs.cloud.google.com/vision-ai/docs/reference/rest",
+      "https://docs.cloud.google.com/vision-ai/docs/search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search Batch Video Warehouse data \\_|\\_ Vertex AI Vision \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-search",
+        "source_id": "site-docs-reference",
+        "final_score": 290,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Vision Guides Send feedback Search Batch Video Warehouse data Stay organized with collections Save and categorize content based on your preferences.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// warehouse-visionai.googleapis.com /v1/projects/ PROJECT NUMBER /locations/ LOCATION ID /indexEndpoints/ INDEX ENDPOINT ID :searchIndexEndpoint \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"searchResultItems\": [ { \"asset\": \"projects/ PROJECT NUMBER /locations/ LOCATION ID /corpora/ CORPUS ID /assets/ ASSET ID 1 \" }, { \"asset\": \"projects/ PROJECT NUMBER /locations/ LOCATION ID /corpora/ CORPUS ID /assets/ ASSET ID 2 \" } ] } If you have an image of a sunset at a beach, you can also use it as a search query by sending the following request (input image is in base64 encoding format): REST & CMD LINE Before using any of the request data, make the following replacements: REGIONALIZED ENDPOINT : Endpoint might include a prefix matching the LOCATION ID such as europe-west4- .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// warehouse-visionai.googleapis.com /v1/projects/ PROJECT NUMBER /locations/ LOCATION ID /indexEndpoints/ INDEX ENDPOINT ID :searchIndexEndpoint \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"searchResultItems\": [ { \"asset\": \"projects/ PROJECT NUMBER /locations/ LOCATION ID /corpora/ CORPUS ID /assets/ ASSET ID 1 \" }, { \"asset\": \"projects/ PROJECT NUMBER /locations/ LOCATION ID /corpora/ CORPUS ID /assets/ ASSET ID 2 \" } ] } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Create and update a Batch Video Warehouse \\_|\\_ Vertex AI Vision \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-creation",
+        "source_id": "site-docs-reference",
+        "final_score": 284,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// warehouse-visionai.googleapis.com /v1/projects/ PROJECT NUMBER /locations/ LOCATION ID /corpora\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION ID /warehouseoperations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.visionai.v1.CreateCorpusMetadata\" }, \"done\": true, \"response\": { \"@type\": \"type.googleapis.com/google.cloud.visionai.v1.Corpus\", \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION ID /corpora/ CORPUS ID \", \"displayName\": \" DISPLAY NAME \", \"description\": \" WAREHOUSE DESCRIPTION \", \"type\": \"VIDEO ON DEMAND\", \"search capability setting\": { \"search capabilities\": { \"type\": \"EMBEDDING SEARCH\" } } } } Create, upload, and analyze assets To add a video to Batch Video Warehouse, first create an asset.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// warehouse-visionai.googleapis.com /v1/projects/ PROJECT NUMBER /locations/ LOCATION ID /corpora/ CORPUS ID /dataSchemas\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION ID /corpora/ CORPUS ID /dataSchemas/ DATASCHEMA ID \", \"key\": \" data-key \", \"schemaDetails\": { \"type\": \" BOOLEAN \", \"granularity\": \" GRANULARITY ASSET LEVEL \", \"searchStrategy\": { \"search strategy type\": \"EXACT SEARCH\" } } } Create annotations You can annotate a video with either asset-level annotations or annotations with relative temporal partitions.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// warehouse-visionai.googleapis.com /v1/projects/ PROJECT NUMBER /locations/ LOCATION ID /corpora/ CORPUS ID /assets/ ASSET ID :upload\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION ID /corpora/ CORPUS ID /assets/ ASSET ID /operations/ OPERATION ID \", } The uploaded video needs to be analyzed before going into search indexes."
+        ]
+      },
+      {
+        "title": "Vision AI API \\_|\\_ Vertex AI Vision \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vision-ai/docs/reference/rest",
+        "source_id": "site-docs-root",
+        "final_score": 258,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Service endpoint: warehouse-visionai.googleapis.com REST Resource: v1.projects.locations.corpora Methods analyze POST /v1/{name=projects/ /locations/ /corpora/ }:analyze Analyzes a corpus. create POST /v1/{parent=projects/ /locations/ }/corpora Creates a corpus inside a project. delete DELETE /v1/{name=projects/ /locations/ /corpora/ } Deletes a corpus only if its empty. get GET /v1/{name=projects/ /locations/ /corpora/ } Gets corpus details inside a project. list GET /v1/{parent=projects/ /locations/ }/corpora Lists all corpora in a project. patch PATCH /v1/{corpus.name=projects/ /locations/ /corpora/ } Updates a corpus in a project. searchAssets POST /v1/{corpus=projects/ /locations/ /corpora/ }:searchAssets Search media asset.",
+          "This service has the following service endpoints and all URIs below are relative to these service endpoints: visionai.googleapis.com : Used for interacting with Streams and Applications. warehouse-visionai.googleapis.com : Used for interacting with Vision AI's Media Warehouse.",
+          "Home Documentation AI and ML Vertex AI Vision Reference Send feedback Vision AI API Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Search streaming video warehouse data in the console \\_|\\_ Vertex AI Vision\\",
+        "url": "https://docs.cloud.google.com/vision-ai/docs/search",
+        "source_id": "site-docs-root",
+        "final_score": 256,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Vision Guides Send feedback Search streaming video warehouse data in the console Stay organized with collections Save and categorize content based on your preferences.",
+          "Search streaming video clip assets Console Open the Warehouses tab of the Vertex AI Vision dashboard.",
+          "After you have created a Vision Warehouse, added it to an app, and deployed the app, you can search for clips (assets) stored in the streaming video warehouse."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "application.name",
+      "corpus.name",
+      "request.json",
+      "type.googleapis.com",
+      "v1.projects.locations.applications",
+      "v1.projects.locations.corpora",
+      "visionai.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-search",
+        "https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-creation",
+        "https://docs.cloud.google.com/vision-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vision-ai/docs/search"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-search",
+        "https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-creation",
+        "https://docs.cloud.google.com/vision-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vision-ai/docs/search"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-search",
+        "https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-creation",
+        "https://docs.cloud.google.com/vision-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vision-ai/docs/search"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-search",
+        "https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-creation",
+        "https://docs.cloud.google.com/vision-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vision-ai/docs/search"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-search",
+        "https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-creation",
+        "https://docs.cloud.google.com/vision-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vision-ai/docs/search"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-search",
+        "https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-creation",
+        "https://docs.cloud.google.com/vision-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vision-ai/docs/search"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-search",
+        "https://docs.cloud.google.com/vision-ai/docs/batch-video-warehouse-creation",
+        "https://docs.cloud.google.com/vision-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vision-ai/docs/search"
+      ]
+    }
+  ]
+}

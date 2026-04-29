@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.119Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "RBAC for ingestion metrics",
+  "feature_slug": "rbac-for-ingestion-metrics",
+  "summary": "Role-based access control now restricts visibility of ingestion metrics in the Data Ingestion and Health dashboard by business scope.",
+  "extended_definition": "Role-based access control now restricts visibility of ingestion metrics in the Data Ingestion and Health dashboard by business scope.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+      "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
+      "https://docs.cloud.google.com/chronicle/docs/administration/rbac"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Role-Based Access Control (RBAC) User Guide \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "source_id": "site-docs-reference",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Role-Based Access Control (RBAC) User Guide Supported in: Google secops SIEM Role-based access control (RBAC) enables an administrator to tailor access to Google Security Operations features based on an employee's role in your organization.",
+          "Important: This document describes the Google SecOps roles and groups available in the Google SecOps RBAC feature that don't use IAM for feature access control.",
+          "Google Security Operations includes the following predefined roles: Administrator—Manages the role-based access control policies for your enterprise."
+        ]
+      },
+      {
+        "title": "Data RBAC overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 195,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Data RBAC overview Supported in: Google secops SIEM Data role-based access control ( data RBAC ) is a security model that uses individual user roles to restrict user access to data within an organization.",
+          "For example, a user might be allowed to access a specific feature (feature RBAC) and then, within that feature, their access to specific data might be restricted based on their role (data RBAC).",
+          "Predefined scoped read-only access Chronicle API Restricted Data Access ( roles/chronicle.restrictedDataAccess ) and Chronicle API Restricted Data Access Viewer ( roles/chronicle.restrictedDataAccessViewer ) Chronicle API Restricted Data Access Viewer Custom scoped access Chronicle API Restricted Data Access ( roles/chronicle.restrictedDataAccess ) and custom role (for feature RBAC definition) Custom permissions within features Custom global access chronicle.globalDataAccessScopes.permit permission and Chronicle API Global Data Access ( roles/globalDataAccess ) Global permissions within features The following is a description of each access type presented in the table: Predefined global access: this access is typically required for users who need access to all the data."
+        ]
+      },
+      {
+        "title": "\"Configure data RBAC for users \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "source_id": "site-docs-reference",
+        "final_score": 171,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure data RBAC for users Supported in: Google secops SIEM This page describes how data role-based access control ( data RBAC ) administrators can configure data RBAC within Google Security Operations.",
+          "Before you begin To understand the core concepts of data RBAC, different access types, and the corresponding user roles, the working of labels and scopes, and the impact of data RBAC on Google SecOps features, see Overview of Data RBAC .",
+          "The following operators let you create precise rules for controlling access to multiple scopes with a single IAM condition: ENDS WITH : checks if the scope name ends with a specific word."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chronicle.globalDataAccessScopes.permit",
+      "chronicle.restrictedDataAccess",
+      "chronicle.restrictedDataAccessViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/chronicle.restrictedDataAccess",
+      "roles/chronicle.restrictedDataAccessViewer",
+      "roles/globalDataAccess"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users"
+      ]
+    }
+  ]
+}

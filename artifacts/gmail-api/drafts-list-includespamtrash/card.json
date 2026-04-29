@@ -1,0 +1,202 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:13.415Z",
+  "source_step08_card": "data/step-08/current/products/gmail-api/card.json",
+  "product_name": "Gmail API",
+  "product_slug": "gmail-api",
+  "feature_name": "drafts.list includeSpamTrash",
+  "feature_slug": "drafts-list-includespamtrash",
+  "summary": "The drafts.list method can include drafts with the SPAM or TRASH label when includeSpamTrash is enabled.",
+  "extended_definition": "The drafts.list method can include drafts with the SPAM or TRASH label when includeSpamTrash is enabled.",
+  "lifecycle": {
+    "latest_feature_date": "2016-01-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/gmail/api/guides/list-messages",
+      "https://developers.google.com/workspace/gmail/api/reference/quota",
+      "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.drafts/list"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Method: users.drafts.list \\_|\\_ Gmail \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.drafts/list",
+        "source_id": "site-docs-reference",
+        "final_score": 213,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, \"from:someuser@example.com rfc822msgid:<somemsgid@example.com> is:unread\" . includeSpamTrash boolean Include drafts from SPAM and TRASH in the results.",
+          "Home Google Workspace Gmail Reference Send feedback Method: users.drafts.list Stay organized with collections Save and categorize content based on your preferences.",
+          "Response body If successful, the response body contains data with the following structure: JSON representation { \"drafts\" : [ { object ( Draft ) } ] , \"nextPageToken\" : string , \"resultSizeEstimate\" : integer } Fields drafts[] object ( Draft ) List of drafts."
+        ]
+      },
+      {
+        "title": "Usage limits \\_|\\_ Gmail \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/reference/quota",
+        "source_id": "site-docs-reference",
+        "final_score": 100,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following table outlines the per-method quota unit usage: Method Quota units drafts.create 10 drafts.delete 10 drafts.get 5 drafts.list 5 drafts.send 100 drafts.update 15 getProfile 1 history.list 2 labels.create 5 labels.delete 5 labels.get 1 labels.list 1 labels.update 5 messages.attachments.get 5 messages.batchDelete 50 messages.batchModify 50 messages.delete 10 messages.get 5 messages.import 25 messages.insert 25 messages.list 5 messages.modify 5 messages.send 100 messages.trash 5 messages.untrash 5 settings.delegates.create 100 settings.delegates.delete 5 settings.delegates.get 1 settings.delegates.list 1 settings.filters.create 5 settings.filters.delete 5 settings.filters.get 1 settings.filters.list 1 settings.forwardingAddresses.create 100 settings.forwardingAddresses.delete 5 settings.forwardingAddresses.get 1 settings.forwardingAddresses.list 1 settings.getAutoForwarding 1 settings.getImap 1 settings.getPop 1 settings.getVacation 1 settings.sendAs.create 100 settings.sendAs.delete 5 settings.sendAs.get 1 settings.sendAs.list 1 settings.sendAs.update 100 settings.sendAs.verify 100 settings.updateAutoForwarding 5 settings.updateImap 5 settings.updatePop 100 settings.updateVacation 5 stop 50 threads.delete 20 threads.get 10 threads.list 10 threads.modify 10 threads.trash 10 threads.untrash 10 watch 100 When using the Gmail API, there's also a limit of 500 recipients per email message.",
+          "Per-method quota usage The number of quota units consumed by a request varies depending on the method called.",
+          "The Gmail API is subject to usage limits which restrict the rate at which methods of the API can be called."
+        ]
+      },
+      {
+        "title": "List Gmail messages \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/guides/list-messages",
+        "source_id": "site-docs-root",
+        "final_score": 76,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "List messages The messages.list method supports several query parameters to filter the messages: maxResults : Maximum number of messages to return (defaults to 100, maximum 500). pageToken : Token to retrieve a specific page of results. q : Query string to filter messages, such as from:someuser@example.com is:unread . labelIds : Only return messages with labels that match all specified label IDs. includeSpamTrash : Include messages from SPAM and TRASH in the results.",
+          "Lists the user's Gmail messages. \"\"\" creds = None The file token.json stores the user's access and refresh tokens, and is created automatically when the authorization flow completes for the first time. if os . path . exists ( \"token.json\" ): creds = Credentials . from authorized user file ( \"token.json\" , SCOPES ) If there are no (valid) credentials available, let the user log in. if not creds or not creds . valid : if creds and creds . expired and creds . refresh token : creds . refresh ( Request ()) else : flow = InstalledAppFlow . from client secrets file ( \"credentials.json\" , SCOPES ) creds = flow . run local server ( port = 0 ) Save the credentials for the next run with open ( \"token.json\" , \"w\" ) as token : token . write ( creds . to json ()) try : Call the Gmail API service = build ( \"gmail\" , \"v1\" , credentials = creds ) results = ( service . users () . messages () . list ( userId = \"me\" , labelIds = [ \"INBOX\" ]) . execute () ) messages = results . get ( \"messages\" , []) if not messages : print ( \"No messages found.\" ) return print ( \"Messages:\" ) for message in messages : print ( f 'Message ID: { message [ \"id\" ] } ' ) msg = ( service . users () . messages () . get ( userId = \"me\" , id = message [ \"id\" ]) . execute () ) print ( f ' Subject: { msg [ \"snippet\" ] } ' ) except HttpError as error : TODO(developer) - Handle errors from gmail API. print ( f \"An error occurred: { error } \" ) if name == \" main \" : main () The messages.list method returns a response body that contains the following: messages[] : An array of Message resources. nextPageToken : For requests with multiple pages of results, a token that can be used with subsequent calls to list more messages. resultSizeEstimate : An estimated total number of results.",
+          "This document explains how to call the Gmail API's messages.list method."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "credentials.json",
+      "developers.google.com",
+      "drafts.create",
+      "drafts.delete",
+      "drafts.get",
+      "drafts.list",
+      "drafts.send",
+      "drafts.update",
+      "example.com",
+      "googleapiclient.discovery",
+      "googleapiclient.errors",
+      "history.list",
+      "labels.create",
+      "labels.delete",
+      "labels.get",
+      "labels.list",
+      "labels.update",
+      "messages.attachments.get",
+      "messages.batchDelete",
+      "messages.batchModify",
+      "messages.delete",
+      "messages.get",
+      "messages.import",
+      "messages.insert",
+      "messages.list",
+      "messages.modify",
+      "messages.py",
+      "messages.send",
+      "messages.trash",
+      "messages.untrash",
+      "oauthlib.flow",
+      "os.path",
+      "settings.delegates.create",
+      "settings.delegates.delete",
+      "settings.delegates.get",
+      "settings.delegates.list",
+      "settings.filters.create",
+      "settings.filters.delete",
+      "settings.filters.get",
+      "settings.filters.list",
+      "settings.forwardingAddresses.create",
+      "settings.forwardingAddresses.delete",
+      "settings.forwardingAddresses.get",
+      "settings.forwardingAddresses.list",
+      "settings.getAutoForwarding",
+      "settings.getImap",
+      "settings.getPop",
+      "settings.getVacation",
+      "settings.sendAs.create",
+      "settings.sendAs.delete",
+      "settings.sendAs.get",
+      "settings.sendAs.list",
+      "settings.sendAs.update",
+      "settings.sendAs.verify",
+      "settings.updateAutoForwarding",
+      "settings.updateImap",
+      "settings.updatePop",
+      "settings.updateVacation",
+      "threads.delete",
+      "threads.get",
+      "threads.list",
+      "threads.modify",
+      "threads.trash",
+      "threads.untrash",
+      "token.json",
+      "users.drafts",
+      "users.drafts.list",
+      "users.history",
+      "users.history.list",
+      "users.messages",
+      "users.messages.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.drafts/list",
+        "https://developers.google.com/workspace/gmail/api/reference/quota",
+        "https://developers.google.com/workspace/gmail/api/guides/list-messages"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.drafts/list",
+        "https://developers.google.com/workspace/gmail/api/reference/quota",
+        "https://developers.google.com/workspace/gmail/api/guides/list-messages"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.drafts/list",
+        "https://developers.google.com/workspace/gmail/api/reference/quota",
+        "https://developers.google.com/workspace/gmail/api/guides/list-messages"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.drafts/list",
+        "https://developers.google.com/workspace/gmail/api/reference/quota",
+        "https://developers.google.com/workspace/gmail/api/guides/list-messages"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.drafts/list",
+        "https://developers.google.com/workspace/gmail/api/reference/quota",
+        "https://developers.google.com/workspace/gmail/api/guides/list-messages"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.drafts/list",
+        "https://developers.google.com/workspace/gmail/api/reference/quota",
+        "https://developers.google.com/workspace/gmail/api/guides/list-messages"
+      ]
+    }
+  ]
+}

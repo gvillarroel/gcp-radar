@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.948Z",
+  "source_step08_card": "data/step-08/current/products/backup-for-gke/card.json",
+  "product_name": "Backup for GKE",
+  "product_slug": "backup-for-gke",
+  "feature_name": "Backup index visibility",
+  "feature_slug": "backup-index-visibility",
+  "summary": "Backup for GKE now provides a backup index to view resource information within backups.",
+  "extended_definition": "Backup for GKE now provides a backup index to view resource information within backups.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iam/docs/overview",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Modify resources during restoration \\_|\\_ Backup for GKE \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+        "source_id": "site-docs-root",
+        "final_score": 89,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This following action adds a new environment variable \"PORT\" with value \"80\" to the nginx container. op : add path : \"/spec/containers/0/env/0\" value : > { \"name\" : \"PORT\" , \"value\" : \"80\" } Original apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx spec : containers : - name : nginx image : nginx:latest ports : - containerPort : 80 env : - name : PROTOCOL value : \"https\" resources : limits : cpu : \"250m\" memory : \"64Mi\" initContainers : - name : install image : busybox:stable command : - wget - \"-O\" - \"/tmp/index.html\" - http://info.cern.ch Transformed apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx spec : containers : - name : nginx image : nginx:latest ports : - containerPort : 80 env : - name : PROTOCOL value : \"https\" - name : PORT # newly added value : \"80\" # newly added resources : limits : cpu : \"250m\" memory : \"64Mi\" initContainers : - name : install image : busybox:stable command : - wget - \"-O\" - \"/tmp/index.html\" - http://info.cern.ch The following action adds value to a new label app.kubernetes.io/name: nginx to the Pod. op : add path : \"/metadata/labels/app.kubernetes.io 1name\" value : \"nginx\" Original apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx spec : containers : - name : nginx image : nginx:latest ports : - containerPort : 80 env : - name : PROTOCOL value : \"https\" resources : limits : cpu : \"250m\" memory : \"64Mi\" initContainers : - name : install image : busybox:stable command : - wget - \"-O\" - \"/tmp/index.html\" - http://info.cern.ch Transformed apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx app.kubernetes.io/name : nginx # newly added spec : containers : - name : nginx image : nginx:latest ports : - containerPort : 80 env : - name : PROTOCOL value : \"https\" resources : limits : cpu : \"250m\" memory : \"64Mi\" initContainers : - name : install image : busybox:stable command : - wget - \"-O\" - \"/tmp/index.html\" - http://info.cern.ch The following action replaces the image of nginx container to change it from \"nginx:latest\" to \"nginx:stable\" . op : add path : \"/spec/containers/0/image\" value : nginx:stable Original apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx spec : containers : - name : nginx image : nginx:latest ports : - containerPort : 80 env : - name : PROTOCOL value : \"https\" resources : limits : cpu : \"250m\" memory : \"64Mi\" initContainers : - name : install image : busybox:stable command : - wget - \"-O\" - \"/tmp/index.html\" - http://info.cern.ch Transformed apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx spec : containers : - name : nginx image : nginx:stable # replaced ports : - containerPort : 80 env : - name : PROTOCOL value : \"https\" resources : limits : cpu : \"250m\" memory : \"64Mi\" initContainers : - name : install image : busybox:stable command : - wget - \"-O\" - \"/tmp/index.html\" - http://info.cern.ch Note: An add operation is equivalent to replace operation if the path specifies an object member that already exists.",
+          "The following action copies environment variables from the nginx container to the install init container. op : copy fromPath : \"/spec/containers/0/env\" path : \"/spec/initContainers/0/env\" Original apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx spec : containers : - name : nginx image : nginx:latest ports : - containerPort : 80 env : - name : PROTOCOL value : \"https\" resources : limits : cpu : \"250m\" memory : \"64Mi\" initContainers : - name : install image : busybox:stable command : - wget - \"-O\" - \"/tmp/index.html\" - http://info.cern.ch Transformed apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx spec : containers : - name : nginx image : nginx:latest ports : - containerPort : 80 env : - name : PROTOCOL value : \"https\" resources : limits : cpu : \"250m\" memory : \"64Mi\" initContainers : - name : install image : busybox:stable command : - wget - \"-O\" - \"/tmp/index.html\" - http://info.cern.ch env : # copy from \"nginx\" container - name : PROTOCOL value : https To learn more about defining transformation rules in the Google Cloud console, see Plan a set of restores .",
+          "The following action removes environment variables from the nginx container and adds them to the install init container. op : move fromPath : \"/spec/containers/0/env\" path : \"/spec/initContainers/0/env\" Original apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx spec : containers : - name : nginx image : nginx:latest ports : - containerPort : 80 env : - name : PROTOCOL value : \"https\" resources : limits : cpu : \"250m\" memory : \"64Mi\" initContainers : - name : install image : busybox:stable command : - wget - \"-O\" - \"/tmp/index.html\" - http://info.cern.ch Transformed apiVersion : v1 kind : Pod metadata : name : nginx namespace : ns labels : app : nginx spec : containers : - name : nginx image : nginx:latest ports : - containerPort : 80 \"env\" is moved to \"install\" container resources : limits : cpu : \"250m\" memory : \"64Mi\" initContainers : - name : install image : busybox:stable command : - wget - \"-O\" - \"/tmp/index.html\" - http://info.cern.ch env : # moved \"from\" nginx container - name : PROTOCOL value : https Copy fromPath is required for copy operation."
+        ]
+      },
+      {
+        "title": "\"IAM overview \\_|\\_ Identity and Access Management (IAM) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iam/docs/overview",
+        "source_id": "site-iam-reference",
+        "final_score": 88,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Advanced access control In addition to allow policies, IAM provides the following access control mechanisms to help you refine who has access to what resources: Additional policy types : IAM offers the following policy types in addition to allow policies: Deny policies : Deny policies prevent principals from using certain permissions, even if they're granted a role with the permission.",
+          "To get a complete list of the principals that have access to the resource, you need to view the resource's allow policy and the resource's ancestors' allow policies.",
+          "For example, you could require that principals request access each time they want to view a sensitive resource instead of permanently granting them a IAM role."
+        ]
+      },
+      {
+        "title": "Back up your workloads \\_|\\_ Backup for GKE \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup",
+        "source_id": "site-docs-root",
+        "final_score": 87,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "View backup index The backup index provides information about the resources that are included in a backup.",
+          "You can view the backup index by using the gcloud CLI or the Google Cloud console. gcloud View the group, version, kind, and name of each resource in a backup: gcloud beta container backup-restore backups get-backup-index-download-url BACKUP \\ --project = PROJECT ID \\ --location = LOCATION \\ --backup-plan = BACKUP PLAN The command generates a URL which lets you view and download the backup index.",
+          "Console Use the following instructions to view backup index and its details in the Google Cloud console: Go to the Google Kubernetes Engine page in the Google Cloud console."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.kubernetes.io",
+      "index.html",
+      "info.cern.ch"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup",
+        "https://docs.cloud.google.com/iam/docs/overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup",
+        "https://docs.cloud.google.com/iam/docs/overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup",
+        "https://docs.cloud.google.com/iam/docs/overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup",
+        "https://docs.cloud.google.com/iam/docs/overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup",
+        "https://docs.cloud.google.com/iam/docs/overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup",
+        "https://docs.cloud.google.com/iam/docs/overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup",
+        "https://docs.cloud.google.com/iam/docs/overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules"
+      ]
+    }
+  ]
+}

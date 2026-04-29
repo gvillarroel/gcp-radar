@@ -1,0 +1,178 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.896Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr",
+  "feature_name": "Dynamic protection tags for automated Compute Engine backups",
+  "feature_slug": "dynamic-protection-tags-for-automated-compute-engine-backups",
+  "summary": "Backup and DR Service added automated protection of Compute Engine instances using Google Cloud tags via dynamic protection tags.",
+  "extended_definition": "Backup and DR Service added automated protection of Compute Engine instances using Google Cloud tags via dynamic protection tags.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Automate protection of Compute Engine instances \\_|\\_ Backup and DR \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "source_id": "site-docs-reference",
+        "final_score": 235,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The triggered job can take a few minutes depending on the number of changes pending for your workloads. echo \"Triggering dynamic protection job..\" curl -H \"Authorization: Bearer $BEARER TOKEN \" -H \"backupdr-management-session: Actifio $SESSION ID \" -H \"Content-Type: application/json\" -XPOST -d '{}' \" $MC ENDPOINT /actifio/dynamicprotection/job/gceinstance\" echo \"Dynamic protection job triggered.\" Use Dynamic Protection with the Resource Manager You can use dynamic protection tags with Resource Manager , automating protection of your Compute Engine instances at a higher organizational level.",
+          "Prerequisite to automate backups Before you start automating backups of Compute Engine instances, read the following procedures to prepare for backups: Create a backup plan template After setting up Backup and DR Service and creating a backup plan template, you can automate protection of your Compute Engine instances by applying the backup plan template to the instance using Tags.",
+          "Create Dynamic Protection Tags Use these instructions to create Dynamic Protection Tags to attach to your Compute Engine instances in order to automate protection: To create, update, and delete tag definitions, you need the Tag Administrator role, or another role that includes specific permissions ."
+        ]
+      },
+      {
+        "title": "\"Automate protection of Google Cloud VMware Engine \\_|\\_ Backup and DR \\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "source_id": "site-docs-reference",
+        "final_score": 203,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "IAM roles and permissions To create, update, and delete Dynamic Protection Tags in the appliance management console, you need to have one of the following roles: Backup and DR Admin Backup and DR Backup User Backup and DR User V2 Project Editor Project Owner a custom role that includes the following permissions: Required permissions backupdr.managementServers.listDynamicProtection backupdr.managementServers.getDynamicProtection backupdr.managementServers.createDynamicProtection backupdr.managementServers.deleteDynamicProtection compute.instances.listEffectiveTags Learn more about Backup and DR Service roles .",
+          "The triggered job can take a few minutes depending on the number of changes pending for your workloads. echo \"Triggering dynamic protection job..\" curl -H \"Authorization: Bearer $BEARER TOKEN \" -H \"backupdr-management-session: Actifio $SESSION ID \" -H \"Content-Type: application/json\" -XPOST -d '{}' \" $MC ENDPOINT /actifio/dynamicprotection/job/vmwarevm\" echo \"Dynamic protection job triggered.\" Migrate manual protection to dynamic protection If you intend to migrate your already protected resources to use dynamic protection using tags, you must enable the migration flag in your project.",
+          "Run manual auto protection Although the protection engine runs daily at 4:15 AM and 4:15 PM local time, you can also make an on-demand run of the Dynamic Protection engine using the following command steps: Set the appliance management console endpoint by entering a value that starts with 'https://bmc-' and ends with '.com'."
+        ]
+      },
+      {
+        "title": "\"Back up Compute Engine instances \\_|\\_ Backup and DR \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup",
+        "source_id": "site-docs-reference",
+        "final_score": 175,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Use the management console to back up Compute Engine instances : if you have any of the following backup requirements, you can use the management console to back up Compute Engine instances: Cross-region backups Backups of specific disks attached to a virtual machine (VM) Automated protection of Compute Engine VMs based on tags If the Google Cloud console-based backup plans and backup vaults are not in a location that is compatible with the region where your source VMs are running.",
+          "The following table lists the permissions required for each API call: Resource Action to be Performed on the Resource Permissions required for each API call Project where it needs to be assigned Backup vault Create BackupVault backupdr.backupVaults.create Admin project Delete BackupVault backupdr.backupVaults.delete Admin project Update BackupVault backupdr.backupVaults.update Admin project List BackupVaults backupdr.backupVaults.list Admin project Get BackupVault backupdr.backupVaults.get Admin project Backup plan Create BackupPlan backupdr.backupPlans.create Admin project Delete BackupPlan backupdr.backupPlans.delete Admin project Get BackupPlan backupdr.backupPlans.get Admin project List Backup Plans backupdr.backupPlans.list Admin project Backup Plan Associations Create Backup Plan Association Workload project backupdr.backupPlanAssociations.createForComputeInstance Workload project backupdr.backupPlans.useForComputeInstance Admin project Delete Backup Plan Association backupdr.backupPlanAssociations.deleteForComputeInstance Workload project Trigger an on-demand backup on Backup Plan Association backupdr.backupPlanAssociations.triggerBackupForComputeInstance Workload project Get Backup Plan Association backupdr.backupPlanAssociations.getForComputeInstance Workload project List Backup Plan Associations backupdr.backupPlanAssociations.list Workload project Fetch Backup Plan Associations backupdr.backupPlanAssociations.fetchForComputeInstance Workload project Data Source Get DataSource backupdr.bvdataSources.get Admin project List DataSources backupdr.backupPlanAssociations.list Admin project Backups Get Backup backupdr.bvbackups.get Admin project List Backups backupdr.bvbackups.list Admin project Delete Backup backupdr.bvbackups.delete Admin project Restore Backup backupdr.bvbackups.restore Admin project Operations List Operations backupdr.operations.list Respective project Get Operations backupdr.operations.get Respective project Grant backup vault access in the Compute Engine project To back up a Compute Engine VM instance in a project different from where the backup vault is created, you must grant the Backup and DR Compute Engine Operator ( roles/backupdr.computeEngineOperator ) IAM role to the backup vault service agent within the Compute Engine project.",
+          "This page provides instructions for how to back up Compute Engine instances to a Backup and DR Service backup vault including how to grant backup vault access in your Compute Engine project, configure scheduled backups, create on-demand backups, and how to manage your vaulted backups."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backupdr.backupPlanAssociations.createForComputeInstance",
+      "backupdr.backupPlanAssociations.deleteForComputeInstance",
+      "backupdr.backupPlanAssociations.fetchForComputeInstance",
+      "backupdr.backupPlanAssociations.getForComputeInstance",
+      "backupdr.backupPlanAssociations.list",
+      "backupdr.backupPlanAssociations.triggerBackupForComputeInstance",
+      "backupdr.backupPlans.create",
+      "backupdr.backupPlans.delete",
+      "backupdr.backupPlans.get",
+      "backupdr.backupPlans.list",
+      "backupdr.backupPlans.useForComputeInstance",
+      "backupdr.backupVaults.create",
+      "backupdr.backupVaults.delete",
+      "backupdr.backupVaults.get",
+      "backupdr.backupVaults.list",
+      "backupdr.backupVaults.update",
+      "backupdr.bvbackups.delete",
+      "backupdr.bvbackups.get",
+      "backupdr.bvbackups.list",
+      "backupdr.bvbackups.restore",
+      "backupdr.bvdataSources.get",
+      "backupdr.computeEngineOperator",
+      "backupdr.managementServers.createDynamicProtection",
+      "backupdr.managementServers.deleteDynamicProtection",
+      "backupdr.managementServers.getDynamicProtection",
+      "backupdr.managementServers.listDynamicProtection",
+      "backupdr.operations.get",
+      "backupdr.operations.list",
+      "compute.instances.listEffectiveTags"
+    ],
+    "missing_inventory_roles": [
+      "roles/backupdr.computeEngineOperator"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:54.168Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "Replication from an external server",
+  "feature_slug": "replication-from-an-external-server",
+  "summary": "Cloud SQL for PostgreSQL supports replication from an external server.",
+  "extended_definition": "Cloud SQL for PostgreSQL supports replication from an external server.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/about-storage-shrink",
+      "https://docs.cloud.google.com/sql/docs/postgres/admin-api-error-messages",
+      "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud SQL Admin API error messages \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/admin-api-error-messages",
+        "source_id": "site-api-reference",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ERROR DISALLOWED UPDATING EXTERNAL SERVER REPLICA REPLICATION STATE Updating the replication state setting of an external server replica instance isn't allowed.",
+          "ERROR DISALLOWED UPDATING EXTERNAL SERVER REPLICA REPLICATION STATE Updating the replication state setting of an external server replica instance isn't allowed.",
+          "ERROR READ REPLICA UNDER EXTERNAL SERVER REPLICA NOT SYNCED To have a read replica, there must be an initial sync completed on the external server replica."
+        ]
+      },
+      {
+        "title": "About storage shrink \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/about-storage-shrink",
+        "source_id": "site-iam-reference",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Limitations The following feature limitations apply: Not supported with replication from an external server .",
+          "MySQL PostgreSQL SQL Server If the storage capacity of a Cloud SQL instance is larger than your application needs, then you can manually reduce, or shrink, your storage capacity to a smaller size."
+        ]
+      },
+      {
+        "title": "\"Connect to an instance using Private Service Connect \\_|\\_ Cloud SQL for\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "source_id": "site-iam-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \"POSTGRES 13\", \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \"db-custom-2-7680\", \"kind\": \"sql#settings\", \"availabilityType\": \"REGIONAL\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"authorizedNetworks\": [], \"pscConfig\": { \"allowedConsumerProjects\": [ \" ALLOWED PROJECTS \" ], \"pscAutoConnections\": { consumerNetwork:\"projects/ PARENT PROJECT /global/networks/ CONSUMER NETWORK \", consumerNetworkStatus:\" CONSUMER NETWORK STATUS \", consumerProject:\" CONSUMER PROJECT \", ipAddress:\" IP ADDRESS \", status:\" STATUS \" }, \"pscEnabled\": true }, \"ipv4Enabled\": false }, } The following fields exist for instances that have Private Service Connect enabled for them: allowedConsumerProjects : a list of the allowed projects for the instance.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://dns.googleapis.com/dns/v1/projects/ PROJECT ID /managedZones\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \" ZONE NAME \", \"dnsName\": \" DNS NAME \", \"description\": \" DESCRIPTION \", \"id\": \" ID \", \"nameServers\": [ \"ns-gcp-private.googledomains.com.\" ], \"creationTime\": \"2024-05-10T17:05:34.607Z\", \"visibility\": \"private\", \"privateVisibilityConfig\": { \"networks\": [ { \"networkUrl\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /global/networks/ NETWORK NAME \", \"kind\": \"dns#managedZonePrivateVisibilityConfigNetwork\" } ], \"gkeClusters\": [], \"kind\": \"dns#managedZonePrivateVisibilityConfig\" }, \"cloudLoggingConfig\": { \"kind\": \"dns#managedZoneCloudLoggingConfig\" }, \"kind\": \"dns#managedZone\" } After you create the Private Service Connect endpoint , create a DNS record in the zone.",
+          "HTTP method and URL: POST https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances Request JSON body: { \"name\": \" INSTANCE NAME \", \"project\": PROJECT ID \", \"region\": \" REGION NAME \", \"databaseVersion\": \"POSTGRES 13\", \"kind\": \"sql#instance\", \"settings\": { \"availabilityType\": \" AVAILABILITY TYPE \", \"ipConfiguration\": { \"ipv4Enabled\": false, \"pscConfig\": { \"allowedConsumerProjects\": [ \" ALLOWED PROJECTS \" ], \"pscAutoConnections\": [ { \"consumerProject\":\" CONSUMER PROJECT \", \"consumerNetwork\":\"projects/ PARENT PROJECT /global/networks/ CONSUMER NETWORK \" } ], \"pscEnabled\": true } }, \"kind\": \"sql#settings\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"tier\": \" MACHINE TYPE \" } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "dns.googleapis.com",
+      "private.googledomains.com",
+      "request.json",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/about-storage-shrink",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api-error-messages",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/about-storage-shrink",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api-error-messages",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/about-storage-shrink",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api-error-messages",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/about-storage-shrink",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api-error-messages",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/about-storage-shrink",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api-error-messages",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/about-storage-shrink",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api-error-messages",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/about-storage-shrink",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api-error-messages",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/about-storage-shrink",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api-error-messages",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
+      ]
+    }
+  ]
+}

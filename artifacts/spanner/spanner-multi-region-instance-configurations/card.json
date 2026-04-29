@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner multi-region instance configurations",
+  "feature_slug": "spanner-multi-region-instance-configurations",
+  "summary": "Added new North America multi-region Spanner instance configurations nam14 (Northern Virginia/Montreal/South Carolina) and nam15 (Dallas/Northern Virginia/Iowa).",
+  "extended_definition": "Added new North America multi-region Spanner instance configurations nam14 (Northern Virginia/Montreal/South Carolina) and nam15 (Dallas/Northern Virginia/Iowa).",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+      "https://docs.cloud.google.com/spanner/docs/compute-capacity",
+      "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Autoscaler tool overview \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+        "source_id": "site-docs-root",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "The preprocessing done by the Poller also simplifies the process of evaluating thresholds for regional, dual-region, and multi-regional Spanner instances.",
+          "Multi-regional, dual-region, and regional instances all have different utilization thresholds that are used when scaling.",
+          "Custom thresholds The Autoscaler tool determines the number of nodes or processing units to be added or subtracted to an instance using the recommended Spanner thresholds for the following load metrics: High priority CPU 24-hour rolling average CPU Storage utilization We recommend that you use the default thresholds as described in Creating alerts for Spanner metrics ."
+        ]
+      },
+      {
+        "title": "\"Compute capacity, nodes and processing units \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/compute-capacity",
+        "source_id": "site-docs-root",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "Compute capacity and instance configurations As described in Regional, dual-region, and multi-region configurations , Spanner distributes an instance across zones of one or more regions to provide high performance and high availability.",
+          "For information about data replicas in instance configurations, see Regional, dual-region, and multi-region configurations .",
+          "When removing compute capacity, monitor your CPU utilization and request latencies in Cloud Monitoring to ensure CPU utilization stays under 65% for regional instances and 45% for each region in multi-region instances."
+        ]
+      },
+      {
+        "title": "\"Create a Spanner free trial instance and sample application \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "For a full list of all available instance configurations, see Regional, dual-region, and multi-region configurations .",
+          "You can create a free trial instance in any of the Spanner regional instance configurations : INSTANCE DESCRIPTION : the name to display for the instance in the Google Cloud console.",
+          "You can create a free trial instance in any of the Spanner regional instance configurations ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+        "https://docs.cloud.google.com/spanner/docs/compute-capacity",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+      ]
+    }
+  ]
+}

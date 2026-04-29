@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.589Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Calendar event transparency",
+  "feature_slug": "calendar-event-transparency",
+  "summary": "Calendar event transparency support lets scripts get and set whether events appear as Busy or Available.",
+  "extended_definition": "Calendar event transparency support lets scripts get and set whether events appear as Busy or Available.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/reference/add-ons-response-service/calendar-event-action-response",
+      "https://developers.google.com/apps-script/reference/add-ons-response-service/calendar-event-action-response-builder",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, refer to the following documentation: Enum EventTransparency Class CalendarEvent Class CalendarEventSeries November 27, 2024 Feature The Calendar service now has a getEventType() method that lets developers differentiate regular events from other types of events like out-of-office and working location events.",
+          "Feature Generally available : You can now get and set the transparency of a calendar event, meaning whether the event shows as \"Busy\" or \"Available\" in Google Calendar.",
+          "This allows scripts to specify whether a dialog in Google Docs, Forms, or the new version of Sheets should prevent the user from interacting with anything other than the dialog."
+        ]
+      },
+      {
+        "title": "\"Class CalendarEventActionResponseBuilder \\_|\\_ Apps Script \\_|\\_ Google\\",
+        "url": "https://developers.google.com/apps-script/reference/add-ons-response-service/calendar-event-action-response-builder",
+        "source_id": "site-docs-reference-3",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Methods Method Return type Brief description add Attachments(attachments) Calendar Event Action Response Builder Specifies that the response should add the attachments to the Calendar event when the associated UI action is taken. add Attendees(emails) Calendar Event Action Response Builder Specifies that the response should add the indicated attendees to the Calendar event when the associated UI action is taken. build() Calendar Event Action Response Builds the current Calendar event action response and validates it. set Conference Data(conferenceData) Calendar Event Action Response Builder Specifies that the response should set the indicated conference data to the Calendar event when the associated UI action is taken.",
+          "Throws Error — If the constructed Calendar event action response isn't valid. setConferenceData(conferenceData) Specifies that the response should set the indicated conference data to the Calendar event when the associated UI action is taken.",
+          "Return CalendarEventActionResponseBuilder — This object, for chaining. addAttendees(emails) Specifies that the response should add the indicated attendees to the Calendar event when the associated UI action is taken."
+        ]
+      },
+      {
+        "title": "Class CalendarEventActionResponse \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/add-ons-response-service/calendar-event-action-response",
+        "source_id": "site-docs-reference-3",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CalendarEventActionResponse Represents a response that makes changes to the calendar event that the user is currently editing in reaction to an action taken in the UI, such as a button click. // A CalendarEventActionResponse that adds two attendees to an event. const calendarEventActionResponse = AddOnsResponseService . newCalendarEventActionResponseBuilder () . addAttendees ([ 'user1@example.com' , 'user2@example.com' ]) . build (); Methods Method Return type Brief description print Json() String Prints the JSON representation of this object.",
+          "Home Google Workspace Apps Script Reference Send feedback Class CalendarEventActionResponse Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/calendar-event-action-response-builder",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/calendar-event-action-response"
+      ]
+    }
+  ]
+}

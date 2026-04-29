@@ -1,0 +1,170 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:56.733Z",
+  "source_step08_card": "data/step-08/current/products/cloud-trace/card.json",
+  "product_name": "Cloud Trace",
+  "product_slug": "cloud-trace",
+  "feature_name": "Trace analysis in Log Analytics",
+  "feature_slug": "trace-analysis-in-log-analytics",
+  "summary": "The Log Analytics page can query and analyze trace data with SQL, including joins between trace and log data.",
+  "extended_definition": "The Log Analytics page can query and analyze trace data with SQL, including joins between trace and log data.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/trace/docs/analytics",
+      "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset",
+      "https://docs.cloud.google.com/trace/docs/finding-traces",
+      "https://docs.cloud.google.com/trace/docs/sql-in-alerting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Find and explore traces \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "source_id": "site-docs-root",
+        "final_score": 283,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following screenshot illustrates how trace data is shown: To run queries that perform an aggregate analysis of your spans, use the Observability Analytics page or BigQuery.",
+          "View aggregated trace data To view the aggregated information about your trace data, do the following: In the Google Cloud console, go to the Trace explorer page: Go to Trace explorer You can also find this page by using the search bar.",
+          "Explore a trace This section provides information about how you can explore a span in the context of its trace: Open and configure the Trace Explorer page."
+        ]
+      },
+      {
+        "title": "\"Monitor your SQL query results with an alerting policy \\_|\\_ Cloud Trace\\",
+        "url": "https://docs.cloud.google.com/trace/docs/sql-in-alerting",
+        "source_id": "site-docs-root-2",
+        "final_score": 271,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a SQL-based alerting policy To create a SQL-based alerting policy, do the following: Google Cloud console In the Google Cloud console, go to the manage search Log Analytics page: Go to Log Analytics If you use the search bar to find this page, then select the result whose subheading is Logging .",
+          "On the Observability Analytics page, in the query editor, enter a SQL query that queries your trace data.",
+          "Before you create a SQL-based alerting policy, complete the following steps: To get the permissions that you need to query trace data and create SQL-based alerting policies, ask your administrator to grant you the following IAM roles on your project: Query trace data: Cloud Trace User ( roles/cloudtrace.user ) Create SQL-based alerting policies: Monitoring Editor ( roles/monitoring.editor ) Logging SqlAlertWriter ( roles/logging.sqlAlertWriter ) Verify that the Monitoring Service Account exists and that it has the following roles: Monitoring Service Agent ( roles/monitoring.notificationServiceAgent ) on your project."
+        ]
+      },
+      {
+        "title": "Analyze trace data with BigQuery \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset",
+        "source_id": "site-docs-root-2",
+        "final_score": 260,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use BigQuery Studio To open BigQuery from the Observability Analytics page and then query your trace data, do the following: In the Google Cloud console, go to the manage search Log Analytics page: Go to Log Analytics If you use the search bar to find this page, then select the result whose subheading is Logging .",
+          "Use BigQuery engine To run a query on the BigQuery engine when using the Observability Analytics page, do the following: In the Google Cloud console, go to the manage search Log Analytics page: Go to Log Analytics If you use the search bar to find this page, then select the result whose subheading is Logging .",
+          "Queries that are run on the BigQuery engine can query observability views, views on log buckets, and analytics views."
+        ]
+      },
+      {
+        "title": "Query and analyze traces \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/analytics",
+        "source_id": "site-docs-root",
+        "final_score": 259,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable the API To get the permissions that you need to load the Observability Analytics page, write, run, and save private queries on your trace data, ask your administrator to grant you the following IAM roles: Observability View Accessor ( roles/observability.viewAccessor ) on the observability views that you want to query.",
+          "Enter and run a custom query To enter a SQL query, then do the following: In the Google Cloud console, go to the manage search Log Analytics page: Go to Log Analytics If you use the search bar to find this page, then select the result whose subheading is Logging .",
+          "Load, edit, and run the system-defined query In the Google Cloud console, go to the manage search Log Analytics page: Go to Log Analytics If you use the search bar to find this page, then select the result whose subheading is Logging ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudtrace.user",
+      "logging.sqlAlertWriter",
+      "monitoring.editor",
+      "monitoring.notificationServiceAgent",
+      "observability.viewAccessor"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudtrace.user",
+      "roles/logging.sqlAlertWriter",
+      "roles/monitoring.editor",
+      "roles/monitoring.notificationServiceAgent",
+      "roles/observability.viewAccessor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/sql-in-alerting",
+        "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset",
+        "https://docs.cloud.google.com/trace/docs/analytics"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/sql-in-alerting",
+        "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset",
+        "https://docs.cloud.google.com/trace/docs/analytics"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/sql-in-alerting",
+        "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset",
+        "https://docs.cloud.google.com/trace/docs/analytics"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/sql-in-alerting",
+        "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset",
+        "https://docs.cloud.google.com/trace/docs/analytics"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/sql-in-alerting",
+        "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset",
+        "https://docs.cloud.google.com/trace/docs/analytics"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/sql-in-alerting",
+        "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset",
+        "https://docs.cloud.google.com/trace/docs/analytics"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/sql-in-alerting",
+        "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset",
+        "https://docs.cloud.google.com/trace/docs/analytics"
+      ]
+    }
+  ]
+}

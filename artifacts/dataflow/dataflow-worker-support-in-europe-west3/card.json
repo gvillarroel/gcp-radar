@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:03.460Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Dataflow worker support in europe-west3",
+  "feature_slug": "dataflow-worker-support-in-europe-west3",
+  "summary": "Dataflow can run workers in zones within the europe-west3 region.",
+  "extended_definition": "Dataflow can run workers in zones within the europe-west3 region.",
+  "lifecycle": {
+    "latest_feature_date": "2017-08-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/concepts/regional-endpoints",
+      "https://docs.cloud.google.com/dataflow/docs/guides/flexrs",
+      "https://docs.cloud.google.com/dataflow/docs/resources/locations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Dataflow locations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/resources/locations",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "Region description Region name Warsaw europe-central2 Finland europe-north1 Stockholm europe-north2 Madrid europe-southwest1 Belgium europe-west1 London europe-west2 Frankfurt europe-west3 Netherlands europe-west4 Zurich europe-west6 Milan europe-west8 Paris europe-west9 Berlin europe-west10 Turin europe-west12 Middle East The following table lists the regions in the Middle East where Dataflow is available.",
+          "Regional availability You can use Dataflow workers, endpoints, Streaming Engine, Shuffle, and FlexRS in supported regions.",
+          "Region description Region name Montréal northamerica-northeast1 Toronto northamerica-northeast2 Queretaro, Mexico northamerica-south1 São Paulo southamerica-east1 Santiago southamerica-west1 Iowa us-central1 South Carolina us-east1 Northern Virginia us-east4 Columbus, Ohio us-east5 Oregon us-west1 Los Angeles, California us-west2 Salt Lake City, Utah us-west3 Las Vegas, Nevada us-west4 Dallas, Texas us-south1 Asia Pacific The following table lists the regions in Asia Pacific where Dataflow is available."
+        ]
+      },
+      {
+        "title": "Use Flexible Resource Scheduling in Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/flexrs",
+        "source_id": "site-docs-reference-2",
+        "final_score": 88,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example shows how to add parameters to your regular pipeline parameters in order to use FlexRS: --flexRSGoal = COST OPTIMIZED \\ --region = europe-west1 \\ --maxNumWorkers = 10 \\ --workerMachineType = n1-highmem-16 If you omit region , maxNumWorkers , and workerMachineType , the Dataflow service determines the default value.",
+          "The following example shows how to add parameters to your regular pipeline parameters in order to use FlexRS: --flexrs goal = COST OPTIMIZED \\ --region = europe-west1 \\ --max num workers = 10 \\ --machine type = n1-highmem-16 If you omit region , max num workers , and machine type , the Dataflow service determines the default value.",
+          "The following example shows how to add parameters to your regular pipeline parameters in order to use FlexRS: --flexrs goal = COST OPTIMIZED \\ --region = europe-west1 \\ --max num workers = 10 \\ --machine type = n1-highmem-16 If you omit region , max num workers , and machine type , the Dataflow service determines the default value."
+        ]
+      },
+      {
+        "title": "Dataflow regions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/concepts/regional-endpoints",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "Regional placement offers benefits such as: Improved resource availability: Dataflow jobs are more resilient to zonal resource availability errors, because workers can continue to be created in other zones with remaining availability.",
+          "Improved reliability: In the event of a zonal failure, Dataflow jobs can continue to run, because workers are recreated in other zones.",
+          "Override the worker region or zone By default, when you submit a job with the --region option, workers are automatically assigned to either zones across the region or the single best zone within the region, depending on the job type."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/resources/locations",
+        "https://docs.cloud.google.com/dataflow/docs/guides/flexrs",
+        "https://docs.cloud.google.com/dataflow/docs/concepts/regional-endpoints"
+      ]
+    }
+  ]
+}

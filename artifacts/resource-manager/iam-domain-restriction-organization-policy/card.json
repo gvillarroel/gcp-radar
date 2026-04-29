@@ -1,0 +1,148 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:26.331Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager",
+  "feature_name": "IAM domain restriction organization policy",
+  "feature_slug": "iam-domain-restriction-organization-policy",
+  "summary": "Restricts IAM domains through an organization policy.",
+  "extended_definition": "Restricts IAM domains through an organization policy.",
+  "lifecycle": {
+    "latest_feature_date": "2020-01-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases",
+      "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs",
+      "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Introduction to organization restrictions \\_|\\_ Resource Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 143,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For managed devices in an organization, the organization restrictions feature restricts access only to resources in authorized Google Cloud organizations.",
+          "The organization restrictions feature lets you prevent data exfiltration through phishing or insider attacks.",
+          "The following diagram illustrates how the different components work to enforce organization restrictions: The architecture diagram shows the following components: Managed device : A device that is governed by the organization policies of a company."
+        ]
+      },
+      {
+        "title": "\"Manage multiple organization resources \\_|\\_ Resource Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs",
+        "source_id": "site-iam-reference",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "Each of the two domains have their own Google Workspace accounts, with hypothetical.com being the primary organization resource.",
+          "They can remove the domain from the Project Creator role in the organization resource's allow policy as well.",
+          "Example The following diagram illustrates an organization with a primary domain that is kept isolated from an acquired secondary domain."
+        ]
+      },
+      {
+        "title": "Handle special cases \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases",
+        "source_id": "site-iam-reference",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "However, you will not be able to use that service account on any resources that have a domain restriction organization policy applied to them that restricts them to the source organization resource's domain.",
+          "You have applied an organization policy with the domain restriction constraint to project-C , which only allows it to access the domain of organizations/12345678901.",
+          "That project will continue to work with the attached service account even if there is an organization policy that restricts the domain of that project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "hypothetical.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases"
+      ]
+    }
+  ]
+}

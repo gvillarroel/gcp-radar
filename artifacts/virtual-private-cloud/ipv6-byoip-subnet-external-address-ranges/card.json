@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:33.557Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "IPv6 BYOIP subnet external address ranges",
+  "feature_slug": "ipv6-byoip-subnet-external-address-ranges",
+  "summary": "Allows assigning IPv6 BYOIP address ranges to subnet external ranges for VM external IPv6 addresses, including ephemeral or reserved addresses via static regional allocations.",
+  "extended_definition": "Allows assigning IPv6 BYOIP address ranges to subnet external ranges for VM external IPv6 addresses, including ephemeral or reserved addresses via static regional allocations.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip",
+      "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+      "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+      "https://docs.cloud.google.com/vpc/docs/subnets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Subnets \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/subnets",
+        "source_id": "site-docs-root",
+        "final_score": 200,
+        "relevance": "",
+        "evidence_snippets": [
+          "BYOIP-provided external IPv6 subnet ranges can only be used for external /96 IPv6 address ranges of VM network interfaces.",
+          "Forwarding rule for an internal passthrough Network Load Balancer, external passthrough Network Load Balancer, or protocol forwarding /96 or specified by a BYOIP sub-prefix The IPv6 address range of a forwarding rule for internal protocol forwarding or an internal passthrough Network Load Balancer is an internal /96 IP address range from a subnet's internal IPv6 address range.",
+          "External /96 IPv6 address ranges of forwarding rules for external protocol forwarding or backend service-based external passthrough Network Load Balancers can use the second half ( /65 ) of the subnet's /64 range."
+        ]
+      },
+      {
+        "title": "\"Bring your own IP addresses \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "source_id": "site-docs-root-2",
+        "final_score": 194,
+        "relevance": "",
+        "evidence_snippets": [
+          "BYOIP-provided external IPv6 subnet ranges can only be used by virtual machine (VM) instances.",
+          "BYOIP-provided external IPv6 subnet ranges can only be used by VM instances.",
+          "Must be smaller than the associated sub-prefix—the difference between the allocatable prefix length and the sub-prefix length must be at least 8, and can't be greater than 32 Valid lengths: /48 , /56 , /64 , /72 , /80 , /88 , /96 Default lengths: If the parent sub-prefix's length is /64 or /72 , the default allocatable prefix length is /96 Otherwise, the default allocatable prefix length is /64 Sub-prefix for external subnet ranges (--mode=EXTERNAL IPV6 SUBNETWORK CREATION) Can be the same size or smaller (have a longer prefix length) than the parent public delegated prefix The difference between the prefix length of a sub-prefix and its parent public delegated prefix can't be greater than 24 Valid lengths: /32 , /40 , /48 , /56 External Sub-prefix for internal subnet ranges (--mode=INTERNAL IPV6 SUBNETWORK CREATION) Can be the same size or smaller (have a longer prefix length) than the parent public delegated prefix The difference between the prefix length of a sub-prefix and its parent public delegated prefix can't be greater than 24 Valid lengths: /32 , /40 , /48 , /56 Internal Limitations Provisioning time takes multiple weeks and cannot be accelerated."
+        ]
+      },
+      {
+        "title": "\"Access APIs from VMs with external IP addresses \\_|\\_ Virtual Private Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip",
+        "source_id": "site-docs-root-2",
+        "final_score": 179,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you enable external IPv6 addresses on a subnet, a system-generated IPv6 default route ( ::/0 ) is added to that VPC network.",
+          "IPSet () for e in data [ \"prefixes\" ]: if \"ipv4Prefix\" in e : cidrs . add ( e . get ( \"ipv4Prefix\" )) if \"ipv6Prefix\" in e : cidrs . add ( e . get ( \"ipv6Prefix\" )) return cidrs def main (): cidrs = { group : get data ( link ) for group , link in IPRANGE URLS . items ()} if len ( cidrs ) != 2 : raise ValueError ( \"ERROR: Could process data from Google\" ) print ( \"IP ranges for Google APIs and services default domains:\" ) for ip in ( cidrs [ \"goog\" ] - cidrs [ \"cloud\" ]) . iter cidrs (): print ( ip ) if name == \" main \" : main () Note: In the past, Google Cloud published a list of IP address ranges in the spf.google.com DNS TXT record (and the records it referenced).",
+          "IPv6 support for private.googleapis.com and restricted.googleapis.com The following IPv6 address ranges can be used to direct traffic from IPv6 clients to Google APIs and services: private.googleapis.com : 2600:2d00:0002:2000::/56 restricted.googleapis.com : 2600:2d00:0002:1000::/56 Consider configuring the IPv6 addresses if you want to use the private.googleapis.com or restricted.googleapis.com domain, and you have clients that use IPv6 addresses."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create and manage VPC networks \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "source_id": "site-docs-root",
+        "final_score": 174,
+        "relevance": "",
+        "evidence_snippets": [
+          "Add a subnet that uses an IPv6 BYOIP address range Bring your own IP addresses (BYOIP) lets you import global unicast address (GUA) ranges that you can assign to a subnet's internal or external IPv6 address range.",
+          "A dual-stack subnet can have one of the following configurations for its primary IP address ranges: Internal IPv4 range and internal IPv6 range Internal IPv4 range and external IPv6 range Each subnet in a VPC network can have a different configuration; you don't need to configure them all as dual-stack, for example.",
+          "If you want to use BYOIP to bring your own IPv6 addresses, see Assign subnet ranges instead."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "private.googleapis.com",
+      "restricted.googleapis.com",
+      "spf.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/subnets",
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/subnets",
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/subnets",
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks"
+      ]
+    }
+  ]
+}

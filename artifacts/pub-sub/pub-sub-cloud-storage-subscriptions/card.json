@@ -1,0 +1,127 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:25.774Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub",
+  "feature_name": "Pub/Sub Cloud Storage subscriptions",
+  "feature_slug": "pub-sub-cloud-storage-subscriptions",
+  "summary": "Cloud Storage subscriptions let Pub/Sub write messages directly to an existing Cloud Storage bucket.",
+  "extended_definition": "Cloud Storage subscriptions let Pub/Sub write messages directly to an existing Cloud Storage bucket.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create Cloud Storage subscriptions \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription",
+        "source_id": "site-docs-root-2",
+        "final_score": 319,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To create a Cloud Storage subscription, run the gcloud pubsub subscriptions create command . gcloud pubsub subscriptions create SUBSCRIPTION ID \\ --topic = TOPIC ID \\ --cloud-storage-bucket = BUCKET NAME \\ --cloud-storage-file-prefix = CLOUD STORAGE FILE PREFIX \\ --cloud-storage-file-suffix = CLOUD STORAGE FILE SUFFIX \\ --cloud-storage-file-datetime-format = CLOUD STORAGE FILE DATETIME FORMAT \\ --cloud-storage-max-duration = CLOUD STORAGE MAX DURATION \\ --cloud-storage-max-bytes = CLOUD STORAGE MAX BYTES \\ --cloud-storage-max-messages = CLOUD STORAGE MAX MESSAGES \\ --cloud-storage-output-format = CLOUD STORAGE OUTPUT FORMAT \\ --cloud-storage-write-metadata --cloud-storage-use-topic-schema If you want to use a custom service account, provide it as an additional argument: gcloud pubsub subscriptions create SUBSCRIPTION ID \\ --topic = TOPIC ID \\ --cloud-storage-bucket = BUCKET NAME \\ --cloud-storage-file-prefix = CLOUD STORAGE FILE PREFIX \\ --cloud-storage-file-suffix = CLOUD STORAGE FILE SUFFIX \\ --cloud-storage-file-datetime-format = CLOUD STORAGE FILE DATETIME FORMAT \\ --cloud-storage-max-duration = CLOUD STORAGE MAX DURATION \\ --cloud-storage-max-bytes = CLOUD STORAGE MAX BYTES \\ --cloud-storage-max-messages = CLOUD STORAGE MAX MESSAGES \\ --cloud-storage-output-format = CLOUD STORAGE OUTPUT FORMAT \\ --cloud-storage-write-metadata --cloud-storage-use-topic-schema --cloud-storage-service-account-email = SERVICE ACCOUNT NAME In the command, only SUBSCRIPTION ID , the --topic flag, and the --cloud-storage-bucket flag are required.",
+          "Here is the Avro schema for the output messages with write metadata disabled: { \"type\" : \"record\" , \"namespace\" : \"com.google.pubsub\" , \"name\" : \"PubsubMessage\" , \"fields\" : [ { \"name\" : \"data\" , \"type\" : \"bytes\" } ] } Here is the Avro schema for the output messages with write metadata enabled: { \"type\" : \"record\" , \"namespace\" : \"com.google.pubsub\" , \"name\" : \"PubsubMessageWithMetadata\" , \"fields\" : [ { \"name\" : \"subscription name\" , \"type\" : \"string\" }, { \"name\" : \"message id\" , \"type\" : \"string\" }, { \"name\" : \"publish time\" , \"type\" : { \"type\" : \"long\" , \"logicalType\" : \"timestamp-micros\" } }, { \"name\" : \"attributes\" , \"type\" : { \"type\" : \"map\" , \"values\" : \"string\" } }, { \"name\" : \"data\" , \"type\" : \"bytes\" } ] } Use topic schema : This option lets Pub/Sub use the schema of the Pub/Sub topic to which the subscription is attached when writing Avro files.",
+          "Values are as follows: text : Messages are written as raw text, separated by a newline. avro : Messages are written as an Avro binary. --cloud-storage-write-metadata and --cloud-storage-use-topic-schema only affect subscriptions with output format avro ."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "source_id": "site-api-reference",
+        "final_score": 311,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "The Pub/Sub service account associated with this subscriptions's parent project (i.e., service-{project number}@gcp-sa-pubsub.iam.gserviceaccount.com) must have permission to Acknowledge() messages on this subscription. retryPolicy object ( RetryPolicy ) Optional.",
+          "Users should ensure that there is a subscription attached to this topic since messages published to a topic with no subscriptions are lost. maxDeliveryAttempts integer Optional."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 305,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "The Pub/Sub service account associated with this subscriptions's parent project (i.e., service-{project number}@gcp-sa-pubsub.iam.gserviceaccount.com) must have permission to Acknowledge() messages on this subscription. retryPolicy object ( RetryPolicy ) Optional."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 305,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "The Pub/Sub service account associated with this subscriptions's parent project (i.e., service-{project number}@gcp-sa-pubsub.iam.gserviceaccount.com) must have permission to Acknowledge() messages on this subscription. retryPolicy object ( RetryPolicy ) Optional."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.pubsub",
+      "i.e",
+      "pubsub.googleapis.com",
+      "pubsub.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    }
+  ]
+}

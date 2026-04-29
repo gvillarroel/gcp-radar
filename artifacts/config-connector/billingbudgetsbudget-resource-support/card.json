@@ -1,0 +1,243 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:59.197Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "BillingBudgetsBudget resource support",
+  "feature_slug": "billingbudgetsbudget-resource-support",
+  "summary": "Config Connector supports managing the BillingBudgetsBudget resource.",
+  "extended_definition": "Config Connector supports managing the BillingBudgetsBudget resource.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+      "https://docs.cloud.google.com/config-connector/docs/reference/overview",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Managing and deleting resources \\_|\\_ Config Connector \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+        "source_id": "site-docs-reference",
+        "final_score": 24,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following Config Connector resources correspond to Google Cloud resources which have a service-generated resource ID: AccessContextManagerAccessPolicy ApigeeOrganization BillingBudgetsBudget CloudIdentityGroup CloudIdentityMembership ComputeFirewallPolicy DataCatalogPolicyTag DataCatalogTaxonomy DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType EssentialContactsContact Folder IAPBrand IAPIdentityAwareProxyClient IdentityPlatformTenant MonitoringAlertPolicy MonitoringGroup MonitoringNotificationChannel MonitoringUptimeCheckConfig RecaptchaEnterpriseKey ResourceManagerLien SQLSSLCert SecretManagerSecretVersion StorageNotification StorageTransferJob TagsTagBinding TagsTagKey TagsTagValue VertexAIDataset VertexAIIndex Note: Folder is a special case.",
+          "Managing and deleting resources This page explains how Config Connector manages an existing resource and handles deleting resources .",
+          "If a resource with the same name already exists, Config Connector acquires that resource and starts managing it."
+        ]
+      },
+      {
+        "title": "BillingBudgetsBudget \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget",
+        "source_id": "site-docs-root-2",
+        "final_score": 24,
+        "relevance": "",
+        "evidence_snippets": [
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : billingbudgets.cnrm.cloud.google.com/v1beta1 kind : BillingBudgetsBudget metadata : name : billingbudgetsbudget-sample-calendarbudget spec : billingAccountRef : Replace \"${BILLING ACCOUNT ID FOR BILLING RESOURCES?}\" with the numeric ID for your billing account external : \"${BILLING ACCOUNT ID FOR BILLING RESOURCES?}\" displayName : \"sample-budget\" budgetFilter : projects : - name : \"billingbudgetsbudget-dep-calb\" creditTypes : - \"DISCOUNT\" creditTypesTreatment : \"INCLUDE SPECIFIED CREDITS\" services : This is the service name for the Geolocation API. - \"services/0245-C3C9-3864\" labels : label-one : values : - \"value-one\" calendarPeriod : \"MONTH\" amount : specifiedAmount : currencyCode : \"USD\" units : 9000000 nanos : 0 thresholdRules : - thresholdPercent : 0.5 spendBasis : \"CURRENT SPEND\" allUpdatesRule : pubsubTopicRef : name : \"billingbudgetsbudget-dep-calendarbudget\" schemaVersion : \"1.0\" monitoringNotificationChannels : - name : \"billingbudgetsbudget-dep-calendarbudget\" disableDefaultIamRecipients : false --- apiVersion : monitoring.cnrm.cloud.google.com/v1beta1 kind : MonitoringNotificationChannel metadata : name : billingbudgetsbudget-dep-calendarbudget spec : labels : email address : test@example.com type : \"email\" --- apiVersion : pubsub.cnrm.cloud.google.com/v1beta1 kind : PubSubTopic metadata : name : billingbudgetsbudget-dep-calendarbudget --- apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project metadata : name : billingbudgetsbudget-dep-calb spec : organizationRef : Replace \"${ORG ID?}\" with the numeric ID for your organization external : \"${ORG ID?}\" name : \"billingbudgetsbudget-dep-calb\" billingAccountRef : Replace \"${BILLING ACCOUNT ID FOR BILLING RESOURCES?}\" with the numeric ID for your billing account external : \"${BILLING ACCOUNT ID FOR BILLING RESOURCES?}\" Custom Budget Copyright 2021 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License.",
+          "BillingBudgetsBudget Property Value Google Cloud Service Name Billing Budgets Google Cloud Service Documentation /billing/docs/ Google Cloud REST Resource Name billingAccounts.budgets Google Cloud REST Resource Documentation /billing/docs/reference/budget/rest/v1beta1/billingAccounts.budgets Config Connector Resource Short Names gcpbillingbudgetsbudget gcpbillingbudgetsbudgets billingbudgetsbudget Config Connector Service Name billingbudgets.googleapis.com Config Connector Resource Fully Qualified Name billingbudgetsbudgets.billingbudgets.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema allUpdatesRule : disableDefaultIamRecipients : boolean monitoringNotificationChannels : - external : string name : string namespace : string pubsubTopicRef : external : string name : string namespace : string schemaVersion : string amount : lastPeriodAmount : {} specifiedAmount : currencyCode : string nanos : integer units : integer billingAccountRef : external : string name : string namespace : string budgetFilter : calendarPeriod : string creditTypes : - string creditTypesTreatment : string customPeriod : endDate : day : integer month : integer year : integer startDate : day : integer month : integer year : integer labels : string : object projects : - external : string name : string namespace : string services : - string subaccounts : - external : string name : string namespace : string displayName : string resourceID : string thresholdRules : - spendBasis : string thresholdPercent : float Fields allUpdatesRule Optional object Optional.",
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : billingbudgets.cnrm.cloud.google.com/v1beta1 kind : BillingBudgetsBudget metadata : name : billingbudgetsbudget-sample-custombudget spec : billingAccountRef : Replace \"${BILLING ACCOUNT ID FOR BILLING RESOURCES?}\" with the numeric ID for your billing account external : \"${BILLING ACCOUNT ID FOR BILLING RESOURCES?}\" budgetFilter : creditTypes : - \"DISCOUNT\" creditTypesTreatment : \"INCLUDE SPECIFIED CREDITS\" customPeriod : startDate : year : 2140 month : 1 day : 1 endDate : year : 2312 month : 3 day : 14 amount : specifiedAmount : currencyCode : \"USD\" units : 9000000 nanos : 0 Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector ."
+        ]
+      },
+      {
+        "title": "Config Connector resources \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 24,
+        "relevance": "",
+        "evidence_snippets": [
+          "Google Cloud Product Config Connector Resource Name Access Context Manager AccessContextManagerAccessLevel Access Context Manager AccessContextManagerAccessPolicy Access Context Manager AccessContextManagerServicePerimeter Access Context Manager AccessContextManagerServicePerimeterResource AlloyDB for PostgreSQL AlloyDBBackup AlloyDB for PostgreSQL AlloyDBCluster AlloyDB for PostgreSQL AlloyDBInstance AlloyDB for PostgreSQL AlloyDBUser API Gateway APIGatewayAPI Apigee ApigeeEndpointAttachment Apigee ApigeeEnvgroup Apigee ApigeeEnvgroupAttachment Apigee ApigeeEnvironment Apigee ApigeeInstance Apigee ApigeeInstanceAttachment Apigee ApigeeOrganization App Hub AppHubApplication Artifact Registry ArtifactRegistryRepository BigQuery sharing BigQueryAnalyticsHubDataExchange BigQuery sharing BigQueryAnalyticsHubListing BigQuery BigLake BigLakeTable BigQuery BigqueryConnectionConnection Backup and DR BackupDRBackupPlan Backup and DR BackupDRBackupPlanAssociation Backup and DR BackupDRBackupVault BigQuery BigQueryDataset BigQuery BigQueryJob BigQuery BigQueryRoutine BigQuery BigQueryTable BigQuery BigQueryDataTransferConfig BigQuery Reservation BigQueryReservationAssignment BigQuery Reservation BigQueryReservationReservation Cloud Billing Budget Bigtable BigtableAppProfile Bigtable BigtableGCPolicy Bigtable BigtableInstance Bigtable BigtableTable Cloud Billing Budget BillingBudgetsBudget Binary Authorization BinaryAuthorizationAttestor Binary Authorization BinaryAuthorizationPolicy Cloud Build CloudBuildTrigger Cloud Build CloudBuildWorkerPool Cloud Asset Inventory AssetFeed Cloud Asset Inventory AssetSavedQuery Cloud Composer ComposerEnvironment Cloud Deploy CloudDeployDeliveryPipeline Cloud Quotas APIQuotaAdjusterSettings Cloud Quotas APIQuotaPreference Cloud Run functions CloudFunctionsFunction Cloud Identity CloudIdentityGroup Cloud Identity CloudIdentityMembership Cloud Intrusion Detection System CloudIDSEndpoint Cloud Scheduler CloudSchedulerJob Certificate Manager CertificateManagerCertificate Certificate Manager CertificateManagerCertificateMap Certificate Manager CertificateManagerCertificateMapEntry Certificate Manager CertificateManagerDNSAuthorization Compute Engine ComputeAddress Compute Engine ComputeBackendBucket Compute Engine ComputeBackendService Compute Engine ComputeDisk Compute Engine ComputeExternalVPNGateway Compute Engine ComputeFirewall Compute Engine ComputeFirewallPolicy Compute Engine ComputeFirewallPolicyAssociation Compute Engine ComputeFirewallPolicyRule Compute Engine ComputeForwardingRule Compute Engine ComputeHealthCheck Compute Engine ComputeHTTPHealthCheck Compute Engine ComputeHTTPSHealthCheck Compute Engine ComputeImage Compute Engine ComputeInstance Compute Engine ComputeInstanceGroup Compute Engine ComputeInstanceGroupManager Compute Engine ComputeInstanceTemplate Compute Engine ComputeInterconnectAttachment Compute Engine ComputeManagedSSLCertificate Compute Engine ComputeNetwork Compute Engine ComputeNetworkEndpointGroup Compute Engine ComputeNetworkFirewallPolicy Compute Engine ComputeNetworkFirewallPolicyAssociation Compute Engine ComputeNetworkPeering Compute Engine ComputeNodeGroup Compute Engine ComputeNodeTemplate Compute Engine ComputePacketMirroring Compute Engine ComputeProjectMetadata Compute Engine ComputeRegionNetworkEndpointGroup Compute Engine ComputeReservation Compute Engine ComputeResourcePolicy Compute Engine ComputeRoute Compute Engine ComputeRouter Compute Engine ComputeRouterInterface Compute Engine ComputeRouterNAT Compute Engine ComputeRouterPeer Compute Engine ComputeSecurityPolicy Compute Engine ComputeServiceAttachment Compute Engine ComputeSharedVPCHostProject Compute Engine ComputeSharedVPCServiceProject Compute Engine ComputeSnapshot Compute Engine ComputeSSLCertificate Compute Engine ComputeSSLPolicy Compute Engine ComputeSubnetwork Compute Engine ComputeTargetGrpcProxy Compute Engine ComputeTargetHttpProxy Compute Engine ComputeTargetHttpsProxy Compute Engine ComputeTargetInstance Compute Engine ComputeTargetPool Compute Engine ComputeTargetSslProxy Compute Engine ComputeTargetTcpProxy Compute Engine ComputeTargetVPNGateway Compute Engine ComputeURLMap Compute Engine ComputeVPNGateway Compute Engine ComputeVPNTunnel Config Controller ConfigControllerInstance Artifact Analysis ContainerAnalysisNote Data Catalog DataCatalogPolicyTag Data Catalog DataCatalogTaxonomy Dataflow DataflowJob Dataflow DataflowFlexTemplateJob Dataform DataformRepository Cloud Data Fusion DatafusionInstance Managed Service for Apache Spark DataprocAutoscalingPolicy Managed Service for Apache Spark DataprocCluster Managed Service for Apache Spark DataprocWorkflowTemplate Dataproc Metastore MetastoreBackup Cloud Data Loss Prevention DLPDeidentifyTemplate Cloud Data Loss Prevention DLPInspectTemplate Cloud Data Loss Prevention DLPJobTrigger Cloud Data Loss Prevention DLPStoredInfoType Cloud DNS DNSManagedZone Cloud DNS DNSPolicy Cloud DNS DNSRecordSet Google Distributed Cloud EdgeContainerCluster Google Distributed Cloud EdgeContainerNodePool Google Distributed Cloud EdgeContainerVPNConnection Google Distributed Cloud EdgeNetworkNetwork Google Distributed Cloud EdgeNetworkSubnet Document AI DocumentAIProcessorVersion Essential Contacts EssentialContactsContact Eventarc EventarcTrigger Filestore FilestoreBackup Filestore FilestoreInstance Firestore FirestoreDatabase Firestore FirestoreIndex GKE attached clusters ContainerAttachedCluster GKE Hub GKEHubMembership GKE Hub GKEHubFeature GKE Hub GKEHubFeatureMembership Google Kubernetes Engine ContainerCluster Google Kubernetes Engine ContainerNodePool Identity and Access Management IAMAccessBoundaryPolicy Identity and Access Management IAMAuditConfig Identity and Access Management IAMCustomRole Identity and Access Management IAMPartialPolicy Identity and Access Management IAMPolicy Identity and Access Management IAMPolicyMember Identity and Access Management IAMServiceAccount Identity and Access Management IAMServiceAccountKey Identity and Access Management IAMWorkforcePool Identity and Access Management IAMWorkforcePoolProvider Identity and Access Management IAMWorkloadIdentityPool Identity and Access Management IAMWorkloadIdentityPoolProvider Identity-Aware Proxy IAPBrand Identity-Aware Proxy IAPIdentityAwareProxyClient Identity-Aware Proxy IAPSettings Identity Platform IdentityPlatformOAuthIDPConfig Identity Platform IdentityPlatformConfig Identity Platform IdentityPlatformTenant Identity Platform IdentityPlatformTenantOAuthIDPConfig Cloud Key Management Service KMSCryptoKey Cloud Key Management Service KMSKeyRing Cloud Key Management Service KMSAutokeyConfig Cloud Key Management Service KMSImportJob Cloud Key Management Service KMSKeyHandle Cloud Logging LoggingLink Cloud Logging LoggingLogBucket Cloud Logging LoggingLogExclusion Cloud Logging LoggingLogMetric Cloud Logging LoggingLogSink Cloud Logging LoggingLogView Google Cloud Managed Service for Apache Kafka ManagedKafkaCluster Google Cloud Managed Service for Apache Kafka ManagedKafkaTopic Memorystore for Memcached MemcacheInstance Memorystore for Valkey MemorystoreInstance Cloud Monitoring MonitoringAlertPolicy Cloud Monitoring MonitoringDashboard Cloud Monitoring MonitoringGroup Cloud Monitoring MonitoringMetricDescriptor Cloud Monitoring MonitoringMonitoredProject Cloud Monitoring MonitoringNotificationChannel Cloud Monitoring MonitoringService Cloud Monitoring MonitoringServiceLevelObjective Cloud Monitoring MonitoringUptimeCheckConfig Network Connectivity NetworkConnectivityHub Network Connectivity NetworkConnectivitySpoke Notebooks NotebooksInstance OS Config OSConfigGuestPolicy OS Config OSConfigOSPolicyAssignment Organization Policy OrgPolicyCustomConstraint Private CA PrivateCACAPool Private CA PrivateCACertificate Private CA PrivateCACertificateAuthority Private CA PrivateCACertificateTemplate Privileged Access Manager PrivilegedAccessManagerEntitlement Pub/Sub PubSubSchema Pub/Sub PubSubSnapshot Pub/Sub PubSubSubscription Pub/Sub PubSubTopic Pub/Sub Lite PubSubLiteReservation Memorystore RedisCluster Memorystore RedisInstance reCAPTCHA RecaptchaEnterpriseKey Resource Manager Folder Resource Manager Project Resource Manager ResourceManagerLien Resource Manager ResourceManagerPolicy Cloud Run RunJob Cloud Run RunService Secret Manager SecretManagerSecret Secret Manager SecretManagerSecretVersion Secure Source Manager SecureSourceManagerInstance Secure Source Manager SecureSourceManagerRepository Service Directory ServiceDirectoryEndpoint Service Directory ServiceDirectoryNamespace Service Directory ServiceDirectoryService Service Networking ServiceNetworkingConnection Service Usage Service Service Usage ServiceIdentity Cloud Source Repositories SourceRepoRepository Speech-to-Text SpeechCustomClass Speech-to-Text SpeechPhraseSet Speech-to-Text SpeechRecognizer Spanner SpannerBackupSchedule Spanner SpannerDatabase Spanner SpannerInstance Cloud SQL SQLDatabase Cloud SQL SQLInstance Cloud SQL SSLCert Cloud SQL SQLUser Cloud Storage StorageAnywhereCache Cloud Storage StorageBucket Cloud Storage StorageBucketAccessControl Cloud Storage StorageDefaultObjectAccessControl Cloud Storage StorageNotification Storage Transfer Service StorageTransferJob Tags TagsLocationTagBinding Tags TagsTagBinding Tags TagsTagKey Tags TagsTagValue Cloud Service Mesh NetworkSecurityAuthorizationPolicy Cloud Service Mesh NetworkSecurityClientTLSPolicy Cloud Service Mesh NetworkSecurityServerTLSPolicy Cloud Service Mesh NetworkServicesEndpointPolicy Cloud Service Mesh NetworkServicesGateway Cloud Service Mesh NetworkServicesGRPCRoute Cloud Service Mesh NetworkServicesHTTPRoute Cloud Service Mesh NetworkServicesMesh Cloud Service Mesh NetworkServicesTCPRoute Cloud Service Mesh NetworkServicesTLSRoute Vertex AI VertexAIDataset Vertex AI VertexAIEndpoint Vertex AI VertexAIIndex Vertex AI VertexAIMetadataStore Google Cloud VMware Engine VMwareEngineExternalAddress Serverless VPC Access VPCAccessConnector Cloud Workstations WorkstationCluster Cloud Workstations WorkstationConfig Cloud Workstations Workstation The following resources are not supported in Config Connector starting from the corresponding version: Google Cloud Product Config Connector Resource Name Deprecation Version Game Servers Realm GameServicesRealm 1.101.0 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Config Connector resources Config Connector supports the following resources.",
+          "Home Documentation Access and resource management Config Connector API and reference Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billingbudgets.cnrm.cloud.google.com",
+      "billingbudgets.googleapis.com",
+      "billingbudgetsbudgets.billingbudgets.cnrm.cloud.google.com",
+      "example.com",
+      "monitoring.cnrm.cloud.google.com",
+      "pubsub.cnrm.cloud.google.com",
+      "resourcemanager.cnrm.cloud.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/overview"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/overview"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/overview"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/overview"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/overview"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/overview"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/overview"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/overview"
+      ]
+    }
+  ]
+}

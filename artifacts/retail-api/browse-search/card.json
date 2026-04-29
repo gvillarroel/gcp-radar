@@ -1,0 +1,155 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:26.739Z",
+  "source_step08_card": "data/step-08/current/products/retail-api/card.json",
+  "product_name": "Retail API",
+  "product_slug": "retail-api",
+  "feature_name": "Browse search",
+  "feature_slug": "browse-search",
+  "summary": "Browse search uses Retail Search to rank browse results by popularity, buyability, and personalization.",
+  "extended_definition": "Browse search uses Retail Search to rank browse results by popularity, buyability, and personalization.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/retail/docs/a-b-monitor",
+      "https://docs.cloud.google.com/retail/docs/boosting",
+      "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+      "https://docs.cloud.google.com/retail/docs/data-quality"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Data quality \\_|\\_ Vertex AI Search for commerce \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/retail/docs/data-quality",
+        "source_id": "site-docs-root",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following performance tiers are available for both use cases, text query search and browse: Text query search TIER 1 Relevance Results are returned based on degree of relevance to the query, such as how black a dress is when a black dress is queried.",
+          "At least 250,000 browse search user events followed by a detail-page-view , add-to-cart , or purchase event with the same visitor ID and with one of the products included in the search event over the last 90 days.",
+          "Browse search , used when your shoppers land on a particular category page, such as the \"Appliances\" category web page of a home improvement store's retail site and browse the sorted items in that category."
+        ]
+      },
+      {
+        "title": "Boost results \\_|\\_ Vertex AI Search for commerce \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/retail/docs/boosting",
+        "source_id": "site-docs-reference",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To troubleshoot why a boosted product might not appear in search and browse results, check for: Multiple boost rules (including bury demotions) : Check boost mode configuration (sum or max) and determine the final score.",
+          "You can control the result ranking by applying a boosting rule to prioritize or de-prioritize returned search items.",
+          "Boosting is a multiplier function applied to search and browse results."
+        ]
+      },
+      {
+        "title": "\"Monitor and analyze A/B experiments \\_|\\_ Vertex AI Search for commerce\\",
+        "url": "https://docs.cloud.google.com/retail/docs/a-b-monitor",
+        "source_id": "site-docs-reference",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example 1: Two variant arms In this example, assume that you plan to set up an A/B experiment with: 20% of search requests sent to in-house search engines as the baseline control group 20% of search requests sent to Google Vertex AI Search for Retail API as the experiment group 60% as a holdout group that is not in the A/B test The request and user event configuration would be: Traffic type Discovery engine event.experimentIds event.attributionToken Traffic % Control traffic In-house CONTROL N/A 20% Experiment traffic Google Vertex AI Search for Retail API EXPERIMENT Attribution token from search response 20% Holdout traffic Either / both N/A Depends on discovery engine 60% Holdout traffic might be served by an in-house search engine, Vertex AI Search for commerce, or both.",
+          "Variant arm name Traffic destination User event experiment ID Intended traffic % Example control arm External CONTROL 50% Example experiment arm 1 Google Vertex AI Search for Retail API EXP DF ON 25% Example experiment arm 2 Google Vertex AI Search for Retail API EXP DF OFF 25% Traffic metrics An experiment's Monitoring page shows if there are unintended traffic splits for the following metrics: Search/Browse event count per date Search/Browse visitor count per date Search/Browse event count per category When unintended traffic splits occur for one of these metrics, its card at the top of the Monitoring page shows the dates on which the unintended traffic split occurred.",
+          "Select a serving traffic destination: Google Vertex AI Search for Retail API : If this variant arm monitors traffic for Vertex AI Search for commerce results."
+        ]
+      },
+      {
+        "title": "\"Conversational Commerce agent developer's guide \\_|\\_ Vertex AI Search for\\",
+        "url": "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "HTTP method and endpoint POST h tt ps : //retail.googleapis.com/v2/{placement=projects/ /locations/ /catalogs/ /servingConfigs/ }:search Core product Search API request: Initial query { \"placement\" : \"projects/YOUR PROJECT ID/locations/global/catalogs/default catalog/servingConfigs/default search\" , // Or if using legacy placements: // \"placement\": \"projects/YOUR PROJECT ID/locations/global/catalogs/default catalog/placements/default search\", \"query\" : \"Help me plan a party\" , // This is the original user query \"visitorId\" : \"your visitor id\" , \"branch\" : \"projects/YOUR PROJECT ID/locations/global/catalogs/default catalog/branches/default branch\" , \"pageSize\" : 20 , // Optional: Number of results to return per page \"filter\" : \"categories:(\\\"Party Supplies\\\" OR \\\"Decorations\\\" OR \\\"Food & Drink\\\")\" , // Mirroring the filter from the Conversational Commerce API \"orderBy\" : \"relevance DESC\" , // Optional \"userInfo\" : { // Optional: User information for enhanced personalization, should mirror Conversational Commerce API // \"userId\": \"user123\", \"userAgent\": \"Chrome/120.0\" }, \"searchMode\" : \"PRODUCT SEARCH\" // Typically for product searches } placement (Required) : The resource name of the Retail Search serving config or legacy placement.",
+          "HTTP method and endpoint POST h tt ps : //retail.googleapis.com/v2/{placement=projects/ /locations/ /catalogs/ /placements/ }:conversationalSearch Conversational API request: Initial query { \"query\" : \"Help me plan a party\" , \"branch\" : \"projects/{project id}/locations/{location id}/catalogs/default catalog/branches/default branch\" , \"placement\" : \"projects/{project id}/locations/global/catalogs/default catalog/placements/default search\" , \"visitorId\" : \"your visitor id\" , \"conversationId\" : \"\" , // Leave empty for the first query \"searchParams\" : { // IMPORTANT: These search parameters should mirror the configuration // of your core Search API calls to ensure consistency between LLM answers and search results. \"filter\" : \"categories:(\\\"Party Supplies\\\" OR \\\"Decorations\\\" OR \\\"Food & Drink\\\")\" }, \"userInfo\" : { // Optional: User information for enhanced personalization // Example: \"userId\": \"user123\", \"userAgent\": \"Chrome/120.0\" }, \"conversationalFilteringSpec\" : { // Optional: Controls conversational filtering behavior.",
+          "For core search experiences (such as the search results page) : You have the flexibility to use either the refined search.query from the API or the original query provided by the end-user, because it's more likely that the original query is already a precise product search term."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "event.attributionToken",
+      "event.experimentIds",
+      "info.price",
+      "retail.googleapis.com",
+      "search.query"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/data-quality",
+        "https://docs.cloud.google.com/retail/docs/boosting",
+        "https://docs.cloud.google.com/retail/docs/a-b-monitor",
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/data-quality",
+        "https://docs.cloud.google.com/retail/docs/boosting",
+        "https://docs.cloud.google.com/retail/docs/a-b-monitor",
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/data-quality",
+        "https://docs.cloud.google.com/retail/docs/boosting",
+        "https://docs.cloud.google.com/retail/docs/a-b-monitor",
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/data-quality",
+        "https://docs.cloud.google.com/retail/docs/boosting",
+        "https://docs.cloud.google.com/retail/docs/a-b-monitor",
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/data-quality",
+        "https://docs.cloud.google.com/retail/docs/boosting",
+        "https://docs.cloud.google.com/retail/docs/a-b-monitor",
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/data-quality",
+        "https://docs.cloud.google.com/retail/docs/boosting",
+        "https://docs.cloud.google.com/retail/docs/a-b-monitor",
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide"
+      ]
+    }
+  ]
+}

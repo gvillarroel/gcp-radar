@@ -1,0 +1,155 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Best sellers and price competitiveness migration guides",
+  "feature_slug": "best-sellers-and-price-competitiveness-migration-guides",
+  "summary": "Migration guides help users transition best sellers and price competitiveness reports to newer versions.",
+  "extended_definition": "Migration guides help users transition best sellers and price competitiveness reports to newer versions.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+      "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery",
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references Data Intelligence Platform Cloud migration with Collibra & BigQuery Enterprise-wide data privacy: Collibra + BigQuery Enterprise-scale data quality: Collibra + BigQuery Data quality without the complexity: BigQuery & Collibra Partner Advantage page Direct link Datahub Solution DataHub Cloud Category Data Governance, Security, & MDM Description Datahub is an open source metadata platform that helps organizations discover, understand, and govern their data assets.",
+          "Partner references Use BigQuery directly in a notebook Getting started with BigQuery in Deepnote BigQuery with Google OAuth Partner Advantage page Direct link DinMo Solution DinMo Category BI, ML, & Advanced Analytics Description DinMo transforms all customer touch points into high-value audiences and helps users leverage them in all activation platforms without code or engineering in less than 5 minutes.",
+          "Partner references Hightouch BigQuery Source Hightouch for BigQuery documentation Sync data from BigQuery to Segment Partner Advantage page Direct link Incorta Solution Incorta unified data & analytics platform Category ETL & Data Integration Description Incorta is a self-service data analytics platform that helps users gain a deeper understanding of their business and make quick, accurate decisions."
+        ]
+      },
+      {
+        "title": "\"Best practices for multi-tenant workloads on BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery",
+        "source_id": "site-docs-reference-5",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "A dataset-per-tenant design helps to mitigate the following concerns that an organization experiences when it scales to thousands of tenants: Administrative complexity : the total number of new projects and cloud resources on a per customer basis End-to-end latency : how up to date the datastore is for both the tenants and cross-customer analytics solutions Performance expectations : ensuring that tenant performance stays within acceptable limits Configure datasets for each tenant Within a project that is dedicated to storing customer data, each customer's data is separated by BigQuery datasets.",
+          "Sensitive Data Protection Sensitive Data Protection provides APIs and scanning utilities that help you identify and mitigate sensitive content that is stored inside BigQuery or Cloud Storage datasets.",
+          "Best practices for multi-tenant workloads on BigQuery This document provides techniques and best practices for common patterns that are used in multi-tenant data platforms and enterprise data marts."
+        ]
+      },
+      {
+        "title": "\"Migrate code with the batch SQL translator \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "source_id": "site-docs-reference-5",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "To address this, the BigQuery Migration Service (and the broader BigQuery community) provide helper user-defined functions (UDFs) that replicate the behavior of these unsupported source dialect functions.",
+          "The following example shows a translation configuration YAML file for a Teradata to BigQuery translation: tasks: translation task: type: Teradata2BigQuery Translation translationDetails: sourceTargetMapping: - sourceSpec: baseUri: gs://bq-translations/input targetSpec: relativePath: output targetBaseUri: gs://bq-translations targetTypes: - sql sourceEnvironment: defaultDatabase: default db schemaSearchPath: - foo The following example shows a translation configuration JSON file for a Teradata to BigQuery translation: { \"tasks\" : { \"translation task\" : { \"type\" : \"Teradata2BigQuery Translation\" , \"translationDetails\" : { \"sourceTargetMapping\" : [ { \"sourceSpec\" : { \"literal\" : { \"literalString\" : \"sel 1\" , \"relativePath\" : \"my input 1\" } , \"encoding\" : \"UTF-8\" } } , { \"sourceSpec\" : { \"literal\" : { \"literalString\" : \"sel 2\" , \"relativePath\" : \"my input 2\" } , \"encoding\" : \"UTF-8\" } } ] , \"targetReturnLiterals\" : [ \"sql/my input 1\" , \"sql/my input 2\" ] } } } } Once the translation configuration is created, run the following command to run the translation job. bq mk --migration workflow --location = LOCATION --config file = CONFIG FILE NAME .json Replace the following: LOCATION : the location of the Google Cloud project that is running this translation job.",
+          "Required permissions You must have the following permissions on the project to enable the BigQuery Migration Service: resourcemanager.projects.get serviceusage.services.enable serviceusage.services.get You need the following permissions on the project to access and use the BigQuery Migration Service: bigquerymigration.workflows.create bigquerymigration.workflows.get bigquerymigration.workflows.list bigquerymigration.workflows.delete bigquerymigration.subtasks.get bigquerymigration.subtasks.list Alternatively, you can use the following roles to get the same permissions: bigquerymigration.viewer - Read only access. bigquerymigration.editor - Read/write access."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquerymigration.editor",
+      "bigquerymigration.subtasks.get",
+      "bigquerymigration.subtasks.list",
+      "bigquerymigration.viewer",
+      "bigquerymigration.workflows.create",
+      "bigquerymigration.workflows.delete",
+      "bigquerymigration.workflows.get",
+      "bigquerymigration.workflows.list",
+      "serviceusage.services.enable",
+      "serviceusage.services.get"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator"
+      ]
+    }
+  ]
+}

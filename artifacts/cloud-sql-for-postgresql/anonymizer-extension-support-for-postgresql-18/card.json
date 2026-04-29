@@ -1,0 +1,113 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:54.168Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "anonymizer extension support for PostgreSQL 18",
+  "feature_slug": "anonymizer-extension-support-for-postgresql-18",
+  "summary": "Anonymizer extension support for PostgreSQL 18 makes the anonymizer extension available on PostgreSQL 18; anonymizer extension support for PostgreSQL 18 makes the anonymizer extension available on PostgreSQL 18.",
+  "extended_definition": "Anonymizer extension support for PostgreSQL 18 makes the anonymizer extension available on PostgreSQL 18; anonymizer extension support for PostgreSQL 18 makes the anonymizer extension available on PostgreSQL 18.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+      "https://docs.cloud.google.com/sql/docs/postgres/features",
+      "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 55,
+        "relevance": "",
+        "evidence_snippets": [
+          "From a terminal, connect to your database: gcloud sql connect INSTANCE NAME Run this command to create the extension: CREATE EXTENSION pgaudit ; Exit the database, and from a terminal run the following command: gcloud sql instances patch INSTANCE NAME \\ --database-flags = cloudsql.enable pgaudit = on,pgaudit.log = all Manage instances Issue Troubleshooting You want to find out what queries are running now.",
+          "Relevant log files include: cloudsql.googleapis.com/postgres.log If Cloud Audit Logs is enabled and you have the required permissions to view them, cloudaudit.googleapis.com/activity may also be available.",
+          "The consumer network is either not configured correctly, or not configured at all, and therefore, no endpoint is available to connect to."
+        ]
+      },
+      {
+        "title": "Cloud SQL metrics \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "source_id": "site-api-reference",
+        "final_score": 51,
+        "relevance": "",
+        "evidence_snippets": [
+          "The lazy writer is a system process that flushes out batches of dirty, aged buffers (buffers that contain changes that must be written back to disk before the buffer can be reused for a different page) and makes them available to user processes.",
+          "After sampling, data is not visible for up to 165 seconds. backend type : Type of the backend, one of [autovacuum launcher, autovacuum worker, logical replication launcher, logical replication worker, parallel worker, background writer, client backend, checkpointer, archiver, startup, walreceiver, walsender, walwriter]. wait event : Name of the wait event, such as AutoVacuumMain, ClientRead. wait event type : Type of wait event, one of [Activity, BufferPin, Extension, IO, IPC, Lock, LWLock, Timeout]. database/postgresql/blocks read count GA (project) Number of disk blocks read.",
+          "After sampling, data is not visible for up to 165 seconds. database/mysql/innodb/innodb log waits count GA (project) Transaction waits for Innodb logbuffer flush DELTA , INT64 , 1 cloudsql database Total number of transactions wait for space to become available in the InnoDB log buffer, to help tune innodb log buffer size configuration."
+        ]
+      },
+      {
+        "title": "Cloud SQL for PostgreSQL features \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/features",
+        "source_id": "site-docs-root",
+        "final_score": 47,
+        "relevance": "",
+        "evidence_snippets": [
+          "Unsupported features for Cloud SQL for PostgreSQL Any feature that requires SUPERUSER privileges with the following exceptions: You can use the CREATE EXTENSION statement only for supported extensions .",
+          "Supported PostgreSQL extensions for Cloud SQL Cloud SQL supports many PostgreSQL extensions.",
+          "For a complete list of these extensions, see Configure PostgreSQL extensions ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "cloudsql.enable",
+      "cloudsql.googleapis.com",
+      "instance.master",
+      "pgaudit.log",
+      "postgres.log"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/postgres/features"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/postgres/features"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/postgres/features"
+      ]
+    }
+  ]
+}

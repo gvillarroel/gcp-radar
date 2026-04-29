@@ -1,0 +1,209 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:51.951Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run-functions/card.json",
+  "product_name": "Cloud Run functions",
+  "product_slug": "cloud-run-functions",
+  "feature_name": "Go 1.23 runtime",
+  "feature_slug": "go-1-23-runtime",
+  "summary": "Cloud Run functions supports the Go 1.23 runtime; Cloud Run functions supports the Go 1.23 runtime.",
+  "extended_definition": "Cloud Run functions supports the Go 1.23 runtime; Cloud Run functions supports the Go 1.23 runtime.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 2,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/functions/docs/building",
+      "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+      "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Build process overview \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/building",
+        "source_id": "site-iam-reference",
+        "final_score": 23,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can optionally use a private pool , which you specify using the --build-worker-pool flag. gcloud functions deploy FUNCTION NAME \\ -- gen2 \\ -- region = REGION \\ -- project = PROJECT ID \\ -- runtime = RUNTIME \\ -- entry - point = CODE ENTRYPOINT \\ -- build - service - account = projects / PROJECT ID / serviceAccounts / SA EMAIL \\ -- memory = 256 Mi \\ -- trigger - http \\ -- source = .",
+          "To stop using a given private pool and instead use the default Cloud Build pool, use the --clear-build-worker-pool flag when re-deploying. gcloud functions deploy FUNCTION NAME \\ --runtime RUNTIME \\ --clear-build-worker-pool [ FLAGS... ] Replace FUNCTION NAME with the name of the function and RUNTIME with the runtime you are using.",
+          "Deploy your function to build using a private pool: gcloud functions deploy FUNCTION NAME \\ --runtime RUNTIME \\ --build-worker-pool PRIVATE POOL NAME [ FLAGS... ] Replace FUNCTION NAME with the name of the function, RUNTIME with the runtime you are using, and PRIVATE POOL NAME with the name of your pool."
+        ]
+      },
+      {
+        "title": "\"Configure Direct VPC egress for 2nd gen functions \\_|\\_ Cloud Run functions\\",
+        "url": "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "source_id": "site-iam-reference",
+        "final_score": 21,
+        "relevance": "",
+        "evidence_snippets": [
+          "BACKEND URL ; if ( ! backendUrl ) { console . error ( 'BACKEND URL environment variable not set.' ); res . status ( 500 ). send ( 'BACKEND URL not configured.' ); return ; } try { const metadataServerURL = 'http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/identity?audience=' ; const tokenUrl = metadataServerURL + backendUrl ; const tokenResponse = await axios . get ( tokenUrl , { headers : { 'Metadata-Flavor' : 'Google' , }, }); const token = tokenResponse . data ; const response = await axios . get ( backendUrl , { headers : { Authorization : bearer ${ token } , }, }); res . status ( 200 ). send ( Response from backend: ${ response . data } ); } catch ( error ) { console . error ( Error calling backend service: ${ error . message } ); res . status ( 500 ). send ( Error calling backend: ${ error . message } ); } }; functions . http ( 'callVPCService' , callVPCService ); Deploy the function with Direct VPC egress configured to route all traffic to your default VPC network: gcloud functions deploy my-2ndgen-function \\ --source . \\ --runtime nodejs20 \\ --trigger-http \\ --entry-point callVPCService \\ --network = default \\ --subnet = default \\ --direct-vpc-egress = all \\ --region = REGION \\ --allow-unauthenticated \\ --set-env-vars BACKEND URL = BACKEND URL Replace the following: REGION : the region where you deployed the backend service.",
+          "Configure Direct VPC egress Configure Direct VPC egress for new or existing 2nd gen functions. gcloud To configure Direct VPC egress when you deploy a function, use the gcloud functions deploy command with flags for your network settings. gcloud functions deploy FUNCTION NAME \\ --source . \\ --runtime RUNTIME \\ --trigger-http \\ --region REGION \\ --network = NETWORK \\ --subnet = SUBNET \\ --network-tags = NETWORK TAG NAMES \\ --direct-vpc-egress = EGRESS SETTING Replace the following: FUNCTION NAME : the name of your function.",
+          "Create and deploy the function Create a new directory for the function and change into it: cd .. mkdir dvpc-function cd dvpc-function Create a package.json file with the following content: { \"name\" : \"sample-http\" , \"version\" : \"0.0.1\" , \"dependencies\" : { \"axios\" : \"0.21.1\" , \"@google-cloud/functions-framework\" : \"^3.0.0\" } } Create an index.js file with the following content."
+        ]
+      },
+      {
+        "title": "\"Execution environment security \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security",
+        "source_id": "site-iam-reference",
+        "final_score": 21,
+        "relevance": "",
+        "evidence_snippets": [
+          "By default, automatic security updates are enabled for functions deployed using: gcloud functions Cloud Functions v2 API gcloud run with the --functions flag and the --base-image flag Set your function's update policy You can change your function's update policy by using the following command: gcloud functions deploy FUNCTION NAME \\ --runtime-update-policy= POLICY ...",
+          "On deployment updates : Updates and security patches are applied to runtimes only when functions are deployed or redeployed, unless otherwise noted.",
+          "After a period of testing for stability and reliability, the updated runtime is rolled out to all functions resulting in a zero downtime update."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudbuild.workerPoolUser",
+      "config.direct",
+      "index.js",
+      "interface.network",
+      "interface.subnetwork",
+      "metadata.google.internal",
+      "package.json",
+      "projects.locations.functions",
+      "robot.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudbuild.workerPoolUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security"
+      ]
+    }
+  ]
+}

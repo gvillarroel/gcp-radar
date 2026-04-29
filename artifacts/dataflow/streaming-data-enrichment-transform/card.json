@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:03.460Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Streaming data enrichment transform",
+  "feature_slug": "streaming-data-enrichment-transform",
+  "summary": "Dataflow provides a turnkey transform to enrich streaming data by augmenting records with related data from a second source.",
+  "extended_definition": "Dataflow provides a turnkey transform to enrich streaming data by augmenting records with related data from a second source.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/enrichment",
+      "https://docs.cloud.google.com/dataflow/docs/machine-learning",
+      "https://docs.cloud.google.com/dataflow/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Enrich streaming data \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/enrichment",
+        "source_id": "site-docs-reference-2",
+        "final_score": 184,
+        "relevance": "",
+        "evidence_snippets": [
+          "Apache Beam simplifies the data enrichment workflow by providing a turnkey enrichment transform that you can add to your pipeline.",
+          "Support and limitations The enrichment transform has the following requirements: Available for batch and streaming pipelines.",
+          "This page explains how to use the Apache Beam enrichment transform to enrich your streaming data."
+        ]
+      },
+      {
+        "title": "Dataflow ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/machine-learning",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable right fitting Enrich streaming pipelines with feature store data Apache Beam simplifies the data enrichment workflow by providing a turnkey enrichment transform that you can add to your pipeline.",
+          "Anomaly Detection Anomaly Detection with statistical methods This notebook demonstrates how to perform anomaly detection on both batch and streaming data using the AnomalyDetection PTransform.",
+          "Additional features Use accelerators (GPUs/TPUs) Using accelerators like GPUs and TPUs in Dataflow jobs can significantly speed up data processing tasks frequently used in machine learning and image processing use cases."
+        ]
+      },
+      {
+        "title": "Dataflow overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/overview",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 107,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use Dataflow to create data pipelines that read from one or more sources, transform the data, and write the data to a destination.",
+          "A solution built on Dataflow can grow with your needs as you move from batch to streaming or encounter more advanced use cases.",
+          "However, Dataflow is also suitable for more advanced applications, such as real-time streaming analytics."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "beam.Row",
+      "com.google.dataflow.v1beta3"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/enrichment",
+        "https://docs.cloud.google.com/dataflow/docs/machine-learning",
+        "https://docs.cloud.google.com/dataflow/docs/overview"
+      ]
+    }
+  ]
+}

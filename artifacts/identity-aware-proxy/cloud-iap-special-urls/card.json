@@ -1,0 +1,220 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:20.028Z",
+  "source_step08_card": "data/step-08/current/products/identity-aware-proxy/card.json",
+  "product_name": "Identity-Aware Proxy",
+  "product_slug": "identity-aware-proxy",
+  "feature_name": "Cloud IAP special URLs",
+  "feature_slug": "cloud-iap-special-urls",
+  "summary": "Cloud IAP special URLs let you enhance and personalize an application.",
+  "extended_definition": "Cloud IAP special URLs let you enhance and personalize an application.",
+  "lifecycle": {
+    "latest_feature_date": "2017-07-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iap/docs/auth-policies",
+      "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+      "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto",
+      "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Setting up IAP for Compute Engine \\_|\\_ Identity-Aware Proxy \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "source_id": "site-docs-root",
+        "final_score": 145,
+        "relevance": "",
+        "evidence_snippets": [
+          "See the License for the specific language governing permissions and limitations under the License. apt-get -y update apt-get -y install git apt-get -y install virtualenv git clone https://github.com/GoogleCloudPlatform/python-docs-samples cd python-docs-samples/iap virtualenv venv -p python3 source venv/bin/activate pip install -r requirements.txt cat example gce backend.py sed -e \"s/YOUR BACKEND SERVICE ID/ $( gcloud compute backend-services describe my-backend-service --global --format = \"value(id)\" ) /g\" sed -e \"s/YOUR PROJECT ID/ $( gcloud config get-value account tr -cd \"[0-9]\" ) /g\" > real backend.py gunicorn real backend:app -b 0 .0.0.0:80 When you're finished updating values, click Create to create the template.",
+          "Add the certificate to your project To add the certificate to your project, run the following commands on the VM: sudo su cd /etc/letsencrypt/live/ YOUR DOMAIN gcloud compute ssl-certificates create my-cert --certificate=fullchain.pem --private-key=privkey.pem After you've successfully created your certificate, a message appears that's similar to: Created [https://www.googleapis.com/compute/v1/projects/example-project/global/sslCertificates/my-cert] Before you continue, close the SSH session.",
+          "Create a certificate To create a certificate, register with Let's Encrypt by running the following commands on the VM where YOUR DOMAIN is your domain name, not including the protocol: sudo pkill busybox sudo apt-get install -y certbot sudo certbot certonly --standalone -d YOUR-DOMAIN During this process, Let's Encrypt might request an email address to send a reminder when your certificate expires (by default, 3 months after it's issued)."
+        ]
+      },
+      {
+        "title": "IAP reauthentication \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "source_id": "site-docs-root",
+        "final_score": 143,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "IAP reauthentication lets service and application owners or Google Cloud administrators require authenticated end users to reauthenticate after a specified time when accessing an IAP-protected service or application and limit how long a user can access a IAP-protected service or application before authentication is required.",
+          "You will need the name in the following step. gcloud iap settings get [--organization=ORGANIZATION --folder=FOLDER --project=/PROJECT --resource-type=RESOURCE TYPE --service=SERVICE --version=VERSION] Replace RESOURCE NAME in the following command with the name from the previous step.",
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback IAP reauthentication Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Use authorization policies to delegate authorization to IAP and IAM \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "source_id": "site-docs-root",
+        "final_score": 140,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "API Configure permission at the organization level organization/ ORGANIZATION Configure permission at the folder level folders/ FOLDER Configure permission at the project level projects/ PROJECT ID Configure permission for all global forwarding rules in a project projects/ PROJECT ID /forwarding rule Configure permission for all forwarding rules in a project in a region projects/ PROJECT ID /iap web/forwarding rule- REGION Configure permission for a specific global forwarding rule in a project projects/ PROJECT ID /iap web/forwarding rule/services/ SERVICE Configure permission for a specific forwarding rule in a project in a region projects/ PROJECT ID /iap web/forwarding rule- REGION /services/ SERVICE Set the authorization policy curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Accept: application/json\" \\ -H \"Content-Type: application/json\" \\ -d @policy.json \\ \"https://iap.googleapis.com/v1/RESOURCE NAME:setIamPolicy\" For policy.json , you can create the JSON file by running the following command.",
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Use authorization policies to delegate authorization to IAP and IAM Stay organized with collections Save and categorize content based on your preferences.",
+          "Create the authorization policy and enable IAP To create an authorization policy, you create a policy file that defines the target and rules, and then enable IAP on the forwarding rule."
+        ]
+      },
+      {
+        "title": "\"Enabling IAP for on-premises apps \\_|\\_ Identity-Aware Proxy \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto",
+        "source_id": "site-docs-root",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After the deployment is complete, your on-premises connector apps appear in the Applications table and you can enable IAP.",
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Enabling IAP for on-premises apps Stay organized with collections Save and categorize content based on your preferences.",
+          "Go to IAP To begin setting up your connector deployment for an on-premises app, click Connect new application and select Connect via on-prem connector ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backend.py",
+      "fullchain.pem",
+      "github.com",
+      "iap.googleapis.com",
+      "policy.json",
+      "privkey.pem",
+      "requirements.txt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/auth-policies",
+        "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto"
+      ]
+    }
+  ]
+}

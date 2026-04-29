@@ -1,0 +1,111 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.589Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "HtmlService X-Frame-Options header support",
+  "feature_slug": "htmlservice-x-frame-options-header-support",
+  "summary": "HtmlService can set X-Frame-Options headers so Apps Script HTML and web apps can render in iframes.",
+  "extended_definition": "HtmlService can set X-Frame-Options headers so Apps Script HTML and web apps can render in iframes.",
+  "lifecycle": {
+    "latest_feature_date": "2016-10-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/advanced/calendar",
+      "https://developers.google.com/apps-script/reference/spreadsheet",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "October 19, 2016 Feature Added X-Frame-Option header support to HtmlService , allowing iframes to render Apps Script HTML and web apps.",
+          "The new classes and methods include: BandingTheme Banding BooleanCondition BooleanCriteria ConditionalFormatRuleBuilder ConditionalFormatRule Dimension Direction FilterCriteriaBuilder FilterCriteria Filter GradientCondition InterpolationType PivotFilter PivotGroup PivotTableSummarizeFunction PivotTable PivotTableDisplayType PivotValue RangeList RelativeDate Selection TextDirection TextRotation TextToColumnsDelimiter WrapStrategy EmbeddedChartBuilder.setHiddenDimensionStrategy(strategy) (also in each of the type-specific chart builder classes) EmbeddedChartBuilder.setNumHeaders(headers) (also in each of the type-specific chart builder classes) EmbeddedChartBuilder.setMergeStrategy(mergeStrategy) (also in each of the type-specific chart builder classes) EmbeddedChartBuilder.setTransposeRowsAndColumns(transpose) (also in each of the type-specific chart builder classes) Range.activateAsCurrentCell() Range.applyColumnBanding() Range.applyColumnBanding(bandingTheme) Range.applyColumnBanding(bandingTheme, showHeader, showFooter) Range.applyRowBanding() Range.applyRowBanding(bandingTheme) Range.applyRowBanding(bandingTheme, showHeader, showFooter) Range.createFilter() Range.createPivotTable(sourceData) Range.deleteCells(shiftDimension) Range.getBandings() Range.getNextDataCell(direction) Range.getTextDirection() Range.getTextDirections() Range.getTextRotation() Range.getTextRotations() Range.getWrapStrategies() Range.getWrapStrategy() Range.insertCells(shiftDimension) Range.setShowHyperlink(showHyperlink) Range.setTextDirection(direction) Range.setTextDirections(directions) Range.setTextRotation(degrees) Range.setTextRotation(rotation) Range.setTextRotations(rotations) Range.setVerticalText(isVertical) Range.setWrapStrategies(strategies) Range.setWrapStrategy(strategy) Range.setTextToColumns() Range.setTextToColumns(delimiter) Range.setTextToColumns(delimiter) Sheet.autoResizeColumns(startColumns, numColumns) Sheet.autoResizeRows(startRows, numRows) Sheet.clearConditionalFormatRules() Sheet.getActiveRangeList() Sheet.getBandings() Sheet.getConditionalFormatRules() Sheet.getCurrentCell() Sheet.getFilter() Sheet.getPivotTables() Sheet.getRangeList(a1Notations) Sheet.getSelection() Sheet.hasHiddenGridlines() Sheet.isRightToLeft() Sheet.setActiveRangeList(rangeList) Sheet.setColumnWidths(startColumn numColumns, width) Sheet.setConditionalFormatRules(rules) Sheet.setCurrentCell(cell) Sheet.setHiddenGridlines(hideGridlines) Sheet.setRightToLeft(rightToLeft) Sheet.setRowHeights(startRow, numRows, height) Spreadsheet.getActiveRangeList() Spreadsheet.getBandings() Spreadsheet.getCurrentCell() Spreadsheet.getRangeList(a1Notations) Spreadsheet.getSelection() Spreadsheet.setActiveRangeList(rangeList) Spreadsheet.setCurrentCell(cell) Feature The Charts service has been extended to support EmbeddedCharts in Google Sheets with the enums ChartHiddenDimensionStrategy and ChartMergeStrategy .",
+          "September 09, 2013 Deprecated Deprecated the DocumentApp methods getFootnotes() , getLinkUrl() , setLinkUrl(url) , and isAtDocumentEnd() in the classes FooterSection , FootnoteSection , and HeaderSection , as well as the methods getNextSibling() and getPreviousSibling() in the classes FooterSection and HeaderSection ."
+        ]
+      },
+      {
+        "title": "Spreadsheet Service \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/spreadsheet",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "EmbeddedScatterChartBuilder Methods Method Return type Brief description add Range(range) Embedded Chart Builder Adds a range to the chart this builder modifies. as Area Chart() Embedded Area Chart Builder Sets the chart type to AreaChart and returns an Embedded Area Chart Builder . as Bar Chart() Embedded Bar Chart Builder Sets the chart type to BarChart and returns an Embedded Bar Chart Builder . as Column Chart() Embedded Column Chart Builder Sets the chart type to ColumnChart and returns an Embedded Column Chart Builder . as Combo Chart() Embedded Combo Chart Builder Sets the chart type to ComboChart and returns an Embedded Combo Chart Builder . as Histogram Chart() Embedded Histogram Chart Builder Sets the chart type to HistogramChart and returns an Embedded Histogram Chart Builder . as Line Chart() Embedded Line Chart Builder Sets the chart type to LineChart and returns an Embedded Line Chart Builder . as Pie Chart() Embedded Pie Chart Builder Sets the chart type to PieChart and returns an Embedded Pie Chart Builder . as Scatter Chart() Embedded Scatter Chart Builder Sets the chart type to ScatterChart and returns an Embedded Scatter Chart Builder . as Table Chart() Embedded Table Chart Builder Sets the chart type to TableChart and returns an Embedded Table Chart Builder . build() Embedded Chart Builds the chart to reflect all changes made to it. clear Ranges() Embedded Chart Builder Removes all ranges from the chart this builder modifies. get Chart Type() Chart Type Returns the current chart type. get Container() Container Info Return the chart Container Info , which encapsulates where the chart appears on the sheet. get Ranges() Range[] Returns a copy of the list of ranges currently providing data for this chart. remove Range(range) Embedded Chart Builder Removes the specified range from the chart this builder modifies. set Background Color(cssValue) Embedded Scatter Chart Builder Sets the background color for the chart. set Chart Type(type) Embedded Chart Builder Changes the type of chart. set Colors(cssValues) Embedded Scatter Chart Builder Sets the colors for the lines in the chart. set Hidden Dimension Strategy(strategy) Embedded Chart Builder Sets the strategy to use for hidden rows and columns. set Legend Position(position) Embedded Scatter Chart Builder Sets the position of the legend with respect to the chart. set Legend Text Style(textStyle) Embedded Scatter Chart Builder Sets the text style of the chart legend. set Merge Strategy(mergeStrategy) Embedded Chart Builder Sets the merge strategy to use when more than one range exists. set Num Headers(headers) Embedded Chart Builder Sets the number of rows or columns of the range that should be treated as headers. set Option(option, value) Embedded Chart Builder Sets advanced options for this chart. set Point Style(style) Embedded Scatter Chart Builder Sets the style for points in the line. set Position(anchorRowPos, anchorColPos, offsetX, offsetY) Embedded Chart Builder Sets the position, changing where the chart appears on the sheet. set Title(chartTitle) Embedded Scatter Chart Builder Sets the title of the chart. set Title Text Style(textStyle) Embedded Scatter Chart Builder Sets the text style of the chart title. set Transpose Rows And Columns(transpose) Embedded Chart Builder Sets whether the chart's rows and columns are transposed. set XAxis Log Scale() Embedded Scatter Chart Builder Makes the horizontal axis into a logarithmic scale (requires all values to be positive). set XAxis Range(start, end) Embedded Scatter Chart Builder Sets the range for the horizontal axis of the chart. set XAxis Text Style(textStyle) Embedded Scatter Chart Builder Sets the horizontal axis text style. set XAxis Title(title) Embedded Scatter Chart Builder Adds a title to the horizontal axis. set XAxis Title Text Style(textStyle) Embedded Scatter Chart Builder Sets the horizontal axis title text style. set YAxis Log Scale() Embedded Scatter Chart Builder Makes the vertical axis into a logarithmic scale (requires all values to be positive). set YAxis Range(start, end) Embedded Scatter Chart Builder Sets the range for the vertical axis of the chart. set YAxis Text Style(textStyle) Embedded Scatter Chart Builder Sets the vertical axis text style. set YAxis Title(title) Embedded Scatter Chart Builder Adds a title to the vertical axis. set YAxis Title Text Style(textStyle) Embedded Scatter Chart Builder Sets the vertical axis title text style.",
+          "EmbeddedBarChartBuilder Methods Method Return type Brief description add Range(range) Embedded Chart Builder Adds a range to the chart this builder modifies. as Area Chart() Embedded Area Chart Builder Sets the chart type to AreaChart and returns an Embedded Area Chart Builder . as Bar Chart() Embedded Bar Chart Builder Sets the chart type to BarChart and returns an Embedded Bar Chart Builder . as Column Chart() Embedded Column Chart Builder Sets the chart type to ColumnChart and returns an Embedded Column Chart Builder . as Combo Chart() Embedded Combo Chart Builder Sets the chart type to ComboChart and returns an Embedded Combo Chart Builder . as Histogram Chart() Embedded Histogram Chart Builder Sets the chart type to HistogramChart and returns an Embedded Histogram Chart Builder . as Line Chart() Embedded Line Chart Builder Sets the chart type to LineChart and returns an Embedded Line Chart Builder . as Pie Chart() Embedded Pie Chart Builder Sets the chart type to PieChart and returns an Embedded Pie Chart Builder . as Scatter Chart() Embedded Scatter Chart Builder Sets the chart type to ScatterChart and returns an Embedded Scatter Chart Builder . as Table Chart() Embedded Table Chart Builder Sets the chart type to TableChart and returns an Embedded Table Chart Builder . build() Embedded Chart Builds the chart to reflect all changes made to it. clear Ranges() Embedded Chart Builder Removes all ranges from the chart this builder modifies. get Chart Type() Chart Type Returns the current chart type. get Container() Container Info Return the chart Container Info , which encapsulates where the chart appears on the sheet. get Ranges() Range[] Returns a copy of the list of ranges currently providing data for this chart. remove Range(range) Embedded Chart Builder Removes the specified range from the chart this builder modifies. reverse Categories() Embedded Bar Chart Builder Reverses the drawing of series in the domain axis. reverse Direction() Embedded Bar Chart Builder Reverses the direction in which the bars grow along the horizontal axis. set Background Color(cssValue) Embedded Bar Chart Builder Sets the background color for the chart. set Chart Type(type) Embedded Chart Builder Changes the type of chart. set Colors(cssValues) Embedded Bar Chart Builder Sets the colors for the lines in the chart. set Hidden Dimension Strategy(strategy) Embedded Chart Builder Sets the strategy to use for hidden rows and columns. set Legend Position(position) Embedded Bar Chart Builder Sets the position of the legend with respect to the chart. set Legend Text Style(textStyle) Embedded Bar Chart Builder Sets the text style of the chart legend. set Merge Strategy(mergeStrategy) Embedded Chart Builder Sets the merge strategy to use when more than one range exists. set Num Headers(headers) Embedded Chart Builder Sets the number of rows or columns of the range that should be treated as headers. set Option(option, value) Embedded Chart Builder Sets advanced options for this chart. set Position(anchorRowPos, anchorColPos, offsetX, offsetY) Embedded Chart Builder Sets the position, changing where the chart appears on the sheet. set Range(start, end) Embedded Bar Chart Builder Sets the range for the chart. set Stacked() Embedded Bar Chart Builder Uses stacked lines, meaning that line and bar values are stacked (accumulated). set Title(chartTitle) Embedded Bar Chart Builder Sets the title of the chart. set Title Text Style(textStyle) Embedded Bar Chart Builder Sets the text style of the chart title. set Transpose Rows And Columns(transpose) Embedded Chart Builder Sets whether the chart's rows and columns are transposed. set XAxis Text Style(textStyle) Embedded Bar Chart Builder Sets the horizontal axis text style. set XAxis Title(title) Embedded Bar Chart Builder Adds a title to the horizontal axis. set XAxis Title Text Style(textStyle) Embedded Bar Chart Builder Sets the horizontal axis title text style. set YAxis Text Style(textStyle) Embedded Bar Chart Builder Sets the vertical axis text style. set YAxis Title(title) Embedded Bar Chart Builder Adds a title to the vertical axis. set YAxis Title Text Style(textStyle) Embedded Bar Chart Builder Sets the vertical axis title text style. use Log Scale() Embedded Bar Chart Builder Makes the range axis into a logarithmic scale (requires all values to be positive).",
+          "EmbeddedAreaChartBuilder Methods Method Return type Brief description add Range(range) Embedded Chart Builder Adds a range to the chart this builder modifies. as Area Chart() Embedded Area Chart Builder Sets the chart type to AreaChart and returns an Embedded Area Chart Builder . as Bar Chart() Embedded Bar Chart Builder Sets the chart type to BarChart and returns an Embedded Bar Chart Builder . as Column Chart() Embedded Column Chart Builder Sets the chart type to ColumnChart and returns an Embedded Column Chart Builder . as Combo Chart() Embedded Combo Chart Builder Sets the chart type to ComboChart and returns an Embedded Combo Chart Builder . as Histogram Chart() Embedded Histogram Chart Builder Sets the chart type to HistogramChart and returns an Embedded Histogram Chart Builder . as Line Chart() Embedded Line Chart Builder Sets the chart type to LineChart and returns an Embedded Line Chart Builder . as Pie Chart() Embedded Pie Chart Builder Sets the chart type to PieChart and returns an Embedded Pie Chart Builder . as Scatter Chart() Embedded Scatter Chart Builder Sets the chart type to ScatterChart and returns an Embedded Scatter Chart Builder . as Table Chart() Embedded Table Chart Builder Sets the chart type to TableChart and returns an Embedded Table Chart Builder . build() Embedded Chart Builds the chart to reflect all changes made to it. clear Ranges() Embedded Chart Builder Removes all ranges from the chart this builder modifies. get Chart Type() Chart Type Returns the current chart type. get Container() Container Info Return the chart Container Info , which encapsulates where the chart appears on the sheet. get Ranges() Range[] Returns a copy of the list of ranges currently providing data for this chart. remove Range(range) Embedded Chart Builder Removes the specified range from the chart this builder modifies. reverse Categories() Embedded Area Chart Builder Reverses the drawing of series in the domain axis. set Background Color(cssValue) Embedded Area Chart Builder Sets the background color for the chart. set Chart Type(type) Embedded Chart Builder Changes the type of chart. set Colors(cssValues) Embedded Area Chart Builder Sets the colors for the lines in the chart. set Hidden Dimension Strategy(strategy) Embedded Chart Builder Sets the strategy to use for hidden rows and columns. set Legend Position(position) Embedded Area Chart Builder Sets the position of the legend with respect to the chart. set Legend Text Style(textStyle) Embedded Area Chart Builder Sets the text style of the chart legend. set Merge Strategy(mergeStrategy) Embedded Chart Builder Sets the merge strategy to use when more than one range exists. set Num Headers(headers) Embedded Chart Builder Sets the number of rows or columns of the range that should be treated as headers. set Option(option, value) Embedded Chart Builder Sets advanced options for this chart. set Point Style(style) Embedded Area Chart Builder Sets the style for points in the line. set Position(anchorRowPos, anchorColPos, offsetX, offsetY) Embedded Chart Builder Sets the position, changing where the chart appears on the sheet. set Range(start, end) Embedded Area Chart Builder Sets the range for the chart. set Stacked() Embedded Area Chart Builder Uses stacked lines, meaning that line and bar values are stacked (accumulated). set Title(chartTitle) Embedded Area Chart Builder Sets the title of the chart. set Title Text Style(textStyle) Embedded Area Chart Builder Sets the text style of the chart title. set Transpose Rows And Columns(transpose) Embedded Chart Builder Sets whether the chart's rows and columns are transposed. set XAxis Text Style(textStyle) Embedded Area Chart Builder Sets the horizontal axis text style. set XAxis Title(title) Embedded Area Chart Builder Adds a title to the horizontal axis. set XAxis Title Text Style(textStyle) Embedded Area Chart Builder Sets the horizontal axis title text style. set YAxis Text Style(textStyle) Embedded Area Chart Builder Sets the vertical axis text style. set YAxis Title(title) Embedded Area Chart Builder Adds a title to the vertical axis. set YAxis Title Text Style(textStyle) Embedded Area Chart Builder Sets the vertical axis title text style. use Log Scale() Embedded Area Chart Builder Makes the range axis into a logarithmic scale (requires all values to be positive)."
+        ]
+      },
+      {
+        "title": "Advanced Calendar Service \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/advanced/calendar",
+        "source_id": "site-docs-reference",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use HTTP request headers like If-Match and If-None-Match with the advanced Calendar service for conditional operations.",
+          "HTTP request headers The advanced Calendar service can accept the HTTP request headers If-Match and If-None-Match .",
+          "Events . list ( calendarId , options ); } catch ( e ) { // Check to see if the sync token was invalidated by the server; // if so, perform a full sync instead. if ( e . message === \"Sync token is no longer valid, a full sync is required.\" ) { properties . deleteProperty ( \"syncToken\" ); logSyncedEvents ( calendarId , true ); return ; } throw new Error ( e . message ); } if ( events . items && events . items . length === 0 ) { console . log ( \"No events found.\" ); return ; } for ( const event of events . items ) { if ( event . status === \"cancelled\" ) { console . log ( \"Event id %s was cancelled.\" , event . id ); return ; } if ( event . start . date ) { const start = new Date ( event . start . date ); console . log ( \"%s (%s)\" , event . summary , start . toLocaleDateString ()); return ; } // Events that don't last all day; they have defined start times. const start = new Date ( event . start . dateTime ); console . log ( \"%s (%s)\" , event . summary , start . toLocaleString ()); } pageToken = events . nextPageToken ; } while ( pageToken ); properties . setProperty ( \"syncToken\" , events . nextSyncToken ); } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "console.error",
+      "console.info",
+      "console.warn",
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/spreadsheet",
+        "https://developers.google.com/apps-script/advanced/calendar"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/spreadsheet",
+        "https://developers.google.com/apps-script/advanced/calendar"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/spreadsheet",
+        "https://developers.google.com/apps-script/advanced/calendar"
+      ]
+    }
+  ]
+}

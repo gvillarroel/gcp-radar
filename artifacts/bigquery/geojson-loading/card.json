@@ -1,0 +1,94 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "GeoJSON loading",
+  "feature_slug": "geojson-loading",
+  "summary": "BigQuery GIS supports loading geography data from newline-delimited GeoJSON files.",
+  "extended_definition": "BigQuery GIS supports loading geography data from newline-delimited GeoJSON files.",
+  "lifecycle": {
+    "latest_feature_date": "2021-05-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/batch-loading-data",
+      "https://docs.cloud.google.com/bigquery/docs/gis-data",
+      "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Working with geospatial data \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/gis-data",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example: CREATE EXTERNAL TABLE mydataset . table1 OPTIONS ( format = \"NEWLINE DELIMITED JSON\" , json extension = 'GEOJSON' , uris = [ 'gs://mybucket/geofile.json' ] ); Loading GeoJSON geometry data Geospatial analytics supports loading individual GeoJSON geometry objects that are embedded as text strings in other file types.",
+          "Alternatively, you may define GeoJSON data directly, but it must be converted to a string before loading it into BigQuery. my geography = geojson .",
+          "Loading newline-delimited GeoJSON files A newline-delimited GeoJSON file contains a list of GeoJSON feature objects, one per line in the file."
+        ]
+      },
+      {
+        "title": "Loading CSV data from Cloud Storage \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "source_id": "site-docs-root",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "CSV , skip leading rows = 1 , ) uri = \"gs://cloud-samples-data/bigquery/us-states/us-states.csv\" load job = client . load table from uri ( uri , table id , job config = job config ) # Make an API request. load job . result () # Waits for the job to complete. destination table = client . get table ( table id ) print ( \"Loaded {} rows.\" . format ( destination table . num rows )) Loading hive-partitioned CSV data BigQuery supports loading hive-partitioned CSV data stored on Cloud Storage and will populate the hive partitioning columns as columns in the destination BigQuery managed table.",
+          "The following list shows examples of valid data: WKT: POINT(1 2) GeoJSON: { \"type\": \"Point\", \"coordinates\": [1, 2] } Hex encoded WKB: 0101000000feffffffffffef3f0000000000000040 Before loading GEOGRAPHY data, also read Loading geospatial data .",
+          "For more information, see Set up authentication for client libraries . require \"google/cloud/bigquery\" def load table gcs csv dataset id = \"your dataset id\" bigquery = Google :: Cloud :: Bigquery . new dataset = bigquery . dataset dataset id gcs uri = \"gs://cloud-samples-data/bigquery/us-states/us-states.csv\" table id = \"us states\" load job = dataset . load job table id , gcs uri , skip leading : 1 do schema schema . string \"name\" schema . string \"post abbr\" end puts \"Starting job #{ load job . job id } \" load job . wait until done! # Waits for table load to complete. puts \"Job finished.\" table = dataset . table table id puts \"Loaded #{ table . rows count } rows to table #{ table . id } \" end Loading CSV data into a table that uses column-based time partitioning To load CSV data from Cloud Storage into a BigQuery table that uses column-based time partitioning: Go Before trying this sample, follow the Go setup instructions in the BigQuery quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "Batch loading data \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/batch-loading-data",
+        "source_id": "site-docs-reference-5",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "Loading data from Cloud Storage BigQuery supports loading data from any of the following Cloud Storage storage classes : Standard Nearline Coldline Archive To learn how to load data into BigQuery, see the page for your data format: CSV JSON Avro Parquet ORC Datastore exports Firestore exports To learn how to configure a recurring load from Cloud Storage into BigQuery, see Cloud Storage transfers .",
+          "The source data can be in any of the following formats: Avro Comma-separated values (CSV) JSON (newline-delimited) ORC Parquet Datastore exports stored in Cloud Storage Firestore exports stored in Cloud Storage You can also use BigQuery Data Transfer Service to set up recurring loads from Cloud Storage into BigQuery.",
+          "FORMAT : CSV , AVRO , PARQUET , ORC , or NEWLINE DELIMITED JSON . project id : your project ID. dataset : an existing dataset. table : the name of the table into which you're loading data. path to source : the path to the local file. schema : a valid schema."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "geofile.json",
+      "mytable.csv.gz",
+      "states.csv"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/gis-data",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/batch-loading-data"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "CSIStorageCapacity",
+  "feature_slug": "csistoragecapacity",
+  "summary": "CSIStorageCapacity is a Kubernetes API for advertising storage capacity to the scheduler; deprecated on 2022-09-14.",
+  "extended_definition": "CSIStorageCapacity is a Kubernetes API for advertising storage capacity to the scheduler; deprecated on 2022-09-14.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-14",
+    "deprecation_date": "2022-09-14",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/cloud-storage-fuse-csi-driver/volume-attr",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/optimize-multishares"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Optimize storage with Filestore Multishares for GKE \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/optimize-multishares",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "From the command line, run the following command to check the current PVC size of replica 0: kubectl get pvc test-pvc-multishare-web-0 -o json { \"apiVersion\": \"v1\", \"kind\": \"PersistentVolumeClaim\", \"metadata\": { \"annotations\": { \"pv.kubernetes.io/bind-completed\": \"yes\", \"pv.kubernetes.io/bound-by-controller\": \"yes\", \"volume.beta.kubernetes.io/storage-provisioner\": \"filestore.csi.storage.gke.io\", \"volume.kubernetes.io/storage-provisioner\": \"filestore.csi.storage.gke.io\" }, \"creationTimestamp\": \"2022-06-21T22:07:42Z\", \"finalizers\": [ \"kubernetes.io/pvc-protection\" ], \"labels\": { \"app\": \"nginx\" }, \"name\": \"test-pvc-multishare-web-0\", \"namespace\": \"default\", \"resourceVersion\": \"48395\", \"uid\": \"7aa21b5a-5343-4547-b7d7-414c16af15a7\" }, \"spec\": { \"accessModes\": [ \"ReadWriteMany\" ], \"resources\": { \"requests\": { \"storage\": \"100Gi\" } }, \"storageClassName\": \"enterprise-multishare-rwx\", \"volumeMode\": \"Filesystem\", \"volumeName\": \"pvc-7aa21b5a-5343-4547-b7d7-414c16af15a7\" }, \"status\": { \"accessModes\": [ \"ReadWriteMany\" ], \"capacity\": { \"storage\": \"100Gi\" }, \"phase\": \"Bound\" } } From the command line, run the following command to increase the size to 500 GiB: kubectl edit pvc test-pvc-multishare-web-0 The file will open in the command line.",
+          "From the command line, run the following instances describe command to verify the capacity of the Filestore instance: gcloud filestore instances describe fs-a767cef8-738e-4c8e-b70b-09cbb872d016 --project= YOUR PROJECT ID --region= REGION capacityGb: '1536' capacityStepSizeGb: '256' createTime: '2022-06-21T21:15:30.464237089Z' labels: storage gke io created-by: filestore csi storage gke io storage gke io storage-class-id: enterprise-multishare-rwx maxCapacityGb: '10240' maxShareCount: '10' multiShareEnabled: true name: projects/ YOUR PROJECT ID /locations/us-central1/instances/fs-a767cef8-738e-4c8e-b70b-09cbb872d016 networks: - connectMode: DIRECT PEERING ipAddresses: - 10.192.53.2 modes: - MODE IPV4 network: csi-filestore-test-network reservedIpRange: 10.192.53.0/26 state: READY tier: ENTERPRISE where: YOUR PROJECT ID is the name of the project being used.",
+          "From the command line, run the following instances describe command: gcloud filestore instances describe fs-a767cef8-738e-4c8e-b70b-09cbb872d016 --project= YOUR PROJECT ID --region= REGION capacityGb: '1024' capacityStepSizeGb: '256' createTime: '2022-06-21T21:15:30.464237089Z' labels: storage gke io created-by: filestore csi storage gke io storage gke io storage-class-id: enterprise-multishare-rwx maxCapacityGb: '10240' maxShareCount: '10' multiShareEnabled: true name: projects/ YOUR PROJECT ID /locations/ REGION /instances/fs-a767cef8-738e-4c8e-b70b-09cbb872d016 networks: - connectMode: DIRECT PEERING ipAddresses: - 10.192.53.2 modes: - MODE IPV4 network: csi-filestore-test-network reservedIpRange: 10.192.53.0/26 state: READY tier: ENTERPRISE where: YOUR PROJECT ID is the name of the project being used."
+        ]
+      },
+      {
+        "title": "\"Manually optimize Cloud Storage FUSE CSI driver for performance \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "source_id": "site-docs-reference-2",
+        "final_score": 82,
+        "relevance": "",
+        "evidence_snippets": [
+          "Inference serving example The following example shows how to enable parallel download for inference serving: Create a PersistentVolume and PersistentVolumeClaim manifest with the following specification: apiVersion : v1 kind : PersistentVolume metadata : name : serving-bucket-pv spec : accessModes : - ReadWriteMany capacity : storage : 64Gi persistentVolumeReclaimPolicy : Retain storageClassName : example-storage-class claimRef : namespace : NAMESPACE name : serving-bucket-pvc mountOptions : - implicit-dirs #avoid if list cache enabled and doing metadata prefetch - metadata-cache:ttl-secs:-1 - metadata-cache:stat-cache-max-size-mb:-1 - metadata-cache:type-cache-max-size-mb:-1 - file-cache:max-size-mb:-1 - file-cache:cache-file-for-range-read:true - file-system:kernel-list-cache-ttl-secs:-1 - file-cache:enable-parallel-downloads:true - read ahead kb=1024 csi : driver : gcsfuse.csi.storage.gke.io volumeHandle : BUCKET NAME volumeAttributes : skipCSIBucketAccessCheck : \"true\" gcsfuseMetadataPrefetchOnMount : \"true\" --- apiVersion : v1 kind : PersistentVolumeClaim metadata : name : serving-bucket-pvc namespace : NAMESPACE spec : accessModes : - ReadWriteMany resources : requests : storage : 64Gi volumeName : serving-bucket-pv storageClassName : example-storage-class Replace the following values: NAMESPACE : the Kubernetes namespace where you want to deploy your Pod.",
+          "Note: If you choose to use the default emptyDir volume for file caching, the value of Pod annotation gke-gcsfuse/ephemeral-storage-limit must be larger than the fileCacheCapacity volume attribute or the file-cache:max-size-mb mount option value.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Guides Send feedback Manually optimize Cloud Storage FUSE CSI driver for performance Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Cloud Storage FUSE CSI driver volume attributes \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/cloud-storage-fuse-csi-driver/volume-attr",
+        "source_id": "site-api-reference",
+        "final_score": 78,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This attribute is required if you manually manage the Cloud Storage FUSE sidecars for your hostNetwork: true Pods and want to enable those Pods to use their own Kubernetes Service Account (KSA) for authentication when accessing Cloud Storage.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Reference Send feedback Cloud Storage FUSE CSI driver volume attributes Stay organized with collections Save and categorize content based on your preferences.",
+          "Set this to \"true\" to configure your host network ( hostNetwork: true ) Pods to use their own Kubernetes Service Account (KSA) for authentication when accessing Cloud Storage using Cloud Storage FUSE."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "filestore.csi.storage.gke.io",
+      "gcsfuse.csi.storage.gke.io",
+      "kubernetes.io",
+      "pv.kubernetes.io",
+      "volume.beta.kubernetes.io",
+      "volume.kubernetes.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/optimize-multishares",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/cloud-storage-fuse-csi-driver/volume-attr"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/optimize-multishares",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/cloud-storage-fuse-csi-driver/volume-attr"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/optimize-multishares",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/cloud-storage-fuse-csi-driver/volume-attr"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/optimize-multishares",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/cloud-storage-fuse-csi-driver/volume-attr"
+      ]
+    }
+  ]
+}

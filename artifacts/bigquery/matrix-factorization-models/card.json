@@ -1,0 +1,120 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Matrix Factorization models",
+  "feature_slug": "matrix-factorization-models",
+  "summary": "BigQuery ML supports Matrix Factorization models for recommendation workloads; BigQuery ML supports Matrix Factorization models for recommendation workloads.",
+  "extended_definition": "BigQuery ML supports Matrix Factorization models for recommendation workloads; BigQuery ML supports Matrix Factorization models for recommendation workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2020-08-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-explicit-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-implicit-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create recommendations based on explicit feedback with a matrix factorization\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-explicit-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 207,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics BigQuery Guides Send feedback Create recommendations based on explicit feedback with a matrix factorization model Stay organized with collections Save and categorize content based on your preferences.",
+          "Go to BigQuery In the query editor, paste in the following query and click Run : CREATE OR REPLACE MODEL bqml tutorial.mf explicit OPTIONS ( MODEL TYPE = 'matrix factorization' , FEEDBACK TYPE = 'explicit' , USER COL = 'user id' , ITEM COL = 'item id' , L2 REG = 9.83 , NUM FACTORS = 34 ) AS SELECT user id , item id , rating FROM bqml tutorial.ratings ; The query takes about 10 minutes to complete, after which the mf explicit model appears in the Explorer pane.",
+          "For more information, see Set up ADC for a local development environment . from bigframes.ml import decomposition import bigframes.pandas as bpd Load data from BigQuery bq df = bpd . read gbq ( \"bqml tutorial.ratings\" , columns = ( \"user id\" , \"item id\" , \"rating\" ) ) Create the Matrix Factorization model model = decomposition ."
+        ]
+      },
+      {
+        "title": "\"Create recommendations based on implicit feedback with a matrix factorization\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-implicit-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 207,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics BigQuery Guides Send feedback Create recommendations based on implicit feedback with a matrix factorization model Stay organized with collections Save and categorize content based on your preferences.",
+          "Go to BigQuery In the query editor, paste in the following query and click Run : CREATE OR REPLACE MODEL bqml tutorial.mf implicit OPTIONS ( MODEL TYPE = 'matrix factorization' , FEEDBACK TYPE = 'implicit' , USER COL = 'visitorId' , ITEM COL = 'contentId' , RATING COL = 'rating' , L2 REG = 30 , NUM FACTORS = 15 ) AS SELECT visitorId , contentId , 0.3 ( 1 + ( session duration - 57937 ) / 57937 ) AS rating FROM bqml tutorial.analytics session data WHERE 0.3 ( 1 + ( session duration - 57937 ) / 57937 ) 1 ; The query takes about 10 minutes to complete, after which the mf implicit model appears in the Explorer pane.",
+          "Matrix factorization models are trained using the Weighted-Alternating Least Squares algorithm when you use implicit feedback as training data."
+        ]
+      },
+      {
+        "title": "The CREATE MODEL statement \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "source_id": "site-docs-root",
+        "final_score": 155,
+        "relevance": "",
+        "evidence_snippets": [
+          "CREATE MODEL statement for K-means models Collaborative Filtering 'MATRIX FACTORIZATION' Matrix factorization for recommendation systems.",
+          "To use a default connection , specify specify DEFAULT instead of the connection name. model option list CREATE MODEL supports the following options: MODEL TYPE Syntax MODEL TYPE = { 'LINEAR REG' 'LOGISTIC REG' 'KMEANS' 'PCA' 'MATRIX FACTORIZATION' 'AUTOENCODER' 'AUTOML REGRESSOR' 'AUTOML CLASSIFIER' 'BOOSTED TREE CLASSIFIER' 'BOOSTED TREE REGRESSOR' 'RANDOM FOREST CLASSIFIER' 'RANDOM FOREST REGRESSOR' 'DNN CLASSIFIER' 'DNN REGRESSOR' 'DNN LINEAR COMBINED CLASSIFIER' 'DNN LINEAR COMBINED REGRESSOR' 'ARIMA PLUS' 'ARIMA PLUS XREG' 'TENSORFLOW' 'TENSORFLOW LITE' 'ONNX' 'XGBOOST' 'CONTRIBUTION ANALYSIS' } Description Specify the model type.",
+          "Supported data types for input label cols include: Model type Supported label types regression models INT64 NUMERIC BIGNUMERIC FLOAT64 classification models Any groupable data type Supported data types for data split columns BigQuery ML supports different GoogleSQL data types depending on the data split method."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigframes.ml",
+      "bigframes.pandas",
+      "tutorial.analytics",
+      "tutorial.mf",
+      "tutorial.ratings"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-explicit-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-implicit-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-explicit-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-implicit-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-explicit-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-implicit-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-explicit-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-implicit-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create"
+      ]
+    }
+  ]
+}

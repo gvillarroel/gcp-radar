@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:33.557Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "System-generated default IPv6 route",
+  "feature_slug": "system-generated-default-ipv6-route",
+  "summary": "VPC now provides a system-generated default IPv6 route with a next-hop set to the default-internet-gateway.",
+  "extended_definition": "VPC now provides a system-generated default IPv6 route with a next-hop set to the default-internet-gateway.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid",
+      "https://docs.cloud.google.com/vpc/docs/routes",
+      "https://docs.cloud.google.com/vpc/docs/vpc",
+      "https://docs.cloud.google.com/vpc/docs/vpc-peering"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Routes \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/routes",
+        "source_id": "site-docs-root",
+        "final_score": 225,
+        "relevance": "",
+        "evidence_snippets": [
+          "System-generated routes System-generated default routes 0.0.0.0/0 for IPv4 ::/0 for IPv6 default-internet-gateway Applies to the whole VPC network Can be removed or replaced Subnet routes Each subnet has at least one subnet route for each IP address range that is associated with the subnet.",
+          "When you create a subnet that has an external IPv6 address range, Google Cloud adds a system-generated IPv6 default route to the VPC network if it doesn't already have one.",
+          "The system-generated IPv6 default route is a local static route that has a ::/0 destination and default internet gateway next hop."
+        ]
+      },
+      {
+        "title": "VPC networks \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc",
+        "source_id": "site-docs-root",
+        "final_score": 187,
+        "relevance": "",
+        "evidence_snippets": [
+          "Route advertisements and internal IP addresses The following IP addresses are advertised within a VPC network: Regional internal IPv4 addresses Used for primary and secondary IPv4 subnet address ranges Regional internal and external IPv6 addresses Used for internal and external IPv6 subnet address ranges Global internal IPv4 addresses Used for Private Service Connect endpoints for Google APIs If you connect VPC networks using VPC Network Peering, subnet ranges using private IPv4 addresses are always exchanged.",
+          "Subnets with IPv6 address ranges aren't supported in the following: Auto mode VPC networks, including the default network Legacy networks If you have an auto mode VPC network that you would like to add subnets with IPv6 address ranges to, you can do the following: Convert the auto mode network to custom mode .",
+          "Internet access requirements The following criteria must be satisfied for an instance to have outgoing internet access: The network must have a valid default internet gateway route or custom route whose destination IP range is the most general ( 0.0.0.0/0 for IPv4, ::/0 for IPv6)."
+        ]
+      },
+      {
+        "title": "VPC Network Peering \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "source_id": "site-docs-root",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "Route type Route export conditions Route import conditions Dynamic IPv4 routes Not exported by default Export is controlled by using the --export-custom-routes flag Not imported by default Import is controlled by using the --import-custom-routes flag Dynamic IPv6 routes Not exported by default Export is controlled by using the --export-custom-routes flag when the stack type of the peering is set to --stack-type=IPV4 IPV6 Not imported by default Import is controlled by using the --import-custom-routes flag when the stack type of the peering is set to --stack-type=IPV4 IPV6 Benefits of exchanging static and dynamic routes When one VPC network exports static and dynamic routes and the other VPC network imports those routes, the importing network can send packets directly to the next hop for each imported static or dynamic route whose next hop is in the peer VPC network.",
+          "VPC Network Peering also provides certain external IPv6 connectivity to the destination external IPv6 address ranges of the following resources when the routes to those destination external IPv6 addresses are exchanged by VPC Network Peering: Dual-stack and IPv6-only virtual machine (VM) instance network interfaces Forwarding rules for external protocol forwarding Forwarding rules for external passthrough Network Load Balancers VPC Network Peering supports both IPv4 and IPv6 connectivity.",
+          "Options for exchanging subnet routes The following table describes the route exchange options for subnet routes : Route type Route export conditions Route import conditions IPv4 subnet routes (primary and secondary IPv4 subnet ranges) using private IPv4 address ranges Always exported Can't be disabled Always imported Can't be disabled IPv4 subnet routes (primary and secondary IPv4 subnet ranges) using privately used public IPv4 address ranges Exported by default Export is controlled using the --export-subnet-routes-with-public-ip flag Not imported by default Import is controlled using the --import-subnet-routes-with-public-ip flag Internal IPv6 subnet ranges ( ipv6-access-type=INTERNAL ) Not exported by default Export is enabled by setting --stack-type=IPV4 IPV6 Not imported by default Import is enabled by setting --stack-type=IPV4 IPV6 External IPv6 subnet ranges ( ipv6-access-type=EXTERNAL ) Not exported by default Export is enabled by setting --stack-type=IPV4 IPV6 Not imported by default Import is enabled by setting --stack-type=IPV4 IPV6 Options for exchanging static routes The following table describes the route exchange options for static routes ."
+        ]
+      },
+      {
+        "title": "\"Configure Private Google Access for on-premises hosts \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid",
+        "source_id": "site-docs-root-2",
+        "final_score": 160,
+        "relevance": "",
+        "evidence_snippets": [
+          "For private.googleapis.com : For IPv4 connectivity: 199.36.153.8/30 For both IPv4 and IPv6 connectivity: 199.36.153.8/30,2600:2d00:0002:2000::/56 For restricted.googleapis.com : For IPv4 connectivity: 199.36.153.4/30 For both IPv4 and IPv6 connectivity: 199.36.153.4/30,2600:2d00:0002:1000::/56 Firewall considerations Google Cloud firewall rules in the VPC network to which your on-premises network connects have no effect upon: Packets sent through a Cloud VPN tunnel connected to the VPC network Packets sent through a VLAN attachment connected to the VPC network Incoming packets to Cloud DNS inbound forwarder IP addresses in the VPC network You should ensure that the firewall configuration of on-premises systems allows outbound traffic to and established responses from the appropriate IP addresses: If you use private.googleapis.com : For IPv4 connectivity: 199.36.153.8/30 For IPv6 connectivity: 2600:2d00:0002:2000::/56 If you use restricted.googleapis.com : For IPv4 connectivity: 199.36.153.4/30 For IPv6 connectivity: 2600:2d00:0002:1000::/56 Any Cloud DNS inbound forwarder IP addresses, if you're using Cloud DNS for the DNS configuration What's next If you need VMs in your Google Cloud VPC network to access Google APIs and services, see Configure Private Google Access for VPC .",
+          "Look for a route whose destination range matches: 199.36.153.8/30 if you chose private.googleapis.com 199.36.153.4/30 if you chose restricted.googleapis.com gcloud Use the following gcloud command, replacing NETWORK NAME with the name of the VPC network to which your on-premises network connects: gcloud compute routes list \\ --filter=\"default-internet-gateway NETWORK NAME \" Routes are listed in table format unless you customize the command with the --format flag.",
+          "Go to Routes Use the Filter table text field to filter the list of routes using the following criteria, replacing NETWORK NAME with the name of the VPC network to which your on-premises network connects: Network: NETWORK NAME Next hop type: default internet gateway Look at the Destination IP range column for each route."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "private.googleapis.com",
+      "restricted.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/routes",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/routes",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/routes",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/routes",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid"
+      ]
+    }
+  ]
+}

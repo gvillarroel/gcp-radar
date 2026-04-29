@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:49.591Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Logging query language cast function",
+  "feature_slug": "logging-query-language-cast-function",
+  "summary": "The Logging query language supports the cast function.",
+  "extended_definition": "The Logging query language supports the cast function.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+      "https://docs.cloud.google.com/logging/docs/view/building-queries",
+      "https://docs.cloud.google.com/logging/docs/view/logging-query-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Logging query language \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logging-query-language",
+        "source_id": "site-docs-root",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, the following functions match the string \"hello world\": SEARCH(\"hello world\") SEARCH(\"Hello World\") SEARCH(\"HELLO WORLD\") Because backticks are used in the following functions, they produce different results: SEARCH(\"hello world\") SEARCH(\"world hello\") The Logging query language supports different ways that you can search your log data.",
+          "Using the resource.type field in the following examples, the Logging query language grammar looks like this: Simple restriction: resource.type = \"k8s cluster\" Conjunctive restriction: resource.type = \"k8s cluster\" AND severity = \"ERROR\" Note: When a query contains multiple statements, you can either specify how those statements are joined or rely on Cloud Logging implicitly adding the conjunctive restriction, AND , between the statements.",
+          "Home Documentation Observability Cloud Logging Guides Send feedback Logging query language Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Build and save queries by using the Logging query language \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/logging/docs/view/building-queries",
+        "source_id": "site-docs-root",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "Write advanced queries using the Logging query language You can use the Logging query language to build more advanced queries in the Logs Explorer query-editor field: If you don't see the query-editor field in the Query pane, enable Show query .",
+          "For example, when the two operators are mixed, the expression a AND b OR c AND d turns into the following Logging query language expression: \"a\" \"b\" OR \"c\" \"d\" The NOT operator has the highest precedence, followed by OR and AND in that order.",
+          "Home Documentation Observability Cloud Logging Guides Send feedback Build and save queries by using the Logging query language Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "OpsAnalyticsQuery \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "source_id": "site-docs-reference",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "The alias must be defined in the QueryBuilderConfig 's fieldSources list, otherwise the model is invalid. projectedField object ( ProjectedField ) A projected field option for when a user wants to use a field with some additional transformations such as casting or extractions.",
+          "Home Documentation Observability Cloud Logging Reference Send feedback OpsAnalyticsQuery Stay organized with collections Save and categorize content based on your preferences.",
+          "JSON representation QueryBuilderConfig JSON representation FilterPredicate JSON representation OperatorType FilterExpression JSON representation FieldSource JSON representation ProjectedField JSON representation FieldOperation FunctionApplication JSON representation Comparator SortOrderParameter JSON representation SortOrder Describes a query that can be run in Log Analytics."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logging-query-language",
+        "https://docs.cloud.google.com/logging/docs/view/building-queries",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logging-query-language",
+        "https://docs.cloud.google.com/logging/docs/view/building-queries",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery"
+      ]
+    }
+  ]
+}

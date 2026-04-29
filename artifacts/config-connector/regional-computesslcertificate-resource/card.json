@@ -1,0 +1,207 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:59.197Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "Regional ComputeSSLCertificate resource",
+  "feature_slug": "regional-computesslcertificate-resource",
+  "summary": "Config Connector supports regional ComputeSSLCertificate resources.",
+  "extended_definition": "Config Connector supports regional ComputeSSLCertificate resources.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeforwardingrule",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computesubnetwork"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "ComputeBackendService | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "source_id": "feature-recovery-http",
+        "final_score": 31,
+        "relevance": "",
+        "evidence_snippets": [
+          "If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource. selfLink string Sample YAML(s) External Load Balancing Backend Service # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeBackendService metadata : name : computebackendservice-sample-externalloadbalancing spec : description : External backend service with cookie-based session affinity. portName : cookie-cloud timeoutSec : 30 healthChecks : - healthCheckRef : name : computebackendservice-dep-externalloadbalancing loadBalancingScheme : EXTERNAL location : global protocol : HTTPS affinityCookieTtlSec : 360 connectionDrainingTimeoutSec : 60 securityPolicyRef : name : computebackendservice-dep-externalloadbalancing sessionAffinity : GENERATED_COOKIE customRequestHeaders : - \"Trailer: custom-trailer\" logConfig : enable : true sampleRate : 0.5 backend : - balancingMode : RATE capacityScaler : 1 description : A network endpoint group serving this backend with all its available capacity, as calculated by number of simultaneous connections. maxRatePerEndpoint : 10 group : networkEndpointGroupRef : name : computebackendservice-dep-externalloadbalancing --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeHealthCheck metadata : name : computebackendservice-dep-externalloadbalancing spec : httpsHealthCheck : port : 443 location : global --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeInstanceGroup metadata : name : computebackendservice-dep-externalloadbalancing spec : namedPort : - name : cookie-cloud port : 8444 zone : us-central1-a networkRef : name : computebackendservice-dep-externalloadbalancing --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : computebackendservice-dep-externalloadbalancing spec : routingMode : GLOBAL autoCreateSubnetworks : false --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetworkEndpointGroup metadata : name : computebackendservice-dep-externalloadbalancing spec : networkRef : name : computebackendservice-dep-externalloadbalancing subnetworkRef : name : computebackendservice-dep-externalloadbalancing location : us-west1-a --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeSecurityPolicy metadata : name : computebackendservice-dep-externalloadbalancing spec : rule : - action : deny(403) priority : 2147483647 match : versionedExpr : SRC_IPS_V1 config : srcIpRanges : - \"*\" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeSubnetwork metadata : name : computebackendservice-dep-externalloadbalancing spec : ipCidrRange : 10.2.0.0/16 region : us-west1 networkRef : name : computebackendservice-dep-externalloadbalancing Internal Managed Load Balancing Backend Service # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeBackendService metadata : name : computebackendservice-sample-internalmanagedloadbalancing spec : description : Internal managed backend service with Maglev session affinity. localityLbPolicy : MAGLEV timeoutSec : 86400 consistentHash : httpHeaderName : \"Hash_String\" healthChecks : - healthCheckRef : name : computebackendservice-dep-internalmanagedloadbalancing loadBalancingScheme : INTERNAL_MANAGED location : us-east1 protocol : HTTP connectionDrainingTimeoutSec : 10 sessionAffinity : HEADER_FIELD circuitBreakers : connectTimeout : nanos : 999999999 seconds : 0 maxConnections : 1024 maxPendingRequests : 1024 maxRequests : 1024 maxRequestsPerConnection : 1 maxRetries : 3 logConfig : enable : false outlierDetection : consecutiveGatewayFailure : 5 enforcingConsecutiveErrors : 100 enforcingSuccessRate : 100 successRateMinimumHosts : 5 successRateRequestVolume : 100 baseEjectionTime : nanos : 999999999 seconds : 29 consecutiveErrors : 5 enforcingConsecutiveGatewayFailure : 0 interval : nanos : 999999999 seconds : 9 maxEjectionPercent : 10 successRateStdevFactor : 1900 backend : - balancingMode : RATE capacityScaler : 0.9 description : An instance group serving this backend with 90% of its capacity, as calculated by requests per second. maxRate : 10000 group : instanceGroupRef : name : computebackendservice-dep-internalmanagedloadbalancing --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeHealthCheck metadata : name : computebackendservice-dep-internalmanagedloadbalancing spec : httpHealthCheck : port : 80 location : global --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeInstanceGroup metadata : name : computebackendservice-dep-internalmanagedloadbalancing spec : zone : us-east1-c networkRef : name : computebackendservice-dep-internalmanagedloadbalancing --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : computebackendservice-dep-internalmanagedloadbalancing spec : routingMode : REGIONAL autoCreateSubnetworks : false Oauth2clientid Backend Service # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeBackendService metadata : name : computebackendservice-sample-oauth2clientid spec : description : Internal managed backend service with Maglev session affinity. localityLbPolicy : MAGLEV timeoutSec : 86400 consistentHash : httpHeaderName : \"Hash string\" healthChecks : - healthCheckRef : name : computebackendservice-dep-oauth2clientid loadBalancingScheme : INTERNAL_MANAGED location : us-east1 protocol : HTTP connectionDrainingTimeoutSec : 10 sessionAffinity : HEADER_FIELD circuitBreakers : connectTimeout : nanos : 999999999 seconds : 0 maxConnections : 1024 maxPendingRequests : 1024 maxRequests : 1024 maxRequestsPerConnection : 1 maxRetries : 3 logConfig : enable : false outlierDetection : consecutiveGatewayFailure : 5 enforcingConsecutiveErrors : 100 enforcingSuccessRate : 100 successRateMinimumHosts : 5 successRateRequestVolume : 100 baseEjectionTime : nanos : 999999999 seconds : 29 consecutiveErrors : 5 enforcingConsecutiveGatewayFailure : 0 interval : nanos : 999999999 seconds : 9 maxEjectionPercent : 10 successRateStdevFactor : 1900 backend : - balancingMode : RATE capacityScaler : 0.9 description : An instance group serving this backend with 90% of its capacity, as calculated by requests per second. maxRate : 10000 group : instanceGroupRef : name : computebackendservice-dep-oauth2clientid iap : oauth2ClientIdRef : external : computebackendservice-dep-oauth2clientid oauth2ClientSecret : value : \"test-secret-value\" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeHealthCheck metadata : name : computebackendservice-dep-oauth2clientid spec : httpHealthCheck : port : 80 location : global --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeInstanceGroup metadata : name : computebackendservice-dep-oauth2clientid spec : zone : us-east1-c networkRef : name : computebackendservice-dep-oauth2clientid --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : computebackendservice-dep-oauth2clientid spec : routingMode : REGIONAL autoCreateSubnetworks : false --- apiVersion : iap.cnrm.cloud.google.com/v1beta1 kind : IAPBrand metadata : name : computebackendservice-dep-oauth2clientid spec : applicationTitle : \"test brand\" supportEmail : \"support@example.com\" --- apiVersion : iap.cnrm.cloud.google.com/v1beta1 kind : IAPIdentityAwareProxyClient metadata : name : computebackendservice-dep-oauth2clientid spec : displayName : \"Test Client\" brandRef : name : computebackendservice-dep-oauth2clientid Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .",
+          "ComputeBackendService Property Value Google Cloud Service Name Compute Engine Google Cloud Service Documentation /compute/docs/ Google Cloud REST Resource Name v1.backendServices v1.regionBackendServices Google Cloud REST Resource Documentation /compute/docs/reference/rest/v1/backendServices /compute/docs/reference/rest/v1/regionBackendServices Config Connector Resource Short Names gcpcomputebackendservice gcpcomputebackendservices computebackendservice Config Connector Service Name compute.googleapis.com Config Connector Resource Fully Qualified Name computebackendservices.compute.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 ComputeBackendService can manage both global and regional backend services.",
+          "This field is applicable to either a regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED; or a global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. securitySettings.clientTLSPolicyRef Required* object ClientTlsPolicy is a resource that specifies how a client should authenticate connections to backends of a service."
+        ]
+      },
+      {
+        "title": "ComputeForwardingRule | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeforwardingrule",
+        "source_id": "feature-recovery-http",
+        "final_score": 31,
+        "relevance": "",
+        "evidence_snippets": [
+          "References a URL map which specifies how traffic routes to gRPC backend services. urlMapRef : name : computeforwardingrule-dep-global-with-grpc-proxy validateForProxyless : true --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeURLMap metadata : name : computeforwardingrule-dep-global-with-grpc-proxy spec : location : global defaultService : backendServiceRef : name : computeforwardingrule-dep-global-with-grpc-proxy Global Internal Forwarding Rule With Target Http Proxy # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeForwardingRule metadata : name : computeforwardingrule-sample-global-internal-http-proxy spec : target : targetHTTPProxyRef : name : computeforwardingrule-dep-global-internal-http-proxy ipAddress : addressRef : name : computeforwardingrule-dep-global-internal-http-proxy ipProtocol : \"TCP\" loadBalancingScheme : INTERNAL_MANAGED location : global networkRef : name : computeforwardingrule-dep-global-internal-http-proxy subnetworkRef : name : computeforwardingrule-dep-global-internal-http-proxy portRange : '80-80' allowGlobalAccess : true --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : computeforwardingrule-dep-global-internal-http-proxy spec : addressType : INTERNAL location : us-central1 ipVersion : IPV4 purpose : SHARED_LOADBALANCER_VIP subnetworkRef : name : computeforwardingrule-dep-global-internal-http-proxy --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeBackendService metadata : name : computeforwardingrule-dep-global-internal-http-proxy spec : healthChecks : - healthCheckRef : name : computeforwardingrule-dep-global-internal-http-proxy loadBalancingScheme : INTERNAL_MANAGED location : global protocol : HTTP backend : - balancingMode : UTILIZATION group : instanceGroupRef : name : computeforwardingrule-dep-global-internal-http-proxy --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeHealthCheck metadata : name : computeforwardingrule-dep-global-internal-http-proxy spec : httpHealthCheck : port : 80 location : global --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeInstanceGroup metadata : name : computeforwardingrule-dep-global-internal-http-proxy spec : zone : us-central1-a networkRef : name : computeforwardingrule-dep-global-internal-http-proxy --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : computeforwardingrule-dep-global-internal-http-proxy spec : routingMode : REGIONAL autoCreateSubnetworks : false --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeSubnetwork metadata : name : computeforwardingrule-dep-global-internal-http-proxy spec : ipCidrRange : 10.2.0.0/28 region : us-central1 networkRef : name : computeforwardingrule-dep-global-internal-http-proxy --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeSubnetwork metadata : name : computeforwardingrule-dep-global-internal-http-proxy-proxy spec : ipCidrRange : 10.3.0.0/26 region : us-central1 purpose : GLOBAL_MANAGED_PROXY role : ACTIVE networkRef : name : computeforwardingrule-dep-global-internal-http-proxy --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeTargetHTTPProxy metadata : name : computeforwardingrule-dep-global-internal-http-proxy spec : urlMapRef : name : computeforwardingrule-dep-global-internal-http-proxy location : global --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeURLMap metadata : name : computeforwardingrule-dep-global-internal-http-proxy spec : defaultService : backendServiceRef : name : computeforwardingrule-dep-global-internal-http-proxy location : global Regional Forwarding Rule # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeForwardingRule metadata : labels : label-one : \"value-one\" name : computeforwardingrule-sample-regional spec : description : \"A regional forwarding rule\" target : targetVPNGatewayRef : name : computeforwardingrule-dep-regional ipProtocol : \"ESP\" location : us-central1 ipAddress : addressRef : name : computeforwardingrule-dep-regional --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : computeforwardingrule-dep-regional labels : label-one : \"value-one\" spec : location : us-central1 --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : computeforwardingrule-dep-regional spec : routingMode : REGIONAL autoCreateSubnetworks : false --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeTargetVPNGateway metadata : name : computeforwardingrule-dep-regional spec : description : a regional target vpn gateway region : us-central1 networkRef : name : computeforwardingrule-dep-regional Regional Forwarding Rule Vpc Psc # Copyright 2024 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeForwardingRule metadata : name : computeforwardingrule-dep-psc spec : location : \"us-central1\" networkRef : name : computeforwardingrule-dep-psc-producer subnetworkRef : name : computeforwardingrule-dep1-psc-producer description : \"A test forwarding rule with internal load balancing scheme\" loadBalancingScheme : \"INTERNAL\" backendServiceRef : name : computeforwardingrule-dep-psc allPorts : true --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeForwardingRule metadata : name : computeforwardingrule-sample-psc spec : description : \"A VPC private service connect forwarding rule\" target : serviceAttachmentRef : name : computeforwardingrule-dep-psc # the Forwarding Rule should be regional and should be in the same region with the Service Attachment location : us-central1 networkRef : name : computeforwardingrule-dep-psc-consumer # PSC forwarding rule requires loadBalancingScheme to be set to empty loadBalancingScheme : \"\" allowPscGlobalAccess : true ipAddress : addressRef : # Replace ${PROJECT_ID?} with your project ID # PSC forwarding rule requires address's self_link instead of address external : \"https://www.googleapis.com/compute/v1/projects/${PROJECT_ID?}/regions/us-central1/addresses/computeforwardingrule-dep-psc\" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : computeforwardingrule-dep-psc spec : location : us-central1 subnetworkRef : name : computeforwardingrule-dep-psc-consumer addressType : \"INTERNAL\" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeBackendService metadata : name : computeforwardingrule-dep-psc spec : location : us-central1 --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : computeforwardingrule-dep-psc-consumer spec : description : Consumer network autoCreateSubnetworks : false --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : computeforwardingrule-dep-psc-producer spec : description : Producer network autoCreateSubnetworks : false --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeServiceAttachment metadata : name : computeforwardingrule-dep-psc spec : projectRef : # Replace ${PROJECT_ID?} with your project ID external : \"projects/${PROJECT_ID?}\" location : us-central1 description : \"A dep service attachment\" targetServiceRef : name : computeforwardingrule-dep-psc connectionPreference : \"ACCEPT_AUTOMATIC\" natSubnets : - name : \"computeforwardingrule-dep2-psc-producer\" enableProxyProtocol : false --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeSubnetwork metadata : name : computeforwardingrule-dep-psc-consumer spec : region : us-central1 ipCidrRange : \"10.0.0.0/16\" networkRef : name : computeforwardingrule-dep-psc-consumer --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeSubnetwork metadata : name : computeforwardingrule-dep1-psc-producer spec : region : us-central1 ipCidrRange : \"10.0.0.0/16\" networkRef : name : computeforwardingrule-dep-psc-producer --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeSubnetwork metadata : name : computeforwardingrule-dep2-psc-producer spec : region : us-central1 ipCidrRange : \"10.1.0.0/16\" networkRef : name : computeforwardingrule-dep-psc-producer purpose : \"PRIVATE_SERVICE_CONNECT\" Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .",
+          "ComputeForwardingRule Property Value Google Cloud Service Name Compute Engine Google Cloud Service Documentation /compute/docs/ Google Cloud REST Resource Name v1.forwardingRules v1.globalForwardingRules Google Cloud REST Resource Documentation /compute/docs/reference/rest/v1/forwardingRules /compute/docs/reference/rest/v1/globalForwardingRules Config Connector Resource Short Names gcpcomputeforwardingrule gcpcomputeforwardingrules computeforwardingrule Config Connector Service Name compute.googleapis.com Config Connector Resource Fully Qualified Name computeforwardingrules.compute.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 ComputeForwardingRule can manage both global and regional forwarding rules.",
+          "A regional forwarding rule supports IPv4 only."
+        ]
+      },
+      {
+        "title": "ComputeSubnetwork | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computesubnetwork",
+        "source_id": "feature-recovery-http",
+        "final_score": 31,
+        "relevance": "",
+        "evidence_snippets": [
+          "If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource. selfLink string Sample YAML(s) Typical Use Case # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeSubnetwork metadata : labels : label-one : \"value-one\" name : computesubnetwork-sample spec : ipCidrRange : 10.2.0.0/16 region : us-central1 description : My subnet privateIpGoogleAccess : false networkRef : name : computesubnetwork-dep logConfig : aggregationInterval : INTERVAL_10_MIN flowSampling : 0.5 metadata : INCLUDE_ALL_METADATA --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : computesubnetwork-dep spec : routingMode : REGIONAL autoCreateSubnetworks : false Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .",
+          "Flow logging isn't supported if the subnet 'purpose' field is set to subnetwork is 'REGIONAL_MANAGED_PROXY' or 'GLOBAL_MANAGED_PROXY'. logConfig.aggregationInterval Optional string Can only be specified if VPC flow logging for this subnetwork is enabled.",
+          "A subnetwork in a given region with purpose set to 'GLOBAL_MANAGED_PROXY' is a proxy-only subnet and is shared between all the cross-regional Envoy-based load balancers."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.cnrm.cloud.google.com",
+      "compute.googleapis.com",
+      "computebackendservices.compute.cnrm.cloud.google.com",
+      "computeforwardingrules.compute.cnrm.cloud.google.com",
+      "example.com",
+      "iap.cnrm.cloud.google.com",
+      "metadata.generation",
+      "v1.backendServices",
+      "v1.forwardingRules",
+      "v1.globalForwardingRules",
+      "v1.regionBackendServices"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeforwardingrule",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computesubnetwork"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeforwardingrule",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computesubnetwork"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeforwardingrule",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computesubnetwork"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeforwardingrule",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computesubnetwork"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeforwardingrule",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computesubnetwork"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeforwardingrule",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computesubnetwork"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeforwardingrule",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computesubnetwork"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeforwardingrule",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computesubnetwork"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeforwardingrule",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computesubnetwork"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeforwardingrule",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computesubnetwork"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeforwardingrule",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computesubnetwork"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeforwardingrule",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computesubnetwork"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computebackendservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeforwardingrule",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computesubnetwork"
+      ]
+    }
+  ]
+}

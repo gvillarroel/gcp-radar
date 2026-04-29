@@ -1,0 +1,120 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:47.011Z",
+  "source_step08_card": "data/step-08/current/products/cloud-cdn/card.json",
+  "product_name": "Cloud CDN",
+  "product_slug": "cloud-cdn",
+  "feature_name": "Cloud CDN custom response headers",
+  "feature_slug": "cloud-cdn-custom-response-headers",
+  "summary": "Cloud CDN supports configuring custom response headers on backend buckets and backend services through External HTTP(S) Load Balancing; Cloud CDN expands custom response header support on backend buckets and services and populates a new cdn_cache_status variable in headers.",
+  "extended_definition": "Cloud CDN supports configuring custom response headers on backend buckets and backend services through External HTTP(S) Load Balancing; Cloud CDN expands custom response header support on backend buckets and services and populates a new cdn_cache_status variable in headers.",
+  "lifecycle": {
+    "latest_feature_date": "2020-09-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cdn/docs/caching",
+      "https://docs.cloud.google.com/cdn/docs/locations",
+      "https://docs.cloud.google.com/cdn/docs/using-cache-keys"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cache locations \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/locations",
+        "source_id": "site-docs-reference-2",
+        "final_score": 38,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "Caching overview \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/caching",
+        "source_id": "site-docs-reference-2",
+        "final_score": 35,
+        "relevance": "",
+        "evidence_snippets": [
+          "Request type Default behavior Configurable Benefits of collapsing Chunk requests Enabled No Can significantly reduce origin bandwidth Item requests Enabled Yes Can reduce origin request volume To disable item request collapsing using the Google Cloud CLI for a backend bucket that references a Cloud Storage bucket: Note: Google Cloud CLI support for the --request-coalescing flag was introduced in Google Cloud CLI version 330.0.0 . gcloud Use the gcloud compute backend-services or backend-buckets command: gcloud compute backend-services update BACKEND SERVICE NAME \\ --no-request-coalescing To enable item request collapsing on a backend bucket using the Google Cloud CLI: gcloud Use the gcloud compute backend-buckets command: gcloud compute backend-buckets update BACKEND BUCKET NAME \\ --request-coalescing To enable item request collapsing using the Google Cloud CLI for a backend service, including VM groups and external backends: gcloud Use the gcloud compute backend-services command: gcloud compute backend-services update BACKEND SERVICE NAME \\ --request-coalescing Requests initiated by Cloud CDN When your origin server supports byte range requests , Cloud CDN can send multiple requests to your origin server in reaction to a single client request.",
+          "For backend services, use the gcloud compute backend-services create or gcloud compute backend-services update command with the --bypass-cache-on-request-headers flag. gcloud compute backend-buckets (create update) BACKEND BUCKET NAME --bypass-cache-on-request-headers= BYPASS REQUEST HEADER gcloud compute backend-services (create update) BACKEND SERVICE NAME --bypass-cache-on-request-headers= BYPASS REQUEST HEADER For example: gcloud compute backend-services update my-backend-service --bypass-cache-on-request-headers=Pragma --bypass-cache-on-request-headers=Authorization API For backend buckets, use the Method: backendBuckets.insert , Method: backendBuckets.update , or Method: backendBuckets.patch API call.",
+          "Use one of the following API calls: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendBuckets PUT https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendBuckets/ BACKEND BUCKET POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendServices PUT https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendServices/ BACKEND SERVICE Add the following snippet to the JSON request body: \"cdnPolicy\": { \"fields\": \"bypassCacheOnRequestHeaders\" } What's next To understand how cache modes make it easier to cache content, see Using cache modes ."
+        ]
+      },
+      {
+        "title": "Customize cache keys \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/using-cache-keys",
+        "source_id": "site-docs-reference-2",
+        "final_score": 35,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use this command to set the query string parameter user to the include list of a backend service. gcloud compute backend-services update BACKEND SERVICE \\ --cache-key-include-query-string \\ --cache-key-query-string-whitelist user Use this command to set the query string parameter user to the exclude list of a backend service. gcloud compute backend-services update BACKEND SERVICE \\ --cache-key-include-query-string \\ --cache-key-query-string-blacklist user Use this command to set the query string parameter user to the include list of a backend bucket. gcloud compute backend-buckets update BACKEND BUCKET \\ --cache-key-query-string-whitelist user API To specify an include list or an exclude list for a backend service, specify query string parameters in the cacheKeyPolicy section of cdnPolicy for the backendServices resource.",
+          "PUT https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendBuckets/ BACKEND BUCKET Add the following snippet to the JSON request body: \"cdnPolicy\": { \"cacheKeyPolicy\": [ { \"includeProtocol\": false, \"includeHost\": false, \"includeQueryString\": false } ] } Update cache keys to add the protocol, host, and query string By default, backend services configured to use Cloud CDN include all components of the request URI in cache keys.",
+          "Click Done . gcloud To exclude one or more components from the cache keys for a backend service, use the gcloud compute backend-services update command . gcloud compute backend-services update BACKEND SERVICE \\ --no-cache-key-include-protocol \\ --no-cache-key-include-host \\ --no-cache-key-include-query-string For backend buckets, use the gcloud compute backend-buckets update command ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/using-cache-keys",
+        "https://docs.cloud.google.com/cdn/docs/locations"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/using-cache-keys",
+        "https://docs.cloud.google.com/cdn/docs/locations"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/using-cache-keys",
+        "https://docs.cloud.google.com/cdn/docs/locations"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/using-cache-keys",
+        "https://docs.cloud.google.com/cdn/docs/locations"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/using-cache-keys",
+        "https://docs.cloud.google.com/cdn/docs/locations"
+      ]
+    }
+  ]
+}

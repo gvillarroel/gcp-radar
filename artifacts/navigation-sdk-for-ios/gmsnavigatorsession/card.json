@@ -1,0 +1,153 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:24.154Z",
+  "source_step08_card": "data/step-08/current/products/navigation-sdk-for-ios/card.json",
+  "product_name": "Navigation SDK for iOS",
+  "product_slug": "navigation-sdk-for-ios",
+  "feature_name": "GMSNavigatorSession",
+  "feature_slug": "gmsnavigatorsession",
+  "summary": "GMSNavigatorSession is a new class for programmatically controlling a navigation session.",
+  "extended_definition": "GMSNavigatorSession is a new class for programmatically controlling a navigation session.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/controls",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/events",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSLocationSimulator"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Modify the navigation UI \\_|\\_ Navigation SDK for iOS \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/controls",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "",
+        "evidence_snippets": [
+          "Swift class MyCustomView : UIView , GMSNavigationAccessoryView { … func heightForAccessoryViewConstrained ( to size : CGSize , on mapView : GMSMapView ) - > CGFloat { // viewHeight gets calculated as the height your view needs. return viewHeight } … } let customView = MyCustomView (...) mapView . setHeaderAccessory ( customView ) // At some later point customView changes size. mapView . invalidateLayout ( forAccessoryView : customView ) // Remove the custom header accessory view. mapView . setHeaderAccessory ( nil ) Objective-C @interface MyCustomView : UIView < GMSNavigationAccessoryView > … @end @implementation MyCustomView … - ( CGFloat ) heightForAccessoryViewConstrainedToSize : ( CGSize ) size onMapView : ( GMSMapView ) mapView { // viewHeight gets calculated as the height your view needs. return viewHeight ; } … @end MyCustomView customView = [[ MyCustomView alloc ] init … ]; [ mapView setHeaderAccessoryView : customView ]; // At some later point customView changes size. [ mapView invalidateLayoutForAccessoryView : customView ]; // Remove the custom header accessory view. [ mapView setHeaderAccessoryView : nil ]; Normal and low-light modes The GMSNavigatorListener.didChangeSuggestedLightingMode listener method is triggered when estimated lighting conditions are updated.",
+          "You can toggle the visibility of the navigation header and footer and set its colors programmatically using the following properties: navigationHeaderEnabled — controls whether the navigation header is visible (default is true ). navigationFooterEnabled — controls whether the navigation footer is visible (default is true ). navigationHeaderPrimaryBackgroundColor — sets the primary background color for the navigation header. navigationHeaderSecondaryBackgroundColor — sets the secondary background color for the navigation header.",
+          "For indoor maps without navigation, use the indoorEnabled and indoorDisplay methods of the Maps SDK for iOS GMSMapView class."
+        ]
+      },
+      {
+        "title": "\"Listen for navigation events \\_|\\_ Navigation SDK for iOS \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/events",
+        "source_id": "site-docs-root",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See the License for the specific language governing permissions and limitations under the License . / import GoogleNavigation import UIKit class ViewController : UIViewController , GMSNavigatorListener , GMSRoadSnappedLocationProviderListener { var mapView : GMSMapView ! var locationManager : CLLocationManager ! override func loadView () { locationManager = CLLocationManager () let camera = GMSCameraPosition . camera ( withLatitude : 47.67 , longitude : - 122.20 , zoom : 14 ) mapView = GMSMapView . map ( withFrame : CGRect . zero , camera : camera ) // Add listeners for GMSNavigator and GMSRoadSnappedLocationProvider . mapView . navigator ? . add ( self ) mapView . roadSnappedLocationProvider ? . add ( self ) // Set the time update threshold ( seconds ) and distance update threshold ( meters ) . mapView . navigator ? . timeUpdateThreshold = 10 mapView . navigator ? . distanceUpdateThreshold = 100 // Show the terms and conditions . let companyName = \"Ride Sharing Co.\" GMSNavigationServices . showTermsAndConditionsDialogIfNeeded ( withCompanyName : companyName ) { termsAccepted in if termsAccepted { // Enable navigation if the user accepts the terms . self . mapView . isNavigationEnabled = true // Request authorization to use location services . self . locationManager . requestAlwaysAuthorization () // Request authorization for alert notifications which deliver guidance instructions // in the background .",
+          "UIButton navButton = [ UIButton buttonWithType : UIButtonTypeCustom ]; [ navButton addTarget : self action : @selector ( startNav ) forControlEvents : UIControlEventTouchUpInside ]; [ navButton setTitle : @\"Navigate\" forState : UIControlStateNormal ]; [ navButton setBackgroundColor : [ UIColor blueColor ]]; [ navButton setAlpha : 0.5 ]; navButton . frame = CGRectMake ( 5.0 , 150.0 , 100.0 , 35.0 ); [ mapView addSubview : navButton ]; } @end Declaring conformance to the required protocols Before implementing the navigation methods, the view controller must adopt the protocols: Swift class ViewController : UIViewController , GMSNavigatorListener , GMSRoadSnappedLocationProviderListener { Objective-C @interface ViewController () < GMSNavigatorListener , GMSRoadSnappedLocationProviderListener > @end After adopting the navigation protocols, set the listeners to the view controller.",
+          "NSString companyName = @\"Ride Sharing Co.\" ; [ GMSNavigationServices showTermsAndConditionsDialogIfNeededWithCompanyName : companyName callback : ^ ( BOOL termsAccepted ) { if ( termsAccepted ) { // Enable navigation if the user accepts the terms. mapView . navigationEnabled = YES ; // Request authorization to use location services. [ locationManager requestAlwaysAuthorization ]; } else { // Handle the case when the user rejects the terms and conditions. } }]; self . view = mapView ; [ self makeButton ]; } // Create a route and initiate navigation. - ( void ) startNav { NSArray<GMSNavigationWaypoint > destinations = @[ [[ GMSNavigationWaypoint alloc ] initWithPlaceID : @\"ChIJnUYTpNASkFQR gSty5kyoUk\" title : @\"PCC Natural Market\" ], [[ GMSNavigationWaypoint alloc ] initWithPlaceID : @\"ChIJJ326ROcSkFQRBfUzOL2DSbo\" title : @\"Marina Park\" ] ] ; [ mapView . navigator setDestinations : destinations callback : ^ ( GMSRouteStatus routeStatus ){ mapView . navigator . guidanceActive = YES ; mapView . navigator . sendsBackgroundNotifications = YES ; mapView . cameraMode = GMSNavigationCameraModeFollowing ; [ mapView . locationSimulator simulateLocationsAlongExistingRoute ]; }]; [ mapView . roadSnappedLocationProvider startUpdatingLocation ]; } #pragma mark - GMSNavigatorListener // Listener for continuous location updates. - ( void ) locationProvider: ( GMSRoadSnappedLocationProvider ) locationProvider didUpdateLocation :( CLLocation ) location { NSLog ( @\"Location: %@\" , location . description ); } // Listener to handle speeding events. - ( void ) navigator: ( GMSNavigator ) navigator didUpdateSpeedingPercentage :( CGFloat ) percentageAboveLimit { NSLog ( @\"Speed is %f percent above the limit.\" , percentageAboveLimit ); } // Listener to handle arrival events. - ( void ) navigator: ( GMSNavigator ) navigator didArriveAtWaypoint: ( GMSNavigationWaypoint ) waypoint { NSLog ( @\"You have arrived at: %@\" , waypoint . title ); [ mapView . navigator continueToNextDestination ]; mapView . navigator . guidanceActive = YES ; } // Listener for route change events. - ( void ) navigatorDidChangeRoute: ( GMSNavigator ) navigator { NSLog ( @\"The route has changed.\" ); } // Listener for time to next destination. - ( void ) navigator: ( GMSNavigator ) navigator didUpdateRemainingTime: ( NSTimeInterval ) time { NSLog ( @\"Time to next destination: %f\" , time ); } // Listener for distance to next destination. - ( void ) navigator: ( GMSNavigator ) navigator didUpdateRemainingDistance :( CLLocationDistance ) distance { double miles = distance 0.00062137 ; NSLog ( @\"%@\" , [ NSString stringWithFormat : @\"Distance to next destination: %.2f.\" , miles ]); } // Listener for traffic updates for next destination - ( void ) navigator: ( GMSNavigator ) navigator didUpdateDelayCategory :( GMSNavigationDelayCategory ) delayCategory { NSLog ( @\"Delay category to next destination: %ld.\" , delayCategory ); } // Listener for suggested lighting mode changes. -( void ) navigator: ( GMSNavigator ) navigator didChangeSuggestedLightingMode :( GMSNavigationLightingMode ) lightingMode { NSLog ( @\"Suggested lighting mode has changed: %ld\" , ( long ) lightingMode ); // Change to the suggested lighting mode. mapView . lightingMode = lightingMode ; } #pragma mark - Programmatic UI elements // Add a button to the view. - ( void ) makeButton { // Start navigation."
+        ]
+      },
+      {
+        "title": "\"GoogleNavigation Framework Reference \\_|\\_ Navigation SDK for iOS \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSLocationSimulator",
+        "source_id": "site-docs-reference",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Declaration Swift func simulateAlongNewRoute ( toDestinations destinations : [ GMSNavigationWaypoint ], routingOptions : GMSNavigationRoutingOptions , callback : @escaping GMSRouteStatusCallback ) Objective-C - ( void ) simulateAlongNewRouteToDestinations : ( nonnull NSArray < GMSNavigationWaypoint > ) destinations routingOptions : ( nonnull GMSNavigationRoutingOptions ) routingOptions callback : ( nonnull GMSRouteStatusCallback ) callback ; Parameters destinations The list of destinations for the route that will be simulated. routingOptions The routing logic that will determine the returned route. callback A block that will be called when the route becomes available or fails. -simulateLocationAtCoordinate: Starts simulating the device location at a fixed coordinate.",
+          "Declaration Swift func simulateAlongNewRoute ( toDestinations destinations : [ GMSNavigationWaypoint ], callback : @escaping GMSRouteStatusCallback ) Objective-C - ( void ) simulateAlongNewRouteToDestinations : ( nonnull NSArray < GMSNavigationWaypoint > ) destinations callback : ( nonnull GMSRouteStatusCallback ) callback ; Parameters destinations The list of destinations for the route that will be simulated. callback A block that will be called when the route becomes available or fails. -simulateAlongNewRouteToDestinations:routingOptions:callback: Calculates a route to the given waypoints, and simulates travel along this route.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-08-27 UTC.\"],[],[\"The GMSLocationSimulator class simulates device locations for testing."
+        ]
+      },
+      {
+        "title": "\"GoogleNavigation Framework Reference \\_|\\_ Navigation SDK for iOS \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes",
+        "source_id": "site-docs-reference",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "Declaration Swift class GMSNavigationMutableWaypoint : GMSNavigationWaypoint Objective-C @interface GMSNavigationMutableWaypoint : GMSNavigationWaypoint GMSNavigator This is the main class of the Google Navigation SDK for iOS and provides methods for controlling navigation to a destination and accessing route and progress information.",
+          "Declaration Swift class GMSNavigationLicensePlateRestriction : NSObject Objective-C @interface GMSNavigationLicensePlateRestriction : NSObject GMSNavigationNavInfo Contains information about the state of navigation Declaration Swift class GMSNavigationNavInfo : NSObject Objective-C @interface GMSNavigationNavInfo : NSObject GMSNavigationRouteInfo An immutable class that encapsulates ETA and distance information for both the default best route, and the shortest route, to a specific waypoint.",
+          "Declaration Swift class GMSNavigationStepInfo : NSObject Objective-C @interface GMSNavigationStepInfo : NSObject GMSNavigationStepInfoImageOptions Declaration Swift class GMSNavigationStepInfoImageOptions : NSObject Objective-C @interface GMSNavigationStepInfoImageOptions : NSObject / The object which provides screen metrics for the screen the image will be displayed on."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "location.description",
+      "waypoint.title"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/events",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSLocationSimulator",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/events",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSLocationSimulator",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/events",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSLocationSimulator",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/events",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSLocationSimulator",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/events",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSLocationSimulator",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/events",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSLocationSimulator",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes"
+      ]
+    }
+  ]
+}

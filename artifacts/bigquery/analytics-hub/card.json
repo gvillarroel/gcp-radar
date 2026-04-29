@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Analytics Hub",
+  "feature_slug": "analytics-hub",
+  "summary": "Analytics Hub lets organizations create secure data exchanges and share analytics assets through publishable listings.",
+  "extended_definition": "Analytics Hub lets organizations create secure data exchanges and share analytics assets through publishable listings.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage data exchanges \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "source_id": "site-docs-reference-5",
+        "final_score": 216,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To view data exchanges in your organization, use the organizations.locations.dataExchanges.list method : GET https://analyticshub.googleapis.com/v1/organizations/ ORGANIZATION ID /location/ LOCATION /dataExchanges Replace the following: ORGANIZATION ID : the organization ID.",
+          "POST https://analyticshub.googleapis.com/v1/projects/ PROJECT ID /location/ LOCATION /dataExchanges?dataExchangeId= DATAEXCHANGE ID Replace the following: PROJECT ID : the ID of the project where you want to create the data exchange.",
+          "DELETE https://analyticshub.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /dataExchanges/ DATAEXCHANGE ID Replace the following: PROJECT ID : the ID of the project in which you want to create the data exchange."
+        ]
+      },
+      {
+        "title": "Introduction to BigQuery sharing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "source_id": "site-docs-reference-5",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Analytics Hub Admin role lets you create multiple data exchanges and manage other users performing sharing tasks.",
+          "Introduction to BigQuery sharing BigQuery sharing (formerly Analytics Hub) is a data exchange platform that lets you share data and insights at scale across organizational boundaries with a robust security and privacy framework.",
+          "As an Analytics Hub Admin, you can create data exchanges that enable data sharing, and then give permissions to data publishers and subscribers to access these data exchanges."
+        ]
+      },
+      {
+        "title": "Manage listings \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "source_id": "site-docs-reference-5",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable the Analytics Hub API gcloud Run the gcloud services enable command: gcloud services enable analyticshub.googleapis.com Required roles To manage listings and subscriptions, you must have one of the following BigQuery sharing Identity and Access Management (IAM) roles: Analytics Hub Publisher role ( roles/analyticshub.publisher ), which lets you create, update, delete, and set IAM policies on your listings.",
+          "POST https://analyticshub.googleapis.com/v1/projects/ PROJECT ID /location/ LOCATION /dataExchanges/ DATAEXCHANGE ID /listings?listingId= LISTING ID Replace the following: PROJECT ID : the project ID that contains the data exchange in which you want to create the listing.",
+          "Analytics Hub Admin role ( roles/analyticshub.admin ), which lets you create, update, delete, and set IAM policies on all listings in your data exchange."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "analyticshub.admin",
+      "analyticshub.googleapis.com",
+      "analyticshub.listingAdmin",
+      "analyticshub.publisher",
+      "analyticshub.subscriber",
+      "example.com",
+      "example.domain.com",
+      "gmail.com",
+      "organizations.locations.dataExchanges.list",
+      "projects.locations.dataExchanges.listings.setIamPolicy"
+    ],
+    "missing_inventory_roles": [
+      "roles/analyticshub.admin",
+      "roles/analyticshub.listingAdmin",
+      "roles/analyticshub.publisher",
+      "roles/analyticshub.subscriber"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings"
+      ]
+    }
+  ]
+}

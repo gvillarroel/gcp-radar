@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Cross-region dataset replication",
+  "feature_slug": "cross-region-dataset-replication",
+  "summary": "BigQuery can replicate a dataset from its source region to one or more other regions; Cross-region dataset replication lets you replicate a dataset from a source region to one or more other regions.",
+  "extended_definition": "BigQuery can replicate a dataset from its source region to one or more other regions; Cross-region dataset replication lets you replicate a dataset from a source region to one or more other regions.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+      "https://docs.cloud.google.com/bigquery/docs/managing-datasets",
+      "https://docs.cloud.google.com/bigquery/docs/user-defined-functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage listings \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "source_id": "site-docs-reference-5",
+        "final_score": 198,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following BigQuery predefined roles contain the bigquery.datasets.update permission: BigQuery Data Owner ( roles/bigquery.dataOwner ) BigQuery Admin ( roles/bigquery.admin ) To view all data exchanges across projects in an organization that you have access to, you must have the resourcemanager.organizations.get permission.",
+          "Before configuring the listing for multiple regions, verify you've enabled cross-region dataset replication on the shared dataset, as you can select only regions where cross-region dataset replication is enabled.",
+          "Before configuring the listing for multiple regions, verify you've enabled cross-region dataset replication on the shared dataset, as you can select only regions where cross-region dataset replication is enabled."
+        ]
+      },
+      {
+        "title": "User-defined functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "source_id": "site-docs-reference",
+        "final_score": 158,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you run a query, BigQuery automatically uses the local version of the UDF from the local dataset replica without your specifying the region where the function is defined, making your queries portable across different locations.",
+          "To make your UDFs region-independent, you can use cross-region dataset replication : Create a new dedicated dataset , for example my utils , to store all your necessary UDFs.",
+          "Community-contributed functions Community contributed UDFs are available in the bigquery-public-data.persistent udfs public dataset and the open source bigquery-utils GitHub repository ."
+        ]
+      },
+      {
+        "title": "Manage datasets \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/managing-datasets",
+        "source_id": "site-docs-reference-required-11",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "Value ; import java.io.IOException ; import java.util.HashMap ; import java.util.Map ; // Sample to copy dataset from another gcp project public class CopyDataset { public static void main ( String [] args ) throws IOException { // TODO(developer): Replace these variables before running the sample. final String destinationProjectId = \"MY DESTINATION PROJECT ID\" ; final String destinationDatasetId = \"MY DESTINATION DATASET ID\" ; final String sourceProjectId = \"MY SOURCE PROJECT ID\" ; final String sourceDatasetId = \"MY SOURCE DATASET ID\" ; Map<String , Value > params = new HashMap <> (); params . put ( \"source project id\" , Value . newBuilder (). setStringValue ( sourceProjectId ). build ()); params . put ( \"source dataset id\" , Value . newBuilder (). setStringValue ( sourceDatasetId ). build ()); TransferConfig transferConfig = TransferConfig . newBuilder () . setDestinationDatasetId ( destinationDatasetId ) . setDisplayName ( \"Your Dataset Copy Name\" ) . setDataSourceId ( \"cross region copy\" ) . setParams ( Struct . newBuilder (). putAllFields ( params ). build ()) . setSchedule ( \"every 24 hours\" ) . build (); copyDataset ( destinationProjectId , transferConfig ); } public static void copyDataset ( String projectId , TransferConfig transferConfig ) throws IOException { try ( DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient . create ()) { ProjectName parent = ProjectName . of ( projectId ); CreateTransferConfigRequest request = CreateTransferConfigRequest . newBuilder () . setParent ( parent . toString ()) . setTransferConfig ( transferConfig ) . build (); TransferConfig config = dataTransferServiceClient . createTransferConfig ( request ); System . out . println ( \"Copy dataset created successfully :\" + config . getName ()); } catch ( ApiException ex ) { System . out . print ( \"Copy dataset was not created.\" + ex . toString ()); } } } Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "The following examples show the formatting of the parameters, based on your system's environment: Linux: use single quotes to enclose the JSON string–for example: '{\"source dataset id\":\"mydataset\",\"source project id\":\"mysourceproject\",\"overwrite destination table\":\"true\"}' Windows command line: use double quotes to enclose the JSON string, and escape double quotes in the string with a backslash–for example: \"{\\\"source dataset id\\\":\\\"mydataset\\\",\\\"source project id\\\":\\\"mysourceproject\\\",\\\"overwrite destination table\\\":\\\"true\\\"}\" PowerShell: use single quotes to enclose the JSON string, and escape double quotes in the string with a backslash–for example: '{\\\"source dataset id\\\":\\\"mydataset\\\",\\\"source project id\\\":\\\"mysourceproject\\\",\\\"overwrite destination table\\\":\\\"true\\\"}' For example, the following command creates a dataset copy configuration that's named My Transfer with a target dataset that's named mydataset and a project with the ID of myproject . bq mk \\ --transfer config \\ --project id = myproject \\ --data source = cross region copy \\ --target dataset = mydataset \\ --display name = 'My Transfer' \\ --params = '{ \"source dataset id\":\"123 demo eu\", \"source project id\":\"mysourceproject\", \"overwrite destination table\":\"true\" }' API Enable the BigQuery Data Transfer Service for your destination dataset.",
+          "TransferConfig ( destination dataset id = destination dataset id , display name = \"Your Dataset Copy Name\" , data source id = \"cross region copy\" , params = { \"source project id\" : source project id , \"source dataset id\" : source dataset id , }, schedule = \"every 24 hours\" , ) transfer config = transfer client . create transfer config ( parent = transfer client . common project path ( destination project id ), transfer config = transfer config , ) print ( f \"Created transfer config: { transfer config . name } \" ) To avoid additional storage costs, consider deleting the prior dataset ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.admin",
+      "bigquery.dataOwner",
+      "bigquery.datasets.update",
+      "data.persistent",
+      "java.io.IOException",
+      "java.util.HashMap",
+      "java.util.Map",
+      "resourcemanager.organizations.get"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.admin",
+      "roles/bigquery.dataOwner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/managing-datasets"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/managing-datasets"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/managing-datasets"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/managing-datasets"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/managing-datasets"
+      ]
+    }
+  ]
+}

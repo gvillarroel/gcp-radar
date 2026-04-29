@@ -1,0 +1,185 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:13.643Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-armor/card.json",
+  "product_name": "Google Cloud Armor",
+  "product_slug": "google-cloud-armor",
+  "feature_name": "Network edge security policies",
+  "feature_slug": "network-edge-security-policies",
+  "summary": "Cloud Armor network edge security policies are available to allowlisted users; Cloud Armor supports network edge security policies.",
+  "extended_definition": "Cloud Armor network edge security policies are available to allowlisted users; Cloud Armor supports network edge security policies.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/armor/docs/advanced-network-ddos",
+      "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+      "https://docs.cloud.google.com/armor/docs/configure-security-policies",
+      "https://docs.cloud.google.com/armor/docs/security-policy-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Security policy overview \\_|\\_ Google Cloud Armor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "source_id": "site-docs-root",
+        "final_score": 316,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Armor security policies are available for the following load balancer and endpoint types: All external Application Load Balancers, including classic Application Load Balancers Regional internal Application Load Balancer Global external proxy Network Load Balancer (TCP/SSL) Classic proxy Network Load Balancer (TCP/SSL) External passthrough Network Load Balancer (TCP/UDP) External protocol forwarding VMs with external IPv4 addresses or external IPv6 address ranges assigned to a network interface (NIC) The load balancer can be in Premium Tier or Standard Tier .",
+          "Globally scoped security policies Backend security policy Edge security policy Internal service security policy Frontend type Global external Application Load Balancer Classic Application Load Balancer (global only) Global external proxy Network Load Balancer Classic proxy Network Load Balancer Global external Application Load Balancer Classic Application Load Balancer (global only) Global external proxy Network Load Balancer Classic proxy Network Load Balancer Cloud Service Mesh clients Attachment point (protected resource) Backend service Backend service Backend service Backend bucket Cloud Service Mesh endpoint policy Rule actions Allow Deny Redirect ( GOOGLE RECAPTCHA and EXTERNAL 302 ) Throttle Rate-based ban Allow Deny Throttle Rate-based ban Allow Deny Fairshare Client IP address Client geography Client ASN Media CDN only Rate limiting TLS fingerprinting (JA3 and JA4) Bot management HTTP filtering Media CDN only WAF Adaptive Protection Address Group Google Threat Intelligence Media CDN only Security Command Center Cloud Monitoring Request logging Regionally scoped security policies Regional backend security policy Network edge security policy Frontend type Regional external Application Load Balancer Regional internal Application Load Balancer External passthrough Network Load Balancer External protocol forwarding VMs with NICs that have external IP addresses Attachment point (protected resource) Backend service (regional) Backend service (regional) Target pool Target instance Backend service (regional) Instance Rule actions Allow Deny Throttle Rate-based ban Allow Deny Throttle Rate-based ban Allow Deny Client IP address Client geography Client ASN Rate limiting TLS fingerprinting (JA3 and JA4) JA3 only JA3 only Bot management HTTP filtering WAF Adaptive Protection Address Group Google Threat Intelligence Byte offset filtering Security Command Center Cloud Monitoring Request logging Backend security policies Backend security policies are used with backend services exposed by the following load balancer types: Global external Application Load Balancer Classic Application Load Balancer Regional external Application Load Balancer Regional internal Application Load Balancer Global external proxy Network Load Balancer Classic proxy Network Load Balancer You use backend security policies to filter requests and protect backend services that reference instance groups or any of the supported NEG types behind the previously listed load balancer types.",
+          "You can configure network edge security policies for the following resources: External passthrough Network Load Balancers Protocol forwarding VMs with public IP addresses Network edge security policies support filtering based on some of the same parameters as backend security policies, and are the only security policy type to support byte offset filtering ."
+        ]
+      },
+      {
+        "title": "\"Configure Cloud Armor security policies \\_|\\_ Google Cloud Armor \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/armor/docs/configure-security-policies",
+        "source_id": "site-docs-root",
+        "final_score": 302,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following command adds a rule to allow traffic from the IP address 1.2.3.4 and contains the string example in the user-agent header: gcloud compute security-policies rules create 1000 \\ --security-policy my-policy \\ --expression \"inIpRange(origin.ip, '1.2.3.4/32') && has(request.headers['user-agent']) && request.headers['user-agent'].contains('example')\" \\ --action allow \\ --description \"Block User-Agent 'example'\" The following command adds a rule to block requests if the request's cookie contains a specific value: gcloud compute security-policies rules create 1000 \\ --security-policy my-policy \\ --expression \"has(request.headers['cookie']) && request.headers['cookie'].contains('80=BLAH')\" \\ --action deny-403 \\ --description \"Cookie Block\" The following command adds a rule to block requests from the region AU : gcloud compute security-policies rules create 1000 \\ --security-policy my-policy \\ --expression \"origin.region code == 'AU'\" \\ --action deny-403 \\ --description \"AU block\" The following command adds a rule to block requests from the region AU that are not in the specified IP range: gcloud compute security-policies rules create 1000 \\ --security-policy my-policy \\ --expression \"origin.region code == \"AU\" && !inIpRange(origin.ip, '1.2.3.0/24')\" \\ --action deny-403 \\ --description \"country and IP block\" The following command adds a rule to block requests with a URI that matches a regular expression: gcloud compute security-policies rules create 1000 \\ --security-policy my-policy \\ --expression \"request.path.matches('/example path/')\" \\ --action deny-502 \\ --description \"regex block\" The following command adds a rule to block requests if the Base64 decoded value of the user-id header contains a specific value: gcloud compute security-policies rules create 1000 \\ --security-policy my-policy \\ --expression \"has(request.headers['user-id']) && request.headers['user-id'].base64Decode().contains('myValue')\" \\ --action deny-403 \\ --description \"country and IP block\" The following command adds a rule that uses a preconfigured expression set to mitigate SQLi attacks: gcloud compute security-policies rules create 1000 \\ --security-policy my-policy \\ --expression \"evaluatePreconfiguredWaf('sqli-stable')\" \\ --action deny-403 Update a single rule in a security policy Use these instructions to update a single rule in a Cloud Armor security policy.",
+          "Note that the actual output would include all of the rules that are listed in Tuning Cloud Armor WAF rules . gcloud compute security-policies list-preconfigured-expression-sets EXPRESSION SET sqli-canary RULE ID SENSITIVITY owasp-crs-v042200-id942120-sqli 2 … xss-canary RULE ID SENSITIVITY owasp-crs-v042200-id941110-xss 1 owasp-crs-v042200-id941120-xss 2 … sourceiplist-fastly sourceiplist-cloudflare sourceiplist-imperva What's next Tune web application firewall (WAF) rules Troubleshoot issues Use the custom rules language reference Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For example, you can modify the the priorities of the existing rules and add a new rule: description: my description fingerprint: PWfLGDWQDLY= id: '123' name: my-policy rules: - action: deny(404) description: my-rule-1 match: expr: expression: evaluatePreconfiguredWaf('xss-stable') versionedExpr: SRC IPS V1 preview: false priority: 1 - action: allow description: my-new-rule match: config: srcIpRanges: - '1.2.3.1' versionedExpr: SRC IPS V1 preview: false priority: 10 - action: allow description: my-rule-2 match: config: srcIpRanges: - '1.2.3.4' versionedExpr: SRC IPS V1 preview: false priority: 11 - action: deny description: default rule kind: compute#securityPolicyRule match: config: srcIpRanges: - ' ' versionedExpr: SRC IPS V1 preview: false priority: 2147483647 selfLink: https://www.googleapis.com/compute/v1/projects/my-project/global/securityPolicies/my-policy Create a new Cloud Armor security policy and specify the modified filename and format, as shown in the following example: gcloud compute security-policies create new-policy \\ --file-name modified-policy \\ --file-format yaml Remove the old security policy from the relevant backend service, as shown in the following example: gcloud compute backend-services update my-backend \\ --security-policy \"\" Add the new security policy to the backend service, as shown in the following example: gcloud compute backend-services update my-backend \\ --security-policy new-policy If the old policy is unused, delete it: gcloud compute security-policies delete my-policy Delete rules from a security policy Use these instructions to delete rules from a Cloud Armor security policy."
+        ]
+      },
+      {
+        "title": "\"Configure advanced network DDoS protection \\_|\\_ Google Cloud Armor \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/armor/docs/advanced-network-ddos",
+        "source_id": "site-iam-reference",
+        "final_score": 278,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "What's next Learn to Configure network edge security policies Learn about Cloud Armor Enterprise Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Create a security policy of type CLOUD ARMOR NETWORK , or use an existing security policy with type CLOUD ARMOR NETWORK . gcloud compute security-policies create SECURITY POLICY NAME \\ --type CLOUD ARMOR NETWORK \\ --region REGION Replace the following: SECURITY POLICY NAME : the name that you want your security policy to have REGION : the region in which you want your security policy to be provisioned Update the newly created or existing security policy by setting the --network-ddos-protection flag to ADVANCED . gcloud compute security-policies update SECURITY POLICY NAME \\ --network-ddos-protection ADVANCED \\ --region REGION Alternatively, you can set the --network-ddos-protection flag to ADVANCED PREVIEW to enable the security policy in preview mode . gcloud beta compute security-policies update SECURITY POLICY NAME \\ --network-ddos-protection ADVANCED PREVIEW \\ --region REGION Create a network edge security service that references your security policy. gcloud compute network-edge-security-services create SERVICE NAME \\ --security-policy SECURITY POLICY NAME \\ --region REGION Disable advanced network DDoS protection To disable advanced network DDoS protection, you can either update or delete the security policy.",
+          "Finally, you create a network edge security service, a resource to which you can attach security policies of type CLOUD ARMOR NETWORK ."
+        ]
+      },
+      {
+        "title": "\"Cloud Armor Enterprise overview \\_|\\_ Google Cloud Armor \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 272,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Armor Standard Cloud Armor Enterprise Paygo Annual Billing method Pay-as-you-go Pay-as-you-go Subscription with 12-month commitment Pricing Per policy, per rule, per request (see Pricing ) $200/month per project $200/month per protected resource after first 2 resources $3000/month per billing account $30/month per protected resource after first 100 resources DDoS attack protection External Application Load Balancer External proxy Network Load Balancer External Application Load Balancer External proxy Network Load Balancer External passthrough Network Load Balancer Protocol forwarding Public IP addresses (VMs) External Application Load Balancer External proxy Network Load Balancer External passthrough Network Load Balancer Protocol forwarding Public IP addresses (VMs) Cloud Armor WAF Per policy, per rule, per request (see Pricing ) Included with Paygo Included with Annual Resource limits Up to quota limit Up to quota limit Up to quota limit Time commitment One year Adaptive Protection Alerting only Advanced network DDoS protection Network edge security policies Address Group Google Threat Intelligence Hierarchical security policies DDoS attack visibility DDoS response support Eligibility requirements DDoS bill protection Note: Customers who subscribed to Cloud Armor Enterprise after September 3, 2024 aren't eligible for DDoS Response Support until they have successfully completed a DDoS posture review.",
+          "Cloud Armor Standard includes the following: A pay-as-you go pricing model Always-on protection from volumetric and protocol-based DDoS attacks, with automated inline mitigations in real time and with no latency impact across the following infrastructure types: Global external Application Load Balancer (HTTP/HTTPS) Classic Application Load Balancer (HTTP/HTTPS) Regional external Application Load Balancer (HTTP/HTTPS) External passthrough Network Load Balancer Global external proxy Network Load Balancer (TCP/SSL) Cloud CDN Media CDN Integration with Cloud CDN and Media CDN Access to Cloud Armor web application firewall (WAF) rule capabilities, including preconfigured WAF rules for OWASP Top 10 protection Cloud Armor Enterprise includes the following: All the features of Cloud Armor Standard Choice of pricing models: Cloud Armor Enterprise Annual or Paygo Bundled Cloud Armor WAF usage, including rules, policy, and requests Third-party named IP address lists Google Threat Intelligence for Cloud Armor Adaptive Protection for Layer 7 endpoints Advanced network DDoS protection for pass-through endpoints—external passthrough Network Load Balancers, protocol forwarding, and public IP addresses for virtual machine (VM) instances Access to DDoS attack visibility Hierarchical security policies (Cloud Armor Enterprise Annual only): Access to DDoS bill protection and DDoS response team services (additional conditions apply, see Eligibility for DDoS response team ) All Google Cloud projects that include an external Application Load Balancer or an external proxy Network Load Balancer are automatically enrolled in Cloud Armor Standard.",
+          "During the review process we learn about your unique use case and architecture, and verify that your Cloud Armor security policies are configured according to our best practices ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "origin.ip",
+      "origin.region",
+      "request.headers",
+      "request.path.matches",
+      "resource.type",
+      "type.googleapis.com",
+      "xx.xx.xx.xx",
+      "yy.yy.yy.yy"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-security-policies",
+        "https://docs.cloud.google.com/armor/docs/advanced-network-ddos",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-security-policies",
+        "https://docs.cloud.google.com/armor/docs/advanced-network-ddos",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-security-policies",
+        "https://docs.cloud.google.com/armor/docs/advanced-network-ddos",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-security-policies",
+        "https://docs.cloud.google.com/armor/docs/advanced-network-ddos",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-security-policies",
+        "https://docs.cloud.google.com/armor/docs/advanced-network-ddos",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-security-policies",
+        "https://docs.cloud.google.com/armor/docs/advanced-network-ddos",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-security-policies",
+        "https://docs.cloud.google.com/armor/docs/advanced-network-ddos",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-security-policies",
+        "https://docs.cloud.google.com/armor/docs/advanced-network-ddos",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-security-policies",
+        "https://docs.cloud.google.com/armor/docs/advanced-network-ddos",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:03.460Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Cloud Dataflow Service general availability",
+  "feature_slug": "cloud-dataflow-service-general-availability",
+  "summary": "The Cloud Dataflow Service reached general availability.",
+  "extended_definition": "The Cloud Dataflow Service reached general availability.",
+  "lifecycle": {
+    "latest_feature_date": "2015-08-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/concepts/regional-endpoints",
+      "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+      "https://docs.cloud.google.com/dataflow/docs/guides/job-builder-custom-job"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot Dataflow errors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "source_id": "site-docs-reference-2",
+        "final_score": 35,
+        "relevance": "",
+        "evidence_snippets": [
+          "For details and availability, see Dataflow Shuffle .",
+          "For details and availability, see Dataflow Shuffle .",
+          "For details and availability, see Dataflow Shuffle ."
+        ]
+      },
+      {
+        "title": "Dataflow regions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/concepts/regional-endpoints",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 31,
+        "relevance": "",
+        "evidence_snippets": [
+          "Regional placement offers benefits such as: Improved resource availability: Dataflow jobs are more resilient to zonal resource availability errors, because workers can continue to be created in other zones with remaining availability.",
+          "If you need more control over the location of pipeline log messages, you can do the following: Create an exclusion filter for the Default log router sink to prevent Dataflow logs from being exported to the Default log bucket.",
+          "Although user data is strictly handled by Dataflow workers in their assigned geographic region, pipeline log messages are stored in Cloud Logging , which has a single global presence in Google Cloud."
+        ]
+      },
+      {
+        "title": "\"Create a custom job with the job builder \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/job-builder-custom-job",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 30,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following command in your shell or terminal: gcloud dataflow yaml run my-job-builder-job --yaml-pipeline-file = YAML FILE PATH Replace YAML FILE PATH with the path of your YAML file, either locally or in Cloud Storage.",
+          "Home Documentation Data analytics Cloud Dataflow Guides Send feedback Create a custom job with the job builder Stay organized with collections Save and categorize content based on your preferences.",
+          "Run the pipeline To run a pipeline from the job builder, perform the following steps: Optional: Set Dataflow job options."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/concepts/regional-endpoints",
+        "https://docs.cloud.google.com/dataflow/docs/guides/job-builder-custom-job"
+      ]
+    }
+  ]
+}

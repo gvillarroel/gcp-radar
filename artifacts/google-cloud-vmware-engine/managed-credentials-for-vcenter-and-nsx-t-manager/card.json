@@ -1,0 +1,197 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:14.895Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "Managed credentials for vCenter and NSX-T Manager",
+  "feature_slug": "managed-credentials-for-vcenter-and-nsx-t-manager",
+  "summary": "VMware Engine generates and lets you view or reset passwords for the CloudOwner@gve.local and NSX-T admin users.",
+  "extended_definition": "VMware Engine generates and lets you view or reset passwords for the CloudOwner@gve.local and NSX-T admin users.",
+  "lifecycle": {
+    "latest_feature_date": "2021-02-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security",
+      "https://docs.cloud.google.com/vmware-engine/docs/concepts-permission-model",
+      "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-elevate-privilege"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Elevate VMware Engine privileges | Google Cloud VMware Engine | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-elevate-privilege",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 186,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use any of the following built-in solution user IDs: solution-user-01@gve.local solution-user-02@gve.local solution-user-03@gve.local solution-user-04@gve.local solution-user-05@gve.local Get a solution user password To get a solution user password, take the following steps. gcloud gcloud vmware private-clouds vcenter credentials describe \\ --private-cloud= PRIVATE_CLOUD_NAME \\ --project= PROJECT_ID \\ --username= USERNAME_ID \\ --location= ZONE Replace the following: PRIVATE_CLOUD_NAME : the private cloud for this request PROJECT_ID : the project for this request USERNAME_ID : one of the solution user IDs ZONE : the zone of the private cloud API In the REST API, make a GET request to the showVcenterCredentials method and provide the provide the solution user ID: https://vmwareengine.googleapis.com/v1/projects/ PROJECT_ID /locations/ ZONE /privateClouds/ PRIVATE_CLOUD_NAME :showVcenterCredentials?username= USERNAME_ID Replace the following: PROJECT_ID : the project for this request ZONE : the zone of the private cloud PRIVATE_CLOUD_NAME : the private cloud for this request USERNAME_ID : one of the solution user IDs Reset solution user password To reset a solution user password, take the following steps. gcloud gcloud vmware private-clouds vcenter credentials reset \\ --private-cloud= PRIVATE_CLOUD_NAME \\ --project= PROJECT_ID \\ --username= USERNAME_ID \\ --location= ZONE Replace the following: PRIVATE_CLOUD_NAME : the private cloud for this request PROJECT_ID : the project for this request USERNAME_ID : one of the solution user IDs ZONE : the zone of the private cloud API In the REST API, make a POST request to the resetVcenterCredentials method and provide the solution user ID in the request body: https://vmwareengine.googleapis.com/v1/projects/ PROJECT_ID /locations/ ZONE /privateClouds/ PRIVATE_CLOUD_NAME :resetVcenterCredentials { \"username\": :\" USERNAME_ID \" } Replace the following: PROJECT_ID : the project for this request ZONE : the zone of the private cloud USERNAME_ID : one of the solution user IDs Forbidden actions When VMware Engine detects any of the following forbidden actions, VMware Engine reverts the changes to ensure that service remains uninterrupted whenever possible.",
+          "Resetting vCenter or NSX sign-in credentials using VMware tools, API calls, or management appliances (vCenter/NSX manager).",
+          "Cluster actions The following cluster actions are forbidden: Removing a cluster from vCenter Changing vSphere high availability (HA) on a cluster Adding a host to the cluster from vCenter Removing a host from the cluster from vCenter Changing vSphere Distributed Resource Scheduler (DRS) on a cluster Creating new Data Centers in VMware Engine Host actions The following host actions are forbidden: Adding or removing datastores on an ESXi host; you can mount a temporary disaster recovery datastore, but SLAs won't apply Uninstalling vCenter agent from host Modifying the host configuration Making any changes to the host profiles Placing a host in maintenance mode Network actions The following network actions are forbidden in vCenter Server: Deleting the default distributed virtual switch (DVS) in a private cloud Removing a host from the default DVS Importing any DVS setting Reconfiguring any DVS setting Upgrading any DVS Deleting the management portgroup Editing the management portgroup The following network actions are forbidden in NSX Manager: Adding a new NSX Edge node Changing an existing NSX Edge node Roles and permissions actions The following roles and permissions actions are forbidden: Modifying or deleting permission to any management objects Modifying or removing any default roles Increase the privileges of a role to higher than of Cloud-Owner-Role Adding users and groups to the Administrator group on vCenter Adding any Active Directory users and groups to the Administrator group on vCenter Other actions The following actions are additionally forbidden: Removing any default licenses: vCenter Server ESXi nodes NSX HCX Modifying or deleting the management resource pool."
+        ]
+      },
+      {
+        "title": "\"Best practices for VMware Engine security \\_|\\_ Google Cloud VMware Engine\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 159,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Rotate the passwords of built-in service accounts VMware Engine generates credentials to access management appliances in the private cloud (such as vCenter, NSX and HCX).",
+          "We recommend that you establish a process to rotate the passwords of the default vCenter service account CloudOwner@gve.local and the default NSX service account administrator.",
+          "VMware Engine vCenter LDAP Hosts and clusters, VMs and folders, datastores in the vCenter UI VM creation, VM folder creation, datastore object creation and deletion, for example NSX LDAP \"Users and Roles\" in the NSX Manager UI NSX segment creation, firewall configuration, load balancer configuration, for example. vCenter VM Guest Operating System Active Directory, LDAP, Local Users, for example Guest Operating System SSH or RDP Login, file operations, for example In Google Cloud IAM, there are two predefined roles with permissions to the VMware Engine portal: VMware Engine Service Admin - gives full access to the VMware Engine service on Google Cloud."
+        ]
+      },
+      {
+        "title": "Private cloud vSphere permission model | Google Cloud VMware Engine | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-permission-model",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "CloudOwner user When you create a private cloud, a default user, CloudOwner@gve.local is created in the vCenter Single Sign-On domain and given Cloud-Owner-Role access to manage objects in the private cloud. vCenter roles Roles in vCenter define a set of privileges that let a user perform certain operations.",
+          "Private cloud vSphere permission model | Google Cloud VMware Engine | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in VMware Engine Start free Overview Guides Reference Support Resources Samples Technology areas More Overview Guides Reference Support Resources Samples Cross-product tools More Console Discover Product overview VMware Engine nodes Get started Request API access and quota Networking requirements Create a private cloud Create a stretched private cloud Create a VMware VM Configure Networking Concepts VLANs and subnets About VMware Engine networks VPN gateways Set up networking Create a VMware Engine network Configure and manage subnets Connect to networks and services Peer a VPC network Connect from on-premises Connect using VPN Manage external access Create and manage network policies Configure internet access for workload VMs Reserve an external IP address Manage external access rules Configure DNS Configure DNS bindings Configure management DNS for private clouds Legacy networks (Legacy) Private connections (Legacy) DNS forwarding rules Networking best practices Private clouds About VMware Engine private clouds Stretched private clouds VMware components Create a single-node private cloud Manage private cloud resources Manage stretched private cloud resources Elevate privileges Manage autoscale Delete a private cloud Compute best practices Licensing Microsoft licensing options for Windows Server Microsoft SQL Server licensing options Security Security overview VMware Engine IAM roles and permissions Manage vSphere permissions Private cloud vSphere permission model VPC Service Controls Shared responsibility model Configure Google SecOps Security best practices Storage Storage-only nodes Manage storage-only nodes NFS datastores NFS datastores overview Configure NetApp Volumes as a vSphere datastore Configure Filestore as a vSphere datastore Manage NFS datastores Monitor NFS datastores Connect to NetApp Volumes Connect to Dell PowerScale vSAN encryption About vSAN encryption Configure vSAN encryption using CipherTrust Manager Configure vSAN encryption using Fortanix KMS Configure vSAN encryption using HyTrust KeyControl Storage best practices Integrate Access Google Cloud resources from VMware Engine Configure authentication using Active Directory Configure VMware Aria Automation Configure VMware Aria Operations Configure VMware Cloud Director service Migrate Migrate VMware VMs to your private cloud Establish Layer 2 network stretching using NSX-T Migrate VMware VMs using HCX Migration options Migration best practices Operate and maintain Monitoring Monitoring overview Monitor activity Set up Cloud Monitoring with a standalone agent Forward syslog messages Audit logging Audit logging Operator audit logging System audit logging Committed use discounts audit logging Backup and disaster recovery Backup solutions Data protection recommendations Configure disaster recovery using VMware SRM Configure disaster recovery using Zerto Configure Zerto VAIO-based solution Availability and redundancy Maintenance and updates Support for Oracle workloads Asset inventory services Optimize Costing best practices Samples Google Cloud VMware Engine code samples Code samples for all products AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Compute VMware Engine Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "List of vCenter privileges for default roles The following sections list vCenter privileges for each role in the groups created by VMware Engine."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gve.local",
+      "vmwareengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-elevate-privilege",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-permission-model"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-elevate-privilege",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-permission-model"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-elevate-privilege",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-permission-model"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-elevate-privilege",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-permission-model"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-elevate-privilege",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-permission-model"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-elevate-privilege",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-permission-model"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-elevate-privilege",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-permission-model"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-elevate-privilege",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-permission-model"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-elevate-privilege",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-permission-model"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-elevate-privilege",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-permission-model"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-elevate-privilege",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-permission-model"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-elevate-privilege",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-permission-model"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-elevate-privilege",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-permission-model"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-elevate-privilege",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-permission-model"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:25.238Z",
+  "source_step08_card": "data/step-08/current/products/places-api/card.json",
+  "product_name": "Places API",
+  "product_slug": "places-api",
+  "feature_name": "fuelOptions field",
+  "feature_slug": "fueloptions-field",
+  "summary": "This field returns the most recent information about fuel options available at a gas station.",
+  "extended_definition": "This field returns the most recent information about fuel options available at a gas station.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/places/web-service/choose-fields",
+      "https://developers.google.com/maps/documentation/places/web-service/legacy/search-nearby",
+      "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+      "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Package google.maps.places.v1 \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "source_id": "site-api-reference",
+        "final_score": 158,
+        "relevance": "",
+        "evidence_snippets": [
+          "If a payment option data is not available, the payment option field will be unset. parking options ParkingOptions Options of parking provided by the place. sub destinations[] SubDestination A list of sub-destinations related to the place. fuel options FuelOptions The most recent information about fuel options in a gas station.",
+          "FuelOptions The most recent information about fuel options in a gas station.",
+          "Fields name string A reference representing this place review which may be used to look up this place review again (also called the API \"resource\" name: places/{place id}/reviews/{review} ). relative publish time description string A string of formatted recent time, expressing the review time relative to the current time in a form appropriate for the language and country. text LocalizedText The localized text of the review. original text LocalizedText The review text in its original language. rating double A number between 1.0 and 5.0, also called the number of stars. author attribution AuthorAttribution This review's author. publish time Timestamp Timestamp for the review. flag content uri string A link where users can flag a problem with the review. google maps uri string A link to show the review on Google Maps. visit date Date The date when the author visited the place."
+        ]
+      },
+      {
+        "title": "REST Resource: places \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "source_id": "site-api-reference",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "If a payment option data is not available, the payment option field will be unset. parkingOptions object ( ParkingOptions ) Options of parking provided by the place. subDestinations[] object ( SubDestination ) A list of sub-destinations related to the place. fuelOptions object ( FuelOptions ) The most recent information about fuel options in a gas station.",
+          "FuelOptions The most recent information about fuel options in a gas station.",
+          "JSON representation { \"name\" : string , \"relativePublishTimeDescription\" : string , \"text\" : { object ( LocalizedText ) } , \"originalText\" : { object ( LocalizedText ) } , \"rating\" : number , \"authorAttribution\" : { object ( AuthorAttribution ) } , \"publishTime\" : string , \"flagContentUri\" : string , \"googleMapsUri\" : string , \"visitDate\" : { object ( Date ) } } Fields name string A reference representing this place review which may be used to look up this place review again (also called the API \"resource\" name: places/{placeId}/reviews/{review} ). relativePublishTimeDescription string A string of formatted recent time, expressing the review time relative to the current time in a form appropriate for the language and country. text object ( LocalizedText ) The localized text of the review. originalText object ( LocalizedText ) The review text in its original language. rating number A number between 1.0 and 5.0, also called the number of stars. authorAttribution object ( AuthorAttribution ) This review's author. publishTime string ( Timestamp format) Timestamp for the review."
+        ]
+      },
+      {
+        "title": "Choose fields to return \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/choose-fields",
+        "source_id": "site-docs-root",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you only want the text field, set the field mask as: places.formattedAddress,places.displayName.text Define a response field mask for Place Details (New) Place Details (New) returns a single Place object in the form: { \"name\" : \"places/ChIJkR8FdQNB0VQRm64T lv1g1g\" , \"id\" : \"ChIJkR8FdQNB0VQRm64T lv1g1g\" , \"types\" : [ \"locality\" , \"political\" ], \"formattedAddress\" : \"Trinidad, CA 95570, USA\" , \"displayName\" : { \"text\" : \"Trinidad\" , \"languageCode\" : \"en\" } ... } Therefore, you specify a field mask for this API by specifying the fields of the Place object that you want to return: curl -X GET -H 'Content-Type: application/json' \\ -H \"X-Goog-Api-Key: API KEY \" \\ -H \"X-Goog-FieldMask: formattedAddress,displayName\" \\ https://places.googleapis.com/v1/places/ChIJj61dQgK6j4AR4GeTYWZsKWw gRPC call For gRPC, set a variable containing the response field mask.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-09 UTC.\"],[],[\"When using Place Details, Nearby Search, or Text Search, you must define a response field mask, specifying desired fields.",
+          "For information on fields specific to each API, see the following: Place Details (New) FieldMask parameters Nearby Search (New) FieldMask parameters Text Search (New) FieldMask parameters You specify the field list by creating a response field mask ."
+        ]
+      },
+      {
+        "title": "Nearby Search (Legacy) \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/legacy/search-nearby",
+        "source_id": "site-docs-root-2",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "This field is not always returned, and its content is subject to change. info messages optional Array<string> When the service returns additional information about the request specification, there may be an additional info messages field within the response object.",
+          "See PlacesSearchStatus for more information. error message optional string When the service returns a status code other than OK< , there may be an additional error message field within the response object.",
+          "Values in this field are combined with values in the keyword field and passed as part of the same search string. opennow Returns only those places that are open for business at the time the query is sent."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "places.displayName.text",
+      "places.formattedAddress",
+      "places.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "https://developers.google.com/maps/documentation/places/web-service/choose-fields",
+        "https://developers.google.com/maps/documentation/places/web-service/legacy/search-nearby"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "https://developers.google.com/maps/documentation/places/web-service/choose-fields",
+        "https://developers.google.com/maps/documentation/places/web-service/legacy/search-nearby"
+      ]
+    }
+  ]
+}

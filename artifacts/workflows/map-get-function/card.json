@@ -1,0 +1,141 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:34.788Z",
+  "source_step08_card": "data/step-08/current/products/workflows/card.json",
+  "product_name": "Workflows",
+  "product_slug": "workflows",
+  "feature_name": "map.get function",
+  "feature_slug": "map-get-function",
+  "summary": "The map.get function performs safe map key lookups and returns null when a key is missing.",
+  "extended_definition": "The map.get function performs safe map key lookups and returns null when a key is missing.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workflows/docs/execute-workflow-client-libraries",
+      "https://docs.cloud.google.com/workflows/docs/reference/stdlib/map/get",
+      "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Function: map.get | Workflows | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/reference/stdlib/map/get",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 221,
+        "relevance": "",
+        "evidence_snippets": [
+          "Performs a safe lookup on a map, returning null if the key is not found.",
+          "If the input is not a map or if the map does not contain the key, returns null.",
+          "Examples # Retrieve item for specified key from map # Returns \"world\" - init : assign : - my_map : { \"key1\" : \"hello\" , \"key2\" : \"world\" } - returnStep : return : ${map.get(my_map, \"key2\")} Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Execute a workflow using the Cloud Client Libraries \\_|\\_ Workflows\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/execute-workflow-client-libraries",
+        "source_id": "site-docs-root",
+        "final_score": 77,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If no input arguments are provided or \"searchTerm\" is absent, it will fetch the day of the week in Amsterdam and use it as the search term. main : params : [ input ] steps : - validateSearchTermAndRedirectToReadWikipedia : switch : - condition : '${map.get(input, \"searchTerm\") != null}' assign : - searchTerm : '${input.searchTerm}' next : readWikipedia - getCurrentTime : call : http.get args : url : https://timeapi.io/api/Time/current/zone?timeZone=Europe/Amsterdam result : currentTime - setFromCallResult : assign : - searchTerm : '${currentTime.body.dayOfWeek}' - readWikipedia : call : http.get args : url : 'https://en.wikipedia.org/w/api.php' query : action : opensearch search : '${searchTerm}' result : wikiResult - returnOutput : return : '${wikiResult.body[1]}' After creating the workflow, you can deploy it, but don't execute the workflow: gcloud workflows deploy myFirstWorkflow \\ --source = myFirstWorkflow.yaml \\ --service-account = SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com \\ --location = CLOUD REGION Replace CLOUD REGION with a supported location for the workflow.",
+          "WorkflowName ; import java.io.IOException ; import java.util.concurrent.ExecutionException ; public class WorkflowsQuickstart { private static final String PROJECT = System . getenv ( \"GOOGLE CLOUD PROJECT\" ); private static final String LOCATION = System . getenv (). getOrDefault ( \"LOCATION\" , \"us-central1\" ); private static final String WORKFLOW = System . getenv (). getOrDefault ( \"WORKFLOW\" , \"myFirstWorkflow\" ); public static void main ( String ... args ) throws IOException , InterruptedException , ExecutionException { if ( PROJECT == null ) { throw new IllegalArgumentException ( \"Environment variable 'GOOGLE CLOUD PROJECT' is required to run this quickstart.\" ); } workflowsQuickstart ( PROJECT , LOCATION , WORKFLOW ); } private static volatile boolean finished ; public static void workflowsQuickstart ( String projectId , String location , String workflow ) throws IOException , InterruptedException , ExecutionException { // Initialize client that will be used to send requests.",
+          "For example: C# public class ExecuteWorkflowWithArgumentsSample { /// <summary> /// Execute a workflow with arguments and return the execution operation. /// </summary> /// <param name=\"projectID\">Your Google Cloud Project ID.</param> /// <param name=\"locationID\">The region where your workflow is located.</param> /// <param name=\"workflowID\">Your Workflow ID.</param> /// <returns> /// An Execute object representing the completed workflow execution. /// </returns> public async Task<Execution> ExecuteWorkflowWithArguments ( string projectId = \"YOUR-PROJECT-ID\" , string locationID = \"YOUR-LOCATION-ID\" , string workflowID = \"YOUR-WORKFLOW-ID\" ) { // Initialize the client."
+        ]
+      },
+      {
+        "title": "Standard library overview \\_|\\_ Workflows \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 73,
+        "relevance": "",
+        "evidence_snippets": [
+          "Functions delete Takes a map, creates a copy of the map, and removes the item with the specified key. get Performs a safe lookup on a map, returning null if the key is not found. merge Takes two maps, creates a copy of the first map, and adds the items from the second map to the copy. merge nested Takes two maps, creates a copy of the first map, and recursively adds items from the second map to the copy.",
+          "Functions default(val, defaultVal) Returns a value if it is not null; otherwise returns a default value. if(condition, ifTrue, ifFalse) Evaluates a condition and returns one of two arguments depending on what the condition evaluates to.",
+          "Functions decode Decodes given data to string, assuming the specified character set. encode Encodes given text to bytes, using the specified character set. find all Finds the index of all instances of a substring in a string. find all regex Finds all matches of a regular expression in a string. match regex Reports whether a string contains a match of a regular expression. replace all Replaces all instances of a substring with a new string. replace all regex Replaces all matches of a regular expression with a new string. split Splits the source string into a list of all substrings between each instance of the separator. substring Extracts the substring between two zero-based indexes of a source string. to lower Returns a string with all Unicode letters mapped to their lowercase. to upper Returns a string with all Unicode letters mapped to their uppercase. url decode Returns a string with pluses and percent-escaped characters converted to UTF-8. url encode Returns a string with percent-encoded reserved characters, including spaces. url encode plus Returns a string with percent-encoded reserved characters, and spaces replaced by pluses ( + )."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "api.php",
+      "body.dayOfWeek",
+      "en.wikipedia.org",
+      "http.get",
+      "iam.gserviceaccount.com",
+      "input.searchTerm",
+      "java.io.IOException",
+      "java.util.concurrent.ExecutionException",
+      "map.get",
+      "timeapi.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/map/get",
+        "https://docs.cloud.google.com/workflows/docs/execute-workflow-client-libraries",
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/map/get",
+        "https://docs.cloud.google.com/workflows/docs/execute-workflow-client-libraries",
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/map/get",
+        "https://docs.cloud.google.com/workflows/docs/execute-workflow-client-libraries",
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/map/get",
+        "https://docs.cloud.google.com/workflows/docs/execute-workflow-client-libraries",
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/map/get",
+        "https://docs.cloud.google.com/workflows/docs/execute-workflow-client-libraries",
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/map/get",
+        "https://docs.cloud.google.com/workflows/docs/execute-workflow-client-libraries",
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview"
+      ]
+    }
+  ]
+}

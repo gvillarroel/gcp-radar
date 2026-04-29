@@ -1,0 +1,169 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:26.022Z",
+  "source_step08_card": "data/step-08/current/products/recaptcha/card.json",
+  "product_name": "reCAPTCHA",
+  "product_slug": "recaptcha",
+  "feature_name": "reCAPTCHA Enterprise for WAF and Google Cloud Armor integration",
+  "feature_slug": "recaptcha-enterprise-for-waf-and-google-cloud-armor-integration",
+  "summary": "Integrates reCAPTCHA Enterprise with WAF and Google Cloud Armor to protect applications; Integrates reCAPTCHA Enterprise with WAF and Google Cloud Armor to protect applications.",
+  "extended_definition": "Integrates reCAPTCHA Enterprise with WAF and Google Cloud Armor to protect applications; Integrates reCAPTCHA Enterprise with WAF and Google Cloud Armor to protect applications.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+      "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+      "https://docs.cloud.google.com/recaptcha/docs/best-practices-oat"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class RecaptchaEnterpriseServiceAsyncClient (1.29.0) \\_|\\_ Python client\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 259,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SearchRelatedAccountGroupMembershipsRequest ( project=\"project value\", ) Make the request page result = client. search related account group memberships (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.recaptchaenterprise v1.types.SearchRelatedAccountGroupMembershipsRequest , dict]] The request object.",
+          "ListRelatedAccountGroupMembershipsRequest ( parent=\"parent value\", ) Make the request page result = client. list related account group memberships (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.recaptchaenterprise v1.types.ListRelatedAccountGroupMembershipsRequest , dict]] The request object.",
+          "ListRelatedAccountGroupsRequest ( parent=\"parent value\", ) Make the request page result = client. list related account groups (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.recaptchaenterprise v1.types.ListRelatedAccountGroupsRequest , dict]] The request object."
+        ]
+      },
+      {
+        "title": "\"Class RecaptchaEnterpriseServiceClient (1.29.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 259,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SearchRelatedAccountGroupMembershipsRequest ( project=\"project value\", ) Make the request page result = client. search related account group memberships (request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[ google.cloud.recaptchaenterprise v1.types.SearchRelatedAccountGroupMembershipsRequest , dict] The request object.",
+          "ListRelatedAccountGroupMembershipsRequest ( parent=\"parent value\", ) Make the request page result = client. list related account group memberships (request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[ google.cloud.recaptchaenterprise v1.types.ListRelatedAccountGroupMembershipsRequest , dict] The request object.",
+          "ListRelatedAccountGroupsRequest ( parent=\"parent value\", ) Make the request page result = client. list related account groups (request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[ google.cloud.recaptchaenterprise v1.types.ListRelatedAccountGroupsRequest , dict] The request object."
+        ]
+      },
+      {
+        "title": "\"Class RecaptchaEnterpriseServiceClient (3.85.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "source_id": "site-java-reference",
+        "final_score": 243,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: To customize credentials: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library RecaptchaEnterpriseServiceSettings recaptchaEnterpriseServiceSettings = RecaptchaEnterpriseServiceSettings . newBuilder () . setCredentialsProvider ( FixedCredentialsProvider . create ( myCredentials )) . build (); RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient = RecaptchaEnterpriseServiceClient . create ( recaptchaEnterpriseServiceSettings ); To customize the endpoint: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library RecaptchaEnterpriseServiceSettings recaptchaEnterpriseServiceSettings = RecaptchaEnterpriseServiceSettings . newBuilder (). setEndpoint ( myEndpoint ). build (); RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient = RecaptchaEnterpriseServiceClient . create ( recaptchaEnterpriseServiceSettings ); Please refer to the GitHub repository's samples for more quickstart code snippets.",
+          "Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient = RecaptchaEnterpriseServiceClient . create ()) { ListRelatedAccountGroupMembershipsRequest request = ListRelatedAccountGroupMembershipsRequest . newBuilder () . setParent ( RelatedAccountGroupName . of ( \"[PROJECT]\" , \"[RELATEDACCOUNTGROUP]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . build (); ApiFuture<RelatedAccountGroupMembership> future = recaptchaEnterpriseServiceClient . listRelatedAccountGroupMembershipsPagedCallable () . futureCall ( request ); // Do something. for ( RelatedAccountGroupMembership element : future . get (). iterateAll ()) { // doThingsWith(element); } } Returns Type Description UnaryCallable < ListRelatedAccountGroupMembershipsRequest , ListRelatedAccountGroupMembershipsPagedResponse > listRelatedAccountGroups(ListRelatedAccountGroupsRequest request) public final RecaptchaEnterpriseServiceClient .",
+          "Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient = RecaptchaEnterpriseServiceClient . create ()) { ListRelatedAccountGroupsRequest request = ListRelatedAccountGroupsRequest . newBuilder () . setParent ( ProjectName . of ( \"[PROJECT]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . build (); ApiFuture<RelatedAccountGroup> future = recaptchaEnterpriseServiceClient . listRelatedAccountGroupsPagedCallable () . futureCall ( request ); // Do something. for ( RelatedAccountGroup element : future . get (). iterateAll ()) { // doThingsWith(element); } } Returns Type Description UnaryCallable < ListRelatedAccountGroupsRequest , ListRelatedAccountGroupsPagedResponse > migrateKey(MigrateKeyRequest request) public final Key migrateKey ( MigrateKeyRequest request ) Migrates an existing key from reCAPTCHA to reCAPTCHA Enterprise."
+        ]
+      },
+      {
+        "title": "\"Best practices for protection from automated threats \\_|\\_ reCAPTCHA \\_\\",
+        "url": "https://docs.cloud.google.com/recaptcha/docs/best-practices-oat",
+        "source_id": "site-iam-reference",
+        "final_score": 234,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, you can use reCAPTCHA for WAF and Google Cloud Armor integration If scraping involves APIs, use the Apigee Management APIs for additional mitigation.",
+          "For example, you can use reCAPTCHA for WAF and Google Cloud Armor integration .",
+          "For example, you can use reCAPTCHA for WAF and Google Cloud Armor integration ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+      "com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListFirewallPoliciesFixedSizeCollection",
+      "com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListFirewallPoliciesPage",
+      "com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListFirewallPoliciesPagedResponse",
+      "com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListIpOverridesFixedSizeCollection",
+      "com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListIpOverridesPage",
+      "v1.types.ListFirewallPoliciesRequest",
+      "v1.types.ListRelatedAccountGroupMembershipsRequest",
+      "v1.types.ListRelatedAccountGroupsRequest",
+      "v1.types.SearchRelatedAccountGroupMembershipsRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/best-practices-oat"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/best-practices-oat"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/best-practices-oat"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/best-practices-oat"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/best-practices-oat"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/best-practices-oat"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/best-practices-oat"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.589Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Utilities.jsonParse() and Utilities.jsonStringify()",
+  "feature_slug": "utilities-jsonparse-and-utilities-jsonstringify",
+  "summary": "Utilities.jsonParse() and Utilities.jsonStringify() provided JSON parsing and serialization helpers before standard JavaScript JSON methods were preferred; deprecated on 2013-11-18.",
+  "extended_definition": "Utilities.jsonParse() and Utilities.jsonStringify() provided JSON parsing and serialization helpers before standard JavaScript JSON methods were preferred; deprecated on 2013-11-18.",
+  "lifecycle": {
+    "latest_feature_date": "2013-11-18",
+    "deprecation_date": "2013-11-18",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/reference/utilities",
+      "https://developers.google.com/apps-script/reference/utilities/utilities",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Class Utilities | Apps Script | Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/utilities/utilities",
+        "source_id": "feature-recovery-http",
+        "final_score": 158,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "As of November 2013, replaced by JSON.stringify() Return a JSON string of the object passed in. // Logs: {\"name\":\"John Smith\",\"company\":\"Virginia Company\"} const person = { name : 'John Smith' , company : 'Virginia Company' , }; const json = Utilities . jsonStringify ( person ); Logger . log ( json ); Parameters Name Type Description obj Object The JavaScript object to serialize to JSON.",
+          "As of November 2013, replaced by JSON.parse() Return an object corresponding to the JSON string passed in. // Returns the object { name: \"John Smith\", company: \"Virginia Company\"} const obj = Utilities . jsonParse ( '{\"name\":\"John Smith\",\"company\":\"Virginia Company\"}' , ); Parameters Name Type Description json String String A String representation of a JavaScript object to deserialize.",
+          "Deprecated methods `jsonParse` and `jsonStringify` are replaced by `JSON.parse()` and `JSON.stringify()`."
+        ]
+      },
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "November 18, 2013 Deprecated The Apps Script methods Utilities.jsonParse() and Utilities.jsonStringify() have been deprecated in favor of the now-standard JavaScript methods JSON.parse() and JSON.stringify() , which now appear in autocomplete.",
+          "Added two new methods to the Utilities class provide JSON support: Utilities.jsonParse() and Utilities.jsonStringify() .",
+          "November 03, 2022 Feature Apps Script added a new method to the Utilities class . parseDate(date, timeZone, format ) parses a provided string date according to the specification described in the Java Standard Edition SimpleDateFormat class ."
+        ]
+      },
+      {
+        "title": "Utilities Service | Apps Script | Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/utilities",
+        "source_id": "feature-recovery-http",
+        "final_score": 92,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DigestAlgorithm Properties Property Type Description MD2 Enum MD2 algorithm MD5 Enum MD5 algorithm SHA_1 Enum SHA-1 algorithm SHA_256 Enum SHA-256 algorithm SHA_384 Enum SHA-384 algorithm SHA_512 Enum SHA-512 algorithm MacAlgorithm Properties Property Type Description HMAC_MD5 Enum HMAC_SHA_1 Enum HMAC_SHA_256 Enum HMAC_SHA_384 Enum HMAC_SHA_512 Enum RsaAlgorithm Properties Property Type Description RSA_SHA_1 Enum RSA_SHA_256 Enum Utilities Properties Property Type Description Charset Charset Digest Algorithm Digest Algorithm Mac Algorithm Mac Algorithm Rsa Algorithm Rsa Algorithm Methods Method Return type Brief description base64Decode(encoded) Byte[] Decodes a base-64 encoded string into a UTF-8 byte array. base64Decode(encoded, charset) Byte[] Decodes a base-64 encoded string into a byte array in a specific character set. base64DecodeWebSafe(encoded) Byte[] Decodes a base-64 web-safe encoded string into a UTF-8 byte array. base64DecodeWebSafe(encoded, charset) Byte[] Decodes a base-64 web-safe encoded string into a byte array in a specific character set. base64Encode(data) String Generates a base-64 encoded string from the given byte array. base64Encode(data) String Generates a base-64 encoded string from the given string. base64Encode(data, charset) String Generates a base-64 encoded string from the given string in a specific character set. base64EncodeWebSafe(data) String Generates a base-64 web-safe encoded string from the given byte array. base64EncodeWebSafe(data) String Generates a base-64 web-safe encoded string from the given string. base64EncodeWebSafe(data, charset) String Generates a base-64 web-safe encoded string from the given string in a specific character set. compute Digest(algorithm, value) Byte[] Compute a digest using the specified algorithm on the specified Byte[] value. compute Digest(algorithm, value) Byte[] Compute a digest using the specified algorithm on the specified String value. compute Digest(algorithm, value, charset) Byte[] Compute a digest using the specified algorithm on the specified String value with the given character set. compute Hmac Sha256Signature(value, key) Byte[] Signs the provided value using HMAC-SHA256 with the given key. compute Hmac Sha256Signature(value, key) Byte[] Signs the provided value using HMAC-SHA256 with the given key. compute Hmac Sha256Signature(value, key, charset) Byte[] Signs the provided value using HMAC-SHA256 with the given key and character set. compute Hmac Signature(algorithm, value, key) Byte[] Compute a message authentication code using the specified algorithm on the specified key and value. compute Hmac Signature(algorithm, value, key) Byte[] Compute a message authentication code using the specified algorithm on the specified key and value. compute Hmac Signature(algorithm, value, key, charset) Byte[] Compute a message authentication code using the specified algorithm on the specified key and value. compute Rsa Sha1Signature(value, key) Byte[] Signs the provided value using RSA-SHA1 with the given key. compute Rsa Sha1Signature(value, key, charset) Byte[] Signs the provided value using RSA-SHA1 with the given key and charset. compute Rsa Sha256Signature(value, key) Byte[] Signs the provided value using RSA-SHA256 with the given key. compute Rsa Sha256Signature(value, key, charset) Byte[] Signs the provided value using RSA-SHA256 with the given key. compute Rsa Signature(algorithm, value, key) Byte[] Signs the provided value using the specified RSA algorithm with the given key. compute Rsa Signature(algorithm, value, key, charset) Byte[] Signs the provided value using the specified RSA algorithm with the given key and charset. format Date(date, timeZone, format) String Formats date according to specification described in Java SE SimpleDateFormat class. format String(template, args) String Performs sprintf -like string formatting using '%'-style format strings. get Uuid() String Get a UUID as a string (equivalent to using the java.util.UUID.randomUUID() method). gzip(blob) Blob gzip -compresses the provided Blob data and returns it in a new Blob object. gzip(blob, name) Blob gzip -compresses the provided Blob data and returns it in a new Blob object. new Blob(data) Blob Create a new Blob object from a byte array. new Blob(data, contentType) Blob Create a new Blob object from a byte array and content type. new Blob(data, contentType, name) Blob Create a new Blob object from a byte array, content type, and name. new Blob(data) Blob Create a new Blob object from a string. new Blob(data, contentType) Blob Create a new Blob object from a string and content type. new Blob(data, contentType, name) Blob Create a new Blob object from a string, content type, and name. parse Csv(csv) String[][] Returns a tabular 2D array representation of a CSV string. parse Csv(csv, delimiter) String[][] Returns a tabular 2D array representation of a CSV string using a custom delimiter. parse Date(date, timeZone, format) Date Parses the provided string date according to the specification described in the Java Standard Edition Simple Date Format class. sleep(milliseconds) void Sleeps for specified number of milliseconds. ungzip(blob) Blob Uncompresses a Blob object and returns a Blob containing the uncompressed data. unzip(blob) Blob[] Takes a Blob representing a zip file and returns its component files. zip(blobs) Blob Creates a new Blob object that is a zip file containing the data from the Blobs passed in. zip(blobs, name) Blob Creates a new Blob object that is a zip file containing the data from the Blobs passed in.",
+          "Mac Algorithm Selector of MAC algorithm Rsa Algorithm Selector of RSA algorithm Utilities This service provides utilities for string encoding/decoding, date formatting, JSON manipulation, and other miscellaneous tasks.",
+          "Utilities This service provides utilities for string encoding/decoding, date formatting, JSON manipulation, and other miscellaneous tasks."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "java.util.UUID.randomUUID",
+      "projects.deployments",
+      "projects.versions"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/utilities/utilities",
+        "https://developers.google.com/apps-script/reference/utilities"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/utilities/utilities",
+        "https://developers.google.com/apps-script/reference/utilities"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/utilities/utilities",
+        "https://developers.google.com/apps-script/reference/utilities"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/utilities/utilities",
+        "https://developers.google.com/apps-script/reference/utilities"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/utilities/utilities",
+        "https://developers.google.com/apps-script/reference/utilities"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/utilities/utilities",
+        "https://developers.google.com/apps-script/reference/utilities"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/utilities/utilities",
+        "https://developers.google.com/apps-script/reference/utilities"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/utilities/utilities",
+        "https://developers.google.com/apps-script/reference/utilities"
+      ]
+    }
+  ]
+}

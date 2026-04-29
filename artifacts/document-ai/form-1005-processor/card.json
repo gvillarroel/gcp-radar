@@ -1,0 +1,135 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:07.711Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai",
+  "feature_name": "Form 1005 Processor",
+  "feature_slug": "form-1005-processor",
+  "summary": "Extracts structured data from Form 1005 documents.",
+  "extended_definition": "Extracts structured data from Form 1005 documents.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/form-parser",
+      "https://docs.cloud.google.com/document-ai/docs/processors-list",
+      "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class DocumentProcessorServiceAsyncClient (3.14.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 160,
+        "relevance": "",
+        "evidence_snippets": [
+          "Processors are built using state-of-the-art Google AI such as natural language, computer vision, and translation to extract structured information from unstructured or semi-structured documents.",
+          "Each processor defines how to extract structural information from a document. get processor type get processor type ( request : typing .",
+          "Each processor defines how to extract structural information from a document. delete processor delete processor ( request : typing ."
+        ]
+      },
+      {
+        "title": "\"Class DocumentProcessorServiceClient (3.14.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 160,
+        "relevance": "",
+        "evidence_snippets": [
+          "Processors are built using state-of-the-art Google AI such as natural language, computer vision, and translation to extract structured information from unstructured or semi-structured documents.",
+          "Each processor defines how to extract structural information from a document. get processor type get processor type ( request : typing .",
+          "Each processor defines how to extract structural information from a document. delete processor delete processor ( request : typing ."
+        ]
+      },
+      {
+        "title": "Form Parser \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/form-parser",
+        "source_id": "site-docs-root-2",
+        "final_score": 160,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a Form Parser processor, which can identify and extract text, key-value pairs, tables, and generic entities from many types of documents.",
+          "Form Parser can be considered over the other parsers when the use case involves: Dealing with structured forms: It excels at extracting KVPs from well-defined forms that look like conventional forms with labeled blanks to fill in, such as name: .",
+          "Flexible table extraction is needed: Form Parser extracts from simple (no cells that span rows or columns) tables that look like tables."
+        ]
+      },
+      {
+        "title": "Processor list \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/processors-list",
+        "source_id": "site-docs-root",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "The processor currently returns information from the following signals: fraud signals is identity document detection: Predicts whether an image contains a recognized identity document. fraud signals suspicious words detection: Predicts whether words are present that aren't typical on IDs. fraud signals image manipulation detection: Predicts whether the image was altered or tampered with an image editing tool. fraud signals online duplicate detection: Predicts whether the image can be found online (US only).",
+          "Category Pretrained Functions OCR, Entity Extraction Release stage General availability Access status Public lock open Type in API PAYSTUB PROCESSOR Notes If the multi-page input document contains more than one valid pay slips, the processor extracts entities from only the first valid pay slip.",
+          "More information Custom summarizer Footnotes [†] Identity Document Proofing works to extract and evaluate information from ID documents that contributes to identifying whether the input image represents an authentic ID."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "async.AsyncRetry",
+      "core.retry",
+      "core.retry.Retry"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient",
+        "https://docs.cloud.google.com/document-ai/docs/form-parser",
+        "https://docs.cloud.google.com/document-ai/docs/processors-list"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient",
+        "https://docs.cloud.google.com/document-ai/docs/form-parser",
+        "https://docs.cloud.google.com/document-ai/docs/processors-list"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient",
+        "https://docs.cloud.google.com/document-ai/docs/form-parser",
+        "https://docs.cloud.google.com/document-ai/docs/processors-list"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient",
+        "https://docs.cloud.google.com/document-ai/docs/form-parser",
+        "https://docs.cloud.google.com/document-ai/docs/processors-list"
+      ]
+    }
+  ]
+}

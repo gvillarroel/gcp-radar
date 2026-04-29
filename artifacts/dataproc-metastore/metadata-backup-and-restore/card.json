@@ -1,0 +1,221 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:05.041Z",
+  "source_step08_card": "data/step-08/current/products/dataproc-metastore/card.json",
+  "product_name": "Dataproc Metastore",
+  "product_slug": "dataproc-metastore",
+  "feature_name": "Metadata backup and restore",
+  "feature_slug": "metadata-backup-and-restore",
+  "summary": "Metadata backup and restore supports cross-service restoration of Dataproc Metastore metadata; Metadata backup and restore lets Dataproc Metastore back up and restore service metadata.",
+  "extended_definition": "Metadata backup and restore supports cross-service restoration of Dataproc Metastore metadata; Metadata backup and restore lets Dataproc Metastore back up and restore service metadata.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/backup-metadata",
+      "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+      "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rpc",
+      "https://docs.cloud.google.com/dataproc-metastore/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Back up a Dataproc Metastore service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/backup-metadata",
+        "source_id": "site-iam-reference",
+        "final_score": 172,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to back up a Dataproc Metastore service: To back up a metadata service: metastore.backups.create To use the Cloud Storage object: orgpolicy.policy.get resourcemanager.projects.get resourcemanager.projects.list storage.managedFolders.create storage.managedFolders.delete storage.managedFolders.get storage.managedFolders.list storage.multipartUploads. storage.objects.create storage.objects.delete storage.objects.get storage.objects.list storage.objects.restore storage.objects.update You might also be able to get these permissions with custom roles or other predefined roles .",
+          "To grant read and modify access to specific metadata of databases and tables: Dataproc Metastore Metadata Operator ( roles/metastore.metadataOperator ) on the metadata service To use the Cloud Storage object that stores scheduled backups: Cloud Storage Object User ( roles/storage.objectUser ) on the Dataproc Metastore service agent For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "What's next Restore a Dataproc Metastore service from a backup Update and delete a Dataproc Metastore service Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Troubleshooting \\_|\\_ Dataproc Metastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 160,
+        "relevance": "",
+        "evidence_snippets": [
+          "To restore metadata, you must request an IAM role containing the metastore.services.restore and metastore.backups.use IAM permissions.",
+          "Job fails because the service metadata file is too big If your service metadata file is too large, it can take more than the one hour job timeout limit to complete the backup or restore process.",
+          "Backup and restore error scenarios This section outlines common Dataproc Metastore backup and restore issues."
+        ]
+      },
+      {
+        "title": "Dataproc Metastore API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1alpha.projects.locations.services Methods alterLocation POST /v1alpha/{service}:alterLocation Alter metadata resource location. alterTableProperties POST /v1alpha/{service}:alterTableProperties Alter metadata table properties. cancelMigration POST /v1alpha/{service}:cancelMigration Cancels the ongoing Managed Migration process. completeMigration POST /v1alpha/{service}:completeMigration Completes the managed migration process. create POST /v1alpha/{parent}/services Creates a metastore service in a project and location. delete DELETE /v1alpha/{name} Deletes a single service. exportMetadata POST /v1alpha/{service}:exportMetadata Exports metadata from a service. get GET /v1alpha/{name} Gets the details of a single service. getIamPolicy GET /v1alpha/{resource}:getIamPolicy Gets the access control policy for a resource. list GET /v1alpha/{parent}/services Lists services in a project and location. moveTableToDatabase POST /v1alpha/{service}:moveTableToDatabase Move a table to another database. patch PATCH /v1alpha/{service.name} Updates the parameters of a single service. queryMetadata POST /v1alpha/{service}:queryMetadata Query Dataproc Metastore metadata. removeIamPolicy POST /v1alpha/{resource}:removeIamPolicy Removes the attached IAM policies for a resource restore POST /v1alpha/{service}:restore Restores a service from a backup. setIamPolicy POST /v1alpha/{resource}:setIamPolicy Sets the access control policy on the specified resource. startMigration POST /v1alpha/{service}:startMigration Starts the Managed Migration process. testIamPermissions POST /v1alpha/{resource}:testIamPermissions Returns permissions that a caller has on the specified resource.",
+          "REST Resource: v1beta.projects.locations.services Methods alterLocation POST /v1beta/{service}:alterLocation Alter metadata resource location. alterTableProperties POST /v1beta/{service}:alterTableProperties Alter metadata table properties. cancelMigration POST /v1beta/{service}:cancelMigration Cancels the ongoing Managed Migration process. completeMigration POST /v1beta/{service}:completeMigration Completes the managed migration process. create POST /v1beta/{parent}/services Creates a metastore service in a project and location. delete DELETE /v1beta/{name} Deletes a single service. exportMetadata POST /v1beta/{service}:exportMetadata Exports metadata from a service. get GET /v1beta/{name} Gets the details of a single service. getIamPolicy GET /v1beta/{resource}:getIamPolicy Gets the access control policy for a resource. list GET /v1beta/{parent}/services Lists services in a project and location. moveTableToDatabase POST /v1beta/{service}:moveTableToDatabase Move a table to another database. patch PATCH /v1beta/{service.name} Updates the parameters of a single service. queryMetadata POST /v1beta/{service}:queryMetadata Query Dataproc Metastore metadata. removeIamPolicy POST /v1beta/{resource}:removeIamPolicy Removes the attached IAM policies for a resource restore POST /v1beta/{service}:restore Restores a service from a backup. setIamPolicy POST /v1beta/{resource}:setIamPolicy Sets the access control policy on the specified resource. startMigration POST /v1beta/{service}:startMigration Starts the Managed Migration process. testIamPermissions POST /v1beta/{resource}:testIamPermissions Returns permissions that a caller has on the specified resource.",
+          "REST Resource: v1.projects.locations.services Methods alterLocation POST /v1/{service}:alterLocation Alter metadata resource location. alterTableProperties POST /v1/{service}:alterTableProperties Alter metadata table properties. cancelMigration POST /v1/{service}:cancelMigration Cancels the ongoing Managed Migration process. completeMigration POST /v1/{service}:completeMigration Completes the managed migration process. create POST /v1/{parent}/services Creates a metastore service in a project and location. delete DELETE /v1/{name} Deletes a single service. exportMetadata POST /v1/{service}:exportMetadata Exports metadata from a service. get GET /v1/{name} Gets the details of a single service. getIamPolicy GET /v1/{resource}:getIamPolicy Gets the access control policy for a resource. list GET /v1/{parent}/services Lists services in a project and location. moveTableToDatabase POST /v1/{service}:moveTableToDatabase Move a table to another database. patch PATCH /v1/{service.name} Updates the parameters of a single service. queryMetadata POST /v1/{service}:queryMetadata Query Dataproc Metastore metadata. restore POST /v1/{service}:restore Restores a service from a backup. setIamPolicy POST /v1/{resource}:setIamPolicy Sets the access control policy on the specified resource. startMigration POST /v1/{service}:startMigration Starts the Managed Migration process. testIamPermissions POST /v1/{resource}:testIamPermissions Returns permissions that a caller has on the specified resource."
+        ]
+      },
+      {
+        "title": "Dataproc Metastore API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rpc",
+        "source_id": "site-docs-root",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "UpdateService Updates the parameters of a single service. google.cloud.metastore.v1alpha.DataprocMetastoreFederation Methods CreateFederation Creates a metastore federation in a project and location.",
+          "UpdateService Updates the parameters of a single service. google.cloud.metastore.v1beta.DataprocMetastoreFederation Methods CreateFederation Creates a metastore federation in a project and location.",
+          "UpdateService Updates the parameters of a single service. google.cloud.metastore.v1.DataprocMetastoreFederation Methods CreateFederation Creates a metastore federation in a project and location."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.metastore.v1",
+      "metastore.backups.create",
+      "metastore.backups.use",
+      "metastore.iam.gserviceaccount.com",
+      "metastore.metadataOperator",
+      "metastore.serviceAgent",
+      "metastore.services.create",
+      "metastore.services.restore",
+      "orgpolicy.policy.get",
+      "service.name",
+      "storage.managedFolders.create",
+      "storage.managedFolders.delete",
+      "storage.managedFolders.get",
+      "storage.managedFolders.list",
+      "storage.multipartUploads",
+      "storage.objects.create",
+      "storage.objects.delete",
+      "storage.objects.get",
+      "storage.objects.list",
+      "storage.objects.restore",
+      "storage.objects.update",
+      "storage.objectUser",
+      "v1.projects.locations.services",
+      "v1alpha.projects.locations.services",
+      "v1alpha.projects.locations.services.backups",
+      "v1beta.projects.locations.services"
+    ],
+    "missing_inventory_roles": [
+      "roles/metastore.metadataOperator",
+      "roles/metastore.serviceAgent",
+      "roles/storage.objectUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/backup-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/troubleshooting",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/backup-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/troubleshooting",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/backup-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/troubleshooting",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/backup-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/troubleshooting",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/backup-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/troubleshooting",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/backup-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/troubleshooting",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/backup-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/troubleshooting",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/backup-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/troubleshooting",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rpc"
+      ]
+    }
+  ]
+}

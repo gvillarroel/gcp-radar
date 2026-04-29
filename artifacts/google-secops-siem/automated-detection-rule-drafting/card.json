@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.987Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "Automated detection rule drafting",
+  "feature_slug": "automated-detection-rule-drafting",
+  "summary": "When Emerging Threats finds a coverage gap, Gemini can automatically draft new detection rules.",
+  "extended_definition": "When Emerging Threats finds a coverage gap, Gemini can automatically draft new detection rules.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays",
+      "https://docs.cloud.google.com/chronicle/docs/detection/emerging-threats",
+      "https://docs.cloud.google.com/chronicle/docs/detection/emerging-threats-detailed-view"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Emerging Threats Center detail view \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/emerging-threats-detailed-view",
+        "source_id": "site-docs-root",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Emerging Threats Center detailed view includes the following panels: Associated Rules Disabled Rules Recent Associated Entities IOCs Associated Rules Note: Coverage analysis applies only to Endpoint Detection and Response (EDR) data sources.",
+          "Rule set Identifies the rule source, such as Mandiant Frontline Threats, Mandiant Hunt Rules, or Mandiant Intel Emerging Threats .",
+          "Automatically highlight detection coverage : The system runs the simulated log events against the Google Cloud Threat Intelligence (GCTI) curated detection rules and coverage reports that show where Google SecOps has detections and where gaps exist."
+        ]
+      },
+      {
+        "title": "\"Emerging Threats Center \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/emerging-threats",
+        "source_id": "site-docs-root",
+        "final_score": 187,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Emerging Threats Center provides a curated view of the most critical global threats from GTI that pose risks to your environment, including IoCs, detection matches, and affected entities.",
+          "Emerging Threats Center Supported in: Google secops SIEM The Emerging Threats Center in Google Security Operations provides AI-powered threat intelligence that helps you understand how current and emerging threat campaigns might affect your organization.",
+          "Note: The Emerging Threats Center feed displays only threat collections that have been updated within the past year, ensuring that you always work with up-to-date intelligence."
+        ]
+      },
+      {
+        "title": "\"Understand rule detection delays \\_|\\_ Google Security Operations \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays",
+        "source_id": "site-docs-root",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Retro hunts When you run a rule against historical data using a retro hunt, the system only creates the detection after the retro hunt process finishes.",
+          "Expected delays : These delays result from the ingestion process and the configuration choices you make when setting up the detection rule.",
+          "When scheduled rules run again, the system can create new detections based on updated reference list contents."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/emerging-threats-detailed-view",
+        "https://docs.cloud.google.com/chronicle/docs/detection/emerging-threats",
+        "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/emerging-threats-detailed-view",
+        "https://docs.cloud.google.com/chronicle/docs/detection/emerging-threats",
+        "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays"
+      ]
+    }
+  ]
+}

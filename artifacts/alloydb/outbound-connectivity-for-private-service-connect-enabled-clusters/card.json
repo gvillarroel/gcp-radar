@@ -1,0 +1,132 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:40.969Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Outbound connectivity for Private Service Connect-enabled clusters",
+  "feature_slug": "outbound-connectivity-for-private-service-connect-enabled-clusters",
+  "summary": "Outbound connectivity for Private Service Connect-enabled AlloyDB clusters enables secure outbound connections for operations such as migrations and foreign data wrappers.",
+  "extended_definition": "Outbound connectivity for Private Service Connect-enabled AlloyDB clusters enables secure outbound connections for operations such as migrations and foreign data wrappers.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/about-private-service-connect",
+      "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances",
+      "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Private Service Connect overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/about-private-service-connect",
+        "source_id": "site-docs-reference",
+        "final_score": 189,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Service attachment When you create any AlloyDB instance within a Private Service Connect-enabled cluster, AlloyDB creates a service attachment unique to that instance.",
+          "When you create a Private Service Connect-enabled cluster and instance, you can let AlloyDB automatically create endpoints for you or create the endpoint manually.",
+          "To enable outbound connectivity from an AlloyDB instance to your consumer project, you need to create a network attachment within that VPC and project."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.clusters \\_|\\_ AlloyDB for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "source_id": "site-iam-reference",
+        "final_score": 160,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The project number that needs to be allowlisted on the network attachment to enable outbound connectivity.",
+          "Methods create Creates a new Cluster in a given project and location. createsecondary Creates a cluster of type SECONDARY in the given location using the primary cluster as the source. delete Deletes a single Cluster. export Exports data from the cluster. get Gets details of a single Cluster. import Imports data to the cluster. list Lists Clusters in a given project and location. patch Updates the parameters of a single Cluster. promote Promotes a SECONDARY cluster. restore Creates a new Cluster in a given project and location, with a volume restored from the provided source, either a backup ID or a point-in-time and a source cluster. restoreFromCloudSQL Restores an AlloyDB cluster from a CloudSQL resource. switchover Switches the roles of PRIMARY and SECONDARY clusters without any data loss. upgrade Upgrades a single Cluster.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Reference Send feedback REST Resource: projects.locations.clusters Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: alloydb \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances",
+        "source_id": "site-api-reference",
+        "final_score": 154,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "When enabled, this allows authorized users to connect to the instance from the public internet using the executeSql API, even for private IP instances.",
+          "Configurations for setting up PSC interfaces attached to the instance which are used for outbound connectivity.",
+          "The service attachment created when Private Service Connect (PSC) is enabled for the instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.clusters"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/about-private-service-connect",
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/about-private-service-connect",
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/about-private-service-connect",
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/about-private-service-connect",
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/about-private-service-connect",
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/about-private-service-connect",
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:34.788Z",
+  "source_step08_card": "data/step-08/current/products/workflows/card.json",
+  "product_name": "Workflows",
+  "product_slug": "workflows",
+  "feature_name": "Workflow visualization",
+  "feature_slug": "workflow-visualization",
+  "summary": "The Google Cloud Console displays a visualization of a workflow during editing.",
+  "extended_definition": "The Google Cloud Console displays a visualization of a workflow during editing.",
+  "lifecycle": {
+    "latest_feature_date": "2020-12-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workflows/docs/create-workflow-console",
+      "https://docs.cloud.google.com/workflows/docs/tutorials/execute-workflows-from-workflow",
+      "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create a workflow by using the Google Cloud console \\_|\\_ Workflows\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/create-workflow-console",
+        "source_id": "site-api-reference",
+        "final_score": 129,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create a workflow by using the Google Cloud console This quickstart shows you how to create, deploy, and execute your first workflow using the Google Cloud console.",
+          "In the Google Cloud console, go to the Workflows page: Go to Workflows From the list of workflows, click a workflow to go to its Workflow details page.",
+          "Create and deploy a workflow In the Google Cloud console, go to the Workflows page: Go to Workflows On the Workflows page, click add Create ."
+        ]
+      },
+      {
+        "title": "\"Run a workflow that executes other workflows in parallel \\_|\\_ Workflows\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/tutorials/execute-workflows-from-workflow",
+        "source_id": "site-docs-root-2",
+        "final_score": 127,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The child workflow demonstrates this by doing the following: Receives an integer as an argument Sleeps for 10 seconds to simulate some processing Returns an indicator (based on whether the integer is an odd or even number) to simulate success or failure of the workflow execution Console In the Google Cloud console, go to the Workflows page.",
+          "For more information, see Complete the execution of a workflow . - return execution results : return : ${execution results} Deploy the workflow: Console In the Google Cloud console, go to the Workflows page: Go to Workflows Click add Create .",
+          "Console In the Google Cloud console, go to the Workflows page: Go to Workflows On the Workflows page, click the workflow-parent workflow to go to its details page."
+        ]
+      },
+      {
+        "title": "\"Pause and resume a workflow using callbacks and Google Sheets \\_|\\_ Workflows\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets",
+        "source_id": "site-docs-root-2",
+        "final_score": 117,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Console In the Google Cloud console, go to the Workflows page: Go to Workflows On the Workflows page, select the workflows-awaits-callback-sheets workflow to go to its details page.",
+          "Activate Cloud Shell At the bottom of the Google Cloud console, a Cloud Shell session starts and displays a command-line prompt.",
+          "Console In the Google Cloud console, go to the Workflows page: Go to Workflows Click add Create ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "api.php",
+      "args.iteration",
+      "child.yaml",
+      "details.url",
+      "e.message",
+      "en.wikipedia.org",
+      "events.await",
+      "events.create",
+      "googleapis.sheets.v4.spreadsheets.values.append",
+      "http.get",
+      "iam.gserviceaccount.com",
+      "input.searchTerm",
+      "request.body",
+      "request.body.approver",
+      "request.http",
+      "sheets.yaml",
+      "sys.get",
+      "sys.log",
+      "sys.sleep",
+      "text.split"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/create-workflow-console",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/execute-workflows-from-workflow",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/create-workflow-console",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/execute-workflows-from-workflow",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+      ]
+    }
+  ]
+}

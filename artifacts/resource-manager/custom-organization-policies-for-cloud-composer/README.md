@@ -1,0 +1,36 @@
+# Custom organization policies for Cloud Composer
+
+Product: Resource Manager
+Feature slug: `custom-organization-policies-for-cloud-composer`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Organization Policy custom constraints are generally available for Cloud Composer.
+
+## Lifecycle
+
+- Latest feature date: 2025-03-14
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- allow
+- constraint
+- iam
+- permission
+- policy
+- security
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/resource-manager/docs/custom-constraints](https://docs.cloud.google.com/resource-manager/docs/custom-constraints)
+- [https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies](https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies)
+- [https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse](https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse)

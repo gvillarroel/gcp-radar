@@ -1,0 +1,160 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:57.167Z",
+  "source_step08_card": "data/step-08/current/products/cloud-workstations/card.json",
+  "product_name": "Cloud Workstations",
+  "product_slug": "cloud-workstations",
+  "feature_name": "Hyperdisk Balanced High Availability persistent directories",
+  "feature_slug": "hyperdisk-balanced-high-availability-persistent-directories",
+  "summary": "Cloud Workstations lets you configure Hyperdisk Balanced High Availability for persistent directories in the Google Cloud console; Cloud Workstations supports Hyperdisk Balanced High Availability for persistent directories on supported machine series.",
+  "extended_definition": "Cloud Workstations lets you configure Hyperdisk Balanced High Availability for persistent directories in the Google Cloud console; Cloud Workstations supports Hyperdisk Balanced High Availability for persistent directories on supported machine series.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workstations/docs/available-gpus",
+      "https://docs.cloud.google.com/workstations/docs/base-editor-overview",
+      "https://docs.cloud.google.com/workstations/docs/create-configuration",
+      "https://docs.cloud.google.com/workstations/docs/customize-development-environment"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customize your development environment \\_|\\_ Cloud Workstations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "source_id": "site-docs-root-2",
+        "final_score": 230,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: projects.locations.workstationClusters.workstationConfigs Resource: WorkstationConfig JSON representation Host JSON representation GceInstance JSON representation GceShieldedInstanceConfig JSON representation GceConfidentialInstanceConfig JSON representation Accelerator JSON representation BoostConfig JSON representation PersistentDirectory JSON representation GceRegionalPersistentDisk JSON representation ReclaimPolicy GceHyperdiskBalancedHighAvailability JSON representation ReclaimPolicy EphemeralDirectory JSON representation GcePersistentDisk JSON representation Container JSON representation CustomerEncryptionKey JSON representation ReadinessCheck JSON representation PortRange JSON representation Methods Resource: WorkstationConfig A workstation configuration resource in the Cloud Workstations API.",
+          "How a persistent directory should be implemented. directory type can be only one of the following: gcePd object ( GceRegionalPersistentDisk ) A PersistentDirectory backed by a Compute Engine persistent disk. gceHd object ( GceHyperdiskBalancedHighAvailability ) A PersistentDirectory backed by a Compute Engine hyperdisk high availability disk.",
+          "JSON representation { \"mountPath\" : string , // Union field directory type can be only one of the following: \"gcePd\" : { object ( GceRegionalPersistentDisk ) } , \"gceHd\" : { object ( GceHyperdiskBalancedHighAvailability ) } // End of list of possible types for union field directory type . } Fields mountPath string Optional."
+        ]
+      },
+      {
+        "title": "Available GPUs \\_|\\_ Cloud Workstations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workstations/docs/available-gpus",
+        "source_id": "site-docs-root-2",
+        "final_score": 194,
+        "relevance": "",
+        "evidence_snippets": [
+          "To satisfy this use case, Cloud Workstations allows the use of Google Cloud Hyperdisk Balanced High Availability disks as persistent directories for the machine types enumerated earlier.",
+          "For example: gcloud beta workstations configs create \\ ... \\ --disk-type = hyperdisk-balanced-ha \\ --disk-size = 200 This command will create a Hyperdisk with size 200 GB.",
+          "Now that you have selected a GPU model and compatible machine type, update the configuration: For NVIDIA A100 40GB GPUs, run this command to update your configuration: gcloud beta workstations configs update \\ --project = PROJECT ID \\ --region = LOCATION \\ --cluster = CLUSTER NAME \\ CONFIG NAME \\ --machine-type = A2 MACHINE TYPE Replace A2 MACHINE TYPE with the chosen A2 machine type determined in the previous step (for example, a2-highgpu-1g )."
+        ]
+      },
+      {
+        "title": "\"Create a workstation configuration \\_|\\_ Cloud Workstations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/create-configuration",
+        "source_id": "site-docs-root",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "Set the Disk type of your persistent directory to Balanced , which has higher performance but is more economical than SSD .",
+          "Customize the environment Customize the Cloud Workstations environment by configuring the workstation container image and persistent storage using these steps: Configure the container image by choosing whether to use one of the preconfigured base images or to provide a reference to a customized container image that you've created.",
+          "This section explains the four steps of creating a workstation configuration: Configure basics Define machine settings Customize the environment Add users To follow step-by-step guidance for this task directly in the Google Cloud console, click Guide me : Guide me Before you begin Before you begin using Cloud Workstations, be sure that you have the required permissions and that you complete these required setup steps."
+        ]
+      },
+      {
+        "title": "Base editor overview \\_|\\_ Cloud Workstations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workstations/docs/base-editor-overview",
+        "source_id": "site-docs-root",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "These Activity bar views are as follows: Explorer : view the folders and files in your current workspace Search : search your files for a string or regular expression Source Control : manage application files with the Cloud Workstations base editor's Git support Debug : debug your application by setting breakpoints and inspecting variables Extensions : search through a catalog of extensions that add additional features to your IDE Cloud Code : create and deploy Google Cloud applications directly from the IDE Settings : customize the Cloud Workstations base editor to suit your workflow View and edit files The built-in code editor that lets you browse file directories and view and edit files inside your workstation.",
+          "Right-click in Explorer view to upload and download files Language support The Cloud Workstations base editor supports languages such as Go, Python, Java, .NET Core, and Node.js through extensions, providing language features such as: Smart highlighting, code suggestions and context-based completions Linting and providing descriptive errors Code navigation (go to definitions, declarations, references, and implementations) Intuitive debugging support Cloud Code integration Cloud Code provides IDE support for the full development cycle of Kubernetes and Cloud Run applications, from creating and customizing a new application from sample applications to running your finished application.",
+          "Cloud Workstations base editor Upload and download files and directories To upload or download files and directories in the Code-OSS Explorer view, use any of the following methods: Drag files over the Explorer view to add it to the workspace."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.workstationClusters.workstationConfigs"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/available-gpus",
+        "https://docs.cloud.google.com/workstations/docs/create-configuration",
+        "https://docs.cloud.google.com/workstations/docs/base-editor-overview"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/available-gpus",
+        "https://docs.cloud.google.com/workstations/docs/create-configuration",
+        "https://docs.cloud.google.com/workstations/docs/base-editor-overview"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/available-gpus",
+        "https://docs.cloud.google.com/workstations/docs/create-configuration",
+        "https://docs.cloud.google.com/workstations/docs/base-editor-overview"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/available-gpus",
+        "https://docs.cloud.google.com/workstations/docs/create-configuration",
+        "https://docs.cloud.google.com/workstations/docs/base-editor-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/available-gpus",
+        "https://docs.cloud.google.com/workstations/docs/create-configuration",
+        "https://docs.cloud.google.com/workstations/docs/base-editor-overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/available-gpus",
+        "https://docs.cloud.google.com/workstations/docs/create-configuration",
+        "https://docs.cloud.google.com/workstations/docs/base-editor-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/available-gpus",
+        "https://docs.cloud.google.com/workstations/docs/create-configuration",
+        "https://docs.cloud.google.com/workstations/docs/base-editor-overview"
+      ]
+    }
+  ]
+}

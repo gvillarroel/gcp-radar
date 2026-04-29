@@ -1,0 +1,141 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "GKE Autopilot partner allowlists",
+  "feature_slug": "gke-autopilot-partner-allowlists",
+  "summary": "This feature lets GKE Autopilot partners create and manage allowlists for specific partner workloads and install them in clusters.",
+  "extended_definition": "This feature lets GKE Autopilot partners create and manage allowlists for specific partner workloads and install them in clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-autopilot-privileged-workloads",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Autopilot partners \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners",
+        "source_id": "site-docs-reference-2",
+        "final_score": 234,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Run privileged partner workloads in Autopilot In GKE version 1.32.2-gke.1652000 and later, some partners provide allowlists that correspond to their privileged workloads.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Resources Send feedback Autopilot partners Stay organized with collections Save and categorize content based on your preferences.",
+          "Pricing Any resources that partner workloads create in your Autopilot clusters are billed according to the Autopilot pricing model ."
+        ]
+      },
+      {
+        "title": "\"About privileged workload admission in Autopilot mode \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-autopilot-privileged-workloads",
+        "source_id": "site-docs-reference-2",
+        "final_score": 184,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The syntax for these paths depends on who created the WorkloadAllowlist, as follows: Specific Autopilot partners and approved open source projects: gke:// REPOSITORY PATH / SELECTOR Replace the following: REPOSITORY PATH : the path to the directory that contains allowlists for the workload, such as Grafana/alloy .",
+          "By default, every Autopilot or Standard cluster in a Google Cloud organization lets you install WorkloadAllowlists for Autopilot partner workloads and for open source workloads.",
+          "By default, the autopilotPrivilegedAdmission constraint allows the use of all allowlists that are owned by approved GKE partners and open source projects."
+        ]
+      },
+      {
+        "title": "GKE Autopilot security measures \\_|\\_ GKE security \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "source_id": "site-iam-reference",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "Autopilot allows privileged containers from verified partners for purposes such as running security and monitoring tooling.",
+          "This information is for Security specialists who want to understand the security constraints that Google applies in Autopilot mode, and the security features that are available for use in Autopilot.",
+          "Security boundaries in Autopilot Autopilot provides access to the Kubernetes API but removes permissions to use some highly privileged Kubernetes features, such as privileged Pods."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "gke.1652000"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-autopilot-privileged-workloads",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-autopilot-privileged-workloads",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-autopilot-privileged-workloads",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-autopilot-privileged-workloads",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-autopilot-privileged-workloads",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-autopilot-privileged-workloads",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-autopilot-privileged-workloads",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    }
+  ]
+}

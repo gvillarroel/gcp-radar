@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.121Z",
+  "source_step08_card": "data/step-08/current/products/google-distributed-cloud-software-only-for-bare-metal/card.json",
+  "product_name": "Google Distributed Cloud (software only) for bare metal",
+  "product_slug": "google-distributed-cloud-software-only-for-bare-metal",
+  "feature_name": "OpenTelemetry-based application metrics pipeline",
+  "feature_slug": "opentelemetry-based-application-metrics-pipeline",
+  "summary": "Application metrics collection now uses a more scalable monitoring pipeline based on OpenTelemetry.",
+  "extended_definition": "Application metrics collection now uses a more scalable monitoring pipeline based on OpenTelemetry.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/application-logging-monitoring",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Enable application logging and monitoring \\_|\\_ Google Distributed Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/application-logging-monitoring",
+        "source_id": "site-docs-reference",
+        "final_score": 133,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Technology areas Google Distributed Cloud GDC for bare metal Guides Send feedback Enable application logging and monitoring Stay organized with collections Save and categorize content based on your preferences.",
+          "To deploy the example application, run the following command: kubectl -n gmp-test apply \\ -f https://raw.githubusercontent.com/GoogleCloudPlatform/prometheus-engine/v0.4.1/examples/example-app.yaml Configure a PodMonitoring resource Configure a PodMonitoring custom resource to capture metrics data emitted by the example application and send it to Google Cloud Managed Service for Prometheus.",
+          "Under spec , set enableCloudLoggingForApplications to true : apiVersion : addons.gke.io/v1alpha1 kind : Stackdriver metadata : name : stackdriver namespace : kube-system spec : projectID : ... clusterName : ... clusterLocation : ... proxyConfigSecretName : ... enableCloudLoggingForApplications : true enableVPC : ... optimizedMetrics : true Save and close the edited file."
+        ]
+      },
+      {
+        "title": "\"Configure logging and monitoring \\_|\\_ Google Distributed Cloud (software\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "source_id": "site-docs-root",
+        "final_score": 131,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "An OpenTelemetry Collector based DaemonSet that scrapes metrics from each node to Cloud Monitoring.",
+          "Additional resources For more information about Google Cloud Managed Service for Prometheus, see the following: Google Cloud Managed Service for Prometheus GKE control plane metrics are PromQL compatible Using Google Cloud Managed Service for Prometheus for user applications on Google Distributed Cloud Log tags Many Google Distributed Cloud logs have an F tag: logtag: \"F\" This tag means that the log entry is complete or full .",
+          "Home Technology areas Google Distributed Cloud GDC for bare metal Guides Send feedback Configure logging and monitoring Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Cluster configuration field reference \\_|\\_ Google Distributed Cloud (software\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "source_id": "site-docs-root",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "In this case, when using Prometheus as a custom metrics provider for horizontal Pod autoscaling, use the following fully qualified domain name (FQDN): http://prometheus.k8s.svc.cluster.local:9090 The FQDN follows standard Kubernetes naming conventions for internal DNS names : prometheus : The name of the Kubernetes Service (the Prometheus application service itself). k8s : The name of the Kubernetes Namespace where the service is running. svc : Indicates that this is a Service resource type within the cluster. cluster.local : The default domain suffix for the Kubernetes cluster internal network.",
+          "Home Technology areas Google Distributed Cloud GDC for bare metal Guides Send feedback Cluster configuration field reference Stay organized with collections Save and categorize content based on your preferences.",
+          "Specifies the adapter configuration for horizontal Pod autoscaling based on custom metrics."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "addons.gke.io",
+      "app.yaml",
+      "baremetal.cluster.gke.io",
+      "cluster.local",
+      "preview.baremetal.cluster.gke.io",
+      "prometheus.k8s.svc.cluster.local",
+      "prometheus.prometheus.svc.cluster.local",
+      "raw.githubusercontent.com",
+      "v0.4.1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/application-logging-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/application-logging-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/application-logging-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/application-logging-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref"
+      ]
+    }
+  ]
+}

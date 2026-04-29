@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:32.041Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search",
+  "feature_name": "Vertex AI Search well-grounded answer filtering",
+  "feature_slug": "vertex-ai-search-well-grounded-answer-filtering",
+  "summary": "Vertex AI Search can return only well-grounded answers using configurable grounding-score filters to suppress poorly grounded responses, with options for stricter or more inclusive answer selection.",
+  "extended_definition": "Vertex AI Search can return only well-grounded answers using configurable grounding-score filters to suppress poorly grounded responses, with options for stricter or more inclusive answer selection.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Get answers and follow-ups \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "source_id": "site-docs-reference",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example command and partial result curl -X POST -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/123456/locations/global/collections/default collection/engines/my-app/servingConfigs/default search:answer\" \\ -d '{ \"query\": { \"text\": \"When can an NCD be made?\"}, \"groundingSpec\": { \"filtering level\": \"FILTERING LEVEL HIGH\" } }' { answer { state: SUCCEEDED answer text: \"We do not have a summary for your query.\" steps { state: SUCCEEDED description: \"Rephrase the query and search.\" actions { search action { query: \"test?\" } observation { search results { document: \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/f7f5cfde02\" uri: \"gs://my-bucket-123/data/CoverageDocumentation.pdf\" title: \"ABC345 0101\" chunk info { content: \"This notice implements part of section 731 of the Medicare Prescription Drug, Improvement, and Modernization Act of 2003 by describing a method of developing, and making available to the public, guidance documents under the Medicare program… \" } ... search results { document: \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/f7f5cfde02\" uri: \"gs://my-bucket-123/data/CoverageDocumentation.pdf\" title: \"ABC345 0101\" chunk info { content: \"For the purposes of this notice, the term guidance documents means documents prepared for our staff, potential requestors of National Coverage Determinations, and other interested parties explaining the NCD process… \" } } } } } answer skipped reasons: LOW GROUNDED CONTENT } In this example, no answer is returned because the high threshold wasn't met.",
+          "Query ( text = \"What is Vertex AI Search?\" ), session = None , # Optional: include previous session ID to continue a conversation query understanding spec = query understanding spec , answer generation spec = answer generation spec , user pseudo id = \"user-pseudo-id\" , # Optional: Add user pseudo-identifier for queries. ) Make the request response = client . answer query ( request ) Handle the response print ( response ) return response Search phase commands: Search and answer with search result options This section shows how to specify options for the search phase portion of the answer method call, options such as setting the maximum number of documents returned, boosting, and filtering, and how to get an answer when you supply your own search results.",
+          "Example command and result curl -X GET -H \"Authorization: Bearer $(gcloud auth print-access-token)\" -H \"Content-Type: application/json\" \"https://discoveryengine.googleapis.com/v1/projects/123456/locations/global/collections/default collection/engines/my-app/sessions?filter=userPseudoId=test user%20AND%20state=IN PROGRESS\" { \"sessions\": [ { \"name\": \"projects/123456/locations/global/collections/default collection/engines/my-app/sessions/16002628354770206943\", \"state\": \"IN PROGRESS\", \"userPseudoId\": \"test user\", \"turns\": [ { \"query\": { \"queryId\": \"projects/123456/locations/global/questions/741830\", \"text\": \"Compare bigquery with spanner database?\" }, \"answer\": \"projects/123456/locations/global/collections/default collection/engines/my-app/sessions/16002628354770206943/answers/4861507376861383072\" } ], \"startTime\": \"2024-09-13T18:47:10.465311Z\", \"endTime\": \"2024-09-13T18:49:41.579151Z\" } ] } Python For more information, see the Vertex AI Search Python API reference documentation ."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: discoveryengine.googleapis.com \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "In this case the filter would look like this: filter --> name:'ANY(\"king kong\")' For more information about filtering including syntax and filter operators, see Filter boostSpec object ( BoostSpec ) Boost specification to boost certain documents in search results which may affect the answer query response.",
+          "Filtering in Vertex AI Search is done by mapping the LHS filter key to a key property defined in the Vertex AI Search backend -- this mapping is defined by the customer in their schema.",
+          "AnswerQueryRequest JSON representation { \"servingConfig\" : string , \"query\" : { object ( Query ) } , \"session\" : string , \"safetySpec\" : { object ( SafetySpec ) } , \"relatedQuestionsSpec\" : { object ( RelatedQuestionsSpec ) } , \"groundingSpec\" : { object ( GroundingSpec ) } , \"answerGenerationSpec\" : { object ( AnswerGenerationSpec ) } , \"searchSpec\" : { object ( SearchSpec ) } , \"queryUnderstandingSpec\" : { object ( QueryUnderstandingSpec ) } , \"asynchronousMode\" : boolean , \"userPseudoId\" : string , \"userLabels\" : { string : string , ... } , \"endUserSpec\" : { object ( EndUserSpec ) } } Fields servingConfig string Required."
+        ]
+      },
+      {
+        "title": "\"Vertex AI APIs for building search and RAG experiences \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis",
+        "source_id": "site-docs-reference",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "Generation Choose the best generation method for your needs: Ground with your data : Generate well-grounded answers to a user's query.",
+          "Use the grounded generation API to generate well-grounded answers to a user's prompt.",
+          "Use the generate content API to generate well-grounded answers to a user's prompt."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.589Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Gmail message header access",
+  "feature_slug": "gmail-message-header-access",
+  "summary": "Apps Script Gmail service adds GmailMessage.getHeader() to retrieve RFC 2822 message headers.",
+  "extended_definition": "Apps Script Gmail service adds GmailMessage.getHeader() to retrieve RFC 2822 message headers.",
+  "lifecycle": {
+    "latest_feature_date": "2019-05-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/advanced/gmail",
+      "https://developers.google.com/apps-script/reference/add-ons-response-service/chat-message",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following methods have been added to the Group , Image , Line , PageElement , Shape , SheetsChart , Table , Video , and WordArt classes: bringForward() bringToFront() sendBackward() sendToBack() setDescription(description) setTitle(title) The Spreadsheet service has been extended with the following new classes and methods that let you add and search for metadata strings attached to rows, columns, sheets, or spreadsheets: DeveloperMetadata DeveloperMetadataFinder DeveloperMetadataLocation DeveloperMetadataLocationType DeveloperMetadataVisibility Range.addDeveloperMetadata(key) Range.addDeveloperMetadata(key, visibility) Range.addDeveloperMetadata(key, value) Range.addDeveloperMetadata(key, value, visibility) Range.createDeveloperMetadataFinder() Range.getDeveloperMetadata() Sheet.addDeveloperMetadata(key) Sheet.addDeveloperMetadata(key, visibility) Sheet.addDeveloperMetadata(key, value) Sheet.addDeveloperMetadata(key, value, visibility) Sheet.createDeveloperMetadataFinder() Sheet.getDeveloperMetadata() Spreadsheet.addDeveloperMetadata(key) Spreadsheet.addDeveloperMetadata(key, visibility) Spreadsheet.addDeveloperMetadata(key, value) Spreadsheet.addDeveloperMetadata(key, value, visibility) Spreadsheet.createDeveloperMetadataFinder() Spreadsheet.getDeveloperMetadata() October 30, 2018 Feature The Spreadsheet service has been extended with the following new classes and methods: OverGridImage Sheet.getImages() Sheet.isColumnHiddenByUser(columnPosition) Sheet.isRowHiddenByFilter(rowPosition) Sheet.isRowHiddenByUser(rowPosition) Spreadsheet.getImages() Spreadsheet.isColumnHiddenByUser(columnPosition) Spreadsheet.isRowHiddenByFilter(rowPosition) Spreadsheet.isRowHiddenByUser(rowPosition) The following methods have been added to existing services: console service console.error() console.info() console.warn() DataStudio service Field.isHidden() Field.setIsHidden() Gmail service GmailAttachment.getHash() GmailMessage.getAttachments(options) Change The following methods in the Spreadsheet service now return an OverGridImage object instead of void: Sheet.insertImage(blobSource, column, row) Sheet.insertImage(blobSource, column, row, offsetX, offsetY) Sheet.insertImage(url, column, row) Sheet.insertImage(url, column, row, offsetX, offsetY) October 18, 2018 Feature The Card service has been extended with the following classes and methods to support Gmail add-on compose actions : CardService.UpdateDraftActionResponse CardService.UpdateDraftActionResponseBuilder CardService.UpdateDraftBodyAction CardService.ContentType CardService.UpdateDraftBodyType CardService.newUpdateDraftActionResponseBuilder() CardService.newUpdateDraftBodyAction() September 27, 2018 Announcement The Data Studio service is now available.",
+          "The Slides service has been extended with the following new methods to support concrete color schemes: ColorScheme.setConcreteColor(type, color) ColorScheme.setConcreteColor(type, red, green, blue) ColorScheme.setConcreteColor(type, hexColor) The Spreadsheet service has been extended with the following new methods to support trimming whitespace and removing duplicate values: RangeList.trimWhitespace() Range.removeDuplicates() Range.removeDuplicates(columnsToCompare) Range.trimWhitespace() May 20, 2019 Feature The Gmail service has been updated with the GmailMessage.getHeader(name) method that can retrieve a RFC 2822 header from a message.",
+          "The gallery also features the following new samples: Build a Google Chat app with an ADK AI agent Build a Chat app with an Agent2Agent agent Analyze and label Gmail messages with Gemini and Vertex AI June 04, 2025 Deprecated Google Analytics 4 has replaced Universal Analytics , which means the Apps Script Advanced Service for Google Analytics Management API and Reporting API is deprecated."
+        ]
+      },
+      {
+        "title": "Class ChatMessage \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/add-ons-response-service/chat-message",
+        "source_id": "site-docs-reference-3",
+        "final_score": 117,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Available for Google Workspace add-ons that extend Google Chat. const card = CardService . newCardBuilder () . setHeader ( CardService . newCardHeader (). setTitle ( \"Card Title\" )) . addSection ( CardService . newCardSection () . addWidget ( CardService . newTextParagraph (). setText ( \"Text paragraph\" ))) . build (); const cardWithId = CardService . newCardWithId (). setCardId ( \"card one\" ). setCard ( card ); const message = AddOnsResponseService . newChatMessage (). addCardWithId ( cardWithId ); Methods Method Return type Brief description add Accessory Widget(accessoryWidget) Chat Message Sets the accessoryWidget for this action. add Card With Id(cardWithId) Chat Message Sets the card of the message. set Text(text) Chat Message Sets the text of the message.",
+          "Return ChatMessage — This object, for chaining. addCardWithId(cardWithId) Sets the card of the message. const card = CardService . newCardBuilder () . setHeader ( CardService . newCardHeader () . setTitle ( \"Card Title\" )) . addSection ( CardService . newCardSection () . addWidget ( CardService . newTextParagraph () . setText ( \"Text paragraph\" ))) . build (); const cardWithId = CardService . newCardWithId () . setCardId ( \"card one\" ) . setCard ( card ); const message = AddOnsResponseService . newChatMessage () . addCardWithId ( cardWithId ); Parameters Name Type Description card With Id Card With Id The cardWithId to set.",
+          "Home Google Workspace Apps Script Reference Send feedback Class ChatMessage Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Advanced Gmail Service \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/advanced/gmail",
+        "source_id": "site-docs-reference",
+        "final_score": 109,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Page Summary outlined flag The Advanced Gmail service allows using the Gmail API in Apps Script to find and modify threads, messages, and labels.",
+          "Much like Apps Script's built-in Gmail service , this API lets scripts find and modify threads, messages, and labels in a Gmail mailbox.",
+          "Messages . list ( userId , options ); const messages = response . messages ; console . log ( \"Unread Messages:\" ); for ( const message of messages ) { console . log ( - Message ID: ${ message . id } ); } } catch ( err ) { // Log any errors to the Apps Script execution log. console . log ( Failed with error: ${ err . message } ); } } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "console.error",
+      "console.info",
+      "console.warn",
+      "developers.google.com",
+      "gmail.gs"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/chat-message",
+        "https://developers.google.com/apps-script/advanced/gmail"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/chat-message",
+        "https://developers.google.com/apps-script/advanced/gmail"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/chat-message",
+        "https://developers.google.com/apps-script/advanced/gmail"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/chat-message",
+        "https://developers.google.com/apps-script/advanced/gmail"
+      ]
+    }
+  ]
+}

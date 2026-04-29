@@ -1,0 +1,197 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:53.295Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Server CA mode update",
+  "feature_slug": "server-ca-mode-update",
+  "summary": "This feature lets you change the server certificate authority mode of an existing Cloud SQL instance.",
+  "extended_definition": "This feature lets you change the server certificate authority mode of an existing Cloud SQL instance.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+      "https://docs.cloud.google.com/sql/docs/mysql/features",
+      "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "source_id": "site-docs-reference-3",
+        "final_score": 159,
+        "relevance": "",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances Request JSON body: { \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"databaseVersion\": \" DATABASE VERSION \", \"settings\": { \"tier\": \" MACHINE TYPE \", \"edition\": \" EDITION TYPE \", \"dataCacheConfig\" { \"dataCacheEnabled\": DATA CACHE ENABLED }, \"backupConfiguration\": { \"binaryLogEnabled\": true, \"enabled\": true }, \"passwordValidationPolicy\": { \"enablePasswordPolicy\": true \"minLength\": \" MIN LENGTH \", \"complexity\": COMPLEXITY DEFAULT, \"reuseInterval\": \" REUSE INTERVAL \", \"disallowUsernameSubstring\": \" DISALLOW USERNAME SUBSTRING \", }, \"ipConfiguration\": { \"privateNetwork\": \" PRIVATE NETWORK \", \"authorizedNetworks\": [ AUTHORIZED NETWORKS ], \"ipv4Enabled\": false, \"enablePrivatePathForGoogleCloudServices\": true, \"serverCaMode\": \" CA MODE \", \"serverCertificateRotationMode\": \" SERVER CERTIFICATE ROTATION MODE \", \"customSubjectAlternativeNames\": \" DNS NAMES \" }, \"dataApiAccess\": \"ALLOW DATA API\" }, \"sqlNetworkArchitecture\": \"NEW NETWORK ARCHITECTURE\" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances Request JSON body: { \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"databaseVersion\": \" DATABASE VERSION \", \"settings\": { \"tier\": \" MACHINE TYPE \", \"edition\": \" EDITION TYPE \", \"dataCacheConfig\": { \"dataCacheEnabled\": DATA CACHE ENABLED }, \"backupConfiguration\": { \"binaryLogEnabled\": true, \"enabled\": true }, \"passwordValidationPolicy\": { \"enablePasswordPolicy\": true \"minLength\": \" MIN LENGTH \", \"complexity\": COMPLEXITY DEFAULT, \"reuseInterval\": \" REUSE INTERVAL \", \"disallowUsernameSubstring\": \" DISALLOW USERNAME SUBSTRING \" }, \"ipConfiguration\": { \"privateNetwork\": \" PRIVATE NETWORK \", \"authorizedNetworks\": [ AUTHORIZED NETWORKS ], \"ipv4Enabled\": false, \"enablePrivatePathForGoogleCloudServices\": true, \"serverCaMode\": \" CA MODE \", \"serverCertificateRotationMode\": \" SERVER CERTIFICATE ROTATION MODE \", \"customSubjectAlternativeNames\": \" DNS NAMES \" }, \"dataApiAccess\": \"ALLOW DATA API\" }, \"sqlNetworkArchitecture\": \"NEW NETWORK ARCHITECTURE\" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Delete the changes To delete your changes, do the following: To disable deletion protection, in your Terraform configuration file set the deletion protection argument to false . deletion protection = \"false\" Apply the updated Terraform configuration by running the following command and entering yes at the prompt: terraform apply Remove resources previously applied with your Terraform configuration by running the following command and entering yes at the prompt: terraform destroy REST v1 Create the instance This example creates an instance."
+        ]
+      },
+      {
+        "title": "Cloud SQL for MySQL features \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "source_id": "site-docs-root",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about the implications of this change on the compatibility between servers, clients, and connectors, see caching sha2 password as the Preferred Authentication Plugin .",
+          "The following features are unsupported for Cloud SQL for MySQL 8.0: FIPS mode Resource groups The following feature is unsupported for Cloud SQL for MySQL 8.4: Tagged GTIDs .",
+          "For more information about tagged GTIDs, see \"MySQL Replication: tagged GTIDs\" in the Features Added or Changed in MySQL 8.4 section of the MySQL 8.4 release notes."
+        ]
+      },
+      {
+        "title": "\"Use the Cloud SQL remote MCP server \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See the following example command: gcloud model-armor floorsettings update \\ --full-uri = 'projects/ PROJECT ID /locations/global/floorSetting' \\ --enable-floor-setting-enforcement = TRUE \\ --add-integrated-services = GOOGLE MCP SERVER \\ --google-mcp-server-enforcement-type = INSPECT AND BLOCK \\ --enable-google-mcp-server-cloud-logging \\ --malicious-uri-filter-settings-enforcement = ENABLED \\ --add-rai-settings-filters = '[{\"confidenceLevel\": \"MEDIUM AND ABOVE\", \"filterType\": \"DANGEROUS\"}]' Replace PROJECT ID with your Google Cloud project ID.",
+          "Disable scanning MCP traffic with Model Armor If you want to stop scanning Google MCP traffic with Model Armor, run the following command: gcloud model-armor floorsettings update \\ --full-uri = 'projects/ PROJECT ID /locations/global/floorSetting' \\ --remove-integrated-services = GOOGLE MCP SERVER Replace PROJECT ID with the Google Cloud project ID.",
+          "Before you begin Required roles To get the permissions that you need to use the Cloud SQL remote MCP server, ask your administrator to grant you the following IAM roles on the project where you want to use the remote Cloud SQL MCP server: Make MCP tool calls in a project: MCP Tool User ( roles/mcp.toolUser ) Create an OAuth client ID: OAuth Config Editor ( roles/oauthconfig.editor ) Create, clone, or update a Cloud SQL instance: Cloud SQL Admin ( roles/cloudsql.admin ) Create or update a Cloud SQL user: Cloud SQL Admin ( roles/cloudsql.admin ) Execute SQL queries in Cloud SQL: Cloud SQL Admin ( roles/cloudsql.admin ) Cloud SQL Studio User ( roles/cloudsql.StudioUser ) Get a Cloud SQL instance or list all Cloud SQL instances in a project: Cloud SQL Viewer ( roles/cloudsql.viewer ) Import data into a Cloud SQL instance: Cloud SQL Admin ( roles/cloudsql.admin ) Storage Admin ( roles/storage.admin ) List Cloud SQL users: Cloud SQL Viewer ( roles/cloudsql.viewer ) For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.admin",
+      "cloudsql.instances.clone",
+      "cloudsql.instances.create",
+      "cloudsql.instances.executeSql",
+      "cloudsql.instances.get",
+      "cloudsql.instances.import",
+      "cloudsql.instances.list",
+      "cloudsql.instances.login",
+      "cloudsql.instances.update",
+      "cloudsql.StudioUser",
+      "cloudsql.users.create",
+      "cloudsql.users.list",
+      "cloudsql.users.update",
+      "cloudsql.viewer",
+      "mcp.tools.call",
+      "mcp.toolUser",
+      "oauthconfig.editor",
+      "sqladmin.googleapis.com",
+      "storage.admin"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudsql.admin",
+      "roles/cloudsql.StudioUser",
+      "roles/cloudsql.viewer",
+      "roles/mcp.toolUser",
+      "roles/oauthconfig.editor",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.119Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "Applied Threat Intelligence insights",
+  "feature_slug": "applied-threat-intelligence-insights",
+  "summary": "Applied Threat Intelligence provides curated insights into associations between indicators, threat actors, campaigns, and malware.",
+  "extended_definition": "Applied Threat Intelligence provides curated insights into associations between indicators, threat actors, campaigns, and malware.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview",
+      "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+      "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Applied Threat Intelligence curated detections overview \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "source_id": "site-docs-reference",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Applied Threat Intelligence curated detections overview Supported in: Google secops SIEM This document provides an overview of the Curated Detection rule sets within the Applied Threat Intelligence Curated Prioritization category, available in Google Security Operations Enterprise Plus.",
+          "Curated detection rule sets The Curated Prioritization category includes the following rule sets that support the Applied Threat Intelligence feature in Google SecOps: Active Breach Priority Network Indicators : Detects network-related Indicators of Compromise (IoCs) in event data using Mandiant Threat Intelligence and prioritizes IoCs with the 'Active breach' label.",
+          "If the network.direction field is not populated in the UDM event, then Applied Threat Intelligence checks the principal.ip and target.ip fields against RFC 1918 internal IP address ranges to determine the network direction."
+        ]
+      },
+      {
+        "title": "\"Google Unified Security \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "source_id": "site-docs-reference-2",
+        "final_score": 206,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Curated Detections & Prioritization : Pre-built detection rules (available in rule packs like \"Applied Threat Intelligence - Curated Prioritization\") contextualize IOC matches using event data and Mandiant intelligence features to generate prioritized alerts (Active Breach, High, Medium, Inbound IP Auth).",
+          "Centralized Investigation: The IOC Matches page serves as the central hub for viewing matched IOCs, filtering results (by Type, Priority, Status, Source: Mandiant, etc.), and drilling down into event details, UDM context, threat intelligence rationale, and associations.",
+          "Getting Started Enable Curated Detections: Activate the Applied Threat Intelligence curated detections rule packs within Google SecOps to enable alerting and prioritization."
+        ]
+      },
+      {
+        "title": "\"Applied Threat Intelligence overview \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To use Applied Threat Intelligence, do the following: Enable the Applied Threat Intelligence curated detections .",
+          "Information about the IoC is displayed, including the following: GCTI priority GTI verdict Associations Campaigns You can also view detailed information about the events that triggered the IoC match, information from the threat intelligence source, and the rationale for the GTI score.",
+          "Google SecOps curated detections evaluate your event data against Mandiant threat intelligence data, and generates an alert when one or more rules identify a match to an IoC with an active breach or high priority."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "network.direction",
+      "principal.ip",
+      "target.ip"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview"
+      ]
+    }
+  ]
+}

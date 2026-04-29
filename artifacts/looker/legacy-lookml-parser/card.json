@@ -1,0 +1,127 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:20.598Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "Legacy LookML parser",
+  "feature_slug": "legacy-lookml-parser",
+  "summary": "The legacy LookML parser can be disabled on customer-hosted Looker 26.4 instances and is fully deprecated in Looker 26.6; deprecated on 2026-03-11.",
+  "extended_definition": "The legacy LookML parser can be disabled on customer-hosted Looker 26.4 instances and is fully deprecated in Looker 26.6; deprecated on 2026-03-11.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-11",
+    "deprecation_date": "2026-03-11",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-support-access"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Admin settings - General settings \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "source_id": "site-docs-reference",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "This setting is enabled by default for all Looker (original) instances except those that are hosted in the EMEA region and those that are enrolled in Looker's Extended Support Release (ESR) program .",
+          "Force mobile authentication When this setting is enabled, users are required to sign in to the Looker mobile app and the Looker (Legacy) app every time they open the app on their mobile device.",
+          "Mobile Application Access When this setting is enabled, users can log in to their Looker account on the instance using the Looker mobile app and the Looker (Legacy) app ."
+        ]
+      },
+      {
+        "title": "Admin settings - Support Access \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-support-access",
+        "source_id": "site-docs-reference",
+        "final_score": 99,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Changes to Support Access Settings tile lists the most recent events when your support access settings were changed, and includes: Whether support access to your Looker instance was enabled, disabled, or extended The name of the user who changed the support access setting, or an explanation for automatic changes (such as expiration of the access timer) The time and date the setting change occurred The Recent Access tile shows information about which Google employees have recently accessed your Looker instance, including: The name of the Google employee who accessed your Looker instance The date that the analyst accessed your instance The purpose for which the analyst accessed your instance (this will be one of the following values): Professional Services support Technical Support Trial Development Support Legacy support access If you are using a Looker (original) instance and the Tiered Support Access Labs feature has been disabled, the Support Access page in the Admin section of Looker behaves differently in the following ways: The maximum duration for support access is 90 days.",
+          "If you have a customer-hosted Looker deployment or a Looker-hosted deployment with an IP allowlist , you must add Looker's secure gateway IP address to your allowlist to enable Looker support to access your Looker application.",
+          "Enabling support access Note: If you are using a Looker (original) instance and the Tiered Support Access Labs feature has been disabled, see the Legacy support access section for steps to enable support access."
+        ]
+      },
+      {
+        "title": "Common LookML patterns \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 85,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following code creates a set customers.detail and points both counts to the same set of fields. view: customers { set: detail { fields: [id, name, city] # creates named set customers.detail } measure: count { type: count drill fields: [detail ] # show fields in the set \"customers.detail\" } measure: in california count { type: count filters: [state: \"California\"] drill fields: [detail ] # show fields in the set \"customers.detail\" } } LookML sets are powerful in the following ways: Redeclaration of sets is additive.",
+          "If the user didn't filter on any of those fields, Looker will automatically add a filter of 1 day on orders.created time . filters: [orders.created time: \"1 day\"] unless: [created date, shipped time, shipped date, orders.id, customer.name] } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "This page describes the following common patterns in LookML: Labeling fields (and names in the UI) Filtering counts by a dimension Percentages Using sets for drill-down details Filtering result sets Labeling fields (and names in the UI) Looker converts LookML field names into the strings that the UI displays by combining the view name in regular-weight font with the field's short name in bold."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "customer.name",
+      "customers.detail",
+      "orders.created",
+      "orders.id"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-support-access",
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-support-access",
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-support-access",
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-support-access",
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-support-access",
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:33.557Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Alias IP Ranges",
+  "feature_slug": "alias-ip-ranges",
+  "summary": "Alias IP Ranges enables assigning additional IP addresses to a VM instance for use by containers running on that VM; Alias IP Ranges allows additional IP addresses to be assigned to a VM instance for use by containers on that VM.",
+  "extended_definition": "Alias IP Ranges enables assigning additional IP addresses to a VM instance for use by containers running on that VM; Alias IP Ranges allows additional IP addresses to be assigned to a VM instance for use by containers on that VM.",
+  "lifecycle": {
+    "latest_feature_date": "2017-09-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/add-dynamic-nics",
+      "https://docs.cloud.google.com/vpc/docs/alias-ip",
+      "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+      "https://docs.cloud.google.com/vpc/docs/quota"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure alias IP ranges \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "source_id": "site-docs-root-2",
+        "final_score": 325,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The first network interface listed, the one in my-subnet1 , is the primary interface: gcloud compute instances create multi-nic-alias-vm \\ --machine-type f1-micro \\ --network-interface \"subnet=my-subnet1,aliases=/32;range1:/24\" \\ --network-interface \"subnet=my-subnet2,aliases=/32;range2:/24\" Use the display command to see the interfaces and their addresses: gcloud compute instances describe multi-nic-alias-vm ... networkInterfaces: - ... aliasIpRanges: - ipCidrRange: 172.16.1.2/32 - ipCidrRange: 10.1.0.0/24 subnetworkRangeName: range1 name: nic0 network: .../networks/my-network1 networkIP: 172.16.1.3 subnetwork: .../subnetworks/my-subnet1 ... - ... aliasIpRanges: - ipCidrRange: 172.16.2.2/32 - ipCidrRange: 10.2.0.0/24 subnetworkRangeName: range2 name: nic1 network: .../networks/my-network2 networkIP: 172.16.2.3 subnetwork: .../subnetworks/my-subnet2 API Create two custom mode VPC networks named my-network1 and my-network2 .",
+          "Alias IP addresses can be added to firewall rules as source or destination ranges.",
+          "Use source ranges to allow or deny ingress traffic from alias IP addresses."
+        ]
+      },
+      {
+        "title": "Alias IP ranges \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "source_id": "site-docs-root-2",
+        "final_score": 295,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure alias IP ranges describes commands for setting up a subnet with secondary ranges and for assigning alias IP addresses to VMs.",
+          "To create the configuration illustrated above: Create a subnet with a CIDR range 10.128.0.0/16, from which VM IP addresses are allocated, and a secondary CIDR range 172.16.0.0/20 for the containers’ exclusive use, which will be configured as alias IP ranges in the VM that is hosting them: gcloud compute networks subnets create subnet-a \\ --network network-a \\ --range 10.128.0.0/16 \\ --secondary-range container-range=172.16.0.0/20 Create VMs with a primary IP from range 10.128.0.0/16 and an alias IP range 172.16.0.0/24 from the secondary CIDR range 172.16.0.0/20 for the containers in that VM to use: gcloud compute instances create vm1 [...] \\ --network-interface subnet=subnet-a,aliases=container-range:172.16.0.0/24 gcloud compute instances create vm2 [...] \\ --network-interface subnet=subnet-a,aliases=container-range:172.16.1.0/24 Container IP addresses are configured in Google Cloud as alias IP addresses.",
+          "Alias IP ranges defined in a VM network interface Using IP aliasing, you can configure multiple internal IP addresses, representing containers or applications hosted in a VM, without having to define a separate network interface."
+        ]
+      },
+      {
+        "title": "\"Add Dynamic Network Interfaces to an instance \\_|\\_ Virtual Private Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/add-dynamic-nics",
+        "source_id": "site-docs-root-2",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Select one of the following options for the IP stack type for the Dynamic NIC: IPv4 (single-stack) IPv4 and IPv6 (dual-stack) IPv6 (single-stack) For Dynamic NICs with IPv4 addresses, do the following: For Primary internal IPv4 address , select one of the following: Ephemeral (Automatic) to automatically assign a new ephemeral IPv4 address Ephemeral (Custom) to manually specify a new ephemeral IPv4 address A reserved static internal IPv4 address from the list Reserve static internal IPv4 address to reserve and assign a new static internal IPv4 address For External IPv4 address , select one of the following: Ephemeral to assign a new ephemeral IPv4 address None to not assign an external IPv4 address A reserved static IPv4 address from the list Reserve static external IP address to reserve and assign a new static external IPv4 address You can optionally assign one or more alias IP ranges to the network interface.",
+          "Select one of the following options for the IP stack type for the Dynamic NIC: IPv4 (single-stack) IPv4 and IPv6 (dual-stack) IPv6 (single-stack) For Dynamic NICs with IPv4 addresses, do the following: For Primary internal IPv4 address , select one of the following: Ephemeral (Automatic) to automatically assign a new ephemeral IPv4 address Ephemeral (Custom) to manually specify a new ephemeral IPv4 address A reserved static internal IPv4 address from the list Reserve static internal IPv4 address to reserve and assign a new static internal IPv4 address For External IPv4 address , select one of the following: Ephemeral to assign a new ephemeral IPv4 address None to not assign an external IPv4 address A reserved static IPv4 address from the list Reserve static external IP address to reserve and assign a new static external IPv4 address You can optionally assign one or more alias IP ranges to the network interface.",
+          "For more information about assigning alias IP ranges to VM network interfaces, see Configure alias IP ranges ."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/quota",
+        "source_id": "site-docs-root",
+        "final_score": 207,
+        "relevance": "",
+        "evidence_snippets": [
+          "Quota name: ALIASES PER NETWORK GLOBAL Available metrics: compute.googleapis.com/quota/ip aliases per vpc network/limit compute.googleapis.com/quota/ip aliases per vpc network/usage compute.googleapis.com/quota/ip aliases per vpc network/exceeded Subnet IP address ranges Subnetwork ranges per VPC network The total number of subnet IP address ranges used by subnets in the VPC network.",
+          "Quota name: INSTANCES PER NETWORK GLOBAL Available metrics: compute.googleapis.com/quota/instances per vpc network/limit compute.googleapis.com/quota/instances per vpc network/usage compute.googleapis.com/quota/instances per vpc network/exceeded IP aliases per VPC network The total number of alias IP ranges used by VM network interfaces (NICs) in the VPC network.",
+          "Static global internal IPv4 addresses The number of static global internal IPv4 address ranges that you can reserve in your project, such as allocated IPv4 address ranges for private services access and IPv4 addresses reserved for Private Service Connect endpoints that are used to access global Google APIs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/add-dynamic-nics",
+        "https://docs.cloud.google.com/vpc/docs/quota"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/add-dynamic-nics",
+        "https://docs.cloud.google.com/vpc/docs/quota"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/add-dynamic-nics",
+        "https://docs.cloud.google.com/vpc/docs/quota"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/add-dynamic-nics",
+        "https://docs.cloud.google.com/vpc/docs/quota"
+      ]
+    }
+  ]
+}

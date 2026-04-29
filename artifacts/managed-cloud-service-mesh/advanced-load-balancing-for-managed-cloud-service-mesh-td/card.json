@@ -1,0 +1,383 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:21.989Z",
+  "source_step08_card": "data/step-08/current/products/managed-cloud-service-mesh/card.json",
+  "product_name": "Managed Cloud Service Mesh",
+  "product_slug": "managed-cloud-service-mesh",
+  "feature_name": "Advanced load balancing for managed Cloud Service Mesh (TD)",
+  "feature_slug": "advanced-load-balancing-for-managed-cloud-service-mesh-td",
+  "summary": "Advanced load balancing for managed Cloud Service Mesh (TD) is available in preview; Advanced load balancing for managed Cloud Service Mesh (TD) is available in preview.",
+  "extended_definition": "Advanced load balancing for managed Cloud Service Mesh (TD) is available in preview; Advanced load balancing for managed Cloud Service Mesh (TD) is available in preview.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh",
+      "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+      "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+      "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/unsupported-istio-apis"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Resolving managed Cloud Service Mesh issues \\_|\\_ Cloud Service Mesh v1.21\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh",
+        "source_id": "site-iam-reference",
+        "final_score": 244,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "NodePool Workload Identity Federation for GKE is disabled The following command displays the state of managed Cloud Service Mesh: gcloud container fleet mesh describe You may see the NODEPOOL WORKLOAD IDENTITY FEDERATION REQUIRED error code in the Conditions field of your membership: membershipStates: projects/test-project/locations/us-central1/memberships/my-membership: servicemesh: conditions: - code: NODEPOOL WORKLOAD IDENTITY FEDERATION REQUIRED details: One or more node pools have workload identity federation disabled. documentationLink: https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity severity: ERROR controlPlaneManagement: details: - code: REVISION FAILED PRECONDITION details: Required in -cluster components are not ready.",
+          "The error can occur if you did not enable Workload Identity on your Kubernetes cluster, which you can do by using the following command: export CLUSTER NAME = ... export PROJECT ID = ... export LOCATION = ... gcloud container clusters update $CLUSTER NAME --zone $LOCATION \\ --workload-pool = $PROJECT ID .svc.id.goog Managed data plane state The following command displays the state of the managed data plane : gcloud container fleet mesh describe --project PROJECT ID The following table lists all possible managed data plane states: State Code Description ACTIVE OK The managed data plane is running normally.",
+          "Filter this message using the following query: resource.type=\"k8s cluster\" resource.labels.project id=[ PROJECT ID ] resource.labels.location=[ REGION ] resource.labels.cluster name=[ CLUSTER NAME ] severity=WARNING jsonPayload.message= \"Internal error occurred: failed calling webhook\" To resolve the issue: Enable the required connectgateway API: gcloud services enable connectgateway.googleapis.com --project =[ PROJECT ID ] Re-install managed Cloud Service Mesh ."
+        ]
+      },
+      {
+        "title": "\"Unsupported Istio APIs in Managed Cloud Service Mesh \\_|\\_ Cloud Service\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/unsupported-istio-apis",
+        "source_id": "site-docs-reference",
+        "final_score": 237,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Table of contents DestinationRule MeshConfig Gateway ProxyConfig ServiceEntry Sidecar Telemetry VirtualService WasmPlugin WorkloadEntry WorkloadGroup DestinationRule API Field DestinationRule subsets.trafficPolicy.portLevelSettings.loadBalancer.localityLbSetting.failoverPriority DestinationRule trafficPolicy.portLevelSettings.loadBalancer.localityLbSetting.distribute.to DestinationRule trafficPolicy.portLevelSettings.loadBalancer.localityLbSetting.distribute.from DestinationRule subsets.trafficPolicy.portLevelSettings.loadBalancer.localityLbSetting.distribute.to.key DestinationRule subsets.trafficPolicy.loadBalancer.localityLbSetting.distribute.from DestinationRule subsets.trafficPolicy.loadBalancer.localityLbSetting.distribute.to.value DestinationRule subsets.trafficPolicy.portLevelSettings.loadBalancer.localityLbSetting.distribute.to.value DestinationRule subsets.trafficPolicy.portLevelSettings.loadBalancer.localityLbSetting.distribute.from DestinationRule trafficPolicy.tunnel.protocol DestinationRule subsets.trafficPolicy.loadBalancer.localityLbSetting.distribute.to.key Gateway API Field Gateway servers.tls.verifyCertificateHash Gateway servers.tls.verifyCertificateSpki MeshConfig API Field MeshConfig ca.tlsSettings.caCertificates MeshConfig ca.tlsSettings.privateKey MeshConfig configSources.tlsSettings.credentialName MeshConfig extensionProviders.envoyTcpAls.logName MeshConfig extensionProviders.envoyTcpAls.service MeshConfig certificates.dnsNames MeshConfig extensionProviders.lightstep.maxTagLength MeshConfig extensionProviders.lightstep.port MeshConfig configSources.tlsSettings.caCertificates MeshConfig extensionProviders.stackdriver.debug MeshConfig extensionProviders.stackdriver.maxTagLength MeshConfig localityLbSetting.distribute.to.value MeshConfig configSources.tlsSettings.insecureSkipVerify MeshConfig extensionProviders.envoyHttpAls.additionalResponseHeadersToLog MeshConfig extensionProviders.envoyHttpAls.additionalResponseTrailersToLog MeshConfig extensionProviders.envoyOtelAls.logFormat.text MeshConfig extensionProviders.skywalking.accessToken MeshConfig proxyListenPort MeshConfig ca.tlsSettings.subjectAltNames MeshConfig ingressService MeshConfig configSources.subscribedResources MeshConfig extensionProviders.envoyHttpAls.filterStateObjectsToLog MeshConfig extensionProviders.envoyHttpAls.service MeshConfig extensionProviders.envoyTcpAls.filterStateObjectsToLog MeshConfig extensionProviders.stackdriver.logging.labels.key MeshConfig extensionProviders.envoyHttpAls.logName MeshConfig extensionProviders.stackdriver.logging.labels.value MeshConfig proxyInboundListenPort MeshConfig ca.tlsSettings.insecureSkipVerify MeshConfig configSources.tlsSettings.privateKey MeshConfig extensionProviders.envoyHttpAls.port MeshConfig extensionProviders.envoyTcpAls.port MeshConfig extensionProviders.stackdriver.maxNumberOfAttributes MeshConfig extensionProviders.stackdriver.maxNumberOfMessageEvents MeshConfig ingressControllerMode MeshConfig ca.tlsSettings.sni MeshConfig certificates.secretName MeshConfig extensionProviders.datadog.maxTagLength MeshConfig extensionProviders.envoyOtelAls.logName MeshConfig extensionProviders.lightstep.accessToken MeshConfig extensionProviders.opencensus.maxTagLength MeshConfig ingressClass MeshConfig ca.tlsSettings.clientCertificate MeshConfig caCertificates.trustDomains MeshConfig extensionProviders.envoyOtelAls.logFormat.labels.fields MeshConfig extensionProviders.stackdriver.maxNumberOfAnnotations MeshConfig ingressSelector MeshConfig caCertificates.certSigners MeshConfig caCertificates.spiffeBundleUrl MeshConfig configSources.tlsSettings.mode MeshConfig configSources.tlsSettings.sni MeshConfig configSources.tlsSettings.subjectAltNames MeshConfig extensionProviders.lightstep.service MeshConfig proxyHttpPort MeshConfig ca.istiodSide MeshConfig ca.tlsSettings.credentialName MeshConfig extensionProviders.skywalking.port MeshConfig extensionProviders.skywalking.service MeshConfig extensionProviders.zipkin.enable64bitTraceId MeshConfig localityLbSetting.distribute.to.key MeshConfig ca.tlsSettings.mode MeshConfig configSources.tlsSettings.clientCertificate MeshConfig extensionProviders.zipkin.maxTagLength MeshConfig extensionProviders.envoyHttpAls.additionalRequestHeadersToLog MeshConfig extensionProviders.opentelemetry.maxTagLength ProxyConfig API Field ProxyConfig envoyAccessLogService.tlsSettings.subjectAltNames ProxyConfig envoyMetricsService.tlsSettings.caCertificates ProxyConfig envoyMetricsService.tlsSettings.privateKey ProxyConfig readinessProbe.httpGet.httpHeaders.value ProxyConfig discoveryAddress ProxyConfig envoyMetricsService.tcpKeepalive.time.nanos ProxyConfig proxyMetadata.TRUST DOMAIN ProxyConfig envoyAccessLogService.tcpKeepalive.time.nanos ProxyConfig envoyMetricsService.address ProxyConfig proxyMetadata.XDS ROOT CA ProxyConfig readinessProbe.tcpSocket.port ProxyConfig statsdUdpAddress ProxyConfig statusPort ProxyConfig envoyAccessLogService.tcpKeepalive.interval.nanos ProxyConfig envoyMetricsService.tlsSettings.sni ProxyConfig readinessProbe.timeoutSeconds ProxyConfig tracing.openCensusAgent.context ProxyConfig tracing.tlsSettings.mode ProxyConfig tracing.tlsSettings.subjectAltNames ProxyConfig envoyAccessLogService.tcpKeepalive.probes ProxyConfig envoyAccessLogService.tlsSettings.clientCertificate ProxyConfig envoyMetricsService.tlsSettings.mode ProxyConfig readinessProbe.httpGet.scheme ProxyConfig tracing.tlsSettings.caCertificates ProxyConfig envoyAccessLogService.tlsSettings.sni ProxyConfig envoyMetricsService.tlsSettings.credentialName ProxyConfig proxyMetadata.HTTP PROXY ProxyConfig readinessProbe.failureThreshold ProxyConfig readinessProbe.httpGet.path ProxyConfig tracing.tlsSettings.insecureSkipVerify ProxyConfig customConfigFile ProxyConfig envoyAccessLogService.tlsSettings.credentialName ProxyConfig proxyMetadata.ISTIO META PROXY XDS VIA AGENT ProxyConfig proxyMetadata.XDS HEADER Cloud-Run-Enable-H2 ProxyConfig readinessProbe.exec.command ProxyConfig readinessProbe.httpGet.httpHeaders.name ProxyConfig readinessProbe.initialDelaySeconds ProxyConfig tracing.lightstep.accessToken ProxyConfig tracing.tlsSettings.privateKey ProxyConfig configPath ProxyConfig envoyAccessLogService.address ProxyConfig envoyAccessLogService.tlsSettings.mode ProxyConfig envoyAccessLogService.tlsSettings.privateKey ProxyConfig envoyMetricsService.tcpKeepalive.interval.seconds ProxyConfig proxyMetadata.PILOT JWT ENABLE REMOTE JWKS ProxyConfig readinessProbe.successThreshold ProxyConfig envoyAccessLogService.tlsSettings.caCertificates ProxyConfig envoyMetricsService.tcpKeepalive.probes ProxyConfig envoyMetricsService.tlsSettings.insecureSkipVerify ProxyConfig privateKeyProvider.qat.pollDelay.nanos ProxyConfig proxyMetadata.CA ROOT CA ProxyConfig proxyMetadata.PROXY CONFIG XDS AGENT ProxyConfig readinessProbe.tcpSocket.host ProxyConfig statNameLength ProxyConfig tracing.tlsSettings.credentialName ProxyConfig tracing.tlsSettings.sni ProxyConfig envoyAccessLogService.tlsSettings.insecureSkipVerify ProxyConfig envoyMetricsService.tlsSettings.clientCertificate ProxyConfig envoyMetricsService.tlsSettings.subjectAltNames ProxyConfig meshId ProxyConfig proxyHeaders.server.value ProxyConfig binaryPath ProxyConfig envoyMetricsService.tcpKeepalive.interval.nanos ProxyConfig privateKeyProvider.cryptomb.pollDelay.nanos ProxyConfig proxyBootstrapTemplatePath ProxyConfig tracing.lightstep.address ProxyConfig tracing.tlsSettings.clientCertificate ProxyConfig controlPlaneAuthPolicy ProxyConfig envoyAccessLogService.tcpKeepalive.interval.seconds ProxyConfig envoyMetricsService.tcpKeepalive.time.seconds ProxyConfig readinessProbe.periodSeconds ProxyConfig serviceCluster ProxyConfig envoyAccessLogService.tcpKeepalive.time.seconds ProxyConfig privateKeyProvider.qat.pollDelay.seconds ProxyConfig proxyMetadata.HTTPS PROXY ProxyConfig proxyMetadata.ISTO META ENABLE NATIVE SIDECARS ProxyConfig readinessProbe.httpGet.host ProxyConfig privateKeyProvider.cryptomb.pollDelay.seconds ProxyConfig proxyMetadata.XDS AUTH PROVIDER ProxyConfig readinessProbe.httpGet.port ServiceEntry API Field ServiceEntry endpoints.network ServiceEntry endpoints.serviceAccount ServiceEntry endpoints.weight Sidecar API Field Sidecar inboundConnectionPool.tcp.maxConnections Sidecar ingress.connectionPool.http.maxRetries Sidecar ingress.tls.cipherSuites Sidecar inboundConnectionPool.http.http2MaxRequests Sidecar ingress.connectionPool.tcp.maxConnectionDuration Sidecar ingress.tls.credentialName Sidecar outboundTrafficPolicy.egressProxy.host Sidecar inboundConnectionPool.tcp.tcpKeepalive.interval Sidecar inboundConnectionPool.tcp.tcpKeepalive.time Sidecar ingress.connectionPool.http.h2UpgradePolicy Sidecar ingress.connectionPool.tcp.maxConnections Sidecar ingress.tls.subjectAltNames Sidecar ingress.tls.verifyCertificateHash Sidecar outboundTrafficPolicy.egressProxy.subset Sidecar ingress.connectionPool.tcp.tcpKeepalive.probes Sidecar ingress.tls.maxProtocolVersion Sidecar ingress.tls.privateKey Sidecar egress.port.targetPort Sidecar ingress.connectionPool.http.http1MaxPendingRequests Sidecar ingress.connectionPool.http.useClientProtocol Sidecar ingress.tls.serverCertificate Sidecar inboundConnectionPool.http.maxRetries Sidecar inboundConnectionPool.tcp.maxConnectionDuration Sidecar ingress.connectionPool.tcp.tcpKeepalive.interval Sidecar inboundConnectionPool.http.http1MaxPendingRequests Sidecar ingress.tls.mode Sidecar outboundTrafficPolicy.egressProxy.port.number Sidecar inboundConnectionPool.tcp.connectTimeout Sidecar ingress.connectionPool.http.idleTimeout Sidecar ingress.connectionPool.http.maxRequestsPerConnection Sidecar inboundConnectionPool.http.idleTimeout Sidecar ingress.connectionPool.tcp.tcpKeepalive.time Sidecar ingress.tls.minProtocolVersion Sidecar inboundConnectionPool.http.h2UpgradePolicy Sidecar inboundConnectionPool.http.useClientProtocol Sidecar ingress.connectionPool.http.http2MaxRequests Sidecar ingress.tls.httpsRedirect Sidecar ingress.tls.verifyCertificateSpki Sidecar inboundConnectionPool.http.maxRequestsPerConnection Sidecar inboundConnectionPool.tcp.tcpKeepalive.probes Sidecar ingress.port.targetPort Sidecar ingress.connectionPool.tcp.connectTimeout Sidecar ingress.tls.caCertificates Telemetry API Field Telemetry metrics.reportingInterval Telemetry metrics.overrides.match.customMetric Telemetry accessLogging.match VirtualService API Field VirtualService http.mirrors.percentage.value VirtualService http.match.statPrefix VirtualService http.corsPolicy.maxAge.nanos VirtualService http.fault.abort.http2Error VirtualService http.fault.delay.exponentialDelay WasmPlugin API Field WasmPlugin ALL UNSUPPORTED WorkloadEntry API Field WorkloadEntry ALL UNSUPPORTED WorkloadGroup API Field WorkloadGroup ALL UNSUPPORTED Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Unsupported Istio APIs in Managed Cloud Service Mesh This page contains a non-exhaustive list of the API fields and their corresponding Istio API that have are unsupported in TRAFFIC DIRECTOR control plane implementation.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "\"Provision a managed Cloud Service Mesh control plane on GKE \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "source_id": "site-docs-reference",
+        "final_score": 233,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To disable the managed data plane at the cluster level and revert back to managing the sidecar proxies yourself, change the annotation: kubectl annotate --overwrite controlplanerevision -n istio-system \\ mesh.cloud.google.com/proxy='{\"managed\":\"false\"}' To disable the managed data plane for a namespace: kubectl annotate --overwrite namespace NAMESPACE \\ mesh.cloud.google.com/proxy='{\"managed\":\"false\"}' To disable the managed data plane for a pod: kubectl annotate --overwrite pod POD NAME \\ mesh.cloud.google.com/proxy='{\"managed\":\"false\"}' Enable maintenance windows for the managed data plane If you have a GKE maintenance window configured, active upgrades will commence at the start of the next available maintenance window and continue without pause until all managed pods have been updated (usually 12 hours).",
+          "Verify the control plane has been provisioned After a few minutes, verify that the control plane status is ACTIVE : gcloud container fleet mesh describe --project FLEET PROJECT ID The output is similar to: ... membershipSpecs : projects / 746296320118 / locations / us - central1 / memberships / demo - cluster - 1 : mesh : management : MANAGEMENT AUTOMATIC membershipStates : projects / 746296320118 / locations / us - central1 / memberships / demo - cluster - 1 : servicemesh : controlPlaneManagement : details : - code : REVISION READY details : ' Ready : asm - managed ' state : ACTIVE implementation : ISTIOD TRAFFIC DIRECTOR dataPlaneManagement : details : - code : OK details : Service is running . state : ACTIVE state : code : OK description : ' Revision ( s ) ready for use : asm - managed . ' ...",
+          "Grant service accounts in the fleet project permission to access the cluster project: gcloud projects add-iam-policy-binding \" CLUSTER PROJECT ID \" \\ --member \"serviceAccount:service- FLEET PROJECT NUMBER @gcp-sa-servicemesh.iam.gserviceaccount.com\" \\ --role roles/anthosservicemesh.serviceAgent Enable the Mesh API on the cluster's project: gcloud services enable mesh.googleapis.com \\ --project = CLUSTER PROJECT ID Configure Certificate Authority Service (Optional) If your service mesh deployment requires Certificate Authority Service (CA Service), then follow Configure Certificate Authority Service for managed Cloud Service Mesh to enable it for your fleet."
+        ]
+      },
+      {
+        "title": "\"Install Cloud Service Mesh for Kubernetes workloads off Google Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "source_id": "site-docs-reference",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Mesh Config Admin roles/meshconfig.admin Fleet and cluster project Provides permissions required to initialize managed components of Cloud Service Mesh, such as managed control plane and backend permission that allows workloads to talk to Stackdriver without each being individually authorized (for both managed and in-cluster control planes).",
+          "Note that for Kubernetes workloads on Google Cloud, we recommend provisioning a managed control plane For instructions to prepare an offline installation of Cloud Service Mesh, see Prepare an offline installation of Cloud Service Mesh You will need to specify the --offline and --output dir options when running asmcli install .",
+          "This page explains how to install unmanaged, in-cluster Cloud Service Mesh for Kubernetes workloads off Google Cloud: Run asmcli to do a new installation of Cloud Service Mesh 1.26.8-asm.3."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "anthosservicemesh.serviceAgent",
+      "asm.3",
+      "ca.istiodSide",
+      "ca.tlsSettings.caCertificates",
+      "ca.tlsSettings.clientCertificate",
+      "ca.tlsSettings.credentialName",
+      "ca.tlsSettings.insecureSkipVerify",
+      "ca.tlsSettings.mode",
+      "ca.tlsSettings.privateKey",
+      "ca.tlsSettings.sni",
+      "ca.tlsSettings.subjectAltNames",
+      "certificates.dnsNames",
+      "certificates.secretName",
+      "connectgateway.googleapis.com",
+      "cryptomb.pollDelay.nanos",
+      "cryptomb.pollDelay.seconds",
+      "datadog.maxTagLength",
+      "distribute.from",
+      "distribute.to",
+      "distribute.to.key",
+      "distribute.to.value",
+      "egress.port.targetPort",
+      "endpoints.network",
+      "endpoints.serviceAccount",
+      "endpoints.weight",
+      "exec.command",
+      "http.corsPolicy.maxAge.nanos",
+      "http.fault.abort.http2Error",
+      "http.fault.delay.exponentialDelay",
+      "http.h2UpgradePolicy",
+      "http.http1MaxPendingRequests",
+      "http.http2MaxRequests",
+      "http.idleTimeout",
+      "http.match.statPrefix",
+      "http.maxRequestsPerConnection",
+      "http.maxRetries",
+      "http.mirrors.percentage.value",
+      "http.useClientProtocol",
+      "ingress.connectionPool.http.h2UpgradePolicy",
+      "ingress.connectionPool.http.http1MaxPendingRequests",
+      "ingress.connectionPool.http.http2MaxRequests",
+      "ingress.connectionPool.http.idleTimeout",
+      "ingress.connectionPool.http.maxRequestsPerConnection",
+      "ingress.connectionPool.http.maxRetries",
+      "ingress.connectionPool.http.useClientProtocol",
+      "ingress.connectionPool.tcp.connectTimeout",
+      "ingress.connectionPool.tcp.maxConnectionDuration",
+      "ingress.connectionPool.tcp.maxConnections",
+      "ingress.connectionPool.tcp.tcpKeepalive.interval",
+      "ingress.connectionPool.tcp.tcpKeepalive.probes",
+      "ingress.connectionPool.tcp.tcpKeepalive.time",
+      "ingress.port.targetPort",
+      "ingress.tls.caCertificates",
+      "ingress.tls.cipherSuites",
+      "ingress.tls.credentialName",
+      "ingress.tls.httpsRedirect",
+      "ingress.tls.maxProtocolVersion",
+      "ingress.tls.minProtocolVersion",
+      "ingress.tls.mode",
+      "ingress.tls.privateKey",
+      "ingress.tls.serverCertificate",
+      "ingress.tls.subjectAltNames",
+      "ingress.tls.verifyCertificateHash",
+      "ingress.tls.verifyCertificateSpki",
+      "interval.nanos",
+      "interval.seconds",
+      "labels.fields",
+      "lightstep.accessToken",
+      "lightstep.maxTagLength",
+      "lightstep.port",
+      "lightstep.service",
+      "mesh.cloud.google.com",
+      "mesh.googleapis.com",
+      "meshconfig.admin",
+      "metrics.overrides.match.customMetric",
+      "metrics.reportingInterval",
+      "names.all",
+      "opencensus.maxTagLength",
+      "opentelemetry.maxTagLength",
+      "policy.yaml",
+      "port.number",
+      "privateca.admin",
+      "qat.pollDelay.nanos",
+      "qat.pollDelay.seconds",
+      "resource.labels.cluster",
+      "resource.labels.location",
+      "resource.labels.project",
+      "resource.type",
+      "san.type",
+      "san.value.startsWith",
+      "server.value",
+      "servers.tls.verifyCertificateHash",
+      "servers.tls.verifyCertificateSpki",
+      "servicemesh.iam.gserviceaccount.com",
+      "serviceusage.serviceUsageAdmin",
+      "skywalking.accessToken",
+      "skywalking.port",
+      "skywalking.service",
+      "stackdriver.debug",
+      "stackdriver.logging.labels.key",
+      "stackdriver.logging.labels.value",
+      "stackdriver.maxNumberOfAnnotations",
+      "stackdriver.maxNumberOfAttributes",
+      "stackdriver.maxNumberOfMessageEvents",
+      "stackdriver.maxTagLength",
+      "subsets.trafficPolicy.loadBalancer.localityLbSetting.distribute.from",
+      "subsets.trafficPolicy.loadBalancer.localityLbSetting.distribute.to.key",
+      "subsets.trafficPolicy.loadBalancer.localityLbSetting.distribute.to.value",
+      "subsets.trafficPolicy.portLevelSettings.loadBalancer.localityLbSetting.distribute.from",
+      "subsets.trafficPolicy.portLevelSettings.loadBalancer.localityLbSetting.distribute.to.key",
+      "subsets.trafficPolicy.portLevelSettings.loadBalancer.localityLbSetting.distribute.to.value",
+      "subsets.trafficPolicy.portLevelSettings.loadBalancer.localityLbSetting.failoverPriority",
+      "svc.id.goog",
+      "tcp.connectTimeout",
+      "tcp.maxConnectionDuration",
+      "tcp.maxConnections",
+      "tcp.tcpKeepalive.interval",
+      "tcp.tcpKeepalive.probes",
+      "tcp.tcpKeepalive.time",
+      "time.nanos",
+      "time.seconds",
+      "tracing.lightstep.accessToken",
+      "tracing.lightstep.address",
+      "tracing.openCensusAgent.context",
+      "tracing.tlsSettings.caCertificates",
+      "tracing.tlsSettings.clientCertificate",
+      "tracing.tlsSettings.credentialName",
+      "tracing.tlsSettings.insecureSkipVerify",
+      "tracing.tlsSettings.mode",
+      "tracing.tlsSettings.privateKey",
+      "tracing.tlsSettings.sni",
+      "tracing.tlsSettings.subjectAltNames",
+      "tunnel.protocol",
+      "v1.20",
+      "v1.21",
+      "v1.26",
+      "zipkin.enable64bitTraceId",
+      "zipkin.maxTagLength"
+    ],
+    "missing_inventory_roles": [
+      "roles/anthosservicemesh.serviceAgent",
+      "roles/meshconfig.admin",
+      "roles/privateca.admin",
+      "roles/serviceusage.serviceUsageAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/unsupported-istio-apis",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/unsupported-istio-apis",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/unsupported-istio-apis",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/unsupported-istio-apis",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/unsupported-istio-apis",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/unsupported-istio-apis",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/unsupported-istio-apis",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/unsupported-istio-apis",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/unsupported-istio-apis",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/unsupported-istio-apis",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/unsupported-istio-apis",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/unsupported-istio-apis",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/unsupported-istio-apis",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/unsupported-istio-apis",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/unsupported-istio-apis",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/unsupported-istio-apis",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh"
+      ]
+    }
+  ]
+}

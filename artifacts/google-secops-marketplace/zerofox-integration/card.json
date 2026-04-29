@@ -1,0 +1,151 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.653Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-marketplace/card.json",
+  "product_name": "Google SecOps Marketplace",
+  "product_slug": "google-secops-marketplace",
+  "feature_name": "Zerofox integration",
+  "feature_slug": "zerofox-integration",
+  "summary": "Adds a new integration with Zerofox.",
+  "extended_definition": "Adds a new integration with Zerofox.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+      "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Response integrations community contribution guidelines \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "source_id": "site-docs-reference",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "Release notes The general structure for the release note should follow the following format: {integration item} - {update} For example: Get Case Details - Added ability to fetch information about affected IOCs Depending on the situation, there are unique release notes for specific scenarios: If it's a new integration: New Integration Added - {integration name} If a new action is added: New Action Added - {action name} If a new connector is added: New Connector Added - {connector name} If a new job is added: New Job Added - {job name} If a predefined widget is added to an action: {action name} - Added Predefined Widget.",
+          "Response integration metadata Name The Name should correspond to the product name with which the integration is going to be integrated and shouldn't contain any special characters.",
+          "All submitted integrations undergo a vetting process by the official Google SecOps team, with a focus on the highlighted requirements within this document."
+        ]
+      },
+      {
+        "title": "\"Integrate Amazon EC2 with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "source_id": "site-docs-root",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before you begin, ensure the integration is installed from the Content Hub within your Google SecOps instance.",
+          "Authorize Security Group Egress Adds the specified egress rule to a security group for use with a VPC.",
+          "When you specify an existing tag key, the value is overwritten with the new value."
+        ]
+      },
+      {
+        "title": "\"Integrate Active Directory with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "To configure the integration with a CA certificate, complete the following steps: To obtain the CA certificate, enter the cat mycert.crt command: bash-3.2# cat mycert.crt -----BEGIN CERTIFICATE----- CERTIFICATE STRING -----END CERTIFICATE----- bash-3.2# To encode the root CA certificate file to the base64 format with the -----BEGIN CERTIFICATE----- and -----END CERTIFICATE----- strings, enter the cat mycert.crt base64 command: bash-3.2# cat mycert.crt base64 BASE64 ENCODED CERTIFICATE STRING bash-3.2# Copy the BASE64 ENCODED CERTIFICATE STRING value and enter it in the CA Certificate File - parsed into Base64 String parameter value field in Google SecOps Active Directory integration configuration .",
+          "Action outputs The Enable Computer action provides the following outputs: Action output type Availability Case wall attachment Not available Case wall link Not available Case wall table Not available Enrichment table Not available JSON result Not available Script result Available Script result The following table lists the value for the script result output when using the Enable Computer action: Script result name Value is success True or False Enrich Entities Use the Enrich Entities action to enrich the Hostname or Username entities with Active Directory properties.",
+          "Use cases The Active Directory integration can help you solve the following use cases: Activate and deactivate users: use Google SecOps capabilities to deactivate a potentially compromised user account and prevent further unauthorized access."
+        ]
+      },
+      {
+        "title": "\"Integrate Akamai with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action outputs The Get Network Lists action provides the following outputs: Action output type Availability Case wall attachment Not available Case wall link Not available Case wall table Not available Enrichment table Not available JSON result Available Script result Available JSON result The following example describes the JSON result output received when using the Get Network Lists action: [ { \"networkListType\" : \"networkListResponse\" , \"accessControlGroup\" : \"KSD\\nwith ION 3-13H1234\" , \"name\" : \"General List\" , \"elementCount\" : 3011 , \"readOnly\" : false , \"shared\" : false , \"syncPoint\" : 22 , \"type\" : \"IP\" , \"uniqueId\" : \"25614 GENERALLIST\" , \"links\" : { \"activateInProduction\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/PRODUCTION/activate\" , \"method\" : \"POST\" }, \"activateInStaging\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/STAGING/activate\" , \"method\" : \"POST\" }, \"appendItems\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST\" , \"method\" : \"POST\" }, \"retrieve\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST\" }, \"statusInProduction\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/PRODUCTION/status\" }, \"statusInStaging\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/STAGING/status\" }, \"update\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST\" , \"method\" : \"PUT\" } }, \"Activation STAGING\" : { \"activationId\" : 12345 , \"activationComments\" : \"Allow IPs of new employees who joined this week\" , \"activationStatus\" : \"PENDING ACTIVATION\" , \"syncPoint\" : 5 , \"uniqueId\" : \"25614 GENERALLIST\" , \"fast\" : false , \"dispatchCount\" : 1 , \"links\" : { \"appendItems\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/append\" , \"method\" : \"POST\" }, \"retrieve\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST\" }, \"statusInProduction\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/environments/PRODUCTION/status\" }, \"statusInStaging\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/environments/STAGING/status\" }, \"syncPointHistory\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/sync-points/5/history\" }, \"update\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST\" , \"method\" : \"PUT\" }, \"activationDetails\" : { \"href\" : \"/network-list/v2/network-lists/activations/12345/\" } } }, \"Activation PRODUCTION\" : { \"activationId\" : 12345 , \"activationComments\" : \"Allow IPs of new employees who joined this week\" , \"activationStatus\" : \"PENDING ACTIVATION\" , \"syncPoint\" : 5 , \"uniqueId\" : \"25614 GENERALLIST\" , \"fast\" : false , \"dispatchCount\" : 1 , \"links\" : { \"appendItems\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/append\" , \"method\" : \"POST\" }, \"retrieve\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST\" }, \"statusInProduction\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/environments/PRODUCTION/status\" }, \"statusInStaging\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/environments/STAGING/status\" }, \"syncPointHistory\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/sync-points/5/history\" }, \"update\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST\" , \"method\" : \"PUT\" }, \"activationDetails\" : { \"href\" : \"/network-list/v2/network-lists/activations/12345/\" } } } } ] Output messages The Get Network Lists action provides the following output messages: Output message Message description Successfully returned network lists from Akamai.",
+          "Action outputs The Remove Items From Network List action provides the following outputs: Action output type Availability Case wall attachment Not available Case wall link Not available Case wall table Not available Enrichment table Not available JSON result Available Script result Available JSON result The following example describes the JSON result output received when using the Remove Items From Network Lists action: { \"networkListType\" : \"networkListResponse\" , \"accessControlGroup\" : \"KSD\\nwith ION 3-13H1234\" , \"name\" : \"General List\" , \"elementCount\" : 3011 , \"readOnly\" : false , \"shared\" : false , \"syncPoint\" : 22 , \"type\" : \"IP\" , \"uniqueId\" : \"25614 GENERALLIST\" , \"links\" : { \"activateInProduction\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/PRODUCTION/activate\" , \"method\" : \"POST\" }, \"activateInStaging\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/STAGING/activate\" , \"method\" : \"POST\" }, \"appendItems\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST\" , \"method\" : \"POST\" }, \"retrieve\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST\" }, \"statusInProduction\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/PRODUCTION/status\" }, \"statusInStaging\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/STAGING/status\" }, \"update\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST\" , \"method\" : \"PUT\" } } } Output messages The Remove Items From Network List action provides the following output messages: Output message Message description Successfully updated network list in Akamai.",
+          "Action outputs The Add Items To Network List action provides the following outputs: Action output type Availability Case wall attachment Not available Case wall link Not available Case wall table Not available Enrichment table Not available JSON result Available Script result Available JSON result The following example describes the JSON result output received when using the Add Items To Network Lists action: { \"networkListType\" : \"networkListResponse\" , \"accessControlGroup\" : \"KSD\\nwith ION 3-13H1234\" , \"name\" : \"General List\" , \"elementCount\" : 3011 , \"readOnly\" : false , \"shared\" : false , \"syncPoint\" : 22 , \"type\" : \"IP\" , \"uniqueId\" : \"25614 GENERALLIST\" , \"links\" : { \"activateInProduction\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/PRODUCTION/activate\" , \"method\" : \"POST\" }, \"activateInStaging\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/STAGING/activate\" , \"method\" : \"POST\" }, \"appendItems\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST\" , \"method\" : \"POST\" }, \"retrieve\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST\" }, \"statusInProduction\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/PRODUCTION/status\" }, \"statusInStaging\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/STAGING/status\" }, \"update\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST\" , \"method\" : \"PUT\" } } } Output messages The Add Items To Network List action provides the following output messages: Output message Message description Successfully updated network list in Akamai."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "mycert.crt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:20.135Z",
+  "source_step08_card": "data/step-08/current/products/immersive-stream-for-xr/card.json",
+  "product_name": "Immersive Stream for XR",
+  "product_slug": "immersive-stream-for-xr",
+  "feature_name": "NVIDIA L4 GPU support",
+  "feature_slug": "nvidia-l4-gpu-support",
+  "summary": "NVIDIA L4 GPUs are supported in selected regions.",
+  "extended_definition": "NVIDIA L4 GPUs are supported in selected regions.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/immersive-stream/xr/docs/audit-logging",
+      "https://docs.cloud.google.com/immersive-stream/xr/docs/locations-and-pricing",
+      "https://docs.cloud.google.com/immersive-stream/xr/docs/quickstart",
+      "https://docs.cloud.google.com/immersive-stream/xr/docs/supported-commands"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Locations and pricing \\_|\\_ Immersive Stream for XR \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/immersive-stream/xr/docs/locations-and-pricing",
+        "source_id": "site-docs-root",
+        "final_score": 172,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "There is an option to use NVIDIA L4 GPUs, which offer higher performance at an increased price.",
+          "L4 GPUs are only available in some regions, and they only support the 3D-only experience mode.",
+          "New instances are created using NVIDIA T4 GPUs by default."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Deploy Immersive Stream for XR experiences \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/immersive-stream/xr/docs/quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 170,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optionally, set a custom fallback URL to send users to when your service instance is stocked out, there is a failed connection, or there are other issues that prevent the experience from continuing. gcloud immersive-stream xr instances create MY INSTANCE \\ --content= MY CONTENT \\ --version= MY-VERSION \\ --add-region=\"region=us-central1,capacity=1\" \\ --add-region=\"region=us-west1,capacity=3 \\ --mode=\"ar\" \\ --gpu-class=\"t4\" \\ --fallback-url=\"https://www.example.com\" \\ --async This is an asynchronous operation.",
+          "Select a mode and GPU class : Select the experience mode supported by the instance.",
+          "If not specified, the instance is created with 3D/AR mode and NVIDIA T4 GPU class."
+        ]
+      },
+      {
+        "title": "Supported commands \\_|\\_ Immersive Stream for XR \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/immersive-stream/xr/docs/supported-commands",
+        "source_id": "site-docs-root",
+        "final_score": 150,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Description Commands Create an Instance that uses NVIDIA L4 GPUs and supports 3D-only mode.",
+          "AR mode won't be supported by this instance. gcloud immersive-stream xr instances create my-instance --content= my-content --version= my-version-tag --add-region=\"region= region1 ,capacity= capacity1 \" --mode=3d --gpu-class=l4 --async Create an Instance that has autoscaling enabled.",
+          "This releases all compute resources reserved for streaming. gcloud immersive-stream xr instances delete my-instance --async Synchronously wait for a long running operation to complete. gcloud immersive-stream xr operations wait operation-id Describe the status of a long running operation. gcloud immersive-stream xr operations describe operation-id List all operations created in the past seven days. gcloud immersive-stream xr operations list Note: The following commands are for features that are not yet publicly available."
+        ]
+      },
+      {
+        "title": "\"Audit logging information for Immersive Stream for XR \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/immersive-stream/xr/docs/audit-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following are the audit log names, including variables for the resource identifiers: projects/ PROJECT ID /logs/cloudaudit.googleapis.com%2Factivity projects/ PROJECT ID /logs/cloudaudit.googleapis.com%2Fdata access projects/ PROJECT ID /logs/cloudaudit.googleapis.com%2Fsystem event projects/ PROJECT ID /logs/cloudaudit.googleapis.com%2Fpolicy folders/ FOLDER ID /logs/cloudaudit.googleapis.com%2Factivity folders/ FOLDER ID /logs/cloudaudit.googleapis.com%2Fdata access folders/ FOLDER ID /logs/cloudaudit.googleapis.com%2Fsystem event folders/ FOLDER ID /logs/cloudaudit.googleapis.com%2Fpolicy billingAccounts/ BILLING ACCOUNT ID /logs/cloudaudit.googleapis.com%2Factivity billingAccounts/ BILLING ACCOUNT ID /logs/cloudaudit.googleapis.com%2Fdata access billingAccounts/ BILLING ACCOUNT ID /logs/cloudaudit.googleapis.com%2Fsystem event billingAccounts/ BILLING ACCOUNT ID /logs/cloudaudit.googleapis.com%2Fpolicy organizations/ ORGANIZATION ID /logs/cloudaudit.googleapis.com%2Factivity organizations/ ORGANIZATION ID /logs/cloudaudit.googleapis.com%2Fdata access organizations/ ORGANIZATION ID /logs/cloudaudit.googleapis.com%2Fsystem event organizations/ ORGANIZATION ID /logs/cloudaudit.googleapis.com%2Fpolicy Note: The part of the log name following /logs/ must be URL-encoded.",
+          "To read your Google Cloud project-level audit log entries, run the following command: gcloud logging read \"logName : projects/ PROJECT ID /logs/cloudaudit.googleapis.com\" \\ --project= PROJECT ID To read your folder-level audit log entries, run the following command: gcloud logging read \"logName : folders/ FOLDER ID /logs/cloudaudit.googleapis.com\" \\ --folder= FOLDER ID To read your organization-level audit log entries, run the following command: gcloud logging read \"logName : organizations/ ORGANIZATION ID /logs/cloudaudit.googleapis.com\" \\ --organization= ORGANIZATION ID To read your Cloud Billing account-level audit log entries, run the following command: gcloud logging read \"logName : billingAccounts/ BILLING ACCOUNT ID /logs/cloudaudit.googleapis.com\" \\ --billing-account= BILLING ACCOUNT ID Add the --freshness flag to your command to read logs that are more than 1 day old.",
+          "For example, to view all the project-level audit logs for Immersive Stream for XR, use the following query, supplying a valid resource identifier in each of the log names: logName = ( \"projects/ PROJECT ID /logs/cloudaudit.googleapis.com%2Factivity\" OR \"projects/ PROJECT ID /logs/cloudaudit.googleapis.com%2Fdata access\" OR \"projects/ PROJECT ID /logs/cloudaudit.googleapis.com%2Fsystem event\" OR \"projects/ PROJECT ID /logs/cloudaudit.googleapis.com%2Fpolicy\" ) protoPayload . serviceName = \"stream.googleapis.com\" Route audit logs You can route audit logs to supported destinations in the same way that you can route other kinds of logs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "stream.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/locations-and-pricing",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/quickstart",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/supported-commands",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/locations-and-pricing",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/quickstart",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/supported-commands",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/locations-and-pricing",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/quickstart",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/supported-commands",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/locations-and-pricing",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/quickstart",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/supported-commands",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/audit-logging"
+      ]
+    }
+  ]
+}

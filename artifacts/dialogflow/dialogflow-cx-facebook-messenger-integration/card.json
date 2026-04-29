@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:06.489Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Dialogflow CX Facebook Messenger integration",
+  "feature_slug": "dialogflow-cx-facebook-messenger-integration",
+  "summary": "Dialogflow CX includes an integration with Facebook Messenger.",
+  "extended_definition": "Dialogflow CX includes an integration with Facebook Messenger.",
+  "lifecycle": {
+    "latest_feature_date": "2021-04-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/call-companion",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/tutorials/deploy/host",
+      "https://docs.cloud.google.com/dialogflow/es/docs/agents-mega"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Mega agents \\_|\\_ Dialogflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-mega",
+        "source_id": "site-iam-reference",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Hangouts Chat, Dialogflow Messenger, Facebook Messenger, and Facebook Workplace integrations each automatically create this special service account.",
+          "If you plan on using any integrations for the mega agent, the automatically created service- project-number @gcp-sa-dialogflow.iam.gserviceaccount.com service account for the mega agent's project must have a role on that project that includes permission to make detect intent calls.",
+          "You can use the Dialogflow Messenger integration as an easy way to do this, or you could setup your desired integration for the mega agent prior to configuring sub-agents."
+        ]
+      },
+      {
+        "title": "Call companion \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/call-companion",
+        "source_id": "site-docs-root",
+        "final_score": 74,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you are using Dialogflow CX Messenger , go to the left-hand navigation menu and click Manage > Integrations > Dialogflow CX Messenger > Manage .",
+          "Settings You can customize the following fields for the Dialogflow CX Messenger UI or call companion UI: Company name or title Font Logo (must be stored in a Google Cloud bucket, format: gs://<bucket name>/<object name> ) Text color (select the color or enter hex code) Background color (select the color or enter hex code) User input background color (select the color or enter hex code) Agent response background color (select the color or enter hex code) Customize the UI Select an agent with call companion enabled and click Agent Settings , then the Multimodal tab.",
+          "Enable call companion: For a new telephony integration: Follow the steps to enable Dialogflow CX Phone Gateway , and check the Enable call companion option for a new conversation profile."
+        ]
+      },
+      {
+        "title": "Host your agent \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/tutorials/deploy/host",
+        "source_id": "site-docs-root",
+        "final_score": 72,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To launch your browser and view your web service, you can open the target URL from the previous step, or run the following command: gcloud app browse Setup Dialogflow Messenger Note: Make sure billing is enabled on your project before testing the integration.",
+          "The Dialogflow Messenger integration is used for an agent user interface.",
+          "To set up unauthenticated access to your Dialogflow CX Messenger agent: Go to the Dialogflow CX console ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dialogflow.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-mega",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/call-companion",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/tutorials/deploy/host"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-mega",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/call-companion",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/tutorials/deploy/host"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-mega",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/call-companion",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/tutorials/deploy/host"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-mega",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/call-companion",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/tutorials/deploy/host"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-mega",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/call-companion",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/tutorials/deploy/host"
+      ]
+    }
+  ]
+}

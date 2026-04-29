@@ -1,0 +1,36 @@
+# Google Ad Manager ad insertion
+
+Product: Video Stitcher API
+Feature slug: `google-ad-manager-ad-insertion`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Video Stitcher API supports inserting ads served by Google Ad Manager into live streams and VOD assets.
+
+## Lifecycle
+
+- Latest feature date: 2023-02-14
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- auth
+- authorization
+- key
+- private
+- token
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceClient](https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceClient)
+- [https://docs.cloud.google.com/video-stitcher/docs/how-to/gam/vod/overview](https://docs.cloud.google.com/video-stitcher/docs/how-to/gam/vod/overview)
+- [https://docs.cloud.google.com/video-stitcher/docs/quickstarts/inserting-ads-into-vod](https://docs.cloud.google.com/video-stitcher/docs/quickstarts/inserting-ads-into-vod)

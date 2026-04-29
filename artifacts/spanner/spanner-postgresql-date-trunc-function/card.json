@@ -1,0 +1,119 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner PostgreSQL date_trunc function",
+  "feature_slug": "spanner-postgresql-date-trunc-function",
+  "summary": "Spanner supports the PostgreSQL date_trunc function in the PostgreSQL dialect.",
+  "extended_definition": "Spanner supports the PostgreSQL date_trunc function in the PostgreSQL dialect.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql",
+      "https://docs.cloud.google.com/spanner/docs/ml-tutorial-embeddings",
+      "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Dialect parity between GoogleSQL and PostgreSQL \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "source_id": "site-docs-reference",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the following example, we use CONCAT as our function F : -- Given the following schema CREATE TABLE singers ( singer id BIGINT PRIMARY KEY, first name VARCHAR(1024), last name VARCHAR(1024), singer info BYTEA ); -- Create a hash for each row (using all columns) WITH hashed rows AS ( SELECT , ABS(MOD(spanner.farm fingerprint( CONCAT( singer id::text, first name, last name, singer info::text ) ), 100)) AS hash value FROM singers ) -- Sample data SELECT FROM hashed rows WHERE hash value < 10 -- sample roughly 10% LIMIT 10; / Optional: LIMIT to a max of 10 rows to be returned / VALUE IN UNNEST(ARRAY(...)) Use the equality operator with the ANY function, as shown in the following example: SELECT value = any(array[...]) GoogleSQL dialect function differences GoogleSQL function PostgreSQL dialect recommendation ACOSH Use the formula of the function explicitly, as shown in the following example: SELECT LN(x + SQRT(x x - 1)); APPROX COSINE DISTANCE No recommendation available.",
+          "Home Documentation Databases Spanner Reference Send feedback Dialect parity between GoogleSQL and PostgreSQL Stay organized with collections Save and categorize content based on your preferences.",
+          "This page describes the dialect differences between GoogleSQL and PostgreSQL and offers recommendations for using PostgreSQL approaches for specific GoogleSQL features."
+        ]
+      },
+      {
+        "title": "Get Vertex AI text embeddings \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/ml-tutorial-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": [
+          "This page describes how to use the Vertex AI text embedding API to generate, store, and update text embeddings for data stored in Spanner for GoogleSQL-dialect databases and PostgreSQL-dialect databases.",
+          "ML PREDICT ROW ( 'projects/ PROJECT /locations/ LOCATION /publishers/google/models/ $MODEL NAME ' , JSONB BUILD OBJECT ( 'instances' , JSONB BUILD ARRAY ( JSONB BUILD OBJECT ( 'content' , @ Description ))) ) - > 'predictions' - > 0 - > 'embeddings' - > 'values' )); Replace the following: PROJECT : the project hosting the Vertex AI endpoint LOCATION : the location of the Vertex AI endpoint MODEL NAME : the name of the Vertex AI text embedding model Update text embeddings To update your embeddings or to ingest data in realtime, use the UPDATE ( GoogleSQL and PostgreSQL ) statement.",
+          "PREDICT ( MODEL MODEL NAME , ( SELECT @ description as content )) ) WHERE id = @ id ; Replace the following: MODEL NAME : the name of the Vertex AI text embedding model PostgreSQL UPDATE Products SET description = $ 1 , embeddings = spanner ."
+        ]
+      },
+      {
+        "title": "\"Commit timestamps in PostgreSQL-dialect databases \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql",
+        "source_id": "site-docs-root",
+        "final_score": 31,
+        "relevance": "",
+        "evidence_snippets": [
+          "This page describes how to write a commit timestamp for each insert and update operation that you perform with Spanner in PostgreSQL-dialect databases.",
+          "Home Documentation Databases Spanner Guides Send feedback Commit timestamps in PostgreSQL-dialect databases Stay organized with collections Save and categorize content based on your preferences.",
+          "COMMIT TIMESTAMP ) . build ()); } dbClient . write ( mutations ); } Node.js // Imports the Google Cloud client library const { Spanner } = require ( ' @google-cloud/spanner ' ); / TODO(developer): Uncomment the following lines before running the sample. / // const projectId = 'my-project-id'; // const instanceId = 'my-instance'; // const databaseId = 'my-database'; // Creates a client const spanner = new Spanner ({ projectId : projectId , }); // Gets a reference to a Cloud Spanner instance and database const instance = spanner . instance ( instanceId ); const database = instance . database ( databaseId ); // Instantiate Spanner table objects const performancesTable = database . table ( 'Performances' ); const data = [ { SingerId : '1' , VenueId : '4' , EventDate : '2017-10-05' , Revenue : '11000' , LastUpdateTime : 'spanner.commit timestamp()' , }, { SingerId : '1' , VenueId : '19' , EventDate : '2017-11-02' , Revenue : '15000' , LastUpdateTime : 'spanner.commit timestamp()' , }, { SingerId : '2' , VenueId : '42' , EventDate : '2017-12-23' , Revenue : '7000' , LastUpdateTime : 'spanner.commit timestamp()' , }, ]; // Inserts rows into the Singers table // Note: Cloud Spanner interprets Node.js numbers as FLOAT64s, so // they must be converted to strings before being inserted as INT64s try { await performancesTable . insert ( data ); console . log ( 'Inserted data.' ); } catch ( err ) { console . error ( 'ERROR:' , err ); } finally { // Close the database when finished database . close (); } PHP use Google\\Cloud\\Spanner\\SpannerClient; / Inserts sample data into a table with a commit timestamp column."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "spanner.commit",
+      "spanner.farm"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/ml-tutorial-embeddings",
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/ml-tutorial-embeddings",
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/ml-tutorial-embeddings",
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql"
+      ]
+    }
+  ]
+}

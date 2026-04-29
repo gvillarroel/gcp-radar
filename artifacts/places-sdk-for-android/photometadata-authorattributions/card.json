@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:25.384Z",
+  "source_step08_card": "data/step-08/current/products/places-sdk-for-android/card.json",
+  "product_name": "Places SDK for Android",
+  "product_slug": "places-sdk-for-android",
+  "feature_name": "PhotoMetadata.authorAttributions",
+  "feature_slug": "photometadata-authorattributions",
+  "summary": "Adds author attributions to PhotoMetadata for place photos.",
+  "extended_definition": "Adds author attributions to PhotoMetadata for place photos.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/places/android-sdk/attributions",
+      "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+      "https://developers.google.com/maps/documentation/places/android-sdk/place-photos",
+      "https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/model/AuthorAttributions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "AuthorAttributions \\_|\\_ Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/model/AuthorAttributions",
+        "source_id": "site-docs-reference",
+        "final_score": 263,
+        "relevance": "",
+        "evidence_snippets": [
+          "AuthorAttributions public abstract class AuthorAttributions implements Parcelable Information about the author(s) for the photo of a Place .",
+          "Inherited Constants From android.os.Parcelable static final int CONTENTS FILE DESCRIPTOR = 1 static final int PARCELABLE STABILITY LOCAL = 0 static final int PARCELABLE STABILITY VINTF = 1 static final int PARCELABLE WRITE RETURN VALUE = 1 Inherited methods From android.os.Parcelable abstract int describeContents () int getStability () abstract void writeToParcel ( Parcel p, int p1) Public constructors AuthorAttributions public AuthorAttributions () Public methods asList public abstract List < AuthorAttribution > asList () The list of AuthorAttribution . newInstance public static AuthorAttributions newInstance ( List < AuthorAttribution > authorAttributions) Creates an AuthorAttributions .",
+          "Summary Public constructors AuthorAttributions () Public methods abstract List < AuthorAttribution > asList () The list of AuthorAttribution . static AuthorAttributions newInstance ( List < AuthorAttribution > authorAttributions) Creates an AuthorAttributions ."
+        ]
+      },
+      {
+        "title": "Place Photos (New) \\_|\\_ Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/place-photos",
+        "source_id": "site-docs-root",
+        "final_score": 260,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "PHOTO METADATAS ); // Get a Place object final FetchPlaceRequest placeRequest = FetchPlaceRequest . newInstance ( placeId , fields ); placesClient . fetchPlace ( placeRequest ). addOnSuccessListener (( response ) -> { final Place place = response . getPlace (); // Get the photo metadata. final List<PhotoMetadata> metadata = place . getPhotoMetadatas (); if ( metadata == null metadata . isEmpty ()) { Log . w ( TAG , \"No photo metadata.\" ); return ; } final PhotoMetadata photoMetadata = metadata . get ( 0 ); // Get the attribution text and author attributions. final String attributions = photoMetadata . getAttributions (); final AuthorAttributions authorAttributions = photoMetadata . getAuthorAttributions (); // Create a FetchResolvedPhotoUriRequest. final FetchResolvedPhotoUriRequest photoRequest = FetchResolvedPhotoUriRequest . builder ( photoMetadata ) . setMaxWidth ( 500 ) . setMaxHeight ( 300 ) . build (); // Request the photo URI placesClient . fetchResolvedPhotoUri ( photoRequest ). addOnSuccessListener (( fetchResolvedPhotoUriResponse ) -> { Uri uri = fetchResolvedPhotoUriResponse . getUri (); RequestOptions requestOptions = new RequestOptions (). override ( Target .",
+          "AuthorAttributions , an AuthorAttributions object accessed by PhotoMetadata.getAuthorAttributions() .",
+          "In the OnSuccessListener for your FetchPlaceResponse , call Place.getPhotoMetadas() to get the photo metadata object of type PhotoMetadata from the response Place object."
+        ]
+      },
+      {
+        "title": "Policies and attributions for Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/attributions",
+        "source_id": "site-docs-root-2",
+        "final_score": 250,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "String attributions = photoMetadata . getAttributions (); To get the author attributions for a photo, call PhotoMetadata.getAuthorAttributions() .",
+          "String reviewAttribution = placeReview . getAttribution (); AuthorAttribution authorAttribution = placeReview . getAuthorAttribution (); // Display the review contents and attributions as necessary. } }). addOnFailureListener (( exception ) - > { if ( exception instanceof ApiException ) { // Handle the error. } }); Displaying third-party attributions Attributions to third-party providers contain content and links in HTML format that you must preserve and display to the user in the format in which they are provided.",
+          "AuthorAttributions authorAttributions = photoMetadata . getAuthorAttributions (); List<AuthorAttribution> authorAttributionList = authorAttributions . asList (); Search results attributions In Europe, when using Google's unadulterated ranking, search products must have explainer text no more than 1 click away that describes the main factors and the weighting of the main factors that determine search results ranking."
+        ]
+      },
+      {
+        "title": "\"Places SDK (Legacy) overview \\_|\\_ Places SDK for Android \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+        "source_id": "site-docs-reference",
+        "final_score": 206,
+        "relevance": "",
+        "evidence_snippets": [
+          "Place Photo (New) adds the AuthorAttributions to the PhotoMetadata class.",
+          "SDK features available in each version The following table shows which SDK and API versions are required for each SDK feature: Feature Places API enabled on API key Initialization method Minimum SDK version Autocomplete (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.5.0 Place Details (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.3.0 Nearby Search (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.5.0 Place Photos (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.4.0 Text Search (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.3.0 Place Autocomplete Places API initialize() (Deprecated) Current Place Places API initialize() (Deprecated) Place Details Places API initialize() (Deprecated) Place Photos Places API initialize() (Deprecated) Deprecated: The Places.initialize method is deprecated.",
+          "New features The Places SDK for Android (New) includes the latest versions of all of the SDK features: Autocomplete (New) Place Details (New) Nearby Search (New) Place Photos (New) Text Search (New) New Text Search service Text Search (New) returns information about a set of places based on a string — for example \"pizza in New York\" or \"shoe stores near Ottawa\" or \"123 Main Street\"."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "android.os.Parcelable",
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/model/AuthorAttributions",
+        "https://developers.google.com/maps/documentation/places/android-sdk/place-photos",
+        "https://developers.google.com/maps/documentation/places/android-sdk/attributions",
+        "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/model/AuthorAttributions",
+        "https://developers.google.com/maps/documentation/places/android-sdk/place-photos",
+        "https://developers.google.com/maps/documentation/places/android-sdk/attributions",
+        "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/model/AuthorAttributions",
+        "https://developers.google.com/maps/documentation/places/android-sdk/place-photos",
+        "https://developers.google.com/maps/documentation/places/android-sdk/attributions",
+        "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/model/AuthorAttributions",
+        "https://developers.google.com/maps/documentation/places/android-sdk/place-photos",
+        "https://developers.google.com/maps/documentation/places/android-sdk/attributions",
+        "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy"
+      ]
+    }
+  ]
+}

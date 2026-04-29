@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:40.868Z",
+  "source_step08_card": "data/step-08/current/products/access-context-manager/card.json",
+  "product_name": "Access Context Manager",
+  "product_slug": "access-context-manager",
+  "feature_name": "Access level Regions attribute",
+  "feature_slug": "access-level-regions-attribute",
+  "summary": "The Regions access-level attribute became available in Access Context Manager.",
+  "extended_definition": "The Regions access-level attribute became available in Access Context Manager.",
+  "lifecycle": {
+    "latest_feature_date": "2019-03-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+      "https://docs.cloud.google.com/access-context-manager/docs/create-access-level",
+      "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access level attributes \\_|\\_ Access Context Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "source_id": "site-api-reference",
+        "final_score": 127,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This attribute can only be included in conditions when creating or modifying an access level using the gcloud command-line tool or the Access Context Manager API.",
+          "You can include the following attributes in your access level: IP subnetworks Geographic locations Access level dependencies Principals Device policy Attributes IP subnetworks Description Checks whether a request is coming from one or more IPv4 and/or IPv6 CIDR blocks that you specify.",
+          "Home Documentation Security Access Context Manager Reference Send feedback Access level attributes Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Custom access level specification \\_|\\_ Access Context Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "source_id": "site-api-reference",
+        "final_score": 112,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Objects origin Contains attributes that identify the origin of the request. request.auth Contains attributes that identify authentication and authorization aspects of the request. request.time Contains time-based attributes that you can use to restrict access to resources based on the time of day, day of the week, or a specific date range. levels Contains attributes to define dependency on other access levels. device Contains attributes that describe the device the request originated from. origin attributes This section lists the attributes supported by the origin object.",
+          "Example: // Checks if the enterprise certificate associated with the origin matches the device. device.certificates.exists ( cert , cert.is valid && cert.cert fingerprint == origin.clientCertFingerprint ()) Macros for CEL expressions You can use the following macros in the CEL expressions for custom access levels: Macro Description has(e.f) Tests whether a field is available.",
+          "Example: levels. allow corp ips Where allow corp ips is the name of an access level. device attribute This section lists the attributes supported by the device object."
+        ]
+      },
+      {
+        "title": "\"Creating a basic access level \\_|\\_ Access Context Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/create-access-level",
+        "source_id": "site-api-reference",
+        "final_score": 96,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following criteria can be checked when determining whether to grant access: Screen lock is enabled Storage encryption is enabled Device is running a specified operating system kind and version Important: You must have a paid subscription to use device attributes in custom access level expressions.",
+          "Limit access by device attributes This example describes how to create an access level that grants access only to devices, which meet a specified set of requirements, like a certain operating system (OS) version.",
+          "See the following examples: Limit access on a corporate network Limit access by device attributes Grant access by user or service account Before you begin Learn about access levels ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cert.cert",
+      "cert.is",
+      "device.certificates.exists",
+      "e.f",
+      "origin.clientCertFingerprint",
+      "request.auth",
+      "request.time"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "https://docs.cloud.google.com/access-context-manager/docs/create-access-level"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "https://docs.cloud.google.com/access-context-manager/docs/create-access-level"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "https://docs.cloud.google.com/access-context-manager/docs/create-access-level"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "https://docs.cloud.google.com/access-context-manager/docs/create-access-level"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "https://docs.cloud.google.com/access-context-manager/docs/create-access-level"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "https://docs.cloud.google.com/access-context-manager/docs/create-access-level"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "https://docs.cloud.google.com/access-context-manager/docs/create-access-level"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "https://docs.cloud.google.com/access-context-manager/docs/create-access-level"
+      ]
+    }
+  ]
+}

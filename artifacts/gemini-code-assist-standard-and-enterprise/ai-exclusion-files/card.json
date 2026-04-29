@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:11.742Z",
+  "source_step08_card": "data/step-08/current/products/gemini-code-assist-standard-and-enterprise/card.json",
+  "product_name": "Gemini Code Assist Standard and Enterprise",
+  "product_slug": "gemini-code-assist-standard-and-enterprise",
+  "feature_name": "AI exclusion files",
+  "feature_slug": "ai-exclusion-files",
+  "summary": "Lets you configure .aiexclude and .gitignore files to exclude files from local context in VS Code Gemini Code Assist.",
+  "extended_definition": "Lets you configure .aiexclude and .gitignore files to exclude files from local context in VS Code Gemini Code Assist.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/create-aiexclude-file",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Exclude files from Gemini Code Assist use \\_|\\_ Gemini for Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/create-aiexclude-file",
+        "source_id": "site-docs-reference",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure context exclusion settings This section shows you how to configure settings for .aiexclude and .gitignore files.",
+          "Examples The following examples demonstrate how you can configure an .aiexclude file: Block all files named apikeys.txt at or below the directory that contains the .aiexclude file: apikeys.txt Block all files with the .key file extension at or below the directory that contains the .aiexclude file: .key Block only the apikeys.txt file at the same directory as the .aiexclude file, but not any subdirectories: /apikeys.txt Block all files in the directory my/sensitive/dir and all subdirectories.",
+          "The path should be relative to the directory that contains the .aiexclude file. my/sensitive/dir/ Blocks all the files in directory foo and its subdirectories except file named bar.txt in the foo directory. foo/ !foo/bar.txt Control access to index for code customization By default, code customization indexes all the supported code files in your specified repositories."
+        ]
+      },
+      {
+        "title": "\"Chat with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "source_id": "site-docs-reference",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "Connectivity issues in the Gemini Code Assist output window If you see a connection error or other connectivity problems in the Gemini Code Assist output window, try the following: Configure your firewall to allow access to oauth2.googleapis.com and cloudaicompanion.googleapis.com .",
+          "To manage the files and folders in your Context Drawer, perform the following tasks: VS Code Note: Chats created with Gemini Code Assist for VS Code, prior to version 2.34.0 , won't retain and display the saved context in the Context Drawer.",
+          "Exclude files from local context If files are specified in a .aiexclude or .gitignore file, Gemini Code Assist by default excludes them from local use in the context for code completion, code generation, code transformation, and chat."
+        ]
+      },
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "Connectivity issues in the Gemini Code Assist output window If you see a connection error or other connectivity problems in the Gemini Code Assist output window, try the following: Configure your firewall to allow access to oauth2.googleapis.com and cloudaicompanion.googleapis.com .",
+          "Exclude files from local context If files are specified in a .aiexclude or .gitignore file, Gemini Code Assist by default excludes them from local use in the context for code completion, code generation, code transformation, and chat.",
+          "This document describes how you can use Gemini Code Assist , an AI-powered collaborator in your IDE, to help you do the following in VS Code or IntelliJ and other supported JetBrains IDEs : Generate code for your project with code transformation."
+        ]
+      },
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "Connectivity issues in the Gemini Code Assist output window If you see a connection error or other connectivity problems in the Gemini Code Assist output window, try the following: Configure your firewall to allow access to oauth2.googleapis.com and cloudaicompanion.googleapis.com .",
+          "Exclude files from local context If files are specified in a .aiexclude or .gitignore file, Gemini Code Assist by default excludes them from local use in the context for code completion, code generation, code transformation, and chat.",
+          "This document describes how you can use Gemini Code Assist , an AI-powered collaborator in your IDE, to help you do the following in VS Code or IntelliJ and other supported JetBrains IDEs : Generate code for your project with code transformation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apikeys.txt",
+      "bar.txt",
+      "cloudaicompanion.googleapis.com",
+      "oauth2.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/create-aiexclude-file",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/create-aiexclude-file",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/create-aiexclude-file",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/create-aiexclude-file",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/create-aiexclude-file",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/create-aiexclude-file",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+      ]
+    }
+  ]
+}

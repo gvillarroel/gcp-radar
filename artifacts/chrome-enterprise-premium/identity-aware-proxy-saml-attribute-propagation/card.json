@@ -1,0 +1,146 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:46.245Z",
+  "source_step08_card": "data/step-08/current/products/chrome-enterprise-premium/card.json",
+  "product_name": "Chrome Enterprise Premium",
+  "product_slug": "chrome-enterprise-premium",
+  "feature_name": "Identity-Aware Proxy SAML attribute propagation",
+  "feature_slug": "identity-aware-proxy-saml-attribute-propagation",
+  "summary": "IAP SAML attribute propagation enables SAML attributes to be passed through Identity-Aware Proxy authentication flows.",
+  "extended_definition": "IAP SAML attribute propagation enables SAML attributes to be passed through Identity-Aware Proxy authentication flows.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/access-protection",
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/apply-resources",
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Chrome Enterprise Premium access protection overview \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/access-protection",
+        "source_id": "site-iam-reference",
+        "final_score": 88,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Chrome Enterprise Premium works by leveraging four Google Cloud offerings: Identity-Aware Proxy (IAP) : A service that enables employees to access corporate apps and resources from untrusted networks without the use of a VPN.",
+          "Access levels restrict access based on the following attributes: IP subnetworks Regions Principals Device policy When you create a device-based access level, Access Context Manager references the inventory of devices created by Endpoint Verification.",
+          "When to use Chrome Enterprise Premium Use Chrome Enterprise Premium when you want to establish fine-grained access control based on a wide range of attributes and conditions including what device is being used and from what IP address."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Apply Chrome Enterprise Premium to cloud resources \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/apply-resources",
+        "source_id": "site-iam-reference",
+        "final_score": 88,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Securing your apps and resources with IAP Identity-Aware Proxy (IAP) establishes a central identity awareness layer for apps and resources accessed by HTTPS and TCP.",
+          "Before you begin Before you make your apps and resources context-aware, you'll need to: If you don't already have Cloud Identity user accounts in your organization, create a few Cloud Identity accounts .",
+          "What's next Learn how to view Context-Aware Access logs in Cloud Audit Logs Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Secure non-Google Cloud applications using the app connector \\_|\\_ Chrome\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector",
+        "source_id": "site-iam-reference",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enabling Identity-Aware Proxy Follow the Identity-Aware Proxy (IAP) documentation for setting up Identity-Aware Proxy .",
+          "Overview You can use the Chrome Enterprise Premium app connector to provide identity and Context-Aware Access to HTTPS applications running in non-Google Cloud environments.",
+          "Create an NEG based backend service and connect it to a Private Service Connect service attachment by running the following commands: gcurl https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/backendServices \\ -d \"{ \\ 'name': '${LB PREFIX}-backend-service', \\ 'service protocol': 'HTTPS', \\ 'port name': 'https', \\ 'load balancing scheme': 'EXTERNAL MANAGED' \\ }\" gcurl -X PATCH https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/backendServices/${LB PREFIX}-backend-service \\ -d \"{ \\ 'backends': \\ [{ \\ 'group': 'https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/regions/${REGION}/networkEndpointGroups/${LB PREFIX}-neg' \\ }] \\ }\" Create a Google managed certificate for your domain by running the following commands: gcurl https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/addresses \\ -d \"{ \\ 'name': '${LB PREFIX}-static-ip', \\ 'ip version': 'IPV4' \\ }\" gcurl https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/sslCertificates \\ -d \"{ \\ 'name': '${LB PREFIX}-ssl-cert', \\ 'managed': \\ { \\ 'domains': '${DOMAIN NAME}' \\ }, \\ 'type': 'MANAGED' \\ }\" LB IP=$(gcurl https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/addresses/${LB PREFIX}-static-ip jq -r '.address') Create an external Application Load Balancer based on the backend from the previous step by running the following commands: gcurl https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/urlMaps \\ -d \"{ \\ 'name': '${LB PREFIX}-map-https', \\ 'default service': 'https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/backendServices/${LB PREFIX}-backend-service' \\ }\" gcurl https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/targetHttpsProxies \\ -d \"{ \\ 'name': '${LB PREFIX}-https-lb-proxy', \\ 'url map': 'https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/urlMaps/${LB PREFIX}-map-https', \\ 'ssl certificate': 'https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/sslCertificates/${LB PREFIX}-ssl-cert' \\ }\" gcurl https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/forwardingRules \\ -d \"{ \\ 'name': '${LB PREFIX}-https-lb-forwarding-rule', \\ target: 'https://www.googleapis.com/compute/v1/projects/${PROJECT NUMBER}/global/targetHttpsProxies/${LB PREFIX}-https-lb-proxy', \\ 'ip address': '${LB IP}', \\ 'port range': '443-443', \\ 'load balancing scheme': 'EXTERNAL MANAGED' \\ }\" After the external Application Load Balancer is created, your application is accessible over the internet by that IP address."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/access-protection",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/apply-resources",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/access-protection",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/apply-resources",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/access-protection",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/apply-resources",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/access-protection",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/apply-resources",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/access-protection",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/apply-resources",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/access-protection",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/apply-resources",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/access-protection",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/apply-resources",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/access-protection",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/apply-resources",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector"
+      ]
+    }
+  ]
+}

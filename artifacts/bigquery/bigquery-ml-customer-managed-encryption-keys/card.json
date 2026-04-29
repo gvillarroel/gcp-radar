@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery ML customer-managed encryption keys",
+  "feature_slug": "bigquery-ml-customer-managed-encryption-keys",
+  "summary": "BigQuery ML supports customer-managed Cloud KMS keys to encrypt ML models.",
+  "extended_definition": "BigQuery ML supports customer-managed Cloud KMS keys to encrypt ML models.",
+  "lifecycle": {
+    "latest_feature_date": "2019-11-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/aead-encryption-concepts",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Copy a table with customer-managed encryption keys (CMEK) \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics BigQuery Samples Copy a table with customer-managed encryption keys (CMEK) Stay organized with collections Save and categorize content based on your preferences.",
+          "For more information, see Set up authentication for client libraries . import ( \"context\" \"fmt\" \"cloud.google.com/go/bigquery\" ) // copyTableWithCMEK demonstrates creating a copy of a table and ensuring the copied data is // protected with a customer managed encryption key. func copyTableWithCMEK ( projectID , datasetID , tableID string ) error { // projectID := \"my-project-id\" // datasetID := \"mydataset\" // tableID := \"mytable\" ctx := context .",
+          "Explore further For detailed documentation that includes this code sample, see the following: Customer-managed Cloud KMS keys Code sample Go Before trying this sample, follow the Go setup instructions in the BigQuery quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "AEAD encryption concepts \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/aead-encryption-concepts",
+        "source_id": "site-docs-reference-2",
+        "final_score": 158,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BigQuery also provides support for customer managed encryption keys (CMEKs), which lets you encrypt tables using specific encryption keys.",
+          "The KEK is a symmetric encryption keyset that is stored securely in the Cloud Key Management Service and managed using Cloud KMS permissions and roles .",
+          "Cloud KMS keys GoogleSQL supports AEAD encryption functions with Cloud KMS keys to further secure your data."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "BigQuery only supports unenforced primary keys. foreign key : An expression that defines a foreign key table constraint .",
+          "For more information, see Customer-managed Cloud KMS keys .",
+          "For more information, see Customer-managed Cloud KMS keys ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/aead-encryption-concepts",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/aead-encryption-concepts",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/aead-encryption-concepts",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/aead-encryption-concepts",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/aead-encryption-concepts",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/aead-encryption-concepts",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/aead-encryption-concepts",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    }
+  ]
+}

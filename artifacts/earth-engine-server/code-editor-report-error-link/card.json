@@ -1,0 +1,107 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:09.652Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server",
+  "feature_name": "Code Editor Report error link",
+  "feature_slug": "code-editor-report-error-link",
+  "summary": "Adds a Report error link to Code Editor errors to make feedback submission easier.",
+  "extended_definition": "Adds a Report error link to Code Editor errors to make feedback submission easier.",
+  "lifecycle": {
+    "latest_feature_date": "2020-11-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/debugging",
+      "https://developers.google.com/earth-engine/guides/playground",
+      "https://developers.google.com/earth-engine/help"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Debugging guide \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/debugging",
+        "source_id": "site-docs-root",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you get this error, click the \"Report error\" link which appears in the JavaScript Code Editor console.",
+          "In the second case, adding nonsense to the map, the cryptic g.eeObject.name is not a function error is displayed in the JavaScript Code Editor because the object being added to the map, nonsense , is a string, not an EE object (in Python a TypeError is thrown).",
+          "Debugging can be challenging because errors can occur either in the client-side code or the server-side execution of the coded instructions, and result from scaling problems as well as syntactic or logical errors."
+        ]
+      },
+      {
+        "title": "Get help \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/help",
+        "source_id": "site-docs-root",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Report a bug What kind of bug did you find? (click links to learn more or expand for examples) An API bug : script errors or incorrect results Unexpected or incorrect function result Unfamiliar error Internal error messages Errors not resolved by common debugging methods An unchanged, working script from some time ago, now does NOT work API documentation is missing critical information Issues regarding Data Catalog assets A Code Editor interface bug : UI display and functionality issues Scripts not loading Buttons not working Strange layout Missing page elements Map interaction not working Data Catalog search not working A dataset bug Missing assets Projection issues Unclear dataset descriptions Don't expect any response to bug reports .",
+          "Here is my code; inspect the histogram table to see the results. // Define an image. var img = ee.Image('LANDSAT/LC08/C02/T1 TOA/LC08 038029 20180810'); // Define an area of interest. var aoi = ee.Geometry.Rectangle(-110.5, 44.6, -110.1, 44.8); // Calculate a histogram for the pixels in the API. var reflHistDict = img.select('B[1-7]').multiply(1e4).reduceRegion({ reducer: ee.Reducer.fixedHistogram(0, 5000, 250), geometry: aoi, scale: 30 }); // A dictionary was returned, get the ee.Array results for SWIR1 band. var swir1HistArray = ee.Array(reflHistDict.get('B6')); print(swir1HistArray); Code Editor script Make the code in your question reproducible .",
+          "Change in script behavior or output Earth Engine API code, architecture, and policies can change, resulting in different behavior or errors that appear now but did not some time ago for the same script."
+        ]
+      },
+      {
+        "title": "Earth Engine Code Editor \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/playground",
+        "source_id": "site-docs-root",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JavaScript editor The JavaScript editor will: Format and highlight code as you type Underline code with problems, offer fixes and other hints for correct syntax Autocomplete pairs of quotes, brackets and parentheses Offer code completion hints for Earth Engine functions Above the code editor are buttons for running the script, saving the script, resetting the output map and console, and getting a link to the script.",
+          "Click the help button in the upper right of the Code Editor to see links to this Developer's Guide, other help forums, a guided tour of the Code Editor and a list of keyboard shortcuts that help with coding, running code, and displaying data on the Map .",
+          "When the URL is visited by someone with an Earth Engine account, the browser will navigate to the Code Editor and replicate the environment as it was when the link was created, including code, imports, map layers, and map position."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "ee.Array",
+      "ee.Geometry.Rectangle",
+      "ee.Image",
+      "ee.Reducer.fixedHistogram",
+      "g.eeObject.name",
+      "img.select",
+      "links.zip"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/help",
+        "https://developers.google.com/earth-engine/guides/debugging",
+        "https://developers.google.com/earth-engine/guides/playground"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/help",
+        "https://developers.google.com/earth-engine/guides/debugging",
+        "https://developers.google.com/earth-engine/guides/playground"
+      ]
+    }
+  ]
+}

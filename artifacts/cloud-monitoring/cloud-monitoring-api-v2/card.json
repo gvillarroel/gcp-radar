@@ -1,0 +1,99 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:50.221Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring",
+  "feature_name": "Cloud Monitoring API v2",
+  "feature_slug": "cloud-monitoring-api-v2",
+  "summary": "Cloud Monitoring API v2 was deprecated and later turned down; deprecated on 2017-08.",
+  "extended_definition": "Cloud Monitoring API v2 was deprecated and later turned down; deprecated on 2017-08.",
+  "lifecycle": {
+    "latest_feature_date": "2017-11-05",
+    "deprecation_date": "2017-08",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.query.Query",
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceClient",
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.notification_channel_service.NotificationChannelServiceClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class NotificationChannelServiceClient (2.30.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.notification_channel_service.NotificationChannelServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 59,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "There is no guarantee that the verification codes returned by this method will be of a similar structure or form as the ones that are delivered to the channel via SendNotificationChannelVerificationCode; while VerifyNotificationChannel() will recognize both the codes delivered via SendNotificationChannelVerificationCode() and returned from GetNotificationChannelVerificationCode(), it is typically the case that the verification codes delivered via SendNotificationChannelVerificationCode() will be shorter and also have a shorter expiration (e.g. codes such as \"G-123456\") whereas GetVerificationCode() will typically return a much longer, websafe base 64 encoded string that has a longer expiration time.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-03-31 UTC.\"],[],[]]",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import monitoring v3 def sample send notification channel verification code(): Create a client client = monitoring v3 ."
+        ]
+      },
+      {
+        "title": "Class Query (2.30.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.query.Query",
+        "source_id": "site-python-reference",
+        "final_score": 59,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-03-31 UTC.\"],[],[]]",
+          "For example, you could request an aggregated time series for each combination of project and zone as follows:: from google.cloud import monitoring query = query . reduce (monitoring.Aggregation.Reducer.REDUCE MEAN, 'resource.project id', 'resource.zone') Parameters Name Description cross series reducer str or Reducer The approach to be used to combine time series.",
+          "Example:: from google.cloud import monitoring query = query . align ( monitoring.Aggregation.Aligner.ALIGN MEAN, minutes=5) It is also possible to specify the aligner as a literal string:: query = query.align('ALIGN MEAN', minutes=5) Parameters Name Description per series aligner str or Aligner The approach to be used to align individual time series."
+        ]
+      },
+      {
+        "title": "\"Class MetricServiceClient (2.30.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 55,
+        "relevance": "",
+        "evidence_snippets": [
+          "A monitoring filter https://cloud.google.com/monitoring/api/v3/filters that specifies which time series should be returned.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-03-31 UTC.\"],[],[]]",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import monitoring v3 def sample list monitored resource descriptors(): Create a client client = monitoring v3 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g",
+      "googleapis.dev",
+      "monitoring.Aggregation.Aligner.ALIGN",
+      "monitoring.Aggregation.Reducer.REDUCE",
+      "options.html",
+      "query.align",
+      "resource.project",
+      "resource.zone"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.notification_channel_service.NotificationChannelServiceClient",
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.query.Query",
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceClient"
+      ]
+    }
+  ]
+}

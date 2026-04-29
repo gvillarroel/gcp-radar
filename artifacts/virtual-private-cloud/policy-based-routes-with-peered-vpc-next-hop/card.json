@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:33.557Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Policy-based routes with peered VPC next hop",
+  "feature_slug": "policy-based-routes-with-peered-vpc-next-hop",
+  "summary": "Policy-based routes can now use a next hop that exists in a peered VPC network.",
+  "extended_definition": "Policy-based routes can now use a next hop that exists in a peered VPC network.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks",
+      "https://docs.cloud.google.com/vpc/docs/routes",
+      "https://docs.cloud.google.com/vpc/docs/vpc",
+      "https://docs.cloud.google.com/vpc/docs/vpc-peering"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Test connectivity within VPC networks \\_|\\_ Network Intelligence Center\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks",
+        "source_id": "site-iam-reference",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Ingress firewall rule card expanded (click to enlarge) When a trace contains a VPC network route with the next hop as a peered VPC network, the start of the trace is not a VM instance, but a VPC network.",
+          "If no other routes are available to the destination VM instance, Connectivity Tests uses the default static route with the next hop as the internet gateway.",
+          "VM-to-VM trace through an inaccessible peered VPC network in a different project (click to enlarge) What's next Common test scenarios Learn about Connectivity Tests Troubleshoot Connectivity Tests Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Routes \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/routes",
+        "source_id": "site-docs-root",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If your model isn't empty, all routes in your model have these characteristics: Identical preference category Identical priorities Next hops that haven't been disregarded Next hops in one VPC network Identical destinations Route types that aren't policy-based or subnet routes Send or drop packet : Depending on the number of routes remaining in the route model, Google Cloud sends or drops the packet: If your route model contains a single route, Google Cloud sends the packet to the next hop, with the following exception: Next hop internal passthrough Network Load Balancers that don't have global access enabled aren't reachable from regions outside of the load balancer's region.",
+          "The following route types always apply to all VM instances, VLAN attachments, and Cloud VPN tunnels: Special routing paths Subnet routes The following route types can be configured to apply only to certain VM instances, VLAN attachments, or Cloud VPN tunnels: Policy-based routes can apply to: All VM instances, VLAN attachments, and Cloud VPN tunnels Only VM instances identified by network tags Only VLAN attachments in a particular region Static routes can apply to: All VM instances, VLAN attachments, and Cloud VPN tunnels Only VM instances identified by network tags Dynamic routes can apply to VM instances, VLAN attachments, and Cloud VPN tunnels in either the region containing the dynamic route's next hop or all regions, based on the dynamic routing mode of the VPC network.",
+          "Local static route Supports various destinations Forwards packets to a static route next hop For details about each static route next hop , see considerations for: Instances and internal passthrough Network Load Balancers Next hop instances Internal passthrough Network Load Balancer next hops Classic VPN tunnel next hops Local dynamic route Destinations that don't conflict with subnet routes or static routes Peer of a BGP session on a Cloud Router Routes are added and removed automatically based on learned routes from Cloud Routers in your VPC network."
+        ]
+      },
+      {
+        "title": "VPC Network Peering \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "source_id": "site-docs-root",
+        "final_score": 252,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see the Use VPC Network Peering sections of the following load balancer documentation: Internal passthrough Network Load Balancers and connected networks Internal proxy Network Load Balancers and connected networks Internal Application Load Balancers and connected networks Peered networks can exchange static routes that use internal passthrough Network Load Balancers as next hops.",
+          "Suppose a local VPC network contains dynamic routes with a next hop Cloud VPN tunnel, Cloud Interconnect attachment (VLAN), or Router appliance that connects to an on-premises network.",
+          "Route type Route export conditions Route import conditions Static routes with network tags (all next hop types ) Can't be exported Can't be imported Static routes that use the default internet gateway next hop Can't be exported Can't be imported IPv4 static routes—without network tags—that use a next hop different from default internet gateway Not exported by default Export is controlled by using the --export-custom-routes flag Not imported by default Import is controlled by using the --import-custom-routes flag IPv6 static routes—without network tags—that use a VM instance as the next hop Not exported by default Export is controlled by using the --export-custom-routes flag when the stack type of the peering is set to --stack-type=IPV4 IPV6 Not imported by default Import is controlled by using the --import-custom-routes flag when the stack type of the peering is set to --stack-type=IPV4 IPV6 Options for exchanging dynamic routes The following table describes the route exchange options for dynamic routes ."
+        ]
+      },
+      {
+        "title": "VPC networks \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc",
+        "source_id": "site-docs-root",
+        "final_score": 217,
+        "relevance": "",
+        "evidence_snippets": [
+          "Unless you create an organizational policy that prohibits it, new projects start with a default network (an auto mode VPC network) that has one subnetwork (subnet) in each region.",
+          "Organization policy constraints Each new project starts with a default VPC network .",
+          "Route advertisements and internal IP addresses The following IP addresses are advertised within a VPC network: Regional internal IPv4 addresses Used for primary and secondary IPv4 subnet address ranges Regional internal and external IPv6 addresses Used for internal and external IPv6 subnet address ranges Global internal IPv4 addresses Used for Private Service Connect endpoints for Google APIs If you connect VPC networks using VPC Network Peering, subnet ranges using private IPv4 addresses are always exchanged."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/routes",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/vpc"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/routes",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/vpc"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/routes",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/vpc"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/routes",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/vpc"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/routes",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/vpc"
+      ]
+    }
+  ]
+}

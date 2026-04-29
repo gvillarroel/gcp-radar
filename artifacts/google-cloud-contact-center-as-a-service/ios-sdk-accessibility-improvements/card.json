@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:13.819Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "iOS SDK accessibility improvements",
+  "feature_slug": "ios-sdk-accessibility-improvements",
+  "summary": "The mobile iOS SDK adds support for several WCAG accessibility criteria to improve assistive technology compatibility.",
+  "extended_definition": "The mobile iOS SDK adds support for several WCAG accessibility criteria to improve assistive technology compatibility.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/web-sdk-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"iOS SDK guide \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following code shows how to configure the download transcript button: typedef NS OPTIONS ( NSUInteger, UJETChatDownloadTranscriptVisibilityOptions ) { UJETChatDownloadTranscriptVisibilityOptionsShowAll = 0 , UJETChatDownloadTranscriptVisibilityOptionsHideFromOptionsMenu = 1 << 0 , UJETChatDownloadTranscriptVisibilityOptionsHideFromPostChatScreen = 1 << 1 , UJETChatDownloadTranscriptVisibilityOptionsHideAll = UJETChatDownloadTranscriptVisibilityOptionsHideFromOptionsMenu UJETChatDownloadTranscriptVisibilityOptionsHideFromPostChatScreen } ; @property ( nonatomic, assign ) UJETChatDownloadTranscriptVisibilityOptions transcriptVisibilityOptions ; PSTN Fallback We provide PSTN fallback for several situations: Mobile network is offline.",
+          "Check that your certificate is working with Apple's push notification server. openssl s client -connect gateway.push.apple.com:2195 -cert cert.pem -debug -showcerts When successful, it should return: --- New, TLSv1/SSLv3, Cipher is AES256-SHA Server public key is 2048 bit Secure Renegotiation IS supported Compression: NONE Expansion: NONE SSL-Session: Protocol : TLSv1 Cipher : AES256-SHA Session-ID: Session-ID-ctx: Master-Key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Key-Arg : None Start Time: 1475785489 Timeout : 300 ( sec ) Verify return code: 0 ( ok ) --- Sign in to the CCAI Platform portal with administrator credentials, and go to Settings > Developer Settings > Mobile App .",
+          "String // Should have this value as it is view.addSubview ( broadcastPickerView ) } @IBAction func denyButtonClicked ( sender: Any ) { dismiss ( animated: true ) {[ weak self ] in self?.dismissed? () } } } Don't forget to pass this provider to our SDK through the following API: let provider = CobrowseAlertProvider () UJET.setCobrowseAlertProvider ( provider ) Broadcast Extension The feature requires adding a Broadcast Extension."
+        ]
+      },
+      {
+        "title": "\"Web SDK API reference \\_|\\_ Google Cloud Contact Center as a Service \\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/web-sdk-api",
+        "source_id": "site-docs-reference-3",
+        "final_score": 54,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Mid-Session authentication by API \\_|\\_ Google Cloud Contact Center as a\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 46,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cert.pem",
+      "gateway.push.apple.com",
+      "view.addSubview"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/web-sdk-api",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/web-sdk-api",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/web-sdk-api",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/web-sdk-api",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/web-sdk-api",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:51.951Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run-functions/card.json",
+  "product_name": "Cloud Run functions",
+  "product_slug": "cloud-run-functions",
+  "feature_name": "Python 3.11 runtime",
+  "feature_slug": "python-3-11-runtime",
+  "summary": "Cloud Run functions supports the Python 3.11 runtime; Cloud Run functions supports the Python 3.11 runtime.",
+  "extended_definition": "Cloud Run functions supports the Python 3.11 runtime; Cloud Run functions supports the Python 3.11 runtime.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/functions/docs/building",
+      "https://docs.cloud.google.com/functions/docs/securing/custom-constraints",
+      "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage function resources using custom constraints \\_|\\_ Cloud Run functions\\",
+        "url": "https://docs.cloud.google.com/functions/docs/securing/custom-constraints",
+        "source_id": "site-iam-reference",
+        "final_score": 30,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Common organization policy examples The following table provides the syntax of some custom organization policies that you might find useful: Description Constraint syntax Prevent functions from being created with a specific language name : organizations/ ORGANIZATION ID /customConstraints/custom.cloudFunctionRuntimeBlock resource types : cloudfunctions.googleapis.com/Function method types : - CREATE - UPDATE condition : resource.buildConfig.runtime == \"python312\" action type : DENY display name : Deny functions using Python 3.12 description : Functions cannot be created with Python 3.12 as the language runtime Require functions to use a specific worker pool name : organizations/ ORGANIZATION ID /customConstraints/custom.cloudFunctionsWorkerPool resource types : cloudfunctions.googleapis.com/Function method types : - CREATE - UPDATE condition : resource.buildConfig.workerPool == \" WORKER POOL \" action type : DENY display name : Require worker pool description : Functions must use a worker pool Replace WORKER POOL with the name of your Cloud Build worker pool.",
+          "Require that functions store all container images in a specific image repository name : organizations/ ORGANIZATION ID /customConstraints/custom.cloudFunctionsRepository resource types : cloudfunctions.googleapis.com/Function method types : - CREATE - UPDATE condition : resource.buildConfig.dockerRepository.startsWith(\" REPO PATH \") action type : DENY display name : Image repository constraint description : Functions must push images to a central image repository under REPO PATH Replace REPO PATH with the URI of the image repository URL that you want all functions to store their container images in.",
+          "Manage function resources using custom constraints Note: If you've created or deployed functions using Cloud Run, see Cloud Run's Manage custom constraints for projects guide for a detailed description of how to use custom constraints."
+        ]
+      },
+      {
+        "title": "Build process overview \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/building",
+        "source_id": "site-iam-reference",
+        "final_score": 23,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can optionally use a private pool , which you specify using the --build-worker-pool flag. gcloud functions deploy FUNCTION NAME \\ -- gen2 \\ -- region = REGION \\ -- project = PROJECT ID \\ -- runtime = RUNTIME \\ -- entry - point = CODE ENTRYPOINT \\ -- build - service - account = projects / PROJECT ID / serviceAccounts / SA EMAIL \\ -- memory = 256 Mi \\ -- trigger - http \\ -- source = .",
+          "To stop using a given private pool and instead use the default Cloud Build pool, use the --clear-build-worker-pool flag when re-deploying. gcloud functions deploy FUNCTION NAME \\ --runtime RUNTIME \\ --clear-build-worker-pool [ FLAGS... ] Replace FUNCTION NAME with the name of the function and RUNTIME with the runtime you are using.",
+          "Deploy your function to build using a private pool: gcloud functions deploy FUNCTION NAME \\ --runtime RUNTIME \\ --build-worker-pool PRIVATE POOL NAME [ FLAGS... ] Replace FUNCTION NAME with the name of the function, RUNTIME with the runtime you are using, and PRIVATE POOL NAME with the name of your pool."
+        ]
+      },
+      {
+        "title": "\"Terraform Pub/Sub Tutorial \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub",
+        "source_id": "site-docs-reference-2",
+        "final_score": 22,
+        "relevance": "",
+        "evidence_snippets": [
+          "Here is the main.tf file: terraform { required providers { google = { source = \"hashicorp/google\" version = \">= 4.34.0\" } } } resource \"random id\" \"bucket prefix\" { byte length = 8 } resource \"google service account\" \"default\" { account id = \"test-gcf-sa\" display name = \"Test Service Account\" } resource \"google pubsub topic\" \"default\" { name = \"functions2-topic\" } resource \"google storage bucket\" \"default\" { name = \"${random id.bucket prefix.hex}-gcf-source\" # Every bucket name must be globally unique location = \"US\" uniform bucket level access = true } data \"archive file\" \"default\" { type = \"zip\" output path = \"/tmp/function-source.zip\" source dir = \"function-source/\" } resource \"google storage bucket object\" \"default\" { name = \"function-source.zip\" bucket = google storage bucket.default.name source = data.archive file.default.output path # Path to the zipped function source code } resource \"google cloudfunctions2 function\" \"default\" { name = \"function\" location = \"us-central1\" description = \"a new function\" build config { runtime = \"nodejs22\" entry point = \"helloPubSub\" # Set the entry point environment variables = { BUILD CONFIG TEST = \"build test\" } source { storage source { bucket = google storage bucket.default.name object = google storage bucket object.default.name } } } service config { max instance count = 3 min instance count = 1 available memory = \"256M\" timeout seconds = 60 environment variables = { SERVICE CONFIG TEST = \"config test\" } ingress settings = \"ALLOW INTERNAL ONLY\" all traffic on latest revision = true service account email = google service account.default.email } event trigger { trigger region = \"us-central1\" event type = \"google.cloud.pubsub.topic.v1.messagePublished\" pubsub topic = google pubsub topic.default.id retry policy = \"RETRY POLICY RETRY\" } } Initialize Terraform In the terraform-docs-samples/functions/pubsub directory containing the main.tf file, run this command to add the necessary plugins and build the .terraform directory: terraform init Validate the Terraform configuration Preview the Terraform configuration.",
+          "Terraform is an open source tool that lets you provision Google Cloud resources with declarative configuration files This tutorial uses a Node.js function as an example, but it also works with Python, Go, and Java functions.",
+          "When prompted, enter yes : terraform apply Triggering the function To test the Pub/Sub function: Publish a message to the topic (in this example, the topic name is functions2-topic ): gcloud pubsub topics publish TOPIC NAME --message=\"Friend\" Read the function logs to see the result, where FUNCTION NAME is the name of your function (in this example, the function name is function ): gcloud functions logs read FUNCTION NAME You should see logging output that includes your new \"Friend\" message."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.default.email",
+      "bucket.default.name",
+      "cloudbuild.workerPoolUser",
+      "cloudfunctions.googleapis.com",
+      "custom.cloudFunctionRuntimeBlock",
+      "custom.cloudFunctionsRepository",
+      "custom.cloudFunctionsWorkerPool",
+      "data.archive",
+      "file.default.output",
+      "github.com",
+      "id.bucket",
+      "main.tf",
+      "object.default.name",
+      "prefix.hex",
+      "resource.buildConfig.dockerRepository.startsWith",
+      "resource.buildConfig.runtime",
+      "resource.buildConfig.workerPool",
+      "robot.iam.gserviceaccount.com",
+      "samples.git",
+      "source.zip",
+      "topic.default.id"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudbuild.workerPoolUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/custom-constraints",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/custom-constraints",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/custom-constraints",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/custom-constraints",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/custom-constraints",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/custom-constraints",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/custom-constraints",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/custom-constraints",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    }
+  ]
+}

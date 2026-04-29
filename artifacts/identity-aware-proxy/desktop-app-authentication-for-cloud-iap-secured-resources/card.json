@@ -1,0 +1,193 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:20.028Z",
+  "source_step08_card": "data/step-08/current/products/identity-aware-proxy/card.json",
+  "product_name": "Identity-Aware Proxy",
+  "product_slug": "identity-aware-proxy",
+  "feature_name": "Desktop app authentication for Cloud IAP-secured resources",
+  "feature_slug": "desktop-app-authentication-for-cloud-iap-secured-resources",
+  "summary": "Desktop applications can authenticate to Cloud IAP-secured resources.",
+  "extended_definition": "Desktop applications can authenticate to Cloud IAP-secured resources.",
+  "lifecycle": {
+    "latest_feature_date": "2017-06-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iap/docs/authentication-howto",
+      "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+      "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+      "https://docs.cloud.google.com/iap/docs/enabling-cloud-run"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Programmatic authentication \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "source_id": "site-docs-root",
+        "final_score": 244,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . using Google.Apis.Auth.OAuth2 ; using System.Net.Http ; using System.Net.Http.Headers ; using System.Threading ; using System.Threading.Tasks ; public class IAPClient { /// <summary> /// Makes a request to a IAP secured application by first obtaining /// an OIDC token. /// </summary> /// <param name=\"iapClientId\">The client ID observed on /// https://console.cloud.google.com/apis/credentials. </param> /// <param name=\"uri\">HTTP URI to fetch.</param> /// <param name=\"cancellationToken\">The token to propagate operation cancel notifications.</param> /// <returns>The HTTP response message.</returns> public async Task<HttpResponseMessage> InvokeRequestAsync ( string iapClientId , string uri , CancellationToken cancellationToken = default ) { // Get the OidcToken. // You only need to do this once in your application // as long as you can keep a reference to the returned OidcToken.",
+          "Authenticate with a service account JWT IAP supports service account JWT authentication for Google identities, Identity Platform, and Workforce Identity Federation configured applications.",
+          "For more information, see Set up authentication for a local development environment . namespace Google\\Cloud\\Samples\\Iap; Imports Auth libraries and Guzzle HTTP libraries. use Google\\Auth\\ApplicationDefaultCredentials; use GuzzleHttp\\Client; use GuzzleHttp\\HandlerStack; / Make a request to an application protected by Identity-Aware Proxy. @param string $url The Identity-Aware Proxy-protected URL to fetch. @param string $clientId The client ID used by Identity-Aware Proxy. / function make iap request($url, $clientId) { // create middleware, using the client ID as the target audience for IAP $middleware = ApplicationDefaultCredentials::getIdTokenMiddleware($clientId); $stack = HandlerStack::create(); $stack->push($middleware); // create the HTTP client $client = new Client([ 'handler' => $stack, 'auth' => 'google auth' ]); // make the request $response = $client->get($url); print('Printing out response body:'); print($response->getBody()); } Python To authenticate to IAP, set up Application Default Credentials."
+        ]
+      },
+      {
+        "title": "IAP reauthentication \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "source_id": "site-docs-root",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, mobile and desktop applications cannot reauthenticate users because the resources that require reauthentication are inaccessible to these applications.",
+          "IAP reauthentication (or, reauth) is designed to enforce reauthentication policies for IAP-protected services and applications (or, apps).",
+          "Run the following command: gcloud iap settings set SETTING FILE [--organization= ORGANIZATION --folder= FOLDER --project=/ PROJECT --resource-type= RESOURCE TYPE --service= SERVICE --version= VERSION To set a reauthentication policy on the resources within an organization, run the following command: gcloud iap settings set SETTING FILE --organization= ORGANIZATION To set a reauthentication policy on the resources within a folder, run the following command: gcloud iap settings set SETTING FILE --folder= FOLDER To set a reauthentication policy on all web type resources within a project, run the following command: gcloud iap settings set SETTING FILE --project= PROJECT --resource-type=iap web To set a reauthentication policy on an App Engine service within a project, run the following command: gcloud iap settings set SETTING FILE --project= PROJECT --resource-type=app-engine --service= SERVICE Where SETTING FILE is: accessSettings : reauthSettings : method : \"LOGIN\" maxAge : \"3600s\" policyType : \"MINIMUM\" Replace the following: FOLDER : The folder ID."
+        ]
+      },
+      {
+        "title": "\"Enabling IAP for App Engine \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "source_id": "site-docs-root",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following command to specify the project that contains the applications that you want to protect with IAP. gcloud config set project PROJECT ID To enable IAP, run the following command. gcloud iap web enable --resource-type=app-engine --versions= version Add principals who should have the IAP-secured Web App user role to the project. gcloud projects add-iam-policy-binding PROJECT ID \\ --member= PRINCIPAL IDENTIFIER \\ --role=roles/iap.httpsResourceAccessor Replace PROJECT ID with your project ID.",
+          "Only principals with the IAP-Secured Web App User ( roles/iap.httpsResourceAccessor ) role on the project will be given access. gcloud Before you set up your project and IAP, you need an up-to-date version of the gcloud CLI.",
+          "In the Add principals dialog that appears, enter the email addresses of groups or individuals who should have the IAP-secured Web App User role for the project."
+        ]
+      },
+      {
+        "title": "Enable IAP for Cloud Run \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/enabling-cloud-run",
+        "source_id": "site-docs-root",
+        "final_score": 215,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To enable access to users outside your organization, or without an organization, update the OAuth client configuration to use a custom OAuth client as described in Enable IAP for external applications .",
+          "In the Add Principal dialog, enter the accounts of groups or individuals who should have the IAP-secured Web App User role for the project.",
+          "See Managing access to IAP-secured resources for more information."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "console.cloud.google.com",
+      "example.com",
+      "example.iam.gserviceaccount.com",
+      "googlegroups.com",
+      "iap.httpsResourceAccessor"
+    ],
+    "missing_inventory_roles": [
+      "roles/iap.httpsResourceAccessor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run"
+      ]
+    }
+  ]
+}

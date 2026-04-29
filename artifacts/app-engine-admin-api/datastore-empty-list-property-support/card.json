@@ -1,0 +1,181 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.741Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-admin-api/card.json",
+  "product_name": "App Engine Admin API",
+  "product_slug": "app-engine-admin-api",
+  "feature_name": "Datastore empty-list property support",
+  "feature_slug": "datastore-empty-list-property-support",
+  "summary": "Enabled Datastore properties to represent an empty list value.",
+  "extended_definition": "Enabled Datastore properties to represent an empty list value.",
+  "lifecycle": {
+    "latest_feature_date": "2015-08-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps",
+      "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+      "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Package google.appengine.v1 \\_|\\_ App Engine Admin API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "source_id": "site-docs-reference-4",
+        "final_score": 145,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This may not represent the full list of mapped domain mappings if the user does not have VIEWER permissions on all of the applications that have this certificate mapped.",
+          "Index Applications (interface) AuthorizedCertificates (interface) AuthorizedDomains (interface) DomainMappings (interface) Firewall (interface) Instances (interface) Services (interface) Versions (interface) ApiConfigHandler (message) ApiEndpointHandler (message) Application (message) Application.DatabaseType (enum) Application.FeatureSettings (message) Application.IdentityAwareProxy (message) Application.ServingStatus (enum) AuthFailAction (enum) AuthorizedCertificate (message) AuthorizedCertificateView (enum) AuthorizedDomain (message) AutomaticScaling (message) BasicScaling (message) BatchUpdateIngressRulesRequest (message) BatchUpdateIngressRulesResponse (message) CertificateRawData (message) CloudBuildOptions (message) ContainerInfo (message) CpuUtilization (message) CreateApplicationRequest (message) CreateAuthorizedCertificateRequest (message) CreateDomainMappingRequest (message) CreateIngressRuleRequest (message) CreateVersionMetadataV1 (message) CreateVersionRequest (message) DebugInstanceRequest (message) DeleteAuthorizedCertificateRequest (message) DeleteDomainMappingRequest (message) DeleteIngressRuleRequest (message) DeleteInstanceRequest (message) DeleteServiceRequest (message) DeleteVersionRequest (message) Deployment (message) DiskUtilization (message) DomainMapping (message) DomainOverrideStrategy (enum) EndpointsApiService (message) EndpointsApiService.RolloutStrategy (enum) Entrypoint (message) ErrorHandler (message) ErrorHandler.ErrorCode (enum) FileInfo (message) FirewallRule (message) FirewallRule.Action (enum) FlexibleRuntimeSettings (message) GetApplicationRequest (message) GetAuthorizedCertificateRequest (message) GetDomainMappingRequest (message) GetIngressRuleRequest (message) GetInstanceRequest (message) GetServiceRequest (message) GetVersionRequest (message) HealthCheck (message) InboundServiceType (enum) Instance (message) Instance.Availability (enum) Instance.Liveness (message) Instance.Liveness.LivenessState (enum) Library (message) ListAuthorizedCertificatesRequest (message) ListAuthorizedCertificatesResponse (message) ListAuthorizedDomainsRequest (message) ListAuthorizedDomainsResponse (message) ListDomainMappingsRequest (message) ListDomainMappingsResponse (message) ListIngressRulesRequest (message) ListIngressRulesResponse (message) ListInstancesRequest (message) ListInstancesResponse (message) ListServicesRequest (message) ListServicesResponse (message) ListVersionsRequest (message) ListVersionsResponse (message) LivenessCheck (message) LocationMetadata (message) LoginRequirement (enum) ManagedCertificate (message) ManagementStatus (enum) ManualScaling (message) Network (message) NetworkSettings (message) NetworkSettings.IngressTrafficAllowed (enum) NetworkUtilization (message) OperationMetadataV1 (message) ReadinessCheck (message) RepairApplicationRequest (message) RequestUtilization (message) ResourceRecord (message) ResourceRecord.RecordType (enum) Resources (message) ScriptHandler (message) SecurityLevel (enum) Service (message) ServingStatus (enum) SslSettings (message) SslSettings.SslManagementType (enum) StandardSchedulerSettings (message) StaticFilesHandler (message) TrafficSplit (message) TrafficSplit.ShardBy (enum) UpdateApplicationRequest (message) UpdateAuthorizedCertificateRequest (message) UpdateDomainMappingRequest (message) UpdateIngressRuleRequest (message) UpdateServiceRequest (message) UpdateVersionRequest (message) UrlDispatchRule (message) UrlMap (message) UrlMap.RedirectHttpResponseCode (enum) Version (message) VersionView (enum) Volume (message) VpcAccessConnector (message) VpcAccessConnector.EgressSetting (enum) ZipInfo (message) Applications Manages App Engine applications.",
+          "Defaults to a runtime-specific value. max idle instances int32 Maximum number of idle instances that should be maintained for this version. max total instances int32 Maximum number of instances that should be started to handle requests for this version. max pending latency Duration Maximum amount of time that a request should wait in the pending queue before starting a new instance to handle it. min idle instances int32 Minimum number of idle instances that should be maintained for this version."
+        ]
+      },
+      {
+        "title": "\"Configure Datastore indexes with index.yaml \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+        "source_id": "site-docs-reference",
+        "final_score": 133,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The kind of the entity for the query. properties A list of properties to include as columns of the index, in the order to be sorted: properties used in equality filters first, followed by the property used in inequality filters, then the sort orders and their directions.",
+          "Each element in this list has the following elements: name The datastore name of the property. direction The direction to sort, either asc for ascending or desc for descending.",
+          "Each element in the list represents an index for the application."
+        ]
+      },
+      {
+        "title": "REST Resource: apps \\_|\\_ App Engine Admin API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps",
+        "source_id": "site-api-reference",
+        "final_score": 109,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Any value specified here in a request is ignored. iap object ( IdentityAwareProxy ) gcrDomain string The Google Container Registry domain used for storing managed build docker images for this application. databaseType enum ( DatabaseType ) The type of the Cloud Firestore or Cloud Datastore database associated with this application. featureSettings object ( FeatureSettings ) The feature specific settings to be used in the application.",
+          "IdentityAwareProxy Identity-Aware Proxy JSON representation { \"enabled\" : boolean , \"oauth2ClientId\" : string , \"oauth2ClientSecret\" : string , \"oauth2ClientSecretSha256\" : string } Fields enabled boolean Whether the serving infrastructure will authenticate and authorize all incoming requests.",
+          "JSON representation { \"splitHealthChecks\" : boolean , \"useContainerOptimizedOs\" : boolean } Fields splitHealthChecks boolean Boolean value indicating if split health checks should be used instead of the legacy health checks."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.applications.get",
+      "index.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps"
+      ]
+    }
+  ]
+}

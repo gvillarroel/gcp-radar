@@ -1,0 +1,150 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:31.941Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-agent-builder/card.json",
+  "product_name": "Vertex AI Agent Builder",
+  "product_slug": "vertex-ai-agent-builder",
+  "feature_name": "Vertex AI Agent Engine Memory Bank",
+  "feature_slug": "vertex-ai-agent-engine-memory-bank",
+  "summary": "Memory Bank now supports creating and managing memory revisions; The Agent Engine page in Cloud Console now includes a Memory Bank tab for displaying and managing memories.",
+  "extended_definition": "Memory Bank now supports creating and managing memory revisions; The Agent Engine page in Cloud Console now includes a Memory Bank tab for displaying and managing memories.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-adk",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart with Vertex AI Agent Engine SDK \\_|\\_ Vertex AI Agent Builder\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api",
+        "source_id": "site-docs-root",
+        "final_score": 350,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see an example of using Memory Bank with the Agent Engine SDK, run the \"Get started with Memory Bank\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub To see an example of using Memory Bank with LangGraph, run the \"Get started with Memory Bank - LangGraph\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Before you begin To complete the steps demonstrated in this tutorial, you must first follow the steps in Set up for Memory Bank .",
+          "This tutorial uses the following steps: Create memories using the following options: Generate memories using Vertex AI Agent Engine Memory Bank : Write sessions and events to Vertex AI Agent Engine Sessions as sources for Vertex AI Agent Engine Memory Bank to generate memories.",
+          "Use the Vertex AI Agent Engine SDK if you don't want an agent framework to orchestrate calls for you, or you want to integrate Sessions and Memory Bank with agent frameworks other than Agent Development Kit (ADK)."
+        ]
+      },
+      {
+        "title": "\"Develop an Agent Development Kit agent \\_|\\_ Vertex AI Agent Builder \\_\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk",
+        "source_id": "site-docs-reference",
+        "final_score": 288,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To asynchronously query the agent, use the AdkApp.async stream query method: async for event in app . async stream query ( user id = \" USER ID \" , session id = SESSION ID , # Optional. you can pass in the session id when querying the agent message = \"What is the exchange rate from US dollars to Swedish currency on 2025-04-03?\" , ): print ( event ) The agent might respond with a request for information like the following: { 'author' : 'currency exchange agent' , 'content' : { 'parts' : [{ 'text' : 'I need to know the Swedish currency code to ' 'provide you with the exchange rate.' }], 'role' : 'model' }, 'id' : 'wIgZAtQ4' , #... } You can send a response (for example, \"SEK\" ) on behalf of USER ID within the session corresponding to session by specifying: async for event in app . async stream query ( user id = \" USER ID \" , session id = session . id , # Optional. you can pass in the session id when querying the agent message = \"SEK\" , ): print ( event ) You should receive a continuation of the conversation like the following sequence of dictionaries: { 'author' : 'currency exchange agent' , 'content' : { 'parts' : [{ 'function call' : { 'args' : { 'currency date' : '2025-04-03' , 'currency from' : 'USD' , 'currency to' : 'SEK' }, 'id' : 'adk-2b9230a6-4b92-4a1b-9a65-b708ff6c68b6' , 'name' : 'get exchange rate' }}], 'role' : 'model' }, 'id' : 'bOPHtzji' , ... } { 'author' : 'currency exchange agent' , 'content' : { 'parts' : [{ 'function response' : { 'id' : 'adk-2b9230a6-4b92-4a1b-9a65-b708ff6c68b6' , 'name' : 'get exchange rate' , 'response' : { 'amount' : 1.0 , 'base' : 'USD' , 'date' : '2025-04-03' , 'rates' : { 'SEK' : 9.6607 }}}}], 'role' : 'user' }, 'id' : '9AoDFmiL' , ... } { 'author' : 'currency exchange agent' , 'content' : { 'parts' : [{ 'text' : 'The exchange rate from USD to SEK on ' '2025-04-03 is 1 USD to 9.6607 SEK.' }], 'role' : 'model' }, 'id' : 'hmle7trT' , ... } (Optional) Manage memories By default, AdkApp uses an in-memory implementation of agentic memory when running locally and uses Vertex AI Agent Engine Memory Bank after you deploy the agent to Vertex AI Agent Engine.",
+          "If you want to override the default memory service, you can define a memory service builder function that returns a BaseMemoryService as follows: def memory service builder (): from google.adk.memory import InMemoryMemoryService return InMemoryMemoryService () Pass your database to AdkApp as memory service builder= : from vertexai.agent engines import AdkApp app = AdkApp ( agent = agent , # Required. memory service builder = memory service builder , # Optional. ) Use the agent with memories Test your ADK agent with memories: Create a session and interact with the agent: initial session = await app . async create session ( user id = \" USER ID \" ) async for event in app . async stream query ( user id = \" USER ID \" , session id = initial session . id , message = \"Can you update the temperature to my preferred temperature?\" , ): print ( event ) Since there are no available memories during the first session and the agent does not know any user preferences, the agent may reply with a response such as \"What is your preferred temperature?\" You can respond with the following command: async for event in app . async stream query ( user id = \" USER ID \" , session id = initial session . id , message = \"I like it at 71 degrees\" , ): print ( event ) The agent might return with a response such as \"Setting the temperature to 71 degrees Fahrenheit.",
+          "The response is a sequence of dictionaries that's similar to the following: { 'author' : 'currency exchange agent' , 'content' : { 'parts' : [{ 'function call' : { 'args' : { 'currency date' : '2025-04-03' , 'currency from' : 'USD' , 'currency to' : 'SEK' }, 'id' : 'adk-e39f3ba2-fa8c-4169-a63a-8e4c62b89818' , 'name' : 'get exchange rate' }}], 'role' : 'model' }, 'id' : 'zFyIaaif' , ... } { 'author' : 'currency exchange agent' , 'content' : { 'parts' : [{ 'function response' : { 'id' : 'adk-e39f3ba2-fa8c-4169-a63a-8e4c62b89818' , 'name' : 'get exchange rate' , 'response' : { 'amount' : 1.0 , 'base' : 'USD' , 'date' : '2025-04-03' , 'rates' : { 'SEK' : 9.6607 }}}}], 'role' : 'user' }, 'id' : 'u2YR4Uom' , ... } { 'author' : 'currency exchange agent' , 'content' : { 'parts' : [{ 'text' : 'The exchange rate from USD to SEK on ' '2025-04-03 is 9.6607.' }], 'role' : 'model' }, 'id' : 'q3jWA3wl' , ... } (Optional) Manage sessions AdkApp uses in-memory sessions when running locally and uses cloud-based managed sessions after you deploy the agent to Vertex AI Agent Engine."
+        ]
+      },
+      {
+        "title": "\"Use agent identity with Vertex AI Agent Engine \\_|\\_ Vertex AI Agent Builder\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "source_id": "site-docs-root",
+        "final_score": 273,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Agent Engine instance is created with a read-only, system attested agent identity (a principal identifier ): Agent identity Format principal:// TRUST DOMAIN / NAMESPACE / AGENT NAME Example agent identity principal://agents.global.org- ORGANIZATION ID .system.id.goog/resources/aiplatform/projects/ PROJECT NUMBER /locations/ LOCATION /reasoningEngines/ AGENT ENGINE ID The following parts are auto-provisioned to you as part of agent identity: TRUST DOMAIN : A trust domain is provisioned for you when you enable the Vertex AI API: If you have an organization, the trust domain is created at the organization level with the format agents.global.org- ORGANIZATION ID .system.id.goog .",
+          "Define the agent in your preferred framework: from google.adk.agents import Agent agent = Agent ( model = \"gemini-2.5-flash\" , name = \"minimal agent\" , instruction = \"You are a helpful assistant.\" , ) Then, deploy it: import vertexai from vertexai import types from vertexai.agent engines import AdkApp Initialize the Vertex AI client with v1beta1 API for agent identity support client = vertexai .",
+          "We recommend the following roles: roles/aiplatform.expressUser : Grant access to running inference, sessions, and memory. roles/serviceusage.serviceUsageConsumer : Grant the agent permission to use the project's quota and the Vertex AI SDK. roles/browser : Grant access to basic Google Cloud functionalities."
+        ]
+      },
+      {
+        "title": "\"Quickstart with Agent Development Kit \\_|\\_ Vertex AI Agent Builder \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-adk",
+        "source_id": "site-docs-root",
+        "final_score": 270,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Run To see an example of using Memory Bank with Cloud Run, run the \"Get started with Sessions and Memory Bank for ADK agents in Cloud Run\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub To deploy your agent to Cloud Run, refer to the instructions in the ADK documentation to learn how to define your agent to deploy to Cloud Run. adk deploy cloud run \\ ... --memory service uri = agentengine:// AGENT ENGINE ID GKE To see an example of using Memory Bank with Google Kubernetes Engine, run the \"Get started with Sessions and Memory Bank for ADK agents in Google Kubernetes Engine\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub To deploy your agent to Google Kubernetes Engine (GKE), refer to the instructions in the ADK documentation to learn how to define your agent to deploy to GKE. adk deploy gke \\ ... --memory service uri = agentengine:// AGENT ENGINE ID ADK Web Important: ADK Web is not meant for use in production deployments.",
+          "However, you can override the default memory service to use VertexAiMemoryBankService : def memory bank service builder (): return VertexAiMemoryBankService ( project = \" PROJECT ID \" , location = \" LOCATION \" , agent engine id = \" AGENT ENGINE ID \" ) adk app = AdkApp ( agent = adk agent , Override the default memory service. memory service builder = memory bank service builder ) async def call agent ( query , session id , user id ): adk app is a local agent.",
+          "In this case, you need to directly create the memory service and runner. import asyncio from google.adk.memory import VertexAiMemoryBankService from google.adk.sessions import VertexAiSessionService from google.genai import types memory service = VertexAiMemoryBankService ( project = \" PROJECT ID \" , location = \" LOCATION \" , agent engine id = \" AGENT ENGINE ID \" , ) You can use any ADK session service."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "agents.global.org",
+      "aiplatform.expressUser",
+      "serviceusage.serviceUsageConsumer",
+      "system.id.goog",
+      "vertexai.agent"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.expressUser",
+      "roles/browser",
+      "roles/serviceusage.serviceUsageConsumer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-adk"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-adk"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-adk"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-adk"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-adk"
+      ]
+    }
+  ]
+}

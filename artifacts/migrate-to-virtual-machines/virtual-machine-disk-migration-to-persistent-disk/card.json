@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:23.096Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-virtual-machines/card.json",
+  "product_name": "Migrate to Virtual Machines",
+  "product_slug": "migrate-to-virtual-machines",
+  "feature_name": "Virtual machine disk migration to Persistent Disk",
+  "feature_slug": "virtual-machine-disk-migration-to-persistent-disk",
+  "summary": "Migrates VM disks to Persistent Disk volumes that can be attached during or after the migration process; Migrates VM disks to Persistent Disk volumes that can be attached to a new VM or an existing VM.",
+  "extended_definition": "Migrates VM disks to Persistent Disk volumes that can be attached during or after the migration process; Migrates VM disks to Persistent Disk volumes that can be attached to a new VM or an existing VM.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import",
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate VM disks and attach them to a new VM \\_|\\_ Migrate to Virtual Machines\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+        "source_id": "site-docs-root",
+        "final_score": 339,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Step 3: Configure the target for a migrated VM disk Migrate to Virtual Machines lets you migrate the disks of a source VM to Persistent Disk volumes on Google Cloud with the following options: Migrate the disks to Persistent Disk volumes Migrate the disks to Persistent Disk volumes and attach them to a new VM instance You must configure the target details such as project, zone, disk type, and more based on the option you choose.",
+          "Initiate replication of a source VM To initiate replication of a source VM, follow these steps: Open the Migrate to Virtual Machines page in the Google Cloud console: Go to the Migrate to Virtual Machines page Select the VM Disk Migrations tab.",
+          "If you have created a new VM instance and attached the migrated Persistent Disk volumes to it, Migrate to Virtual Machines deploys a clone of the VM instance to a Compute Engine instance in your target environment to test it."
+        ]
+      },
+      {
+        "title": "\"Migrate VM disks and attach them to a new VM \\_|\\_ Migrate to Virtual Machines\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+        "source_id": "site-docs-root-2",
+        "final_score": 339,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Step 3: Configure the target for a migrated VM disk Migrate to Virtual Machines lets you migrate the disks of a source VM to Persistent Disk volumes on Google Cloud with the following options: Migrate the disks to Persistent Disk volumes Migrate the disks to Persistent Disk volumes and attach them to a new VM instance You must configure the target details such as project, zone, disk type, and more based on the option you choose.",
+          "Initiate replication of a source VM To initiate replication of a source VM, follow these steps: Open the Migrate to Virtual Machines page in the Google Cloud console: Go to the Migrate to Virtual Machines page Select the VM Disk Migrations tab.",
+          "If you have created a new VM instance and attached the migrated Persistent Disk volumes to it, Migrate to Virtual Machines deploys a clone of the VM instance to a Compute Engine instance in your target environment to test it."
+        ]
+      },
+      {
+        "title": "\"Import virtual disk images \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import",
+        "source_id": "site-docs-root",
+        "final_score": 285,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "POST https://vmmigration.googleapis.com/v1/projects/ HOST PROJECT ID /locations/ REGION ID /imageImports?imageImportId= IMPORT NAME { \"cloudStorageUri\": \" SOURCE FILE \", \"diskImageTargetDefaults\": { \"imageName\": \" IMAGE NAME \", \"targetProject\": \"projects/ HOST PROJECT ID /locations/global/targetProjects/ TARGET PROJECT \", ... } } Replace the following: HOST PROJECT ID : the name of the host project from which you want to migrate the virtual disk image.",
+          "Role Permissions required Description Storage Object Viewer roles/storage.objectViewer Grant the default Migrate to Virtual Machines service account in the host project ( service- HOST PROJECT NUMBER @gcp-sa-vmmigration.iam.gserviceaccount.com ) the roles/storage.objectViewer role on the bucket where the image you want to import resides.",
+          "VM Migration Service Account roles/vmmigration.serviceAgent Grant the default Migrate to Virtual Machines service account in the host project ( service- HOST PROJECT NUMBER @gcp-sa-vmmigration.iam.gserviceaccount.com ) the roles/vmmigration.serviceAgent role on the target project."
+        ]
+      },
+      {
+        "title": "\"Import virtual disk images \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import",
+        "source_id": "site-docs-root-2",
+        "final_score": 285,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "POST https://vmmigration.googleapis.com/v1/projects/ HOST PROJECT ID /locations/ REGION ID /imageImports?imageImportId= IMPORT NAME { \"cloudStorageUri\": \" SOURCE FILE \", \"diskImageTargetDefaults\": { \"imageName\": \" IMAGE NAME \", \"targetProject\": \"projects/ HOST PROJECT ID /locations/global/targetProjects/ TARGET PROJECT \", ... } } Replace the following: HOST PROJECT ID : the name of the host project from which you want to migrate the virtual disk image.",
+          "Role Permissions required Description Storage Object Viewer roles/storage.objectViewer Grant the default Migrate to Virtual Machines service account in the host project ( service- HOST PROJECT NUMBER @gcp-sa-vmmigration.iam.gserviceaccount.com ) the roles/storage.objectViewer role on the bucket where the image you want to import resides.",
+          "VM Migration Service Account roles/vmmigration.serviceAgent Grant the default Migrate to Virtual Machines service account in the host project ( service- HOST PROJECT NUMBER @gcp-sa-vmmigration.iam.gserviceaccount.com ) the roles/vmmigration.serviceAgent role on the target project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "storage.objectViewer",
+      "vmmigration.googleapis.com",
+      "vmmigration.iam.gserviceaccount.com",
+      "vmmigration.serviceAgent"
+    ],
+    "missing_inventory_roles": [
+      "roles/storage.objectViewer",
+      "roles/vmmigration.serviceAgent"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "bigframes.pandas DataFrame API",
+  "feature_slug": "bigframes-pandas-dataframe-api",
+  "summary": "Bigframes.pandas provides a DataFrame API on top of BigQuery with partial pandas compatibility.",
+  "extended_definition": "Bigframes.pandas provides a DataFrame API on top of BigQuery with partial pandas compatibility.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/create-machine-learning-model",
+      "https://docs.cloud.google.com/bigquery/docs/dataframes-quickstart",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Run queries using the BigQuery DataFrames bigframes.pandas APIs \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 238,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . import bigframes.pandas as bpd Load data from BigQuery query or table = \"bigquery-public-data.ml datasets.penguins\" bq df = bpd . read gbq ( query or table ) Inspect one of the columns (or series) of the DataFrame: bq df [ \"body mass g\" ] Compute the mean of this series: average body mass = bq df [ \"body mass g\" ] . mean () print ( f \"average body mass: { average body mass } \" ) Find the heaviest species using the groupby operation to calculate the mean body mass g: ( bq df [ \"body mass g\" ] . groupby ( by = bq df [ \"species\" ]) . mean () . sort values ( ascending = False ) . head ( 10 ) ) What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "Home Documentation Data analytics BigQuery Samples Run queries using the BigQuery DataFrames bigframes.pandas APIs Stay organized with collections Save and categorize content based on your preferences.",
+          "Use the BigQuery DataFrames bigframes.pandas APIs to perform data analysis via the BigQuery Query engine."
+        ]
+      },
+      {
+        "title": "Create an ML model in BigQuery ML by using SQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/create-machine-learning-model",
+        "source_id": "site-docs-root",
+        "final_score": 156,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up ADC for a local development environment . import bigframes.pandas as bpd Select model you'll use for evaluating. read gbq model loads model data from a BigQuery, but you could also use the model object from the previous steps. model = bpd . read gbq model ( your model id , # For example: \"bqml tutorial.sample model\", ) The filters parameter limits the number of tables scanned by the query.",
+          "For more information, see Set up ADC for a local development environment . import bigframes.pandas as bpd Select model you'll use for predicting. read gbq model loads model data from BigQuery, but you could also use the model object from the previous steps. model = bpd . read gbq model ( your model id , # For example: \"bqml tutorial.sample model\", ) The filters parameter limits the number of tables scanned by the query.",
+          "For more information, see Set up ADC for a local development environment . import bigframes.pandas as bpd Select model you'll use for predicting. read gbq model loads model data from BigQuery, but you could also use the model object from the previous steps. model = bpd . read gbq model ( your model id , # For example: \"bqml tutorial.sample model\", ) The filters parameter limits the number of tables scanned by the query."
+        ]
+      },
+      {
+        "title": "Try BigQuery DataFrames \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/dataframes-quickstart",
+        "source_id": "site-docs-reference",
+        "final_score": 146,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Add the following code to the code cell: import bigframes.pandas as bpd Set BigQuery DataFrames options Note: The project option is not required in all environments.",
+          "Set the ordering mode to \"strict\" (default) for more pandas compatibility. bpd . options . bigquery . ordering mode = \"partial\" Create a DataFrame from a BigQuery table query or table = \"bigquery-public-data.ml datasets.penguins\" df = bpd . read gbq ( query or table ) Efficiently preview the results using the .peek() method. df . peek () Modify the bpd.options.bigquery.project = your gcp project id line to specify your Google Cloud project ID.",
+          "Create a new code cell in the notebook and add the following code: Use the DataFrame just as you would a pandas DataFrame, but calculations happen in the BigQuery query engine instead of the local system. average body mass = df [ \"body mass g\" ] . mean () print ( f \"average body mass: { average body mass } \" ) Run the code cell."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigframes.ml.linear",
+      "bigframes.pandas",
+      "bpd.options.bigquery.project",
+      "data.ml",
+      "datasets.penguins",
+      "tutorial.sample"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+        "https://docs.cloud.google.com/bigquery/docs/create-machine-learning-model",
+        "https://docs.cloud.google.com/bigquery/docs/dataframes-quickstart"
+      ]
+    }
+  ]
+}

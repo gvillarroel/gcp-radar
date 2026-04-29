@@ -1,0 +1,189 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:51.951Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run-functions/card.json",
+  "product_name": "Cloud Run functions",
+  "product_slug": "cloud-run-functions",
+  "feature_name": "Label propagation to Cloud Run",
+  "feature_slug": "label-propagation-to-cloud-run",
+  "summary": "Labels set on Cloud Run functions propagate to Cloud Run when functions are deployed there.",
+  "extended_definition": "Labels set on Cloud Run functions propagate to Cloud Run when functions are deployed there.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/functions/docs/building",
+      "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+      "https://docs.cloud.google.com/functions/docs/securing/cmek"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.functions \\_|\\_ Cloud Run functions \\_\\",
+        "url": "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "source_id": "site-docs-root",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"description\" : string , \"status\" : enum ( CloudFunctionStatus ) , \"entryPoint\" : string , \"runtime\" : string , \"timeout\" : string , \"availableMemoryMb\" : integer , \"serviceAccountEmail\" : string , \"updateTime\" : string , \"versionId\" : string , \"labels\" : { string : string , ... } , \"environmentVariables\" : { string : string , ... } , \"buildEnvironmentVariables\" : { string : string , ... } , \"network\" : string , \"maxInstances\" : integer , \"minInstances\" : integer , \"vpcConnector\" : string , \"vpcConnectorEgressSettings\" : enum ( VpcConnectorEgressSettings ) , \"ingressSettings\" : enum ( IngressSettings ) , \"kmsKeyName\" : string , \"buildWorkerPool\" : string , \"buildId\" : string , \"buildName\" : string , \"secretEnvironmentVariables\" : [ { object ( SecretEnvVar ) } ] , \"secretVolumes\" : [ { object ( SecretVolume ) } ] , \"sourceToken\" : string , \"dockerRepository\" : string , \"dockerRegistry\" : enum ( DockerRegistry ) , \"buildServiceAccount\" : string , \"satisfiesPzs\" : boolean , \"satisfiesPzi\" : boolean , // Union field source code can be only one of the following: \"sourceArchiveUrl\" : string , \"sourceRepository\" : { object ( SourceRepository ) } , \"sourceUploadUrl\" : string // End of list of possible types for union field source code . // Union field trigger can be only one of the following: \"httpsTrigger\" : { object ( HttpsTrigger ) } , \"eventTrigger\" : { object ( EventTrigger ) } // End of list of possible types for union field trigger . // Union field runtime update policy can be only one of the following: \"automaticUpdatePolicy\" : { object ( AutomaticUpdatePolicy ) } , \"onDeployUpdatePolicy\" : { object ( OnDeployUpdatePolicy ) } // End of list of possible types for union field runtime update policy . } Fields name string A user-defined name of the function.",
+          "Each deployment attempt results in a new version of a function being created. labels map (key: string, value: string) Labels associated with this Cloud Function.",
+          "Methods call Synchronously invokes a deployed Cloud Function. create Creates a new function. delete Deletes a function with the given name from the specified project. generateDownloadUrl Returns a signed URL for downloading deployed function source code. generateUploadUrl Returns a signed URL for uploading a function source code. get Returns a function with the given name from the requested project. getIamPolicy Gets the IAM access control policy for a function. list Returns a list of functions that belong to the requested project. patch Updates existing function. setIamPolicy Sets the IAM access control policy on the specified function. testIamPermissions Tests the specified permissions against the IAM access control policy for a function."
+        ]
+      },
+      {
+        "title": "Build process overview \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/building",
+        "source_id": "site-iam-reference",
+        "final_score": 53,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: Deploying function ( may take a while - up to 2 minutes ) ...⠹ For Cloud Build Stackdriver Logs , visit: https://console.cloud.google.com/logs/viewer?project = & advancedFilter = resource.type% 3Dbuild%0Aresource.labels.build id%3D38d5b662-2315-45dd-8aa2- 380d50d4f5e8%0AlogName%3Dprojects%2F % 2Flogs%2Fcloudbuild Deploying function ( may take a while - up to 2 minutes ) ...done.",
+          "To stop using a given private pool and instead use the default Cloud Build pool, use the --clear-build-worker-pool flag when re-deploying. gcloud functions deploy FUNCTION NAME \\ --runtime RUNTIME \\ --clear-build-worker-pool [ FLAGS... ] Replace FUNCTION NAME with the name of the function and RUNTIME with the runtime you are using.",
+          "To learn the build process for functions deployed using the gcloud run command, see: Build Cloud Run into containers Set build service account Set build worker pools When you deploy your function's source code using the gcloud functions deploy command, that source is stored in a Cloud Storage bucket."
+        ]
+      },
+      {
+        "title": "\"Protect your data with CMEK \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 51,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following types of Cloud Run functions data are encrypted when using a CMEK: Function source code uploaded for deployment and stored by Google in Cloud Storage, used in the build process.",
+          "You cannot specify a particular key version to use when enabling CMEK for your functions.",
+          "Granting service accounts access to the key For all functions, you must grant the following service accounts access to the key: Cloud Run functions service agent ( service- PROJECT NUMBER @gcf-admin-robot.iam.gserviceaccount.com ) Artifact Registry service agent ( service- PROJECT NUMBER @gcp-sa-artifactregistry.iam.gserviceaccount.com ) Cloud Storage service agent ( service- PROJECT NUMBER @gs-project-accounts.iam.gserviceaccount.com ) Cloud Run service agent ( service- PROJECT NUMBER @serverless-robot-prod.iam.gserviceaccount.com ) Eventarc service agent ( service- PROJECT NUMBER @gcp-sa-eventarc.iam.gserviceaccount.com ) To grant these service accounts access to the key, add each service account as a principal of the key and then grant the service account the Cloud KMS CryptoKey Encrypter/Decrypter role: Console Go to the Cloud Key Management Service page in the Google Cloud console: Go to the Cloud KMS page Click the name of the key ring that contains the chosen key."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accounts.iam.gserviceaccount.com",
+      "artifactregistry.iam.gserviceaccount.com",
+      "console.cloud.google.com",
+      "eventarc.iam.gserviceaccount.com",
+      "labels.build",
+      "prod.iam.gserviceaccount.com",
+      "projects.locations",
+      "projects.locations.functions",
+      "resource.type",
+      "robot.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/securing/cmek"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/securing/cmek"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/securing/cmek"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/securing/cmek"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/securing/cmek"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/securing/cmek"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/securing/cmek"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/securing/cmek"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/securing/cmek"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/securing/cmek"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/securing/cmek"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/securing/cmek"
+      ]
+    }
+  ]
+}

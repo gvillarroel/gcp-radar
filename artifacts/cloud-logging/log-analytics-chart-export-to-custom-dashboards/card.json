@@ -1,0 +1,227 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:49.591Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Log Analytics chart export to custom dashboards",
+  "feature_slug": "log-analytics-chart-export-to-custom-dashboards",
+  "summary": "Log Analytics SQL query charts can be saved to custom dashboards.",
+  "extended_definition": "Log Analytics SQL query charts can be saved to custom dashboards.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+      "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+      "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "OpsAnalyticsQuery \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "source_id": "site-docs-reference",
+        "final_score": 140,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation QueryBuilderConfig JSON representation FilterPredicate JSON representation OperatorType FilterExpression JSON representation FieldSource JSON representation ProjectedField JSON representation FieldOperation FunctionApplication JSON representation Comparator SortOrderParameter JSON representation SortOrder Describes a query that can be run in Log Analytics.",
+          "Examples: jsonPayload.labels.message jsonPayload.request id httpRequest.status jsonPayload.\\ my-custom-field.value jsonPayload.my key with spaces.data` aliasRef string The alias name for a field that has already been aliased within a different ProjectedField type elsewhere in the query model.",
+          "Home Documentation Observability Cloud Logging Reference Send feedback OpsAnalyticsQuery Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Google Cloud platform logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "source_id": "site-docs-reference",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "N/A N/A Google Analytics Data API Logging API service name: analyticsdata.googleapis.com Log ID Monitored resource Payload Labels Severities analyticsdata.googleapis.com%2Ffresh bigquery export status analyticsdata.googleapis.com/FreshBigQueryExport type.googleapis.com/google.analytics.cloud.ExportStatusLog N/A DEFAULT INFO WARNING analyticsdata.googleapis.com%2Fbigquery daily export status analyticsdata.googleapis.com/BigQueryDailyExport type.googleapis.com/google.analytics.cloud.ExportStatusLog N/A DEFAULT INFO WARNING Google Binary Authorization API Logging API service name: binaryauthorization.googleapis.com Log ID Monitored resource Payload Labels Severities binaryauthorization.googleapis.com%2Fcontinuous validation k8s cluster v1beta1: type.googleapis.com/google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent N/A WARNING Google Maps Platform - Mobility Billing Logging API service name: mobilitybilling.googleapis.com Log ID Monitored resource Payload Labels Severities mobilitybilling.googleapis.com%2Fexternal cloud logs mobilitybilling.googleapis.com/Project type.googleapis.com/google.maps.mobilitybilling.logs.v1.ReportBillableEventLog environment DEFAULT ERROR Google Workspace Add-ons Logging API service name: gsuiteaddons.googleapis.com Log ID Monitored resource Payload Labels Severities gsuiteaddons.googleapis.com%2Ferrors g suite add ons type.googleapis.com/google.cloud.gsuiteaddons.logging.v1.GSuiteAddOnsLogEntry N/A ERROR Identity Toolkit Logging API service name: identitytoolkit.googleapis.com Log ID Monitored resource Payload Labels Severities identitytoolkit.googleapis.com%2Frequests identitytoolkit project type.googleapis.com/google.cloud.identitytoolkit.logging.RequestLog N/A INFO ERROR identitytoolkit.googleapis.com%2Frequests identitytoolkit tenant type.googleapis.com/google.cloud.identitytoolkit.logging.RequestLog N/A INFO ERROR Immersive Stream for XR Logging API service name: stream.googleapis.com Log ID Monitored resource Payload Labels Severities stream.googleapis.com%2Fsession event stream.googleapis.com/StreamInstance type.googleapis.com/google.cloud.stream.logging.v1.SessionEventLog N/A INFO ERROR Issuer Switch Service Logging API service name: issuerswitch.googleapis.com Log ID Monitored resource Payload Labels Severities issuerswitch.googleapis.com%2Fpgis activity issuerswitch.googleapis.com/UPIInstance type.googleapis.com/google.cloud.paymentgateway.issuerswitch.v1.UpiTransaction N/A DEBUG ERROR INFO Key Management Service Logging API service name: cloudkms.googleapis.com Log ID Monitored resource Payload Labels Severities cloudkms.googleapis.com%2Fcryptokey events cloudkms cryptokey type.googleapis.com/google.cloud.kms.logging.v1.CryptoKeyEvent N/A INFO ERROR cloudkms.googleapis.com%2Fcryptokeyversion events cloudkms cryptokeyversion type.googleapis.com/google.cloud.kms.logging.v1.CryptoKeyVersionEvent N/A INFO ERROR Live Stream API Logging API service name: livestream.googleapis.com Log ID Monitored resource Payload Labels Severities livestream.googleapis.com%2Fchannel activities livestream.googleapis.com/Channel type.googleapis.com/google.cloud.video.livestream.logging.v1.ChannelActivity N/A INFO DEBUG ERROR Local Rides and Deliveries API Logging API service name: fleetengine.googleapis.com Log ID Monitored resource Payload Labels Severities fleetengine.googleapis.com%2Fupdate vehicle attributes fleetengine.googleapis.com/Fleet type.googleapis.com/maps.fleetengine.v1.UpdateVehicleAttributesLog environment vehicle id DEFAULT ERROR Logging API Logging API service name: logging.googleapis.com Log ID Monitored resource Payload Labels Severities logging.googleapis.com%2Fsink error logging sink A report of an error encountered while trying to export data to a configured log sink. activity type name destination error code error detail log entity id log filter sink id ERROR logging.googleapis.com%2Fmetric throttled metric Informs customer that a metric associated with Logs-based metrics is being throttled. activity type name dropped labels label cardinalities limit type metric name user cardinality WARNING Memorystore Logging API service name: memorystore.googleapis.com Log ID Monitored resource Payload Labels Severities memorystore.googleapis.com%2Flog stream memorystore.googleapis.com/Instance type.googleapis.com/google.logging.v2.LogEntry CONSUMER PROJECT INSTANCE ID INFO WARNING ERROR Network Analyzer Logging API service name: networkanalyzer.googleapis.com Log ID Monitored resource Payload Labels Severities networkanalyzer.googleapis.com%2Fanalyzer reports networking.googleapis.com/Location type.googleapis.com/google.cloud.networkanalyzer.logging.v1.Report N/A DEFAULT Network Services API Logging API service name: networkservices.googleapis.com Log ID Monitored resource Payload Labels Severities networkservices.googleapis.com%2Fmesh events mesh A simple JSON payload containing a single 'description' field with event details.",
+          "Describes the current status of the transfer run. run id DEFAULT INFO WARNING ERROR CbTestDuckService Logging API service name: cbtestduckservice.googleapis.com Log ID Monitored resource Payload Labels Severities cbtestduckservice.googleapis.com%2Factivity history cbtestduckservice.googleapis.com/Book Test payload for CB Test Duck Service N/A INFO DEBUG ERROR Certificate Manager Logging API service name: certificatemanager.googleapis.com Log ID Monitored resource Payload Labels Severities certificatemanager.googleapis.com%2Fcertificates expiry certificatemanager.googleapis.com/Project type.googleapis.com/google.cloud.certificatemanager.logging.v1.CertificatesExpiry N/A WARNING Chat Logging API service name: chat.googleapis.com Log ID Monitored resource Payload Labels Severities chat.googleapis.com%2Ferrors chat.googleapis.com/Project type.googleapis.com/google.chat.logging.v1.ChatAppLogEntry N/A ERROR Cloud Backup and DR Logging API service name: backupdr.googleapis.com Log ID Monitored resource Payload Labels Severities backupdr.googleapis.com%2Fbackup recovery appliance events backupdr.googleapis.com/BackupRecoveryAppliance type.googleapis.com/google.cloud.backupdr.logging.v1.Event N/A ERROR WARNING INFO backupdr.googleapis.com%2Fgcb backup recovery jobs backupdr.googleapis.com/ManagementConsole type.googleapis.com/google.cloud.backupdr.logging.v1.BackupRecoveryJobReportLog N/A INFO backupdr.googleapis.com%2Fgcb daily schedule compliance backupdr.googleapis.com/ManagementConsole type.googleapis.com/google.cloud.backupdr.logging.v1.DailyScheduleComplianceReportLog N/A INFO backupdr.googleapis.com%2Fgcb protected resource backupdr.googleapis.com/ManagementConsole type.googleapis.com/google.cloud.backupdr.logging.v1.ProtectedResourceReportLog N/A INFO backupdr.googleapis.com%2Fbdr backup restore jobs backupdr.googleapis.com/BackupDRProject type.googleapis.com/google.cloud.backupdr.logging.v1.BDRBackupRestoreJobLog N/A INFO ERROR backupdr.googleapis.com%2Fbdr backup plan jobs backupdr.googleapis.com/BackupPlan type.googleapis.com/google.cloud.backupdr.logging.v1.BDRBackupPlanJobLog N/A INFO ERROR backupdr.googleapis.com%2Fbdr protected resource backupdr.googleapis.com/BackupPlan type.googleapis.com/google.cloud.backupdr.logging.v1.BDRProtectedResourceLog N/A INFO backupdr.googleapis.com%2Fbdr backup vault details backupdr.googleapis.com/BackupVault type.googleapis.com/google.cloud.backupdr.logging.v1.BDRBackupVaultDetailsLog N/A INFO Cloud Database Migration Service Logging API service name: datamigration.googleapis.com Log ID Monitored resource Payload Labels Severities datamigration.googleapis.com%2Fmigration job event datamigration.googleapis.com/MigrationJob type.googleapis.com/google.cloud.clouddms.logging.v1.MigrationJobEventLog N/A INFO NOTICE ERROR datamigration.googleapis.com%2Fconnection profile event datamigration.googleapis.com/ConnectionProfile type.googleapis.com/google.cloud.clouddms.logging.v1.ConnectionProfileEventLog N/A INFO NOTICE ERROR datamigration.googleapis.com%2Fprivate connection event datamigration.googleapis.com/PrivateConnection type.googleapis.com/google.cloud.clouddms.logging.v1.PrivateConnectionEventLog N/A INFO NOTICE ERROR Cloud Datastream Logging API service name: datastream.googleapis.com Log ID Monitored resource Payload Labels Severities datastream.googleapis.com%2Fstream activity datastream.googleapis.com/Stream type.googleapis.com/google.cloud.datastream.logging.v1.StreamActivityLogEntry N/A ERROR INFO WARNING Cloud Deploy Logging API service name: clouddeploy.googleapis.com Log ID Monitored resource Payload Labels Severities clouddeploy.googleapis.com%2Frelease render clouddeploy.googleapis.com/DeliveryPipeline type.googleapis.com/google.cloud.deploy.v1.ReleaseRenderEvent N/A INFO clouddeploy.googleapis.com%2Frollout notification clouddeploy.googleapis.com/DeliveryPipeline type.googleapis.com/google.cloud.deploy.v1.RolloutNotificationEvent N/A ERROR clouddeploy.googleapis.com%2Frollout update clouddeploy.googleapis.com/DeliveryPipeline type.googleapis.com/google.cloud.deploy.v1.RolloutUpdateEvent N/A INFO clouddeploy.googleapis.com%2Fdeliverypipeline notification clouddeploy.googleapis.com/DeliveryPipeline type.googleapis.com/google.cloud.deploy.v1.DeliveryPipelineNotificationEvent N/A ERROR clouddeploy.googleapis.com%2Fdeploypolicy evaluation clouddeploy.googleapis.com/DeliveryPipeline type.googleapis.com/google.cloud.deploy.v1.DeployPolicyEvaluationEvent N/A INFO WARNING ERROR clouddeploy.googleapis.com%2Fdeploypolicy notification clouddeploy.googleapis.com/DeployPolicy type.googleapis.com/google.cloud.deploy.v1.DeployPolicyNotificationEvent N/A ERROR clouddeploy.googleapis.com%2Fcustomtargettype notification clouddeploy.googleapis.com/CustomTargetType type.googleapis.com/google.cloud.deploy.v1.CustomTargetTypeNotificationEvent N/A ERROR clouddeploy.googleapis.com%2Ftarget notification clouddeploy.googleapis.com/Target type.googleapis.com/google.cloud.deploy.v1.TargetNotificationEvent N/A ERROR clouddeploy.googleapis.com%2Frelease notification clouddeploy.googleapis.com/DeliveryPipeline type.googleapis.com/google.cloud.deploy.v1.ReleaseNotificationEvent N/A ERROR clouddeploy.googleapis.com%2Fjobrun notification clouddeploy.googleapis.com/DeliveryPipeline type.googleapis.com/google.cloud.deploy.v1.JobRunNotificationEvent N/A ERROR clouddeploy.googleapis.com%2Fautomation clouddeploy.googleapis.com/DeliveryPipeline type.googleapis.com/google.cloud.deploy.v1.AutomationEvent N/A ERROR NOTICE clouddeploy.googleapis.com%2Fautomationrun clouddeploy.googleapis.com/DeliveryPipeline type.googleapis.com/google.cloud.deploy.v1.AutomationRunEvent N/A ERROR NOTICE Cloud Functions Logging API service name: cloudfunctions.googleapis.com Log ID Monitored resource Payload Labels Severities cloudfunctions.googleapis.com%2Fcloud-functions cloud function Cloud Functions writes logs to this stream that indicate the start and end of execution, as well as the stdout and stderr from those executions. execution id instance id infrastructure runtime version DEFAULT DEBUG INFO NOTICE WARNING ERROR CRITICAL ALERT EMERGENCY Cloud IDS Logging API service name: ids.googleapis.com Log ID Monitored resource Payload Labels Severities ids.googleapis.com%2Fthreat ids.googleapis.com/Endpoint Threat logs from the Cloud IDS endpoint.",
+          "The instance's operating system, BIOS, and other system-level entities often write output to the serial ports, which makes them useful for troubleshooting crashes, failed boots, startup issues, or shutdown issues. compute.googleapis.com/resource name is text escaped INFO DEBUG Storage Transfer Logging API service name: storagetransfer.googleapis.com Log ID Monitored resource Payload Labels Severities storagetransfer.googleapis.com%2Ftransfer activity storage transfer job type.googleapis.com/google.storagetransfer.logging.TransferActivityLog N/A INFO WARNING ERROR Traffic Director Logging API service name: trafficdirector.googleapis.com Log ID Monitored resource Payload Labels Severities trafficdirector.googleapis.com%2Fevents gce network type.googleapis.com/google.networking.trafficdirector.type.TrafficDirectorLogEntry N/A ERROR INFO WARNING trafficdirector.googleapis.com%2Fevents gateway scope type.googleapis.com/google.networking.trafficdirector.type.TrafficDirectorLogEntry N/A ERROR INFO trafficdirector.googleapis.com%2Fevents mesh type.googleapis.com/google.networking.trafficdirector.type.TrafficDirectorLogEntry N/A ERROR INFO Vertex AI API Logging API service name: aiplatform.googleapis.com Log ID Monitored resource Payload Labels Severities aiplatform.googleapis.com%2Fpipeline job events aiplatform.googleapis.com/PipelineJob type.googleapis.com/google.cloud.aiplatform.logging.PipelineJobLogEntry network pipeline name pipeline type service account template metadata version template uri vertex-ai-pipelines-run-billing-id vertex pipeline system label propagate labels ERROR INFO aiplatform.googleapis.com%2Fpipeline job task events aiplatform.googleapis.com/PipelineJob type.googleapis.com/google.cloud.aiplatform.logging.PipelineJobTaskLogEntry custom job id network pipeline name schedule name service account template metadata version template uri vertex-ai-pipelines-run-billing-id vertex pipeline system label propagate labels ERROR INFO Web Security Scanner API Logging API service name: websecurityscanner.googleapis.com Log ID Monitored resource Payload Labels Severities websecurityscanner.googleapis.com%2Fscan activity security scanner scan config type.googleapis.com/google.cloud.websecurityscanner.v1.ScanRunLog N/A ERROR WARNING INFO Workflows Logging API service name: workflows.googleapis.com Log ID Monitored resource Payload Labels Severities workflows.googleapis.com%2Fengine call workflows.googleapis.com/Workflow type.googleapis.com/google.cloud.workflows.type.EngineCallLog workflows.googleapis.com/execution id workflows.googleapis.com/revision id DEBUG workflows.googleapis.com%2Fexecutions system workflows.googleapis.com/Workflow type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog workflows.googleapis.com/execution id workflows.googleapis.com/revision id INFO ERROR reCAPTCHA Enterprise Logging API service name: recaptchaenterprise.googleapis.com Log ID Monitored resource Payload Labels Severities recaptchaenterprise.googleapis.com%2Fassessment recaptchaenterprise.googleapis.com/Key type.googleapis.com/google.cloud.recaptchaenterprise.v1.Assessment N/A DEFAULT ERROR recaptchaenterprise.googleapis.com%2Fannotation recaptchaenterprise.googleapis.com/Key type.googleapis.com/google.cloud.recaptchaenterprise.v1.AnnotateAssessmentRequest N/A DEFAULT ERROR Understand and manage platform logs The following sections provide basic information about using and managing platform logs in Cloud Logging."
+        ]
+      },
+      {
+        "title": "View and analyze logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "source_id": "site-docs-root",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "For information about creating charts from your query results and saving charts to a custom dashboard, see Chart query results with Observability Analytics .",
+          "Highlight search terms, monitor and download your logs There are various options to analyze your logs data by selecting the Actions menu of the Query results toolbar: ink highlighter Highlight in results : Enter text to be highlighted in your query results. add chart Create metric : Set up a log-based metric . call merge Create sink : Create a log sink that auto-populates the sink's inclusion filter with the current query expression. add alert Create log alert : Set up a log-based alerting policy . edit Manage alerts : View and manage alerting policies. download Download : Download your logs in CSV or JSON format.",
+          "Set preferences for viewing log data To customize how your logs data is presented in the query results, click the settings Preferences button, and select View , Format , or Manage summary fields : To show or hide the Timeline and Fields panes, to hide summary chips in your query results, or to change the sorting order of your logs, select View ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "analyticsdata.googleapis.com",
+      "assuredworkloads.googleapis.com",
+      "backupdr.googleapis.com",
+      "bigquerydatatransfer.googleapis.com",
+      "binaryauthorization.googleapis.com",
+      "cbtestduckservice.googleapis.com",
+      "certificatemanager.googleapis.com",
+      "chat.googleapis.com",
+      "clouddeploy.googleapis.com",
+      "cloudfunctions.googleapis.com",
+      "cloudkms.googleapis.com",
+      "compute.googleapis.com",
+      "datamigration.googleapis.com",
+      "datastream.googleapis.com",
+      "field.value",
+      "fleetengine.googleapis.com",
+      "gkebackup.googleapis.com",
+      "gsuiteaddons.googleapis.com",
+      "identitytoolkit.googleapis.com",
+      "ids.googleapis.com",
+      "integrations.googleapis.com",
+      "issuerswitch.googleapis.com",
+      "labels.message",
+      "livestream.googleapis.com",
+      "logging.googleapis.com",
+      "maps.fleetengine.v1.UpdateVehicleAttributesLog",
+      "memorystore.googleapis.com",
+      "mobilitybilling.googleapis.com",
+      "networkanalyzer.googleapis.com",
+      "networking.googleapis.com",
+      "networkservices.googleapis.com",
+      "recaptchaenterprise.googleapis.com",
+      "spaces.data",
+      "storagetransfer.googleapis.com",
+      "stream.googleapis.com",
+      "trafficdirector.googleapis.com",
+      "type.googleapis.com",
+      "websecurityscanner.googleapis.com",
+      "workflows.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    }
+  ]
+}

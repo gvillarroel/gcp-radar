@@ -1,0 +1,159 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Private reuse of public IP addresses in VPC-native clusters",
+  "feature_slug": "private-reuse-of-public-ip-addresses-in-vpc-native-clusters",
+  "summary": "Supports privately reusing public IP address ranges in VPC-native clusters.",
+  "extended_definition": "Supports privately reusing public IP address ranges in VPC-native clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2020-05-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "source_id": "site-api-reference",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "AutoIpamConfig JSON representation { // Union field enabled can be only one of the following: \"enabled\" : boolean // End of list of possible types for union field enabled . } Fields Union field enabled . enabled can be only one of the following: enabled boolean The flag that enables Auto IPAM on this cluster MasterAuthorizedNetworksConfig JSON representation { \"enabled\" : boolean , \"cidrBlocks\" : [ { object ( CidrBlock ) } ] , // Union field gcp public cidrs access enabled can be only one of the // following: \"gcpPublicCidrsAccessEnabled\" : boolean // End of list of possible types for union field // gcp public cidrs access enabled . // Union field private endpoint enforcement enabled can be only one of the // following: \"privateEndpointEnforcementEnabled\" : boolean // End of list of possible types for union field // private endpoint enforcement enabled . } Fields enabled boolean Whether or not master authorized networks is enabled. cidrBlocks[] object ( CidrBlock ) cidr blocks define up to 50 external networks that could access Kubernetes master through HTTPS.",
+          "IPEndpointsConfig JSON representation { \"authorizedNetworksConfig\" : { object ( MasterAuthorizedNetworksConfig ) } , \"publicEndpoint\" : string , \"privateEndpoint\" : string , \"privateEndpointSubnetwork\" : string , // Union field enabled can be only one of the following: \"enabled\" : boolean // End of list of possible types for union field enabled . // Union field enable public endpoint can be only one of the following: \"enablePublicEndpoint\" : boolean // End of list of possible types for union field enable public endpoint . // Union field global access can be only one of the following: \"globalAccess\" : boolean // End of list of possible types for union field global access . } Fields authorizedNetworksConfig object ( MasterAuthorizedNetworksConfig ) Configuration of authorized networks.",
+          "PrivateClusterConfig JSON representation { \"enablePrivateNodes\" : boolean , \"enablePrivateEndpoint\" : boolean , \"masterIpv4CidrBlock\" : string , \"privateEndpoint\" : string , \"publicEndpoint\" : string , \"peeringName\" : string , \"masterGlobalAccessConfig\" : { object ( PrivateClusterMasterGlobalAccessConfig ) } , \"privateEndpointSubnetwork\" : string } Fields enablePrivateNodes (deprecated) boolean This item is deprecated!"
+        ]
+      },
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "To find all clusters originally created with public nodes, use this Cloud Asset Inventory query in the project or organization: SELECT resource.data.name AS cluster name, resource.parent AS project name, resource.data.privateClusterConfig.enablePrivateNodes FROM container googleapis com Cluster WHERE resource.data.privateClusterConfig.enablePrivateNodes is null OR resource.data.privateClusterConfig.enablePrivateNodes = false Disallow SSH to the cluster nodes 2024-07-02 Update: This section applies to both Autopilot and Standard clusters.",
+          "Legacy public clusters with --master-authorized-networks and PSC-based clusters with --master-authorized-networks and --enable-google-cloud (default) configured are additionally accessible by the following: Public IP addresses of all Compute Engine VMs in Google Cloud Google Cloud platform IP addresses What vulnerabilities are addressed by this patch?",
+          "Convert public node pools to private 2024-07-02 Update: For Autopilot clusters originally created as public clusters, you can place your workloads on private nodes by using nodeSelectors ."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "AutoIpamConfig JSON representation { // Union field enabled can be only one of the following: \"enabled\" : boolean // End of list of possible types for union field enabled . } Fields Union field enabled . enabled can be only one of the following: enabled boolean The flag that enables Auto IPAM on this cluster MasterAuthorizedNetworksConfig JSON representation { \"enabled\" : boolean , \"cidrBlocks\" : [ { object ( CidrBlock ) } ] , // Union field gcp public cidrs access enabled can be only one of the // following: \"gcpPublicCidrsAccessEnabled\" : boolean // End of list of possible types for union field // gcp public cidrs access enabled . // Union field private endpoint enforcement enabled can be only one of the // following: \"privateEndpointEnforcementEnabled\" : boolean // End of list of possible types for union field // private endpoint enforcement enabled . } Fields enabled boolean Whether or not master authorized networks is enabled. cidrBlocks[] object ( CidrBlock ) cidr blocks define up to 50 external networks that could access Kubernetes master through HTTPS.",
+          "IPEndpointsConfig JSON representation { \"authorizedNetworksConfig\" : { object ( MasterAuthorizedNetworksConfig ) } , \"publicEndpoint\" : string , \"privateEndpoint\" : string , \"privateEndpointSubnetwork\" : string , // Union field enabled can be only one of the following: \"enabled\" : boolean // End of list of possible types for union field enabled . // Union field enable public endpoint can be only one of the following: \"enablePublicEndpoint\" : boolean // End of list of possible types for union field enable public endpoint . // Union field global access can be only one of the following: \"globalAccess\" : boolean // End of list of possible types for union field global access . } Fields authorizedNetworksConfig object ( MasterAuthorizedNetworksConfig ) Configuration of authorized networks.",
+          "PrivateClusterConfig JSON representation { \"enablePrivateNodes\" : boolean , \"enablePrivateEndpoint\" : boolean , \"masterIpv4CidrBlock\" : string , \"privateEndpoint\" : string , \"publicEndpoint\" : string , \"peeringName\" : string , \"masterGlobalAccessConfig\" : { object ( PrivateClusterMasterGlobalAccessConfig ) } , \"privateEndpointSubnetwork\" : string } Fields enablePrivateNodes (deprecated) boolean This item is deprecated!"
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "resource.data.name",
+      "resource.data.privateClusterConfig.enablePrivateNodes",
+      "resource.parent"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.432Z",
+  "source_step08_card": "data/step-08/current/products/app-hub/card.json",
+  "product_name": "App Hub",
+  "product_slug": "app-hub",
+  "feature_name": "App Hub application management in app-enabled folders",
+  "feature_slug": "app-hub-application-management-in-app-enabled-folders",
+  "summary": "App Hub now supports creating and managing App Hub applications from app-enabled folders in Preview.",
+  "extended_definition": "App Hub now supports creating and managing App Hub applications from app-enabled folders in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/app-hub/docs/application-centric-google-cloud",
+      "https://docs.cloud.google.com/app-hub/docs/enabled-apis",
+      "https://docs.cloud.google.com/app-hub/docs/quickstart-create-application"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Enable APIs on the management project \\_|\\_ App Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/enabled-apis",
+        "source_id": "site-docs-root-2",
+        "final_score": 146,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "API Required or recommended More information App Hub API ( apphub.googleapis.com ) Organize existing resources into applications Required App Hub pricing VPC Service Controls App Design Center API ( designcenter.googleapis.com ) Design, deploy, and update applications Required App Design Center pricing Cloud Asset API ( cloudasset.googleapis.com ) Manage the global metadata inventory of Google Cloud resources and other assets Required Cloud Asset Inventory pricing VPC Service Controls Cloud Resource Manager API ( cloudresourcemanager.googleapis.com ) Manage container resources such as organizations, folders, and projects Required Cloud Resource Manager API pricing VPC Service Controls Infrastructure Manager API ( config.googleapis.com ) Automate deployment and management of Google Cloud infrastructure resources Required Infra Manager pricing VPC Service Controls Cloud Build API ( cloudbuild.googleapis.com ) Run builds for Infra Manager deployments Required Cloud Build pricing VPC Service Controls Cloud Storage API ( storage.googleapis.com ) Store data for Google Cloud services, including App Design Center and Cloud Logging Required Cloud Storage pricing VPC Service Controls Google Cloud Observability APIs The following APIs provide capabilities for observability features.",
+          "API Required or recommended More information App Optimize API ( appoptimize.googleapis.com ) Optimize costs in Cost Explorer and Cloud Hub Required Retrieve data from Cloud Billing and Cloud Monitoring Recommender API ( recommender.googleapis.com ) Generate recommendations and insights to help you optimize your Google Cloud resources Required Recommender pricing VPC Service Controls Service Health API ( servicehealth.googleapis.com ) Identify Google Cloud service disruptions relevant to your applications Required Personalized Service Health pricing VPC Service Controls Security and compliance APIs Security Command Center is a risk management solution that helps security professionals to prevent, detect, and respond to security issues.",
+          "API Required or recommended More information Gemini for Google Cloud API ( cloudaicompanion.googleapis.com ) Recommended Gemini Cloud Assist pricing VPC Service Controls Enable recommended APIs To enable recommended APIs after application management setup, follow these steps: To get the permissions that you need to enable APIs, ask your administrator to grant you the Service Usage Admin ( roles/serviceusage.serviceUsageAdmin ) role on the management project."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create an application from existing resources \\_|\\_ App Hub\\",
+        "url": "https://docs.cloud.google.com/app-hub/docs/quickstart-create-application",
+        "source_id": "site-docs-root",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Compute Engine API ( compute.googleapis.com ) Infrastructure Manager API ( config.googleapis.com ) Enable APIs Required roles To get the permissions that you need to enable required APIs and create a sample application from existing resources, ask your administrator to grant you the following IAM roles on the management project: To enable required APIs: Service Usage Admin ( roles/serviceusage.serviceUsageAdmin ) To get full access to required services: App Hub Admin ( roles/apphub.admin ) Cloud Run Admin ( roles/run.admin ) Compute Admin ( roles/compute.admin ) Cloud Infrastructure Manager Admin ( roles/config.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "This quickstart supports users who want to use their existing infrastructure to gain visibility and operational control by grouping Google Cloud resources into logical applications.",
+          "This quickstart assumes you have defined an application management boundary and creates an application using the management project ."
+        ]
+      },
+      {
+        "title": "Application-centric Google Cloud \\_|\\_ App Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/application-centric-google-cloud",
+        "source_id": "site-docs-root-2",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In this case, two folders ( Business Unit 1 and Business Unit 2 ) are attached to their own management projects, defining separate application management boundaries.",
+          "All the folders are configured for application management and hence have their own distinct management projects.",
+          "When you set up a management project, APIs for application management are automatically enabled."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apphub.admin",
+      "apphub.googleapis.com",
+      "appoptimize.googleapis.com",
+      "cloudaicompanion.googleapis.com",
+      "cloudasset.googleapis.com",
+      "cloudbuild.googleapis.com",
+      "cloudresourcemanager.googleapis.com",
+      "compute.admin",
+      "compute.googleapis.com",
+      "config.admin",
+      "config.googleapis.com",
+      "designcenter.googleapis.com",
+      "recommender.googleapis.com",
+      "run.admin",
+      "securitycenter.googleapis.com",
+      "servicehealth.googleapis.com",
+      "serviceusage.serviceUsageAdmin",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/apphub.admin",
+      "roles/compute.admin",
+      "roles/config.admin",
+      "roles/run.admin",
+      "roles/serviceusage.serviceUsageAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/enabled-apis",
+        "https://docs.cloud.google.com/app-hub/docs/quickstart-create-application",
+        "https://docs.cloud.google.com/app-hub/docs/application-centric-google-cloud"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/enabled-apis",
+        "https://docs.cloud.google.com/app-hub/docs/quickstart-create-application",
+        "https://docs.cloud.google.com/app-hub/docs/application-centric-google-cloud"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/enabled-apis",
+        "https://docs.cloud.google.com/app-hub/docs/quickstart-create-application",
+        "https://docs.cloud.google.com/app-hub/docs/application-centric-google-cloud"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/enabled-apis",
+        "https://docs.cloud.google.com/app-hub/docs/quickstart-create-application",
+        "https://docs.cloud.google.com/app-hub/docs/application-centric-google-cloud"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/enabled-apis",
+        "https://docs.cloud.google.com/app-hub/docs/quickstart-create-application",
+        "https://docs.cloud.google.com/app-hub/docs/application-centric-google-cloud"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/enabled-apis",
+        "https://docs.cloud.google.com/app-hub/docs/quickstart-create-application",
+        "https://docs.cloud.google.com/app-hub/docs/application-centric-google-cloud"
+      ]
+    }
+  ]
+}

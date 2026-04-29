@@ -1,0 +1,156 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.828Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry",
+  "feature_name": "Artifact Registry beta launch",
+  "feature_slug": "artifact-registry-beta-launch",
+  "summary": "Artifact Registry entered beta as the container-and-package registry successor with support for Docker, Maven, and npm package formats.",
+  "extended_definition": "Artifact Registry entered beta as the container-and-package registry successor with support for Docker, Maven, and npm package formats.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+      "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images",
+      "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Store Docker container images in Artifact Registry \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images",
+        "source_id": "site-docs-root-2",
+        "final_score": 79,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Store Docker container images in Artifact Registry Artifact Registry provides a single location for managing private packages and Docker container images.",
+          "Run the following command to tag the image as quickstart-image:tag1 : docker tag us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0 \\ us-west1-docker.pkg.dev/ PROJECT /quickstart-docker-repo/quickstart-image:tag1 Where: us-west1 is the repository location. us-west1-docker.pkg.dev is the hostname for the Docker repository you created.",
+          "For this sample image: us-docker.pkg.dev is the hostname for container images stored in Artifact Registry Docker repositories, which includes the location of the repository ( us ). google-samples is the project ID. containers is the repository ID. /gke/hello-app is the path to the image in the repository containers ."
+        ]
+      },
+      {
+        "title": "\"Transition from Container Registry \\_|\\_ Artifact Registry \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "source_id": "site-docs-root",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "Feature Container Registry Artifact Registry Supported formats Container images only Multiple artifact formats , including container images, language packages, and OS packages.",
+          "Scans return OS and language package vulnerability information for images in Container Registry with supported operating systems .",
+          "Scanning for OS and language package vulnerabilities in containers."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Artifact Registry \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 71,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Container images: Docker , Helm Language packages: Java , Node.js , Python , Go OS packages: Debian , RPM Other: Kubeflow Pipeline templates GitLab on Google Cloud The GitLab on Google Cloud integration uses Workload Identity Federation for authorization and authentication for GitLab workloads on Google Cloud without the need for service accounts or service account keys.",
+          "Container images: Docker , Helm Language packages: Java , Node.js , Python , Go OS packages: Debian , RPM Other: Kubeflow Pipeline templates Use a service account : Create a service account to act on behalf of your application, or choose an existing service account that use for your CI/CD automation.",
+          "Container images: Docker , Helm Language packages: Java , Node.js , Python , Go OS packages: Debian , RPM You can also restrict artifact downloads with download rules ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.email",
+      "account.repo",
+      "artifactregistry.reader",
+      "docker.pkg.dev",
+      "repo.location",
+      "repo.name",
+      "repository.my"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.reader"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control"
+      ]
+    }
+  ]
+}

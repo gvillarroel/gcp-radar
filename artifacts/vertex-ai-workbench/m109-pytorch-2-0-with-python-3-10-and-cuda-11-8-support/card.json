@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:32.709Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-workbench/card.json",
+  "product_name": "Vertex AI Workbench",
+  "product_slug": "vertex-ai-workbench",
+  "feature_name": "M109: PyTorch 2.0 with Python 3.10 and CUDA 11.8 support",
+  "feature_slug": "m109-pytorch-2-0-with-python-3-10-and-cuda-11-8-support",
+  "summary": "The M109 release adds support for PyTorch 2.0 with Python 3.10 and CUDA 11.8 for Vertex AI Workbench user-managed notebooks.",
+  "extended_definition": "The M109 release adds support for PyTorch 2.0 with Python 3.10 and CUDA 11.8 for Vertex AI Workbench user-managed notebooks.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+      "https://docs.cloud.google.com/vertex-ai/docs/start/training-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Introduction to the Vertex AI SDK for Python \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "source_id": "site-api-reference",
+        "final_score": 83,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Write code with the Vertex AI SDK for Python To use the Vertex AI SDK for Python: Install the google-cloud-aiplatform package, which includes both the Vertex AI SDK for Python and the Vertex AI Python client library, by running the following command in your virtual environment: pip install -- upgrade google - cloud - aiplatform Use the following code to import the google.cloud.aiplatform namespace: from google.cloud import aiplatform Preview: To use features for the Vertex AI SDK for Python that are still in preview , import vertexai.preview : import vertexai.preview If you're using a local shell, then create local authentication credentials for your user account: gcloud auth application-default login You don't need to do this if you're using Cloud Shell.",
+          "To see an example of using the Vertex AI SDK as part of a more comprehensive workflow, run the \"Custom training and online prediction\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Understand the Vertex AI SDK and client library differences When you install the Vertex AI SDK for Python, the Vertex AI Python client library is also installed.",
+          "Use Vertex AI Python client library and SDK together If you use the Vertex AI SDK for Python and discover you need greater flexibility or control, or if you need a method not included in the Vertex AI SDK, you can use the Vertex AI Python client library in the same workflow."
+        ]
+      },
+      {
+        "title": "Custom training beginner's guide \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/start/training-guide",
+        "source_id": "site-docs-root",
+        "final_score": 74,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For an example of packaging your training application as a Python Source Distribution, see the notebook tutorial Training, tuning and deploying a PyTorch classification model .",
+          "Notebooks To see examples of how to enable Profiler for a custom training job, run the following notebooks in the environment of your choice: \"Training, tuning and deploying a PyTorch text sentiment classification model on Vertex AI\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Get started with Vertex AI Distributed Training\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Run hyperparameter tuning for a TensorFlow model\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Vertex AI TensorBoard custom training with prebuilt container\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"PyTorch distributed training with Vertex AI Reduction Server\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Custom training and batch prediction (image classification)\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Custom training and online prediction (image classification)\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Video Training custom models Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Recommended training application structure If you choose to package up your code as a Python source distribution or as a custom container, it's recommended that you structure your application as follows: training-application-dir/ ....setup.py ....Dockerfile trainer/ ....task.py ....model.py ....utils.py Create a directory to store all of your training application code, in this case, training-application-dir ."
+        ]
+      },
+      {
+        "title": "\"Vertex Explainable AI notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials",
+        "source_id": "site-docs-root",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "Tutorial steps Package training application into a Python source distribution Configure and run training job in a prebuilt container Package model artifacts in a model archive file Upload model for deployment Deploy model using a prebuilt container for prediction Make online predictions Colab Colab Enterprise GitHub Vertex AI Workbench Ray on Vertex AI overview Get started with PyTorch on Ray on Vertex AI .",
+          "Tutorial steps Create a PyTorch distributed training application Package the training application with prebuilt containers Create a custom job on Vertex AI with Reduction Server Submit and monitor the job Colab Colab Enterprise GitHub Vertex AI Workbench Custom training Custom training using Python package, managed text dataset, and TF Serving container .",
+          "Learn how to create a distributed PyTorch training job using Vertex AI SDK for Python and custom containers."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "model.py",
+      "setup.py",
+      "task.py",
+      "utils.py",
+      "vertexai.preview"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/vertex-ai/docs/start/training-guide",
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/vertex-ai/docs/start/training-guide",
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials"
+      ]
+    }
+  ]
+}

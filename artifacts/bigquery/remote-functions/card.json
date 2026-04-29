@@ -1,0 +1,113 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Remote functions",
+  "feature_slug": "remote-functions",
+  "summary": "Remote functions let BigQuery GoogleSQL queries invoke functions hosted in Cloud Functions or Cloud Run; Remote functions let BigQuery call functions implemented outside SQL and JavaScript, including external libraries and services.",
+  "extended_definition": "Remote functions let BigQuery GoogleSQL queries invoke functions hosted in Cloud Functions or Cloud Run; Remote functions let BigQuery call functions implemented outside SQL and JavaScript, including external libraries and services.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/remote-functions-translation-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example: \"https://us-east1-your-project.cloudfunctions.net/foo\" For more information, see Create a remote function . user defined context ARRAY <STRUCT <STRING,STRING>> A list of key-value pairs that will be sent with every HTTP request when the function is invoked.",
+          "If all of the invoked functions are DETERMINISTIC , BigQuery tries to cache the result, unless the results can't be cached for other reasons.",
+          "Examples The following table function takes an INT64 parameter that is used to filter the results of a query: CREATE OR REPLACE TABLE FUNCTION mydataset . names by year ( y INT64 ) AS SELECT year , name , SUM ( number ) AS total FROM bigquery-public-data.usa names.usa 1910 current WHERE year = y GROUP BY year , name The following example specifies the return TABLE type in the RETURNS clause: CREATE OR REPLACE TABLE FUNCTION mydataset . names by year ( y INT64 ) RETURNS TABLE<name STRING , year INT64 , total INT64 > AS SELECT year , name , SUM ( number ) AS total FROM bigquery-public-data.usa names.usa 1910 current WHERE year = y GROUP BY year , name The following example computes total sales for items with the name item name from the orders table: CREATE TABLE FUNCTION mydataset . compute sales ( orders TABLE<item STRING , sales INT64 > , item name STRING ) AS ( SELECT SUM ( sales ) AS total sales , item FROM orders WHERE item = item name GROUP BY item ); CREATE PROCEDURE statement Creates a new procedure , which is a block of statements that can be called from other queries."
+        ]
+      },
+      {
+        "title": "\"Remote functions and Translation API tutorial \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/remote-functions-translation-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Remote functions and Translation API tutorial This tutorial describes how to create a BigQuery remote function , invoke the Cloud Translation API , and perform content translation from any language to Spanish using SQL and Python.",
+          "Args: request: HTTP request from BigQuery https://cloud.google.com/bigquery/docs/reference/standard-sql/remote-functions#input format Returns: HTTP response to BigQuery https://cloud.google.com/bigquery/docs/reference/standard-sql/remote-functions#output format \"\"\" try : Parse request data as JSON request json = request . get json () Get the project of the query caller = request json [ \"caller\" ] project = extract project from caller ( caller ) if project is None : return flask . make response ( flask . jsonify ( { \"errorMessage\" : ( 'project can \\' t be extracted from \"caller\":' f \" { caller } .\" ) } ), 400 , ) Get the target language code, default is Spanish (\"es\") context = request json . get ( \"userDefinedContext\" , {}) target = context . get ( \"target language\" , \"es\" ) calls = request json [ \"calls\" ] translated = translate text ([ call [ 0 ] for call in calls ], project , target ) return flask . jsonify ({ \"replies\" : translated }) except Exception as err : return flask . make response ( flask . jsonify ({ \"errorMessage\" : f \"Unexpected error { type ( err ) } : { err } \" }), 400 , ) def extract project from caller ( job : str ) - > str : \"\"\"Extract project id from full resource name of a BigQuery job.",
+          "Go to BigQuery In the query editor, enter the following query: CREATE OR REPLACE FUNCTION remote function test.translate text ( x STRING ) RETURNS STRING REMOTE WITH CONNECTION us.remote-function-connection OPTIONS ( endpoint = ' TRIGGER URL ' , max batching rows = 10 ); Replace TRIGGER URL with the trigger URL that you saved earlier when you created a Cloud Run functions function."
+        ]
+      },
+      {
+        "title": "Troubleshoot quota and limit errors \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "source_id": "site-docs-root",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "Maximum number of concurrent queries that contain remote functions BigQuery returns this error when the number of concurrent queries that contain remote functions exceeds the limit.",
+          "Error message Exceeded rate limits: too many concurrent queries with remote functions for this project This limit can be increased.",
+          "Diagnosis To see limits for concurrent queries that contain remote functions , see Remote function limits ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.Client",
+      "data.usa",
+      "names.usa",
+      "project.cloudfunctions.net",
+      "test.translate",
+      "us.remote"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/remote-functions-translation-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/remote-functions-translation-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/remote-functions-translation-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    }
+  ]
+}

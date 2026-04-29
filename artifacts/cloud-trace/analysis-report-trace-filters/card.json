@@ -1,0 +1,111 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:56.733Z",
+  "source_step08_card": "data/step-08/current/products/cloud-trace/card.json",
+  "product_name": "Cloud Trace",
+  "product_slug": "cloud-trace",
+  "feature_name": "Analysis report trace filters",
+  "feature_slug": "analysis-report-trace-filters",
+  "summary": "Analysis reports can filter traces by full URI, URI prefix, or trace filter.",
+  "extended_definition": "Analysis reports can filter traces by full URI, URI prefix, or trace filter.",
+  "lifecycle": {
+    "latest_feature_date": "2018-12-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient.ListTracesFixedSizeCollection",
+      "https://docs.cloud.google.com/trace/docs/analytics",
+      "https://docs.cloud.google.com/trace/docs/finding-traces",
+      "https://docs.cloud.google.com/trace/docs/trace-filters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Trace filters \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/trace-filters",
+        "source_id": "site-docs-reference",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This document describes how you can configure filters when you use the Cloud Trace API list method.",
+          "For example, the following filter matches traces that have a latency of one second or more, and that contain a span named /modules.GetNumInstances : +span:/modules.GetNumInstances latency:1s All string comparisons are case-sensitive.",
+          "Home Documentation Observability Cloud Trace Reference Send feedback Cloud Trace filters Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Find and explore traces \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "source_id": "site-docs-root",
+        "final_score": 221,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you are investigating an issue, you might want to view a specific trace or only spans with certain properties: To restrict which spans are shown, apply filters .",
+          "When you add or remove a filter, the data displayed by the Trace Explorer page is refreshed and only shows those spans that match all applied filters.",
+          "Filter your trace data To display only information that is of interest to you, apply filters."
+        ]
+      },
+      {
+        "title": "Query and analyze traces \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/analytics",
+        "source_id": "site-docs-root",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Observability Cloud Trace Guides Send feedback Query and analyze traces Stay organized with collections Save and categorize content based on your preferences.",
+          "Query trace data This section describes the approaches that you can use to query your trace data: Load a system-defined query, edit this query, and then run the query.",
+          "If you want to view or explore individual traces or spans, or view attributes that are attached to spans, then use the Trace Explorer page."
+        ]
+      },
+      {
+        "title": "\"Class TraceServiceClient.ListTracesFixedSizeCollection (2.88.0) \\_|\\_ Java\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient.ListTracesFixedSizeCollection",
+        "source_id": "site-java-reference",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ListTracesFixedSizeCollection > Inheritance java.lang.Object > AbstractFixedSizeCollection > TraceServiceClient.ListTracesFixedSizeCollection Inherited Members AbstractFixedSizeCollection.createCollection(List<PageT>,int) AbstractFixedSizeCollection.getCollectionSize() AbstractFixedSizeCollection.getNextCollection() AbstractFixedSizeCollection.getNextPageToken() AbstractFixedSizeCollection.getValues() AbstractFixedSizeCollection.hasNextCollection() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createCollection(List<TraceServiceClient.ListTracesPage> pages, int collectionSize) protected TraceServiceClient .",
+          "2.88.0 (latest) 2.87.0 2.85.0 2.83.0 2.82.0 2.80.0 2.78.0 2.76.0 2.75.0 2.74.0 2.73.0 2.72.0 2.70.0 2.68.0 2.67.0 2.64.0 2.63.0 2.62.0 2.60.0 2.59.0 2.58.0 2.57.0 2.56.0 2.55.0 2.54.0 2.53.0 2.52.0 2.51.0 2.49.0 2.48.0 2.47.0 2.46.0 2.45.0 2.44.0 2.43.0 2.42.0 2.41.0 2.40.0 2.39.0 2.37.0 2.36.0 2.35.0 2.34.0 2.33.0 2.32.0 2.31.0 2.30.0 2.29.0 2.28.0 2.27.0 2.24.0 2.23.0 2.22.0 2.21.0 2.20.0 2.19.0 2.18.0 2.17.0 2.16.0 2.15.0 2.14.0 2.13.0 2.12.0 2.11.0 2.9.0 2.8.0 2.7.0 2.6.0 2.5.0 2.4.0 2.3.7 2.2.0 2.1.13 public static class TraceServiceClient .",
+          "ListTracesPage > pages , int collectionSize ) Parameters Name Description pages List < ListTracesPage > collectionSize int Returns Type Description TraceServiceClient.ListTracesFixedSizeCollection Overrides AbstractFixedSizeCollection<RequestT,ResponseT,ResourceT,PageT,CollectionT>.createCollection(List<PageT> pages, int collectionSize) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.trace.v1.TraceServiceClient",
+      "com.google.cloud.trace.v1.TraceServiceClient.ListTracesFixedSizeCollection",
+      "com.google.cloud.trace.v1.TraceServiceClient.ListTracesPage",
+      "com.google.cloud.trace.v1.TraceServiceClient.ListTracesPagedResponse",
+      "java.lang.Object",
+      "modules.GetNumInstances"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/trace-filters",
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/analytics",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/com.google.cloud.trace.v1.TraceServiceClient.ListTracesFixedSizeCollection"
+      ]
+    }
+  ]
+}

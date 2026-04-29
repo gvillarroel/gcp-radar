@@ -1,0 +1,94 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:48.593Z",
+  "source_step08_card": "data/step-08/current/products/cloud-interconnect/card.json",
+  "product_name": "Cloud Interconnect",
+  "product_slug": "cloud-interconnect",
+  "feature_name": "400 Gbps VLAN attachments",
+  "feature_slug": "400-gbps-vlan-attachments",
+  "summary": "Cloud Interconnect supports VLAN attachments with maximum capacities of 400 Gbps for Dedicated Interconnect and Cross-Cloud Interconnect.",
+  "extended_definition": "Cloud Interconnect supports VLAN attachments with maximum capacities of 400 Gbps for Dedicated Interconnect and Cross-Cloud Interconnect.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/cci-overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-cci-for-oci-overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/interconnect/quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Dedicated Interconnect overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview",
+        "source_id": "site-docs-root",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Each link type has a different maximum capacity: 1 x 10-Gbps (10 Gbps) circuit up to 8 x 10-Gbps (80 Gbps) circuits 1 x 100-Gbps (100 Gbps) circuit up to 8 x 100-Gbps (800 Gbps) circuits 1 x 400-Gbps (400 Gbps) circuit up to 8 x 400-Gbps (3200 Gbps) circuits Caution: The link type that you select when you create a Dedicated Interconnect connection cannot be changed later.",
+          "Create VLAN attachments Dual-stack IPv4 and IPv6 VLAN attachments A Dedicated Interconnect VLAN attachment that is configured with the dual-stack (IPv4 and IPv6) stack type can support both IPv4 and IPv6 traffic.",
+          "When you configure custom IP address ranges for VLAN attachments that you use with Dedicated Interconnect, you must provide the custom IP address ranges during VLAN creation."
+        ]
+      },
+      {
+        "title": "Cross-Cloud Interconnect overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/cci-overview",
+        "source_id": "site-docs-root",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Port capacity Cross-Cloud Interconnect connections are available in the following sizes: Provider Size Amazon Web Services (AWS), Oracle Cloud Infrastructure (OCI) 10 Gbps, 100 Gbps, and 400 Gbps Microsoft Azure, Alibaba Cloud 10 Gbps, 100 Gbps Cross-Cloud Interconnect MTU Cross-Cloud Interconnect lets you configure jumbo maximum transmission units (MTUs) with any of the cloud providers.",
+          "When you configure custom IP address ranges for VLAN attachments that you use with Cross-Cloud Interconnect and AWS, you must provide the IPv6 subnet that was allocated by AWS during attachment provisioning.",
+          "Use the following table to choose the option that works best for your needs: Interconnect connection type Cross-Cloud Interconnect Partner Cross-Cloud Interconnect for AWS Description Provides dedicated connectivity between Google Cloud and providers like OCI, AWS, Azure, and Alibaba Provides dedicated connectivity between Google Cloud and providers like AWS Needs physical provisioning Yes No Needs physical attachments and ports Yes No Connection increments 10 Gbps or 100 Gbps Granular pre approved speeds starting from 1 Gbps to 100 Gbps Provisioning time 1-4 weeks 1 day or less Connection ordering Must be initiated from Google Cloud Bidirectional; can be initiated from Google Cloud or Amazon Web Services Resiliency Must be configured manually Built into the product Google support for Cross-Cloud Interconnect The following diagram shows the point of physical cabling that Google support is responsible for."
+        ]
+      },
+      {
+        "title": "Partner Cross-Cloud Interconnect for OCI overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-cci-for-oci-overview",
+        "source_id": "site-docs-root",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can provision partner VLAN attachments over these connections to interconnect your VPC networks in Google Cloud and OCI within minutes.",
+          "Provisioning To provision a Partner Cross-Cloud Interconnect for OCI connection with OCI, you start by selecting your paired location, and then ordering Partner Interconnect attachments in the appropriate Google Cloud locations.",
+          "VLAN attachment MTU options We recommend that you use the same maximum transmission unit (MTU) for all VLAN attachments that are connected to the same VPC network, and that you set the MTU of the VPC networks to the same value."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Cloud Interconnect \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/interconnect/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 216,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Maximum bandwidth per VLAN attachment Dedicated Interconnect, Cross-Cloud Interconnect: Capacities from 50 Mbps to 400 Gbps Partner Interconnect, Cross-Site Interconnect: Capacities from 50 Mbps to 100 Gbps The maximum possible bandwidth per VLAN attachment depends on the bandwidth capacity that you order.",
+          "VLAN attachments total Mbps Quota The maximum bandwidth capacity of all VLAN attachments in a given region for a given project, irrespective of their relationship with Interconnect connections.",
+          "10-Gbps increments up to eight circuits (80 Gbps) to increase the maximum total bandwidth of all VLAN attachments that use the Cloud Interconnect connection to 80 Gbps."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

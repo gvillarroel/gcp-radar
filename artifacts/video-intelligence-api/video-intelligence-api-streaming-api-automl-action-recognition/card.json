@@ -1,0 +1,180 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:33.461Z",
+  "source_step08_card": "data/step-08/current/products/video-intelligence-api/card.json",
+  "product_name": "Video Intelligence API",
+  "product_slug": "video-intelligence-api",
+  "feature_name": "Video Intelligence API Streaming API AutoML Action Recognition",
+  "feature_slug": "video-intelligence-api-streaming-api-automl-action-recognition",
+  "summary": "Allows AutoML Action Recognition using custom AutoML models on real-time video streams via the Streaming API.",
+  "extended_definition": "Allows AutoML Action Recognition using custom AutoML models on real-time video streams via the Streaming API.",
+  "lifecycle": {
+    "latest_feature_date": "2021-11-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/video-intelligence/docs/celebrity-recognition",
+      "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+      "https://docs.cloud.google.com/video-intelligence/docs/reference/rpc",
+      "https://docs.cloud.google.com/video-intelligence/docs/streaming/live-streaming"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "AnnotateVideoResponse \\_|\\_ Video Intelligence API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "source_id": "site-api-reference",
+        "final_score": 237,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Video Intelligence API Reference Send feedback AnnotateVideoResponse Stay organized with collections Save and categorize content based on your preferences.",
+          "JSON representation { \"inputUri\" : string , \"segment\" : { object ( VideoSegment ) } , \"segmentLabelAnnotations\" : [ { object ( LabelAnnotation ) } ] , \"segmentPresenceLabelAnnotations\" : [ { object ( LabelAnnotation ) } ] , \"shotLabelAnnotations\" : [ { object ( LabelAnnotation ) } ] , \"shotPresenceLabelAnnotations\" : [ { object ( LabelAnnotation ) } ] , \"frameLabelAnnotations\" : [ { object ( LabelAnnotation ) } ] , \"faceAnnotations\" : [ { object ( FaceAnnotation ) } ] , \"faceDetectionAnnotations\" : [ { object ( FaceDetectionAnnotation ) } ] , \"shotAnnotations\" : [ { object ( VideoSegment ) } ] , \"explicitAnnotation\" : { object ( ExplicitContentAnnotation ) } , \"speechTranscriptions\" : [ { object ( SpeechTranscription ) } ] , \"textAnnotations\" : [ { object ( TextAnnotation ) } ] , \"objectAnnotations\" : [ { object ( ObjectTrackingAnnotation ) } ] , \"logoRecognitionAnnotations\" : [ { object ( LogoRecognitionAnnotation ) } ] , \"personDetectionAnnotations\" : [ { object ( PersonDetectionAnnotation ) } ] , \"error\" : { object ( Status ) } } Fields inputUri string Video file location in Cloud Storage . segment object ( VideoSegment ) Video segment on which the annotation is run. segmentLabelAnnotations[] object ( LabelAnnotation ) Topical label annotations on video level or user-specified segment level.",
+          "JSON representation VideoAnnotationResults JSON representation LabelAnnotation JSON representation Entity JSON representation LabelSegment JSON representation LabelFrame JSON representation FaceAnnotation JSON representation FaceSegment JSON representation FaceFrame JSON representation NormalizedBoundingBox JSON representation FaceDetectionAnnotation JSON representation Track JSON representation TimestampedObject JSON representation DetectedAttribute JSON representation DetectedLandmark JSON representation NormalizedVertex JSON representation ExplicitContentAnnotation JSON representation ExplicitContentFrame JSON representation SpeechTranscription JSON representation SpeechRecognitionAlternative JSON representation WordInfo JSON representation TextAnnotation JSON representation TextSegment JSON representation TextFrame JSON representation NormalizedBoundingPoly JSON representation ObjectTrackingAnnotation JSON representation ObjectTrackingFrame JSON representation LogoRecognitionAnnotation JSON representation PersonDetectionAnnotation JSON representation Video annotation response."
+        ]
+      },
+      {
+        "title": "\"How-to stream live videos \\_|\\_ Video Intelligence API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/streaming/live-streaming",
+        "source_id": "site-docs-root",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example shows how to use the binary from the command line. $ export GOOGLE APPLICATION CREDENTIALS = / path to credential /credential json $ export CONFIG = / path to config /config json $ export PIPE NAME = / path to pipe / name of pipe $ export TIMEOUT = 3600 $ ./streaming client main --alsologtostderr --endpoint \"dns:///alpha-videointelligence.googleapis.com\" \\ --video path = $PIPE NAME --use pipe = true --config = $CONFIG --timeout = $TIMEOUT $GOOGLE APPLICATION CREDENTIALS specifies the file path of the JSON file containing your service account key.",
+          "Step 3: Run GStreamer pipeline GStreamer supports multiple live streaming protocols including but not limited to: HTTP Live Streaming (HLS) Real-time Streaming Protocol (RTSP) Real-time Protocol (RTP) Real-time Messaging Protocol (RTMP) WebRTC Streaming from Webcam The Video Intelligence API uses the GStreamer pipeline to convert from these live streaming protocols to a decodable video stream, and writes the stream into the named pipe created in Step 1.",
+          "The Video Intelligence Streaming API supports standard live streaming protocols like RTSP, RTMP, and HLS."
+        ]
+      },
+      {
+        "title": "Recognize celebrities \\_|\\_ Video Intelligence API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/celebrity-recognition",
+        "source_id": "site-iam-reference",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT NUMBER \" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://videointelligence.googleapis.com/v1/ OPERATION NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION ID /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.videointelligence.v1p3beta1.AnnotateVideoProgress\", \"annotationProgress\": [ { \"inputUri\": \" INPUT URI \", \"progressPercent\": 100, \"startTime\": \"2020-05-12T19:36:09.110351Z\", \"updateTime\": \"2020-05-12T19:36:17.519069Z\" } ] }, \"done\": true, \"response\": { \"@type\": \"type.googleapis.com/google.cloud.videointelligence.v1p3beta1.AnnotateVideoResponse\", \"annotationResults\": [ { ... } ] } } The output from annotating the video should look similar to the following example. { \"annotationResults\": [ { \"inputUri\": \" INPUT URI , \"segment\": { \"startTimeOffset\": { }, \"endTimeOffset\": { \"seconds\": 19, \"nanos\": 519500000 } }, \"celebrityRecognitionAnnotations\": { \"celebrityTracks\": [ { \"celebrities\": [...], \"faceTrack\": {...} }, { \"celebrities\": [ { \"celebrity\": { \"name\": \"video-intelligence/ CELEBRITY MID \", \"displayName\": \" CELEBRITY NAME/var>\" }, \"confidence\": 0.81873637 } ], \"faceTrack\": { \"segment\": { \"startTimeOffset\": { \"seconds\": 1, \"nanos\": 459791000 }, \"endTimeOffset\": { \"seconds\": 3, \"nanos\": 712041000 } }, \"timestampedObjects\": [ { \"normalizedBoundingBox\": {...}, \"timeOffset\": {...} }, { \"normalizedBoundingBox\": { \"left\": 0.38046876, \"top\": 0.26249999, \"right\": 0.60312498, \"bottom\": 0.72361112 }, \"timeOffset\": { \"seconds\": 1, \"nanos\": 459791000 } }, { \"normalizedBoundingBox\": {...}, \"timeOffset\": {...} }] } }, { \"celebrities\": [...], \"faceTrack\": {...} } ] } ... } Request celebrity opt-out If you are a celebrity and would like not to be included in this feature for either the Cloud Vision or Video Intelligence API please submit this form .",
+          "PROJECT NUMBER : The numeric identifier for your Google Cloud project HTTP method and URL: POST https://videointelligence.googleapis.com/v1p3beta1/videos:annotate Request JSON body: { \"inputUri\": \"gs:// INPUT URI \", \"outputUri\": \"gs:// OUTPUT URI \", \"features\": [\"CELEBRITY RECOGNITION\"] } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Report misuse If you suspect that the Video Intelligence API celebrity recognition feature is being misused in any way, please let us know using this form."
+        ]
+      },
+      {
+        "title": "Video Intelligence API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/reference/rpc",
+        "source_id": "site-docs-root",
+        "final_score": 191,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Service: videointelligence.googleapis.com The Service name videointelligence.googleapis.com is needed to create RPC client stubs. google.cloud.videointelligence.v1.VideoIntelligenceService Methods AnnotateVideo Performs asynchronous video annotation. google.cloud.videointelligence.v1p3beta1.StreamingVideoIntelligenceService Methods StreamingAnnotateVideo Performs video annotation with bidirectional streaming: emitting results while sending video/audio bytes. google.cloud.videointelligence.v1p3beta1.VideoIntelligenceService Methods AnnotateVideo Performs asynchronous video annotation. google.longrunning.Operations Methods CancelOperation Starts asynchronous cancellation on a long-running operation.",
+          "Home Documentation AI and ML Video Intelligence API Reference Send feedback Cloud Video Intelligence API Stay organized with collections Save and categorize content based on your preferences.",
+          "Supports both asynchronous API and streaming API."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "request.json",
+      "type.googleapis.com",
+      "videointelligence.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/streaming/live-streaming",
+        "https://docs.cloud.google.com/video-intelligence/docs/celebrity-recognition",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/streaming/live-streaming",
+        "https://docs.cloud.google.com/video-intelligence/docs/celebrity-recognition",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/streaming/live-streaming",
+        "https://docs.cloud.google.com/video-intelligence/docs/celebrity-recognition",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/streaming/live-streaming",
+        "https://docs.cloud.google.com/video-intelligence/docs/celebrity-recognition",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/streaming/live-streaming",
+        "https://docs.cloud.google.com/video-intelligence/docs/celebrity-recognition",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/streaming/live-streaming",
+        "https://docs.cloud.google.com/video-intelligence/docs/celebrity-recognition",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/streaming/live-streaming",
+        "https://docs.cloud.google.com/video-intelligence/docs/celebrity-recognition",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/streaming/live-streaming",
+        "https://docs.cloud.google.com/video-intelligence/docs/celebrity-recognition",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/streaming/live-streaming",
+        "https://docs.cloud.google.com/video-intelligence/docs/celebrity-recognition",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rpc"
+      ]
+    }
+  ]
+}

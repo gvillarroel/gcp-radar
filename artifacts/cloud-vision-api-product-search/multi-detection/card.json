@@ -1,0 +1,144 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:57.026Z",
+  "source_step08_card": "data/step-08/current/products/cloud-vision-api-product-search/card.json",
+  "product_name": "Cloud Vision API Product Search",
+  "product_slug": "cloud-vision-api-product-search",
+  "feature_name": "multi-detection",
+  "feature_slug": "multi-detection",
+  "summary": "Multi-detection finds multiple products in an image and returns similar products for each detected item.",
+  "extended_definition": "Multi-detection finds multiple products in an image and returns similar products for each detected item.",
+  "lifecycle": {
+    "latest_feature_date": "2018-12-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products",
+      "https://docs.cloud.google.com/vision/product-search/docs/create-reference-images",
+      "https://docs.cloud.google.com/vision/product-search/docs/searching",
+      "https://docs.cloud.google.com/vision/product-search/docs/searching-response"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Understanding search responses & multi-detection \\_|\\_ Vision API Product\\",
+        "url": "https://docs.cloud.google.com/vision/product-search/docs/searching-response",
+        "source_id": "site-docs-root",
+        "final_score": 288,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Multiple-product images (multi-detection) & response The following search image contains multiple products. gs://cloud-samples-data/product search/multiple dresses.jpg Using Vision API Product Search to search for similar products returns a response that identifies multiple bounding boxes in the image, one for the entire image and also three boxes for each of the three dresses.",
+          "For more information, see the API Reference documentation . { \"responses\" : [ { \"productSearchResults\" : { \"indexTime\" : \"2018-12-05T18:34:22.231193168Z\" , \"results\" : [ { \"product\" : { \"name\" : \"projects/ project-id /locations/ location-id /products/product id89\" , \"displayName\" : \" \" , \"productCategory\" : \"apparel\" , \"productLabels\" : [ { \"key\" : \"style\" , \"value\" : \"women\" }, { \"key\" : \"category\" , \"value\" : \"dress\" } ] }, \"score\" : 0.40636745 , \"image\" : \"projects/ project-id /locations/ location-id /products/product id89/referenceImages/image89\" }, { \"product\" : { \"name\" : \"projects/ project-id /locations/ location-id /products/product id56\" , \"displayName\" : \" \" , \"productCategory\" : \"apparel\" , \"productLabels\" : [ { \"key\" : \"style\" , \"value\" : \"women\" }, { \"key\" : \"category\" , \"value\" : \"dress\" } ] }, \"score\" : 0.35433072 , \"image\" : \"projects/ project-id /locations/ location-id /products/product id56/referenceImages/image56\" }, ... { \"product\" : { \"name\" : \"projects/ project-id /locations/ location-id /products/product id92\" , \"displayName\" : \" \" , \"productCategory\" : \"apparel\" , \"productLabels\" : [ { \"key\" : \"style\" , \"value\" : \"women\" }, { \"key\" : \"category\" , \"value\" : \"dress\" } ] }, \"score\" : 0.30736163 , \"image\" : \"projects/ project-id /locations/ location-id /products/product id92/referenceImages/image92\" } ], \"productGroupedResults\" : [ { \"boundingPoly\" : { \"normalizedVertices\" : [ { \"x\" : 0.38727918 , \"y\" : 0.10391616 }, { \"x\" : 0.57177967 , \"y\" : 0.10391616 }, { \"x\" : 0.57177967 , \"y\" : 0.94973093 }, { \"x\" : 0.38727918 , \"y\" : 0.94973093 } ] } , \"results\" : [ { \"product\" : { \"name\" : \"projects/ project-id /locations/ location-id /products/product id39\" , \"displayName\" : \" \" , \"productCategory\" : \"apparel\" , \"productLabels\" : [ { \"key\" : \"style\" , \"value\" : \"women\" }, { \"key\" : \"category\" , \"value\" : \"dress\" } ] }, \"score\" : 0.36689043 , \"image\" : \"projects/ project-id /locations/ location-id /products/product id39/referenceImages/image39\" }, { \"boundingPoly\" : { \"normalizedVertices\" : [ { \"x\" : 0.63010275 , \"y\" : 0.08650439 }, { \"x\" : 0.88989735 , \"y\" : 0.08650439 }, { \"x\" : 0.88989735 , \"y\" : 0.9285545 }, { \"x\" : 0.63010275 , \"y\" : 0.9285545 } ] } , \"results\" : [ { \"product\" : { \"name\" : \"projects/ project-id /locations/ location-id /products/product id89\" , \"displayName\" : \" \" , \"productCategory\" : \"apparel\" , \"productLabels\" : [ { \"key\" : \"style\" , \"value\" : \"women\" }, { \"key\" : \"category\" , \"value\" : \"dress\" } ] }, \"score\" : 0.4007347 , \"image\" : \"projects/ project-id /locations/ location-id /products/product id89/referenceImages/image89\" }, ... { \"product\" : { \"name\" : \"projects/ project-id /locations/ location-id /products/product id30\" , \"displayName\" : \" \" , \"productCategory\" : \"apparel\" , \"productLabels\" : [ { \"key\" : \"style\" , \"value\" : \"women\" }, { \"key\" : \"category\" , \"value\" : \"dress\" } ] }, \"score\" : 0.27045864 , \"image\" : \"projects/ project-id /locations/ location-id /products/product id30/referenceImages/image30\" }, ... { \"product\" : { \"name\" : \"projects/ project-id /locations/ location-id /products/product id63\" , \"displayName\" : \" \" , \"productCategory\" : \"apparel\" , \"productLabels\" : [ { \"key\" : \"style\" , \"value\" : \"women\" }, { \"key\" : \"category\" , \"value\" : \"dress\" } ] }, \"score\" : 0.23139484 , \"image\" : \"projects/ project-id /locations/ location-id /products/product id63/referenceImages/image63\" } ] }, ... { \"boundingPoly\" : { \"normalizedVertices\" : [ {}, { \"x\" : 1 }, { \"x\" : 1 , \"y\" : 1 }, { \"y\" : 1 } ] } , \"results\" : [ { \"product\" : { \"name\" : \"projects/ project-id /locations/ location-id /products/product id30\" , \"displayName\" : \" \" , \"productCategory\" : \"apparel\" , \"productLabels\" : [ { \"key\" : \"style\" , \"value\" : \"women\" }, { \"key\" : \"category\" , \"value\" : \"dress\" } ] }, \"score\" : 0.39522344 , \"image\" : \"projects/ project-id /locations/ location-id /products/product id30/referenceImages/image30\" }, ... { \"product\" : { \"name\" : \"projects/ project-id /locations/ location-id /products/product id4\" , \"displayName\" : \" \" , \"productCategory\" : \"apparel\" , \"productLabels\" : [ { \"key\" : \"style\" , \"value\" : \"women\" }, { \"key\" : \"category\" , \"value\" : \"dress\" } ] }, \"score\" : 0.34226564 , \"image\" : \"projects/ project-id /locations/ location-id /products/product id4/referenceImages/image4\" } ] }, { \"boundingPoly\" : { \"normalizedVertices\" : [ { \"x\" : 0.030102689 , \"y\" : 0.067680866 }, { \"x\" : 0.28942674 , \"y\" : 0.067680866 }, { \"x\" : 0.28942674 , \"y\" : 0.94973093 }, { \"x\" : 0.030102689 , \"y\" : 0.94973093 } ] } , \"results\" : [ { \"product\" : { \"name\" : \"projects/ project-id /locations/ location-id /products/product id89\" , \"displayName\" : \" \" , \"productCategory\" : \"apparel\" , \"productLabels\" : [ { \"key\" : \"style\" , \"value\" : \"women\" }, { \"key\" : \"category\" , \"value\" : \"dress\" } ] }, \"score\" : 0.42439392 , \"image\" : \"projects/ project-id /locations/ location-id /products/product id89/referenceImages/image89\" }, ... { \"product\" : { \"name\" : \"projects/ project-id /locations/ location-id /products/product id51\" , \"displayName\" : \" \" , \"productCategory\" : \"apparel\" , \"productLabels\" : [ { \"key\" : \"style\" , \"value\" : \"women\" }, { \"key\" : \"category\" , \"value\" : \"dress\" } ] }, \"score\" : 0.26797917 , \"image\" : \"projects/ project-id /locations/ location-id /products/product id51/referenceImages/image51\" } ] } ] } } ] } Bounding boxes & matching products The following image shows all bounding boxes identified by Vision API Product Search in this multi-product image. gs://cloud-samples-data/product search/multiple dresses.jpg Similar to a single-product image, a multi-product image's response lists bounding boxes and matching products results in the productGroupedResults field.",
+          "Vision API Product Search can detect and find matching products for a single product in a search image, or identify and list matching products for multiple products if they are present in your image."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a product set and search for products \\_|\\_ Vision API\\",
+        "url": "https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products",
+        "source_id": "site-docs-root",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For an example of single-product detection and multi-detection of products in an image, see Understanding search responses & multi-detection .",
+          "These results are further broken down by individual products identified by bounding boxes if there are multiple products in a single image.",
+          "Response { \"responses\": [ { \"productSearchResults\": { \"indexTime\": \"2020-01-07T18:33:45.300851144Z\", \"results\": [ { \"product\": { \"name\": \"projects/ PROJECT ID /locations/ LOCATION ID /products/ product id16 \", \"displayName\": \" \", \"productCategory\": \"apparel-v2\", \"productLabels\": [ { \"key\": \"style\", \"value\": \"women\" }, { \"key\": \"category\", \"value\": \"dress\" } ] }, \"score\": 1, \"image\": \"projects/ PROJECT ID /locations/ LOCATION ID /products/product id16/referenceImages/ image16 \" }, { \"product\": { \"name\": \"projects/ PROJECT ID /locations/ LOCATION ID /products/ product id29 \", \"displayName\": \" \", \"productCategory\": \"apparel-v2\", \"productLabels\": [ { \"key\": \"style\", \"value\": \"women\" }, { \"key\": \"category\", \"value\": \"dress\" } ] }, \"score\": 0.27578148, \"image\": \"projects/ PROJECT ID /locations/ LOCATION ID /products/product id29/referenceImages/ image29 \" }, ... { \"product\": { \"name\": \"projects/ PROJECT ID /locations/ LOCATION ID /products/ product id22 \", \"displayName\": \" \", \"productCategory\": \"apparel-v2\", \"productLabels\": [ { \"key\": \"style\", \"value\": \"women\" }, { \"key\": \"category\", \"value\": \"dress\" }, { \"key\": \"kids\", \"value\": \"true\" } ] }, \"score\": 0.20356013, \"image\": \"projects/ PROJECT ID /locations/ LOCATION ID /products/product id22/referenceImages/ image22 \" } ], \"productGroupedResults\": [ { \"boundingPoly\": { \"normalizedVertices\": [ { \"x\": 0.25542393, \"y\": 0.15517132 }, { \"x\": 0.8196448, \"y\": 0.15517132 }, { \"x\": 0.8196448, \"y\": 0.92001766 }, { \"x\": 0.25542393, \"y\": 0.92001766 } ] }, \"results\": [ { \"product\": { \"name\": \"projects/ PROJECT ID /locations/ LOCATION ID /products/ product id16 \", \"displayName\": \" \", \"productCategory\": \"apparel-v2\", \"productLabels\": [ { \"key\": \"style\", \"value\": \"women\" }, { \"key\": \"category\", \"value\": \"dress\" } ] }, \"score\": 1, \"image\": \"projects/ PROJECT ID /locations/ LOCATION ID /products/product id16/referenceImages/ image16 \" }, { \"product\": { \"name\": \"projects/ PROJECT ID /locations/ LOCATION ID /products/ product id57 \", \"displayName\": \" \", \"productCategory\": \"apparel-v2\", \"productLabels\": [ { \"key\": \"style\", \"value\": \"women\" }, { \"key\": \"category\", \"value\": \"dress\" } ] }, \"score\": 0.27369013, \"image\": \"projects/ PROJECT ID /locations/ LOCATION ID /products/product id57/referenceImages/ image57 \" }, ... { \"product\": { \"name\": \"projects/ PROJECT ID /locations/ LOCATION ID /products/ product id18 \", \"displayName\": \" \", \"productCategory\": \"apparel-v2\", \"productLabels\": [ { \"key\": \"style\", \"value\": \"women\" }, { \"key\": \"category\", \"value\": \"dress\" } ] }, \"score\": 0.21221256, \"image\": \"projects/ PROJECT ID /locations/ LOCATION ID /products/product id18/referenceImages/ image18 \" } ], \"objectAnnotations\": [ { \"mid\": \"/m/01d40f\", \"name\": \"Dress\", \"score\": 0.968603 } ] } ] } } ] } Congratulations!"
+        ]
+      },
+      {
+        "title": "\"Searching for Products \\_|\\_ Vision API Product Search \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vision/product-search/docs/searching",
+        "source_id": "site-docs-root",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See the Understanding search responses & multi-detection topic for an example of single product detection and multi-detection of products in an image.",
+          "Currently you can only specify one product category (homegoods, apparel, toys, packaged goods, and general ). imageContext.filter - (Optional) A key-value filtering expression (or multiple expressions) for product label.",
+          "Currently you can only specify one product category (homegoods, apparel, toys, packaged goods, and general ). imageContext.filter - (Optional) A key-value filtering expression (or multiple expressions) for product label."
+        ]
+      },
+      {
+        "title": "\"Creating your reference images & indexing \\_|\\_ Vision API Product Search\\",
+        "url": "https://docs.cloud.google.com/vision/product-search/docs/create-reference-images",
+        "source_id": "site-docs-root",
+        "final_score": 203,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Creating multiple reference images with bulk import You can also create reference images at the same time you create a product set and multiple products.",
+          "The response should look similar to the following: { \"name\": \"locations/ location-id /operations/f10f34e32c40a710\", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.vision.v1.BatchOperationMetadata\", \"state\": \"SUCCESSFUL\", \"submitTime\": \"2019-12-06T21:16:04.476466873Z\", \"endTime\": \"2019-12-06T21:16:40.594258084Z\" }, \"done\": true, \"response\": { \"@type\": \"type.googleapis.com/google.cloud.vision.v1.ImportProductSetsResponse\", \"referenceImages\": [ { \"name\": \"projects/ project-id /locations/ location-id /products/product id0/referenceImages/image0\", \"uri\": \"gs:// my-storage-bucket /img 039.jpg\" }, { \"name\": \"projects/ project-id /locations/ location-id /products/product id1/referenceImages/image1\", \"uri\": \"gs:// my-storage-bucket /img 105.jpg\" }, { \"name\": \"projects/ project-id /locations/ location-id /products/product id2/referenceImages/image2\", \"uri\": \"gs:// my-storage-bucket /img 224.jpg\" }, { \"name\": \"projects/ project-id /locations/ location-id /products/product id3/referenceImages/image3\", \"uri\": \"gs:// my-storage-bucket /img 385.jpg\" } ], \"statuses\": [ {}, {}, {}, {} ] } } Go To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries .",
+          "Target files must be in Product Search CSV format'; // A resource that represents Google Cloud Platform location. const projectLocation = client . locationPath ( projectId , location ); // Set the input configuration along with Google Cloud Storage URI const inputConfig = { gcsSource : { csvFileUri : gcsUri , }, }; // Import the product sets from the input URI. const [ response , operation ] = await client . importProductSets ({ parent : projectLocation , inputConfig : inputConfig , }); console . log ( 'Processing operation name: ' , operation . name ); // synchronous check of operation status const [ result ] = await response . promise (); console . log ( 'Processing done.' ); console . log ( 'Results of the processing:' ); for ( const i in result . statuses ) { console . log ( 'Status of processing ' , i , 'of the csv:' , result . statuses [ i ] ); // Check the status of reference image if ( result . statuses [ i ]. code === 0 ) { console . log ( result . referenceImages [ i ]); } else { console . log ( 'No reference image.' ); } } } importProductSets (); Python To learn how to install and use the client library for Vision API Product Search, see Vision API Product Search client libraries ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dresses.jpg",
+      "type.googleapis.com",
+      "vision.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/product-search/docs/searching-response",
+        "https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products",
+        "https://docs.cloud.google.com/vision/product-search/docs/searching",
+        "https://docs.cloud.google.com/vision/product-search/docs/create-reference-images"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/product-search/docs/searching-response",
+        "https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products",
+        "https://docs.cloud.google.com/vision/product-search/docs/searching",
+        "https://docs.cloud.google.com/vision/product-search/docs/create-reference-images"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/product-search/docs/searching-response",
+        "https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products",
+        "https://docs.cloud.google.com/vision/product-search/docs/searching",
+        "https://docs.cloud.google.com/vision/product-search/docs/create-reference-images"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/product-search/docs/searching-response",
+        "https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products",
+        "https://docs.cloud.google.com/vision/product-search/docs/searching",
+        "https://docs.cloud.google.com/vision/product-search/docs/create-reference-images"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/product-search/docs/searching-response",
+        "https://docs.cloud.google.com/vision/product-search/docs/create-product-set-search-products",
+        "https://docs.cloud.google.com/vision/product-search/docs/searching",
+        "https://docs.cloud.google.com/vision/product-search/docs/create-reference-images"
+      ]
+    }
+  ]
+}

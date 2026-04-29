@@ -1,0 +1,197 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:55.943Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "List Objects V2",
+  "feature_slug": "list-objects-v2",
+  "summary": "List Objects V2 provides an updated object listing capability for Cloud Storage.",
+  "extended_definition": "List Objects V2 provides an updated object listing capability for Cloud Storage.",
+  "lifecycle": {
+    "latest_feature_date": "2021-11-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+      "https://docs.cloud.google.com/storage/docs/access-control/iam",
+      "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+      "https://docs.cloud.google.com/storage/docs/uploading-objects"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and manage access control lists (ACLs) \\_|\\_ Cloud Storage \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "source_id": "site-iam-reference",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions storage.buckets.get storage.buckets.list This permission is only required for using the Google Cloud console to perform the tasks on this page. storage.buckets.setIamPolicy storage.buckets.update storage.objects.get storage.objects.getIamPolicy storage.objects.setIamPolicy storage.objects.update You can also get these permissions with custom roles .",
+          "In order to make sure that new objects created in the bucket get the updated default object ACL, you should wait at least 30 seconds between changing the default object ACL and creating new objects.",
+          "Overview This page describes how to control access to buckets and objects using Access Control Lists (ACLs)."
+        ]
+      },
+      {
+        "title": "\"Upload objects from a file system \\_|\\_ Cloud Storage \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "source_id": "site-docs-root",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Threads can be used instead of processes by passing worker type=transfer manager.THREAD. workers=8 from google.cloud.storage import Client , transfer manager storage client = Client () bucket = storage client . bucket ( bucket name ) results = transfer manager . upload many from filenames ( bucket , filenames , source directory = source directory , max workers = workers ) for name , result in zip ( filenames , results ): The results list is either None or an exception for each filename in the input list, in order. if isinstance ( result , Exception ): print ( \"Failed to upload {} due to exception: {} \" . format ( name , result )) else : print ( \"Uploaded {} to {} .\" . format ( name , bucket . name )) The following sample uploads all objects with a common prefix concurrently: def upload directory with transfer manager ( bucket name , source directory , workers = 8 ): \"\"\"Upload every file in a directory, including all files in subdirectories.",
+          "UploadResult ; import java.io.IOException ; import java.nio.file.Path ; import java.util.List ; class UploadMany { public static void uploadManyFiles ( String bucketName , List<Path> files ) throws IOException { TransferManager transferManager = TransferManagerConfig . newBuilder (). build (). getService (); ParallelUploadConfig parallelUploadConfig = ParallelUploadConfig . newBuilder (). setBucketName ( bucketName ). build (); List<UploadResult> results = transferManager . uploadFiles ( files , parallelUploadConfig ). getUploadResults (); for ( UploadResult result : results ) { System . out . println ( \"Upload for \" + result . getInput (). getName () + \" completed with status \" + result . getStatus ()); } } } The following sample uploads all objects with a common prefix concurrently: import com.google.cloud.storage.transfermanager.",
+          "If the destination object already exists in your bucket, set instead a generation-match precondition using its generation number. generation match precondition = 0 blob . upload from filename ( source file name , if generation match = generation match precondition ) print ( f \"File { source file name } uploaded to { destination blob name } .\" ) The following sample uploads multiple objects concurrently: def upload many blobs with transfer manager ( bucket name , filenames , source directory = \"\" , workers = 8 ): \"\"\"Upload every file in a list to a bucket, concurrently in a process pool."
+        ]
+      },
+      {
+        "title": "Identity and Access Management \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/iam",
+        "source_id": "site-iam-reference",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Since the storage.objects.list permission is granted at the bucket level, you cannot use the resource.name condition attribute to restrict object listing access to a subset of objects in the bucket.",
+          "Relation to ACLs In addition to IAM, your buckets and objects can use a legacy access control system called access control lists (ACLs) if the uniform bucket-level access feature is not enabled for your bucket.",
+          "Usage This page provides an overview of Identity and Access Management (IAM) and its use with controlling access to the buckets, managed folders, and objects resources in Cloud Storage."
+        ]
+      },
+      {
+        "title": "\"Set and manage IAM policies on managed folders \\_|\\_ Cloud Storage \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "source_id": "site-iam-reference",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "For an alternative way to control access to individual objects in your buckets, see Access Control Lists .",
+          "If you're looking for other methods of access control, see the following resources: To learn about how to control access to whole buckets and the objects within them, see Set and manage IAM policies on buckets .",
+          "This page describes how to set Identity and Access Management (IAM) policies on managed folders , so you can get fine-grained access control over specific groups of objects within a bucket."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.storage.transfermanager",
+      "java.io.IOException",
+      "java.nio.file.Path",
+      "java.util.List",
+      "manager.THREAD",
+      "resource.name",
+      "storage.buckets.get",
+      "storage.buckets.list",
+      "storage.buckets.setIamPolicy",
+      "storage.buckets.update",
+      "storage.objects.create",
+      "storage.objects.delete",
+      "storage.objects.get",
+      "storage.objects.getIamPolicy",
+      "storage.objects.list",
+      "storage.objects.setIamPolicy",
+      "storage.objects.update",
+      "storage.objectViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    }
+  ]
+}

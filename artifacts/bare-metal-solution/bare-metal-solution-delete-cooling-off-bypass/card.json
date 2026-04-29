@@ -1,0 +1,86 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.969Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution",
+  "feature_name": "Bare Metal Solution delete cooling-off bypass",
+  "feature_slug": "bare-metal-solution-delete-cooling-off-bypass",
+  "summary": "The cooling-off period can now be skipped when deleting a LUN or storage volume in Bare Metal Solution.",
+  "extended_definition": "The cooling-off period can now be skipped when deleting a LUN or storage volume in Bare Metal Solution.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+      "https://docs.cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.nfsShares/delete",
+      "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Maintain the Bare Metal Solution environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "source_id": "site-docs-reference",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "Delete an NFS volume Deleting an NFS volume automatically triggers a cooling-off period of seven days during which time Google Cloud removes the volume from use.",
+          "If you want to skip the cooling-off period and delete the storage volume permanently, continue with the following steps: Caution: This action can't be reversed.",
+          "If you want to skip the cooling-off period and delete the LUN permanently, continue with the following steps: Caution: This action can't be reversed."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.nfsShares.delete \\_|\\_ Bare Metal Solution \\_\\",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.nfsShares/delete",
+        "source_id": "site-api-reference",
+        "final_score": 58,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Distributed, hybrid, and multicloud Bare Metal Reference Send feedback Method: projects.locations.nfsShares.delete Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request DELETE https://baremetalsolution.googleapis.com/v2/{name=projects/ /locations/ /nfsShares/ } The URL uses gRPC Transcoding syntax.",
+          "The underlying volume is automatically deleted."
+        ]
+      },
+      {
+        "title": "\"Solution Guide: Google Cloud Backup and DR for Oracle on Bare Metal Solution\\",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr",
+        "source_id": "site-docs-root-2",
+        "final_score": 52,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to the Monitor > Jobs menu to monitor the progress of the job being unmounted and confirm that the job completes. https://bmc- PROJECT NUMBER - GENERATED ID -dot- REGION .backupdr.googleusercontent.com/#jobs If you accidentally delete the Oracle database manually, or shutdown the database before you run the Unmount and Delete job, perform the Unmount and Delete job again and select the Force Unmount option on the confirmation screen.",
+          "00:00:00 ora pmon SCHTEST root 178934 169484 0 10:07 pts/0 00:00:00 grep --color=auto pmon Unmount an Oracle database After you finish using the database, you should unmount and delete the database.",
+          "Note: At this point, you cannot move, expand, or delete the Persistent Disk until you remove any backup images stored in this pool."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backupdr.googleusercontent.com",
+      "baremetalsolution.googleapis.com",
+      "projects.locations.nfsShares",
+      "projects.locations.nfsShares.delete"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:23.409Z",
+  "source_step08_card": "data/step-08/current/products/migration-center/card.json",
+  "product_name": "Migration Center",
+  "product_slug": "migration-center",
+  "feature_name": "Server-to-hosted-database relationship view",
+  "feature_slug": "server-to-hosted-database-relationship-view",
+  "summary": "Migration Center shows the relationship between a server and a hosted database directly in the Console.",
+  "extended_definition": "Migration Center shows the relationship between a server and a hosted database directly in the Console.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migration-center/docs/migration-center-overview",
+      "https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools",
+      "https://docs.cloud.google.com/migration-center/docs/view-assets",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Migration tools \\_|\\_ Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools",
+        "source_id": "site-docs-root",
+        "final_score": 244,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Database Migration Service PostgreSQL, MySQL, SQL Server, Oracle Cloud SQL, AlloyDB for PostgreSQL This tool is a serverless service that helps migrate PostgreSQL workloads into Cloud SQL and AlloyDB for PostgreSQL, MySQL and SQL Server workloads into Cloud SQL, and Oracle workloads into Cloud SQL for PostgreSQL or AlloyDB for PostgreSQL.",
+          "HarbourBridge: Spanner Evaluation and Migration is a standalone open source tool for Spanner evaluation and migration, using data from an existing PostgreSQL, MySQL, SQL Server, Oracle or DynamoDB database.",
+          "RackWare Management Module (RMM) is a fully-automated enterprise-grade migration solution that lets you migrate physical and virtual servers from any data center or public cloud into Google Cloud."
+        ]
+      },
+      {
+        "title": "View the collected assets \\_|\\_ Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/view-assets",
+        "source_id": "site-docs-root",
+        "final_score": 238,
+        "relevance": "",
+        "evidence_snippets": [
+          "After you add your assets to Migration Center with an automatic scan by using one of the available collection methods , you can review the basic information about your infrastructure directly in Migration Center, both at the asset level, and in aggregate.",
+          "This tab shows all the aggregated performance data and statistics collected with the Migration Center discovery client, manual file import, and the mcdc CLI, such as the following: Daily input/output operations per second Daily memory usage Daily CPU usage Network bytes received and sent per second Available details for databases On the details page for a database, you can see the basic information about the database, including the name, engine, edition, and version.",
+          "For example, you can see the following structured attributes for an EKS cluster: cluster endpoint access cluster vpc id endpoint kubernetes version logging platform version role arn status Label assets Migration Center lets you assign labels to your assets to help you organize your resources."
+        ]
+      },
+      {
+        "title": "Migration Center overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/migration-center-overview",
+        "source_id": "site-api-reference",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Discover your assets Migration Center helps you create an inventory of your assets, including servers, Microsoft SQL Server, MySQL, and PostgreSQL databases, by automatically scanning your on-premises environment.",
+          "Assess your infrastructure With Migration Center, you can dive deep in the analysis and get a holistic view into your environment.",
+          "Estimate your cloud costs Migration Center lets you generate a rapid cost estimate of future Google Cloud costs based on the size and configuration of your current on-premises or other cloud environment resources ( Preview )."
+        ]
+      },
+      {
+        "title": "\"Class MigrationCenterAsyncClient (0.4.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 219,
+        "relevance": "",
+        "evidence_snippets": [
+          "CreateImportDataFileRequest ( parent=\"parent value\", import data file id=\"import data file id value\", import data file=import data file, ) Make the request operation = client. create import data file (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.migrationcenter v1.types.CreateImportDataFileRequest , dict]] The request object.",
+          "Returns Type Description google.cloud.migrationcenter v1.types.ReportAssetFramesResponse A response to a call to ReportAssetFrame. report config path report config path ( project : str , location : str , report config : str ) - > str Returns a fully-qualified report config string. report path report path ( project : str , location : str , report config : str , report : str ) - > str Returns a fully-qualified report string. run import job run import job ( request : typing .",
+          "CreateReportConfigRequest ( parent=\"parent value\", report config id=\"report config id value\", report config=report config, ) Make the request operation = client. create report config (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.migrationcenter v1.types.CreateReportConfigRequest , dict]] The request object."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "v1.types.CreateImportDataFileRequest",
+      "v1.types.CreateImportJobRequest",
+      "v1.types.CreateReportConfigRequest",
+      "v1.types.ReportAssetFramesResponse"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools",
+        "https://docs.cloud.google.com/migration-center/docs/view-assets",
+        "https://docs.cloud.google.com/migration-center/docs/migration-center-overview",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools",
+        "https://docs.cloud.google.com/migration-center/docs/view-assets",
+        "https://docs.cloud.google.com/migration-center/docs/migration-center-overview",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools",
+        "https://docs.cloud.google.com/migration-center/docs/view-assets",
+        "https://docs.cloud.google.com/migration-center/docs/migration-center-overview",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools",
+        "https://docs.cloud.google.com/migration-center/docs/view-assets",
+        "https://docs.cloud.google.com/migration-center/docs/migration-center-overview",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools",
+        "https://docs.cloud.google.com/migration-center/docs/view-assets",
+        "https://docs.cloud.google.com/migration-center/docs/migration-center-overview",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/migration-modernization-tools",
+        "https://docs.cloud.google.com/migration-center/docs/view-assets",
+        "https://docs.cloud.google.com/migration-center/docs/migration-center-overview",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    }
+  ]
+}

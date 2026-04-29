@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:49.160Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "Dual-stack backends for regional and cross-region proxy load balancers",
+  "feature_slug": "dual-stack-backends-for-regional-and-cross-region-proxy-load-balancers",
+  "summary": "Supported regional and cross-region Application Load Balancers and proxy Network Load Balancers can use dual-stack IPv4 and IPv6 backends and be converted from IPv4-only deployments to dual-stack deployments.",
+  "extended_definition": "Supported regional and cross-region Application Load Balancers and proxy Network Load Balancers can use dual-stack IPv4 and IPv6 backends and be converted from IPv4-only deployments to dual-stack deployments.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+      "https://docs.cloud.google.com/load-balancing/docs/network",
+      "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Backend service-based regional external passthrough Network Load Balancer\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/network",
+        "source_id": "site-docs-root",
+        "final_score": 216,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The non- nic0 and nic0 network interfaces must be in different VPC networks. (The NEG's VPC network can't contain the nic0 interface and the desired non- nic0 interface.) Dual-stack backends (IPv4 and IPv6) If you want the load balancer to use dual-stack backends that handle both IPv4 and IPv6 traffic, note the following requirements: Backends must be configured in dual-stack subnets that are in the same region as the load balancer's IPv6 forwarding rule.",
+          "Backends must be configured in either dual-stack or IPv6-only subnets that are in the same region as the load balancer's IPv6 forwarding rule.",
+          "Location of load balancing resources 1 Required location of IP address resource Host project Host project Service project Service project or host project 1 Includes the forwarding rule, backend service, health check, and backends (NEGs and managed or unmanaged instance groups) Traffic distribution Regional external passthrough Network Load Balancers support a variety of traffic distribution customization options, including session affinity, connection tracking, weighted load balancing, and failover."
+        ]
+      },
+      {
+        "title": "\"Backend services overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 188,
+        "relevance": "",
+        "evidence_snippets": [
+          "Table: Backend services and supported backend types Product Maximum number of backend services Scope of backend service Supported backend types Load balancing scheme Global external Application Load Balancer Multiple Global Each backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends 1 All zonal NEGs: One or more GCE VM IP PORT type zonal NEGs 1 All hybrid connectivity NEGs: One or more NON GCP PRIVATE IP PORT type NEGs A combination of zonal and hybrid NEGs: GCE VM IP PORT and NON GCP PRIVATE IP PORT type NEGs 2 All serverless NEGs: One or more App Engine, Cloud Run, or Cloud Run functions resources One global internet NEG for an external backend Private Service Connect NEGs: Google APIs: a single Private Service Connect NEG Managed services: one or more Private Service Connect NEGs EXTERNAL MANAGED Classic Application Load Balancer Multiple Global 3 Each backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends All zonal NEGs: One or more GCE VM IP PORT type zonal NEGs All hybrid connectivity NEGs: One or more NON GCP PRIVATE IP PORT type NEGs A combination of zonal and hybrid NEGs: GCE VM IP PORT and NON GCP PRIVATE IP PORT type NEGs 2 All serverless NEGs: One or more App Engine, Cloud Run, or Cloud Run functions resources One global internet NEG for an external backend EXTERNAL 4 Regional external Application Load Balancer Multiple Regional Each backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends 1 All zonal NEGs: One or more GCE VM IP PORT type zonal NEGs 1 All hybrid connectivity NEGs: One or more NON GCP PRIVATE IP PORT type NEGs A combination of zonal and hybrid NEGs: GCE VM IP PORT and NON GCP PRIVATE IP PORT type NEGs 2 A single serverless NEG (for Cloud Run or Cloud Run functions 2nd gen only) A single Private Service Connect NEG All regional internet NEGs for an external backend All published service backends ( Preview ) EXTERNAL MANAGED Cross-region internal Application Load Balancer Multiple Global Each backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends 1 All zonal NEGs: One or more GCE VM IP PORT type zonal NEGs 1 All hybrid connectivity NEGs: One or more NON GCP PRIVATE IP PORT type NEGs A combination of zonal and hybrid NEGs: GCE VM IP PORT and NON GCP PRIVATE IP PORT type NEGs 2 A single serverless NEG (for Cloud Run or Cloud Run functions 2nd gen only) Private Service Connect NEGs: Google APIs: a single Private Service Connect NEG Managed services: one or more Private Service Connect NEGs INTERNAL MANAGED Regional internal Application Load Balancer Multiple Regional Each backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends 1 All zonal NEGs: One or more GCE VM IP PORT type zonal NEGs 1 All hybrid connectivity NEGs: One or more NON GCP PRIVATE IP PORT type NEGs A combination of zonal and hybrid NEGs: GCE VM IP PORT and NON GCP PRIVATE IP PORT type NEGs 2 A single serverless NEG (for Cloud Run or Cloud Run functions 2nd gen only) A single Private Service Connect NEG All regional internet NEGs for an external backend All published service backends ( Preview ) INTERNAL MANAGED Global external proxy Network Load Balancer 1 Global 3 The backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends 1 All zonal NEGs: One or more GCE VM IP PORT type zonal NEGs 1 All hybrid connectivity NEGs: One or more NON GCP PRIVATE IP PORT type NEGs A combination of zonal and hybrid NEGs: GCE VM IP PORT and NON GCP PRIVATE IP PORT type NEGs 2 Private Service Connect NEGs: Google APIs: a single Private Service Connect NEG Managed services: one or more Private Service Connect NEGs EXTERNAL MANAGED Classic proxy Network Load Balancer 1 Global 3 The backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends All zonal NEGs: One or more GCE VM IP PORT type zonal NEGs All hybrid connectivity NEGs: One or more NON GCP PRIVATE IP PORT type NEGs A combination of zonal and hybrid NEGs: GCE VM IP PORT and NON GCP PRIVATE IP PORT type NEGs 2 EXTERNAL Regional external proxy Network Load Balancer Without TLS routes: 1 With TLS routes: Multiple Regional The backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends 1 All zonal NEGs: One or more GCE VM IP PORT type zonal NEGs 1 All hybrid connectivity NEGs: One or more NON GCP PRIVATE IP PORT type NEGs A combination of zonal and hybrid NEGs: GCE VM IP PORT and NON GCP PRIVATE IP PORT type NEGs All regional internet NEGs for an external backend A single Private Service Connect NEG All published service backends ( Preview ) EXTERNAL MANAGED Regional internal proxy Network Load Balancer Without TLS routes: 1 With TLS routes: Multiple Regional The backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends 1 All zonal NEGs: One or more GCE VM IP PORT type zonal NEGs 1 All hybrid connectivity NEGs: One or more NON GCP PRIVATE IP PORT type NEGs A combination of zonal and hybrid NEGs: GCE VM IP PORT and NON GCP PRIVATE IP PORT type NEGs All regional internet NEGs for an external backend A single Private Service Connect NEG All published service backends ( Preview ) INTERNAL MANAGED Cross-region internal proxy Network Load Balancer Without TLS routes: 1 With TLS routes: Multiple Global The backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends 1 All zonal NEGs: One or more GCE VM IP PORT type zonal NEGs 1 All hybrid connectivity NEGs: One or more NON GCP PRIVATE IP PORT type NEGs A combination of zonal and hybrid NEGs: GCE VM IP PORT and NON GCP PRIVATE IP PORT type NEGs Private Service Connect NEGs: Google APIs: a single Private Service Connect NEG Managed services: one or more Private Service Connect NEGs INTERNAL MANAGED Regional external passthrough Network Load Balancer 1 Regional The backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends All zonal NEGs: One or more GCE VM IP type zonal NEGs EXTERNAL Internal passthrough Network Load Balancer 1 Regional, but configurable to be globally accessible The backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends All zonal NEGs: One or more GCE VM IP type zonal NEGs One port mapping NEG INTERNAL Cloud Service Mesh Multiple Global Each backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends All zonal NEGs: One or more GCE VM IP PORT or NON GCP PRIVATE IP PORT type zonal NEGs One internet NEG of type INTERNET FQDN PORT One or more Service Directory service bindings ( Preview ) All published service backends ( Preview ) INTERNAL SELF MANAGED 1 These load balancers support IPv4-only and dual-stack (IPv4 and IPv6) instance groups and zonal NEG backends.",
+          "Table : Supported load balancing locality policy settings Load balancer Load balancing locality policy options Global external Application Load Balancer Regional external Application Load Balancer Cross-region internal Application Load Balancer Regional internal Application Load Balancer Supported options: ROUND ROBIN LEAST REQUEST RING HASH RANDOM ORIGINAL DESTINATION (not supported for global external Application Load Balancers) MAGLEV WEIGHTED ROUND ROBIN Global external proxy Network Load Balancer Regional external proxy Network Load Balancer Cross-region internal proxy Network Load Balancer Regional internal proxy Network Load Balancer Supported options: ROUND ROBIN LEAST REQUEST RING HASH RANDOM MAGLEV ORIGINAL DESTINATION (not supported for global external proxy Network Load Balancers) Regional external passthrough Network Load Balancer Supported options: MAGLEV WEIGHTED MAGLEV Internal passthrough Network Load Balancer Classic Application Load Balancer Classic proxy Network Load Balancer Not supported Note that the effective default value of the load balancing locality policy ( localityLbPolicy ) changes according to your session affinity settings.",
+          "By default, all Google Cloud load balancers select backends by using a five-tuple hash ( --session-affinity=NONE ), as follows: Packet's source IP address Packet's source port (if present in the packet's header) Packet's destination IP address Packet's destination port (if present in the packet's header) Packet's protocol To learn more about session affinity for passthrough Network Load Balancers, see the following documents: Traffic distribution for regional external passthrough Network Load Balancers Traffic distribution for internal passthrough Network Load Balancers To learn more about session affinity for Application Load Balancers, see the following documents: Session affinity for external Application Load Balancers Session affinity for internal Application Load Balancers To learn more about session affinity for proxy Network Load Balancers, see the following documents: Session affinity for external proxy Network Load Balancers Session affinity for internal proxy Network Load Balancers Backend service timeout Most Google Cloud load balancers have a backend service timeout ."
+        ]
+      },
+      {
+        "title": "\"Internal proxy Network Load Balancer overview \\_|\\_ Cloud Load Balancing\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "source_id": "site-docs-root",
+        "final_score": 184,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table specifies the backend service APIs for internal proxy Network Load Balancers: Load balancer mode Backend service type Regional internal proxy Network Load Balancer Regional regionBackendServices Cross-region internal proxy Network Load Balancer Global backendServices Supported backends The internal proxy Network Load Balancer supports the following types of backends: Load balancer mode Supported backends on a backend service Instance groups Zonal NEGs Internet NEGs Serverless NEGs Hybrid NEGs Private Service Connect NEGs GKE Regional internal proxy Network Load Balancer GCE VM IP PORT type endpoints Regional NEGs only Add a Private Service Connect NEG Cross-region internal proxy Network Load Balancer GCE VM IP PORT type endpoints Add a Private Service Connect NEG All of the backends must be of the same type (instance groups or NEGs).",
+          "What's next Set up a cross-region internal Application Load Balancer with VM instance group backends Set up a cross-region internal Application Load Balancer with hybrid connectivity Set up a regional internal proxy Network Load Balancer with an instance group backend Set up a regional internal proxy Network Load Balancer with a zonal NEG backend Set up a regional internal proxy Network Load Balancer with a hybrid NEG backend Set up a regional internal proxy Network Load Balancer with an internet NEG backend View metrics with Cloud Monitoring Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The following table specifies the scope of health checks supported by internal proxy Network Load Balancers in each mode: Load balancer mode Health check type Regional internal proxy Network Load Balancer Regional regionHealthChecks Cross-region internal proxy Network Load Balancer Global healthChecks For more information about health checks, see the following: Health checks overview Use health checks Firewall rules Internal proxy Network Load Balancers require the following firewall rules: An ingress allow rule that permits traffic from the Google health check probes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+      ]
+    }
+  ]
+}

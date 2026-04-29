@@ -1,0 +1,207 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.613Z",
+  "source_step08_card": "data/step-08/current/products/apigee-monetization/card.json",
+  "product_name": "Apigee Monetization",
+  "product_slug": "apigee-monetization",
+  "feature_name": "Monetization Banded Consumption Pricing",
+  "feature_slug": "monetization-banded-consumption-pricing",
+  "summary": "Monetization rate plans now support banded consumption fees, applying different fees per API consumption band.",
+  "extended_definition": "Monetization rate plans now support banded consumption fees, applying different fees per API consumption band.",
+  "lifecycle": {
+    "latest_feature_date": "2021-11-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Managing rate plans for API products \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "source_id": "site-docs-reference",
+        "final_score": 203,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following provides an example of the response output, including the two rate plans, myrateplan1 and myrateplan2 associated with HelloworldProduct API product: { \"ratePlans\": [ { \"name\": \"6b51b501-ac15-41b7-bb3e-621edb849e13\", \"apiproduct\": \"HelloworldProduct\", \"displayName\": \"myrateplan2\", \"billingPeriod\": \"MONTHLY\", \"currencyCode\": \"USD\", \"setupFee\": { \"currencyCode\": \"USD\", \"units\": \"20\" }, \"fixedRecurringFee\": { \"currencyCode\": \"USD\", \"units\": \"25\" }, \"fixedFeeFrequency\": 1, \"consumptionPricingType\": \"FIXED PER UNIT\", \"consumptionPricingRates\": [ { \"fee\": { \"currencyCode\": \"USD\", \"nanos\": 500000000 } } ], \"revenueShareType\": \"FIXED\", \"revenueShareRates\": [ { \"sharePercentage\": 2 } ], \"state\": \"DRAFT\" }, { \"name\": \"8c0b527c-ba2f-45f1-ac1c-b9e891546fc2\", \"apiproduct\": \"HelloworldProduct\", \"displayName\": \"myrateplan1\", \"billingPeriod\": \"MONTHLY\", \"currencyCode\": \"USD\", \"consumptionPricingType\": \"FIXED PER UNIT\", \"consumptionPricingRates\": [ { \"fee\": { \"currencyCode\": \"USD\", \"units\": \"3\" } } ], \"state\": \"PUBLISHED\", \"startTime\": \"1617302588000\" } ] } For more information about the API and its response payload, see the List rate plans API Viewing details for a rate plan using the API To view details for a rate plan, issue a GET request to the following API: https://apigee.googleapis.com/v1/organizations/ $ORG /apiproducts/ $APIPRODUCT /rateplans/ $RATEPLAN NAME To determine the name of the rate plan to pass in the resource path, see Listing the rate plans in an organization .",
+          "To update a rate plan, issue a PUT request to the following API, passing the modified request body in your request: https://apigee.googleapis.com/v1/organizations/ $ORG /apiproducts/ $APIPRODUCT /rateplans/ $RATEPLAN NAME For example, the following changes the consumption-based fee to 5 ; and the revenue share percentage to 6.5% all other configuration settings are included to ensure that they are maintained: curl \"https://apigee.googleapis.com/v1/organizations/ $ORG /apiproducts/ $APIPRODUCT /rateplans/ $RATEPLAN NAME \" \\ -X PUT \\ -H \"Authorization: Bearer $TOKEN\" \\ -H \"Content-type: application/json\" \\ -d '{ \"apiproduct\": \"HelloworldProduct\", \"displayName\": \"myrateplan3\", \"currencyCode\":\"USD\", \"billingPeriod\":\"MONTHLY\", \"consumptionPricingType\":\"FIXED PER UNIT\", \"consumptionPricingRates\":[{ \"fee\":{ \"units\":\"5\" , \"nanos\":0 } }], \"revenueShareType\":\"FIXED\", \"revenueShareRates\":[{ \"sharePercentage\":\"6.5\" }], \"state\":\"DRAFT\", \"startTime\": 1617302588000 }' For more information about the fields you can specify in the request body, see Resource: RatePlans .",
+          "To publish the rate plan, issue a PUT request to the following API, passing the modified request body in your request: https://apigee.googleapis.com/v1/organizations/ $ORG /apiproducts/ $APIPRODUCT /rateplans/ $RATEPLAN NAME For example, the following changes the status of the rateplan1 rate plan to PUBLISHED and sets the activation time to April 1, 2021, specified as milliseconds since epoch: curl \"https://apigee.googleapis.com/v1/organizations/ $ORG /apiproducts/ $APIPRODUCT /rateplans/ $RATEPLAN NAME \" \\ -X PUT \\ -H \"Authorization: Bearer $TOKEN\" \\ -H \"Content-type: application/json\" \\ -d '{ \"apiproduct\": \"HelloworldProduct\", \"displayName\": \"myrateplan3\", \"currencyCode\":\"USD\", \"billingPeriod\":\"MONTHLY\", \"consumptionPricingType\":\"FIXED PER UNIT\", \"consumptionPricingRates\":[{ \"fee\":{ \"units\":\"3\", \"nanos\":0 } }], \"revenueShareType\":\"FIXED\", \"revenueShareRates\":[{ \"sharePercentage\":\"5\" }], \"state\":\"PUBLISHED\", \"startTime\": 1617302588000 }' For more information about the fields you can specify in the request body, see Resource: RatePlans ."
+        ]
+      },
+      {
+        "title": "Overview of Apigee monetization | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 102,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "When creating a rate plan , you configure the billing currency and frequency, any setup and recurring fees, and the consumption-based fees.",
+          "Managing API products Managing client applications Organizing client app ownership Controlling developer access to your apps App access overview Registering app developers Importing existing consumer keys and secrets Developer portal solutions API design overview Building your integrated portal Introduction How portal users interact with your portal Getting started Tutorial: Building your first portal Overview Step 1: Create a portal Step 2: Customize the color palette Step 3: Customize the logo Step 4: Edit page content Step 5: Set up navigation Step 6: Publish an API Quick tips for customizing the sample portal Best practices for building your portal Building and publishing your portal Steps to build your portal Managing your portals Managing the pages in your portal Developing portal content Customizing your theme Setting up navigation Publishing your APIs Managing access to your APIs using API keys Managing the default visibility Managing your assets Customizing your domain Configuring email Configure a content security policy Configuring analytics tracking Adding custom scripts Publishing your portal content Viewing your live portal Creating a custom search page Managing user account creation and sign-in experience Configuring the user account creation and sign-in experience Configuring identity providers Managing user accounts Managing developer teams Managing audiences Reference Cookies Markdown syntax Building your portal using Drupal Introduction Drupal-based developer portal in Cloud Marketplace Overview Get started Customize your portal Support resources Choosing a hosting provider Support process for Apigee Drupal modules MONETIZE Overview of Apigee monetization Steps to use Apigee monetization Enabling Apigee monetization Enforcing monetization limits in API proxies Enforcing monetization quotas in API products Managing prepaid account balances Managing rate plans for API products Integrating monetization in Drupal portal Purchasing API product subscriptions using API Debugging monetization using the Debug tool Capturing monetization data Generating monetization reports ADMINISTER Users, roles, and access Users and roles Apigee roles Managing users, roles, and permissions using APIs Managing users in the UI Managing access in Google Cloud Access Apigee using Workforce Identity Federation Adding IAM Conditions to policies Apigee Spaces Apigee Spaces overview Apigee Spaces roles and permissions Create and manage Apigee Spaces Manage API resources with Apigee Spaces Move API resources in Apigee Spaces IAM permission hierarchy in Apigee Spaces Network Configuration Peering ranges Using multiple regions Managing instances Changing instance IPs Recreating an Apigee instance with zero downtime Using shared VPC networks Southbound networking patterns Northbound networking with Private Service Connect Migrate northbound routing to Private Service Connect Configure active health check for regional failover with Private Service Connect Client IP resolution Security administration TLS Options for configuring TLS Accessing TLS connection information in an API proxy Working with references SAML Using VPC Service Controls About the encryption keys Provisioning NAT IPs Performance considerations for Apigee Cloud NAT Calculating static NAT IP requirements Preventing DoS attacks Integrate Apigee with your SIEM solution Integrate Apigee with Google SecOps Managing data collectors Backups Switching between organizations Manage maintenance updates Overview Manage instance maintenance windows View maintenance logs ANALYZE Analytics overview Using the analytics dashboards API metrics API proxy performance Error code analysis Latency analysis Cache performance Target performance Developer analysis Developer engagement Traffic composition End user analysis Devices Geomap Custom reports Creating and managing custom reports Analytics metrics, dimensions, and filters reference Operations anomalies Operations anomalies overview View and investigate anomalies Create anomaly alerts Collecting custom data with the DataCapture policy Exporting data from analytics Obfuscate user data for analytics Data Studio integration Using the API Using the asynchronous custom reports API Using the metrics API Metrics API examples Troubleshooting Troubleshooting with analytics What does an analytics entity named 'not set' mean?",
+          "Rate plan Define the billing configuration, fees, and charges that are incurred for the use of APIs offered in a monetized API product bundle."
+        ]
+      },
+      {
+        "title": "Get started with LLM token policies \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies",
+        "source_id": "site-docs-reference",
+        "final_score": 39,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "See the PromptTokenLimit policy reference page for: Examples Flow variables Error reference Configure the PromptTokenLimit policy in the Apigee UI when performing the following tasks: Create an API product Creating an API proxy using the UI Attaching and configuring policies in the UI LLMTokenQuota policy Use the LLMTokenQuota policy when you want to set and enforce token consumption quotas for different API products, developers, or apps.",
+          "Here, 1,000 per minute --> <Rate>1000pm</Rate> <!-- Specifies where to get the user's prompt from the request --> <UserPromptSource>{jsonPath('$.contents[-1].parts[-1].text',request.content,true)}</UserPromptSource> </PromptTokenLimit> Where: <Rate> : The rate at which to limit tokens. <UserPromptSource> : Specifies where to get the user's prompt from the request.",
+          "The following PromptTokenLimit policy example limits the token rate to 1,000 tokens per minute: <PromptTokenLimit continueOnError=\"false\" enabled=\"true\" name=\"PTL-limitTokens-1\"> <DisplayName>Limit Prompt Tokens</DisplayName> <!-- The rate at which to limit tokens."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "e.g",
+      "request.content",
+      "v1.10"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+      ]
+    }
+  ]
+}

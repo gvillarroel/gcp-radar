@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "TRANSLATE function",
+  "feature_slug": "translate-function",
+  "summary": "BigQuery Standard SQL supports the TRANSLATE string replacement function.",
+  "extended_definition": "BigQuery Standard SQL supports the TRANSLATE string replacement function.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+      "https://docs.cloud.google.com/bigquery/docs/graph-iso-standards",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "String functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions",
+        "source_id": "site-docs-root",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "GoogleSQL for BigQuery supports string functions.",
+          "Return type INT64 Examples SELECT REGEXP INSTR ( 'ab@cd-ef' , '@[^-] ' ) AS instr a , REGEXP INSTR ( 'ab@d-ef' , '@[^-] ' ) AS instr b , REGEXP INSTR ( 'abc@cd-ef' , '@[^-] ' ) AS instr c , REGEXP INSTR ( 'abc-ef' , '@[^-] ' ) AS instr d , / ---------------------------------------+ instr a instr b instr c instr d +---------------------------------------+ 3 3 4 0 +--------------------------------------- / SELECT REGEXP INSTR ( 'a@cd-ef b@cd-ef' , '@[^-] ' , 1 ) AS instr a , REGEXP INSTR ( 'a@cd-ef b@cd-ef' , '@[^-] ' , 2 ) AS instr b , REGEXP INSTR ( 'a@cd-ef b@cd-ef' , '@[^-] ' , 3 ) AS instr c , REGEXP INSTR ( 'a@cd-ef b@cd-ef' , '@[^-] ' , 4 ) AS instr d , / ---------------------------------------+ instr a instr b instr c instr d +---------------------------------------+ 2 2 10 10 +--------------------------------------- / SELECT REGEXP INSTR ( 'a@cd-ef b@cd-ef c@cd-ef' , '@[^-] ' , 1 , 1 ) AS instr a , REGEXP INSTR ( 'a@cd-ef b@cd-ef c@cd-ef' , '@[^-] ' , 1 , 2 ) AS instr b , REGEXP INSTR ( 'a@cd-ef b@cd-ef c@cd-ef' , '@[^-] ' , 1 , 3 ) AS instr c / -----------------------------+ instr a instr b instr c +-----------------------------+ 2 10 18 +----------------------------- / SELECT REGEXP INSTR ( 'a@cd-ef' , '@[^-] ' , 1 , 1 , 0 ) AS instr a , REGEXP INSTR ( 'a@cd-ef' , '@[^-] ' , 1 , 1 , 1 ) AS instr b / -------------------+ instr a instr b +-------------------+ 2 5 +------------------- / REGEXP REPLACE REGEXP REPLACE ( value , regexp , replacement ) Description Returns a STRING where all substrings of value that match regular expression regexp are replaced with replacement .",
+          "Return type STRING Example SELECT b ' \\ x00 \\ x01 \\ x02 \\ x03 \\ xAA \\ xEE \\ xEF \\ xFF' AS byte string , TO HEX ( b ' \\ x00 \\ x01 \\ x02 \\ x03 \\ xAA \\ xEE \\ xEF \\ xFF' ) AS hex string / ----------------------------------+------------------+ byte string hex string +----------------------------------+------------------+ \\x00\\x01\\x02\\x03\\xaa\\xee\\xef\\xff 00010203aaeeefff +----------------------------------+------------------ / TRANSLATE TRANSLATE ( expression , source characters , target characters ) Description In expression , replaces each character in source characters with the corresponding character in target characters ."
+        ]
+      },
+      {
+        "title": "\"Transform SQL translations using configuration YAML files \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "source_id": "site-docs-reference-5",
+        "final_score": 96,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following configuration YAML changes the output names of all objects (database, schema, relation, and attributes) in the script according to the configured rules. type : experimental object rewriter global : outputName : regex : - match : '\\s' replaceWith : ' ' - match : '>=' replaceWith : 'gte' - match : '^[^a-zA-Z ]. ' replaceWith : ' $0' A SQL translation with this configuration YAML file might look like the following: teradata-input.sql create table \"test special chars >= 12\" ( \"42eid\" int , \"custom column\" varchar ( 10 )); bq-output.sql CREATE TABLE test special chars employees gte 12 ( 42eid INT64 , custom column STRING ) ; Optimize and improve the performance of translated SQL Optional transformations can be applied to translated SQL in order to introduce changes that can improve performance or cost.",
+          "BigQuery supports the following data type conversions: DATETIME to TIMESTAMP TIMESTAMP to DATETIME (accepts optional time zone) TIMESTAMP WITH TIME ZONE to DATETIME (accepts optional time zone) CHAR to VARCHAR In the following example, the configuration YAML converts a TIMESTAMP data type to DATETIME . type : experimental object rewriter global : typeConvert : timestamp : DATETIME Setting default time zone Preview This product or feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "The interactive SQL translator, BigQuery Migration API, the batch SQL translator, and the batch translation Python client supports the use of multiple configuration YAML files in a single translation job."
+        ]
+      },
+      {
+        "title": "BigQuery Graph and ISO standards \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/graph-iso-standards",
+        "source_id": "site-api-reference",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "BigQuery Graph is based on two ISO standards: ISO/IEC 9075-16:2023 - Information technology — Database languages SQL Property Graph Queries (SQL/PGQ) , Edition 1, 2023 ISO/IEC 39075:2024 - Information technology — Database languages — GQL , Edition 1, 2024 The following tables describe the high-level relationship between SQL/PGQ, GQL, and how BigQuery Graph supports these standards.",
+          "BigQuery Graph and ISO standards The document describes how BigQuery Graph supports the ISO international standard query language for graph databases.",
+          "BigQuery Graph supports additional features in the ISO standards."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "input.sql",
+      "output.sql"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

@@ -1,0 +1,159 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:32.709Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-workbench/card.json",
+  "product_name": "Vertex AI Workbench",
+  "product_slug": "vertex-ai-workbench",
+  "feature_name": "Vertex AI Workbench instance NVIDIA driver update",
+  "feature_slug": "vertex-ai-workbench-instance-nvidia-driver-update",
+  "summary": "The NVIDIA GPU drivers for Vertex AI Workbench instances were updated to version 550.54.15 to address startup installation failures on Debian 11 images using linux-image-5.10.0-29-cloud-amd64.",
+  "extended_definition": "The NVIDIA GPU drivers for Vertex AI Workbench instances were updated to version 550.54.15 to address startup installation failures on Debian 11 images using linux-image-5.10.0-29-cloud-amd64.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/iam",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest/v1/projects.locations.instances/getInstanceHealth"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Method: projects.locations.instances.getInstanceHealth \\_|\\_ Vertex AI \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest/v1/projects.locations.instances/getInstanceHealth",
+        "source_id": "site-api-reference-2",
+        "final_score": 110,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Reference Send feedback Method: projects.locations.instances.getInstanceHealth Stay organized with collections Save and categorize content based on your preferences.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-06-27 UTC.\"],[],[]]",
+          "Format: projects/{projectId}/locations/{location}/instances/{instanceId} Authorization requires the following IAM permission on the specified resource name : notebooks.instances.getHealth Request body The request body must be empty."
+        ]
+      },
+      {
+        "title": "Manage access to a Vertex AI Workbench instance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access",
+        "source_id": "site-docs-reference-2",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "Grant access to Vertex AI Workbench instances To grant users permission to access a specific Vertex AI Workbench instance, set an IAM policy on the instance. gcloud To grant a role to a principal on a Vertex AI Workbench instance, use the get-iam-policy command to retrieve the current policy, edit the current policy's access, and then use the set-iam-policy command to update the policy on the instance.",
+          "API To grant a role to a principal on a Vertex AI Workbench instance, use the getIamPolicy method to retrieve the current policy, edit the current policy's access, and then use the setIamPolicy method to update the policy on the instance.",
+          "Before using any of the command data below, make the following replacements: INSTANCE NAME : the name of your instance PROJECT ID : your Google Cloud project ID LOCATION : the zone where your instance is located Save the following content in a file called request.json : { \"policy\" : { \"bindings\" : [ { \"role\" : \"roles/notebooks.viewer\" , \"members\" : [ \"user:email@example.com\" ] }, { \"role\" : \"roles/notebooks.admin\" , \"members\" : [ \"user:eve@example.com\" ] } ], \"etag\" : \"BwWWja0YfJA=\" , \"version\" : 3 } } Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud workbench instances set-iam-policy INSTANCE NAME \\ --project = PROJECT ID \\ --location = LOCATION \\ request.json --format = json Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud workbench instances set-iam-policy INSTANCE NAME --project = PROJECT ID --location = LOCATION request.json --format = json Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud workbench instances set-iam-policy INSTANCE NAME ^ --project = PROJECT ID ^ --location = LOCATION ^ request.json --format = json Grant access to the JupyterLab interface Granting a principal access to a Vertex AI Workbench instance doesn't grant the ability to use the instance's JupyterLab interface."
+        ]
+      },
+      {
+        "title": "Vertex AI Workbench instances access control \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/iam",
+        "source_id": "site-docs-reference-2",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, you can grant users roles/notebooks.viewer permissions at the project level so that they can view all Vertex AI Workbench resources in the project, and then you can grant each user roles/notebooks.admin permissions on a specific Vertex AI Workbench instance so that they have all of the admin abilities to administer that instance.",
+          "Control access to an instance's JupyterLab interface with the access mode You control access to a Vertex AI Workbench instance's JupyterLab interface through the instance's access mode.",
+          "However, even granting a principal full access to a Vertex AI Workbench instance doesn't grant the ability to use the instance's JupyterLab interface."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "cmd.exe",
+      "example.com",
+      "notebooks.admin",
+      "notebooks.instances.getHealth",
+      "notebooks.viewer",
+      "projects.locations.instances",
+      "projects.locations.instances.getInstanceHealth",
+      "request.json"
+    ],
+    "missing_inventory_roles": [
+      "roles/notebooks.admin",
+      "roles/notebooks.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest/v1/projects.locations.instances/getInstanceHealth",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/iam"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest/v1/projects.locations.instances/getInstanceHealth",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/iam"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest/v1/projects.locations.instances/getInstanceHealth",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/iam"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest/v1/projects.locations.instances/getInstanceHealth",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/iam"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest/v1/projects.locations.instances/getInstanceHealth",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/iam"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest/v1/projects.locations.instances/getInstanceHealth",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/iam"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest/v1/projects.locations.instances/getInstanceHealth",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/iam"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest/v1/projects.locations.instances/getInstanceHealth",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/iam"
+      ]
+    }
+  ]
+}

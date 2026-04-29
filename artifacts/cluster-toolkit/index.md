@@ -1,0 +1,81 @@
+# Cluster Toolkit
+
+Service card: [card.json](./card.json)
+
+Generated from Step 08 card: `data/step-06/current/products/cluster-toolkit/extended-features.json`
+
+## Summary
+
+- Promoted features: 65
+- Step 07 product status: PASS
+- Corpus health: healthy
+- Latest feature date: 2026-03-25
+- Official source links: 19
+
+## Features
+
+- [GKE cloud DNS default configuration](./gke-cloud-dns-default-configuration/README.md)
+- [Managed Lustre integration for GKE A4X Max](./managed-lustre-integration-for-gke-a4x-max/README.md)
+- [Zone-aware disk type validation](./zone-aware-disk-type-validation/README.md)
+- [A4X-Max Bare Metal support](./a4x-max-bare-metal-support/README.md)
+- [Conditional and required configuration validations](./conditional-and-required-configuration-validations/README.md)
+- [Dynamic Workload Scheduler queued provisioning for TPU](./dynamic-workload-scheduler-queued-provisioning-for-tpu/README.md)
+- [A4X JBVM blueprint](./a4x-jbvm-blueprint/README.md)
+- [Cloud Storage FUSE profile for Slurm blueprints](./cloud-storage-fuse-profile-for-slurm-blueprints/README.md)
+- [Dynamic Workload Scheduler Flex-start for TPU](./dynamic-workload-scheduler-flex-start-for-tpu/README.md)
+- [Infrastructure Data-Plane Function support](./infrastructure-data-plane-function-support/README.md)
+- [IPv6 support](./ipv6-support/README.md)
+- [Report and Replace API integration for Slurm](./report-and-replace-api-integration-for-slurm/README.md)
+- [Dynamic Workload Scheduler Flex-start for G4](./dynamic-workload-scheduler-flex-start-for-g4/README.md)
+- [gIB Arm64 version support](./gib-arm64-version-support/README.md)
+- [Parallelstore module](./parallelstore-module/README.md)
+- [Automated Google Cloud resource cleanup script](./automated-google-cloud-resource-cleanup-script/README.md)
+- [Cloud Build cleanup pipeline](./cloud-build-cleanup-pipeline/README.md)
+- [Robust destroy workflow](./robust-destroy-workflow/README.md)
+- [Configurable Kueue installation wait parameter](./configurable-kueue-installation-wait-parameter/README.md)
+- [NCCL test script for Slurm on GKE](./nccl-test-script-for-slurm-on-gke/README.md)
+- [Cloud Storage Bucket core module](./cloud-storage-bucket-core-module/README.md)
+- [Google Cloud NetApp Volumes support](./google-cloud-netapp-volumes-support/README.md)
+- [kubectl force_conflicts flag support](./kubectl-force-conflicts-flag-support/README.md)
+- [TPU 7x blueprint files](./tpu-7x-blueprint-files/README.md)
+- [A3 High TCPx custom image blueprint](./a3-high-tcpx-custom-image-blueprint/README.md)
+- [G4 blueprint](./g4-blueprint/README.md)
+- [GKE Inference Gateway support](./gke-inference-gateway-support/README.md)
+- [Parameterized gIB NCCL RDMA plugin installer](./parameterized-gib-nccl-rdma-plugin-installer/README.md)
+- [Managed Lustre support for gke-tpu-v6-advanced](./managed-lustre-support-for-gke-tpu-v6-advanced/README.md)
+- [Sycomp storage example blueprints](./sycomp-storage-example-blueprints/README.md)
+- [Managed Lustre support for gke-a4x](./managed-lustre-support-for-gke-a4x/README.md)
+- [Automated TPU support in TPU v6 blueprint](./automated-tpu-support-in-tpu-v6-blueprint/README.md)
+- [Cloud Storage FUSE mounts in TPU v6 blueprint](./cloud-storage-fuse-mounts-in-tpu-v6-blueprint/README.md)
+- [NUMA-aware scheduling for G4 on GKE](./numa-aware-scheduling-for-g4-on-gke/README.md)
+- [WEKA filesystem mount scripts module](./weka-filesystem-mount-scripts-module/README.md)
+- [IBM Spectrum Symphony HostFactory connector support](./ibm-spectrum-symphony-hostfactory-connector-support/README.md)
+- [NCCL package downloads for A3 Ultra and A4 High](./nccl-package-downloads-for-a3-ultra-and-a4-high/README.md)
+- [AArch64 architecture support](./aarch64-architecture-support/README.md)
+- [Cloud Storage FUSE support for H4D](./cloud-storage-fuse-support-for-h4d/README.md)
+- [Debian-based A3 Mega blueprints](./debian-based-a3-mega-blueprints/README.md)
+- [GPU network wait improvements for A-family](./gpu-network-wait-improvements-for-a-family/README.md)
+- [Managed Lustre support for A4X](./managed-lustre-support-for-a4x/README.md)
+- [GKE Managed Lustre integration](./gke-managed-lustre-integration/README.md)
+- [Private Service Access alternative services support](./private-service-access-alternative-services-support/README.md)
+- [Dynamic Workload Scheduler Flex-start regional MIG support](./dynamic-workload-scheduler-flex-start-regional-mig-support/README.md)
+- [A4X blueprints](./a4x-blueprints/README.md)
+- [Slinky community scheduler module](./slinky-community-scheduler-module/README.md)
+- [H4D GKE blueprint](./h4d-gke-blueprint/README.md)
+- [Parallelstore blueprints](./parallelstore-blueprints/README.md)
+- [Cluster Health Scripts integration for GKE blueprints](./cluster-health-scripts-integration-for-gke-blueprints/README.md)
+- [AlphaFold 3 high-throughput blueprint](./alphafold-3-high-throughput-blueprint/README.md)
+- [GKE TPU v6e example](./gke-tpu-v6e-example/README.md)
+- [GPU health-check epilogs for Slurm](./gpu-health-check-epilogs-for-slurm/README.md)
+- [Managed Lustre Slurm blueprint](./managed-lustre-slurm-blueprint/README.md)
+- [Managed Lustre VM blueprint](./managed-lustre-vm-blueprint/README.md)
+- [Managed Lustre support](./managed-lustre-support/README.md)
+- [TPU support in GKE nodepool module](./tpu-support-in-gke-nodepool-module/README.md)
+- [Automatic GPU health checks for Slurm](./automatic-gpu-health-checks-for-slurm/README.md)
+- [Multiple node pools in GKE nodepool module](./multiple-node-pools-in-gke-nodepool-module/README.md)
+- [A4 support in GKE and Slurm blueprints](./a4-support-in-gke-and-slurm-blueprints/README.md)
+- [Dynamic Workload Scheduler Flex for GKE](./dynamic-workload-scheduler-flex-for-gke/README.md)
+- [A3 Ultra blueprint](./a3-ultra-blueprint/README.md)
+- [H4D Slurm blueprint](./h4d-slurm-blueprint/README.md)
+- [H4D VM blueprint](./h4d-vm-blueprint/README.md)
+- [Kueue workload scheduler support for A3 Ultra](./kueue-workload-scheduler-support-for-a3-ultra/README.md)

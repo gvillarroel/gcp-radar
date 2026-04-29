@@ -1,0 +1,103 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Array subscript operator direct indexing",
+  "feature_slug": "array-subscript-operator-direct-indexing",
+  "summary": "The BigQuery array subscript operator can return an array element directly by index.",
+  "extended_definition": "The BigQuery array subscript operator can return an array element directly by index.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/arrays",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/operators"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Operators \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/operators",
+        "source_id": "site-docs-root",
+        "final_score": 170,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Examples In this example, the EXISTS operator returns FALSE because there are no rows in Words where the direction is south : WITH Words AS ( SELECT 'Intend' as value , 'east' as direction UNION ALL SELECT 'Secure' , 'north' UNION ALL SELECT 'Clarity' , 'west' ) SELECT EXISTS ( SELECT value FROM Words WHERE direction = 'south' ) as result ; / --------+ result +--------+ FALSE +-------- / IN operator The IN operator supports the following syntax: search value [ NOT ] IN value set value set : { ( expression [ , ... ] ) ( subquery ) UNNEST ( array expression ) } Description Checks for an equal value in a set of values.",
+          "Examples In following query, the array subscript operator is used to return values at specific position in item array .",
+          "Even though the number of code points is different, the two strings are considered equal when the collation units are considered the same. '\\u0041\\u030A' is 'Å' (two code points) '\\u0061\\u030A' is 'å' (two code points) '\\u00C5' is 'Å' (one code point) In the following examples, the difference between '\\u0061\\u030A' and '\\u00C5' is tertiary. -- Returns FALSE ' \\ u0061 \\ u030A' LIKE '% \\ u00C5%' ; -- Returns TRUE COLLATE ( ' \\ u0061 \\ u030A' , 'und:ci' ) LIKE '% \\ u00C5%' ; -- Returns TRUE COLLATE ( ' \\ u0061 \\ u030A' , 'und:ci' ) = COLLATE ( ' \\ u00C5' , 'und:ci' ); In the following example, '\\u0083' is a NO BREAK HERE character and is ignored. -- Returns FALSE ' \\ u0083' LIKE '' ; -- Returns TRUE COLLATE ( ' \\ u0083' , 'und:ci' ) LIKE '' ; Quantified LIKE operator The quantified LIKE operator supports the following syntax: search value [ NOT ] LIKE quantifier patterns quantifier : { ANY SOME ALL } patterns : { ( expression [ , ... ] ) UNNEST ( array expression ) } Description Checks search value for matches against several patterns."
+        ]
+      },
+      {
+        "title": "Work with arrays \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/arrays",
+        "source_id": "site-docs-reference",
+        "final_score": 144,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Filtering arrays The following example uses a WHERE clause in the ARRAY() operator's subquery to filter the returned rows.",
+          "WITH Races AS ( SELECT \"800M\" AS race , [ STRUCT ( \"Rudisha\" AS name , [ 23.4 , 26.3 , 26.4 , 26.1 ] AS laps ), STRUCT ( \"Makhloufi\" AS name , [ 24.5 , 25.4 , 26.6 , 26.1 ] AS laps ), STRUCT ( \"Murphy\" AS name , [ 23.9 , 26.0 , 27.0 , 26.0 ] AS laps ), STRUCT ( \"Bosse\" AS name , [ 23.6 , 26.2 , 26.5 , 27.1 ] AS laps ), STRUCT ( \"Rotich\" AS name , [ 24.7 , 25.6 , 26.9 , 26.4 ] AS laps ), STRUCT ( \"Lewandowski\" AS name , [ 25.0 , 25.7 , 26.3 , 27.2 ] AS laps ), STRUCT ( \"Kipketer\" AS name , [ 23.2 , 26.1 , 27.3 , 29.4 ] AS laps ), STRUCT ( \"Berian\" AS name , [ 23.7 , 26.1 , 27.0 , 29.3 ] AS laps ) ] AS participants ) SELECT race , ( SELECT name FROM UNNEST ( participants ), UNNEST ( laps ) AS duration ORDER BY duration ASC LIMIT 1 ) AS runner with fastest lap FROM Races ; / ------+-------------------------+ race runner with fastest lap +------+-------------------------+ 800M Kipketer +------+------------------------- / Notice that the preceding query uses the comma operator ( , ) to perform a cross join and flatten the array.",
+          "WITH Sequences AS ( SELECT [ 0 , 1 , 1 , 2 , 3 , 5 ] AS some numbers UNION ALL SELECT [ 2 , 4 , 8 , 16 , 32 ] UNION ALL SELECT [ 5 , 10 ] ) SELECT FROM Sequences ; / ---------------------+ some numbers +---------------------+ [0, 1, 1, 2, 3, 5] [2, 4, 8, 16, 32] [5, 10] +--------------------- / To access array elements in the some numbers column, specify which type of indexing you want to use: either index or OFFSET(index) for zero-based indexes, or ORDINAL(index) for one-based indexes: SELECT some numbers , some numbers [ 0 ] AS index 0 , some numbers [ OFFSET ( 1 ) ] AS offset 1 , some numbers [ ORDINAL ( 1 ) ] AS ordinal 1 FROM Sequences ; / --------------------+---------+----------+-----------+ some numbers index 0 offset 1 ordinal 1 +--------------------+---------+----------+-----------+ [0, 1, 1, 2, 3, 5] 0 1 0 [2, 4, 8, 16, 32] 2 4 2 [5, 10] 5 10 5 +--------------------+---------+----------+----------- / Note: OFFSET and ORDINAL will raise errors if the index is out of range."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples The following table function takes an INT64 parameter that is used to filter the results of a query: CREATE OR REPLACE TABLE FUNCTION mydataset . names by year ( y INT64 ) AS SELECT year , name , SUM ( number ) AS total FROM bigquery-public-data.usa names.usa 1910 current WHERE year = y GROUP BY year , name The following example specifies the return TABLE type in the RETURNS clause: CREATE OR REPLACE TABLE FUNCTION mydataset . names by year ( y INT64 ) RETURNS TABLE<name STRING , year INT64 , total INT64 > AS SELECT year , name , SUM ( number ) AS total FROM bigquery-public-data.usa names.usa 1910 current WHERE year = y GROUP BY year , name The following example computes total sales for items with the name item name from the orders table: CREATE TABLE FUNCTION mydataset . compute sales ( orders TABLE<item STRING , sales INT64 > , item name STRING ) AS ( SELECT SUM ( sales ) AS total sales , item FROM orders WHERE item = item name GROUP BY item ); CREATE PROCEDURE statement Creates a new procedure , which is a block of statements that can be called from other queries.",
+          "If the table name exists in the dataset, the following error is returned: Already Exists: project id:dataset.table The table schema contains 3 columns: x: A parameterized string with a maximum length of 10 y: A STRUCT containing a (an array of parameterized bytes with a maximum length of 5), b (a parameterized NUMERIC with a maximum precision of 15, maximum scale of 2, and rounding mode set to 'ROUND HALF EVEN'), and c (a float) z: A parameterized BIGNUMERIC with a maximum precision of 35 and maximum scale of 0 Creating a partitioned table The following example creates a partitioned table named newtable in mydataset using a DATE column: CREATE TABLE mydataset . newtable ( transaction id INT64 , transaction date DATE ) PARTITION BY transaction date OPTIONS ( partition expiration days = 3 , description = \"a table partitioned by transaction date\" ) If you haven't configured a default project, prepend a project ID to the dataset name in the example SQL, and enclose the name in backticks if project id contains special characters: project id.dataset.table .",
+          "The table option list specifies the: Table expiration time: January 1, 2025 at 00:00:00 UTC Partition expiration time: 1 day Description: A table that expires in 2025 Label: org unit = development Creating a new table from an existing table The following example creates a table named top words in mydataset from a query: CREATE TABLE mydataset . top words OPTIONS ( description = \"Top ten words per Shakespeare corpus\" ) AS SELECT corpus , ARRAY AGG ( STRUCT ( word , word count ) ORDER BY word count DESC LIMIT 10 ) AS top words FROM bigquery - public - data . samples . shakespeare GROUP BY corpus ; If you haven't configured a default project, prepend a project ID to the dataset name in the example SQL, and enclose the name in backticks if project id contains special characters: project id.dataset.table ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.usa",
+      "dataset.table",
+      "id.dataset.table",
+      "names.usa"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/operators",
+        "https://docs.cloud.google.com/bigquery/docs/arrays",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/operators",
+        "https://docs.cloud.google.com/bigquery/docs/arrays",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:30.960Z",
+  "source_step08_card": "data/step-08/current/products/transfer-appliance/card.json",
+  "product_name": "Transfer Appliance",
+  "product_slug": "transfer-appliance",
+  "feature_name": "Transfer Appliance ta mount/ta unmount CLI commands",
+  "feature_slug": "transfer-appliance-ta-mount-ta-unmount-cli-commands",
+  "summary": "Transfer Appliance introduced the `ta mount` and `ta unmount` CLI commands so users can mount and unmount their own NFS or CIFS shares on the appliance.",
+  "extended_definition": "Transfer Appliance introduced the `ta mount` and `ta unmount` CLI commands so users can mount and unmount their own NFS or CIFS shares on the appliance.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/transfer-appliance/docs",
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Transfer Appliance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Minimal software : For Linux and Apple macOS systems, copy directly to Transfer Appliance by mounting the exposed NFS share on the appliance to your workstation, using common software already installed on the system.",
+          "Transfer Appliance is available in the following locations: Location TA40(Rackable) TA300(Rackable) TA40(Freestanding) TA300(Freestanding) United States European Union member states United Kingdom Singapore Japan Canada Australia India For a complete list of countries where Transfer Appliance is available, refer to the Order Appliance page on the Google Cloud console.",
+          "Online transfers offer the following benefits: Quickly transfer data to Cloud Storage with low latency : Online transfers are an accelerated method of transferring your data to Cloud Storage, omitting the need to wait for your appliance to be shipped back to Google before the data is copied to your destination bucket."
+        ]
+      },
+      {
+        "title": "Known limitations \\_|\\_ Transfer Appliance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "source_id": "site-docs-reference",
+        "final_score": 180,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you anticipate ordering many appliances for a large transfer and cannot follow the limitations listed below, you must perform an initial proof-of-concept transfer with a single Transfer Appliance and representative data to ensure performance is suitable before you order multiple appliances.",
+          "Supported file metadata Transfer Appliance preserves symlinks, numeric MODE and the last modified time ( mtime ) from Transfer Appliance file system to copy into the corresponding Cloud Storage destination object.",
+          "Home Documentation Storage Transfer Appliance Guides Send feedback Known limitations Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Enable or disable online transfer \\_|\\_ Transfer Appliance \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "source_id": "site-docs-root",
+        "final_score": 177,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Storage Transfer Appliance Guides Send feedback Enable or disable online transfer Stay organized with collections Save and categorize content based on your preferences.",
+          "To set the appliance to online mode, run the following command: ta online The following sample response resembles the output that is returned: Starting containers for online transfer...",
+          "Online transfer compresses and encrypts the data in transit and accelerates data transfer compared to the gcloud CLI and other command-line tools."
+        ]
+      },
+      {
+        "title": "Transfer Appliance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs",
+        "source_id": "site-docs-reference",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Minimal software : For Linux and Apple macOS systems, copy directly to Transfer Appliance by mounting the exposed NFS share on the appliance to your workstation, using common software already installed on the system.",
+          "Transfer Appliance is available in the following locations: Location TA40(Rackable) TA300(Rackable) TA40(Freestanding) TA300(Freestanding) United States European Union member states United Kingdom Singapore Japan Canada Australia India For a complete list of countries where Transfer Appliance is available, refer to the Order Appliance page on the Google Cloud console.",
+          "Online transfers offer the following benefits: Quickly transfer data to Cloud Storage with low latency : Online transfers are an accelerated method of transferring your data to Cloud Storage, omitting the need to wait for your appliance to be shipped back to Google before the data is copied to your destination bucket."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs"
+      ]
+    }
+  ]
+}

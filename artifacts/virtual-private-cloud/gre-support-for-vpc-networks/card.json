@@ -1,0 +1,131 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:33.557Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "GRE support for VPC networks",
+  "feature_slug": "gre-support-for-vpc-networks",
+  "summary": "Virtual Private Cloud added support for GRE routing in VPC networks, available in Beta.",
+  "extended_definition": "Virtual Private Cloud added support for GRE routing in VPC networks, available in Beta.",
+  "lifecycle": {
+    "latest_feature_date": "2020-08-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+      "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+      "https://docs.cloud.google.com/vpc/docs/vpc",
+      "https://docs.cloud.google.com/vpc/docs/vpc-peering"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create and manage VPC networks \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "source_id": "site-docs-root",
+        "final_score": 307,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can omit both flags if you want to configure only external IPv6 on subnets in this VPC network. gcloud compute networks create NETWORK \\ --subnet-mode=custom \\ [ --enable-ula-internal-ipv6 [ --internal-ipv6-range= ULA IPV6 RANGE ]] \\ --bgp-routing-mode= DYNAMIC ROUTING MODE \\ --mtu= MTU Replace the following: NETWORK : a name for the VPC network.",
+          "You can omit both flags if you want to configure only external IPv6 on subnets in this VPC network. gcloud compute networks create NETWORK \\ --subnet-mode=custom \\ [ --enable-ula-internal-ipv6 [ --internal-ipv6-range= ULA IPV6 RANGE ]] \\ --bgp-routing-mode= DYNAMIC ROUTING MODE \\ --mtu= MTU Replace the following: NETWORK : a name for the VPC network.",
+          "Click Create . gcloud Use the networks create command . gcloud compute networks create NETWORK \\ --subnet-mode=custom \\ --bgp-routing-mode= DYNAMIC ROUTING MODE \\ --mtu= MTU Replace the following: NETWORK : a name for the VPC network."
+        ]
+      },
+      {
+        "title": "VPC networks \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc",
+        "source_id": "site-docs-root",
+        "final_score": 289,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Route advertisements and internal IP addresses The following IP addresses are advertised within a VPC network: Regional internal IPv4 addresses Used for primary and secondary IPv4 subnet address ranges Regional internal and external IPv6 addresses Used for internal and external IPv6 subnet address ranges Global internal IPv4 addresses Used for Private Service Connect endpoints for Google APIs If you connect VPC networks using VPC Network Peering, subnet ranges using private IPv4 addresses are always exchanged.",
+          "VPC networks A Virtual Private Cloud (VPC) network is a virtual version of a physical network that is implemented inside of Google's production network by using Andromeda .",
+          "Google Cloud provides RDMA network profiles that let you create Virtual Private Cloud (VPC) networks that support RDMA connectivity."
+        ]
+      },
+      {
+        "title": "VPC Network Peering \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "source_id": "site-docs-root",
+        "final_score": 269,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The dynamic routing mode of the exporting VPC network—the network that contains the Cloud Routers that learned the prefixes for those dynamic routes— determines the regions in which the peering dynamic routes can be programmed in peer networks: If the dynamic routing mode of the exporting VPC network is regional, then that network exports dynamic routes only in the same region as its Cloud Routers that learned the prefixes.",
+          "When used to specify a source for an ingress rule in a network firewall policy, a Tag can identify sources in both the VPC network to which the Tag is scoped and any peered VPC networks that are connected to the VPC network to which the Tag is scoped.",
+          "VPC Network Peering Google Cloud VPC Network Peering connects two Virtual Private Cloud (VPC) networks so that resources in each network can communicate with each other."
+        ]
+      },
+      {
+        "title": "\"Configure Private Google Access \\_|\\_ Virtual Private Cloud \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "source_id": "site-docs-root-2",
+        "final_score": 261,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To list the subnets for a particular network, use the following command: gcloud compute networks subnets list --filter= NETWORK NAME Run the following command to enable Private Google Access: gcloud compute networks subnets update SUBNET NAME \\ --region= REGION \\ --enable-private-ip-google-access Verify that Private Google Access is enabled by running this command: gcloud compute networks subnets describe SUBNET NAME \\ --region= REGION \\ --format=\"get(privateIpGoogleAccess)\" In all above commands, replace the following with valid values: SUBNET NAME : the name of the subnet REGION : the region for the subnet NETWORK NAME : the name of the VPC network that contains the subnet When creating a new subnet , use the --enable-private-ip-google-access flag to enable Private Google Access: gcloud compute networks subnets create SUBNET NAME \\ --region= REGION \\ --network= NETWORK NAME \\ --range= PRIMARY IPV4 RANGE \\ [ --stack-type= STACK TYPE ] \\ [ --ipv6-access-type= IPv6 ACCESS TYPE ] \\ --enable-private-ip-google-access Replace the following with valid values: SUBNET NAME : the name of the subnet REGION : the region for the subnet NETWORK NAME : the name of the VPC network that contains the subnet PRIMARY IPV4 RANGE : the subnet's primary IPv4 address range.",
+          "To list the subnets for a particular network, use the following command: gcloud compute networks subnets list \\ --filter= NETWORK NAME Run the following command to disable Private Google Access: gcloud compute networks subnets update SUBNET NAME \\ --region= REGION \\ --no-enable-private-ip-google-access Run the following command to verify that Private Google Access is disabled: gcloud compute networks subnets describe SUBNET NAME \\ --region= REGION \\ --format=\"get(privateIpGoogleAccess)\" In all above commands, replace the following with valid values: SUBNET NAME : the name of the subnet REGION : the region for the subnet NETWORK NAME : the name of the VPC network that contains the subnet What's next Configure Private Google Access for on-premises hosts Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Disable Private Google Access Follow these steps to disable Private Google Access for an existing subnet: Console In the Google Cloud console, go to the VPC networks page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access"
+      ]
+    }
+  ]
+}

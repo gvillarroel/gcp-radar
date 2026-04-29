@@ -515,7 +515,7 @@ function buildServiceCard({ generatedAt, step06, validation, corpus, iamSummary,
 }
 
 function markdownTableRow(values) {
-  return `| ${values.map((value) => String(value || "").replace(/\n/g, " ").replace(/\|/g, "\\|")).join(" | ")} |`;
+  return `| ${values.map((value) => String(value ?? "").replace(/\n/g, " ").replace(/\|/g, "\\|")).join(" | ")} |`;
 }
 
 function renderProductMarkdown(card) {
@@ -636,7 +636,7 @@ async function buildProductCard(productSlug, rolesIndex, permissionsIndex) {
     const iamSummary = {
       explicit_feature_count: 0,
       derived_feature_count: 0,
-      unknown_feature_count: Number(step02Summary?.unique_feature_count || 0),
+      unknown_feature_count: 0,
       related_permission_groups: [],
     };
     const serviceCard = buildServiceCard({

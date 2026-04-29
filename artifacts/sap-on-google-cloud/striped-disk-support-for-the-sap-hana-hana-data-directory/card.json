@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:26.956Z",
+  "source_step08_card": "data/step-08/current/products/sap-on-google-cloud/card.json",
+  "product_name": "SAP on Google Cloud",
+  "product_slug": "sap-on-google-cloud",
+  "feature_name": "Striped disk support for the SAP HANA /hana/data directory",
+  "feature_slug": "striped-disk-support-for-the-sap-hana-hana-data-directory",
+  "summary": "Terraform can provision a striped disk to host the SAP HANA /hana/data directory during supported SAP HANA deployments.",
+  "extended_definition": "Terraform can provision a striped disk to host the SAP HANA /hana/data directory during supported SAP HANA deployments.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+      "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp",
+      "https://docs.cloud.google.com/sap/docs/certifications-sap-hana"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Reference architecture: SAP Business Suite on SAP HANA on Google Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+        "source_id": "site-docs-root",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "Recommended storage options for Linux directory structure on SAP HANA: SAP HANA directory Recommended storage option in Google Cloud /usr/sap Balanced Persistent Disk /hana/data SSD-based Persistent Disk or Hyperdisk /hana/log SSD-based Persistent Disk or Hyperdisk /hana/shared Balanced Persistent Disk /hanabackup Balanced Persistent Disk In distributed deployments, /hana/shared and /hanabackup can also be mounted as a network file system using an NFS solution such as Filestore.",
+          "For example, you can take scheduled snapshots of the disk hosting your /hanabackup directory for use in disaster recovery scenarios.",
+          "SAP Note 2456432 - SAP Applications on Google Cloud: Supported Products and Google Cloud machine types 2446441 - Linux on Google Cloud Platform (IaaS): Adaption of your SAP License 2456953 - Windows on Google Cloud (IaaS): Adaption of your SAP License 1380654 - SAP support in public cloud environments SAP Note 2456406 - SAP on Google Cloud Platform: Support Prerequisites 1774566 - SAP Business Suite - Restrictions 1825774 - SAP Business Suite Powered by SAP HANA - Multi-Node Support Deployment automation To install SAP Business Suite on SAP HANA on Google Cloud, you can use the following deployment options: To automate the deployment of a centralized deployment or distributed SAP NetWeaver system, you can use the Terraform configurations provided by Google Cloud."
+        ]
+      },
+      {
+        "title": "\"Reference architecture: SAP S/4HANA on Google Cloud \\_|\\_ SAP on Google\\",
+        "url": "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp",
+        "source_id": "site-docs-reference",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "Recommended storage options for Linux directory structure on SAP HANA: SAP HANA directory Recommended storage option in Google Cloud /usr/sap Balanced Persistent Disk /hana/data SSD-based Persistent Disk or Hyperdisk /hana/log SSD-based Persistent Disk or Hyperdisk /hana/shared Balanced Persistent Disk /hanabackup Balanced Persistent Disk In distributed deployments, /hana/shared and /hanabackup can also be mounted as a network file system using an NFS solution such as Filestore.",
+          "For example, you can take scheduled snapshots of the disk hosting your /hanabackup directory for use in disaster recovery scenarios.",
+          "Recommended storage options for Linux directory structure on SAP ABAP instance: Directory Recommended storage option in Google Cloud /sapmnt † Balanced Persistent Disk /usr/sap Balanced Persistent Disk In distributed deployments, /sapmnt can also be mounted as a network file system using an NFS solution such as Filestore ."
+        ]
+      },
+      {
+        "title": "\"Certifications for SAP HANA on Google Cloud \\_|\\_ SAP on Google Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/sap/docs/certifications-sap-hana",
+        "source_id": "site-docs-root",
+        "final_score": 158,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Compute Engine machine type /hana/data size (GB) and IOPS /hana/log size (GB) and IOPS /hana/shared size (GB) /usr/sap size (GB) Total size (GB) n2-highmem-80 768 GB with 10,000 IOPS 320 GB with 10,000 IOPS 640 32 1,760 n2-highmem-96 921 GB with 10,000 IOPS 384 GB with 10,000 IOPS 768 32 2,105 n2-highmem-128 1,036 GB with 10,000 IOPS 432 GB with 10,000 IOPS 864 32 2,364 c3-highmem-88 844 GB with 10,000 IOPS 352 GB with 10,000 IOPS 704 32 1,932 c3-highmem-176 1,689 GB with 10,000 IOPS 512 GB with 10,000 IOPS 1,024 32 3,257 c3-highmem-192-metal 1,843 GB with 10,000 IOPS 512 GB with 10,000 IOPS 1,024 32 3,411 c4-highmem-96 892 GB with 10,000 IOPS 372 GB with 10,000 IOPS 744 32 2,040 c4-highmem-144 1,339 GB with 10,000 IOPS 512 GB with 10,000 IOPS 1,024 32 2,907 c4-highmem-192 1,785 GB with 10,000 IOPS 512 GB with 10,000 IOPS 1,024 32 3,353 c4-highmem-288 2,678 GB with 10,000 IOPS 512 GB with 10,000 IOPS 1,024 32 4,246 c4-highmem-288-metal 2,678 GB with 10,000 IOPS 512 GB with 10,000 IOPS 1,024 32 4,246 m1-megamem-96 1,719 GB with 10,000 IOPS 512 GB with 10,000 IOPS 1,024 32 3,287 m1-ultramem-80 2,306 GB with 10,000 IOPS 512 GB with 10,000 IOPS 1,024 32 3,874 m1-ultramem-160 4,612 GB with 10,000 IOPS 512 GB with 10,000 IOPS 1,024 32 6,180 m2-megamem-416 7,065 GB with 14,130 IOPS 512 GB with 3,000 IOPS 1,024 32 8,633 m2-ultramem-208 7,065 GB with 14,130 IOPS 512 GB with 10,000 IOPS 1,024 32 8,633 m2-ultramem-416 14,092 GB with 28,184 IOPS 512 GB with 10,000 IOPS 1,024 32 15,660 m2-hypermem-416 10,598 GB with 21,196 IOPS 512 GB with 10,000 IOPS 1,024 32 12,166 m3-ultramem-64 2,342 GB with 10,000 IOPS 512 GB with 10,000 IOPS 1,024 32 3,910 m3-ultramem-128 4,684 GB with 10,000 IOPS 512 GB with 10,000 IOPS 1,024 32 6,252 m3-megamem-64 1,171 GB with 10,000 IOPS 488 GB with 10,000 IOPS 976 32 2,667 m3-megamem-128 2,342 GB with 10,000 IOPS 512 GB with 10,000 IOPS 1,024 32 3,910 m4-megamem-112 1,785 GB with 10,000 IOPS 512 GB with 10,000 IOPS 1,024 32 3,353 m4-megamem-224 3,571 GB with 10,000 IOPS 512 GB with 10,000 IOPS 1,024 32 5,139 m4-ultramem-112 3,571 GB with 10,000 IOPS 512 GB with 10,000 IOPS 1,024 32 5,139 m4-ultramem-224 7,142 GB with 14,130 IOPS 512 GB with 10,000 IOPS 1,024 32 8,710 Hyperdisk Balanced For SAP HANA, the minimum supported provisioned IOPS is 3000 and throughput is 400 MBps.",
+          "Compute Engine machine type /hana/data size (GB) /hana/log size (GB) /hana/shared size (GB) /usr/sap size (GB) Total size (GB) n1-highmem-32 599 104 208 32 943 n1-highmem-64 499 208 416 32 1,155 n1-highmem-96 748 312 624 32 1,716 n2-highmem-32 527 128 256 32 943 n2-highmem-48 460 192 384 32 1,068 n2-highmem-64 614 256 512 32 1,414 n2-highmem-80 768 320 640 32 1,760 n2-highmem-96 921 384 768 32 2,105 n2-highmem-128 1,036 432 864 32 2,364 c3-standard-44 647 88 176 32 943 c3-highmem-44 422 176 352 32 982 c3-highmem-88 844 352 704 32 1,932 c3-highmem-176 1,689 512 1,024 32 3,257 m1-megamem-96 1,719 512 1,024 32 3,287 m1-ultramem-40 1,153 480 961 32 2,626 m1-ultramem-80 2,306 512 1,024 32 3,874 m1-ultramem-160 4,612 512 1,024 32 6,180 m2-megamem-416 7,065 512 1,024 32 8,633 m2-ultramem-208 7,065 512 1,024 32 8,633 m2-ultramem-416 14,092 512 1,024 32 15,660 m2-hypermem-416 10,598 512 1,024 32 12,166 m3-ultramem-32 1,171 488 976 32 2,667 m3-ultramem-64 2,342 512 1,024 32 3,910 m3-ultramem-128 4,684 512 1,024 32 6,252 m3-megamem-64 1,171 488 976 32 2,667 m3-megamem-128 2,342 512 1,024 32 3,910 SSD Persistent Disk If you want to use more than one SSD Persistent Disk volume to host your /hana/data volume, then make sure to equally divide the size value provided in the \" /hana/data size (GB)\" column among the disk volumes that you provision.",
+          "If you want to use more than one Hyperdisk Balanced volume to host your /hana/data volume, then make sure to equally divide the size, IOPS, and throughput values provided in the \" /hana/data size (GB), IOPS, and throughput\" column among the disk volumes that you provision."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

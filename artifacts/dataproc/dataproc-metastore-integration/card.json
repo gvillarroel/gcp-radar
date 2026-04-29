@@ -1,0 +1,121 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:04.393Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Dataproc Metastore integration",
+  "feature_slug": "dataproc-metastore-integration",
+  "summary": "Dataproc clusters can use a Dataproc Metastore service as an external metastore.",
+  "extended_definition": "Dataproc clusters can use a Dataproc Metastore service as an external metastore.",
+  "lifecycle": {
+    "latest_feature_date": "2020-08-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/hive-metastore",
+      "https://docs.cloud.google.com/dataproc-metastore/docs/migrate-mysql-metastore",
+      "https://docs.cloud.google.com/dataproc-metastore/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Hive metastore \\_|\\_ Dataproc Metastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/hive-metastore",
+        "source_id": "site-docs-root-2",
+        "final_score": 117,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Meaning, the metadata that you store in a Dataproc Metastore service can exist in both internal and external tables.",
+          "When modifying data, a Dataproc Metastore service (Hive) treats internal and external tables differently.",
+          "If the Hive warehouse directory is not in the same project as the Dataproc Metastore, ensure that the Dataproc Metastore service agent has permission to access the Hive warehouse directory."
+        ]
+      },
+      {
+        "title": "Dataproc Metastore overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/overview",
+        "source_id": "site-docs-root-2",
+        "final_score": 112,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Integrations with Google Cloud All integrations listed in this section are supported by Dataproc Metastore 1 and Dataproc Metastore 2, unless otherwise noted.",
+          "Import existing metadata stored in an external Hive Metastore metastore into a Dataproc Metastore service.",
+          "Home Documentation Data analytics Dataproc Metastore Guides Send feedback Dataproc Metastore overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Migrate a self-managed MySQL metastore to Dataproc Metastore\\",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/migrate-mysql-metastore",
+        "source_id": "site-docs-root-2",
+        "final_score": 101,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Migrate a self-managed MySQL metastore to Dataproc Metastore This page shows you how to migrate your external self-managed MySQL metastore to Dataproc Metastore by creating a MySQL dump file and importing the metadata into an existing Dataproc Metastore service.",
+          "Enable the API Required Roles To get the permissions that you need to create a Dataproc Metastore and import a MySQL metastore, ask your administrator to grant you the following IAM roles: To create a service and import metadata: Dataproc Metastore Editor ( roles/metastore.editor ) on the project Dataproc Metastore Admin ( roles/metastore.admin ) on the project.",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create a Dataproc Metastore and import a MySQL metastore: To create a service: metastore.services.create on the project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "metastore.admin",
+      "metastore.editor",
+      "metastore.services.create"
+    ],
+    "missing_inventory_roles": [
+      "roles/metastore.admin",
+      "roles/metastore.editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/hive-metastore",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/overview",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/migrate-mysql-metastore"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/hive-metastore",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/overview",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/migrate-mysql-metastore"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/hive-metastore",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/overview",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/migrate-mysql-metastore"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/hive-metastore",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/overview",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/migrate-mysql-metastore"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.987Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "UDM Search templates",
+  "feature_slug": "udm-search-templates",
+  "summary": "UDM Search templates provide Chronicle-provided pre-made searches for Quick Searches and Search Manager.",
+  "extended_definition": "UDM Search templates provide Chronicle-provided pre-made searches for Quick Searches and Search Manager.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+      "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: Optimized results view Timelines chart Aggregations window Optimized results view To maximize the space available for viewing search results, Google SecOps provides an event-focused view.",
+          "Navigate search results using pagination To improve browser stability and performance when loading a large number of results, Google SecOps provides paginated search results.",
+          "Timelines chart The Timelines chart provides a graphical representation of the number of events and alerts occurring each day that are being surfaced by the current search."
+        ]
+      },
+      {
+        "title": "\"Google SecOps audit logs \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 110,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable the data read setting for your Google Cloud project to record SIEM search queries run by users. chronicle.googleapis.com/feeds.get chronicle.googleapis.com/rules.list chronicle.googleapis.com/curatedRuleSets.countCuratedRuleSetDetections Logs with service name chronicleservicemanager.googleapis.com Google SecOps audit logs written using the chronicleservicemanager.googleapis.com service name are only available at the organization level, not at the project level.",
+          "For legacy audit logging of malachitefrontend-pa.googleapis.com configured using a Google Cloud-owned project, Google SecOps Support provided you with this information.",
+          "Also includes data read and data write operations that read or write user-provided data."
+        ]
+      },
+      {
+        "title": "\"Ingest Google Cloud data \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "source_id": "site-api-reference",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the following error message appears: \"The provided filter can potentially allow unsupported log types\", there may be an unsupported log type included in the export filter.",
+          "When you add a log type to the export filter, you may see this message: \"The provided filter can potentially allow unsupported log types\".",
+          "What's next Open your Google SecOps instance using the customer specific URL provided by your Google SecOps representative."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "abuseevent.googleapis.com",
+      "apigee.googleapis.com",
+      "chronicle.googleapis.com",
+      "chronicleservicemanager.googleapis.com",
+      "cloudaudit.googleapis.com",
+      "cloudsql.googleapis.com",
+      "compute.googleapis.com",
+      "dns.googleapis.com",
+      "feeds.get",
+      "general.log",
+      "ids.googleapis.com",
+      "loadbalancing.googleapis.com",
+      "modelarmor.googleapis.com",
+      "mysql.err",
+      "networksecurity.googleapis.com",
+      "osconfig.googleapis.com",
+      "pa.googleapis.com",
+      "postgres.log",
+      "recaptchaenterprise.googleapis.com",
+      "rules.list",
+      "run.googleapis.com",
+      "sqlagent.out",
+      "sqlserver.err",
+      "sysmon.raw",
+      "winevt.raw"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+      ]
+    }
+  ]
+}

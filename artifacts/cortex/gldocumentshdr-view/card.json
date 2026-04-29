@@ -1,0 +1,112 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:02.843Z",
+  "source_step08_card": "data/step-08/current/products/cortex/card.json",
+  "product_name": "Cortex",
+  "product_slug": "cortex",
+  "feature_name": "GLDocumentsHdr view",
+  "feature_slug": "gldocumentshdr-view",
+  "summary": "GLDocumentsHdr is a Cortex SAP reporting view for header-level general ledger document data; deprecated on 2025-09-19.",
+  "extended_definition": "GLDocumentsHdr is a Cortex SAP reporting view for header-level general ledger document data; deprecated on 2025-09-19.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-19",
+    "deprecation_date": "2025-09-19",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cortex/docs/datamesh",
+      "https://docs.cloud.google.com/cortex/docs/datamesh-concepts",
+      "https://docs.cloud.google.com/cortex/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"(Deprecated) Data Mesh User Guide \\_|\\_ Google Cloud Cortex Framework \\_\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "source_id": "site-docs-reference",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "To ensure that you are deploying with required packages and versions, you can run the utility from the same image used by the Cortex deployment process with the following commands: Run container interactively docker container run -it gcr.io/kittycorn-public/deploy-kittycorn:v2.0 Clone the repo git clone https://github.com/GoogleCloudPlatform/cortex-data-foundation Navigate into the repo cd cortex-data-foundation For help with the available parameters and their usage, run the following command: python src/common/data mesh/deploy data mesh.py -h The following is an example for invocation for SAP ECC: python src/common/data mesh/deploy data mesh.py \\ --config-file config/config.json \\ --lake-directories \\ src/SAP/SAP REPORTING/config/ecc/lakes \\ --tag-template-directories \\ src/SAP/SAP REPORTING/config/ecc/tag templates \\ --policy-directories \\ src/SAP/SAP REPORTING/config/ecc/policy taxonomies \\ --annotation-directories \\ src/SAP/SAP REPORTING/config/ecc/annotations See the Data Mesh directories section for information about directory locations.",
+          "Asset and Column Level Access Control with Tag Templates Cortex Framework provides the ability to enable asset or column level access control on all artifacts that are associated with a Catalog Tag Template.",
+          "Access policies that were deployed can be viewed on the BigQuery Schema page to see the policies applied on a particular asset at each level."
+        ]
+      },
+      {
+        "title": "\"(Deprecated) Data Mesh concepts \\_|\\_ Google Cloud Cortex Framework \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/datamesh-concepts",
+        "source_id": "site-docs-reference",
+        "final_score": 67,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dataplex Universal Catalog The following table defines Data Mesh concepts within Dataplex Universal Catalog: Concept Description Cortex Framework context Lake Top level unit for organizing data within a Data Mesh.",
+          "Home Documentation Data analytics Google Cloud Cortex Framework Guides Send feedback Stay organized with collections Save and categorize content based on your preferences. (Deprecated) Data Mesh concepts Warning: The Data Mesh feature within the Google Cloud Cortex Framework is now deprecated and disabled.",
+          "Before diving into the detailed guide on deploying Data Mesh with Google Cloud Cortex Framework, this page provides a foundation for how relevant Data Mesh concepts are generally implemented within a Google Cloud product and specifically with the Cortex Framework context."
+        ]
+      },
+      {
+        "title": "Overview \\_|\\_ Google Cloud Cortex Framework \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cortex/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 63,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Overview Google Cloud Cortex Framework provides reference architectures, deployable solutions, and packaged implementation services to kickstart your Data and AI Cloud journey.",
+          "Cortex Framework uses BigQuery for storing raw, transformed, and reporting data.",
+          "Deployment For Cortex Framework deployment instructions, see the following guides: Quickstart Demo : a quickstart demo to test the Cortex Framework set up process with sample data with in just a few clicks."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.json",
+      "gcr.io",
+      "github.com",
+      "mesh.py",
+      "v2.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "https://docs.cloud.google.com/cortex/docs/datamesh-concepts",
+        "https://docs.cloud.google.com/cortex/docs/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "https://docs.cloud.google.com/cortex/docs/datamesh-concepts",
+        "https://docs.cloud.google.com/cortex/docs/overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "https://docs.cloud.google.com/cortex/docs/datamesh-concepts",
+        "https://docs.cloud.google.com/cortex/docs/overview"
+      ]
+    }
+  ]
+}

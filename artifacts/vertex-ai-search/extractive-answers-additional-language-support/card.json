@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:32.041Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search",
+  "feature_name": "Extractive answers additional language support",
+  "feature_slug": "extractive-answers-additional-language-support",
+  "summary": "Vertex AI Search added support for extractive answers in additional languages, including Arabic, Simplified Chinese, and Japanese.",
+  "extended_definition": "Vertex AI Search added support for extractive answers in additional languages, including Arabic, Simplified Chinese, and Japanese.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: discoveryengine.googleapis.com \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "ExtractiveContentSpec JSON representation { \"maxExtractiveAnswerCount\" : integer , \"maxExtractiveSegmentCount\" : integer , \"returnExtractiveSegmentScore\" : boolean , \"numPreviousSegments\" : integer , \"numNextSegments\" : integer } Fields maxExtractiveAnswerCount integer The maximum number of extractive answers returned in each search result.",
+          "If naturalLanguageQueryUnderstandingSpec is not specified, no additional natural language query understanding will be done. searchAsYouTypeSpec object ( SearchAsYouTypeSpec ) Search as you type configuration.",
+          "At most five answers are returned for each SearchResult . maxExtractiveSegmentCount integer The max number of extractive segments returned in each search result."
+        ]
+      },
+      {
+        "title": "Get answers and follow-ups \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "source_id": "site-docs-reference",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "Query ( text = \"What is Vertex AI Search?\" ), session = None , # Optional: include previous session ID to continue a conversation query understanding spec = query understanding spec , answer generation spec = answer generation spec , user pseudo id = \"user-pseudo-id\" , # Optional: Add user pseudo-identifier for queries. ) Make the request response = client . answer query ( request ) Handle the response print ( response ) return response Set the answer language code The following command shows how to set the language code for answers.",
+          "Example command and result curl -X GET -H \"Authorization: Bearer $(gcloud auth print-access-token)\" -H \"Content-Type: application/json\" \"https://discoveryengine.googleapis.com/v1/projects/123456/locations/global/collections/default collection/engines/my-app/sessions?filter=userPseudoId=test user%20AND%20state=IN PROGRESS\" { \"sessions\": [ { \"name\": \"projects/123456/locations/global/collections/default collection/engines/my-app/sessions/16002628354770206943\", \"state\": \"IN PROGRESS\", \"userPseudoId\": \"test user\", \"turns\": [ { \"query\": { \"queryId\": \"projects/123456/locations/global/questions/741830\", \"text\": \"Compare bigquery with spanner database?\" }, \"answer\": \"projects/123456/locations/global/collections/default collection/engines/my-app/sessions/16002628354770206943/answers/4861507376861383072\" } ], \"startTime\": \"2024-09-13T18:47:10.465311Z\", \"endTime\": \"2024-09-13T18:49:41.579151Z\" } ] } Python For more information, see the Vertex AI Search Python API reference documentation .",
+          "Query ( text = \"What is Vertex AI Search?\" ), session = None , # Optional: include previous session ID to continue a conversation query understanding spec = query understanding spec , answer generation spec = answer generation spec , user pseudo id = \"user-pseudo-id\" , # Optional: Add user pseudo-identifier for queries. ) Make the request response = client . answer query ( request ) Handle the response print ( response ) return response Personalize answers If there is specific information about the user available—for example, data in a profile, you can specify that information in the endUserMetadata object so that the query results can be personalized for the user."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: discoveryengine.googleapis.com \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "AnswerGenerationSpec JSON representation { \"modelSpec\" : { object ( ModelSpec ) } , \"promptSpec\" : { object ( PromptSpec ) } , \"includeCitations\" : boolean , \"answerLanguageCode\" : string , \"ignoreAdversarialQuery\" : boolean , \"ignoreNonAnswerSeekingQuery\" : boolean , \"ignoreJailBreakingQuery\" : boolean , \"multimodalSpec\" : { object ( MultimodalSpec ) } , // Union field ignore low relevant content can be only one of the following: \"ignoreLowRelevantContent\" : boolean // End of list of possible types for union field ignore low relevant content . } Fields modelSpec object ( ModelSpec ) Answer generation model specification. promptSpec object ( PromptSpec ) Answer generation prompt specification. includeCitations boolean Specifies whether to include citation metadata in the answer.",
+          "SearchParams JSON representation { \"maxReturnResults\" : integer , \"filter\" : string , \"boostSpec\" : { object ( BoostSpec ) } , \"orderBy\" : string , \"searchResultMode\" : enum ( SearchResultMode ) , \"customFineTuningSpec\" : { object ( CustomFineTuningSpec ) } , \"dataStoreSpecs\" : [ { object ( DataStoreSpec ) } ] , \"naturalLanguageQueryUnderstandingSpec\" : { object ( NaturalLanguageQueryUnderstandingSpec ) } } Fields maxReturnResults integer Number of search results to return.",
+          "UnstructuredDocumentInfo JSON representation { \"document\" : string , \"uri\" : string , \"title\" : string , \"documentContexts\" : [ { object ( DocumentContext ) } ] , \"extractiveSegments\" : [ { object ( ExtractiveSegment ) } ] , \"extractiveAnswers\" : [ { object ( ExtractiveAnswer ) } ] } Fields document string Document resource name. uri string URI for the document. title string Title. documentContexts[] object ( DocumentContext ) List of document contexts."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search"
+      ]
+    }
+  ]
+}

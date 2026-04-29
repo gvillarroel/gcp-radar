@@ -1,0 +1,191 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:27.049Z",
+  "source_step08_card": "data/step-08/current/products/secret-manager/card.json",
+  "product_name": "Secret Manager",
+  "product_slug": "secret-manager",
+  "feature_name": "Parameter Manager",
+  "feature_slug": "parameter-manager",
+  "summary": "Parameter Manager stores, accesses, and manages the lifecycle of workload parameters; Parameter Manager stores, accesses, and manages the lifecycle of workload parameters.",
+  "extended_definition": "Parameter Manager stores, accesses, and manages the lifecycle of workload parameters; Parameter Manager stores, accesses, and manages the lifecycle of workload parameters.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+      "https://docs.cloud.google.com/secret-manager/docs/locations",
+      "https://docs.cloud.google.com/secret-manager/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Secret Manager overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Manage operational parameters for your applications using Parameter Manager : Parameter Manager is an extension to the Secret Manager service that you can use to store and manage application configurations such as database connection strings, feature flags, environment names, port numbers to listen on, and settings for application features.",
+          "Secret Manager manages server-side encryption keys on your behalf using the same hardened key management systems that we use for our own encrypted data, including strict key access controls and auditing.",
+          "To use Parameter Manager, you must enable the Parameter Manager API and grant your users the required IAM roles ."
+        ]
+      },
+      {
+        "title": "Secret Manager locations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "source_id": "site-docs-root",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Region Regional Secret Manager Parameter Manager europe-west1 (Belgium) Yes Yes europe-west10 (Berlin) Yes No europe-north1 (Finland) No No europe-north2 (Stockholm) Yes No europe-west3 (Frankfurt) Yes Yes europe-west2 (London) Yes Yes europe-southwest1 (Madrid) Yes Yes europe-west8 (Milan) Yes Yes europe-west4 (Netherlands) Yes Yes europe-west12 (Turin) Yes No europe-west9 (Paris) Yes Yes europe-central2 (Warsaw) Yes Yes europe-west6 (Zurich) Yes Yes Locations in North America The following table lists the locations in North America where Secret Manager and Parameter Manager resources can be stored.",
+          "Region Regional Secret Manager Parameter Manager asia-south2 (Delhi) Yes Yes asia-east2 (Hong Kong) Yes Yes asia-southeast2 (Jakarta) Yes No australia-southeast2 (Melbourne) Yes Yes asia-south1 (Mumbai) Yes Yes asia-northeast2 (Osaka) Yes Yes asia-northeast3 (Seoul) Yes Yes asia-southeast1 (Singapore) Yes No australia-southeast1 (Sydney) Yes Yes asia-east1 (Taiwan) Yes Yes asia-northeast1 (Tokyo) Yes Yes asia-southeast3 (Bangkok) Yes No Locations in Europe The following table lists the locations in Europe where Secret Manager and Parameter Manager resources can be stored.",
+          "Multi-Region Name Multi-Region Description Regional Secret Manager Parameter Manager us Data centers in the United States No Yes eu Data centers in the European Union No Yes What's next Learn more about locations Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Class SecretManagerServiceAsyncClient (2.27.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "SecretManagerServiceAsyncClient () Initialize request argument(s) request = iam policy pb2.TestIamPermissionsRequest( resource=\"resource value\", permissions=['permissions value1', 'permissions value2'], ) Make the request response = await client. test iam permissions (request=request) Handle the response print(response) Parameters Name Description request Optional[Union[ google.iam.v1.iam policy pb2.TestIamPermissionsRequest , dict]] The request object.",
+          "SecretManagerServiceAsyncClient () Initialize request argument(s) request = iam policy pb2.GetIamPolicyRequest( resource=\"resource value\", ) Make the request response = await client. get iam policy (request=request) Handle the response print(response) Parameters Name Description request Optional[Union[ google.iam.v1.iam policy pb2.GetIamPolicyRequest , dict]] The request object.",
+          "SecretManagerServiceAsyncClient () Initialize request argument(s) request = iam policy pb2.SetIamPolicyRequest( resource=\"resource value\", ) Make the request response = await client. set iam policy (request=request) Handle the response print(response) Parameters Name Description request Optional[Union[ google.iam.v1.iam policy pb2.SetIamPolicyRequest , dict]] The request object."
+        ]
+      },
+      {
+        "title": "\"Class SecretManagerServiceClient (2.27.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "SecretManagerServiceClient () Initialize request argument(s) request = iam policy pb2.TestIamPermissionsRequest( resource=\"resource value\", permissions=['permissions value1', 'permissions value2'], ) Make the request response = client. test iam permissions (request=request) Handle the response print(response) Parameters Name Description request Union[ google.iam.v1.iam policy pb2.TestIamPermissionsRequest , dict] The request object.",
+          "SecretManagerServiceClient () Initialize request argument(s) request = iam policy pb2.GetIamPolicyRequest( resource=\"resource value\", ) Make the request response = client. get iam policy (request=request) Handle the response print(response) Parameters Name Description request Union[ google.iam.v1.iam policy pb2.GetIamPolicyRequest , dict] The request object.",
+          "SecretManagerServiceClient () Initialize request argument(s) request = iam policy pb2.SetIamPolicyRequest( resource=\"resource value\", ) Make the request response = client. set iam policy (request=request) Handle the response print(response) Parameters Name Description request Union[ google.iam.v1.iam policy pb2.SetIamPolicyRequest , dict] The request object."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.secretmanager.v1",
+      "pb2.GetIamPolicyRequest",
+      "pb2.SetIamPolicyRequest",
+      "pb2.TestIamPermissionsRequest",
+      "v1.types.ListSecretVersionsRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/overview",
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/overview",
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/overview",
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/overview",
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/overview",
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/overview",
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/overview",
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/overview",
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/overview",
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/overview",
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    }
+  ]
+}

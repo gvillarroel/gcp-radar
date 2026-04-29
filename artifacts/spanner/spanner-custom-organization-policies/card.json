@@ -1,0 +1,166 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner custom organization policies",
+  "feature_slug": "spanner-custom-organization-policies",
+  "summary": "Spanner supports custom organization policies as a generally available feature.",
+  "extended_definition": "Spanner supports custom organization policies as a generally available feature.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient",
+      "https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview",
+      "https://docs.cloud.google.com/spanner/docs/cmek"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) overview \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/cmek",
+        "source_id": "site-docs-root",
+        "final_score": 35,
+        "relevance": "",
+        "evidence_snippets": [
+          "Require or limit CMEK within your organization You can set organization-wide policies regarding the use of CMEK protection across various Google Cloud products, including Spanner.",
+          "With these policies, you can: Require that new Spanner databases created by your organization use CMEK protection.",
+          "Limit which of your organization's Cloud KMS keys are available for CMEK protection."
+        ]
+      },
+      {
+        "title": "Disaster recovery overview \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview",
+        "source_id": "site-docs-root",
+        "final_score": 33,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can customize lifecycle and retention policies.",
+          "Spanner offers the following features to help ensure high data availability: Multi-regional configurations : Spanner can maintain replicas of your data in separate zones within a single region or multiple regions to ensure data availability even if a zone or region fails.",
+          "Test your disaster recovery strategy Consider testing and validating the following components of your disaster recovery plan: Simulate the most likely events that can cause data loss for your organization."
+        ]
+      },
+      {
+        "title": "\"Class DatabaseAdminAsyncClient (3.63.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 29,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON example: :literal: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [ \"user:eve@example.com\" ], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ],=\"\" \"etag\":=\"\" \"bwwwja0yfja=\", \" version\":=\"\" 3=\"\"> \\ \\ YAML example: :literal: bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01t00:00:00.000z')=\"\" etag:=\"\" bwwwja0yfja=\"version:\"> \\ \\ For a description of IAM and its features, see the IAM documentation. get mtls endpoint and cert source get mtls endpoint and cert source ( client options : typing .",
+          "JSON example: :literal: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [ \"user:eve@example.com\" ], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ],=\"\" \"etag\":=\"\" \"bwwwja0yfja=\", \" version\":=\"\" 3=\"\"> \\ \\ YAML example: :literal: bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01t00:00:00.000z')=\"\" etag:=\"\" bwwwja0yfja=\"version:\"> \\ \\ For a description of IAM and its features, see the IAM documentation. test iam permissions test iam permissions ( request : typing .",
+          "Normally, each value must be of type str , but for metadata keys ending with the suffix -bin , the corresponding values must be of type bytes . common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. copy backup copy backup ( request : typing ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "core.client",
+      "example.com",
+      "options.ClientOptions",
+      "request.time",
+      "resourcemanager.organizationAdmin",
+      "resourcemanager.organizationViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.organizationViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:18.628Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-soar/card.json",
+  "product_name": "Google SecOps SOAR",
+  "product_slug": "google-secops-soar",
+  "feature_name": "Action result attachment size limit",
+  "feature_slug": "action-result-attachment-size-limit",
+  "summary": "The maximum size for action result attachments has been increased to 50 MB.",
+  "extended_definition": "The maximum size for action result attachments has been increased to 50 MB.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Integrate Active Directory with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "source_id": "site-api-reference",
+        "final_score": 172,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action outputs The Search Active Directory action provides the following outputs: Action output type Availability Case wall attachment Not available Case wall link Not available Case wall table Not available Enrichment table Not available JSON result Available Output messages Available Script result Available JSON result The following example shows the JSON result output received when using the Search Active Directory action: [ { \"primaryGroupID\" : [ 513 ], \"logonCount\" : [ 6505 ], \"cn\" : [ \"user name\" ], \"countryCode\" : [ 0 ], \"objectClass\" : [ \"top\" , \"person\" , \"organizationalPerson\" ], \"userPrincipalName\" : [ \"user@example.com\" ], \"adminCount\" : [ 1 ], \"lastLogonTimestamp\" : [ \"2019-01-09 08:42:03.540783+00:00\" ], \"manager\" : [ \"CN=user name,OU=R&D,OU=TLV,OU=host name,DC=domain,DC=LOCAL\" ], \"instanceType\" : [ 4 ], \"distinguishedName\" : [ \"CN=user name,OU=R&D,OU=TLV,OU=host,DC=domain,DC=LOCAL\" ], \"dSCorePropagationData\" : [ \"2019-01-14 14:39:16+00:00\" ], \"msDS-SupportedEncryptionTypes\" : [ 0 ], \"objectSid\" : [ \" ID \" ], \"whenCreated\" : [ \"2011-11-07 08:00:44+00:00\" ], \"uSNCreated\" : [ 7288202 ], \"lockoutTime\" : [ \"1601-01-01 00:00:00+00:00\" ], \"badPasswordTime\" : [ \"date\" ], \"pwdLastSet\" : [ \"date\" ], \"sAMAccountName\" : [ \"example\" ], \"objectCategory\" : [ \"CN=Person,CN=Schema,CN=Configuration,DC=host,DC=LOCAL\" ], \"lastLogon\" : [ \"2019-01-14 17:13:54.463070+00:00\" ], \"objectGUID\" : [ \" GUID \" ], \"whenChanged\" : [ \"2019-01-14 16:49:01+00:00\" ], \"badPwdCount\" : [ 1 ], \"accountExpires\" : [ \"9999-12-31 23:59:59.999999\" ], \"displayName\" : [ \"example\" ], \"name\" : [ \"user\" ], \"memberOf\" : [ \"CN=\\\\\\\\u05e7\\\\\\\\u05d1\\\\\\\\u05d5\\\\\\\\u05e6\\\\\\\\u05d4 \\\\\\\\u05d1\\\\\\\\u05e2\\\\\\\\u05d1\\\\\\\\u05e8\\\\\\\\u05d9\\\\\\\\u05ea,OU=TEST,OU=QA,OU=IT,OU=TLV,OU=host,DC=domain,DC=LOCAL\" , \"CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=domain,DC=LOCAL\" , \"CN=Local Admin,OU=Groups,OU=IT,OU=TLV,OU=host,DC=domain,DC=LOCAL\" ], \"codePage\" : [ 0 ], \"userAccountControl\" : [ 111 ], \"sAMAccountType\" : [ 805306368 ], \"uSNChanged\" : [ 15301168 ], \"sn\" : [ \"example\" ], \"givenName\" : [ \"user\" ], \"lastLogoff\" : [ \"1601-01-01 00:00:00+00:00\" ] } ] Output messages The Search Active Directory action can return the following output messages: Output message Message description Successfully performed the query \" QUERY STRING \" in Active Directory.",
+          "Action outputs The Get Group Members action provides the following outputs: Action output type Availability Case wall attachment Not available Case wall link Not available Case wall table Not available Enrichment table Not available JSON result Available Script result Available JSON result The following example shows the JSON result output received when using the Get Group Members action: [ { \"cn\" : \"Example User1\" , \"displayName\" : \"Example User1\" , \"distinguishedName\" : \"CN=Example User1,OU=User Accounts,DC=example,DC=local\" }, { \"cn\" : \"Example User2\" , \"displayName\" : \"Example User2\" , \"distinguishedName\" : \"CN=Example User2,CN=Users,DC=example,DC=local\" }, { \"cn\" : \"Example User3\" , \"displayName\" : \"Example User3\" , \"distinguishedName\" : \"CN=Example User3,CN=Users,DC=example,DC=local\" } ] Script result The following table lists the value for the script result output when using the Get Group Members action: Script result name Value is success True or False Get Manager Contact Details Use the Get Manager Contact Details action to obtain the manager contact details from Active Directory.",
+          "Action outputs The Is User in Group action provides the following outputs: Action output type Availability Case wall attachment Not available Case wall link Not available Case wall table Not available Enrichment table Not available JSON result Available Script result Available JSON result The following example shows the JSON result output received when using the Is User in Group action: [ { \"EntityResult\" : true , \"Entity\" : \"USER1@EXAMPLE.COM\" }, { \"EntityResult\" : false , \"Entity\" : \"USER2@EXAMPLE.COM\" }, { \"EntityResult\" : true , \"Entity\" : \"USER3@EXAMPLE.COM\" } ] Script result The following table lists the value for the script result output when using the Is User in Group action: Script result name Value is success True or False List User Groups Use the List User Groups action to obtain a list of all user groups that are available in Active Directory."
+        ]
+      },
+      {
+        "title": "TIPCommon 2.1.0 \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "source_id": "site-docs-root",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "TIPCommon 2.1.0 The TIPCommon 2.1.0 library contains the following modules: TIPCommon.adapters PubSubAdapter TIPCommon.base parse case attachment() parse case comment() Action soar action api client name action start time logger params global context entity types entities to update json results attachments contents data tables html reports links entity insights case insights result value output message error output message action start time api client attachments case insights contents data tables entities to update entity insights entity types error output message execution state html reports is first run links logger name output message params result value run() soar action EnrichAction enrichment data entity results global context ActionParamType BOOLEAN CASE PRIORITIES CLOSE CASE REASONS CLOSE ROOT CAUSE CODE CONTENT DDL EMAIL CONTENT ENTITY TYPE MULTI VALUES NULL PASSWORD PLAYBOOK NAME STAGE STRING USER Attachment title filename file contents additional data CaseAttachment attachment id attachment type description is favorite CaseComment comment comment for client modification time unix time in ms for client last editor last editor full name is deleted creator user id creator full name comment id comment type case id is favorite modification time unix time in ms creation time unix time in ms alert identifier CaseInsight title triggered by content severity insight type entity identifier additional data additional data type additional data title CasePriority CRITICAL HIGH INFORMATIONAL LOW MEDIUM CaseStage ASSESSMENT IMPROVEMENT INCIDENT INVESTIGATION RESEARCH TRIAGE CloseCaseOrAlertInconclusiveRootCauses NO CLEAR CONCLUSION CloseCaseOrAlertMaintenanceRootCauses LAB TEST OTHER RULE UNDER CONSTRUCTION CloseCaseOrAlertMaliciousRootCauses EXTERNAL ATTACK INFRASTRUCTURE ISSUE IRRELEVANT TCP UDP PORT MISCONFIGURED SYSTEM OTHER SIMILAR CASE IS ALREADY UNDER INVESTIGATION SYSTEM APPLICATION MALFUNCTION SYSTEM CLOCKED THE ATTACK UNFORESEEN EFFECTS OF CHANGE UNKNOWN CloseCaseOrAlertNotMaliciousRootCauses EMPLOYEE ERROR HUMAN ERROR LAB TEST LEGIT ACTION MISCONFIGURED SYSTEM NONE NORMAL BEHAVIOR OTHER PENETRATION TEST RULE UNDER CONSTRUCTION SIMILAR CASE IS ALREADY UNDER INVESTIGATION UNKNOWN USER MISTAKE CloseCaseOrAlertReasons INCONCLUSIVE MAINTENANCE MALICIOUS NOT MALICIOUS Content title content DataTable title data table EntityInsight entity message triggered by original requesting user EntityTypesEnum ADDRESS ALERT APPLICATION CHILD HASH CHILD PROCESS CLUSTER CONTAINER CREDIT CARD CVE CVE ID DATABASE DEPLOYMENT DESTINATION DOMAIN DOMAIN EMAIL MESSAGE EVENT FILE HASH FILE NAME GENERIC HOST NAME IP SET MAC ADDRESS PARENT HASH PARENT PROCESS PHONE NUMBER POD PROCESS SERVICE SOURCE DOMAIN THREAT ACTOR THREAT CAMPAIGN THREAT SIGNATURE URL USB USER ExecutionState COMPLETED FAILED IN PROGRESS TIMED OUT FullDetailsConfigurationParameter full dict id integration identifier creation time modification time is mandatory description name display name value type optional values HTMLReport title report name report contents IntegrationParamType BOOLEAN EMAIL INTEGER IP NULL PASSWORD STRING Link title link ScriptParameter full dict id creation time modification time custom action id is mandatory default value description name value type optional values Apiable Authable authenticat session() Logger debug() error() exception() info() warn() Session headers verify delete() get() patch() post() put() request() Job api client error msg job start time logger name params soar job start() RefreshTokenRenewalJob api client SuccessFailureTuple failure list success list validate param csv to multi value() JobParameter full dict id is mandatory name type value ActionJsonOutput ActionOutput ConnectorJsonOutput ConnectorOutput alert info from json() TIPCommon.rest build credentials from sa() build credentials from sa attr() generate jwt from credentials() generate jwt from sa() get adc() get auth request() get impersonated credentials() get secops siem tenant credentials() GcpErrorReason IAM PERMISSION DENIED GcpPermissions IAM SA GET ACCESS TOKEN extract project id from sa email() extract project id from sa key() get http client() get workload sa email() retrieve project id() validate impersonation() get auth session() SoarApiErrorServer batch set custom field values() get alert events() get case attachments() get case overview details() get connector cards() get entity data() get env action def files() get federation cases() get full case details() get installed integrations of environment() get installed jobs() get integration full details() get user profile cards() get workflow instance card() list custom field values() list custom fields() remove case tag() save attachment to case wall() set alert priority() set case score bulk() set custom field values() validate response() data models Module AlertCard from json() AlertEvent from json() AlertPriority CRITICAL HIGH INFORMATIVE LOW MEDIUM UNCHANGED BaseAlert raw data alert id to json() BaseDataModel raw data to json() CaseDataStatus ALL CLOSED CREATION PENDING MERGED NEW OPENED CaseDetails from json() is closed is open CasePriority CRITICAL HIGH INFORMATIVE LOW MEDIUM UNCHANGED CaseWallAttachment base64 blob case id file type is important name ConnectorCard from json() ConnectorConnectivityStatusEnum LIVE NO CONNECTIVITY ConnectorParamTypes BOOLEAN DOMAIN EMAIL HOST INTEGER IP NULL PASSWORD SCRIPT STRING URL ConnectorParameter name value type mode is mandatory Container CustomField description display name id scopes type from json() CustomFieldScope ALERTS CASE build parent path() CustomFieldValue custom field id identifier scope values from json() DatabaseContextType ALERT CASE CONNECTOR GLOBAL JOB EventPropertyField from json() FieldGroupItem from json() FieldItem from json() FieldsGroup from json() GoogleServiceAccount to dict() InstalledIntegrationInstance to dict() JobParamType BOOLEAN DOMAIN HOST INTEGER IP NULL PASSWORD STRING URL Parameter raw data SLA from json() ScriptContext action definition name alert id async polling interval in sec async total duration deadline case id connector context default result value environment environment api key execution deadline unix time ms integration identifier integration instance job api key max json result size original requesting user parameters script timeout deadline target entities unique identifier use proxy settings vault settings workflow id workflow instance id to json() update() SmimeEmailConfig ca certificate b64 certificate b64 email private key b64 SmimeType ENCRYPTED SIGNED TypedContainer UserProfileCard from json() encryption Module decrypt() decrypt email() encrypt() get private key() exceptions Module ActionSetupError AlreadyExistsError BadGatewayError CaseResultError ConnectorContextError ConnectorProcessingError ConnectorSetupError ConnectorValidationError DeadlineExceededError EmptyMandatoryValues EnrichActionError FailedPreconditionError GeneralActionException GeneralConnectorException GeneralJobException GoogleCloudException ImpersonationUnauthorizedError InternalJSONDecoderError InvalidArgumentError InvalidTimeException JobSetupError NotFoundError OauthError ParameterExtractionError ParameterValidationError PermissionDeniedError RefreshTokenRenewalJobException ResourceExhaustedError SDKWrapperError SMIMEMailError UnauthenticatedError UnavailableError extraction Module extract action param() extract configuration param() extract connector param() extract job param() extract script param() get connector detailed params() filters Module filter list by type() filter none kwargs() filter old alerts() filter old ids() filter old ids by timestamp() pass whitelist filter() OAuth Module AuthenticationError AuthorizedOauthClient close() request() CredStorage get instance identifier() get token() set token() EncryptionError OAuthAdapter abstractcheck signer() abstractprepare authorized client() abstractrefresh token() abstract static validate bad credentials() OauthManager prepare authorized client() refresh if bad credentials() refresh if expired() save token() OauthToken access token additional data expiration time refresh token signer from cache() to cache() smp io Module read and repair existing content() read content() read ids() read ids by timestamp() write content() write ids() write ids with timestamp() smp time Module change timezone() convert string to timestamp() datetime to rfc3339() get last success time() get timestamps() get timestamps from range() is approaching action timeout() is approaching timeout() save timestamp() siemplify fetch timestamp() siemplify save timestamp() validate timestamp() soar ops Module create slo message() get clean comment body() get file() get secops mode() get soar case comments() get user by id() get user profile cards with pagination() is slo comment() remove prefix from comments() save file() transformation Module add prefix to dict() add prefix to dict keys() adjust to csv() construct csv() convert comma separated to list() convert dict to json result dict() convert list to comma string() dict to flat() flat dict to csv() get unicode() removeprefix() removesuffix() rename dict key() string to multi value() utils Module camel to snake case() cast keys to int() clean result() create and write to tempfiles() get entity original identifier() get function arg names() get unique items by difference() is empty string or none() is first run() is overflowed() is python 37() is test run() none to default value() platform supports 1p api() platform supports db() safe cast bool value from str() safe cast int value from str() validation Module ParameterValidator validate csv() validate ddl() validate email() validate float() validate integer() validate json() lower limit() validate non negative() validate non zero() validate percentage() validate positive() validate range() validate severity() validate upper limit() Need more help?",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]",
+          "For details, see the Google Developers Site Policies ."
+        ]
+      },
+      {
+        "title": "\"Integrate Akamai with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+        "source_id": "site-api-reference",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action outputs The Get Network Lists action provides the following outputs: Action output type Availability Case wall attachment Not available Case wall link Not available Case wall table Not available Enrichment table Not available JSON result Available Script result Available JSON result The following example describes the JSON result output received when using the Get Network Lists action: [ { \"networkListType\" : \"networkListResponse\" , \"accessControlGroup\" : \"KSD\\nwith ION 3-13H1234\" , \"name\" : \"General List\" , \"elementCount\" : 3011 , \"readOnly\" : false , \"shared\" : false , \"syncPoint\" : 22 , \"type\" : \"IP\" , \"uniqueId\" : \"25614 GENERALLIST\" , \"links\" : { \"activateInProduction\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/PRODUCTION/activate\" , \"method\" : \"POST\" }, \"activateInStaging\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/STAGING/activate\" , \"method\" : \"POST\" }, \"appendItems\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST\" , \"method\" : \"POST\" }, \"retrieve\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST\" }, \"statusInProduction\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/PRODUCTION/status\" }, \"statusInStaging\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/STAGING/status\" }, \"update\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST\" , \"method\" : \"PUT\" } }, \"Activation STAGING\" : { \"activationId\" : 12345 , \"activationComments\" : \"Allow IPs of new employees who joined this week\" , \"activationStatus\" : \"PENDING ACTIVATION\" , \"syncPoint\" : 5 , \"uniqueId\" : \"25614 GENERALLIST\" , \"fast\" : false , \"dispatchCount\" : 1 , \"links\" : { \"appendItems\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/append\" , \"method\" : \"POST\" }, \"retrieve\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST\" }, \"statusInProduction\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/environments/PRODUCTION/status\" }, \"statusInStaging\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/environments/STAGING/status\" }, \"syncPointHistory\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/sync-points/5/history\" }, \"update\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST\" , \"method\" : \"PUT\" }, \"activationDetails\" : { \"href\" : \"/network-list/v2/network-lists/activations/12345/\" } } }, \"Activation PRODUCTION\" : { \"activationId\" : 12345 , \"activationComments\" : \"Allow IPs of new employees who joined this week\" , \"activationStatus\" : \"PENDING ACTIVATION\" , \"syncPoint\" : 5 , \"uniqueId\" : \"25614 GENERALLIST\" , \"fast\" : false , \"dispatchCount\" : 1 , \"links\" : { \"appendItems\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/append\" , \"method\" : \"POST\" }, \"retrieve\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST\" }, \"statusInProduction\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/environments/PRODUCTION/status\" }, \"statusInStaging\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/environments/STAGING/status\" }, \"syncPointHistory\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/sync-points/5/history\" }, \"update\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST\" , \"method\" : \"PUT\" }, \"activationDetails\" : { \"href\" : \"/network-list/v2/network-lists/activations/12345/\" } } } } ] Output messages The Get Network Lists action provides the following output messages: Output message Message description Successfully returned network lists from Akamai.",
+          "Action outputs The Remove Items From Network List action provides the following outputs: Action output type Availability Case wall attachment Not available Case wall link Not available Case wall table Not available Enrichment table Not available JSON result Available Script result Available JSON result The following example describes the JSON result output received when using the Remove Items From Network Lists action: { \"networkListType\" : \"networkListResponse\" , \"accessControlGroup\" : \"KSD\\nwith ION 3-13H1234\" , \"name\" : \"General List\" , \"elementCount\" : 3011 , \"readOnly\" : false , \"shared\" : false , \"syncPoint\" : 22 , \"type\" : \"IP\" , \"uniqueId\" : \"25614 GENERALLIST\" , \"links\" : { \"activateInProduction\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/PRODUCTION/activate\" , \"method\" : \"POST\" }, \"activateInStaging\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/STAGING/activate\" , \"method\" : \"POST\" }, \"appendItems\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST\" , \"method\" : \"POST\" }, \"retrieve\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST\" }, \"statusInProduction\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/PRODUCTION/status\" }, \"statusInStaging\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/STAGING/status\" }, \"update\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST\" , \"method\" : \"PUT\" } } } Output messages The Remove Items From Network List action provides the following output messages: Output message Message description Successfully updated network list in Akamai.",
+          "Action outputs The Add Items To Network List action provides the following outputs: Action output type Availability Case wall attachment Not available Case wall link Not available Case wall table Not available Enrichment table Not available JSON result Available Script result Available JSON result The following example describes the JSON result output received when using the Add Items To Network Lists action: { \"networkListType\" : \"networkListResponse\" , \"accessControlGroup\" : \"KSD\\nwith ION 3-13H1234\" , \"name\" : \"General List\" , \"elementCount\" : 3011 , \"readOnly\" : false , \"shared\" : false , \"syncPoint\" : 22 , \"type\" : \"IP\" , \"uniqueId\" : \"25614 GENERALLIST\" , \"links\" : { \"activateInProduction\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/PRODUCTION/activate\" , \"method\" : \"POST\" }, \"activateInStaging\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/STAGING/activate\" , \"method\" : \"POST\" }, \"appendItems\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST\" , \"method\" : \"POST\" }, \"retrieve\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST\" }, \"statusInProduction\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/PRODUCTION/status\" }, \"statusInStaging\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/STAGING/status\" }, \"update\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST\" , \"method\" : \"PUT\" } } } Output messages The Add Items To Network List action provides the following output messages: Output message Message description Successfully updated network list in Akamai."
+        ]
+      },
+      {
+        "title": "\"Composite detections \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "source_id": "site-docs-root-2",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This information makes the result far more actionable than the original detection.",
+          "It does not automatically execute the underlying rules to generate new inputs for the test, which means you cannot validate an entire rule chain in a single action.",
+          "A dashboard widget then shows which users are approaching a daily egress limit (for example, 10,000 bytes)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cymbal.com",
+      "d.detection.collection",
+      "d.detection.detection.rule",
+      "e.metadata.log",
+      "e.metadata.product",
+      "e.principal.hostname",
+      "e.principal.process.command",
+      "elements.references.event.network.dns.questions.name",
+      "elements.references.event.principal.asset.hostname",
+      "example.com",
+      "prevalence.graph.entity.domain.prevalence.day",
+      "prevalence.graph.entity.domain.prevalence.rolling",
+      "prevalence.graph.entity.hostname",
+      "prevalence.graph.metadata.entity",
+      "prevalence.graph.metadata.source",
+      "re.capture"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    }
+  ]
+}

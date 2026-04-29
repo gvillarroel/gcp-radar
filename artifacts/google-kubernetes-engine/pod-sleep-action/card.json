@@ -1,0 +1,209 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Pod sleep action",
+  "feature_slug": "pod-sleep-action",
+  "summary": "The Pod preStop Sleep Action is now generally available to delay Pod termination for graceful shutdown.",
+  "extended_definition": "The Pod preStop Sleep Action is now generally available to delay Pod termination for graceful shutdown.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/computeclass",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Orchestrate Multislice workloads using JobSet and Kueue \\_|\\_ GKE AI/ML\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "Update your ClusterQueue to have a preemption policy: apiVersion : kueue.x-k8s.io/v1beta1 kind : ResourceFlavor metadata : name : \"vlp-24\" spec : nodeLabels : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 --- apiVersion : kueue.x-k8s.io/v1beta1 kind : ClusterQueue metadata : name : \"cluster-queue\" spec : namespaceSelector : {} resourceGroups : - coveredResources : [ \"google.com/tpu\" ] flavors : - name : \"vlp-24\" resources : - name : \"google.com/tpu\" nominalQuota : 24 preemption : reclaimWithinCohort : Any withinClusterQueue : LowerPriority --- apiVersion : kueue.x-k8s.io/v1beta1 kind : LocalQueue metadata : namespace : default name : multislice-queue spec : clusterQueue : cluster-queue Create a PriorityClass for each distinct priority level you want to assign to workloads: apiVersion : scheduling.k8s.io/v1 kind : PriorityClass metadata : name : low-priority value : 100 globalDefault : false description : \"This low priority class should be used for some Pods only.\" Assign the priorityClassName to your JobSet: Autopilot apiVersion : jobset.x-k8s.io/v1alpha2 kind : JobSet metadata : name : low-priority labels : kueue.x-k8s.io/queue-name : multislice-queue annotations : alpha.jobset.sigs.k8s.io/exclusive-topology : cloud.google.com/gke-nodepool spec : failurePolicy : maxRestarts : 4 replicatedJobs : - name : slice replicas : 1 template : spec : parallelism : 2 completions : 2 backoffLimit : 0 template : spec : nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 priorityClassName : low-priority containers : - name : jax-tpu image : python:3.8 ports : - containerPort : 8471 - containerPort : 8080 command : - bash - -c - sleep 60 resources : limits : google.com/tpu : 4 # Number of TPU chips per worker Standard apiVersion : jobset.x-k8s.io/v1alpha2 kind : JobSet metadata : name : low-priority labels : kueue.x-k8s.io/queue-name : multislice-queue annotations : alpha.jobset.sigs.k8s.io/exclusive-topology : cloud.google.com/gke-nodepool spec : failurePolicy : maxRestarts : 4 replicatedJobs : - name : slice replicas : 1 template : spec : parallelism : 2 completions : 2 backoffLimit : 0 template : spec : hostNetwork : true dnsPolicy : ClusterFirstWithHostNet nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 priorityClassName : low-priority containers : - name : jax-tpu image : python:3.8 ports : - containerPort : 8471 - containerPort : 8080 securityContext : privileged : true command : - bash - -c - sleep 60 resources : limits : google.com/tpu : 4 # Number of TPU chips per worker GKE includes a preemption policy, which defines how Kueue assigns the available resources.",
+          "The following metrics are useful for monitoring the performance of a JobSet: kubernetes.io/jobset/scheduling goodput : the fraction of time that all the resources required to run the training JobSet are available. kubernetes.io/jobset/proxy runtime goodput : the fraction of time that all required accelerators are productive.",
+          "Monitor the workloads JobSet and node pool observability metrics and dashboards in the Google Cloud console are generally available."
+        ]
+      },
+      {
+        "title": "\"Deploy a highly-available PostgreSQL database on GKE \\_|\\_ Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "source_id": "site-docs-root-2",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "The deployment defined in prepareforha.yaml ensures that Autopilot provisions nodes across three zones in your cluster, by setting these values: replicas:3 podAntiAffinity with requiredDuringSchedulingIgnoredDuringExecution and topologyKey: \"topology.kubernetes.io/zone\" kubectl -n $NAMESPACE apply -f scripts/prepareforha.yaml apiVersion : apps/v1 kind : Deployment metadata : name : prepare-three-zone-ha labels : app : prepare-three-zone-ha app.kubernetes.io/name : postgresql-ha spec : replicas : 3 selector : matchLabels : app : prepare-three-zone-ha app.kubernetes.io/name : postgresql-ha template : metadata : labels : app : prepare-three-zone-ha app.kubernetes.io/name : postgresql-ha spec : affinity : podAntiAffinity : requiredDuringSchedulingIgnoredDuringExecution : - labelSelector : matchExpressions : - key : app operator : In values : - prepare-three-zone-ha topologyKey : \"topology.kubernetes.io/zone\" nodeAffinity : preferredDuringSchedulingIgnoredDuringExecution : - preference : matchExpressions : - key : cloud.google.com/compute-class operator : In values : - \"Scale-Out\" weight : 1 nodeSelector : app.stateful/component : postgresql tolerations : - effect : NoSchedule key : app.stateful/component operator : Equal value : postgresql containers : - name : prepare-three-zone-ha image : busybox:latest command : - \"/bin/sh\" - \"-c\" - \"while true; do sleep 3600; done\" resources : limits : cpu : \"500m\" ephemeral-storage : \"10Mi\" memory : \"0.5Gi\" requests : cpu : \"500m\" ephemeral-storage : \"10Mi\" memory : \"0.5Gi\" Update the Helm dependency. cd helm/postgresql-bootstrap helm dependency update Inspect and verify the charts that Helm will install. helm -n postgresql template postgresql . \\ --set global.imageRegistry = \"us-docker.pkg.dev/ $PROJECT ID /main\" Install the Helm chart. helm -n postgresql upgrade --install postgresql . \\ --set global.imageRegistry = \"us-docker.pkg.dev/ $PROJECT ID /main\" The output is similar to the following: NAMESPACE: postgresql STATUS: deployed REVISION: 1 TEST SUITE: None Verify that the PostgreSQL replicas are running. kubectl get all -n $NAMESPACE The output is similar to the following: NAME READY STATUS RESTARTS AGE pod/postgresql-postgresql-bootstrap-pgpool-75664444cb-dkl24 1/1 Running 0 8m39s pod/postgresql-postgresql-ha-pgpool-6d86bf9b58-ff2bg 1/1 Running 0 8m39s pod/postgresql-postgresql-ha-postgresql-0 2/2 Running 0 8m39s pod/postgresql-postgresql-ha-postgresql-1 2/2 Running 0 8m39s pod/postgresql-postgresql-ha-postgresql-2 2/2 Running 0 8m38s NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE service/postgresql-postgresql-ha-pgpool ClusterIP 192.168.99.236 <none> 5432/TCP 8m39s service/postgresql-postgresql-ha-postgresql ClusterIP 192.168.90.20 <none> 5432/TCP 8m39s service/postgresql-postgresql-ha-postgresql-headless ClusterIP None <none> 5432/TCP 8m39s service/postgresql-postgresql-ha-postgresql-metrics ClusterIP 192.168.127.198 <none> 9187/TCP 8m39s NAME READY UP-TO-DATE AVAILABLE AGE deployment.apps/postgresql-postgresql-bootstrap-pgpool 1/1 1 1 8m39s deployment.apps/postgresql-postgresql-ha-pgpool 1/1 1 1 8m39s NAME DESIRED CURRENT READY AGE replicaset.apps/postgresql-postgresql-bootstrap-pgpool-75664444cb 1 1 1 8m39s replicaset.apps/postgresql-postgresql-ha-pgpool-6d86bf9b58 1 1 1 8m39s NAME READY AGE statefulset.apps/postgresql-postgresql-ha-postgresql 3/3 8m39s Create a test dataset In this section, you'll create a database and a table with sample values.",
+          "To perform a backup and restore, follow these steps: Verify the status of ProtectedApplication on cluster-db1 . kubectl get ProtectedApplication -A The output looks similar to the following: NAMESPACE NAME READY TO BACKUP postgresql postgresql-ha true Create a backup plan for the ProtectedApplication. export NAMESPACE = postgresql export PROTECTED APP = $( kubectl get ProtectedApplication -n $NAMESPACE grep -v 'NAME' awk '{ print $1 }' ) gcloud beta container backup-restore backup-plans create $BACKUP PLAN NAME \\ --project = $PROJECT ID \\ --location = $DR REGION \\ --cluster = projects/ $PROJECT ID /locations/ $REGION /clusters/ $SOURCE CLUSTER \\ --selected-applications = $NAMESPACE / $PROTECTED APP \\ --include-secrets \\ --include-volume-data \\ --cron-schedule = \"0 3 \" \\ --backup-retain-days = 7 \\ --backup-delete-lock-days = 0 Manually create a backup. gcloud beta container backup-restore backups create $BACKUP NAME \\ --project = $PROJECT ID \\ --location = $DR REGION \\ --backup-plan = $BACKUP PLAN NAME \\ --wait-for-completion Set up a restore plan. gcloud beta container backup-restore restore-plans create $RESTORE PLAN NAME \\ --project = $PROJECT ID \\ --location = $DR REGION \\ --backup-plan = projects/ $PROJECT ID /locations/ $DR REGION /backupPlans/ $BACKUP PLAN NAME \\ --cluster = projects/ $PROJECT ID /locations/ $DR REGION /clusters/ $TARGET CLUSTER \\ --cluster-resource-conflict-policy = use-existing-version \\ --namespaced-resource-restore-mode = delete-and-restore \\ --volume-data-restore-policy = restore-volume-data-from-backup \\ --selected-applications = $NAMESPACE / $PROTECTED APP \\ --cluster-resource-scope-selected-group-kinds = \"storage.k8s.io/StorageClass\" , \"scheduling.k8s.io/PriorityClass\" Restore from the backup. gcloud beta container backup-restore restores create $RESTORE NAME \\ --project = $PROJECT ID \\ --location = $DR REGION \\ --restore-plan = $RESTORE PLAN NAME \\ --backup = projects/ $PROJECT ID /locations/ $DR REGION /backupPlans/ $BACKUP PLAN NAME /backups/ $BACKUP NAME \\ --wait-for-completion Verify that your cluster is restored To verify that the restored cluster has all the expected Pods, PersistentVolume, and StorageClass resources, follow these steps: Configure kubectl command line access to the backup cluster cluster-db2 . gcloud container clusters get-credentials $TARGET CLUSTER --location $DR REGION --project $PROJECT ID Verify that the StatefulSet is ready with 3/3 Pods. kubectl get all -n $NAMESPACE The output is similar to the following: NAME READY STATUS RESTARTS AGE pod/postgresql-postgresql-ha-pgpool-778798b5bd-k2q4b 1/1 Running 0 4m49s pod/postgresql-postgresql-ha-postgresql-0 2/2 Running 2 (4m13s ago) 4m49s pod/postgresql-postgresql-ha-postgresql-1 2/2 Running 0 4m49s pod/postgresql-postgresql-ha-postgresql-2 2/2 Running 0 4m49s NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE service/postgresql-postgresql-ha-pgpool ClusterIP 192.168.241.46 <none> 5432/TCP 4m49s service/postgresql-postgresql-ha-postgresql ClusterIP 192.168.220.20 <none> 5432/TCP 4m49s service/postgresql-postgresql-ha-postgresql-headless ClusterIP None <none> 5432/TCP 4m49s service/postgresql-postgresql-ha-postgresql-metrics ClusterIP 192.168.226.235 <none> 9187/TCP 4m49s NAME READY UP-TO-DATE AVAILABLE AGE deployment.apps/postgresql-postgresql-ha-pgpool 1/1 1 1 4m49s NAME DESIRED CURRENT READY AGE replicaset.apps/postgresql-postgresql-ha-pgpool-778798b5bd 1 1 1 4m49s NAME READY AGE statefulset.apps/postgresql-postgresql-ha-postgresql 3/3 4m49s Verify all Pods in the postgres namespace are running. kubectl get pods -n $NAMESPACE The output is similar to the following: postgresql-postgresql-ha-pgpool-569d7b8dfc-2f9zx 1/1 Running 0 7m56s postgresql-postgresql-ha-postgresql-0 2/2 Running 0 7m56s postgresql-postgresql-ha-postgresql-1 2/2 Running 0 7m56s postgresql-postgresql-ha-postgresql-2 2/2 Running 0 7m56s Verify the PersistentVolumes and StorageClass.",
+          "Terraform creates a private cluster in the us-central1 region, and enables Backup for GKE for disaster recovery and Managed Service for Prometheus for cluster monitoring. module \"gke-db1\" { source = \"../modules/beta-private-cluster\" project id = var.project id name = \"cluster-db1\" regional = true region = \"us-central1\" network = module.network.network name subnetwork = module.network.primary subnet name ip range pods = \"ip-range-pods-db1\" ip range services = \"ip-range-svc-db1\" create service account = true enable private endpoint = false enable private nodes = true master ipv4 cidr block = \"172.16.0.0/28\" network policy = true cluster autoscaling = { \"autoscaling profile\" : \"OPTIMIZE UTILIZATION\" , \"enabled\" : true , \"gpu resources\" : [], \"min cpu cores\" : 36 , \"min memory gb\" : 144 , \"max cpu cores\" : 48 , \"max memory gb\" : 192 , } monitoring enable managed prometheus = true gke backup agent config = true node pools = [ { name = \"pool-sys\" autoscaling = true min count = 1 max count = 3 max surge = 1 max unavailable = 0 machine type = \"e2-standard-4\" node locations = \"us-central1-a,us-central1-b,us-central1-c\" auto repair = true }, { name = \"pool-db\" autoscaling = true max surge = 1 max unavailable = 0 machine type = \"e2-standard-8\" node locations = \"us-central1-a,us-central1-b,us-central1-c\" auto repair = true }, ] node pools labels = { all = {} pool-db = { \"app.stateful/component\" = \"postgresql\" } pool-sys = { \"app.stateful/component\" = \"postgresql-pgpool\" } } node pools taints = { all = [] pool-db = [ { key = \"app.stateful/component\" value = \"postgresql\" effect = \"NO SCHEDULE\" }, ], pool-sys = [ { key = \"app.stateful/component\" value = \"postgresql-pgpool\" effect = \"NO SCHEDULE\" }, ], } gce pd csi driver = true } Create a backup cluster in the us-west1 region for disaster recovery. module \"gke-db2\" { source = \"../modules/beta-private-cluster\" project id = var.project id name = \"cluster-db2\" regional = true region = \"us-west1\" network = module.network.network name subnetwork = module.network.secondary subnet name ip range pods = \"ip-range-pods-db2\" ip range services = \"ip-range-svc-db2\" create service account = false service account = module.gke-db1.service account enable private endpoint = false enable private nodes = true master ipv4 cidr block = \"172.16.0.16/28\" network policy = true cluster autoscaling = { \"autoscaling profile\" : \"OPTIMIZE UTILIZATION\" , \"enabled\" : true , \"gpu resources\" : [], \"min cpu cores\" : 10 , \"min memory gb\" : 144 , \"max cpu cores\" : 48 , \"max memory gb\" : 192 , } monitoring enable managed prometheus = true gke backup agent config = true node pools = [ { name = \"pool-sys\" autoscaling = true min count = 1 max count = 3 max surge = 1 max unavailable = 0 machine type = \"e2-standard-4\" node locations = \"us-west1-a,us-west1-b,us-west1-c\" auto repair = true }, { name = \"pool-db\" autoscaling = true max surge = 1 max unavailable = 0 machine type = \"e2-standard-8\" node locations = \"us-west1-a,us-west1-b,us-west1-c\" auto repair = true }, ] node pools labels = { all = {} pool-db = { \"app.stateful/component\" = \"postgresql\" } pool-sys = { \"app.stateful/component\" = \"postgresql-pgpool\" } } node pools taints = { all = [] pool-db = [ { key = \"app.stateful/component\" value = \"postgresql\" effect = \"NO SCHEDULE\" }, ], pool-sys = [ { key = \"app.stateful/component\" value = \"postgresql-pgpool\" effect = \"NO SCHEDULE\" }, ], } gce pd csi driver = true } Tip: To debug issues when running Terraform, you can capture debug output by setting the Terraform log level environment variable TF LOG ."
+        ]
+      },
+      {
+        "title": "ComputeClass \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/computeclass",
+        "source_id": "site-api-reference",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "TRANSPARENT HUGEPAGE DEFRAG DEFER WITH MADVISE : an application enters direct reclaim and compaction like always, but only for regions that have used madvise(MADV HUGEPAGE) ; all other regions wake kswapd in the background to reclaim pages and wake kcompactd to compact memory so that THP is available in the near future.",
+          "TRANSPARENT HUGEPAGE DEFRAG MADVISE : an application enters direct reclaim and compaction like always, but only for regions that have used madvise(MADV HUGEPAGE) ; all other regions wake kswapd in the background to reclaim pages and wake kcompactd to compact memory so that THP is available in the near future.",
+          "It is not a working example. apiVersion : cloud.google.com/v1 kind : ComputeClass metadata : name : my-class spec : activeMigration : optimizeRulePriority : false autoscalingPolicy : consolidationDelayMinutes : 1 consolidationThreshold : 0 gpuConsolidationThreshold : 0 description : \"Short description of the ComputeClass.\" nodePoolAutoCreation : enabled : false nodePoolConfig : imageType : ubuntu containerd ipType : public serviceAccount : example-service-account@example-project. iam.gserviceaccount.com autoRepair : true autoUpgrade : true nodeLabels : example-label-key : example-label-value confidentialNodeType : SEV taints : - effect : NoSchedule key : example-key value : example-value imageStreaming : enabled : true gvnic : enabled : true resourceManagerTags : - key : example-project/example-tag-key value : example-tag-value loggingConfig : loggingVariantConfig : variant : DEFAULT priorityDefaults : nodeSystemConfig : linuxNodeConfig : sysctls : net.core.somaxconn : 256 transparentHugepageEnabled : TRANSPARENT HUGEPAGE ENABLED ALWAYS kubeletConfig : cpuCfsQuota : true location : zones : [ 'us-central1-a' , 'us-central1-b' ] priorities : - machineFamily : n4 maxRunDurationSeconds : 360 minCores : 16 minCpuPlatform : \"Intel Emerald Rapids\" minMemoryGb : 64 placement : policyName : my-resource-policy reservations : affinity : Specific specific : - name : n4-shared-reservation project : reservation-project zones : [ 'us-central1-a' ] reservationBlock : name : reservation-block-name reservationSubBlock : name : reservation-sub-block-name spot : true storage : bootDiskSize : 100 bootDiskKMSKey : projects/example/locations/us-central1/keyRings/example/cryptoKeys/key-1 secondaryBootDisks : - diskImageName : pytorch-mnist project : k8s-staging-jobset mode : CONTAINER IMAGE CACHE nodeSystemConfig : linuxNodeConfig : sysctls : net.core.somaxconn : 512 - machineType : n4-standard-32 nodeLabels : example-priority-label-key : example-priority-label-value location : zones : [ 'us-central1-c' ] locationPolicy : ANY spot : true reservations : affinity : AnyBestEffort storage : bootDiskSize : 100 bootDiskType : hyperdisk-balanced localSSDCount : 1 taints : - effect : NoSchedule key : example-priority-key value : example-priority-value nodeSystemConfig : linuxNodeConfig : swapConfig : enabled : true bootDiskProfile : swapSizeGib : 10 - machineType : n4-standard-32 location : zoneTypes : [ 'STANDARD' , 'AI' ] - nodepools : [ 'example-first-nodepool-name' , 'example-second-nodepool-name' ] - podFamily : general-purpose - gpu : count : 1 driverVersion : default type : nvidia-l4 - tpu : count : 8 topology : \"2x4\" type : tpu-v5-lite-podslice - flexStart : enabled : true nodeRecycling : leadTimeSeconds : 1200 capacityCheckWaitTimeSeconds : 3600 whenUnsatisfiable : ScaleUpAnyway status : conditions : - lastTransitionTime : 2024-10-10T00:00:00Z message : example-message observedGeneration : 1 reason : example-reason status : \"True\" type : example-type ComputeClass specification metadata : name : string spec : activeMigration : object( activeMigration ) autoscalingPolicy : object( autoscalingPolicy ) nodePoolAutoCreation : object( nodePoolAutoCreation ) nodePoolGroup : object( nodePoolGroup ) nodePoolConfig : object( nodePoolConfig ) autopilot : object( autopilot ) priorities : [ object( priorities ) ] priorityDefaults : object( priorityDefaults ) whenUnsatisfiable : string Fields metadata required object A field that identifies the ComputeClass. metadata.name optional string The name of the ComputeClass. spec required object The ComputeClass specification, which defines how the ComputeClass works. spec.activeMigration optional object ( activeMigration ) A specification that lets you choose whether GKE automatically replaces existing nodes that are lower in a ComputeClass priority list with new nodes that are higher in that priority list. spec.autoscalingPolicy optional object ( autoscalingPolicy ) A specification that lets you fine-tune the timing and thresholds that cause GKE to remove underused nodes and consolidate workloads on other nodes. spec.nodePoolAutoCreation optional object( nodePoolAutoCreation ) A specification that lets you choose whether GKE can create and delete node pools in Standard mode clusters based on the ComputeClass priority rules."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alpha.jobset.sigs.k8s.io",
+      "app.kubernetes.io",
+      "app.stateful",
+      "container.googleapis.com",
+      "db1.service",
+      "deployment.apps",
+      "docker.pkg.dev",
+      "github.com",
+      "gke.1788000",
+      "global.imageRegistry",
+      "iam.gserviceaccount.com",
+      "jax.device",
+      "jobset.x",
+      "k8s.io",
+      "kubernetes.io",
+      "kueue.x",
+      "manifests.yaml",
+      "metadata.name",
+      "module.gke",
+      "module.network.network",
+      "module.network.primary",
+      "module.network.secondary",
+      "multislice.yaml",
+      "net.core.somaxconn",
+      "prepareforha.yaml",
+      "releases.html",
+      "replicaset.apps",
+      "scheduling.k8s.io",
+      "spec.activeMigration",
+      "spec.autoscalingPolicy",
+      "spec.nodePoolAutoCreation",
+      "statefulset.apps",
+      "storage.googleapis.com",
+      "storage.k8s.io",
+      "topology.kubernetes.io",
+      "v0.8.1",
+      "vacuum...end",
+      "var.project"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/computeclass",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/computeclass",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/computeclass",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/computeclass",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/computeclass",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/computeclass",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/computeclass",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/computeclass",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/computeclass",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/computeclass",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/computeclass",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    }
+  ]
+}

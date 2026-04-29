@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:46.245Z",
+  "source_step08_card": "data/step-08/current/products/chrome-enterprise-premium/card.json",
+  "product_name": "Chrome Enterprise Premium",
+  "product_slug": "chrome-enterprise-premium",
+  "feature_name": "Chrome Enterprise Premium watermarking",
+  "feature_slug": "chrome-enterprise-premium-watermarking",
+  "summary": "Chrome Enterprise Premium watermarking displays custom watermarks on web pages that match configured data-protection rules.",
+  "extended_definition": "Chrome Enterprise Premium watermarking displays custom watermarks on web pages that match configured data-protection rules.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/create-access-levels-cs",
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/create-access-levels-intune",
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and assign custom access levels using Falcon ZTA data \\_|\\_ Chrome\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/create-access-levels-cs",
+        "source_id": "site-iam-reference",
+        "final_score": 52,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Ensure that you have one of the following Identity and Access Management roles: Access Context Manager Admin ( roles/accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/accesscontextmanager.policyEditor ) Understand the objects and attributes that are used to build the Common Expression Language (CEL) expressions for custom access levels.",
+          "The exp field (expiry) field is provided as part of the Falcon ZTA's zero trust assessment. timestamp(device.vendors[\"CrowdStrike\"].data[\"exp\"]) - request.time > duration(\"0m\") For examples and more information about Common Expression Language (CEL) support and custom access levels, see the Custom access level specification .",
+          "Assign custom access levels for Google Workspace applications Assign access levels for Google Workspace applications from the Google Workspace Admin console: From the Admin console Home page, go to Security > Context-Aware Access ."
+        ]
+      },
+      {
+        "title": "\"Create and assign custom access levels using Microsoft Intune data \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/create-access-levels-intune",
+        "source_id": "site-iam-reference",
+        "final_score": 50,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Ensure that you have one of the following Identity and Access Management roles: Access Context Manager Admin ( roles/accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/accesscontextmanager.policyEditor ) Understand the objects and attributes that are used to build the Common Expression Language (CEL) expressions for custom access levels.",
+          "Assign custom access levels for Google Workspace applications Assign access levels for Google Workspace applications from the Google Workspace Admin console: From the Admin console Home page, go to Security > Context-Aware Access .",
+          "Home Documentation Security Chrome Enterprise Premium Guides Send feedback Create and assign custom access levels using Microsoft Intune data Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Secure access to private web applications \\_|\\_ Chrome Enterprise Premium\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "source_id": "site-docs-root",
+        "final_score": 50,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accesscontextmanager.policyAdmin",
+      "accesscontextmanager.policyEditor",
+      "device.vendors",
+      "request.time"
+    ],
+    "missing_inventory_roles": [
+      "roles/accesscontextmanager.policyAdmin",
+      "roles/accesscontextmanager.policyEditor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/create-access-levels-cs",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/create-access-levels-intune",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/create-access-levels-cs",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/create-access-levels-intune",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/create-access-levels-cs",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/create-access-levels-intune",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/create-access-levels-cs",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/create-access-levels-intune",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/create-access-levels-cs",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/create-access-levels-intune",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/create-access-levels-cs",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/create-access-levels-intune",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:03.460Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Streaming Engine in Warsaw (europe-central2)",
+  "feature_slug": "streaming-engine-in-warsaw-europe-central2",
+  "summary": "This feature makes Streaming Engine available in zones in the Warsaw region europe-central2.",
+  "extended_definition": "This feature makes Streaming Engine available in zones in the Warsaw region europe-central2.",
+  "lifecycle": {
+    "latest_feature_date": "2021-03-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline",
+      "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template",
+      "https://docs.cloud.google.com/dataflow/docs/resources/locations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Dataflow locations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/resources/locations",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Region description Region name Warsaw europe-central2 Finland europe-north1 Stockholm europe-north2 Madrid europe-southwest1 Belgium europe-west1 London europe-west2 Frankfurt europe-west3 Netherlands europe-west4 Zurich europe-west6 Milan europe-west8 Paris europe-west9 Berlin europe-west10 Turin europe-west12 Middle East The following table lists the regions in the Middle East where Dataflow is available.",
+          "Region description Region name Taiwan asia-east1 Hong Kong asia-east2 Tokyo asia-northeast1 Osaka asia-northeast2 Seoul asia-northeast3 Mumbai asia-south1 Delhi asia-south2 Singapore asia-southeast1 Jakarta asia-southeast2 Bangkok asia-southeast3 Sydney australia-southeast1 Melbourne australia-southeast2 Europe The following table lists the regions in Europe where Dataflow is available.",
+          "Region description Region name Doha me-central1 Dammam, Saudi Arabia me-central2 Tel Aviv me-west1 Africa The following table lists the regions in Africa where Dataflow is available."
+        ]
+      },
+      {
+        "title": "Deploy Dataflow pipelines \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline",
+        "source_id": "site-docs-reference-2",
+        "final_score": 121,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Streaming Engine By default, the Dataflow pipeline runner executes the steps of your streaming pipeline entirely on worker virtual machines, consuming worker CPU, memory, and Persistent Disk storage.",
+          "Dataflow's Streaming Engine moves pipeline execution out of the worker VMs and into the Dataflow service backend.",
+          "For more information, see Streaming Engine ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a streaming pipeline using a Dataflow template \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template",
+        "source_id": "site-docs-root",
+        "final_score": 114,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To ensure that the Compute Engine default service account has the necessary permissions to run the Dataflow job, ask your administrator to grant the following IAM roles to the Compute Engine default service account on your project: Important: You must grant these roles to the Compute Engine default service account, not to your user account.",
+          "In the dialog, for Topic name enter the following, and then click Save : projects/pubsub-public-data/topics/taxirides-realtime This publicly available Pub/Sub topic is based on the NYC Taxi & Limousine Commission's open dataset .",
+          "If you clicked Hide preview features to go to the Google Cloud console, then perform the following step instead: In the navigation panel, in the Resources section, select the taxirides dataset you created."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "beam.examples.wordcount",
+      "kinglear.txt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/resources/locations",
+        "https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline",
+        "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/resources/locations",
+        "https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline",
+        "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/resources/locations",
+        "https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline",
+        "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template"
+      ]
+    }
+  ]
+}

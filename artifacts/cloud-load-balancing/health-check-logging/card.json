@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:49.160Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "Health check logging",
+  "feature_slug": "health-check-logging",
+  "summary": "Health check logging records load balancer health check activity for observability and troubleshooting; Health check logging records load balancer health check activity for observability and troubleshooting.",
+  "extended_definition": "Health check logging records load balancer health check activity for observability and troubleshooting; Health check logging records load balancer health check activity for observability and troubleshooting.",
+  "lifecycle": {
+    "latest_feature_date": "2020-12-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts",
+      "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+      "https://docs.cloud.google.com/load-balancing/docs/health-checks"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Health check logging information \\_|\\_ Cloud Load Balancing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 245,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Terraform To create a health check for different protocols with logging, use the google compute health check resource . resource \"google compute health check\" \"health check tcp with logging\" { provider = google-beta name = \"health-check-tcp\" timeout sec = 1 check interval sec = 1 tcp health check { port = \"22\" } log config { enable = true } } For a regional load balancer, use the google compute region health check resource .",
+          "Replace PROJECT ID with your project's ID. logName=\"projects/ PROJECT ID /logs/compute.googleapis.com%2Fhealthchecks\" You can configure export of logs-based metrics for load balancer health checks.",
+          "Connection draining works by just informing the load balancer that the new state is DRAINING , and it effectively overrides the true health state of the endpoint as observed by the health checker."
+        ]
+      },
+      {
+        "title": "Health checks overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 199,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table shows the source IP ranges to allow for each load balancer: Product Health check probe source IP ranges Global external Application Load Balancer Global external proxy Network Load Balancer 35.191.0.0/16 130.211.0.0/22 For IPv6 traffic to the backends: 2600:2d00:1:b029::/64 2600:2d00:1:1::/64 Regional external Application Load Balancer 1, 2 Cross-region internal Application Load Balancer 1 Regional internal Application Load Balancer 1, 2 Regional external proxy Network Load Balancer 1, 2 Regional internal proxy Network Load Balancer 1, 2 Cross-region internal proxy Network Load Balancer 1 35.191.0.0/16 130.211.0.0/22 For IPv6 traffic to the backends: 2600:2d00:1:b029::/64 Classic proxy Network Load Balancer Classic Application Load Balancer Cloud Service Mesh, except for internet NEG backends and hybrid NEG backends 35.191.0.0/16 130.211.0.0/22 Regional external passthrough Network Load Balancer 3 For IPv4 traffic to the backends: 35.191.0.0/16 209.85.152.0/22 209.85.204.0/22 For IPv6 traffic to the backends: 2600:1901:8001::/48 Internal passthrough Network Load Balancer For IPv4 traffic to the backends: 35.191.0.0/16 130.211.0.0/22 For IPv6 traffic to the backends: 2600:2d00:1:b029::/64 Cloud Service Mesh with internet NEG backends and hybrid NEG backends IP addresses of the VMs running the Envoy software For a sample configuration, see the Cloud Service Mesh documentation 1 Allowing traffic from Google's health check probe ranges isn't required for hybrid NEGs.",
+          "Load balancer Health check category and scope Global external Application Load Balancer Classic Application Load Balancer Global external proxy Network Load Balancer Classic proxy Network Load Balancer Cross-region internal Application Load Balancer Cross-region internal proxy Network Load Balancer Health check ( global ) Regional external Application Load Balancer Regional internal Application Load Balancer Regional internal proxy Network Load Balancer Regional external proxy Network Load Balancer Health check ( regional ) Regional external passthrough Network Load Balancer Backend service-based load balancer: Health check ( regional ) Target pool-based load balancer: Legacy health check ( global with the HTTP protocol ) Internal passthrough Network Load Balancer Health check ( global or regional ) For external Application Load Balancers, legacy health checks are not recommended but are sometimes supported, depending on the load balancer mode.",
+          "If you use a target pool-based regional external passthrough Network Load Balancer to balance TCP traffic, you need to run an HTTP service on the VMs being load balanced so that they can respond to health check probes."
+        ]
+      },
+      {
+        "title": "Use health checks \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/health-checks",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Application Load Balancers can reference more than one health check if it references more than one backend service. gcloud compute backend-services update BACKEND SERVICE NAME \\ --global \\ --health-checks HEALTH CHECK NAME \\ --global-health-checks To change the health check for either a regional external Application Load Balancer, a regional external proxy Network Load Balancer, a regional internal Application Load Balancer, or a regional internal proxy Network Load Balancer: Both the backend service and health check are regional.",
+          "It can reference a regional health check. gcloud compute backend-services update BACKEND SERVICE NAME \\ --region= REGION \\ --health-checks= HEALTH CHECK NAME \\ --health-checks-region= REGION To change the health check for a global external proxy Network Load Balancer, classic proxy Network Load Balancer, global external Application Load Balancer, classic Application Load Balancer, or a cross-region internal Application Load Balancer: Both the backend service and health check are global for these load balancers.",
+          "If you're using a global health check with your internal passthrough Network Load Balancer, use --global-health-checks instead of --health-checks-region . gcloud compute backend-services update BACKEND SERVICE NAME \\ --region= REGION \\ --health-checks= HEALTH CHECK NAME \\ --health-checks-region= REGION To change the health check for a backend service-based regional external passthrough Network Load Balancer: A regional external passthrough Network Load Balancer's backend service is regional."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/health-checks"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/health-checks"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/health-checks"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/health-checks"
+      ]
+    }
+  ]
+}

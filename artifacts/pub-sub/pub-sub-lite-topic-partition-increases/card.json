@@ -1,0 +1,216 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:25.774Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub",
+  "feature_name": "Pub/Sub Lite topic partition increases",
+  "feature_slug": "pub-sub-lite-topic-partition-increases",
+  "summary": "Pub/Sub Lite topics can have their partition count increased.",
+  "extended_definition": "Pub/Sub Lite topics can have their partition count increased.",
+  "lifecycle": {
+    "latest_feature_date": "2021-03-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/change-topic-type",
+      "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+      "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+      "https://docs.cloud.google.com/pubsub/docs/publisher"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create an Amazon Kinesis Data Streams import topic \\_|\\_ Pub/Sub \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+        "source_id": "site-docs-root-2",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create and manage Amazon Kinesis Data Streams import topics: Create an import topic: pubsub.topics.create Delete an import topic: pubsub.topics.delete Get an import topic: pubsub.topics.get List an import topic: pubsub.topics.list Publish to an import topic: pubsub.topics.publish and pubsub.serviceAgent Update an import topic: pubsub.topics.update Get the IAM policy for an import topic: pubsub.topics.getIamPolicy Configure the IAM policy for an import topic: pubsub.topics.setIamPolicy You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Run the gcloud pubsub topics update command with all the flags mentioned in the following sample: gcloud pubsub topics update TOPIC ID --kinesis-ingestion-stream-arn KINESIS STREAM ARN --kinesis-ingestion-consumer-arn KINESIS CONSUMER ARN --kinesis-ingestion-role-arn KINESIS ROLE ARN --kinesis-ingestion-service-account PUBSUB SERVICE ACCOUNT Replace the following: TOPIC ID is the topic ID.",
+          "Ensure that you have completed the following procedures: Set up federated identity to access Kinesis Data Streams Add the Pub/Sub publisher role to the Pub/Sub service account Add the service account user role to the service account To create an Amazon Kinesis Data Streams import topic, follow these steps: Console In the Google Cloud console, go to the Topics page."
+        ]
+      },
+      {
+        "title": "Change topic type \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/change-topic-type",
+        "source_id": "site-docs-root-2",
+        "final_score": 244,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the gcloud pubsub topics update command with all the flags mentioned in the following sample: gcloud pubsub topics update TOPIC ID \\ --cloud-storage-ingestion-bucket = BUCKET NAME \\ --cloud-storage-ingestion-input-format = INPUT FORMAT \\ --cloud-storage-ingestion-text-delimiter = TEXT DELIMITER \\ --cloud-storage-ingestion-minimum-object-create-time = MINIMUM OBJECT CREATE TIME \\ --cloud-storage-ingestion-match-glob = MATCH GLOB Replace the following: TOPIC ID is the topic ID or name.",
+          "Run the gcloud pubsub topics update command with all the flags mentioned in the following sample: gcloud pubsub topics update TOPIC ID --kinesis-ingestion-stream-arn KINESIS STREAM ARN --kinesis-ingestion-consumer-arn KINESIS CONSUMER ARN --kinesis-ingestion-role-arn KINESIS ROLE ARN --kinesis-ingestion-service-account PUBSUB SERVICE ACCOUNT Replace the following: TOPIC ID is the topic ID or name.",
+          "Run the gcloud pubsub topics update command: gcloud pubsub topics update TOPIC ID \\ --clear-ingestion-data-source-settings Replace TOPIC ID with the topic ID."
+        ]
+      },
+      {
+        "title": "\"Choose Pub/Sub or Cloud Managed Service for Apache Kafka \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "source_id": "site-docs-root-2",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Publishers and subscribers can scale independently, not only across different topics and subscriptions, but also within the same ones.",
+          "Pub/Sub dynamically adjusts capacity for individual topics and subscriptions.",
+          "Open source Kafka compatibility for lift and shift No Yes Identity and Access Management and security Yes Yes Automatic network configuration Yes Yes Multi-cloud: identical across clouds No Yes Uptime SLA Yes Yes Data plane SLA Yes Not at this time Logging and monitoring Yes Yes Partition rebalancing across brokers Not applicable Yes Automatic capacity Pub/Sub dynamically adjusts capacity based on the incoming message rate and subscriber demand."
+        ]
+      },
+      {
+        "title": "Publish messages to topics \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/publisher",
+        "source_id": "site-docs-root",
+        "final_score": 239,
+        "relevance": "",
+        "evidence_snippets": [
+          "Click Publish . gcloud To publish a message with an ordering key, use the gcloud pubsub topics publish command and the --ordering-key flag: gcloud pubsub topics publish TOPIC ID \\ --message= MESSAGE DATA \\ --ordering-key= ORDERING KEY Replace the following: TOPIC ID : the ID of the topic MESSAGE DATA : a string with the message data ORDERING KEY : a string with an ordering key REST To publish a message with an ordering key, send a POST request like the following: POST https://pubsub.googleapis.com/v1/projects/ PROJECT ID /topics/ TOPIC ID :publish Content-Type: application/json Authorization: Bearer $(gcloud auth application-default print-access-token) Replace the following: PROJECT ID : the project ID of the project with the topic TOPIC ID : the ID of the topic Specify the following fields in the request body: { \"messages\": [ { \"attributes\": { \" KEY \": \" VALUE \", ... }, \"data\": \" MESSAGE DATA \", \"ordering key\": \" ORDERING KEY \", } ] } Replace the following: KEY : the key of a message attribute VALUE : the value for the key of the message attribute MESSAGE DATA : a base64-encoded string with the message data ORDERING KEY : a string with an ordering key The message must contain either a non-empty data field or at least one attribute.",
+          "Click Publish . gcloud To publish a message, use the gcloud pubsub topics publish command: gcloud pubsub topics publish TOPIC ID \\ --message= MESSAGE DATA \\ [--attribute= KEY =\" VALUE \",...] Replace the following: TOPIC ID : the ID of the topic MESSAGE DATA : a string with the message data KEY : the key of a message attribute VALUE : the value for the key of the message attribute REST To publish a message, send a POST request like the following: POST https://pubsub.googleapis.com/v1/projects/ PROJECT ID /topics/ TOPIC ID :publish Content-Type: application/json Authorization: Bearer $(gcloud auth application-default print-access-token) Replace the following: PROJECT ID : the project ID of the project with the topic TOPIC ID : the ID of the topic Specify the following fields in the request body: { \"messages\": [ { \"attributes\": { \" KEY \": \" VALUE \", ... }, \"data\": \" MESSAGE DATA \", } ] } Replace the following: KEY : the key of a message attribute VALUE : the value for the key of the message attribute MESSAGE DATA : a base64-encoded string with the message data The message must contain either a non-empty data field or at least one attribute.",
+          "PublisherClient ( publisher options = publisher options , client options = client options ) The topic path method creates a fully qualified identifier in the form projects/{project id}/topics/{topic id} topic path = publisher . topic path ( project id , topic id ) for message in [ ( \"message1\" , \"key1\" ), ( \"message2\" , \"key2\" ), ( \"message3\" , \"key1\" ), ( \"message4\" , \"key2\" ), ]: Data must be a bytestring data = message [ 0 ] . encode ( \"utf-8\" ) ordering key = message [ 1 ] When you publish a message, the client returns a future. future = publish er . publish ( topic path , data = data , ordering key = ordering key ) print ( future . result ()) print ( f \"Published messages with ordering keys to { topic path } .\" ) Ruby The following sample uses Ruby Pub/Sub client library v3."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "client.Publisher",
+      "e.g",
+      "pubsub.googleapis.com",
+      "pubsub.serviceAgent",
+      "pubsub.topics.create",
+      "pubsub.topics.delete",
+      "pubsub.topics.get",
+      "pubsub.topics.getIamPolicy",
+      "pubsub.topics.list",
+      "pubsub.topics.publish",
+      "pubsub.topics.setIamPolicy",
+      "pubsub.topics.update"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/change-topic-type",
+        "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "https://docs.cloud.google.com/pubsub/docs/publisher"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/change-topic-type",
+        "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "https://docs.cloud.google.com/pubsub/docs/publisher"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/change-topic-type",
+        "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "https://docs.cloud.google.com/pubsub/docs/publisher"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/change-topic-type",
+        "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "https://docs.cloud.google.com/pubsub/docs/publisher"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/change-topic-type",
+        "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "https://docs.cloud.google.com/pubsub/docs/publisher"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/change-topic-type",
+        "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "https://docs.cloud.google.com/pubsub/docs/publisher"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/change-topic-type",
+        "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "https://docs.cloud.google.com/pubsub/docs/publisher"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/change-topic-type",
+        "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "https://docs.cloud.google.com/pubsub/docs/publisher"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/change-topic-type",
+        "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "https://docs.cloud.google.com/pubsub/docs/publisher"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/change-topic-type",
+        "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "https://docs.cloud.google.com/pubsub/docs/publisher"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/change-topic-type",
+        "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "https://docs.cloud.google.com/pubsub/docs/publisher"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/change-topic-type",
+        "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "https://docs.cloud.google.com/pubsub/docs/publisher"
+      ]
+    }
+  ]
+}

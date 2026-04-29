@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:13.819Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Disable multicast for call routing",
+  "feature_slug": "disable-multicast-for-call-routing",
+  "summary": "Call routing can be configured to disable multicast so calls are offered to one agent at a time through deltacast.",
+  "extended_definition": "Call routing can be configured to disable multicast so calls are offered to one agent at a time through deltacast.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_Routing",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Multicast and deltacast \\_|\\_ Google Cloud Contact Center as a Service \\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_Routing",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 207,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following diagram shows the deltacast routing flow: Turn on deltacast for calls globally This section shows you how to switch from the default multicast routing to deltacast routing.",
+          "Deltacast for calls If enabled, deltacast extends to the following: Transfers Scheduled calls Calls routed using Direct Access Points (DAPs) Queues with cascade groups enabled Queues with percent allocation groups This section outlines deltacast routing logic and describes how to enable this feature.",
+          "Deltacast is an intelligent routing system unique to CCAI Platform that uses logic to disperse calls to individual agents, rather than giving agents the same opportunity to answer."
+        ]
+      },
+      {
+        "title": "\"Call settings \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 175,
+        "relevance": "",
+        "evidence_snippets": [
+          "Specific Interactive Voice Response (IVR) inbound routing If you have a line that is specific to a particular customer type or marketing promotion, Direct Access Points can be used to direct phone calls to that specific point in the queue.",
+          "When scheduled calls are enabled for queues with Cascade groups : If available, an agent from the highest level group will be assigned the calls first, then the next group in the standard routing order.",
+          "Unanswered Transferred Call Expiration Expires all unanswered transferred calls and unanswered deflected callbacks in queues when the wait duration in the queue reaches the time configured."
+        ]
+      },
+      {
+        "title": "\"Chat Settings and Features \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+        "source_id": "site-docs-reference",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "When disabled, agents will no longer receive new calls when on a chat.",
+          "Please see Chat Routing: Multicast and Deltacast for all routing logic details Agent experience When the chat is assigned to an agent, and is approximately three seconds from being connected, the agent receives a browser notification, New Chat Picked Up.",
+          "New calls while on a chat : If an agent is assigned to both call and chat queues, enabling this setting will allow the agent to be assigned new calls when they are on a chat."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_Routing",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_Routing",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:47.516Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deployment-manager/card.json",
+  "product_name": "Cloud Deployment Manager",
+  "product_slug": "cloud-deployment-manager",
+  "feature_name": "Cloud Scheduler type provider support",
+  "feature_slug": "cloud-scheduler-type-provider-support",
+  "summary": "Deployment Manager supports managing Cloud Scheduler jobs through the gcp-types/cloudscheduler-v1 type provider.",
+  "extended_definition": "Deployment Manager supports managing Cloud Scheduler jobs through the gcp-types/cloudscheduler-v1 type provider.",
+  "lifecycle": {
+    "latest_feature_date": "2020-04-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration/describing-listing-deleting-types",
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration/sharing-types-across-projects",
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-gcp-types"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported Google Cloud type providers \\_|\\_ Cloud Deployment Manager \\_\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-gcp-types",
+        "source_id": "site-api-reference",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For a full list of resource types, including resources that are in alpha, run the following command: gcloud beta deployment - manager types list -- project gcp - types You can also create your own type providers, such as for third-party APIs.",
+          "Home Documentation Infrastructure as code Cloud Deployment Manager Reference Send feedback Supported Google Cloud type providers Stay organized with collections Save and categorize content based on your preferences.",
+          "For an overview of creating a type provider, see Integrating with Deployment Manager ."
+        ]
+      },
+      {
+        "title": "\"Describing, listing, and deleting types \\_|\\_ Cloud Deployment Manager \\_\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration/describing-listing-deleting-types",
+        "source_id": "site-docs-reference",
+        "final_score": 88,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can get a list of base types provided by a type provider. gcloud To get a list of base types provided by a type provider: gcloud beta deployment - manager types list --provider [TYPE PROVIDER] --project [PROJECT ID] For example, to get a list of base types in the Compute Engine type provider, run this command: gcloud beta deployment-manager types list --provider compute-v1 --project gcp-types API Make a GET request to the following URI: GET https : // www . googleapis . com / deploymentmanager / v2beta / projects / [ PROJECT ID ] / global / typeProviders / [ PROVIDER NAME ] / types For example, for a list of types in the Compute Engine type provider, use this URI: GET https://www.googleapis.com/deploymentmanager/v2beta/projects/gcp-types/global/typeProviders/compute-v1/types Listing type providers You can get a list of your type providers using the gcloud CLI, or the API. gcloud To list your type providers, make a type-providers list request: gcloud beta deployment - manager type - providers list API In the API, make a GET request to the global type providers list: GET https : // www . googleapis . com / deploymentmanager / v2 / projects /[ PROJECT ID ]/ global / typeProviders For more information, see the documentation for the list method.",
+          "Describing a single composite type You can describe a single composite type to get information about the type. gcloud Run the types describe command to describe a type: gcloud beta deployment - manager types describe [ COMPOSITE TYPE NAME ] --provider composite API Make a GET request to the following URI: https : // www . googleapis . com / deploymentmanager / v2beta / projects /[ PROJECT ID ]/ global / compositeTypes /[ COMPOSITE TYPE NAME ] Listing composite types You can get a list of your composite types using the gcloud CLI, or the API. gcloud To list your composite types, make a types list request: gcloud beta deployment - manager types list -- provider composite API In the API, make a GET request to the global types list: GET https : // www . googleapis . com / deploymentmanager / v2 / projects /[ PROJECT ID ]/ global / types For more information, see the documentation for the list method.",
+          "See the list of default Google Cloud type providers . gcloud Run the type-providers describe command to describe a type provider. gcloud beta deployment-manager type-providers describe PROVIDER NAME --project PROJECT ID For example, use this command to describe the Pub/Sub type provider: gcloud beta deployment - manager type - providers describe pubsub - v1 -- project gcp - types API Make a GET request to the following URI: https://www.googleapis.com/deploymentmanager/v2beta/projects/ [PROJECT ID] /global/typeProviders/ [PROVIDER NAME] For example, use this URI for the Pub/Sub type provider: https://www.googleapis.com/deploymentmanager/v2beta/projects/gcp-types/global/typeProviders/pubsub-v1 Getting a list of types provided by a type provider A type provider exposes all resources of the underlying API as base types."
+        ]
+      },
+      {
+        "title": "\"Sharing Types Across Projects \\_|\\_ Cloud Deployment Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration/sharing-types-across-projects",
+        "source_id": "site-docs-reference",
+        "final_score": 88,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Add to add the account. gcloud With the Google Cloud CLI, add a binding to the IAM policy for the project: gcloud projects add-iam-policy-binding [PROJECT ID] \\ --member serviceAccount:[SERVICE ACCOUNT EMAIL] --role roles/deploymentmanager.typeViewer where: [PROJECT ID] is the ID of the project containing images you want to share. [SERVICE ACCOUNT EMAIL] is the email of the service account in the project you want to share types with.",
+          "For example: { \"policy\" : { \"version\" : \"0\" , \"bindings\" : [ { \"role\" : \"roles/owner\" , \"members\" : [ \"user:example@gmail.com\" ] }, { \"role\" : \"roles/deploymentmanager.typeViewer\" , \"members\" : [ \"serviceAccount:123456789012@cloudservices.gserviceaccount.com\" ] } ] } } Using types from other projects in your configuration Once you have access to your types, you can specify the type in configurations using the syntax.",
+          "Using the gcloud CLI, you can grant Jane the role like so: gcloud projects add - iam - policy - binding another - project \\ -- member user : jane @ gmail . com -- role deploymentmanager . typeViewer For comprehensive instructions on adding and removing roles from users, read the documentation for granting, changing, and revoking access to project members ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudservices.gserviceaccount.com",
+      "deploymentmanager.typeViewer",
+      "gmail.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/deploymentmanager.typeViewer",
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-gcp-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/describing-listing-deleting-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/sharing-types-across-projects"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-gcp-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/describing-listing-deleting-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/sharing-types-across-projects"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-gcp-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/describing-listing-deleting-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/sharing-types-across-projects"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-gcp-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/describing-listing-deleting-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/sharing-types-across-projects"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-gcp-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/describing-listing-deleting-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/sharing-types-across-projects"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-gcp-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/describing-listing-deleting-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/sharing-types-across-projects"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-gcp-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/describing-listing-deleting-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/sharing-types-across-projects"
+      ]
+    }
+  ]
+}

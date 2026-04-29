@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:19.077Z",
+  "source_step08_card": "data/step-08/current/products/google-workspace-admin-sdk/card.json",
+  "product_name": "Google Workspace Admin SDK",
+  "product_slug": "google-workspace-admin-sdk",
+  "feature_name": "Login audit events",
+  "feature_slug": "login-audit-events",
+  "summary": "Audit events that record login failures, including disabled-account and unknown-failure cases.",
+  "extended_definition": "Audit events that record login failures, including disabled-account and unknown-failure cases.",
+  "lifecycle": {
+    "latest_feature_date": "2014-03-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-admin",
+      "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-login",
+      "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-mobile"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Reports API: Login Activity Report \\_|\\_ Admin console \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-login",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "For readability purposes, the following example is formatted with line returns: GET https://admin.googleapis.com/admin/reports/v1/activity/users/ all /applications/ login ?endTime= end date &startTime= start date &maxResults= maximum number of events returned on a response page The following example gets a report on all of your account's login events for the past 180 days.",
+          "To do this, use a GET HTTP request of the following form: GET https://admin.googleapis.com/admin/reports/v1/activity/users/ all /applications/ login ?maxResults= maximum number of events returned on a response page &eventName= name of the login event &filters= event parameter relational operator parameter value The following example shows how to retrieve all suspicious successful logins for a domain: GET https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/login?eventName=login success&filters=is suspicious==true&maxResults=25 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "GET https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/login?customerId=C03az79cb Retrieve Google Workspace login events by event name In some instances, you may want to retrieve specific events , such as suspicious successful logins."
+        ]
+      },
+      {
+        "title": "\"Reports API: Device Audit Activity Report \\_|\\_ Admin console \\_|\\_ Google\\",
+        "url": "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-mobile",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "For readability purposes, the following example is formatted with line returns: GET https://admin.googleapis.com/admin/reports/v1/activity/users/ all /applications/ mobile ?endTime= end date &startTime= start date &maxResults= maximum number of events returned on a response page The following example gets a report on all of your account's device audit events for the past 180 days.",
+          "GET https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/mobile?customerId=C03az79cb Retrieve device audit events by event name In some instances, you may want to retrieve specific events , such as suspicious activity events.",
+          "Retrieve device audit events for a domain To retrieve all device audit events for all users within your domain, use the following GET HTTP request and include the authorization token described in the authorization documentation ."
+        ]
+      },
+      {
+        "title": "Admin Activity Report \\_|\\_ Admin console \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-admin",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information about the request's URL query strings and the response properties, see the API Reference . { \"kind\" : \"reports#auditActivities\" , \"nextPageToken\" : \" the next page's token \" , \"items\" : [ { \"kind\" : \"audit#activity\" , \"id\" : { \"time\" : \"2011-06-17T15:39:18.460Z\" , \"uniqueQualifier\" : \" report's unique ID \" , \"applicationName\" : \"admin\" , \"customerId\" : \"C03az79cb\" }, \"actor\" : { \"callerType\" : \"USER\" , \"email\" : \"liz@example.com\" , \"profileId\" : \" user's unique Google Workspace profile ID \" , \"key\" : \" consumer key of requester in OAuth 2LO requests \" }, \"ownerDomain\" : \"example.com\" , \"ipAddress\" : \" user's IP address \" , \"events\" : [ { \"type\" : \"GROUP SETTINGS\" , \"name\" : \"CHANGE GROUP SETTING\" , \"parameters\" : [ { \"name\" : \"SETTING NAME\" , \"value\" : \"WHO CAN JOIN\" , \"intValue\" : \" integer value of parameter \" , \"boolValue\" : \" boolean value of parameter \" } ] } ] }, { \"kind\" : \"audit#activity\" , \"id\" : { \"time\" : \"2011-06-17T15:39:18.460Z\" , \"uniqueQualifier\" : \" reports unique ID \" , \"applicationName\" : \"admin\" , \"customerId\" : \"C03az79cb\" }, \"actor\" : { \"callerType\" : \"USER\" , \"email\" : \"liz@example.com\" , \"profileId\" : \" user's unique Google Workspace profile ID \" , \"key\" : \" consumer key of requester in an OAuth 2LO request \" }, \"ownerDomain\" : \"example.com\" , \"ipAddress\" : \" user's IP address \" , \"events\" : [ { \"type\" : \"GROUP SETTINGS\" , \"name\" : \"CREATE GROUP\" , \"parameters\" : [ { \"name\" : \"GROUP EMAIL\" , \"value\" : \"helpdesk@example.com\" , \"intValue\" : \"\" , \"boolValue\" : \"\" } ] } ] } ] } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For readability, the following example is formatted with line returns: GET https://admin.googleapis.com/admin/reports/v1/activity/users/ all /applications/ admin ?endTime= a date &startTime= a date &maxResults= number of events listed on each page of the report The following example gets a report on all of your account's administrative activities for the past 180 days which is the maximum time period for a report.",
+          "For each activity, the response includes all of the activity's events including the event specified in the API request."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "admin.googleapis.com",
+      "developers.google.com",
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-login",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-mobile",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-admin"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-login",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-mobile",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-admin"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-login",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-mobile",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-admin"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-login",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-mobile",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-admin"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-login",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-mobile",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-audit-admin"
+      ]
+    }
+  ]
+}

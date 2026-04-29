@@ -1,0 +1,132 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "CREATE VIEW with column name list",
+  "feature_slug": "create-view-with-column-name-list",
+  "summary": "BigQuery supports defining a view with an explicit column name list in CREATE VIEW statements.",
+  "extended_definition": "BigQuery supports defining a view with an explicit column name list in CREATE VIEW statements.",
+  "lifecycle": {
+    "latest_feature_date": "2021-04-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-explicit-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-index-column-options",
+      "https://docs.cloud.google.com/bigquery/docs/reference/libraries-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "SEARCH_INDEX_COLUMN_OPTIONS view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-index-column-options",
+        "source_id": "site-docs-reference-3",
+        "final_score": 48,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The INFORMATION SCHEMA.SEARCH INDEX COLUMN OPTIONS view has the following schema: Column name Data type Value index catalog STRING The name of the project that contains the dataset. index schema STRING The name of the dataset that contains the index. table name STRING The name of the base table that the index is created on. index name STRING The name of the index. index column name STRING The name of the indexed column that the option is set on. option name STRING The name of the option specified on the column. option type STRING The type of the option. option value STRING The value of the option.",
+          "SEARCH INDEX COLUMN OPTIONS WHERE index schema = 'mydataset' AND index name = 'index1' AND table name = 'table1' ; The result is similar to the following: +-------------------+-------------------+---------------+--------------+ index column name option name option type option value +-------------------+-------------------+---------------+--------------+ col2 index granularity STRING GLOBAL col3 index granularity STRING COLUMN +-------------------+-------------------+---------------+--------------+ The following equivalent example, which doesn't use ALL COLUMNS , sets the default index column granularity to COLUMN and individually sets the granularity for two columns to GLOBAL and COLUMN respectively: CREATE SEARCH INDEX index1 ON mydataset . table1 ( col1 , col2 OPTIONS ( index granularity = 'GLOBAL' ), col3 OPTIONS ( index granularity = 'COLUMN' ) ) OPTIONS ( default index column granularity = 'COLUMN' ); SELECT index column name , option name , option type , option value FROM mydataset .",
+          "CREATE SEARCH INDEX index1 ON mydataset . table1 ( ALL COLUMNS WITH COLUMN OPTIONS ( col2 OPTIONS ( index granularity = 'GLOBAL' ), col3 OPTIONS ( index granularity = 'COLUMN' ) ) ) OPTIONS ( default index column granularity = 'COLUMN' ); SELECT index column name , option name , option type , option value FROM mydataset ."
+        ]
+      },
+      {
+        "title": "BigQuery APIs and libraries overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/libraries-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 47,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For links to the reference documentation and source code, select a language: C++ API Reference Documentation Source Code C# API Reference Documentation Source Code Go API Reference Documentation Source Code Java API Reference Documentation Source Code Node.js API Reference Documentation Source Code PHP API Reference Documentation Source Code Python API Reference Documentation Source Code Ruby API Reference Documentation Source Code BigQuery Migration API This API supports mechanisms to help users migrate existing data warehouses to BigQuery.",
+          "For links to the reference documentation and source code, select a language: C# API Reference Documentation Source Code Go API Reference Documentation Source Code Java API Reference Documentation Source Code Node.js API Reference Documentation Source Code PHP API Reference Documentation Source Code Python API Reference Documentation Source Code Ruby API Reference Documentation Source Code BigQuery Data Policy API This API helps users manage BigQuery data policies for column-level security and data masking.",
+          "The API supports a parallel mechanism of scanning storage and exposes support for leveraging features such as column projects and filtering."
+        ]
+      },
+      {
+        "title": "\"Create recommendations based on explicit feedback with a matrix factorization\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-explicit-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 40,
+        "relevance": "",
+        "evidence_snippets": [
+          "Call model.predict() to get predicted ratings. import bigframes.bigquery as bbq Load movies movies = bpd . read gbq ( \"bqml tutorial.movies\" ) Merge the movies df with the previously created predicted df merged df = bpd . merge ( predicted , movies , left on = \"item id\" , right on = \"movie id\" ) Separate users and predicted data, setting the index to 'movie id' users = merged df [[ \"user id\" , \"movie id\" ]] . set index ( \"movie id\" ) Take the predicted data and sort it in descending order by 'predicted rating', setting the index to 'movie id' sort data = ( merged df [[ \"movie title\" , \"genre\" , \"predicted rating\" , \"movie id\" ]] . sort values ( by = \"predicted rating\" , ascending = False ) . set index ( \"movie id\" ) ) re-merge the separated dfs by index merged user = sort data . join ( users , how = \"outer\" ) group the users and set the user id as the index merged user . groupby ( \"user id\" ) . head ( 5 ) . set index ( \"user id\" ) . sort index () print ( merged user ) Output: movie title genre predicted rating user id 1 Saving Private Ryan (1998) Action Drama War 5.19326 1 Fargo (1996) Crime Drama Thriller 4.996954 1 Driving Miss Daisy (1989) Drama 4.983671 1 Ben-Hur (1959) Action Adventure Drama 4.877622 1 Schindler's List (1993) Drama War 4.802336 2 Saving Private Ryan (1998) Action Drama War 5.19326 2 Braveheart (1995) Action Drama War 5.174145 2 Gladiator (2000) Action Drama 5.066372 2 On Golden Pond (1981) Drama 5.01198 2 Driving Miss Daisy (1989) Drama 4.983671 Clean up To avoid incurring charges to your Google Cloud account for the resources used in this tutorial, either delete the project that contains the resources, or keep the project and delete the individual resources.",
+          "Create a dataset named bqml tutorial with the data location set to US . bq mk --dataset \\ --location=US \\ --description \"BigQuery ML tutorial dataset.\" \\ bqml tutorial Confirm that the dataset was created: bq ls API Call the datasets.insert method with a defined dataset resource . { \"datasetReference\" : { \"datasetId\" : \"bqml tutorial\" } } BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames .",
+          "For more information, see Set up ADC for a local development environment . from bigframes.ml import decomposition import bigframes.pandas as bpd Load data from BigQuery bq df = bpd . read gbq ( \"bqml tutorial.ratings\" , columns = ( \"user id\" , \"item id\" , \"rating\" ) ) Create the Matrix Factorization model model = decomposition ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigframes.bigquery",
+      "bigframes.ml",
+      "bigframes.pandas",
+      "core.exceptions",
+      "datasets.insert",
+      "model.predict",
+      "tutorial.movies",
+      "tutorial.ratings"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-index-column-options",
+        "https://docs.cloud.google.com/bigquery/docs/reference/libraries-overview",
+        "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-explicit-tutorial"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-index-column-options",
+        "https://docs.cloud.google.com/bigquery/docs/reference/libraries-overview",
+        "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-explicit-tutorial"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-index-column-options",
+        "https://docs.cloud.google.com/bigquery/docs/reference/libraries-overview",
+        "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-explicit-tutorial"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-index-column-options",
+        "https://docs.cloud.google.com/bigquery/docs/reference/libraries-overview",
+        "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-explicit-tutorial"
+      ]
+    }
+  ]
+}

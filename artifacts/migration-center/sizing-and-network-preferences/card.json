@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:23.409Z",
+  "source_step08_card": "data/step-08/current/products/migration-center/card.json",
+  "product_name": "Migration Center",
+  "product_slug": "migration-center",
+  "feature_name": "Sizing and network preferences",
+  "feature_slug": "sizing-and-network-preferences",
+  "summary": "Migration Center lets you customize sizing recommendations with target sizing strategy, default utilization estimates, and network data transfer preferences.",
+  "extended_definition": "Migration Center lets you customize sizing recommendations with target sizing strategy, default utilization estimates, and network data transfer preferences.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migration-center/docs/generate-tco-report",
+      "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/VirtualMachinePreferences",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class MigrationCenterAsyncClient (0.4.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 262,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Python Client libraries Send feedback Class MigrationCenterAsyncClient (0.4.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "CreatePreferenceSetRequest ( parent=\"parent value\", preference set id=\"preference set id value\", ) Make the request operation = client. create preference set (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.migrationcenter v1.types.CreatePreferenceSetRequest , dict]] The request object.",
+          "DeletePreferenceSetRequest ( name=\"name value\", ) Make the request operation = client. delete preference set (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.migrationcenter v1.types.DeletePreferenceSetRequest , dict]] The request object."
+        ]
+      },
+      {
+        "title": "\"Class MigrationCenterClient (0.4.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "source_id": "site-python-reference",
+        "final_score": 262,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Python Client libraries Send feedback Class MigrationCenterClient (0.4.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "CreatePreferenceSetRequest ( parent=\"parent value\", preference set id=\"preference set id value\", ) Make the request operation = client. create preference set (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.migrationcenter v1.types.CreatePreferenceSetRequest , dict] The request object.",
+          "DeletePreferenceSetRequest ( name=\"name value\", ) Make the request operation = client. delete preference set (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.migrationcenter v1.types.DeletePreferenceSetRequest , dict] The request object."
+        ]
+      },
+      {
+        "title": "Generate TCO reports \\_|\\_ Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/generate-tco-report",
+        "source_id": "site-docs-root",
+        "final_score": 238,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Migration Migration Center Guides Send feedback Generate TCO reports Stay organized with collections Save and categorize content based on your preferences.",
+          "If assets don't have performance data, Migration Center generates sizing recommendations based on the target sizing strategy that you choose in the migration preferences.",
+          "Limitations If you generate a TCO report for a group that contains a database deployment and its underlying server, Migration Center generates separate cost estimates for the server and the database."
+        ]
+      },
+      {
+        "title": "VirtualMachinePreferences \\_|\\_ Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/VirtualMachinePreferences",
+        "source_id": "site-api-reference",
+        "final_score": 229,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation ComputeMigrationTargetProduct RegionPreferences JSON representation CommitmentPlan SizingOptimizationStrategy ComputeEnginePreferences JSON representation MachinePreferences JSON representation LicenseType VmwareEnginePreferences JSON representation CommitmentPlan SoleTenancyPreferences JSON representation HostMaintenancePolicy CommitmentPlan VirtualMachinePreferences enables you to create sets of assumptions, for example, a geographical location and pricing track, for your migrated virtual machines.",
+          "Home Documentation Migration Migration Center Reference Send feedback VirtualMachinePreferences Stay organized with collections Save and categorize content based on your preferences.",
+          "If you are unsure which value to set, a moderate sizing optimization strategy is often a good value to start with. compute Engine Preferences object ( ComputeEnginePreferences ) Compute Engine preferences concern insights and recommendations for Compute Engine target. vmware Engine Preferences object ( VmwareEnginePreferences ) Preferences concerning insights and recommendations for Google Cloud VMware Engine. sole Tenancy Preferences object ( SoleTenancyPreferences ) Preferences concerning Sole Tenant nodes and virtual machines."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "operation.result",
+      "v1.types.CreatePreferenceSetRequest",
+      "v1.types.DeletePreferenceSetRequest",
+      "v1.types.UpdatePreferenceSetRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/generate-tco-report",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/VirtualMachinePreferences"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/generate-tco-report",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/VirtualMachinePreferences"
+      ]
+    }
+  ]
+}

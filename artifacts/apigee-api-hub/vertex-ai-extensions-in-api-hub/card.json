@@ -1,0 +1,190 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.459Z",
+  "source_step08_card": "data/step-08/current/products/apigee-api-hub/card.json",
+  "product_name": "Apigee API hub",
+  "product_slug": "apigee-api-hub",
+  "feature_name": "Vertex AI extensions in API hub",
+  "feature_slug": "vertex-ai-extensions-in-api-hub",
+  "summary": "API hub now supports creating Vertex AI extensions for registered APIs, including integration with LLMs for real-time data processing.",
+  "extended_definition": "API hub now supports creating Vertex AI extensions for registered APIs, including integration with LLMs for real-time data processing.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+      "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Get started with the Apigee Extension Processor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 80,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create the traffic extension using the following command to call the Extension Processor provisioning API: curl -X POST -H \"Authorization: Bearer $TOKEN \" \\ https://apigee.googleapis.com/v1/organizations/ $ORG NAME /apimServiceExtensions?apimServiceExtensionId = TRAFFIC EXT NAME \\ -H \"Content-Type:application/json\" -d \\ '{ \"extensionProcessor\": \" TARGET PROXY NAME \" \"lbForwardingRule\": \" LB FORWARDING RULE \", \"network\" : \" NETWORK \", \"networkConfigs\": [ { \"region\": \"$REGION\", \"subnet\": \"project/my-project/regions/$REGION/subnetworks/$SUBNET\" } ], \"extensions\": [ { \"name\": \" TARGET PROXY NAME \", \"matchCondition\": \" CEL EXPRESSION \", \"failOpen\": FAIL OPEN , \"hostname\": \" ENV GROUP HOSTNAME \", \"supportedEvents\": [ \"REQUEST HEADERS\", \"RESPONSE HEADERS\" ] } ] }' Where: TRAFFIC EXT NAME is is the name of the traffic extension you are creating.",
+          "Go to the VPC Networks page in the Google Cloud console: Go to VPC Networks Required roles To get the permissions that you need to install the Apigee Extension Processor, ask your administrator to grant you the following IAM roles: Create and manage service accounts: Service Account Admin ( roles/iam.serviceAccountAdmin ) on organization Create and manage service extensions: Service Extensions Admin ( roles/networkservices.serviceExtensionsAdmin ) on organization Create and manage network endpoint groups (NEGs): Compute Instance Admin ( roles/compute.instanceAdmin ) on organization Create and manage networking resources: Compute Network Admin ( roles/compute.networkAdmin ) on organization Create and manage backend services: Compute Load Balancer Admin ( roles/compute.loadBalancerAdmin ) on organization Create and manage Apigee resources: Apigee Org Admin ( roles/apigee.admin ) on organization Create and manage traffic extensions: Apigee APIM Service Extension Admin ( roles/apigee.apimServiceExtensionAdmin ) on organization View traffic extensions: Apigee APIM Service Extension Viewer ( roles/apigee.apimServiceExtensionViewer ) on organization Manage long-running operations: Apigee APIM Service Extension Service Agent ( roles/apigee.apimServiceExtensionServiceAgent ) on the service agent in the Google Cloud project For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "The response appears similar to the following: { \"name\" : \"my-traffic-extension\" , \"extensionProcessor\" : \"my-extension-processor\" , \"lbForwardingRule\" : \"https://www.googleapis.com/compute/v1/projects/my-project/global/forwardingRules/my-forwarding-rule\" , \"network\" : \"projects/my-project/global/networks/my-network\" , \"networkConfigs\" : [ { \"region\" : \"us-west1\" , \"subnet\" : \"projects/my-project/regions/us-west1/subnetworks/my-subnet\" } ] , \"extensions\" : [ { \"name\" : \"organizations/my-org/apis/my-api-proxy\" , \"matchCondition\" : \"request.url.contains('1234567890')\" , \"failOpen\" : true, \"hostname\" : \"my-hostname.apigee.net\" , \"supportedEvents\" : [ \"REQUEST HEADERS\" , \"RESPONSE HEADERS\" ] } ] } Update a traffic extension You can update the traffic extension using the updateMask parameter."
+        ]
+      },
+      {
+        "title": "Apigee known issues \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "source_id": "site-docs-reference",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute: kubectl delete crd $(cat istio-crd.csv) Update clusterrole Get the current apigee-ingressgateway-manager clusterrole: kubectl get clusterrole apigee-ingressgateway-manager-apigee -o yaml > apigee-ingressgateway-manager-apigee-clusterrole.yaml Copy the clusterrole to a new location: cp apigee-ingressgateway-manager-apigee-clusterrole.yaml apigee-ingressgateway-manager-apigee-clusterrole-added-istio-permissions.yaml Add the following additional permissions to the end of the file: - apiGroups: - gateway.networking.k8s.io resources: - gatewayclasses - gateways - grpcroutes - httproutes - referencegrants verbs: - get - list - watch - apiGroups: - networking.istio.io resources: - sidecars - destinationrules - gateways - virtualservices - envoyfilters - workloadentries - serviceentries - workloadgroups - proxyconfigs verbs: - get - list - watch - apiGroups: - security.istio.io resources: - peerauthentications - authorizationpolicies - requestauthentications verbs: - get - list - watch - apiGroups: - telemetry.istio.io resources: - telemetries verbs: - get - list - watch - apiGroups: - extensions.istio.io resources: - wasmplugins verbs: - get - list - watch Apply the role: kubectl -n APIGEE NAMESPACE apply -f apigee-ingressgateway-manager-apigee-clusterrole-added-istio-permissions.yaml After you have completed the above options, you will need to restart your apigee-ingressgateway-manager pods.",
+          "List the ingress-manager pods to reinstall or recreate: kubectl get deployments -n APIGEE NAMESPACE Example output: NAME READY UP-TO-DATE AVAILABLE AGE apigee-controller-manager 1/1 1 1 32d apigee-ingressgateway-manager 2/2 2 2 32d Restart the ingress-manager pods: kubectl rollout restart deployment -n APIGEE NAMESPACE apigee-ingressgateway-manager After a few minutes, monitor the apigee-ingressgateway-manager pods: watch -n 10 kubectl -n APIGEE NAMESPACE get pods -l app=apigee-ingressgateway-manager Example output: NAME READY STATUS RESTARTS AGE apigee-ingressgateway-manager-12345abcde-678wx 3/3 Running 0 10m apigee-ingressgateway-manager-12345abcde-901yz 3/3 Running 0 10m 414499328 hybrid 1.14.1 FIXED in hybrid 1.14.3 and hybrid 1.15.0 ApigeeTelemetry can become stuck in creating state.",
+          "432315283 Apigee OPEN When updating a keystore or truststore without creating a new keystore or truststore, runtime updates may fail and cause the following intermittent error: {\"fault\":{\"faultstring\":\"SSL Handshake failed sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target\",\"detail\":{\"errorcode\":\"messaging.adaptors.http.flow.SslHandshakeFailed\"}}} The error is intermittent because the keystore or truststore update may fail on one runtime pod but succeed on other pods."
+        ]
+      },
+      {
+        "title": "\"Get started with semantic caching policies \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 53,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "When this operation completes, you should see a response similar to the following: { \"name\" : \"projects/976063410430/locations/us-west1/indexes/5695338290484346880/operations/9084564741162008576\" , \"metadata\" : { \"@type\" : \"type.googleapis.com/google.cloud.aiplatform.v1.CreateIndexOperationMetadata\" , \"genericMetadata\" : { \"createTime\" : \"2025-04-25T18:45:27.996136Z\" , \"updateTime\" : \"2025-04-25T18:45:27.996136Z\" } } } For more information on creating Vector Search indexes, see Create an index .",
+          "Before creating the API proxy, set the following environment variable: export PUBLIC DOMAIN NAME = $( gcloud ai index-endpoints describe $INDEX ENDPOINT ID --region = $REGION --project = $PROJECT ID grep \"publicEndpointDomainName\" awk '{print $2}' ) To create a proxy for use with semantic caching: Go to the API proxies page in the Google Cloud console.",
+          "For this tutorial, set this URL to the following: REGION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /publishers/google/models/text-embedding-004:predict Query Nearest Neighbor URL : This Vertex AI service searches for similar text input from previous requests in the Vector Search index to avoid reprocessing."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "apigee.admin",
+      "apigee.apimServiceExtensionAdmin",
+      "apigee.apimServiceExtensionServiceAgent",
+      "apigee.apimServiceExtensionViewer",
+      "apigee.googleapis.com",
+      "clusterrole.yaml",
+      "compute.instanceAdmin",
+      "compute.loadBalancerAdmin",
+      "compute.networkAdmin",
+      "crd.csv",
+      "extensions.istio.io",
+      "gateway.networking.k8s.io",
+      "hostname.apigee.net",
+      "iam.serviceAccountAdmin",
+      "messaging.adaptors.http.flow.SslHandshakeFailed",
+      "meta.helm.sh",
+      "networking.istio.io",
+      "networkservices.serviceExtensionsAdmin",
+      "permissions.yaml",
+      "request.url.contains",
+      "security.istio.io",
+      "sun.security.provider.certpath.SunCertPathBuilderException",
+      "telemetry.istio.io",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/apigee.admin",
+      "roles/apigee.apimServiceExtensionAdmin",
+      "roles/apigee.apimServiceExtensionServiceAgent",
+      "roles/apigee.apimServiceExtensionViewer",
+      "roles/compute.instanceAdmin",
+      "roles/compute.loadBalancerAdmin",
+      "roles/compute.networkAdmin",
+      "roles/iam.serviceAccountAdmin",
+      "roles/networkservices.serviceExtensionsAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    }
+  ]
+}

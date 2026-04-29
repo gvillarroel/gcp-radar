@@ -1,0 +1,127 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.589Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Drive Service",
+  "feature_slug": "drive-service",
+  "summary": "Drive Service was added to create and modify files and folders in Google Drive.",
+  "extended_definition": "Drive Service was added to create and modify files and folders in Google Drive.",
+  "lifecycle": {
+    "latest_feature_date": "2013-05-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/advanced/drive",
+      "https://developers.google.com/apps-script/advanced/drive-labels",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Advanced Drive Service \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/advanced/drive",
+        "source_id": "site-docs-reference",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Much like Apps Script's built-in Drive service , this API allows scripts to create, find, and modify files and folders in Google Drive.",
+          "Files . update ( file , fileId , null , { fields : \"id,appProperties\" , }); console . log ( \"ID: %s, appProperties: %s\" , file . id , JSON . stringify ( file . appProperties , null , 2 ), ); } catch ( err ) { // TODO (developer) - Handle exception console . log ( \"Failed with error %s\" , err . message ); } } Add a user to a file The following code sample shows how to add a user as an editor to a file and suppress the email notification. / Adds a user to a file as an editor without sending an email notification. / function addEditor () { var fileId = '1234567890abcdefghijklmnopqrstuvwxyz' ; var userEmail = 'bob@example.com' ; var request = { 'role' : 'writer' , 'type' : 'user' , 'emailAddress' : userEmail }; Drive .",
+          "Files . create ( file , image , { fields : \"id,size\" }); console . log ( \"ID: %s, File size (bytes): %s\" , file . id , file . size ); } catch ( err ) { // TODO (developer) - Handle exception console . log ( \"Failed to upload file with error %s\" , err . message ); } } Create a folder The following code sample shows how to create a folder in Drive. / Creates a new folder. / function createFolder () { var folderMetadata = { 'name' : 'New Folder' , 'mimeType' : 'application/vnd.google-apps.folder' }; var folder = Drive ."
+        ]
+      },
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "Added Drive Service , which allows scripts to create and modify files and folders in Google Drive.",
+          "August 31, 2021 Feature The Drive Service has added three new methods to the file and folder classes to manage the use of resource keys when sharing files and folders. getSecurityUpdateEligible() : Gets whether a file for folder is eligible to apply the security update that requires a resource key for access when it's shared using a link. getSecurityUpdateEnabled() : Gets whether a file or folder requires a resource key for access when it's shared using a link. setSecurityUpdateEnabled(enabled) : Sets whether the file or folder requires a resource key for access when it's shared using a link.",
+          "September 03, 2013 Feature Added the DriveApp methods DriveApp.getFoldersByName(name) and DriveApp.searchFolders(params) , which return a FolderIterator with the requested results."
+        ]
+      },
+      {
+        "title": "Advanced Drive Labels Service \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/advanced/drive-labels",
+        "source_id": "site-docs-reference",
+        "final_score": 120,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Page Summary outlined flag The Google Drive Labels advanced service in Apps Script allows you to create and manage labels for Drive files and folders.",
+          "Create and manage labels for your Drive files and folders with the Google Drive Labels advanced service.",
+          "Files . listLabels ( fileId ); console . log ( \"%d label(s) are applied to this file\" , appliedLabels . labels . length , ); for ( const appliedLabel of appliedLabels . labels ) { // Resource name of the label at the applied revision. const labelName = labels/ ${ appliedLabel . id } @ ${ appliedLabel . revisionId } ; console . log ( \"Fetching Label: %s\" , labelName ); const label = DriveLabels ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apps.folder",
+      "developers.google.com",
+      "example.com",
+      "vnd.google"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/advanced/drive",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/advanced/drive-labels"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/advanced/drive",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/advanced/drive-labels"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/advanced/drive",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/advanced/drive-labels"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/advanced/drive",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/advanced/drive-labels"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/advanced/drive",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/advanced/drive-labels"
+      ]
+    }
+  ]
+}

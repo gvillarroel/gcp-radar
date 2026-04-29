@@ -1,0 +1,167 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:55.943Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "Default soft delete retention via bucket tags",
+  "feature_slug": "default-soft-delete-retention-via-bucket-tags",
+  "summary": "Bucket tags can define a default soft delete retention duration for newly created buckets in an organization.",
+  "extended_definition": "Bucket tags can define a default soft delete retention duration for newly created buckets in an organization.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.blob.Blob",
+      "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+      "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.SoftDeletePolicy",
+      "https://docs.cloud.google.com/storage/docs/creating-buckets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Class Bucket (3.10.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "source_id": "site-python-reference",
+        "final_score": 234,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This parameter can only be used successfully if the bucket has a soft delete policy.",
+          "Note this property is only set for soft-deleted buckets. hierarchical namespace enabled Whether hierarchical namespace is enabled for this bucket. :setter: Update whether hierarchical namespace is enabled for this bucket. :getter: Query whether hierarchical namespace is enabled for this bucket.",
+          "If not passed, falls back to the client stored on the current bucket. generation int Selects the specific revision of the object. copy source acl bool (Optional) If true, copy the soft-deleted object's access controls. projection str (Optional) Specifies the set of properties to return."
+        ]
+      },
+      {
+        "title": "\"Class SoftDeletePolicy (3.10.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.SoftDeletePolicy",
+        "source_id": "site-python-reference",
+        "final_score": 213,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See https://cloud.google.com/storage/docs/soft-delete Parameters Name Description bucket Bucket Bucket for which this instance is the policy. retention duration seconds int (Optional) The period of time in seconds that soft-deleted objects in the bucket will be retained and cannot be permanently deleted. effective time datetime.datetime (Optional) When the bucket's soft delete policy is effective.",
+          "Returns Type Description SoftDeletePolicy Instance created from resource. fromkeys fromkeys ( value = None , / ) Create a new dictionary with keys from iterable and values set to value. get get ( key , default = None , / ) Return the value for key if key is in the dictionary, else default. items items () API documentation for storage.bucket.SoftDeletePolicy.items method. keys keys () API documentation for storage.bucket.SoftDeletePolicy.keys method. pop pop ( k [, d ]) If the key is not found, return the default if given; otherwise, raise a KeyError. popitem popitem () Remove and return a (key, value) pair as a 2-tuple.",
+          "Return the value for key if key is in the dictionary, else default. update update ([ E , ] F ) If E is present and has a .keys() method, then does: for k in E: D[k] = E[k] If E is present and lacks a .keys() method, then does: for k, v in E: D[k] = v In either case, this is followed by: for k in F: D[k] = F[k] values values () API documentation for storage.bucket.SoftDeletePolicy.values method."
+        ]
+      },
+      {
+        "title": "Class Blob (3.10.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.blob.Blob",
+        "source_id": "site-python-reference",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See: https://cloud.google.com/storage/docs/soft-delete rewrite rewrite ( source , token = None , client = None , if generation match = None , if generation not match = None , if metageneration match = None , if metageneration not match = None , if source generation match = None , if source generation not match = None , if source metageneration match = None , if source metageneration not match = None , timeout = 60 , retry = google . cloud . storage . retry .",
+          "Pass 'strict' to raise a ValueError exception if there is an encoding error (the default of None has the same effect), or pass 'ignore' to ignore errors. (Note that ignoring encoding errors can lead to data loss.) Other more rarely-used options are also available; see the Python 'io' module documentation for 'io.TextIOWrapper' for a complete list. newline str (Optional) For text mode only, controls how line endings are handled.",
+          "The content type of the upload will be determined in order of precedence: The value passed in to this method (if not :data: None ) The value stored on the current blob The value given by mimetypes.guess type The default value ('application/octet-stream') Note: The effect of uploading to an existing blob depends on the \"versioning\" and \"lifecycle\" policies defined on the blob's bucket."
+        ]
+      },
+      {
+        "title": "Create a bucket \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "source_id": "site-docs-root",
+        "final_score": 200,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: gcloud storage buckets create gs:// BUCKET NAME --project= PROJECT ID --default-storage-class= STORAGE CLASS --location= BUCKET LOCATION --uniform-bucket-level-access --soft-delete-duration= RETENTION DURATION --encryption-enforcement-file= ENCRYPTION ENFORCEMENT FILE For a complete list of options for bucket creation using the gcloud CLI, see buckets create options .",
+          "If not otherwise specified in your request, buckets are created in the US multi-region with a default storage class of Standard storage and have a seven-day soft delete retention duration.",
+          "For example, STANDARD . --uniform-bucket-level-access : Enable uniform bucket-level access for your bucket. --soft-delete-duration : Specify a soft delete retention duration, which is the number of days you want to retain objects after they get deleted."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.storage",
+      "com.google.cloud.storage.BlobInfo",
+      "datetime.datetime",
+      "io.TextIOWrapper",
+      "mimetypes.guess",
+      "storage.bucket.SoftDeletePolicy.items",
+      "storage.bucket.SoftDeletePolicy.keys",
+      "storage.bucket.SoftDeletePolicy.values"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.SoftDeletePolicy",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.blob.Blob",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.SoftDeletePolicy",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.blob.Blob",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.SoftDeletePolicy",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.blob.Blob",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.SoftDeletePolicy",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.blob.Blob",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.SoftDeletePolicy",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.blob.Blob",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.SoftDeletePolicy",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.blob.Blob",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.SoftDeletePolicy",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.blob.Blob",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets"
+      ]
+    }
+  ]
+}

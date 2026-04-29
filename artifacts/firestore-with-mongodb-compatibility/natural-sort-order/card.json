@@ -1,0 +1,176 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:11.019Z",
+  "source_step08_card": "data/step-08/current/products/firestore-with-mongodb-compatibility/card.json",
+  "product_name": "Firestore with MongoDB compatibility",
+  "product_slug": "firestore-with-mongodb-compatibility",
+  "feature_name": "natural sort order",
+  "feature_slug": "natural-sort-order",
+  "summary": "Supports ascending natural sort order in aggregation pipelines.",
+  "extended_definition": "Supports ascending natural sort order in aggregation pipelines.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Behavior differences \\_|\\_ Firestore with MongoDB compatibility \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences",
+        "source_id": "site-iam-reference",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "Queries Natural sort order (queries without an explicit sort) does not match insertion order or order by id ascending.",
+          "Queries and writes Command Unsupported Fields find max min returnKey showRecordId tailable oplogReplay noCursorTimeout awaitData allowPartialResults collation allowDiskUsage let aggregate collation let insert (none) update Within an update statement: collation delete Within a delete statement: collation findAndModify collation let count collation distinct collation getMore comment killCursors (none) explain (none) Transactions and sessions Command Unsupported Fields commitTransaction (none) abortTransaction (none) endSessions (none) Administration Command Unsupported Fields Notes listDatabases authorizedDatabases filter must be empty if provided. listCollections (none) authorizedCollections must be false if provided. listIndexes (none) createIndexes (none) dropIndexes (none) createCollection timeseries expireAfterSeconds clusteredIndex changeStreamPreAndPostImages size max storageEngine validator validationLevel validationAction indexOptionDefaults viewOn pipeline collation encryptedFields This command is a no-op. capped must be false if provided.",
+          "Regular expression Regular expression options must be valid (\"i\", \"m\", \"s\", \"u\", or \"x\") and provided in alphabetical order without repeats."
+        ]
+      },
+      {
+        "title": "\"Indexes overview \\_|\\_ Firestore with MongoDB compatibility \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, the following indexes are two distinct indexes and not interchangeable: Collection Fields cities country (ascending), population (descending) cities population (descending), country (ascending), When creating an index to support a query, include the fields in the same order as your query.",
+          "Index definition and structure An index consists of the following: a collection ID a list of fields in the given collection an order, either ascending or descending, for each field An index can also enable the sparse , multikey , or unique options.",
+          "Index ordering The order and sort direction of each field uniquely defines the index."
+        ]
+      },
+      {
+        "title": "\"Supported features: 8.0 \\_|\\_ Firestore with MongoDB compatibility \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "source_id": "site-docs-root",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "Operator Supported $abs Yes $add Yes $ceil Yes $divide Yes $exp Yes $floor Yes $ln Yes $log Yes $log10 Yes $mod Yes $multiply Yes $pow Yes $round Yes $sqrt Yes $subtract Yes $trunc Yes Array operators Operator Supported $arrayElemAt Yes $arrayToObject Yes $concatArrays Yes $filter Yes $firstN Yes $in Yes $indexOfArray Yes $isArray Yes $lastN Yes $map Yes $maxN Yes $minN Yes $objectToArray Yes $range Yes $reduce Yes $reverseArray Yes $size Yes $slice Yes $sortArray Yes $zip Yes Boolean operators Operator Supported $and Yes $not Yes $or Yes Comparison operators Operator Supported $cmp Yes $eq Yes $gt Yes $gte Yes $lt Yes $lte Yes $ne Yes Conditional expression operators Operator Supported $cond Yes $ifNull Yes $switch Yes Data size operators Operator Supported $binarySize Yes $bsonSize Yes Date operators Operator Supported $dateAdd Yes $dateDiff Yes $dateFromParts Yes $dateFromString Yes $dateSubtract Yes $dateToParts Yes $dateToString Yes $dateTrunc Yes $dayOfMonth Yes $dayOfWeek Yes $dayOfYear Yes $hour Yes $isoDayOfWeek Yes $isoWeek Yes $isoWeekYear Yes $millisecond Yes $minute Yes $month Yes $second Yes $toDate Yes $week Yes $year Yes Timestamp operators Operator Supported $tsIncrement No $tsSecond No Miscellaneous operators Operator Supported $getField Yes $natural Yes (ascending) $rand Yes $sampleRate No $toHashedIndexKey No Literal expression operators Operator Supported $literal Yes Object operators Operator Supported $mergeObjects Yes $objectToArray Yes $setField No Set operators Operator Supported $allElementsTrue Yes $anyElementTrue Yes $setDifference Yes $setEquals Yes $setIntersection Yes $setIsSubset Yes $setUnion Yes Stage operators Operator Supported $addFields Yes $bucket Yes $bucketAuto No $changeStream No $collStats No $count Yes $currentOp No $documents Yes $facet Yes $geoNear No $graphLookup No $group Yes $indexStats No $limit Yes $listLocalSessions No $listSessions No $lookup Yes $match Yes $merge No $out No $planCacheStats No $project Yes $redact No $replaceRoot Yes $replaceWith Yes $sample Yes $set Yes $search No $setWindowFields No $skip Yes $sort Yes $sortByCount Yes $unionWith Yes $unset Yes $unwind Yes String operators Operator Supported $concat Yes $dateFromString Yes $dateToString Yes $indexOfBytes Yes $indexOfCP Yes $ltrim Yes $regexFind Yes $regexFindAll Yes $regexMatch Yes $replaceAll Yes $replaceOne Yes $rtrim Yes $split Yes $strcasecmp Yes $strLenBytes Yes $strLenCP Yes $substr Yes $substrBytes Yes $substrCP Yes $toLower Yes $toString Yes $toUpper Yes $trim Yes System variables Variable Supported $$CLUSTERTIME No $$CURRENT No $$DESCEND No $$KEEP No $$NOW Yes $$PRUNE No $$REMOVE Yes $$ROOT Yes Text operators Operator Supported $meta No Trigonometry operators Operator Supported $acos No $acosh No $asin No $asinh No $atan No $atan2 No $atanh No $cos No $cosh No $degreesToRadians No $radiansToDegrees No $sin No $sinh No $tan No $tanh No Type operators Operator Supported $convert Yes $isNumber Yes $toBool Yes $toDate Yes $toDecimal Yes $toDouble Yes $toInt Yes $toLong Yes $toObjectId Yes $toString Yes $type Yes Variable operators Operator Supported $let Yes Geospatial Firestore with MongoDB compatibility supports the following Geospatial operators.",
+          "Array operators Operator Supported $ Yes $[] Yes $[<identifier>] Yes $addToSet Yes $percentile Yes $pop Yes $pull Yes $pullAll Yes $push Yes Bitwise operators Operator Supported $bit Yes Field operators Operator Supported $currentDate Yes $inc Yes $max Yes $min Yes $mul Yes $rename Yes $set Yes $setOnInsert Yes $unset Yes Update modifiers Modifier Supported $each Yes $position Yes $slice Yes $sort Yes Aggregation pipeline operators Firestore with MongoDB compatibility supports the following aggregation pipeline operators.",
+          "Command Supported cloneCollectionAsCapped No collMod No collMod: expireAfterSeconds No convertToCapped No copydb No create Yes createIndex Yes createIndexes Yes createView No currentOp No drop No dropDatabase No To delete a database, see Delete a database . dropIndex Yes To delete indexes, see Manage indexes . dropIndexes No filemd5 No getAuditConfig No killCursors Yes killOp No listCollections Yes listDatabases Yes listIndexes Yes reIndex No renameCollection No setAuditConfig No Diagnostic commands Command Supported buildInfo Yes collStats No connectionStatus Yes connPoolStats No dataSize No dbHash No dbStats No explain Yes For behavior differences and limitations, see Query Explain features No hello Yes hostInfo Yes listCommands No profiler No serverStatus No top No whatsmyuri No Role management commands To manage database access, Firestore with MongoDB compatibility supports Identity and Access Management roles and permissions ."
+        ]
+      },
+      {
+        "title": "\"Query execution reference \\_|\\_ Firestore with MongoDB compatibility \\_\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 114,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For a schema of [k1, k2, k3] , a key ordering length of 0 means the scan can return in any order, 1 means order by k1, but rows with the same k1 value can come with any order, 3 returns documents in exact sorted order. • SequentialScan index: type=CollectionGroupIndex, id=CAE, keys=[user ASC, date placed ASC, key ASC] key ordering length: 3 keys: [user ASC, date placed ASC, key ASC] limit: 10 properties: Selection { a } ranges: / records returned: 1 records scanned: 1 UniqueScan Represents a scan of a static, sequential range of rows in storage with in-memory deduplication of rows. • UniqueScan index: type=CollectionGroupIndex, id=CAE, keys=[user ASC, date placed ASC, key ASC] keys: [user ASC, date placed ASC, key ASC] properties: Selection { a } ranges: / ----(-∞..+∞) records returned: 1 records scanned: 1 IndexSeek Represents a dynamic scan where the rows returned may be parametrized by runtime data and might not be along a single sequential range of the index, and multiple distinct scans may be performed to satisfy the query.",
+          "For example, when grouping by distinct values of a field while using an index on that field. • StreamAggregate keys: [foo ASC, bar ASC] properties: Selection { baz } aggregations: [$sum($foo 1) AS baz] MajorSort Performs a sort operation on a fixed set of properties.",
+          "Materializes all records in memory at once and returns the sorted values in order, the size of the sort set is limited by the query memory limit ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference"
+      ]
+    }
+  ]
+}

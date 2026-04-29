@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery GIS",
+  "feature_slug": "bigquery-gis",
+  "summary": "BigQuery GIS adds geospatial data types and functions for spatial analytics in BigQuery; BigQuery GIS adds geospatial data types and functions for spatial analytics in BigQuery.",
+  "extended_definition": "BigQuery GIS adds geospatial data types and functions for spatial analytics in BigQuery; BigQuery GIS adds geospatial data types and functions for spatial analytics in BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/geospatial-tutorial-hurricane",
+      "https://docs.cloud.google.com/bigquery/docs/gis-data",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Working with geospatial data \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/gis-data",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 187,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example: CREATE EXTERNAL TABLE mydataset . table1 OPTIONS ( format = \"NEWLINE DELIMITED JSON\" , json extension = 'GEOJSON' , uris = [ 'gs://mybucket/geofile.json' ] ); Loading GeoJSON geometry data Geospatial analytics supports loading individual GeoJSON geometry objects that are embedded as text strings in other file types.",
+          "Geospatial analytics adds additional points to the line where necessary so that the converted sequence of edges remains within 10 meters of the original geodesic line.",
+          "Geospatial analytics adds additional points to the line as necessary, so that the converted sequence of edges remains within 10 meters of the original line."
+        ]
+      },
+      {
+        "title": "\"Using geospatial analytics to plot a hurricane's path \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/geospatial-tutorial-hurricane",
+        "source_id": "site-docs-reference",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Objectives In this tutorial, you: Use a geospatial analytics function to convert latitude and longitude columns into geographical points Run a query that plots the path of a hurricane Visualize your results in BigQuery Visualize your results in BigQuery Geo Viz Costs BigQuery is a paid product and you will incur BigQuery usage in this tutorial.",
+          "Home Documentation Data analytics BigQuery Guides Send feedback Using geospatial analytics to plot a hurricane's path Stay organized with collections Save and categorize content based on your preferences.",
+          "To learn more about the geography functions you can use in geospatial analytics, see Geography functions in GoogleSQL ."
+        ]
+      },
+      {
+        "title": "Geography functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "GoogleSQL for BigQuery supports the following functions that can be used to analyze geographical data, determine spatial relationships between geographical features, and construct or manipulate GEOGRAPHY s.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback Geography functions Stay organized with collections Save and categorize content based on your preferences.",
+          "Raster functions ST REGIONSTATS Functions for analyzing geospatial rasters using geographies."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "geofile.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

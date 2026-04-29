@@ -1,0 +1,167 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:07.711Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai",
+  "feature_name": "Custom Document Extractor schema creation and annotation",
+  "feature_slug": "custom-document-extractor-schema-creation-and-annotation",
+  "summary": "Custom Document Extractor upgrades schema creation and annotation workflows.",
+  "extended_definition": "Custom Document Extractor upgrades schema creation and annotation workflows.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature",
+      "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+      "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+      "https://docs.cloud.google.com/document-ai/docs/handle-response"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Custom extractor mechanisms \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "source_id": "site-docs-root",
+        "final_score": 242,
+        "relevance": "",
+        "evidence_snippets": [
+          "For automated version upgrades, see Previous arrow back Custom extractor overview Next Automated schema extraction arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Custom extractor uses the label names you define and previous annotations to make it quicker and easier to label documents at scale with auto-labeling .",
+          "Custom extractor mechanisms You can create custom extractors that are specifically suited to your documents, and trained and evaluated with your data."
+        ]
+      },
+      {
+        "title": "Handle processing response \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "source_id": "site-docs-root-2",
+        "final_score": 234,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following parsers do follow it: Extract (Custom Extractor) Legacy Bank statement parser Expense parser Invoice Parser PaySlip parser W2 Parser Code samples The following code samples demonstrate how to send a processing request and then read and print the fields from a specialized processor to the terminal: Java For more information, see the Document AI Java API reference documentation .",
+          "The following code sample demonstrates how to configure specific entities for a foundation model Custom Document Extractor on a per-request basis and print the extracted entities: Python For more information, see the Document AI Python API reference documentation .",
+          "For more information, see Set up authentication for a local development environment . from typing import Optional , Sequence from google.api core.client options import ClientOptions from google.cloud import documentai TODO(developer): Uncomment these variables before running the sample. project id = \"YOUR PROJECT ID\" location = \"YOUR PROCESSOR LOCATION\" # Format is \"us\" or \"eu\" processor id = \"YOUR PROCESSOR ID\" # Create processor before running sample processor version = \"rc\" # Refer to https://cloud.google.com/document-ai/docs/manage-processor-versions for more information file path = \"/path/to/local/pdf\" mime type = \"application/pdf\" # Refer to https://cloud.google.com/document-ai/docs/file-types for supported file types def process document custom extractor sample ( project id : str , location : str , processor id : str , processor version : str , file path : str , mime type : str , ) - > None : Entities to extract from Foundation Model CDE properties = [ documentai ."
+        ]
+      },
+      {
+        "title": "\"Create, use, and manage a custom document classifier \\_|\\_ Document AI \\_\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "source_id": "site-docs-root",
+        "final_score": 220,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable the APIs Required roles To get the permissions that you need to create a custom classifier, ask your administrator to grant you the following IAM roles on your project: Document AI Administrator ( roles/documentai.admin ) Storage Admin ( roles/storage.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "In the Documents panel, you can find that one document has been assigned to the training set. (Optional) Import prelabeled data to the training and test sets If you're using v1.4, you must upload training and test sets to train the custom processor.",
+          "When complete, you find the documents on the Manage Dataset tab with the label applied. (Optional) Train the processor If you're using v1.4, you must train the custom processor on training and test sets of data."
+        ]
+      },
+      {
+        "title": "\"Custom extractor with generative AI \\_|\\_ Document AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature",
+        "source_id": "site-docs-root",
+        "final_score": 212,
+        "relevance": "",
+        "evidence_snippets": [
+          "Derived fields in the custom extractor Custom extractor supports derived fields in the following models: pretrained-foundation-model-v1.4-2025-02-05 as General Availability (GA) pretrained-foundation-model-v1.5-2025-05-05 as Preview pretrained-foundation-model-v1.5-pro-2025-06-20 as Preview You can enable these features in the console UI when creating or editing labels in your document schema.",
+          "Signature detection in custom extractor Document AI's custom extractor supports signature detection in custom extractor models pretrained-foundation-model-v1.4-2025-02-05 and pretrained-foundation-model-v1.5-2025-05-05 .",
+          "Home Documentation AI and ML Document AI Guides Send feedback Custom extractor with generative AI Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "core.client",
+      "documentai.admin",
+      "storage.admin",
+      "v1.4",
+      "v1.5"
+    ],
+    "missing_inventory_roles": [
+      "roles/documentai.admin",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature"
+      ]
+    }
+  ]
+}

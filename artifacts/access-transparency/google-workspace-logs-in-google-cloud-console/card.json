@@ -1,0 +1,146 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:40.890Z",
+  "source_step08_card": "data/step-08/current/products/access-transparency/card.json",
+  "product_name": "Access Transparency",
+  "product_slug": "access-transparency",
+  "feature_name": "Google Workspace logs in Google Cloud Console",
+  "feature_slug": "google-workspace-logs-in-google-cloud-console",
+  "summary": "Access Transparency logs for Google Workspace services can be viewed in the Google Cloud Console.",
+  "extended_definition": "Access Transparency logs for Google Workspace services can be viewed in the Google Cloud Console.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs",
+      "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs",
+      "https://docs.cloud.google.com/iam/docs/principal-identifiers"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Viewing Access Transparency logs for Google Workspace \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs",
+        "source_id": "site-docs-reference",
+        "final_score": 131,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "View Access Transparency logs for Google Workspace You can use the Logs Explorer in the Google Cloud console to retrieve, view, and analyze Access Transparency logs.",
+          "To view Access Transparency logs for Google Workspace using the Logs Explorer, do the following: Go to the Logs Explorer page in the Google Cloud console.",
+          "Sample Access Transparency log for Google Workspace The following sample is an example of the Access Transparency log for Google Workspace. { \"insertId\" : \"-6x8cuqc3rk\" , \"jsonPayload\" : { \"activityId\" : { \"uniqQualifier\" : \"1720950322606095479\" , \"timeUsec\" : \"1621441673703908\" }, \"@type\" : \"type.googleapis.com/ccc hosted reporting.ActivityProto\" , \"event\" : [ { \"status\" : { \"success\" : true }, \"eventType\" : \"GSUITE RESOURCE\" , \"parameter\" : [ { \"multiStrValue\" : [ \"GMAIL\" ], \"name\" : \"GSUITE PRODUCT NAME\" , }, { \"name\" : \"RESOURCE NAME\" , \"multiStrValue\" : [ \"//googleapis.com/gmail/users/owner@example.com\" ], }, { \"name\" : \"LOG ID\" , \"value\" : \"Qt8v90c0fAEy SyaOplDvJc\" , }, { \"multiStrValue\" : [ \"Google Initiated Service - For details, please refer to the documentation.\" ], \"name\" : \"JUSTIFICATIONS\" , }, { \"name\" : \"ACTOR HOME OFFICE\" , \"value\" : \"US\" , }, { \"value\" : \"owner@example.net\" , \"name\" : \"OWNER EMAIL\" , } ], \"eventName\" : \"ACCESS\" } ] }, \"resource\" : { \"type\" : \"organization\" , \"labels\" : { \"organization id\" : \"12345\" } }, \"timestamp\" : \"2021-05-19T16:27:53.703908Z\" , \"severity\" : \"NOTICE\" , \"logName\" : \"organizations/12345/logs/cloudaudit.googleapis.com%2Faccess transparency\" , \"receiveTimestamp\" : \"2021-05-19T16:28:52.867650088Z\" } For information about the event and parameters that can appear in the jsonPayload field of the Access Transparency logs generated when Google personnel access Google Workspace resources, see Access Transparency Activity Events ."
+        ]
+      },
+      {
+        "title": "Understanding and using Access Transparency logs \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs",
+        "source_id": "site-docs-reference",
+        "final_score": 89,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "What's next Learn how to view and understand Access Transparency logs for Google Workspace services .",
+          "Access Transparency logs are available in the Google Cloud console alongside your Cloud Audit Logs.",
+          "Sample Access Transparency log entry The following is an example of an Access Transparency log entry: { insertId : \"abcdefg12345\" jsonPayload : { @ type : \"type.googleapis.com/google.cloud.audit.TransparencyLog\" location : { principalOfficeCountry : \"US\" principalEmployingEntity : \"Google LLC\" principalPhysicalLocationCountry : \"CA\" } principalJobTitle : \"Engineering\" product : [ 0 : \"Cloud Storage\" ] reason : [ detail : \"Case number: bar123\" type : \"CUSTOMER INITIATED SUPPORT\" ] permissionDetails :[ 0 : { permissionType : \"DATA READ\" logAccessed : true } 1 : { permissionType : \"ADMIN READ\" } ] eventId : \"asdfg12345asdfg12345asdfg12345\" accesses : [ 0 : { methodName : \"GoogleInternal.Read\" resourceName : \"//googleapis.com/storage/buckets/ BUCKET NAME /objects/foo123\" } ] accessApprovals : [ 0 : \"projects/123/approvalRequests/abcdef12345\" ] } logName : \"projects/ PROJECT ID /logs/cloudaudit.googleapis.com %2F access transparency\" operation : { id : \"12345xyz\" } receiveTimestamp : \"2017-12-18T16:06:37.400577736Z\" resource : { labels : { project id : \"1234567890\" } type : \"project\" } severity : \"NOTICE\" timestamp : \"2017-12-18T16:06:24.660001Z\" } Log field descriptions Field Description insertId Unique identifier for the log. @type Access Transparency log identifier. principalOfficeCountry ISO 3166-1 alpha-2 country code of country in which the accessor has a permanent desk, ?? if location not available, or 3-character continent identifier where Google personnel are in a low-population country. principalEmployingEntity The entity that employs the Google personnel making the access (for example, Google LLC ). principalPhysicalLocationCountry ISO 3166-1 alpha-2 country code of country from which access was made, ?? if location not available, or 3-character continent identifier where Google personnel are in a low-population country. principalJobTitle The job family of the Google personnel making the access. product Customer's Google Cloud product that was accessed. reason:detail Details of the reason, for example, a support ticket ID. reason:type Access reason type (for example, CUSTOMER INITIATED SUPPORT) . permissionDetails Details about permissions linked to an access."
+        ]
+      },
+      {
+        "title": "\"Principal identifiers \\_|\\_ Identity and Access Management (IAM) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/iam/docs/principal-identifiers",
+        "source_id": "site-iam-reference",
+        "final_score": 48,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Service account serviceAccount: SA EMAIL ADDRESS Example: serviceAccount:my-service-account@my-project.iam.gserviceaccount.com Note : When granting access to a new service account in the Google Cloud console, omit the serviceAccount: prefix.",
+          "Principal type Identifier Google Account user: USER EMAIL ADDRESS Example: user:alex@example.com Note : When granting access to a new Google Account in the Google Cloud console, omit the user: prefix.",
+          "Google group group: GROUP EMAIL ADDRESS Example: group:my-group@example.com Note : When granting access to a new Google group in the Google Cloud console, omit the group: prefix."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "example.com",
+      "example.net",
+      "googleapis.com",
+      "project.iam.gserviceaccount.com",
+      "reporting.ActivityProto",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs",
+        "https://docs.cloud.google.com/iam/docs/principal-identifiers"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs",
+        "https://docs.cloud.google.com/iam/docs/principal-identifiers"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs",
+        "https://docs.cloud.google.com/iam/docs/principal-identifiers"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs",
+        "https://docs.cloud.google.com/iam/docs/principal-identifiers"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs",
+        "https://docs.cloud.google.com/iam/docs/principal-identifiers"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs",
+        "https://docs.cloud.google.com/iam/docs/principal-identifiers"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs",
+        "https://docs.cloud.google.com/iam/docs/principal-identifiers"
+      ]
+    }
+  ]
+}

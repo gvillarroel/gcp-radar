@@ -1,0 +1,128 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:15.403Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "kubernetes.io/node_pool/multi_host/available",
+  "feature_slug": "kubernetes-io-node-pool-multi-host-available",
+  "summary": "This metric reports whether all nodes in a multi-host TPU node pool are available.",
+  "extended_definition": "This metric reports whether all nodes in a multi-host TPU node pool are available.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 304,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "See https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/#eviction-signals EvictionMinimumReclaim JSON representation { \"memoryAvailable\" : string , \"nodefsAvailable\" : string , \"nodefsInodesFree\" : string , \"imagefsAvailable\" : string , \"imagefsInodesFree\" : string , \"pidAvailable\" : string } Fields memoryAvailable string Optional.",
+          "See https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/#eviction-signals EvictionGracePeriod JSON representation { \"memoryAvailable\" : string , \"nodefsAvailable\" : string , \"nodefsInodesFree\" : string , \"imagefsAvailable\" : string , \"imagefsInodesFree\" : string , \"pidAvailable\" : string } Fields memoryAvailable string Optional.",
+          "For more information, including usage and the valid values, see: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/ sandboxConfig object ( SandboxConfig ) Sandbox configuration for this node. nodeGroup string Setting this field will assign instances of this pool to run on the specified node group."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "source_id": "site-api-reference",
+        "final_score": 304,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "See https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/#eviction-signals EvictionMinimumReclaim JSON representation { \"memoryAvailable\" : string , \"nodefsAvailable\" : string , \"nodefsInodesFree\" : string , \"imagefsAvailable\" : string , \"imagefsInodesFree\" : string , \"pidAvailable\" : string } Fields memoryAvailable string Optional.",
+          "See https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/#eviction-signals EvictionGracePeriod JSON representation { \"memoryAvailable\" : string , \"nodefsAvailable\" : string , \"nodefsInodesFree\" : string , \"imagefsAvailable\" : string , \"imagefsInodesFree\" : string , \"pidAvailable\" : string } Fields memoryAvailable string Optional.",
+          "For more information, including usage and the valid values, see: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/ sandboxConfig object ( SandboxConfig ) Sandbox configuration for this node. nodeGroup string Setting this field will assign instances of this pool to run on the specified node group."
+        ]
+      },
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 304,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following versions of GKE or later have been updated to address the providerID issue: 1.33.1-gke.1386000 1.32.4-gke.1533000 1.31.9-gke.1119000 1.30.12-gke.1208000 Optionally, if you cannot upgrade, implement the following validating admission policy on your cluster to mitigate the providerID issue: apiVersion : admissionregistration . k8s . io / v1 kind : ValidatingAdmissionPolicy metadata : name : validate - node - providerid spec : failurePolicy : Fail matchConstraints : resourceRules : - apiGroups : [ \"\" ] apiVersions : [ \"v1\" ] operations : [ \"CREATE\", \"UPDATE\" ] resources : [ \"nodes\" ] matchConditions : - name : \"has-providerid\" expression : \"has(object.spec.providerID)\" validations : - expression : \"object.spec.providerID == '' object.spec.providerID.endsWith('/' + object.metadata.name)\" message : \"node.spec.providerID must match the node name\" --- apiVersion : admissionregistration . k8s . io / v1 kind : ValidatingAdmissionPolicyBinding metadata : name : validate - node - providerid - binding spec : policyName : validate - node - providerid validationActions : [ Deny ] Use node restricted labels when isolating workloads to specific nodes as a security control If you are using labels for node isolation, as described in Kubernetes documentation , use node restricted labels (for example, labels of the form node-restriction.kubernetes.io/example-constraint ) in node affinity and node selector terms used for workload isolation.",
+          "Check if your GKE clusters are using ingress-nginx by using one of the following commands: Check an individual cluster: kubectl get pods --all-namespaces --selector app.kubernetes.io/name = ingress-nginx Check multiple clusters at once using a Cloud Asset Inventory resource search query : gcloud asset search-all-resources \\ --scope = 'organizations/ ORGANIZATION ID ' \\ --asset-types = 'k8s.io/Pod' \\ --query = 'labels.\"app.kubernetes.io/name\"=\"ingress-nginx\"' Replace ORGANIZATION ID with your organization resource ID.",
+          "When implementing node isolation as a security control, you must use labels and label selectors with the node-restriction.kubernetes.io/ prefix to prevent compromised nodes from manipulating scheduling behavior."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.kubernetes.io",
+      "container.googleapis.com",
+      "gke.1119000",
+      "gke.1208000",
+      "gke.1386000",
+      "gke.1533000",
+      "k8s.io",
+      "kubernetes.io",
+      "node.spec.providerID",
+      "object.metadata.name",
+      "object.spec.providerID",
+      "object.spec.providerID.endsWith",
+      "restriction.kubernetes.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    }
+  ]
+}

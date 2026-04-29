@@ -1,0 +1,176 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:26.739Z",
+  "source_step08_card": "data/step-08/current/products/retail-api/card.json",
+  "product_name": "Retail API",
+  "product_slug": "retail-api",
+  "feature_name": "Retail Search",
+  "feature_slug": "retail-search",
+  "summary": "The Retail Search product capability became generally available.",
+  "extended_definition": "The Retail Search product capability became generally available.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/retail/docs/configs",
+      "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+      "https://docs.cloud.google.com/retail/docs/conversational-filtering",
+      "https://docs.cloud.google.com/retail/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About serving configs \\_|\\_ Vertex AI Search for commerce \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/retail/docs/configs",
+        "source_id": "site-docs-reference",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If a random serving config id is placed as part of the search request, search will default to essentially an empty or non-configured serving control, allowing Vertex AI Search for commerce to still work with default search capability.",
+          "Generally, diversification reduces the likelihood that similar products are shown in a recommendation panel, at the risk of removing some good recommendations.",
+          "Serving configurations are available as of Recommendations AI v2 and Retail Search v2alpha."
+        ]
+      },
+      {
+        "title": "\"Conversational Commerce agent developer's guide \\_|\\_ Vertex AI Search for\\",
+        "url": "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "HTTP method and endpoint POST h tt ps : //retail.googleapis.com/v2/{placement=projects/ /locations/ /catalogs/ /servingConfigs/ }:search Core product Search API request: Initial query { \"placement\" : \"projects/YOUR PROJECT ID/locations/global/catalogs/default catalog/servingConfigs/default search\" , // Or if using legacy placements: // \"placement\": \"projects/YOUR PROJECT ID/locations/global/catalogs/default catalog/placements/default search\", \"query\" : \"Help me plan a party\" , // This is the original user query \"visitorId\" : \"your visitor id\" , \"branch\" : \"projects/YOUR PROJECT ID/locations/global/catalogs/default catalog/branches/default branch\" , \"pageSize\" : 20 , // Optional: Number of results to return per page \"filter\" : \"categories:(\\\"Party Supplies\\\" OR \\\"Decorations\\\" OR \\\"Food & Drink\\\")\" , // Mirroring the filter from the Conversational Commerce API \"orderBy\" : \"relevance DESC\" , // Optional \"userInfo\" : { // Optional: User information for enhanced personalization, should mirror Conversational Commerce API // \"userId\": \"user123\", \"userAgent\": \"Chrome/120.0\" }, \"searchMode\" : \"PRODUCT SEARCH\" // Typically for product searches } placement (Required) : The resource name of the Retail Search serving config or legacy placement.",
+          "This early detection of intent and immediate availability of search refinements allows your model to make prompt decisions on how to handle your user's query and how to manage your user's experience concerning latency from LLM responses: For query types that don't expect a conversational text response, such as SIMPLE PRODUCT SEARCH , RETAIL IRRELEVANT , BLOCKLISTED , QUERY TYPE UNSPECIFIED , ORDER SUPPORT , DEALS AND COUPONS , STORE RELEVANT : Because query types are in the first chunk, your system knows immediately that no LLM answer is coming.",
+          "The diagram shows how user events, product catalog data, and operational logs are processed, transformed, and integrated into a generative AI index and Retail Adapter service to handle search operations and fulfill user intents to return search results."
+        ]
+      },
+      {
+        "title": "\"Conversational product filtering overview \\_|\\_ Vertex AI Search for commerce\\",
+        "url": "https://docs.cloud.google.com/retail/docs/conversational-filtering",
+        "source_id": "site-docs-root",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Business use case The conversational product filtering capability in guided search is specifically designed to address broad, ambiguous or very nuanced search queries.",
+          "Edit generative questions Conversational product filtering encourages a human-in-the-loop interaction with the generative AI questions by allowing retailers to preliminarily edit, overwrite, or deselect AI-generated questions according to their preferences, based on the uploaded catalog.",
+          "When a site user performs a broad search (like coffee table or red dress) that returns thousands of results, conversational product filtering intelligently prompts them with follow-up questions to quickly narrow down their options."
+        ]
+      },
+      {
+        "title": "Vertex AI Search for commerce API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/retail/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v2beta.projects REST Resource: v2beta.projects.locations.catalogs REST Resource: v2beta.projects.locations.catalogs.attributesConfig REST Resource: v2beta.projects.locations.catalogs.branches.operations REST Resource: v2beta.projects.locations.catalogs.branches.products REST Resource: v2beta.projects.locations.catalogs.completionData REST Resource: v2beta.projects.locations.catalogs.controls REST Resource: v2beta.projects.locations.catalogs.generativeQuestion REST Resource: v2beta.projects.locations.catalogs.generativeQuestions REST Resource: v2beta.projects.locations.catalogs.models REST Resource: v2beta.projects.locations.catalogs.operations REST Resource: v2beta.projects.locations.catalogs.placements REST Resource: v2beta.projects.locations.catalogs.servingConfigs REST Resource: v2beta.projects.locations.catalogs.userEvents REST Resource: v2beta.projects.locations.operations REST Resource: v2beta.projects.operations REST Resource: v2alpha.projects REST Resource: v2alpha.projects.locations.catalogs REST Resource: v2alpha.projects.locations.catalogs.attributesConfig REST Resource: v2alpha.projects.locations.catalogs.branches REST Resource: v2alpha.projects.locations.catalogs.branches.operations REST Resource: v2alpha.projects.locations.catalogs.branches.places.operations REST Resource: v2alpha.projects.locations.catalogs.branches.products REST Resource: v2alpha.projects.locations.catalogs.completionData REST Resource: v2alpha.projects.locations.catalogs.controls REST Resource: v2alpha.projects.locations.catalogs.generativeQuestion REST Resource: v2alpha.projects.locations.catalogs.generativeQuestions REST Resource: v2alpha.projects.locations.catalogs.merchantCenterAccountLinks REST Resource: v2alpha.projects.locations.catalogs.models REST Resource: v2alpha.projects.locations.catalogs.operations REST Resource: v2alpha.projects.locations.catalogs.placements REST Resource: v2alpha.projects.locations.catalogs.servingConfigs REST Resource: v2alpha.projects.locations.catalogs.userEvents REST Resource: v2alpha.projects.locations.operations REST Resource: v2alpha.projects.operations REST Resource: v2alpha.projects.retailProject REST Resource: v2.projects.locations.catalogs REST Resource: v2.projects.locations.catalogs.attributesConfig REST Resource: v2.projects.locations.catalogs.branches.operations REST Resource: v2.projects.locations.catalogs.branches.products REST Resource: v2.projects.locations.catalogs.completionData REST Resource: v2.projects.locations.catalogs.controls REST Resource: v2.projects.locations.catalogs.generativeQuestion REST Resource: v2.projects.locations.catalogs.generativeQuestions REST Resource: v2.projects.locations.catalogs.models REST Resource: v2.projects.locations.catalogs.operations REST Resource: v2.projects.locations.catalogs.placements REST Resource: v2.projects.locations.catalogs.servingConfigs REST Resource: v2.projects.locations.catalogs.userEvents REST Resource: v2.projects.locations.operations REST Resource: v2.projects.operations Service: retail.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "REST Resource: v2alpha.projects Methods enrollSolution POST /v2alpha/{project=projects/ }:enrollSolution The method enrolls a solution of type Retail Search into a project. getAlertConfig GET /v2alpha/{name=projects/ /alertConfig} Get the AlertConfig of the requested project. getLoggingConfig GET /v2alpha/{name=projects/ /loggingConfig} Gets the LoggingConfig of the requested project. getRetailProject GET /v2alpha/{name=projects/ /retailProject} Gets the project. listEnrolledSolutions GET /v2alpha/{parent=projects/ }:enrolledSolutions Lists all the retail API solutions the project has enrolled. updateAlertConfig PATCH /v2alpha/{alertConfig.name=projects/ /alertConfig} Update the alert config of the requested project. updateLoggingConfig PATCH /v2alpha/{loggingConfig.name=projects/ /loggingConfig} Updates the LoggingConfig of the requested project.",
+          "REST Resource: v2alpha.projects.locations.catalogs Methods completeQuery GET /v2alpha/{catalog=projects/ /locations/ /catalogs/ }:completeQuery Completes the specified prefix with keyword suggestions. exportAnalyticsMetrics POST /v2alpha/{catalog=projects/ /locations/ /catalogs/ }:exportAnalyticsMetrics Exports analytics metrics. getAttributesConfig GET /v2alpha/{name=projects/ /locations/ /catalogs/ /attributesConfig} Gets an AttributesConfig . getCompletionConfig GET /v2alpha/{name=projects/ /locations/ /catalogs/ /completionConfig} Gets a CompletionConfig . getConversationalSearchCustomizationConfig GET /v2alpha/{name=projects/ /locations/ /catalogs/ }/conversationalSearchCustomizationConfig Returns the conversational search customization config for a given catalog. getDefaultBranch GET /v2alpha/{catalog=projects/ /locations/ /catalogs/ }:getDefaultBranch Get which branch is currently default branch set by CatalogService.SetDefaultBranch method under a specified parent catalog. getGenerativeQuestionFeature GET /v2alpha/{catalog=projects/ /locations/ /catalogs/ }/generativeQuestionFeature Manages overal generative question feature state -- enables toggling feature on and off. list GET /v2alpha/{parent=projects/ /locations/ }/catalogs Lists all the Catalog s associated with the project. patch PATCH /v2alpha/{catalog.name=projects/ /locations/ /catalogs/ } Updates the Catalog s. setDefaultBranch POST /v2alpha/{catalog=projects/ /locations/ /catalogs/ }:setDefaultBranch Set a specified branch id as default branch. updateAttributesConfig PATCH /v2alpha/{attributesConfig.name=projects/ /locations/ /catalogs/ /attributesConfig} Updates the AttributesConfig . updateCompletionConfig PATCH /v2alpha/{completionConfig.name=projects/ /locations/ /catalogs/ /completionConfig} Updates the CompletionConfig s. updateConversationalSearchCustomizationConfig PATCH /v2alpha/{conversationalSearchCustomizationConfig.catalog=projects/ /locations/ /catalogs/ }/conversationalSearchCustomizationConfig Updates the conversational search customization config for a given catalog. updateGenerativeQuestion PATCH /v2alpha/{generativeQuestionConfig.catalog=projects/ /locations/ /catalogs/ }/generativeQuestion Allows management of individual questions. updateGenerativeQuestionFeature PATCH /v2alpha/{generativeQuestionsFeatureConfig.catalog=projects/ /locations/ /catalogs/ }/generativeQuestionFeature Manages overal generative question feature state -- enables toggling feature on and off."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "catalog.name",
+      "retail.googleapis.com",
+      "v2.projects.locations.catalogs",
+      "v2.projects.locations.catalogs.attributesConfig",
+      "v2.projects.locations.catalogs.branches.operations",
+      "v2.projects.locations.catalogs.branches.products",
+      "v2.projects.locations.catalogs.completionData",
+      "v2.projects.locations.catalogs.controls",
+      "v2.projects.locations.catalogs.generativeQuestion",
+      "v2.projects.locations.catalogs.generativeQuestions",
+      "v2.projects.locations.catalogs.models",
+      "v2.projects.locations.catalogs.operations",
+      "v2.projects.locations.catalogs.placements",
+      "v2.projects.locations.catalogs.servingConfigs",
+      "v2.projects.locations.catalogs.userEvents",
+      "v2.projects.locations.operations",
+      "v2.projects.operations",
+      "v2alpha.projects",
+      "v2alpha.projects.locations.catalogs",
+      "v2alpha.projects.locations.catalogs.attributesConfig",
+      "v2alpha.projects.locations.catalogs.branches",
+      "v2alpha.projects.locations.catalogs.branches.operations",
+      "v2alpha.projects.locations.catalogs.branches.places.operations",
+      "v2alpha.projects.locations.catalogs.branches.products",
+      "v2alpha.projects.locations.catalogs.completionData",
+      "v2alpha.projects.locations.catalogs.controls",
+      "v2alpha.projects.locations.catalogs.generativeQuestion",
+      "v2alpha.projects.locations.catalogs.generativeQuestions",
+      "v2alpha.projects.locations.catalogs.merchantCenterAccountLinks",
+      "v2alpha.projects.locations.catalogs.models",
+      "v2alpha.projects.locations.catalogs.operations",
+      "v2alpha.projects.locations.catalogs.placements",
+      "v2alpha.projects.locations.catalogs.servingConfigs",
+      "v2alpha.projects.locations.catalogs.userEvents",
+      "v2alpha.projects.locations.operations",
+      "v2alpha.projects.operations",
+      "v2alpha.projects.retailProject",
+      "v2beta.projects",
+      "v2beta.projects.locations.catalogs",
+      "v2beta.projects.locations.catalogs.attributesConfig",
+      "v2beta.projects.locations.catalogs.branches.operations",
+      "v2beta.projects.locations.catalogs.branches.products",
+      "v2beta.projects.locations.catalogs.completionData",
+      "v2beta.projects.locations.catalogs.controls",
+      "v2beta.projects.locations.catalogs.generativeQuestion",
+      "v2beta.projects.locations.catalogs.generativeQuestions",
+      "v2beta.projects.locations.catalogs.models",
+      "v2beta.projects.locations.catalogs.operations",
+      "v2beta.projects.locations.catalogs.placements",
+      "v2beta.projects.locations.catalogs.servingConfigs",
+      "v2beta.projects.locations.catalogs.userEvents",
+      "v2beta.projects.locations.operations",
+      "v2beta.projects.operations"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/configs",
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering",
+        "https://docs.cloud.google.com/retail/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/configs",
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering",
+        "https://docs.cloud.google.com/retail/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/configs",
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering",
+        "https://docs.cloud.google.com/retail/docs/reference/rest"
+      ]
+    }
+  ]
+}

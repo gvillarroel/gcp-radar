@@ -1,0 +1,137 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:53.250Z",
+  "source_step08_card": "data/step-08/current/products/cloud-source-repositories/card.json",
+  "product_name": "Cloud Source Repositories",
+  "product_slug": "cloud-source-repositories",
+  "feature_name": "Repository mirroring from GitHub and Bitbucket",
+  "feature_slug": "repository-mirroring-from-github-and-bitbucket",
+  "summary": "Cloud Source Repositories can mirror repositories from GitHub and Bitbucket through the beta user interface.",
+  "extended_definition": "Cloud Source Repositories can mirror repositories from GitHub and Bitbucket through the beta user interface.",
+  "lifecycle": {
+    "latest_feature_date": "2018-08-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/source-repositories/docs/mirroring-a-bitbucket-repository",
+      "https://docs.cloud.google.com/source-repositories/docs/mirroring-a-github-repository",
+      "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository",
+      "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Mirroring a Bitbucket repository \\_|\\_ Cloud Source Repositories \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/source-repositories/docs/mirroring-a-bitbucket-repository",
+        "source_id": "site-docs-root",
+        "final_score": 332,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you are mirroring your Bitbucket repository to Cloud Source Repositories to integrate with Cloud Build and do not need any other Cloud Source Repositories features, follow the Cloud Build instructions on building repositories from Bitbucket Cloud instead.",
+          "Home Documentation Application development Cloud Source Repositories Guides Send feedback Mirroring a Bitbucket repository Stay organized with collections Save and categorize content based on your preferences.",
+          "Only Bitbucket Cloud and GitHub Cloud repositories can be mirrorred to Cloud Source Repositories; self-hosted Bitbucket and GitHub mirroring are not supported."
+        ]
+      },
+      {
+        "title": "\"Mirroring a GitHub repository \\_|\\_ Cloud Source Repositories \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/source-repositories/docs/mirroring-a-github-repository",
+        "source_id": "site-docs-root",
+        "final_score": 324,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you are mirroring your GitHub repository to Cloud Source Repositories to integrate with Cloud Build and do not need any other Cloud Source Repositories features, follow the Cloud Build instructions on building repositories from GitHub instead.",
+          "Home Documentation Application development Cloud Source Repositories Guides Send feedback Mirroring a GitHub repository Stay organized with collections Save and categorize content based on your preferences.",
+          "Only Bitbucket Cloud and GitHub Cloud repositories can be mirrored to Cloud Source Repositories; self-hosted Bitbucket and GitHub mirroring are not supported."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.repos \\_|\\_ Cloud Source Repositories \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos",
+        "source_id": "site-api-reference",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Removing this webhook from the other hosting service will stop Google Cloud Source Repositories from receiving notifications, and thereby disabling mirroring. deployKeyId string ID of the SSH deploy key at the other hosting service.",
+          "MirrorConfig Configuration to automatically mirror a repository from another hosting service, for example GitHub or Bitbucket.",
+          "Size is only returned by repos.get. url string URL to clone the repository from Google Cloud Source Repositories."
+        ]
+      },
+      {
+        "title": "\"Pushing code from an existing repository \\_|\\_ Cloud Source Repositories\\",
+        "url": "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository",
+        "source_id": "site-docs-root",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Application development Cloud Source Repositories Guides Send feedback Pushing code from an existing repository Stay organized with collections Save and categorize content based on your preferences.",
+          "This topic describes how to push code from an existing repository on your local machine to Cloud Source Repositories.",
+          "Push to a Google Cloud repository To push from your local Git repository to a Google Cloud repository, enter the following command: git push google master Pull from a Google Cloud repository To pull from a Google Cloud repository to your local Git repository, enter the following command: git pull google master View the commit history of a Google Cloud repository To view the commit history, enter the following command: git log google/master What's next After you push your local repository to your local machine, you can: Learn from your code's history ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "credential.helper",
+      "gcloud.cmd",
+      "gcloud.sh",
+      "projects.repos",
+      "repos.get"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/mirroring-a-bitbucket-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/mirroring-a-github-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos",
+        "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/mirroring-a-bitbucket-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/mirroring-a-github-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos",
+        "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/mirroring-a-bitbucket-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/mirroring-a-github-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos",
+        "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/mirroring-a-bitbucket-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/mirroring-a-github-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos",
+        "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository"
+      ]
+    }
+  ]
+}

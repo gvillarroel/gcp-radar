@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:33.557Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Immutable internal ranges",
+  "feature_slug": "immutable-internal-ranges",
+  "summary": "Adds internal ranges that cannot be edited after creation, except for description changes; Introduces internal ranges that are read-only after creation except for updating the description.",
+  "extended_definition": "Adds internal ranges that cannot be edited after creation, except for description changes; Introduces internal ranges that are read-only after creation except for updating the description.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/alias-ip",
+      "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+      "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+      "https://docs.cloud.google.com/vpc/docs/routes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure alias IP ranges \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "source_id": "site-docs-root-2",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks { \"ipCidrRange\": \" PRIMARY IP RANGE \", \"network\": \" NETWORK URL \", \"name\": \" SUBNET NAME \", \"secondaryIpRanges\": [ { \"rangeName\": \" SECONDARY RANGE NAME 1 \", \"ipCidrRange\": \" SECONDARY IP RANGE 1 \" }, { \"rangeName\": \" SECONDARY RANGE NAME 2 \", \"ipCidrRange\": \" SECONDARY IP RANGE 2 \" }, ...] } Replace the following: PROJECT ID : the ID of the project that contains the VPC network where the subnet is to be created.",
+          "If necessary, add firewall rules to allow pinging an alias IP range: gcloud compute firewall-rules create FIREWALL NAME1 \\ --network NETWORK NAME \\ --priority 0 \\ --source-ranges ALIAS IP \\ --allow icmp gcloud compute firewall-rules create FIREWALL NAME2 \\ --network NETWORK NAME \\ --priority 0 \\ --direction out \\ --destination-ranges ALIAS IP \\ --allow icmp Ensure that the VM recognizes the IP alias ranges as being local.",
+          "Make sure that you add the lines above the line reading Lines below this comment will be discarded . [Unit] After=google-guest-agent.service My secondary IP range isn't listed Secondary IP ranges aren't listed as regular subnets."
+        ]
+      },
+      {
+        "title": "Routes \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/routes",
+        "source_id": "site-docs-root",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "If your model isn't empty, all routes in your model have these characteristics: Identical preference category Identical priorities Next hops that haven't been disregarded Next hops in one VPC network Identical destinations Route types that aren't policy-based or subnet routes Send or drop packet : Depending on the number of routes remaining in the route model, Google Cloud sends or drops the packet: If your route model contains a single route, Google Cloud sends the packet to the next hop, with the following exception: Next hop internal passthrough Network Load Balancers that don't have global access enabled aren't reachable from regions outside of the load balancer's region.",
+          "This path can be used by the following: VMs with /96 external IPv6 address ranges assigned to their network interfaces, when the packets they send have sources in that /96 address range.",
+          "The following routes have next hops in regions different from the hybrid subnet's region, so they always result in packet drops: Dynamic routes learned by Cloud Routers in regions different from the hybrid subnet route's region, even if the dynamic routing mode of the VPC network that contains the Cloud Routers is global Static routes that have next hops in regions different from the hybrid subnet's region, including all internal passthrough Network Load Balancers in different regions even if they have global access enabled What's next To create and manage routes, see Use routes ."
+        ]
+      },
+      {
+        "title": "Alias IP ranges \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "source_id": "site-docs-root-2",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "To create the configuration illustrated above: Create a subnet with a CIDR range 10.128.0.0/16, from which VM IP addresses are allocated, and a secondary CIDR range 172.16.0.0/20 for the containers’ exclusive use, which will be configured as alias IP ranges in the VM that is hosting them: gcloud compute networks subnets create subnet-a \\ --network network-a \\ --range 10.128.0.0/16 \\ --secondary-range container-range=172.16.0.0/20 Create VMs with a primary IP from range 10.128.0.0/16 and an alias IP range 172.16.0.0/24 from the secondary CIDR range 172.16.0.0/20 for the containers in that VM to use: gcloud compute instances create vm1 [...] \\ --network-interface subnet=subnet-a,aliases=container-range:172.16.0.0/24 gcloud compute instances create vm2 [...] \\ --network-interface subnet=subnet-a,aliases=container-range:172.16.1.0/24 Container IP addresses are configured in Google Cloud as alias IP addresses.",
+          "For more information, see: Next hop instance internal IP address ( next-hop-address ) Behavior when instances are stopped or deleted VPC Network Peering VPC Network Peering allows you to peer two VPC networks so that the VMs in the two networks can communicate via internal, private IP addresses.",
+          "Example: Configure containers with alias IP ranges Using alias IP ranges, container IP addresses can be allocated from a secondary CIDR range and configured as alias IP addresses in the VM that is hosting the container."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create and manage VPC networks \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "source_id": "site-docs-root",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "The per network limits describe the maximum number of secondary ranges that you can define for each subnet. --enable-flow-logs : Enables VPC Flow Logs in the subnet at creation time. --enable-private-ip-google-access : Enables Private Google Access in the subnet at creation time. --purpose : Enables you to specify the purpose of the subnet . --role : Enables you to specify a role (active or backup) for a proxy-only subnet .",
+          "Add a subnet that uses an IPv6 BYOIP address range Bring your own IP addresses (BYOIP) lets you import global unicast address (GUA) ranges that you can assign to a subnet's internal or external IPv6 address range.",
+          "To list all subnets in a region and include their IP address utilization, make the following GET request: GET https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks?views=WITH UTILIZATION Describe a subnet You can view the details of an existing subnet—such as its primary IPv4 ranges, secondary IP ranges, IPv6 ranges, IP address utilization, and region—by following the steps in this section."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "agent.service",
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/routes",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/routes",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/routes",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/routes",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/routes",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/routes",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks"
+      ]
+    }
+  ]
+}

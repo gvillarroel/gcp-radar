@@ -1,0 +1,241 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.653Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-marketplace/card.json",
+  "product_name": "Google SecOps Marketplace",
+  "product_slug": "google-secops-marketplace",
+  "feature_name": "Revoke User Sessions action",
+  "feature_slug": "revoke-user-sessions-action",
+  "summary": "Adds an action that revokes a user's sessions in Google Workspace.",
+  "extended_definition": "Adds an action that revokes a user's sessions in Google Workspace.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Integrate Amazon EC2 with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "source_id": "site-docs-root",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "Action Results Script Result Script result name Value options Example is success True/False is success:False JSON Result \"EC2 Security Groups\" : [ { \"Description\" : \"launch-wizard-2 created 2021-01-30T19:37:11.523+02:00\" , \"GroupName\" : \"launch-wizard-2\" , \"IpPermissions\" :[ { \"FromPort\" : 22 , \"IpProtocol\" : \"tcp\" , \"IpRanges\" :[ { \"CidrIp\" : \"192.0.2.0/0\" } ], \"Ipv6Ranges\" :[ ], \"PrefixListIds\" :[ ], \"ToPort\" : 22 , \"UserIdGroupPairs\" :[ ] } ], \"OwnerId\" : \"582302349248\" , \"GroupId\" : \"sg-001700ccddac4189a\" , \"IpPermissionsEgress\" :[ { \"IpProtocol\" : \"-1\" , \"IpRanges\" :[ { \"CidrIp\" : \"192.0.2.0/0\" } ], \"Ipv6Ranges\" :[ ], \"PrefixListIds\" :[ ], \"UserIdGroupPairs\" :[ ] } ], \"Tags\" :[ { \"Key\" : \"Team\" , \"Value\" : \"A-Team\" }, { \"Key\" : \"Owner\" , \"Value\" : \"Example\" } ], \"VpcId\" : \"vpc- ID \" } ] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If successfully listed groups(is success = true): \"Successfully described Amazon EC2 security groups.\" If no available values(is success = false): \"No security groups were found in Amazon EC2\" The action should fail and stop a playbook execution: if fatal error, invalid group ID/Name, SDK error, like wrong credentials, no connection to server, other: \"Error executing action \"List Security Groups\".",
+          "For more details please check the logs.` The action should fail and stop a playbook execution: if fatal error, SDK error, like wrong credentials, no connection to server, other: \"Error executing action \"Revoke Security Group Ingress\".",
+          "The action should fail and stop a playbook execution: if fatal error, SDK error, like wrong credentials, no connection to server, other: \"Error executing action \"Revoke Security Group Egress\"."
+        ]
+      },
+      {
+        "title": "\"AWS Identity and Access Management (IAM) \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "source_id": "site-docs-root",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result [{ \"Arn\" : \"arn:aws:iam::582302349248:user/ziv\" , \"CreateDate\" : \"2020-12-03T12:12:20\" , \"Path\" : \"/\" , \"UserId\" : \"AIDAYPE7MW7AFMHK4WCHS\" , \"UserName\" : \"ziv\" }] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print \"Successfully listed available users in AWS IAM\" If no data available: Print \"No users found in AWS IAM\" The action should fail and stop a playbook execution: if not successful (wrong credentials, no connection to server, other server error, if max>10000): print \"Error executing action 'List Users'.",
+          "Create Users(Dev need to be able to create their data in the company bucket) Create Groups (Developers as a group) Create Policies (John need to assign permissions to the users/group) Attach Policies (John attaches a policy to the group that lets devs read,write,list objects in AWS S3) Add/remove users from group (One of the devs becomes a manager, access should be changed) Before you begin This integration provides native platform capabilities and doesn't require external third-party API keys or credentials for authentication.",
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print \"Successfully added the user <User name> to the IAM group: <Group name>\" If error - Group not exist or/and User not exist: group not exist: Print \"Could not add <UserName> to <Group name>."
+        ]
+      },
+      {
+        "title": "\"Integrate Recommender with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "source_id": "site-docs-root-2",
+        "final_score": 135,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action outputs Action output type Case wall attachment N/A Case wall link N/A Case wall table N/A Enrichment table N/A Entity insight N/A Insight N/A JSON result Available OOTB widget N/A Script result Available Script result Script result name Value is success True/False JSON result { \"applied recommendations\": [ { \"name\": \"projects/ PROJECT ID /locations/global/recommenders/google.iam.policy.Recommender/recommendations/217d3019-bae5-4a52-9968-787fdd546a53\", \"description\": \"Replace the current role with a smaller role to cover the permissions needed.\", \"lastRefreshTime\": \"2023-07-28T07:00:00Z\", \"primaryImpact\": { \"category\": \"SECURITY\", \"securityProjection\": { \"details\": { \"revokedIamPermissionsCount\": 610 } } }, \"content\": { \"operationGroups\": [ { \"operations\": [ { \"action\": \"add\", \"resourceType\": \"cloudresourcemanager.googleapis.com/Project\", \"resource\": \"//cloudresourcemanager.googleapis.com/projects/ PROJECT ID \", \"path\": \"/iamPolicy/bindings/ /members/-\", \"value\": \" USER ID @example.com\", \"pathFilters\": { \"/iamPolicy/bindings/ /condition/expression\": \"\", \"/iamPolicy/bindings/ /role\": \"roles/compute.instanceAdmin\" } }, { \"action\": \"remove\", \"resourceType\": \"cloudresourcemanager.googleapis.com/Project\", \"resource\": \"//cloudresourcemanager.googleapis.com/projects/ PROJECT ID \", \"path\": \"/iamPolicy/bindings/ /members/ \", \"pathFilters\": { \"/iamPolicy/bindings/ /condition/expression\": \"\", \"/iamPolicy/bindings/ /members/ \": \" USER ID @example.com\", \"/iamPolicy/bindings/ /role\": \"roles/compute.admin\" } } ] } ], \"overview\": { \"resource\": \"//cloudresourcemanager.googleapis.com/projects/ PROJECT ID \", \"member\": \"user: USER ID @example.com\", \"removedRole\": \"roles/compute.admin\", \"addedRoles\": [ \"roles/compute.instanceAdmin\" ], \"minimumObservationPeriodInDays\": \"0\" } }, \"stateInfo\": { \"state\": \"SUCCEEDED\", \"stateMetadata\": { \"applied by\": \"bulk apply by automated script-2023-08-11\" } }, \"etag\": \"\\\"892d57ee41baa03e\\\"\", \"recommenderSubtype\": \"REPLACE ROLE\", \"associatedInsights\": [ { \"insight\": \"projects/ PROJECT ID /locations/global/insightTypes/google.iam.policy.Insight/insights/ INSIGHT ID \" } ], \"priority\": \"P4\" }, { \"name\": \"projects/ PROJECT ID /locations/global/recommenders/google.iam.policy.Recommender/recommendations/ RECOMMENDATION ID \", \"description\": \"Replace the current role with a smaller role to cover the permissions needed.\", \"lastRefreshTime\": \"2023-07-28T07:00:00Z\", \"primaryImpact\": { \"category\": \"SECURITY\", \"securityProjection\": { \"details\": { \"revokedIamPermissionsCount\": 19 } } }, \"content\": { \"operationGroups\": [ { \"operations\": [ { \"action\": \"add\", \"resourceType\": \"cloudresourcemanager.googleapis.com/Project\", \"resource\": \"//cloudresourcemanager.googleapis.com/projects/ PROJECT ID \", \"path\": \"/iamPolicy/bindings/ /members/-\", \"value\": \"user: USER ID @example.com\", \"pathFilters\": { \"/iamPolicy/bindings/ /condition/expression\": \"\", \"/iamPolicy/bindings/ /role\": \"roles/storage.objectAdmin\" } }, { \"action\": \"remove\", \"resourceType\": \"cloudresourcemanager.googleapis.com/Project\", \"resource\": \"//cloudresourcemanager.googleapis.com/projects/ PROJECT ID \", \"path\": \"/iamPolicy/bindings/ /members/ \", \"pathFilters\": { \"/iamPolicy/bindings/ /condition/expression\": \"\", \"/iamPolicy/bindings/ /members/ \": \"user: USER ID @example.com\", \"/iamPolicy/bindings/ /role\": \"roles/storage.admin\" } } ] } ], \"overview\": { \"resource\": \"//cloudresourcemanager.googleapis.com/projects/ PROJECT ID \", \"member\": \"user: USER ID @example.com\", \"removedRole\": \"roles/storage.admin\", \"addedRoles\": [ \"roles/storage.objectAdmin\" ], \"minimumObservationPeriodInDays\": \"0\" } }, \"stateInfo\": { \"state\": \"SUCCEEDED\", \"stateMetadata\": { \"applied by\": \"bulk apply by automated script-2023-08-11\" } }, \"etag\": \"\\\"af7635ffeb512998\\\"\", \"recommenderSubtype\": \"REPLACE ROLE\", \"associatedInsights\": [ { \"insight\": \"projects/ PROJECT ID /locations/global/insightTypes/google.iam.policy.Insight/insights/ INSIGHT ID \" } ], \"priority\": \"P4\" } ], \"failed recommendations\": [] } Case wall The action provides the following output messages: Output message Message description Successfully applied provided IAM recommendations.",
+          "Action outputs Action output type Case wall attachment N/A Case wall link N/A Case wall table Available Enrichment table N/A Entity insight N/A Insight N/A JSON result Available OOTB widget N/A Script result Available Script result Script result name Value is success True/False JSON result [ { \"name\": \"name\", \"description\": \"This role has not been used during the observation window.\", \"lastRefreshTime\": \"2023-07-27T07:00:00Z\", \"primaryImpact\": { \"category\": \"SECURITY\", \"securityProjection\": { \"details\": { \"revokedIamPermissionsCount\": 68 } } }, \"content\": { \"operationGroups\": [ { \"operations\": [ { \"action\": \"remove\", \"resourceType\": \"cloudresourcemanager.googleapis.com/Project\", \"resource\": \"//cloudresourcemanager.googleapis.com/projects\", \"path\": \"/iamPolicy/bindings/ /members/ \", \"pathFilters\": { \"/iamPolicy/bindings/ /condition/expression\": \"\", \"/iamPolicy/bindings/ /members/ \": \"serviceAccount: SERVICE ACCOUNT ID \", \"/iamPolicy/bindings/ /role\": \"roles/monitoring.admin\" } } ] } ], \"overview\": { \"resource\": \"//cloudresourcemanager.googleapis.com/\", \"member\": \"serviceAccount: SERVICE ACCOUNT ID \", \"removedRole\": \"roles/monitoring.admin\", \"minimumObservationPeriodInDays\": \"0\" } }, \"stateInfo\": { \"state\": \"ACTIVE\" }, \"etag\": \"\", \"recommenderSubtype\": \"REMOVE ROLE\", \"associatedInsights\": [ { \"insight\": \"projects/i/locations/global/insightTypes/\" } ], \"priority\": \"P4\" }, { \"name\": \"name\", \"description\": \"This role has not been used during the observation window.\", \"lastRefreshTime\": \"2023-07-27T07:00:00Z\", \"primaryImpact\": { \"category\": \"SECURITY\", \"securityProjection\": { \"details\": { \"revokedIamPermissionsCount\": 5 } } }, \"content\": { \"operationGroups\": [ { \"operations\": [ { \"action\": \"remove\", \"resourceType\": \"cloudresourcemanager.googleapis.com/Project\", \"resource\": \"//cloudresourcemanager.googleapis.com/projects/ PROJECT ID \", \"path\": \"/iamPolicy/bindings/ /members/ \", \"pathFilters\": { \"/iamPolicy/bindings/ /condition/expression\": \"\", \"/iamPolicy/bindings/ /members/ \": \"user: USER ID @example.com\", \"/iamPolicy/bindings/ /role\": \"roles/chroniclesm.admin\" } } ] } ], \"overview\": { \"resource\": \"//cloudresourcemanager.googleapis.com/projects\", \"member\": \"user: USER ID @example.com\", \"removedRole\": \"roles/chroniclesm.admin\", \"minimumObservationPeriodInDays\": \"0\" } }, \"stateInfo\": { \"state\": \"ACTIVE\" }, \"etag\": \"\", \"recommenderSubtype\": \"REMOVE ROLE\", \"associatedInsights\": [ { \"insight\": \"projects\" } ], \"priority\": \"P4\" } ] Case wall The action provides the following output messages: Output message Message description Successfully found recommendations for the provided criteria in the Google Cloud Recommender service.",
+          "Example of the expected input: projects/projectname/locations/global/recommenders/google.iam.policy.Recommender/recommendations/0f262740-bf4a-4c3d-9573-0da3345cf3f7 Action outputs Action output type Case wall attachment N/A Case wall link N/A Case wall table N/A Enrichment table N/A Entity insight N/A Insight N/A JSON result Available OOTB widget N/A Script result Available Script result Script result name Value is success True/False JSON result [ { \"name\": \"name\", \"description\": \"This role has not been used during the observation window.\", \"lastRefreshTime\": \"2023-07-28T07:00:00Z\", \"primaryImpact\": { \"category\": \"SECURITY\", \"securityProjection\": { \"details\": { \"revokedIamPermissionsCount\": 68 } } }, \"content\": { \"operationGroups\": [ { \"operations\": [ { \"action\": \"remove\", \"resourceType\": \"cloudresourcemanager.googleapis.com/Project\", \"resource\": \"//cloudresourcemanager.googleapis.com/projects/ PROJECT ID \", \"path\": \"/iamPolicy/bindings/ /members/ \", \"pathFilters\": { \"/iamPolicy/bindings/ /condition/expression\": \"\", \"/iamPolicy/bindings/ /members/ \": \"serviceAccount: SERVICE ACCOUNT ID .iam.gserviceaccount.com\", \"/iamPolicy/bindings/ /role\": \"roles/monitoring.admin\" } } ] } ], \"overview\": { \"resource\": \"//cloudresourcemanager.googleapis.com/projects/ PROJECT ID \", \"member\": \"serviceAccount: SERVICE ACCOUNT ID .iam.gserviceaccount.com\", \"removedRole\": \"roles/monitoring.admin\", \"minimumObservationPeriodInDays\": \"0\" } }, \"stateInfo\": { \"state\": \"ACTIVE\" }, \"etag\": \"\", \"recommenderSubtype\": \"REMOVE ROLE\", \"associatedInsights\": [ { \"insight\": \"projects/ PROJECT ID /locations/global/insightTypes/google.iam.policy.Insight/insights/\" } ], \"priority\": \"P4\" } ] Case wall The action provides the following output messages: Output message Message description Successfully found recommendation in the Google Cloud Recommender service."
+        ]
+      },
+      {
+        "title": "\"Integrate Anomali STAXX with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx",
+        "source_id": "site-docs-root",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "This process ensures that every entity is correctly indexed as a unique asset, making it fully searchable and actionable in playbooks.",
+          "Action results Script result Script result name Value options Example is success True or False is success:False Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: if successful: \"Successfully connected to the Anomali STAXX server with the provided connection parameters!\" The action should fail and stop a playbook execution: If not successful: \"Failed to connect to the Anomali STAXX server!",
+          "To streamline and improve the mapping process for the connector, the default value resolves to a fallback value that is referenced from the code."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "amazonaws.com",
+      "chroniclesm.admin",
+      "cloudresourcemanager.googleapis.com",
+      "compute.admin",
+      "compute.instanceAdmin",
+      "ec2.internal",
+      "example.com",
+      "iam.gserviceaccount.com",
+      "monitoring.admin",
+      "storage.admin",
+      "storage.objectAdmin",
+      "t2.micro"
+    ],
+    "missing_inventory_roles": [
+      "roles/chroniclesm.admin",
+      "roles/compute.admin",
+      "roles/compute.instanceAdmin",
+      "roles/monitoring.admin",
+      "roles/storage.admin",
+      "roles/storage.objectAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    }
+  ]
+}

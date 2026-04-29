@@ -1,0 +1,212 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:57.167Z",
+  "source_step08_card": "data/step-08/current/products/cloud-workstations/card.json",
+  "product_name": "Cloud Workstations",
+  "product_slug": "cloud-workstations",
+  "feature_name": "Configurable JetBrains readiness server",
+  "feature_slug": "configurable-jetbrains-readiness-server",
+  "summary": "Cloud Workstations lets you configure the JetBrains readiness server port and timeout through environment variables.",
+  "extended_definition": "Cloud Workstations lets you configure the JetBrains readiness server port and timeout through environment variables.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workstations/docs/customize-container-images",
+      "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+      "https://docs.cloud.google.com/workstations/docs/develop-code-using-local-jetbrains-ides",
+      "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Develop code using local JetBrains IDEs \\_|\\_ Cloud Workstations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/develop-code-using-local-jetbrains-ides",
+        "source_id": "site-docs-root",
+        "final_score": 207,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Add a server readiness check For convenience, all JetBrains images come preinstalled with a basic HTTP server running on port 80 which can be used to determine if the preconfigured JetBrains IDE is ready to accept incoming connections.",
+          "The Cloud Workstations plugin lets you initiate remote development sessions for Cloud Workstations using JetBrains IDEs such as IntelliJ IDEA Ultimate, PyCharm Professional, Rider, CLion, PhpStorm, and WebStorm.",
+          "Home Documentation Application development Cloud Workstations Guides Send feedback Develop code using local JetBrains IDEs Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Customize container images \\_|\\_ Cloud Workstations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workstations/docs/customize-container-images",
+        "source_id": "site-docs-root-2",
+        "final_score": 172,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can then interact with either IDE: FROM us-central1-docker.pkg.dev/cloud-workstations-images/predefined/code-oss:latest as code-oss-image FROM us-central1-docker.pkg.dev/cloud-workstations-images/predefined/jetbrains-intellij:latest Copy Code OSS for Cloud Workstations and startup scripts into our custom image COPY --from = code-oss-image /opt/code-oss /opt/code-oss COPY --from = code-oss-image /etc/workstation-startup.d/110 start-code-oss.sh /etc/workstation-startup.d/110 start-code-oss.sh Use the existing entrypoint script which will execute all scripts in /etc/workstation-startup.d/ ENTRYPOINT [ \"/google/scripts/entrypoint.sh\" ] Container image that pre-installs IDE extensions in Code OSS for Cloud Workstations for Java development To create a container image that pre-installs IDE extensions in Code OSS for Cloud Workstations for Java development at build time, run the following commands: FROM us-central1-docker.pkg.dev/cloud-workstations-images/predefined/code-oss:latest RUN wget https://open-vsx.org/api/vscjava/vscode-java-debug/0.40.1/file/vscjava.vscode-java-debug-0.40.1.vsix && \\ unzip vscjava.vscode-java-debug-0.40.1.vsix \"extension/ \" && \\ mv extension /opt/code-oss/extensions/java-debug RUN wget https://open-vsx.org/api/vscjava/vscode-java-dependency/0.19.1/file/vscjava.vscode-java-dependency-0.19.1.vsix && \\ unzip vscjava.vscode-java-dependency-0.19.1.vsix \"extension/ \" && \\ mv extension /opt/code-oss/extensions/java-dependency RUN wget https://open-vsx.org/api/redhat/java/1.6.0/file/redhat.java-1.6.0.vsix && \\ unzip redhat.java-1.6.0.vsix \"extension/ \" && \\ mv extension /opt/code-oss/extensions/redhat-java RUN wget https://open-vsx.org/api/vscjava/vscode-maven/0.35.2/file/vscjava.vscode-maven-0.35.2.vsix && \\ unzip vscjava.vscode-maven-0.35.2.vsix \"extension/ \" && \\ mv extension /opt/code-oss/extensions/java-maven RUN wget https://open-vsx.org/api/vscjava/vscode-java-test/0.35.0/file/vscjava.vscode-java-test-0.35.0.vsix && \\ unzip vscjava.vscode-java-test-0.35.0.vsix \"extension/ \" && \\ mv extension /opt/code-oss/extensions/java-test RUN chmod a+rwx -R /opt/code-oss/extensions/ If you pre-install extensions, they are considered built-in extensions.",
+          "Assuming that you named your script, 011 add-ssh-env-variables.sh , add the following to your image in your Dockerfile and make it executable: FROM us-central1-docker.pkg.dev/cloud-workstations-images/predefined/code-oss:latest COPY 011 add-ssh-env-variables.sh /etc/workstation-startup.d/ RUN chmod +x /etc/workstation-startup.d/011 add-ssh-env-variables.sh Container image that enables X11 forwarding for SSH sessions X11 forwarding lets you start remote applications and forward the application display to a local machine.",
+          "Here's a sample Dockerfile, which makes the necessary modifications: FROM us-central1-docker.pkg.dev/cloud-workstations-images/predefined/code-oss:latest Permit X11 forwarding using only IPv4 RUN cat >> /etc/ssh/sshd config <<-EOF AddressFamily inet X11Forwarding yes EOF Copy Code OSS for Cloud Workstations into another container image A multi-stage build lets you use multiple FROM statements in your Dockerfile."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Set up workstations \\_|\\_ Cloud Workstations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console",
+        "source_id": "site-docs-root-2",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable the API Required roles To get the permissions that you need to manage and use workstations, ask your administrator to grant you the following IAM roles: Create and manage workstation clusters and configurations: Cloud Workstations Admin ( roles/workstations.admin ) on the project Create workstations using a configuration: Cloud Workstations Creator ( roles/workstations.workstationCreator ) on the project or the workstation configuration Use a workstation: Cloud Workstations User ( roles/workstations.user ) on the workstation.",
+          "To follow step-by-step guidance for this task directly in the Google Cloud console, click Guide me : Guide me Before you begin This guide covers steps for administrators to set up Cloud Workstations and for developers to use the workstations.",
+          "Home Documentation Application development Cloud Workstations Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Customize your development environment \\_|\\_ Cloud Workstations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "source_id": "site-docs-root-2",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Workstations provides a number of preconfigured images , but you can create your own custom container images .",
+          "JSON representation { \"name\" : string , \"displayName\" : string , \"uid\" : string , \"reconciling\" : boolean , \"annotations\" : { string : string , ... } , \"labels\" : { string : string , ... } , \"createTime\" : string , \"updateTime\" : string , \"deleteTime\" : string , \"etag\" : string , \"idleTimeout\" : string , \"runningTimeout\" : string , \"maxUsableWorkstations\" : integer , \"host\" : { object ( Host ) } , \"persistentDirectories\" : [ { object ( PersistentDirectory ) } ] , \"ephemeralDirectories\" : [ { object ( EphemeralDirectory ) } ] , \"container\" : { object ( Container ) } , \"encryptionKey\" : { object ( CustomerEncryptionKey ) } , \"readinessChecks\" : [ { object ( ReadinessCheck ) } ] , \"replicaZones\" : [ string ] , \"degraded\" : boolean , \"conditions\" : [ { object ( Status ) } ] , \"enableAuditAgent\" : boolean , \"disableTcpConnections\" : boolean , \"allowedPorts\" : [ { object ( PortRange ) } ] , \"grantWorkstationAdminRoleOnCreate\" : boolean } Fields name string Identifier.",
+          "REST Resource: projects.locations.workstationClusters.workstationConfigs Resource: WorkstationConfig JSON representation Host JSON representation GceInstance JSON representation GceShieldedInstanceConfig JSON representation GceConfidentialInstanceConfig JSON representation Accelerator JSON representation BoostConfig JSON representation PersistentDirectory JSON representation GceRegionalPersistentDisk JSON representation ReclaimPolicy GceHyperdiskBalancedHighAvailability JSON representation ReclaimPolicy EphemeralDirectory JSON representation GcePersistentDisk JSON representation Container JSON representation CustomerEncryptionKey JSON representation ReadinessCheck JSON representation PortRange JSON representation Methods Resource: WorkstationConfig A workstation configuration resource in the Cloud Workstations API."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "docker.pkg.dev",
+      "entrypoint.sh",
+      "installer.sh",
+      "oss.sh",
+      "projects.locations.workstationClusters.workstationConfigs",
+      "redhat.java",
+      "startup.d",
+      "variables.sh",
+      "vscjava.vscode",
+      "vsx.org",
+      "workstations.admin",
+      "workstations.user",
+      "workstations.workstationCreator"
+    ],
+    "missing_inventory_roles": [
+      "roles/workstations.admin",
+      "roles/workstations.user",
+      "roles/workstations.workstationCreator"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/develop-code-using-local-jetbrains-ides",
+        "https://docs.cloud.google.com/workstations/docs/customize-container-images",
+        "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/develop-code-using-local-jetbrains-ides",
+        "https://docs.cloud.google.com/workstations/docs/customize-container-images",
+        "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/develop-code-using-local-jetbrains-ides",
+        "https://docs.cloud.google.com/workstations/docs/customize-container-images",
+        "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/develop-code-using-local-jetbrains-ides",
+        "https://docs.cloud.google.com/workstations/docs/customize-container-images",
+        "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/develop-code-using-local-jetbrains-ides",
+        "https://docs.cloud.google.com/workstations/docs/customize-container-images",
+        "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/develop-code-using-local-jetbrains-ides",
+        "https://docs.cloud.google.com/workstations/docs/customize-container-images",
+        "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/develop-code-using-local-jetbrains-ides",
+        "https://docs.cloud.google.com/workstations/docs/customize-container-images",
+        "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/develop-code-using-local-jetbrains-ides",
+        "https://docs.cloud.google.com/workstations/docs/customize-container-images",
+        "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/develop-code-using-local-jetbrains-ides",
+        "https://docs.cloud.google.com/workstations/docs/customize-container-images",
+        "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/develop-code-using-local-jetbrains-ides",
+        "https://docs.cloud.google.com/workstations/docs/customize-container-images",
+        "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/develop-code-using-local-jetbrains-ides",
+        "https://docs.cloud.google.com/workstations/docs/customize-container-images",
+        "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment"
+      ]
+    }
+  ]
+}

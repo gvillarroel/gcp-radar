@@ -1,0 +1,184 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:22.541Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis-cluster/card.json",
+  "product_name": "Memorystore for Redis Cluster",
+  "product_slug": "memorystore-for-redis-cluster",
+  "feature_name": "maintenance logs",
+  "feature_slug": "maintenance-logs",
+  "summary": "You can query and view maintenance logs for a Memorystore for Redis Cluster cluster in Cloud Logging.",
+  "extended_definition": "You can query and view maintenance logs for a Memorystore for Redis Cluster cluster in Cloud Logging.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Monitor access using audit logs \\_|\\_ Memorystore for Redis Cluster \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "source_id": "site-iam-reference",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "View logs You can query for all audit logs or you can query for logs by their audit log name.",
+          "To display all audit logs, enter either of the following queries into the query-editor field, and then click Run query : logName:\"cloudaudit.googleapis.com\" protoPayload.\"@type\"=\"type.googleapis.com/google.cloud.audit.AuditLog\" To display the audit logs for a specific resource and audit log type, in the Query builder pane, do the following: In Resource type , select the Google Cloud resource whose audit logs you want to see.",
+          "Console In the Google Cloud console, you can use the Logs Explorer to retrieve your audit log entries for your Google Cloud project, folder, or organization: Note: You can't view audit logs for Cloud Billing accounts in the Google Cloud console."
+        ]
+      },
+      {
+        "title": "\"About maintenance \\_|\\_ Memorystore for Redis Cluster \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "source_id": "site-docs-root",
+        "final_score": 187,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After you schedule maintenance for your cluster, you can either start the update for your cluster immediately or defer the update for up to two weeks from the originally scheduled maintenance date and time.",
+          "If the current day and time works for your cluster and you expect a high load on your cluster in the future, then you can run the maintenance update immediately.",
+          "Configure your client application To configure your client application for the best performance and availability possible during maintenance, follow these steps: Use and configure your OSS Redis cluster client according to the guidance at Redis client best practices to make sure that any scheduled maintenance doesn't impact your client application."
+        ]
+      },
+      {
+        "title": "\"High availability and replicas \\_|\\_ Memorystore for Redis Cluster \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+        "source_id": "site-docs-root",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Using recommended best practices allows your OSS Redis client to automatically and gracefully handle the role (automatic failovers), and slot assignment changes (node replacement, consumer scale out/in) for your cluster without any downtime.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Cluster Guides Send feedback High availability and replicas Stay organized with collections Save and categorize content based on your preferences.",
+          "Failover and node repair duration Automatic failovers can take time on the order of tens of seconds for unplanned events such as a primary node process crash, or a hardware failure."
+        ]
+      },
+      {
+        "title": "\"Google Cloud Memorystore for Redis API \\_|\\_ Memorystore for Redis Cluster\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1alpha1.projects.locations.clusters Methods backup POST /v1alpha1/{name=projects/ /locations/ /clusters/ }:backup Backup Redis Cluster. create POST /v1alpha1/{parent=projects/ /locations/ }/clusters Creates a Redis cluster based on the specified properties. delete DELETE /v1alpha1/{name=projects/ /locations/ /clusters/ } Deletes a specific Redis cluster. get GET /v1alpha1/{name=projects/ /locations/ /clusters/ } Gets the details of a specific Redis cluster. getCertificateAuthority GET /v1alpha1/{name=projects/ /locations/ /clusters/ /certificateAuthority} Gets the details of certificate authority information for Redis cluster. list GET /v1alpha1/{parent=projects/ /locations/ }/clusters Lists all Redis clusters owned by a project in either the specified location (region) or all locations. patch PATCH /v1alpha1/{cluster.name=projects/ /locations/ /clusters/ } Updates the metadata and configuration of a specific Redis cluster. rescheduleClusterMaintenance POST /v1alpha1/{name=projects/ /locations/ /clusters/ }:rescheduleClusterMaintenance Reschedules upcoming maintenance event.",
+          "REST Resource: v1beta1.projects.locations.clusters Methods backup POST /v1beta1/{name=projects/ /locations/ /clusters/ }:backup Backup Redis Cluster. create POST /v1beta1/{parent=projects/ /locations/ }/clusters Creates a Redis cluster based on the specified properties. delete DELETE /v1beta1/{name=projects/ /locations/ /clusters/ } Deletes a specific Redis cluster. get GET /v1beta1/{name=projects/ /locations/ /clusters/ } Gets the details of a specific Redis cluster. getCertificateAuthority GET /v1beta1/{name=projects/ /locations/ /clusters/ /certificateAuthority} Gets the details of certificate authority information for Redis cluster. list GET /v1beta1/{parent=projects/ /locations/ }/clusters Lists all Redis clusters owned by a project in either the specified location (region) or all locations. patch PATCH /v1beta1/{cluster.name=projects/ /locations/ /clusters/ } Updates the metadata and configuration of a specific Redis cluster. rescheduleClusterMaintenance POST /v1beta1/{name=projects/ /locations/ /clusters/ }:rescheduleClusterMaintenance Reschedules upcoming maintenance event.",
+          "REST Resource: v1.projects.locations.clusters Methods backup POST /v1/{name=projects/ /locations/ /clusters/ }:backup Backup Redis Cluster. create POST /v1/{parent=projects/ /locations/ }/clusters Creates a Redis cluster based on the specified properties. delete DELETE /v1/{name=projects/ /locations/ /clusters/ } Deletes a specific Redis cluster. get GET /v1/{name=projects/ /locations/ /clusters/ } Gets the details of a specific Redis cluster. getCertificateAuthority GET /v1/{name=projects/ /locations/ /clusters/ /certificateAuthority} Gets the details of certificate authority information for Redis cluster. list GET /v1/{parent=projects/ /locations/ }/clusters Lists all Redis clusters owned by a project in either the specified location (region) or all locations. patch PATCH /v1/{cluster.name=projects/ /locations/ /clusters/ } Updates the metadata and configuration of a specific Redis cluster. rescheduleClusterMaintenance POST /v1/{name=projects/ /locations/ /clusters/ }:rescheduleClusterMaintenance Reschedules upcoming maintenance event."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "cluster.name",
+      "redis.googleapis.com",
+      "type.googleapis.com",
+      "v1.projects.locations.clusters",
+      "v1alpha1.projects.locations.clusters",
+      "v1beta1.projects.locations.clusters"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/rest"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/rest"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/rest"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/rest"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/rest"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/rest"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/rest"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/rest"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/rest"
+      ]
+    }
+  ]
+}

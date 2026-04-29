@@ -1,0 +1,203 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:17.987Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "ListUserAliases",
+  "feature_slug": "listuseraliases",
+  "summary": "ListUserAliases returns all aliases for a user in an enterprise.",
+  "extended_definition": "ListUserAliases returns all aliases for a user in an enterprise.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/chrome-enterprise-threats-category",
+      "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/ingest-bce",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Collect Chrome Enterprise Premium Context Access Aware Data \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/ingest-bce",
+        "source_id": "site-api-reference",
+        "final_score": 72,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google Cloud Logs Cloud Identity Devices Cloud Identity Device Users Before you begin Before you set up feeds to ingest Chrome Enterprise Premium data, complete the following tasks: Connect your Google Cloud organization to Google Security Operations by completing the following sections: Enable telemetry ingestion to Google Security Operations .",
+          "Collect Chrome Enterprise Premium Context Access Aware Data Supported in: Google secops SIEM This document explains how you can connect your organization to Google Security Operations, enable the Identity-Aware Proxy (IAP) API, and set up feeds to ingest the following data to Google Security Operations.",
+          "For more information, see Control API access with domain-wide delegation Create a user for impersonation From the Google Admin console Home page, select Directory > Users ."
+        ]
+      },
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "Types of grouped UDM fields You can search across all of the following grouped UDM fields: Grouped field name Associated UDM fields domain about.administrative domain about.asset.network domain network.dns.questions.name network.dns domain principal.administrative domain principal.asset.network domain target.administrative domain target.asset.hostname target.asset.network domain target.hostname email intermediary.user.email addresses network.email.from network.email.to principal.user.email addresses security result.about.user.email addresses target.user.email addresses file path principal.file.full path principal.process.file.full path principal.process.parent process.file.full path target.file.full path target.process.file.full path target.process.parent process.file.full path hash about.file.md5 about.file.sha1 about.file.sha256 principal.process.file.md5 principal.process.file.sha1 principal.process.file.sha256 security result.about.file.sha256 target.file.md5 target.file.sha1 target.file.sha256 target.process.file.md5 target.process.file.sha1 target.process.file.sha256 hostname intermediary.hostname observer.hostname principal.asset.hostname principal.hostname src.asset.hostname src.hostname target.asset.hostname target.hostname ip intermediary.ip observer.ip principal.artifact.ip principal.asset.ip principal.ip src.artifact.ip src.asset.ip src.ip target.artifact.ip target.asset.ip target.ip namespace principal.namespace src.namespace target.namespace process id principal.process.parent process.pid principal.process.parent process.product specific process id principal.process.pid principal.process.product specific process id target.process.parent process.pid target.process.parent process.product specific process id target.process.pid target.process.product specific process id user about.user.userid observer.user.userid principal.user.user display name principal.user.userid principal.user.windows sid src.user.userid target.user.user display name target.user.userid target.user.windows sid Find a UDM field for search query While writing a search query, you may not know which UDM field to include.",
+          "The following examples show supported boolean operators ( AND , OR , and NOT ): A AND B A OR B Use parentheses ( ) to group expressions and control evaluation order: (A OR B) AND (B OR C) AND (C OR NOT D) Examples: Search for login events on the finance server: metadata.event type = \"USER LOGIN\" and target.hostname = \"finance-svr\" Use the operator (>) to search for connections where more than 10 MB of data was sent: metadata.event type = \"NETWORK CONNECTION\" and network.sent bytes > 10000000 Use multiple conditions to search for winword.exe launching cmd.exe or powershell.exe : metadata.event type = \"PROCESS LAUNCH\" and principal.process.file.full path = /winword/ and ( target.process.file.full path = /cmd.exe/ or target.process.file.full path = /powershell.exe/ ) Search key-value pairs in additional and labels fields: The additional and labels fields act as customizable containers for event data that doesn't map to standard UDM fields.",
+          "For example, if you have a database called suspicious with a column of IP addresses you know are problematic, you can reference that database in Search instead of manually entering individual IP addresses in Search: events: $e.principal.ip in %susupicious.ip You can narrow your results by searching for specific metadata in addition to IP addresses, for example you might be specifically concerned with changes to user resources: events: $e.metadata.event type = \"USER RESOURCE UPDATE CONTENT\" $e.principal.ip in %susupicious.ip You can narrow a search against interrelated UDM fields and match against multiple data table columns."
+        ]
+      },
+      {
+        "title": "\"Overview of Chrome Enterprise Premium Threats Category \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/chrome-enterprise-threats-category",
+        "source_id": "site-api-reference",
+        "final_score": 64,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported devices and log types The rule sets in the Chrome Enterprise Premium Threats category require logs from the following Google Security Operations data sources: Chrome Management Logs ( CHROME MANAGEMENT ) To feed these logs to Google SecOps, follow the steps in Collect Google Chrome logs .",
+          "This document provides an overview of the rule sets within the Chrome Enterprise Threats category, the required data sources, and configuration you can use to tune the alerts generated by each rule set.",
+          "Overview of Chrome Enterprise Premium Threats Category Supported in: Google secops SIEM Note: This feature is covered by Pre-GA Offerings Terms of the Google Security Operations Service Specific Terms."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "about.administrative",
+      "about.asset.network",
+      "about.file.md5",
+      "about.file.sha1",
+      "about.file.sha256",
+      "about.user.userid",
+      "cmd.exe",
+      "e.metadata.event",
+      "e.principal.ip",
+      "intermediary.hostname",
+      "intermediary.ip",
+      "intermediary.user.email",
+      "metadata.event",
+      "network.dns",
+      "network.dns.questions.name",
+      "network.email.from",
+      "network.email.to",
+      "network.sent",
+      "observer.hostname",
+      "observer.ip",
+      "observer.user.userid",
+      "powershell.exe",
+      "principal.administrative",
+      "principal.artifact.ip",
+      "principal.asset.hostname",
+      "principal.asset.ip",
+      "principal.asset.network",
+      "principal.file.full",
+      "principal.hostname",
+      "principal.ip",
+      "principal.namespace",
+      "principal.process.file.full",
+      "principal.process.file.md5",
+      "principal.process.file.sha1",
+      "principal.process.file.sha256",
+      "principal.process.parent",
+      "principal.process.pid",
+      "principal.process.product",
+      "principal.user.email",
+      "principal.user.user",
+      "principal.user.userid",
+      "principal.user.windows",
+      "process.file.full",
+      "process.pid",
+      "process.product",
+      "result.about.file.sha256",
+      "result.about.user.email",
+      "src.artifact.ip",
+      "src.asset.hostname",
+      "src.asset.ip",
+      "src.hostname",
+      "src.ip",
+      "src.namespace",
+      "src.user.userid",
+      "susupicious.ip",
+      "target.administrative",
+      "target.artifact.ip",
+      "target.asset.hostname",
+      "target.asset.ip",
+      "target.asset.network",
+      "target.file.full",
+      "target.file.md5",
+      "target.file.sha1",
+      "target.file.sha256",
+      "target.hostname",
+      "target.ip",
+      "target.namespace",
+      "target.process.file.full",
+      "target.process.file.md5",
+      "target.process.file.sha1",
+      "target.process.file.sha256",
+      "target.process.parent",
+      "target.process.pid",
+      "target.process.product",
+      "target.user.email",
+      "target.user.user",
+      "target.user.userid",
+      "target.user.windows",
+      "udm.additional",
+      "winword.exe"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/ingest-bce",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/chrome-enterprise-threats-category"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/ingest-bce",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/chrome-enterprise-threats-category"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/ingest-bce",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/chrome-enterprise-threats-category"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/ingest-bce",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/chrome-enterprise-threats-category"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/ingest-bce",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/chrome-enterprise-threats-category"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.896Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr",
+  "feature_name": "Db2 backup and restore using persistent disk snapshots",
+  "feature_slug": "db2-backup-and-restore-using-persistent-disk-snapshots",
+  "summary": "Backup and DR Service now supports backup and restore of Db2 databases using persistent disk snapshots.",
+  "extended_definition": "Backup and DR Service now supports backup and restore of Db2 databases using persistent disk snapshots.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+      "https://docs.cloud.google.com/compute/docs/disks/about-regional-persistent-disk"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About synchronous disk replication \\_|\\_ Compute Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/compute/docs/disks/about-regional-persistent-disk",
+        "source_id": "site-docs-reference-2",
+        "final_score": 155,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Important: In case of an unavailable disk, Google recommends that you always use any existing standard snapshots to create a new Regional Persistent Disk or Hyperdisk Balanced High Availability volume and recover disk data.",
+          "About synchronous disk replication A Regional Persistent Disk or Hyperdisk Balanced High Availability volume, also referred to as a regional disk, or synchronously replicated disk, has a primary and a secondary zone within its region where it stores disk data: Primary zone is the same zone where the compute instance that you attach the disk to is located.",
+          "Replication states for regional disks Depending on the state of the individual zonal replicas, your Regional Persistent Disk or Hyperdisk Balanced High Availability volume can be in one of the following replication states: Fully replicated: Replicas in both zones are available and are synced with the latest disk data."
+        ]
+      },
+      {
+        "title": "\"Protect and recover SAP HANA databases in Compute Engine instances \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "source_id": "site-docs-reference",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "Within the Advanced Settings dialog, find and set the following advanced settings: Snapshot location : Select the region where the Persistent Disk snapshots are to be stored.",
+          "It will then create new disks from the persistent disk snapshots and make them available to the server.",
+          "Note: SAP HANA Scale-Out isn't supported for backup to Persistent Disk snapshots."
+        ]
+      },
+      {
+        "title": "\"Backup and DR Service for Compute Engine for self-managed storage \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine",
+        "source_id": "site-api-reference",
+        "final_score": 113,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Data restore with Persistent Disk snapshots follows these steps: Select the instance and point in time that they want to work with.",
+          "The Backup and DR Compute Engine guide Check for the cloud credentials Discover and protect Compute Engine instances Mount backup images of Compute Engine instances Restore a Compute Engine instance Import Persistent Disk snapshot images Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "How it works: Backup and DR Persistent Disk snapshots Data backup with Persistent Disk snapshots follows these steps: The first successful snapshot of an instance creates a snapshot of each Persistent Disk."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/disks/about-regional-persistent-disk",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/disks/about-regional-persistent-disk",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-compute-engine"
+      ]
+    }
+  ]
+}

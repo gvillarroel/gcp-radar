@@ -1,0 +1,136 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:59.197Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "MutatingWebhookConfigurationCustomization v1beta1",
+  "feature_slug": "mutatingwebhookconfigurationcustomization-v1beta1",
+  "summary": "The MutatingWebhookConfigurationCustomization CRD graduated to v1beta1.",
+  "extended_definition": "The MutatingWebhookConfigurationCustomization CRD graduated to v1beta1.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Installing Config Connector v1alpha1 CRDs \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "source_id": "site-docs-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "Configure webhook timeout \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "source_id": "site-docs-reference",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a file named configure-mutating-webhook-timeout.yaml and copy the following YAML into it: apiVersion : customize.core.cnrm.cloud.google.com/v1beta1 kind : MutatingWebhookConfigurationCustomization metadata : name : mutating-webhook spec : webhooks : - name : container-annotation-handler timeoutSeconds : 20 Note: when specifying the name of webhook configuration and the names of webhooks in the YAML file, don't include the .cnrm.cloud.google.com suffix.",
+          "Use kubectl apply to apply the webhook timeout customization to your cluster: kubectl apply -f configure-mutating-webhook-timeout.yaml Verify the successful configuration by running the following command: kubectl get mutatingwebhookconfigurationcustomizations mutating-webhook -o jsonpath='{.status.healthy}{\"\\n\"}' It should display status.healthy field set to true .",
+          "Create a file named configure-validating-webhook-timeout.yaml and copy the following YAML into it: apiVersion : customize.core.cnrm.cloud.google.com/v1beta1 kind : ValidatingWebhookConfigurationCustomization metadata : name : validating-webhook spec : webhooks : - name : deny-immutable-field-updates timeoutSeconds : 12 - name : deny-unknown-fields timeoutSeconds : 15 Note: when specifying the name of webhook configuration and the names of webhooks in the YAML file, don't include the .cnrm.cloud.google.com suffix."
+        ]
+      },
+      {
+        "title": "\"AccessContextManagerServicePerimeter \\_|\\_ Config Connector \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "source_id": "site-docs-root",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": [
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : accesscontextmanager.cnrm.cloud.google.com/v1beta1 kind : AccessContextManagerServicePerimeter metadata : name : serviceperimetersample spec : Config for DRY-RUN To use this 'useExplicitDryRunSpec' must be set to 'true' Replace \"${ACCESS POLICY NUMBER}\" with the numeric ID for your Access Policy Replace \"${PROJECT NUMBER}\" with the appropriate project number for the project to be protected by the perimeter spec : List of Access Levels to be applied for this perimeter accessLevels : - name : serviceperimeterdep2 List of projects to be included in this perimeter resources : - projectRef : external : \"projects/${PROJECT NUMBER1}\" - projectRef : external : \"projects/${PROJECT NUMBER2}\" List of restricted services restrictedServices : - \"storage.googleapis.com\" List of services that could be accessed from within the perimeter vpcAccessibleServices : allowedServices : - \"storage.googleapis.com\" - \"pubsub.googleapis.com\" enableRestriction : true egressPolicies : - egressFrom : identities : - name : serviceperimeterengressdep - egressTo : resources : - projectRef : external : \"projects/${PROJECT NUMBER1}\" ingressPolicies : - ingressFrom : identities : - name : serviceperimeteringressdep sources : - accessLevelRef : name : serviceperimeterdep2 ingressTo : resources : - projectRef : external : \"projects/${PROJECT NUMBER2}\" Config to ENFORCE Config items are repeated as above for DRY-RUN Replace \"${ACCESS POLICY NUMBER}\" with the numeric ID for your Access Policy Replace \"${PROJECT NUMBERx}\" with the appropriate project number for the project to be protected by the perimeter status : accessLevels : - name : serviceperimeterdep2 resources : - projectRef : external : \"projects/${PROJECT NUMBER3}\" - projectRef : external : \"projects/${PROJECT NUMBER4}\" restrictedServices : - \"bigquery.googleapis.com\" vpcAccessibleServices : allowedServices : - \"bigquery.googleapis.com\" - \"logging.googleapis.com\" enableRestriction : true title : Service Perimeter created by Config Connector useExplicitDryRunSpec : true accessPolicyRef : Using an already existing Access Policy.",
+          "Set the appropriate ACCESS POLICY NUMBER external : accessPolicies/${ACCESS POLICY NUMBER} description : A Service Perimeter Created by Config Connector perimeterType : PERIMETER TYPE REGULAR --- apiVersion : accesscontextmanager.cnrm.cloud.google.com/v1beta1 kind : AccessContextManagerAccessLevel metadata : annotations : Replace \"${ORG ID?}\" with the numeric ID for your organization cnrm.cloud.google.com/organization-id : \"${ORG ID}\" name : serviceperimeterdep1 spec : accessPolicyRef : Replace \"${ACCESS POLICY NUMBER}\" with the numeric ID for your Access Policy external : \"accessPolicies/${ACCESS POLICY NUMBER}\" title : Service Perimeter Dependency ACL1 basic : conditions : - devicePolicy : requireCorpOwned : true --- apiVersion : accesscontextmanager.cnrm.cloud.google.com/v1beta1 kind : AccessContextManagerAccessLevel metadata : annotations : Replace \"${ORG ID?}\" with the numeric ID for your organization cnrm.cloud.google.com/organization-id : \"${ORG ID}\" name : serviceperimeterdep2 spec : accessPolicyRef : Replace \"${ACCESS POLICY NUMBER}\" with the numeric ID for your Access Policy external : \"accessPolicies/${ACCESS POLICY NUMBER}\" title : Service Perimeter Dependency ACL2 basic : conditions : - devicePolicy : requireCorpOwned : true --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : annotations : Replace \"${ORG ID?}\" with the numeric ID for your organization cnrm.cloud.google.com/organization-id : \"${ORG ID}\" name : serviceperimeterengressdep --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : annotations : Replace \"${ORG ID?}\" with the numeric ID for your organization cnrm.cloud.google.com/organization-id : \"${ORG ID}\" name : serviceperimeteringressdep Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accesscontextmanager.cnrm.cloud.google.com",
+      "bigquery.googleapis.com",
+      "cnrm.cloud.google.com",
+      "customize.core.cnrm.cloud.google.com",
+      "iam.cnrm.cloud.google.com",
+      "logging.googleapis.com",
+      "pubsub.googleapis.com",
+      "status.healthy",
+      "storage.googleapis.com",
+      "timeout.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    }
+  ]
+}

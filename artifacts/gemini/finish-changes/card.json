@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:11.292Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini",
+  "feature_name": "Finish changes",
+  "feature_slug": "finish-changes",
+  "summary": "An AI pair-programming feature completes in-progress work from partial input such as pseudocode, TODOs, or half-written code; An AI pair-programming feature completes in-progress work from partial input such as pseudocode, TODOs, or half-written code.",
+  "extended_definition": "An AI pair-programming feature completes in-progress work from partial input such as pseudocode, TODOs, or half-written code; An AI pair-programming feature completes in-progress work from partial input such as pseudocode, TODOs, or half-written code.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings",
+      "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/get",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "source_id": "site-docs-root-2",
+        "final_score": 244,
+        "relevance": "",
+        "evidence_snippets": [
+          "To generate suggested code, press the keyboard shortcut provided by the hint, or right-click in the file and select Gemini Code Assist > Finish changes .",
+          "Finish changes in a file Gemini Code Assist can generate code suggestion to complete your file's pseudocode, #TODOs, and half-written code.",
+          "Alternatively, you can use the finish changes keyboard shortcut ."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.codeToolsSettings.settingBindings \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings",
+        "source_id": "site-api-reference",
+        "final_score": 208,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "An object containing a list of \"key\": value pairs.",
+          "Methods create Creates a new SettingBinding in a given project and location. delete Deletes a single SettingBinding. get Gets details of a single SettingBinding. list Lists SettingBindings in a given project and location. patch Updates the parameters of a single SettingBinding.",
+          "Home Documentation AI and ML Gemini for Google Cloud API and references Send feedback REST Resource: projects.locations.codeToolsSettings.settingBindings Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Chat with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 207,
+        "relevance": "",
+        "evidence_snippets": [
+          "Revert to a checkpoint in chat After applying the changes that Gemini Code Assist generates based on your prompt, you can choose to revert the modified code file(s) to a certain checkpoint, which reverts all of the applied changes to the code file(s).",
+          "Delete prompt and response pairs To delete your prompt and Gemini Code Assist's response to that particular prompt, follow these steps: VS Code In the chat pane, hold your pointer over your prompt that you wish to remove.",
+          "Your prompt and response pair is removed from your chat history with Gemini Code Assist."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.codeToolsSettings.settingBindings.get \\_|\\_ Gemini\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/get",
+        "source_id": "site-api-reference",
+        "final_score": 202,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Gemini for Google Cloud API and references Send feedback Method: projects.locations.codeToolsSettings.settingBindings.get Stay organized with collections Save and categorize content based on your preferences.",
+          "IAM Permissions Requires the following IAM permission on the name resource: cloudaicompanion.settingBindings.codeToolsSettingsGet For more information, see the IAM documentation .",
+          "HTTP request GET https://cloudaicompanion.googleapis.com/v1/{name=projects/ /locations/ /codeToolsSettings/ /settingBindings/ } The URL uses gRPC Transcoding syntax."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaicompanion.googleapis.com",
+      "cloudaicompanion.settingBindings.codeToolsSettingsGet",
+      "projects.locations.codeToolsSettings.settingBindings",
+      "projects.locations.codeToolsSettings.settingBindings.create",
+      "projects.locations.codeToolsSettings.settingBindings.delete",
+      "projects.locations.codeToolsSettings.settingBindings.get",
+      "projects.locations.codeToolsSettings.settingBindings.list",
+      "projects.locations.codeToolsSettings.settingBindings.patch"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/get"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/get"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/get"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/get"
+      ]
+    }
+  ]
+}

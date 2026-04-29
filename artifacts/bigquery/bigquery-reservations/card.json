@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery Reservations",
+  "feature_slug": "bigquery-reservations",
+  "summary": "BigQuery Reservations lets you purchase slots for flat-rate pricing and allocate them for workload management; BigQuery Reservations lets customers purchase and allocate slots for workload management and flat-rate pricing.",
+  "extended_definition": "BigQuery Reservations lets you purchase slots for flat-rate pricing and allocate them for workload management; BigQuery Reservations lets customers purchase and allocate slots for workload management and flat-rate pricing.",
+  "lifecycle": {
+    "latest_feature_date": "2020-04-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery",
+      "https://docs.cloud.google.com/bigquery/docs/controlling-costs",
+      "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Best practices for multi-tenant workloads on BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery",
+        "source_id": "site-docs-reference-5",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "This project acts as the BigQuery reservations admininistration project , enabling organization-wide sharing of slots.",
+          "A dataset-per-tenant design helps to mitigate the following concerns that an organization experiences when it scales to thousands of tenants: Administrative complexity : the total number of new projects and cloud resources on a per customer basis End-to-end latency : how up to date the datastore is for both the tenants and cross-customer analytics solutions Performance expectations : ensuring that tenant performance stays within acceptable limits Configure datasets for each tenant Within a project that is dedicated to storing customer data, each customer's data is separated by BigQuery datasets.",
+          "Copy datasets for multiregional configurations Because BigQuery disallows cross-regional queries, you can't use the strategy of segmenting data with authorized views when data marts must exist across multiple regions."
+        ]
+      },
+      {
+        "title": "bq command-line tool reference \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "Must be one of the following: ANNUAL THREE YEAR NONE Customers using legacy flat-rate pricing also may use one of the following values: FLEX MONTHLY ANNUAL --project id= PROJECT ID Specifies the project that administers the slots. --slots= NUMBER OF BASELINE SLOTS Specifies the number of baseline slots to purchase. --edition= EDITION The edition associated with the capacity commitment.",
+          "For information about using the bq mk command with the BigQuery Data Transfer Service, see the following: Set up an Amazon S3 transfer Set up a Campaign Manager transfer Set up a Cloud Storage transfer Set up a Google Ad Manager transfer Set up a Google Ads transfer Set up a Google Merchant Center transfer (beta) Set up a Google Play transfer Set up a Search Ads 360 transfer (beta) Set up a YouTube Channel transfer Set up a YouTube Content Owner transfer Migrate data from Amazon Redshift Migrate data from Teradata bq mk --transfer run Creates a data transfer run at the specified time or time range using the specified data transfer configuration.",
+          "Replace PLAN with one of the following: ANNUAL THREE YEAR NONE Customers using legacy flat-rate pricing also may use one of the following values: FLEX MONTHLY ANNUAL --reservation={true false} Specifies whether to update a reservation."
+        ]
+      },
+      {
+        "title": "Estimate and control costs \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/controlling-costs",
+        "source_id": "site-docs-root",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . import ( \"context\" \"fmt\" \"io\" \"cloud.google.com/go/bigquery\" ) // queryDryRun demonstrates issuing a dry run query to validate query structure and // provide an estimate of the bytes scanned. func queryDryRun ( w io .",
+          "Project is assigned to a reservation, but still seeing BigQuery Analysis on-demand costs Read through the Troubleshooting issues with reservations section to identify where the Analysis charges might be coming from.",
+          "Unexpected charges for pay-as-you go (PAYG) slots for the BigQuery Standard edition In the Cloud Billing report, apply a filter with the label goog-bq-feature-type with the value BQ STUDIO NOTEBOOK ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery",
+        "https://docs.cloud.google.com/bigquery/docs/controlling-costs",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery",
+        "https://docs.cloud.google.com/bigquery/docs/controlling-costs",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery",
+        "https://docs.cloud.google.com/bigquery/docs/controlling-costs",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery",
+        "https://docs.cloud.google.com/bigquery/docs/controlling-costs",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery",
+        "https://docs.cloud.google.com/bigquery/docs/controlling-costs",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    }
+  ]
+}

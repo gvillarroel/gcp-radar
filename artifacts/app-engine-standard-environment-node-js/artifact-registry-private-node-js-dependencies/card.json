@@ -1,0 +1,147 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.164Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-node-js/card.json",
+  "product_name": "App Engine standard environment Node.js",
+  "product_slug": "app-engine-standard-environment-node-js",
+  "feature_name": "Artifact Registry private Node.js dependencies",
+  "feature_slug": "artifact-registry-private-node-js-dependencies",
+  "summary": "Node.js apps can install private dependencies from an Artifact Registry Node.js package repository.",
+  "extended_definition": "Node.js apps can install private dependencies from an Artifact Registry Node.js package repository.",
+  "lifecycle": {
+    "latest_feature_date": "2022-02-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services",
+      "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+      "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Specifying dependencies \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "source_id": "site-docs-reference-3",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Private dependencies with Artifact Registry If your app uses a private npm module , you can use an Artifact Registry Node.js package repository to host private dependencies.",
+          "To include private dependencies, list the Artifact Registry repository and configure settings for authenticating with the registry in your .npmrc file in the app directory.",
+          "You can use any Node.js web framework including the following: Express.js Hapi.js Loopback.js Koa.js Kraken.js Restify.js Sails.js To use a particular web framework, such as Express.js , add the framework to your package.json file: Using npm : npm install express Using yarn : yarn add express Using pnpm : pnpm add express For example, the resulting package.json file might look as follows: { \"dependencies\" : { \"lodash\" : \"^4.0.1\" , \"express\" : \"^4.16.2\" } } Installing the Cloud Client Libraries The Cloud Client Libraries for Node.js is the idiomatic way for Node.js developers to integrate with Google Cloud services, such as Firestore in Datastore mode (Datastore) and Cloud Storage ."
+        ]
+      },
+      {
+        "title": "\"Configure App Engine service accounts \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "source_id": "site-docs-reference",
+        "final_score": 64,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After May 15, 2024, Artifact Registry hosts images for the gcr.io domain in Google Cloud projects without previous Container Registry usage.",
+          "After May 15, 2024, Artifact Registry hosts images for the gcr.io domain in Google Cloud projects without previous Container Registry usage.",
+          "Specify an app-level default service account during app creation During the initial App Engine application creation process, you can choose to assign a service account that you created or use the auto-created PROJECT ID @appspot.gserviceaccount.com service account to act as the default."
+        ]
+      },
+      {
+        "title": "\"Communicating between your services \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services",
+        "source_id": "site-docs-reference",
+        "final_score": 55,
+        "relevance": "",
+        "evidence_snippets": [
+          "Communication between services in different projects You can have private access between Google Cloud projects when apps running in projects belong to a Shared VPC network that is configured to invoke an app running in the Shared VPC network's host project.",
+          "Follow DNS configuration to add the DNS hostname, but be sure to configure the private zone to be for appspot.com rather than googleapis.com .",
+          "Your app can only be reached on the private.googleapis.com IP range using this appspot.com domain."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.com",
+      "appspot.gserviceaccount.com",
+      "gcr.io",
+      "googleapis.com",
+      "iam.gserviceaccount.com",
+      "package.json",
+      "private.googleapis.com",
+      "r.appspot.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:43.108Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "File-based data preparation sources",
+  "feature_slug": "file-based-data-preparation-sources",
+  "summary": "BigQuery data preparations can clean, transform, and enrich files from Cloud Storage and Google Drive.",
+  "extended_definition": "BigQuery data preparations can clean, transform, and enrich files from Cloud Storage and Google Drive.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-explicit-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "It can help Google customers in consolidating data from various sources to Google BigQuery or loading data from it to other sources, import and export CSV files to/from file storages, creating refreshable Google Sheets reports with data from various sources and more.",
+          "With GrowthLoop, you can activate 100% of your customer data in minutes by creating customer segments based on the entire customer profile and measuring impact all within BigQuery.",
+          "Home Documentation Data analytics BigQuery Resources Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Analyze multimodal data with SQL and BigQuery DataFrames \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up ADC for a local development environment . df manuals agg The results look similar to the following: +-------------------------------------+--------------------------------+-----------------------------------+------------------------------------------------------+-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ manual.uri manual.version manual.authorizer manual.details chunks.uri chunks.version chunks.authorizer chunks.details +-------------------------------------+--------------------------------+-----------------------------------+------------------------------------------------------+-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ gs://cloud-samples-data/bigquery/ 1742492785900455 myproject.region.myconnection {\"gcs metadata\":{\"content type\":\"application/pef\", gs://cloud-samples-data/bigquery/ 1745875761227129 myproject.region.myconnection {\"gcs metadata\":{\"content type\":\"application/pdf\", tutorials/cymbal-pets/documents/ \"md5 hash\":\"c9032b037693d15a33210d638c763d0e\", tutorials/cymbal-pets/documents/ \"md5 hash\":\"5a1116cce4978ec1b094d8e8b49a1d7c\", crittercuisine 5000 user manual.pdf \"size\":566105,\"updated\":1742492785941000}} crittercuisine 5000 user manual page1.pdf \"size\":504583,\"updated\":1745875761266000}} +-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ crittercuisine 5000 user manual page1.pdf 1745875760613874 myproject.region.myconnection {\"gcs metadata\":{\"content type\":\"application/pdf\", tutorials/cymbal-pets/documents/ \"md5 hash\":\"94d03ec65d28b173bc87eac7e587b325\", crittercuisine 5000 user manual page2.pdf \"size\":94622,\"updated\":1745875760649000}} +-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ ... ... ... ... +-------------------------------------+--------------------------------+-----------------------------------+------------------------------------------------------+-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ Run the following to generate a single response from a Gemini model based on the analysis of an array of ObjectRef values: SQL WITH manuals AS ( SELECT OBJ .",
+          "For more information, see Set up ADC for a local development environment . result = bbq . ai . generate table ( gemini model , df manuals agg [ \"prompt\" ], output schema = { \"page1 summary\" : \"STRING\" , \"page2 summary\" : \"STRING\" , \"page3 summary\" : \"STRING\" , }, )[[ \"page1 summary\" , \"page2 summary\" , \"page3 summary\" ]] result The results look similar to the following: +-----------------------------------------------+-------------------------------------------+----------------------------------------------------+ page1 summary page2 summary page3 summary +-----------------------------------------------+-------------------------------------------+----------------------------------------------------+ This manual provides an overview of the This section explains how to program This page covers connecting the feeder to Wi-Fi CritterCuisine Pro 5000 automatic pet feeder, the feeder's clock, set feeding using the CritterCuisine Connect app, remote including its features, safety precautions, schedules, copy and delete meal settings, feeding, managing feeding schedules, viewing assembly instructions, and initial setup. manually feed your pet, record feeding logs, receiving low food alerts, a voice message, and understand updating firmware, creating multiple pet profiles, the low food level indicator. sharing access with other users, and cleaning and maintaining the feeder. +-----------------------------------------------+-------------------------------------------+----------------------------------------------------+ Clean up Caution : Deleting a project has the following effects: Everything in the project is deleted.",
+          "CREATE OR REPLACE FUNCTION cymbal pets . chunk pdf ( src json STRING , chunk size INT64 , overlap size INT64 ) RETURNS ARRAY<STRING > LANGUAGE python WITH CONNECTION us.cymbal conn OPTIONS ( entry point = 'chunk pdf' , runtime version = 'python-3.11' , packages =[ 'pypdf' ] ) AS \" \"\" import io import json from pypdf import PdfReader # type: ignore from urllib.request import urlopen, Request def chunk pdf(src ref: str, chunk size: int, overlap size: int) -> str: src json = json.loads(src ref) srcUrl = src json[\" access urls \"][\" read url \"] req = urlopen(srcUrl) pdf file = io.BytesIO(bytearray(req.read())) reader = PdfReader(pdf file, strict=False) extract and chunk text simultaneously all text chunks = [] curr chunk = \"\" for page in reader.pages: page text = page.extract text() if page text: curr chunk += page text split the accumulated text into chunks of a specific size with overlaop this loop implements a sliding window approach to create chunks while len(curr chunk) >= chunk size: split idx = curr chunk.rfind(\" \", 0, chunk size) if split idx == -1: split idx = chunk size actual chunk = curr chunk[:split idx] all text chunks.append(actual chunk) overlap = curr chunk[split idx + 1 : split idx + 1 + overlap size] curr chunk = overlap + curr chunk[split idx + 1 + overlap size :] if curr chunk: all text chunks.append(curr chunk) return all text chunks \"\" \" ; BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames ."
+        ]
+      },
+      {
+        "title": "\"Create recommendations based on explicit feedback with a matrix factorization\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-explicit-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Call model.predict() to get predicted ratings. import bigframes.bigquery as bbq Load movies movies = bpd . read gbq ( \"bqml tutorial.movies\" ) Merge the movies df with the previously created predicted df merged df = bpd . merge ( predicted , movies , left on = \"item id\" , right on = \"movie id\" ) Separate users and predicted data, setting the index to 'movie id' users = merged df [[ \"user id\" , \"movie id\" ]] . set index ( \"movie id\" ) Take the predicted data and sort it in descending order by 'predicted rating', setting the index to 'movie id' sort data = ( merged df [[ \"movie title\" , \"genre\" , \"predicted rating\" , \"movie id\" ]] . sort values ( by = \"predicted rating\" , ascending = False ) . set index ( \"movie id\" ) ) re-merge the separated dfs by index merged user = sort data . join ( users , how = \"outer\" ) group the users and set the user id as the index merged user . groupby ( \"user id\" ) . head ( 5 ) . set index ( \"user id\" ) . sort index () print ( merged user ) Output: movie title genre predicted rating user id 1 Saving Private Ryan (1998) Action Drama War 5.19326 1 Fargo (1996) Crime Drama Thriller 4.996954 1 Driving Miss Daisy (1989) Drama 4.983671 1 Ben-Hur (1959) Action Adventure Drama 4.877622 1 Schindler's List (1993) Drama War 4.802336 2 Saving Private Ryan (1998) Action Drama War 5.19326 2 Braveheart (1995) Action Drama War 5.174145 2 Gladiator (2000) Action Drama 5.066372 2 On Golden Pond (1981) Drama 5.01198 2 Driving Miss Daisy (1989) Drama 4.983671 Clean up To avoid incurring charges to your Google Cloud account for the resources used in this tutorial, either delete the project that contains the resources, or keep the project and delete the individual resources.",
+          "First, create a Client object with bqclient = google.cloud.bigquery.Client() , then load the movielens1m data into the dataset you created in the previous step. import io import zipfile import google.api core.exceptions import requests try : Check if you've already created the Movielens tables to avoid downloading and uploading the dataset unnecessarily. bqclient . get table ( \"bqml tutorial.ratings\" ) bqclient . get table ( \"bqml tutorial.movies\" ) except google . api core . exceptions .",
+          "Home Documentation Data analytics BigQuery Guides Send feedback Create recommendations based on explicit feedback with a matrix factorization model Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigframes.bigquery",
+      "chunk.rfind",
+      "chunks.append",
+      "chunks.authorizer",
+      "chunks.details",
+      "chunks.uri",
+      "chunks.version",
+      "core.exceptions",
+      "io.BytesIO",
+      "json.loads",
+      "manual.authorizer",
+      "manual.details",
+      "manual.pdf",
+      "manual.uri",
+      "manual.version",
+      "model.predict",
+      "myproject.region.myconnection",
+      "page.extract",
+      "page1.pdf",
+      "page2.pdf",
+      "pets.product",
+      "reader.pages",
+      "req.read",
+      "tutorial.movies",
+      "tutorial.ratings",
+      "tutorial.recommend",
+      "urllib.request",
+      "us.cymbal"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-explicit-tutorial"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-explicit-tutorial"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/bigqueryml-mf-explicit-tutorial"
+      ]
+    }
+  ]
+}

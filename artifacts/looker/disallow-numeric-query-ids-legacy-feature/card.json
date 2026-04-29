@@ -1,0 +1,192 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:20.598Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "Disallow Numeric Query IDs legacy feature",
+  "feature_slug": "disallow-numeric-query-ids-legacy-feature",
+  "summary": "This legacy feature lets users opt in to or out of query API changes that affect numeric query IDs.",
+  "extended_definition": "This legacy feature lets users opt in to or out of query API changes that affect numeric query IDs.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/data-types",
+      "https://docs.cloud.google.com/bigquery/docs/hubspot-transfer",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Admin settings - Preview Features \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "source_id": "site-docs-reference",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "When enabled, the New Looker Explore and Merge Query Experience feature lets individual users have the option to try the redesigned Looker Explore and Merge Query interfaces.",
+          "The Enhanced Content Cleanup preview feature provides the following capabilities: Lets admins and users access a new Unused content folder to quickly identify and manage the unused content on a Looker instance.",
+          "When this preview feature is enabled, the new Enhanced search experience lets you search for Looker content using filters for specific content types, special characters, and more metadata options."
+        ]
+      },
+      {
+        "title": "Load HubSpot data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/hubspot-transfer",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "To allow the HubSpot connector to transfer data from your HubSpot account, you must enable the following scopes for your private app: Required scopes automation business-intelligence collector graphql query execute collector graphql query read content conversations.read conversations.visitor identification.tokens.create crm.import crm.lists.read crm.objects.companies.read crm.objects.contacts.read crm.objects.deals.read crm.objects.owners.read crm.schemas.companies.read crm.schemas.contacts.read crm.schemas.deals.read e-commerce files forms forms-uploaded-files hubdb integration-sync oauth sales-email-read settings.users.read settings.users.teams.read social tickets timeline transactional-email For information about configuring scopes for your private app, see Legacy private apps .",
+          "Data type mapping The following table maps HubSpot data types to the corresponding BigQuery data types: HubSpot data type BigQuery data type String STRING Text STRING Integer INTEGER Boolean BOOLEAN Date TIMESTAMP Datetime TIMESTAMP Long BIGNUMERIC Pricing There is no cost to transfer HubSpot data into BigQuery while this feature is in Preview .",
+          "The following list includes a list of required scopes needed to transfer its corresponding data object: crm.objects.appointments.read crm.objects.courses.read crm.objects.custom.read crm.objects.goals.read crm.objects.leads.read crm.objects.line items.read crm.objects.listings.read crm.objects.orders.read crm.objects.owners.read crm.objects.products.read crm.objects.services.read crm.objects.users.read crm.pipelines.orders.read crm.schemas.appointments.read crm.schemas.courses.read crm.schemas.custom.read crm.schemas.deals.read crm.schemas.line items.read crm.schemas.listings.read crm.schemas.orders.read crm.schemas.quotes.read crm.schemas.services.read marketing.campaigns.read marketing.campaigns.revenue.read settings.users.read settings.users.teams.read crm.dealsplits.read write crm.export crm.extensions calling transcripts.read crm.schemas.carts.read crm.objects.carts.read crm.objects.subscriptions.read crm.objects.commercepayments.read crm.objects.projects.read crm.objects.quotes.read crm.objects.partner-clients.read crm.objects.partner-services.read crm.objects.marketing events.read crm.objects.invoices.read crm.objects.feedback submissions.read crm.objects.forecasts.read crm.schemas.commercepayments.read crm.schemas.forecasts.read crm.schemas.invoices.read crm.schemas.projects.read crm.schemas.subscriptions.read BigQuery prerequisites Verify that you have completed all actions required to enable the BigQuery Data Transfer Service ."
+        ]
+      },
+      {
+        "title": "Legacy SQL data types \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/data-types",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following cast and conversion functions are supported in legacy SQL: CAST(<numeric> AS STRING) CAST(<bignumeric> AS STRING) CAST(<string> AS NUMERIC) CAST(<string> AS BIGNUMERIC) Civil time in legacy SQL You can read civil time data types—DATE, TIME, and DATETIME—and process them with non-modifying operators such as SELECT list (with aliases) , GROUP BY keys , and pass-through fields in window functions, etc.",
+          "Exact numeric in legacy SQL You can read NUMERIC or BIGNUMERIC values in non-modifying clauses such as SELECT list (with aliases) , GROUP BY keys , and pass-through fields in window functions, and so on.",
+          "Legacy SQL data types This document details the data types supported by BigQuery's legacy SQL query syntax."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "clients.read",
+      "conversations.read",
+      "conversations.visitor",
+      "crm.dealsplits.read",
+      "crm.export",
+      "crm.extensions",
+      "crm.import",
+      "crm.lists.read",
+      "crm.objects.appointments.read",
+      "crm.objects.carts.read",
+      "crm.objects.commercepayments.read",
+      "crm.objects.companies.read",
+      "crm.objects.contacts.read",
+      "crm.objects.courses.read",
+      "crm.objects.custom.read",
+      "crm.objects.deals.read",
+      "crm.objects.feedback",
+      "crm.objects.forecasts.read",
+      "crm.objects.goals.read",
+      "crm.objects.invoices.read",
+      "crm.objects.leads.read",
+      "crm.objects.line",
+      "crm.objects.listings.read",
+      "crm.objects.marketing",
+      "crm.objects.orders.read",
+      "crm.objects.owners.read",
+      "crm.objects.partner",
+      "crm.objects.products.read",
+      "crm.objects.projects.read",
+      "crm.objects.quotes.read",
+      "crm.objects.services.read",
+      "crm.objects.subscriptions.read",
+      "crm.objects.users.read",
+      "crm.pipelines.orders.read",
+      "crm.schemas.appointments.read",
+      "crm.schemas.carts.read",
+      "crm.schemas.commercepayments.read",
+      "crm.schemas.companies.read",
+      "crm.schemas.contacts.read",
+      "crm.schemas.courses.read",
+      "crm.schemas.custom.read",
+      "crm.schemas.deals.read",
+      "crm.schemas.forecasts.read",
+      "crm.schemas.invoices.read",
+      "crm.schemas.line",
+      "crm.schemas.listings.read",
+      "crm.schemas.orders.read",
+      "crm.schemas.projects.read",
+      "crm.schemas.quotes.read",
+      "crm.schemas.services.read",
+      "crm.schemas.subscriptions.read",
+      "events.read",
+      "identification.tokens.create",
+      "items.read",
+      "marketing.campaigns.read",
+      "marketing.campaigns.revenue.read",
+      "services.read",
+      "settings.users.read",
+      "settings.users.teams.read",
+      "submissions.read",
+      "transcripts.read"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hubspot-transfer",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "https://docs.cloud.google.com/bigquery/docs/data-types"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hubspot-transfer",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "https://docs.cloud.google.com/bigquery/docs/data-types"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hubspot-transfer",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "https://docs.cloud.google.com/bigquery/docs/data-types"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hubspot-transfer",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "https://docs.cloud.google.com/bigquery/docs/data-types"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hubspot-transfer",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "https://docs.cloud.google.com/bigquery/docs/data-types"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hubspot-transfer",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "https://docs.cloud.google.com/bigquery/docs/data-types"
+      ]
+    }
+  ]
+}

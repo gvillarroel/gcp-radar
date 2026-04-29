@@ -1,0 +1,222 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:59.197Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "DNSManagedZone status metadata fields",
+  "feature_slug": "dnsmanagedzone-status-metadata-fields",
+  "summary": "Config Connector exposes creationTime and managedZoneId status fields for DNSManagedZone resources.",
+  "extended_definition": "Config Connector exposes creationTime and managedZoneId status fields for DNSManagedZone resources.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+      "https://docs.cloud.google.com/config-connector/docs/concepts/resources",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Ignore unspecified fields \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "source_id": "site-docs-reference",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "Kinds with Merge support The following are all the Config Connector kinds that support Merge populating behavior: AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AlloyDBBackup AlloyDBCluster AlloyDBUser ApigeeEnvironment ApigeeOrganization ArtifactRegistryRepository BigQueryDataset BigQueryJob BigQueryTable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable BillingBudgetsBudget BinaryAuthorizationAttestor BinaryAuthorizationPolicy CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CloudBuildTrigger CloudFunctionsFunction CloudIdentityGroup CloudIdentityMembership CloudSchedulerJob ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeForwardingRule ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSSLCertificate ComputeSSLPolicy ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel ConfigControllerInstance ContainerAnalysisNote ContainerAttachedCluster ContainerCluster ContainerNodePool DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType DNSManagedZone DNSPolicy DNSRecordSet DataFusionInstance DataflowFlexTemplateJob DataflowJob DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate EdgeContainerCluster EdgeContainerNodePool EdgeContainerVpnConnection EdgeNetworkNetwork EdgeNetworkSubnet EventarcTrigger FilestoreBackup FilestoreInstance FirestoreIndex Folder GKEHubFeature GKEHubMembership IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider IAPBrand IAPIdentityAwareProxyClient IdentityPlatformConfig IdentityPlatformOAuthIDPConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig KMSCryptoKey KMSKeyRing LoggingLogBucket LoggingLogExclusion LoggingLogSink LoggingLogView MemcacheInstance MonitoringAlertPolicy MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig NetworkConnectivityHub NetworkConnectivitySpoke NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy NetworkServicesEndpointPolicy NetworkServicesGRPCRoute NetworkServicesGateway NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute OSConfigGuestPolicy OSConfigOSPolicyAssignment PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Project PubSubLiteReservation PubSubSchema PubSubSubscription PubSubTopic RecaptchaEnterpriseKey RedisInstance ResourceManagerLien ResourceManagerPolicy RunJob RunService SQLDatabase SQLSSLCert SQLUser SecretManagerSecret SecretManagerSecretVersion Service ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService ServiceIdentity ServiceNetworkingConnection SourceRepoRepository SpannerDatabase SpannerInstance StorageBucket StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification StorageTransferJob VPCAccessConnector The following kinds don't support the Merge populating behavior starting from the corresponding version: Kind Name Version LoggingLogMetric 1.118.1 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "This skips populating unspecified fields into the Kubernetes resource spec: metadata : annotations : cnrm.cloud.google.com/state-into-spec : absent This annotation has a default value of merge if not specified, which means Config Connector populates all unspecified fields into spec.",
+          "Observed State If you need to set cnrm.cloud.google.com/state-into-spec: absent , but your solution depends on the populated values from unspecified fields, check if these fields exist under status.observedState in the CRD schema."
+        ]
+      },
+      {
+        "title": "About Config Connector CRDs \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/concepts/resources",
+        "source_id": "site-docs-reference",
+        "final_score": 97,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The ready condition has Message and Reason fields which provide additional information on the resource's status.",
+          "This section describes how Config Connector uses subfields within metadata.",
+          "These actions are defined in subfields of metadata.annotations ."
+        ]
+      },
+      {
+        "title": "IAMPartialPolicy \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "source_id": "site-docs-root-2",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "Kind Supports Conditions AccessContextManagerAccessPolicy ApigeeEnvironment ArtifactRegistryRepository BigQueryTable Y BigtableInstance Y BigtableTable Y BillingAccount Y BinaryAuthorizationPolicy Y CloudFunctionsFunction Y ComputeBackendBucket ComputeDisk ComputeImage Y ComputeInstance Y ComputeSnapshot ComputeSubnetwork Y DNSManagedZone DataprocCluster Y Folder Y IAMServiceAccount Y IAMWorkforcePool Y KMSCryptoKey Y KMSKeyRing Y NetworkSecurityAuthorizationPolicy Y NetworkSecurityClientTLSPolicy Y NetworkSecurityServerTLSPolicy Y Organization Y Project Y PubSubSubscription PubSubTopic RunJob RunService SecretManagerSecret ServiceDirectoryNamespace ServiceDirectoryService SourceRepoRepository SpannerDatabase Y SpannerInstance StorageBucket Y Kind External Reference Formats AccessContextManagerAccessPolicy {{name}} ApigeeEnvironment organizations/{{apigee organization}}/environments/{{name}} ArtifactRegistryRepository projects/{{project}}/locations/{{location}}/repositories/{{repository id}} BigQueryTable projects/{{project}}/datasets/{{dataset id}}/tables/{{table id}} BigtableInstance projects/{{project}}/instances/{{name}} BigtableTable projects/{{project}}/instances/{{instance name}}/tables/{{name}} BillingAccount {{billing account id}} BinaryAuthorizationPolicy projects/{{project}}/policy CloudFunctionsFunction projects/{{project}}/locations/{{region}}/functions/{{name}} ComputeBackendBucket projects/{{project}}/global/backendBuckets/{{name}} ComputeDisk projects/{{project}}/regions/{{region}}/disks/{{name}} projects/{{project}}/zones/{{zone}}/disks/{{name}} ComputeImage projects/{{project}}/global/images/{{name}} ComputeInstance projects/{{project}}/zones/{{zone}}/instances/{{name}} ComputeSnapshot projects/{{project}}/global/snapshots/{{name}} ComputeSubnetwork projects/{{project}}/regions/{{region}}/subnetworks/{{name}} DNSManagedZone projects/{{project}}/managedZones/{{name}} DataprocCluster projects/{{project}}/regions/{{location}}/clusters/{{name}} Folder folders/{{folder id}} IAMServiceAccount projects/{{project}}/serviceAccounts/{{account id}}@{{project}}.iam.gserviceaccount.com IAMWorkforcePool locations/{{location}}/workforcePools/{{name}} KMSCryptoKey projects/{{project}}/locations/{{location}}/keyRings/{{key ring id}}/cryptoKeys/{{name}} KMSKeyRing projects/{{project}}/locations/{{location}}/keyRings/{{name}} NetworkSecurityAuthorizationPolicy projects/{{project}}/locations/{{location}}/authorizationPolicies/{{name}} NetworkSecurityClientTLSPolicy projects/{{project}}/locations/{{location}}/clientTlsPolicies/{{name}} NetworkSecurityServerTLSPolicy projects/{{project}}/locations/{{location}}/serverTlsPolicies/{{name}} Organization {{org id}} Project projects/{{project id}} PubSubSubscription projects/{{project}}/subscriptions/{{name}} PubSubTopic projects/{{project}}/topics/{{name}} RunJob projects/{{project}}/locations/{{location}}/jobs/{{name}} RunService projects/{{project}}/locations/{{location}}/services/{{name}} SecretManagerSecret projects/{{project}}/secrets/{{secret id}} ServiceDirectoryNamespace projects/{{project}}/locations/{{location}}/namespaces/{{namespace id}} ServiceDirectoryService {{namespace}}/services/{{service id}} SourceRepoRepository projects/{{project}}/repos/{{name}} SpannerDatabase projects/{{project}}/instances/{{instance}}/databases/{{name}} SpannerInstance projects/{{project}}/instances/{{name}} StorageBucket {{name}} Custom Resource Definition Properties Spec Schema bindings : - condition : description : string expression : string title : string members : - member : string memberFrom : bigQueryConnectionConnectionRef : name : string namespace : string type : string logSinkRef : name : string namespace : string serviceAccountRef : name : string namespace : string serviceIdentityRef : name : string namespace : string sqlInstanceRef : name : string namespace : string role : string resourceRef : apiVersion : string external : string kind : string name : string namespace : string Fields bindings Optional list (object) Optional.",
+          "The Google Cloud resource to set the IAM policy on for example organization or project, etc. resourceRef.apiVersion Optional string APIVersion of the referenced resource resourceRef.external Optional string The external name of the referenced resource resourceRef.kind Required string Kind of the referenced resource resourceRef.name Optional string resourceRef.namespace Optional string Field is required when parent field is specified Status Schema allBindings : - condition : description : string expression : string title : string members : - string role : string conditions : - lastTransitionTime : string message : string reason : string status : string type : string lastAppliedBindings : - condition : description : string expression : string title : string members : - string role : string observedGeneration : integer Fields allBindings list (object) AllBindings surfaces all IAM bindings for the referenced resource. allBindings[] object Specifies the members to bind to an IAM role. allBindings[].condition object Optional.",
+          "If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cnrm.cloud.google.com",
+      "i.e",
+      "iam.gserviceaccount.com",
+      "metadata.annotations",
+      "metadata.generation",
+      "status.condition",
+      "status.email",
+      "status.observedState",
+      "status.observedState.cloudResource.serviceAccountID",
+      "status.serviceAccountEmailAddress",
+      "status.writerIdentity"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/resources"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/resources"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/resources"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/resources"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/resources"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/resources"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/resources"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/resources"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/resources"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/resources"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/resources"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/resources"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/resources"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/resources"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/resources"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/resources"
+      ]
+    }
+  ]
+}

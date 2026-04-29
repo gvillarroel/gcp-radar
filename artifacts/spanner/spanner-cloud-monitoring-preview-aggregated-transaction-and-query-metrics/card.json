@@ -1,0 +1,173 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner Cloud Monitoring preview aggregated transaction and query metrics",
+  "feature_slug": "spanner-cloud-monitoring-preview-aggregated-transaction-and-query-metrics",
+  "summary": "Adds preview support for viewing aggregated Spanner metrics in Cloud Monitoring for transactions, reads, queries, and lock contentions, with one-minute metric retention increased to six weeks.",
+  "extended_definition": "Adds preview support for viewing aggregated Spanner metrics in Cloud Monitoring for transactions, reads, queries, and lock contentions, with one-minute metric retention increased to six weeks.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus",
+      "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+      "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Capture custom client-side metrics using OpenTelemetry \\_|\\_ Spanner \\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+        "source_id": "site-docs-root",
+        "final_score": 122,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To set up custom client-side metrics using OpenTelemetry, you need to configure the OpenTelemetry SDK and OTLP exporter: Add the necessary dependencies to your application using the following code: Java <dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>libraries-bom</artifactId> <version>26.32.0</version> <type>pom</type> <scope>import</scope> </dependency> <dependency> <groupId>io.opentelemetry</groupId> <artifactId>opentelemetry-bom</artifactId> <version>1.35.0</version> <type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-spanner</artifactId> </dependency> <dependency> <groupId>io.opentelemetry</groupId> <artifactId>opentelemetry-sdk</artifactId> </dependency> <dependency> <groupId>io.opentelemetry</groupId> <artifactId>opentelemetry-sdk-metrics</artifactId> </dependency> <dependency> <groupId>io.opentelemetry</groupId> <artifactId>opentelemetry-sdk-trace</artifactId> </dependency> <dependency> <groupId>io.opentelemetry</groupId> <artifactId>opentelemetry-exporter-otlp</artifactId> </dependency> </dependencies> Go go . opentelemetry . io / otel v1 .34.0 go . opentelemetry . io / otel / exporters / otlp / otlpmetric / otlpmetricgrpc v1 .28.0 go . opentelemetry . io / otel / exporters / otlp / otlptrace / otlptracegrpc v1 .28.0 go . opentelemetry . io / otel / metric v1 .34.0 go . opentelemetry . io / otel / sdk v1 .34.0 go . opentelemetry . io / otel / sdk / metric v1 .34.0 Create an OpenTelemetry object with the OTLP exporter and inject it into Spanner using SpannerOptions : Java // Enable OpenTelemetry metrics and traces before Injecting OpenTelemetry SpannerOptions . enableOpenTelemetryMetrics (); SpannerOptions . enableOpenTelemetryTraces (); // Create a new meter provider SdkMeterProvider sdkMeterProvider = SdkMeterProvider . builder () // Use Otlp exporter or any other exporter of your choice. . registerMetricReader ( PeriodicMetricReader . builder ( OtlpGrpcMetricExporter . builder (). build ()). build ()) . build (); // Create a new tracer provider SdkTracerProvider sdkTracerProvider = SdkTracerProvider . builder () // Use Otlp exporter or any other exporter of your choice. . addSpanProcessor ( SimpleSpanProcessor . builder ( OtlpGrpcSpanExporter . builder (). build ()). build ()) . build (); // Configure OpenTelemetry object using Meter Provider and Tracer Provider OpenTelemetry openTelemetry = OpenTelemetrySdk . builder () . setMeterProvider ( sdkMeterProvider ) . setTracerProvider ( sdkTracerProvider ) . build (); // Inject OpenTelemetry object via Spanner options or register as GlobalOpenTelemetry.",
+          "SpannerOptions options = SpannerOptions . newBuilder () . setOpenTelemetry ( openTelemetry ) . build (); Spanner spanner = options . getService (); DatabaseClient dbClient = spanner . getDatabaseClient ( DatabaseId . of ( projectId , instanceId , databaseId )); captureGfeMetric ( dbClient ); captureQueryStatsMetric ( openTelemetry , dbClient ); // Close the providers to free up the resources and export the data. / sdkMeterProvider . close (); sdkTracerProvider . close (); Go // Ensure that your Go runtime version is supported by the OpenTelemetry-Go compatibility policy before enabling OpenTelemetry instrumentation. // Refer to compatibility here https://github.com/googleapis/google-cloud-go/blob/main/debug.md#opentelemetry import ( \"context\" \"fmt\" \"io\" \"log\" \"strconv\" \"strings\" \"cloud.google.com/go/spanner\" \"go.opentelemetry.io/otel\" \"go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetricgrpc\" \"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc\" \"go.opentelemetry.io/otel/metric\" sdkmetric \"go.opentelemetry.io/otel/sdk/metric\" \"go.opentelemetry.io/otel/sdk/resource\" sdktrace \"go.opentelemetry.io/otel/sdk/trace\" semconv \"go.opentelemetry.io/otel/semconv/v1.24.0\" \"google.golang.org/api/iterator\" ) func enableOpenTelemetryMetricsAndTraces ( w io .",
+          "You can capture the GFE latency using the following code: Java static void captureGfeMetric ( DatabaseClient dbClient ) { // GFE latency and other Spanner metrics are automatically collected // when OpenTelemetry metrics are enabled. try ( ResultSet resultSet = dbClient . singleUse () // Execute a single read or query against Cloud Spanner. . executeQuery ( Statement . of ( \"SELECT SingerId, AlbumId, AlbumTitle FROM Albums\" ))) { while ( resultSet . next ()) { System . out . printf ( \"%d %d %s\" , resultSet . getLong ( 0 ), resultSet . getLong ( 1 ), resultSet . getString ( 2 )); } } } Go // GFE Latency and other Spanner metrics are automatically collected // when OpenTelemetry metrics are enabled. func captureGFELatencyMetric ( ctx context ."
+        ]
+      },
+      {
+        "title": "\"Build change streams connections using Dataflow \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "source_id": "site-docs-root",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "Custom change stream metrics These metrics are exposed in Cloud Monitoring and include: Bucketed (histogram) latency between a record being committed in Spanner to it being emitted into a PCollection by the connector.",
+          "This function breaks each data change record into separate data change records, one per mod. private static class BreakRecordByModFn extends DoFn<DataChangeRecord , DataChangeRecord > { @ProcessElement public void processElement ( @Element DataChangeRecord record , OutputReceiver<DataChangeRecord> outputReceiver ) { record . getMods (). stream () . map ( mod - > new DataChangeRecord ( record . getPartitionToken (), record . getCommitTimestamp (), record . getServerTransactionId (), record . isLastRecordInTransactionInPartition (), record . getRecordSequence (), record . getTableName (), record . getRowType (), Collections . singletonList ( mod ), record . getModType (), record . getValueCaptureType (), record . getNumberOfRecordsInTransaction (), record . getNumberOfPartitionsInTransaction (), record . getTransactionTag (), record . isSystemTransaction (), record . getMetadata ())) . forEach ( outputReceiver :: output ); } } KeyByIdFn This function takes in a DataChangeRecord and outputs a DataChangeRecord keyed by the Spanner primary key hashed to an integer value. private static class KeyByIdFn extends DoFn<DataChangeRecord , KV<String , DataChangeRecord >> { // NUMBER OF BUCKETS should be configured by the user to match their key cardinality // Here, we are choosing to hash the Spanner primary keys to a bucket index, in order to have a deterministic number // of states and timers for performance purposes. // Note that having too many buckets might have undesirable effects if it results in a low number of records per bucket // On the other hand, having too few buckets might also be problematic, since many keys will be contained within them. private static final int NUMBER OF BUCKETS = 1000 ; @ProcessElement public void processElement ( @Element DataChangeRecord record , OutputReceiver<KV<String , DataChangeRecord >> outputReceiver ) { int hashCode = ( int ) record . getMods (). get ( 0 ). getKeysJson (). hashCode (); // Hash the received keys into a bucket in order to have a // deterministic number of buffers and timers.",
+          "These examples demonstrate how to filter change stream records based on user-defined transaction tags as well as system tags: User-defined tag filtering for my-tx-tag : pipeline . apply ( SpannerIO . readChangeStream () . withSpannerConfig ( SpannerConfig . create () . withProjectId ( \"my-project-id\" ) . withInstanceId ( \"my-instance-id\" ) . withDatabaseId ( \"my-database-id\" ) . withDatabaseRole ( \"my-database-role\" )) // Needed for fine-grained access control only . withChangeStreamName ( \"my-change-stream\" ) . withMetadataInstance ( \"my-metadata-instance-id\" ) . withMetadataDatabase ( \"my-metadata-database-id\" ) . withInclusiveStartAt ( Timestamp . now ())) . apply ( Filter . by ( record - > ! record . isSystemTransaction () && record . getTransactionTag (). equalsIgnoreCase ( \"my-tx-tag\" ))) // Subsequent processing goes here System tag filtering/ TTL auditing: pipeline . apply ( SpannerIO . readChangeStream () . withSpannerConfig ( SpannerConfig . create () . withProjectId ( \"my-project-id\" ) . withInstanceId ( \"my-instance-id\" ) . withDatabaseId ( \"my-database-id\" ) . withDatabaseRole ( \"my-database-role\" )) // Needed for fine-grained access control only . withChangeStreamName ( \"my-change-stream\" ) . withMetadataInstance ( \"my-metadata-instance-id\" ) . withMetadataDatabase ( \"my-metadata-database-id\" ) . withInclusiveStartAt ( Timestamp . now ())) . apply ( Filter . by ( record - > record . isSystemTransaction () && record . getTransactionTag (). equals ( \"RowDeletionPolicy\" ))) // Subsequent processing goes here Sample: Fetch full row This example works with a Spanner table named Singer that has the following definition: CREATE TABLE Singers ( SingerId INT64 NOT NULL , FirstName STRING ( 1024 ), LastName STRING ( 1024 ) ) PRIMARY KEY ( SingerId ); Under the default OLD AND NEW VALUES value capture mode of change streams, when there is an update to a Spanner row, the data change record received will contain only the columns that were changed."
+        ]
+      },
+      {
+        "title": "\"Capture custom client-side metrics using OpenCensus \\_|\\_ Spanner \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus",
+        "source_id": "site-docs-root",
+        "final_score": 114,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "SpannerRpcViews . registerGfeLatencyView (); // Capture GFE Latency and GFE Header missing count. // SpannerRpcViews.registerGfeLatencyAndHeaderMissingCountViews(); // Capture only GFE Header missing count. // SpannerRpcViews.registerGfeHeaderMissingCountView(); // Enable OpenCensus exporters to export metrics to Stackdriver Monitoring. // Exporters use Application Default Credentials to authenticate. // See https://developers.google.com/identity/protocols/application-default-credentials // for more details. try { StackdriverStatsExporter . createAndRegister (); } catch ( IOException IllegalStateException e ) { System . out . println ( \"Error during StackdriverStatsExporter\" ); } try ( ResultSet resultSet = dbClient . singleUse () // Execute a single read or query against Cloud Spanner. . executeQuery ( Statement . of ( \"SELECT SingerId, AlbumId, AlbumTitle FROM Albums\" ))) { while ( resultSet . next ()) { System . out . printf ( \"%d %d %s\" , resultSet . getLong ( 0 ), resultSet . getLong ( 1 ), resultSet . getString ( 2 )); } } } Go // We are in the process of adding support in the Cloud Spanner Go Client Library // to capture the gfe latency metric. import ( \"context\" \"fmt\" \"io\" \"strconv\" \"strings\" spanner \"cloud.google.com/go/spanner/apiv1\" sppb \"cloud.google.com/go/spanner/apiv1/spannerpb\" gax \"github.com/googleapis/gax-go/v2\" \"google.golang.org/grpc\" \"google.golang.org/grpc/metadata\" \"contrib.go.opencensus.io/exporter/stackdriver\" \"go.opencensus.io/stats\" \"go.opencensus.io/stats/view\" \"go.opencensus.io/tag\" ) // OpenCensus Tag, Measure and View. var ( KeyMethod = tag .",
+          "It is imperative that this step exists, // otherwise recorded metrics will be dropped and never exported. static View QUERY STATS LATENCY VIEW = View . create ( Name . create ( \"cloud.google.com/java/spanner/query stats elapsed\" ), \"The execution of the query\" , QUERY STATS ELAPSED , AGGREGATION WITH MILLIS HISTOGRAM , Collections . emptyList ()); static ViewManager manager = Stats . getViewManager (); private static final StatsRecorder STATS RECORDER = Stats . getStatsRecorder (); static void captureQueryStatsMetric ( DatabaseClient dbClient ) { manager . registerView ( QUERY STATS LATENCY VIEW ); // Enable OpenCensus exporters to export metrics to Cloud Monitoring. // Exporters use Application Default Credentials to authenticate. // See https://developers.google.com/identity/protocols/application-default-credentials // for more details. try { StackdriverStatsExporter . createAndRegister (); } catch ( IOException IllegalStateException e ) { System . out . println ( \"Error during StackdriverStatsExporter\" ); } try ( ResultSet resultSet = dbClient . singleUse () . analyzeQuery ( Statement . of ( \"SELECT SingerId, AlbumId, AlbumTitle FROM Albums\" ), QueryAnalyzeMode .",
+          "RpcViews . registerClientGrpcBasicViews (); // Enable OpenCensus exporters to export metrics to Stackdriver Monitoring. // Exporters use Application Default Credentials to authenticate. // See https://developers.google.com/identity/protocols/application-default-credentials // for more details. try { StackdriverStatsExporter . createAndRegister (); } catch ( IOException IllegalStateException e ) { System . out . println ( \"Error during StackdriverStatsExporter\" ); } try ( ResultSet resultSet = dbClient . singleUse () // Execute a single read or query against Cloud Spanner. . executeQuery ( Statement . of ( \"SELECT SingerId, AlbumId, AlbumTitle FROM Albums\" ))) { while ( resultSet . next ()) { System . out . printf ( \"%d %d %s\" , resultSet . getLong ( 0 ), resultSet . getLong ( 1 ), resultSet . getString ( 2 )); } } } Go import ( \"context\" \"fmt\" \"io\" \"regexp\" \"cloud.google.com/go/spanner\" \"google.golang.org/api/iterator\" \"contrib.go.opencensus.io/exporter/stackdriver\" \"go.opencensus.io/plugin/ocgrpc\" \"go.opencensus.io/stats/view\" ) var validDatabasePattern = regexp ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud",
+      "com.google.cloud.spanner",
+      "contrib.go.opencensus.io",
+      "debug.md",
+      "developers.google.com",
+      "github.com",
+      "go.opencensus.io",
+      "go.opentelemetry.io",
+      "io.opentelemetry",
+      "v1.24.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus"
+      ]
+    }
+  ]
+}

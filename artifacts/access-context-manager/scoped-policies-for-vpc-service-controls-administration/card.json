@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:40.868Z",
+  "source_step08_card": "data/step-08/current/products/access-context-manager/card.json",
+  "product_name": "Access Context Manager",
+  "product_slug": "access-context-manager",
+  "feature_name": "Scoped policies for VPC Service Controls administration",
+  "feature_slug": "scoped-policies-for-vpc-service-controls-administration",
+  "summary": "Scoped policies enable delegation of VPC Service Controls perimeter and access-level administration to folder- and project-level administrators.",
+  "extended_definition": "Scoped policies enable delegation of VPC Service Controls perimeter and access-level administration to folder- and project-level administrators.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+      "https://docs.cloud.google.com/access-context-manager/docs/create-access-policy",
+      "https://docs.cloud.google.com/access-context-manager/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Apply policies to user groups using access bindings \\_|\\_ Access Context\\",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+        "source_id": "site-iam-reference",
+        "final_score": 127,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "API Create a JSON body: { \"groupKey\": \" GROUP ID \", // // Optional; if specified, all applications that aren't defined in // scopedAccessSettings have these access levels applied. // // If more than one access level is specified, the user is // granted access if any one resolves to TRUE (OR logic, not AND). // // If you omit this key entirely, then no policy enforcement is // applied by default. // \"accessLevels\": [ \" DEFAULT ACCESS LEVEL \" ], \"scopedAccessSettings\": [ { \"scope\": { \"clientScope\": { \"restrictedClientApplication\": { \"clientId\": \" CLIENT ID \" } } }, \"activeSettings\": { \"accessLevels\": [ \" ACCESS LEVEL A \" ], \"sessionSettings\": [ { \"sessionLength\": \" SESSION LENGTH \", \"sessionReauthMethod\": \" SESSION REAUTH METHOD \", \"sessionLengthEnabled\": true } ] } }, { \"scope\": { \"clientScope\": { \"restrictedClientApplication\": { \"name\": \" CLIENT NAME \" } }, \"activeSettings\": { \"accessLevels\": [ \" ACCESS LEVEL B \" ] } } } ] } Replace the following: GROUP ID : The group ID.",
+          "For each application that you want to map to a specific access level, include a clientScope entry. scopedAccessSettings: - scope: clientScope: restrictedClientApplication: clientId: CLIENT ID activeSettings: accessLevels: - ACCESS LEVEL A sessionSettings: - sessionLength: SESSION LENGTH sessionReauthMethod: SESSION REAUTH METHOD sessionLengthEnabled: true - scope: clientScope: restrictedClientApplication: because this app is specified by name, it won't work with sessionSettings. if you add sessionSettings, make sure to replace the name key with clientId, and use the OAuth client ID as the value. name: CLIENT NAME activeSettings: accessLevels: - ACCESS LEVEL B Replace the following: CLIENT ID : The OAuth client ID.",
+          "API Create a JSON body: { \"group key\": \" GROUP ID \", // // Optional; if specified, all applications that aren't defined in // scopedAccessSettings have these access levels applied. // // If more than one access level is specified, the user is // granted access if any one resolves to TRUE (OR logic, not AND). // // If you omit this key entirely, then no policy enforcement is // be applied by default. // \"access levels\": [ \" DEFAULT ACCESS LEVEL \" ], // // Optional; if specified, all applications that aren't defined in // scopedAccessSettings will have these dry run access levels applied. // \"dry run access levels\": [ \" DEFAULT DRY RUN ACCESS LEVEL \" ], \"scoped access settings\": [ { \"scope\": { \"client scope\": { \"restricted client application\": { \"name\": \" CLIENT NAME \" } } }, \"active settings\": { \"access levels\": [ \" ACCESS LEVEL A \" ] }, \"dry run settings\": { \"access levels\": [ \" DRY RUN ACCESS LEVEL 1 \" ] } }, { \"scope\": { \"client scope\": { \"restricted client application\": { \"client id\": \" CLIENT ID \" } } }, \"active settings\": { \"access levels\": [ \" DRY RUN ACCESS LEVEL 2 \" ] } } ] } Replace the following: GROUP ID : The group ID."
+        ]
+      },
+      {
+        "title": "Access Context Manager Overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 117,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can configure and enforce Access Context Manager policies across the following Chrome Enterprise Premium solution components: VPC Service Controls Identity-Aware Proxy Context-Aware Access for Google Workspace Identity and Access Management (IAM) conditions Benefits Many companies rely on a perimeter security model such as a firewall to secure internal resources.",
+          "To delegate administration of an access policy, you can create a scoped access policy and set the scope of the policy at the folder or project level.",
+          "Access policies An access policy is a container for all of your Access Context Manager resources, such as access levels and service perimeters ."
+        ]
+      },
+      {
+        "title": "\"Create an access policy \\_|\\_ Access Context Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/create-access-policy",
+        "source_id": "site-docs-root",
+        "final_score": 107,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To delegate administration by binding a principal and role with a scoped access policy, use the add-iam-policy-binding command. gcloud access-context-manager policies add-iam-policy-binding \\ [ POLICY ] --member = PRINCIPAL --role = ROLE Where: POLICY is ID of the policy or fully qualified identifier for the policy.",
+          "On the Create access policy page, click Create access policy . gcloud To create a scoped access policy, use the gcloud access-context-manager policies create command. gcloud access-context-manager policies create \\ --organization ORGANIZATION ID [ --scopes = SCOPE ] --title POLICY TITLE Where: ORGANIZATION ID is the numeric ID of your organization.",
+          "To delegate administration of the scoped access policy, do the following: Create a request body. { \"policy\" : \" IAM POLICY \" , } Where: IAM POLICY is a collection of bindings."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/create-access-policy"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/create-access-policy"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/create-access-policy"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/create-access-policy"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/create-access-policy"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/create-access-policy"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/create-access-policy"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/create-access-policy"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/create-access-policy"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:32.709Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-workbench/card.json",
+  "product_name": "Vertex AI Workbench",
+  "product_slug": "vertex-ai-workbench",
+  "feature_name": "curl SSL certificate path detection in Vertex AI Workbench user-managed notebooks",
+  "feature_slug": "curl-ssl-certificate-path-detection-in-vertex-ai-workbench-user-managed-notebooks",
+  "summary": "A bug was fixed where curl could not detect the correct SSL certificate path by default in user-managed notebooks.",
+  "extended_definition": "A bug was fixed where curl could not detect the correct SSL certificate path by default in user-managed notebooks.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/colab/create-console-quickstart",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage access to a Vertex AI Workbench managed notebooks instance's JupyterLab\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab",
+        "source_id": "site-docs-reference-2",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following are examples of single user access metadata entries: proxy-mode=mail proxy-user-mail=user@example.com When you select the Service account access mode, Vertex AI Workbench stores a proxy-mode=service account metadata entry.",
+          "Home Documentation AI and ML Vertex AI Vertex AI Workbench Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "To continue using Vertex AI Workbench, we recommend that you migrate your managed notebooks instances to Vertex AI Workbench instances ."
+        ]
+      },
+      {
+        "title": "\"Notebooks API usage overview \\_|\\_ Vertex AI Workbench \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference",
+        "source_id": "site-docs-reference",
+        "final_score": 64,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "API versions The following API versions are available: v2 ( generally available ) is for managing Vertex AI Workbench instances. v1 ( generally available ) is for managing user-managed notebooks and managed notebooks instances. v1beta1 is scheduled for removal.",
+          "Home Documentation AI and ML Vertex AI Vertex AI Workbench Reference Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a Colab Enterprise notebook by using the Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/colab/create-console-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 56,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Enable the Vertex AI, Dataform, and Compute Engine APIs.",
+          "Enable the Vertex AI, Dataform, and Compute Engine APIs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference",
+        "https://docs.cloud.google.com/vertex-ai/docs/colab/create-console-quickstart"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference",
+        "https://docs.cloud.google.com/vertex-ai/docs/colab/create-console-quickstart"
+      ]
+    }
+  ]
+}

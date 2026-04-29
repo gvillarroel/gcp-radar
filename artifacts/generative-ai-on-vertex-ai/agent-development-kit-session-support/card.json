@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:12.462Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "Agent Development Kit session support",
+  "feature_slug": "agent-development-kit-session-support",
+  "summary": "Vertex AI Agent Engine gained Preview support for sessions with Agent Development Kit agents.",
+  "extended_definition": "Vertex AI Agent Engine gained Preview support for sessions with Agent Development Kit agents.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/libraries",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Vertex AI GenAI API \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 247,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: v1beta1.projects.locations Methods askContexts POST /v1beta1/{parent}:askContexts Agentic Retrieval Ask API for RAG. asyncRetrieveContexts POST /v1beta1/{parent}:asyncRetrieveContexts Asynchronous API to retrieves relevant contexts for a query. augmentPrompt POST /v1beta1/{parent}:augmentPrompt Given an input prompt, it returns augmented prompt from vertex rag store to guide LLM towards generating grounded responses. corroborateContent POST /v1beta1/{parent}:corroborateContent Given an input text, it returns a score that evaluates the factuality of the text. evaluateDataset POST /v1beta1/{location}:evaluateDataset Evaluates a dataset based on a set of given metrics. evaluateInstances POST /v1beta1/{location}:evaluateInstances Evaluates instances based on a given metric. generateInstanceRubrics POST /v1beta1/{location}:generateInstanceRubrics Generates rubrics for a given prompt. generateSyntheticData POST /v1beta1/{location}:generateSyntheticData Generates synthetic (artificial) data based on a description getRagEngineConfig GET /v1beta1/{name} Gets a RagEngineConfig. retrieveContexts POST /v1beta1/{parent}:retrieveContexts Retrieves relevant contexts for a query. updateRagEngineConfig PATCH /v1beta1/{ragEngineConfig.name} Updates a RagEngineConfig.",
+          "REST Resource: v1.projects.locations Methods askContexts POST /v1/{parent}:askContexts Agentic Retrieval Ask API for RAG. asyncRetrieveContexts POST /v1/{parent}:asyncRetrieveContexts Asynchronous API to retrieves relevant contexts for a query. augmentPrompt POST /v1/{parent}:augmentPrompt Given an input prompt, it returns augmented prompt from vertex rag store to guide LLM towards generating grounded responses. corroborateContent POST /v1/{parent}:corroborateContent Given an input text, it returns a score that evaluates the factuality of the text. evaluateDataset POST /v1/{location}:evaluateDataset Evaluates a dataset based on a set of given metrics. evaluateInstances POST /v1/{location}:evaluateInstances Evaluates instances based on a given metric. generateInstanceRubrics POST /v1/{location}:generateInstanceRubrics Generates rubrics for a given prompt. generateSyntheticData POST /v1/{location}:generateSyntheticData Generates synthetic (artificial) data based on a description getRagEngineConfig GET /v1/{name} Gets a RagEngineConfig. retrieveContexts POST /v1/{parent}:retrieveContexts Retrieves relevant contexts for a query. updateRagEngineConfig PATCH /v1/{ragEngineConfig.name} Updates a RagEngineConfig.",
+          "REST Resource: v1beta1.projects.locations.reasoningEngines.sessions Methods appendEvent POST /v1beta1/{name}:appendEvent Appends an event to a given session. create POST /v1beta1/{parent}/sessions Creates a new Session . delete DELETE /v1beta1/{name} Deletes details of the specific Session . get GET /v1beta1/{name} Gets details of the specific Session . list GET /v1beta1/{parent}/sessions Lists Sessions in a given reasoning engine. patch PATCH /v1beta1/{session.name} Updates the specific Session ."
+        ]
+      },
+      {
+        "title": "\"Generative AI glossary \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "source_id": "site-docs-root",
+        "final_score": 217,
+        "relevance": "",
+        "evidence_snippets": [
+          "Vertex AI Agent Engine Vertex AI Agent Engine, a part of the Vertex AI Platform, is a set of services that enables developers to deploy, manage, and scale AI agents in production.",
+          "For more information, see Vertex AI Agent Engine overview .",
+          "Home Documentation AI and ML Vertex AI Generative AI on Vertex AI Guides Send feedback Generative AI glossary Stay organized with collections Save and categorize content based on your preferences. agent In the context of generative AI, an agent is software that autonomously plans and executes a series of actions in pursuit of a goal, potentially in novel situations."
+        ]
+      },
+      {
+        "title": "\"Grounding with Vertex AI Search \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "source_id": "site-docs-root",
+        "final_score": 203,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to IAM To get the permissions that you need to use grounding with Vertex AI Search, ask your administrator to grant you the following IAM roles: To read all Discovery Engine resources: Discovery Engine Viewer ( roles/discoveryengine.viewer ).",
+          "Select a grounding source option from the following table: Grounding option Description Input Vertex AI RAG Engine Grounds using your data and do-it-yourself components.",
+          "To read and write all Discovery Engine resources and to create a Vertex AI Search instance: Discovery Engine Editor ( roles/discoveryengine.editor )."
+        ]
+      },
+      {
+        "title": "\"Vertex AI client libraries \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/libraries",
+        "source_id": "site-api-reference",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Java If you are using Maven with BOM, add the following in your pom.xml: <dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>libraries-bom</artifactId> <version>26.34.0</version> <type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-vertexai</artifactId> </dependency> </dependencies> If you are using Maven without BOM, add the following to your pom.xml: <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-vertexai</artifactId> <version>1.1.0</version> </dependency> If you are using Gradle without BOM, add the following to your build.gradle: implementation 'com.google.cloud:google-cloud-vertexai:1.1.0' For more information, see Setting Up a Java Development Environment .",
+          "Node.js npm install @google-cloud/vertexai For more information, see Setting Up a Node.js Development Environment .",
+          "Go go get cloud.google.com/go/vertexai/genai For more information, see Setting Up a Go Development Environment ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "build.gradle",
+      "com.google.cloud",
+      "discoveryengine.editor",
+      "discoveryengine.viewer",
+      "pom.xml",
+      "scones.jpg",
+      "session.name",
+      "v1.projects.locations",
+      "v1.projects.locations.reasoningEngines.sessions",
+      "v1beta1.projects.locations",
+      "v1beta1.projects.locations.reasoningEngines.sessions",
+      "vertexai.preview.prompts"
+    ],
+    "missing_inventory_roles": [
+      "roles/discoveryengine.editor",
+      "roles/discoveryengine.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/libraries"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/libraries"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/libraries"
+      ]
+    }
+  ]
+}

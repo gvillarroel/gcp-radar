@@ -1,0 +1,94 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:28.768Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner columnar engine",
+  "feature_slug": "spanner-columnar-engine",
+  "summary": "Spanner launched the Columnar engine in Public Preview to enable automatic columnar query execution and faster columnar scans with vectorized execution on live operational data; The Spanner columnar engine provides a preview storage and query acceleration technique for analytical workloads, improving scan performance on live operational data by up to 200x without impacting transactional workloads.",
+  "extended_definition": "Spanner launched the Columnar engine in Public Preview to enable automatic columnar query execution and faster columnar scans with vectorized execution on live operational data; The Spanner columnar engine provides a preview storage and query acceleration technique for analytical workloads, improving scan performance on live operational data by up to 200x without impacting transactional workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/columnar-engine",
+      "https://docs.cloud.google.com/spanner/docs/configure-columnar-engine",
+      "https://docs.cloud.google.com/spanner/docs/query-execution-operators"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Spanner columnar engine overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/columnar-engine",
+        "source_id": "site-docs-root",
+        "final_score": 244,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Optimal columnar coverage After you enable columnar engine on a database that already contains data, Spanner's automatic compaction process converts data to columnar storage asynchronously in the background.",
+          "Preview — Spanner columnar engine This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "After you enable the Spanner columnar engine and Spanner completes data compaction, storage usage increases to include the new columnar representation."
+        ]
+      },
+      {
+        "title": "Configure Spanner columnar engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/configure-columnar-engine",
+        "source_id": "site-docs-root",
+        "final_score": 234,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If you create a new database without data and enable columnar engine, Spanner stores data in columnar format as you insert it and as compactions occur in the background.",
+          "Preview — Spanner columnar engine This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "When you enable Spanner columnar engine on an existing database that has data in it, Spanner provides a mechanism to manually trigger compactions."
+        ]
+      },
+      {
+        "title": "Query execution operators \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/query-execution-operators",
+        "source_id": "site-docs-reference",
+        "final_score": 76,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/columnar-engine",
+        "https://docs.cloud.google.com/spanner/docs/configure-columnar-engine",
+        "https://docs.cloud.google.com/spanner/docs/query-execution-operators"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/columnar-engine",
+        "https://docs.cloud.google.com/spanner/docs/configure-columnar-engine",
+        "https://docs.cloud.google.com/spanner/docs/query-execution-operators"
+      ]
+    }
+  ]
+}

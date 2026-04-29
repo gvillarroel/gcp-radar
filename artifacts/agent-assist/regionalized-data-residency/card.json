@@ -1,0 +1,135 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:40.906Z",
+  "source_step08_card": "data/step-08/current/products/agent-assist/card.json",
+  "product_name": "Agent Assist",
+  "product_slug": "agent-assist",
+  "feature_name": "Regionalized data residency",
+  "feature_slug": "regionalized-data-residency",
+  "summary": "Regionalized data residency lets Agent Assist users confine conversation data at rest to a specified geographic region.",
+  "extended_definition": "Regionalized data residency lets Agent Assist users confine conversation data at rest to a specified geographic region.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/agent-assist/docs/conversation-data-format",
+      "https://docs.cloud.google.com/agent-assist/docs/conversation-dataset",
+      "https://docs.cloud.google.com/agent-assist/docs/export-conversations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a conversation dataset \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/agent-assist/docs/conversation-dataset",
+        "source_id": "site-docs-reference",
+        "final_score": 57,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Agent Assist Guides Send feedback Create a conversation dataset Stay organized with collections Save and categorize content based on your preferences.",
+          "The URI should have the following format: gs://<bucket name>/<object name> For example: gs://mydata/conversationjsons/conv0 .json gs://mydatabucket/test/conv.json Click Create .",
+          "We suggest that you remove any conversations with fewer than 20 messages or 3 conversation turns (changes in which participant is making an utterance)."
+        ]
+      },
+      {
+        "title": "Export conversation data \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/agent-assist/docs/export-conversations",
+        "source_id": "site-docs-root",
+        "final_score": 57,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Agent Assist Guides Send feedback Export conversation data Stay organized with collections Save and categorize content based on your preferences.",
+          "Old conversations are deleted by the system periodically, so if you try to reference an older conversation it may no longer be available.",
+          "Authentication and access control When you send a request to export conversations, use your end-user credentials for authentication ."
+        ]
+      },
+      {
+        "title": "Upload conversation data \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/agent-assist/docs/conversation-data-format",
+        "source_id": "site-docs-reference",
+        "final_score": 57,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Example The following shows an example of a conversation data file. { \"conversation info\":{ \"categories\":[ { \"display name\":\"Category 1\" } ] }, \"entries\": [ { \"start timestamp usec\": 1000000, \"text\": \"Hello, I'm calling in regards to ...\", \"role\": \"CUSTOMER\", \"user id\": 1 }, { \"start timestamp usec\": 5000000, \"text\": \"Yes, I can answer your question ...\", \"role\": \"AGENT\", \"user id\": 2 }, ... ] } Upload conversations to Cloud Storage You must provide your conversation data in a Cloud Storage bucket contained within your Google Cloud Platform project.",
+          "You have a nice day\", \"role\": \"AGENT\" } ], \"conversation info\": { \"annotations\": [ { \"annotation\": { \"conversation summarization suggestion\": { \"text sections\": [ { \"key\": \"Situation\", \"value\": \"Customer was unable to login to account\" }, { \"key\": \"Action\", \"value\": \"Agent sent an email with password reset instructions\" }, { \"key\": \"Outcome\", \"value\": \"Problem was resolved\" } ] } } } ] } } Conversation transcript data Text conversation data must be supplied in JSON-formatted files, where each file contains data for a single conversation.",
+          "The following is an example demonstrating the format of a conversation transcript with associated annotation: { \"entries\": [ { \"text\": \"How can I help?\", \"role\": \"AGENT\" }, { \"text\": \"I cannot login\", \"role\": \"CUSTOMER\" }, { \"text\": \"Ok, let me confirm."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "conv.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/conversation-data-format",
+        "https://docs.cloud.google.com/agent-assist/docs/conversation-dataset",
+        "https://docs.cloud.google.com/agent-assist/docs/export-conversations"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/conversation-data-format",
+        "https://docs.cloud.google.com/agent-assist/docs/conversation-dataset",
+        "https://docs.cloud.google.com/agent-assist/docs/export-conversations"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/conversation-data-format",
+        "https://docs.cloud.google.com/agent-assist/docs/conversation-dataset",
+        "https://docs.cloud.google.com/agent-assist/docs/export-conversations"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/conversation-data-format",
+        "https://docs.cloud.google.com/agent-assist/docs/conversation-dataset",
+        "https://docs.cloud.google.com/agent-assist/docs/export-conversations"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/conversation-data-format",
+        "https://docs.cloud.google.com/agent-assist/docs/conversation-dataset",
+        "https://docs.cloud.google.com/agent-assist/docs/export-conversations"
+      ]
+    }
+  ]
+}

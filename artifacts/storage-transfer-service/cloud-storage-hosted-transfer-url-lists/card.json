@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:30.277Z",
+  "source_step08_card": "data/step-08/current/products/storage-transfer-service/card.json",
+  "product_name": "Storage Transfer Service",
+  "product_slug": "storage-transfer-service",
+  "feature_name": "Cloud Storage-hosted transfer URL lists",
+  "feature_slug": "cloud-storage-hosted-transfer-url-lists",
+  "summary": "Storage Transfer Service now allows transfer URL lists to be stored in an access-controlled Cloud Storage bucket for file transfer jobs.",
+  "extended_definition": "Storage Transfer Service now allows transfer URL lists to be stored in an access-controlled Cloud Storage bucket for file transfer jobs.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+      "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+      "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Metadata preservation \\_|\\_ Storage Transfer Service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "source_id": "site-docs-root",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "For the latter, the metadata must have been preserved when files were initially transferred to Cloud Storage. { \"description\": \"metadata-example\", \"projectId\": \"example-project-id\" \"transferSpec\": { ... \"transferOptions\": { \"metadataOptions\": { \"gid\": \"GID NUMBER\", # Default is \"GID SKIP\" \"uid\": \"UID NUMBER\", # Default is \"UID SKIP\" \"mode\": \"MODE PRESERVE\", # Default is \"MODE SKIP\" \"symlink\": \"SYMLINK PRESERVE\" # Default is \"SYMLINK SKIP\" } } } } POSIX to Cloud Storage Preserved metadata is stored in Cloud Storage as custom metadata key:value pairs.",
+          "URL list transfer to Cloud Storage For more information about URL lists, see Creating a URL list .",
+          "The preserved value is stored in the customTime field of the transferred object in Cloud Storage."
+        ]
+      },
+      {
+        "title": "Create transfers \\_|\\_ Storage Transfer Service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "source_id": "site-docs-root",
+        "final_score": 55,
+        "relevance": "",
+        "evidence_snippets": [
+          "Transfers from Amazon S3, Microsoft Azure, URL lists, or Cloud Storage to Cloud Storage do not require agents and agent pools .",
+          "Storage Transfer Service is able to transfer data from the following Microsoft Azure Storage regions: Americas: East US, East US 2, West US, West US 2, West US 3, Central US, North Central US, South Central US, West Central US, Canada Central, Canada East, Brazil South Asia-Pacific: Australia Central, Australia East, Australia Southeast, Central India, South India, West India, Southeast Asia, East Asia, Japan East, Japan West, Korea South, Korea Central Europe, Middle East, Africa (EMEA): France Central, Germany West Central, Norway East, Sweden Central, Switzerland North, North Europe, West Europe, UK South, UK West, Qatar Central, UAE North, South Africa North Request using transferJobs create : POST h tt ps : //storagetransfer.googleapis.com/v1/transferJobs { \"description\" : \"YOUR DESCRIPTION\" , \"status\" : \"ENABLED\" , \"projectId\" : \"PROJECT ID\" , \"schedule\" : { \"scheduleStartDate\" : { \"day\" : 14 , \"month\" : 2 , \"year\" : 2020 }, \"scheduleEndDate\" : { \"day\" : 14 \"month\" : 2 , \"year\" : 2020 }, \"startTimeOfDay\" : { \"hours\" : 1 , \"minutes\" : 1 } }, \"transferSpec\" : { \"azureBlobStorageDataSource\" : { \"storageAccount\" : \"AZURE SOURCE NAME\" , \"azureCredentials\" : { \"sasToken\" : \"AZURE SAS TOKEN\" , }, \"container\" : \"AZURE CONTAINER\" , }, \"gcsDataSink\" : { \"bucketName\" : \"GCS SINK NAME\" } } } Response: 200 OK { \"transferJob\" : [ { \"creationTime\" : \"2020-02-14T01:01:00.000000000Z\" , \"description\" : \"YOUR DESCRIPTION\" , \"name\" : \"transferJobs/JOB ID\" , \"status\" : \"ENABLED\" , \"lastModificationTime\" : \"2020-02-14T01:01:00.000000000Z\" , \"projectId\" : \"PROJECT ID\" , \"schedule\" : { \"scheduleStartDate\" : { \"day\" : 14 \"month\" : 2 , \"year\" : 2020 }, \"scheduleEndDate\" : { \"day\" : 14 , \"month\" : 2 , \"year\" : 2020 }, \"startTimeOfDay\" : { \"hours\" : 1 , \"minutes\" : 1 } }, \"transferSpec\" : { \"azureBlobStorageDataSource\" : { \"storageAccount\" : \"AZURE SOURCE NAME\" , \"azureCredentials\" : { \"sasToken\" : \"AZURE SAS TOKEN\" , }, \"container\" : \"AZURE CONTAINER\" , }, \"objectConditions\" : {}, \"transferOptions\" : {} } } ] } Transfer from a file system See Transfer from a file system to Cloud Storage .",
+          "ENABLED ) . build (); // Create a Transfer Service client StorageTransferServiceClient storageTransfer = StorageTransferServiceClient . create (); // Create the transfer job TransferJob response = storageTransfer . createTransferJob ( CreateTransferJobRequest . newBuilder (). setTransferJob ( transferJob ). build ()); System . out . println ( \"Created transfer job from standard bucket to Nearline bucket:\" ); System . out . println ( response . toString ()); } } Node.js // Imports the Google Cloud client library const { StorageTransferServiceClient , } = require ( ' @google-cloud/storage-transfer ' ); / TODO(developer): Uncomment the following lines before running the sample. / // The ID of the Google Cloud Platform Project that owns the job // projectId = 'my-project-id' // A useful description for your transfer job // description = 'My transfer job' // Google Cloud Storage source bucket name // gcsSourceBucket = 'my-gcs-source-bucket' // Google Cloud Storage destination bucket name // gcsSinkBucket = 'my-gcs-destination-bucket' // Date to start daily migration // startDate = new Date() // Creates a client const client = new StorageTransferServiceClient (); / Create a daily migration from a GCS bucket to another GCS bucket for objects untouched for 30+ days. / async function createDailyNearline30DayMigration () { // Runs the request and creates the job const [ transferJob ] = await client . createTransferJob ({ transferJob : { projectId , description , status : ' ENABLED ' , schedule : { scheduleStartDate : { day : startDate . getDate (), month : startDate . getMonth () + 1 , year : startDate . getFullYear (), }, }, transferSpec : { gcsDataSource : { bucketName : gcsSourceBucket , }, gcsDataSink : { bucketName : gcsSinkBucket , }, objectConditions : { minTimeElapsedSinceLastModification : { seconds : 2592000 , // 30 days }, }, transferOptions : { deleteObjectsFromSourceAfterTransfer : true , }, }, }, }); console . log ( Created transferJob: ${ transferJob . name } ); } createDailyNearline30DayMigration (); Python Looking for older samples?"
+        ]
+      },
+      {
+        "title": "\"Transfer from S3-compatible storage to Cloud Storage \\_|\\_ Storage Transfer\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "source_id": "site-docs-root",
+        "final_score": 51,
+        "relevance": "",
+        "evidence_snippets": [
+          "Defaults to the default agent // const sourceAgentPoolName = 'projects/my-project/agentPools/transfer service default'; // The S3-compatible bucket name to transfer data from // const sourceBucketName = \"my-bucket-name\"; // The S3-compatible path (object prefix) to transfer data from // const sourcePath = \"path/to/data/\"; // The ID of the GCS bucket to transfer data to // const gcsSinkBucket = \"my-sink-bucket\"; // The GCS path (object prefix) to transfer data to // const gcsPath = \"path/to/data/\"; // The S3 region of the source bucket // const region = 'us-east-1'; // The S3-compatible endpoint // const endpoint = \"us-east-1.example.com\"; // The S3-compatible network protocol // const protocol = NetworkProtocol.NETWORK PROTOCOL HTTPS; // The S3-compatible request model // const requestModel = RequestModel.REQUEST MODEL VIRTUAL HOSTED STYLE; // The S3-compatible auth method // const authMethod = AuthMethod.AUTH METHOD AWS SIGNATURE V4; // Creates a client const client = new storageTransfer .",
+          "Defaults to 'projects/{project id}/agentPools/transfer service default' source agent pool name = 'projects/my-project/agentPools/my-agent' The S3 compatible bucket name to transfer data from source bucket name = \"my-bucket-name\" The S3 compatible path (object prefix) to transfer data from source path = \"path/to/data/\" The ID of the GCS bucket to transfer data to gcs sink bucket = \"my-sink-bucket\" The GCS path (object prefix) to transfer data to gcs path = \"path/to/data/\" The S3 region of the source bucket region = 'us-east-1' The S3-compatible endpoint endpoint = \"us-east-1.example.com\" The S3-compatible network protocol protocol = NetworkProtocol.NETWORK PROTOCOL HTTPS The S3-compatible request model request model = RequestModel.REQUEST MODEL VIRTUAL HOSTED STYLE The S3-compatible auth method auth method = AuthMethod.AUTH METHOD AWS SIGNATURE V4 transfer job request = storage transfer .",
+          "To use the gcloud CLI to create a transfer from an S3-compatible source to a Cloud Storage bucket, use the following command. gcloud transfer jobs create s3: // SOURCE BUCKET NAME gs:// SINK BUCKET NAME \\ --source-agent-pool= POOL NAME \\ --source-endpoint= ENDPOINT \\ --source-signing-region= REGION \\ --source-auth-method= AWS SIGNATURE V2 AWS SIGNATURE V4 \\ --source-request-model= PATH STYLE VIRTUAL HOSTED STYLE \\ --source-network-protocol= HTTP HTTPS \\ --source-list-api= LIST OBJECTS LIST OBJECTS V2 The following flags are required: --source-agent-pool is the name of the agent pool to use for this transfer. --source-endpoint specifies your storage system's endpoint."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "storagetransfer.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:42.969Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution",
+  "feature_name": "Bare Metal Solution storage volume observability",
+  "feature_slug": "bare-metal-solution-storage-volume-observability",
+  "summary": "Bare Metal Solution now supports observability features for storage volumes.",
+  "extended_definition": "Bare Metal Solution now supports observability features for storage volumes.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sap/docs/agent-for-sap/latest/planning",
+      "https://docs.cloud.google.com/sap/docs/sap-hana-monitoring-agent-planning-guide",
+      "https://docs.cloud.google.com/sap/docs/sap-hana-monitoring-agent-user-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Google Cloud's Agent for SAP planning guide \\_|\\_ SAP on Google Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/sap/docs/sap-hana-monitoring-agent-planning-guide",
+        "source_id": "site-docs-reference-2",
+        "final_score": 99,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For instructions about how to install and configure the agent, validate your installation, and verify that the agent is running as expected, see: Install and configure the agent on a Compute Engine instance Install and configure the agent on a Bare Metal Solution server If you use the following RHEL or SLES \"for SAP\" OS images that Google Cloud provides, then Google Cloud's Agent for SAP is packaged with the OS images: RHEL: all \"for SAP\" images SLES: SLES 15 SP4 for SAP and later versions Supported features Version 3.12 (latest) of Google Cloud's Agent for SAP supports the following features: SAP Host Agent metrics collection SAP system discovery Agent health metrics collection Process Monitoring metrics collection Workload Manager evaluation metrics collection SAP HANA monitoring metrics collection Backint based backup and recovery for SAP HANA Disk snapshot based backup and recovery for SAP HANA Workload performance diagnostics SAP Host Agent metrics collection The SAP Host Agent metrics collection is enabled by default for agent instances installed on Compute Engine instances or Bare Metal Solution servers.",
+          "60 730 hours (365 days / 12 months 24 hours) For one fast-changing metric, writing data at the rate of 1 data point per 30 seconds , that is, 2 data points per minute for one month: For one slow-changing metric, writing data at the rate of 1 data point per 120 seconds , that is, 0.5 data points per minute for one month: Total fast-changing metrics data points is: 87,600 (43,800 minutes 2 data points) Total slow-changing metrics data points is: 21,900 (43,800 minutes 0.5 data points) Total volume ingested for each fast-changing metric is: 700,800 bytes (87,600 data points 8 bytes) This is 0.66833496 MiB (700,800 bytes / 1,048,576 bytes/MiB) Total volume ingested for each slow-changing metric is: 175,200 bytes (87,600 data points 8 bytes) This is 0.16708374 MiB (175,200 / 1,048,576 bytes/MiB) Consider that you have 100 compute instances, each writing 44 metrics.",
+          "Total monthly ingestion: 1236.419678 MiB 0.0668335 MiB for one metric 18,500 (500 compute instances 37 metrics) Approximate cost per month 500 compute instances: $280.30 (1236.419678 - 150) 0.258 MiB ingested Rate ($/MiB) Cost ($) Free allotment/month 150 0.00 $0.00 Chargeable 1,086.419678 0.258 $280.30 Total 1,236.419678 $280.30 Resources consumed by the agent To help you evaluate the resources that Google Cloud's Agent for SAP consumes for collecting metrics, this section shows sample usages of the agent and the resources that they consumed in Google Cloud's test system with the following specifications: Machine type: n2-highmem-64 Type of persistent storage disk attached to the Compute Engine instance: SSD Persistent Disk ( pd-ssd ) SAP systems running on the compute instance: One instance of SAP HANA and two instances of SAP NetWeaver."
+        ]
+      },
+      {
+        "title": "\"Google Cloud's Agent for SAP planning guide \\_|\\_ SAP on Google Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/sap/docs/sap-hana-monitoring-agent-user-guide",
+        "source_id": "site-docs-reference-2",
+        "final_score": 99,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For instructions about how to install and configure the agent, validate your installation, and verify that the agent is running as expected, see: Install and configure the agent on a Compute Engine instance Install and configure the agent on a Bare Metal Solution server If you use the following RHEL or SLES \"for SAP\" OS images that Google Cloud provides, then Google Cloud's Agent for SAP is packaged with the OS images: RHEL: all \"for SAP\" images SLES: SLES 15 SP4 for SAP and later versions Supported features Version 3.12 (latest) of Google Cloud's Agent for SAP supports the following features: SAP Host Agent metrics collection SAP system discovery Agent health metrics collection Process Monitoring metrics collection Workload Manager evaluation metrics collection SAP HANA monitoring metrics collection Backint based backup and recovery for SAP HANA Disk snapshot based backup and recovery for SAP HANA Workload performance diagnostics SAP Host Agent metrics collection The SAP Host Agent metrics collection is enabled by default for agent instances installed on Compute Engine instances or Bare Metal Solution servers.",
+          "60 730 hours (365 days / 12 months 24 hours) For one fast-changing metric, writing data at the rate of 1 data point per 30 seconds , that is, 2 data points per minute for one month: For one slow-changing metric, writing data at the rate of 1 data point per 120 seconds , that is, 0.5 data points per minute for one month: Total fast-changing metrics data points is: 87,600 (43,800 minutes 2 data points) Total slow-changing metrics data points is: 21,900 (43,800 minutes 0.5 data points) Total volume ingested for each fast-changing metric is: 700,800 bytes (87,600 data points 8 bytes) This is 0.66833496 MiB (700,800 bytes / 1,048,576 bytes/MiB) Total volume ingested for each slow-changing metric is: 175,200 bytes (87,600 data points 8 bytes) This is 0.16708374 MiB (175,200 / 1,048,576 bytes/MiB) Consider that you have 100 compute instances, each writing 44 metrics.",
+          "Total monthly ingestion: 1236.419678 MiB 0.0668335 MiB for one metric 18,500 (500 compute instances 37 metrics) Approximate cost per month 500 compute instances: $280.30 (1236.419678 - 150) 0.258 MiB ingested Rate ($/MiB) Cost ($) Free allotment/month 150 0.00 $0.00 Chargeable 1,086.419678 0.258 $280.30 Total 1,236.419678 $280.30 Resources consumed by the agent To help you evaluate the resources that Google Cloud's Agent for SAP consumes for collecting metrics, this section shows sample usages of the agent and the resources that they consumed in Google Cloud's test system with the following specifications: Machine type: n2-highmem-64 Type of persistent storage disk attached to the Compute Engine instance: SSD Persistent Disk ( pd-ssd ) SAP systems running on the compute instance: One instance of SAP HANA and two instances of SAP NetWeaver."
+        ]
+      },
+      {
+        "title": "\"Google Cloud's Agent for SAP planning guide \\_|\\_ SAP on Google Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/sap/docs/agent-for-sap/latest/planning",
+        "source_id": "site-docs-reference-2",
+        "final_score": 99,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For instructions about how to install and configure the agent, validate your installation, and verify that the agent is running as expected, see: Install and configure the agent on a Compute Engine instance Install and configure the agent on a Bare Metal Solution server If you use the following RHEL or SLES \"for SAP\" OS images that Google Cloud provides, then Google Cloud's Agent for SAP is packaged with the OS images: RHEL: all \"for SAP\" images SLES: SLES 15 SP4 for SAP and later versions Supported features Version 3.12 (latest) of Google Cloud's Agent for SAP supports the following features: SAP Host Agent metrics collection SAP system discovery Agent health metrics collection Process Monitoring metrics collection Workload Manager evaluation metrics collection SAP HANA monitoring metrics collection Backint based backup and recovery for SAP HANA Disk snapshot based backup and recovery for SAP HANA Workload performance diagnostics SAP Host Agent metrics collection The SAP Host Agent metrics collection is enabled by default for agent instances installed on Compute Engine instances or Bare Metal Solution servers.",
+          "60 730 hours (365 days / 12 months 24 hours) For one fast-changing metric, writing data at the rate of 1 data point per 30 seconds , that is, 2 data points per minute for one month: For one slow-changing metric, writing data at the rate of 1 data point per 120 seconds , that is, 0.5 data points per minute for one month: Total fast-changing metrics data points is: 87,600 (43,800 minutes 2 data points) Total slow-changing metrics data points is: 21,900 (43,800 minutes 0.5 data points) Total volume ingested for each fast-changing metric is: 700,800 bytes (87,600 data points 8 bytes) This is 0.66833496 MiB (700,800 bytes / 1,048,576 bytes/MiB) Total volume ingested for each slow-changing metric is: 175,200 bytes (87,600 data points 8 bytes) This is 0.16708374 MiB (175,200 / 1,048,576 bytes/MiB) Consider that you have 100 compute instances, each writing 44 metrics.",
+          "Total monthly ingestion: 1236.419678 MiB 0.0668335 MiB for one metric 18,500 (500 compute instances 37 metrics) Approximate cost per month 500 compute instances: $280.30 (1236.419678 - 150) 0.258 MiB ingested Rate ($/MiB) Cost ($) Free allotment/month 150 0.00 $0.00 Chargeable 1,086.419678 0.258 $280.30 Total 1,236.419678 $280.30 Resources consumed by the agent To help you evaluate the resources that Google Cloud's Agent for SAP consumes for collecting metrics, this section shows sample usages of the agent and the resources that they consumed in Google Cloud's test system with the following specifications: Machine type: n2-highmem-64 Type of persistent storage disk attached to the Compute Engine instance: SSD Persistent Disk ( pd-ssd ) SAP systems running on the compute instance: One instance of SAP HANA and two instances of SAP NetWeaver."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

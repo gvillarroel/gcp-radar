@@ -1,0 +1,163 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:49.591Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Logs Viewer trace integration",
+  "feature_slug": "logs-viewer-trace-integration",
+  "summary": "Logs Viewer can display Cloud Trace information alongside log data.",
+  "extended_definition": "Logs Viewer can display Cloud Trace information alongside log data.",
+  "lifecycle": {
+    "latest_feature_date": "2020-08-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis",
+      "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+      "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and analyze logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "source_id": "site-docs-root",
+        "final_score": 177,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, if a log entry similar to the following is displayed as a result of your query, then the service menu includes the service named myservice : { ... labels: { compute.googleapis.com/resource name: \"mycluster1\" k8s-pod/app: \"myservice\" k8s-pod/pod-template-hash: \"5ffcd94fdd\" } logName: \"projects/my-project/logs/stdout\" resource: { labels: {6} type: \"k8s container\" } ... } You have log data with labels for an App Hub service or workload.",
+          "To select which parts of the timestamp to display, click the settings Preferences menu, select Format , and then select one of the following options: Date, time, and timezone Date and time (default) Time only Find patterns in your logs by using summary fields Suppose you're looking through the log entries in your query results and want to quickly skim the results by a certain LogEntry field.",
+          "Before you begin To get the permissions that you need to use the Logs Explorer to view log entries, ask your administrator to grant you the following IAM roles: To view log entries in the Required bucket and those in the Default view on the Default bucket, or to select a log scope: Logs Viewer ( roles/logging.viewer ) on your project, folder, or organization."
+        ]
+      },
+      {
+        "title": "Google Cloud platform logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "source_id": "site-docs-reference",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "The instance's operating system, BIOS, and other system-level entities often write output to the serial ports, which makes them useful for troubleshooting crashes, failed boots, startup issues, or shutdown issues. compute.googleapis.com/resource name is text escaped INFO DEBUG Storage Transfer Logging API service name: storagetransfer.googleapis.com Log ID Monitored resource Payload Labels Severities storagetransfer.googleapis.com%2Ftransfer activity storage transfer job type.googleapis.com/google.storagetransfer.logging.TransferActivityLog N/A INFO WARNING ERROR Traffic Director Logging API service name: trafficdirector.googleapis.com Log ID Monitored resource Payload Labels Severities trafficdirector.googleapis.com%2Fevents gce network type.googleapis.com/google.networking.trafficdirector.type.TrafficDirectorLogEntry N/A ERROR INFO WARNING trafficdirector.googleapis.com%2Fevents gateway scope type.googleapis.com/google.networking.trafficdirector.type.TrafficDirectorLogEntry N/A ERROR INFO trafficdirector.googleapis.com%2Fevents mesh type.googleapis.com/google.networking.trafficdirector.type.TrafficDirectorLogEntry N/A ERROR INFO Vertex AI API Logging API service name: aiplatform.googleapis.com Log ID Monitored resource Payload Labels Severities aiplatform.googleapis.com%2Fpipeline job events aiplatform.googleapis.com/PipelineJob type.googleapis.com/google.cloud.aiplatform.logging.PipelineJobLogEntry network pipeline name pipeline type service account template metadata version template uri vertex-ai-pipelines-run-billing-id vertex pipeline system label propagate labels ERROR INFO aiplatform.googleapis.com%2Fpipeline job task events aiplatform.googleapis.com/PipelineJob type.googleapis.com/google.cloud.aiplatform.logging.PipelineJobTaskLogEntry custom job id network pipeline name schedule name service account template metadata version template uri vertex-ai-pipelines-run-billing-id vertex pipeline system label propagate labels ERROR INFO Web Security Scanner API Logging API service name: websecurityscanner.googleapis.com Log ID Monitored resource Payload Labels Severities websecurityscanner.googleapis.com%2Fscan activity security scanner scan config type.googleapis.com/google.cloud.websecurityscanner.v1.ScanRunLog N/A ERROR WARNING INFO Workflows Logging API service name: workflows.googleapis.com Log ID Monitored resource Payload Labels Severities workflows.googleapis.com%2Fengine call workflows.googleapis.com/Workflow type.googleapis.com/google.cloud.workflows.type.EngineCallLog workflows.googleapis.com/execution id workflows.googleapis.com/revision id DEBUG workflows.googleapis.com%2Fexecutions system workflows.googleapis.com/Workflow type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog workflows.googleapis.com/execution id workflows.googleapis.com/revision id INFO ERROR reCAPTCHA Enterprise Logging API service name: recaptchaenterprise.googleapis.com Log ID Monitored resource Payload Labels Severities recaptchaenterprise.googleapis.com%2Fassessment recaptchaenterprise.googleapis.com/Key type.googleapis.com/google.cloud.recaptchaenterprise.v1.Assessment N/A DEFAULT ERROR recaptchaenterprise.googleapis.com%2Fannotation recaptchaenterprise.googleapis.com/Key type.googleapis.com/google.cloud.recaptchaenterprise.v1.AnnotateAssessmentRequest N/A DEFAULT ERROR Understand and manage platform logs The following sections provide basic information about using and managing platform logs in Cloud Logging.",
+          "OPERATION NAME FILE NAME LOG TYPE DEFAULT DEBUG INFO NOTICE WARNING ERROR CRITICAL ALERT EMERGENCY Application Integration Logging API service name: integrations.googleapis.com Log ID Monitored resource Payload Labels Severities integrations.googleapis.com%2Fexecution info integrations.googleapis.com/IntegrationVersion type.googleapis.com/google.cloud.integrations.v1alpha.ExecutionInfo N/A INFO WARNING ERROR Assured Workloads Logging API service name: assuredworkloads.googleapis.com Log ID Monitored resource Payload Labels Severities assuredworkloads.googleapis.com%2Fregulatory intercept ack folder type.googleapis.com/google.cloud.assuredworkloads.regulatoryintercept.logging.v1.RegulatoryInterceptAckLogEntry N/A INFO assuredworkloads.googleapis.com%2Fregulatory intercept ack project type.googleapis.com/google.cloud.assuredworkloads.regulatoryintercept.logging.v1.RegulatoryInterceptAckLogEntry N/A INFO Backup for GKE Logging API service name: gkebackup.googleapis.com Log ID Monitored resource Payload Labels Severities gkebackup.googleapis.com%2Fbackup change gkebackup.googleapis.com/BackupPlan type.googleapis.com/google.cloud.gkebackup.logging.v1.BackupChange backup id INFO ERROR gkebackup.googleapis.com%2Fbackup plan change gkebackup.googleapis.com/BackupPlan type.googleapis.com/google.cloud.gkebackup.logging.v1.BackupPlanChange backup plan id INFO ERROR gkebackup.googleapis.com%2Frestore change gkebackup.googleapis.com/RestorePlan type.googleapis.com/google.cloud.gkebackup.logging.v1.RestoreChange restore id INFO ERROR gkebackup.googleapis.com%2Frestore plan change gkebackup.googleapis.com/RestorePlan type.googleapis.com/google.cloud.gkebackup.logging.v1.RestorePlanChange restore plan id INFO ERROR gkebackup.googleapis.com%2Fbackup channel change gkebackup.googleapis.com/BackupChannel type.googleapis.com/google.cloud.gkebackup.logging.v1.BackupChannelChange backup channel id INFO ERROR gkebackup.googleapis.com%2Frestore channel change gkebackup.googleapis.com/RestoreChannel type.googleapis.com/google.cloud.gkebackup.logging.v1.RestoreChannelChange restore channel id INFO ERROR gkebackup.googleapis.com%2Fbfg backup plan jobs gkebackup.googleapis.com/BackupPlan type.googleapis.com/google.cloud.backupdr.logging.v1.BDRBackupPlanJobLog N/A INFO ERROR gkebackup.googleapis.com%2Fbfg backup restore jobs gkebackup.googleapis.com/Project type.googleapis.com/google.cloud.backupdr.logging.v1.BDRBackupRestoreJobLog N/A INFO ERROR BigQuery Data Transfer API Logging API service name: bigquerydatatransfer.googleapis.com Log ID Monitored resource Payload Labels Severities bigquerydatatransfer.googleapis.com%2Ftransfer config bigquery dts config Debug logs for BigQuery Data Transfer runs.",
+          "Each entry contains a line (or multiple lines, if they match a known multi-line exception format like a stack trace) written to /var/log/ from the user container. instanceId managed-by commit-sha gcb-trigger-id gcb-build-id run.googleapis.com/execution name run.googleapis.com/task index run.googleapis.com/task attempt container name DEFAULT DEBUG INFO NOTICE WARNING ERROR CRITICAL ALERT EMERGENCY run.googleapis.com%2Fstdout cloud run worker pool Cloud Run stdout logs."
+        ]
+      },
+      {
+        "title": "Internet Information Services \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis",
+        "source_id": "site-docs-root-2",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The integration also collects information from access logs.",
+          "The Internet Information Services (IIS) integration collects telemetry from your IIS web servers.",
+          "For more information about using the Integrations page, see Manage integrations ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "assuredworkloads.googleapis.com",
+      "bigquerydatatransfer.googleapis.com",
+      "compute.googleapis.com",
+      "gkebackup.googleapis.com",
+      "integrations.googleapis.com",
+      "logging.viewer",
+      "recaptchaenterprise.googleapis.com",
+      "run.googleapis.com",
+      "storagetransfer.googleapis.com",
+      "trafficdirector.googleapis.com",
+      "type.googleapis.com",
+      "websecurityscanner.googleapis.com",
+      "workflows.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    }
+  ]
+}

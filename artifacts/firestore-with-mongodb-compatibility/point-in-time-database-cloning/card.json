@@ -1,0 +1,199 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:11.019Z",
+  "source_step08_card": "data/step-08/current/products/firestore-with-mongodb-compatibility/card.json",
+  "product_name": "Firestore with MongoDB compatibility",
+  "product_slug": "firestore-with-mongodb-compatibility",
+  "feature_name": "Point-in-time database cloning",
+  "feature_slug": "point-in-time-database-cloning",
+  "summary": "You can clone an existing database into a new database at a selected timestamp; You can clone an existing database into a new database at a selected timestamp.",
+  "extended_definition": "You can clone an existing database into a new database at a selected timestamp; You can clone an existing database into a new database at a selected timestamp.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+      "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and manage databases \\_|\\_ Firestore with MongoDB compatibility \\_\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "source_id": "site-docs-root",
+        "final_score": 235,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example shows how to configure CMEK encryption for the cloned database: gcloud firestore databases clone \\ --source-database = 'projects/example-project/databases/example-source-db' \\ --snapshot-time = '2025-06-01T10:20:00.00Z' \\ --destination-database = 'example-dest-db' \\ --encryption-type = 'customer-managed-encryption' \\ --kms-key-name = 'projects/example-project/locations/us-central1/keyRings/example-key-ring/cryptoKeys/example-key' Configure per-database access permissions You can use Identity and Access Management Conditions to configure access permissions on a per-database level.",
+          "If you want to specify a different encryption configuration for the cloned database, you can use Google Cloud CLI commands. gcloud Use the gcloud firestore databases clone command to clone a database: gcloud firestore databases clone \\ --source-database = ' SOURCE DATABASE ' \\ --snapshot-time = ' PITR TIMESTAMP ' \\ --destination-database = ' DESTINATION DATABASE ID ' Replace the following: SOURCE DATABASE : the database name of an existing database that you want to clone.",
+          "Example: gcloud firestore databases clone \\ --source-database = 'projects/example-project/databases/example-source-db' \\ --snapshot-time = '2025-06-01T10:20:00.00Z' \\ --destination-database = 'example-dest-db' If you want to bind to some tags while cloning a database, use the previous command with the --tags flag, which is an optional list of tags KEY=VALUE pairs to bind."
+        ]
+      },
+      {
+        "title": "\"Manage Firestore with MongoDB compatibility resources using custom constraints\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints",
+        "source_id": "site-iam-reference",
+        "final_score": 224,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Benefits Security, compliance, and governance : you can use custom organization policies as follows: To enforce disaster recovery requirements, you can require specific disaster recovery settings on databases like delete protection, and point in time recovery.",
+          "Note that the format of a database name in custom organization policies is projects/ project-id /databases/ database-id while only database-id is specified in database management operations. name : organizations/ ORGANIZATION ID /customConstraints/custom.nameSuffixMobile resourceTypes : - firestore.googleapis.com/Database methodTypes : - CREATE condition : \"resource.name.endsWith('-mobile')\" actionType : ALLOW displayName : Firestore database names end with \"-mobile\" description : Only allow the creation of database names ending with suffix \"-mobile\" Databases can only be created in specified locations . name : organizations/ ORGANIZATION ID /customConstraints/custom.locationUsCentral1 resourceTypes : - firestore.googleapis.com/Database methodTypes : - CREATE condition : \"resource.locationId == 'us-central1'\" actionType : ALLOW displayName : Firestore database location id us-central1 description : Only allow the creation of databases in region us-central1 Databases must enable point-in-time-recovery . name : organizations/ ORGANIZATION ID /customConstraints/custom.pitrEnforce resourceTypes : - firestore.googleapis.com/Database methodTypes : - CREATE - UPDATE condition : \"resource.pointInTimeRecoveryEnablement == \" POINT IN TIME RECOVERY ENABLED\"\" actionType : ALLOW displayName : Firestore database enables PiTR description : Only allow the creation and updating of a databases if PiTR is enabled.",
+          "Resource Field firestore.googleapis.com/Database resource.appEngineIntegrationMode resource.cmekConfig.kmsKeyName resource.concurrencyMode resource.deleteProtectionState resource.locationId resource.name resource.pointInTimeRecoveryEnablement resource.type What's next Learn more about Organization Policy Service ."
+        ]
+      },
+      {
+        "title": "\"Exporting and importing data \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "source_id": "site-docs-root-2",
+        "final_score": 212,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Choose the state of your database to export section, select Export from an earlier point in time .",
+          "Note: Exporting a collection group won't automatically export subcollections of the collections within the group. gcloud firestore export gs:// [BUCKET NAME] \\ --collection-ids= [COLLECTION GROUP ID 1] , [COLLECTION GROUP ID 2] \\ --database= [DATABASE] For example, you can design a restaurants collection in the foo database to include multiple subcollections, such as ratings , reviews , or outlets .",
+          "For example: gcloud firestore import gs://my-bucket/2017-05-25T23:54:39 76544/ --database='cymbal' You can confirm the location of your export files in the Cloud Storage browser in the Google Cloud console: Open Cloud Storage browser Once you start an import operation, closing the terminal does not cancel the operation, see cancel an operation ."
+        ]
+      },
+      {
+        "title": "\"Plan disaster recovery \\_|\\_ Firestore with MongoDB compatibility \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+        "source_id": "site-iam-reference",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Database clone You can recover data by cloning your database from a point in time in the past.",
+          "You can read data at a granularity level of 1 minute and surgically write back into the your database with a recovery time objective (maximum time for recovery) of 0.",
+          "Data exports For data retention needs beyond 14 weeks, you can use PITR to create an export of your entire database and save this data in Cloud Storage indefinitely."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "custom.locationUsCentral1",
+      "custom.nameSuffixMobile",
+      "custom.pitrEnforce",
+      "firestore.googleapis.com",
+      "resource.appEngineIntegrationMode",
+      "resource.cmekConfig.kmsKeyName",
+      "resource.concurrencyMode",
+      "resource.deleteProtectionState",
+      "resource.locationId",
+      "resource.name",
+      "resource.name.endsWith",
+      "resource.pointInTimeRecoveryEnablement",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery"
+      ]
+    }
+  ]
+}

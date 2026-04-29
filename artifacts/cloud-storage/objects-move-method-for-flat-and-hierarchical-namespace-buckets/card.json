@@ -1,0 +1,276 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:55.943Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "Objects move method for flat and hierarchical namespace buckets",
+  "feature_slug": "objects-move-method-for-flat-and-hierarchical-namespace-buckets",
+  "summary": "The Objects: move method supports moving objects in both flat namespace and hierarchical namespace buckets.",
+  "extended_definition": "The Objects: move method supports moving objects in both flat namespace and hierarchical namespace buckets.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+      "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+      "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+      "https://docs.cloud.google.com/storage/docs/access-control/iam-json"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"IAM permissions for JSON methods \\_|\\_ Cloud Storage \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/iam-json",
+        "source_id": "site-docs-reference",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "15 To move an object within a bucket with hierarchical namespace enabled, you either need storage.objects.delete and storage.objects.get permissions, or storage.objects.move permission if you want to move it without granting read or delete access to the object.",
+          "Resource Method Required IAM Permissions 1 AnywhereCache create storage.anywhereCaches.create AnywhereCache disable storage.anywhereCaches.disable AnywhereCache get storage.anywhereCaches.get AnywhereCache list storage.anywhereCaches.list AnywhereCache pause storage.anywhereCaches.pause AnywhereCache resume storage.anywhereCaches.resume AnywhereCache update storage.anywhereCaches.update Buckets delete storage.buckets.delete Buckets get storage.buckets.get storage.buckets.getIamPolicy 2 storage.buckets.getIpFilter 13 storage.anywhereCaches.get 18 Buckets getIamPolicy storage.buckets.getIamPolicy Buckets insert storage.buckets.create storage.buckets.enableObjectRetention 3 storage.buckets.setIpFilter 14 Buckets list storage.buckets.list storage.buckets.getIamPolicy 2 storage.buckets.getIpFilter 13 storage.anywhereCaches.list Buckets lockRetentionPolicy storage.buckets.update Buckets patch storage.buckets.update storage.buckets.getIamPolicy 4 storage.buckets.setIamPolicy 5 storage.buckets.setIpFilter 14 storage.buckets.getIpFilter 13 Buckets relocate storage.buckets.relocate Buckets setIamPolicy storage.buckets.setIamPolicy Buckets testIamPermissions None Buckets update storage.buckets.update storage.buckets.getIamPolicy 4 storage.buckets.setIamPolicy 5 storage.buckets.setIpFilter 14 storage.buckets.getIpFilter 13 storage.anywhereCaches.update DatasetConfigs delete storageinsights.datasetConfigs.delete DatasetConfigs get storageinsights.datasetConfigs.get DatasetConfigs insert storageinsights.datasetConfigs.create DatasetConfigs list storageinsights.datasetConfigs.list DatasetConfigs linkDataset storageinsights.datasetConfigs.linkDataset DatasetConfigs unlinkDataset storageinsights.datasetConfigs.unlinkDataset DatasetConfigs patch storageinsights.datasetConfigs.update Folders get storage.folders.get Folders insert storage.folders.create Folders list storage.folders.list Folders rename storage.folders.rename (for the source folder) storage.folders.create (for the destination folder) Folders delete storage.folders.delete IntelligenceConfig getIntelligenceConfig storage.intelligenceConfigs.get IntelligenceConfig updateIntelligenceConfig storage.intelligenceConfigs.update Jobs create storagebatchoperations.jobs.create Jobs get storagebatchoperations.jobs.get storagebatchoperations.operations.get Jobs list storagebatchoperations.jobs.list storagebatchoperations.operations.list Jobs cancel storagebatchoperations.jobs.cancel storagebatchoperations.operations.cancel Jobs delete storagebatchoperations.jobs.delete ManagedFolders delete storage.managedfolders.delete storage.managedfolders.setIamPolicy 10 ManagedFolders get storage.managedfolders.get ManagedFolders getIamPolicy storage.managedfolders.getIamPolicy ManagedFolders insert storage.managedfolders.create ManagedFolders list storage.managedfolders.list ManagedFolders update storage.managedfolders.update ManagedFolders setIamPolicy storage.managedfolders.setIamPolicy Notifications delete storage.buckets.update Notifications get storage.buckets.get Notifications insert storage.buckets.update Notifications list storage.buckets.get Objects bulkRestore storage.buckets.restore storage.objects.create storage.objects.delete 11 storage.objects.restore storage.objects.setIamPolicy 6 ,12 Objects compose storage.objects.get storage.objects.create storage.objects.delete 7 storage.objects.getIamPolicy 2 ,6 storage.objects.setRetention 8 storage.objects.createContext 19 Objects copy storage.objects.get (for the source bucket) storage.objects.create (for the destination bucket) storage.objects.delete (for the destination bucket) 7 storage.objects.setRetention (for the destination bucket) 8 storage.objects.createContext 19 Objects delete storage.objects.delete Objects get storage.objects.get storage.objects.getIamPolicy 2 ,6 Objects insert storage.objects.create storage.objects.delete 7 storage.objects.setRetention 8 storage.objects.createContext 19 Objects list storage.objects.list storage.objects.getIamPolicy 2 ,6 Objects move storage.objects.move 15 (for the source object) storage.objects.delete 15 (for the source object) storage.objects.get 15 (for the source object) storage.objects.create (for the destination object) storage.objects.delete 16 (for the destination object) storage.folders.create 17 (for the destination object) Objects patch storage.objects.update storage.objects.setRetention 8 storage.objects.overrideUnlockedRetention 9 storage.objects.getIamPolicy 4 ,6 storage.objects.setIamPolicy 5 ,6 storage.objects.createContext 20 storage.objects.updateContext 21 storage.objects.deleteContext 22 Objects restore storage.objects.create storage.objects.delete 7 storage.objects.restore storage.objects.getIamPolicy 2 ,6 storage.objects.setIamPolicy 6 ,12 Objects rewrite storage.objects.get (for the source bucket) storage.objects.create (for the destination bucket) storage.objects.delete (for the destination bucket) 7 storage.objects.setRetention (for the destination bucket) 8 storage.objects.createContext 19 Objects update storage.objects.update storage.objects.setRetention 8 storage.objects.overrideUnlockedRetention 9 storage.objects.getIamPolicy 4 ,6 storage.objects.setIamPolicy 5 ,6 storage.objects.createContext 20 storage.objects.updateContext 21 storage.objects.deleteContext 22 Objects watchAll storage.buckets.update Projects.hmacKeys create storage.hmacKeys.create Projects.hmacKeys delete storage.hmacKeys.delete Projects.hmacKeys get storage.hmacKeys.get Projects.hmacKeys list storage.hmacKeys.list Projects.hmacKeys update storage.hmacKeys.update Projects.serviceAccount get resourceManager.projects.get ReportConfigs delete storageinsights.reportConfigs.delete ReportConfigs get storageinsights.reportConfigs.get ReportConfigs list storageinsights.reportConfigs.list ReportConfigs insert storageinsights.reportConfigs.create ReportConfigs update storageinsights.reportConfigs.update ReportDetails get storageinsights.reportDetails.get ReportDetails list storageinsights.reportDetails.list 1 If you use the userProject parameter or the x-goog-user-project header in your request, you must have serviceusage.services.use permission for the project ID that you specify, in addition to the normal IAM permissions required to make the request.",
+          "Resource Method Required IAM Permissions 1 BucketAccessControls delete storage.buckets.get storage.buckets.getIamPolicy storage.buckets.setIamPolicy storage.buckets.update BucketAccessControls get storage.buckets.get storage.buckets.getIamPolicy BucketAccessControls insert storage.buckets.get storage.buckets.getIamPolicy storage.buckets.setIamPolicy storage.buckets.update BucketAccessControls list storage.buckets.get storage.buckets.getIamPolicy BucketAccessControls patch storage.buckets.get storage.buckets.getIamPolicy storage.buckets.setIamPolicy storage.buckets.update BucketAccessControls update storage.buckets.get storage.buckets.getIamPolicy storage.buckets.setIamPolicy storage.buckets.update DefaultObjectAccessControls delete storage.buckets.get storage.buckets.getIamPolicy storage.buckets.setIamPolicy storage.buckets.update DefaultObjectAccessControls get storage.buckets.get storage.buckets.getIamPolicy DefaultObjectAccessControls insert storage.buckets.get storage.buckets.getIamPolicy storage.buckets.setIamPolicy storage.buckets.update DefaultObjectAccessControls list storage.buckets.get storage.buckets.getIamPolicy DefaultObjectAccessControls patch storage.buckets.get storage.buckets.getIamPolicy storage.buckets.setIamPolicy storage.buckets.update DefaultObjectAccessControls update storage.buckets.get storage.buckets.getIamPolicy storage.buckets.setIamPolicy storage.buckets.update ObjectAccessControls delete storage.objects.get storage.objects.getIamPolicy storage.objects.setIamPolicy storage.objects.update ObjectAccessControls get storage.objects.get storage.objects.getIamPolicy ObjectAccessControls insert storage.objects.get storage.objects.getIamPolicy storage.objects.setIamPolicy storage.objects.update ObjectAccessControls list storage.objects.get storage.objects.getIamPolicy ObjectAccessControls patch storage.objects.get storage.objects.getIamPolicy storage.objects.setIamPolicy storage.objects.update ObjectAccessControls update storage.objects.get storage.objects.getIamPolicy storage.objects.setIamPolicy storage.objects.update 1 If you use the userProject parameter or the x-goog-user-project header in your request, you must have serviceusage.services.use permission for the project ID that you specify, in addition to the normal IAM permissions required to make the request."
+        ]
+      },
+      {
+        "title": "Class Bucket (3.10.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "source_id": "site-python-reference",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "For such buckets, iterate over the blobs returned by list blobs and call make public for each blob. move blob move blob ( blob , new name , client = None , if generation match = None , if generation not match = None , if metageneration match = None , if metageneration not match = None , if source generation match = None , if source generation not match = None , if source metageneration match = None , if source metageneration not match = None , timeout = 60 , retry = google . cloud . storage . retry .",
+          "See https://cloud.google.com/storage/docs/json api/v1/buckets and https://cloud.google.com/storage/docs/locations Returns None if the property has not been set before creation, if the bucket's resource has not been loaded from the server, or if the bucket is not a dual-regions bucket. default event based hold Scalar property getter. default kms key name Retrieve / set default KMS encryption key for objects in the bucket.",
+          "See: configuring retries Exceptions Type Description ValueError if force is True and the bucket contains more than 256 objects / blobs. delete blob delete blob ( blob name , client = None , generation = None , if generation match = None , if generation not match = None , if metageneration match = None , if metageneration not match = None , timeout = 60 , retry = google . api core . retry . retry unary ."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.storage (2.64.0) \\_|\\_ Java client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "source_id": "site-java-reference",
+        "final_score": 174,
+        "relevance": "",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-03-14 UTC.\"],[],[]]",
+          "Customer Encryption Objects of this class hold information on the customer-supplied encryption key, if the blob is encrypted using such a key. com. google. cloud. storage.",
+          "This interface allows writing bytes to an Appendable Upload, and provides methods to close this channel -- optionally finalizing the upload. com. google. cloud. storage."
+        ]
+      },
+      {
+        "title": "\"Create and manage access control lists (ACLs) \\_|\\_ Cloud Storage \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "source_id": "site-iam-reference",
+        "final_score": 171,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use // addAllUsers(), addDomain(), addProject(), addGroup(), and // addAllAuthenticatedUsers() to grant access to different types of entities. // You can also use \"readers\" and \"writers\" to grant different roles. await storage . bucket ( bucketName ). acl . default . owners . addUser ( userEmail ); console . log ( Added user ${ userEmail } as an owner on bucket ${ bucketName } . ); } addBucketDefaultOwner (). catch ( console . error ); The following sample deletes a default object ACL from a bucket: / TODO(developer): Uncomment the following lines before running the sample. / // The ID of your GCS bucket // const bucketName = 'your-unique-bucket-name'; // The email address of the user to remove // const userEmail = 'user-email-to-remove'; // Imports the Google Cloud client library const { Storage } = require ( ' @google-cloud/storage ' ); // Creates a client const storage = new Storage (); async function removeBucketDefaultOwner () { // Removes the user from the access control list of the bucket.",
+          "For example, the following ACLs grant the OWNER permission for the object paris.jpg to the owners of project 867489160491 and the user jeffersonloveshiking@gmail.com , as well as the READER permission for paris.jpg to the members of the gs-announce group: [ { \"entity\": \"project-owners-867489160491\", \"role\": \"OWNER\", \"projectTeam\": { \"projectNumber\": \"867489160491\", \"team\": \"owners\" }, }, { \"entity\": \"user-jeffersonloveshiking@gmail.com\", \"email\": \"jeffersonloveshiking@gmail.com\", \"role\": \"OWNER\" }, { \"entity\": \"group-gs-announce@googlegroups.com\", \"email\": \"gs-announce@googlegroups.com\", \"role\": \"READER\" } ] Use the objects update command with the --acl-file flag: gcloud storage objects update gs:// BUCKET NAME / OBJECT NAME --acl-file= FILE LOCATION Where: BUCKET NAME is the name of the bucket that contains the object that the ACLs apply to.",
+          "CreateObjectAcl ( bucket name , object name , entity , gcs :: ObjectAccessControl :: ROLE OWNER ()); if ( ! patched acl ) throw std :: move ( patched acl ). status (); std :: cout << \"ACL entry for \" << patched acl - > entity () << \" in object \" << patched acl - > object () << \" in bucket \" << patched acl - > bucket () << \" is now \" << patched acl << \" \\n \" ; } The following sample removes an ACL from an object: namespace gcs = :: google :: cloud :: storage ; using :: google :: cloud :: StatusOr ; []( gcs :: Client client , std :: string const & bucket name , std :: string const & object name , std :: string const & entity ) { StatusOr<gcs :: ObjectMetadata > original metadata = client ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.storage",
+      "developers.google.com",
+      "gmail.com",
+      "googlegroups.com",
+      "paris.jpg",
+      "projects.get",
+      "serviceusage.services.use",
+      "storage.anywhereCaches.create",
+      "storage.anywhereCaches.disable",
+      "storage.anywhereCaches.get",
+      "storage.anywhereCaches.list",
+      "storage.anywhereCaches.pause",
+      "storage.anywhereCaches.resume",
+      "storage.anywhereCaches.update",
+      "storage.buckets.create",
+      "storage.buckets.delete",
+      "storage.buckets.enableObjectRetention",
+      "storage.buckets.get",
+      "storage.buckets.getIamPolicy",
+      "storage.buckets.getIpFilter",
+      "storage.buckets.list",
+      "storage.buckets.relocate",
+      "storage.buckets.restore",
+      "storage.buckets.setIamPolicy",
+      "storage.buckets.setIpFilter",
+      "storage.buckets.update",
+      "storage.folders.create",
+      "storage.folders.delete",
+      "storage.folders.get",
+      "storage.folders.list",
+      "storage.folders.rename",
+      "storage.hmacKeys.create",
+      "storage.hmacKeys.delete",
+      "storage.hmacKeys.get",
+      "storage.hmacKeys.list",
+      "storage.hmacKeys.update",
+      "storage.intelligenceConfigs.get",
+      "storage.intelligenceConfigs.update",
+      "storage.managedfolders.create",
+      "storage.managedfolders.delete",
+      "storage.managedfolders.get",
+      "storage.managedfolders.getIamPolicy",
+      "storage.managedfolders.list",
+      "storage.managedfolders.setIamPolicy",
+      "storage.managedfolders.update",
+      "storage.objects.create",
+      "storage.objects.createContext",
+      "storage.objects.delete",
+      "storage.objects.deleteContext",
+      "storage.objects.get",
+      "storage.objects.getIamPolicy",
+      "storage.objects.list",
+      "storage.objects.move",
+      "storage.objects.overrideUnlockedRetention",
+      "storage.objects.restore",
+      "storage.objects.setIamPolicy",
+      "storage.objects.setRetention",
+      "storage.objects.update",
+      "storage.objects.updateContext",
+      "storagebatchoperations.jobs.cancel",
+      "storagebatchoperations.jobs.create",
+      "storagebatchoperations.jobs.delete",
+      "storagebatchoperations.jobs.get",
+      "storagebatchoperations.jobs.list",
+      "storagebatchoperations.operations.cancel",
+      "storagebatchoperations.operations.get",
+      "storagebatchoperations.operations.list",
+      "storageinsights.datasetConfigs.create",
+      "storageinsights.datasetConfigs.delete",
+      "storageinsights.datasetConfigs.get",
+      "storageinsights.datasetConfigs.linkDataset",
+      "storageinsights.datasetConfigs.list",
+      "storageinsights.datasetConfigs.unlinkDataset",
+      "storageinsights.datasetConfigs.update",
+      "storageinsights.reportConfigs.create",
+      "storageinsights.reportConfigs.delete",
+      "storageinsights.reportConfigs.get",
+      "storageinsights.reportConfigs.list",
+      "storageinsights.reportConfigs.update",
+      "storageinsights.reportDetails.get",
+      "storageinsights.reportDetails.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-json",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-json",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-json",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-json",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-json",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-json",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-json",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-json",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-json",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-json",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-json",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists"
+      ]
+    }
+  ]
+}

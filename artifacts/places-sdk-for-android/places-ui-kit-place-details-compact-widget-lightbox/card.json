@@ -1,0 +1,148 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:25.384Z",
+  "source_step08_card": "data/step-08/current/products/places-sdk-for-android/card.json",
+  "product_name": "Places SDK for Android",
+  "product_slug": "places-sdk-for-android",
+  "feature_name": "Places UI Kit Place Details Compact Widget lightbox",
+  "feature_slug": "places-ui-kit-place-details-compact-widget-lightbox",
+  "summary": "The Place Details Compact Widget now supports a lightbox for full-screen photo enlargement.",
+  "extended_definition": "The Place Details Compact Widget now supports a lightbox for full-screen photo enlargement.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/places/android-sdk/details-place",
+      "https://developers.google.com/maps/documentation/places/android-sdk/place-details-ui-kit",
+      "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-custom-styling",
+      "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/place-details-ui-kit",
+        "source_id": "site-docs-root",
+        "final_score": 270,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Kotlin package com.example.placedetailsuikit import android.Manifest import android.annotation.SuppressLint import android.content.pm.PackageManager import android.content.res.Configuration import android.location.Location import android.os.Bundle import android.util.Log import android.view.View import android.widget.Toast import androidx.activity.enableEdgeToEdge import androidx.activity.result.ActivityResultLauncher import androidx.activity.result.contract.ActivityResultContracts import androidx.activity.viewModels import androidx.appcompat.app.AppCompatActivity import androidx.core.app.ActivityCompat import androidx.lifecycle.ViewModel import com.example.placedetailsuikit.databinding.ActivityMainBinding import com.google.android.gms.location.FusedLocationProviderClient import com.google.android.gms.location.LocationServices import com.google.android.gms.maps.CameraUpdateFactory import com.google.android.gms.maps.GoogleMap import com.google.android.gms.maps.OnMapReadyCallback import com.google.android.gms.maps.SupportMapFragment import com.google.android.gms.maps.model.LatLng import com.google.android.gms.maps.model.PointOfInterest import com.google.android.libraries.places.api.Places import com.google.android.libraries.places.api.model.Place import com.google.android.libraries.places.widget.PlaceDetailsCompactFragment import com.google.android.libraries.places.widget.PlaceLoadListener import com.google.android.libraries.places.widget.model.Orientation private const val TAG = & quot ; PlacesUiKit&quot ; / A simple ViewModel to store UI state that needs to survive configuration changes.",
+          "Compact view Full view Place photo Lightbox enabled for full-screen photo enlargement Place address Rating and rating count Place type Price Accessible entrance information Open now status Place photo collage Place address Rating and rating count Place type Price Accessibility info Open now status Open hours Editorial summary Website Phone number Reviews rendered in dedicated tab Plus code Feature list, rendered in a dedicated tab Type-specific highlights, such as gas prices for gas stations Billing When using the Place Details UI Kit, you are billed for each time the .loadWithPlaceId() , .loadWithResourceName() , or loadWithCoordinates() method is called.",
+          "Select platform: Android iOS JavaScript Place Details component The Place Details component of the Places UI Kit lets you add an individual UI component that displays place details in your app."
+        ]
+      },
+      {
+        "title": "Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-custom-styling",
+        "source_id": "site-docs-root",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Select platform: Android iOS JavaScript Customizeable style properties Visual customization examples You can customize the colors, typography, spacing, borders, and corners of these Places UI kit components and non-UI kit features: Place Details component Place Search component Basic Place Autocomplete component Non-UI Kit Place Autocomplete widget Places UI kit offers a design system approach to visual customization roughly based on Material Design (with some Google-Maps-specific modifications).",
+          "Any theme attributes that are not overridden use the default styles. < style name = \"CustomizedPlaceDetailsTheme\" parent = \"PlacesMaterialTheme\" > < item name = \"placesColorPrimary\" > @color / app primary color < / item > < item name = \"placesColorOnSurface\" > @color / app color on surface < / item > < item name = \"placesColorOnSurfaceVariant\" > @color / app color on surface < / item > < item name = \"placesTextAppearanceBodySmall\" > @style / app text appearence small < / item > < item name = \"placesCornerRadius\" > 20 dp < / item > < / style > Important: The Places UI Kit provides a dark theme by default, so you may need to customize both dark and light themes.",
+          "To create a dark theme, add an entry for the colors in values-night/colors.xml Customization tool Use this tool to visualize custom configurations in a Places UI Kit element."
+        ]
+      },
+      {
+        "title": "Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-overview",
+        "source_id": "site-docs-root",
+        "final_score": 219,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Similarly, a Places UI Kit Place Details request may return photos, price, and rating for a selected place, but you will only be billed for the Places UI Kit Place Details request.",
+          "The Places UI Kit provides the following components for rendering Places data: Place Details renders details for a selected place.",
+          "Select platform: Android iOS JavaScript Places UI Kit The Places UI Kit component library lets you bring the familiar Google Maps user experience for Places to your apps and web pages, using the same data that powers the Places API."
+        ]
+      },
+      {
+        "title": "Place Details (New) \\_|\\_ Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/details-place",
+        "source_id": "site-docs-root",
+        "final_score": 196,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Products Google Maps Platform Documentation Android Places SDK for Android Guides Send feedback Place Details (New) Stay organized with collections Save and categorize content based on your preferences.",
+          "Place Details (New) requests You can request place details by calling PlacesClient.fetchPlace() and passing a FetchPlaceRequest object containing a place ID and field list , as well as any optional parameters : // Define a place ID. final String placeId = \"INSERT PLACE ID HERE\" ; // Specify the list of fields to return. final List<Place .",
+          "Place Details example The following example requests the ID , DISPLAY NAME , and FORMATTED ADDRESS fields for the Empire State Building in New York City. // Define a place ID. final String placeId = \"ChIJaXQRs6lZwokRY6EFpJnhNNE\" ; // Specify the list of fields to return. final List<Place ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "android.annotation.SuppressLint",
+      "android.content.pm.PackageManager",
+      "android.content.res.Configuration",
+      "android.location.Location",
+      "android.Manifest",
+      "android.os.Bundle",
+      "android.util.Log",
+      "android.view.View",
+      "android.widget.Toast",
+      "androidx.activity.enableEdgeToEdge",
+      "androidx.activity.result.ActivityResultLauncher",
+      "androidx.activity.result.contract.ActivityResultContracts",
+      "androidx.activity.viewModels",
+      "androidx.appcompat.app.AppCompatActivity",
+      "androidx.core.app.ActivityCompat",
+      "androidx.lifecycle.ViewModel",
+      "colors.xml",
+      "com.example.placedetailsuikit",
+      "com.example.placedetailsuikit.databinding.ActivityMainBinding",
+      "com.google.android.gms.location.FusedLocationProviderClient",
+      "com.google.android.gms.location.LocationServices",
+      "com.google.android.gms.maps.CameraUpdateFactory",
+      "com.google.android.gms.maps.GoogleMap",
+      "com.google.android.gms.maps.model.LatLng",
+      "com.google.android.gms.maps.model.PointOfInterest",
+      "com.google.android.gms.maps.OnMapReadyCallback",
+      "com.google.android.gms.maps.SupportMapFragment",
+      "com.google.android.libraries.places.api.model.Place",
+      "com.google.android.libraries.places.api.Places",
+      "com.google.android.libraries.places.widget.model.Orientation",
+      "com.google.android.libraries.places.widget.PlaceDetailsCompactFragment",
+      "com.google.android.libraries.places.widget.PlaceLoadListener",
+      "developers.google.com",
+      "style.CustomizedPlaceDetailsTheme"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/place-details-ui-kit",
+        "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-custom-styling",
+        "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-overview",
+        "https://developers.google.com/maps/documentation/places/android-sdk/details-place"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/place-details-ui-kit",
+        "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-custom-styling",
+        "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-overview",
+        "https://developers.google.com/maps/documentation/places/android-sdk/details-place"
+      ]
+    }
+  ]
+}

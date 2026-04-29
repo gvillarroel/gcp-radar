@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:41.389Z",
+  "source_step08_card": "data/step-08/current/products/api-gateway/card.json",
+  "product_name": "API Gateway",
+  "product_slug": "api-gateway",
+  "feature_name": "API Gateway web console development UI",
+  "feature_slug": "api-gateway-web-console-development-ui",
+  "summary": "Google Cloud Console gained a web UI for developing APIs on API Gateway.",
+  "extended_definition": "Google Cloud Console gained a web UI for developing APIs on API Gateway.",
+  "lifecycle": {
+    "latest_feature_date": "2020-04-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/api-gateway/docs/about-dev-env",
+      "https://docs.cloud.google.com/api-gateway/docs/configure-dev-env",
+      "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-console"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About the API Gateway development environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/api-gateway/docs/about-dev-env",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "About the API Gateway development environment API Gateway gives you three basic ways to interact with the services and resources necessary to build APIs: Google Cloud console Command-line interface ( gcloud ) Client libraries Google Cloud console The Google Cloud console provides a web-based, graphical user interface that you can use to manage your Google Cloud console(Google Cloud) projects and resources.",
+          "What's next Configuring your development environment Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "When you use the Google Cloud console, you create a new project, or choose an existing project, and use the resources that you create in the context of that project."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Secure traffic to a service with the Google Cloud console \\_\\",
+        "url": "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-console",
+        "source_id": "site-docs-root",
+        "final_score": 100,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create and deploy a new API config To create and deploy a new API config that secures API access using API keys: Enable your service: In the Google Cloud console, go to APIs & Services > Library .",
+          "API Gateway requires that you enable the following Google services: Name Title apigateway.googleapis.com API Gateway API servicemanagement.googleapis.com Service Management API servicecontrol.googleapis.com Service Control API If you have not previously enabled these services for the project you select, you are prompted to do so.",
+          "What's next Learn more About API Gateway Walk through Configure your development environment Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Configure the development environment \\_|\\_ API Gateway \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/api-gateway/docs/configure-dev-env",
+        "source_id": "site-docs-root",
+        "final_score": 95,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Replace PROJECT ID with your Google Cloud project ID: gcloud config set project PROJECT ID Enable the required Google services API Gateway requires that you enable the following Google Cloud services: Name Service name API Gateway API apigateway.googleapis.com Service Management API servicemanagement.googleapis.com Service Control API servicecontrol.googleapis.com To enable required services: Google Cloud console In the Google Cloud console, go to the APIs & Services > API Library page.",
+          "Google Cloud CLI Use the following commands to enable the services: gcloud services enable apigateway.googleapis.com gcloud services enable servicemanagement.googleapis.com gcloud services enable servicecontrol.googleapis.com For more information about the gcloud services, see gcloud services .",
+          "To add the required role and permission to the gateway service account: Google Cloud console In the Google Cloud console, go to the IAM & Admin > Service Accounts page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigateway.googleapis.com",
+      "servicecontrol.googleapis.com",
+      "servicemanagement.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/about-dev-env",
+        "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-console",
+        "https://docs.cloud.google.com/api-gateway/docs/configure-dev-env"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/about-dev-env",
+        "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-console",
+        "https://docs.cloud.google.com/api-gateway/docs/configure-dev-env"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/about-dev-env",
+        "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-console",
+        "https://docs.cloud.google.com/api-gateway/docs/configure-dev-env"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/about-dev-env",
+        "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-console",
+        "https://docs.cloud.google.com/api-gateway/docs/configure-dev-env"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/about-dev-env",
+        "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-console",
+        "https://docs.cloud.google.com/api-gateway/docs/configure-dev-env"
+      ]
+    }
+  ]
+}

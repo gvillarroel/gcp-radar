@@ -1,0 +1,127 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:45.795Z",
+  "source_step08_card": "data/step-08/current/products/calendar-api/card.json",
+  "product_name": "Calendar API",
+  "product_slug": "calendar-api",
+  "feature_name": "Birthday special events from Google Contacts",
+  "feature_slug": "birthday-special-events-from-google-contacts",
+  "summary": "The Calendar API can access birthdays and other special events automatically created from Google Contacts, including birthday-specific metadata in birthdayProperties.",
+  "extended_definition": "The Calendar API can access birthdays and other special events automatically created from Google Contacts, including birthday-specific metadata in birthdayProperties.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/calendar/api/guides/create-events",
+      "https://developers.google.com/workspace/calendar/api/guides/event-types",
+      "https://developers.google.com/workspace/calendar/api/guides/recurringevents"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Event types \\_|\\_ Google Calendar \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/calendar/api/guides/event-types",
+        "source_id": "site-docs-root",
+        "final_score": 129,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Paste the following into the code editor. const CALENDAR ID = ' CALENDAR ID ' 'primary' ; / Lists default events. / function listDefaultEvents () { listEvents ( 'default' ); } / Lists birthday events. / function listBirthdays () { listEvents ( 'birthday' ); } / Lists events from Gmail. / function listEventsFromGmail () { listEvents ( 'fromGmail' ); } / Lists events with the given event type.",
+          "Birthday Birthdays are special all-day events with an annual recurrence.",
+          "Events . get ( CALENDAR ID , ' EVENT ID ' ); console . log ( response ); } catch ( exception ) { console . log ( exception . message ); } } / Creates a default event. / function createDefaultEvent () { const event = { start : { dateTime : '2024-07-30T10:30:00+01:00' }, end : { dateTime : '2024-07-30T12:30:00+01:00' }, description : 'Created from Apps Script.' , eventType : 'default' , summary : 'Sample event' , } createEvent ( event ); } / Creates a birthday event. / function createBirthday () { const event = { start : { date : '2024-01-29' }, end : { date : '2024-01-30' }, eventType : 'birthday' , recurrence : [ \"RRULE:FREQ=YEARLY\" ], summary : \"My friend's birthday\" , transparency : \"transparent\" , visibility : \"private\" , } createEvent ( event ); } / Creates a Calendar event."
+        ]
+      },
+      {
+        "title": "Recurring events \\_|\\_ Google Calendar \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/calendar/api/guides/recurringevents",
+        "source_id": "site-docs-root",
+        "final_score": 89,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Id ); Python event = { 'summary' : 'Appointment' , 'location' : 'Somewhere' , 'start' : { 'dateTime' : '2011-06-03T10:00:00.000-07:00' , 'timeZone' : 'America/Los Angeles' }, 'end' : { 'dateTime' : '2011-06-03T10:25:00.000-07:00' , 'timeZone' : 'America/Los Angeles' }, 'recurrence' : [ 'RRULE:FREQ=WEEKLY;UNTIL=20110701T170000Z' , ], 'attendees' : [ { 'email' : 'attendeeEmail' , Other attendee's data... }, ... ], } recurring event = service . events () . insert ( calendarId = 'primary' , body = event ) . execute () print recurring event [ 'id' ] PHP $event = new Google Service Calendar Event(); $event->setSummary('Appointment'); $event->setLocation('Somewhere'); $start = new Google Service Calendar EventDateTime(); $start->setDateTime('2011-06-03T10:00:00.000-07:00'); $start->setTimeZone('America/Los Angeles'); $event->setStart($start); $end = new Google Service Calendar EventDateTime(); $end->setDateTime('2011-06-03T10:25:00.000-07:00'); $end->setTimeZone('America/Los Angeles'); $event->setEnd($end); $event->setRecurrence(array('RRULE:FREQ=WEEKLY;UNTIL=20110701T170000Z')); $attendee1 = new Google Service Calendar EventAttendee(); $attendee1->setEmail('attendeeEmail'); // ... $attendees = array($attendee1, // ... ); $event->attendees = $attendees; $recurringEvent = $service->events->insert('primary', $event); echo $recurringEvent->getId(); Ruby event = Google :: Apis :: CalendarV3 :: Event . new ( summary : 'Appointment' , location : 'Somewhere' , start : { date time : '2011-06-03T10:00:00.000-07:00' , time zone : 'America/Los Angeles' }, end : { date time : '2011-06-03T10:25:00.000-07:00' , time zone : 'America/Los Angeles' }, recurrence : [ 'RRULE:FREQ=WEEKLY;UNTIL=20110701T170000Z' ] attendees : [ { email : 'attendeeEmail' }, #... ] ) response = client . insert event ( 'primary' , event ) print response . id Access instances To see all the instances of a given recurring event you can use the events.instances() request.",
+          "Protocol POST / calendar / v3 / calendars / primary / events ... { \"summary\": \"Appointment\", \"location\": \"Somewhere\", \"start\": { \"dateTime\": \"2011-06-03 T10 : 00 : 00.000 -07 : 00 \", \" timeZone \": \" America / Los Angeles \" }, \" end \": { \" dateTime \": \" 2011-06-03 T10 : 25 : 00.000 -07 : 00 \", \" timeZone \": \" America / Los Angeles \" }, \" recurrence \": [ \"RRULE:FREQ=WEEKLY;UNTIL=20110701T170000Z\" , ] , \" attendees \" : [ { \"email\" : \"attendeeEmail\" , Other attendee 's data... }, ... ], } Java Event event = new Event (); event . setSummary ( \"Appointment\" ); event . setLocation ( \"Somewhere\" ); ArrayList<EventAttendee> attendees = new ArrayList<EventAttendee> (); attendees . add ( new EventAttendee (). setEmail ( \"attendeeEmail\" )); // ... event . setAttendees ( attendees ); DateTime start = DateTime . parseRfc3339 ( \"2011-06-03T10:00:00.000-07:00\" ); DateTime end = DateTime . parseRfc3339 ( \"2011-06-03T10:25:00.000-07:00\" ); event . setStart ( new EventDateTime (). setDateTime ( start ). setTimeZone ( \"America/Los Angeles\" )); event . setEnd ( new EventDateTime (). setDateTime ( end ). setTimeZone ( \"America/Los Angeles\" )); event . setRecurrence ( Arrays . asList ( \"RRULE:FREQ=WEEKLY;UNTIL=20110701T170000Z\" )); Event recurringEvent = service . events (). insert ( \"primary\" , event ). execute (); System . out . println ( createdEvent . getId ()); .NET Event event = new Event () { Summary = \"Appointment\" , Location = \"Somewhere\" , Start = new EventDateTime () { DateTime = new DateTime ( \"2011-06-03T10:00:00.000:-07:00\" ) TimeZone = \"America/Los Angeles\" }, End = new EventDateTime () { DateTime = new DateTime ( \"2011-06-03T10:25:00.000:-07:00\" ) TimeZone = \"America/Los Angeles\" }, Recurrence = new String [] { \"RRULE:FREQ=WEEKLY;UNTIL=20110701T170000Z\" }, Attendees = new List<EventAttendee> () { new EventAttendee () { Email : \"attendeeEmail\" }, // ... } }; Event recurringEvent = service .",
+          "Updated ); Python First retrieve the instances from the API. instances = service . events () . instances ( calendarId = 'primary' , eventId = 'recurringEventId' ) . execute () Select the instance to cancel. instance = instances [ 'items' ][ 0 ] instance [ 'status' ] = 'cancelled' updated instance = service . events () . update ( calendarId = 'primary' , eventId = instance [ 'id' ], body = instance ) . execute () Print the updated date. print updated instance [ 'updated' ] PHP $events = $service->events->instances(\"primary\", \"eventId\"); // Select the instance to cancel. $instance = $events->getItems()[0]; $instance->setStatus('cancelled'); $updatedInstance = $service->events->update('primary', $instance->getId(), $instance); // Print the updated date. echo $updatedInstance->getUpdated(); Ruby First retrieve the instances from the API. instances = client . list event instances ( 'primary' , 'recurringEventId' ) Select the instance to cancel. instance = instances . items [ 0 ] instance . status = 'cancelled' response = client . update event ( 'primary' , instance . id , instance ) print response . updated Modify all following instances In order to change all the instances of a recurring event on or after a given (target) instance, you must make two separate API requests."
+        ]
+      },
+      {
+        "title": "Create events \\_|\\_ Google Calendar \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/calendar/api/guides/create-events",
+        "source_id": "site-docs-root",
+        "final_score": 87,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Add an event To create an event, call the events.insert() method providing at least these parameters: calendarId is the calendar identifier and can either be the email address of the calendar on which to create the event or a special keyword 'primary' which will use the primary calendar of the logged in user.",
+          "In order to successfully create events, you need to: Set your OAuth scope to https://www.googleapis.com/auth/calendar so that you have edit access to the user's calendar.",
+          "Reminders () . setUseDefault ( false ) . setOverrides ( Arrays . asList ( reminderOverrides )); event . setReminders ( reminders ); String calendarId = \"primary\" ; event = service . events (). insert ( calendarId , event ). execute (); System . out . printf ( \"Event created: %s\\n\" , event . getHtmlLink ()); JavaScript // Refer to the JavaScript quickstart on how to setup the environment: // https://developers.google.com/workspace/calendar/quickstart/js // Change the scope to 'https://www.googleapis.com/auth/calendar' and delete any // stored credentials. const event = { 'summary' : 'Google I/O 2015' , 'location' : '800 Howard St., San Francisco, CA 94103' , 'description' : 'A chance to hear more about Google\\'s developer products.' , 'start' : { 'dateTime' : '2015-05-28T09:00:00-07:00' , 'timeZone' : 'America/Los Angeles' }, 'end' : { 'dateTime' : '2015-05-28T17:00:00-07:00' , 'timeZone' : 'America/Los Angeles' }, 'recurrence' : [ 'RRULE:FREQ=DAILY;COUNT=2' ], 'attendees' : [ { 'email' : 'lpage@example.com' }, { 'email' : 'sbrin@example.com' } ], 'reminders' : { 'useDefault' : false , 'overrides' : [ { 'method' : 'email' , 'minutes' : 24 60 }, { 'method' : 'popup' , 'minutes' : 10 } ] } }; const request = gapi . client . calendar . events . insert ({ 'calendarId' : 'primary' , 'resource' : event }); request . execute ( function ( event ) { appendPre ( 'Event created: ' + event . htmlLink ); }); Node.js // Refer to the Node.js quickstart on how to setup the environment: // https://developers.google.com/workspace/calendar/quickstart/node // Change the scope to 'https://www.googleapis.com/auth/calendar' and delete any // stored credentials. const event = { 'summary' : 'Google I/O 2015' , 'location' : '800 Howard St., San Francisco, CA 94103' , 'description' : 'A chance to hear more about Google\\'s developer products.' , 'start' : { 'dateTime' : '2015-05-28T09:00:00-07:00' , 'timeZone' : 'America/Los Angeles' , }, 'end' : { 'dateTime' : '2015-05-28T17:00:00-07:00' , 'timeZone' : 'America/Los Angeles' , }, 'recurrence' : [ 'RRULE:FREQ=DAILY;COUNT=2' ], 'attendees' : [ { 'email' : 'lpage@example.com' }, { 'email' : 'sbrin@example.com' }, ], 'reminders' : { 'useDefault' : false , 'overrides' : [ { 'method' : 'email' , 'minutes' : 24 60 }, { 'method' : 'popup' , 'minutes' : 10 }, ], }, }; calendar . events . insert ({ auth : auth , calendarId : 'primary' , resource : event , }, function ( err , event ) { if ( err ) { console . log ( 'There was an error contacting the Calendar service: ' + err ); return ; } console . log ( 'Event created: %s' , event . htmlLink ); }); PHP $event = new Google Service Calendar Event(array( 'summary' => 'Google I/O 2015', 'location' => '800 Howard St., San Francisco, CA 94103', 'description' => 'A chance to hear more about Google\\'s developer products.', 'start' => array( 'dateTime' => '2015-05-28T09:00:00-07:00', 'timeZone' => 'America/Los Angeles', ), 'end' => array( 'dateTime' => '2015-05-28T17:00:00-07:00', 'timeZone' => 'America/Los Angeles', ), 'recurrence' => array( 'RRULE:FREQ=DAILY;COUNT=2' ), 'attendees' => array( array('email' => 'lpage@example.com'), array('email' => 'sbrin@example.com'), ), 'reminders' => array( 'useDefault' => FALSE, 'overrides' => array( array('method' => 'email', 'minutes' => 24 60), array('method' => 'popup', 'minutes' => 10), ), ), )); $calendarId = 'primary'; $event = $service->events->insert($calendarId, $event); printf('Event created: %s\\n', $event->htmlLink); Python Refer to the Python quickstart on how to setup the environment: https://developers.google.com/workspace/calendar/quickstart/python Change the scope to 'https://www.googleapis.com/auth/calendar' and delete any stored credentials. event = { 'summary' : 'Google I/O 2015' , 'location' : '800 Howard St., San Francisco, CA 94103' , 'description' : 'A chance to hear more about Google \\' s developer products.' , 'start' : { 'dateTime' : '2015-05-28T09:00:00-07:00' , 'timeZone' : 'America/Los Angeles' , }, 'end' : { 'dateTime' : '2015-05-28T17:00:00-07:00' , 'timeZone' : 'America/Los Angeles' , }, 'recurrence' : [ 'RRULE:FREQ=DAILY;COUNT=2' ], 'attendees' : [ { 'email' : 'lpage@example.com' }, { 'email' : 'sbrin@example.com' }, ], 'reminders' : { 'useDefault' : False , 'overrides' : [ { 'method' : 'email' , 'minutes' : 24 60 }, { 'method' : 'popup' , 'minutes' : 10 }, ], }, } event = service . events () . insert ( calendarId = 'primary' , body = event ) . execute () print 'Event created: %s ' % ( event . get ( 'htmlLink' )) Ruby event = Google :: Apis :: CalendarV3 :: Event . new ( summary : 'Google I/O 2015' , location : '800 Howard St., San Francisco, CA 94103' , description : 'A chance to hear more about Google \\' s developer products.' , start : Google :: Apis :: CalendarV3 :: EventDateTime . new ( date time : '2015-05-28T09:00:00-07:00' , time zone : 'America/Los Angeles' ), end : Google :: Apis :: CalendarV3 :: EventDateTime . new ( date time : '2015-05-28T17:00:00-07:00' , time zone : 'America/Los Angeles' ), recurrence : [ 'RRULE:FREQ=DAILY;COUNT=2' ] , attendees : [ Google :: Apis :: CalendarV3 :: EventAttendee . new ( email : 'lpage@example.com' ), Google :: Apis :: CalendarV3 :: EventAttendee . new ( email : 'sbrin@example.com' ) ] , reminders : Google :: Apis :: CalendarV3 :: Event :: Reminders . new ( use default : false , overrides : [ Google :: Apis :: CalendarV3 :: EventReminder . new ( reminder method : 'email' , minutes : 24 60 ), Google :: Apis :: CalendarV3 :: EventReminder . new ( reminder method : 'popup' , minutes : 10 ) ] ) ) result = client . insert event ( 'primary' , event ) puts \"Event created: #{ result . html link } \" Add Drive attachments to events You can attach Google Drive files such as meeting notes in Docs, budgets in Sheets, presentations in Slides, or any other relevant Google Drive files to your calendar events."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "events.insert",
+      "events.instances",
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/event-types",
+        "https://developers.google.com/workspace/calendar/api/guides/create-events",
+        "https://developers.google.com/workspace/calendar/api/guides/recurringevents"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/event-types",
+        "https://developers.google.com/workspace/calendar/api/guides/create-events",
+        "https://developers.google.com/workspace/calendar/api/guides/recurringevents"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/event-types",
+        "https://developers.google.com/workspace/calendar/api/guides/create-events",
+        "https://developers.google.com/workspace/calendar/api/guides/recurringevents"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/event-types",
+        "https://developers.google.com/workspace/calendar/api/guides/create-events",
+        "https://developers.google.com/workspace/calendar/api/guides/recurringevents"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/event-types",
+        "https://developers.google.com/workspace/calendar/api/guides/create-events",
+        "https://developers.google.com/workspace/calendar/api/guides/recurringevents"
+      ]
+    }
+  ]
+}

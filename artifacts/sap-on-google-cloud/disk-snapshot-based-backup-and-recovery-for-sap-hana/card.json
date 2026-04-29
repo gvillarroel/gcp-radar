@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:26.956Z",
+  "source_step08_card": "data/step-08/current/products/sap-on-google-cloud/card.json",
+  "product_name": "SAP on Google Cloud",
+  "product_slug": "sap-on-google-cloud",
+  "feature_name": "Disk snapshot-based backup and recovery for SAP HANA",
+  "feature_slug": "disk-snapshot-based-backup-and-recovery-for-sap-hana",
+  "summary": "Google Cloud's Agent for SAP version 3.0 can use disk snapshots to perform backup and recovery for SAP HANA systems.",
+  "extended_definition": "Google Cloud's Agent for SAP version 3.0 can use disk snapshots to perform backup and recovery for SAP HANA systems.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sap/docs/agent-for-sap/latest/all-guides",
+      "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+      "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Reference architecture: SAP Business Suite on SAP HANA on Google Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+        "source_id": "site-docs-root",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you're using version 3.0 or later of Google Cloud's Agent for SAP, you can create backups and perform recovery for SAP HANA using the agent's disk snapshot feature.",
+          "The following diagram shows the flow of backups when you use the Backint feature of Google Cloud's Agent for SAP: Back up to disks You can use the native SAP HANA backup and recovery function with Compute Engine Persistent Disk volumes and use a Cloud Storage bucket for longer-term storage of the backups.",
+          "For example, you can take scheduled snapshots of the disk hosting your /hanabackup directory for use in disaster recovery scenarios."
+        ]
+      },
+      {
+        "title": "\"Reference architecture: SAP S/4HANA on Google Cloud \\_|\\_ SAP on Google\\",
+        "url": "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp",
+        "source_id": "site-docs-reference",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you're using version 3.0 or later of Google Cloud's Agent for SAP, you can create backups and perform recovery for SAP HANA using the agent's disk snapshot feature.",
+          "The following diagram shows the flow of backups when you use the Backint feature of Google Cloud's Agent for SAP: Back up to disks You can use the native SAP HANA backup and recovery function with Compute Engine Persistent Disk volumes and use a Cloud Storage bucket for longer-term storage of the backups.",
+          "For example, you can take scheduled snapshots of the disk hosting your /hanabackup directory for use in disaster recovery scenarios."
+        ]
+      },
+      {
+        "title": "\"Google Cloud's Agent for SAP guides \\_|\\_ SAP on Google Cloud \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sap/docs/agent-for-sap/latest/all-guides",
+        "source_id": "site-docs-reference",
+        "final_score": 206,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Backup and recovery for SAP HANA by using disk snapshots Provides conceptual information about performing backup and recovery operations for SAP HANA by using the disk snapshot feature of Google Cloud's Agent for SAP.",
+          "Backup and recovery for SAP HANA by using Backint Provides conceptual information about performing backup and recovery operations for SAP HANA by using the Backint feature of Google Cloud's Agent for SAP.",
+          "Back up and recover SAP HANA by using a disk snapshot Provides information about how to back up and recover SAP HANA by using the disk snapshot feature of Google Cloud's Agent for SAP."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

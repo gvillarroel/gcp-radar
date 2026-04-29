@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:17:31.179Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Vertex AI Pipeline task-level logs in Cloud Logging",
+  "feature_slug": "vertex-ai-pipeline-task-level-logs-in-cloud-logging",
+  "summary": "Task-level logs for Vertex AI pipelines are now generally available in Cloud Logging.",
+  "extended_definition": "Task-level logs for Vertex AI pipelines are now generally available in Cloud Logging.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+      "https://docs.cloud.google.com/vertex-ai/docs/pipelines/introduction",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/tabular"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Introduction to Vertex AI Pipelines \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/pipelines/introduction",
+        "source_id": "site-docs-reference-2",
+        "final_score": 181,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Structure of an ML pipeline Pipeline tasks and components Life cycle of an ML pipeline Use Vertex ML Metadata to track the lineage of ML artifacts Add pipeline runs to experiments Note: If you're experienced in creating ML pipelines using the Kubeflow Pipelines SDK and want to understand the differences between Vertex AI Pipelines and Kubeflow Pipelines, see Migrate from Kubeflow Pipelines to Vertex AI Pipelines .",
+          "When you run your ML pipeline, Vertex AI Pipelines executes these tasks in the sequence described in the DAG.",
+          "To learn more, run the \"Vertex AI Pipelines: Lightweight Python function-based components, and component I/O\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Vertex AI Pipelines lets you automate, monitor, and govern your machine learning (ML) systems in a serverless manner by using ML pipelines to orchestrate your ML workflows."
+        ]
+      },
+      {
+        "title": "\"Build a pipeline for continuous model training \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 172,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use the in operator to verify subject is present. print ( f \"Subject: { cloudevent [ 'subject' ] } \" ) Print out details from the protoPayload This field encapsulates a Cloud Audit Logging entry See https://cloud.google.com/logging/docs/audit#audit log entry structure payload = cloudevent . data . get ( \"protoPayload\" ) if payload : print ( f \"API method: { payload . get ( 'methodName' ) } \" ) print ( f \"Resource name: { payload . get ( 'resourceName' ) } \" ) print ( f \"Principal: { payload . get ( 'authenticationInfo' , dict ()) . get ( 'principalEmail' ) } \" ) row count = payload . get ( 'metadata' , dict ()) . get ( 'tableDataChange' , dict ()) . get ( 'insertedRowsCount' ) print ( f \"No. of rows: { row count } !!\" ) if row count : if int ( row count ) > 0 : print ( \"Pipeline trigger Condition met !!\" ) submit pipeline job () else : print ( \"No pipeline triggered !!!\" ) def submit pipeline job (): PROJECT ID = ' PROJECT ID ' REGION = ' REGION ' BUCKET NAME = \" BUCKET NAME \" DATASET NAME = \"mlops\" TABLE NAME = \"chicago\" base output dir = BUCKET NAME BUCKET URI = \"gs:// {} \" . format ( BUCKET NAME ) PIPELINE ROOT = \" {} /pipeline root/chicago-taxi-pipe\" . format ( BUCKET URI ) PIPELINE NAME = \"vertex-mlops-pipeline-tutorial\" EXPERIMENT NAME = PIPELINE NAME + \"-experiment\" REPO NAME = \"mlops\" TEMPLATE NAME = \"custom-model-training-evaluation-pipeline\" TRAINING JOB DISPLAY NAME = \"taxifare-prediction-training-job\" worker pool specs = [{ \"machine spec\" : { \"machine type\" : \"e2-highmem-2\" }, \"replica count\" : 1 , \"python package spec\" :{ \"executor image uri\" : \"us-docker.pkg.dev/vertex-ai/training/sklearn-cpu.1-0:latest\" , \"package uris\" : [ f \" { BUCKET URI } /trainer-0.1.tar.gz\" ], \"python module\" : \"trainer.task\" , \"args\" :[ \"--project-id\" , PROJECT ID , \"--training-dir\" , f \"/gcs/ { BUCKET NAME } \" , \"--bq-source\" , f \" { PROJECT ID } . { DATASET NAME } . { TABLE NAME } \" ] }, }] parameters = { \"project\" : PROJECT ID , \"location\" : REGION , \"training job display name\" : \"taxifare-prediction-training-job\" , \"worker pool specs\" : worker pool specs , \"base output dir\" : BUCKET URI , \"prediction container uri\" : \"us-docker.pkg.dev/vertex-ai/prediction/sklearn-cpu.1-0:latest\" , \"model display name\" : \"taxifare-prediction-model\" , \"batch prediction job display name\" : \"taxifare-prediction-batch-job\" , \"target field name\" : \"fare\" , \"test data gcs uri\" : [ f \" { BUCKET URI } /test no target.csv\" ], \"ground truth gcs source\" : [ f \" { BUCKET URI } /test.csv\" ], \"batch predictions gcs prefix\" : f \" { BUCKET URI } /batch predict output\" , \"existing model\" : False } TEMPLATE URI = f \"https:// { REGION } -kfp.pkg.dev/ { PROJECT ID } / { REPO NAME } / { TEMPLATE NAME } /latest\" print ( \"TEMPLATE URI: \" , TEMPLATE URI ) request body = { \"name\" : PIPELINE NAME , \"displayName\" : PIPELINE NAME , \"runtimeConfig\" :{ \"gcsOutputDirectory\" : PIPELINE ROOT , \"parameterValues\" : parameters , }, \"templateUri\" : TEMPLATE URI } pipeline url = \"https://us-central1-aiplatform.googleapis.com/v1/projects/ {} /locations/ {} /pipelineJobs\" . format ( PROJECT ID , REGION ) creds , project = google . auth . default () auth req = google . auth . transport . requests .",
+          "Initialize the Vertex AI SDK with the project, staging bucket, location and experiment. from google.cloud import aiplatform aiplatform . init ( project = PROJECT ID , staging bucket = BUCKET URI , location = REGION , experiment = EXPERIMENT NAME ) aiplatform . autolog () Define the pipeline tasks In your notebook, define your pipeline custom model training evaluation pipeline : from kfp import dsl from kfp.dsl import importer from kfp.dsl import OneOf from google cloud pipeline components.v1.custom job import CustomTrainingJobOp from google cloud pipeline components.types import artifact types from google cloud pipeline components.v1.model import ModelUploadOp from google cloud pipeline components.v1.batch predict job import ModelBatchPredictOp from google cloud pipeline components.v1.model evaluation import ModelEvaluationRegressionOp from google cloud pipeline components.v1.vertex notification email import VertexNotificationEmailOp from google cloud pipeline components.v1.endpoint import ModelDeployOp from google cloud pipeline components.v1.endpoint import EndpointCreateOp from google.cloud import aiplatform define the train-deploy pipeline @dsl . pipeline ( name = \"custom-model-training-evaluation-pipeline\" ) def custom model training evaluation pipeline ( project : str , location : str , training job display name : str , worker pool specs : list , base output dir : str , prediction container uri : str , model display name : str , batch prediction job display name : str , target field name : str , test data gcs uri : list , ground truth gcs source : list , batch predictions gcs prefix : str , batch predictions input format : str = \"csv\" , batch predictions output format : str = \"jsonl\" , ground truth format : str = \"csv\" , parent model resource name : str = None , parent model artifact uri : str = None , existing model : bool = False ): Notification task notify task = VertexNotificationEmailOp ( recipients = EMAIL RECIPIENTS ) with dsl .",
+          "Else (): Upload the model model upload op = ModelUploadOp ( project = project , location = location , display name = model display name , unmanaged container model = import unmanaged model task . outputs [ \"artifact\" ], ) Get the model (or model version) model resource = OneOf ( model version upload op . outputs [ \"model\" ], model upload op . outputs [ \"model\" ]) Batch prediction batch predict task = ModelBatchPredictOp ( project = project , job display name = batch prediction job display name , model = model resource , location = location , instances format = batch predictions input format , predictions format = batch predictions output format , gcs source uris = test data gcs uri , gcs destination output uri prefix = batch predictions gcs prefix , machine type = 'n1-standard-2' ) Evaluation task evaluation task = ModelEvaluationRegressionOp ( project = project , target field name = target field name , location = location , model= model resource, predictions format = batch predictions output format , predictions gcs source = batch predict task . outputs [ \"gcs output directory\" ], ground truth format = ground truth format , ground truth gcs source = ground truth gcs source ) return Your pipeline consists of a graph of tasks that make use the following Google Cloud Pipeline Components : CustomTrainingJobOp : Runs custom training jobs in Vertex AI."
+        ]
+      },
+      {
+        "title": "Train custom ML models on Vertex AI Pipelines \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/tabular",
+        "source_id": "site-docs-reference-2",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This tutorial shows you how to use Vertex AI Pipelines to run an end-to-end ML workflow, including the following tasks: Import and transform data.",
+          "Tabular classification TensorFlow python3 -m pip install \"kfp<2.0.0\" \"google-cloud-aiplatform>=1.16.0\" --upgrade --quiet from kfp import components %% Loading components download from gcs op = components . load component from url ( \"https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/399405402d95f4a011e2d2e967c96f8508ba5688/community-content/pipeline components/google-cloud/storage/download/component.yaml\" ) select columns using Pandas on CSV data op = components . load component from url ( \"https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/399405402d95f4a011e2d2e967c96f8508ba5688/community-content/pipeline components/pandas/Select columns/in CSV format/component.yaml\" ) fill all missing values using Pandas on CSV data op = components . load component from url ( \"https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/399405402d95f4a011e2d2e967c96f8508ba5688/community-content/pipeline components/pandas/Fill all missing values/in CSV format/component.yaml\" ) binarize column using Pandas on CSV data op = components . load component from url ( \"https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/399405402d95f4a011e2d2e967c96f8508ba5688/community-content/pipeline components/pandas/Binarize column/in CSV format/component.yaml\" ) split rows into subsets op = components . load component from url ( \"https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/399405402d95f4a011e2d2e967c96f8508ba5688/community-content/pipeline components/dataset manipulation/Split rows into subsets/in CSV/component.yaml\" ) create fully connected tensorflow network op = components . load component from url ( \"https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/399405402d95f4a011e2d2e967c96f8508ba5688/community-content/pipeline components/tensorflow/Create fully connected network/component.yaml\" ) train model using Keras on CSV op = components . load component from url ( \"https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/399405402d95f4a011e2d2e967c96f8508ba5688/community-content/pipeline components/tensorflow/Train model using Keras/on CSV/component.yaml\" ) predict with TensorFlow model on CSV data op = components . load component from url ( \"https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/399405402d95f4a011e2d2e967c96f8508ba5688/community-content/pipeline components/tensorflow/Predict/on CSV/component.yaml\" ) upload Tensorflow model to Google Cloud Vertex AI op = components . load component from url ( \"https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/399405402d95f4a011e2d2e967c96f8508ba5688/community-content/pipeline components/google-cloud/Vertex AI/Models/Upload Tensorflow model/component.yaml\" ) deploy model to endpoint op = components . load component from url ( \"https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/399405402d95f4a011e2d2e967c96f8508ba5688/community-content/pipeline components/google-cloud/Vertex AI/Models/Deploy to endpoint/component.yaml\" ) %% Pipeline definition def train tabular classification model using TensorFlow pipeline (): dataset gcs uri = \"gs://ml-pipeline-dataset/Chicago taxi trips/chicago taxi trips 2019-01-01 - 2019-02-01 limit=10000.csv\" feature columns = [ \"trip seconds\" , \"trip miles\" , \"pickup community area\" , \"dropoff community area\" , \"fare\" , \"tolls\" , \"extras\" ] # Excluded \"trip total\" label column = \"tips\" training set fraction = 0.8 Deploying the model might incur additional costs over time deploy model = False classification label column = \"class\" all columns = [ label column ] + feature columns dataset = download from gcs op ( gcs path = dataset gcs uri ) . outputs [ \"Data\" ] dataset = select columns using Pandas on CSV data op ( table = dataset , column names = all columns , ) . outputs [ \"transformed table\" ] dataset = fill all missing values using Pandas on CSV data op ( table = dataset , replacement value = \"0\" , # Optional: column names=None, # =[...] ) . outputs [ \"transformed table\" ] classification dataset = binarize column using Pandas on CSV data op ( table = dataset , column name = label column , predicate = \" > 0\" , new column name = classification label column , ) . outputs [ \"transformed table\" ] split task = split rows into subsets op ( table = classification dataset , fraction 1 = training set fraction , ) classification training data = split task . outputs [ \"split 1\" ] classification testing data = split task . outputs [ \"split 2\" ] network = create fully connected tensorflow network op ( input size = len ( feature columns ), Optional: hidden layer sizes = [ 10 ], activation name = \"elu\" , output activation name = \"sigmoid\" , output size=1, ) . outputs [ \"model\" ] model = train model using Keras on CSV op ( training data = classification training data , model = network , label column name = classification label column , Optional: loss function name = \"binary crossentropy\" , number of epochs = 10 , #learning rate=0.1, #optimizer name=\"Adadelta\", #optimizer parameters={}, #batch size=32, #metric names=[\"mean absolute error\"], #random seed=0, ) . outputs [ \"trained model\" ] predictions = predict with TensorFlow model on CSV data op ( dataset = classification testing data , model = model , label column name needs to be set when doing prediction on a dataset that has labels label column name = classification label column , Optional: batch size=1000, ) . outputs [ \"predictions\" ] vertex model name = upload Tensorflow model to Google Cloud Vertex AI op ( model = model , ) . outputs [ \"model name\" ] Deploying the model might incur additional costs over time if deploy model : vertex endpoint name = deploy model to endpoint op ( model name = vertex model name , ) . outputs [ \"endpoint name\" ] pipeline func = train tabular classification model using TensorFlow pipeline %% Pipeline submission if name == ' main ' : from google.cloud import aiplatform aiplatform .",
+          "PipelineJob . from pipeline func ( pipeline func = pipeline func ) . submit () Tabular regression TensorFlow python3 -m pip install \"kfp<2.0.0\" \"google-cloud-aiplatform>=1.16.0\" --upgrade --quiet from kfp import components %% Loading components download from gcs op = components . load component from url ( \"https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/399405402d95f4a011e2d2e967c96f8508ba5688/community-content/pipeline components/google-cloud/storage/download/component.yaml\" ) select columns using Pandas on CSV data op = components . load component from url ( \"https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/399405402d95f4a011e2d2e967c96f8508ba5688/community-content/pipeline components/pandas/Select columns/in CSV format/component.yaml\" ) fill all missing values using Pandas on CSV data op = components . load component from url ( \"https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/399405402d95f4a011e2d2e967c96f8508ba5688/community-content/pipeline components/pandas/Fill all missing values/in CSV format/component.yaml\" ) split rows into subsets op = components . load component from url ( \"https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/399405402d95f4a011e2d2e967c96f8508ba5688/community-content/pipeline components/dataset manipulation/Split rows into subsets/in CSV/component.yaml\" ) create fully connected tensorflow network op = components . load component from url ( \"https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/399405402d95f4a011e2d2e967c96f8508ba5688/community-content/pipeline components/tensorflow/Create fully connected network/component.yaml\" ) train model using Keras on CSV op = components . load component from url ( \"https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/399405402d95f4a011e2d2e967c96f8508ba5688/community-content/pipeline components/tensorflow/Train model using Keras/on CSV/component.yaml\" ) predict with TensorFlow model on CSV data op = components . load component from url ( \"https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/399405402d95f4a011e2d2e967c96f8508ba5688/community-content/pipeline components/tensorflow/Predict/on CSV/component.yaml\" ) upload Tensorflow model to Google Cloud Vertex AI op = components . load component from url ( \"https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/399405402d95f4a011e2d2e967c96f8508ba5688/community-content/pipeline components/google-cloud/Vertex AI/Models/Upload Tensorflow model/component.yaml\" ) deploy model to endpoint op = components . load component from url ( \"https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/399405402d95f4a011e2d2e967c96f8508ba5688/community-content/pipeline components/google-cloud/Vertex AI/Models/Deploy to endpoint/component.yaml\" ) %% Pipeline definition def train tabular regression model using Tensorflow pipeline (): dataset gcs uri = \"gs://ml-pipeline-dataset/Chicago taxi trips/chicago taxi trips 2019-01-01 - 2019-02-01 limit=10000.csv\" feature columns = [ \"trip seconds\" , \"trip miles\" , \"pickup community area\" , \"dropoff community area\" , \"fare\" , \"tolls\" , \"extras\" ] # Excluded \"trip total\" label column = \"tips\" training set fraction = 0.8 Deploying the model might incur additional costs over time deploy model = False all columns = [ label column ] + feature columns dataset = download from gcs op ( gcs path = dataset gcs uri ) . outputs [ \"Data\" ] dataset = select columns using Pandas on CSV data op ( table = dataset , column names = all columns , ) . outputs [ \"transformed table\" ] dataset = fill all missing values using Pandas on CSV data op ( table = dataset , replacement value = \"0\" , # Optional: column names=None, # =[...] ) . outputs [ \"transformed table\" ] split task = split rows into subsets op ( table = dataset , fraction 1 = training set fraction , ) training data = split task . outputs [ \"split 1\" ] testing data = split task . outputs [ \"split 2\" ] network = create fully connected tensorflow network op ( input size = len ( feature columns ), Optional: hidden layer sizes = [ 10 ], activation name = \"elu\" , output activation name=None, output size=1, ) . outputs [ \"model\" ] model = train model using Keras on CSV op ( training data = training data , model = network , label column name = label column , Optional: #loss function name=\"mean squared error\", number of epochs = 10 , #learning rate=0.1, #optimizer name=\"Adadelta\", #optimizer parameters={}, #batch size=32, metric names = [ \"mean absolute error\" ], #random seed=0, ) . outputs [ \"trained model\" ] predictions = predict with TensorFlow model on CSV data op ( dataset = testing data , model = model , label column name needs to be set when doing prediction on a dataset that has labels label column name = label column , Optional: batch size=1000, ) . outputs [ \"predictions\" ] vertex model name = upload Tensorflow model to Google Cloud Vertex AI op ( model = model , ) . outputs [ \"model name\" ] Deploying the model might incur additional costs over time if deploy model : vertex endpoint name = deploy model to endpoint op ( model name = vertex model name , ) . outputs [ \"endpoint name\" ] pipeline func = train tabular regression model using Tensorflow pipeline %% Pipeline submission if name == ' main ' : from google.cloud import aiplatform aiplatform ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "component.yaml",
+      "components.types",
+      "components.v1.batch",
+      "components.v1.custom",
+      "components.v1.endpoint",
+      "components.v1.model",
+      "components.v1.vertex",
+      "cpu.1",
+      "docker.pkg.dev",
+      "kfp.dsl",
+      "kfp.pkg.dev",
+      "raw.githubusercontent.com",
+      "tar.gz",
+      "target.csv",
+      "test.csv",
+      "trainer.task"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/introduction",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/tabular"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/introduction",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/tabular"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/introduction",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/tabular"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/introduction",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/tabular"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/introduction",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/tabular"
+      ]
+    }
+  ]
+}

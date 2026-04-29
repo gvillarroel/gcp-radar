@@ -1,0 +1,145 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-29T04:16:49.591Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Logging agent partial success ingestion",
+  "feature_slug": "logging-agent-partial-success-ingestion",
+  "summary": "The Logging agent supports partial success so valid log entries are ingested even when some entries in a batch are invalid.",
+  "extended_definition": "The Logging agent supports partial success so valid log entries are ingested even when some entries in a batch are invalid.",
+  "lifecycle": {
+    "latest_feature_date": "2018-02-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Install and manage the Ops Agent by using VM Extension Manager policies\\",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "source_id": "site-docs-root-2",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "Verify that the Ops Agent is collecting telemetry If the Ops Agent has been successfully installed and is running correctly, then it sends metrics to Cloud Monitoring and logs to Cloud Logging.",
+          "Enter the following query and click Run query : severity>=DEBUG log id(\"GCEGuestAgentManager\") \"The agent config file is not valid\" Linux Run the following command on the Linux Compute Engine VM: journalctl -u google-guest-agent-manager grep \"The agent config file is not valid\" Windows Run the following command on the Windows Compute Engine VM: Get-Eventlog -Source google guest agent manager -LogName Application Where-Object {$ .Message -like \" The agent config file is not valid \"} If you see logs containing the string The agent config file is not valid , then the custom configuration for the Ops Agent you provided when creating or updating the extension policy is invalid.",
+          "If you haven't done so already, install the beta component of the gcloud CLI by running the following command: gcloud components install beta To check if you have the beta component installed, run the following command: gcloud components list If you previously installed the beta component, verify that have the latest version: gcloud components update Uninstall any observability agents Before creating a VM Extension Manager policy to manage the Ops Agent on a VM, ensure that there are no instances of the Ops Agent or the legacy Monitoring agent and Logging agent already on the VM."
+        ]
+      },
+      {
+        "title": "Configure the Logging agent \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "source_id": "site-docs-root",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "In addition, the following Prometheus metrics are exposed by the output plugin in prometheus mode: uptime with a version label: Uptime of the Logging agent. stackdriver successful requests count with grpc and code labels: The number of successful requests to the Logging API. stackdriver failed requests count with grpc and code labels: The number of failed requests to the Logging API, broken down by the error code. stackdriver ingested entries count with grpc and code labels: The number of log entries ingested by the Logging API. stackdriver dropped entries count with grpc and code labels: The number of log entries rejected by the Logging API. stackdriver retried entries count with grpc and code labels: The number of log entries that failed to be ingested by the Google Cloud fluentd output plugin due to a transient error and were retried. prometheus and prometheus monitor plugin configuration Note: The following default monitoring configuration is exclusive to Linux operating systems.",
+          "When set to true , the Logging agent keeps track of the number of log entries requested to be sent to Cloud Logging and the actual number of log entries successfully ingested by Cloud Logging.",
+          "If false , the full set would be dropped if it contained any invalid log entries. enable monitoring bool true When set to true , the Logging agent exports internal telemetry."
+        ]
+      },
+      {
+        "title": "Use agent policies (GA) \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+        "source_id": "site-docs-root-2",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "To enable debug-level logging for the entire project, run the following command: gcloud compute project-info add-metadata \\ --project PROJECT ID \\ --metadata osconfig-log-level=debug To enable debug-level logging for one VM, run the following command: gcloud compute instances add-metadata INSTANCE ID \\ --project PROJECT ID \\ --metadata osconfig-log-level=debug Helper scripts This section provides additional information about the helper scripts described in this document: The prepare-for-ops-agents-policies.sh script The diagnose policies.sh script The prepare-for-ops-agents-policies.sh script After you download the prepare-for-ops-agents-policies.sh script, you can use the script to perform the following actions, based on the arguments you provide: Enable the Cloud Logging API, the Cloud Monitoring API, and the OS Config API for the project.",
+          "Grant the Identity and Access Management roles Logs Writer ( roles/logging.logWriter ) and Monitoring Metric Writer ( roles/monitoring.metricWriter ) to the Compute Engine default service account so that the agents can write logs and metrics to the Logging and Cloud Monitoring APIs.",
+          "Uninstall the legacy Monitoring agent and Logging agent If you're creating a policy for the Ops Agent, ensure that your VMs don't have the legacy Logging agent or Monitoring agent installed on them."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "logging.logWriter",
+      "monitoring.metricWriter",
+      "policies.sh"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.logWriter",
+      "roles/monitoring.metricWriter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies"
+      ]
+    }
+  ]
+}
