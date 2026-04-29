@@ -6,6 +6,7 @@ import path from "node:path";
 const artifactsRoot = path.resolve(process.env.GCP_RADAR_VALIDATE_ARTIFACTS_ROOT || "artifacts");
 const radarRoot = path.resolve(process.env.GCP_RADAR_VALIDATE_RADAR_ROOT || "radar");
 const step08Root = path.resolve(process.env.GCP_RADAR_VALIDATE_STEP08_ROOT || "data/step-08/current");
+const step10Root = path.resolve(process.env.GCP_RADAR_VALIDATE_STEP10_ROOT || "data/step-10/current");
 const outputFile = path.resolve(process.env.GCP_RADAR_VALIDATE_OUTPUT || "data/final-output-validation.json");
 const officialGoogleHosts = [
   "cloud.google.com",
@@ -170,10 +171,101 @@ async function validateRadarDoesNotReferenceDataSteps() {
   return findings;
 }
 
+async function validateRadarMatchesArtifacts() {
+  const findings = [];
+  const products = [];
+
+  for (const productSlug of await listDirs(artifactsRoot)) {
+    const promotionPath = path.join(artifactsRoot, productSlug, "promotion.json");
+    const promotion = await readJson(promotionPath, null);
+    if (!promotion) {
+      continue;
+    }
+    products.push({
+      product_slug: productSlug,
+      feature_count: (promotion.promoted_features || []).filter((feature) => feature?.feature_slug).length,
+    });
+  }
+
+  const artifactProductSlugs = new Set(products.map((product) => product.product_slug));
+  const radarProductsDir = path.join(radarRoot, "products");
+  const radarProductSlugs = new Set(
+    (await listFilesRecursive(radarProductsDir))
+      .filter((file) => path.dirname(file) === radarProductsDir)
+      .filter((file) => file.endsWith(".md"))
+      .map((file) => path.basename(file, ".md"))
+  );
+
+  for (const productSlug of artifactProductSlugs) {
+    if (!radarProductSlugs.has(productSlug)) {
+      findings.push({
+        severity: "error",
+        rule: "missing_radar_product_report",
+        path: path.join(radarProductsDir, `${productSlug}.md`),
+        product_slug: productSlug,
+      });
+    }
+  }
+
+  for (const productSlug of radarProductSlugs) {
+    if (!artifactProductSlugs.has(productSlug)) {
+      findings.push({
+        severity: "error",
+        rule: "stale_radar_product_report",
+        path: path.join(radarProductsDir, `${productSlug}.md`),
+        product_slug: productSlug,
+      });
+    }
+  }
+
+  const step10IndexPath = path.join(step10Root, "index.json");
+  const step10Index = await readJson(step10IndexPath, null);
+  if (!step10Index) {
+    findings.push({ severity: "error", rule: "missing_step10_index", path: step10IndexPath });
+    return findings;
+  }
+
+  const featureCount = products.reduce((sum, product) => sum + product.feature_count, 0);
+  if (step10Index.product_count !== products.length) {
+    findings.push({
+      severity: "error",
+      rule: "step10_product_count_mismatch",
+      path: step10IndexPath,
+      expected: products.length,
+      actual: step10Index.product_count,
+    });
+  }
+  if (step10Index.feature_count !== featureCount) {
+    findings.push({
+      severity: "error",
+      rule: "step10_feature_count_mismatch",
+      path: step10IndexPath,
+      expected: featureCount,
+      actual: step10Index.feature_count,
+    });
+  }
+
+  const expectedReports = new Set([...artifactProductSlugs].sort().map((productSlug) => `radar/products/${productSlug}.md`));
+  const actualReports = new Set((step10Index.reports?.products || []).map((report) => String(report).replace(/\\/g, "/")));
+  for (const report of expectedReports) {
+    if (!actualReports.has(report)) {
+      findings.push({ severity: "error", rule: "step10_index_missing_product_report", path: step10IndexPath, report });
+    }
+  }
+  for (const report of actualReports) {
+    if (!expectedReports.has(report)) {
+      findings.push({ severity: "error", rule: "step10_index_stale_product_report", path: step10IndexPath, report });
+    }
+  }
+
+  return findings;
+}
+
 async function main() {
   const artifactValidation = await validateArtifacts();
   const radarFindings = await validateRadarDoesNotReferenceDataSteps();
-  const findings = [...artifactValidation.findings, ...radarFindings];
+  const radarArtifactFindings = await validateRadarMatchesArtifacts();
+  const findings = [...artifactValidation.findings, ...radarFindings, ...radarArtifactFindings];
   const payload = {
     schema_version: "final-output-validation-v1",
     generated_at: new Date().toISOString(),
