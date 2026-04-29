@@ -37,6 +37,10 @@ The validator must check:
 - `data/step-10/current/index.json` product and feature counts match promoted
   artifacts
 - Step 10 product report paths exactly match the promoted product inventory
+- each Step 10 product report links every promoted feature README for that
+  product
+- Step 10 product reports do not retain feature README links outside the
+  product's promoted feature inventory
 
 ## Consequences
 
@@ -44,6 +48,7 @@ Benefits:
 
 - stale final product reports are detected before delivery
 - missing product reports are detected before delivery
+- incomplete final product reports are detected before delivery
 - Step 10 metadata can be trusted as a summary of promoted artifacts
 
 Costs:

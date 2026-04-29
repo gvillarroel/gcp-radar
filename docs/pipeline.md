@@ -378,7 +378,9 @@ directories under `artifacts/`, the product reports under `radar/products/`,
 and `data/step-10/current/index.json` must describe the same product inventory
 and feature counts. Stale or missing product reports fail validation. Radar
 Markdown links to promoted `artifacts/` content must resolve to existing files
-or directories.
+or directories. Product reports must link every promoted feature README for
+their product and must not retain feature README links that are no longer in
+that product's promotion manifest.
 
 ## Practical Lessons
 
