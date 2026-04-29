@@ -485,6 +485,12 @@ Features can be promoted only when they pass Step 07, have official Google
 evidence links, have a non-empty technical summary, and do not carry
 unaccepted blocking warnings.
 
+For each processed product, Step 09 removes stale feature artifact directories
+under `artifacts/<product-slug>/` that are not present in the current promotion
+manifest. Product artifact directories must therefore contain only the service
+card, product index, promotion manifest, and directories for currently promoted
+features.
+
 Each promoted feature artifact must include an IAM section that lists the
 feature's explicit roles and permissions when available. When IAM is derived or
 unknown, the artifact must say that clearly instead of implying a requirement.

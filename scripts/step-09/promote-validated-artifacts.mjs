@@ -223,6 +223,7 @@ async function promoteProduct(productSlug) {
 
   const promotedFeatures = [];
   const skippedFeatures = [];
+  const staleFeatureArtifactDirs = [];
   const generatedAt = new Date().toISOString();
   const serviceArtifactCard = {
     schema_version: schemaVersion,
@@ -266,6 +267,16 @@ async function promoteProduct(productSlug) {
     });
   }
 
+  const promotedFeatureSlugs = new Set(promotedFeatures.map((feature) => feature.feature_slug));
+  for (const entry of await readdir(productArtifactDir, { withFileTypes: true })) {
+    if (!entry.isDirectory() || promotedFeatureSlugs.has(entry.name)) {
+      continue;
+    }
+    const staleDir = path.join(productArtifactDir, entry.name);
+    await rm(staleDir, { recursive: true, force: true });
+    staleFeatureArtifactDirs.push(relativeToCwd(staleDir));
+  }
+
   await writeFile(path.join(productArtifactDir, "index.md"), renderProductIndex(card, promotedFeatures, relativeToCwd(cardPath)));
   await writeJson(path.join(productArtifactDir, "promotion.json"), {
     schema_version: schemaVersion,
@@ -277,6 +288,7 @@ async function promoteProduct(productSlug) {
     accepted_warning_rules: [...acceptedWarningRules].sort(compareStrings),
     promoted_feature_count: promotedFeatures.length,
     skipped_feature_count: skippedFeatures.length,
+    stale_feature_artifact_dirs_removed: staleFeatureArtifactDirs,
     promoted_features: promotedFeatures,
     skipped_features: skippedFeatures,
   });
@@ -287,6 +299,8 @@ async function promoteProduct(productSlug) {
     service_card: relativeToCwd(path.join(productArtifactDir, "card.json")),
     promoted_feature_count: promotedFeatures.length,
     skipped_feature_count: skippedFeatures.length,
+    stale_feature_artifact_dir_count: staleFeatureArtifactDirs.length,
+    stale_feature_artifact_dirs_removed: staleFeatureArtifactDirs,
     product_index: relativeToCwd(path.join(productArtifactDir, "index.md")),
     promotion_json: relativeToCwd(path.join(productArtifactDir, "promotion.json")),
   };
@@ -312,6 +326,7 @@ async function main() {
     product_count: products.length,
     promoted_feature_count: products.reduce((sum, product) => sum + product.promoted_feature_count, 0),
     skipped_feature_count: products.reduce((sum, product) => sum + product.skipped_feature_count, 0),
+    stale_feature_artifact_dir_count: products.reduce((sum, product) => sum + product.stale_feature_artifact_dir_count, 0),
     products,
   };
 

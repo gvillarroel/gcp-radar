@@ -37,6 +37,7 @@ Default behavior:
 
 - promotes every product card under `data/step-08/current/products/`
 - writes one unique service card to `artifacts/<product-slug>/card.json`
+- removes stale feature artifact directories that are no longer promoted for each processed product
 - accepts the current Step 07 warning rules as reviewed non-blocking warnings
 - blocks features with Step 07 failures, missing summaries, missing official source links, or non-official source links
 
@@ -47,6 +48,6 @@ Optional controls:
 - set `GCP_RADAR_STEP09_ARTIFACTS_ROOT` to override the artifacts root
 - set `GCP_RADAR_STEP09_OUTPUT_ROOT` to override the Step 09 output root
 - set `GCP_RADAR_STEP09_ACCEPTED_WARNING_RULES` to override reviewed warning rules
-- set `GCP_RADAR_STEP09_CLEAN_PRODUCT_ARTIFACTS=1` to remove an existing product artifact directory before promotion
+- set `GCP_RADAR_STEP09_CLEAN_PRODUCT_ARTIFACTS=1` to remove an existing product artifact directory before promotion; this is broader than the default stale-feature cleanup
 
 All script-facing documentation must be written in English.
