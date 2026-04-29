@@ -368,6 +368,11 @@ counts. Each feature row should show the mapping status, roles, permissions,
 coverage, and official evidence links. `radar/iam/index.md` must aggregate the
 same promoted feature-level role and permission details across products.
 
+During regeneration, Step 10 removes stale Markdown files directly under
+`radar/products/` when they do not correspond to a currently promoted artifact
+product. That keeps the product report directory aligned with the promoted
+source-of-truth inventory before final-output validation runs.
+
 Final validation checks the report boundary after Step 10. The promoted product
 directories under `artifacts/`, the product reports under `radar/products/`,
 and `data/step-10/current/index.json` must describe the same product inventory

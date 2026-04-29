@@ -512,6 +512,11 @@ Current canonical Step 10 output layout:
 
 Step 10 reports must read from promoted `artifacts/` content only.
 
+Step 10 owns the generated Markdown files directly under `radar/products/`.
+During report generation, stale product reports that do not match the current
+promoted artifact inventory must be removed before new product reports are
+written.
+
 The final radar must make IAM review possible from the reports themselves. For
 each promoted feature in each product report, Step 10 should show:
 

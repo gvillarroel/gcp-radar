@@ -1,6 +1,6 @@
 #!/usr/bin/env zx
 
-import { access, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
+import { access, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const schemaVersion = "step-10-radar-reports-v1";
@@ -289,6 +289,12 @@ async function main() {
   await mkdir(outputRoot, { recursive: true });
 
   await writeFile(path.join(radarRoot, "index.md"), renderIndex(products, generatedAt));
+  const expectedProductReports = new Set(products.map((product) => `${product.product_slug}.md`));
+  for (const entry of await readdir(path.join(radarRoot, "products"), { withFileTypes: true })) {
+    if (entry.isFile() && entry.name.endsWith(".md") && !expectedProductReports.has(entry.name)) {
+      await rm(path.join(radarRoot, "products", entry.name));
+    }
+  }
   for (const product of products) {
     await writeFile(path.join(radarRoot, "products", `${product.product_slug}.md`), renderProductReport(product));
   }
