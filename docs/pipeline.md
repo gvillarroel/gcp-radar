@@ -371,7 +371,9 @@ same promoted feature-level role and permission details across products.
 Final validation checks the report boundary after Step 10. The promoted product
 directories under `artifacts/`, the product reports under `radar/products/`,
 and `data/step-10/current/index.json` must describe the same product inventory
-and feature counts. Stale or missing product reports fail validation.
+and feature counts. Stale or missing product reports fail validation. Radar
+Markdown links to promoted `artifacts/` content must resolve to existing files
+or directories.
 
 ## Practical Lessons
 

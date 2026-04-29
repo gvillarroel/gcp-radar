@@ -30,6 +30,8 @@ The validator must check:
 - artifact IAM roles and permissions still exist in the Step 08 inventory
 - radar Markdown and JSON files do not reference intermediate `data/step-*`
   paths
+- radar Markdown links that point to promoted `artifacts/` content resolve to
+  existing artifact files or directories
 - `radar/products/*.md` exactly matches the promoted product directories under
   `artifacts/`
 - `data/step-10/current/index.json` product and feature counts match promoted

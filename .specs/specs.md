@@ -530,6 +530,8 @@ Final-output validation must confirm that the promoted artifact inventory,
 `data/step-10/current/index.json`, and `radar/products/*.md` agree exactly.
 Stale product reports, missing product reports, mismatched Step 10 counts, and
 radar references to intermediate `data/step-*` paths are validation failures.
+Radar Markdown links that target promoted `artifacts/` content must resolve to
+existing files or directories.
 
 ### Step 11: Knowledge Capture
 

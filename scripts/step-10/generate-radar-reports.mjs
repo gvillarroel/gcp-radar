@@ -181,7 +181,7 @@ function renderIamReport(products) {
         .join("<br>");
       lines.push(markdownTableRow([
         product.product_name,
-        `[${feature.feature_name}](../artifacts/${product.product_slug}/${feature.feature_slug}/README.md)`,
+        `[${feature.feature_name}](../../artifacts/${product.product_slug}/${feature.feature_slug}/README.md)`,
         iam.iam_mapping_status || "unknown",
         roles || "none",
         permissions || "none",
@@ -214,7 +214,7 @@ function renderSecurityReport(products) {
         .join("<br>");
       lines.push(markdownTableRow([
         product.product_name,
-        `[${feature.feature_name}](../artifacts/${product.product_slug}/${feature.feature_slug}/README.md)`,
+        `[${feature.feature_name}](../../artifacts/${product.product_slug}/${feature.feature_slug}/README.md)`,
         capabilities.map((capability) => capability.capability).join(", "),
         evidence,
       ]));
@@ -265,7 +265,7 @@ function renderServiceCardsReport(products) {
     const service = product.service_card || {};
     const iam = service.iam_status_counts || {};
     lines.push(markdownTableRow([
-      `[${product.product_name}](../artifacts/${product.product_slug}/card.json)`,
+      `[${product.product_name}](../../artifacts/${product.product_slug}/card.json)`,
       service.validation?.product_status || product.promotion?.product_status || "unknown",
       service.feature_count || product.features.length,
       service.lifecycle?.latest_feature_date || "unknown",

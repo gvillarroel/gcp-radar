@@ -171,6 +171,38 @@ async function validateRadarDoesNotReferenceDataSteps() {
   return findings;
 }
 
+async function validateRadarArtifactLinks() {
+  const findings = [];
+  for (const file of await listFilesRecursive(radarRoot)) {
+    if (!file.endsWith(".md")) {
+      continue;
+    }
+    const content = await readFile(file, "utf8");
+    const linkPattern = /\[[^\]]*\]\(([^)]+)\)/g;
+    for (const match of content.matchAll(linkPattern)) {
+      const rawLink = String(match[1] || "").trim();
+      if (!rawLink || /^[a-z][a-z0-9+.-]*:/i.test(rawLink) || rawLink.startsWith("#")) {
+        continue;
+      }
+      const targetWithoutAnchor = rawLink.split("#")[0];
+      if (!targetWithoutAnchor.replace(/\\/g, "/").includes("artifacts/")) {
+        continue;
+      }
+      const resolved = path.resolve(path.dirname(file), decodeURIComponent(targetWithoutAnchor));
+      if (!(await exists(resolved))) {
+        findings.push({
+          severity: "error",
+          rule: "broken_radar_artifact_link",
+          path: file,
+          link: rawLink,
+          resolved_path: resolved,
+        });
+      }
+    }
+  }
+  return findings;
+}
+
 async function validateRadarMatchesArtifacts() {
   const findings = [];
   const products = [];
@@ -264,8 +296,9 @@ async function validateRadarMatchesArtifacts() {
 async function main() {
   const artifactValidation = await validateArtifacts();
   const radarFindings = await validateRadarDoesNotReferenceDataSteps();
+  const radarArtifactLinkFindings = await validateRadarArtifactLinks();
   const radarArtifactFindings = await validateRadarMatchesArtifacts();
-  const findings = [...artifactValidation.findings, ...radarFindings, ...radarArtifactFindings];
+  const findings = [...artifactValidation.findings, ...radarFindings, ...radarArtifactLinkFindings, ...radarArtifactFindings];
   const payload = {
     schema_version: "final-output-validation-v1",
     generated_at: new Date().toISOString(),
