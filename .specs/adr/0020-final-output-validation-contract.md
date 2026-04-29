@@ -39,6 +39,8 @@ The validator must check:
 - `data/step-10/current/index.json` product and feature counts match promoted
   artifacts
 - Step 10 product report paths exactly match the promoted product inventory
+- fixed Step 10 report paths in `data/step-10/current/index.json` match the
+  canonical radar report layout and resolve to existing files
 - every promoted feature listed in a promotion manifest has both its artifact
   `card.json` and `README.md`
 - each product artifact index links every promoted feature README for that

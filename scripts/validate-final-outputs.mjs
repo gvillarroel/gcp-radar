@@ -429,6 +429,39 @@ async function validateRadarMatchesArtifacts() {
     });
   }
 
+  const expectedFixedReports = {
+    index: "radar/index.md",
+    iam: "radar/iam/index.md",
+    security: "radar/security/index.md",
+    services: "radar/services/index.md",
+    coverage: "radar/coverage.md",
+  };
+  for (const [reportKey, expectedReport] of Object.entries(expectedFixedReports)) {
+    const actualReport = step10Index.reports?.[reportKey]
+      ? String(step10Index.reports[reportKey]).replace(/\\/g, "/")
+      : "";
+    if (actualReport !== expectedReport) {
+      findings.push({
+        severity: "error",
+        rule: "step10_index_fixed_report_path_mismatch",
+        path: step10IndexPath,
+        report_key: reportKey,
+        expected: expectedReport,
+        actual: actualReport || null,
+      });
+      continue;
+    }
+    if (!(await exists(path.resolve(actualReport)))) {
+      findings.push({
+        severity: "error",
+        rule: "step10_index_fixed_report_missing",
+        path: step10IndexPath,
+        report_key: reportKey,
+        report: actualReport,
+      });
+    }
+  }
+
   const expectedReports = new Set([...artifactProductSlugs].sort().map((productSlug) => `radar/products/${productSlug}.md`));
   const actualReports = new Set((step10Index.reports?.products || []).map((report) => String(report).replace(/\\/g, "/")));
   for (const report of expectedReports) {

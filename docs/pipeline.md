@@ -383,7 +383,9 @@ official Google hosts. Every feature listed in a promotion manifest must have
 both its promoted `card.json` and `README.md`. Product artifact indexes and
 product reports must link every promoted feature README for their product and
 must not retain feature README links that are no longer in that product's
-promotion manifest.
+promotion manifest. The fixed Step 10 report paths recorded in
+`data/step-10/current/index.json` must match the canonical radar report layout
+and resolve to existing files.
 
 ## Practical Lessons
 
