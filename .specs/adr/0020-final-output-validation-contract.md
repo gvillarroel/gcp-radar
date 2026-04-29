@@ -32,6 +32,8 @@ The validator must check:
   paths
 - radar Markdown links that point to promoted `artifacts/` content resolve to
   existing artifact files or directories
+- every external HTTP(S) link in promoted artifact Markdown points to an
+  official Google host
 - every external HTTP(S) link in generated radar Markdown points to an official
   Google host
 - `radar/products/*.md` exactly matches the promoted product directories under
@@ -43,6 +45,8 @@ The validator must check:
   canonical radar report layout and resolve to existing files
 - every promoted feature listed in a promotion manifest has both its artifact
   `card.json` and `README.md`
+- promoted service and feature artifact cards have embedded slugs that match
+  their artifact path and promotion manifest
 - each product artifact index links every promoted feature README for that
   product
 - product artifact indexes do not retain feature README links outside the

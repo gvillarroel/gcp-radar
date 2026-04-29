@@ -128,6 +128,22 @@ async function validateArtifacts() {
       findings.push({ severity: "error", rule: "missing_service_card", path: serviceCardPath });
     } else if (serviceCard.card_type !== "service") {
       findings.push({ severity: "error", rule: "invalid_service_card_type", path: serviceCardPath });
+    } else if (serviceCard.product_slug && serviceCard.product_slug !== productSlug) {
+      findings.push({
+        severity: "error",
+        rule: "service_card_product_slug_mismatch",
+        path: serviceCardPath,
+        expected: productSlug,
+        actual: serviceCard.product_slug,
+      });
+    } else if (serviceCard.service_slug && serviceCard.service_slug !== productSlug) {
+      findings.push({
+        severity: "error",
+        rule: "service_card_service_slug_mismatch",
+        path: serviceCardPath,
+        expected: productSlug,
+        actual: serviceCard.service_slug,
+      });
     }
     for (const link of serviceCard?.official_source_links || []) {
       if (!isOfficialGoogleUrl(link)) {
@@ -141,6 +157,24 @@ async function validateArtifacts() {
         continue;
       }
       featureCount += 1;
+      if (card.product_slug !== productSlug) {
+        findings.push({
+          severity: "error",
+          rule: "feature_card_product_slug_mismatch",
+          path: cardPath,
+          expected: productSlug,
+          actual: card.product_slug || null,
+        });
+      }
+      if (card.feature_slug !== featureSlug) {
+        findings.push({
+          severity: "error",
+          rule: "feature_card_feature_slug_mismatch",
+          path: cardPath,
+          expected: featureSlug,
+          actual: card.feature_slug || null,
+        });
+      }
       const links = card.evidence?.source_links || [];
       if (links.length === 0) {
         findings.push({ severity: "error", rule: "missing_source_links", path: cardPath });
@@ -219,6 +253,43 @@ async function validateArtifactProductIndexes() {
         product_slug: productSlug,
         link,
       });
+    }
+  }
+
+  return findings;
+}
+
+async function validateArtifactMarkdownExternalLinksAreOfficial() {
+  const findings = [];
+  const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
+  const bareUrlPattern = /https?:\/\/[^\s<>)"']+/g;
+
+  for (const file of await listFilesRecursive(artifactsRoot)) {
+    if (!file.endsWith(".md")) {
+      continue;
+    }
+    const content = await readFile(file, "utf8");
+    const links = new Set();
+
+    for (const match of content.matchAll(linkPattern)) {
+      const rawLink = String(match[1] || "").trim();
+      if (/^https?:\/\//i.test(rawLink)) {
+        links.add(rawLink);
+      }
+    }
+    for (const match of content.matchAll(bareUrlPattern)) {
+      links.add(String(match[0] || "").trim().replace(/[.,;:]+$/g, ""));
+    }
+
+    for (const link of links) {
+      if (!isOfficialGoogleUrl(link)) {
+        findings.push({
+          severity: "error",
+          rule: "non_official_artifact_markdown_external_link",
+          path: file,
+          link,
+        });
+      }
     }
   }
 
@@ -481,6 +552,7 @@ async function validateRadarMatchesArtifacts() {
 async function main() {
   const artifactValidation = await validateArtifacts();
   const artifactIndexFindings = await validateArtifactProductIndexes();
+  const artifactMarkdownExternalLinkFindings = await validateArtifactMarkdownExternalLinksAreOfficial();
   const radarFindings = await validateRadarDoesNotReferenceDataSteps();
   const radarArtifactLinkFindings = await validateRadarArtifactLinks();
   const radarExternalLinkFindings = await validateRadarExternalLinksAreOfficial();
@@ -488,6 +560,7 @@ async function main() {
   const findings = [
     ...artifactValidation.findings,
     ...artifactIndexFindings,
+    ...artifactMarkdownExternalLinkFindings,
     ...radarFindings,
     ...radarArtifactLinkFindings,
     ...radarExternalLinkFindings,

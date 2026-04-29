@@ -539,8 +539,13 @@ The fixed Step 10 report paths recorded in `data/step-10/current/index.json`
 must match the canonical radar report layout and resolve to existing files.
 Every external HTTP(S) link in generated radar Markdown must resolve to an
 official Google host.
+Every external HTTP(S) link in promoted artifact Markdown must resolve to an
+official Google host.
 Every feature listed in a promotion manifest must have both a promoted
 `card.json` and `README.md` artifact.
+Promoted service and feature artifact cards must keep their embedded slugs
+consistent with their artifact path and promotion manifest so final reports
+cannot aggregate a card under the wrong product or feature identity.
 Each product artifact index must link every promoted feature README for that
 product and must not link feature README files outside the product's promotion
 manifest.
