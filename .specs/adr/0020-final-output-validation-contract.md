@@ -32,6 +32,8 @@ The validator must check:
   paths
 - radar Markdown links that point to promoted `artifacts/` content resolve to
   existing artifact files or directories
+- every external HTTP(S) link in generated radar Markdown points to an official
+  Google host
 - `radar/products/*.md` exactly matches the promoted product directories under
   `artifacts/`
 - `data/step-10/current/index.json` product and feature counts match promoted

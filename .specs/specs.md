@@ -535,6 +535,8 @@ Final-output validation must confirm that the promoted artifact inventory,
 `data/step-10/current/index.json`, and `radar/products/*.md` agree exactly.
 Stale product reports, missing product reports, mismatched Step 10 counts, and
 radar references to intermediate `data/step-*` paths are validation failures.
+Every external HTTP(S) link in generated radar Markdown must resolve to an
+official Google host.
 Every feature listed in a promotion manifest must have both a promoted
 `card.json` and `README.md` artifact.
 Each product artifact index must link every promoted feature README for that

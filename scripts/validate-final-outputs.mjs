@@ -271,6 +271,43 @@ async function validateRadarArtifactLinks() {
   return findings;
 }
 
+async function validateRadarExternalLinksAreOfficial() {
+  const findings = [];
+  const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
+  const bareUrlPattern = /https?:\/\/[^\s<>)"']+/g;
+
+  for (const file of await listFilesRecursive(radarRoot)) {
+    if (!file.endsWith(".md")) {
+      continue;
+    }
+    const content = await readFile(file, "utf8");
+    const links = new Set();
+
+    for (const match of content.matchAll(linkPattern)) {
+      const rawLink = String(match[1] || "").trim();
+      if (/^https?:\/\//i.test(rawLink)) {
+        links.add(rawLink);
+      }
+    }
+    for (const match of content.matchAll(bareUrlPattern)) {
+      links.add(String(match[0] || "").trim().replace(/[.,;:]+$/g, ""));
+    }
+
+    for (const link of links) {
+      if (!isOfficialGoogleUrl(link)) {
+        findings.push({
+          severity: "error",
+          rule: "non_official_radar_external_link",
+          path: file,
+          link,
+        });
+      }
+    }
+  }
+
+  return findings;
+}
+
 async function validateRadarMatchesArtifacts() {
   const findings = [];
   const products = [];
@@ -413,8 +450,16 @@ async function main() {
   const artifactIndexFindings = await validateArtifactProductIndexes();
   const radarFindings = await validateRadarDoesNotReferenceDataSteps();
   const radarArtifactLinkFindings = await validateRadarArtifactLinks();
+  const radarExternalLinkFindings = await validateRadarExternalLinksAreOfficial();
   const radarArtifactFindings = await validateRadarMatchesArtifacts();
-  const findings = [...artifactValidation.findings, ...artifactIndexFindings, ...radarFindings, ...radarArtifactLinkFindings, ...radarArtifactFindings];
+  const findings = [
+    ...artifactValidation.findings,
+    ...artifactIndexFindings,
+    ...radarFindings,
+    ...radarArtifactLinkFindings,
+    ...radarExternalLinkFindings,
+    ...radarArtifactFindings,
+  ];
   const payload = {
     schema_version: "final-output-validation-v1",
     generated_at: new Date().toISOString(),
