@@ -536,7 +536,9 @@ Final-output validation must confirm that the promoted artifact inventory,
 Stale product reports, missing product reports, mismatched Step 10 counts, and
 radar references to intermediate `data/step-*` paths are validation failures.
 Radar Markdown links that target promoted `artifacts/` content must resolve to
-existing files or directories.
+existing files or directories. Each product report must also link every
+promoted feature README for that product and must not link feature README files
+outside the product's promoted feature inventory.
 
 ### Step 11: Knowledge Capture
 

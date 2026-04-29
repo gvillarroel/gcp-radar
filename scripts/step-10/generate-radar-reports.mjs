@@ -41,6 +41,11 @@ function markdownTableRow(values) {
   return `| ${values.map((value) => String(value || "").replace(/\n/g, " ").replace(/\|/g, "\\|")).join(" | ")} |`;
 }
 
+function markdownLink(label, target) {
+  const escapedLabel = String(label || "").replace(/([\\[\]])/g, "\\$1");
+  return `[${escapedLabel}](${target})`;
+}
+
 async function listProductDirs() {
   if (!(await exists(artifactsRoot))) {
     return [];
@@ -109,7 +114,7 @@ function renderIndex(products, generatedAt) {
       product.features.length,
       product.service_card?.lifecycle?.latest_feature_date || "unknown",
       `[report](./products/${product.product_slug}.md)`,
-      `[\`${product.product_slug}\`](../artifacts/${product.product_slug}/card.json)`,
+      markdownLink(`\`${product.product_slug}\``, `../artifacts/${product.product_slug}/card.json`),
     ]));
   }
 
@@ -149,7 +154,7 @@ function renderProductReport(product) {
       .map((permission) => `\`${permission.permission}\``)
       .join("<br>");
     lines.push(markdownTableRow([
-      `[${feature.feature_name}](../../artifacts/${product.product_slug}/${feature.feature_slug}/README.md)`,
+      markdownLink(feature.feature_name, `../../artifacts/${product.product_slug}/${feature.feature_slug}/README.md`),
       iam.iam_mapping_status || "unknown",
       roles || "none",
       permissions || "none",
@@ -181,7 +186,7 @@ function renderIamReport(products) {
         .join("<br>");
       lines.push(markdownTableRow([
         product.product_name,
-        `[${feature.feature_name}](../../artifacts/${product.product_slug}/${feature.feature_slug}/README.md)`,
+        markdownLink(feature.feature_name, `../../artifacts/${product.product_slug}/${feature.feature_slug}/README.md`),
         iam.iam_mapping_status || "unknown",
         roles || "none",
         permissions || "none",
@@ -214,7 +219,7 @@ function renderSecurityReport(products) {
         .join("<br>");
       lines.push(markdownTableRow([
         product.product_name,
-        `[${feature.feature_name}](../../artifacts/${product.product_slug}/${feature.feature_slug}/README.md)`,
+        markdownLink(feature.feature_name, `../../artifacts/${product.product_slug}/${feature.feature_slug}/README.md`),
         capabilities.map((capability) => capability.capability).join(", "),
         evidence,
       ]));
@@ -265,7 +270,7 @@ function renderServiceCardsReport(products) {
     const service = product.service_card || {};
     const iam = service.iam_status_counts || {};
     lines.push(markdownTableRow([
-      `[${product.product_name}](../../artifacts/${product.product_slug}/card.json)`,
+      markdownLink(product.product_name, `../../artifacts/${product.product_slug}/card.json`),
       service.validation?.product_status || product.promotion?.product_status || "unknown",
       service.feature_count || product.features.length,
       service.lifecycle?.latest_feature_date || "unknown",

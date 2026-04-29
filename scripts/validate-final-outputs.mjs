@@ -178,7 +178,7 @@ async function validateRadarArtifactLinks() {
       continue;
     }
     const content = await readFile(file, "utf8");
-    const linkPattern = /\[[^\]]*\]\(([^)]+)\)/g;
+    const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
     for (const match of content.matchAll(linkPattern)) {
       const rawLink = String(match[1] || "").trim();
       if (!rawLink || /^[a-z][a-z0-9+.-]*:/i.test(rawLink) || rawLink.startsWith("#")) {
@@ -215,7 +215,10 @@ async function validateRadarMatchesArtifacts() {
     }
     products.push({
       product_slug: productSlug,
-      feature_count: (promotion.promoted_features || []).filter((feature) => feature?.feature_slug).length,
+      feature_slugs: (promotion.promoted_features || [])
+        .map((feature) => feature?.feature_slug)
+        .filter(Boolean)
+        .sort((left, right) => left.localeCompare(right)),
     });
   }
 
@@ -250,6 +253,50 @@ async function validateRadarMatchesArtifacts() {
     }
   }
 
+  for (const product of products) {
+    const reportPath = path.join(radarProductsDir, `${product.product_slug}.md`);
+    if (!(await exists(reportPath))) {
+      continue;
+    }
+    const report = await readFile(reportPath, "utf8");
+    const expectedFeatureLinks = new Set(product.feature_slugs.map((featureSlug) => `../../artifacts/${product.product_slug}/${featureSlug}/README.md`));
+    const actualFeatureLinks = new Set();
+    const staleFeatureLinks = new Set();
+    const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
+    for (const match of report.matchAll(linkPattern)) {
+      const link = String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0];
+      const prefix = `../../artifacts/${product.product_slug}/`;
+      if (!link.startsWith(prefix) || !link.endsWith("/README.md")) {
+        continue;
+      }
+      if (expectedFeatureLinks.has(link)) {
+        actualFeatureLinks.add(link);
+      } else {
+        staleFeatureLinks.add(link);
+      }
+    }
+    for (const link of expectedFeatureLinks) {
+      if (!actualFeatureLinks.has(link)) {
+        findings.push({
+          severity: "error",
+          rule: "missing_radar_feature_artifact_link",
+          path: reportPath,
+          product_slug: product.product_slug,
+          link,
+        });
+      }
+    }
+    for (const link of staleFeatureLinks) {
+      findings.push({
+        severity: "error",
+        rule: "stale_radar_feature_artifact_link",
+        path: reportPath,
+        product_slug: product.product_slug,
+        link,
+      });
+    }
+  }
+
   const step10IndexPath = path.join(step10Root, "index.json");
   const step10Index = await readJson(step10IndexPath, null);
   if (!step10Index) {
@@ -257,7 +304,7 @@ async function validateRadarMatchesArtifacts() {
     return findings;
   }
 
-  const featureCount = products.reduce((sum, product) => sum + product.feature_count, 0);
+  const featureCount = products.reduce((sum, product) => sum + product.feature_slugs.length, 0);
   if (step10Index.product_count !== products.length) {
     findings.push({
       severity: "error",
