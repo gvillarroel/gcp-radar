@@ -13,11 +13,21 @@ flowchart LR
     S1["Step 01\nAcquire source snapshots"] --> S2["Step 02\nBuild per-product feature inventories"]
     S2 --> S3["Step 03\nRank official documentation URLs"]
     S3 --> S4["Step 04\nCapture curated documentation corpora"]
-    S4 --> S5["Step 05\nMaterialize IAM inventory"]
+    IAM["Google Cloud IAM\nvia gcloud"] --> S5["Step 05\nMaterialize IAM inventory"]
     S4 --> S6["Step 06\nGenerate extended feature definitions"]
-    S5 --> S7["Step 07+\nValidate and promote artifacts"]
+    S5 --> S7["Step 07\nQuality gate"]
     S6 --> S7
+    S7 --> S8["Step 08+\nCards, artifacts, and reports"]
 ```
+
+## Index Semantics
+
+`current/index.json` files are latest-run indexes. They describe the most recent
+stage invocation, which can be a targeted product subset.
+
+The on-disk workspace inventory is the set of product outputs under each
+stage's documented `current/` layout. Progress summaries must label which view
+they are using.
 
 ## Step 01
 
@@ -147,8 +157,9 @@ Collect IAM role and permission information directly from Google Cloud tooling.
 
 ### Inputs
 
-- Google Cloud CLI access
-- project or organization-scoped IAM queries
+- authenticated Google Cloud CLI access
+- `gcloud iam roles list`
+- `gcloud iam roles describe`
 
 ### Outputs
 
@@ -188,6 +199,64 @@ It tells us:
 
 That feedback is what drives the improvement loop for Steps 03 and 04.
 
+## Step 07
+
+### Goal
+
+Evaluate Step 06 feature definitions before any artifact promotion.
+
+### Inputs
+
+- Step 06 `extended-features.json` files
+- Step 04 corpus pages for selected evidence checks
+
+### Outputs
+
+- `gate.json`
+- `gate.md`
+- global Step 07 latest-run index
+- global triage artifacts:
+  - `data/step-07/current/triage.json`
+  - `data/step-07/current/triage.md`
+
+### What Makes Step 07 Valuable
+
+Step 07 separates "generated" from "acceptable for promotion".
+
+It records:
+
+- product-level pass or fail status
+- feature-level failures and warnings
+- exact rule identifiers
+- suggested upstream stages for repair
+
+A passing gate is still not final source-of-truth acceptance. Warnings must be
+reviewed before promotion into `artifacts/`.
+
+### Triage Workflow
+
+Run `scripts/step-07/summarize-quality-gate-triage.mjs` after any Step 07
+evaluation. The triage output groups findings by product, rule, severity,
+suggested upstream step, and failing feature. Use it to choose targeted repair
+batches instead of reading every product gate manually.
+
+Repair order should follow failing product count first, then project priority.
+For this cycle the priority order is Spanner, Dialogflow, Google Distributed
+Cloud VMware, Cloud Logging, Google Meet, App Engine Java, and then remaining
+one-failure products.
+
+Do not lower Step 07 fail thresholds to make failures disappear. Fix the
+upstream evidence path:
+
+- if exact identifier evidence exists in Step 04, tune Step 06 ranking or final
+  source-link selection
+- if product-specific evidence is missing from Step 04, improve Step 03 seeds or
+  Step 04 capture
+- if official evidence uses an equivalent spelling, add a narrowly scoped
+  identifier or dedicated-evidence variant
+
+Warnings remain promotion-review input even when all failures are cleared.
+
 ## Feedback Loop
 
 ```mermaid
@@ -196,9 +265,12 @@ flowchart TD
     B --> C["Step 04 corpus capture"]
     C --> D["Step 06 extended feature definitions"]
     D --> E["coverage-feedback.json"]
+    D --> G["Step 07 gate findings"]
     E --> F["Missing themes, missing auth pages, weak roots, weak references"]
+    G --> F
     F --> B
     F --> C
+    F --> D
 ```
 
 ## Promotion Path
@@ -207,16 +279,103 @@ The later stages turn intermediate research into durable outputs.
 
 ```mermaid
 flowchart LR
-    A["data/step-01 .. data/step-06"] --> B["Validated evidence review"]
-    B --> C["artifacts/<product>/<feature>/"]
-    C --> D["radar/ reports"]
+    A["data/step-06 feature outputs"] --> B["Step 07 quality gate"]
+    B --> C["Step 08 cards"]
+    C --> D["Step 09 promotion review"]
+    D --> E["artifacts/<product>/<feature>/"]
+    E --> F["Step 10 radar reports"]
 ```
+
+## Step 08
+
+### Goal
+
+Build product and feature cards from generated definitions, gate findings, IAM
+inventory, and corpus provenance.
+
+### Inputs
+
+- Step 06 extended feature definitions
+- Step 07 gate outputs
+- Step 05 IAM inventory
+- Step 04 corpus metadata
+
+### Outputs
+
+- `data/step-08/current/products/<product-slug>/card.json`
+- `data/step-08/current/products/<product-slug>/card.md`
+
+### Quality Bar
+
+IAM data must be explicitly classified as `explicit`,
+`derived_from_permission_prefix`, or `unknown`.
+
+Each feature card must carry the IAM detail required by downstream artifacts:
+explicit roles, explicit permissions, derived roles, derived permissions, and
+any role or permission mentions that were not found in the Step 05 inventory.
+Only explicit mappings may be treated as evidence-backed required IAM for the
+feature. Derived mappings are related IAM signals and must be labeled as such.
+
+## Step 09
+
+### Goal
+
+Promote validated card content into source-of-truth artifacts.
+
+### Inputs
+
+- Step 08 product cards
+
+### Outputs
+
+- `artifacts/<product-slug>/<feature-slug>/README.md`
+- `artifacts/<product-slug>/<feature-slug>/card.json`
+- `artifacts/<product-slug>/card.json`
+- `artifacts/<product-slug>/index.md`
+- `data/step-09/current/index.json`
+
+### Quality Bar
+
+Promotion requires Step 07 pass status, official Google evidence links, a
+non-empty summary, and no unaccepted blocking warning class.
+
+Promoted feature documentation must include an IAM section. That section must
+list explicit roles and permissions when the evidence supports them. If the
+mapping is derived or unknown, the artifact must say so directly and avoid
+presenting derived IAM data as a required access grant.
+
+## Step 10
+
+### Goal
+
+Generate final radar reports from promoted artifacts only.
+
+### Inputs
+
+- promoted artifact cards under `artifacts/`
+
+### Outputs
+
+- `radar/index.md`
+- `radar/services/index.md`
+- `radar/products/<product-slug>.md`
+- `radar/iam/index.md`
+- `radar/security/index.md`
+- `radar/coverage.md`
+
+Product reports must include feature-level IAM detail, not just aggregate IAM
+counts. Each feature row should show the mapping status, roles, permissions,
+coverage, and official evidence links. `radar/iam/index.md` must aggregate the
+same promoted feature-level role and permission details across products.
 
 ## Practical Lessons
 
 - Step 03 quality dominates Step 04 usefulness.
 - Step 04 seed choice matters more than raw crawl count.
 - Step 06 is the best early warning system for weak documentation selection.
+- Step 07 warnings are useful even when a product passes the gate.
+- Latest-run indexes should not be used as catalog-wide progress summaries
+  unless the run was full-catalog.
 - Product-family-specific rules are required for large Google documentation
   surfaces such as App Engine, Vertex AI, Workspace APIs, and Apigee.
 

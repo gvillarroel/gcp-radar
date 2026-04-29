@@ -62,7 +62,7 @@ The project should eventually generate structured artifacts representing:
 - features
 - lifecycle metadata
 - evidence links
-- IAM role mappings
+- IAM role and permission mappings for each feature
 - security capability mappings
 - hierarchical product-feature trees
 
@@ -134,7 +134,9 @@ Current implemented Step 02 input:
 Current canonical Step 02 output layout:
 
 - `data/step-02/current/index.md`
-- `data/step-02/current/products/<product-slug>.md`
+- `data/step-02/current/<product-slug>.md`
+- `data/step-02/.state/current/assistant-results.json`
+- `data/step-02/.state/current/product-state.json`
 
 Each per-product Step 02 markdown file currently contains:
 
@@ -163,7 +165,7 @@ This step should identify, when available:
 
 Current implemented Step 03 input:
 
-- `data/step-02/current/products/<product-slug>.md`
+- `data/step-02/current/<product-slug>.md`
 
 Current canonical Step 03 output layout:
 
@@ -342,6 +344,8 @@ Current canonical Step 06 output layout:
 - `data/step-06/current/index.json`
 - `data/step-06/current/products/<product-slug>/extended-features.json`
 - `data/step-06/current/products/<product-slug>/extended-features.md`
+- `data/step-06/current/products/<product-slug>/coverage-feedback.json`
+- `data/step-06/current/products/<product-slug>/features/<feature-slug>.md`
 - `data/step-06/.state/current/products/<product-slug>/state.json`
 
 Each Step 06 feature entry should contain:
@@ -352,6 +356,8 @@ Each Step 06 feature entry should contain:
 - a coverage status for the feature definition
 - the extended definition text
 - the real official documentation URLs used as evidence
+- one feature-level Markdown file per Step 02 feature
+- coverage feedback for uncovered or weakly covered feature themes
 
 Expected storage location:
 
@@ -391,6 +397,9 @@ Expected storage location:
 
 - `data/step-07/`
 
+Step 07 is a quality gate, not final artifact promotion. A passing product can
+still carry warnings that need review before source-of-truth acceptance.
+
 Validated documentation that is accepted as correct should then be promoted into `artifacts/`.
 
 ### Step 8: Card Construction
@@ -409,6 +418,43 @@ Expected storage location:
 
 - `data/step-08/`
 
+Current canonical Step 08 inputs:
+
+- `data/step-06/current/products/<product-slug>/extended-features.json`
+- `data/step-07/current/products/<product-slug>/gate.json`
+- `data/step-05/current/roles/index.json`
+- `data/step-05/current/permissions/index.json`
+- `data/step-04/current/products/<product-slug>/selection.json`
+- `data/step-04/current/products/<product-slug>/state.json`
+
+Current canonical Step 08 output layout:
+
+- `data/step-08/current/index.json`
+- `data/step-08/current/products/<product-slug>/card.json`
+- `data/step-08/current/products/<product-slug>/card.md`
+
+IAM mapping status must use:
+
+- `explicit` when a role or permission appears in feature evidence and exists in Step 05
+- `derived_from_permission_prefix` when only product-level permission prefix association is defensible
+- `unknown` when no defensible mapping exists
+
+Every Step 08 feature card must preserve the IAM detail needed for final
+review:
+
+- mapping status
+- explicit roles found in feature evidence
+- explicit permissions found in feature evidence
+- derived roles and permissions when only permission-prefix evidence is
+  available
+- missing roles or permissions that appeared in evidence but were not present
+  in the Step 05 inventory
+
+Only `explicit` roles and permissions may be described as evidence-backed
+feature requirements. `derived_from_permission_prefix` mappings are related IAM
+signals, not confirmed feature requirements. `unknown` means the final output
+must state that no defensible IAM mapping was found.
+
 ### Step 9: Source-Of-Truth Artifact Organization
 
 Organize validated documentation under `artifacts/` by product and then by feature.
@@ -422,11 +468,63 @@ Each feature directory should contain the validated documentation for that featu
 
 This content is the source of truth for final reporting.
 
+Current canonical Step 09 input:
+
+- `data/step-08/current/products/<product-slug>/card.json`
+
+Current canonical Step 09 output layout:
+
+- `data/step-09/current/index.json`
+- `artifacts/<product-slug>/card.json`
+- `artifacts/<product-slug>/index.md`
+- `artifacts/<product-slug>/promotion.json`
+- `artifacts/<product-slug>/<feature-slug>/README.md`
+- `artifacts/<product-slug>/<feature-slug>/card.json`
+
+Features can be promoted only when they pass Step 07, have official Google
+evidence links, have a non-empty technical summary, and do not carry
+unaccepted blocking warnings.
+
+Each promoted feature artifact must include an IAM section that lists the
+feature's explicit roles and permissions when available. When IAM is derived or
+unknown, the artifact must say that clearly instead of implying a requirement.
+
 ### Step 10: Final Radar Reporting
 
 Generate final reports under `radar/` using the validated content stored in `artifacts/`.
 
 `radar/` is the canonical home for final report outputs.
+
+Current canonical Step 10 inputs:
+
+- `artifacts/<product-slug>/promotion.json`
+- `artifacts/<product-slug>/<feature-slug>/card.json`
+
+Current canonical Step 10 output layout:
+
+- `radar/index.md`
+- `radar/services/index.md`
+- `radar/products/<product-slug>.md`
+- `radar/iam/index.md`
+- `radar/security/index.md`
+- `radar/coverage.md`
+- `data/step-10/current/index.json`
+
+Step 10 reports must read from promoted `artifacts/` content only.
+
+The final radar must make IAM review possible from the reports themselves. For
+each promoted feature in each product report, Step 10 should show:
+
+- feature name and link to the promoted feature artifact
+- IAM mapping status
+- roles associated with the feature
+- permissions associated with the feature
+- coverage status
+- official Google evidence links
+
+The IAM report must aggregate the same promoted feature-level role and
+permission details across products. Product reports must not reduce IAM to only
+a product-level count or a mapping-status label.
 
 ### Step 11: Knowledge Capture
 
@@ -451,15 +549,27 @@ Evaluation outputs should measure whether skills improve:
 - mapping accuracy
 - workflow reliability
 
-## Suggested Near-Term Deliverables
+## Index Semantics
 
-1. Define the canonical schema for products, features, and evidence.
-2. Implement the first `zx` scripts for Step 1 discovery.
-3. Define the internal `data/step-XX/` layout for generated cards and intermediate artifacts.
-4. Define the promotion rules from `data/step-XX/` outputs into `artifacts/`.
-5. Define the final report structure under `radar/`.
-6. Define validation checks for lifecycle status and official-source coverage.
-7. Define the first evaluation loop for project-specific skills.
+For stages that write `data/step-XX/current/index.json`, the index describes the
+latest invocation of that stage. It might be a targeted rerun over a product
+subset.
+
+The broader on-disk workspace inventory is the set of product outputs under the
+stage's documented `current/` layout. Progress reports must say whether they
+are using the latest-run index or a scan of on-disk product outputs.
+
+## Current Near-Term Deliverables
+
+1. Expand Step 05 beyond the current limited IAM sample into the full
+   predefined-role inventory.
+2. Add a workspace-inventory summary that distinguishes latest-run indexes from
+   on-disk product outputs.
+3. Triage Step 07 failures, audit Step 07 warnings, and decide which warning
+   classes block promotion.
+4. Promote a small reviewed product subset into `artifacts/` before attempting
+   catalog-wide promotion.
+5. Define the first evaluation loop for project-specific skills.
 
 ## Repository Conventions
 
@@ -481,9 +591,10 @@ Evaluation outputs should measure whether skills improve:
 These are currently unresolved and should likely become ADRs:
 
 - canonical storage format for cards
-- canonical schema for evidence and source provenance
-- internal folder structure under `data/step-XX/`
+- canonical schema for promoted evidence and source provenance
 - file conventions within `artifacts/<product>/<feature>/`
 - report conventions within `radar/`
-- naming conventions for scripts and stages
+- Step 07 failure triage workflow
+- Step 07 warning classes that should block promotion
+- full-catalog workspace inventory summary format
 - evaluation dataset design for Skill Arena

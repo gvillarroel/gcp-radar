@@ -133,15 +133,26 @@ function renderProductReport(product) {
     "",
     "## Features",
     "",
-    markdownTableRow(["Feature", "IAM", "Coverage", "Official sources"]),
-    markdownTableRow(["---", "---", "---", "---"]),
+    markdownTableRow(["Feature", "IAM", "Roles", "Permissions", "Coverage", "Official sources"]),
+    markdownTableRow(["---", "---", "---", "---", "---", "---"]),
   ];
 
   for (const feature of product.features.sort((left, right) => compareStrings(left.feature_name, right.feature_name))) {
     const sources = (feature.evidence?.source_links || []).slice(0, 3).map((url) => `[source](${url})`).join("<br>");
+    const iam = feature.iam || {};
+    const roles = [...(iam.explicit_roles || []), ...(iam.derived_roles || [])]
+      .slice(0, 8)
+      .map((role) => `\`${role}\``)
+      .join("<br>");
+    const permissions = [...(iam.explicit_permissions || []), ...(iam.derived_permissions || [])]
+      .slice(0, 8)
+      .map((permission) => `\`${permission.permission}\``)
+      .join("<br>");
     lines.push(markdownTableRow([
       `[${feature.feature_name}](../../artifacts/${product.product_slug}/${feature.feature_slug}/README.md)`,
-      feature.iam?.iam_mapping_status || "unknown",
+      iam.iam_mapping_status || "unknown",
+      roles || "none",
+      permissions || "none",
       feature.coverage_status || "",
       sources,
     ]));
