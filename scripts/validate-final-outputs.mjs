@@ -264,6 +264,21 @@ async function validateArtifacts() {
           findings.push({ severity: "error", rule: "non_official_source_link", path: cardPath, link });
         }
       }
+      const officialSourceLinks = links.filter(isOfficialGoogleUrl);
+      const featureReadmePath = path.join(artifactsRoot, productSlug, featureSlug, "README.md");
+      if (officialSourceLinks.length > 0 && await exists(featureReadmePath)) {
+        const featureReadme = await readFile(featureReadmePath, "utf8");
+        if (!officialSourceLinks.some((link) => featureReadme.includes(link))) {
+          findings.push({
+            severity: "error",
+            rule: "missing_artifact_readme_evidence_link",
+            path: featureReadmePath,
+            product_slug: productSlug,
+            feature_slug: featureSlug,
+            expected_one_of: officialSourceLinks,
+          });
+        }
+      }
       for (const role of [...(card.iam?.explicit_roles || []), ...(card.iam?.derived_roles || [])]) {
         if (!inventory.roles.has(role)) {
           findings.push({ severity: "error", rule: "role_not_in_step08_inventory", path: cardPath, role });
