@@ -477,6 +477,67 @@ async function validateRadarIamTablesSeparateExplicitAndDerived() {
   return findings;
 }
 
+async function validateRadarServicesReportMatchesArtifacts() {
+  const findings = [];
+  const servicesReportPath = path.join(radarRoot, "services", "index.md");
+  if (!(await exists(servicesReportPath))) {
+    findings.push({
+      severity: "error",
+      rule: "missing_radar_services_report",
+      path: servicesReportPath,
+    });
+    return findings;
+  }
+
+  const artifactProductSlugs = new Set();
+  for (const productSlug of await listDirs(artifactsRoot)) {
+    if (await exists(path.join(artifactsRoot, productSlug, "promotion.json"))) {
+      artifactProductSlugs.add(productSlug);
+    }
+  }
+
+  const report = await readFile(servicesReportPath, "utf8");
+  const expectedServiceLinks = new Set(
+    [...artifactProductSlugs].sort().map((productSlug) => `../../artifacts/${productSlug}/card.json`)
+  );
+  const actualServiceLinks = new Set();
+  const staleServiceLinks = new Set();
+  const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
+
+  for (const match of report.matchAll(linkPattern)) {
+    const link = String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0];
+    if (!link.startsWith("../../artifacts/") || !link.endsWith("/card.json")) {
+      continue;
+    }
+    if (expectedServiceLinks.has(link)) {
+      actualServiceLinks.add(link);
+    } else {
+      staleServiceLinks.add(link);
+    }
+  }
+
+  for (const link of expectedServiceLinks) {
+    if (!actualServiceLinks.has(link)) {
+      findings.push({
+        severity: "error",
+        rule: "missing_radar_service_artifact_link",
+        path: servicesReportPath,
+        link,
+      });
+    }
+  }
+  for (const link of staleServiceLinks) {
+    findings.push({
+      severity: "error",
+      rule: "stale_radar_service_artifact_link",
+      path: servicesReportPath,
+      link,
+    });
+  }
+
+  return findings;
+}
+
 async function validateRadarMatchesArtifacts() {
   const findings = [];
   const products = [];
@@ -655,6 +716,7 @@ async function main() {
   const radarArtifactLinkFindings = await validateRadarArtifactLinks();
   const radarExternalLinkFindings = await validateRadarExternalLinksAreOfficial();
   const radarIamTableFindings = await validateRadarIamTablesSeparateExplicitAndDerived();
+  const radarServicesReportFindings = await validateRadarServicesReportMatchesArtifacts();
   const radarArtifactFindings = await validateRadarMatchesArtifacts();
   const findings = [
     ...artifactValidation.findings,
@@ -664,6 +726,7 @@ async function main() {
     ...radarArtifactLinkFindings,
     ...radarExternalLinkFindings,
     ...radarIamTableFindings,
+    ...radarServicesReportFindings,
     ...radarArtifactFindings,
   ];
   const payload = {

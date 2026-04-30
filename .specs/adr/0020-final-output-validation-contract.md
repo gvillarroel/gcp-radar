@@ -60,6 +60,8 @@ The validator must check:
   product's promoted feature inventory
 - Step 10 product reports and the IAM report keep explicit roles and
   permissions separate from derived roles and permissions
+- the Step 10 services report links every promoted product service card and
+  does not retain service-card links outside the promoted artifact inventory
 
 ## Consequences
 

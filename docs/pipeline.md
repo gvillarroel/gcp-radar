@@ -397,7 +397,9 @@ README for their product and must not retain feature README links that are no
 longer in that product's promotion manifest. The fixed Step 10 report paths recorded in
 `data/step-10/current/index.json` must match the canonical radar report layout
 and resolve to existing files. Product reports and the IAM report must retain
-separate explicit and derived IAM columns.
+separate explicit and derived IAM columns. The services report must link every
+promoted product service card and must not retain service-card links outside
+the promoted artifact inventory.
 
 ## Practical Lessons
 

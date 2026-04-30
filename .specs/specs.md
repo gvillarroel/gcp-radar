@@ -563,7 +563,9 @@ Radar Markdown links that target promoted `artifacts/` content must resolve to
 existing files or directories. Each product report must also link every
 promoted feature README for that product and must not link feature README files
 outside the product's promoted feature inventory. Product reports and the IAM
-report must keep explicit IAM evidence separate from derived IAM signals.
+report must keep explicit IAM evidence separate from derived IAM signals. The
+services report must link every promoted product service card and must not keep
+stale service-card links outside the promoted artifact inventory.
 
 ### Step 11: Knowledge Capture
 
