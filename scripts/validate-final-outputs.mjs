@@ -74,6 +74,10 @@ function isOfficialGoogleUrl(url) {
   }
 }
 
+function relativeToCwd(target) {
+  return path.relative(process.cwd(), target).replace(/\\/g, "/") || ".";
+}
+
 async function loadStep08Inventory() {
   const roles = new Set();
   const permissions = new Set();
@@ -105,6 +109,7 @@ async function validateArtifacts() {
     const promotion = await readJson(promotionPath, null);
     const serviceCardPath = path.join(artifactsRoot, productSlug, "card.json");
     const serviceCard = await readJson(serviceCardPath, null);
+    const expectedSourceStep08Card = relativeToCwd(path.join(step08Root, "products", productSlug, "card.json"));
     const promotedFeatureSlugs = new Set((promotion?.promoted_features || []).map((feature) => feature.feature_slug).filter(Boolean));
     const artifactFeatureSlugs = await listDirs(productDir);
     if (!promotion) {
@@ -148,6 +153,26 @@ async function validateArtifacts() {
           product_slug: productSlug,
           expected: expectedServiceCard,
           actual: actualServiceCard || null,
+        });
+      }
+      const actualSourceStep08Card = String(promotion.source_step08_card || "").replace(/\\/g, "/");
+      if (actualSourceStep08Card !== expectedSourceStep08Card) {
+        findings.push({
+          severity: "error",
+          rule: "promotion_manifest_source_step08_card_mismatch",
+          path: promotionPath,
+          product_slug: productSlug,
+          expected: expectedSourceStep08Card,
+          actual: actualSourceStep08Card || null,
+        });
+      }
+      if (!(await exists(path.join(step08Root, "products", productSlug, "card.json")))) {
+        findings.push({
+          severity: "error",
+          rule: "promotion_manifest_source_step08_card_missing",
+          path: promotionPath,
+          product_slug: productSlug,
+          expected: expectedSourceStep08Card,
         });
       }
       const seenFeatureSlugs = new Set();
@@ -255,6 +280,14 @@ async function validateArtifacts() {
       findings.push({ severity: "error", rule: "missing_service_card", path: serviceCardPath });
     } else if (serviceCard.card_type !== "service") {
       findings.push({ severity: "error", rule: "invalid_service_card_type", path: serviceCardPath });
+    } else if (String(serviceCard.source_step08_card || "").replace(/\\/g, "/") !== expectedSourceStep08Card) {
+      findings.push({
+        severity: "error",
+        rule: "service_card_source_step08_card_mismatch",
+        path: serviceCardPath,
+        expected: expectedSourceStep08Card,
+        actual: String(serviceCard.source_step08_card || "").replace(/\\/g, "/") || null,
+      });
     } else if (serviceCard.product_slug && serviceCard.product_slug !== productSlug) {
       findings.push({
         severity: "error",
@@ -291,6 +324,17 @@ async function validateArtifacts() {
           path: cardPath,
           expected: productSlug,
           actual: card.product_slug || null,
+        });
+      }
+      if (String(card.source_step08_card || "").replace(/\\/g, "/") !== expectedSourceStep08Card) {
+        findings.push({
+          severity: "error",
+          rule: "feature_card_source_step08_card_mismatch",
+          path: cardPath,
+          product_slug: productSlug,
+          feature_slug: featureSlug,
+          expected: expectedSourceStep08Card,
+          actual: String(card.source_step08_card || "").replace(/\\/g, "/") || null,
         });
       }
       if (card.feature_slug !== featureSlug) {

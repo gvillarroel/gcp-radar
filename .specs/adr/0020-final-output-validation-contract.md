@@ -60,9 +60,14 @@ The validator must check:
   link from its promoted feature card
 - promoted service and feature artifact cards have embedded slugs that match
   their artifact path and promotion manifest
+- promoted service and feature artifact cards have `source_step08_card`
+  provenance that matches the canonical Step 08 product card path being
+  validated
 - each product promotion manifest has an embedded product slug, service-card
   path, promoted feature count, promoted feature slugs, and promoted artifact
   paths that match the containing artifact directory
+- each product promotion manifest has `source_step08_card` provenance that
+  matches an existing canonical Step 08 product card path
 - each product promotion manifest has a skipped feature count that matches its
   skipped feature list, no duplicate skipped feature slugs, and no feature slug
   listed as both promoted and skipped
