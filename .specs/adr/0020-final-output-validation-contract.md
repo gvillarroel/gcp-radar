@@ -27,6 +27,8 @@ The canonical final validation script is:
 The validator must check:
 
 - every promoted feature artifact has official Google source links
+- promoted evidence source links use the `http` or `https` scheme on an
+  official Google host
 - artifact IAM roles and permissions still exist in the Step 08 inventory
 - radar Markdown and JSON files do not reference intermediate `data/step-*`
   paths

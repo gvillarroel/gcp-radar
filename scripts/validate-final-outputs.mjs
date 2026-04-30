@@ -63,7 +63,11 @@ async function listFilesRecursive(directory) {
 
 function isOfficialGoogleUrl(url) {
   try {
-    const host = new URL(url).hostname.toLowerCase();
+    const parsedUrl = new URL(url);
+    if (!["http:", "https:"].includes(parsedUrl.protocol)) {
+      return false;
+    }
+    const host = parsedUrl.hostname.toLowerCase();
     return officialGoogleHosts.some((allowed) => host === allowed || host.endsWith(`.${allowed}`));
   } catch {
     return false;

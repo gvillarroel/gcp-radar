@@ -288,7 +288,11 @@ function earthEngineCatalogUrlsForFeature(featureName, featureSummary) {
 
 function isOfficialGoogleUrl(url) {
   try {
-    const host = new URL(url).hostname.toLowerCase();
+    const parsedUrl = new URL(url);
+    if (!["http:", "https:"].includes(parsedUrl.protocol)) {
+      return false;
+    }
+    const host = parsedUrl.hostname.toLowerCase();
     return ["docs.cloud.google.com", "cloud.google.com", "developers.google.com", "googleapis.dev"]
       .some((candidate) => host === candidate || host.endsWith(`.${candidate}`));
   } catch {

@@ -398,7 +398,9 @@ and radar root being validated, and its product report list must not contain
 duplicate entries. Radar Markdown links to promoted `artifacts/` content must
 resolve to existing files or directories. External HTTP(S) links in generated
 radar Markdown and promoted artifact Markdown must point to official Google
-hosts. Every feature listed in a promotion manifest must have both its promoted
+hosts. Promoted evidence source links must also use the `http` or `https`
+scheme; host-only matches using other URL schemes are not authoritative
+evidence. Every feature listed in a promotion manifest must have both its promoted
 `card.json` and `README.md`.
 Each promoted feature README must include at least one official Google evidence
 link from its promoted feature card so artifact review remains possible from
