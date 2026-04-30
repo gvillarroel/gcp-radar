@@ -106,6 +106,7 @@ async function validateArtifacts() {
     if (!promotion) {
       findings.push({ severity: "error", rule: "missing_promotion_manifest", path: promotionPath });
     } else {
+      const skippedFeatures = Array.isArray(promotion.skipped_features) ? promotion.skipped_features : [];
       if (promotion.product_slug !== productSlug) {
         findings.push({
           severity: "error",
@@ -122,6 +123,15 @@ async function validateArtifacts() {
           path: promotionPath,
           expected: promotedFeatureSlugs.size,
           actual: promotion.promoted_feature_count,
+        });
+      }
+      if (promotion.skipped_feature_count !== skippedFeatures.length) {
+        findings.push({
+          severity: "error",
+          rule: "promotion_manifest_skipped_feature_count_mismatch",
+          path: promotionPath,
+          expected: skippedFeatures.length,
+          actual: promotion.skipped_feature_count,
         });
       }
       const expectedServiceCard = `artifacts/${productSlug}/card.json`;
@@ -182,6 +192,38 @@ async function validateArtifacts() {
             feature_slug: featureSlug,
             expected: expectedCard,
             actual: actualCard || null,
+          });
+        }
+      }
+      const seenSkippedFeatureSlugs = new Set();
+      for (const feature of skippedFeatures) {
+        const featureSlug = feature?.feature_slug;
+        if (!featureSlug) {
+          findings.push({
+            severity: "error",
+            rule: "promotion_manifest_skipped_feature_missing_slug",
+            path: promotionPath,
+            product_slug: productSlug,
+          });
+          continue;
+        }
+        if (seenSkippedFeatureSlugs.has(featureSlug)) {
+          findings.push({
+            severity: "error",
+            rule: "promotion_manifest_duplicate_skipped_feature_slug",
+            path: promotionPath,
+            product_slug: productSlug,
+            feature_slug: featureSlug,
+          });
+        }
+        seenSkippedFeatureSlugs.add(featureSlug);
+        if (promotedFeatureSlugs.has(featureSlug)) {
+          findings.push({
+            severity: "error",
+            rule: "promotion_manifest_feature_promoted_and_skipped",
+            path: promotionPath,
+            product_slug: productSlug,
+            feature_slug: featureSlug,
           });
         }
       }

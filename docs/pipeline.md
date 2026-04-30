@@ -406,7 +406,10 @@ the human-readable artifact itself.
 Promoted service and feature artifact cards must use embedded slugs that match
 their artifact path and promotion manifest. Promotion manifests must use a
 product slug, service-card path, promoted feature count, feature slugs, and
-artifact paths that match the containing artifact directory.
+artifact paths that match the containing artifact directory. Promotion
+manifests must also keep skipped feature counts aligned with the skipped
+feature list and must not list the same feature slug as both promoted and
+skipped.
 Product artifact indexes and product reports must link every promoted feature
 README for their product. Product artifact indexes must also link the promoted
 service card. Product reports must also link the promoted service card and
