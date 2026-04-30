@@ -36,6 +36,9 @@ row should include the IAM mapping status, roles, permissions, and official
 evidence links. Explicit roles and permissions must be shown separately from
 derived roles and permissions. The dedicated IAM report must aggregate the same
 feature-level roles and permissions across products with the same separation.
+The services report must expose service-card official evidence links when they
+exist, not just a source count, so service-level provenance is reviewable from
+the final radar.
 
 Reports must distinguish explicit feature IAM evidence from derived IAM
 signals. Derived roles or permissions must not be described as required access

@@ -542,10 +542,12 @@ async function validateRadarServicesReportMatchesArtifacts() {
   );
   const actualServiceLinks = new Set();
   const staleServiceLinks = new Set();
+  const reportLinks = new Set();
   const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
 
   for (const match of report.matchAll(linkPattern)) {
     const link = String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0];
+    reportLinks.add(link);
     if (!link.startsWith("../../artifacts/") || !link.endsWith("/card.json")) {
       continue;
     }
@@ -573,6 +575,23 @@ async function validateRadarServicesReportMatchesArtifacts() {
       path: servicesReportPath,
       link,
     });
+  }
+  for (const productSlug of artifactProductSlugs) {
+    const serviceCardPath = path.join(artifactsRoot, productSlug, "card.json");
+    const serviceCard = await readJson(serviceCardPath, null);
+    const officialSourceLinks = (serviceCard?.official_source_links || []).filter(isOfficialGoogleUrl);
+    if (officialSourceLinks.length === 0) {
+      continue;
+    }
+    if (!officialSourceLinks.some((link) => reportLinks.has(link))) {
+      findings.push({
+        severity: "error",
+        rule: "missing_radar_service_evidence_link",
+        path: servicesReportPath,
+        product_slug: productSlug,
+        expected_one_of: officialSourceLinks,
+      });
+    }
   }
 
   return findings;

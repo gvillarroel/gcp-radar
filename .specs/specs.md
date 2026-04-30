@@ -537,6 +537,9 @@ The IAM report must aggregate the same promoted feature-level role and
 permission details across products, with explicit and derived IAM values in
 separate columns. Product reports must not reduce IAM to only a product-level
 count or a mapping-status label.
+The services report must expose official Google evidence links from promoted
+service cards, not just source counts, so service-level provenance remains
+reviewable from the final radar output.
 
 Final-output validation must confirm that the promoted artifact inventory,
 `data/step-10/current/index.json`, and `radar/products/*.md` agree exactly.
@@ -568,6 +571,8 @@ README files outside the product's promoted feature inventory. Product reports
 and the IAM report must keep explicit IAM evidence separate from derived IAM
 signals. The services report must link every promoted product service card and
 must not keep stale service-card links outside the promoted artifact inventory.
+When a promoted service card has official Google source links, the services
+report must include at least one of those service evidence links.
 The root radar index must link every promoted product report and service card,
 and must not retain stale product or service-card links outside the promoted
 artifact inventory.

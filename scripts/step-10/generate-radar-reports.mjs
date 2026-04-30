@@ -60,6 +60,13 @@ function formatPermissions(permissions, limit = 8) {
     .join("<br>") || "none";
 }
 
+function formatSources(sources, limit = 3) {
+  return (sources || [])
+    .slice(0, limit)
+    .map((url) => `[source](${url})`)
+    .join("<br>") || "none";
+}
+
 async function listProductDirs() {
   if (!(await exists(artifactsRoot))) {
     return [];
@@ -282,7 +289,7 @@ function renderServiceCardsReport(products) {
       iam.explicit || 0,
       iam.derived_from_permission_prefix || 0,
       iam.unknown || 0,
-      service.official_source_links?.length || 0,
+      formatSources(service.official_source_links),
     ]));
   }
 
