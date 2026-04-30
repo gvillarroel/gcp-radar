@@ -1100,6 +1100,13 @@ function formatPermissionsForReportValidation(permissions, limit = 8) {
     .join("<br>") || "none";
 }
 
+function formatSourcesForReportValidation(sources, limit = 3) {
+  return (sources || [])
+    .slice(0, limit)
+    .map((url) => `[source](${url})`)
+    .join("<br>");
+}
+
 function parseIntegerCell(value) {
   const parsed = Number(String(value || "").trim());
   return Number.isInteger(parsed) ? parsed : null;
@@ -1478,6 +1485,7 @@ async function validateRadarMatchesArtifacts() {
     const expectedFeatureLinks = new Set(product.feature_slugs.map((featureSlug) => `../../artifacts/${product.product_slug}/${featureSlug}/README.md`));
     const expectedServiceCardLink = `../../artifacts/${product.product_slug}/card.json`;
     const expectedArtifactIndexLink = `../../artifacts/${product.product_slug}/index.md`;
+    const expectedFeatureRows = new Map();
     const actualFeatureLinks = new Set();
     const staleFeatureLinks = new Set();
     const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
@@ -1493,6 +1501,23 @@ async function validateRadarMatchesArtifacts() {
       } else {
         staleFeatureLinks.add(link);
       }
+    }
+    const rows = report
+      .split(/\r?\n/)
+      .filter((line) => line.trim().startsWith("|"))
+      .map(splitMarkdownTableRow)
+      .filter((cells) => cells.length > 0);
+    const header = rows[0] || [];
+    const expectedHeader = ["Feature", "IAM", "Explicit roles", "Explicit permissions", "Derived roles", "Derived permissions", "Coverage", "Official sources"];
+    if (expectedHeader.some((label, index) => header[index] !== label)) {
+      findings.push({
+        severity: "error",
+        rule: "radar_product_feature_header_mismatch",
+        path: reportPath,
+        product_slug: product.product_slug,
+        expected: expectedHeader,
+        actual: header,
+      });
     }
     const summaryExpectations = [
       ["Promoted features", product.feature_slugs.length],
@@ -1566,6 +1591,16 @@ async function validateRadarMatchesArtifacts() {
       const featureCardPath = path.join(artifactsRoot, product.product_slug, featureSlug, "card.json");
       const featureCard = await readJson(featureCardPath, null);
       const officialSourceLinks = (featureCard?.evidence?.source_links || []).filter(isOfficialGoogleUrl);
+      const iam = featureCard?.iam || {};
+      expectedFeatureRows.set(`../../artifacts/${product.product_slug}/${featureSlug}/README.md`, {
+        iam: iam.iam_mapping_status || "unknown",
+        explicit_roles: formatRolesForReportValidation(iam.explicit_roles),
+        explicit_permissions: formatPermissionsForReportValidation(iam.explicit_permissions),
+        derived_roles: formatRolesForReportValidation(iam.derived_roles),
+        derived_permissions: formatPermissionsForReportValidation(iam.derived_permissions),
+        coverage: featureCard?.coverage_status || "",
+        sources: formatSourcesForReportValidation(featureCard?.evidence?.source_links || []),
+      });
       if (officialSourceLinks.length === 0) {
         continue;
       }
@@ -1578,6 +1613,70 @@ async function validateRadarMatchesArtifacts() {
           feature_slug: featureSlug,
           expected_one_of: officialSourceLinks,
         });
+      }
+    }
+    const actualFeatureRows = new Map();
+    for (const cells of rows.slice(2)) {
+      if (cells.length < expectedHeader.length) {
+        continue;
+      }
+      const featureLink = [...String(cells[0] || "").matchAll(linkPattern)]
+        .map((match) => String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0])
+        .find((link) => link.startsWith("../../artifacts/") && link.endsWith("/README.md"));
+      if (!featureLink) {
+        findings.push({
+          severity: "error",
+          rule: "radar_product_feature_row_missing_link",
+          path: reportPath,
+          product_slug: product.product_slug,
+          row: cells,
+        });
+        continue;
+      }
+      if (actualFeatureRows.has(featureLink)) {
+        findings.push({
+          severity: "error",
+          rule: "radar_product_duplicate_feature_row",
+          path: reportPath,
+          product_slug: product.product_slug,
+          link: featureLink,
+        });
+      }
+      actualFeatureRows.set(featureLink, {
+        iam: cells[1],
+        explicit_roles: cells[2],
+        explicit_permissions: cells[3],
+        derived_roles: cells[4],
+        derived_permissions: cells[5],
+        coverage: cells[6],
+        sources: cells[7],
+      });
+    }
+    for (const [link, expected] of expectedFeatureRows) {
+      const actual = actualFeatureRows.get(link);
+      if (!actual) {
+        findings.push({
+          severity: "error",
+          rule: "missing_radar_product_feature_row",
+          path: reportPath,
+          product_slug: product.product_slug,
+          link,
+        });
+        continue;
+      }
+      for (const field of ["iam", "explicit_roles", "explicit_permissions", "derived_roles", "derived_permissions", "coverage", "sources"]) {
+        if (actual[field] !== expected[field]) {
+          findings.push({
+            severity: "error",
+            rule: "radar_product_feature_row_mismatch",
+            path: reportPath,
+            product_slug: product.product_slug,
+            link,
+            field,
+            expected: expected[field],
+            actual: actual[field],
+          });
+        }
       }
     }
   }

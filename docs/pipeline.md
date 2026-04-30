@@ -429,9 +429,12 @@ separate explicit and derived IAM columns. The IAM report must link every
 promoted feature artifact and must not retain stale feature artifact links.
 Its rows must also match the promoted feature cards for product name, IAM
 mapping status, explicit roles, explicit permissions, derived roles, and
-derived permissions. The services report must link every
-promoted product service card and must not retain service-card links outside
-the promoted artifact inventory. When a promoted service card has official
+derived permissions. Product report feature rows must also match promoted
+feature cards for IAM mapping status, explicit roles, explicit permissions,
+derived roles, derived permissions, coverage status, and rendered source links.
+The services report must link every promoted product service card and must not
+retain service-card links outside the promoted artifact inventory. When a
+promoted service card has official
 Google source links, the services report must include at least one of those
 service evidence links. The root radar index must link every promoted
 product report and service card, must not retain stale product or service-card
