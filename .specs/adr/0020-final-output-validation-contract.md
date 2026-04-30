@@ -58,6 +58,8 @@ The validator must check:
   product
 - Step 10 product reports do not retain feature README links outside the
   product's promoted feature inventory
+- Step 10 product reports and the IAM report keep explicit roles and
+  permissions separate from derived roles and permissions
 
 ## Consequences
 

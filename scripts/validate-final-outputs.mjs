@@ -447,6 +447,36 @@ async function validateRadarExternalLinksAreOfficial() {
   return findings;
 }
 
+async function validateRadarIamTablesSeparateExplicitAndDerived() {
+  const findings = [];
+  const requiredHeaders = ["Explicit roles", "Explicit permissions", "Derived roles", "Derived permissions"];
+  const reportFiles = [
+    path.join(radarRoot, "iam", "index.md"),
+    ...((await listFilesRecursive(path.join(radarRoot, "products")))
+      .filter((file) => path.dirname(file) === path.join(radarRoot, "products"))
+      .filter((file) => file.endsWith(".md"))),
+  ];
+
+  for (const file of reportFiles) {
+    if (!(await exists(file))) {
+      continue;
+    }
+    const content = await readFile(file, "utf8");
+    for (const header of requiredHeaders) {
+      if (!content.includes(header)) {
+        findings.push({
+          severity: "error",
+          rule: "radar_iam_table_missing_explicit_derived_header",
+          path: file,
+          header,
+        });
+      }
+    }
+  }
+
+  return findings;
+}
+
 async function validateRadarMatchesArtifacts() {
   const findings = [];
   const products = [];
@@ -624,6 +654,7 @@ async function main() {
   const radarFindings = await validateRadarDoesNotReferenceDataSteps();
   const radarArtifactLinkFindings = await validateRadarArtifactLinks();
   const radarExternalLinkFindings = await validateRadarExternalLinksAreOfficial();
+  const radarIamTableFindings = await validateRadarIamTablesSeparateExplicitAndDerived();
   const radarArtifactFindings = await validateRadarMatchesArtifacts();
   const findings = [
     ...artifactValidation.findings,
@@ -632,6 +663,7 @@ async function main() {
     ...radarFindings,
     ...radarArtifactLinkFindings,
     ...radarExternalLinkFindings,
+    ...radarIamTableFindings,
     ...radarArtifactFindings,
   ];
   const payload = {

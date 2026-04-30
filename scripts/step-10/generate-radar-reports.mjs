@@ -46,6 +46,20 @@ function markdownLink(label, target) {
   return `[${escapedLabel}](${target})`;
 }
 
+function formatRoles(roles, limit = 8) {
+  return (roles || [])
+    .slice(0, limit)
+    .map((role) => `\`${role}\``)
+    .join("<br>") || "none";
+}
+
+function formatPermissions(permissions, limit = 8) {
+  return (permissions || [])
+    .slice(0, limit)
+    .map((permission) => `\`${permission.permission}\``)
+    .join("<br>") || "none";
+}
+
 async function listProductDirs() {
   if (!(await exists(artifactsRoot))) {
     return [];
@@ -138,26 +152,20 @@ function renderProductReport(product) {
     "",
     "## Features",
     "",
-    markdownTableRow(["Feature", "IAM", "Roles", "Permissions", "Coverage", "Official sources"]),
-    markdownTableRow(["---", "---", "---", "---", "---", "---"]),
+    markdownTableRow(["Feature", "IAM", "Explicit roles", "Explicit permissions", "Derived roles", "Derived permissions", "Coverage", "Official sources"]),
+    markdownTableRow(["---", "---", "---", "---", "---", "---", "---", "---"]),
   ];
 
   for (const feature of product.features.sort((left, right) => compareStrings(left.feature_name, right.feature_name))) {
     const sources = (feature.evidence?.source_links || []).slice(0, 3).map((url) => `[source](${url})`).join("<br>");
     const iam = feature.iam || {};
-    const roles = [...(iam.explicit_roles || []), ...(iam.derived_roles || [])]
-      .slice(0, 8)
-      .map((role) => `\`${role}\``)
-      .join("<br>");
-    const permissions = [...(iam.explicit_permissions || []), ...(iam.derived_permissions || [])]
-      .slice(0, 8)
-      .map((permission) => `\`${permission.permission}\``)
-      .join("<br>");
     lines.push(markdownTableRow([
       markdownLink(feature.feature_name, `../../artifacts/${product.product_slug}/${feature.feature_slug}/README.md`),
       iam.iam_mapping_status || "unknown",
-      roles || "none",
-      permissions || "none",
+      formatRoles(iam.explicit_roles),
+      formatPermissions(iam.explicit_permissions),
+      formatRoles(iam.derived_roles),
+      formatPermissions(iam.derived_permissions),
       feature.coverage_status || "",
       sources,
     ]));
@@ -172,24 +180,21 @@ function renderIamReport(products) {
     "",
     "This report is generated from promoted artifacts only.",
     "",
-    markdownTableRow(["Product", "Feature", "Mapping", "Roles", "Permissions"]),
-    markdownTableRow(["---", "---", "---", "---", "---"]),
+    markdownTableRow(["Product", "Feature", "Mapping", "Explicit roles", "Explicit permissions", "Derived roles", "Derived permissions"]),
+    markdownTableRow(["---", "---", "---", "---", "---", "---", "---"]),
   ];
 
   for (const product of products) {
     for (const feature of product.features) {
       const iam = feature.iam || {};
-      const roles = [...(iam.explicit_roles || []), ...(iam.derived_roles || [])].slice(0, 8).map((role) => `\`${role}\``).join("<br>");
-      const permissions = [...(iam.explicit_permissions || []), ...(iam.derived_permissions || [])]
-        .slice(0, 8)
-        .map((permission) => `\`${permission.permission}\``)
-        .join("<br>");
       lines.push(markdownTableRow([
         product.product_name,
         markdownLink(feature.feature_name, `../../artifacts/${product.product_slug}/${feature.feature_slug}/README.md`),
         iam.iam_mapping_status || "unknown",
-        roles || "none",
-        permissions || "none",
+        formatRoles(iam.explicit_roles),
+        formatPermissions(iam.explicit_permissions),
+        formatRoles(iam.derived_roles),
+        formatPermissions(iam.derived_permissions),
       ]));
     }
   }

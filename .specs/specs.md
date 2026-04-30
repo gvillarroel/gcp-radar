@@ -528,14 +528,15 @@ each promoted feature in each product report, Step 10 should show:
 
 - feature name and link to the promoted feature artifact
 - IAM mapping status
-- roles associated with the feature
-- permissions associated with the feature
+- explicit roles and permissions associated with the feature
+- derived roles and permissions associated with the feature, labeled separately
 - coverage status
 - official Google evidence links
 
 The IAM report must aggregate the same promoted feature-level role and
-permission details across products. Product reports must not reduce IAM to only
-a product-level count or a mapping-status label.
+permission details across products, with explicit and derived IAM values in
+separate columns. Product reports must not reduce IAM to only a product-level
+count or a mapping-status label.
 
 Final-output validation must confirm that the promoted artifact inventory,
 `data/step-10/current/index.json`, and `radar/products/*.md` agree exactly.
@@ -561,7 +562,8 @@ manifest.
 Radar Markdown links that target promoted `artifacts/` content must resolve to
 existing files or directories. Each product report must also link every
 promoted feature README for that product and must not link feature README files
-outside the product's promoted feature inventory.
+outside the product's promoted feature inventory. Product reports and the IAM
+report must keep explicit IAM evidence separate from derived IAM signals.
 
 ### Step 11: Knowledge Capture
 

@@ -370,8 +370,10 @@ Generate final radar reports from promoted artifacts only.
 
 Product reports must include feature-level IAM detail, not just aggregate IAM
 counts. Each feature row should show the mapping status, roles, permissions,
-coverage, and official evidence links. `radar/iam/index.md` must aggregate the
-same promoted feature-level role and permission details across products.
+coverage, and official evidence links. Explicit IAM values and derived IAM
+signals must be shown in separate columns so derived permission-prefix matches
+are not presented as feature requirements. `radar/iam/index.md` must aggregate
+the same promoted feature-level role and permission details across products.
 
 During regeneration, Step 10 removes stale Markdown files directly under
 `radar/products/` when they do not correspond to a currently promoted artifact
@@ -394,7 +396,8 @@ Product artifact indexes and product reports must link every promoted feature
 README for their product and must not retain feature README links that are no
 longer in that product's promotion manifest. The fixed Step 10 report paths recorded in
 `data/step-10/current/index.json` must match the canonical radar report layout
-and resolve to existing files.
+and resolve to existing files. Product reports and the IAM report must retain
+separate explicit and derived IAM columns.
 
 ## Practical Lessons
 
