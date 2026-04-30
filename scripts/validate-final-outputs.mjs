@@ -6,6 +6,7 @@ import path from "node:path";
 const artifactsRoot = path.resolve(process.env.GCP_RADAR_VALIDATE_ARTIFACTS_ROOT || "artifacts");
 const radarRoot = path.resolve(process.env.GCP_RADAR_VALIDATE_RADAR_ROOT || "radar");
 const step08Root = path.resolve(process.env.GCP_RADAR_VALIDATE_STEP08_ROOT || "data/step-08/current");
+const step09Root = path.resolve(process.env.GCP_RADAR_VALIDATE_STEP09_ROOT || "data/step-09/current");
 const step10Root = path.resolve(process.env.GCP_RADAR_VALIDATE_STEP10_ROOT || "data/step-10/current");
 const outputFile = path.resolve(process.env.GCP_RADAR_VALIDATE_OUTPUT || "data/final-output-validation.json");
 const officialGoogleHosts = [
@@ -993,6 +994,171 @@ async function validateRadarCoverageReportMatchesArtifacts() {
   return findings;
 }
 
+async function validateStep09IndexMatchesArtifacts() {
+  const findings = [];
+  const step09IndexPath = path.join(step09Root, "index.json");
+  const step09Index = await readJson(step09IndexPath, null);
+  if (!step09Index) {
+    findings.push({ severity: "error", rule: "missing_step09_index", path: step09IndexPath });
+    return findings;
+  }
+
+  const expectedArtifactsRoot = path.relative(process.cwd(), artifactsRoot).replace(/\\/g, "/") || ".";
+  const actualArtifactsRoot = String(step09Index.artifacts_root || "").replace(/\\/g, "/");
+  if (actualArtifactsRoot !== expectedArtifactsRoot) {
+    findings.push({
+      severity: "error",
+      rule: "step09_index_artifacts_root_mismatch",
+      path: step09IndexPath,
+      expected: expectedArtifactsRoot,
+      actual: actualArtifactsRoot || null,
+    });
+  }
+
+  const expectedStep08Root = path.relative(process.cwd(), step08Root).replace(/\\/g, "/") || ".";
+  const actualStep08Root = String(step09Index.source_step08_root || "").replace(/\\/g, "/");
+  if (actualStep08Root !== expectedStep08Root) {
+    findings.push({
+      severity: "error",
+      rule: "step09_index_step08_root_mismatch",
+      path: step09IndexPath,
+      expected: expectedStep08Root,
+      actual: actualStep08Root || null,
+    });
+  }
+
+  const expectedProducts = new Map();
+  for (const productSlug of await listDirs(artifactsRoot)) {
+    const promotionPath = path.join(artifactsRoot, productSlug, "promotion.json");
+    const promotion = await readJson(promotionPath, null);
+    if (!promotion) {
+      continue;
+    }
+    expectedProducts.set(productSlug, {
+      product_name: promotion.product_name || productSlug,
+      service_card: `artifacts/${productSlug}/card.json`,
+      product_index: `artifacts/${productSlug}/index.md`,
+      promotion_json: `artifacts/${productSlug}/promotion.json`,
+      promoted_feature_count: Number(promotion.promoted_feature_count || 0),
+      skipped_feature_count: Number(promotion.skipped_feature_count || 0),
+    });
+  }
+
+  const indexProducts = Array.isArray(step09Index.products) ? step09Index.products : [];
+  if (!Array.isArray(step09Index.products)) {
+    findings.push({
+      severity: "error",
+      rule: "step09_index_products_not_array",
+      path: step09IndexPath,
+      actual_type: step09Index.products === null ? "null" : typeof step09Index.products,
+    });
+  }
+
+  const actualProducts = new Map();
+  for (const product of indexProducts) {
+    const productSlug = product?.product_slug;
+    if (!productSlug) {
+      findings.push({ severity: "error", rule: "step09_index_product_missing_slug", path: step09IndexPath });
+      continue;
+    }
+    if (actualProducts.has(productSlug)) {
+      findings.push({
+        severity: "error",
+        rule: "step09_index_duplicate_product",
+        path: step09IndexPath,
+        product_slug: productSlug,
+      });
+    }
+    actualProducts.set(productSlug, product);
+  }
+
+  if (step09Index.product_count !== expectedProducts.size) {
+    findings.push({
+      severity: "error",
+      rule: "step09_product_count_mismatch",
+      path: step09IndexPath,
+      expected: expectedProducts.size,
+      actual: step09Index.product_count,
+    });
+  }
+
+  const expectedPromotedFeatureCount = [...expectedProducts.values()]
+    .reduce((sum, product) => sum + product.promoted_feature_count, 0);
+  const expectedSkippedFeatureCount = [...expectedProducts.values()]
+    .reduce((sum, product) => sum + product.skipped_feature_count, 0);
+  if (step09Index.promoted_feature_count !== expectedPromotedFeatureCount) {
+    findings.push({
+      severity: "error",
+      rule: "step09_promoted_feature_count_mismatch",
+      path: step09IndexPath,
+      expected: expectedPromotedFeatureCount,
+      actual: step09Index.promoted_feature_count,
+    });
+  }
+  if (step09Index.skipped_feature_count !== expectedSkippedFeatureCount) {
+    findings.push({
+      severity: "error",
+      rule: "step09_skipped_feature_count_mismatch",
+      path: step09IndexPath,
+      expected: expectedSkippedFeatureCount,
+      actual: step09Index.skipped_feature_count,
+    });
+  }
+
+  for (const [productSlug, expected] of expectedProducts) {
+    const actual = actualProducts.get(productSlug);
+    if (!actual) {
+      findings.push({
+        severity: "error",
+        rule: "step09_index_missing_product",
+        path: step09IndexPath,
+        product_slug: productSlug,
+      });
+      continue;
+    }
+    for (const field of ["service_card", "product_index", "promotion_json"]) {
+      const actualPath = String(actual[field] || "").replace(/\\/g, "/");
+      if (actualPath !== expected[field]) {
+        findings.push({
+          severity: "error",
+          rule: "step09_index_product_path_mismatch",
+          path: step09IndexPath,
+          product_slug: productSlug,
+          field,
+          expected: expected[field],
+          actual: actualPath || null,
+        });
+      }
+    }
+    for (const field of ["promoted_feature_count", "skipped_feature_count"]) {
+      if (Number(actual[field] || 0) !== expected[field]) {
+        findings.push({
+          severity: "error",
+          rule: "step09_index_product_count_mismatch",
+          path: step09IndexPath,
+          product_slug: productSlug,
+          field,
+          expected: expected[field],
+          actual: actual[field],
+        });
+      }
+    }
+  }
+
+  for (const productSlug of actualProducts.keys()) {
+    if (!expectedProducts.has(productSlug)) {
+      findings.push({
+        severity: "error",
+        rule: "step09_index_stale_product",
+        path: step09IndexPath,
+        product_slug: productSlug,
+      });
+    }
+  }
+
+  return findings;
+}
+
 async function validateRadarMatchesArtifacts() {
   const findings = [];
   const products = [];
@@ -1242,6 +1408,7 @@ async function main() {
   const radarSecurityReportFindings = await validateRadarSecurityReportMatchesArtifacts();
   const radarRootIndexFindings = await validateRadarRootIndexMatchesArtifacts();
   const radarCoverageReportFindings = await validateRadarCoverageReportMatchesArtifacts();
+  const step09IndexFindings = await validateStep09IndexMatchesArtifacts();
   const radarArtifactFindings = await validateRadarMatchesArtifacts();
   const findings = [
     ...artifactValidation.findings,
@@ -1255,6 +1422,7 @@ async function main() {
     ...radarSecurityReportFindings,
     ...radarRootIndexFindings,
     ...radarCoverageReportFindings,
+    ...step09IndexFindings,
     ...radarArtifactFindings,
   ];
   const payload = {

@@ -381,15 +381,18 @@ product. That keeps the product report directory aligned with the promoted
 source-of-truth inventory before final-output validation runs.
 
 Final validation checks the report boundary after Step 10. The promoted product
-directories under `artifacts/`, the product reports under `radar/products/`,
-and `data/step-10/current/index.json` must describe the same product inventory
-and feature counts. Stale or missing product reports fail validation. The Step
-10 index must record the same artifacts root and radar root being validated,
-and its product report list must not contain duplicate entries. Radar Markdown
-links to promoted `artifacts/` content must resolve to existing files or
-directories. External HTTP(S) links in generated radar Markdown and promoted
-artifact Markdown must point to official Google hosts. Every feature listed in a
-promotion manifest must have both its promoted `card.json` and `README.md`.
+directories under `artifacts/`, the Step 09 promotion index, the product reports
+under `radar/products/`, and `data/step-10/current/index.json` must describe
+the same product inventory and feature counts. Stale or missing product reports
+fail validation. The Step 09 index must record the same Step 08 root and
+artifacts root being validated, and its product list must not contain duplicate
+or stale product entries. The Step 10 index must record the same artifacts root
+and radar root being validated, and its product report list must not contain
+duplicate entries. Radar Markdown links to promoted `artifacts/` content must
+resolve to existing files or directories. External HTTP(S) links in generated
+radar Markdown and promoted artifact Markdown must point to official Google
+hosts. Every feature listed in a promotion manifest must have both its promoted
+`card.json` and `README.md`.
 Each promoted feature README must include at least one official Google evidence
 link from its promoted feature card so artifact review remains possible from
 the human-readable artifact itself.

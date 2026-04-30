@@ -18,7 +18,7 @@ artifacts, or while omitting reports for newly promoted products.
 ## Decision
 
 Treat final-output validation as the contract between promoted artifacts,
-Step 10 metadata, and radar reports.
+Step 09 metadata, Step 10 metadata, and radar reports.
 
 The canonical final validation script is:
 
@@ -38,6 +38,12 @@ The validator must check:
   Google host
 - `radar/products/*.md` exactly matches the promoted product directories under
   `artifacts/`
+- `data/step-09/current/index.json` product and feature counts match promoted
+  artifacts
+- `data/step-09/current/index.json` records the same Step 08 root and
+  artifacts root that final-output validation is checking
+- Step 09 product entries exactly match the promoted artifact inventory without
+  duplicate or stale product entries
 - `data/step-10/current/index.json` product and feature counts match promoted
   artifacts
 - `data/step-10/current/index.json` records the same artifacts root and radar
