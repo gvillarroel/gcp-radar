@@ -104,6 +104,74 @@ async function validateArtifacts() {
     const artifactFeatureSlugs = await listDirs(productDir);
     if (!promotion) {
       findings.push({ severity: "error", rule: "missing_promotion_manifest", path: promotionPath });
+    } else {
+      if (promotion.product_slug !== productSlug) {
+        findings.push({
+          severity: "error",
+          rule: "promotion_manifest_product_slug_mismatch",
+          path: promotionPath,
+          expected: productSlug,
+          actual: promotion.product_slug || null,
+        });
+      }
+      if (promotion.promoted_feature_count !== promotedFeatureSlugs.size) {
+        findings.push({
+          severity: "error",
+          rule: "promotion_manifest_promoted_feature_count_mismatch",
+          path: promotionPath,
+          expected: promotedFeatureSlugs.size,
+          actual: promotion.promoted_feature_count,
+        });
+      }
+      const seenFeatureSlugs = new Set();
+      for (const feature of promotion.promoted_features || []) {
+        const featureSlug = feature?.feature_slug;
+        if (!featureSlug) {
+          findings.push({
+            severity: "error",
+            rule: "promotion_manifest_missing_feature_slug",
+            path: promotionPath,
+            product_slug: productSlug,
+          });
+          continue;
+        }
+        if (seenFeatureSlugs.has(featureSlug)) {
+          findings.push({
+            severity: "error",
+            rule: "promotion_manifest_duplicate_feature_slug",
+            path: promotionPath,
+            product_slug: productSlug,
+            feature_slug: featureSlug,
+          });
+        }
+        seenFeatureSlugs.add(featureSlug);
+        const expectedReadme = `artifacts/${productSlug}/${featureSlug}/README.md`;
+        const expectedCard = `artifacts/${productSlug}/${featureSlug}/card.json`;
+        const actualReadme = String(feature.artifact_readme || "").replace(/\\/g, "/");
+        const actualCard = String(feature.artifact_card || "").replace(/\\/g, "/");
+        if (actualReadme !== expectedReadme) {
+          findings.push({
+            severity: "error",
+            rule: "promotion_manifest_feature_readme_path_mismatch",
+            path: promotionPath,
+            product_slug: productSlug,
+            feature_slug: featureSlug,
+            expected: expectedReadme,
+            actual: actualReadme || null,
+          });
+        }
+        if (actualCard !== expectedCard) {
+          findings.push({
+            severity: "error",
+            rule: "promotion_manifest_feature_card_path_mismatch",
+            path: promotionPath,
+            product_slug: productSlug,
+            feature_slug: featureSlug,
+            expected: expectedCard,
+            actual: actualCard || null,
+          });
+        }
+      }
     }
     for (const featureSlug of artifactFeatureSlugs) {
       if (promotion && !promotedFeatureSlugs.has(featureSlug)) {
