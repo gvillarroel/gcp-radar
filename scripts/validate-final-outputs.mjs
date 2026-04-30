@@ -533,6 +533,69 @@ async function validateRadarIamTablesSeparateExplicitAndDerived() {
   return findings;
 }
 
+async function validateRadarIamReportMatchesArtifacts() {
+  const findings = [];
+  const iamReportPath = path.join(radarRoot, "iam", "index.md");
+  if (!(await exists(iamReportPath))) {
+    findings.push({
+      severity: "error",
+      rule: "missing_radar_iam_report",
+      path: iamReportPath,
+    });
+    return findings;
+  }
+
+  const expectedFeatureLinks = new Set();
+  for (const productSlug of await listDirs(artifactsRoot)) {
+    const promotion = await readJson(path.join(artifactsRoot, productSlug, "promotion.json"), null);
+    if (!promotion) {
+      continue;
+    }
+    for (const feature of promotion.promoted_features || []) {
+      if (feature?.feature_slug) {
+        expectedFeatureLinks.add(`../../artifacts/${productSlug}/${feature.feature_slug}/README.md`);
+      }
+    }
+  }
+
+  const report = await readFile(iamReportPath, "utf8");
+  const actualFeatureLinks = new Set();
+  const staleFeatureLinks = new Set();
+  const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
+  for (const match of report.matchAll(linkPattern)) {
+    const link = String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0];
+    if (!link.startsWith("../../artifacts/") || !link.endsWith("/README.md")) {
+      continue;
+    }
+    if (expectedFeatureLinks.has(link)) {
+      actualFeatureLinks.add(link);
+    } else {
+      staleFeatureLinks.add(link);
+    }
+  }
+
+  for (const link of expectedFeatureLinks) {
+    if (!actualFeatureLinks.has(link)) {
+      findings.push({
+        severity: "error",
+        rule: "missing_radar_iam_feature_link",
+        path: iamReportPath,
+        link,
+      });
+    }
+  }
+  for (const link of staleFeatureLinks) {
+    findings.push({
+      severity: "error",
+      rule: "stale_radar_iam_feature_link",
+      path: iamReportPath,
+      link,
+    });
+  }
+
+  return findings;
+}
+
 async function validateRadarServicesReportMatchesArtifacts() {
   const findings = [];
   const servicesReportPath = path.join(radarRoot, "services", "index.md");
@@ -1223,8 +1286,7 @@ async function validateRadarMatchesArtifacts() {
     for (const match of report.matchAll(linkPattern)) {
       const link = String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0];
       reportLinks.add(link);
-      const prefix = `../../artifacts/${product.product_slug}/`;
-      if (!link.startsWith(prefix) || !link.endsWith("/README.md")) {
+      if (!link.startsWith("../../artifacts/") || !link.endsWith("/README.md")) {
         continue;
       }
       if (expectedFeatureLinks.has(link)) {
@@ -1404,6 +1466,7 @@ async function main() {
   const radarArtifactLinkFindings = await validateRadarArtifactLinks();
   const radarExternalLinkFindings = await validateRadarExternalLinksAreOfficial();
   const radarIamTableFindings = await validateRadarIamTablesSeparateExplicitAndDerived();
+  const radarIamReportFindings = await validateRadarIamReportMatchesArtifacts();
   const radarServicesReportFindings = await validateRadarServicesReportMatchesArtifacts();
   const radarSecurityReportFindings = await validateRadarSecurityReportMatchesArtifacts();
   const radarRootIndexFindings = await validateRadarRootIndexMatchesArtifacts();
@@ -1418,6 +1481,7 @@ async function main() {
     ...radarArtifactLinkFindings,
     ...radarExternalLinkFindings,
     ...radarIamTableFindings,
+    ...radarIamReportFindings,
     ...radarServicesReportFindings,
     ...radarSecurityReportFindings,
     ...radarRootIndexFindings,
